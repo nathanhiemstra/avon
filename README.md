@@ -20,13 +20,13 @@ This README documents steps to Avon Proof of Concept application up and running.
 * Clone the repo: 
 ```git clone https://studio4digitalcraftsmanship@bitbucket.org/craftsmanshipstudio/avon-poc.git```
 ### How run local server ###
-1. CD to the directory where you cloned the repo. Example: ```cd /Users/nathanhiemstra/Sites/avon-poc```
+1. CD to the directory where you cloned the repo. Example: ```cd /Users/yoursweetusername/Sites/avon-poc```
 2. ```gulp server```
 3. Website will be available at http://localhost:3000
 You should see something like this:
 ```
-n:~ nathanhiemstra$ cd /Users/nathanhiemstra/Sites/avon-poc
-n:avon-poc nathanhiemstra$ gulp server
+n:~ yoursweetusername$ cd /Users/yoursweetusername/Sites/avon-poc
+n:avon-poc yoursweetusername$ gulp server
 [14:43:05] Using gulpfile ~/Sites/avon-poc/gulpfile.js
 [14:43:05] Starting 'server'...
 [14:43:05] Finished 'server' after 31 ms
