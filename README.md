@@ -15,21 +15,37 @@ This README documents steps to Avon Proof of Concept application up and running.
 
 ### Setup ###
 
-* Get aded to our [Avon team](https://bitbucket.org/account/user/craftsmanshipstudio/projects/AVON) in Bitbucket.
-* Get aded to the [avon-poc](https://bitbucket.org/craftsmanshipstudio/avon-poc) repo in Bitbucket.
-* Clone the repo: 
-```git clone https://studio4digitalcraftsmanship@bitbucket.org/craftsmanshipstudio/avon-poc.git```
+1. Get aded to our [Avon team](https://bitbucket.org/account/user/craftsmanshipstudio/projects/AVON) in Bitbucket.
+2. Get aded to the [avon-poc](https://bitbucket.org/craftsmanshipstudio/avon-poc) repo in Bitbucket.
+3. Create a local folder for the repo
+4. CD to that folder. Example: ```cd /Users/yoursweetusername/Sites/avon-poc```
+3. Clone the repo: ```git clone https://studio4digitalcraftsmanship@bitbucket.org/craftsmanshipstudio/avon-poc.git```
+
 ### How run local server ###
-1. CD to the directory where you cloned the repo. Example: ```cd /Users/yoursweetusername/Sites/avon-poc```
+1. CD to the folder where you cloned the repo. Example: ```cd /Users/yoursweetusername/Sites/avon-poc```
 2. ```gulp server```
 3. Website will be available at http://localhost:3000
 You should see something like this:
 ```
 n:~ yoursweetusername$ cd /Users/yoursweetusername/Sites/avon-poc
-n:avon-poc yoursweetusername$ gulp server
-[14:43:05] Using gulpfile ~/Sites/avon-poc/gulpfile.js
-[14:43:05] Starting 'server'...
-[14:43:05] Finished 'server' after 31 ms
+n:avon-poc yoursweetusername$ gulp 
+[16:45:08] Using gulpfile ~/Sites/avon-poc/gulpfile.js
+[16:45:08] Starting 'default'...
+[16:45:08] Starting 'build'...
+[16:45:08] Starting 'clean'...
+[16:45:08] Finished 'clean' after 11 ms
+[16:45:08] Starting 'sass'...
+[16:45:08] Finished 'sass' after 36 ms
+[16:45:08] Starting 'fileinclude'...
+[16:45:08] Finished 'fileinclude' after 3.57 ms
+[16:45:08] Starting 'copy'...
+[16:45:08] Finished 'copy' after 3.24 ms
+[16:45:08] Finished 'build' after 57 ms
+[16:45:08] Starting 'watch'...
+[16:45:08] Finished 'watch' after 19 ms
+[16:45:08] Starting 'server'...
+[16:45:08] Finished 'server' after 19 ms
+[16:45:08] Finished 'default' after 98 ms
 [Browsersync] Access URLs:
  --------------------------------------
        Local: http://localhost:3000
