@@ -15,7 +15,8 @@
   "homepage": "https://bitbucket.org/craftsmanshipstudio/avon-poc#readme",
   "dependencies": {
     "gulp": "^3.9.1",
-    "gulp-file-include": "^1.2.0"
+    "gulp-file-include": "^1.2.0",
+    "gulp-util": "^3.0.8"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
