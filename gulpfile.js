@@ -8,21 +8,27 @@ var gulpSequence =  require('gulp-sequence');
 var gutil =         require('gulp-util');
 var autoprefixer =  require('gulp-autoprefixer');
 var browserSync =   require('browser-sync').create();
-
 var path = {
-  css:              "dist/css",
-  home:             "src/index.html",
-  html:             "src/*.html",
+  dist: {},
+  css: {}
+};
+path.dist = {
+  css:              "dist/css"
+};
+path.src = {
+  docsAssets:       "src/styleguide/docs-assets/**/*",
+  html:             "src/**/*.html",
+  fonts:            "src/fonts/*",
   images:           "src/images/**/*",
-  javascript:       "src/javascript/**/*.js", 
-  partials:         "src/_partials/**/*.html",
+  js:               "src/js/**/*.js", 
   sass:             "src/sass/**/*.scss"
 };
 
-path.filesToCopyNotSass = [
-  path.html,
-  path.images,
-  path.javascript
+path.staticFilesToCopy = [
+  path.src.docsAssets,
+  path.src.fonts,
+  path.src.images,
+  path.src.js
 ];
 
 gulp.task('clean', function() {
@@ -31,14 +37,12 @@ gulp.task('clean', function() {
 });
 
 gulp.task('copy', function() {
-  gulp.src(path.filesToCopyNotSass, {base: "src"})
+  gulp.src(path.staticFilesToCopy, {base: "src"})
     .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('fileinclude', function() {
-  gulp.src([
-    './src/widget-demo.html'
-  ]).pipe(fileinclude({
+  gulp.src([path.src.html]).pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
     }))
@@ -46,9 +50,9 @@ gulp.task('fileinclude', function() {
 });
 
 gulp.task('sass', function(){
-  return gulp.src(path.sass)
+  return gulp.src(path.src.sass)
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
-    .pipe(gulp.dest(path.css))
+    .pipe(gulp.dest(path.dist.css))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -61,14 +65,14 @@ gulp.task('server', function() {
       directory: false
     }
   });
-  gulp.watch([path.filesToCopyNotSass, path.sass]).on('change', browserSync.reload);
+  gulp.watch([path.staticFilesToCopy, path.src.sass]).on('change', browserSync.reload);
 });
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-  gulp.watch(path.filesToCopyNotSass, ['copy']);
-  gulp.watch(path.sass, ['sass']);
-  gulp.watch([path.partials, path.html], ['fileinclude']);
+  gulp.watch(path.staticFilesToCopy, ['copy']);
+  gulp.watch(path.src.sass, ['sass']);
+  gulp.watch([path.src.html], ['fileinclude']);
 });
 
 gulp.task('build', gulpSequence('clean', 'sass', 'fileinclude', 'copy'));
