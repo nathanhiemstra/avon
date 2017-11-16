@@ -12,6 +12,7 @@ This README documents steps to Avon Proof of Concept application up and running.
 * Deliverable files are in the **dist** folder
 * Gulp watches for changes to HTML/Javascript/SASS files then: 1. recompiles SASS 2. copies changes from **src** to the **dist** folder
 * Images must be manually copied from **src** to the **dist** folder
+* Code highlighting done with [Prism](http://prismjs.com/) using plugins: Toolbar, Copy to Clipboard Button, and Unescaped Markup. 
 
 ### Setup ###
 
