@@ -11,26 +11,19 @@
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <li{% if page.slug == "getting-started" %} class="active"{% endif %}>
-          <a href="../getting-started">Getting started</a>
-        </li>
-        <li{% if page.slug == "css" %} class="active"{% endif %}>
+
+        <li @@if (context.slug == "css") { class="active" }>
           <a href="../css">CSS</a>
         </li>
-        <li{% if page.slug == "components" %} class="active"{% endif %}>
+        <li @@if (context.slug == "components") { class="active" }>
           <a href="../components">Components</a>
         </li>
-        <li{% if page.slug == "js" %} class="active"{% endif %}>
-          <a href="../javascript">JavaScript</a>
-        </li>
-        <li{% if page.slug == "customize" %} class="active"{% endif %}>
-          <a href="../customize">Customize</a>
-        </li>
+
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <!-- <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ site.expo }}" onclick="_gaq.push(['_trackEvent', 'Navbar', 'Community links', 'Expo']);">Expo</a></li>
         <li><a href="{{ site.blog }}" onclick="_gaq.push(['_trackEvent', 'Navbar', 'Community links', 'Blog']);">Blog</a></li>
-      </ul>
+      </ul> -->
     </nav>
   </div>
 </header>

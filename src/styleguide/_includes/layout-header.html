@@ -3,13 +3,13 @@
   <head>
     <!-- Meta, title, CSS, favicons, etc. -->
 
-    @@include('header.html',{"title": "@@title"})
+    @@include('header.html', {"title": "@@title"})
   </head>
   <body>
     <a class="sr-only" href="#content">Skip to main content</a>
 
     <!-- Docs master nav -->
-    @@include('nav-main.html')
+    @@include('nav-main.html', {"slug": "@@slug"})
 
     <!-- Docs page layout -->
     <div class="bs-header" id="content">
