@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <!-- Meta, title, CSS, favicons, etc. -->
-    @@include('header.html')
+
+    @@include('header.html',{"title": "@@title"})
   </head>
   <body>
     <a class="sr-only" href="#content">Skip to main content</a>
@@ -13,9 +14,8 @@
     <!-- Docs page layout -->
     <div class="bs-header" id="content">
       <div class="container">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.lead }}</p>
-        @@include('ads.html')
+        <h1>@@title</h1>
+
       </div>
     </div>
 
@@ -24,4 +24,3 @@
       <div class="row">
         <div class="col-md-9" role="main">
       
-        

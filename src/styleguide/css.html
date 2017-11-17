@@ -1,11 +1,5 @@
----
-layout: default
-title: CSS
-slug: css
-lead: "Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes, and an advanced grid system."
----
+@@include('_includes/layout-header.html', {"title": "CSS"})
 
-@@include('_includes/layout-header.html')
 
 
 <!-- Global Bootstrap settings
@@ -23,7 +17,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 
 
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <!DOCTYPE html>
 <html lang="en">
   ...
@@ -34,13 +28,13 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   <p>With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we've rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they're baked right into the core. In fact, <strong>Bootstrap is mobile first</strong>. Mobile first styles can be found throughout the entire library instead of in separate files.</p>
   <p>To ensure proper rendering and touch zooming, <strong>add the viewport meta tag</strong> to your <code>&lt;head&gt;</code>.</p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <meta name="viewport" content="width=device-width, initial-scale=1">
 @@include('_includes/highlight-end.html')
 
   <p>You can disable zooming capabilities on mobile devices by adding <code>user-scalable=no</code> to the viewport meta tag. This disables zooming, meaning users are only able to scroll, and results in your site feeling a bit more like a native application. Overall, we don't recommend this on every site, so use caution!</p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 @@include('_includes/highlight-end.html')
 
@@ -48,7 +42,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   <h3 id="overview-responsive-images">Responsive images</h3>
   <p>Images in Bootstrap 3 can be made responsive-friendly via the addition of the <code>.img-responsive</code> class. This applies <code>max-width: 100%;</code> and <code>height: auto;</code> to the image so that it scales nicely to the parent element.</p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <img src="..." class="img-responsive" alt="Responsive image">
 @@include('_includes/highlight-end.html')
 
@@ -69,7 +63,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   <p>Easily center a page's contents by wrapping its contents in a <code>.container</code>. Containers set <code>width</code> at various media query breakpoints to match our grid system.</p>
   <p>Note that, due to <code>padding</code> and fixed widths, containers are not nestable by default.</p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="container">
   ...
 </div>
@@ -106,7 +100,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   <h3 id="grid-media-queries">Media queries</h3>
   <p>We use the following media queries in our Less files to create the key breakpoints in our grid system.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
@@ -123,7 +117,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 
   <p>We occasionally expand on these media queries to include a <code>max-width</code> to limit CSS to a narrower set of devices.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 @media (max-width: @screen-xs-max) { ... }
 @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { ... }
 @media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
@@ -240,7 +234,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </div>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="row">
   <div class="col-md-1">.col-md-1</div>
   <div class="col-md-1">.col-md-1</div>
@@ -274,7 +268,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   <h3 id="grid-example-fluid">Example: Fluid container</h3>
   <p>Turn any fixed-width grid layout into a full-width layout by changing your outermost <code>.container</code> to <code>.container-fluid</code>.</p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="container-fluid">
   <div class="row">
     ...
@@ -301,7 +295,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </div>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
 <div class="row">
   <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
@@ -339,7 +333,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </div>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
   <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
@@ -373,7 +367,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </div>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="row">
   <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
   <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
@@ -388,7 +382,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 
   <p>In addition to column clearing at responsive breakpoints, you may need to <strong>reset offsets, pushes, or pulls</strong>. Those resets are available for medium and large grid tiers only, since they start only at the (second) small grid tier. See this in action in <a href="../examples/grid/">the grid example</a>.</p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="row">
   <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
   <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0</div>
@@ -418,7 +412,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </div>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="row">
   <div class="col-md-4">.col-md-4</div>
   <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
@@ -450,7 +444,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </div>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="row">
   <div class="col-md-9">
     Level 1: .col-md-9
@@ -475,7 +469,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   </div>
 
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="row">
   <div class="col-md-9 col-md-push-3">.col-md-9 .col-md-push-3</div>
   <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
@@ -489,7 +483,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   <h4>Variables</h4>
   <p>Variables determine the number of columns, the gutter width, and the media query point at which to begin floating columns. We use these to generate the predefined grid classes documented above, as well as for the custom mixins listed below.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 @grid-columns:              12;
 @grid-gutter-width:         30px;
 @grid-float-breakpoint:     768px;
@@ -499,7 +493,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   <h4>Mixins</h4>
   <p>Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 // Creates a wrapper for a series of columns
 .make-row(@gutter: @grid-gutter-width) {
   // Then clear the floated columns
@@ -631,13 +625,13 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     right: percentage((@columns / @grid-columns));
   }
 }
-@@include('_includes/highlight-end.html')
+@@include('_includes/highlight-end.html' {"type": "css"})
 
 
   <h4>Example usage</h4>
   <p>You can modify the variables to your own custom values, or just use the mixins with their default values. Here's an example of using the default settings to create a two-column layout with a gap between.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 .wrapper {
   .make-row();
 }
@@ -648,10 +642,10 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   .make-lg-column(3);
   .make-lg-column-offset(1);
 }
-@@include('_includes/highlight-end.html')
+@@include('_includes/highlight-end.html' {"type": "css"})
 
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="wrapper">
   <div class="content-main">...</div>
   <div class="content-secondary">...</div>
@@ -701,7 +695,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </table>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <h1>h1. Bootstrap heading</h1>
 <h2>h2. Bootstrap heading</h2>
 <h3>h3. Bootstrap heading</h3>
@@ -737,7 +731,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </table>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <h1>h1. Bootstrap heading <small>Secondary text</small></h1>
 <h2>h2. Bootstrap heading <small>Secondary text</small></h2>
 <h3>h3. Bootstrap heading <small>Secondary text</small></h3>
@@ -757,7 +751,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <p>...</p>
 @@include('_includes/highlight-end.html')
 
@@ -769,7 +763,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <p class="lead">...</p>
 @@include('_includes/highlight-end.html')
 
@@ -790,7 +784,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p><small>This line of text is meant to be treated as fine print.</small></p>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <small>This line of text is meant to be treated as fine print.</small>
 @@include('_includes/highlight-end.html')
 
@@ -802,7 +796,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <strong>rendered as bold text</strong>
 @@include('_includes/highlight-end.html')
 
@@ -813,7 +807,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p>The following snippet of text is <em>rendered as italicized text</em>.</p>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <em>rendered as italicized text</em>
 @@include('_includes/highlight-end.html')
 
@@ -832,7 +826,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p class="text-justify">Justified text.</p>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <p class="text-left">Left aligned text.</p>
 <p class="text-center">Center aligned text.</p>
 <p class="text-right">Right aligned text.</p>
@@ -851,7 +845,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <abbr title="attribute">attr</abbr>
 @@include('_includes/highlight-end.html')
 
@@ -862,7 +856,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr> is the best thing since sliced bread.</p>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <abbr title="HyperText Markup Language" class="initialism">HTML</abbr>
 @@include('_includes/highlight-end.html')
 
@@ -884,7 +878,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </address>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <address>
   <strong>Twitter, Inc.</strong><br>
   795 Folsom Ave, Suite 600<br>
@@ -912,7 +906,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </blockquote>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <blockquote>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
 </blockquote>
@@ -931,7 +925,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </blockquote>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <blockquote>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
   <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
@@ -948,7 +942,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </blockquote>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <blockquote class="blockquote-reverse">
   ...
 </blockquote>
@@ -981,7 +975,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </ul>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <ul>
   <li>...</li>
 </ul>
@@ -1003,7 +997,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </ol>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <ol>
   <li>...</li>
 </ol>
@@ -1032,7 +1026,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </ul>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <ul class="list-unstyled">
   <li>...</li>
 </ul>
@@ -1049,7 +1043,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </ul>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <ul class="list-inline">
   <li>...</li>
 </ul>
@@ -1070,7 +1064,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </dl>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <dl>
   <dt>...</dt>
   <dd>...</dd>
@@ -1094,7 +1088,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </dl>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <dl class="dl-horizontal">
   <dt>...</dt>
   <dd>...</dd>
@@ -1121,7 +1115,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 @@include('_includes/highlight-end.html')
 
@@ -1132,7 +1126,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   To switch directories, type <kbd>cd</kbd> followed by the name of the directory.
 </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
   To switch directories, type <kbd>cd</kbd> followed by the name of the directory.
 @@include('_includes/highlight-end.html')
 
@@ -1143,7 +1137,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
 </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
 @@include('_includes/highlight-end.html')
 
@@ -1193,7 +1187,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </table>
   </div><!-- /example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <table class="table">
   ...
 </table>
@@ -1240,7 +1234,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </table>
   </div><!-- /example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <table class="table table-striped">
   ...
 </table>
@@ -1287,7 +1281,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </table>
   </div><!-- /example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <table class="table table-bordered">
   ...
 </table>
@@ -1329,7 +1323,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </table>
   </div><!-- /example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <table class="table table-hover">
   ...
 </table>
@@ -1371,7 +1365,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </table>
   </div><!-- /example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <table class="table table-condensed">
   ...
 </table>
@@ -1496,7 +1490,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </table>
   </div><!-- /example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <!-- On rows -->
 <tr class="active">...</tr>
 <tr class="success">...</tr>
@@ -1610,7 +1604,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </div><!-- /.table-responsive -->
   </div><!-- /example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="table-responsive">
   <table class="table">
     ...
@@ -1653,7 +1647,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <form role="form">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -1712,7 +1706,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <form class="form-inline" role="form">
   <div class="form-group">
     <label class="sr-only" for="exampleInputEmail2">Email address</label>
@@ -1766,7 +1760,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <form class="form-horizontal" role="form">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
@@ -1814,7 +1808,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <input type="text" class="form-control" placeholder="Text input">
 @@include('_includes/highlight-end.html')
 
@@ -1831,7 +1825,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <textarea class="form-control" rows="3"></textarea>
 @@include('_includes/highlight-end.html')
 
@@ -1863,7 +1857,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="checkbox">
   <label>
     <input type="checkbox" value="">
@@ -1902,7 +1896,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <label class="checkbox-inline">
   <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
 </label>
@@ -1937,7 +1931,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <select class="form-control">
   <option>1</option>
   <option>2</option>
@@ -1976,7 +1970,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <form class="form-horizontal" role="form">
   <div class="form-group">
     <label class="col-sm-2 control-label">Email</label>
@@ -2015,7 +2009,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
 @@include('_includes/highlight-end.html')
 
@@ -2056,7 +2050,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <form role="form">
   <fieldset disabled>
     <div class="form-group">
@@ -2101,7 +2095,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="form-group has-success">
   <label class="control-label" for="inputSuccess1">Input with success</label>
   <input type="text" class="form-control" id="inputSuccess1">
@@ -2139,7 +2133,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="form-group has-success has-feedback">
   <label class="control-label" for="inputSuccess2">Input with success</label>
   <input type="text" class="form-control" id="inputSuccess2">
@@ -2171,7 +2165,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <form class="form-horizontal" role="form">
   <div class="form-group has-success has-feedback">
     <label class="control-label col-sm-3" for="inputSuccess3">Input with success</label>
@@ -2194,7 +2188,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <form class="form-inline" role="form">
   <div class="form-group has-success has-feedback">
     <label class="control-label" for="inputSuccess4">Input with success</label>
@@ -2231,7 +2225,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <input class="form-control input-lg" type="text" placeholder=".input-lg">
 <input class="form-control" type="text" placeholder="Default input">
 <input class="form-control input-sm" type="text" placeholder=".input-sm">
@@ -2260,7 +2254,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="row">
   <div class="col-xs-2">
     <input type="text" class="form-control" placeholder=".col-xs-2">
@@ -2284,7 +2278,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
 @@include('_includes/highlight-end.html')
 
@@ -2309,7 +2303,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <button type="button" class="btn btn-link">Link</button>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <!-- Standard button -->
 <button type="button" class="btn btn-default">Default</button>
 
@@ -2354,7 +2348,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </p>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <p>
   <button type="button" class="btn btn-primary btn-lg">Large button</button>
   <button type="button" class="btn btn-default btn-lg">Large button</button>
@@ -2382,7 +2376,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </div>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
 <button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
 @@include('_includes/highlight-end.html')
@@ -2399,7 +2393,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <button type="button" class="btn btn-default btn-lg active">Button</button>
   </p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <button type="button" class="btn btn-primary btn-lg active">Primary button</button>
 <button type="button" class="btn btn-default btn-lg active">Button</button>
 @@include('_includes/highlight-end.html')
@@ -2412,7 +2406,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <a href="#" class="btn btn-default btn-lg active" role="button">Link</a>
   </p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <a href="#" class="btn btn-primary btn-lg active" role="button">Primary link</a>
 <a href="#" class="btn btn-default btn-lg active" role="button">Link</a>
 @@include('_includes/highlight-end.html')
@@ -2429,7 +2423,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <button type="button" class="btn btn-default btn-lg" disabled="disabled">Button</button>
   </p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <button type="button" class="btn btn-lg btn-primary" disabled="disabled">Primary button</button>
 <button type="button" class="btn btn-default btn-lg" disabled="disabled">Button</button>
 @@include('_includes/highlight-end.html')
@@ -2447,7 +2441,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <a href="#" class="btn btn-default btn-lg disabled" role="button">Link</a>
   </p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <a href="#" class="btn btn-primary btn-lg disabled" role="button">Primary link</a>
 <a href="#" class="btn btn-default btn-lg disabled" role="button">Link</a>
 @@include('_includes/highlight-end.html')
@@ -2474,7 +2468,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <input class="btn btn-default" type="submit" value="Submit">
   </form>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <a class="btn btn-default" href="#" role="button">Link</a>
 <button class="btn btn-default" type="submit">Button</button>
 <input class="btn btn-default" type="button" value="Input">
@@ -2507,7 +2501,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <img data-src="holder.js/140x140" class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <img src="..." alt="..." class="img-rounded">
 <img src="..." alt="..." class="img-circle">
 <img src="..." alt="..." class="img-thumbnail">
@@ -2538,7 +2532,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <p class="text-muted">...</p>
 <p class="text-primary">...</p>
 <p class="text-success">...</p>
@@ -2562,7 +2556,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <p class="bg-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <p class="bg-primary">...</p>
 <p class="bg-success">...</p>
 <p class="bg-info">...</p>
@@ -2578,7 +2572,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <p><button type="button" class="close" aria-hidden="true">&times;</button></p>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <button type="button" class="close" aria-hidden="true">&times;</button>
 @@include('_includes/highlight-end.html')
 
@@ -2590,7 +2584,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <span class="caret"></span>
   </div>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <span class="caret"></span>
 @@include('_includes/highlight-end.html')
 
@@ -2599,13 +2593,13 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <h3 id="helper-classes-floats">Quick floats</h3>
   <p>Float an element to the left or right with a class. <code>!important</code> is included to avoid specificity issues. Classes can also be used as mixins.</p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="pull-left">...</div>
 <div class="pull-right">...</div>
 @@include('_includes/highlight-end.html')
 
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 // Classes
 .pull-left {
   float: left !important;
@@ -2633,12 +2627,12 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <h3 id="helper-classes-center">Center content blocks</h3>
   <p>Set an element to <code>display: block</code> and center via <code>margin</code>. Available as a mixin and class.</p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="center-block">...</div>
 @@include('_includes/highlight-end.html')
 
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 // Classes
 .center-block {
   display: block;
@@ -2657,13 +2651,13 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <h3 id="helper-classes-clearfix">Clearfix</h3>
   <p>Clear the <code>float</code> on any element with the <code>.clearfix</code> class. Utilizes <a href="http://nicolasgallagher.com/micro-clearfix-hack/">the micro clearfix</a> as popularized by Nicolas Gallagher. Can also be used as a mixin.</p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <!-- Usage as a class -->
 <div class="clearfix">...</div>
 @@include('_includes/highlight-end.html')
 
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 // Mixin itself
 .clearfix() {
   &:before,
@@ -2689,13 +2683,13 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <p><code>.hide</code> is available, but it does not always affect screen readers and is <strong>deprecated</strong> as of v3.0.1. Use <code>.hidden</code> or <code>.sr-only</code> instead.</p>
   <p>Furthermore, <code>.invisible</code> can be used to toggle only the visibility of an element, meaning its <code>display</code> is not modified and the element can still affect the flow of the document.</p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <div class="show">...</div>
 <div class="hidden">...</div>
 @@include('_includes/highlight-end.html')
 
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 // Classes
 .show {
   display: block !important;
@@ -2722,12 +2716,12 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <h3 id="helper-classes-screen-readers">Screen reader content</h3>
   <p>Hide an element to all devices <strong>except screen readers</strong> with <code>.sr-only</code>. Necessary for following <a href="../getting-started/#accessibility">accessibility best practices</a>. Can also be used as a mixin.</p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <a class="sr-only" href="#content">Skip to main content</a>
 @@include('_includes/highlight-end.html')
 
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 // Usage as a Mixin
 .skip-navigation {
   .sr-only();
@@ -2739,12 +2733,12 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <h3 id="helper-classes-image-replacement">Image replacement</h3>
   <p>Utilize the <code>.text-hide</code> class or mixin to help replace an element's text content with a background image.</p>
 
-@@include('_includes/highlight-start-markup.html')
+@@include('_includes/highlight-start.html', {"type": "markup"})
 <h1 class="text-hide">Custom heading</h1>
 @@include('_includes/highlight-end.html')
 
   
-  @@include('_includes/highlight-start-css.html')
+  @@include('_includes/highlight-start.html', {"type": "css"})
 // Usage as a Mixin
 .heading {
   .text-hide();
@@ -3015,7 +3009,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </div>
   </div>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 @gray-darker:  lighten(#000, 13.5%); // #222
 @gray-dark:    lighten(#000, 20%);   // #333
 @gray:         lighten(#000, 33.5%); // #555
@@ -3034,7 +3028,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </div>
   </div>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 @brand-primary: #428bca;
 @brand-success: #5cb85c;
 @brand-info:    #5bc0de;
@@ -3045,7 +3039,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 
   <p>Use any of these color variables as they are or reassign them to more meaningful variables for your project.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 // Use as-is
 .masthead {
   background-color: @brand-primary;
@@ -3062,7 +3056,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <h3 id="less-variables-scaffolding">Scaffolding</h3>
   <p>A handful of variables for quickly customizing key elements of your site's skeleton.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 // Scaffolding
 @body-bg:    #fff;
 @text-color: @black-50;
@@ -3072,7 +3066,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <h3 id="less-variables-links">Links</h3>
   <p>Easily style your links with the right color with only one value.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 // Variables
 @link-color:       @brand-primary;
 @link-color-hover: darken(@link-color, 15%);
@@ -3094,7 +3088,7 @@ a {
   <h3 id="less-variables-typography">Typography</h3>
   <p>Easily set your type face, text size, leading, and more with a few quick variables. Bootstrap makes use of these as well to provide easy typographic mixins.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 @font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -3124,7 +3118,7 @@ a {
   <h3 id="less-variables-icons">Icons</h3>
   <p>Two quick variables for customizing the location and filename of your icons.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 @icon-font-path:          "../fonts/";
 @icon-font-name:          "glyphicons-halflings-regular";
 @@include('_includes/highlight-end.html')
@@ -3133,7 +3127,7 @@ a {
   <h3 id="less-variables-components">Components</h3>
   <p>Components throughout Bootstrap make use of some default variables for setting common values. Here are the most commonly used.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 @padding-base-vertical:          6px;
 @padding-base-horizontal:        12px;
 
@@ -3169,7 +3163,7 @@ a {
   <h3 id="less-mixins-box-sizing">Box-sizing</h3>
   <p>Reset your components' box model with a single mixin. For context, see this <a href="https://developer.mozilla.org/en-US/docs/CSS/box-sizing" target="_blank">helpful article from Mozilla</a>.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 .box-sizing(@box-model) {
   -webkit-box-sizing: @box-model; // Safari <= 5
      -moz-box-sizing: @box-model; // Firefox <= 19
@@ -3181,7 +3175,7 @@ a {
   <h3 id="less-mixins-rounded-corners">Rounded corners</h3>
   <p>Today all modern browsers support the non-prefixed <code>border-radius</code> property. As such, there is no <code>.border-radius()</code> mixin, but Bootstrap does include shortcuts for quickly rounding two corners on a particular side of an object.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 .border-top-radius(@radius) {
   border-top-right-radius: @radius;
    border-top-left-radius: @radius;
@@ -3206,7 +3200,7 @@ a {
   <p>The mixin is <strong>deprecated</strong> as of v3.1.0, since Bootstrap doesn't officially support the outdated platforms that don't support the standard property. To preserve backwards-compatibility, Bootstrap will continue to use the mixin internally until Bootstrap v4.</p>
   <p>Be sure to use <code>rgba()</code> colors in your box shadows so they blend as seamlessly as possible with backgrounds.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 .box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
   -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
           box-shadow: @shadow;
@@ -3217,7 +3211,7 @@ a {
   <h3 id="less-mixins-transitions">Transitions</h3>
   <p>Three mixins for flexibility. Set all transition information with one, or specify a separate delay and duration as needed.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 .transition(@transition) {
   -webkit-transition: @transition;
           transition: @transition;
@@ -3246,7 +3240,7 @@ a {
   <h3 id="less-mixins-transformations">Transformations</h3>
   <p>Rotate, scale, translate (move), or skew any object.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 .rotate(@degrees) {
   -webkit-transform: rotate(@degrees);
       -ms-transform: rotate(@degrees); // IE9 only
@@ -3304,7 +3298,7 @@ a {
   <h3 id="less-mixins-animations">Animations</h3>
   <p>A single mixin for using all of CSS3's animation properties in one declaration and other mixins for individual properties.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 .animation(@animation) {
   -webkit-animation: @animation;
           animation: @animation;
@@ -3339,7 +3333,7 @@ a {
   <h3 id="less-mixins-opacity">Opacity</h3>
   <p>Set the opacity for all browsers and provide a <code>filter</code> fallback for IE8.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 .opacity(@opacity) {
   opacity: @opacity;
   // IE8 filter
@@ -3352,7 +3346,7 @@ a {
   <h3 id="less-mixins-placeholder">Placeholder text</h3>
   <p>Provide context for form controls within each field.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 .placeholder(@color: @input-color-placeholder) {
   &:-moz-placeholder            { color: @color; } // Firefox 4-18
   &::-moz-placeholder           { color: @color; } // Firefox 19+
@@ -3365,7 +3359,7 @@ a {
   <h3 id="less-mixins-columns">Columns</h3>
   <p>Generate columns via CSS within a single element.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 .content-columns(@width; @count; @gap) {
   -webkit-column-width: @width;
      -moz-column-width: @width;
@@ -3383,7 +3377,7 @@ a {
   <h3 id="less-mixins-gradients">Gradients</h3>
   <p>Easily turn any two colors into a background gradient. Get more advanced and set a direction, use three colors, or use a radial gradient. With a single mixin you get all the prefixed syntaxes you'll need.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 #gradient > .vertical(#333; #000);
 #gradient > .horizontal(#333; #000);
 #gradient > .radial(#333; #000);
@@ -3391,19 +3385,19 @@ a {
 
   <p>You can also specify the angle of a standard two-color, linear gradient:</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 #gradient > .directional(#333; #000; 45deg);
 @@include('_includes/highlight-end.html')
 
   <p>If you need a barber-stripe style gradient, that's easy, too. Just specify a single color and we'll overlay a translucent white stripe.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 #gradient > .striped(#333; #000; 45deg);
 @@include('_includes/highlight-end.html')
 
   <p>Up the ante and use three colors instead. Set the first color, the second color, the second color's color stop (a decimal value like 0.25), and the third color with these mixins:</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 #gradient > .vertical-three-colors(#777; #333; .25; #000);
 #gradient > .horizontal-three-colors(#777; #333; .25; #000);
 @@include('_includes/highlight-end.html')
@@ -3417,7 +3411,7 @@ a {
   <h3 id="less-mixins-clearfix">Clearfix</h3>
   <p>Forget adding <code>class="clearfix"</code> to any element and instead add the <code>.clearfix()</code> mixin where appropriate. Uses the <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clearfix</a> from <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallager</a>.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 // Mixin
 .clearfix() {
   &:before,
@@ -3440,7 +3434,7 @@ a {
   <h3 id="less-mixins-centering">Horizontal centering</h3>
   <p>Quickly center any element within its parent. <strong>Requires <code>width</code> or <code>max-width</code> to be set.</strong></p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 // Mixin
 .center-block() {
   display: block;
@@ -3459,7 +3453,7 @@ a {
   <h3 id="less-mixins-sizing">Sizing helpers</h3>
   <p>Specify the dimensions of an object more easily.</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 // Mixins
 .size(@width; @height) {
   width: @width;
@@ -3478,7 +3472,7 @@ a {
   <h3 id="less-mixins-resizable">Resizable textareas</h3>
   <p>Easily configure the resize options for any textarea, or any other element. Defaults to normal browser behavior (<code>both</code>).</p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 .resizable(@direction: both) {
   // Options: horizontal, vertical, both
   resize: @direction;
@@ -3491,7 +3485,7 @@ a {
   <h3 id="less-mixins-truncating">Truncating text</h3>
   <p>Easily truncate text with an ellipsis with a single mixin. <strong>Requires element to be <code>block</code> or <code>inline-block</code> level.</strong></p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 // Mixin
 .text-truncate() {
   overflow: hidden;
@@ -3511,7 +3505,7 @@ a {
   <h3 id="less-mixins-retina-images">Retina images</h3>
   <p>Specify two image paths and the @1x image dimensions, and Bootstrap will provide an @2x media query. <strong>If you have many images to serve, consider writing your retina image CSS manually in a single media query.</strong></p>
 
-@@include('_includes/highlight-start-css.html')
+@@include('_includes/highlight-start.html', {"type": "css"})
 .img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
   background-image: url("@{file-1x}");
 
@@ -3586,4 +3580,4 @@ a {
 </div>
 
 
-@@include('_includes/layout-footer.html')
+@@include('_includes/layout-footer.html',{"slug": "css"})

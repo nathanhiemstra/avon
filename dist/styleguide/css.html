@@ -1,14 +1,8 @@
----
-layout: default
-title: CSS
-slug: css
-lead: "Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes, and an advanced grid system."
----
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Meta, title, CSS, favicons, etc. -->
+
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,13 +10,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
 <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 
-<title>
-  {% if page.title == "Bootstrap" %}
-    {{ page.title }}
-  {% else %}
-    {{ page.title }} &middot; Bootstrap
-  {% endif %}
-</title>
+<title>CSS</title>
 
 <!-- Bootstrap core CSS -->
 <link href="../css/vendor/bootstrap.css" rel="stylesheet">
@@ -89,9 +77,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <!-- Docs page layout -->
     <div class="bs-header" id="content">
       <div class="container">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.lead }}</p>
-        <div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div><script>var z = document.createElement("script"); z.async = true; z.src = "http://engine.carbonads.com/z/32341/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script></div></div>
+        <h1>CSS</h1>
 
       </div>
     </div>
@@ -101,7 +87,6 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
       <div class="row">
         <div class="col-md-9" role="main">
       
-        
 
 
 
@@ -120,7 +105,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 
 
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <!DOCTYPE html>
 <html lang="en">
   ...
@@ -131,13 +116,13 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   <p>With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we've rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they're baked right into the core. In fact, <strong>Bootstrap is mobile first</strong>. Mobile first styles can be found throughout the entire library instead of in separate files.</p>
   <p>To ensure proper rendering and touch zooming, <strong>add the viewport meta tag</strong> to your <code>&lt;head&gt;</code>.</p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </script></code></pre>
 
   <p>You can disable zooming capabilities on mobile devices by adding <code>user-scalable=no</code> to the viewport meta tag. This disables zooming, meaning users are only able to scroll, and results in your site feeling a bit more like a native application. Overall, we don't recommend this on every site, so use caution!</p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </script></code></pre>
 
@@ -145,7 +130,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   <h3 id="overview-responsive-images">Responsive images</h3>
   <p>Images in Bootstrap 3 can be made responsive-friendly via the addition of the <code>.img-responsive</code> class. This applies <code>max-width: 100%;</code> and <code>height: auto;</code> to the image so that it scales nicely to the parent element.</p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <img src="..." class="img-responsive" alt="Responsive image">
 </script></code></pre>
 
@@ -166,7 +151,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   <p>Easily center a page's contents by wrapping its contents in a <code>.container</code>. Containers set <code>width</code> at various media query breakpoints to match our grid system.</p>
   <p>Note that, due to <code>padding</code> and fixed widths, containers are not nestable by default.</p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="container">
   ...
 </div>
@@ -337,7 +322,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </div>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="row">
   <div class="col-md-1">.col-md-1</div>
   <div class="col-md-1">.col-md-1</div>
@@ -371,7 +356,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   <h3 id="grid-example-fluid">Example: Fluid container</h3>
   <p>Turn any fixed-width grid layout into a full-width layout by changing your outermost <code>.container</code> to <code>.container-fluid</code>.</p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="container-fluid">
   <div class="row">
     ...
@@ -398,7 +383,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </div>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
 <div class="row">
   <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
@@ -436,7 +421,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </div>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
   <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
@@ -470,7 +455,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </div>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="row">
   <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
   <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
@@ -485,7 +470,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 
   <p>In addition to column clearing at responsive breakpoints, you may need to <strong>reset offsets, pushes, or pulls</strong>. Those resets are available for medium and large grid tiers only, since they start only at the (second) small grid tier. See this in action in <a href="../examples/grid/">the grid example</a>.</p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="row">
   <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
   <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0</div>
@@ -515,7 +500,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </div>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="row">
   <div class="col-md-4">.col-md-4</div>
   <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
@@ -547,7 +532,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </div>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="row">
   <div class="col-md-9">
     Level 1: .col-md-9
@@ -572,7 +557,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   </div>
 
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="row">
   <div class="col-md-9 col-md-push-3">.col-md-9 .col-md-push-3</div>
   <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
@@ -748,7 +733,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 </script></code></pre>
 
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="wrapper">
   <div class="content-main">...</div>
   <div class="content-secondary">...</div>
@@ -798,7 +783,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </table>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <h1>h1. Bootstrap heading</h1>
 <h2>h2. Bootstrap heading</h2>
 <h3>h3. Bootstrap heading</h3>
@@ -834,7 +819,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </table>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <h1>h1. Bootstrap heading <small>Secondary text</small></h1>
 <h2>h2. Bootstrap heading <small>Secondary text</small></h2>
 <h3>h3. Bootstrap heading <small>Secondary text</small></h3>
@@ -854,7 +839,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <p>...</p>
 </script></code></pre>
 
@@ -866,7 +851,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <p class="lead">...</p>
 </script></code></pre>
 
@@ -887,7 +872,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p><small>This line of text is meant to be treated as fine print.</small></p>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <small>This line of text is meant to be treated as fine print.</small>
 </script></code></pre>
 
@@ -899,7 +884,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <strong>rendered as bold text</strong>
 </script></code></pre>
 
@@ -910,7 +895,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p>The following snippet of text is <em>rendered as italicized text</em>.</p>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <em>rendered as italicized text</em>
 </script></code></pre>
 
@@ -929,7 +914,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p class="text-justify">Justified text.</p>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <p class="text-left">Left aligned text.</p>
 <p class="text-center">Center aligned text.</p>
 <p class="text-right">Right aligned text.</p>
@@ -948,7 +933,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <abbr title="attribute">attr</abbr>
 </script></code></pre>
 
@@ -959,7 +944,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr> is the best thing since sliced bread.</p>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <abbr title="HyperText Markup Language" class="initialism">HTML</abbr>
 </script></code></pre>
 
@@ -981,7 +966,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </address>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <address>
   <strong>Twitter, Inc.</strong><br>
   795 Folsom Ave, Suite 600<br>
@@ -1009,7 +994,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </blockquote>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <blockquote>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
 </blockquote>
@@ -1028,7 +1013,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </blockquote>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <blockquote>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
   <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
@@ -1045,7 +1030,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </blockquote>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <blockquote class="blockquote-reverse">
   ...
 </blockquote>
@@ -1078,7 +1063,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </ul>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <ul>
   <li>...</li>
 </ul>
@@ -1100,7 +1085,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </ol>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <ol>
   <li>...</li>
 </ol>
@@ -1129,7 +1114,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </ul>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <ul class="list-unstyled">
   <li>...</li>
 </ul>
@@ -1146,7 +1131,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </ul>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <ul class="list-inline">
   <li>...</li>
 </ul>
@@ -1167,7 +1152,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </dl>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <dl>
   <dt>...</dt>
   <dd>...</dd>
@@ -1191,7 +1176,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     </dl>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <dl class="dl-horizontal">
   <dt>...</dt>
   <dd>...</dd>
@@ -1218,7 +1203,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 </script></code></pre>
 
@@ -1229,7 +1214,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   To switch directories, type <kbd>cd</kbd> followed by the name of the directory.
 </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
   To switch directories, type <kbd>cd</kbd> followed by the name of the directory.
 </script></code></pre>
 
@@ -1240,7 +1225,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
 </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
 </script></code></pre>
 
@@ -1290,7 +1275,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </table>
   </div><!-- /example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <table class="table">
   ...
 </table>
@@ -1337,7 +1322,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </table>
   </div><!-- /example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <table class="table table-striped">
   ...
 </table>
@@ -1384,7 +1369,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </table>
   </div><!-- /example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <table class="table table-bordered">
   ...
 </table>
@@ -1426,7 +1411,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </table>
   </div><!-- /example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <table class="table table-hover">
   ...
 </table>
@@ -1468,7 +1453,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </table>
   </div><!-- /example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <table class="table table-condensed">
   ...
 </table>
@@ -1593,7 +1578,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </table>
   </div><!-- /example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <!-- On rows -->
 <tr class="active">...</tr>
 <tr class="success">...</tr>
@@ -1707,7 +1692,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </div><!-- /.table-responsive -->
   </div><!-- /example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="table-responsive">
   <table class="table">
     ...
@@ -1750,7 +1735,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <form role="form">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -1809,7 +1794,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <form class="form-inline" role="form">
   <div class="form-group">
     <label class="sr-only" for="exampleInputEmail2">Email address</label>
@@ -1863,7 +1848,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <form class="form-horizontal" role="form">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
@@ -1911,7 +1896,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <input type="text" class="form-control" placeholder="Text input">
 </script></code></pre>
 
@@ -1928,7 +1913,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <textarea class="form-control" rows="3"></textarea>
 </script></code></pre>
 
@@ -1960,7 +1945,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="checkbox">
   <label>
     <input type="checkbox" value="">
@@ -1999,7 +1984,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <label class="checkbox-inline">
   <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
 </label>
@@ -2034,7 +2019,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <select class="form-control">
   <option>1</option>
   <option>2</option>
@@ -2073,7 +2058,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <form class="form-horizontal" role="form">
   <div class="form-group">
     <label class="col-sm-2 control-label">Email</label>
@@ -2112,7 +2097,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
 </script></code></pre>
 
@@ -2153,7 +2138,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <form role="form">
   <fieldset disabled>
     <div class="form-group">
@@ -2198,7 +2183,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="form-group has-success">
   <label class="control-label" for="inputSuccess1">Input with success</label>
   <input type="text" class="form-control" id="inputSuccess1">
@@ -2236,7 +2221,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="form-group has-success has-feedback">
   <label class="control-label" for="inputSuccess2">Input with success</label>
   <input type="text" class="form-control" id="inputSuccess2">
@@ -2268,7 +2253,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <form class="form-horizontal" role="form">
   <div class="form-group has-success has-feedback">
     <label class="control-label col-sm-3" for="inputSuccess3">Input with success</label>
@@ -2291,7 +2276,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <form class="form-inline" role="form">
   <div class="form-group has-success has-feedback">
     <label class="control-label" for="inputSuccess4">Input with success</label>
@@ -2328,7 +2313,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <input class="form-control input-lg" type="text" placeholder=".input-lg">
 <input class="form-control" type="text" placeholder="Default input">
 <input class="form-control input-sm" type="text" placeholder=".input-sm">
@@ -2357,7 +2342,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="row">
   <div class="col-xs-2">
     <input type="text" class="form-control" placeholder=".col-xs-2">
@@ -2381,7 +2366,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </form>
   </div><!-- /.bs-example -->
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
 </script></code></pre>
 
@@ -2406,7 +2391,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <button type="button" class="btn btn-link">Link</button>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <!-- Standard button -->
 <button type="button" class="btn btn-default">Default</button>
 
@@ -2451,7 +2436,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </p>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <p>
   <button type="button" class="btn btn-primary btn-lg">Large button</button>
   <button type="button" class="btn btn-default btn-lg">Large button</button>
@@ -2479,7 +2464,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </div>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
 <button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
 </script></code></pre>
@@ -2496,7 +2481,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <button type="button" class="btn btn-default btn-lg active">Button</button>
   </p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <button type="button" class="btn btn-primary btn-lg active">Primary button</button>
 <button type="button" class="btn btn-default btn-lg active">Button</button>
 </script></code></pre>
@@ -2509,7 +2494,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <a href="#" class="btn btn-default btn-lg active" role="button">Link</a>
   </p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <a href="#" class="btn btn-primary btn-lg active" role="button">Primary link</a>
 <a href="#" class="btn btn-default btn-lg active" role="button">Link</a>
 </script></code></pre>
@@ -2526,7 +2511,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <button type="button" class="btn btn-default btn-lg" disabled="disabled">Button</button>
   </p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <button type="button" class="btn btn-lg btn-primary" disabled="disabled">Primary button</button>
 <button type="button" class="btn btn-default btn-lg" disabled="disabled">Button</button>
 </script></code></pre>
@@ -2544,7 +2529,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <a href="#" class="btn btn-default btn-lg disabled" role="button">Link</a>
   </p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <a href="#" class="btn btn-primary btn-lg disabled" role="button">Primary link</a>
 <a href="#" class="btn btn-default btn-lg disabled" role="button">Link</a>
 </script></code></pre>
@@ -2571,7 +2556,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <input class="btn btn-default" type="submit" value="Submit">
   </form>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <a class="btn btn-default" href="#" role="button">Link</a>
 <button class="btn btn-default" type="submit">Button</button>
 <input class="btn btn-default" type="button" value="Input">
@@ -2604,7 +2589,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <img data-src="holder.js/140x140" class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <img src="..." alt="..." class="img-rounded">
 <img src="..." alt="..." class="img-circle">
 <img src="..." alt="..." class="img-thumbnail">
@@ -2635,7 +2620,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <p class="text-muted">...</p>
 <p class="text-primary">...</p>
 <p class="text-success">...</p>
@@ -2659,7 +2644,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <p class="bg-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <p class="bg-primary">...</p>
 <p class="bg-success">...</p>
 <p class="bg-info">...</p>
@@ -2675,7 +2660,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <p><button type="button" class="close" aria-hidden="true">&times;</button></p>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <button type="button" class="close" aria-hidden="true">&times;</button>
 </script></code></pre>
 
@@ -2687,7 +2672,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <span class="caret"></span>
   </div>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <span class="caret"></span>
 </script></code></pre>
 
@@ -2696,7 +2681,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <h3 id="helper-classes-floats">Quick floats</h3>
   <p>Float an element to the left or right with a class. <code>!important</code> is included to avoid specificity issues. Classes can also be used as mixins.</p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="pull-left">...</div>
 <div class="pull-right">...</div>
 </script></code></pre>
@@ -2730,7 +2715,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <h3 id="helper-classes-center">Center content blocks</h3>
   <p>Set an element to <code>display: block</code> and center via <code>margin</code>. Available as a mixin and class.</p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="center-block">...</div>
 </script></code></pre>
 
@@ -2754,7 +2739,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <h3 id="helper-classes-clearfix">Clearfix</h3>
   <p>Clear the <code>float</code> on any element with the <code>.clearfix</code> class. Utilizes <a href="http://nicolasgallagher.com/micro-clearfix-hack/">the micro clearfix</a> as popularized by Nicolas Gallagher. Can also be used as a mixin.</p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <!-- Usage as a class -->
 <div class="clearfix">...</div>
 </script></code></pre>
@@ -2786,7 +2771,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <p><code>.hide</code> is available, but it does not always affect screen readers and is <strong>deprecated</strong> as of v3.0.1. Use <code>.hidden</code> or <code>.sr-only</code> instead.</p>
   <p>Furthermore, <code>.invisible</code> can be used to toggle only the visibility of an element, meaning its <code>display</code> is not modified and the element can still affect the flow of the document.</p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <div class="show">...</div>
 <div class="hidden">...</div>
 </script></code></pre>
@@ -2819,7 +2804,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <h3 id="helper-classes-screen-readers">Screen reader content</h3>
   <p>Hide an element to all devices <strong>except screen readers</strong> with <code>.sr-only</code>. Necessary for following <a href="../getting-started/#accessibility">accessibility best practices</a>. Can also be used as a mixin.</p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <a class="sr-only" href="#content">Skip to main content</a>
 </script></code></pre>
 
@@ -2836,7 +2821,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <h3 id="helper-classes-image-replacement">Image replacement</h3>
   <p>Utilize the <code>.text-hide</code> class or mixin to help replace an element's text content with a background image.</p>
 
-<pre><code class="language-markup"><script type="prism-html-markup">
+<pre><code class="language-markup"><script>
 <h1 class="text-hide">Custom heading</h1>
 </script></code></pre>
 
@@ -3687,21 +3672,137 @@ a {
         <div class="col-md-3">
           <div class="bs-sidebar hidden-print" role="complementary">
             <ul class="nav bs-sidenav">
-              {% if page.slug == "getting-started" %}
-                {% include nav-getting-started.html %}
-              {% elsif page.slug == "css" %}
-                {% include nav-css.html %}
-              {% elsif page.slug == "components" %}
-                {% include nav-components.html %}
-              {% elsif page.slug == "js" %}
-                {% include nav-javascript.html %}
-              {% elsif page.slug == "customize" %}
-                {% include nav-customize.html %}
-              {% elsif page.slug == "about" %}
-                {% include nav-about.html %}
-              {% elsif page.slug == "migration" %}
-                {% include nav-migration.html %}
-              {% endif %}
+              
+                <li>
+  <a href="#overview">Overview</a>
+  <ul class="nav">
+    <li><a href="#overview-doctype">HTML5 doctype</a></li>
+    <li><a href="#overview-mobile">Mobile first</a></li>
+    <li><a href="#overview-responsive-images">Responsive images</a></li>
+    <li><a href="#overview-type-links">Typography and links</a></li>
+    <li><a href="#overview-normalize">Normalize.css</a></li>
+    <li><a href="#overview-container">Containers</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#grid">Grid system</a>
+  <ul class="nav">
+    <li><a href="#grid-intro">Introduction</a></li>
+    <li><a href="#grid-media-queries">Media queries</a></li>
+    <li><a href="#grid-options">Grid options</a></li>
+    <li><a href="#grid-example-basic">Ex: Stacked-to-horizontal</a></li>
+    <li><a href="#grid-example-fluid">Ex: Fluid container</a></li>
+    <li><a href="#grid-example-mixed">Ex: Mobile and desktops</a></li>
+    <li><a href="#grid-example-mixed-complete">Ex: Mobile, tablet, desktops</a></li>
+    <li><a href="#grid-responsive-resets">Responsive column resets</a></li>
+    <li><a href="#grid-offsetting">Offsetting columns</a></li>
+    <li><a href="#grid-nesting">Nesting columns</a></li>
+    <li><a href="#grid-column-ordering">Column ordering</a></li>
+    <li><a href="#grid-less">Less mixins and variables</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#type">Typography</a>
+  <ul class="nav">
+    <li><a href="#type-headings">Headings</a></li>
+    <li><a href="#type-body-copy">Body copy</a></li>
+    <li><a href="#type-emphasis">Emphasis</a></li>
+    <li><a href="#type-abbreviations">Abbreviations</a></li>
+    <li><a href="#type-addresses">Addresses</a></li>
+    <li><a href="#type-blockquotes">Blockquotes</a></li>
+    <li><a href="#type-lists">Lists</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#code">Code</a>
+  <ul class="nav">
+    <li><a href="#code-inline">Inline code</a></li>
+    <li><a href="#code-user-input">User input</a></li>
+    <li><a href="#code-block">Blocks of code</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#tables">Tables</a>
+  <ul class="nav">
+    <li><a href="#tables-example">Basic example</a></li>
+    <li><a href="#tables-striped">Striped rows</a></li>
+    <li><a href="#tables-bordered">Bordered table</a></li>
+    <li><a href="#tables-hover-rows">Hover rows</a></li>
+    <li><a href="#tables-condensed">Condensed table</a></li>
+    <li><a href="#tables-contextual-classes">Contextual classes</a></li>
+    <li><a href="#tables-responsive">Responsive tables</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#forms">Forms</a>
+  <ul class="nav">
+    <li><a href="#forms-example">Basic example</a></li>
+    <li><a href="#forms-inline">Inline form</a></li>
+    <li><a href="#forms-horizontal">Horizontal form</a></li>
+    <li><a href="#forms-controls">Supported controls</a></li>
+    <li><a href="#forms-controls-static">Static control</a></li>
+    <li><a href="#forms-control-focus">Focus state</a></li>
+    <li><a href="#forms-control-disabled">Disabled state</a></li>
+    <li><a href="#forms-control-validation">Validation states</a></li>
+    <li><a href="#forms-control-sizes">Control sizing</a></li>
+    <li><a href="#forms-help-text">Help text</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#buttons">Buttons</a>
+  <ul class="nav">
+    <li><a href="#buttons-options">Options</a></li>
+    <li><a href="#buttons-sizes">Sizes</a></li>
+    <li><a href="#buttons-active">Active state</a></li>
+    <li><a href="#buttons-disabled">Disabled state</a></li>
+    <li><a href="#buttons-tags">Button tags</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#images">Images</a>
+</li>
+<li>
+  <a href="#helper-classes">Helper classes</a>
+  <ul class="nav">
+    <li><a href="#helper-classes-colors">Contextual colors</a></li>
+    <li><a href="#helper-classes-backgrounds">Contextual backgrounds</a></li>
+    <li><a href="#helper-classes-close">Close icon</a></li>
+    <li><a href="#helper-classes-carets">Carets</a></li>
+    <li><a href="#helper-classes-floats">Quick floats</a></li>
+    <li><a href="#helper-classes-center">Center content blocks</a></li>
+    <li><a href="#helper-classes-clearfix">Clearfix</a></li>
+    <li><a href="#helper-classes-show-hide">Showing and hiding content</a></li>
+    <li><a href="#helper-classes-screen-readers">Screen reader content</a></li>
+    <li><a href="#helper-classes-image-replacement">Image replacement</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#responsive-utilities">Responsive utilities</a>
+  <ul class="nav">
+    <li><a href="#responsive-utilities-classes">Available classes</a></li>
+    <li><a href="#responsive-utilities-print">Print classes</a></li>
+    <li><a href="#responsive-utilities-tests">Test cases</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#less">Using Less</a>
+  <ul class="nav">
+    <li><a href="#less-bootstrap">Compiling Bootstrap</a></li>
+    <li><a href="#less-variables">Variables</a></li>
+    <li><a href="#less-mixins-vendor">Vendor mixins</a></li>
+    <li><a href="#less-mixins-utility">Utility mixins</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#sass">Using Sass</a>
+  <ul class="nav">
+    <li><a href="#sass-contents">What's included</a></li>
+    <li><a href="#sass-installation">Rails install</a></li>
+  </ul>
+</li>
+
+              
+              
             </ul>
           </div>
         </div>
@@ -3709,38 +3810,7 @@ a {
 
     </div>
 
-    <!-- Footer
-================================================== -->
-<footer class="bs-footer" role="contentinfo">
-  <div class="container">
-    {% include social-buttons.html %}
-
-    <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
-    <p>Maintained by the <a href="https://github.com/twbs?tab=members">core team</a> with the help of <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</p>
-    <p>Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">MIT</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-    <ul class="footer-links muted">
-      <li>Currently v{{ site.current_version }}</li>
-      <li>&middot;</li>
-      <li><a href="{{ site.repo }}">GitHub</a></li>
-      <li>&middot;</li>
-      <li><a href="../getting-started/#examples">Examples</a></li>
-      <li>&middot;</li>
-      <li><a href="../2.3.2/">v2.3.2 docs</a></li>
-      <li>&middot;</li>
-      <li><a href="../about/">About</a></li>
-      <li>&middot;</li>
-      <li><a href="{{ site.expo }}">Expo</a></li>
-      <li>&middot;</li>
-      <li><a href="{{ site.blog }}">Blog</a></li>
-      <li>&middot;</li>
-      <li><a href="{{ site.repo }}/issues?state=open">Issues</a></li>
-      <li>&middot;</li>
-      <li><a href="{{ site.repo }}/releases">Releases</a></li>
-    </ul>
-  </div>
-</footer>
-
-<!-- Bootstrap core JavaScript
+    <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <!-- <script src="docs-assets/js/email-decode.min.js"></script> -->
@@ -3748,16 +3818,9 @@ a {
 <script src="../js/vendor/bootstrap.js"></script>
 <script src="docs-assets/js/prism.js"></script>
 <script src="docs-assets/js/docs.min.js"></script>
-{% if page.slug == "customize" %}
-<script src="docs-assets/js/customize.min.js"></script>
-{% endif %}
 
-{% comment %}
-  Inject Twitter widgets asynchronously. Snippet snipped from Twitter's
-  JS interface site: https://dev.twitter.com/docs/tfw-javascript
 
-  * "js.async=1;" added to add async attribute to the generated script tag.
-{% endcomment %}
+
 <script>
   window.twttr = (function (d,s,id) {
     var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -3767,20 +3830,6 @@ a {
   }(document, "script", "twitter-wjs"));
 </script>
 
-<!-- Analytics
-================================================== -->
-<script>
-  var _gauges = _gauges || [];
-  (function() {
-    var t   = document.createElement('script');
-    t.async = true;
-    t.id    = 'gauges-tracker';
-    t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
-    t.src = '//secure.gaug.es/track.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(t, s);
-  })();
-</script>
 
   </body>
 </html>
