@@ -5,8 +5,8 @@
  */
 
 // Core variables and mixins from Bootstrap
-@import "vendor/bootstrap/variables";
-@import "vendor/bootstrap/mixins";
+@import "bootstrap-overrides/variables";
+@import "bootstrap-overrides/mixins";
 
 body {
     color: $gray-base;
@@ -19,48 +19,48 @@ body {
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Reset and dependencies
-// @import "includes/normalize";
-// @import "includes/print";
-// @import "includes/glyphicons";
+// @import "bootstrap-overrides/normalize";
+// @import "bootstrap-overrides/print";
+@import "bootstrap-overrides/glyphicons";
 
 // Core CSS
-// @import "includes/scaffolding";
-// @import "includes/type";
-// @import "includes/code";
-// @import "includes/grid";
-// @import "includes/tables";
-// @import "includes/forms";
-// @import "includes/buttons";
+// @import "bootstrap-overrides/scaffolding";
+// @import "bootstrap-overrides/type";
+// @import "bootstrap-overrides/code";
+// @import "bootstrap-overrides/grid";
+// @import "bootstrap-overrides/tables";
+// @import "bootstrap-overrides/forms";
+// @import "bootstrap-overrides/buttons";
 
 // Components
-// @import "includes/component-animations";
-// @import "includes/dropdowns";
-// @import "includes/button-groups";
-// @import "includes/input-groups";
-// @import "includes/navs";
-// @import "includes/navbar";
-// @import "includes/breadcrumbs";
-// @import "includes/pagination";
-// @import "includes/pager";
-// @import "includes/labels";
-// @import "includes/badges";
-// @import "includes/jumbotron";
-// @import "includes/thumbnails";
-// @import "includes/alerts";
-// @import "includes/progress-bars";
-// @import "includes/media";
-// @import "includes/list-group";
-// @import "includes/panels";
-// @import "includes/responsive-embed";
-// @import "includes/wells";
-// @import "includes/close";
+// @import "bootstrap-overrides/component-animations";
+// @import "bootstrap-overrides/dropdowns";
+// @import "bootstrap-overrides/button-groups";
+// @import "bootstrap-overrides/input-groups";
+// @import "bootstrap-overrides/navs";
+// @import "bootstrap-overrides/navbar";
+// @import "bootstrap-overrides/breadcrumbs";
+// @import "bootstrap-overrides/pagination";
+// @import "bootstrap-overrides/pager";
+// @import "bootstrap-overrides/labels";
+// @import "bootstrap-overrides/badges";
+// @import "bootstrap-overrides/jumbotron";
+// @import "bootstrap-overrides/thumbnails";
+// @import "bootstrap-overrides/alerts";
+// @import "bootstrap-overrides/progress-bars";
+// @import "bootstrap-overrides/media";
+// @import "bootstrap-overrides/list-group";
+// @import "bootstrap-overrides/panels";
+// @import "bootstrap-overrides/responsive-embed";
+// @import "bootstrap-overrides/wells";
+// @import "bootstrap-overrides/close";
 
 // Components w/ JavaScript
-// @import "includes/modals";
-// @import "includes/tooltip";
-// @import "includes/popovers";
-// @import "includes/carousel";
+// @import "bootstrap-overrides/modals";
+// @import "bootstrap-overrides/tooltip";
+// @import "bootstrap-overrides/popovers";
+// @import "bootstrap-overrides/carousel";
 
 // Utility classes
-// @import "includes/utilities";
-// @import "includes/responsive-utilities";
+// @import "bootstrap-overrides/utilities";
+// @import "bootstrap-overrides/responsive-utilities";
