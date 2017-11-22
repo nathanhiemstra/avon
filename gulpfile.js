@@ -18,6 +18,9 @@ path.dist = {
 path.src = {
   docsAssets:       "src/styleguide/docs-assets/**/*",
   html:             "src/**/*.html",
+  examplesHtml:     "src/styleguide/examples/**/*.html",
+  examplesCss:      "src/styleguide/examples/**/*.css",
+  examplesJpg:      "src/styleguide/examples/**/*.jpg",
   fonts:            "src/fonts/*",
   images:           "src/images/**/*",
   js:               "src/js/**/*.js", 
@@ -26,6 +29,9 @@ path.src = {
 
 path.staticFilesToCopy = [
   path.src.docsAssets,
+  path.src.examplesHtml,
+  path.src.examplesCss,
+  path.src.examplesJpg,
   path.src.fonts,
   path.src.images,
   path.src.js
