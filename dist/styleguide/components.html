@@ -1,43 +1,47 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Meta, title, CSS, favicons, etc. -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>Styleguide Components</title>
 
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.">
-<meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
-<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <!-- Bootstrap core CSS -->
+  <link href="../css/bootstrap/bootstrap.css" rel="stylesheet">
 
-<title>Components</title>
+  <!-- Documentation extras -->
+  <link href="docs-assets/css/docs.css" rel="stylesheet">
+  <link href="docs-assets/css/prism.css" rel="stylesheet">
+  <link href="../css/avon-main.css" rel="stylesheet">
+  <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
-<!-- Bootstrap core CSS -->
-<link href="../css/bootstrap/bootstrap.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
-<!-- Documentation extras -->
-<link href="docs-assets/css/docs.css" rel="stylesheet">
-<link href="docs-assets/css/prism.css" rel="stylesheet">
-<link href="../css/avon-main.css" rel="stylesheet">
-<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+</head>
 
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+<body>
 
-<!-- Favicons -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+  <section>
+      <a class="sr-only" href="#content">Skip to main content</a>
 
 
-  </head>
-  <body>
-    <a class="sr-only" href="#content">Skip to main content</a>
+      
+      
+      
+        
 
     <!-- Docs master nav -->
-    <header class="navbar navbar-static-top bs-docs-nav" role="banner">
+    
+<header class="navbar navbar-static-top bs-docs-nav" role="banner">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -46,12 +50,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="../" class="navbar-brand">Avon POC Styleguide</a>
+      <a href="index.html" class="navbar-brand">Avon POC Styleguide</a>
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
 
-        <li  class="active" >
+        <li >
           <a href="index.html">CSS</a>
         </li>
         <li >
@@ -62,10 +66,6 @@
         </li>
 
       </ul>
-      <!-- <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{ site.expo }}" onclick="_gaq.push(['_trackEvent', 'Navbar', 'Community links', 'Expo']);">Expo</a></li>
-        <li><a href="{{ site.blog }}" onclick="_gaq.push(['_trackEvent', 'Navbar', 'Community links', 'Blog']);">Blog</a></li>
-      </ul> -->
     </nav>
   </div>
 </header>
@@ -74,16 +74,18 @@
     <!-- Docs page layout -->
     <div class="bs-header" id="content">
       <div class="container">
-        <h1>Components</h1>
-
+        <h1>Styleguide Components</h1>
       </div>
     </div>
 
     <div class="container bs-docs-container">
-
       <div class="row">
         <div class="col-md-9" role="main">
-      
+
+
+          
+          
+          
 
 
 <!-- Glyphicons
@@ -2658,7 +2660,7 @@
   <div class="bs-callout bs-callout-danger">
     <h4>Body padding required</h4>
     <p>The fixed navbar will overlay your other content, unless you add <code>padding</code> to the top of the <code>&lt;body&gt;</code>. Try out your own values or use our snippet below. Tip: By default, the navbar is 50px high.</p>
-{% highlight css %}
+<pre><code class="language-css"><script type="text/plain">
 body { padding-top: 70px; }
 </script></code></pre>
     <p>Make sure to include this <strong>after</strong> the core Bootstrap CSS.</p>
@@ -2702,7 +2704,7 @@ body { padding-top: 70px; }
   <div class="bs-callout bs-callout-danger">
     <h4>Body padding required</h4>
     <p>The fixed navbar will overlay your other content, unless you add <code>padding</code> to the bottom of the <code>&lt;body&gt;</code>. Try out your own values or use our snippet below. Tip: By default, the navbar is 50px high.</p>
-{% highlight css %}
+<pre><code class="language-css"><script type="text/plain">
 body { padding-bottom: 70px; }
 </script></code></pre>
     <p>Make sure to include this <strong>after</strong> the core Bootstrap CSS.</p>
@@ -4076,13 +4078,21 @@ body { padding-bottom: 70px; }
 </div>
 
 
+
+          
+
+
         </div>
         <div class="col-md-3">
           <div class="bs-sidebar hidden-print" role="complementary">
             <ul class="nav bs-sidenav">
+             
+           
               
               
-                <li>
+              
+
+                                            <li>
   <a href="#glyphicons">Glyphicons</a>
   <ul class="nav">
     <li><a href="#glyphicons-glyphs">Available glyphs</a></li>
@@ -4220,34 +4230,39 @@ body { padding-bottom: 70px; }
   </ul>
 </li>
 <li><a href="#wells">Wells</a></li>
-
               
+    
             </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<!-- <script src="docs-assets/js/email-decode.min.js"></script> -->
-<script src="../js/vendor/jquery/1.10.2/jquery.min.js"></script>
-<script src="../js/vendor/bootstrap.js"></script>
-<script src="docs-assets/js/prism.js"></script>
-<script src="docs-assets/js/docs.min.js"></script>
 
 
 
-<script>
-  window.twttr = (function (d,s,id) {
-    var t, js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
-    js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
-    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
-  }(document, "script", "twitter-wjs"));
-</script>
+
+  </section>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- <script src="docs-assets/js/email-decode.min.js"></script> -->
+  <script src="../js/vendor/jquery/1.10.2/jquery.min.js"></script>
+  <script src="../js/vendor/bootstrap.js"></script>
+  <script src="docs-assets/js/prism.js"></script>
+  <script src="docs-assets/js/docs.min.js"></script>
 
 
-  </body>
+
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+
+</body>
 </html>

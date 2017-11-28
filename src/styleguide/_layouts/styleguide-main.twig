@@ -1,0 +1,58 @@
+{# styleguide-main.twig #}
+{% extends 'base.twig' %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+ 
+
+    <!-- Docs master nav -->
+    {% include "../_includes/nav-main.twig" %}
+
+
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content">
+      <div class="container">
+        <h1>{{ title }}</h1>
+      </div>
+    </div>
+
+    <div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-md-9" role="main">
+
+
+          {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+          {# RENDER BLOCK - CONTENT #}
+          {% block styleguideContent %}{% endblock %}
+          {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+
+        </div>
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print" role="complementary">
+            <ul class="nav bs-sidenav">
+             
+           
+              {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+              {# BLOCK - SIDE BAR #}
+              {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+              {% if slug == "styleguide-css" %}
+                {% include "../_includes/nav-css.twig" %}
+              {% endif %}
+              {% if slug == "styleguide-components" %}
+                {% include "../_includes/nav-components.twig" %}
+              {% endif %}
+
+    
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}
