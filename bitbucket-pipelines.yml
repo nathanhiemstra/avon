@@ -11,6 +11,10 @@ pipelines:
         caches:
           - node
         script: # Modify the commands below to build your repository.
-          - npm install
-          - npm test
-          - git status
+          #- npm install
+          #- npm test
+          - git config --list
+          #- git config user.name
+          #- git config user.email <your@email>
+          #- git add package.json
+          #- git commit -m "updated version"
