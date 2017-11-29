@@ -1,7 +1,6 @@
 var autoprefixer =  require('gulp-autoprefixer');
 var browserSync =   require('browser-sync').create();
 var del =           require('del');
-var ext_replace =   require('gulp-ext-replace');
 var concat =        require('gulp-concat');
 var fileinclude =   require('gulp-file-include');
 var gulp =          require('gulp');

@@ -1,0 +1,60 @@
+{# login.html.twig #}
+{% extends "_layouts/base.html.twig" %}
+ 
+{% block content %}
+
+
+
+
+
+
+
+
+  <div class="container">
+  {% include "_includes/modules/atoms/images/logo-your-avon.html.twig" %}
+
+
+    <div class="page-header">
+      <div class="row">
+        <div class="col-sm-1">
+          <h1>Login</h1>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input type="text" class="form-control" placeholder="Username">
+        </div>
+
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <span class="input-group-addon">.00</span>
+        </div>
+
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="text" class="form-control">
+          <span class="input-group-addon">.00</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
