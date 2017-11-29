@@ -22,6 +22,6 @@ pipelines:
           - git config user.name "$DEPLOY_USERNAME"
           - git config user.email "$DEPLOY_EMAIL"
           - git add package.json
-          - git commit -m "[skip CI]"
-          - git push
+          #- git commit -m "[skip CI]"
+          - git push origin master
           - git config --list
