@@ -13,13 +13,12 @@ pipelines:
         script: # Modify the commands below to build your repository.
           #- npm install
           #- npm test
-          - echo $DEPLOY_USERNAME
-          
-          - git config --global credential.helper cache
+   
+     
           # Set git to use the credential memory cache
-          
-          - git --global config user.name "nathanhiemstra"
-          - git --global config user.email "nayt@s4dc.org"
+          - git init
+          - git config user.name "nathanhiemstra"
+          - git config user.email "nayt@s4dc.org"
           - git config user.name "$DEPLOY_USERNAME"
           - git config user.email "$DEPLOY_EMAIL"
           - git add package.json
