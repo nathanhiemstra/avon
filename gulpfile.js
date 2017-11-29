@@ -36,7 +36,7 @@ path.src = {
   images:           "src/images/**/*",
   js:               "src/js/**/*.js", 
   sass:             "src/sass/**/*.scss",
-  twig:             "src/**/*.html.twig",
+  twig:             "src/**/*.twig",
   styleguide:       "src/styleguide/*.twig"
 };
 

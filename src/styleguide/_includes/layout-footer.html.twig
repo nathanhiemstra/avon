@@ -1,0 +1,19 @@
+        </div>
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print" role="complementary">
+            <ul class="nav bs-sidenav">
+              @@if (context.slug == "css") {
+                @@include('nav-css.html.twig')
+              }
+              @@if (context.slug == "components") {
+                @@include('nav-components.html.twig')
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    @@include('footer.twig', {"slug": "@@slug"})
+  </body>
+</html>

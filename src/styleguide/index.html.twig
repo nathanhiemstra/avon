@@ -1,7 +1,7 @@
-{# styleguide/index.twig #}
+{# styleguide/index.html.twig #}
 {% set title = "Styleguide Home" %}
 {% set slug = "styleguide-home" %}
-{% extends "_layouts/styleguide-main.twig" %}
+{% extends "_layouts/styleguide-main.html.twig" %}
  
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -632,7 +632,7 @@
       right: percentage((@columns / @grid-columns));
     }
   }
-  @@include('_includes/end-highlight.twig' {"type": "css"})
+  @@include('_includes/end-highlight.html.twig' {"type": "css"})
 
 
     <h4>Example usage</h4>
@@ -649,7 +649,7 @@
     .make-lg-column(3);
     .make-lg-column-offset(1);
   }
-  @@include('_includes/end-highlight.twig' {"type": "css"})
+  @@include('_includes/end-highlight.html.twig' {"type": "css"})
 
 
 {{ highlightMarkup }}

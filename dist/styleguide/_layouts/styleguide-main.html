@@ -1,4 +1,4 @@
-{# layout.twig #}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <title>{{ title }}</title>
+  <title>Styleguide Home</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -34,10 +34,79 @@
       <a class="sr-only" href="#content">Skip to main content</a>
 
 
-      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-      {# RENDER BLOCK - CONTENT #}
-      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-      {{ test }} {% block content %}{% endblock %}
+      
+      
+      
+        
+
+    <!-- Docs master nav -->
+    
+<header class="navbar navbar-static-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="index.html" class="navbar-brand">Avon POC Styleguide</a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li  class="active" >
+          <a href="index.html">CSS</a>
+        </li>
+        <li >
+          <a href="components.html">Components</a>
+        </li>
+        <li >
+          <a href="examples.html">Examples</a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content">
+      <div class="container">
+        <h1>Styleguide Home</h1>
+      </div>
+    </div>
+
+    <div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-md-9" role="main">
+
+
+          
+          
+                    
+
+
+        </div>
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print" role="complementary">
+            <ul class="nav bs-sidenav">
+             
+           
+              
+              
+              
+
+                            
+    
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
 
 

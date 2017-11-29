@@ -1,5 +1,5 @@
-{# styleguide-main.twig #}
-{% extends 'base.twig' %}
+{# styleguide-main.html.twig #}
+{% extends 'base.html.twig' %}
 
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -9,7 +9,7 @@
  
 
     <!-- Docs master nav -->
-    {% include "../_includes/nav-main.twig" %}
+    {% include "../_includes/nav-main.html.twig" %}
 
 
     <!-- Docs page layout -->
@@ -41,10 +41,10 @@
               {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 
               {% if slug == "styleguide-css" %}
-                {% include "../_includes/nav-css.twig" %}
+                {% include "../_includes/nav-css.html.twig" %}
               {% endif %}
               {% if slug == "styleguide-components" %}
-                {% include "../_includes/nav-components.twig" %}
+                {% include "../_includes/nav-components.html.twig" %}
               {% endif %}
 
     
