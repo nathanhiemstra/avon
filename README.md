@@ -56,7 +56,7 @@ n:avon-poc yoursweetusername$ gulp
 - Finished code: Merge **develop** into to the **master** branch
 
 ### Deploys ###
-[Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/) (See Lastpass for cridentials) is a server our Dreamhost server to get (```git-pull```)  the latest changes from our Bitbucket repo.
+[Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/) (See Lastpass for cridentials) tells our Dreamhost server to get (```git-pull```)  the latest changes from our Bitbucket repo.
 - Go to [Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/) 
 - Click "Deploy"
 - On confirmation screen click "Start deployment"

@@ -1,17 +1,28 @@
-var gulp =          require('gulp');
-var concat =        require('gulp-concat');
-var fileinclude =   require('gulp-file-include');
-var sourcemaps =    require('gulp-sourcemaps');
-var del =           require('del');
-var sass =          require('gulp-sass');
-var gulpSequence =  require('gulp-sequence');
-var gutil =         require('gulp-util');
 var autoprefixer =  require('gulp-autoprefixer');
 var browserSync =   require('browser-sync').create();
+var del =           require('del');
+var ext_replace =   require('gulp-ext-replace');
+var concat =        require('gulp-concat');
+var fileinclude =   require('gulp-file-include');
+var gulp =          require('gulp');
+var gulpSequence =  require('gulp-sequence');
+var gutil =         require('gulp-util');
+var rename =        require("gulp-rename");
+var sourcemaps =    require('gulp-sourcemaps');
+var sass =          require('gulp-sass');
+
+
+var markup = {
+  highlight: {}
+}
 var path = {
   dist: {},
   css: {}
 };
+var page = {
+  styleguideHome: {}
+}
+
 path.dist = {
   css:              "dist/css"
 };
@@ -25,7 +36,7 @@ path.src = {
   images:           "src/images/**/*",
   js:               "src/js/**/*.js", 
   sass:             "src/sass/**/*.scss",
-  twig:             "src/**/*.twig",
+  twig:             "src/**/*.html.twig",
   styleguide:       "src/styleguide/*.twig"
 };
 
@@ -38,12 +49,15 @@ path.staticFilesToCopy = [
   path.src.images,
   path.src.js
 ];
-var page = {
-  styleguideHome: {}
-}
+
 page.styleguideHome = {
   title: 'Styleguide CSS',
   slug: 'styleguide-css'
+}
+markup.highlight = {
+  markup: '<pre><code class="language-markup"><script type="text/plain">',
+  css: '<pre><code class="language-css"><script type="text/plain">',
+  end: '</script></code></pre>',
 }
 
 gulp.task('clean', function() {
@@ -62,17 +76,14 @@ gulp.task('compile', function () {
   return gulp.src(path.src.twig)
       .pipe(twig({
           data: {
-              title: 'Styleguide CSS',
-              slug: 'styleguide-css',
-              highlightMarkup: '<pre><code class="language-markup"><script type="text/plain">',
-              highlightCss: '<pre><code class="language-css"><script type="text/plain">',
-              endhighlight: '</script></code></pre>',
-              pag: {
-                  title: 'pag',
-                  slug: 'styleguide-css',
-                  test3: 'Secure'
-              }
+              highlightMarkup:  markup.highlight.markup,
+              highlightCss:     markup.highlight.css,
+              endhighlight:     markup.highlight.end
           }
+      }))
+      .pipe(rename({
+          // Change .html.twig to just .twig
+          extname: ''
       }))
       .pipe(gulp.dest('./dist/'));
 });
