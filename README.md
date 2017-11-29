@@ -1,6 +1,6 @@
 # README #
 
-This README documents steps to Avon Proof of Concept application up and running.
+This README documents steps to get the Avon Proof of Concept application up and running.
 
 ### What is this repository for? ###
 
