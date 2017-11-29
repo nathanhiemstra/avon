@@ -14,8 +14,15 @@ pipelines:
           #- npm install
           #- npm test
           - echo $DEPLOY_USERNAME
-          # - git --global config user.name nathanhiemstra
-          # - git --global config user.email "nayt@s4dc.org"
-          # - git add package.json
-          #- git commit -m "updated version"
+          
+          - git config --global credential.helper cache
+          # Set git to use the credential memory cache
+          
+          - git --global config user.name "nathanhiemstra"
+          - git --global config user.email "nayt@s4dc.org"
+          - git config user.name "$DEPLOY_USERNAME"
+          - git config user.email "$DEPLOY_EMAIL"
+          - git add package.json
+          - git commit -m "[skip CI]"
+          - git push
           - git config --list
