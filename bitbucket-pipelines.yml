@@ -13,8 +13,9 @@ pipelines:
         script: # Modify the commands below to build your repository.
           #- npm install
           #- npm test
-          - git config --list
-          #- git config user.name
-          #- git config user.email <your@email>
-          #- git add package.json
+          - echo $DEPLOY_USERNAME
+          # - git --global config user.name nathanhiemstra
+          # - git --global config user.email "nayt@s4dc.org"
+          # - git add package.json
           #- git commit -m "updated version"
+          - git config --list
