@@ -1,4 +1,4 @@
-<header class="navbar navbar-static-top bs-docs-nav" role="banner">
+{% set urlBase = "../../../../" %}<header class="navbar navbar-static-top bs-docs-nav" role="banner">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -8,21 +8,9 @@
         <span class="icon-bar"></span>
       </button>
       <a href="index.html" class="navbar-brand">
-        {% include "../../atoms/images/logo-your-avon.html.twig" %}
+        {% include urlBase ~ module.atom.image.logoYourAvon %}
       </a>
     </div>
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="#">Item</a>
-        </li>
-        <li>
-          <a href="#">Item</a>
-        </li>
-        <li>
-          <a href="#">Item</a>
-        </li>
-      </ul>
-    </nav>
+{% include urlBase ~ module.molecules.navigation.primary %}
   </div>
 </header>

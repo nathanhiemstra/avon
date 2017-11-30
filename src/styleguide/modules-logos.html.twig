@@ -1,6 +1,8 @@
 {# styleguide/index.html.twig #}
 {% set title = "Modules - Logos" %}
 {% set slug = "styleguide-modules-logos" %}
+{% set urlBase = "../" %}
+
 {% extends "_layouts/styleguide-main.html.twig" %}
 
 
@@ -18,27 +20,42 @@
   <h1 id="logos" class="page-header">Logos</h1>
 
 
-  <!-- YOUR AVON
+  <!-- YOUR AVON LOGO
   ================================================== -->
-  <h2 id="logos-your-avon">Your Avon</h2>
-  <div class="bs-example">
-    {% include "../_includes/modules/atoms/images/logo-your-avon.html.twig" %}
-  </div>
-  {{ highlightMarkup }}
-  {% include "../_includes/modules/atoms/images/logo-your-avon.html.twig" %}
-  {{ endhighlight }}
+  {% set modItem = {
+      title:  "Your Avon Logo",
+      slug:   "your-avon-logo",
+      path:   module.atom.image.logoYourAvon
+    } 
+  %}
+  {% include module.template %}
 
-
-
-  <!-- YOUR AVON
+  <!-- Primary Navigation
   ================================================== -->
-  <h2 id="logos-your-avon">Your Avon</h2>
-  <div class="bs-example">
-    {% include "../_includes/modules/organisms/global/header.html.twig" %}
-  </div>
-  {{ highlightMarkup }}
-  {% include "../_includes/modules/organisms/global/header.html.twig" %}
-  {{ endhighlight }}
+  {% set modItem = {
+      title:  "Primary Navigation ",
+      slug:   "primary-navigation",
+      path:   module.molecules.navigation.primary 
+    } 
+  %}
+  {% include module.template %}
+
+  <!-- HEADER
+  ================================================== -->
+  {% set modItem = {
+      title:  "Header",
+      slug:   "global-header",
+      path:   module.organism.global.header 
+    } 
+  %}
+  {% include module.template %}
+
+
+   
+    
+
+
+ 
 
 
 

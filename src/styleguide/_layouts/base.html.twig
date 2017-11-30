@@ -13,6 +13,7 @@
 
   <!-- Documentation extras -->
   <link href="docs-assets/css/docs.css" rel="stylesheet">
+  <link href="docs-assets/css/docs-override.css" rel="stylesheet">
   <link href="docs-assets/css/prism.css" rel="stylesheet">
   <link href="../css/avon-main.css" rel="stylesheet">
   <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -50,6 +51,17 @@
   <script src="../js/vendor/jquery/1.10.2/jquery.min.js"></script>
   <script src="../js/vendor/bootstrap.js"></script>
   <script src="docs-assets/js/prism.js"></script>
+  <script src="../js/vendor/prism-normalize-whitespace.js"></script>
+  <script type="text/javascript">
+  // Optional
+  Prism.plugins.NormalizeWhitespace.setDefaults({
+    'remove-trailing': true,
+    'remove-indent': true,
+    'remove-initial-line-feed': true,
+    'left-trim': true,
+    'right-trim': true,
+  });
+  </script>
   <script src="docs-assets/js/docs.min.js"></script>
 
 

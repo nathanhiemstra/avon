@@ -11,6 +11,9 @@ var sourcemaps =    require('gulp-sourcemaps');
 var sass =          require('gulp-sass');
 
 
+var module = {
+  atoms: {}
+}
 var markup = {
   highlight: {}
 }
@@ -20,6 +23,10 @@ var path = {
 };
 var page = {
   styleguideHome: {}
+}
+
+module.atoms = {
+  logoYourAvon:     "_includes/modules/atoms/images/logo-your-avon.html.twig"
 }
 
 path.dist = {
@@ -77,7 +84,25 @@ gulp.task('compile', function () {
           data: {
               highlightMarkup:  markup.highlight.markup,
               highlightCss:     markup.highlight.css,
-              endhighlight:     markup.highlight.end
+              endhighlight:     markup.highlight.end,
+              module: {
+                atom: {
+                  image: {
+                    logoYourAvon: "_includes/modules/atoms/images/logo-your-avon.html.twig"
+                  }
+                },
+                template: "_includes/module.html.twig",
+                molecules :{
+                  navigation: {
+                    primary: "_includes/modules/molecules/navigation/primary.html.twig"
+                  }
+                },
+                organism :{
+                  global: {
+                    header: "_includes/modules/organisms/global/header.html.twig"
+                  }
+                }
+              }           
           }
       }))
       .pipe(rename({
@@ -94,6 +119,7 @@ gulp.task('default', ['compile']);
 //       prefix: '@@',
 //       basepath: '@file'
 //     }))
+
 //     .pipe(gulp.dest('./dist/'));
 // });
 

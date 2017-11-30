@@ -35,18 +35,35 @@
       
       
       
-       
-
-
-
-
-
-
-
+         <div class="container">
+    <header class="navbar navbar-static-top bs-docs-nav" role="banner">
   <div class="container">
-  <img src="/images/logos/your-avon.png" alt="Your Avon">
-
-    <div class="page-header">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="index.html" class="navbar-brand">
+        <img src="/images/logos/your-avon.png" alt="Your Avon">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#">Item</a>
+        </li>
+        <li>
+          <a href="#">Item</a>
+        </li>
+        <li>
+          <a href="#">Item</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>    <div class="page-header">
       <div class="row">
         <div class="col-sm-1">
           <h1>Login</h1>
@@ -54,42 +71,41 @@
       </div>
     </div>
     
-
-
-    <!-- Example row of columns -->
     <div class="row">
       <div class="col-md-4">
-
-        <div class="input-group">
-          <span class="input-group-addon">@</span>
-          <input type="text" class="form-control" placeholder="Username">
+        <form role="form">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          </div>
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Keep me signed in
+              </label>
+            </div>
+          </div>
+        </form>
+        <div class="text-center">
+          <p>Or</p>
+          <button type="submit" class="btn btn-primary btn-block">Continue with Facebook</button>
+          <button type="submit" class="btn btn-primary btn-block">Continue with Google</button>
         </div>
-
-        <div class="input-group">
-          <input type="text" class="form-control">
-          <span class="input-group-addon">.00</span>
-        </div>
-
-        <div class="input-group">
-          <span class="input-group-addon">$</span>
-          <input type="text" class="form-control">
-          <span class="input-group-addon">.00</span>
-        </div>
+        
       </div>
-
+      <div class="col-md-4">
+        <p><button type="submit" class="btn btn-default">Create an Account</button></p>
+        <p><a href="#">Shop as a guest</a></p>
+      </div>
     </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
   </section>
