@@ -1,0 +1,319 @@
+<div class="bs-docs-section">
+  <h1 id="forms" class="page-header">Form Elements</h1>
+
+  
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# Supported controls #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+  <h2 id="forms-controls">Supported controls</h2>
+  <p>Examples of standard form controls supported in an example form layout.</p>
+
+  <h3>Inputs</h3>
+  <p>Most common form control, text-based input fields. Includes support for all HTML5 types: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, and <code>color</code>.</p>
+  <div class="bs-callout bs-callout-danger">
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# Inputs #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+    <h4>Type declaration required</h4>
+    <p>Inputs will only be fully styled if their <code>type</code> is properly declared.</p>
+  </div>
+  <div class="bs-example">
+    <form role="form">
+      <input type="text" class="form-control" placeholder="Text input">
+    </form>
+  </div><!-- /.bs-example -->
+
+  {{ highlightMarkup }}
+  <input type="text" class="form-control" placeholder="Text input">
+  {{ endhighlight }}
+
+  <div class="bs-callout bs-callout-info">
+    <h4>Input groups</h4>
+    <p>To add integrated text or buttons before and/or after any text-based <code>&lt;input&gt;</code>, <a href="../components/#input-groups">check out the input group component</a>.</p>
+  </div>
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# Textarea #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+  <h3>Textarea</h3>
+  <p>Form control which supports multiple lines of text. Change <code>rows</code> attribute as necessary.</p>
+  <div class="bs-example">
+    <form role="form">
+      <textarea class="form-control" rows="3"></textarea>
+    </form>
+  </div><!-- /.bs-example -->
+
+  {{ highlightMarkup }}
+  <textarea class="form-control" rows="3"></textarea>
+  {{ endhighlight }}
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# Selects #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+
+  <h3>Selects</h3>
+  <p>Use the default option, or add <code>multiple</code> to show multiple options at once.</p>
+  <div class="bs-example">
+    <form role="form">
+      <select class="form-control">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <br>
+      <select multiple class="form-control">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </form>
+  </div><!-- /.bs-example -->
+
+  {{ highlightMarkup }}
+  <select class="form-control">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+
+  <select multiple class="form-control">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+  {{ endhighlight }}
+
+
+
+  
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# Input focus #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+  <h2 id="forms-control-focus">Input focus</h2>
+  <p>We remove the default <code>outline</code> styles on some form controls and apply a <code>box-shadow</code> in its place for <code>:focus</code>.</p>
+  <div class="bs-example">
+    <form role="form">
+      <input class="form-control" id="focusedInput" type="text" value="Demonstrative focus state">
+    </form>
+  </div>
+    <h4>Demo <code>:focus</code> state</h4>
+    <p>The above example input uses custom styles in our documentation to demonstrate the <code>:focus</code> state on a <code>.form-control</code>.</p>
+ 
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# Disabled inputs #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+  <h2 id="forms-control-disabled">Disabled inputs</h2>
+  <p>Add the <code>disabled</code> attribute on an input to prevent user input and trigger a slightly different look.</p>
+  <div class="bs-example">
+    <form role="form">
+      <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here…" disabled>
+    </form>
+  </div><!-- /.bs-example -->
+
+  {{ highlightMarkup }}
+  <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+  {{ endhighlight }}
+
+
+  
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# >Validation states #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+  <h2 id="forms-control-validation">Validation states</h2>
+  <p>Bootstrap includes validation styles for error, warning, and success states on form controls. To use, add <code>.has-warning</code>, <code>.has-error</code>, or <code>.has-success</code> to the parent element. Any <code>.control-label</code>, <code>.form-control</code>, and <code>.help-block</code> within that element will receive the validation styles.</p>
+
+  <div class="bs-example">
+    <form role="form">
+      <div class="form-group has-success">
+        <label class="control-label" for="inputSuccess1">Input with success</label>
+        <input type="text" class="form-control" id="inputSuccess1">
+      </div>
+      <div class="form-group has-warning">
+        <label class="control-label" for="inputWarning1">Input with warning</label>
+        <input type="text" class="form-control" id="inputWarning1">
+      </div>
+      <div class="form-group has-error">
+        <label class="control-label" for="inputError1">Input with error</label>
+        <input type="text" class="form-control" id="inputError1">
+      </div>
+    </form>
+  </div><!-- /.bs-example -->
+
+  {{ highlightMarkup }}
+  <div class="form-group has-success">
+    <label class="control-label" for="inputSuccess1">Input with success</label>
+    <input type="text" class="form-control" id="inputSuccess1">
+  </div>
+  <div class="form-group has-warning">
+    <label class="control-label" for="inputWarning1">Input with warning</label>
+    <input type="text" class="form-control" id="inputWarning1">
+  </div>
+  <div class="form-group has-error">
+    <label class="control-label" for="inputError1">Input with error</label>
+    <input type="text" class="form-control" id="inputError1">
+  </div>
+  {{ endhighlight }}
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# With optional icons #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+  <h3>With optional icons</h3>
+  <p>You can also add optional feedback icons with the addition of an extra class and the right icon.</p>
+  <div class="bs-example">
+    <form role="form">
+      <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputSuccess2">Input with success</label>
+        <input type="text" class="form-control" id="inputSuccess2">
+        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+      </div>
+      <div class="form-group has-warning has-feedback">
+        <label class="control-label" for="inputWarning2">Input with warning</label>
+        <input type="text" class="form-control" id="inputWarning2">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+      </div>
+      <div class="form-group has-error has-feedback">
+        <label class="control-label" for="inputError2">Input with error</label>
+        <input type="text" class="form-control" id="inputError2">
+        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+      </div>
+    </form>
+  </div>
+
+  {{ highlightMarkup }}
+  <div class="form-group has-success has-feedback">
+    <label class="control-label" for="inputSuccess2">Input with success</label>
+    <input type="text" class="form-control" id="inputSuccess2">
+    <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+  </div>
+  <div class="form-group has-warning has-feedback">
+    <label class="control-label" for="inputWarning2">Input with warning</label>
+    <input type="text" class="form-control" id="inputWarning2">
+    <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+  </div>
+  <div class="form-group has-error has-feedback">
+    <label class="control-label" for="inputError2">Input with error</label>
+    <input type="text" class="form-control" id="inputError2">
+    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+  </div>
+  {{ endhighlight }}
+
+
+  <p>Optional icons also work on horizontal and inline forms.</p>
+  <div class="bs-example">
+    <form class="form-horizontal" role="form">
+      <div class="form-group has-success has-feedback">
+        <label class="control-label col-sm-3" for="inputSuccess3">Input with success</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputSuccess3">
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  {{ highlightMarkup }}
+  <form class="form-horizontal" role="form">
+    <div class="form-group has-success has-feedback">
+      <label class="control-label col-sm-3" for="inputSuccess3">Input with success</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="inputSuccess3">
+        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+      </div>
+    </div>
+  </form>
+  {{ endhighlight }}
+
+
+  <div class="bs-example">
+    <form class="form-inline" role="form">
+      <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputSuccess4">Input with success</label>
+        <input type="text" class="form-control" id="inputSuccess4">
+        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+      </div>
+    </form>
+  </div>
+
+  {{ highlightMarkup }}
+  <form class="form-inline" role="form">
+    <div class="form-group has-success has-feedback">
+      <label class="control-label" for="inputSuccess4">Input with success</label>
+      <input type="text" class="form-control" id="inputSuccess4">
+      <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+    </div>
+  </form>
+  {{ endhighlight }}
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# Control sizing #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+  <h2 id="forms-control-sizes">Control sizing</h2>
+  <p>Set heights using classes like <code>.input-lg</code>, and set widths using grid column classes like <code>.col-lg-*</code>.</p>
+
+  <h3>Height sizing</h3>
+  <p>Create taller or shorter form controls that match button sizes.</p>
+  <div class="bs-example bs-example-control-sizing">
+    <form role="form">
+      <div class="controls">
+        <input class="form-control input-lg" type="text" placeholder=".input-lg">
+        <input type="text" class="form-control" placeholder="Default input">
+        <input class="form-control input-sm" type="text" placeholder=".input-sm">
+
+        <select class="form-control input-lg">
+          <option value="">.input-lg</option>
+        </select>
+        <select class="form-control">
+          <option value="">Default select</option>
+        </select>
+        <select class="form-control input-sm">
+          <option value="">.input-sm</option>
+        </select>
+      </div>
+    </form>
+  </div><!-- /.bs-example -->
+
+  {{ highlightMarkup }}
+  <input class="form-control input-lg" type="text" placeholder=".input-lg">
+  <input class="form-control" type="text" placeholder="Default input">
+  <input class="form-control input-sm" type="text" placeholder=".input-sm">
+
+  <select class="form-control input-lg">...</select>
+  <select class="form-control">...</select>
+  <select class="form-control input-sm">...</select>
+  {{ endhighlight }}
+
+
+</div>

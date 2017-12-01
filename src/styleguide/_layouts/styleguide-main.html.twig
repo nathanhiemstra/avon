@@ -34,19 +34,24 @@
         <div class="col-md-3">
           <div class="bs-sidebar hidden-print" role="complementary">
             <ul class="nav bs-sidenav">
-             
-           
+
               {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
               {# BLOCK - SIDE BAR #}
               {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 
-              {% if slug == "styleguide-home" %}
+
+              {% if slug == "styleguide-css" %}
                 {% include "../_includes/nav-css.html.twig" %}
               {% endif %}
-              {% if slug == "styleguide-components" %}
-                {% include "../_includes/nav-components.html.twig" %}
+              {% if slug == "styleguide-elements" %}
+                {% include "../_includes/nav-elements.html.twig" %}
               {% endif %}
-
+              {% if slug == "styleguide-groups" %}
+                {% include "../_includes/nav-groups.html.twig" %}
+              {% endif %}
+              {% if slug == "styleguide-modules" %}
+                {% include "../_includes/nav-modules.html.twig" %}
+              {% endif %}
     
             </ul>
           </div>
