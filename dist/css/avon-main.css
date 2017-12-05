@@ -12,8 +12,12 @@ body {
   src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
 .navbar-brand > img {
-  height: 100%;
-  margin: -15.5px -15px; }
+  height: 100%; }
+
+.navbar-fixed-bottom {
+  height: 50px; }
+  .navbar-fixed-bottom body {
+    padding-bottom: 50px; }
 
 .mw-100 {
   max-width: 100% !important; }

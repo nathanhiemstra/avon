@@ -21,3 +21,9 @@ h3, h4 {
 pre[class*="language-"] {
     margin: 1em 0;
 }
+
+body {
+    padding-top: 50px;
+
+    // Because top nav is sticky
+}

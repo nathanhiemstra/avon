@@ -92,8 +92,16 @@ gulp.task('compile', function () {
                   logoYourAvon: "_includes/components/elements/images/logo-your-avon.html.twig"
                 }
               },
-              groups: {},
-              modules: {},
+              groups: {
+                navigation: {
+                  primary: "_includes/components/groups/navigation/primary.html.twig"
+                }
+              },
+              modules: {
+                global: {
+                  header: "_includes/components/modules/global/header.html.twig"
+                }
+              },
               templates: {}
             },
             module: {
@@ -113,6 +121,11 @@ gulp.task('compile', function () {
                   header: "_includes/modules/organisms/global/header.html.twig"
                 }
               }
+            },
+            lorem: {
+              paragraph: "Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret cu. Splendide deseruisse sed ne, pri perpetua sapientem accusamus id, hinc cibo harum vel et Lorem ipsum dolor.",
+              sentence: "Lorem ipsum dolor sit amet, erant dolor phaedrum."
+  
             }           
           }
       }))

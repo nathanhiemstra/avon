@@ -5,6 +5,23 @@
 .navbar-brand {
     > img {
         height: 100%;
-        margin: -15.5px -15px;
+
+        // margin: -15.5px -15px;
+   
+    }
+}
+
+//
+// AVON NEW STYLES: Navbars
+// --------------------------------------------------
+
+//
+// AVON NEW STYLES: Navbar Stucky Bottom
+// --------------------------------------------------
+.navbar-fixed-bottom {
+    height: $navbar-height;
+
+    body {
+        padding-bottom: $navbar-height;
     }
 }
