@@ -11,9 +11,6 @@ var sourcemaps =    require('gulp-sourcemaps');
 var sass =          require('gulp-sass');
 
 
-var module = {
-  atoms: {}
-}
 var markup = {
   highlight: {}
 }
@@ -23,10 +20,6 @@ var path = {
 };
 var page = {
   styleguideHome: {}
-}
-
-module.atoms = {
-  logoYourAvon:     "_includes/modules/atoms/images/logo-your-avon.html.twig"
 }
 
 path.dist = {

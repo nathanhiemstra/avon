@@ -19,6 +19,35 @@ body {
   .navbar-fixed-bottom body {
     padding-bottom: 50px; }
 
+.drawerXX-sticky-bottom {
+  height: 70px; }
+
+.drawerXX.ex .navbar {
+  height: 100vh; }
+
+.drawerXX .navbar {
+  transition: height 0.5s;
+  height: 50px; }
+
+.drawer {
+  overflow: hidden;
+  border: 1px solid red; }
+
+.drawer-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1031;
+  transition: height 0.5s; }
+
+.order-summary {
+  height: 50px;
+  background: #fff; }
+
+.drawer-expand {
+  height: 100vh; }
+
 .mw-100 {
   max-width: 100% !important; }
 

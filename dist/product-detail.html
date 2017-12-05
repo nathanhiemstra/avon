@@ -100,40 +100,58 @@
       
     </main>
     <aside class="col-md-4">
-      <div class="hidden-xs hidden-sm">
-        <h3>Order Summary</h3>
-        <dl>
-          <dt>Person</dt>
-          <dd>$0.00</dd>
-          <dt>Person</dt>
-          <dd>$0.00</dd>
-        </dl>
-        <dl>
-          <dt>Order subtotal</dt>
-          <dd>$0.00</dd>
-          <dt>Discount</dt>
-          <dd>$0.00</dd>
-        </dl>
-        <p><a href="#">Order $00 more for 0% discount!</a></p>
-        <p><a href=""><span class="glyphicon glyphicon-plus-sign"></span> Add extras</a></p>
-        <p><button type="button" class="btn btn-primary btn-lg">Checkout</button></p>
+
+      <div class="drawer drawer-fixed-bottom order-summary">
+
+        <!-- NAV BAR -->
+        <div class="navbar navbar-default hidden-md hidden-lg">
+          <div class="container pt-4">
+            <div class="pull-left">
+              <button type="button" class="btn btn-default btn-xs">
+                <span class="glyphicon glyphicon-chevron-up"></span> Your order
+              </button>
+            </div>
+            <div class="pull-right">
+              <b>$180</b> <small>18 items</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="">
+          <h3>Order Summary</h3>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <dl>
+                <dt>Person</dt>
+                <dd>$0.00</dd>
+                <dt>Person</dt>
+                <dd>$0.00</dd>
+              </dl>
+            </li>
+            <li class="list-group-item">
+              <dl>
+              <dt>Order subtotal</dt>
+              <dd>$0.00</dd>
+              <dt>Discount</dt>
+              <dd>$0.00</dd>
+            </dl>
+            </li>
+            <li class="list-group-item"><a href="#">Order $00 more for 0% discount!</a></li>
+            <li class="list-group-item"><a href=""><span class="glyphicon glyphicon-plus-sign"></span> Add extras</a></li>
+          </ul>
+          <p><button type="button" class="btn btn-primary btn-lg">Checkout</button></p>
+
+
+
+        </div>
 
       </div>
       
+      
 
 
-      <div class="navbar navbar-default navbar-fixed-bottom navbar-sticky-bottom hidden-md hidden-lg">
-        <div class="container pt-4">
-          <div class="pull-left">
-            <button type="button" class="btn btn-default btn-xs">
-              <span class="glyphicon glyphicon-chevron-up"></span> Your order
-            </button>
-          </div>
-          <div class="pull-right">
-            <b>$180</b> <small>18 items</small>
-          </div>
-        </div>
-      </div>
+      
 
     </aside>
   </article>
