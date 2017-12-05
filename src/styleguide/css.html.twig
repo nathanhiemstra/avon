@@ -1,7 +1,7 @@
 {# styleguide/index.html.twig #}
 {% set title = "Styleguide CSS" %}
 {% set slug = "styleguide-css" %}
-{% extends "_layouts/styleguide-main.html.twig" %}
+{% extends "styleguide/_layouts/styleguide-main.html.twig" %}
  
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -11,22 +11,22 @@
   
 
   <!-- SECTION - Containers-->
-  {% include "_includes/css/containers.html.twig" %}
+  {% include "styleguide/_includes/css/containers.html.twig" %}
 
   <!-- SECTION - GRID SYSYEM -->
-  {% include "_includes/css/grid-system.html.twig" %}
+  {% include "styleguide/_includes/css/grid-system.html.twig" %}
 
   <!-- SECTION - HELPER CLASSES -->
-  {% include "_includes/css/helper-classes.html.twig" %}
+  {% include "styleguide/_includes/css/helper-classes.html.twig" %}
 
   <!-- RESPONSIVE UTILITIES -->
-  {% include "_includes/css/responsive-utilities.html.twig" %}
+  {% include "styleguide/_includes/css/responsive-utilities.html.twig" %}
 
   <!-- SECTION - CODE -->
-  {% include "_includes/css/code.html.twig" %}
+  {% include "styleguide/_includes/css/code.html.twig" %}
 
   <!-- SECTION - SASS -->
-  {% include "_includes/css/sass.html.twig" %}
+  {% include "styleguide/_includes/css/sass.html.twig" %}
 
   
 {% endblock %}

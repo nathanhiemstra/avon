@@ -81,28 +81,39 @@ gulp.task('compile', function () {
   var twig = require('gulp-twig');
   return gulp.src(path.src.twig)
       .pipe(twig({
+          base: './src',
           data: {
-              highlightMarkup:  markup.highlight.markup,
-              highlightCss:     markup.highlight.css,
-              endhighlight:     markup.highlight.end,
-              module: {
-                atom: {
-                  image: {
-                    logoYourAvon: "_includes/modules/atoms/images/logo-your-avon.html.twig"
-                  }
-                },
-                template: "_includes/module.html.twig",
-                molecules :{
-                  navigation: {
-                    primary: "_includes/modules/molecules/navigation/primary.html.twig"
-                  }
-                },
-                organism :{
-                  global: {
-                    header: "_includes/modules/organisms/global/header.html.twig"
-                  }
+            highlightMarkup:  markup.highlight.markup,
+            highlightCss:     markup.highlight.css,
+            endhighlight:     markup.highlight.end,
+            components: {
+              elements: {
+                images: {
+                  logoYourAvon: "_includes/components/elements/images/logo-your-avon.html.twig"
                 }
-              }           
+              },
+              groups: {},
+              modules: {},
+              templates: {}
+            },
+            module: {
+              atom: {
+                image: {
+                  logoYourAvon: "_includes/modules/atoms/images/logo-your-avon.html.twig"
+                }
+              },
+              template: "styleguide/_includes/module.html.twig",
+              molecules: {
+                navigation: {
+                  primary: "_includes/modules/molecules/navigation/primary.html.twig"
+                }
+              },
+              organism: {
+                global: {
+                  header: "_includes/modules/organisms/global/header.html.twig"
+                }
+              }
+            }           
           }
       }))
       .pipe(rename({

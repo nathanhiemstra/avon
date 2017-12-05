@@ -1,7 +1,7 @@
 {# styleguide/index.html.twig #}
 {% set title = "Styleguide Home" %}
 {% set slug = "styleguide-home" %}
-{% extends "_layouts/styleguide-main.html.twig" %}
+{% extends "styleguide/_layouts/styleguide-main.html.twig" %}
  
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -18,13 +18,13 @@
   <p class="lead">Get the lowdown on the key pieces of Bootstrap's infrastructure, including our approach to better, faster, stronger web development.</p>
 
   <!-- HTML5 doctype -->
-  {% include "_includes/home/html5-doctype.html.twig" %}
+  {% include "styleguide/_includes/home/html5-doctype.html.twig" %}
 
   <!-- Mobile first -->
-  {% include "_includes/home/mobile-first.html.twig" %}
+  {% include "styleguide/_includes/home/mobile-first.html.twig" %}
 
   <!-- Normalize.css -->
-  {% include "_includes/home/normalize.html.twig" %}
+  {% include "styleguide/_includes/home/normalize.html.twig" %}
 
 </div>
 

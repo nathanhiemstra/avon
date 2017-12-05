@@ -1,4 +1,4 @@
-{% set urlBase = "../../../../" %}<header class="navbar navbar-static-top bs-docs-nav" role="banner">
+<header class="navbar navbar-static-top bs-docs-nav" role="banner">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -8,9 +8,9 @@
         <span class="icon-bar"></span>
       </button>
       <a href="index.html" class="navbar-brand">
-        {% include urlBase ~ module.atom.image.logoYourAvon %}
+        {% include components.elements.images.logoYourAvon %}
       </a>
     </div>
-{% include urlBase ~ module.molecules.navigation.primary %}
+{% include module.molecules.navigation.primary %}
   </div>
 </header>

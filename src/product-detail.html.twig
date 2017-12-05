@@ -1,0 +1,45 @@
+{# product-detail.html.twig #}
+{% extends "_layouts/base.html.twig" %}
+
+{% block content %}
+  <div class="container">
+    {% include module.organism.global.header  %}
+    <div class="page-header">
+      <div class="row">
+        <div class="col-sm-1">
+          <h1>Login</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-8">
+        
+        Product Image
+        Headline
+        Rating
+        Price
+        In Stock
+        Add to order button
+        
+      </div>
+      <div class="col-md-4">
+
+
+        Open/close button
+        Show:
+        $Price
+        # of items
+
+
+        Hidden:
+
+        <div id="footer">
+          <div class="container">
+            <p class="text-muted">Place sticky footer content here.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  {% endblock %}

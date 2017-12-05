@@ -1,10 +1,10 @@
-{% set urlBase = "../../" %}
-<!-- {{ modItem.title }}
+<!-- {{ module.html.twig }}
   ================================================== -->
 <h2 id="{{ modItem.slug }}">{{ modItem.title }}</h2>
+{{ modItem.description }}
 <div class="bs-example">
-  {% include urlBase ~ modItem.path %}
+  include modItem.path %}
 </div>
 {{ highlightMarkup }}
-  {% include urlBase ~ modItem.path %} 
+  include modItem.path %} 
 {{ endhighlight }}
