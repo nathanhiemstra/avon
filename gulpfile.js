@@ -99,31 +99,18 @@ gulp.task('compile', function () {
               },
               modules: {
                 global: {
+                  footer: "_includes/components/modules/global/footer.html.twig",
                   header: "_includes/components/modules/global/header.html.twig"
                 }
               },
+              template: "styleguide/_includes/module.html.twig",
               templates: {}
             },
-            module: {
-              atom: {
-                image: {
-                  logoYourAvon: "_includes/modules/atoms/images/logo-your-avon.html.twig"
-                }
-              },
-              template: "styleguide/_includes/module.html.twig",
-              molecules: {
-                navigation: {
-                  primary: "_includes/modules/molecules/navigation/primary.html.twig"
-                }
-              },
-              organism: {
-                global: {
-                  header: "_includes/modules/organisms/global/header.html.twig"
-                }
-              }
+            styleguide: {
+              item: "styleguide/_includes/module.html.twig"
             },
             lorem: {
-              paragraph: "Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret cu. Splendide deseruisse sed ne, pri perpetua sapientem accusamus id, hinc cibo harum vel et Lorem ipsum dolor.",
+              paragraph: "Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.",
               sentence: "Lorem ipsum dolor sit amet, erant dolor phaedrum."
   
             }           

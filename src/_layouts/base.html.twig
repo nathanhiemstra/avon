@@ -31,13 +31,16 @@
   <section>
       <a class="sr-only" href="#content">Skip to main content</a>
 
+      {# HEADER #}
+      {% include components.modules.global.header %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {# RENDER BLOCK - CONTENT #}
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block content %}{% endblock %}
 
-
+      {# FOOTER #}
+      {% include components.modules.global.footer %}
 
   </section>
 
