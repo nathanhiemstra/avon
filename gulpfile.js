@@ -87,7 +87,8 @@ gulp.task('compile', function () {
               },
               groups: {
                 navigation: {
-                  primary: "_includes/components/groups/navigation/primary.html.twig"
+                  primary: "_includes/components/groups/navigation/primary.html.twig",
+                  breadcrumbs: "_includes/components/groups/navigation/breadcrumb.html.twig"
                 }
               },
               modules: {

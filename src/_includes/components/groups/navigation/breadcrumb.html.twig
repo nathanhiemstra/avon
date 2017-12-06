@@ -1,0 +1,30 @@
+{# If no list items have been passed in, use these FPO items  #}
+
+{% if items is empty %}
+  {% set items = [{
+      'slug': '#',
+      'label': 'Link 1'
+    }, {
+      'slug': '#',
+      'label': 'Link 2'
+    }, {
+      'slug': '#',
+      'label': 'Link 3'
+    }
+    ] %}
+{% endif %}
+{# Build the breadcrumb #}
+<ol class="breadcrumb {{ classes }}">
+  {% for item in items %}
+    {% if loop.last == false %}
+      <li>
+        <a href="{{ item.slug }}">{{ item.label }}</a>
+      </li>
+    {% else %}
+      {# If it's the last one, don't have a link and gicve it ".active" #}
+      <li class="active">
+        {{ item.label }}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ol>

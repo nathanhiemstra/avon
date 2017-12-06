@@ -9,13 +9,21 @@
   <article class="row">
     <main class="col-md-9">
 
-      <ol class="breadcrumb hidden-xs">
-        <li><a href="#">&lt;Home&gt;</a></li>
-        <li><a href="#">&lt;Products&gt;</a></li>
-        <li><a href="#">&lt;Prodct Category&gt;</a></li>
-        <li class="active">&lt;Product Name&gt;</li>
-      </ol>
-
+        {% include components.groups.navigation.breadcrumbs with {
+          'classes':'hidden-xs',
+          'items': [{
+              'slug': '#',
+              'label': 'Home'
+            }, {
+              'slug':  '#',
+              'label': 'Link'
+            }, {
+              'slug':  '#',
+              'label': 'Link'
+            }, {
+              'slug':  '#',
+              'label': 'Link'
+        }]}%}
       <div>
         <h1>&lt;Product Name&gt;</h1>
         <p>
@@ -38,11 +46,10 @@
             <p class="visible-md visible-lg">{{ lorem.paragraph }}</p>
             <p><b>$&lt;13.99&gt;</b></p>
             <p>Regular price: $&lt;19.99&gt;</p>
-            <p>
-              <button type="button" class="btn btn-default btn-xs">
-                <span class="glyphicon glyphicon-ok"></span> In stock
-              </button>
-            </p>
+            <div class="well well-sm d-inline-block">
+              <span class="glyphicon glyphicon-ok"></span> In stock
+            </div>
+        
             <div class="visible-md visible-lg clearfix">
 
               <div class="grid-flush clearfix">
