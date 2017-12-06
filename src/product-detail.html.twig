@@ -7,7 +7,7 @@
   
 
   <article class="row">
-    <main class="col-md-8">
+    <main class="col-md-9">
 
       <ol class="breadcrumb hidden-xs">
         <li><a href="#">&lt;Home&gt;</a></li>
@@ -16,19 +16,65 @@
         <li class="active">&lt;Product Name&gt;</li>
       </ol>
 
+      <div>
+        <h1>&lt;Product Name&gt;</h1>
+        <p>Rating</p>
+      </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <img alt="140x140" src="images/utility/placeholder.png" class="img-responsive">
+          </div>
+          <div class="col-md-6">
+            <p class="visible-md visible-lg">{{ lorem.paragraph }}</p>
+            <p><b>$&lt;13.99&gt;</b></p>
+            <p>Regular price: $&lt;19.99&gt;</p>
+            <p>
+              <button type="button" class="btn btn-default btn-xs">
+                <span class="glyphicon glyphicon-ok"></span> In stock
+              </button>
+            </p>
+            <div class="visible-md visible-lg clearfix">
+
+              <div class="grid-flush clearfix">
+                <form role="form">
+                  <div class="form-group col-sm-2">
+                    <label for="exampleInput1">Qty</label>
+                    <input type="email" class="form-control" id="exampleInput1" placeholder="">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="exampleSelect1">Who is this for?</label>
+                    <select class="form-control" id="exampleSelect1">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <label for="exampleSelect2">Auto Ship</label>
+                    <select class="form-control" id="exampleSelect2">
+                      <option>1</option>
+                      <option>2</option> 
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                 
+                </form>
+              </div>
+              <hr>
+              <p><a href="#" class="pull-right">Add new customer</a></p>
+            </div>
+            <p><button type="button" class="btn btn-primary btn-lg">Add to order</button></p>
+          </div>
+      </div>
+
+
       
-      <img data-src="holder.js/140x140" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCI+PHJlY3Qgd2lkdGg9IjE0MCIgaGVpZ2h0PSIxNDAiIGZpbGw9IiNlZWUiLz48dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI3MCIgeT0iNzAiIHN0eWxlPSJmaWxsOiNhYWE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LXNpemU6MTJweDtmb250LWZhbWlseTpBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4xNDB4MTQwPC90ZXh0Pjwvc3ZnPg==" style="width: 140px; height: 140px;">
-      <h1>Product Name</h1>
-      <p>Rating</p>
-      <p><b>$13.99</b></p>
-      <p>Regular price: $19.99</p>
-      <p>
-        <button type="button" class="btn btn-default btn-xs">
-          <span class="glyphicon glyphicon-ok"></span> In stock
-        </button>
-      </p>
-      <p><button type="button" class="btn btn-primary btn-lg">Add to order</button></p>
-      <div >
+      <div>
         <h2>Features</h2>
         <p>{{ lorem.paragraph }}</p>
         <p>{{ lorem.paragraph }}</p>
@@ -36,7 +82,7 @@
       </div>
       
     </main>
-    <aside class="col-md-4">
+    <aside class="col-md-3">
 
       <div class="drawer drawer-fixed-bottom drawer-order-summary">
 
