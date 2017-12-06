@@ -1,42 +1,34 @@
-.drawerXX {
-    &-sticky-bottom {
-        height: 70px;
+.drawer {
+    overflow: hidden;
+
+    &-fixed-bottom {
+        position: fixed;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: $zindex-drawer-fixed;
+        transition: height 0.5s;
     }
 
-    &.ex {
-        .navbar {
+    &-order-summary {
+        height: 50px;
+        background: $body-bg;
+
+        @media (min-width: $screen-md-min) {
+            height: inherit;
+            position: relative;
+        }
+
+        &.drawer-expanded {
             height: 100vh;
         }
     }
-
-    .navbar {
-        transition: height 0.5s;
-        height: 50px;
-    }
-}
-
-// Fix the top/bottom navbars when screen real estate supports it
-.drawer {
-    overflow: hidden;
-    border: 1px solid red;
-
-    .drawer-content {}
-}
-
-.drawer-fixed-bottom {
-    position: fixed;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: $zindex-drawer-fixed;
-    transition: height 0.5s;
 }
 
 .order-summary {
-    height: 50px;
-    background: $body-bg;
-}
-
-.drawer-expand {
-    height: 100vh;
+    // ATODO: Use @extend .contrainer
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
