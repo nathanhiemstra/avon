@@ -3,107 +3,112 @@
 
 {% block content %}
 
-<div id="avon-poc" class="container">
-  
-
-  <article class="row">
+<div class="container">
+  <div class="row">
     <main class="col-md-9">
 
-        {% include components.groups.navigation.breadcrumbs with {
-          'classes':'hidden-xs',
-          'items': [{
-              'slug': '#',
-              'label': 'Home'
-            }, {
-              'slug':  '#',
-              'label': 'Link'
-            }, {
-              'slug':  '#',
-              'label': 'Link'
-            }, {
-              'slug':  '#',
-              'label': 'Link'
-        }]}%}
-      <div>
+      <!-- BREADCRUMBS -->
+      {% include components.groups.navigation.breadcrumbs with {
+        'classes':'hidden-xs',
+        'items': [{'slug': '#', 'label': 'Home'}, {'slug':  '#', 'label': 'Link'}, {'slug':  '#', 'label': 'Link'}, { 'slug':  '#', 'label': 'Link'}]}
+      %}
+
+      <!-- PRIMARY PRODUCT INFO -->
+      <section>
+        <!-- TITlE -->
         <h1>&lt;Product Name&gt;</h1>
         <p>
-          <span>&lt;000-000&gt;</span>
-          <span class="ml-4">
-            <a href="#"><span class="glyphicon glyphicon-star"></span></a>
-            <a href="#"><span class="glyphicon glyphicon-star"></span></a>
-            <a href="#"><span class="glyphicon glyphicon-star"></span></a>
-            <a href="#"><span class="glyphicon glyphicon-star"></span></a>
-            <a href="#"><span class="glyphicon glyphicon-star-empty"></span></a>
-          </span>
+          <!-- SKU -->
+          <span class="mr-4">{{ fpo.sku }}</span>
+          
+          <!-- RATINGS -->
+          {% include components.groups.ratings.unit %}
         </p>
-      </div>
+      </section>
 
-        <div class="row">
-          <div class="col-md-4">
-            <img alt="140x140" src="images/utility/placeholder.png" class="img-responsive">
+      <!-- SECONDARY PRODUCT INFO -->
+      <section class="row">
+        <div class="col-md-4">
+          <!-- PRODUCT IMAGE(S) -->
+          <img src="images/utility/placeholder.png" alt="" class="img-responsive">
+        </div>
+        <div class="col-md-6">
+
+          <!-- PRODUCT DETAILS -->
+          <p class="visible-md visible-lg">{{ fpo.paragraph }}</p>
+          <p><b>$&lt;13.99&gt;</b></p>
+          <p>Regular price: $&lt;19.99&gt;</p>
+          <div class="well well-sm d-inline-block">
+            <span class="glyphicon glyphicon-ok"></span> In stock
           </div>
-          <div class="col-md-6">
-            <p class="visible-md visible-lg">{{ lorem.paragraph }}</p>
-            <p><b>$&lt;13.99&gt;</b></p>
-            <p>Regular price: $&lt;19.99&gt;</p>
-            <div class="well well-sm d-inline-block">
-              <span class="glyphicon glyphicon-ok"></span> In stock
-            </div>
-        
-            <div class="visible-md visible-lg clearfix">
 
-              <div class="grid-flush clearfix">
-                <form role="form">
+          <!-- ASSIGN TO CUSTOMER(S) -->
+          <div class="visible-md visible-lg">
+
+            <!-- FORM -->
+            <div class="grid-flush clearfix">
+              <form role="form">
+
+                <!-- CUSTOMER -->
+                <div class="row">
                   <div class="form-group col-sm-2">
-                    <label for="exampleInput1">Qty</label>
-                    <input type="email" class="form-control" id="exampleInput1" placeholder="">
+                   {% include components.groups.forms.inputAndLabel with {'mainLabel': 'Qty', 'id': 'exampleInput1'} %}
                   </div>
-                  <div class="form-group col-sm-6">
-                    <label for="exampleSelect1">Who is this for?</label>
-                    <select class="form-control" id="exampleSelect1">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
+                  <div class="form-group col-sm-6 has-error">
+                    <!-- SELECT AND LABEL -->
+                    {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Who is this for?', 'id': 'exampleSelect1', errorMessage: 'Error message!'} %}
                   </div>
                   <div class="form-group col-sm-4">
-                    <label for="exampleSelect2">Auto Ship</label>
-                    <select class="form-control" id="exampleSelect2">
-                      <option>1</option>
-                      <option>2</option> 
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
+                    <!-- SELECT AND LABEL -->
+                    {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Auto Ship', 'id': 'exampleSelect2'} %}
                   </div>
-                 
-                </form>
-              </div>
-              <hr>
-              <p><a href="#" class="pull-right">Add new customer</a></p>
+                </div>
+
+                <!-- CUSTOMER -->
+                <div class="row">
+                  <div class="form-group col-sm-2">
+                   {% include components.groups.forms.inputAndLabel with {'mainLabel': 'Qty', 'id': 'exampleInput2'} %}
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <!-- SELECT AND LABEL -->
+                    {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Who is this for?', 'id': 'exampleSelect3'} %}
+                  </div>
+                  <div class="form-group col-sm-4 has-error">
+                    <!-- SELECT AND LABEL -->
+                    {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Auto Ship', 'id': 'exampleSelect4', errorMessage: 'Error message!'} %}
+                  </div>
+                </div>
+                
+              </form>
             </div>
-            <p><button type="button" class="btn btn-primary btn-lg">Add to order</button></p>
+            <hr class="mt-0">
+            <p class="text-right"><a href="#">Add new customer</a></p>
           </div>
-      </div>
 
+          <!-- CTA -->
+          <p><button type="button" class="btn btn-primary btn-lg">Add to order</button></p>
+        </div>
+      </section><!-- /.row -->
 
-      
-      <div>
+      <!-- TERTIARY PRODUCT-->
+      <section>
+        <!-- FEATURES -->
         <h2>Features</h2>
-        <p>{{ lorem.paragraph }}</p>
-        <p>{{ lorem.paragraph }}</p>
-        <p>{{ lorem.paragraph }}</p>
-      </div>
-      
+        <p>{{ fpo.paragraph }}</p>
+        <p>{{ fpo.paragraph }}</p>
+        <p>{{ fpo.paragraph }}</p>
+      </section>
     </main>
+
+
+    <!-- ORDER SUMMARY -->
     <aside class="col-md-3">
 
+      <!-- DRAWER -->
       <div class="drawer drawer-fixed-bottom drawer-order-summary">
 
-        <!-- NAV BAR -->
-        <div class="navbar navbar-default hidden-md hidden-lg">
+        <!-- DRAWER NAV BAR -->
+        <section class="navbar navbar-default hidden-md hidden-lg">
           <div class="container pt-4">
             <div class="pull-left">
               <button type="button" class="btn btn-default btn-xs trigger-drawer-order-summary">
@@ -114,10 +119,10 @@
               <b>$180</b> <small>18 items</small>
             </div>
           </div>
-        </div>
+        </section>
 
-        <!-- CONTENT -->
-        <div class="order-summary">
+        <!-- DRAWER CONTENT -->
+        <section class="order-summary">
           <h3>Order Summary</h3>
           <ul class="list-group">
             <li class="list-group-item">
@@ -130,31 +135,20 @@
             </li>
             <li class="list-group-item">
               <dl>
-              <dt>Order subtotal</dt>
-              <dd>$&lt;0.00&gt;</dd>
-              <dt>Discount</dt>
-              <dd>$&lt;0.00&gt;</dd>
-            </dl>
+                <dt>Order subtotal</dt>
+                <dd>$&lt;0.00&gt;</dd>
+                <dt>Discount</dt>
+                <dd>$&lt;0.00&gt;</dd>
+              </dl>
             </li>
             <li class="list-group-item"><a href="#">Order $&lt;00&gt; more for &lt;0&gt;% discount!</a></li>
             <li class="list-group-item"><a href=""><span class="glyphicon glyphicon-plus-sign"></span> Add extras</a></li>
           </ul>
           <p><button type="button" class="btn btn-primary btn-lg">Checkout</button></p>
-
-
-
-        </div>
-
-      </div>
-      
-      
-
-
-      
-
+        </section>
+      </div><!-- /.drawer -->
     </aside>
-  </article>
-</div>
-
+  </div><!-- /.row -->
+</div><!-- /.container -->
 
 {% endblock %}

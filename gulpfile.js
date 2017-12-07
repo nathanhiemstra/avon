@@ -21,6 +21,9 @@ var path = {
 var page = {
   styleguideHome: {}
 }
+var prefix = {
+  components: "_includes/components/"
+}
 
 path.dist = {
   css:              "dist/css"
@@ -37,6 +40,7 @@ path.src = {
   sass:             "src/sass/**/*.scss",
   twig:             "src/**/*.twig",
   styleguide:       "src/styleguide/*.twig"
+  
 };
 
 path.staticFilesToCopy = [
@@ -76,38 +80,57 @@ gulp.task('compile', function () {
       .pipe(twig({
           base: './src',
           data: {
-            highlightMarkup:  markup.highlight.markup,
-            highlightCss:     markup.highlight.css,
-            endhighlight:     markup.highlight.end,
+            highlightMarkup:      markup.highlight.markup,
+            highlightCss:         markup.highlight.css,
+            endhighlight:         markup.highlight.end,
             components: {
               elements: {
                 images: {
-                  logoYourAvon: "_includes/components/elements/images/logo-your-avon.html.twig"
+                  logoYourAvon:   prefix.components + "elements/images/logo-your-avon.html.twig"
                 }
               },
               groups: {
+                forms: {
+                  errorMessage:   prefix.components + "groups/forms/error-message.html.twig",
+                  label:          prefix.components + "groups/forms/label.html.twig",
+                  input:          prefix.components + "groups/forms/input.html.twig",
+                  inputAndLabel:  prefix.components + "groups/forms/input-and-label.html.twig",
+                  select:         prefix.components + "groups/forms/select.html.twig",
+                  selectAndLabel: prefix.components + "groups/forms/select-and-label.html.twig"
+                },
                 navigation: {
-                  primary: "_includes/components/groups/navigation/primary.html.twig",
-                  breadcrumbs: "_includes/components/groups/navigation/breadcrumb.html.twig"
+                  primary:        prefix.components + "groups/navigation/primary.html.twig",
+                  breadcrumbs:    prefix.components + "groups/navigation/breadcrumb.html.twig"
+                },
+                ratings: {
+                  unit:           prefix.components + "groups/ratings/unit.html.twig",
+                  selected:       prefix.components + "groups/ratings/selected.html.twig",
+                  unselected:     prefix.components + "groups/ratings/unselected.html.twig"
+                },
+                tables: {
+                  reviewOrder: {
+                    tr:           prefix.components + "groups/tables/review-order-tr.html.twig"
+                  }
                 }
               },
               modules: {
                 global: {
-                  footer: "_includes/components/modules/global/footer.html.twig",
-                  header: "_includes/components/modules/global/header.html.twig"
+                  footer:         prefix.components + "modules/global/footer.html.twig",
+                  header:         prefix.components + "modules/global/header.html.twig"
                 }
               },
-              template: "styleguide/_includes/module.html.twig",
+              template:           "styleguide/_includes/module.html.twig",
               templates: {}
             },
             styleguide: {
-              item: "styleguide/_includes/module.html.twig"
+              item:               "styleguide/_includes/module.html.twig"
             },
-            lorem: {
+            fpo: {
+              image: '<img src="images/utility/placeholder.png" alt="" class="img-responsive">',
+              sku: "&lt;000-000&gt;",
               paragraph: "Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.",
               sentence: "Lorem ipsum dolor sit amet, erant dolor phaedrum."
-  
-            }           
+            }
           }
       }))
       .pipe(rename({

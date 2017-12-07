@@ -25,12 +25,14 @@ body {
 
 // Core CSS
 // @import "bootstrap-overrides/scaffolding";
-// @import "bootstrap-overrides/type";
+@import "bootstrap-overrides/type";
+
 // @import "bootstrap-overrides/code";
 @import "bootstrap-overrides/grid";
 
 // @import "bootstrap-overrides/tables";
-// @import "bootstrap-overrides/forms";
+@import "bootstrap-overrides/forms";
+
 // @import "bootstrap-overrides/buttons";
 
 // Components

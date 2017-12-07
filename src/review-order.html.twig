@@ -1,0 +1,66 @@
+{# product-detail.html.twig #}
+{% set selectItemsPerson = [{'label': 'Person 1'}, {'label': 'Person 2'}, {'label': 'Person 3'}] %}
+{% set thead = '<thead class="sr-only">
+          <tr>
+            <th>Thumbnail</th>
+            <th>Product</th>
+            <th>Recipient</th>
+            <th>Quantity</th>
+            <th>Cost</th>
+            <th>Stock</th>
+            <th>Auto Ship</th>
+            <th>Total</th>
+            <th>Delete</th>
+          </tr>
+        </thead>'
+%}
+{% extends "_layouts/base.html.twig" %}
+
+{% block content %}
+
+<div class="container">
+  <main>
+
+    <section class="row">
+      <h1 class="col-sm-6">Review Order</h1>
+      <p class="col-sm-6 text-right-sm mt-4"><button type="button" class="btn btn-primary btn-lg">Continue</button></p>
+    </section>
+
+    <section>
+      <h2><span class="glyphicon glyphicon-shopping-cart"></span> <span class="well well-sm d-inline-block">YOU</span> Person 1</h2>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          {{ thead }}
+          <tbody>
+            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson} %}
+            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson,'outOfStock': 'true'} %}
+            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson, 'autoShip': 'hide'} %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="glyphicon glyphicon-shopping-cart"></span> Person 2</h2>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          {{ thead }}
+          <tbody>
+            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson, 'autoShip': 'hide'} %}
+            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson, 'autoShip': 'hide'} %}
+            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson} %}
+            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson} %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="text-right-sm">
+      <p>Subtotal (&lt;00&gt; items): <b>$&lt;00.0&gt;</b></p>
+      <p class=" mt-4"><button type="button" class="btn btn-primary btn-lg">Continue</button></p>
+    </section>
+
+  </main>
+</div><!-- /.container -->
+
+{% endblock %}

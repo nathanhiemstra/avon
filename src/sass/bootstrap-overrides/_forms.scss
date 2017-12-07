@@ -1,3 +1,15 @@
 //
 // AVON OVERRIDE: Forms
 // --------------------------------------------------
+
+.form-control + .text-danger {
+    margin-top: 5px;
+}
+
+.table {
+    select.form-control {
+        @media (max-width: $screen-sm-min) {
+            width: auto;
+        }
+    }
+}

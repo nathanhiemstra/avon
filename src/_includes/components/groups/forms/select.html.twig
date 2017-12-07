@@ -1,0 +1,16 @@
+{# If no list items have been passed in, use these FPO items  #}
+{% if items is empty %}
+  {% set items = [{
+      'label': '1'
+    }, {
+      'label': '2'
+    }, {
+      'label': '3'
+    }
+    ] %}
+{% endif %}
+<select class="form-control {{ classes }}" id="{{ id }}">
+  {% for item in items %}
+    <option>{{ item.label }}</option>
+  {% endfor %}
+</select>

@@ -11,6 +11,26 @@ body {
   src: url("../fonts/glyphicons-halflings-regular.eot");
   src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
+@media (min-width: 768px) {
+  .text-right-sm {
+    text-align: right; } }
+
+@media (min-width: 992px) {
+  .text-right-md {
+    text-align: right; } }
+
+@media (min-width: 768px) {
+  .pull-right-sm {
+    float: right !important; } }
+
+@media (min-width: 992px) {
+  .pull-right-md {
+    float: right !important; } }
+
+@media (min-width: 1200px) {
+  .pull-right-lg {
+    float: right !important; } }
+
 .grid-flush {
   margin-left: -15px;
   margin-right: -15px; }
@@ -20,6 +40,13 @@ body {
     display: table; }
     .has-row-order-reverse > .row-order-reverse {
       display: table-caption; } }
+
+.form-control + .text-danger {
+  margin-top: 5px; }
+
+@media (max-width: 768px) {
+  .table select.form-control {
+    width: auto; } }
 
 .navbar-brand > img {
   height: 100%; }
