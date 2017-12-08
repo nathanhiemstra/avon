@@ -9,7 +9,16 @@
     }
     ] %}
 {% endif %}
-<select class="form-control {{ classes }}" id="{{ id }}">
+{% if classes %}
+  {% set classes = ' ' ~ classes %}
+{% endif %}
+{% if id %}
+  {% set id = ' id="' ~ id ~ '"' %}
+{% endif %}
+{% if multiple %}
+  {% set multiple = ' multiple' %}
+{% endif %}
+<select class="form-control{{ classes }}"{{ id }}{{ multiple }}>
   {% for item in items %}
     <option>{{ item.label }}</option>
   {% endfor %}

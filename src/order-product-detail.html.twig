@@ -101,52 +101,10 @@
     </main>
 
 
-    <!-- ORDER SUMMARY -->
+    
     <aside class="col-md-3">
-
-      <!-- DRAWER -->
-      <div class="drawer drawer-fixed-bottom drawer-order-summary">
-
-        <!-- DRAWER NAV BAR -->
-        <section class="navbar navbar-default hidden-md hidden-lg">
-          <div class="container pt-4">
-            <div class="pull-left">
-              <button type="button" class="btn btn-default btn-xs trigger-drawer-order-summary">
-                <span class="glyphicon glyphicon-chevron-up"></span> Your order
-              </button>
-            </div>
-            <div class="pull-right">
-              <b>$180</b> <small>18 items</small>
-            </div>
-          </div>
-        </section>
-
-        <!-- DRAWER CONTENT -->
-        <section class="order-summary">
-          <h3>Order Summary</h3>
-          <ul class="list-group">
-            <li class="list-group-item">
-              <dl>
-                <dt>&lt;Person&gt;</dt>
-                <dd>$&lt;0.00&gt;</dd>
-                <dt>&lt;Person&gt;</dt>
-                <dd>$&lt;0.00&gt;</dd>
-              </dl>
-            </li>
-            <li class="list-group-item">
-              <dl>
-                <dt>Order subtotal</dt>
-                <dd>$&lt;0.00&gt;</dd>
-                <dt>Discount</dt>
-                <dd>$&lt;0.00&gt;</dd>
-              </dl>
-            </li>
-            <li class="list-group-item"><a href="#">Order $&lt;00&gt; more for &lt;0&gt;% discount!</a></li>
-            <li class="list-group-item"><a href=""><span class="glyphicon glyphicon-plus-sign"></span> Add extras</a></li>
-          </ul>
-          <p><button type="button" class="btn btn-primary btn-lg">Checkout</button></p>
-        </section>
-      </div><!-- /.drawer -->
+      <!-- ORDER SUMMARY -->
+      {% include components.groups.checkout.orderSummary with {'ctaButton': 'Continue'} %}
     </aside>
   </div><!-- /.row -->
 </div><!-- /.container -->

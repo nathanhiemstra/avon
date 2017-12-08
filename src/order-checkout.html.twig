@@ -24,13 +24,14 @@
 
       <!-- HEADER -->
       <section class="row">
-        <h1 class="col-sm-10">Checkout (&lt;55&gt;) items</h1>
+        <h1 class="col-sm-10">Checkout (55) items</h1>
         <p class="col-sm-2 text-right-sm mt-4"><a href="#">Edit cart</a></p>
       </section>
+      <hr>
 
 
       <!-- SHIPPING PAYMENT METHODS - DEFAULT -->
-      <section class="border border-top">
+      <section>
         <div class="row">
           <div class="col-sm-6">
             <!-- SELECT AND LABEL -->
@@ -41,100 +42,43 @@
           <div class="col-sm-6">
             <div class="form-group">
             <!-- SELECT AND LABEL -->
-              {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Shipping Method', 'id': 'exampleSelect1', items: [{'label': 'Direct to Rep'}, {'label': 'Shipping Method 2'}, {'label': 'Shipping Method 3'}]} %}
+              {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Shipping Method', 'id': 'exampleSelect2', items: [{'label': 'Direct to Rep'}, {'label': 'Shipping Method 2'}, {'label': 'Shipping Method 3'}]} %}
             </div>
           </div>
         </div><!-- /.row -->
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group">
-            <!-- SELECT AND LABEL -->
-              {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Pay With', 'id': 'exampleSelect1', items: [{'label': 'Card on file ending in 8888'}, {'label': 'Pay Method 2'}, {'label': 'Pay Method 3'}]} %}
+              <!-- SELECT AND LABEL -->
+              {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Pay With', 'id': 'exampleSelect3', items: [{'label': 'Card on file ending in 8888'}, {'label': 'Pay Method 2'}, {'label': 'Pay Method 3'}]} %}
             </div>
           </div>
         </div><!-- /.row -->
-        
+
       </section>
 
       <!-- PERSON -->
       <ul class="list-group">
-
-      
-        <li class="list-group-item">
-          <!-- SUMMARY -->
-          <dl class="summary row">
-            <dt class="col-sm-6"><span class="glyphicon glyphicon-play"></span>  YOU Person 1 (12 items)</dt>
-            <dd class="col-sm-4">Ship direct to rep</dd>
-            <dd class="col-sm-1"><b>$&lt;120.00&gt;</b></dd>
-          </dl>
-
-          <!-- DETAILS -->
-          <div class="details">
-
-          </div>
-        </li>
+        {% include components.groups.checkout.personsOrder with {indexNum: '1', itemCount: '12', total: '120'} %}
+        {% include components.groups.checkout.personsOrder with {indexNum: '2', itemCount: '29', total: '290', collapsed: false} %}
+        {% include components.groups.checkout.personsOrder with {indexNum: '3', itemCount: '4', total: '40'} %}
+        {% include components.groups.checkout.personsOrder with {indexNum: '4', itemCount: '10', total: '10'} %}
       </ul>
 
-
-
       <section class="text-right-sm">
-        <p>Subtotal (&lt;00&gt; items): <b>$&lt;00.0&gt;</b></p>
-        <p class="mt-4"><button type="button" class="btn btn-primary btn-lg">Continue</button></p>
+        <h3 class="clearfix">
+          <span class="pull-left">Order Total:</span> 
+          <span class="pull-right">$460.00</span>
+        </h3>
+        <p class="mt-4"><button type="button" class="btn btn-primary btn-lg">Place Order</button></p>
+        
       </section>
-
     </main>
 
 
-
-    <!-- ORDER SUMMARY -->
     <aside class="col-md-3">
-
-      <!-- DRAWER -->
-      <div class="drawer drawer-fixed-bottom drawer-order-summary">
-
-        <!-- DRAWER NAV BAR -->
-        <section class="navbar navbar-default hidden-md hidden-lg">
-          <div class="container pt-4">
-            <div class="pull-left">
-              <button type="button" class="btn btn-default btn-xs trigger-drawer-order-summary">
-                <span class="glyphicon glyphicon-chevron-up"></span> Your order
-              </button>
-            </div>
-            <div class="pull-right">
-              <b>$180</b> <small>18 items</small>
-            </div>
-          </div>
-        </section>
-
-        <!-- DRAWER CONTENT -->
-        <section class="order-summary">
-          <h3>Order Summary</h3>
-          <ul class="list-group">
-            <li class="list-group-item">
-              <dl>
-                <dt>&lt;55&gt; items:</dt>
-                <dd>$&lt;460.00&gt;</dd>
-                <dt>Shipping &amp; handling:</dt>
-                <dd>$&lt;5.95&gt;</dd>
-                <dt>Taxes:</dt>
-                <dd>$&lt;5.95&gt;</dd>
-              </dl>
-            </li>
-            <li class="list-group-item">
-              <dl>
-                <dt>Order subtotal</dt>
-                <dd>$&lt;487.87&gt;</dd>
-              </dl>
-              <p><a href="#">Order $&lt;45&gt; more for &lt;10&gt;% discount!</a></p>
-              <p><button type="button" class="btn btn-primary btn-lg">Place order</button></p>
-            </li>
-            <li class="list-group-item">
-
-            </li>
-          </ul>
-          
-        </section>
-      </div><!-- /.drawer -->
+      <!-- ORDER SUMMARY -->
+      {% include components.groups.checkout.orderSummary with {'ctaButton': 'Place Order'} %}
     </aside>
 
 

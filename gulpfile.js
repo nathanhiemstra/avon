@@ -22,7 +22,11 @@ var page = {
   styleguideHome: {}
 }
 var prefix = {
-  components: "_includes/components/"
+  components:       "_includes/components/",
+  elements:         "_includes/components/elements/",
+  groups:           "_includes/components/groups/",
+  modules:          "_includes/components/modules/",
+  templates:        "_includes/components/templates/"
 }
 
 path.dist = {
@@ -54,13 +58,15 @@ path.staticFilesToCopy = [
 ];
 
 page.styleguideHome = {
-  title: 'Styleguide CSS',
-  slug: 'styleguide-css'
+  title:  'Styleguide CSS',
+  slug:   'styleguide-css'
 }
 markup.highlight = {
-  markup: '<pre><code class="language-markup"><script type="text/plain">',
-  css: '<pre><code class="language-css"><script type="text/plain">',
-  end: '</script></code></pre>',
+  css:        '<pre><code class="language-css"><script type="text/plain">',
+  markup:     '<pre><code class="language-markup"><script type="text/plain">',
+  javascript: '<pre><code class="language-javascript"><script type="text/plain">',
+  twig:       '<pre><code class="language-twig"><script type="text/plain">',
+  end:        '</script></code></pre>'
 }
 
 gulp.task('clean', function() {
@@ -80,46 +86,62 @@ gulp.task('compile', function () {
       .pipe(twig({
           base: './src',
           data: {
-            highlightMarkup:      markup.highlight.markup,
             highlightCss:         markup.highlight.css,
+            highlightMarkup:      markup.highlight.markup,
+            highlightJavascript:  markup.highlight.javascript,
+            highlightTwig:        markup.highlight.twig,
             endhighlight:         markup.highlight.end,
             components: {
               elements: {
+                forms: {
+                  checkbox:         prefix.elements + "forms/checkbox.html.twig",
+                  errorMessage:     prefix.elements + "forms/error-message.html.twig",
+                  label:            prefix.elements + "forms/label.html.twig",
+                  input:            prefix.elements + "forms/input.html.twig",
+                  radio:            prefix.elements + "forms/radio.html.twig",
+                  select:           prefix.elements + "forms/select.html.twig"
+                },
                 images: {
-                  logoYourAvon:   prefix.components + "elements/images/logo-your-avon.html.twig"
+                  logoYourAvon:     prefix.elements + "images/logo-your-avon.html.twig"
+                },
+                ratings: {
+                  selected:         prefix.groups + "ratings/selected.html.twig",
+                  unselected:       prefix.groups + "ratings/unselected.html.twig"
                 }
               },
               groups: {
                 forms: {
-                  errorMessage:   prefix.components + "groups/forms/error-message.html.twig",
-                  label:          prefix.components + "groups/forms/label.html.twig",
-                  input:          prefix.components + "groups/forms/input.html.twig",
-                  inputAndLabel:  prefix.components + "groups/forms/input-and-label.html.twig",
-                  select:         prefix.components + "groups/forms/select.html.twig",
-                  selectAndLabel: prefix.components + "groups/forms/select-and-label.html.twig"
+                  checkboxAndLabel: prefix.groups + "forms/checkbox-and-label.html.twig",
+                  errorMessage:     prefix.groups + "forms/error-message.html.twig",
+                  inputAndLabel:    prefix.groups + "forms/input-and-label.html.twig",
+                  selectAndLabel:   prefix.groups + "forms/select-and-label.html.twig",
+                  radioAndLabel:    prefix.groups + "forms/radio-and-label.html.twig"
                 },
                 navigation: {
-                  primary:        prefix.components + "groups/navigation/primary.html.twig",
-                  breadcrumbs:    prefix.components + "groups/navigation/breadcrumb.html.twig"
+                  primary:          prefix.groups + "navigation/primary.html.twig",
+                  breadcrumbs:      prefix.groups + "navigation/breadcrumb.html.twig"
+                },
+                checkout: {
+                  personsOrder:     prefix.groups + "checkout/persons-order.html.twig",
+                  productSummary:   prefix.groups + "checkout/product-summary.html.twig",
+                  orderSummary:     prefix.groups + "checkout/order-summary.html.twig"
                 },
                 ratings: {
-                  unit:           prefix.components + "groups/ratings/unit.html.twig",
-                  selected:       prefix.components + "groups/ratings/selected.html.twig",
-                  unselected:     prefix.components + "groups/ratings/unselected.html.twig"
+                  unit:             prefix.groups + "ratings/unit.html.twig"
                 },
                 tables: {
                   ordersCheckout: {
-                    tr:           prefix.components + "groups/tables/orders-checkout-tr.html.twig"
+                    tr:             prefix.groups + "tables/orders-checkout-tr.html.twig"
                   },
                   ordersReview: {
-                    tr:           prefix.components + "groups/tables/orders-review-tr.html.twig"
+                    tr:             prefix.groups + "tables/orders-review-tr.html.twig"
                   }
                 }
               },
               modules: {
                 global: {
-                  footer:         prefix.components + "modules/global/footer.html.twig",
-                  header:         prefix.components + "modules/global/header.html.twig"
+                  footer:           prefix.modules + "global/footer.html.twig",
+                  header:           prefix.modules + "global/header.html.twig"
                 }
               },
               template:           "styleguide/_includes/module.html.twig",

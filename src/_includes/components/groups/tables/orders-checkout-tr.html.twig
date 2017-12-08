@@ -5,8 +5,8 @@
     <div>{{ fpo.sku }}</div>
   </td>
 {% if outOfStock is empty %}
-  <td>{% include components.groups.forms.select with { 'items': selectItemsPerson } %}</td>
-  <td>{% include components.groups.forms.select %}</td>
+  <td>{% include components.elements.forms.select with { 'items': selectItemsPerson } %}</td>
+  <td>{% include components.elements.forms.select %}</td>
   <td>$&lt;00&gt;</td>
   <td>In stock</td>
   <td>{% if autoShip != 'hide' %}Auto Ship{% endif %}</td>

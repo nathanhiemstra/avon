@@ -1,5 +1,5 @@
-{% include components.groups.forms.label with {'id': id, 'mainLabel': mainLabel %}
-{% include components.groups.forms.select with {'id': id, 'items': items, 'classes': classes %}
+{% include components.elements.forms.label with {'id': id, 'mainLabel': mainLabel %}
+{% include components.elements.forms.select with {'id': id, 'items': items, 'classes': classes %}
 {% if errorMessage %}
-  {% include components.groups.forms.errorMessage with {'errorMessage': errorMessage} %}
+  {% include components.elements.forms.errorMessage with {'errorMessage': errorMessage} %}
 {% endif %}

@@ -283,40 +283,22 @@
   <p>Use the default option, or add <code>multiple</code> to show multiple options at once.</p>
   <div class="bs-example">
     <form role="form">
-      <select class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
+      {% include components.elements.forms.select %}
       <br>
-      <select multiple class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
+      {% include components.elements.forms.select with {multiple: true} %}
     </form>
   </div><!-- /.bs-example -->
 
-  {{ highlightMarkup }}
-  <select class="form-control">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-  </select>
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+  &#123;% include components.elements.forms.select %}
 
-  <select multiple class="form-control">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-  </select>
+  &#123;% include components.elements.forms.select with {multiple: true %}
+   </code></pre>
+
+  {{ highlightMarkup }}
+  {% include components.elements.forms.select %}
+
+  {% include components.elements.forms.select with {multiple: true} %}
   {{ endhighlight }}
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -326,12 +308,15 @@
   <p>For selecting one or several options in a list.</p>
 
   <div class="bs-example">
-    <input type="checkbox" value="">
+    {% include components.elements.forms.checkbox with {id: 'checkbox1', theValue: 'option1'} %}
   </div><!-- /.bs-example -->
 
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+    &#123;% include components.elements.forms.checkbox with {id: 'checkbox1', theValue: 'option1'} %}
+  {{ endhighlight }}
   
   {{ highlightMarkup }}
-    <input type="checkbox" value="">
+    {% include components.elements.forms.checkbox with {id: 'checkbox1', theValue: 'option1'} %}
   {{ endhighlight }}
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -342,12 +327,16 @@
 
 
   <div class="bs-example">
-    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+    {% include components.elements.forms.radio with {name: 'optionsRadios', id: 'optionsRadios1', theValue: 'option1'} %}
   </div><!-- /.bs-example -->
 
   
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+    &#123;% include components.elements.forms.radio with {name: 'optionsRadios', id: 'optionsRadios1', theValue: 'option1'} %}
+  {{ endhighlight }}
+
   {{ highlightMarkup }}
-    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+    {% include components.elements.forms.radio with {name: 'optionsRadios', id: 'optionsRadios1', theValue: 'option1'} %}
   {{ endhighlight }}
 
 

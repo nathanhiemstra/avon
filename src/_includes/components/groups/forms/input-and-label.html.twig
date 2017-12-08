@@ -1,5 +1,5 @@
-{% include components.groups.forms.label with {'id': id, 'mainLabel': mainLabel %}
-{% include components.groups.forms.input with {'id': id, 'items': items, 'classes': classes, 'type': type, 'placeholder': placeholder, 'theValue': theValue  %}
+{% include components.elements.forms.label with {'id': id, 'mainLabel': mainLabel %}
+{% include components.elements.forms.input with {'id': id, 'items': items, 'classes': classes, 'type': type, 'placeholder': placeholder, 'theValue': theValue  %}
 {% if errorMessage %}
-  {% include components.groups.forms.errorMessage with {'errorMessage': errorMessage} %}
+  {% include components.elements.forms.errorMessage with {'errorMessage': errorMessage} %}
 {% endif %}

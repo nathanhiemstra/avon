@@ -206,12 +206,7 @@
   <h4>Default (stacked)</h4>
   <div class="bs-example">
     <form role="form">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value="">
-          Option one is this and that&mdash;be sure to include why it's great
-        </label>
-      </div>
+      {% include components.groups.forms.checkboxAndLabel with {theValue: 'Option1', label: "Option one is this and that&mdash;be sure to include why it's great"} %}
       <br>
       <div class="radio">
         <label>
@@ -229,13 +224,12 @@
   </div><!-- /.bs-example -->
 
   
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+  &#123;% include components.groups.forms.checkboxAndLabel with {theValue: 'Option1', label: "Option one is this and that&mdash;be sure to include why it's great"} %}
+  {{ endhighlight }}
+
   {{ highlightMarkup }}
-  <div class="checkbox">
-    <label>
-      <input type="checkbox" value="">
-      Option one is this and that&mdash;be sure to include why it's great
-    </label>
-  </div>
+  {% include components.groups.forms.checkboxAndLabel with {theValue: 'Option1', label: "Option one is this and that&mdash;be sure to include why it's great"} %}
 
   <div class="radio">
     <label>
