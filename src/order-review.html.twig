@@ -32,9 +32,9 @@
         <table class="table table-hover">
           {{ thead }}
           <tbody>
-            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson} %}
-            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson,'outOfStock': 'true'} %}
-            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson, 'autoShip': 'hide'} %}
+            {% include components.groups.tables.ordersReview.tr with {'selectItemsPerson': selectItemsPerson} %}
+            {% include components.groups.tables.ordersReview.tr with {'selectItemsPerson': selectItemsPerson,'outOfStock': 'true'} %}
+            {% include components.groups.tables.ordersReview.tr with {'selectItemsPerson': selectItemsPerson, 'autoShip': 'hide'} %}
           </tbody>
         </table>
       </div>
@@ -46,10 +46,10 @@
         <table class="table table-hover">
           {{ thead }}
           <tbody>
-            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson, 'autoShip': 'hide'} %}
-            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson, 'autoShip': 'hide'} %}
-            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson} %}
-            {% include components.groups.tables.reviewOrder.tr with {'selectItemsPerson': selectItemsPerson} %}
+            {% include components.groups.tables.ordersReview.tr with {'selectItemsPerson': selectItemsPerson, 'autoShip': 'hide'} %}
+            {% include components.groups.tables.ordersReview.tr with {'selectItemsPerson': selectItemsPerson, 'autoShip': 'hide'} %}
+            {% include components.groups.tables.ordersReview.tr with {'selectItemsPerson': selectItemsPerson} %}
+            {% include components.groups.tables.ordersReview.tr with {'selectItemsPerson': selectItemsPerson} %}
           </tbody>
         </table>
       </div>
@@ -57,7 +57,7 @@
 
     <section class="text-right-sm">
       <p>Subtotal (&lt;00&gt; items): <b>$&lt;00.0&gt;</b></p>
-      <p class=" mt-4"><button type="button" class="btn btn-primary btn-lg">Continue</button></p>
+      <p class="mt-4"><button type="button" class="btn btn-primary btn-lg">Continue</button></p>
     </section>
 
   </main>

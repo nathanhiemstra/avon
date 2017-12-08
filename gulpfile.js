@@ -108,8 +108,11 @@ gulp.task('compile', function () {
                   unselected:     prefix.components + "groups/ratings/unselected.html.twig"
                 },
                 tables: {
-                  reviewOrder: {
-                    tr:           prefix.components + "groups/tables/review-order-tr.html.twig"
+                  ordersCheckout: {
+                    tr:           prefix.components + "groups/tables/orders-checkout-tr.html.twig"
+                  },
+                  ordersReview: {
+                    tr:           prefix.components + "groups/tables/orders-review-tr.html.twig"
                   }
                 }
               },
@@ -175,7 +178,6 @@ gulp.task('watch', function() {
   gulp.watch(path.staticFilesToCopy, ['copy']);
   gulp.watch(path.src.sass, ['sass']);
   gulp.watch(path.src.twig, ['compile']);
-  // gulp.watch([path.src.html], ['fileinclude']);
 });
 
 gulp.task('build', gulpSequence('clean', 'sass', 'compile', 'copy'));

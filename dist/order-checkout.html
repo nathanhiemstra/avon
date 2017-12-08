@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./css/bootstrap/bootstrap.css" rel="stylesheet">
+
+  <!-- Documentation extras -->
+  <link href="./css/avon-main.css" rel="stylesheet">
+  <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+</head>
+
+<body>
+
+  <section id="avon-poc"  >
+      <a class="sr-only" href="#content">Skip to main content</a>
+
+      
+      <header class="navbar navbar-default navbar-static-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="index.html" class="navbar-brand">
+        <img src="/images/logos/your-avon.png" alt="Your Avon">
+      </a>
+    </div>
+    <div class="pull-right">
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#">Nav item</a>
+        </li>
+        <li>
+          <a href="#">Nav item</a>
+        </li>
+        <li>
+          <a href="#">Nav item</a>
+        </li>
+      </ul>
+    </nav>
+    </div>
+  </div>
+</header>
+      
+      
+      
+      
+<div class="container">
+  <div class="row">
+    <main class="col-md-9">
+
+      <!-- HEADER -->
+      <section class="row">
+        <h1 class="col-sm-10">Checkout (&lt;55&gt;) items</h1>
+        <p class="col-sm-2 text-right-sm mt-4"><a href="#">Edit cart</a></p>
+      </section>
+
+
+      <!-- SHIPPING PAYMENT METHODS - DEFAULT -->
+      <section class="border border-top">
+        <div class="row">
+          <div class="col-sm-6">
+            <!-- SELECT AND LABEL -->
+            <div class="form-group">
+              <label class="control-label" for="exampleSelect1">Ship To</label>
+<select class="form-control " id="exampleSelect1">
+      <option>Person 1 - 2134 W Fletcher St., Chicago</option>
+      <option>Person 2 - 9876 W Bell St., Chicago</option>
+      <option>Person 3 - 213 W Mable St., Chicago</option>
+  </select>            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+            <!-- SELECT AND LABEL -->
+              <label class="control-label" for="exampleSelect1">Shipping Method</label>
+<select class="form-control " id="exampleSelect1">
+      <option>Direct to Rep</option>
+      <option>Shipping Method 2</option>
+      <option>Shipping Method 3</option>
+  </select>            </div>
+          </div>
+        </div><!-- /.row -->
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+            <!-- SELECT AND LABEL -->
+              <label class="control-label" for="exampleSelect1">Pay With</label>
+<select class="form-control " id="exampleSelect1">
+      <option>Card on file ending in 8888</option>
+      <option>Pay Method 2</option>
+      <option>Pay Method 3</option>
+  </select>            </div>
+          </div>
+        </div><!-- /.row -->
+        
+      </section>
+
+      <!-- PERSON -->
+      <ul class="list-group">
+
+      
+        <li class="list-group-item">
+          <!-- SUMMARY -->
+          <dl class="summary row">
+            <dt class="col-sm-6"><span class="glyphicon glyphicon-play"></span>  YOU Person 1 (12 items)</dt>
+            <dd class="col-sm-4">Ship direct to rep</dd>
+            <dd class="col-sm-1"><b>$&lt;120.00&gt;</b></dd>
+          </dl>
+
+          <!-- DETAILS -->
+          <div class="details">
+
+          </div>
+        </li>
+      </ul>
+
+
+
+      <section class="text-right-sm">
+        <p>Subtotal (&lt;00&gt; items): <b>$&lt;00.0&gt;</b></p>
+        <p class="mt-4"><button type="button" class="btn btn-primary btn-lg">Continue</button></p>
+      </section>
+
+    </main>
+
+
+
+    <!-- ORDER SUMMARY -->
+    <aside class="col-md-3">
+
+      <!-- DRAWER -->
+      <div class="drawer drawer-fixed-bottom drawer-order-summary">
+
+        <!-- DRAWER NAV BAR -->
+        <section class="navbar navbar-default hidden-md hidden-lg">
+          <div class="container pt-4">
+            <div class="pull-left">
+              <button type="button" class="btn btn-default btn-xs trigger-drawer-order-summary">
+                <span class="glyphicon glyphicon-chevron-up"></span> Your order
+              </button>
+            </div>
+            <div class="pull-right">
+              <b>$180</b> <small>18 items</small>
+            </div>
+          </div>
+        </section>
+
+        <!-- DRAWER CONTENT -->
+        <section class="order-summary">
+          <h3>Order Summary</h3>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <dl>
+                <dt>&lt;55&gt; items:</dt>
+                <dd>$&lt;460.00&gt;</dd>
+                <dt>Shipping &amp; handling:</dt>
+                <dd>$&lt;5.95&gt;</dd>
+                <dt>Taxes:</dt>
+                <dd>$&lt;5.95&gt;</dd>
+              </dl>
+            </li>
+            <li class="list-group-item">
+              <dl>
+                <dt>Order subtotal</dt>
+                <dd>$&lt;487.87&gt;</dd>
+              </dl>
+              <p><a href="#">Order $&lt;45&gt; more for &lt;10&gt;% discount!</a></p>
+              <p><button type="button" class="btn btn-primary btn-lg">Place order</button></p>
+            </li>
+            <li class="list-group-item">
+
+            </li>
+          </ul>
+          
+        </section>
+      </div><!-- /.drawer -->
+    </aside>
+
+
+  </div><!-- /.row -->
+</div><!-- /.container -->
+
+
+      
+      <!--Footer-->
+<footer class="my-5">
+    <hr>
+    
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container">
+            Footer
+        </div>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+  </section>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- <script src="docs-assets/js/email-decode.min.js"></script> -->
+  <script src="./js/vendor/jquery/1.10.2/jquery.min.js"></script>
+  <script src="./js/vendor/bootstrap.js"></script>
+  <script src="./js/avon-main.js"></script>
+
+
+
+
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+
+</body>
+</html>

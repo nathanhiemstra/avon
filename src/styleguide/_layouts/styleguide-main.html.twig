@@ -9,7 +9,7 @@
  
 
     <!-- Docs master nav -->
-    {% include "styleguide/_includes/nav-main.html.twig" %}
+    {% include "styleguide/_includes/navs/nav-main.html.twig" %}
 
 
     <!-- Docs page layout -->
@@ -39,18 +39,16 @@
               {# BLOCK - SIDE BAR #}
               {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 
-
-              {% if slug == "styleguide-css" %}
-                {% include "../_includes/nav-css.html.twig" %}
-              {% endif %}
-              {% if slug == "styleguide-elements" %}
-                {% include "../_includes/nav-elements.html.twig" %}
-              {% endif %}
-              {% if slug == "styleguide-groups" %}
-                {% include "../_includes/nav-groups.html.twig" %}
-              {% endif %}
-              {% if slug == "styleguide-modules" %}
-                {% include "../_includes/nav-modules.html.twig" %}
+              {% if slug == "styleguide-home" %}
+                {% include "../_includes/navs/nav-home.html.twig" %}
+              {% elseif slug == "styleguide-css" %}
+                {% include "../_includes/navs/nav-css.html.twig" %}
+              {% elseif slug == "styleguide-elements" %}
+                {% include "../_includes/navs/nav-elements.html.twig" %}
+              {% elseif slug == "styleguide-groups" %}
+                {% include "../_includes/navs/nav-groups.html.twig" %}
+              {% elseif slug == "styleguide-modules" %}
+                {% include "../_includes/navs/nav-modules.html.twig" %}
               {% endif %}
     
             </ul>

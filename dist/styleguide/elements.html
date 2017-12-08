@@ -1102,66 +1102,6 @@
 
 
   
-  
-  
-
-  <h3 id="forms-textareas">Textarea</h3>
-  <p>Form control which supports multiple lines of text. Change <code>rows</code> attribute as necessary.</p>
-  <div class="bs-example">
-    <form role="form">
-      <textarea class="form-control" rows="3"></textarea>
-    </form>
-  </div><!-- /.bs-example -->
-
-  <pre><code class="language-markup"><script type="text/plain">
-  <textarea class="form-control" rows="3"></textarea>
-  </script></code></pre>
-
-
-  
-  
-  
-
-
-  <h3 id="forms-selects">Selects</h3>
-  <p>Use the default option, or add <code>multiple</code> to show multiple options at once.</p>
-  <div class="bs-example">
-    <form role="form">
-      <select class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-      <br>
-      <select multiple class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-    </form>
-  </div><!-- /.bs-example -->
-
-  <pre><code class="language-markup"><script type="text/plain">
-  <select class="form-control">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-  </select>
-
-  <select multiple class="form-control">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-  </select>
-  </script></code></pre>
 
 
 
@@ -1199,6 +1139,9 @@
   <pre><code class="language-markup"><script type="text/plain">
   <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
   </script></code></pre>
+
+
+  
 
 
   
@@ -1375,6 +1318,100 @@
   <select class="form-control input-lg">...</select>
   <select class="form-control">...</select>
   <select class="form-control input-sm">...</select>
+  </script></code></pre>
+
+
+  
+  
+  
+
+  <h3 id="forms-textareas">Textarea</h3>
+  <p>Form control which supports multiple lines of text. Change <code>rows</code> attribute as necessary.</p>
+  <div class="bs-example">
+    <form role="form">
+      <textarea class="form-control" rows="3"></textarea>
+    </form>
+  </div><!-- /.bs-example -->
+
+  <pre><code class="language-markup"><script type="text/plain">
+  <textarea class="form-control" rows="3"></textarea>
+  </script></code></pre>
+
+
+  
+  
+  
+
+
+  <h3 id="forms-selects">Selects</h3>
+  <p>Use the default option, or add <code>multiple</code> to show multiple options at once.</p>
+  <div class="bs-example">
+    <form role="form">
+      <select class="form-control">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <br>
+      <select multiple class="form-control">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </form>
+  </div><!-- /.bs-example -->
+
+  <pre><code class="language-markup"><script type="text/plain">
+  <select class="form-control">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+
+  <select multiple class="form-control">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+  </script></code></pre>
+
+  
+  
+  
+  <h2 id="forms-checkboxes">Checkboxes</h2>
+  <p>For selecting one or several options in a list.</p>
+
+  <div class="bs-example">
+    <input type="checkbox" value="">
+  </div><!-- /.bs-example -->
+
+  
+  <pre><code class="language-markup"><script type="text/plain">
+    <input type="checkbox" value="">
+  </script></code></pre>
+
+  
+  
+  
+  <h2 id="forms-radios">Radios</h2>
+  <p>For selecting one option from many.</p>
+
+
+  <div class="bs-example">
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+  </div><!-- /.bs-example -->
+
+  
+  <pre><code class="language-markup"><script type="text/plain">
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
   </script></code></pre>
 
 
@@ -3092,8 +3129,7 @@
               
               
 
-
-                                            
+                              
 
 
 <li>
@@ -3125,12 +3161,14 @@
   <a href="#forms">Forms</a>
   <ul class="nav">
     <li><a href="#forms-inputs">Inputs</a></li>
+    <li class="pl-4"><a href="#forms-control-focus">Focus state</a></li>
+    <li class="pl-4"><a href="#forms-control-disabled">Disabled state</a></li>
+    <li class="pl-4"><a href="#forms-control-validation">Validation states</a></li>
+    <li class="pl-4"><a href="#forms-control-sizes">Control sizing</a></li>
     <li><a href="#forms-textareas">Textareas</a></li>
     <li><a href="#forms-selects">Selects</a></li>
-    <li><a href="#forms-control-focus">Focus state</a></li>
-    <li><a href="#forms-control-disabled">Disabled state</a></li>
-    <li><a href="#forms-control-validation">Validation states</a></li>
-    <li><a href="#forms-control-sizes">Control sizing</a></li>
+    <li><a href="#forms-checkboxes">Checkboxes</a></li>
+    <li><a href="#forms-radios">Radios</a></li>
   </ul>
 </li>
 <li>
@@ -3177,7 +3215,7 @@
     <li><a href="#progress-animated">Animated</a></li>
     <li><a href="#progress-stacked">Stacked</a></li>
   </ul>
-</li>                                              
+</li>                  
             </ul>
           </div>
         </div>

@@ -1,0 +1,18 @@
+<tr class="{% if outOfStock %} info {% endif %}">
+  <td><img src="images/utility/placeholder.png" class="img-responsive" alt="" width="50"></td>
+  <td>
+    <div><b>Product Name That Might Be Long</b></div>
+    <div>{{ fpo.sku }}</div>
+  </td>
+{% if outOfStock is empty %}
+  <td>{% include components.groups.forms.select with { 'items': selectItemsPerson } %}</td>
+  <td>{% include components.groups.forms.select %}</td>
+  <td>$&lt;00&gt;</td>
+  <td>In stock</td>
+  <td>{% if autoShip != 'hide' %}Auto Ship{% endif %}</td>
+  <td><b>$&lt;00&gt;</b></td>
+  <td><a href="#"><span class="glyphicon glyphicon-remove"></span></a></td>
+{% else %}
+  <td colspan="7">This product is out of stock. You can <a href="#">option 1</a> or <a href="#">option 2</a>.</td>
+{% endif %}
+</tr>
