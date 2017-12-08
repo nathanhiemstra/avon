@@ -1,4 +1,5 @@
-{# product-detail.html.twig #}
+{# order-checkout.html.twig #}
+{% extends "_layouts/with-side-column.html.twig" %}
 {% set selectItemsPerson = [{'label': 'Person 1 (12 items'}, {'label': 'Person 2'}, {'label': 'Person 3'}] %}
 {% set thead = '<thead class="sr-only">
           <tr>
@@ -14,75 +15,74 @@
           </tr>
         </thead>'
 %}
-{% extends "_layouts/base.html.twig" %}
-
-{% block content %}
-
-<div class="container">
-  <div class="row">
-    <main class="col-md-9">
-
-      <!-- HEADER -->
-      <section class="row">
-        <h1 class="col-sm-10">Checkout (55) items</h1>
-        <p class="col-sm-2 text-right-sm mt-4"><a href="#">Edit cart</a></p>
-      </section>
-      <hr>
 
 
-      <!-- SHIPPING PAYMENT METHODS - DEFAULT -->
-      <section>
-        <div class="row">
-          <div class="col-sm-6">
-            <!-- SELECT AND LABEL -->
-            <div class="form-group">
-              {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Ship To', 'id': 'exampleSelect1', items: [{'label': 'Person 1 - 2134 W Fletcher St., Chicago'}, {'label': 'Person 2 - 9876 W Bell St., Chicago'}, {'label': 'Person 3 - 213 W Mable St., Chicago'}]} %}
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group">
-            <!-- SELECT AND LABEL -->
-              {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Shipping Method', 'id': 'exampleSelect2', items: [{'label': 'Direct to Rep'}, {'label': 'Shipping Method 2'}, {'label': 'Shipping Method 3'}]} %}
-            </div>
-          </div>
-        </div><!-- /.row -->
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <!-- SELECT AND LABEL -->
-              {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Pay With', 'id': 'exampleSelect3', items: [{'label': 'Card on file ending in 8888'}, {'label': 'Pay Method 2'}, {'label': 'Pay Method 3'}]} %}
-            </div>
-          </div>
-        </div><!-- /.row -->
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - MAIN #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block main %}
 
-      </section>
+  <!-- HEADER -->
+  <section class="row">
+    <h1 class="col-sm-10">Checkout (55) items</h1>
+    <p class="col-sm-2 text-right-sm mt-4"><a href="#">Edit cart</a></p>
+  </section>
 
-      <!-- PERSON -->
-      <ul class="list-group">
-        {% include components.groups.checkout.personsOrder with {indexNum: '1', itemCount: '12', total: '120'} %}
-        {% include components.groups.checkout.personsOrder with {indexNum: '2', itemCount: '29', total: '290', collapsed: false} %}
-        {% include components.groups.checkout.personsOrder with {indexNum: '3', itemCount: '4', total: '40'} %}
-        {% include components.groups.checkout.personsOrder with {indexNum: '4', itemCount: '10', total: '10'} %}
-      </ul>
+  <hr>
 
-      <section class="text-right-sm">
-        <h3 class="clearfix">
-          <span class="pull-left">Order Total:</span> 
-          <span class="pull-right">$460.00</span>
-        </h3>
-        <p class="mt-4"><button type="button" class="btn btn-primary btn-lg">Place Order</button></p>
-        
-      </section>
-    </main>
+  <!-- SHIPPING PAYMENT METHODS - DEFAULT -->
+  <section>
+    <div class="row">
+      <div class="col-sm-6">
+        <!-- SELECT AND LABEL -->
+        <div class="form-group">
+          {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Ship To', 'id': 'exampleSelect1', items: [{'label': 'Person 1 - 2134 W Fletcher St., Chicago'}, {'label': 'Person 2 - 9876 W Bell St., Chicago'}, {'label': 'Person 3 - 213 W Mable St., Chicago'}]} %}
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+        <!-- SELECT AND LABEL -->
+          {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Shipping Method', 'id': 'exampleSelect2', items: [{'label': 'Direct to Rep'}, {'label': 'Shipping Method 2'}, {'label': 'Shipping Method 3'}]} %}
+        </div>
+      </div>
+    </div><!-- /.row -->
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <!-- SELECT AND LABEL -->
+          {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Pay With', 'id': 'exampleSelect3', items: [{'label': 'Card on file ending in 8888'}, {'label': 'Pay Method 2'}, {'label': 'Pay Method 3'}]} %}
+        </div>
+      </div>
+    </div><!-- /.row -->
+
+  </section>
+
+  <!-- PERSON -->
+  <ul class="list-group">
+    {% include components.groups.checkout.personsOrder with {indexNum: '1', itemCount: '12', total: '120'} %}
+    {% include components.groups.checkout.personsOrder with {indexNum: '2', itemCount: '29', total: '290', collapsed: false} %}
+    {% include components.groups.checkout.personsOrder with {indexNum: '3', itemCount: '4', total: '40'} %}
+    {% include components.groups.checkout.personsOrder with {indexNum: '4', itemCount: '10', total: '10'} %}
+  </ul>
+
+  <section class="text-right-sm">
+    <h3 class="clearfix">
+      <span class="pull-left">Order Total:</span> 
+      <span class="pull-right">$460.00</span>
+    </h3>
+    <p class="mt-4"><button type="button" class="btn btn-primary btn-lg">Place Order</button></p>
+    
+  </section>
+{% endblock %}
 
 
-    <aside class="col-md-3">
-      <!-- ORDER SUMMARY -->
-      {% include components.groups.checkout.orderSummary with {'ctaButton': 'Place Order'} %}
-    </aside>
 
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - ASIDE #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block aside %}
 
-  </div><!-- /.row -->
-</div><!-- /.container -->
+  <!-- ORDER SUMMARY -->
+  {% include components.groups.checkout.orderSummary with {'ctaButton': 'Continue'} %}
 
 {% endblock %}

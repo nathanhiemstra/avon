@@ -1,112 +1,113 @@
 {# product-detail.html.twig #}
-{% extends "_layouts/base.html.twig" %}
+{% extends "_layouts/with-side-column.html.twig" %}
 
-{% block content %}
 
-<div class="container">
-  <div class="row">
-    <main class="col-md-9">
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - MAIN #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block main %}
 
-      <!-- BREADCRUMBS -->
-      {% include components.groups.navigation.breadcrumbs with {
-        'classes':'hidden-xs',
-        'items': [{'slug': '#', 'label': 'Home'}, {'slug':  '#', 'label': 'Link'}, {'slug':  '#', 'label': 'Link'}, { 'slug':  '#', 'label': 'Link'}]}
-      %}
 
-      <!-- PRIMARY PRODUCT INFO -->
-      <section>
-        <!-- TITlE -->
-        <h1>&lt;Product Name&gt;</h1>
-        <p>
-          <!-- SKU -->
-          <span class="mr-4">{{ fpo.sku }}</span>
-          
-          <!-- RATINGS -->
-          {% include components.groups.ratings.unit %}
-        </p>
-      </section>
+  <!-- BREADCRUMBS -->
+  {% include components.groups.navigation.breadcrumbs with {
+    'classes':'hidden-xs',
+    'items': [{'slug': '#', 'label': 'Home'}, {'slug':  '#', 'label': 'Link'}, {'slug':  '#', 'label': 'Link'}, { 'slug':  '#', 'label': 'Link'}]}
+  %}
 
-      <!-- SECONDARY PRODUCT INFO -->
-      <section class="row">
-        <div class="col-md-4">
-          <!-- PRODUCT IMAGE(S) -->
-          <img src="images/utility/placeholder.png" alt="" class="img-responsive">
-        </div>
-        <div class="col-md-6">
+  <!-- PRIMARY PRODUCT INFO -->
+  <section>
+    <!-- TITlE -->
+    <h1>&lt;Product Name&gt;</h1>
+    <p>
+      <!-- SKU -->
+      <span class="mr-4">{{ fpo.sku }}</span>
+      
+      <!-- RATINGS -->
+      {% include components.groups.ratings.unit %}
+    </p>
+  </section>
 
-          <!-- PRODUCT DETAILS -->
-          <p class="visible-md visible-lg">{{ fpo.paragraph }}</p>
-          <p><b>$&lt;13.99&gt;</b></p>
-          <p>Regular price: $&lt;19.99&gt;</p>
-          <div class="well well-sm d-inline-block">
-            <span class="glyphicon glyphicon-ok"></span> In stock
-          </div>
+  <!-- SECONDARY PRODUCT INFO -->
+  <section class="row">
+    <div class="col-md-4">
+      <!-- PRODUCT IMAGE(S) -->
+      <img src="images/utility/placeholder.png" alt="" class="img-responsive">
+    </div>
+    <div class="col-md-6">
 
-          <!-- ASSIGN TO CUSTOMER(S) -->
-          <div class="visible-md visible-lg">
+      <!-- PRODUCT DETAILS -->
+      <p class="visible-md visible-lg">{{ fpo.paragraph }}</p>
+      <p><b>$&lt;13.99&gt;</b></p>
+      <p>Regular price: $&lt;19.99&gt;</p>
+      <div class="well well-sm d-inline-block">
+        <span class="glyphicon glyphicon-ok"></span> In stock
+      </div>
 
-            <!-- FORM -->
-            <div class="grid-flush clearfix">
-              <form role="form">
+      <!-- ASSIGN TO CUSTOMER(S) -->
+      <div class="visible-md visible-lg">
 
-                <!-- CUSTOMER -->
-                <div class="row">
-                  <div class="form-group col-sm-2">
-                   {% include components.groups.forms.inputAndLabel with {'mainLabel': 'Qty', 'id': 'exampleInput1'} %}
-                  </div>
-                  <div class="form-group col-sm-6 has-error">
-                    <!-- SELECT AND LABEL -->
-                    {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Who is this for?', 'id': 'exampleSelect1', errorMessage: 'Error message!'} %}
-                  </div>
-                  <div class="form-group col-sm-4">
-                    <!-- SELECT AND LABEL -->
-                    {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Auto Ship', 'id': 'exampleSelect2'} %}
-                  </div>
-                </div>
+        <!-- FORM -->
+        <div class="grid-flush clearfix">
+          <form role="form">
 
-                <!-- CUSTOMER -->
-                <div class="row">
-                  <div class="form-group col-sm-2">
-                   {% include components.groups.forms.inputAndLabel with {'mainLabel': 'Qty', 'id': 'exampleInput2'} %}
-                  </div>
-                  <div class="form-group col-sm-6">
-                    <!-- SELECT AND LABEL -->
-                    {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Who is this for?', 'id': 'exampleSelect3'} %}
-                  </div>
-                  <div class="form-group col-sm-4 has-error">
-                    <!-- SELECT AND LABEL -->
-                    {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Auto Ship', 'id': 'exampleSelect4', errorMessage: 'Error message!'} %}
-                  </div>
-                </div>
-                
-              </form>
+            <!-- CUSTOMER -->
+            <div class="row">
+              <div class="form-group col-sm-2">
+               {% include components.groups.forms.inputAndLabel with {'mainLabel': 'Qty', 'id': 'exampleInput1'} %}
+              </div>
+              <div class="form-group col-sm-6 has-error">
+                <!-- SELECT AND LABEL -->
+                {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Who is this for?', 'id': 'exampleSelect1', errorMessage: 'Error message!'} %}
+              </div>
+              <div class="form-group col-sm-4">
+                <!-- SELECT AND LABEL -->
+                {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Auto Ship', 'id': 'exampleSelect2'} %}
+              </div>
             </div>
-            <hr class="mt-0">
-            <p class="text-right"><a href="#">Add new customer</a></p>
-          </div>
 
-          <!-- CTA -->
-          <p><button type="button" class="btn btn-primary btn-lg">Add to order</button></p>
+            <!-- CUSTOMER -->
+            <div class="row">
+              <div class="form-group col-sm-2">
+               {% include components.groups.forms.inputAndLabel with {'mainLabel': 'Qty', 'id': 'exampleInput2'} %}
+              </div>
+              <div class="form-group col-sm-6">
+                <!-- SELECT AND LABEL -->
+                {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Who is this for?', 'id': 'exampleSelect3'} %}
+              </div>
+              <div class="form-group col-sm-4 has-error">
+                <!-- SELECT AND LABEL -->
+                {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Auto Ship', 'id': 'exampleSelect4', errorMessage: 'Error message!'} %}
+              </div>
+            </div>
+            
+          </form>
         </div>
-      </section><!-- /.row -->
+        <hr class="mt-0">
+        <p class="text-right"><a href="#">Add new customer</a></p>
+      </div>
 
-      <!-- TERTIARY PRODUCT-->
-      <section>
-        <!-- FEATURES -->
-        <h2>Features</h2>
-        <p>{{ fpo.paragraph }}</p>
-        <p>{{ fpo.paragraph }}</p>
-        <p>{{ fpo.paragraph }}</p>
-      </section>
-    </main>
+      <!-- CTA -->
+      <p><button type="button" class="btn btn-primary btn-lg">Add to order</button></p>
+    </div>
+  </section><!-- /.row -->
+
+  <!-- TERTIARY PRODUCT-->
+  <section>
+    <!-- FEATURES -->
+    <h2>Features</h2>
+    <p>{{ fpo.paragraph }}</p>
+    <p>{{ fpo.paragraph }}</p>
+    <p>{{ fpo.paragraph }}</p>
+  </section>
+{% endblock %}
 
 
-    
-    <aside class="col-md-3">
-      <!-- ORDER SUMMARY -->
-      {% include components.groups.checkout.orderSummary with {'ctaButton': 'Continue'} %}
-    </aside>
-  </div><!-- /.row -->
-</div><!-- /.container -->
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - ASIDE #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block aside %}
+
+  <!-- ORDER SUMMARY -->
+  {% include components.groups.checkout.orderSummary with {'ctaButton': 'Continue'} %}
 
 {% endblock %}

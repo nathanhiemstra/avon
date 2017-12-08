@@ -1,0 +1,21 @@
+{# side-column.html.twig #}
+{% extends '_layouts/base.html.twig' %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+ 
+<div class="container">
+  <main role="main">
+
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {# RENDER BLOCK - CONTENT #}
+    {% block main %}{% endblock %}
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+  </main>
+</div>
+
+{% endblock %}

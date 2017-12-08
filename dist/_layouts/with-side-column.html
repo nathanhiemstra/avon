@@ -9,13 +9,10 @@
   <title></title>
 
   <!-- Bootstrap core CSS -->
-  <link href="../css/bootstrap/bootstrap.css" rel="stylesheet">
+  <link href="./css/bootstrap/bootstrap.css" rel="stylesheet">
 
   <!-- Documentation extras -->
-  <link href="docs-assets/css/prism.css" rel="stylesheet">
-  <link href="docs-assets/css/docs.css" rel="stylesheet">
-  <link href="docs-assets/css/docs-override.css" rel="stylesheet">
-  <link href="../css/avon-main.css" rel="stylesheet">
+  <link href="./css/avon-main.css" rel="stylesheet">
   <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,15 +23,45 @@
 
   <!-- Favicons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
 </head>
 
 <body>
 
-  <section>
+  <section id="avon-poc"  >
       <a class="sr-only" href="#content">Skip to main content</a>
 
-
+      
+      <header class="navbar navbar-default navbar-static-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="index.html" class="navbar-brand">
+        <img src="/images/logos/your-avon.png" alt="Your Avon">
+      </a>
+    </div>
+    <div class="pull-right">
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#">Nav item</a>
+        </li>
+        <li>
+          <a href="#">Nav item</a>
+        </li>
+        <li>
+          <a href="#">Nav item</a>
+        </li>
+      </ul>
+    </nav>
+    </div>
+  </div>
+</header>
       
       
       
@@ -59,29 +86,32 @@
 </div>
 
 
+      
+      <!--Footer-->
+<footer class="my-5">
+    <hr>
+    
 
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container">
+            Footer
+        </div>
+    </div>
+    <!--/.Copyright-->
 
+</footer>
+<!--/.Footer-->
   </section>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
   <!-- <script src="docs-assets/js/email-decode.min.js"></script> -->
-  <script src="../js/vendor/jquery/1.10.2/jquery.min.js"></script>
-  <script src="../js/vendor/bootstrap.js"></script>
-  <script src="docs-assets/js/prism.js"></script>
-  <script src="../js/vendor/prism-normalize-whitespace.js"></script>
-  <script type="text/javascript">
-  // Optional
-  Prism.plugins.NormalizeWhitespace.setDefaults({
-    'remove-trailing': true,
-    'remove-indent': true,
-    'remove-initial-line-feed': true,
-    'left-trim': true,
-    'right-trim': true,
-  });
-  </script>
-  <script src="docs-assets/js/docs.min.js"></script>
+  <script src="./js/vendor/jquery/1.10.2/jquery.min.js"></script>
+  <script src="./js/vendor/bootstrap.js"></script>
+  <script src="./js/avon-main.js"></script>
+
 
 
 
