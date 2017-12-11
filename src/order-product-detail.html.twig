@@ -17,7 +17,7 @@
   <!-- PRIMARY PRODUCT INFO -->
   <section>
     <!-- TITlE -->
-    <h1>&lt;Product Name&gt;</h1>
+    <h1>Product Name</h1>
     <p>
       <!-- SKU -->
       <span class="mr-4">{{ fpo.sku }}</span>
@@ -37,8 +37,8 @@
 
       <!-- PRODUCT DETAILS -->
       <p class="visible-md visible-lg">{{ fpo.paragraph }}</p>
-      <p><b>$&lt;13.99&gt;</b></p>
-      <p>Regular price: $&lt;19.99&gt;</p>
+      <p><b>$13.99</b></p>
+      <p>Regular price: $19.99</p>
       <div class="well well-sm d-inline-block">
         <span class="glyphicon glyphicon-ok"></span> In stock
       </div>
@@ -108,6 +108,6 @@
 {% block aside %}
 
   <!-- ORDER SUMMARY -->
-  {% include components.groups.checkout.orderSummary with {'ctaButton': 'Continue'} %}
+  {% include components.groups.checkout.orderSummary with {'page': 'product-detail'} %}
 
 {% endblock %}

@@ -67,7 +67,7 @@
 
   <section class="text-right-sm">
     <h3 class="clearfix">
-      <span class="pull-left">Order Total:</span> 
+      <span class="pull-left">Order Subtotal:</span> 
       <span class="pull-right">$460.00</span>
     </h3>
     <p class="mt-4"><button type="button" class="btn btn-primary btn-lg">Place Order</button></p>
@@ -83,6 +83,6 @@
 {% block aside %}
 
   <!-- ORDER SUMMARY -->
-  {% include components.groups.checkout.orderSummary with {'ctaButton': 'Continue'} %}
+  {% include components.groups.checkout.orderSummary with {'page': 'checkout'} %}
 
 {% endblock %}

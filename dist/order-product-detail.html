@@ -96,7 +96,7 @@
   <!-- PRIMARY PRODUCT INFO -->
   <section>
     <!-- TITlE -->
-    <h1>&lt;Product Name&gt;</h1>
+    <h1>Product Name</h1>
     <p>
       <!-- SKU -->
       <span class="mr-4">&lt;000-000&gt;</span>
@@ -116,8 +116,8 @@
 
       <!-- PRODUCT DETAILS -->
       <p class="visible-md visible-lg">Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.</p>
-      <p><b>$&lt;13.99&gt;</b></p>
-      <p>Regular price: $&lt;19.99&gt;</p>
+      <p><b>$13.99</b></p>
+      <p>Regular price: $19.99</p>
       <div class="well well-sm d-inline-block">
         <span class="glyphicon glyphicon-ok"></span> In stock
       </div>
@@ -201,7 +201,11 @@
       
       
   <!-- ORDER SUMMARY -->
-  
+  product-detail
+      
+
+
+
 
 <!-- DRAWER -->
 <div class="drawer drawer-fixed-bottom drawer-order-summary">
@@ -217,7 +221,7 @@
         </button>
       </div>
       <div class="pull-right">
-        <b>$180</b> <small>18 items</small>
+        <b>$54.00</b> <small>9 items</small>
       </div>
     </div>
   </section>
@@ -229,49 +233,39 @@
     <h3>Order Summary</h3>
 
     <!-- ITEMIZED -->
-    
     <ul class="list-group">
 
       <!-- ITEMIZED - BY PERSON -->
       <li class="list-group-item">
-        <dl>
-          <dt>Person 1</dt>
+        <dl class="mb-0">
+          <dt>
+            <a href="#collapse-aside-1" data-toggle="collapse"><span class="glyphicon glyphicon-play"></span>  Person 1 (8 items)</a>
+            <div class="collapse" id="collapse-aside-1">
+              Product title - it might be kinda long, man! x 8
+            </div>
+          </dt>
           <dd>$80.00</dd>
-          <dt>Person 2</dt>
+          <dt>
+            <a href="#collapse-aside-2" data-toggle="collapse"><span class="glyphicon glyphicon-play"></span>  Person 2 (1 items)</a>
+            <div class="collapse" id="collapse-aside-2">
+              Product title - it might be kinda long, man! x 1
+            </div>
+          </dt>
           <dd>$10.00</dd>
         </dl>
       </li>
 
-      <!-- ITEMIZED - BY CHARGES -->
-      <li class="list-group-item">
-        <dl>
-          <dt>55 Items:</dt>
-          <dd>$460.00</dd>
-          <dt>Shipping &amp; Handling:</dt>
-          <dd>$5.95</dd>
-          <dt>Taxes</dt>
-          <dd>$18.92</dd>
-        </dl>
-      </li>
 
       <!-- SUBTOTAL -->
       <li class="list-group-item">
-        <dl>
+        <dl class="mb-0">
           <dt>Discount</dt>
-          <dd>- $36.00</dd>
+          <dd>-$36.00</dd>
           <dt>Order subtotal</dt>
-          <dd>$90.00</dd>
-          
+          <dd><b>$54.00</b></dd>
         </dl>
       </li>
 
-      <!-- TOTAL -->
-      <li class="list-group-item">
-        <dl>
-          <dt>Order Total</dt>
-          <dd><b>$484.87</b></dd>
-        </dl>
-      </li>
 
       <!-- DISCOUNT OFFER -->
       <li class="list-group-item"><a href="#">Order $35 more for 5% discount!</a></li>
@@ -283,13 +277,10 @@
     <!-- CTA -->
     <p><button type="button" class="btn btn-primary btn-lg">Continue</button></p>
 
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-         <label class="control-label" for="exampleInput1">Enter Promo Code</label>    <input type="text" class="form-control" id="exampleInput1">        </div>
-      </div>
-      <div class="col-sm-6"><button type="button" class="btn btn-default">Apply</button></div>
-    </div><!-- /.row -->
+
+
+
+
 
     
 

@@ -562,7 +562,7 @@
 
   <section class="text-right-sm">
     <h3 class="clearfix">
-      <span class="pull-left">Order Total:</span> 
+      <span class="pull-left">Order Subtotal:</span> 
       <span class="pull-right">$460.00</span>
     </h3>
     <p class="mt-4"><button type="button" class="btn btn-primary btn-lg">Place Order</button></p>
@@ -577,7 +577,11 @@
       
       
   <!-- ORDER SUMMARY -->
-  
+  checkout
+      
+
+
+
 
 <!-- DRAWER -->
 <div class="drawer drawer-fixed-bottom drawer-order-summary">
@@ -593,7 +597,7 @@
         </button>
       </div>
       <div class="pull-right">
-        <b>$180</b> <small>18 items</small>
+        <b>$484.87</b> <small>55 items</small>
       </div>
     </div>
   </section>
@@ -605,22 +609,12 @@
     <h3>Order Summary</h3>
 
     <!-- ITEMIZED -->
-    
     <ul class="list-group">
 
-      <!-- ITEMIZED - BY PERSON -->
-      <li class="list-group-item">
-        <dl>
-          <dt>Person 1</dt>
-          <dd>$80.00</dd>
-          <dt>Person 2</dt>
-          <dd>$10.00</dd>
-        </dl>
-      </li>
 
       <!-- ITEMIZED - BY CHARGES -->
       <li class="list-group-item">
-        <dl>
+        <dl class="mb-0">
           <dt>55 Items:</dt>
           <dd>$460.00</dd>
           <dt>Shipping &amp; Handling:</dt>
@@ -630,20 +624,10 @@
         </dl>
       </li>
 
-      <!-- SUBTOTAL -->
-      <li class="list-group-item">
-        <dl>
-          <dt>Discount</dt>
-          <dd>- $36.00</dd>
-          <dt>Order subtotal</dt>
-          <dd>$90.00</dd>
-          
-        </dl>
-      </li>
 
       <!-- TOTAL -->
-      <li class="list-group-item">
-        <dl>
+      <li class="list-group-item mb-0">
+        <dl class="mb-0">
           <dt>Order Total</dt>
           <dd><b>$484.87</b></dd>
         </dl>
@@ -657,15 +641,18 @@
     </ul>
 
     <!-- CTA -->
-    <p><button type="button" class="btn btn-primary btn-lg">Continue</button></p>
+    <p><button type="button" class="btn btn-primary btn-lg">Place Order</button></p>
 
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-         <label class="control-label" for="exampleInput1">Enter Promo Code</label>    <input type="text" class="form-control" id="exampleInput1">        </div>
-      </div>
-      <div class="col-sm-6"><button type="button" class="btn btn-default">Apply</button></div>
-    </div><!-- /.row -->
+
+    <!-- PROMO CODE-->
+    <div class=" mt-5">
+      <div class="form-group">
+       <label class="control-label" for="exampleInput1">Enter Promo Code</label>    <input type="text" class="form-control" id="exampleInput1">      </div>
+      <button type="button" class="btn btn-default">Apply</button>
+    </div>
+
+
+
 
     
 
