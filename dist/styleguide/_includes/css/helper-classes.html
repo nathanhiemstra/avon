@@ -117,10 +117,78 @@
   </script></code></pre>
 
 
+
+  
+  
+  
+  <h3 id="helper-classes-display">Display Property</h3>
+
+
   <div class="bs-callout bs-callout-warning">
-    <h4>Not for use in navbars</h4>
-    <p>To align components in navbars with utility classes, use <code>.navbar-left</code> or <code>.navbar-right</code> instead. <a href="../components/#navbar-component-alignment">See the navbar docs</a> for details.</p>
+   <p>Note, this is taken from Bootstrap 4.0 static CSS file. TODO: Inset breakpoint variables.</p>
   </div>
+
+
+  <p>Use .d-block, .d-inline, or .d-inline-block to simply set an element’s display property to block, inline, or inline-block (respectively).</p>
+
+  <p>To make an element display: none, use our responsive utilities instead.</p>
+
+  <pre><code class="language-css"><script type="text/plain">
+    .d-none
+    .d-inline
+    .d-inline-block
+    .d-block
+    .d-table
+    .d-table-cell
+    .d-flex
+    .d-inline-flex
+  </script></code></pre>
+
+  <p>Put them to use by applying any of the classes to an element of your choice. For example, here's how you could use the inline, block, or inline-block utilities (the same applies to the other classes).
+  </p>
+
+  <div class="bs-example">
+    <div class="d-inline bg-success">d-inline</div>
+    <div class="d-inline bg-success">d-inline</div>
+  </div>
+
+   <pre><code class="language-markup"><script type="text/plain">
+    <div class="d-inline bg-success">d-inline</div>
+    <div class="d-inline bg-success">d-inline</div>
+  </script></code></pre>
+
+  <div class="bs-example">
+    <span class="d-block bg-primary">d-block</span>
+  </div>
+
+  <pre><code class="language-markup"><script type="text/plain">
+    <span class="d-block bg-primary">d-block</span>
+  </script></code></pre>
+
+  <div class="bs-example">
+    <div class="d-inline-block bg-warning">d-inline-block</div>
+    <div class="d-inline-block bg-warning">d-inline-block</div>
+  </div>
+
+  <pre><code class="language-markup"><script type="text/plain">
+    <div class="d-inline-block bg-warning">d-inline-block</div>
+    <div class="d-inline-block bg-warning">d-inline-block</div>
+  </script></code></pre>
+
+
+  <p>Responsive variations also exist for every single utility mentioned above.</p>
+
+  <pre><code class="language-css"><script type="text/plain">
+    .d-sm-none
+    .d-sm-inline
+    .d-sm-inline-block
+    .d-sm-block
+    .d-sm-table
+    .d-sm-table-cell
+    .d-sm-flex
+    .d-sm-inline-flex
+  </script></code></pre>
+
 
 
   

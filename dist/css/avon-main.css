@@ -75,21 +75,25 @@ body {
   border-left: 0 !important; }
 
 .border-top {
+  border: 1px solid #777777 !important;
   border-bottom: 0 !important;
   border-right: 0 !important;
   border-left: 0 !important; }
 
 .border-right {
+  border: 1px solid #777777 !important;
   border-top: 0 !important;
   border-bottom: 0 !important;
   border-left: 0 !important; }
 
 .border-bottom {
+  border-bottom: 1px solid #777777 !important;
   border-top: 0 !important;
   border-right: 0 !important;
   border-left: 0 !important; }
 
 .border-left {
+  border: 1px solid #777777 !important;
   border-top: 0 !important;
   border-bottom: 0 !important;
   border-right: 0 !important; }

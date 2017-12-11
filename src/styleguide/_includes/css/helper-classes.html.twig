@@ -87,7 +87,7 @@
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {#  #}
+  {#  QUICK FLOATS #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   <h3 id="helper-classes-floats">Quick floats</h3>
   <p>Float an element to the left or right with a class. <code>!important</code> is included to avoid specificity issues. Classes can also be used as mixins.</p>
@@ -117,10 +117,78 @@
   {{ endhighlight }}
 
 
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DISPLAY #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  <h3 id="helper-classes-display">Display Property</h3>
+
+
   <div class="bs-callout bs-callout-warning">
-    <h4>Not for use in navbars</h4>
-    <p>To align components in navbars with utility classes, use <code>.navbar-left</code> or <code>.navbar-right</code> instead. <a href="../components/#navbar-component-alignment">See the navbar docs</a> for details.</p>
+   <p>Note, this is taken from Bootstrap 4.0 static CSS file. TODO: Inset breakpoint variables.</p>
   </div>
+
+
+  <p>Use .d-block, .d-inline, or .d-inline-block to simply set an element’s display property to block, inline, or inline-block (respectively).</p>
+
+  <p>To make an element display: none, use our responsive utilities instead.</p>
+
+  {{ highlightCss }}
+    .d-none
+    .d-inline
+    .d-inline-block
+    .d-block
+    .d-table
+    .d-table-cell
+    .d-flex
+    .d-inline-flex
+  {{ endhighlight }}
+
+  <p>Put them to use by applying any of the classes to an element of your choice. For example, here's how you could use the inline, block, or inline-block utilities (the same applies to the other classes).
+  </p>
+
+  <div class="bs-example">
+    <div class="d-inline bg-success">d-inline</div>
+    <div class="d-inline bg-success">d-inline</div>
+  </div>
+
+   {{ highlightMarkup }}
+    <div class="d-inline bg-success">d-inline</div>
+    <div class="d-inline bg-success">d-inline</div>
+  {{ endhighlight }}
+
+  <div class="bs-example">
+    <span class="d-block bg-primary">d-block</span>
+  </div>
+
+  {{ highlightMarkup }}
+    <span class="d-block bg-primary">d-block</span>
+  {{ endhighlight }}
+
+  <div class="bs-example">
+    <div class="d-inline-block bg-warning">d-inline-block</div>
+    <div class="d-inline-block bg-warning">d-inline-block</div>
+  </div>
+
+  {{ highlightMarkup }}
+    <div class="d-inline-block bg-warning">d-inline-block</div>
+    <div class="d-inline-block bg-warning">d-inline-block</div>
+  {{ endhighlight }}
+
+
+  <p>Responsive variations also exist for every single utility mentioned above.</p>
+
+  {{ highlightCss }}
+    .d-sm-none
+    .d-sm-inline
+    .d-sm-inline-block
+    .d-sm-block
+    .d-sm-table
+    .d-sm-table-cell
+    .d-sm-flex
+    .d-sm-inline-flex
+  {{ endhighlight }}
+
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}

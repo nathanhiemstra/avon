@@ -577,12 +577,16 @@
       
       
   <!-- ORDER SUMMARY -->
-  <!-- DRAWER -->
+  
+
+<!-- DRAWER -->
 <div class="drawer drawer-fixed-bottom drawer-order-summary">
 
   <!-- DRAWER NAV BAR -->
   <section class="navbar navbar-default hidden-md hidden-lg">
     <div class="container pt-4">
+
+      <!-- DRAWER SUMMARY -->
       <div class="pull-left">
         <button type="button" class="btn btn-default btn-xs trigger-drawer-order-summary">
           <span class="glyphicon glyphicon-chevron-up"></span> Your order
@@ -596,28 +600,76 @@
 
   <!-- DRAWER CONTENT -->
   <section class="order-summary">
+
+    <!-- TITLE -->
     <h3>Order Summary</h3>
+
+    <!-- ITEMIZED -->
+    
     <ul class="list-group">
+
+      <!-- ITEMIZED - BY PERSON -->
       <li class="list-group-item">
         <dl>
-          <dt>&lt;Person&gt;</dt>
-          <dd>$&lt;0.00&gt;</dd>
-          <dt>&lt;Person&gt;</dt>
-          <dd>$&lt;0.00&gt;</dd>
+          <dt>Person 1</dt>
+          <dd>$80.00</dd>
+          <dt>Person 2</dt>
+          <dd>$10.00</dd>
         </dl>
       </li>
+
+      <!-- ITEMIZED - BY CHARGES -->
       <li class="list-group-item">
         <dl>
-          <dt>Order subtotal</dt>
-          <dd>$&lt;0.00&gt;</dd>
+          <dt>55 Items:</dt>
+          <dd>$460.00</dd>
+          <dt>Shipping &amp; Handling:</dt>
+          <dd>$5.95</dd>
+          <dt>Taxes</dt>
+          <dd>$18.92</dd>
+        </dl>
+      </li>
+
+      <!-- SUBTOTAL -->
+      <li class="list-group-item">
+        <dl>
           <dt>Discount</dt>
-          <dd>$&lt;0.00&gt;</dd>
+          <dd>- $36.00</dd>
+          <dt>Order subtotal</dt>
+          <dd>$90.00</dd>
+          
         </dl>
       </li>
-      <li class="list-group-item"><a href="#">Order $&lt;00&gt; more for &lt;0&gt;% discount!</a></li>
+
+      <!-- TOTAL -->
+      <li class="list-group-item">
+        <dl>
+          <dt>Order Total</dt>
+          <dd><b>$484.87</b></dd>
+        </dl>
+      </li>
+
+      <!-- DISCOUNT OFFER -->
+      <li class="list-group-item"><a href="#">Order $35 more for 5% discount!</a></li>
+
+      <!-- DISCOUNT CTA-->
       <li class="list-group-item"><a href=""><span class="glyphicon glyphicon-plus-sign"></span> Add extras</a></li>
     </ul>
+
+    <!-- CTA -->
     <p><button type="button" class="btn btn-primary btn-lg">Continue</button></p>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+         <label class="control-label" for="exampleInput1">Enter Promo Code</label>    <input type="text" class="form-control" id="exampleInput1">        </div>
+      </div>
+      <div class="col-sm-6"><button type="button" class="btn btn-default">Apply</button></div>
+    </div><!-- /.row -->
+
+    
+
+
   </section>
 </div><!-- /.drawer -->
       
