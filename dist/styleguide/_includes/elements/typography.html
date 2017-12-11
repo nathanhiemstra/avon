@@ -1,19 +1,8 @@
-
-
-
-
-
-
-
 <!-- Typography
 ================================================== -->
 <div class="bs-docs-section">
 
-  
-
-
   <h1 id="type" class="page-header">Typography</h1>
-
 
   
   
@@ -22,7 +11,7 @@
   <p>Bootstrap sets basic global display, typography, and link styles. Specifically, we:</p>
   <ul>
     <li>Set <code>background-color: #fff;</code> on the <code>body</code></li>
-    <li>Use the <code>@font-family-base</code>, <code>$font-size-base</code>, and <code>$line-height-base</code> attributes as our typographic base</li>
+    <li>Use the <code>$font-family-base</code>, <code>$font-size-base</code>, and <code>$line-height-base</code> attributes as our typographic base</li>
     <li>Set the global link color via <code>$link-color</code> and apply link underlines only on <code>:hover</code></li>
   </ul>
   <p>These styles can be found within <code>scaffolding.scss</code>.</p>
@@ -467,6 +456,40 @@
     <h4>Auto-truncating</h4>
     <p>Horizontal description lists will truncate terms that are too long to fit in the left column with <code>text-overflow</code>. In narrower viewports, they will change to the default stacked layout.</p>
   </div>
+
+
+
+  
+  
+  
+  <h3 id="type-variables">Variables</h3>
+  <p>Easily set your type face, text size, leading, and more with a few quick variables. Bootstrap makes use of these as well to provide easy typographic mixins.</p>
+
+  <pre><code class="language-css"><script type="text/plain">
+  $font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+  $font-family-serif:       Georgia, "Times New Roman", Times, serif;
+  $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+  $font-family-base:        $font-family-sans-serif;
+
+  $font-size-base:          14px;
+  $font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+  $font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+
+  $font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+  $font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+  $font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+  $font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+  $font-size-h5:            $font-size-base;
+  $font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+
+  $line-height-base:        1.428571429; // 20/14
+  $line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+
+  $headings-font-family:    inherit;
+  $headings-font-weight:    500;
+  $headings-line-height:    1.1;
+  $headings-color:          inherit;
+  </script></code></pre>
 
 
 

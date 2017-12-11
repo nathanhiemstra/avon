@@ -51,11 +51,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="index.html" class="navbar-brand">Home</a>
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
 
+        <li >
+          <a href="index.html">Styleguide home</a>
+        </li>
         <li  class="active" >
           <a href="css.html">CSS</a>
         </li>
@@ -883,33 +885,11 @@
 
 
 
-  
-  
-  
-  <h3 id="helper-classes-close">Close icon</h3>
-  <p>Use the generic close icon for dismissing content like modals and alerts.</p>
-  <div class="bs-example">
-    <p><button type="button" class="close" aria-hidden="true">&times;</button></p>
-  </div>
-
-  <pre><code class="language-markup"><script type="text/plain">
-  <button type="button" class="close" aria-hidden="true">&times;</button>
-  </script></code></pre>
 
 
 
-  
-  
-  
-  <h3 id="helper-classes-carets">Carets</h3>
-  <p>Use carets to indicate dropdown functionality and direction. Note that the default caret will reverse automatically in <a href="../components/#btn-dropdowns-dropup">dropup menus</a>.</p>
-  <div class="bs-example">
-    <span class="caret"></span>
-  </div>
 
-  <pre><code class="language-markup"><script type="text/plain">
-  <span class="caret"></span>
-  </script></code></pre>
+
 
 
 
@@ -1443,63 +1423,6 @@
   <h2 id="less-variables">Variables</h2>
   <p>Variables are used throughout the entire project as a way to centralize and share commonly used values like colors, spacing, or font stacks. For a complete breakdown, please see <a href="../customize/#less-variables-section">the Customizer</a>.</p>
 
-  
-  
-  
-  <h3 id="less-variables-colors">Colors</h3>
-  <p>Easily make use of two color schemes: grayscale and semantic. Grayscale colors provide quick access to commonly used shades of black while semantic include various colors assigned to meaningful contextual values.</p>
-  <div class="bs-example">
-    <div class="color-swatches">
-      <div class="color-swatch gray-darker"></div>
-      <div class="color-swatch gray-dark"></div>
-      <div class="color-swatch gray"></div>
-      <div class="color-swatch gray-light"></div>
-      <div class="color-swatch gray-lighter"></div>
-    </div>
-  </div>
-
-<pre><code class="language-css"><script type="text/plain">
-@gray-darker:  lighten(#000, 13.5%); // #222
-@gray-dark:    lighten(#000, 20%);   // #333
-@gray:         lighten(#000, 33.5%); // #555
-@gray-light:   lighten(#000, 60%);   // #999
-@gray-lighter: lighten(#000, 93.5%); // #eee
-</script></code></pre>
-
-
-  <div class="bs-example">
-    <div class="color-swatches">
-      <div class="color-swatch brand-primary"></div>
-      <div class="color-swatch brand-success"></div>
-      <div class="color-swatch brand-info"></div>
-      <div class="color-swatch brand-warning"></div>
-      <div class="color-swatch brand-danger"></div>
-    </div>
-  </div>
-
-<pre><code class="language-css"><script type="text/plain">
-@brand-primary: #428bca;
-@brand-success: #5cb85c;
-@brand-info:    #5bc0de;
-@brand-warning: #f0ad4e;
-@brand-danger:  #d9534f;
-</script></code></pre>
-
-
-  <p>Use any of these color variables as they are or reassign them to more meaningful variables for your project.</p>
-
-<pre><code class="language-css"><script type="text/plain">
-// Use as-is
-.masthead {
-  background-color: @brand-primary;
-}
-
-// Reassigned variables in Less
-@alert-message-background: @brand-info;
-.alert {
-  background-color: @alert-message-background;
-}
-</script></code></pre>
 
 
   
@@ -2089,8 +2012,6 @@ a {
   <ul class="nav">
     <li><a href="#helper-classes-colors">Contextual colors</a></li>
     <li><a href="#helper-classes-backgrounds">Contextual backgrounds</a></li>
-    <li><a href="#helper-classes-close">Close icon</a></li>
-    <li><a href="#helper-classes-carets">Carets</a></li>
     <li><a href="#helper-classes-floats">Quick floats</a></li>
     <li><a href="#helper-classes-display">Display Properties</a></li>
     <li><a href="#helper-classes-center">Center content blocks</a></li>
@@ -2149,7 +2070,7 @@ a {
     'right-trim': true,
   });
   </script>
-  <script src="docs-assets/js/docs.min.js"></script>
+  <script src="docs-assets/js/application.js"></script>
 
 
 

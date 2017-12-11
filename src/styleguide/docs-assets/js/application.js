@@ -31,11 +31,11 @@
     var $window = $(window)
     var $body   = $(document.body)
 
-    var navHeight = $('.navbar').outerHeight(true) + 10
+    var navHeight = $('.navbar').outerHeight(true) + 100
 
     $body.scrollspy({
       target: '.bs-sidebar',
-      // offset: navHeight
+      offset: navHeight
     })
 
     $window.on('load', function () {

@@ -13,63 +13,6 @@
   <h2 id="less-variables">Variables</h2>
   <p>Variables are used throughout the entire project as a way to centralize and share commonly used values like colors, spacing, or font stacks. For a complete breakdown, please see <a href="../customize/#less-variables-section">the Customizer</a>.</p>
 
-  
-  
-  
-  <h3 id="less-variables-colors">Colors</h3>
-  <p>Easily make use of two color schemes: grayscale and semantic. Grayscale colors provide quick access to commonly used shades of black while semantic include various colors assigned to meaningful contextual values.</p>
-  <div class="bs-example">
-    <div class="color-swatches">
-      <div class="color-swatch gray-darker"></div>
-      <div class="color-swatch gray-dark"></div>
-      <div class="color-swatch gray"></div>
-      <div class="color-swatch gray-light"></div>
-      <div class="color-swatch gray-lighter"></div>
-    </div>
-  </div>
-
-<pre><code class="language-css"><script type="text/plain">
-@gray-darker:  lighten(#000, 13.5%); // #222
-@gray-dark:    lighten(#000, 20%);   // #333
-@gray:         lighten(#000, 33.5%); // #555
-@gray-light:   lighten(#000, 60%);   // #999
-@gray-lighter: lighten(#000, 93.5%); // #eee
-</script></code></pre>
-
-
-  <div class="bs-example">
-    <div class="color-swatches">
-      <div class="color-swatch brand-primary"></div>
-      <div class="color-swatch brand-success"></div>
-      <div class="color-swatch brand-info"></div>
-      <div class="color-swatch brand-warning"></div>
-      <div class="color-swatch brand-danger"></div>
-    </div>
-  </div>
-
-<pre><code class="language-css"><script type="text/plain">
-@brand-primary: #428bca;
-@brand-success: #5cb85c;
-@brand-info:    #5bc0de;
-@brand-warning: #f0ad4e;
-@brand-danger:  #d9534f;
-</script></code></pre>
-
-
-  <p>Use any of these color variables as they are or reassign them to more meaningful variables for your project.</p>
-
-<pre><code class="language-css"><script type="text/plain">
-// Use as-is
-.masthead {
-  background-color: @brand-primary;
-}
-
-// Reassigned variables in Less
-@alert-message-background: @brand-info;
-.alert {
-  background-color: @alert-message-background;
-}
-</script></code></pre>
 
 
   

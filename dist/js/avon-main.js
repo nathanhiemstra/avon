@@ -57,22 +57,10 @@ $(document).ready(function() {
   // LISTENERS
   ////////////////////////////////////////////////////////
 
-  // $objects.inputs.rangeAll.on("input", function() {
-  //   recalculate();
-  // });
-
-  // $objects.inputs.aepOrCapacityFactor.on("change", function() {
-  //   recalculate();
-  // });
-
 
   $objects.triggers.drawerOrderSummary.on("click", function() {
     $objects.drawers.orderSummary.toggleClass('drawer-expanded');
   });
-
-  // $objects.nav.continue.on("click", function() {
-  //   showStepMain();
-  // });
 
 
   ////////////////////////////////////////////////////////
