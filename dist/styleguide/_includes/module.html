@@ -1,10 +1,104 @@
 <!-- 
   ================================================== -->
-<h2 id="global-header">Header</h2>
-
+<h2 id="order-summary-checkout" class="bs-headline">Order Summary (Checkout)</h2>
+Goes in the right column. Content varies between Product Detail and Checkout
 <div class="bs-example">
-  <img src="/images/logos/your-avon.png" alt="Your Avon">
-</div>
+    
+<!-- DRAWER -->
+<div class="drawer drawer-fixed-bottom drawer-order-summary">
+
+  <!-- DRAWER NAV BAR -->
+  <section class="navbar navbar-default hidden-md hidden-lg">
+    <div class="container pt-4">
+
+      <!-- DRAWER SUMMARY -->
+      <div class="pull-left">
+        <button type="button" class="btn btn-default btn-xs trigger-drawer-order-summary">
+          <span class="glyphicon glyphicon-chevron-up"></span> Your order
+        </button>
+      </div>
+      <div class="pull-right">
+        <b>$</b> <small> items</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRAWER CONTENT -->
+  <section class="order-summary">
+
+    <!-- TITLE -->
+    <h3>Order Summary</h3>
+
+    <!-- ITEMIZED -->
+    <ul class="list-group">
+
+
+
+
+
+      <!-- DISCOUNT OFFER -->
+      <li class="list-group-item"><a href="#">Order $35 more for 5% discount!</a></li>
+
+      <!-- DISCOUNT CTA-->
+      <li class="list-group-item"><a href=""><span class="glyphicon glyphicon-plus-sign"></span> Add extras</a></li>
+    </ul>
+
+    <!-- CTA -->
+    <p><button type="button" class="btn btn-primary btn-lg">Continue</button></p>
+
+
+
+
+
+  </section>
+</div><!-- /.drawer --></div>
 <pre><code class="language-markup"><script type="text/plain">
-  <img src="/images/logos/your-avon.png" alt="Your Avon">
-</script></code></pre>
+    
+<!-- DRAWER -->
+<div class="drawer drawer-fixed-bottom drawer-order-summary">
+
+  <!-- DRAWER NAV BAR -->
+  <section class="navbar navbar-default hidden-md hidden-lg">
+    <div class="container pt-4">
+
+      <!-- DRAWER SUMMARY -->
+      <div class="pull-left">
+        <button type="button" class="btn btn-default btn-xs trigger-drawer-order-summary">
+          <span class="glyphicon glyphicon-chevron-up"></span> Your order
+        </button>
+      </div>
+      <div class="pull-right">
+        <b>$</b> <small> items</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRAWER CONTENT -->
+  <section class="order-summary">
+
+    <!-- TITLE -->
+    <h3>Order Summary</h3>
+
+    <!-- ITEMIZED -->
+    <ul class="list-group">
+
+
+
+
+
+      <!-- DISCOUNT OFFER -->
+      <li class="list-group-item"><a href="#">Order $35 more for 5% discount!</a></li>
+
+      <!-- DISCOUNT CTA-->
+      <li class="list-group-item"><a href=""><span class="glyphicon glyphicon-plus-sign"></span> Add extras</a></li>
+    </ul>
+
+    <!-- CTA -->
+    <p><button type="button" class="btn btn-primary btn-lg">Continue</button></p>
+
+
+
+
+
+  </section>
+</div><!-- /.drawer --></script></code></pre>

@@ -66,6 +66,7 @@ markup.highlight = {
   markup:     '<pre><code class="language-markup"><script type="text/plain">',
   javascript: '<pre><code class="language-javascript"><script type="text/plain">',
   twig:       '<pre><code class="language-twig"><script type="text/plain">',
+  sass:       '<pre><code class="language-sass"><script type="text/plain">',
   end:        '</script></code></pre>'
 }
 
@@ -90,6 +91,7 @@ gulp.task('compile', function () {
             highlightMarkup:      markup.highlight.markup,
             highlightJavascript:  markup.highlight.javascript,
             highlightTwig:        markup.highlight.twig,
+            highlightSass:        markup.highlight.sass,
             endhighlight:         markup.highlight.end,
             components: {
               elements: {
@@ -142,6 +144,14 @@ gulp.task('compile', function () {
                 global: {
                   footer:           prefix.modules + "global/footer.html.twig",
                   header:           prefix.modules + "global/header.html.twig"
+                },
+                orders: {
+                  productDetail: {
+                    details:       prefix.modules + "orders/product-detail/details.html.twig",
+                    features:      prefix.modules + "orders/product-detail/features.html.twig",
+                    header:        prefix.modules + "orders/product-detail/header.html.twig",
+                    images:        prefix.modules + "orders/product-detail/images.html.twig"
+                  }
                 }
               },
               template:           "styleguide/_includes/module.html.twig",

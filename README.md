@@ -16,7 +16,18 @@ This README documents steps to get the Avon Proof of Concept application up and 
 * Templating is done with [Twig](https://www.npmjs.com/package/twig).
 * Gulp handles automated tasks (like compiling SASS) and runs the local server.
 * Images must be manually copied from **src** to the **dist** folder
-* Code highlighting is done with [Prism](http://prismjs.com/) using plugins: Toolbar, Copy to Clipboard Button, and Unescaped Markup. 
+* Code highlighting is done with [Prism](http://prismjs.com/) using languages: 
+Markup
+** Markup
+** CSS
+** C-Like
+** JavaScript
+** SaSS
+Plugins: 
+** Copy to Clipboard Button
+** Toolbar
+** Unescaped Markup
+
 * Deploys are triggered manually in [Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/)
 
 ### Setup ###

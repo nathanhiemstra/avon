@@ -1,4 +1,3 @@
-{{ page }}
 {% if page == 'product-detail' %}
   {% set itemsTotal = '9' %}
   {% set priceTotal = '54.00' %}
@@ -12,9 +11,6 @@
 {% else %}
   {% set ctaButton = 'Continue' %}
 {% endif %}
-
-
-
 
 <!-- DRAWER -->
 <div class="drawer drawer-fixed-bottom drawer-order-summary">
@@ -115,7 +111,7 @@
 
 {% if page == 'checkout' %}
     <!-- PROMO CODE-->
-    <div class=" mt-5">
+    <div class="mt-5">
       <div class="form-group">
        {% include components.groups.forms.inputAndLabel with {'mainLabel': 'Enter Promo Code', 'id': 'exampleInput1'} %}
       </div>
@@ -123,10 +119,6 @@
     </div>
 {% endif %}
 
-
-
-
-    
 
 
   </section>

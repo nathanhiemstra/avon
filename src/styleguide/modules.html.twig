@@ -9,6 +9,95 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block styleguideContent %}
 
+  <h1 id="product-detail" class="bs-headline">Product Detail</h1>
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# ORDER - PRODUCT DETAIL HEADER #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Product Detail - Header",
+    slug:         "product-detail-header",
+    path:         components.modules.orders.productDetail.header 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# ORDER - PRODUCT DETAIL IMAGES #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Product Detail - Images",
+    slug:         "product-detail-images",
+    path:         components.modules.orders.productDetail.images 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# ORDER - PRODUCT DETAIL DETAIL #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Product Detail - Detail",
+    slug:         "product-detail-details",
+    path:         components.modules.orders.productDetail.details 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# ORDER - PRODUCT DETAIL FEATURES #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Product Detail - Features",
+    slug:         "product-detail-features",
+    path:         components.modules.orders.productDetail.features 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+  <h1 id="order-summary" class="bs-headline">Order Summary</h1>
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# ORDER SUMMARY (PRODUCT DETAIL) #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Order Summary (Product Detail)",
+    slug:         "order-summary-pd",
+    description:  "Goes in the right column. Content varies between Product Detail and Checkout",
+    path:         components.groups.checkout.orderSummary
+  }%}
+
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  {{ styleguideItem.description }}
+  <div class="bs-example">
+    {% include components.groups.checkout.orderSummary with {'page': 'product-detail'} %}
+  </div>
+  {{ highlightMarkup }}
+    {% include components.groups.checkout.orderSummary with {'page': 'product-detail'} %}
+  {{ endhighlight }}
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# ORDER SUMMARY (PRODUCT DETAIL)  #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:         "Order Summary (Checkout)",
+    slug:         "order-summary-checkout",
+    description:  "Goes in the right column. Content varies between Product Detail and Checkout",
+    path:       components.groups.checkout.orderSummary
+  }%}
+
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  {{ styleguideItem.description }}
+  <div class="bs-example">
+    {% include components.groups.checkout.orderSummary with {'page': 'checkout'} %}
+  </div>
+  {{ highlightMarkup }}
+    {% include components.groups.checkout.orderSummary with {'page': 'checkout'} %}
+  {{ endhighlight }}
+
+
+
 
   <!-- SECTION - JUMBOTRON -->
   {% include "styleguide/_includes/modules/jumbotron.html.twig" %}
