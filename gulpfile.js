@@ -141,21 +141,29 @@ gulp.task('compile', function () {
                 }
               },
               modules: {
+                checkoutV2: {
+                  orderSummary:     prefix.modules + "checkout-v2/order-summary.html.twig"
+                },
                 global: {
                   footer:           prefix.modules + "global/footer.html.twig",
                   header:           prefix.modules + "global/header.html.twig"
                 },
-                orders: {
-                  productDetail: {
-                    details:       prefix.modules + "orders/product-detail/details.html.twig",
-                    features:      prefix.modules + "orders/product-detail/features.html.twig",
-                    header:        prefix.modules + "orders/product-detail/header.html.twig",
-                    images:        prefix.modules + "orders/product-detail/images.html.twig"
+                product: {
+                  detail: {
+                    details:       prefix.modules + "product/detail/details.html.twig",
+                    features:      prefix.modules + "product/detail/features.html.twig",
+                    header:        prefix.modules + "product/detail/header.html.twig",
+                    images:        prefix.modules + "product/detail/images.html.twig"
+                  }
+                },
+                productV2: {
+                  detail: {
+                    addToOrder:    prefix.modules + "product-v2/detail/add-to-order.html.twig",
+                    details:       prefix.modules + "product-v2/detail/details.html.twig"
+                    
                   }
                 }
-              },
-              template:           "styleguide/_includes/module.html.twig",
-              templates: {}
+              }
             },
             styleguide: {
               item:               "styleguide/_includes/module.html.twig"
