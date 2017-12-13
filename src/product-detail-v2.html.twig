@@ -2,10 +2,42 @@
 {% extends "_layouts/one-column.html.twig" %}
 
 
+
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - MAIN #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block main %}
+
+
+</div>
+
+
+
+{#   <section>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+      <li class="active ml-3"><a href="#pd-products" data-toggle="tab">Products (8)</a></li>
+      <li><a href="#pd-incentives" data-toggle="tab">Incentives (5)</a></li>
+    </ul>
+    <div class="container">
+      <!-- Tab panes -->
+      <div class="tab-content mt-5">
+        <div class="tab-pane active" id="pd-products">
+          {% include components.modules.checkoutV2.orderSummaryTabProducts %}
+        </div>
+
+        <!-- INCENTIVES -->
+        <div class="tab-pane" id="pd-incentives">
+          {% include components.modules.checkoutV2.orderSummaryTabIncentives %}
+      </div>
+    
+    </div>
+  </section> #}
+
+    
+  
+<div class="container">
 
   <section class="text-center">
     {% include components.modules.product.detail.images %}
@@ -109,12 +141,8 @@
     </div>
   </section>
 
+  {% include components.modules.checkoutV2.orderSummary %}
 
-
-  {% include components.modules.checkoutV2.orderSummary with { page: 'product-detail' } %}
-
-
-  
   {% include components.modules.productV2.detail.addToOrder %}
 
 {% endblock %}

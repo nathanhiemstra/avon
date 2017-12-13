@@ -5,7 +5,7 @@
 //
 
 .border {
-    border: $border-width solid $border-color !important;
+    border: $border-width solid $list-group-border !important;
 }
 
 .border-0 {
@@ -29,29 +29,33 @@
 }
 
 .border-top {
-    border: $border-width solid $border-color !important;
+    border: $border-width solid $list-group-border !important;
     border-bottom: 0 !important;
     border-right: 0 !important;
     border-left: 0 !important;
 }
 
 .border-right {
-    border: $border-width solid $border-color !important;
+    border: $border-width solid $list-group-border !important;
     border-top: 0 !important;
     border-bottom: 0 !important;
     border-left: 0 !important;
 }
 
 .border-bottom {
-    border-bottom: $border-width solid $border-color !important;
+    border-bottom: $border-width solid $list-group-border !important;
     border-top: 0 !important;
     border-right: 0 !important;
     border-left: 0 !important;
 }
 
 .border-left {
-    border: $border-width solid $border-color !important;
+    border: $border-width solid $list-group-border !important;
     border-top: 0 !important;
     border-bottom: 0 !important;
     border-right: 0 !important;
+}
+
+.border-radius-0 {
+    border-radius: 0 !important;
 }
