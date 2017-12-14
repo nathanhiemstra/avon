@@ -142,9 +142,24 @@ gulp.task('compile', function () {
               },
               modules: {
                 checkoutV2: {
-                  orderSummary:                prefix.modules + "checkout-v2/order-summary.html.twig",
-                  orderSummaryTabProducts:     prefix.modules + "checkout-v2/order-summary-tab-products.html.twig",
-                  orderSummaryTabIncentives:   prefix.modules + "checkout-v2/order-summary-tab-incentives.html.twig"
+                  orderSummary:                 prefix.modules + "checkout-v2/order-summary.html.twig",
+                  orderSummaryTabProducts:      prefix.modules + "checkout-v2/order-summary-tab-products.html.twig",
+                  orderSummaryTabIncentives:    prefix.modules + "checkout-v2/order-summary-tab-incentives.html.twig",
+                  review: {
+                    item: {
+                      cart:                     prefix.modules + "checkout-v2/review-item-cart.html.twig",
+                      shipTo:                   prefix.modules + "checkout-v2/review-item-ship-to.html.twig",
+                      shipMethod:               prefix.modules + "checkout-v2/review-item-ship-method.html.twig",
+                      payMethod:                prefix.modules + "checkout-v2/review-item-pay-method.html.twig"
+                    },
+                    drawer: {
+                      orderTotal:               prefix.modules + "checkout-v2/drawer-total-order.html.twig"
+                    },
+                    tab: {
+                      cart:                     prefix.modules + "checkout-v2/tab-review-cart.html.twig"
+                    }
+                  },
+                  triage:                       prefix.modules + "checkout-v2/triage.html.twig"
                 },
                 global: {
                   footer:           prefix.modules + "global/footer.html.twig",
@@ -167,14 +182,27 @@ gulp.task('compile', function () {
                 }
               }
             },
+            pages: {
+              checkoutV2: {
+                review: {
+                  itemized: 'checkout-review-itemized-v2.html'
+                }
+              },
+              productV2: {
+                detail: 'product-detail-v2.html'
+              }
+            },
             styleguide: {
-              item:               "styleguide/_includes/module.html.twig"
+              item: "styleguide/_includes/module.html.twig"
             },
             fpo: {
               image: '<img src="images/utility/placeholder.png" alt="" class="img-responsive">',
               sku: "&lt;000-000&gt;",
               paragraph: "Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.",
               sentence: "Lorem ipsum dolor sit amet, erant dolor phaedrum."
+            },
+            code: {
+              hideHeaderFooter: "<style>.global-header, .global-footer {display: none;} main {margin-top: 15px;} </style>"
             }
           }
       }))

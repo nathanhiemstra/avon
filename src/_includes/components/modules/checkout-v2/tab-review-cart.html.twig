@@ -1,0 +1,13 @@
+<h3 class="mb-5"><span class="glyphicon glyphicon-shopping-cart"></span> {{ personLabel }}</h3>
+
+<!-- REVIEW ITEM - CART -->
+{% include components.modules.checkoutV2.review.item.cart with { item: 'cart' } %}
+
+<!-- REVIEW ITEM - SHIP TO -->
+{% include components.modules.checkoutV2.review.item.shipTo with { item: 'ship-to' }  %}
+
+<!-- REVIEW ITEM - SHIPPING METHOD  -->
+{% include components.modules.checkoutV2.review.item.shipMethod with { item: 'ship-method' }  %}
+
+<!-- REVIEW ITEM - PAY METHOD  -->
+{% include components.modules.checkoutV2.review.item.payMethod with { item: 'pay-method' }  %}

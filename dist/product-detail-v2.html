@@ -32,7 +32,7 @@
       <a class="sr-only" href="#content">Skip to main content</a>
 
       
-      <header class="navbar navbar-default navbar-static-top bs-docs-nav" role="banner">
+      <header class="navbar navbar-default navbar-static-top global-header" role="banner">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -72,16 +72,7 @@
     
     
     
-
-</div>
-
-
-
-
-
-    
   
-<div class="container">
 
   <section class="text-center">
     <!-- PRODUCT IMAGE(S) -->
@@ -100,7 +91,7 @@
     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#product-add-to-order">
       Add to order
     </button>
-    <button class="btn btn-primary btn-lg">
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#checkout-triage">
       Checkout
     </button>
   </section>
@@ -239,9 +230,12 @@
     </div>
   </section>
 
+</div>
+
+  <!-- DRAWER -->
     
 <!-- DRAWER -->
-<div class="drawer drawer-fixed-bottom drawer-order-summary hidden-md hidden-lg">
+<div id="drawer-order-summary" class="drawer drawer-fixed-bottom drawer-order-summary hidden-md hidden-lg">
 
   <!-- DRAWER NAV BAR -->
   <section class="navbar navbar-default hidden-md hidden-lg">
@@ -249,11 +243,11 @@
 
       <!-- DRAWER SUMMARY -->
       <div class="pull-left">
-        <h4 class="m-0"><a href="#" class="trigger-drawer-order-summary"><span class="glyphicon glyphicon-shopping-cart"></span> My order <small> (<span class="order-qty">8</span> items)</small></a></h4>
+        <h4 class="m-0"><a href="#drawer-order-summary" data-toggle="drawer"><span class="glyphicon glyphicon-shopping-cart"></span> My order <small> (<span class="order-qty">8</span> items)</small></a></h4>
 
       </div>
       <div class="pull-right">
-        <a href="#" class="trigger-drawer-order-summary"><span class="glyphicon glyphicon-chevron-up"></span></a>
+        <a href="#drawer-order-summary" data-toggle="drawer"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
         
       </div>
@@ -261,11 +255,11 @@
   </section>
 
   <!-- DRAWER CONTENT -->
-  <section class="order-summary">
+  <section>
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs">
-      <li class="active ml-3"><a href="#pd-products" data-toggle="tab">Products (8)</a></li>
+      <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products (8)</a></li>
       <li><a href="#pd-incentives" data-toggle="tab">Incentives (5)</a></li>
     </ul>
     <div class="container">
@@ -522,53 +516,141 @@
 
   </section>
 </div><!-- /.drawer -->
-  <!-- Modal -->
-<div class="modal fade" id="product-add-to-order" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <!-- MODAL - ADD TO ORDER -->
+  
+<!-- Modal -->
+<div class="modal fade" id="product-add-to-order" tabindex="-1" role="dialog" aria-labelledby="product-add-to-order" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel">Add product to order</h4>
-        </div>
+
+        
+        
+        
+                
+            <div class="modal-header">
+              
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h4 class="modal-title" id="myModalLabel">Add product to order</h4>
+
+
+            </div>
+
+        
+
         <div class="modal-body">
 
-          <div class="form-group">
-            <label class="control-label" for="who-product-for">Who is this product for?</label>
+          
+          
+          
+          
+  <div class="form-group">
+    <label class="control-label" for="who-product-for">Who is this product for?</label>
   <select class="form-control" id="who-product-for">
       <option>Me</option>
       <option>Someone in my downline</option>
       <option>A new customer</option>
-  </select>          </div>
+  </select>  </div>
 
-          <div class="row">
-            <div class="col-xs-6">
-              <div class="form-group">
-                <label class="control-label" for="quantity">Quantity</label>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <label class="control-label" for="quantity">Quantity</label>
     <select class="form-control" id="quantity">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>              </div>
-            </div>
-            <div class="col-xs-6">
-              <b>Sub-total</b><br>
-              $25.00
-            </div>
-          </div><!-- /.row -->
+  </select>      </div>
+    </div>
+    <div class="col-xs-6">
+      <b>Sub-total</b><br>
+      $25.00
+    </div>
+  </div><!-- /.row -->
 
-          <div class="form-inline">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Auto-replenish
-              </label>
-            </div>
-          </div>
+  <div class="form-inline">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Auto-replenish
+      </label>
+    </div>
+  </div>
 
-          <div class="alert alert-info"><span class="glyphicon glyphicon-info-sign"></span> Shipping and taxes will be calculated during the checkout process</div>
+  <div class="alert alert-info"><span class="glyphicon glyphicon-info-sign"></span> Shipping and taxes will be calculated during the checkout process</div>
+
+          
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Add to order</button>
+
+        
+        
+        
+                
+            <div class="modal-footer">
+              
+  <button type="button" class="btn btn-primary" data-dismiss="modal">Add to order</button>
+
+
+            </div>
+
+        
+
+
+      </div>
+    </div>
+  </div>  
+  <!-- MODAL - TRIAGE -->
+  
+<!-- Modal -->
+<div class="modal fade" id="checkout-triage" tabindex="-1" role="dialog" aria-labelledby="checkout-triage" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        
+        
+        
+                
+            <div class="modal-header">
+              
+  <button type="button" class="btn btn-default btn-sm pull-right" data-dismiss="modal" aria-hidden="true">Cancel</button>
+  <h4 class="modal-title ">Checkout</h4>
+
+
+            </div>
+
+        
+
+        <div class="modal-body">
+
+          
+          
+          
+          
+  <p>This order contains multiple carts. You can quickly check out by applying the same setttings to all carts or customize each cart’s invidual settings.</p>
+
+  <a href="#" class="btn btn-default btn-block my-4">
+    <div  class="text-left">
+      <h3>Quick Checkout</h3>
+      <p>Apply a single shipping address and payment method to all carts</p>
+    </div>
+  </a>
+
+  <a href="checkout-review-itemized-v2.html" class="btn btn-default btn-block my-4">
+    <div  class="text-left">
+      <h3>Itemized Checkout</h3>
+      <p>Use unique shipping and payments options for individual carts</p>
+    </div>
+  </a>
+
+
+
+          
         </div>
+
+        
+        
+        
+                
+
+
       </div>
     </div>
   </div>
@@ -580,7 +662,7 @@
 
       
       <!--Footer-->
-<footer class="my-5 footer">
+<footer class="my-5 footer global-footer">
     <hr>
     
 

@@ -1,6 +1,6 @@
   
 <!-- DRAWER -->
-<div class="drawer drawer-fixed-bottom drawer-order-summary hidden-md hidden-lg">
+<div id="drawer-order-summary" class="drawer drawer-fixed-bottom drawer-order-summary hidden-md hidden-lg">
 
   <!-- DRAWER NAV BAR -->
   <section class="navbar navbar-default hidden-md hidden-lg">
@@ -8,11 +8,11 @@
 
       <!-- DRAWER SUMMARY -->
       <div class="pull-left">
-        <h4 class="m-0"><a href="#" class="trigger-drawer-order-summary"><span class="glyphicon glyphicon-shopping-cart"></span> My order <small> (<span class="order-qty">8</span> items)</small></a></h4>
+        <h4 class="m-0"><a href="#drawer-order-summary" data-toggle="drawer"><span class="glyphicon glyphicon-shopping-cart"></span> My order <small> (<span class="order-qty">8</span> items)</small></a></h4>
 
       </div>
       <div class="pull-right">
-        <a href="#" class="trigger-drawer-order-summary"><span class="glyphicon glyphicon-chevron-up"></span></a>
+        <a href="#drawer-order-summary" data-toggle="drawer"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
         
       </div>
@@ -20,11 +20,11 @@
   </section>
 
   <!-- DRAWER CONTENT -->
-  <section class="order-summary">
+  <section>
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs">
-      <li class="active ml-3"><a href="#pd-products" data-toggle="tab">Products (8)</a></li>
+      <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products (8)</a></li>
       <li><a href="#pd-incentives" data-toggle="tab">Incentives (5)</a></li>
     </ul>
     <div class="container">

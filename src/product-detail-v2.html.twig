@@ -9,35 +9,7 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block main %}
 
-
-</div>
-
-
-
-{#   <section>
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs">
-      <li class="active ml-3"><a href="#pd-products" data-toggle="tab">Products (8)</a></li>
-      <li><a href="#pd-incentives" data-toggle="tab">Incentives (5)</a></li>
-    </ul>
-    <div class="container">
-      <!-- Tab panes -->
-      <div class="tab-content mt-5">
-        <div class="tab-pane active" id="pd-products">
-          {% include components.modules.checkoutV2.orderSummaryTabProducts %}
-        </div>
-
-        <!-- INCENTIVES -->
-        <div class="tab-pane" id="pd-incentives">
-          {% include components.modules.checkoutV2.orderSummaryTabIncentives %}
-      </div>
-    
-    </div>
-  </section> #}
-
-    
   
-<div class="container">
 
   <section class="text-center">
     {% include components.modules.product.detail.images %}
@@ -45,7 +17,7 @@
     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#product-add-to-order">
       Add to order
     </button>
-    <button class="btn btn-primary btn-lg">
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#checkout-triage">
       Checkout
     </button>
   </section>
@@ -144,9 +116,16 @@
     </div>
   </section>
 
+</div>
+
+  <!-- DRAWER -->
   {% include components.modules.checkoutV2.orderSummary %}
 
+  <!-- MODAL - ADD TO ORDER -->
   {% include components.modules.productV2.detail.addToOrder %}
+  
+  <!-- MODAL - TRIAGE -->
+  {% include components.modules.checkoutV2.triage %}
 
 {% endblock %}
 

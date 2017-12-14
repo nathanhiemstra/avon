@@ -1,0 +1,45 @@
+{# modal.html.twig #}
+<!-- Modal -->
+<div class="modal fade" id="{{ modalId }}" tabindex="-1" role="dialog" aria-labelledby="{{ modalId }}" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# RENDER BLOCK - modalHeader #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% set _block = block('modalHeader') %}
+        {% if _block is not empty %}
+
+            <div class="modal-header">
+              {{ _block|raw }}
+            </div>
+
+        {% endif %}
+
+
+        <div class="modal-body">
+
+          {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+          {# RENDER BLOCK - modalBody #}
+          {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+          {% block modalBody %}{% endblock %}
+          
+        </div>
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# RENDER BLOCK - modalFooter #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% set _block = block('modalFooter') %}
+        {% if _block is not empty %}
+
+            <div class="modal-footer">
+              {{ _block|raw }}
+            </div>
+
+        {% endif %}
+
+
+
+      </div>
+    </div>
+  </div>

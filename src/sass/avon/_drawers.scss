@@ -10,18 +10,16 @@
         transition: height 0.5s;
     }
 
-    &-order-summary {
-        height: 50px;
-        background: $body-bg;
+    height: 50px;
+    background: $body-bg;
 
-        @media (min-width: $screen-md-min) {
-            height: inherit;
-            position: relative;
-        }
+    @media (min-width: $screen-md-min) {
+        height: inherit;
+        position: relative;
+    }
 
-        &.drawer-expanded {
-            height: 100vh;
-        }
+    &.drawer-expanded {
+        height: 100vh;
     }
 }
 

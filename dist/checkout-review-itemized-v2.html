@@ -1,0 +1,812 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./css/bootstrap/bootstrap.css" rel="stylesheet">
+
+  <!-- Documentation extras -->
+  <link href="./css/avon-main.css" rel="stylesheet">
+  <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+</head>
+
+<body>
+
+  <section id="avon-poc"  >
+      <a class="sr-only" href="#content">Skip to main content</a>
+
+      
+      <header class="navbar navbar-default navbar-static-top global-header" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="index.html" class="navbar-brand">
+        <img src="/images/logos/your-avon.png" alt="Your Avon">
+      </a>
+    </div>
+    <div class="pull-right">
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#">Nav item</a>
+        </li>
+        <li>
+          <a href="#">Nav item</a>
+        </li>
+        <li>
+          <a href="#">Nav item</a>
+        </li>
+      </ul>
+    </nav>
+    </div>
+  </div>
+</header>
+      
+      
+      
+       
+<div class="container">
+  <main role="main">
+
+    
+    
+    
+<style>.global-header, .global-footer {display: none;} main {margin-top: 15px;} </style>
+
+</div><!-- /.container -->
+
+<section class="clearfix px-4">      
+  <a href="product-detail-v2.html" class="btn btn-default btn-sm pull-right" data-dismiss="modal" aria-hidden="true">Save &amp; Exit</a>
+  <h2 class="modal-title m-0">Checkout</h2>
+</section>
+<hr>
+
+<div class="container">
+
+
+
+<!-- Nav tabs -->
+ 
+<div class="row">
+  <div class="form-group col-xs-5">
+    <select class="form-control" data-tab-select>
+        <option data-target="#tab1">Rosa (cart 1 of 3)</option>
+        <option data-target="#tab2">Kory Rasmussen (cart 2 of 3)</option>
+        <option data-target="#tab3">Tisha Pennington (cart 3 of 3)</option>
+    </select>        
+  </div>
+</div><!-- /.row -->
+
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <section class="tab-pane active" id="tab1">
+    <h3 class="mb-5"><span class="glyphicon glyphicon-shopping-cart"></span> Me (Rosa Stone)</h3>
+
+<!-- REVIEW ITEM - CART -->
+<section class="panel panel-default">
+  <div class="panel-body p-4">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">CART OVERVIEW</h4>
+      </span>
+      <a href="#collapse-rosa-cart" data-toggle="collapse" class="btn btn-default pull-right"><span class="glyphicon glyphicon-chevron-down"></span> Details</a>
+    </div>
+    <div class="clearfix">
+      <dl class="pull-left d-inline-block mb-0 mr-5">
+        <dt>ITEMS</dt>
+        <dd>3</dd>
+      </dl>
+      <dl class="pull-left d-inline-block mb-0 mr-5">
+        <dt>TOTAL</dt>
+        <dd>$135.00</dd>
+      </dl>
+      <dl class="pull-left d-inline-block mb-0">
+        <dt>DISCOUNT</dt>
+        <dd>$23.45</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-rosa-cart">
+    <div class="p-4">
+      <p>* Shipping tax not included</p>
+    </div>
+  </div>
+</section>
+<!-- REVIEW ITEM - SHIP TO -->
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">SHIP TO</h4>
+                  <p>1153 W Grand Ave<br> Chicago, IL, 60642-5808</p>
+              </span>
+      <a href="#collapse-rosa-ship-to" data-toggle="collapse" class="btn btn-default pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-rosa-ship-to">
+    
+<div class="checkbox">
+  <label>
+          <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option1" checked >    
+    1153 W GRAND AVE,<br> CHICAGO, IL, 60642-5808
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option2">    
+    1042 N WINCHESTER AVE APT 3,<br>
+CHICAGO, IL, 60622-3743 United States
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option3">    
+    Add new address
+  </label>
+</div>    <p class="p-4"><a href="#collapse-rosa-ship-to" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+  </div>
+</section>
+<!-- REVIEW ITEM - SHIPPING METHOD  -->
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">SHIPPING METHOD</h4>
+        <p>USPS Ground (4–7 business days)<br> $5.95</p>
+      </span>
+      <a href="#collapse-rosa-ship-method" data-toggle="collapse" class="btn btn-default pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-rosa-ship-method">
+    
+<div class="checkbox">
+  <label>
+          <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option1" checked >    
+    USPS Ground $5.95 (4–7 business days)
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option2">    
+    Overnight $20.90 (next business day)
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option3">    
+    Expedited $15.90 (2–3 business days)
+  </label>
+</div>
+    <p class="p-4"><a href="#collapse-rosa-ship-method" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+    
+  </div>
+</section>
+<!-- REVIEW ITEM - PAY METHOD  -->
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">PAYMENT METHOD</h4>
+        <p>Visa ending in 9845</p>
+      </span>
+      <a href="#collapse-rosa-pay-method" data-toggle="collapse" class="btn btn-default pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-rosa-pay-method">
+    <div>
+      
+<div class="checkbox">
+  <label>
+          <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option1" checked >    
+    Credit card
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option2">    
+    Avon Credit ($85.00 available)
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option3">    
+    Email putchase link to customer
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option4">    
+    PayPal
+  </label>
+</div>    </div>
+
+    <div class="px-4">
+      <div class="row">
+        <div class="form-group col-xs-12">
+          <label class="control-label" for="cart-stype-{{ person }}-{{ item }}">Card Type</label>
+  <select class="form-control" id="cart-stype-{{ person }}-{{ item }}">
+      <option>Visa</option>
+      <option>Mastercard</option>
+      <option>American Express</option>
+  </select>        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-6">
+          <label class="control-label" for="first-{{ person }}-{{ item }}">Name on card</label>    <input type="text" class="form-control" id="first-{{ person }}-{{ item }}">        </div>
+        <div class="form-group col-xs-6">
+          <label class="control-label" for="last-{{ person }}-{{ item }}">&nbsp;</label>    <input type="text" class="form-control" id="last-{{ person }}-{{ item }}">        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-3">
+          <label class="control-label" for="month-{{ person }}-{{ item }}">Expiration date</label>
+  <select class="form-control" id="month-{{ person }}-{{ item }}">
+      <option>Month</option>
+      <option>01</option>
+      <option>02</option>
+      <option>03</option>
+      <option>04</option>
+      <option>05</option>
+      <option>06</option>
+      <option>07</option>
+      <option>08</option>
+      <option>09</option>
+      <option>10</option>
+      <option>11</option>
+      <option>12</option>
+  </select>        </div>
+        <div class="form-group col-xs-3">
+          <label class="control-label" for="year-{{ person }}-{{ item }}">&nbsp;</label>
+  <select class="form-control" id="year-{{ person }}-{{ item }}">
+      <option>Year</option>
+      <option>2018</option>
+      <option>2019</option>
+      <option>2020</option>
+  </select>        </div>
+        <div class="form-group col-xs-2">
+          <label class="control-label" for="cvv-{{ person }}-{{ item }}">CVV Code</label>    <input type="text" class="form-control" id="cvv-{{ person }}-{{ item }}">        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        
+<div class="checkbox">
+  <label>
+        <input type="checkbox" name="addresses-{{ person }}-{{ item }}" value="Option1">    
+    Save this credit card
+  </label>
+</div>      </div>
+
+    </div>
+    
+
+    <p class="p-4"><a href="#collapse-rosa-pay-method" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+    
+  </div>
+</section>  </section>
+
+  <section class="tab-pane" id="tab2">
+    <h3 class="mb-5"><span class="glyphicon glyphicon-shopping-cart"></span> Kory Rasmussen</h3>
+
+<!-- REVIEW ITEM - CART -->
+<section class="panel panel-default">
+  <div class="panel-body p-4">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">CART OVERVIEW</h4>
+      </span>
+      <a href="#collapse-kory-cart" data-toggle="collapse" class="btn btn-default pull-right"><span class="glyphicon glyphicon-chevron-down"></span> Details</a>
+    </div>
+    <div class="clearfix">
+      <dl class="pull-left d-inline-block mb-0 mr-5">
+        <dt>ITEMS</dt>
+        <dd>3</dd>
+      </dl>
+      <dl class="pull-left d-inline-block mb-0 mr-5">
+        <dt>TOTAL</dt>
+        <dd>$135.00</dd>
+      </dl>
+      <dl class="pull-left d-inline-block mb-0">
+        <dt>DISCOUNT</dt>
+        <dd>$23.45</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-kory-cart">
+    <div class="p-4">
+      <p>* Shipping tax not included</p>
+    </div>
+  </div>
+</section>
+<!-- REVIEW ITEM - SHIP TO -->
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">SHIP TO</h4>
+                  <p>1042 N WINCHESTER AVE APT 3,<br> CHICAGO, IL, 60622</p>
+              </span>
+      <a href="#collapse-kory-ship-to" data-toggle="collapse" class="btn btn-default pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-kory-ship-to">
+    
+<div class="checkbox">
+  <label>
+          <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option1" checked >    
+    1153 W GRAND AVE,<br> CHICAGO, IL, 60642-5808
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option2">    
+    1042 N WINCHESTER AVE APT 3,<br>
+CHICAGO, IL, 60622-3743 United States
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option3">    
+    Add new address
+  </label>
+</div>    <p class="p-4"><a href="#collapse-kory-ship-to" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+  </div>
+</section>
+<!-- REVIEW ITEM - SHIPPING METHOD  -->
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">SHIPPING METHOD</h4>
+        <p>USPS Ground (4–7 business days)<br> $5.95</p>
+      </span>
+      <a href="#collapse-kory-ship-method" data-toggle="collapse" class="btn btn-default pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-kory-ship-method">
+    
+<div class="checkbox">
+  <label>
+          <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option1" checked >    
+    USPS Ground $5.95 (4–7 business days)
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option2">    
+    Overnight $20.90 (next business day)
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option3">    
+    Expedited $15.90 (2–3 business days)
+  </label>
+</div>
+    <p class="p-4"><a href="#collapse-kory-ship-method" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+    
+  </div>
+</section>
+<!-- REVIEW ITEM - PAY METHOD  -->
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">PAYMENT METHOD</h4>
+        <p>Visa ending in 9845</p>
+      </span>
+      <a href="#collapse-kory-pay-method" data-toggle="collapse" class="btn btn-default pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-kory-pay-method">
+    <div>
+      
+<div class="checkbox">
+  <label>
+          <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option1" checked >    
+    Credit card
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option2">    
+    Avon Credit ($85.00 available)
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option3">    
+    Email putchase link to customer
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option4">    
+    PayPal
+  </label>
+</div>    </div>
+
+    <div class="px-4">
+      <div class="row">
+        <div class="form-group col-xs-12">
+          <label class="control-label" for="cart-stype-{{ person }}-{{ item }}">Card Type</label>
+  <select class="form-control" id="cart-stype-{{ person }}-{{ item }}">
+      <option>Visa</option>
+      <option>Mastercard</option>
+      <option>American Express</option>
+  </select>        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-6">
+          <label class="control-label" for="first-{{ person }}-{{ item }}">Name on card</label>    <input type="text" class="form-control" id="first-{{ person }}-{{ item }}">        </div>
+        <div class="form-group col-xs-6">
+          <label class="control-label" for="last-{{ person }}-{{ item }}">&nbsp;</label>    <input type="text" class="form-control" id="last-{{ person }}-{{ item }}">        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-3">
+          <label class="control-label" for="month-{{ person }}-{{ item }}">Expiration date</label>
+  <select class="form-control" id="month-{{ person }}-{{ item }}">
+      <option>Month</option>
+      <option>01</option>
+      <option>02</option>
+      <option>03</option>
+      <option>04</option>
+      <option>05</option>
+      <option>06</option>
+      <option>07</option>
+      <option>08</option>
+      <option>09</option>
+      <option>10</option>
+      <option>11</option>
+      <option>12</option>
+  </select>        </div>
+        <div class="form-group col-xs-3">
+          <label class="control-label" for="year-{{ person }}-{{ item }}">&nbsp;</label>
+  <select class="form-control" id="year-{{ person }}-{{ item }}">
+      <option>Year</option>
+      <option>2018</option>
+      <option>2019</option>
+      <option>2020</option>
+  </select>        </div>
+        <div class="form-group col-xs-2">
+          <label class="control-label" for="cvv-{{ person }}-{{ item }}">CVV Code</label>    <input type="text" class="form-control" id="cvv-{{ person }}-{{ item }}">        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        
+<div class="checkbox">
+  <label>
+        <input type="checkbox" name="addresses-{{ person }}-{{ item }}" value="Option1">    
+    Save this credit card
+  </label>
+</div>      </div>
+
+    </div>
+    
+
+    <p class="p-4"><a href="#collapse-kory-pay-method" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+    
+  </div>
+</section>  </section>
+
+  <section class="tab-pane" id="tab3">
+    <h3 class="mb-5"><span class="glyphicon glyphicon-shopping-cart"></span> Tisha Pennington</h3>
+
+<!-- REVIEW ITEM - CART -->
+<section class="panel panel-default">
+  <div class="panel-body p-4">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">CART OVERVIEW</h4>
+      </span>
+      <a href="#collapse-tisha-cart" data-toggle="collapse" class="btn btn-default pull-right"><span class="glyphicon glyphicon-chevron-down"></span> Details</a>
+    </div>
+    <div class="clearfix">
+      <dl class="pull-left d-inline-block mb-0 mr-5">
+        <dt>ITEMS</dt>
+        <dd>3</dd>
+      </dl>
+      <dl class="pull-left d-inline-block mb-0 mr-5">
+        <dt>TOTAL</dt>
+        <dd>$135.00</dd>
+      </dl>
+      <dl class="pull-left d-inline-block mb-0">
+        <dt>DISCOUNT</dt>
+        <dd>$23.45</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-tisha-cart">
+    <div class="p-4">
+      <p>* Shipping tax not included</p>
+    </div>
+  </div>
+</section>
+<!-- REVIEW ITEM - SHIP TO -->
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">SHIP TO</h4>
+                  <p>1042 N WINCHESTER AVE APT 3,<br> CHICAGO, IL, 60622</p>
+              </span>
+      <a href="#collapse-tisha-ship-to" data-toggle="collapse" class="btn btn-default pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-tisha-ship-to">
+    
+<div class="checkbox">
+  <label>
+          <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option1" checked >    
+    1153 W GRAND AVE,<br> CHICAGO, IL, 60642-5808
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option2">    
+    1042 N WINCHESTER AVE APT 3,<br>
+CHICAGO, IL, 60622-3743 United States
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option3">    
+    Add new address
+  </label>
+</div>    <p class="p-4"><a href="#collapse-tisha-ship-to" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+  </div>
+</section>
+<!-- REVIEW ITEM - SHIPPING METHOD  -->
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">SHIPPING METHOD</h4>
+        <p>USPS Ground (4–7 business days)<br> $5.95</p>
+      </span>
+      <a href="#collapse-tisha-ship-method" data-toggle="collapse" class="btn btn-default pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-tisha-ship-method">
+    
+<div class="checkbox">
+  <label>
+          <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option1" checked >    
+    USPS Ground $5.95 (4–7 business days)
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option2">    
+    Overnight $20.90 (next business day)
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option3">    
+    Expedited $15.90 (2–3 business days)
+  </label>
+</div>
+    <p class="p-4"><a href="#collapse-tisha-ship-method" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+    
+  </div>
+</section>
+<!-- REVIEW ITEM - PAY METHOD  -->
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">PAYMENT METHOD</h4>
+        <p>Visa ending in 9845</p>
+      </span>
+      <a href="#collapse-tisha-pay-method" data-toggle="collapse" class="btn btn-default pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-tisha-pay-method">
+    <div>
+      
+<div class="checkbox">
+  <label>
+          <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option1" checked >    
+    Credit card
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option2">    
+    Avon Credit ($85.00 available)
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option3">    
+    Email putchase link to customer
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option4">    
+    PayPal
+  </label>
+</div>    </div>
+
+    <div class="px-4">
+      <div class="row">
+        <div class="form-group col-xs-12">
+          <label class="control-label" for="cart-stype-{{ person }}-{{ item }}">Card Type</label>
+  <select class="form-control" id="cart-stype-{{ person }}-{{ item }}">
+      <option>Visa</option>
+      <option>Mastercard</option>
+      <option>American Express</option>
+  </select>        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-6">
+          <label class="control-label" for="first-{{ person }}-{{ item }}">Name on card</label>    <input type="text" class="form-control" id="first-{{ person }}-{{ item }}">        </div>
+        <div class="form-group col-xs-6">
+          <label class="control-label" for="last-{{ person }}-{{ item }}">&nbsp;</label>    <input type="text" class="form-control" id="last-{{ person }}-{{ item }}">        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-3">
+          <label class="control-label" for="month-{{ person }}-{{ item }}">Expiration date</label>
+  <select class="form-control" id="month-{{ person }}-{{ item }}">
+      <option>Month</option>
+      <option>01</option>
+      <option>02</option>
+      <option>03</option>
+      <option>04</option>
+      <option>05</option>
+      <option>06</option>
+      <option>07</option>
+      <option>08</option>
+      <option>09</option>
+      <option>10</option>
+      <option>11</option>
+      <option>12</option>
+  </select>        </div>
+        <div class="form-group col-xs-3">
+          <label class="control-label" for="year-{{ person }}-{{ item }}">&nbsp;</label>
+  <select class="form-control" id="year-{{ person }}-{{ item }}">
+      <option>Year</option>
+      <option>2018</option>
+      <option>2019</option>
+      <option>2020</option>
+  </select>        </div>
+        <div class="form-group col-xs-2">
+          <label class="control-label" for="cvv-{{ person }}-{{ item }}">CVV Code</label>    <input type="text" class="form-control" id="cvv-{{ person }}-{{ item }}">        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        
+<div class="checkbox">
+  <label>
+        <input type="checkbox" name="addresses-{{ person }}-{{ item }}" value="Option1">    
+    Save this credit card
+  </label>
+</div>      </div>
+
+    </div>
+    
+
+    <p class="p-4"><a href="#collapse-tisha-pay-method" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+    
+  </div>
+</section>  </section>
+</div>
+
+
+
+<!-- DRAWER -->
+  
+<!-- DRAWER -->
+<div id="drawer-order-total" class="drawer drawer-fixed-bottom drawer-order-summary hidden-md hidden-lg">
+
+  <!-- DRAWER NAV BAR -->
+  <section class="navbar navbar-default hidden-md hidden-lg">
+    <div class="container pt-4">
+
+      <!-- DRAWER SUMMARY -->
+      <div class="pull-left">
+        <h4 class="m-0"><a href="#drawer-order-total" data-toggle="drawer"><span class="glyphicon glyphicon-shopping-cart"></span> TOTAL ORDER $456.56</h4>
+
+      </div>
+      <div class="pull-right">
+        <a href="#drawer-order-total" data-toggle="drawer"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- DRAWER CONTENT -->
+  <section class="container">
+
+    <p>Lorem ipsum dolor sit amet, erant dolor phaedrum.</p>
+    <p>Lorem ipsum dolor sit amet, erant dolor phaedrum.</p>
+    <p>Lorem ipsum dolor sit amet, erant dolor phaedrum.</p>
+    <p>Lorem ipsum dolor sit amet, erant dolor phaedrum.</p>
+    <p>Lorem ipsum dolor sit amet, erant dolor phaedrum.</p>
+
+
+
+  </section>
+</div><!-- /.drawer -->  
+
+    
+
+  </main>
+</div>
+
+
+      
+      <!--Footer-->
+<footer class="my-5 footer global-footer">
+    <hr>
+    
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container">
+            Footer
+        </div>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+  </section>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- <script src="docs-assets/js/email-decode.min.js"></script> -->
+  <script src="./js/vendor/jquery/1.10.2/jquery.min.js"></script>
+  <script src="./js/vendor/bootstrap.js"></script>
+  <script src="./js/avon-main.js"></script>
+
+
+
+
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+
+</body>
+</html>

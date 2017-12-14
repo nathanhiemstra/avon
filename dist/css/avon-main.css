@@ -129,7 +129,9 @@ body {
   display: inline-flex !important; }
 
 .drawer {
-  overflow: hidden; }
+  overflow: hidden;
+  height: 50px;
+  background: #fff; }
   .drawer-fixed-bottom {
     position: fixed;
     right: 0;
@@ -137,15 +139,12 @@ body {
     bottom: 0;
     z-index: 1031;
     transition: height 0.5s; }
-  .drawer-order-summary {
-    height: 50px;
-    background: #fff; }
-    @media (min-width: 992px) {
-      .drawer-order-summary {
-        height: inherit;
-        position: relative; } }
-    .drawer-order-summary.drawer-expanded {
-      height: 100vh; }
+  @media (min-width: 992px) {
+    .drawer {
+      height: inherit;
+      position: relative; } }
+  .drawer.drawer-expanded {
+    height: 100vh; }
 
 .order-summary {
   margin-right: auto;
