@@ -185,7 +185,8 @@ gulp.task('compile', function () {
             pages: {
               checkoutV2: {
                 review: {
-                  itemized: 'checkout-review-itemized-v2.html'
+                  itemized: 'checkout-review-itemized-v2.html',
+                  complete: 'checkout-review-complete-v2.html'
                 }
               },
               productV2: {

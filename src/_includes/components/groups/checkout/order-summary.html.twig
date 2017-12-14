@@ -13,7 +13,7 @@
 {% endif %}
 
 <!-- DRAWER -->
-<div class="drawer drawer-fixed-bottom drawer-order-summary">
+<div  id="drawer-order-summary" class="drawer drawer-fixed-bottom">
 
   <!-- DRAWER NAV BAR -->
   <section class="navbar navbar-default hidden-md hidden-lg">
@@ -21,9 +21,9 @@
 
       <!-- DRAWER SUMMARY -->
       <div class="pull-left">
-        <button type="button" class="btn btn-default btn-xs trigger-drawer-order-summary">
+        <a href="#drawer-order-summary" data-toggle="drawer" class="btn btn-default btn-xs">
           <span class="glyphicon glyphicon-chevron-up"></span> Your order
-        </button>
+        </a>
       </div>
       <div class="pull-right">
         <b>${{ priceTotal }}</b> <small>{{ itemsTotal }} items</small>
