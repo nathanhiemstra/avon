@@ -21,7 +21,15 @@
 {% block modalBody %}
 
   <div class="form-group">
-    {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Who is this product for?', 'id': 'who-product-for', items: [{'label': 'Me'}, {'label': 'Someone in my downline'}, {'label': 'A new customer'}]} %}
+    {% include components.groups.forms.selectAndLabel with {
+      'mainLabel': 'Who is this product for?', 
+      'id': 'who-product-for', 
+      items: [
+        {'label': 'You (Rosa Stone)'}, 
+        {'label': 'Kory Rasmussen'}, 
+        {'label': 'Tisha Pennington'},
+        {'label': 'Phoebe Pope'}]
+    } %}
   </div>
 
   <div class="row">
