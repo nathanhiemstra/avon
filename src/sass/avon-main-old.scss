@@ -1,0 +1,76 @@
+/*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins from Bootstrap
+@import "bootstrap-overrides/variables";
+@import "bootstrap-overrides/mixins";
+
+body {
+    color: $gray-base;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+// BOOTSTRAP OVERRIDES
+// The items below are a mirror of the Bootstrap SASS file structure.
+// Overrides should be made in these files. 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Reset and dependencies
+// @import "bootstrap-overrides/normalize";
+// @import "bootstrap-overrides/print";
+@import "bootstrap-overrides/glyphicons";
+
+// Core CSS
+// @import "bootstrap-overrides/scaffolding";
+@import "bootstrap-overrides/type";
+
+// @import "bootstrap-overrides/code";
+@import "bootstrap-overrides/grid";
+
+// @import "bootstrap-overrides/tables";
+@import "bootstrap-overrides/forms";
+
+// @import "bootstrap-overrides/buttons";
+
+// Components
+// @import "bootstrap-overrides/component-animations";
+// @import "bootstrap-overrides/dropdowns";
+// @import "bootstrap-overrides/button-groups";
+// @import "bootstrap-overrides/input-groups";
+// @import "bootstrap-overrides/navs";
+@import "bootstrap-overrides/navbar";
+
+// @import "bootstrap-overrides/breadcrumbs";
+// @import "bootstrap-overrides/pagination";
+// @import "bootstrap-overrides/pager";
+// @import "bootstrap-overrides/labels";
+// @import "bootstrap-overrides/badges";
+// @import "bootstrap-overrides/jumbotron";
+// @import "bootstrap-overrides/thumbnails";
+// @import "bootstrap-overrides/alerts";
+// @import "bootstrap-overrides/progress-bars";
+// @import "bootstrap-overrides/media";
+// @import "bootstrap-overrides/list-group";
+// @import "bootstrap-overrides/panels";
+// @import "bootstrap-overrides/responsive-embed";
+// @import "bootstrap-overrides/wells";
+// @import "bootstrap-overrides/close";
+
+// Components w/ JavaScript
+// @import "bootstrap-overrides/modals";
+// @import "bootstrap-overrides/tooltip";
+// @import "bootstrap-overrides/popovers";
+// @import "bootstrap-overrides/carousel";
+
+// Utility classes
+// @import "bootstrap-overrides/utilities";
+
+// AVON ADDITIONS
+@import "avon/borders";
+@import "avon/display";
+@import "avon/drawers";
+@import "avon/footer";
+@import "avon/spacing";
