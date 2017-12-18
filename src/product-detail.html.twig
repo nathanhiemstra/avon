@@ -1,4 +1,3 @@
-{# product-detail.html.twig #}
 {% extends "_layouts/with-side-column.html.twig" %}
 
 
@@ -15,22 +14,22 @@
 
   <!-- PRIMARY PRODUCT INFO -->
   <section>
-    {% include components.modules.product.detail.header %}
+    {% include components.modules.v1.product.detail.header %}
   </section>
 
   <!-- SECONDARY PRODUCT INFO -->
   <section class="row">
     <div class="col-md-4">
-      {% include components.modules.product.detail.images %}
+      {% include components.modules.v1.product.detail.images %}
     </div>
     <div class="col-md-6">
-      {% include components.modules.product.detail.details %}
+      {% include components.modules.v1.product.detail.details %}
     </div>
   </section><!-- /.row -->
 
   <!-- TERTIARY PRODUCT-->
   <section>
-    {% include components.modules.product.detail.features %}
+    {% include components.modules.v1.product.detail.features %}
   </section>
 {% endblock %}
 

@@ -167,30 +167,41 @@ gulp.task('compile', function () {
                 },
                 product: {
                   detail: {
-                    details:       prefix.modules + "product/detail/details.html.twig",
-                    features:      prefix.modules + "product/detail/features.html.twig",
-                    header:        prefix.modules + "product/detail/header.html.twig",
+                    addToOrder:    prefix.modules + "product-v2/detail/add-to-order.html.twig",
+                    details:       prefix.modules + "product-v2/detail/details.html.twig",
                     images:        prefix.modules + "product/detail/images.html.twig"
                   }
                 },
-                productV2: {
-                  detail: {
-                    addToOrder:    prefix.modules + "product-v2/detail/add-to-order.html.twig",
-                    details:       prefix.modules + "product-v2/detail/details.html.twig"
-                    
+                v1: {
+                  product: {
+                    detail: {
+                      details:       prefix.modules + "product/detail/details.html.twig",
+                      features:      prefix.modules + "product/detail/features.html.twig",
+                      header:        prefix.modules + "product/detail/header.html.twig",
+                      images:        prefix.modules + "product/detail/images.html.twig"
+                    }
                   }
                 }
               }
             },
             pages: {
-              checkoutV2: {
+              checkout: {
                 review: {
-                  itemized: 'checkout-review-itemized-v2.html',
-                  complete: 'checkout-review-complete-v2.html'
+                  itemized: 'checkout-review-itemized.html',
+                  complete: 'checkout-review-complete.html'
                 }
               },
               productV2: {
-                detail: 'product-detail-v2.html'
+                detail:         'product-detail-v2.html'
+              },
+              v1: {
+                order: {
+                  checkout:   'order-checkout.html',
+                  review:     'order-review.html'
+                },
+                product: {
+                  detail:     'product-detail.html'
+                }
               }
             },
             styleguide: {
