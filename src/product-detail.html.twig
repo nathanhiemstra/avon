@@ -1,4 +1,6 @@
-{% extends "_layouts/with-side-column.html.twig" %}
+{% extends "_layouts/one-column.html.twig" %}
+
+
 
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -6,40 +8,123 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block main %}
 
-  <!-- BREADCRUMBS -->
-  {% include components.groups.navigation.breadcrumbs with {
-    'classes':'hidden-xs',
-    'items': [{'slug': '#', 'label': 'Home'}, {'slug':  '#', 'label': 'Link'}, {'slug':  '#', 'label': 'Link'}, { 'slug':  '#', 'label': 'Link'}]}
-  %}
+  
 
-  <!-- PRIMARY PRODUCT INFO -->
-  <section>
-    {% include components.modules.v1.product.detail.header %}
+  <section class="text-center">
+    {% include components.modules.product.detail.images %}
+    {% include components.modules.product.detail.details %}
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#product-add-to-order">
+      Add to order
+    </button>
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#checkout-triage">
+      Checkout
+    </button>
   </section>
 
-  <!-- SECONDARY PRODUCT INFO -->
-  <section class="row">
-    <div class="col-md-4">
-      {% include components.modules.v1.product.detail.images %}
-    </div>
-    <div class="col-md-6">
-      {% include components.modules.v1.product.detail.details %}
-    </div>
-  </section><!-- /.row -->
-
-  <!-- TERTIARY PRODUCT-->
+</div>
+<hr>
+<div class="container">
+ 
   <section>
-    {% include components.modules.v1.product.detail.features %}
+      <h4>About this product</h4>
+      <p>Anew Skinvincible Deep Recovery Cream is here and ready to heal your damaged skin. Add it to your anti aging routine and see its restorative effects for yourself! Smart Repair Technology means this night cream was designed to   the effects of aging by fixing damage accumulated throughout the years from the environment. This night cream is ideal for dry skin as it contains moisturizing properties and protects from further damage. Make fine lines, wrinkles, and sunspots disappear! Comes in a 1 oz container and is fragrance-free making it perfect for sensitive skin.</p>
+      <h4>Benefits</h4>
+      <ul>
+        <li>Reduces the appearance of fine lines and sunspots</li>
+        <li>Smart Repair Technology fixes damaged skin and protects from further harm</li>
+        <li>Suitable for sensitive skin</li>
+        <li>Fragrance-free and oil-free</li>
+        <li>Hypoallergenic and non-comedogenic</li>
+        <li>Allergy-tested and dermatologist-tested</li>
+      </ul>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>Water/eau</li>
+        <li>Hydrogenated polyisobutene</li>
+        <li>Stearyl dimethicone</li>
+        <li>Dimethicone</li>
+      </ul>
+      <a href="#">View all</a>
+
   </section>
+
+</div>
+<hr>
+<div class="container">
+
+  <section>
+    <h4>Related Products</h4>
+    {% set relatedProduct = '<div class="col-xs-6 col-sm-4">
+        <div class="thumbnail">
+          <img src="/images/utility/placeholder.png" alt="" class="img-responsive">
+          <div class="caption">
+            <p>Product name lorem ipsum dolor sit amet, consectetur</p>
+            <h5>$XX.XX</h5>
+          </div>
+        </div>
+      </div>' %}
+    <div class="row">
+      {{ relatedProduct }}
+      {{ relatedProduct }}
+      {{ relatedProduct }}
+      {{ relatedProduct }}
+    </div>
+  </section>
+
+</div>
+<hr>
+<div class="container">
+
+  <section>
+    <div class="clearfix">
+        <h4 class="pull-left">Reviews</h4>
+        <button class="btn btn-default btn-sm pull-right">
+          Write a review
+        </button>
+    </div>
+
+    <hr>
+    {% set review = '
+    <h4>Very happily surprised!</h4>
+    <p>By Starlite77 on 8/1/2017</p>
+    <p>
+      <small>
+        From: San Antonio, TX<br>
+        Age: 35-44<br>
+        I shop Avon: more than 6x a year<br>
+        Skin Type: Combination
+      </small>
+    </p>
+    <p>I have tried so many different creams and treatments over the years, from premium to budget, and they have either had no results or caused my sensitive skin to break out and react. After using a simple and gentle moisturiser for a while, I decided it was time to give another "treatment" style cream a go....I am so incredibly glad I did!</p>
+    <p>I have been using this product for about a month now and my skin loves it! Normally my skin lets me know very quickly if it reacts to a product...ususally within first few days...
+      <br> <a href="#">Read more</a></p>
+
+    <p>
+      Was this review helpful? <a href="#">Yes</a> / <a href="#">No</a><br>
+      You may also <a href="#">flag this review</a>
+    </p>'%}
+
+    <div class="my-5">
+      {% include components.groups.ratings.unit %}
+      {{ review }}
+    </div>
+
+    <div class="my-5">
+      {% include components.groups.ratings.unit %}
+      {{ review }}
+    </div>
+  </section>
+
+</div>
+
+  <!-- DRAWER -->
+  {% include components.modules.checkoutV2.orderSummary %}
+
+  <!-- MODAL - ADD TO ORDER -->
+  {% include components.modules.product.detail.addToOrder %}
+  
+  <!-- MODAL - TRIAGE -->
+  {% include components.modules.checkoutV2.triage %}
+
 {% endblock %}
 
-
-{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-{# DEFINE BLOCK - ASIDE #}
-{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-{% block aside %}
-
-  <!-- ORDER SUMMARY -->
-  {% include components.groups.checkout.orderSummary with {'page': 'product-detail'} %}
-
-{% endblock %}

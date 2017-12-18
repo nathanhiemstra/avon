@@ -22,11 +22,10 @@ var page = {
   styleguideHome: {}
 }
 var prefix = {
-  components:       "_includes/components/",
-  elements:         "_includes/components/elements/",
-  groups:           "_includes/components/groups/",
-  modules:          "_includes/components/modules/",
-  templates:        "_includes/components/templates/"
+  elements:         "_includes/elements/",
+  groups:           "_includes/groups/",
+  modules:          "_includes/modules/",
+  templates:        "_includes/templates/"
 }
 
 path.dist = {
@@ -142,43 +141,43 @@ gulp.task('compile', function () {
               },
               modules: {
                 checkoutV2: {
-                  orderSummary:                 prefix.modules + "checkout-v2/order-summary.html.twig",
-                  orderSummaryTabProducts:      prefix.modules + "checkout-v2/order-summary-tab-products.html.twig",
-                  orderSummaryTabIncentives:    prefix.modules + "checkout-v2/order-summary-tab-incentives.html.twig",
+                  orderSummary:                 prefix.modules + "checkout/order-summary.html.twig",
+                  orderSummaryTabProducts:      prefix.modules + "checkout/order-summary-tab-products.html.twig",
+                  orderSummaryTabIncentives:    prefix.modules + "checkout/order-summary-tab-incentives.html.twig",
                   review: {
                     item: {
-                      cart:                     prefix.modules + "checkout-v2/review-item-cart.html.twig",
-                      shipTo:                   prefix.modules + "checkout-v2/review-item-ship-to.html.twig",
-                      shipMethod:               prefix.modules + "checkout-v2/review-item-ship-method.html.twig",
-                      payMethod:                prefix.modules + "checkout-v2/review-item-pay-method.html.twig"
+                      cart:       prefix.modules + "checkout/review-item-cart.html.twig",
+                      shipTo:     prefix.modules + "checkout/review-item-ship-to.html.twig",
+                      shipMethod: prefix.modules + "checkout/review-item-ship-method.html.twig",
+                      payMethod:  prefix.modules + "checkout/review-item-pay-method.html.twig"
                     },
                     drawer: {
-                      orderTotal:               prefix.modules + "checkout-v2/drawer-total-order.html.twig"
+                      orderTotal: prefix.modules + "checkout/drawer-total-order.html.twig"
                     },
                     tab: {
-                      cart:                     prefix.modules + "checkout-v2/tab-review-cart.html.twig"
+                      cart:       prefix.modules + "checkout/tab-review-cart.html.twig"
                     }
                   },
-                  triage:                       prefix.modules + "checkout-v2/triage.html.twig"
+                  triage:         prefix.modules + "checkout/triage.html.twig"
                 },
                 global: {
-                  footer:           prefix.modules + "global/footer.html.twig",
-                  header:           prefix.modules + "global/header.html.twig"
-                },
+                  footer:         prefix.modules + "global/footer.html.twig",
+                  header:         prefix.modules + "global/header.html.twig"
+                },            
                 product: {
                   detail: {
-                    addToOrder:    prefix.modules + "product-v2/detail/add-to-order.html.twig",
-                    details:       prefix.modules + "product-v2/detail/details.html.twig",
-                    images:        prefix.modules + "product/detail/images.html.twig"
-                  }
+                    addToOrder:   prefix.modules + "product/detail/add-to-order.html.twig",
+                    details:      prefix.modules + "product/detail/details.html.twig",
+                    images:       prefix.modules + "product/detail/images.html.twig"
+                  }                 
                 },
                 v1: {
                   product: {
                     detail: {
-                      details:       prefix.modules + "product/detail/details.html.twig",
-                      features:      prefix.modules + "product/detail/features.html.twig",
-                      header:        prefix.modules + "product/detail/header.html.twig",
-                      images:        prefix.modules + "product/detail/images.html.twig"
+                      details:    prefix.modules + "v1/product/detail/details.html.twig",
+                      features:   prefix.modules + "v1/product/detail/features.html.twig",
+                      header:     prefix.modules + "v1/product/detail/header.html.twig",
+                      images:     prefix.modules + "v1/product/detail/images.html.twig"
                     }
                   }
                 }
@@ -191,16 +190,16 @@ gulp.task('compile', function () {
                   complete: 'checkout-review-complete.html'
                 }
               },
-              productV2: {
-                detail:         'product-detail-v2.html'
+              product: {
+                detail:      'product-detail.html'
               },
               v1: {
                 order: {
-                  checkout:   'order-checkout.html',
-                  review:     'order-review.html'
+                  checkout:  'order-checkout.html',
+                  review:    'order-review.html'
                 },
                 product: {
-                  detail:     'product-detail.html'
+                  detail:    'v1-product-detail.html'
                 }
               }
             },
