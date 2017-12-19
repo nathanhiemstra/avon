@@ -140,7 +140,8 @@ gulp.task('compile', function () {
                 }
               },
               modules: {
-                checkoutV2: {
+                checkout: {
+                  header:                       prefix.modules + "checkout/header.html.twig",
                   orderSummary:                 prefix.modules + "checkout/order-summary.html.twig",
                   orderSummaryTabProducts:      prefix.modules + "checkout/order-summary-tab-products.html.twig",
                   orderSummaryTabIncentives:    prefix.modules + "checkout/order-summary-tab-incentives.html.twig",

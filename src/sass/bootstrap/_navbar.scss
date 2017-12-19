@@ -174,7 +174,8 @@
 
 .navbar-brand {
     float: left;
-    padding: $navbar-padding-vertical $navbar-padding-horizontal;
+
+    // padding: $navbar-padding-vertical $navbar-padding-horizontal;
     font-size: $font-size-large;
     line-height: $line-height-computed;
     height: $navbar-height;
@@ -703,5 +704,17 @@
                 color: $navbar-inverse-link-disabled-color;
             }
         }
+    }
+}
+
+.navbar-isolated {
+    margin-top: $navbar-margin-bottom;
+    text-align: center;
+
+    .navbar-title {
+        @extend .h4;
+
+        display: inline-block;
+        margin-bottom: 0;
     }
 }

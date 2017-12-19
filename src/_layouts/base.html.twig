@@ -25,23 +25,27 @@
 
 <body>
 
-  <section id="avon-poc"  >
+  <section id="avon-poc">
       <a class="sr-only" href="#content">Skip to main content</a>
 
-      {# HEADER #}
-      {% if hide_global_header != true %}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# RENDER BLOCK - HEADER #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block header %}
         {% include components.modules.global.header %}
-      {% endif %}
+      {% endblock %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {# RENDER BLOCK - CONTENT #}
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block content %}{% endblock %}
 
-      {# FOOTER #}
-      {% if hide_global_footer != true %}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# RENDER BLOCK - FOOTER #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block footer %}
         {% include components.modules.global.footer %}
-      {% endif %}
+      {% endblock %}
 
   </section>
 
@@ -67,3 +71,5 @@
 
 </body>
 </html>
+
+
