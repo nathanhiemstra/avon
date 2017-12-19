@@ -4,80 +4,63 @@
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
-  {% embed '_layouts/layout-super-panel.html.twig' %}
 
-    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-    {# DEFINE BLOCK - SUPERPANEL #}
-    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-    {% block super_panel %}
-      {% embed '_layouts/layout-1.html.twig' %}
+  <div class="container">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+      <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products (8)</a></li>
+      <li><a href="#pd-incentives" data-toggle="tab">Incentives (2)</a></li>
+    </ul>
+  </div><!-- /.container -->
+
+  <div class="super-panel">
+    <div class="container">
+ 
+      {% embed '_layouts/layout-9-3.html.twig' %}
 
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {# DEFINE BLOCK - MAIN #}
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block main %}
+          
+          
 
-          {% set panelItemCartOverview = '
-          <section class="panel panel-default">
-                <div class="panel-body p-4">
-                  <div class="clearfix">
-                    <span class="pull-left mr-4 ">
-                      <h4 class="m-0">CART OVERVIEW</h4>
-                    </span>
-                    <a href="#collapse-1" data-toggle="collapse" class="btn btn-default pull-right"><span class="glyphicon glyphicon-chevron-down"></span> Details</a>
-                  </div>
-                  <div class="clearfix">
-                    <dl class="pull-left d-inline-block mb-0 mr-5">
-                      <dt>ITEMS</dt>
-                      <dd>3</dd>
-                    </dl>
-                    <dl class="pull-left d-inline-block mb-0 mr-5">
-                      <dt>TOTAL</dt>
-                      <dd>$135.00</dd>
-                    </dl>
-                    <dl class="pull-left d-inline-block mb-0">
-                      <dt>DISCOUNT</dt>cc
-                      <dd>$23.45</dd>
-                    </dl>
-                  </div>
-                </div>
-                <div class="collapse p-4" id="collapse-1">
-                  <p>* Shipping tax not included</p>
-                </div>
-              </section>
-          ' %}
+          
 
-          <!-- Nav tabs -->
-          <div class="row">
-            <div class="form-group col-xs-5">
-              <select class="form-control" data-tab-select>
-                  <option data-target="#tab1">Rosa (cart 1 of 3)</option>
-                  <option data-target="#tab2">Kory Rasmussen (cart 2 of 3)</option>
-                  <option data-target="#tab3">Tisha Pennington (cart 3 of 3)</option>
-              </select>        
-            </div>
-          </div><!-- /.row -->
+
 
           <!-- Tab panes -->
-          <div class="tab-content">
-            <section class="tab-pane active" id="tab1">
-              {% include components.modules.checkout.review.tab.cart with { person: 'rosa', personLabel: 'You (Rosa Stone)', street: 'grand' } %}
+          <section class="tab-content">
+            <section class="tab-pane active" id="pd-products">
+              Products
             </section>
 
-            <section class="tab-pane" id="tab2">
-              {% include components.modules.checkout.review.tab.cart with { person: 'kory', personLabel: 'Kory Rasmussen', street: 'winchester' } %}
+            <section class="tab-pane" id="pd-incentives">
+              Incentivces
             </section>
-
-            <section class="tab-pane" id="tab3">
-              {% include components.modules.checkout.review.tab.cart with { person: 'tisha', personLabel: 'Tisha Pennington', street: 'winchester' } %}
-            </section>
-          </div>
+          </section>
 
           <!-- DRAWER -->
-          {% include components.modules.checkout.review.drawer.orderTotal %}
+          {% include components.modules.checkout.review.drawer.orderTotal %} 
+
+        {% endblock %}
+
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - ASIDE #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block aside %}
+
+          <!-- ORDER SUMMARY -->
+          {% include components.groups.checkout.orderSummary with {'page': 'product-detail'} %}
+
+           
 
         {% endblock %}
       {% endembed %}
-    {% endblock %}
-  {% endembed %}
+
+    </div>
+  </div><!-- /.super-panel -->
+
+
 {% endblock %}
