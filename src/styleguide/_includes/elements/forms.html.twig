@@ -285,12 +285,16 @@
     <form role="form">
       {% include components.elements.forms.select %}
       <br>
+      {% include components.elements.forms.select with { 'items': [{'label': 'Option Label 1'}, {'label': 'Option Label 2'}, {'label': 'Option Label 3'}] } %}
+      <br>
       {% include components.elements.forms.select with {multiple: true} %}
     </form>
   </div><!-- /.bs-example -->
 
   <pre class="language-markup code-toolbar"><code class="language-twig">
   &#123;% include components.elements.forms.select %}
+
+  &#123;% include components.elements.forms.select with { 'items': [{'label': 'Option Label 1'}, {'label': 'Option Label 2'}, {'label': 'Option Label 3'}] } %}
 
   &#123;% include components.elements.forms.select with {multiple: true %}
    </code></pre>

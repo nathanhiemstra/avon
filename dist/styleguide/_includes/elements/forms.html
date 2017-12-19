@@ -290,6 +290,12 @@
       <option>3</option>
   </select>      <br>
       
+<select class="form-control">
+      <option>Option Label 1</option>
+      <option>Option Label 2</option>
+      <option>Option Label 3</option>
+  </select>      <br>
+      
   <select class="form-control" multiple>
       <option>1</option>
       <option>2</option>
@@ -299,6 +305,8 @@
 
   <pre class="language-markup code-toolbar"><code class="language-twig">
   &#123;% include components.elements.forms.select %}
+
+  &#123;% include components.elements.forms.select with { 'items': [{'label': 'Option Label 1'}, {'label': 'Option Label 2'}, {'label': 'Option Label 3'}] } %}
 
   &#123;% include components.elements.forms.select with {multiple: true %}
    </code></pre>

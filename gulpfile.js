@@ -211,7 +211,14 @@ gulp.task('compile', function () {
               image: '<img src="images/utility/placeholder.png" alt="" class="img-responsive">',
               sku: "&lt;000-000&gt;",
               paragraph: "Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.",
-              sentence: "Lorem ipsum dolor sit amet, erant dolor phaedrum."
+              sentence: "Lorem ipsum dolor sit amet, erant dolor phaedrum.",
+              person: {
+                1: 'You (Rosa Stone)',
+                2: 'Kory Rasmussen',
+                3: 'Tisha Pennington',
+                4: 'Phoebe Pope',
+                5: 'Helen Hicks' 
+              }
             },
             code: {
               hideHeaderFooter: "<style>.global-header, .global-footer {display: none;} main {margin-top: 15px;} </style>"
