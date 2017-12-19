@@ -1,0 +1,23 @@
+
+{% extends '_layouts/base.html.twig' %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+<div class="super-panel">
+  <div class="container">
+    <main role="main">
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# RENDER BLOCK - CONTENT #}
+      {% block main %}{% endblock %}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+    </main>
+  </div><!-- /.container -->
+</div><!-- /.super-panel -->
+
+{% endblock %}

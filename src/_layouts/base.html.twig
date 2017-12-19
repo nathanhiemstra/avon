@@ -29,7 +29,9 @@
       <a class="sr-only" href="#content">Skip to main content</a>
 
       {# HEADER #}
-      {% include components.modules.global.header %}
+      {% if hide_global_header != true %}
+        {% include components.modules.global.header %}
+      {% endif %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {# RENDER BLOCK - CONTENT #}
@@ -37,7 +39,9 @@
       {% block content %}{% endblock %}
 
       {# FOOTER #}
-      {% include components.modules.global.footer %}
+      {% if hide_global_footer != true %}
+        {% include components.modules.global.footer %}
+      {% endif %}
 
   </section>
 

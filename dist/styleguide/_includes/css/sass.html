@@ -663,9 +663,13 @@ $line-height-large: 1.33333 !default;
 // extra decimals for Win 8.1 Chrome
 $line-height-small: 1.5 !default;
 
-$border-radius-base: 4px !default;
-$border-radius-large: 6px !default;
-$border-radius-small: 3px !default;
+// $border-radius-base: 4px !default;
+// $border-radius-large: 6px !default;
+// $border-radius-small: 3px !default;
+
+$border-radius-base: 0 !default;
+$border-radius-large: 0 !default;
+$border-radius-small: 0 !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
 $component-active-color: #fff !default;
@@ -707,6 +711,7 @@ $table-border-color: #ddd !default;
 //## For each of Bootstrap's buttons, define text, background and border color.
 
 $btn-font-weight: normal !default;
+$btn-letter-spacing: 0.5px !default;
 
 $btn-default-color: #333 !default;
 $btn-default-bg: #fff !default;
@@ -738,6 +743,18 @@ $btn-link-disabled-color: $gray-light !default;
 $btn-border-radius-base: $border-radius-base !default;
 $btn-border-radius-large: $border-radius-large !default;
 $btn-border-radius-small: $border-radius-small !default;
+
+$btn-padding-base-vertical: 20px;
+$btn-padding-base-horizontal: 20px;
+
+$btn-padding-large-vertical: $btn-padding-base-vertical;
+$btn-padding-large-horizontal: 32px;
+
+$btn-padding-small-vertical: $padding-small-vertical;
+$btn-padding-small-horizontal: $padding-small-horizontal;
+
+$btn-padding-xs-vertical: $padding-xs-vertical;
+$btn-padding-xs-horizontal: $padding-xs-horizontal;
 
 //== Forms
 //
@@ -1338,6 +1355,8 @@ $panel-warning-heading-bg: $state-warning-bg !default;
 $panel-danger-text: $state-danger-text !default;
 $panel-danger-border: $state-danger-border !default;
 $panel-danger-heading-bg: $state-danger-bg !default;
+
+$super-panel-bg: $gray-lighter !default;
 
 //== Thumbnails
 //

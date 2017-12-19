@@ -1,3 +1,7 @@
+{% set has_super_panel = true %}
+{% set hide_global_header = true %}
+
+
 {% extends "_layouts/one-column.html.twig" %}
 
 
@@ -8,11 +12,9 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block main %}
 
-{{ code.hideHeaderFooter }}
-
 </div><!-- /.container -->
 
-<section class="clearfix px-4">      
+<section class="clearfix px-4 " style="border: 1px solid red">      
   <a href="{{ pages.checkoutV2.review.complete }}" class="btn btn-default btn-sm pull-right" data-dismiss="modal" aria-hidden="true">Save &amp; Exit</a>
   <h2 class="modal-title m-0">Checkout</h2>
 </section>
