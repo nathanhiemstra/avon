@@ -1217,6 +1217,9 @@ h5, .h5 {
 h6, .h6 {
   font-size: 12px; }
 
+.h-utility, .navbar-isolated .navbar-title {
+  text-transform: uppercase; }
+
 p {
   margin: 0 0 9.5px; }
 
@@ -4280,6 +4283,9 @@ a.label:hover, a.label:focus {
   background-color: #d9534f; }
   .label-danger[href]:hover, .label-danger[href]:focus {
     background-color: #c9302c; }
+
+.label-utility {
+  text-transform: uppercase; }
 
 .badge {
   display: inline-block;

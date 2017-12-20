@@ -714,6 +714,8 @@
     .navbar-title {
         @extend .h4;
 
+        @extend .h-utility;
+
         display: inline-block;
         margin-bottom: 0;
     }
