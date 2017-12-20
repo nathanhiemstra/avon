@@ -124,6 +124,7 @@ gulp.task('compile', function () {
                 },
                 checkout: {
                   personsOrder:     prefix.groups + "checkout/persons-order.html.twig",
+                  personsOrderTr:   prefix.groups + "checkout/persons-order-tr.html.twig",
                   productSummary:   prefix.groups + "checkout/product-summary.html.twig",
                   orderSummary:     prefix.groups + "checkout/order-summary.html.twig"
                 },

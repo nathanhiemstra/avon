@@ -37,29 +37,38 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-               <img src="images/fpo/product-thumb.png" class="img-responsive" alt="">
-            </td>
-            <td>
-              <div>
-                Anew Ultimate Supreme Advanced Performance Créme
-                829-957
-              </div>
-              <div>
-                <span>Auto-replenish</span>
-                <span class="d-inline-block">{% include components.elements.forms.select with { 'items': [{'label': fpo.person.4}, {'label': fpo.person.3}, {'label': fpo.person.2}] } %}</span>
-              </div>
-            </td>
-            <td>
-               $30.00<br>
-               Each shipment 
-            </td>
-            <td class="text-right">
-               <div>4</div>
-               <a href="#">Remove</a>
-            </td>
-          </tr>
+
+          
+
+          {% include components.groups.checkout.personsOrderTr with {
+            productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
+            img: 'images/fpo/agnew-ultimate.png',
+            autoReplenish: null,
+            sku: '829-957',
+            price: '30.00',
+            classes: 'input-sm'
+          }%}
+
+          {% include components.groups.checkout.personsOrderTr with {
+            productName: 'Anew Super Coverup', 
+            img: 'images/fpo/cover-up.png',
+            autoReplenish: true,
+            sku: '329-321',
+            price: '10.00',
+            classes: 'input-sm'
+          }%}
+
+          {% include components.groups.checkout.personsOrderTr with {
+            productName: 'Anew Purfume', 
+            img: 'images/fpo/purfume.png',
+            autoReplenish: null,
+            sku: '856-376',
+            price: '45.00',
+            classes: 'input-sm'
+          }%}
+
+
+          
         </tbody>
       </table>
     </div>

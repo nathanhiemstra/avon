@@ -1,0 +1,71 @@
+<li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-{{ indexNum }}" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        {{ personName }}
+      </a>
+    </dt>
+    <dd class="pull-right">${{ total }}</dd>
+  </dl>
+
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">{{ itemCount }} items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+
+
+
+
+
+  <!-- DETAILS -->
+  <div class="details collapse {% if collapsed == false %} in {% endif %}" id="collapse-{{ indexNum }}">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Itemss</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+          <tr>
+            <td>
+               <img src="images/fpo/product-thumb.png" class="img-responsive" alt="">
+            </td>
+            <td>
+              <div>
+                Anew Ultimate Supreme Advanced Performance Créme
+                <small class="text-muted">829-957</small>
+              </div>
+              <div>
+                <span>Auto-replenish</span>
+                <span class="d-inline-block">{% include components.elements.forms.select with { 'items': [{'label': fpo.person.4}, {'label': fpo.person.3}, {'label': fpo.person.2}] } %}</span>
+              </div>
+            </td>
+            <td>
+               $30.00<br>
+               <small class="text-muted">Each shipment</small> 
+            </td>
+            <td class="text-right">
+               {% include components.elements.forms.select %}
+               <div class="mt-4"><a href="#">Remove</a></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+  </div>
+</li>

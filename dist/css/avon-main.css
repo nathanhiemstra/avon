@@ -4287,6 +4287,30 @@ a.label:hover, a.label:focus {
 .label-utility {
   text-transform: uppercase; }
 
+.label-default {
+  padding: 14px 32px;
+  font-size: 14px;
+  line-height: 1.33333;
+  border-radius: 0; }
+
+.label-lg {
+  padding: 14px 32px;
+  font-size: 14px;
+  line-height: 1.33333;
+  border-radius: 0; }
+
+.label-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 0; }
+
+.label-xs {
+  padding: 2px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 0; }
+
 .badge {
   display: inline-block;
   min-width: 10px;
