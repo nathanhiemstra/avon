@@ -191,8 +191,9 @@ gulp.task('compile', function () {
             pages: {
               checkout: {
                 review: {
+                  complete: 'checkout-review-complete.html',
                   itemized: 'checkout-review-itemized.html',
-                  complete: 'checkout-review-complete.html'
+                  order:    'checkout-review-order.html'
                 }
               },
               product: {
