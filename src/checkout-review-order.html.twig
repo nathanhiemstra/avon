@@ -39,7 +39,7 @@
                 {% include components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00'} %}
                 {% include components.groups.checkout.personsOrder with {indexNum: '3', personName: fpo.person.3, itemCount: '8', total: '90.00'} %}
                 {% include components.groups.checkout.personsOrder with {indexNum: '4', personName: fpo.person.4, itemCount: '8', total: '90.00'} %}
-                {% include components.groups.checkout.personsOrder with {indexNum: '4', personName: fpo.person.5, itemCount: '8', total: '90.00'} %}
+                {% include components.groups.checkout.personsOrder with {indexNum: '5', personName: fpo.person.5, itemCount: '8', total: '90.00'} %}
               </ul>
 
             </section>
@@ -49,7 +49,7 @@
           </section>
 
           <!-- DRAWER -->
-          {% include components.modules.checkout.review.drawer.orderTotal %} 
+          
 
         {% endblock %}
 
@@ -59,8 +59,8 @@
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block aside %}
 
-          <!-- ORDER SUMMARY -->
-          {% include components.groups.checkout.orderSummary with {'page': 'product-detail'} %}
+          <!-- ORDER TOTAL -->
+          {% include components.modules.checkout.order.total %}
 
            
 

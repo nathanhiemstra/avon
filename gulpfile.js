@@ -145,6 +145,10 @@ gulp.task('compile', function () {
                   orderSummary:                 prefix.modules + "checkout/order-summary.html.twig",
                   orderSummaryTabProducts:      prefix.modules + "checkout/order-summary-tab-products.html.twig",
                   orderSummaryTabIncentives:    prefix.modules + "checkout/order-summary-tab-incentives.html.twig",
+                  order: {
+                    summary:      prefix.modules + "checkout/order-summary.html.twig",
+                    total:        prefix.modules + "checkout/order-total.html.twig"
+                  },
                   review: {
                     item: {
                       cart:       prefix.modules + "checkout/review-item-cart.html.twig",
@@ -245,9 +249,9 @@ gulp.task('default', ['compile']);
 
 gulp.task('sass', function(){
   return gulp.src(path.src.sass)
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
-    .pipe(sourcemaps.write())
+    // .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.dist.css))
     .pipe(browserSync.reload({
       stream: true

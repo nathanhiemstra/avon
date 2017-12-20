@@ -16,13 +16,6 @@
   </dl> 
 
 
-{#   <dl class="summary row mb-0">
-    <dt class="col-sm-6"><a href="#collapse-{{ indexNum }}" data-toggle="collapse"><span class="glyphicon glyphicon-play"></span>  Person {{ indexNum }} ({{ itemCount }} items)</a></dt>
-    <dd class="col-sm-4">
-      {% include components.groups.forms.checkboxAndLabel with {theValue: 'checkbox1', checked: true, label: "Ship direct to rep"} %}
-    </dd>
-    <dd class="col-sm-1"><b>${{ total }}.00</b></dd>
-  </dl> #}
 
   <!-- DETAILS -->
   <div class="details collapse {% if collapsed == false %} in {% endif %}" id="collapse-{{ indexNum }}">

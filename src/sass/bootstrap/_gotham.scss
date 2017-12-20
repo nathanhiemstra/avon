@@ -1,0 +1,9 @@
+@at-root {
+    @font-face {
+        font-family: 'GothamBook';
+        src: url("#{$base-font-path}#{$base-font-name}book-webfont.eot");
+        src: url("#{$base-font-path}#{$base-font-name}book-webfont.eot?#iefix") format("embedded-opentype"), url("#{$base-font-path}#{$base-font-name}book-webfont.woff2") format("woff2"), url("#{$base-font-path}#{$base-font-name}book-webfont.woff") format("woff"), url("#{$base-font-path}#{$base-font-name}book-webfont.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+}

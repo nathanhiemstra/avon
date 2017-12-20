@@ -1991,7 +1991,7 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif: "GothamBook", sans-serif !default;
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
@@ -2047,9 +2047,11 @@ $headings-color: inherit !default;
 // [converter] If $bootstrap-sass-asset-helper if used, provide path relative to the assets load path.
 // [converter] This is because some asset helpers, such as Sprockets, do not work with file-relative paths.
 $icon-font-path: "../fonts/" !default;
+$base-font-path: $icon-font-path;
 
 //** File name for all font files.
 $icon-font-name: "glyphicons-halflings-regular" !default;
+$base-font-name: "gotham" !default;
 
 //** Element ID within SVG icon file.
 $icon-font-svg-id: "glyphicons_halflingsregular" !default;
@@ -2058,16 +2060,16 @@ $icon-font-svg-id: "glyphicons_halflingsregular" !default;
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-$padding-base-vertical: 6px !default;
+$padding-base-vertical: 8px !default;
 $padding-base-horizontal: 12px !default;
 
-$padding-large-vertical: 10px !default;
-$padding-large-horizontal: 16px !default;
+$padding-large-vertical: 14px !default;
+$padding-large-horizontal: 22px !default;
 
 $padding-small-vertical: 5px !default;
 $padding-small-horizontal: 10px !default;
 
-$padding-xs-vertical: 1px !default;
+$padding-xs-vertical: 2px !default;
 $padding-xs-horizontal: 5px !default;
 
 $line-height-large: 1.33333 !default;
@@ -2156,10 +2158,10 @@ $btn-border-radius-base: $border-radius-base !default;
 $btn-border-radius-large: $border-radius-large !default;
 $btn-border-radius-small: $border-radius-small !default;
 
-$btn-padding-base-vertical: 20px;
+$btn-padding-base-vertical: $padding-base-vertical;
 $btn-padding-base-horizontal: 20px;
 
-$btn-padding-large-vertical: $btn-padding-base-vertical;
+$btn-padding-large-vertical: $padding-large-vertical;
 $btn-padding-large-horizontal: 32px;
 
 $btn-padding-small-vertical: $padding-small-vertical;
