@@ -777,13 +777,12 @@ h1[id] {
 }
 
 /* Framework colors */
-.color-swatches .gray-darker {
-    background-color: #222;
+
+.color-swatches .gray-base {
     background-color: #000;
 }
 
 .color-swatches .gray-dark {
-    background-color: #333;
     background-color: #000;
 }
 
