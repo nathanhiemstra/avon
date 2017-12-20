@@ -8,10 +8,7 @@
   <meta name="description" content="">
   <title>{{ title }}</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="./css/bootstrap/bootstrap.css" rel="stylesheet">
-
-  <!-- Documentation extras -->
+  <!-- Core CSS - containts customized bootstrap plus new CSS -->
   <link href="./css/avon-main.css" rel="stylesheet">
   <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -28,19 +25,27 @@
 
 <body>
 
-  <section id="avon-poc"  >
+  <section id="avon-poc">
       <a class="sr-only" href="#content">Skip to main content</a>
 
-      {# HEADER #}
-      {% include components.modules.global.header %}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# RENDER BLOCK - HEADER #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block header %}
+        {% include components.modules.global.header %}
+      {% endblock %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {# RENDER BLOCK - CONTENT #}
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block content %}{% endblock %}
 
-      {# FOOTER #}
-      {% include components.modules.global.footer %}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# RENDER BLOCK - FOOTER #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block footer %}
+        {% include components.modules.global.footer %}
+      {% endblock %}
 
   </section>
 
@@ -66,3 +71,5 @@
 
 </body>
 </html>
+
+

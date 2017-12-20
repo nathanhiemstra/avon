@@ -1,0 +1,59 @@
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">PAYMENT METHOD</h4>
+        <p>Visa ending in 9845</p>
+      </span>
+      <a href="#collapse-{{ person }}-{{ item }}" data-toggle="collapse" class="pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-{{ person }}-{{ item }}">
+    <div>
+      {% include components.groups.forms.radioAndLabel with {name: 'addresses-{{ person }}-{{ item }}', theValue: 'Option1', label: "Credit card", checked: 'checked'} %}
+      {% include components.groups.forms.radioAndLabel with {name: 'addresses-{{ person }}-{{ item }}', theValue: 'Option2', label: "Avon Credit ($85.00 available)"} %}
+      {% include components.groups.forms.radioAndLabel with {name: 'addresses-{{ person }}-{{ item }}', theValue: 'Option3', label: "Email putchase link to customer"} %}
+      {% include components.groups.forms.radioAndLabel with {name: 'addresses-{{ person }}-{{ item }}', theValue: 'Option4', label: "PayPal"} %}
+    </div>
+
+    <div class="px-4">
+      <div class="row">
+        <div class="form-group col-xs-12">
+          {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Card Type', 'id': 'cart-stype-{{ person }}-{{ item }}', items: [{'label': 'Visa'}, {'label': 'Mastercard'}, {'label': 'American Express'}]} %}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-6">
+          {% include components.groups.forms.inputAndLabel with {'mainLabel': 'Name on card', 'id': 'first-{{ person }}-{{ item }}'} %}
+        </div>
+        <div class="form-group col-xs-6">
+          {% include components.groups.forms.inputAndLabel with {'mainLabel': '&nbsp;', 'id': 'last-{{ person }}-{{ item }}'} %}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-3">
+          {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Expiration date', 'id': 'month-{{ person }}-{{ item }}', items: [{'label': 'Month'}, {'label': '01'}, {'label': '02'}, {'label': '03'}, {'label': '04'}, {'label': '05'}, {'label': '06'}, {'label': '07'}, {'label': '08'}, {'label': '09'}, {'label': '10'}, {'label': '11'}, {'label': '12'}]} %}
+        </div>
+        <div class="form-group col-xs-3">
+          {% include components.groups.forms.selectAndLabel with {'mainLabel': '&nbsp;', 'id': 'year-{{ person }}-{{ item }}', items: [{'label': 'Year'}, {'label': '2018'}, {'label': '2019'}, {'label': '2020'}]} %}
+        </div>
+        <div class="form-group col-xs-2">
+          {% include components.groups.forms.inputAndLabel with {'mainLabel': 'CVV Code', 'id': 'cvv-{{ person }}-{{ item }}'} %}
+        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        {% include components.groups.forms.checkboxAndLabel with {name: 'addresses-{{ person }}-{{ item }}', theValue: 'Option1', label: "Save this credit card"} %}
+      </div>
+
+    </div>
+    
+
+    <p class="p-4"><a href="#collapse-{{ person }}-{{ item }}" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+    
+  </div>
+</section>

@@ -1,0 +1,42 @@
+{% extends "_layouts/modal.html.twig" %}
+  {% set modalId = 'checkout-triage' %}
+
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="btn btn-default btn-sm pull-right" data-dismiss="modal" aria-hidden="true">Cancel</button>
+  <h4 class="modal-title ">Checkout</h4>
+
+{% endblock %}
+
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+  <p>This order contains multiple carts. You can quickly check out by applying the same setttings to all carts or customize each cart’s invidual settings.</p>
+
+  <a href="#" class="btn btn-default btn-block my-4">
+    <div  class="text-left">
+      <h3>Quick Checkout</h3>
+      <p>Apply a single shipping address and payment method to all carts</p>
+    </div>
+  </a>
+
+  <a href="{{ pages.checkout.review.itemized }}" class="btn btn-default btn-block my-4">
+    <div  class="text-left">
+      <h3>Itemized Checkout</h3>
+      <p>Use unique shipping and payments options for individual carts</p>
+    </div>
+  </a>
+
+
+
+{% endblock %}
+

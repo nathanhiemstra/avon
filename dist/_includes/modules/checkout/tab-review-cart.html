@@ -1,0 +1,206 @@
+<h3 class="mb-5"><span class="glyphicon glyphicon-shopping-cart"></span> </h3>
+
+<!-- REVIEW ITEM - CART -->
+<section class="panel panel-default">
+  <div class="panel-body p-4">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">CART OVERVIEW</h4>
+      </span>
+      <a href="#collapse--cart" data-toggle="collapse" class="btn btn-default pull-right"><span class="glyphicon glyphicon-chevron-down"></span> Details</a>
+    </div>
+    <div class="clearfix">
+      <dl class="pull-left d-inline-block mb-0 mr-5">
+        <dt>ITEMS</dt>
+        <dd>3</dd>
+      </dl>
+      <dl class="pull-left d-inline-block mb-0 mr-5">
+        <dt>TOTAL</dt>
+        <dd>$135.00</dd>
+      </dl>
+      <dl class="pull-left d-inline-block mb-0">
+        <dt>DISCOUNT</dt>
+        <dd>$23.45</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="collapse" id="collapse--cart">
+    <div class="p-4">
+      <p>* Shipping tax not included</p>
+    </div>
+  </div>
+</section>
+<!-- REVIEW ITEM - SHIP TO -->
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">SHIP TO</h4>
+                  <p>1042 N WINCHESTER AVE APT 3,<br> CHICAGO, IL, 60622</p>
+              </span>
+      <a href="#collapse--ship-to" data-toggle="collapse" class="pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse--ship-to">
+    
+<div class="checkbox">
+  <label>
+          <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option1" checked >    
+    1153 W GRAND AVE,<br> CHICAGO, IL, 60642-5808
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option2">    
+    1042 N WINCHESTER AVE APT 3,<br>
+CHICAGO, IL, 60622-3743 United States
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option3">    
+    Add new address
+  </label>
+</div>    <p class="p-4"><a href="#collapse--ship-to" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+  </div>
+</section>
+<!-- REVIEW ITEM - SHIPPING METHOD  -->
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">SHIPPING METHOD</h4>
+        <p>USPS Ground (4–7 business days)<br> $5.95</p>
+      </span>
+      <a href="#collapse--ship-method" data-toggle="collapse" class="pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse--ship-method">
+    
+<div class="checkbox">
+  <label>
+          <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option1" checked >    
+    USPS Ground $5.95 (4–7 business days)
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option2">    
+    Overnight $20.90 (next business day)
+  </label>
+</div>    
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option3">    
+    Expedited $15.90 (2–3 business days)
+  </label>
+</div>
+    <p class="p-4"><a href="#collapse--ship-method" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+    
+  </div>
+</section>
+<!-- REVIEW ITEM - PAY METHOD  -->
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">PAYMENT METHOD</h4>
+        <p>Visa ending in 9845</p>
+      </span>
+      <a href="#collapse--pay-method" data-toggle="collapse" class="pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse--pay-method">
+    <div>
+      
+<div class="checkbox">
+  <label>
+          <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option1" checked >    
+    Credit card
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option2">    
+    Avon Credit ($85.00 available)
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option3">    
+    Email putchase link to customer
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option4">    
+    PayPal
+  </label>
+</div>    </div>
+
+    <div class="px-4">
+      <div class="row">
+        <div class="form-group col-xs-12">
+          <label class="control-label" for="cart-stype-{{ person }}-{{ item }}">Card Type</label>
+  <select class="form-control" id="cart-stype-{{ person }}-{{ item }}">
+      <option>Visa</option>
+      <option>Mastercard</option>
+      <option>American Express</option>
+  </select>        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-6">
+          <label class="control-label" for="first-{{ person }}-{{ item }}">Name on card</label>    <input type="text" class="form-control" id="first-{{ person }}-{{ item }}">        </div>
+        <div class="form-group col-xs-6">
+          <label class="control-label" for="last-{{ person }}-{{ item }}">&nbsp;</label>    <input type="text" class="form-control" id="last-{{ person }}-{{ item }}">        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-3">
+          <label class="control-label" for="month-{{ person }}-{{ item }}">Expiration date</label>
+  <select class="form-control" id="month-{{ person }}-{{ item }}">
+      <option>Month</option>
+      <option>01</option>
+      <option>02</option>
+      <option>03</option>
+      <option>04</option>
+      <option>05</option>
+      <option>06</option>
+      <option>07</option>
+      <option>08</option>
+      <option>09</option>
+      <option>10</option>
+      <option>11</option>
+      <option>12</option>
+  </select>        </div>
+        <div class="form-group col-xs-3">
+          <label class="control-label" for="year-{{ person }}-{{ item }}">&nbsp;</label>
+  <select class="form-control" id="year-{{ person }}-{{ item }}">
+      <option>Year</option>
+      <option>2018</option>
+      <option>2019</option>
+      <option>2020</option>
+  </select>        </div>
+        <div class="form-group col-xs-2">
+          <label class="control-label" for="cvv-{{ person }}-{{ item }}">CVV Code</label>    <input type="text" class="form-control" id="cvv-{{ person }}-{{ item }}">        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        
+<div class="checkbox">
+  <label>
+        <input type="checkbox" name="addresses-{{ person }}-{{ item }}" value="Option1">    
+    Save this credit card
+  </label>
+</div>      </div>
+
+    </div>
+    
+
+    <p class="p-4"><a href="#collapse--pay-method" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+    
+  </div>
+</section>

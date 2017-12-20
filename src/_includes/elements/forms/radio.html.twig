@@ -1,0 +1,16 @@
+{% if name %}
+  {% set name = ' name="' ~ name ~ '"' %}
+{% endif %}
+{% if classes %}
+  {% set classes = ' classes="' ~ classes ~ '"' %}
+{% endif %}
+{% if id %}
+  {% set id = ' id="' ~ id ~ '"' %}
+{% endif %}
+{% if theValue %}
+  {% set theValue = ' value="' ~ theValue ~ '"' %}
+{% endif %}
+{% if checked %}
+  {% set checked = ' checked ' %}
+{% endif %}
+<input type="radio" {{ name }}{{ classes }}{{ id }}{{ theValue }}{{ checked }}>

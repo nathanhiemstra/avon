@@ -12,6 +12,7 @@ $(document).ready(function() {
       drawerOrderSummary:       ".trigger-drawer-order-summary"
     },
     drawers: {
+      all:                      '[data-toggle="drawer"]',
       orderSummary:             ".drawer-order-summary"
     }
   }
@@ -24,6 +25,7 @@ $(document).ready(function() {
       drawerOrderSummary:   $(selectors.main).find(selectors.triggers.drawerOrderSummary)
     },
     drawers: {
+      all:                  $(selectors.main).find(selectors.drawers.all),
       orderSummary:         $(selectors.main).find(selectors.drawers.orderSummary)
     }
   }
@@ -34,23 +36,12 @@ $(document).ready(function() {
   // FUNCTIONS
   ////////////////////////////////////////////////////////
 
-  // function deepFind(obj, path) {
-  //   var paths = path.split('.'),
-  //     current = obj,
-  //     i;
 
-  //   for (i = 0; i < paths.length; ++i) {
-  //     if (current[paths[i]] == undefined) {
-  //       return undefined;
-  //     } else {
-  //       current = current[paths[i]];
-  //     }
-  //   }
-  //   return current;
-  // }
+  function toggleDrawer(clickedItem) {
+    var targetId = $(clickedItem).attr("href");
+    $(targetId).toggleClass('drawer-expanded');
+  }
 
- 
- 
 
 
   ////////////////////////////////////////////////////////
@@ -58,9 +49,16 @@ $(document).ready(function() {
   ////////////////////////////////////////////////////////
 
 
-  $objects.triggers.drawerOrderSummary.on("click", function() {
-    $objects.drawers.orderSummary.toggleClass('drawer-expanded');
+  $objects.drawers.all.on("click", function() {
+    toggleDrawer($(this));
   });
+
+
+  $('[data-tab-select]').on('change', function (e) {
+    var $optionSelected = $("option:selected", this);
+    $optionSelected.tab('show')
+  });
+
 
 
   ////////////////////////////////////////////////////////

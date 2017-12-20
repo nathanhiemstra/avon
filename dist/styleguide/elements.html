@@ -8,13 +8,12 @@
   <meta name="description" content="">
   <title>Styleguide Elements</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="../css/bootstrap/bootstrap.css" rel="stylesheet">
-
   <!-- Documentation extras -->
   <link href="docs-assets/css/prism.css" rel="stylesheet">
   <link href="docs-assets/css/docs.css" rel="stylesheet">
   <link href="docs-assets/css/docs-override.css" rel="stylesheet">
+  
+  <!-- Core CSS - containts customized bootstrap plus new CSS -->
   <link href="../css/avon-main.css" rel="stylesheet">
   <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -122,7 +121,7 @@
     </div>
 
   <pre><code class="language-css"><script type="text/plain">
-    $brand-primary: #428bca;
+    $brand-primary: #ED008C;
     $brand-success: #5cb85c;
     $brand-info:    #5bc0de;
     $brand-warning: #f0ad4e;
@@ -1459,6 +1458,12 @@ $alert-message-background: $brand-info;
       <option>3</option>
   </select>      <br>
       
+<select class="form-control">
+      <option>Option Label 1</option>
+      <option>Option Label 2</option>
+      <option>Option Label 3</option>
+  </select>      <br>
+      
     <select class="form-control" multiple>
       <option>1</option>
       <option>2</option>
@@ -1468,6 +1473,8 @@ $alert-message-background: $brand-info;
 
   <pre class="language-markup code-toolbar"><code class="language-twig">
   &#123;% include components.elements.forms.select %}
+
+  &#123;% include components.elements.forms.select with { 'items': [{'label': 'Option Label 1'}, {'label': 'Option Label 2'}, {'label': 'Option Label 3'}] } %}
 
   &#123;% include components.elements.forms.select with {multiple: true %}
    </code></pre>
@@ -1510,7 +1517,7 @@ $alert-message-background: $brand-info;
 
 
   <div class="bs-example">
-          <input type="radio"  id="optionsRadios1" value="option1">  </div><!-- /.bs-example -->
+          <input type="radio"  name="optionsRadios" id="optionsRadios1" value="option1">  </div><!-- /.bs-example -->
 
   
   <pre class="language-markup code-toolbar"><code class="language-twig">
@@ -1518,7 +1525,7 @@ $alert-message-background: $brand-info;
   </script></code></pre>
 
   <pre><code class="language-markup"><script type="text/plain">
-          <input type="radio"  id="optionsRadios1" value="option1">  </script></code></pre>
+          <input type="radio"  name="optionsRadios" id="optionsRadios1" value="option1">  </script></code></pre>
 
 
 </div>

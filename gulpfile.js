@@ -22,11 +22,10 @@ var page = {
   styleguideHome: {}
 }
 var prefix = {
-  components:       "_includes/components/",
-  elements:         "_includes/components/elements/",
-  groups:           "_includes/components/groups/",
-  modules:          "_includes/components/modules/",
-  templates:        "_includes/components/templates/"
+  elements:         "_includes/elements/",
+  groups:           "_includes/groups/",
+  modules:          "_includes/modules/",
+  templates:        "_includes/templates/"
 }
 
 path.dist = {
@@ -141,30 +140,92 @@ gulp.task('compile', function () {
                 }
               },
               modules: {
-                global: {
-                  footer:           prefix.modules + "global/footer.html.twig",
-                  header:           prefix.modules + "global/header.html.twig"
+                checkout: {
+                  header:                       prefix.modules + "checkout/header.html.twig",
+                  orderSummary:                 prefix.modules + "checkout/order-summary.html.twig",
+                  orderSummaryTabProducts:      prefix.modules + "checkout/order-summary-tab-products.html.twig",
+                  orderSummaryTabIncentives:    prefix.modules + "checkout/order-summary-tab-incentives.html.twig",
+                  order: {
+                    summary:      prefix.modules + "checkout/order-summary.html.twig",
+                    total:        prefix.modules + "checkout/order-total.html.twig"
+                  },
+                  review: {
+                    item: {
+                      cart:       prefix.modules + "checkout/review-item-cart.html.twig",
+                      shipTo:     prefix.modules + "checkout/review-item-ship-to.html.twig",
+                      shipMethod: prefix.modules + "checkout/review-item-ship-method.html.twig",
+                      payMethod:  prefix.modules + "checkout/review-item-pay-method.html.twig"
+                    },
+                    drawer: {
+                      orderTotal: prefix.modules + "checkout/drawer-total-order.html.twig"
+                    },
+                    tab: {
+                      cart:       prefix.modules + "checkout/tab-review-cart.html.twig"
+                    }
+                  },
+                  triage:         prefix.modules + "checkout/triage.html.twig"
                 },
-                orders: {
-                  productDetail: {
-                    details:       prefix.modules + "orders/product-detail/details.html.twig",
-                    features:      prefix.modules + "orders/product-detail/features.html.twig",
-                    header:        prefix.modules + "orders/product-detail/header.html.twig",
-                    images:        prefix.modules + "orders/product-detail/images.html.twig"
+                global: {
+                  footer:         prefix.modules + "global/footer.html.twig",
+                  header:         prefix.modules + "global/header.html.twig"
+                },            
+                product: {
+                  detail: {
+                    addToOrder:   prefix.modules + "product/detail/add-to-order.html.twig",
+                    details:      prefix.modules + "product/detail/details.html.twig",
+                    images:       prefix.modules + "product/detail/images.html.twig"
+                  }                 
+                },
+                v1: {
+                  product: {
+                    detail: {
+                      details:    prefix.modules + "v1/product/detail/details.html.twig",
+                      features:   prefix.modules + "v1/product/detail/features.html.twig",
+                      header:     prefix.modules + "v1/product/detail/header.html.twig",
+                      images:     prefix.modules + "v1/product/detail/images.html.twig"
+                    }
                   }
                 }
+              }
+            },
+            pages: {
+              checkout: {
+                review: {
+                  itemized: 'checkout-review-itemized.html',
+                  complete: 'checkout-review-complete.html'
+                }
               },
-              template:           "styleguide/_includes/module.html.twig",
-              templates: {}
+              product: {
+                detail:      'product-detail.html'
+              },
+              v1: {
+                order: {
+                  checkout:  'order-checkout.html',
+                  review:    'order-review.html'
+                },
+                product: {
+                  detail:    'v1-product-detail.html'
+                }
+              }
             },
             styleguide: {
-              item:               "styleguide/_includes/module.html.twig"
+              item: "styleguide/_includes/module.html.twig"
             },
             fpo: {
               image: '<img src="images/utility/placeholder.png" alt="" class="img-responsive">',
               sku: "&lt;000-000&gt;",
               paragraph: "Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.",
-              sentence: "Lorem ipsum dolor sit amet, erant dolor phaedrum."
+              sentence: "Lorem ipsum dolor sit amet, erant dolor phaedrum.",
+              person: {
+                1: 'You (Rosa Stone)',
+                2: 'Kory Rasmussen',
+                3: 'Tisha Pennington',
+                4: 'Phoebe Pope',
+                5: 'Helen Hicks' 
+              }
+            },
+            code: {
+              hideHeaderFooter: "<style>.global-header, .global-footer {display: none;} main {margin-top: 15px;} </style>"
             }
           }
       }))
@@ -188,7 +249,9 @@ gulp.task('default', ['compile']);
 
 gulp.task('sass', function(){
   return gulp.src(path.src.sass)
+    // .pipe(sourcemaps.init())
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
+    // .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.dist.css))
     .pipe(browserSync.reload({
       stream: true

@@ -1,0 +1,29 @@
+<section class="panel panel-default">
+  <div class="panel-body p-4">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">CART OVERVIEW</h4>
+      </span>
+      <a href="#collapse-{{ person }}-{{ item }}" data-toggle="collapse" class="btn btn-default pull-right"><span class="glyphicon glyphicon-chevron-down"></span> Details</a>
+    </div>
+    <div class="clearfix">
+      <dl class="pull-left d-inline-block mb-0 mr-5">
+        <dt>ITEMS</dt>
+        <dd>3</dd>
+      </dl>
+      <dl class="pull-left d-inline-block mb-0 mr-5">
+        <dt>TOTAL</dt>
+        <dd>$135.00</dd>
+      </dl>
+      <dl class="pull-left d-inline-block mb-0">
+        <dt>DISCOUNT</dt>
+        <dd>$23.45</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-{{ person }}-{{ item }}">
+    <div class="p-4">
+      <p>* Shipping tax not included</p>
+    </div>
+  </div>
+</section>

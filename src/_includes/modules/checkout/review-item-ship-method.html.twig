@@ -1,0 +1,19 @@
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">SHIPPING METHOD</h4>
+        <p>USPS Ground (4–7 business days)<br> $5.95</p>
+      </span>
+      <a href="#collapse-{{ person }}-{{ item }}" data-toggle="collapse" class="pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse-{{ person }}-{{ item }}">
+    {% include components.groups.forms.radioAndLabel with {name: 'addresses-{{ person }}-{{ item }}', theValue: 'Option1', label: "USPS Ground $5.95 (4–7 business days)", checked: 'checked'} %}
+    {% include components.groups.forms.radioAndLabel with {name: 'addresses-{{ person }}-{{ item }}', theValue: 'Option2', label: "Overnight $20.90 (next business day)"} %}
+    {% include components.groups.forms.radioAndLabel with {name: 'addresses-{{ person }}-{{ item }}', theValue: 'Option3', label: "Expedited $15.90 (2–3 business days)"} %}
+
+    <p class="p-4"><a href="#collapse-{{ person }}-{{ item }}" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+    
+  </div>
+</section>

@@ -8,10 +8,7 @@
   <meta name="description" content="">
   <title></title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="./css/bootstrap/bootstrap.css" rel="stylesheet">
-
-  <!-- Documentation extras -->
+  <!-- Core CSS - containts customized bootstrap plus new CSS -->
   <link href="./css/avon-main.css" rel="stylesheet">
   <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -28,11 +25,13 @@
 
 <body>
 
-  <section id="avon-poc"  >
+  <section id="avon-poc">
       <a class="sr-only" href="#content">Skip to main content</a>
 
       
-      <header class="navbar navbar-default navbar-static-top bs-docs-nav" role="banner">
+      
+      
+              <header class="navbar navbar-default navbar-static-top global-header" role="banner">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -61,7 +60,7 @@
     </nav>
     </div>
   </div>
-</header>
+</header>      
       
       
       
@@ -122,441 +121,277 @@
 
   <!-- PERSON -->
   <ul class="list-group">
-    <li class="list-group-item">
+    <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
-  <dl class="summary row mb-0">
-    <dt class="col-sm-6"><a href="#collapse-1" data-toggle="collapse"><span class="glyphicon glyphicon-play"></span>  Person 1 (12 items)</a></dt>
-    <dd class="col-sm-4">
-      
-<div class="checkbox">
-  <label>
-        <input type="checkbox" value="checkbox1" checked>    
-    Ship direct to rep
-  </label>
-</div>    </dd>
-    <dd class="col-sm-1"><b>$120.00</b></dd>
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-1" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        
+      </a>
+    </dt>
+    <dd class="pull-right">$120</dd>
   </dl>
+  <dl class="clearfix m-0">
+    <dt class="pull-left">12 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+
 
   <!-- DETAILS -->
-  <div class="details collapse" id="collapse-1">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
+  <div class="details collapse " id="collapse-1">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+               <img src="images/fpo/product-thumb.png" class="img-responsive" alt="">
+            </td>
+            <td>
+              <div>
+                Anew Ultimate Supreme Advanced Performance Créme
+                829-957
+              </div>
+              <div>
+                <span>Auto-replenish</span>
+                <span class="d-inline-block">
+<select class="form-control">
+      <option>Phoebe Pope</option>
+      <option>Tisha Pennington</option>
+      <option>Kory Rasmussen</option>
+  </select></span>
+              </div>
+            </td>
+            <td>
+               $30.00<br>
+               Each shipment 
+            </td>
+            <td class="text-right">
+               <div>4</div>
+               <a href="#">Remove</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
   </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->      </div>
-      <div class="col-sm-6">
-        <!-- SELECT AND LABEL -->
-        <div class="form-group">
-          <label class="control-label" for="exampleSelect1-1">Ship To</label>
-  <select class="form-control" id="exampleSelect1-1">
-      <option>GroupShip: Person 1 - 2134 W Fletcher St., Chicago</option>
-      <option>Ship to - option 2</option>
-      <option>Ship to - option 3</option>
-  </select>        </div>
-        <!-- SELECT AND LABEL -->
-        <div class="form-group">
-          <label class="control-label" for="exampleSelect2-1">Shipping Method</label>
-  <select class="form-control" id="exampleSelect2-1">
-      <option>Direct to Rep</option>
-      <option>Shipping Method 2</option>
-      <option>Shipping Method 3</option>
-  </select>        </div>
-        <!-- SELECT AND LABEL -->
-        <div class="form-group">
-          <label class="control-label" for="exampleSelect3-1">Pay With</label>
-  <select class="form-control" id="exampleSelect3-1">
-      <option>Person&rsquo;s card ending in 8888</option>
-      <option>Pay Method 2</option>
-      <option>Pay Method 3</option>
-  </select>        </div>
-      </div>
-    </div><!-- /.row -->
-  </div>
-</li>    <li class="list-group-item">
+</li>    <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
-  <dl class="summary row mb-0">
-    <dt class="col-sm-6"><a href="#collapse-2" data-toggle="collapse"><span class="glyphicon glyphicon-play"></span>  Person 2 (29 items)</a></dt>
-    <dd class="col-sm-4">
-      
-<div class="checkbox">
-  <label>
-        <input type="checkbox" value="checkbox1" checked>    
-    Ship direct to rep
-  </label>
-</div>    </dd>
-    <dd class="col-sm-1"><b>$290.00</b></dd>
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-2" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        
+      </a>
+    </dt>
+    <dd class="pull-right">$290</dd>
   </dl>
+  <dl class="clearfix m-0">
+    <dt class="pull-left">29 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+
 
   <!-- DETAILS -->
-  <div class="details collapse" id="collapse-2">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
+  <div class="details collapse  in " id="collapse-2">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+               <img src="images/fpo/product-thumb.png" class="img-responsive" alt="">
+            </td>
+            <td>
+              <div>
+                Anew Ultimate Supreme Advanced Performance Créme
+                829-957
+              </div>
+              <div>
+                <span>Auto-replenish</span>
+                <span class="d-inline-block">
+<select class="form-control">
+      <option>Phoebe Pope</option>
+      <option>Tisha Pennington</option>
+      <option>Kory Rasmussen</option>
+  </select></span>
+              </div>
+            </td>
+            <td>
+               $30.00<br>
+               Each shipment 
+            </td>
+            <td class="text-right">
+               <div>4</div>
+               <a href="#">Remove</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
   </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->      </div>
-      <div class="col-sm-6">
-        <!-- SELECT AND LABEL -->
-        <div class="form-group">
-          <label class="control-label" for="exampleSelect1-2">Ship To</label>
-  <select class="form-control" id="exampleSelect1-2">
-      <option>GroupShip: Person 1 - 2134 W Fletcher St., Chicago</option>
-      <option>Ship to - option 2</option>
-      <option>Ship to - option 3</option>
-  </select>        </div>
-        <!-- SELECT AND LABEL -->
-        <div class="form-group">
-          <label class="control-label" for="exampleSelect2-2">Shipping Method</label>
-  <select class="form-control" id="exampleSelect2-2">
-      <option>Direct to Rep</option>
-      <option>Shipping Method 2</option>
-      <option>Shipping Method 3</option>
-  </select>        </div>
-        <!-- SELECT AND LABEL -->
-        <div class="form-group">
-          <label class="control-label" for="exampleSelect3-2">Pay With</label>
-  <select class="form-control" id="exampleSelect3-2">
-      <option>Person&rsquo;s card ending in 8888</option>
-      <option>Pay Method 2</option>
-      <option>Pay Method 3</option>
-  </select>        </div>
-      </div>
-    </div><!-- /.row -->
-  </div>
-</li>    <li class="list-group-item">
+</li>    <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
-  <dl class="summary row mb-0">
-    <dt class="col-sm-6"><a href="#collapse-3" data-toggle="collapse"><span class="glyphicon glyphicon-play"></span>  Person 3 (4 items)</a></dt>
-    <dd class="col-sm-4">
-      
-<div class="checkbox">
-  <label>
-        <input type="checkbox" value="checkbox1" checked>    
-    Ship direct to rep
-  </label>
-</div>    </dd>
-    <dd class="col-sm-1"><b>$40.00</b></dd>
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-3" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        
+      </a>
+    </dt>
+    <dd class="pull-right">$40</dd>
   </dl>
+  <dl class="clearfix m-0">
+    <dt class="pull-left">4 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+
 
   <!-- DETAILS -->
-  <div class="details collapse" id="collapse-3">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
+  <div class="details collapse " id="collapse-3">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+               <img src="images/fpo/product-thumb.png" class="img-responsive" alt="">
+            </td>
+            <td>
+              <div>
+                Anew Ultimate Supreme Advanced Performance Créme
+                829-957
+              </div>
+              <div>
+                <span>Auto-replenish</span>
+                <span class="d-inline-block">
+<select class="form-control">
+      <option>Phoebe Pope</option>
+      <option>Tisha Pennington</option>
+      <option>Kory Rasmussen</option>
+  </select></span>
+              </div>
+            </td>
+            <td>
+               $30.00<br>
+               Each shipment 
+            </td>
+            <td class="text-right">
+               <div>4</div>
+               <a href="#">Remove</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
   </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->      </div>
-      <div class="col-sm-6">
-        <!-- SELECT AND LABEL -->
-        <div class="form-group">
-          <label class="control-label" for="exampleSelect1-3">Ship To</label>
-  <select class="form-control" id="exampleSelect1-3">
-      <option>GroupShip: Person 1 - 2134 W Fletcher St., Chicago</option>
-      <option>Ship to - option 2</option>
-      <option>Ship to - option 3</option>
-  </select>        </div>
-        <!-- SELECT AND LABEL -->
-        <div class="form-group">
-          <label class="control-label" for="exampleSelect2-3">Shipping Method</label>
-  <select class="form-control" id="exampleSelect2-3">
-      <option>Direct to Rep</option>
-      <option>Shipping Method 2</option>
-      <option>Shipping Method 3</option>
-  </select>        </div>
-        <!-- SELECT AND LABEL -->
-        <div class="form-group">
-          <label class="control-label" for="exampleSelect3-3">Pay With</label>
-  <select class="form-control" id="exampleSelect3-3">
-      <option>Person&rsquo;s card ending in 8888</option>
-      <option>Pay Method 2</option>
-      <option>Pay Method 3</option>
-  </select>        </div>
-      </div>
-    </div><!-- /.row -->
-  </div>
-</li>    <li class="list-group-item">
+</li>    <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
-  <dl class="summary row mb-0">
-    <dt class="col-sm-6"><a href="#collapse-4" data-toggle="collapse"><span class="glyphicon glyphicon-play"></span>  Person 4 (10 items)</a></dt>
-    <dd class="col-sm-4">
-      
-<div class="checkbox">
-  <label>
-        <input type="checkbox" value="checkbox1" checked>    
-    Ship direct to rep
-  </label>
-</div>    </dd>
-    <dd class="col-sm-1"><b>$10.00</b></dd>
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-4" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        
+      </a>
+    </dt>
+    <dd class="pull-right">$10</dd>
   </dl>
+  <dl class="clearfix m-0">
+    <dt class="pull-left">10 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+
 
   <!-- DETAILS -->
-  <div class="details collapse" id="collapse-4">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->        <div class="row my-2">
-  <div class="col-sm-3">
-    <img src="images/utility/placeholder.png" class="img-responsive" alt="" width="60" height="60">
-  </div>
-  <div class="col-sm-9">
-    <b>Product title - it might be kinda long, man!</b>
-    <ul class="list-unstyled grid-flush">
-      <li class="col-sm-4"><small>000-000</small></li>
-      <li class="col-sm-4"><small>$10.00</small></li>
-      <li class="col-sm-4"><small>12</small></li>
-    </ul>
-  </div>
-</div><!-- /.row -->      </div>
-      <div class="col-sm-6">
-        <!-- SELECT AND LABEL -->
-        <div class="form-group">
-          <label class="control-label" for="exampleSelect1-4">Ship To</label>
-  <select class="form-control" id="exampleSelect1-4">
-      <option>GroupShip: Person 1 - 2134 W Fletcher St., Chicago</option>
-      <option>Ship to - option 2</option>
-      <option>Ship to - option 3</option>
-  </select>        </div>
-        <!-- SELECT AND LABEL -->
-        <div class="form-group">
-          <label class="control-label" for="exampleSelect2-4">Shipping Method</label>
-  <select class="form-control" id="exampleSelect2-4">
-      <option>Direct to Rep</option>
-      <option>Shipping Method 2</option>
-      <option>Shipping Method 3</option>
-  </select>        </div>
-        <!-- SELECT AND LABEL -->
-        <div class="form-group">
-          <label class="control-label" for="exampleSelect3-4">Pay With</label>
-  <select class="form-control" id="exampleSelect3-4">
-      <option>Person&rsquo;s card ending in 8888</option>
-      <option>Pay Method 2</option>
-      <option>Pay Method 3</option>
-  </select>        </div>
-      </div>
-    </div><!-- /.row -->
+  <div class="details collapse " id="collapse-4">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+               <img src="images/fpo/product-thumb.png" class="img-responsive" alt="">
+            </td>
+            <td>
+              <div>
+                Anew Ultimate Supreme Advanced Performance Créme
+                829-957
+              </div>
+              <div>
+                <span>Auto-replenish</span>
+                <span class="d-inline-block">
+<select class="form-control">
+      <option>Phoebe Pope</option>
+      <option>Tisha Pennington</option>
+      <option>Kory Rasmussen</option>
+  </select></span>
+              </div>
+            </td>
+            <td>
+               $30.00<br>
+               Each shipment 
+            </td>
+            <td class="text-right">
+               <div>4</div>
+               <a href="#">Remove</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
   </div>
 </li>  </ul>
 
@@ -580,7 +415,7 @@
         
 
 <!-- DRAWER -->
-<div class="drawer drawer-fixed-bottom drawer-order-summary">
+<div  id="drawer-order-summary" class="drawer drawer-fixed-bottom">
 
   <!-- DRAWER NAV BAR -->
   <section class="navbar navbar-default hidden-md hidden-lg">
@@ -588,9 +423,9 @@
 
       <!-- DRAWER SUMMARY -->
       <div class="pull-left">
-        <button type="button" class="btn btn-default btn-xs trigger-drawer-order-summary">
+        <a href="#drawer-order-summary" data-toggle="drawer" class="btn btn-default btn-xs">
           <span class="glyphicon glyphicon-chevron-up"></span> Your order
-        </button>
+        </a>
       </div>
       <div class="pull-right">
         <b>$484.87</b> <small>55 items</small>
@@ -654,13 +489,15 @@
       
 
     </aside>
-  </div>
-</div>
+  </div><!-- /.row -->
+</div><!-- /.container -->
 
 
       
-      <!--Footer-->
-<footer class="my-5">
+      
+      
+              <!--Footer-->
+<footer class="my-5 footer global-footer">
     <hr>
     
 
@@ -673,7 +510,7 @@
     <!--/.Copyright-->
 
 </footer>
-<!--/.Footer-->
+<!--/.Footer-->      
   </section>
 
   <!-- Bootstrap core JavaScript
@@ -698,3 +535,5 @@
 
 </body>
 </html>
+
+

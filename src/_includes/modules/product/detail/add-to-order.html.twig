@@ -1,0 +1,68 @@
+{% extends "_layouts/modal.html.twig" %}
+  {% set modalId = 'product-add-to-order' %}
+
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h4 class="modal-title" id="myModalLabel">Add product to order</h4>
+
+{% endblock %}
+
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+  <div class="form-group">
+    {% include components.groups.forms.selectAndLabel with {
+      'mainLabel': 'Who is this product for?', 
+      'id': 'who-product-for', 
+      items: [
+        {'label': 'You (Rosa Stone)'}, 
+        {'label': 'Kory Rasmussen'}, 
+        {'label': 'Tisha Pennington'},
+        {'label': 'Phoebe Pope'}]
+    } %}
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        {% include components.groups.forms.selectAndLabel with {'mainLabel': 'Quantity', 'id': 'quantity'} %}
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <b>Sub-total</b><br>
+      $25.00
+    </div>
+  </div><!-- /.row -->
+
+  <div class="form-inline">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Auto-replenish
+      </label>
+    </div>
+  </div>
+
+  <div class="alert alert-info"><span class="glyphicon glyphicon-info-sign"></span> Shipping and taxes will be calculated during the checkout process</div>
+
+{% endblock %}
+
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <button type="button" class="btn btn-primary" data-dismiss="modal">Add to order</button>
+
+{% endblock %}

@@ -1,0 +1,104 @@
+<section class="panel panel-default">
+  <div class="panel-body pr-4 pb-4  pl-4 ">
+    <div class="clearfix">
+      <span class="pull-left mr-4 ">
+        <h4 class="m-0">PAYMENT METHOD</h4>
+        <p>Visa ending in 9845</p>
+      </span>
+      <a href="#collapse--" data-toggle="collapse" class="pull-right">Edit</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse--">
+    <div>
+      
+<div class="checkbox">
+  <label>
+          <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option1" checked >    
+    Credit card
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option2">    
+    Avon Credit ($85.00 available)
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option3">    
+    Email putchase link to customer
+  </label>
+</div>      
+<div class="checkbox">
+  <label>
+        <input type="radio"  name="addresses-{{ person }}-{{ item }}" value="Option4">    
+    PayPal
+  </label>
+</div>    </div>
+
+    <div class="px-4">
+      <div class="row">
+        <div class="form-group col-xs-12">
+          <label class="control-label" for="cart-stype-{{ person }}-{{ item }}">Card Type</label>
+  <select class="form-control" id="cart-stype-{{ person }}-{{ item }}">
+      <option>Visa</option>
+      <option>Mastercard</option>
+      <option>American Express</option>
+  </select>        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-6">
+          <label class="control-label" for="first-{{ person }}-{{ item }}">Name on card</label>    <input type="text" class="form-control" id="first-{{ person }}-{{ item }}">        </div>
+        <div class="form-group col-xs-6">
+          <label class="control-label" for="last-{{ person }}-{{ item }}">&nbsp;</label>    <input type="text" class="form-control" id="last-{{ person }}-{{ item }}">        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-3">
+          <label class="control-label" for="month-{{ person }}-{{ item }}">Expiration date</label>
+  <select class="form-control" id="month-{{ person }}-{{ item }}">
+      <option>Month</option>
+      <option>01</option>
+      <option>02</option>
+      <option>03</option>
+      <option>04</option>
+      <option>05</option>
+      <option>06</option>
+      <option>07</option>
+      <option>08</option>
+      <option>09</option>
+      <option>10</option>
+      <option>11</option>
+      <option>12</option>
+  </select>        </div>
+        <div class="form-group col-xs-3">
+          <label class="control-label" for="year-{{ person }}-{{ item }}">&nbsp;</label>
+  <select class="form-control" id="year-{{ person }}-{{ item }}">
+      <option>Year</option>
+      <option>2018</option>
+      <option>2019</option>
+      <option>2020</option>
+  </select>        </div>
+        <div class="form-group col-xs-2">
+          <label class="control-label" for="cvv-{{ person }}-{{ item }}">CVV Code</label>    <input type="text" class="form-control" id="cvv-{{ person }}-{{ item }}">        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        
+<div class="checkbox">
+  <label>
+        <input type="checkbox" name="addresses-{{ person }}-{{ item }}" value="Option1">    
+    Save this credit card
+  </label>
+</div>      </div>
+
+    </div>
+    
+
+    <p class="p-4"><a href="#collapse--" data-toggle="collapse" class="btn btn-primary">Continue</a></p>
+    
+  </div>
+</section>
