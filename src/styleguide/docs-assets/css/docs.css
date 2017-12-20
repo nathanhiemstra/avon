@@ -779,22 +779,24 @@ h1[id] {
 /* Framework colors */
 .color-swatches .gray-darker {
     background-color: #222;
+    background-color: #000;
 }
 
 .color-swatches .gray-dark {
     background-color: #333;
+    background-color: #000;
 }
 
 .color-swatches .gray {
-    background-color: #555;
+    background-color: #666;
 }
 
 .color-swatches .gray-light {
-    background-color: #999;
+    background-color: #CCC;
 }
 
 .color-swatches .gray-lighter {
-    background-color: #eee;
+    background-color: #F2F2F2;
 }
 
 .color-swatches .brand-primary {
@@ -802,19 +804,19 @@ h1[id] {
 }
 
 .color-swatches .brand-success {
-    background-color: #5cb85c;
+    background-color: #3EA572;
 }
 
 .color-swatches .brand-warning {
-    background-color: #f0ad4e;
+    background-color: #FAA342;
 }
 
 .color-swatches .brand-danger {
-    background-color: #d9534f;
+    background-color: #E54530;
 }
 
 .color-swatches .brand-info {
-    background-color: #5bc0de;
+    background-color: #2C97D0;
 }
 
 /* Docs colors */
