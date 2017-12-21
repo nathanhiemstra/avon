@@ -251,9 +251,9 @@ gulp.task('default', ['compile']);
 
 gulp.task('sass', function(){
   return gulp.src(path.src.sass)
-    // .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init())
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
-    // .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.dist.css))
     .pipe(browserSync.reload({
       stream: true

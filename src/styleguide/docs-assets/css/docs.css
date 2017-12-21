@@ -45,6 +45,24 @@ body {
     /* For scrollyspy */
 }
 
+.bs-docs-section > h1,
+.bs-docs-section > h2,
+.bs-docs-section > h3,
+.bs-docs-section > h4 {
+    padding-top: 100px;
+}
+
+.bs-docs-section > h1 + h2,
+.bs-docs-section > h2 + h3,
+.bs-docs-section > h3 + h4,
+.bs-docs-section > h1 + h3 {
+    padding-top: inherit;
+}
+
+.styleguide-body {
+    background-color: #f2f2f2;
+}
+
 /* Keep code small in tables on account of limited space */
 .table code {
     font-size: 13px;
@@ -897,10 +915,11 @@ h1[id] {
     padding: 45px 15px 15px;
     margin: 0 -15px 15px;
     background-color: #fafafa;
-    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.05);
-    border-color: #e5e5e5 #eee #eee;
-    border-style: solid;
-    border-width: 1px 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+
+    // border-color: #e5e5e5 #eee #eee;
+    // border-style: solid;
+    // border-width: 1px 0
 }
 
 /* Echo out a label for the example */
@@ -932,7 +951,9 @@ h1[id] {
         border-width: 1px;
         border-color: #ddd;
         border-radius: 4px 4px 0 0;
-        box-shadow: none;
+
+        // box-shadow: none;
+   
     }
 
     .bs-example + .highlight {
