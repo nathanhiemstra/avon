@@ -28,7 +28,7 @@
   <link rel="shortcut icon" href="../assets/ico/favicon.ico">
 </head>
 
-<body>
+<body class="styleguide-body">
 
   <section>
       <a class="sr-only" href="#content">Skip to main content</a>
@@ -120,6 +120,7 @@
       </div>
     </div>
 
+
   <pre><code class="language-css"><script type="text/plain">
     $brand-primary: #ED008C;
     $brand-success: #5cb85c;
@@ -135,7 +136,7 @@
   
   <div class="bs-example">
     <div class="color-swatches">
-      <div class="color-swatch gray-darker"></div>
+      <div class="color-swatch gray-base"></div>
       <div class="color-swatch gray-dark"></div>
       <div class="color-swatch gray"></div>
       <div class="color-swatch gray-light"></div>
@@ -144,11 +145,11 @@
   </div>
 
   <pre><code class="language-css"><script type="text/plain">
-    $gray-darker:  lighten(#000, 13.5%); // #222
-    $gray-dark:    lighten(#000, 20%);   // #333
-    $gray:         lighten(#000, 33.5%); // #555
-    $gray-light:   lighten(#000, 60%);   // #999
-    $gray-lighter: lighten(#000, 93.5%); // #eee
+    $gray-base: #000 !default;
+    $gray-dark: #000 !default;
+    $gray: #666 !default;
+    $gray-light: #CCC !default;
+    $gray-lighter: #F2F2F2 !default;
   </script></code></pre>
 
 
@@ -343,6 +344,17 @@ $alert-message-background: $brand-info;
 
   <pre><code class="language-markup"><script type="text/plain">
   <em>rendered as italicized text</em>
+  </script></code></pre>
+
+
+  <h3>Muted</h3>
+  <p>For muting a snippet of text with the <code>.text-muted</code> class.</p>
+  <div class="bs-example">
+    <p>The following snippet of text is <span class="text-muted">muteded with the <code>.text-muted</code> class</span>.</p>
+  </div>
+
+  <pre><code class="language-markup"><script type="text/plain">
+  <span class="text-muted">rendered as muted text</span>.
   </script></code></pre>
 
 
@@ -1782,16 +1794,15 @@ $alert-message-background: $brand-info;
 
 <!-- YOUR AVON LOGO
   ================================================== -->
-    <!-- 
-  ================================================== -->
+    
 <h2 id="your-avon-logo" class="bs-headline">Your Avon Logo</h2>
 
 <div class="bs-example">
-  <img src="/images/logos/your-avon.png" alt="Your Avon">
-</div>
+      <img src="/images/logos/your-avon.png" alt="Your Avon">
+  </div>
 <pre><code class="language-markup"><script type="text/plain">
-  <img src="/images/logos/your-avon.png" alt="Your Avon">
-</script></code></pre>
+      <img src="/images/logos/your-avon.png" alt="Your Avon">
+  </script></code></pre>
   <!-- SECTION -  GLYPHICONS -->
   
 

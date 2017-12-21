@@ -124,6 +124,7 @@ gulp.task('compile', function () {
                 },
                 checkout: {
                   personsOrder:     prefix.groups + "checkout/persons-order.html.twig",
+                  personsOrderTr:   prefix.groups + "checkout/persons-order-tr.html.twig",
                   productSummary:   prefix.groups + "checkout/product-summary.html.twig",
                   orderSummary:     prefix.groups + "checkout/order-summary.html.twig"
                 },
@@ -150,6 +151,10 @@ gulp.task('compile', function () {
                     total:        prefix.modules + "checkout/order-total.html.twig"
                   },
                   review: {
+                    order: {
+                      tabContent: prefix.modules + 'checkout/review/order/tab-content.html.twig',
+                      navTab:     prefix.modules + 'checkout/review/order/nav-tab.html.twig'
+                    },
                     item: {
                       cart:       prefix.modules + "checkout/review-item-cart.html.twig",
                       shipTo:     prefix.modules + "checkout/review-item-ship-to.html.twig",
@@ -191,8 +196,9 @@ gulp.task('compile', function () {
             pages: {
               checkout: {
                 review: {
+                  complete: 'checkout-review-complete.html',
                   itemized: 'checkout-review-itemized.html',
-                  complete: 'checkout-review-complete.html'
+                  order:    'checkout-review-order.html'
                 }
               },
               product: {
@@ -209,7 +215,8 @@ gulp.task('compile', function () {
               }
             },
             styleguide: {
-              item: "styleguide/_includes/module.html.twig"
+              item:     "styleguide/_includes/module.html.twig",
+              snippet:  "styleguide/_includes/snippet.html.twig"
             },
             fpo: {
               image: '<img src="images/utility/placeholder.png" alt="" class="img-responsive">',
@@ -249,9 +256,9 @@ gulp.task('default', ['compile']);
 
 gulp.task('sass', function(){
   return gulp.src(path.src.sass)
-    // .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init())
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
-    // .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.dist.css))
     .pipe(browserSync.reload({
       stream: true

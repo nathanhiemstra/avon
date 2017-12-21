@@ -1,6 +1,9 @@
 {# index.twig #}
 {% extends "_layouts/base.html.twig" %}
 
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+
 {% block content %}
 
 <div class="container">
@@ -20,16 +23,16 @@
     <h3>Product Detail / Checkout</h3>
     <ul>
       <li><a href="{{ pages.product.detail }}">Product Detail</a></li>
-      <li><a href="{{ pages.checkout.review.itemized }}">Checkout - Itemized</a></li>
+      <li><a href="{{ pages.checkout.review.order }}">Checkout - Review Order</a></li>
       <li><a href="{{ pages.checkout.review.complete }}">Checkout - Review &amp; Complete</a></li>
     </ul>
     
-    <h3>Product Detail / Checkout - V1</h3>
+ {#    <h3>Product Detail / Checkout - V1</h3>
     <ul>
       <li><a href="{{ pages.v1.product.detail }}">Product Detail</a></li>
       <li><a href="{{ pages.v1.order.review }}">Review Order</a></li>
       <li><a href="{{ pages.v1.order.checkout }}">Checkout</a></li>
-    </ul>
+    </ul> #}
 
     
   </main>
