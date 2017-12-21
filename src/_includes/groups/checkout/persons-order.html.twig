@@ -3,9 +3,9 @@
   <!-- SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
-      <a href="#collapse-{{ indexNum }}" data-toggle="collapse">
-        <span class="glyphicon glyphicon-play"></span> 
-        {{ personName }}
+      <a href="#collapse-{{ indexNum }}" data-toggle="collapse" {% if collapsed != false %} class="collapsed" {% endif %}>
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        {{ personName }} {{collapsed}}
       </a>
     </dt>
     <dd class="pull-right">${{ total }}</dd>
@@ -36,7 +36,7 @@
 
           {% include components.groups.checkout.personsOrderTr with {
             productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
-            img: 'images/fpo/agnew-ultimate.png',
+            img: '/images/fpo/agnew-ultimate.png',
             autoReplenish: null,
             sku: '829-957',
             price: '30.00',
@@ -45,7 +45,7 @@
 
           {% include components.groups.checkout.personsOrderTr with {
             productName: 'Anew Super Coverup', 
-            img: 'images/fpo/cover-up.png',
+            img: '/images/fpo/cover-up.png',
             autoReplenish: true,
             sku: '329-321',
             price: '10.00',
@@ -54,7 +54,7 @@
 
           {% include components.groups.checkout.personsOrderTr with {
             productName: 'Anew Purfume', 
-            img: 'images/fpo/purfume.png',
+            img: '/images/fpo/purfume.png',
             autoReplenish: null,
             sku: '856-376',
             price: '45.00',

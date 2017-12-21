@@ -3,8 +3,8 @@
   <!-- SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
-      <a href="#collapse-{{ indexNum }}" data-toggle="collapse">
-        <span class="glyphicon glyphicon-play"></span> 
+      <a href="#collapse-{{ indexNum }}" data-toggle="collapse" {% if collapsed %} class="collapsed" {% endif %}>
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
         {{ personName }}
       </a>
     </dt>

@@ -121,7 +121,7 @@
   <div class="bs-example">
     {% include components.groups.checkout.personsOrderTr with {
       productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
-      img: 'images/fpo/agnew-ultimate.png',
+      img: '/images/fpo/agnew-ultimate.png',
       autoReplenish: null,
       sku: '829-957',
       price: '30.00',
@@ -131,7 +131,7 @@
   {{ highlightMarkup }}
     {% include components.groups.checkout.personsOrderTr with {
       productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
-      img: 'images/fpo/agnew-ultimate.png',
+      img: '/images/fpo/agnew-ultimate.png',
       autoReplenish: null,
       sku: '829-957',
       price: '30.00',
@@ -146,8 +146,8 @@
   {# CHECKOUT / REVIEW / ORDER / TOTAL #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Tab Content",
-    slug:         "product-detail-checkout-review-order-tabContent",
+    title:        "Order Total",
+    slug:         "product-detail-checkout-review-order-total",
     path:         components.modules.checkout.order.total
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
