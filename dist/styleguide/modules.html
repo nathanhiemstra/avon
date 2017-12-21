@@ -105,598 +105,1770 @@
   
   
   
-    <!-- 
-  ================================================== -->
-<h2 id="product-detail-header" class="bs-headline">Product Detail - Header</h2>
-
-<div class="bs-example">
-  <div class="page-header">
-  <!-- TITLE -->
-  <h1>Product Name</h1>
-
-  <!-- HEADER EXTRA -->
-  <div class="page-header-extra mb-3">
-    <!-- SKU -->
-    <span class="mr-4">&lt;000-000&gt;</span>
     
-    <!-- RATINGS -->
-    <span>
-  <a href="#"><span class="glyphicon glyphicon-star"></span></a>  <a href="#"><span class="glyphicon glyphicon-star"></span></a>  <a href="#"><span class="glyphicon glyphicon-star"></span></a>  <a href="#"><span class="glyphicon glyphicon-star"></span></a>  <a href="#"><span class="glyphicon glyphicon-star-empty"></span></a></span>  </div>
-</div></div>
-<pre><code class="language-markup"><script type="text/plain">
-  <div class="page-header">
-  <!-- TITLE -->
-  <h1>Product Name</h1>
+<h2 id="product-detail-page-structure" class="bs-headline">Page Structure</h2>
 
-  <!-- HEADER EXTRA -->
-  <div class="page-header-extra mb-3">
-    <!-- SKU -->
-    <span class="mr-4">&lt;000-000&gt;</span>
+<div class="bs-example">
+      
+    <body>
+      <section id="avon-poc">
+
+        <!-- Header -->
+        <header>Checkout header</header>
+
+        <!-- Tab Nav - 9 columns wide -->
+        <div class="container">
+          <div class="row">
+            <main class="col-md-9">
+              Tab Nav
+            </main>
+          </div>
+        </div>
+
+        <!-- Content - 9x3 columns -->
+        <!-- Note: "super-panel" = full bleed grey backgournd -->
+        <div class="super-panel">
+          <div class="container">
+            <div class="row">
+              <main class="col-md-9" role="main">
+                Tab Content
+              </main>
+              <aside class="col-md-3" role="complementary">
+                Aside content
+              </aside>
+            </div>
+          </div>
+        </div> 
+
+        <!-- Footer -->
+        (No footer)
+
+      </section>
+    </body>
+  </div>
+<pre><code class="language-markup"><script type="text/plain">
+      
+    <body>
+      <section id="avon-poc">
+
+        <!-- Header -->
+        <header>Checkout header</header>
+
+        <!-- Tab Nav - 9 columns wide -->
+        <div class="container">
+          <div class="row">
+            <main class="col-md-9">
+              Tab Nav
+            </main>
+          </div>
+        </div>
+
+        <!-- Content - 9x3 columns -->
+        <!-- Note: "super-panel" = full bleed grey backgournd -->
+        <div class="super-panel">
+          <div class="container">
+            <div class="row">
+              <main class="col-md-9" role="main">
+                Tab Content
+              </main>
+              <aside class="col-md-3" role="complementary">
+                Aside content
+              </aside>
+            </div>
+          </div>
+        </div> 
+
+        <!-- Footer -->
+        (No footer)
+
+      </section>
+    </body>
+  </script></code></pre>
+  
+  
+  
     
-    <!-- RATINGS -->
-    <span>
-  <a href="#"><span class="glyphicon glyphicon-star"></span></a>  <a href="#"><span class="glyphicon glyphicon-star"></span></a>  <a href="#"><span class="glyphicon glyphicon-star"></span></a>  <a href="#"><span class="glyphicon glyphicon-star"></span></a>  <a href="#"><span class="glyphicon glyphicon-star-empty"></span></a></span>  </div>
-</div></script></code></pre>
-
-  
-  
-  
-    <!-- 
-  ================================================== -->
-<h2 id="product-detail-images" class="bs-headline">Product Detail - Images</h2>
+<h2 id="checkout-header" class="bs-headline">Checkout Header</h2>
 
 <div class="bs-example">
-  <!-- PRODUCT IMAGE(S) -->
-<img src="/images/utility/placeholder.png" alt="" class="img-responsive"></div>
+      <header class="navbar navbar-isolated navbar-static-top" role="banner">
+  <div class="container">
+  
+      <a href="index.html" class="navbar-brand ml-0">
+        <img src="/images/logos/your-avon.png" alt="Your Avon">
+      </a>
+       <h1 class="navbar-title">Checkout</h1>
+       <a href="product-detail.html" class="pull-right mt-3">
+        <span class="h4"><span class="glyphicon glyphicon-remove"></span></span>
+        
+      </a>
+ 
+  </div>
+</header>  </div>
 <pre><code class="language-markup"><script type="text/plain">
-  <!-- PRODUCT IMAGE(S) -->
-<img src="/images/utility/placeholder.png" alt="" class="img-responsive"></script></code></pre>
+      <header class="navbar navbar-isolated navbar-static-top" role="banner">
+  <div class="container">
+  
+      <a href="index.html" class="navbar-brand ml-0">
+        <img src="/images/logos/your-avon.png" alt="Your Avon">
+      </a>
+       <h1 class="navbar-title">Checkout</h1>
+       <a href="product-detail.html" class="pull-right mt-3">
+        <span class="h4"><span class="glyphicon glyphicon-remove"></span></span>
+        
+      </a>
+ 
+  </div>
+</header>  </script></code></pre>
 
   
   
   
-    <!-- 
-  ================================================== -->
-<h2 id="product-detail-details" class="bs-headline">Product Detail - Detail</h2>
+    
+<h2 id="checkout-review-order-navTab" class="bs-headline">Nav Tab</h2>
 
 <div class="bs-example">
-  <!-- PRODUCT DETAILS -->
-<p class="visible-md visible-lg">Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.</p>
-<p><b>$13.99</b></p>
-<p>Regular price: $19.99</p>
-<div class="well well-sm d-inline-block">
-  <span class="glyphicon glyphicon-ok"></span> In stock
-</div>
+      <!-- Nav tabs -->
+<ul class="nav nav-tabs nav-justified">
+  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products (8)</a></li>
+  <li><a href="#pd-incentives" data-toggle="tab">Incentives (2)</a></li>
+</ul>
 
-<!-- ASSIGN TO CUSTOMER(S) -->
-<div class="visible-md visible-lg">
-
-  <!-- FORM -->
-  <div class="grid-flush clearfix">
-    <form role="form">
-
-      <!-- CUSTOMER -->
-      <div class="row">
-        <div class="form-group col-sm-2">
-         <label class="control-label" for="exampleInput1">Qty</label>    <input type="text" class="form-control" id="exampleInput1">        </div>
-        <div class="form-group col-sm-6 has-error">
-          <!-- SELECT AND LABEL -->
-          <label class="control-label" for="exampleSelect1">Who is this for?</label>
-    <select class="form-control" id="exampleSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-  </select>  <p class="text-danger">Error message!</p>        </div>
-        <div class="form-group col-sm-4">
-          <!-- SELECT AND LABEL -->
-          <label class="control-label" for="exampleSelect2">Auto Ship</label>
-    <select class="form-control" id="exampleSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-  </select>        </div>
-      </div>
-
-      <!-- CUSTOMER -->
-      <div class="row">
-        <div class="form-group col-sm-2">
-         <label class="control-label" for="exampleInput2">Qty</label>    <input type="text" class="form-control" id="exampleInput2">        </div>
-        <div class="form-group col-sm-6">
-          <!-- SELECT AND LABEL -->
-          <label class="control-label" for="exampleSelect3">Who is this for?</label>
-    <select class="form-control" id="exampleSelect3">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-  </select>        </div>
-        <div class="form-group col-sm-4 has-error">
-          <!-- SELECT AND LABEL -->
-          <label class="control-label" for="exampleSelect4">Auto Ship</label>
-    <select class="form-control" id="exampleSelect4">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-  </select>  <p class="text-danger">Error message!</p>        </div>
-      </div>
-      
-    </form>
   </div>
-  <hr class="mt-0">
-  <p class="text-right"><a href="#">Add new customer</a></p>
-</div>
-
-<!-- CTA -->
-<p><button type="button" class="btn btn-primary btn-lg">Add to order</button></p></div>
 <pre><code class="language-markup"><script type="text/plain">
-  <!-- PRODUCT DETAILS -->
-<p class="visible-md visible-lg">Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.</p>
-<p><b>$13.99</b></p>
-<p>Regular price: $19.99</p>
-<div class="well well-sm d-inline-block">
-  <span class="glyphicon glyphicon-ok"></span> In stock
-</div>
+      <!-- Nav tabs -->
+<ul class="nav nav-tabs nav-justified">
+  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products (8)</a></li>
+  <li><a href="#pd-incentives" data-toggle="tab">Incentives (2)</a></li>
+</ul>
 
-<!-- ASSIGN TO CUSTOMER(S) -->
-<div class="visible-md visible-lg">
-
-  <!-- FORM -->
-  <div class="grid-flush clearfix">
-    <form role="form">
-
-      <!-- CUSTOMER -->
-      <div class="row">
-        <div class="form-group col-sm-2">
-         <label class="control-label" for="exampleInput1">Qty</label>    <input type="text" class="form-control" id="exampleInput1">        </div>
-        <div class="form-group col-sm-6 has-error">
-          <!-- SELECT AND LABEL -->
-          <label class="control-label" for="exampleSelect1">Who is this for?</label>
-    <select class="form-control" id="exampleSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-  </select>  <p class="text-danger">Error message!</p>        </div>
-        <div class="form-group col-sm-4">
-          <!-- SELECT AND LABEL -->
-          <label class="control-label" for="exampleSelect2">Auto Ship</label>
-    <select class="form-control" id="exampleSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-  </select>        </div>
-      </div>
-
-      <!-- CUSTOMER -->
-      <div class="row">
-        <div class="form-group col-sm-2">
-         <label class="control-label" for="exampleInput2">Qty</label>    <input type="text" class="form-control" id="exampleInput2">        </div>
-        <div class="form-group col-sm-6">
-          <!-- SELECT AND LABEL -->
-          <label class="control-label" for="exampleSelect3">Who is this for?</label>
-    <select class="form-control" id="exampleSelect3">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-  </select>        </div>
-        <div class="form-group col-sm-4 has-error">
-          <!-- SELECT AND LABEL -->
-          <label class="control-label" for="exampleSelect4">Auto Ship</label>
-    <select class="form-control" id="exampleSelect4">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-  </select>  <p class="text-danger">Error message!</p>        </div>
-      </div>
-      
-    </form>
-  </div>
-  <hr class="mt-0">
-  <p class="text-right"><a href="#">Add new customer</a></p>
-</div>
-
-<!-- CTA -->
-<p><button type="button" class="btn btn-primary btn-lg">Add to order</button></p></script></code></pre>
+  </script></code></pre>
 
   
   
   
-    <!-- 
-  ================================================== -->
-<h2 id="product-detail-features" class="bs-headline">Product Detail - Features</h2>
+    
+<h2 id="checkout-review-order-tabContent" class="bs-headline">Tab Content</h2>
 
 <div class="bs-example">
-  <!-- FEATURES -->
-<h2>Features</h2>
-<p>Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.</p>
-<p>Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.</p>
-<p>Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.</p></div>
+      <!-- Tab panes -->
+<section class="tab-content">
+  <section class="tab-pane active" id="pd-products">
+    
+    <!-- PERSON -->
+    <ul class="list-group">
+      <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-1" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        You (Rosa Stone)
+      </a>
+    </dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse  in " id="collapse-1">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          
+
+          <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td>
+     <img src="images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+  </select></span>
+      </div>
+      </td>
+  <td>
+     10.00
+     <br> <small class="text-muted">Each shipment</small>
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td>
+     <img src="images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td>
+     45.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+
+          
+        </tbody>
+      </table>
+    </div>
+
+    
+  </div>
+</li>      <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-2" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        Kory Rasmussen
+      </a>
+    </dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-2">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          
+
+          <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td>
+     <img src="images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+  </select></span>
+      </div>
+      </td>
+  <td>
+     10.00
+     <br> <small class="text-muted">Each shipment</small>
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td>
+     <img src="images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td>
+     45.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+
+          
+        </tbody>
+      </table>
+    </div>
+
+    
+  </div>
+</li>      <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-3" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        Tisha Pennington
+      </a>
+    </dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-3">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          
+
+          <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td>
+     <img src="images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+  </select></span>
+      </div>
+      </td>
+  <td>
+     10.00
+     <br> <small class="text-muted">Each shipment</small>
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td>
+     <img src="images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td>
+     45.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+
+          
+        </tbody>
+      </table>
+    </div>
+
+    
+  </div>
+</li>      <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-4" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        Phoebe Pope
+      </a>
+    </dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-4">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          
+
+          <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td>
+     <img src="images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+  </select></span>
+      </div>
+      </td>
+  <td>
+     10.00
+     <br> <small class="text-muted">Each shipment</small>
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td>
+     <img src="images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td>
+     45.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+
+          
+        </tbody>
+      </table>
+    </div>
+
+    
+  </div>
+</li>      <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-5" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        Helen Hicks
+      </a>
+    </dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-5">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          
+
+          <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td>
+     <img src="images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+  </select></span>
+      </div>
+      </td>
+  <td>
+     10.00
+     <br> <small class="text-muted">Each shipment</small>
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td>
+     <img src="images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td>
+     45.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+
+          
+        </tbody>
+      </table>
+    </div>
+
+    
+  </div>
+</li>    </ul>
+
+  </section>
+  <section class="tab-pane" id="pd-incentives">
+    Incentivces
+  </section>
+</section>  </div>
 <pre><code class="language-markup"><script type="text/plain">
-  <!-- FEATURES -->
-<h2>Features</h2>
-<p>Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.</p>
-<p>Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.</p>
-<p>Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.</p></script></code></pre>
+      <!-- Tab panes -->
+<section class="tab-content">
+  <section class="tab-pane active" id="pd-products">
+    
+    <!-- PERSON -->
+    <ul class="list-group">
+      <li class="list-group-item my-4">
 
-  <h1 id="order-summary" class="bs-headline">Order Summary</h1>
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-1" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        You (Rosa Stone)
+      </a>
+    </dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl>
 
-  
-  
-  
-  
-  <h2 id="order-summary-pd" class="bs-headline">Order Summary (Product Detail)</h2>
-  Goes in the right column. Content varies between Product Detail and Checkout
-  <div class="bs-example">
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse  in " id="collapse-1">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
           
 
-<!-- DRAWER -->
-<div  id="drawer-order-summary" class="drawer drawer-fixed-bottom">
-
-  <!-- DRAWER NAV BAR -->
-  <section class="navbar navbar-default hidden-md hidden-lg">
-    <div class="container pt-4">
-
-      <!-- DRAWER SUMMARY -->
-      <div class="pull-left">
-        <a href="#drawer-order-summary" data-toggle="drawer" class="btn btn-default btn-xs">
-          <span class="glyphicon glyphicon-chevron-up"></span> Your order
-        </a>
-      </div>
-      <div class="pull-right">
-        <b>$54.00</b> <small>9 items</small>
-      </div>
+          <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
     </div>
-  </section>
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td>
+     <img src="images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+  </select></span>
+      </div>
+      </td>
+  <td>
+     10.00
+     <br> <small class="text-muted">Each shipment</small>
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td>
+     <img src="images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td>
+     45.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
 
-  <!-- DRAWER CONTENT -->
-  <section class="order-summary">
+          
+        </tbody>
+      </table>
+    </div>
 
-    <!-- TITLE -->
-    <h3>Order Summary</h3>
+    
+  </div>
+</li>      <li class="list-group-item my-4">
 
-    <!-- ITEMIZED -->
-    <ul class="list-group">
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-2" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        Kory Rasmussen
+      </a>
+    </dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl>
 
-      <!-- ITEMIZED - BY PERSON -->
-      <li class="list-group-item">
-        <dl class="mb-0">
-          <dt>
-            <a href="#collapse-aside-1" data-toggle="collapse"><span class="glyphicon glyphicon-play"></span>  Person 1 (8 items)</a>
-            <div class="collapse" id="collapse-aside-1">
-              Product title - it might be kinda long, man! x 8
-            </div>
-          </dt>
-          <dd>$80.00</dd>
-          <dt>
-            <a href="#collapse-aside-2" data-toggle="collapse"><span class="glyphicon glyphicon-play"></span>  Person 2 (1 items)</a>
-            <div class="collapse" id="collapse-aside-2">
-              Product title - it might be kinda long, man! x 1
-            </div>
-          </dt>
-          <dd>$10.00</dd>
-        </dl>
-      </li>
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
 
-
-      <!-- SUBTOTAL -->
-      <li class="list-group-item">
-        <dl class="mb-0">
-          <dt>Discount</dt>
-          <dd>-$36.00</dd>
-          <dt>Order subtotal</dt>
-          <dd><b>$54.00</b></dd>
-        </dl>
-      </li>
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-2">
 
 
-      <!-- DISCOUNT OFFER -->
-      <li class="list-group-item"><a href="#">Order $35 more for 5% discount!</a></li>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
 
-      <!-- DISCOUNT CTA-->
-      <li class="list-group-item"><a href=""><span class="glyphicon glyphicon-plus-sign"></span> Add extras</a></li>
-    </ul>
-
-    <!-- CTA -->
-    <p><button type="button" class="btn btn-primary btn-lg">Continue</button></p>
-
-
-
-
-
-  </section>
-</div><!-- /.drawer -->  </div>
-  <pre><code class="language-markup"><script type="text/plain">
           
 
-<!-- DRAWER -->
-<div  id="drawer-order-summary" class="drawer drawer-fixed-bottom">
-
-  <!-- DRAWER NAV BAR -->
-  <section class="navbar navbar-default hidden-md hidden-lg">
-    <div class="container pt-4">
-
-      <!-- DRAWER SUMMARY -->
-      <div class="pull-left">
-        <a href="#drawer-order-summary" data-toggle="drawer" class="btn btn-default btn-xs">
-          <span class="glyphicon glyphicon-chevron-up"></span> Your order
-        </a>
-      </div>
-      <div class="pull-right">
-        <b>$54.00</b> <small>9 items</small>
-      </div>
+          <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
     </div>
-  </section>
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td>
+     <img src="images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+  </select></span>
+      </div>
+      </td>
+  <td>
+     10.00
+     <br> <small class="text-muted">Each shipment</small>
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td>
+     <img src="images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td>
+     45.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
 
-  <!-- DRAWER CONTENT -->
-  <section class="order-summary">
+          
+        </tbody>
+      </table>
+    </div>
 
-    <!-- TITLE -->
-    <h3>Order Summary</h3>
+    
+  </div>
+</li>      <li class="list-group-item my-4">
 
-    <!-- ITEMIZED -->
-    <ul class="list-group">
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-3" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        Tisha Pennington
+      </a>
+    </dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl>
 
-      <!-- ITEMIZED - BY PERSON -->
-      <li class="list-group-item">
-        <dl class="mb-0">
-          <dt>
-            <a href="#collapse-aside-1" data-toggle="collapse"><span class="glyphicon glyphicon-play"></span>  Person 1 (8 items)</a>
-            <div class="collapse" id="collapse-aside-1">
-              Product title - it might be kinda long, man! x 8
-            </div>
-          </dt>
-          <dd>$80.00</dd>
-          <dt>
-            <a href="#collapse-aside-2" data-toggle="collapse"><span class="glyphicon glyphicon-play"></span>  Person 2 (1 items)</a>
-            <div class="collapse" id="collapse-aside-2">
-              Product title - it might be kinda long, man! x 1
-            </div>
-          </dt>
-          <dd>$10.00</dd>
-        </dl>
-      </li>
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
 
-
-      <!-- SUBTOTAL -->
-      <li class="list-group-item">
-        <dl class="mb-0">
-          <dt>Discount</dt>
-          <dd>-$36.00</dd>
-          <dt>Order subtotal</dt>
-          <dd><b>$54.00</b></dd>
-        </dl>
-      </li>
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-3">
 
 
-      <!-- DISCOUNT OFFER -->
-      <li class="list-group-item"><a href="#">Order $35 more for 5% discount!</a></li>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
 
-      <!-- DISCOUNT CTA-->
-      <li class="list-group-item"><a href=""><span class="glyphicon glyphicon-plus-sign"></span> Add extras</a></li>
-    </ul>
-
-    <!-- CTA -->
-    <p><button type="button" class="btn btn-primary btn-lg">Continue</button></p>
-
-
-
-
-
-  </section>
-</div><!-- /.drawer -->  </script></code></pre>
-
-
-  
-  
-  
-  
-  <h2 id="order-summary-checkout" class="bs-headline">Order Summary (Checkout)</h2>
-  Goes in the right column. Content varies between Product Detail and Checkout
-  <div class="bs-example">
           
 
-<!-- DRAWER -->
-<div  id="drawer-order-summary" class="drawer drawer-fixed-bottom">
-
-  <!-- DRAWER NAV BAR -->
-  <section class="navbar navbar-default hidden-md hidden-lg">
-    <div class="container pt-4">
-
-      <!-- DRAWER SUMMARY -->
-      <div class="pull-left">
-        <a href="#drawer-order-summary" data-toggle="drawer" class="btn btn-default btn-xs">
-          <span class="glyphicon glyphicon-chevron-up"></span> Your order
-        </a>
-      </div>
-      <div class="pull-right">
-        <b>$484.87</b> <small>55 items</small>
-      </div>
+          <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
     </div>
-  </section>
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td>
+     <img src="images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+  </select></span>
+      </div>
+      </td>
+  <td>
+     10.00
+     <br> <small class="text-muted">Each shipment</small>
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td>
+     <img src="images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td>
+     45.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
 
-  <!-- DRAWER CONTENT -->
-  <section class="order-summary">
-
-    <!-- TITLE -->
-    <h3>Order Summary</h3>
-
-    <!-- ITEMIZED -->
-    <ul class="list-group">
-
-
-      <!-- ITEMIZED - BY CHARGES -->
-      <li class="list-group-item">
-        <dl class="mb-0">
-          <dt>55 Items:</dt>
-          <dd>$460.00</dd>
-          <dt>Shipping &amp; Handling:</dt>
-          <dd>$5.95</dd>
-          <dt>Taxes</dt>
-          <dd>$18.92</dd>
-        </dl>
-      </li>
-
-
-      <!-- TOTAL -->
-      <li class="list-group-item mb-0">
-        <dl class="mb-0">
-          <dt>Order Total</dt>
-          <dd><b>$484.87</b></dd>
-        </dl>
-      </li>
-
-      <!-- DISCOUNT OFFER -->
-      <li class="list-group-item"><a href="#">Order $35 more for 5% discount!</a></li>
-
-      <!-- DISCOUNT CTA-->
-      <li class="list-group-item"><a href=""><span class="glyphicon glyphicon-plus-sign"></span> Add extras</a></li>
-    </ul>
-
-    <!-- CTA -->
-    <p><button type="button" class="btn btn-primary btn-lg">Place Order</button></p>
-
-
-    <!-- PROMO CODE-->
-    <div class="mt-5">
-      <div class="form-group">
-       <label class="control-label" for="exampleInput1">Enter Promo Code</label>    <input type="text" class="form-control" id="exampleInput1">      </div>
-      <button type="button" class="btn btn-default">Apply</button>
+          
+        </tbody>
+      </table>
     </div>
 
+    
+  </div>
+</li>      <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-4" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        Phoebe Pope
+      </a>
+    </dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-4">
 
 
-  </section>
-</div><!-- /.drawer -->  </div>
-  <pre><code class="language-markup"><script type="text/plain">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
           
 
-<!-- DRAWER -->
-<div  id="drawer-order-summary" class="drawer drawer-fixed-bottom">
-
-  <!-- DRAWER NAV BAR -->
-  <section class="navbar navbar-default hidden-md hidden-lg">
-    <div class="container pt-4">
-
-      <!-- DRAWER SUMMARY -->
-      <div class="pull-left">
-        <a href="#drawer-order-summary" data-toggle="drawer" class="btn btn-default btn-xs">
-          <span class="glyphicon glyphicon-chevron-up"></span> Your order
-        </a>
+          <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td>
+     <img src="images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+  </select></span>
       </div>
-      <div class="pull-right">
-        <b>$484.87</b> <small>55 items</small>
+      </td>
+  <td>
+     10.00
+     <br> <small class="text-muted">Each shipment</small>
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td>
+     <img src="images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td>
+     45.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+
+          
+        </tbody>
+      </table>
+    </div>
+
+    
+  </div>
+</li>      <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-5" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        Helen Hicks
+      </a>
+    </dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-5">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          
+
+          <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td>
+     <img src="images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+  </select></span>
       </div>
+      </td>
+  <td>
+     10.00
+     <br> <small class="text-muted">Each shipment</small>
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td>
+     <img src="images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
     </div>
-  </section>
+      </td>
+  <td>
+     45.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
 
-  <!-- DRAWER CONTENT -->
-  <section class="order-summary">
-
-    <!-- TITLE -->
-    <h3>Order Summary</h3>
-
-    <!-- ITEMIZED -->
-    <ul class="list-group">
-
-
-      <!-- ITEMIZED - BY CHARGES -->
-      <li class="list-group-item">
-        <dl class="mb-0">
-          <dt>55 Items:</dt>
-          <dd>$460.00</dd>
-          <dt>Shipping &amp; Handling:</dt>
-          <dd>$5.95</dd>
-          <dt>Taxes</dt>
-          <dd>$18.92</dd>
-        </dl>
-      </li>
-
-
-      <!-- TOTAL -->
-      <li class="list-group-item mb-0">
-        <dl class="mb-0">
-          <dt>Order Total</dt>
-          <dd><b>$484.87</b></dd>
-        </dl>
-      </li>
-
-      <!-- DISCOUNT OFFER -->
-      <li class="list-group-item"><a href="#">Order $35 more for 5% discount!</a></li>
-
-      <!-- DISCOUNT CTA-->
-      <li class="list-group-item"><a href=""><span class="glyphicon glyphicon-plus-sign"></span> Add extras</a></li>
-    </ul>
-
-    <!-- CTA -->
-    <p><button type="button" class="btn btn-primary btn-lg">Place Order</button></p>
-
-
-    <!-- PROMO CODE-->
-    <div class="mt-5">
-      <div class="form-group">
-       <label class="control-label" for="exampleInput1">Enter Promo Code</label>    <input type="text" class="form-control" id="exampleInput1">      </div>
-      <button type="button" class="btn btn-default">Apply</button>
+          
+        </tbody>
+      </table>
     </div>
 
-
+    
+  </div>
+</li>    </ul>
 
   </section>
-</div><!-- /.drawer -->  </script></code></pre>
+  <section class="tab-pane" id="pd-incentives">
+    Incentivces
+  </section>
+</section>  </script></code></pre>
 
-
-
-
-  <!-- SECTION - JUMBOTRON -->
   
-
-
-<div class="bs-docs-section">
-
-  <h1 id="jumbotron" class="page-header">Jumbotron</h1>
-
-  <p>A lightweight, flexible component that can optionally extend the entire viewport to showcase key content on your site.</p>
+  
+  
+    <h2 id="checkout-review-order-persons" class="bs-headline">Person's Order</h2>
+  
   <div class="bs-example">
-    <div class="jumbotron">
-      <h1>Hello, world!</h1>
-      <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+    <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-2" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        Kory Rasmussen
+      </a>
+    </dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse  in " id="collapse-2">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          
+
+          <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
     </div>
-  </div>
-  <pre><code class="language-markup"><script type="text/plain">
-  <div class="jumbotron">
-    <h1>Hello, world!</h1>
-    <p>...</p>
-    <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-  </div>
-  </script></code></pre>
-    <p>To make the jumbotron full width, and without rounded corners, place it outside all <code>.container</code>s and instead add a <code>.container</code> within.</p>
-  <pre><code class="language-markup"><script type="text/plain">
-  <div class="jumbotron">
-    <div class="container">
-      ...
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td>
+     <img src="images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
     </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+  </select></span>
+      </div>
+      </td>
+  <td>
+     10.00
+     <br> <small class="text-muted">Each shipment</small>
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td>
+     <img src="images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td>
+     45.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+
+          
+        </tbody>
+      </table>
+    </div>
+
+    
   </div>
-  </script></code></pre>
-</div>
-  <!-- SECTION - PAGE HEADER -->
+</li>  </div>
+  <pre><code class="language-markup"><script type="text/plain">
+    <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-2" data-toggle="collapse">
+        <span class="glyphicon glyphicon-play"></span> 
+        Kory Rasmussen
+      </a>
+    </dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse  in " id="collapse-2">
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          
+
+          <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td>
+     <img src="images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+  </select></span>
+      </div>
+      </td>
+  <td>
+     10.00
+     <br> <small class="text-muted">Each shipment</small>
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td>
+     <img src="images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td>
+     45.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>
+
+          
+        </tbody>
+      </table>
+    </div>
+
+    
+  </div>
+</li>  </script></code></pre>
+
+
+
+
   
-
-
-<div class="bs-docs-section">
   
-
-  <h1 id="page-header" class="page-header">Page header</h1>
-
-  <p>A simple shell for an <code>h1</code> to appropriately space out and segment sections of content on a page. It can utilize the <code>h1</code>'s default <code>small</code> element, as well as most other components (with additional styles).</p>
+  
+    <h2 id="checkout-review-order-persons-product" class="bs-headline">Single Product in Person's Order</h2>
+  
   <div class="bs-example">
-    <div class="page-header">
-      <h1>Example page header <small>Subtext for header</small></h1>
+    <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
     </div>
-  </div>
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>  </div>
   <pre><code class="language-markup"><script type="text/plain">
-  <div class="page-header">
-    <h1>Example page header <small>Subtext for header</small></h1>
-  </div>
-  </script></code></pre>
-</div>
+    <tr>
+  <td>
+     <img src="images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td>
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td>
+     30.00
+     
+  </td>
+  <td class="text-right">
+     
+    <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+  </td>
+</tr>  </script></code></pre>
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+    
+<h2 id="checkout-review-order-tabContent" class="bs-headline">Tab Content</h2>
+
+<div class="bs-example">
+      <section class="text-center">
+  <h3 class="h-utility">Total</h3>
+  <dl class="clearfix border-bottom pb-3 mb-3">
+    <dt class="pull-left label-utility">Order subtotal</dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl> 
+  <dl class="clearfix border-bottom pb-3 mb-3">
+    <dt class="pull-left label-utility">Discount</dt>
+    <dd class="pull-right">$36.00</dd>
+  </dl> 
+  <p>Shipping and taxes will be calculated during the checkout process</p>
+  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Add to order</a>
+</section>  </div>
+<pre><code class="language-markup"><script type="text/plain">
+      <section class="text-center">
+  <h3 class="h-utility">Total</h3>
+  <dl class="clearfix border-bottom pb-3 mb-3">
+    <dt class="pull-left label-utility">Order subtotal</dt>
+    <dd class="pull-right">$90.00</dd>
+  </dl> 
+  <dl class="clearfix border-bottom pb-3 mb-3">
+    <dt class="pull-left label-utility">Discount</dt>
+    <dd class="pull-right">$36.00</dd>
+  </dl> 
+  <p>Shipping and taxes will be calculated during the checkout process</p>
+  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Add to order</a>
+</section>  </script></code></pre>
+
+
+
 
 
           

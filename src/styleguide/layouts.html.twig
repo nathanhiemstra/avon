@@ -1,7 +1,7 @@
 {# styleguide/index.html.twig #}
 {% set title = "Styleguide Layouts" %}
 {% set slug = "styleguide-layouts" %}
-{% extends "styleguide/_layouts/styleguide-main.html.twig" %}
+{% extends "styleguide/_layouts/styleguide-full-width.html.twig" %}
 
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -9,51 +9,115 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block styleguideContent %}
 
+
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# BASE #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Body",
+    slug:         "page-bosy",
+    snippet:      '
+    <body>
+      <section id="avon-poc">
+        <a class="sr-only" href="#content">Skip to main content</a>
+
+        <!-- Header -->
+
+        <!-- Main content -->
+
+        <!-- Footer -->
+
+      </section>
+    </body>' 
+}%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
  
-  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">One Column</h2>
-  {{ styleguideItem.description }}
-  <div class="bs-example">
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMN 12 #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Full Width",
+    slug:         "columns-12",
+    snippet:      '
     <div class="container">
       <main role="main">
-        {{ fpo.paragraph }}
+        <p>' ~ fpo.paragraph ~ '</p>
       </main>
-    </div>
-  </div>
-  {{ highlightMarkup }}
-  <div class="container">
-    <main role="main">
-      {{ fpo.paragraph }}
-    </main>
-  </div>
-  {{ endhighlight }}
+    </div>' 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
 
-  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">Two Columns</h2>
-  {{ styleguideItem.description }}
-  <div class="bs-example">
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMN 9 #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Column: 9 x (nothing)",
+    slug:         "columns-9",
+    snippet:      '
     <div class="container">
       <div class="row">
         <main class="col-md-9" role="main">
-          <p>{{ fpo.paragraph }}</p>
+          <p>' ~ fpo.paragraph ~ '</p>
+        </main>
+      </div>
+    </div>' 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMNS 9x3 #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Columns: 9x3",
+    slug:         "columns-9-x-3",
+    snippet:      '
+    <div class="container">
+      <div class="row">
+        <main class="col-md-9" role="main">
+          <p>' ~ fpo.paragraph ~ '</p>
         </main>
         <aside class="col-md-3" role="complementary">
-          <p>{{ fpo.paragraph }}</p>
+          <p>' ~ fpo.paragraph ~ '</p>
         </aside>
       </div>
-    </div>
-  </div>
-  {{ highlightMarkup }}
-  <div class="container">
-    <div class="row">
-      <main class="col-md-9" role="main">
-        <p>{{ fpo.paragraph }}</p>
-      </main>
-      <aside class="col-md-3" role="complementary">
-        <p>{{ fpo.paragraph }}</p>
-      </aside>
-    </div>
-  </div>
-  {{ endhighlight }}
+    </div>' 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMNS 9x3 INSIDE SUPER PANEL #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Super Panel (Full bleed grey background)",
+    slug:         "super-panel",
+    snippet:      '
+    <div class="super-panel">
+      <div class="container">
+        <div class="row">
+          <main class="col-md-9" role="main" style="background: white;">
+            <p>' ~ fpo.paragraph ~ '</p>
+          </main>
+          <aside class="col-md-3" role="complementary">
+            <p>' ~ fpo.paragraph ~ '</p>
+          </aside>
+        </div>
+      </div>
+    </div>' 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+
 
 
 {% endblock %}

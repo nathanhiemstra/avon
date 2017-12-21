@@ -1,0 +1,18 @@
+<!-- Tab panes -->
+<section class="tab-content">
+  <section class="tab-pane active" id="pd-products">
+    
+    <!-- PERSON -->
+    <ul class="list-group">
+      {% include components.groups.checkout.personsOrder with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', collapsed: false} %}
+      {% include components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00'} %}
+      {% include components.groups.checkout.personsOrder with {indexNum: '3', personName: fpo.person.3, itemCount: '8', total: '90.00'} %}
+      {% include components.groups.checkout.personsOrder with {indexNum: '4', personName: fpo.person.4, itemCount: '8', total: '90.00'} %}
+      {% include components.groups.checkout.personsOrder with {indexNum: '5', personName: fpo.person.5, itemCount: '8', total: '90.00'} %}
+    </ul>
+
+  </section>
+  <section class="tab-pane" id="pd-incentives">
+    Incentivces
+  </section>
+</section>

@@ -151,6 +151,10 @@ gulp.task('compile', function () {
                     total:        prefix.modules + "checkout/order-total.html.twig"
                   },
                   review: {
+                    order: {
+                      tabContent: prefix.modules + 'checkout/review/order/tab-content.html.twig',
+                      navTab:     prefix.modules + 'checkout/review/order/nav-tab.html.twig'
+                    },
                     item: {
                       cart:       prefix.modules + "checkout/review-item-cart.html.twig",
                       shipTo:     prefix.modules + "checkout/review-item-ship-to.html.twig",
@@ -211,7 +215,8 @@ gulp.task('compile', function () {
               }
             },
             styleguide: {
-              item: "styleguide/_includes/module.html.twig"
+              item:     "styleguide/_includes/module.html.twig",
+              snippet:  "styleguide/_includes/snippet.html.twig"
             },
             fpo: {
               image: '<img src="images/utility/placeholder.png" alt="" class="img-responsive">',
