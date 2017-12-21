@@ -1,5 +1,4 @@
 {% if autoReplenish != null %}
-  {% set autoReplenish = '<span>Auto-replenish</span>' %}
   {% set eachShipment = '<br> <small class="text-muted">Each shipment</small>' %}
 {% endif %}
 
@@ -13,10 +12,12 @@
       {{ productName }}
       <small class="text-muted ml-2">{{ sku }}</small>
     </div>
-    <div>
-      <span class="label label-default label-sm">{{ autoReplenish }}</span>
-      <span class="d-inline-block">{% include components.elements.forms.select with { 'items': [{'label': 'Every 4 weeks'}, {'label': 'Every 3 weeks'}, {'label': 'Every 2 weeks'}, {'label': 'Every 1 weeks'}] } %}</span>
-    </div>
+    {% if autoReplenish != null %}
+      <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="d-inline-block">{% include components.elements.forms.select with { 'items': [{'label': 'Every 4 weeks'}, {'label': 'Every 3 weeks'}, {'label': 'Every 2 weeks'}, {'label': 'Every 1 weeks'}] } %}</span>
+      </div>
+    {% endif %}
   </td>
   <td>
      {{ price }}
