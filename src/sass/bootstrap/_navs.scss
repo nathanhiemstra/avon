@@ -79,6 +79,7 @@
     // border-bottom: 1px solid $nav-tabs-border-color;
     > li {
         float: left;
+        text-transform: uppercase;
 
         // Make the list-items overlay the bottom border
         // margin-bottom: -1px;
@@ -92,7 +93,7 @@
             border-radius: $border-radius-base $border-radius-base 0 0;
 
             &:hover {
-                border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+                border-color: $link-hover-color;
             }
         }
 
@@ -206,7 +207,7 @@
         border-radius: $border-radius-base;
 
         &:hover {
-            border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+            border-color: $link-hover-color;
         }
     }
 

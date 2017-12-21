@@ -552,6 +552,8 @@ $gray-lighter: #F2F2F2 !default;
 // #eee
 
 $brand-primary: #ED008C !default;
+$brand-primary-emphasize: #D4027B !default;
+$brand-primary-muted: #FEF4F8 !default;
 
 // #337ab7
 // $brand-success: #5cb85c !default;
@@ -578,7 +580,7 @@ $text-color: $gray-dark !default;
 $link-color: $brand-primary !default;
 
 //** Link hover color set via `darken()` function.
-$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-color: $brand-primary-emphasize !default;
 
 //** Link hover decoration.
 $link-hover-decoration: underline !default;
@@ -1027,7 +1029,7 @@ $navbar-inverse-toggle-border-color: #333 !default;
 
 //=== Shared nav styles
 $nav-link-padding: 10px 15px !default;
-$nav-link-hover-bg: $gray-lighter !default;
+$nav-link-hover-bg: $brand-primary-muted !default;
 
 $nav-disabled-link-color: $gray-light !default;
 $nav-disabled-link-hover-color: $gray-light !default;
@@ -1039,7 +1041,7 @@ $nav-tabs-link-hover-border-color: $gray-lighter !default;
 
 $nav-tabs-active-link-hover-bg: $body-bg !default;
 $nav-tabs-active-link-hover-color: $gray !default;
-$nav-tabs-active-link-hover-border-color: $brand-primary !default;
+$nav-tabs-active-link-hover-border-color: $link-hover-color !default;
 
 $nav-tabs-justified-link-border-color: $body-bg !default;
 $nav-tabs-justified-active-link-border-color: $brand-primary !default;
