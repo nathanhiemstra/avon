@@ -67,10 +67,18 @@ n:avon-poc yoursweetusername$ gulp
 - Finished code: Merge **develop** into to the **master** branch
 
 ### Deploys ###
-[Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/) (See Lastpass for cridentials) tells our Dreamhost server to get (```git-pull```)  the latest changes from our Bitbucket repo.
-- Go to [Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/) 
-- Click "Deploy"
-- On confirmation screen click "Start deployment"
+
+**Production** [s4dc.dreamhosters.com](http://s4dc.dreamhosters.com/)
+  1. Commit changes to ```master``` branch
+  2. Manual deploy via [Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/) (See Lastpass for cridentials) tells our Dreamhost server to get (```git-pull```)  the latest changes from our Bitbucket repo.
+  A. Go to [Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/) 
+  B. Click "Deploy"
+  C. On confirmation screen click "Start deployment"
+
+**Development** [s4dc-dev.dreamhosters.com](http://s4dc-dev.dreamhosters.com/)
+  1. Commit changes to ```develop``` branch
+  2. Automaticall deploys via [Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/)
+
 
 ### Who do I talk to? ###
 
