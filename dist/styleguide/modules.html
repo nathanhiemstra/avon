@@ -266,6 +266,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
 
 
   <pre><code class="language-twig"><script type="text/plain">
+  {% include components.modules.checkout.review.order.navTab %}
   _includes/modules/checkout/review/order/nav-tab.html.twig
   </script></code></pre>
 
@@ -1700,6 +1701,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
 
 
   <pre><code class="language-twig"><script type="text/plain">
+  {% include components.modules.checkout.review.order.tabContent %}
   _includes/modules/checkout/review/order/tab-content.html.twig
   </script></code></pre>
 
@@ -1995,8 +1997,8 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
 </li>  </script></code></pre>
 
   
-  <pre><code class="language-markup"><script type="text/plain">
-      {% include { components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false} %}
+  <pre><code class="language-twig"><script type="text/plain">
+      {% include  components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false} %}
   </script></code></pre>  
 
 
@@ -2063,6 +2065,18 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   </td>
 </tr>  </script></code></pre>
 
+  
+  <pre><code class="language-twig"><script type="text/plain">
+      {% include  components.groups.checkout.personsOrderTr with {
+      productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
+      img: '/images/fpo/agnew-ultimate.png',
+      autoReplenish: null,
+      sku: '829-957',
+      price: '30.00',
+      classes: 'input-sm'
+    } %}
+  </script></code></pre> 
+
 
 
 
@@ -2106,6 +2120,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
 
 
   <pre><code class="language-twig"><script type="text/plain">
+  {% include components.modules.checkout.order.total %}
   _includes/modules/checkout/order-total.html.twig
   </script></code></pre>
 
