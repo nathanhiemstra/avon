@@ -457,6 +457,11 @@ select.form-control.input-lg {
     .form-control {
         padding-right: $input-height-base * 1.25;
     }
+
+    // Since we're hijacking ".has-feedback" for the <select> arrow, adjust a little
+    select.form-control {
+        padding-right: $input-height-base;
+    }
 }
 
 // Feedback icon (requires .glyphicon classes)
