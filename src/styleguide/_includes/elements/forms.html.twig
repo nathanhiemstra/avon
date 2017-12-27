@@ -229,9 +229,22 @@
   <div class="bs-example bs-example-control-sizing">
     <form role="form">
       <div class="controls">
+        <p>Inputs</p>
         <input class="form-control input-lg" type="text" placeholder=".input-lg">
         <input type="text" class="form-control" placeholder="Default input">
         <input class="form-control input-sm" type="text" placeholder=".input-sm">
+      </div>
+    </form>
+  </div><!-- /.bs-example -->
+
+  <div class="bs-example bs-example-control-sizing">
+    <form role="form">
+      <div class="controls">
+
+        {% include components.elements.forms.select with {'classes': 'input-lg'} %}
+        {% include components.elements.forms.select %}
+        {% include components.elements.forms.select with {'classes': 'input-sm'} %}
+
 
         <select class="form-control input-lg">
           <option value="">.input-lg</option>
@@ -246,15 +259,17 @@
     </form>
   </div><!-- /.bs-example -->
 
-  {{ highlightMarkup }}
-  <input class="form-control input-lg" type="text" placeholder=".input-lg">
-  <input class="form-control" type="text" placeholder="Default input">
-  <input class="form-control input-sm" type="text" placeholder=".input-sm">
+{{ highlightMarkup }}
+<input class="form-control input-lg" type="text" placeholder=".input-lg">
+<input class="form-control" type="text" placeholder="Default input">
+<input class="form-control input-sm" type="text" placeholder=".input-sm">
+{{ endhighlight }}
 
-  <select class="form-control input-lg">...</select>
-  <select class="form-control">...</select>
-  <select class="form-control input-sm">...</select>
-  {{ endhighlight }}
+{{ highlightMarkup }}
+{% include components.elements.forms.select with {'classes': 'input-lg'} %}
+{% include components.elements.forms.select  %}
+{% include components.elements.forms.select with {'classes': 'input-sm'} %}
+{{ endhighlight }}
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}

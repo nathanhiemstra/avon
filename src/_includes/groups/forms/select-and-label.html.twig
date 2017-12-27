@@ -1,5 +1,7 @@
-{% include components.elements.forms.label with {'id': id, 'mainLabel': mainLabel %}
-{% include components.elements.forms.select with {'id': id, 'items': items, 'classes': classes %}
+{{ components.elements.forms.selectWrapper.start }}
+  {% include components.elements.forms.label with {'id': id, 'mainLabel': mainLabel %}
+  {% include components.elements.forms.select with {'id': id, 'items': items, 'classes': classes, hasFormGroup: true} %}
+{{ components.elements.forms.selectWrapper.end }}
 {% if errorMessage %}
   {% include components.elements.forms.errorMessage with {'errorMessage': errorMessage} %}
 {% endif %}

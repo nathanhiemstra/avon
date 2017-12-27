@@ -100,7 +100,11 @@ gulp.task('compile', function () {
                   label:            prefix.elements + "forms/label.html.twig",
                   input:            prefix.elements + "forms/input.html.twig",
                   radio:            prefix.elements + "forms/radio.html.twig",
-                  select:           prefix.elements + "forms/select.html.twig"
+                  select:           prefix.elements + "forms/select.html.twig",
+                  selectWrapper: {
+                    start:          '<div class="form-group has-feedback">',
+                    end:            '  <span class="glyphicon glyphicon-play form-control-feedback"></span>\r\n</div>'
+                  }
                 },
                 images: {
                   logoYourAvon:     prefix.elements + "images/logo-your-avon.html.twig"

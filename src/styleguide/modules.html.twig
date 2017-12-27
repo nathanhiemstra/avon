@@ -63,9 +63,11 @@
   {% set styleguideItem = {
     title:        "Checkout Header",
     slug:         "product-detail-checkout-header",
+    twig:         "components.modules.checkout.header",
     path:         components.modules.checkout.header
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -102,10 +104,16 @@
   <div class="bs-example">
     {% include components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false} %}
   </div>
+
+  {# Markup #}
   {{ highlightMarkup }}
     {% include components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false} %}
   {{ endhighlight }}
 
+  {# Twig include #}
+  {{ highlightMarkup }}
+      {{ '{% include ' }}{ components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false}{{ ' %}' }}
+  {{ endhighlight }}  
 
 
 

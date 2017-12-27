@@ -178,6 +178,25 @@ textarea.form-control {
     height: auto;
 }
 
+// Select
+select.form-control {
+    outline: none;
+    -webkit-appearance: none;
+    background: #fff;
+
+    + .glyphicon {
+        color: $link-color;
+    }
+
+    + .glyphicon-play.form-control-feedback {
+        transform: rotate(90deg);
+    }
+}
+
+.select-wrapper {
+    position: relative;
+}
+
 // Search inputs in iOS
 //
 // This overrides the extra rounded corners on search inputs in iOS so that our
@@ -382,6 +401,11 @@ input[type="checkbox"] {
     }
 }
 
+select.form-control.input-sm {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 @include input-size(".input-lg", $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
 
 .form-group-lg {
@@ -414,6 +438,11 @@ input[type="checkbox"] {
         font-size: $font-size-large;
         line-height: $line-height-large;
     }
+}
+
+select.form-control.input-lg {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 // Form control feedback states

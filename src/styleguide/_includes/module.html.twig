@@ -1,6 +1,7 @@
-
 <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
 {{ styleguideItem.description }}
+
+{# Example #}
 <div class="bs-example">
   {% if styleguideItem.snippet %}
     {{ styleguideItem.snippet }}
@@ -8,6 +9,8 @@
     {% include styleguideItem.path %}
   {% endif %}
 </div>
+
+{# Markup #}
 {{ highlightMarkup }}
   {% if styleguideItem.snippet %}
     {{ styleguideItem.snippet }}
@@ -15,3 +18,11 @@
     {% include styleguideItem.path %}
   {% endif %}
 {{ endhighlight }}
+
+{# Twig include and HTML path #}
+{% if styleguideItem.path %}
+  {{ highlightTwig}}
+  {% if styleguideItem.twig %}{{ '{% include ' }}{{ styleguideItem.twig }}{{ ' %}' }}
+  {% endif %}{{ styleguideItem.path  }}
+  {{ endhighlight }}
+{% endif %}

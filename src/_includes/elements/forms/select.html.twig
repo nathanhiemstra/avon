@@ -17,9 +17,18 @@
 {% endif %}
 {% if multiple %}
   {% set multiple = ' multiple' %}
+{% else %}
+  {# If the "form-group" container hasn't been added (likely by select-and-label.html.twig) add it here #}
+  {% if hasFormGroup != true %}
+    {% set formGroupStart = components.elements.forms.selectWrapper.start %}
+    {% set formGroupEnd = components.elements.forms.selectWrapper.end %}
+    {% set indenet = '  ' %}
+  {% endif %}
 {% endif %}
-<select class="form-control{{ classes }}"{{ id }}{{ multiple }}>
-  {% for item in items %}
-    <option>{{ item.label }}</option>
-  {% endfor %}
-</select>
+{{ formGroupStart }}
+{{ indenet }}<select class="form-control{{ classes }}"{{ id }}{{ multiple }}>
+{{ indenet }}{% for item in items %}
+{{ indenet }}  <option>{{ item.label }}</option>
+{{ indenet }}{% endfor %}
+{{ indenet }}</select>
+{{ formGroupEnd }}
