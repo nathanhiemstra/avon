@@ -92,6 +92,18 @@ gulp.task('compile', function () {
             highlightTwig:        markup.highlight.twig,
             highlightSass:        markup.highlight.sass,
             endhighlight:         markup.highlight.end,
+            layouts: {
+              base:               '_layouts/base.html.twig',
+              columns12:          '_layouts/columns-12.html.twig',
+              columns9x3:         '_layouts/columns-9x3.html.twig',
+              themes: {
+                checkout:         '_layouts/theme-checkout.html.twig'
+              },
+              utility: {
+                modal:            '_layouts/modal.html.twig',
+              }
+              
+            },
             components: {
               elements: {
                 forms: {
@@ -201,21 +213,11 @@ gulp.task('compile', function () {
               checkout: {
                 review: {
                   complete: 'checkout-review-complete.html',
-                  itemized: 'checkout-review-itemized.html',
                   order:    'checkout-review-order.html'
                 }
               },
               product: {
                 detail:      'product-detail.html'
-              },
-              v1: {
-                order: {
-                  checkout:  'order-checkout.html',
-                  review:    'order-review.html'
-                },
-                product: {
-                  detail:    'v1-product-detail.html'
-                }
               }
             },
             styleguide: {
