@@ -19,20 +19,17 @@
   <!-- DETAILS -->
   <div class="details collapse {% if collapsed == false %} in {% endif %}" id="collapse-{{ indexNum }}">
 
-
-    <div class="table-responsive">
+    <div class="table-responsiveX">
       <table class="table">
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th class="text-right">Qty</th>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
           </tr>
         </thead>
         <tbody>
-
-          
 
           {% include components.groups.checkout.personsOrderTr with {
             productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
@@ -61,12 +58,8 @@
             classes: 'input-sm'
           }%}
 
-
-          
         </tbody>
       </table>
     </div>
-
-    
   </div>
 </li>
