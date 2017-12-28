@@ -13,19 +13,19 @@
 {% endif %}
 
 <!-- DRAWER -->
-<div id="drawer-order-summary" class="drawer drawer-fixed-bottom drawer-order-summary hidden-md hidden-lg">
+<div id="drawer-order-summary" class="drawer drawer-fixed-bottom drawer-order-summary">
 
   <!-- DRAWER NAV BAR -->
-  <section class="navbar navbar-default hidden-md hidden-lg">
+  <section class="navbar navbar-default">
     <div class="container pt-4">
 
       <!-- DRAWER SUMMARY -->
       <div class="pull-left">
-        <h4 class="m-0"><a href="#drawer-order-summary" data-toggle="drawer"><span class="glyphicon glyphicon-shopping-cart"></span> My order <small> (<span class="order-qty">8</span> items)</small></a></h4>
+        <h4 class="m-0"><a href="#drawer-order-summary" data-toggle="drawer">Your order </a></h4>
 
       </div>
       <div class="pull-right">
-        <a href="#drawer-order-summary" data-toggle="drawer"><span class="glyphicon glyphicon-chevron-up"></span></a>
+        <a href="#drawer-order-summary" data-toggle="drawer" class="btn btn-default btn-sm">Continue</a>
 
         
       </div>
@@ -35,24 +35,34 @@
   <!-- DRAWER CONTENT -->
   <section>
 
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs">
-      <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products (8)</a></li>
-      <li><a href="#pd-incentives" data-toggle="tab">Incentives (5)</a></li>
-    </ul>
-    <div class="container">
-      <!-- Tab panes -->
-      <div class="tab-content mt-5">
-        <div class="tab-pane active" id="pd-products">
-          {% include components.modules.checkout.orderSummaryTabProducts %}
-        </div>
+    {% include components.modules.checkout.header %}
 
-        <!-- INCENTIVES -->
-        <div class="tab-pane" id="pd-incentives">
-          {% include components.modules.checkout.orderSummaryTabIncentives %}
-      </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9">
+          
+          {% include components.modules.checkout.review.order.navTab %}
+
+        </div>
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+
     
-    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9">
+
+           {% include components.modules.checkout.review.order.tabContent %}
+
+        </div>
+        <div class="col-sm-3">
+
+          {% include components.modules.checkout.order.total %}
+
+        </div>
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+
 
 
 

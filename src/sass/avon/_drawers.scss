@@ -14,8 +14,8 @@
     background: $body-bg;
 
     @media (min-width: $screen-md-min) {
-        height: inherit;
-        position: relative;
+        // height: inherit;
+        // position: relative;
     }
 
     &.drawer-expanded {
