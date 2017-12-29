@@ -1,48 +1,79 @@
   
+
 <!-- DRAWER -->
-<div id="drawer-order-summary" class="drawer drawer-fixed-bottom drawer-order-summary">
+<section id="drawer-order-summary" class="drawer drawer-fixed-bottom drawer-order-summary">
 
-  <!-- DRAWER NAV BAR -->
-  <section class="navbar navbar-default">
-    <div class="container pt-4">
-
-      <!-- DRAWER SUMMARY -->
+  <!-- DRAWER SUMMARY -->
+  <section class="drawer-summary">
+    <div class="container-fluid">
       <div class="pull-left">
-        <h4 class="m-0"><a href="#drawer-order-summary" data-toggle="drawer">Your order </a></h4>
-
+        <h4 class="drawer-summary-header"><a href="#drawer-order-summary" data-toggle="drawer">Your order </a></h4>
       </div>
       <div class="pull-right">
-        <a href="#drawer-order-summary" data-toggle="drawer" class="btn btn-default btn-sm">Continue</a>
+        <ul class="list-group pull-left drawer-list-default">
+          <li class="list-group-item">
+            <dl class="mb-0">
+              <dt class="list-group-item-heading">Items</dt>
+              <dd class="list-group-item-text">24</dd>
+            </dl>
+          </li>
+          <li class="list-group-item">
+            <dl class="mb-0">
+              <dt class="list-group-item-heading">Customers</dt>
+              <dd class="list-group-item-text">4</dd>
+            </dl>
+          </li>
+          <li class="list-group-item">
+            <dl class="mb-0">
+              <dt class="list-group-item-heading">Incentives</dt>
+              <dd class="list-group-item-text">3</dd>
+            </dl>
+          </li>
+          <li class="list-group-item">
+            <dl class="mb-0">
+              <dt class="list-group-item-heading">Discount</dt>
+              <dd class="list-group-item-text">$144.62</dd>
+            </dl>
+          </li>
+          <li class="list-group-item">
+            <dl class="mb-0">
+              <dt class="list-group-item-heading">Subtotal</dt>
+              <dd class="list-group-item-text">$450.99</dd>
+            </dl>
+          </li>
+        </ul>
 
-        
+        <div class="pull-right pl-5 pr-4 drawer-valign-middle">
+          <a href="#drawer-order-summary" data-toggle="drawer" class="btn btn-default ">Continue</a>
+        </div>
       </div>
     </div>
-  </section>
+  </section><!-- /.drawer-summary -->
 
   <!-- DRAWER CONTENT -->
-  <section>
+  <section class="drawer-content">
+
 
     <header class="navbar navbar-isolated navbar-static-top" role="banner">
   <div class="container">
-  
       <a href="index.html" class="navbar-brand ml-0">
         <img src="/images/logos/your-avon.png" alt="Your Avon">
       </a>
-       <h1 class="navbar-title">Checkout</h1>
-       <a href="product-detail.html" class="pull-right mt-3">
+       <h1 class="navbar-title">Your Order</h1>
+       <a href="#drawer-order-summary" class="pull-right mt-3" data-toggle="drawer">
         <span class="h4"><span class="glyphicon glyphicon-remove"></span></span>
-        
       </a>
- 
   </div>
 </header>
+    
+
     <div class="container">
       <div class="row">
         <div class="col-sm-9">
           
           <!-- Nav tabs -->
 <ul class="nav nav-tabs nav-justified">
-  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products (8)</a></li>
+  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products</a></li>
   <li><a href="#pd-incentives" data-toggle="tab">Incentives <span class="badge">2</span></a></li>
 </ul>
 
@@ -792,4 +823,4 @@
 
 
   </section>
-</div><!-- /.drawer -->
+</section><!-- /.drawer -->

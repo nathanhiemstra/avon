@@ -1,5 +1,8 @@
 .drawer {
     overflow: hidden;
+    background-color: $body-bg;
+
+    @include box-shadow(0 -1px 9px rgba(0, 0, 0, 0.175));
 
     &-fixed-bottom {
         position: fixed;
@@ -10,8 +13,44 @@
         transition: height 0.5s;
     }
 
-    height: 50px;
-    background: $body-bg;
+    height: $navbar-drawer-height;
+
+    &-height {
+        height: $navbar-drawer-height;
+    }
+
+    .drawer-valign-middle {
+        line-height: $navbar-drawer-height;
+    }
+
+    .drawer-summary-header {
+        line-height: $navbar-drawer-height;
+        margin: 0;
+    }
+
+    &-list-default {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        > li,
+        > .list-group-item {
+            height: $navbar-drawer-height;
+            border-top: 0;
+            border-bottom: 0;
+        }
+
+        .list-group-item {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .list-group-item-heading {
+            margin-top: 5px;
+        }
+
+        @extend .list-inline-abutted;
+    }
 
     @media (min-width: $screen-md-min) {
         // height: inherit;
@@ -20,7 +59,15 @@
 
     &.drawer-expanded {
         height: 100vh;
+
+        .drawer-summary {
+            display: none;
+        }
     }
+}
+
+.drawer-summary {
+    height: $navbar-drawer-height;
 }
 
 .order-summary {

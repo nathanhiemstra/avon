@@ -455,7 +455,7 @@ $navbar-padding-vertical: ($navbar-height - $line-height-computed) / 2 !default;
 $navbar-collapse-max-height: 340px !default;
 
 $navbar-default-color: #777 !default;
-$navbar-default-bg: #f8f8f8 !default;
+$navbar-default-bg: #FFF !default;
 $navbar-default-border: darken($navbar-default-bg, 6.5%) !default;
 
 // Navbar links
@@ -501,6 +501,12 @@ $navbar-inverse-brand-hover-bg: transparent !default;
 $navbar-inverse-toggle-hover-bg: #333 !default;
 $navbar-inverse-toggle-icon-bar-bg: #fff !default;
 $navbar-inverse-toggle-border-color: #333 !default;
+
+// Drawer navbar
+$navbar-drawer-color: $text-color !default;
+$navbar-drawer-bg: #FFF !default;
+$navbar-drawer-border: transparent !default;
+$navbar-drawer-height: 80px !default;
 
 //== Navs
 //

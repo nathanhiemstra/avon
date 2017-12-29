@@ -192,7 +192,10 @@ gulp.task('compile', function () {
                 },
                 global: {
                   footer:         prefix.modules + "global/footer.html.twig",
-                  header:         prefix.modules + "global/header.html.twig"
+                  header:         prefix.modules + "global/header.html.twig",
+                  drawer: {
+                    header:       prefix.modules + "global/drawer-header.html.twig"
+                  }
                 },            
                 product: {
                   detail: {
