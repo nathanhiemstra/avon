@@ -1,6 +1,9 @@
 .drawer {
     overflow: hidden;
-    background-color: $body-bg;
+
+    &:not(.reverse-bg) {
+        background-color: $body-bg;
+    }
 
     @include box-shadow(0 -1px 9px rgba(0, 0, 0, 0.175));
 
@@ -89,6 +92,10 @@
 
     &.drawer-expanded {
         height: 100vh;
+
+        .drawer-content {
+            height: 100vh;
+        }
 
         .drawer-summary {
             display: none;

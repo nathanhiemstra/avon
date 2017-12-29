@@ -15,7 +15,7 @@
 {% set drawerId = 'drawer-order-summary' %}
 
 <!-- DRAWER -->
-<section id="{{ drawerId }}" class="drawer drawer-fixed-bottom drawer-order-summary">
+<section id="{{ drawerId }}" class="drawer drawer-fixed-bottom drawer-order-summary ">
 
   <!-- DRAWER SUMMARY -->
   <section class="drawer-summary">
@@ -70,24 +70,28 @@
   </section><!-- /.drawer-summary -->
 
   <!-- DRAWER CONTENT -->
-  <section class="drawer-content">
-
-    <!-- HEADER -->
-    {% include components.modules.global.drawer.header with { drawerLabel: 'Your Order', drawerId: drawerId } %}
+  <section class="drawer-content reverse-bg">
 
     
+    <div class="no-reverse-bg">
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-9">
-          
-          {% include components.modules.checkout.review.order.navTab %}
+      <!-- HEADER -->
+      {% include components.modules.global.drawer.header with { drawerLabel: 'Your Order', drawerId: drawerId } %}
 
-        </div>
-      </div><!-- /.row -->
-    </div><!-- /.container -->
+      <!-- NAV TABS -->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9">
+            
+            {% include components.modules.checkout.review.order.navTab %}
 
-    
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+
+    </div><!-- /.no-reverse-bg -->
+
+
     <div class="container">
       <div class="row">
         <div class="col-sm-9">
@@ -102,8 +106,6 @@
         </div>
       </div><!-- /.row -->
     </div><!-- /.container -->
-
-
 
 
   </section>
