@@ -420,6 +420,9 @@
 .navbar-default {
     background-color: $navbar-default-bg;
     border-color: $navbar-default-border;
+    padding-top: $navbar-padding-horizontal;
+    padding-bottom: $navbar-padding-horizontal;
+    padding-left: $navbar-padding-horizontal;
 
     .navbar-brand {
         color: $navbar-default-brand-color;
