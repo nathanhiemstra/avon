@@ -937,8 +937,8 @@ $carousel-control-width: 10px !default;
 $carousel-control-opacity: 0.5 !default;
 $carousel-control-font-size: 20px !default;
 
-$carousel-indicator-active-bg: #fff !default;
-$carousel-indicator-border-color: #fff !default;
+$carousel-indicator-active-bg: $brand-primary !default;
+$carousel-indicator-border-color: $brand-primary !default;
 
 $carousel-caption-color: #fff !default;
 

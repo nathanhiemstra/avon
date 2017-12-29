@@ -201,7 +201,7 @@
 
 .carousel-indicators {
     position: absolute;
-    bottom: 10px;
+    bottom: -10px;
     left: 50%;
     z-index: 15;
     width: 60%;
@@ -303,6 +303,6 @@
 
     // Move up the indicators
     .carousel-indicators {
-        bottom: 20px;
+        bottom: -20px;
     }
 }
