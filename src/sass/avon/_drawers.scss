@@ -13,18 +13,16 @@
         transition: height 0.5s;
     }
 
-    height: $navbar-drawer-height;
-
-    &-height {
-        height: $navbar-drawer-height;
-    }
-
-    .drawer-valign-middle {
+    .drawer-valign-middle,
+    .drawer-summary-header {
         line-height: $navbar-drawer-height;
+
+        @media (min-width: $screen-md-min) {
+            line-height: $navbar-drawer-height-lg;
+        }
     }
 
     .drawer-summary-header {
-        line-height: $navbar-drawer-height;
         margin: 0;
     }
 
@@ -36,25 +34,57 @@
         > li,
         > .list-group-item {
             height: $navbar-drawer-height;
+
+            @media (min-width: $screen-md-min) {
+                height: $navbar-drawer-height-lg;
+            }
+
             border-top: 0;
             border-bottom: 0;
-        }
-
-        .list-group-item {
-            padding-left: 30px;
-            padding-right: 30px;
         }
 
         .list-group-item-heading {
             margin-top: 5px;
         }
 
-        @extend .list-inline-abutted;
-    }
+        // Large screens
+        @media (min-width: $screen-md-min) {
+            .list-group-item {
+                padding-left: 3rem;
+                padding-right: 3rem;
 
-    @media (min-width: $screen-md-min) {
-        // height: inherit;
-        // position: relative;
+                > dl {
+                    overflow: hidden;
+                }
+            }
+        }
+
+        // Small screens
+        @media (max-width: $screen-md-min) {
+            > li,
+            > .list-group-item {
+                padding-top: 0;
+                padding-bottom: 0;
+                border: none;
+            }
+
+            .list-group-item-heading,
+            .list-group-item-text {
+                display: inline-block;
+                line-height: $navbar-drawer-height;
+            }
+
+            .list-group-item-heading {
+                float: right;
+                margin: 0  0 0 0.5rem;
+            }
+
+            .list-group-item-text {
+                float: left;
+            }
+        }
+
+        @extend .list-inline-abutted;
     }
 
     &.drawer-expanded {
@@ -66,14 +96,12 @@
     }
 }
 
+.drawer,
+.drawer-height,
 .drawer-summary {
     height: $navbar-drawer-height;
-}
 
-.order-summary {
-    // ATODO: Use @extend .contrainer
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    @media (min-width: $screen-md-min) {
+        height: $navbar-drawer-height-lg;
+    }
 }
