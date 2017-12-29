@@ -8,7 +8,7 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-    <div class="container">
+    
  
       {% embed layouts.columns12 %}
 
@@ -17,126 +17,164 @@
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block main %}
 
-          <!-- Product Details -->
-          <section class="row">
-            <div class="col-sm-6">
-
-              {% include components.modules.product.detail.images %}
-            </div>
-            <div class="col-sm-6">
-              {% include components.modules.product.detail.details %}
-              <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#product-add-to-order">
-                Add to order
-              </button>
-            </div>
-          </section><!-- /.row -->
-
-          <hr>
-
-          <!-- Related Products -->
-          <section>
-            <h4>Related Products</h4>
-            {% set relatedProduct = '<div class="col-xs-3">
-                <div class="thumbnail">
-                  <img src="/images/utility/placeholder.png" alt="" class="img-responsive">
-                  <div class="caption">
-                    <p>Product name lorem ipsum dolor sit amet, consectetur</p>
-                    <h5>$XX.XX</h5>
-                  </div>
-                </div>
-              </div>' %}
-            <div class="row">
-              {{ relatedProduct }}
-              {{ relatedProduct }}
-              {{ relatedProduct }}
-              {{ relatedProduct }}
-            </div>
-          </section>
-
-          <hr>
-
-          <section>
-            <h4>Features</h4>
+          <section class="container py-5 mb-5">
+            <!-- Product Details -->
             <div class="row">
               <div class="col-sm-6">
-                <p>Wipe away the day with Makeup Remover Wipes with Mineral Complex. Use the face wipes to wipe away all your face and eye makeup. The cleansing wipes easily remove makeup and everything else! Leaving your skin feeling clean and refreshed. Carry the wipes in your gym bag or purse for easy access to clean skin all the time! Includes 24 cleansing wipes.</p>
-                <p>{{ fpo.video }}</p>
-                <h4>To use</h4>
-                <ul>
-                  <li>Lift the resealable adhesive strip and remove one towelete, wipe over entire face including eye area to remove all traces of makeup</li>
-                  <li>Immediately close the adhesive strip after each use to protect wipes from drying out </li>
-                  <li>Do not flush</li>
-                </ul>
+
+                {% include components.modules.product.detail.images %}
               </div>
               <div class="col-sm-6">
-                <h4>Benefits</h4>
-                <ul>
-                  <li>Non-greasy and gentle</li>
-                  <li>Easily removes any face or eye makeup</li>
-                  <li>Great for home or travel!</li>
-                  <li>Skin feels totally cleansed and refreshed</li>
-                  <li>Enriched with minerals including zinc, magnesium, iron, and copper</li>
-                </ul>
-                <h4>Ingredients</h4>
-                <ul class="list-unstyled"
-                  <li>Diisopropyl Dimer Dilinoleate</li>
-                  <li>Ethylhexyl Methoxycinnamate</li>
-                  <li>Lanolin</li>
-                  <li>Tridecyl Trimellitate</li>
-                  <li>Synthetic Wax</li>
-               </ul>
-                <a href="#">View all</a>
+                {% include components.modules.product.detail.details %}
+                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#product-add-to-order">
+                  Add to order
+                </button>
               </div>
             </div><!-- /.row -->
           </section>
 
-          <!-- Reviews -->
-          <section>
-            <div class="clearfix">
-                <h4 class="pull-left">Reviews</h4>
-                <button class="btn btn-default btn-sm pull-right">
-                  Write a review
-                </button>
-            </div>
+         
+          <!-- Related Products -->
+          <section class="reverse-bg py-5">
+            <div class="container">
+              <h2 class="text-center my-5 ">Related Products</h2>
 
-            <hr>
-            {% set review = '
-            <h4>Very happily surprised!</h4>
-            <p>By Starlite77 on 8/1/2017</p>
-            <p>
-              <small>
-                From: San Antonio, TX<br>
-                Age: 35-44<br>
-                I shop Avon: more than 6x a year<br>
-                Skin Type: Combination
-              </small>
-            </p>
-            <p>I have tried so many different creams and treatments over the years, from premium to budget, and they have either had no results or caused my sensitive skin to break out and react. After using a simple and gentle moisturiser for a while, I decided it was time to give another "treatment" style cream a go....I am so incredibly glad I did!</p>
-            <p>I have been using this product for about a month now and my skin loves it! Normally my skin lets me know very quickly if it reacts to a product...ususally within first few days...
-              <br> <a href="#">Read more</a></p>
 
-            <p>
-              Was this review helpful? <a href="#">Yes</a> / <a href="#">No</a><br>
-              You may also <a href="#">flag this review</a>
-            </p>'%}
+              {% set relatedProduct = '<div class="col-xs-4 col-sm-3">
+                  <div class="thumbnail">
+                    <img src="/images/utility/placeholder.png" alt="" class="img-responsive">
+                    <div class="caption">
+                      <p>Product name lorem ipsum dolor sit amet, consectetur</p>
+                      <h5>$XX.XX</h5>
+                    </div>
+                  </div>
+                </div>' %}
 
-            <div class="my-5">
-              {% include components.groups.ratings.unit %}
-              {{ review }}
-            </div>
 
-            <div class="my-5">
-              {% include components.groups.ratings.unit %}
-              {{ review }}
-            </div>
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <div class="row">
+                      {{ relatedProduct }}
+                      {{ relatedProduct }}
+                      {{ relatedProduct }}
+                      {{ relatedProduct }}
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="row">
+                      {{ relatedProduct }}
+                      {{ relatedProduct }}
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+              </div>
+            </div><!-- /.container -->
+          </section><!-- /.reverse-bg -->
+ 
+
+          <section class="py-5">
+            <div class="container">
+              <h2 class="text-center my-5 ">Features</h2>
+              <div class="row">
+                <div class="col-sm-7">
+                  <p>Wipe away the day with Makeup Remover Wipes with Mineral Complex. Use the face wipes to wipe away all your face and eye makeup. The cleansing wipes easily remove makeup and everything else! Leaving your skin feeling clean and refreshed. Carry the wipes in your gym bag or purse for easy access to clean skin all the time! Includes 24 cleansing wipes.</p>
+                  <div class="my-5">{{ fpo.video }}</div>
+                  <h4>To use</h4>
+                  <ul>
+                    <li>Lift the resealable adhesive strip and remove one towelete, wipe over entire face including eye area to remove all traces of makeup</li>
+                    <li>Immediately close the adhesive strip after each use to protect wipes from drying out </li>
+                    <li>Do not flush</li>
+                  </ul>
+                </div>
+                <div class="col-sm-5">
+                  <h4>Benefits</h4>
+                  <ul>
+                    <li>Non-greasy and gentle</li>
+                    <li>Easily removes any face or eye makeup</li>
+                    <li>Great for home or travel!</li>
+                    <li>Skin feels totally cleansed and refreshed</li>
+                    <li>Enriched with minerals including zinc, magnesium, iron, and copper</li>
+                  </ul>
+                  <h4>Ingredients</h4>
+                  <ul class="list-unstyled"
+                    <li>Diisopropyl Dimer Dilinoleate</li>
+                    <li>Ethylhexyl Methoxycinnamate</li>
+                    <li>Lanolin</li>
+                    <li>Tridecyl Trimellitate</li>
+                    <li>Synthetic Wax</li>
+                 </ul>
+                  <a href="#">View all</a>
+                </div>
+              </div><!-- /.row -->
+            </div><!-- /.container -->
           </section>
+
+          <!-- Reviews -->
+          <section class="reverse-bg py-5">
+            <div class="container">
+              <div class="clearfix">
+                  <h2 class="pull-left">Reviews</h2>
+                  <button class="btn btn-default btn-sm pull-right">
+                    Write a review
+                  </button>
+              </div>
+
+              <hr>
+              {% set review = '
+              <h4>Very happily surprised!</h4>
+              <p>By Starlite77 on 8/1/2017</p>
+              <p>
+                <small>
+                  From: San Antonio, TX<br>
+                  Age: 35-44<br>
+                  I shop Avon: more than 6x a year<br>
+                  Skin Type: Combination
+                </small>
+              </p>
+              <p>I have tried so many different creams and treatments over the years, from premium to budget, and they have either had no results or caused my sensitive skin to break out and react. After using a simple and gentle moisturiser for a while, I decided it was time to give another "treatment" style cream a go....I am so incredibly glad I did!</p>
+              <p>I have been using this product for about a month now and my skin loves it! Normally my skin lets me know very quickly if it reacts to a product...ususally within first few days...
+                <br> <a href="#">Read more</a></p>
+
+              <p>
+                Was this review helpful? <a href="#">Yes</a> / <a href="#">No</a><br>
+                You may also <a href="#">flag this review</a>
+              </p>'%}
+
+              <div class="my-5 p-5 no-reverse-bg">
+                {% include components.groups.ratings.unit %}
+                {{ review }}
+              </div>
+
+              <div class="my-5 p-5 no-reverse-bg">
+                {% include components.groups.ratings.unit %}
+                {{ review }}
+              </div>
+            </div><!-- /.container -->
+          </section><!-- /.reverse-bg -->
 
         {% endblock %}
 
       {% endembed %}
 
 
-  </div><!-- /.container -->
+
 
 
   <!-- DRAWER -->
