@@ -113,7 +113,7 @@ gulp.task('compile', function () {
                   radio:            prefix.elements + "forms/radio.html.twig",
                   select:           prefix.elements + "forms/select.html.twig",
                   selectWrapper: {
-                    start:          '<div class="form-group has-feedback">',
+                    start:          '<div class="form-group has-feedback d-inline-block">',
                     end:            '  <span class="glyphicon glyphicon-play form-control-feedback"></span>\r\n</div>'
                   }
                 },

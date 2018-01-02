@@ -13,7 +13,7 @@
     {% if autoReplenish != null %}
       <div>
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="hidden-xs hidden-sm">{% include components.elements.forms.select with { 'items': [{'label': 'Every 4 weeks'}, {'label': 'Every 3 weeks'}, {'label': 'Every 2 weeks'}, {'label': 'Every 1 weeks'}] } %}</span>
+        <span class="hidden-xs hidden-sm">{% include components.elements.forms.select with { groupClasses: 'd-inline-block', 'items': [{'label': 'Every 4 weeks'}, {'label': 'Every 3 weeks'}, {'label': 'Every 2 weeks'}, {'label': 'Every 1 weeks'}] } %}</span>
       </div>
     {% endif %}
   </td>
