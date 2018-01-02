@@ -199,12 +199,14 @@ $table-border-color: #ddd !default;
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-font-weight: normal !default;
+$btn-font-weight: bold !default;
 $btn-letter-spacing: 0.5px !default;
 
-$btn-default-color: #333 !default;
+$btn-default-color: $brand-primary !default;
 $btn-default-bg: #fff !default;
-$btn-default-border: #ccc !default;
+$btn-default-border: $brand-primary !default;
+
+$btn-default-hover-color: $brand-primary-emphasize !default
 
 $btn-primary-color: #fff !default;
 $btn-primary-bg: $brand-primary !default;
@@ -453,21 +455,21 @@ $navbar-padding-vertical: ($navbar-height - $line-height-computed) / 2 !default;
 $navbar-collapse-max-height: 340px !default;
 
 $navbar-default-color: #777 !default;
-$navbar-default-bg: #f8f8f8 !default;
+$navbar-default-bg: #FFF !default;
 $navbar-default-border: darken($navbar-default-bg, 6.5%) !default;
 
 // Navbar links
 $navbar-default-link-color: #777 !default;
-$navbar-default-link-hover-color: #333 !default;
+$navbar-default-link-hover-color: $link-hover-color  !default;
 $navbar-default-link-hover-bg: transparent !default;
-$navbar-default-link-active-color: #555 !default;
+$navbar-default-link-active-color: $link-hover-color  !default;
 $navbar-default-link-active-bg: darken($navbar-default-bg, 6.5%) !default;
 $navbar-default-link-disabled-color: #ccc !default;
 $navbar-default-link-disabled-bg: transparent !default;
 
 // Navbar brand label
 $navbar-default-brand-color: $navbar-default-link-color !default;
-$navbar-default-brand-hover-color: darken($navbar-default-brand-color, 10%) !default;
+$navbar-default-brand-hover-color: $link-hover-color !default;
 $navbar-default-brand-hover-bg: transparent !default;
 
 // Navbar toggle
@@ -499,6 +501,15 @@ $navbar-inverse-brand-hover-bg: transparent !default;
 $navbar-inverse-toggle-hover-bg: #333 !default;
 $navbar-inverse-toggle-icon-bar-bg: #fff !default;
 $navbar-inverse-toggle-border-color: #333 !default;
+
+// Drawer navbar
+$navbar-drawer-color: $text-color !default;
+$navbar-drawer-bg: #FFF !default;
+$navbar-drawer-border: transparent !default;
+$navbar-drawer-height: 60px !default;
+$navbar-drawer-height-lg: 80px !default;
+
+
 
 //== Navs
 //
@@ -922,12 +933,12 @@ $breadcrumb-separator: "/" !default;
 $carousel-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !default;
 
 $carousel-control-color: #fff !default;
-$carousel-control-width: 15% !default;
+$carousel-control-width: 10px !default;
 $carousel-control-opacity: 0.5 !default;
 $carousel-control-font-size: 20px !default;
 
-$carousel-indicator-active-bg: #fff !default;
-$carousel-indicator-border-color: #fff !default;
+$carousel-indicator-active-bg: $brand-primary !default;
+$carousel-indicator-border-color: $brand-primary !default;
 
 $carousel-caption-color: #fff !default;
 

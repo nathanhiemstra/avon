@@ -141,12 +141,19 @@ CHICAGO, IL, 60622-3743 United States
     <div class="px-4">
       <div class="row">
         <div class="form-group col-xs-12">
-          <label class="control-label" for="cart-stype-{{ person }}-{{ item }}">Card Type</label>
+          <div class="form-group has-feedback">
+  <label class="control-label" for="cart-stype-{{ person }}-{{ item }}">Card Type</label>  
+    
+  <div class="form-group has-feedback">
   <select class="form-control" id="cart-stype-{{ person }}-{{ item }}">
       <option>Visa</option>
       <option>Mastercard</option>
       <option>American Express</option>
-  </select>        </div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>
+        </div>
       </div>
 
       <div class="row">
@@ -158,7 +165,10 @@ CHICAGO, IL, 60622-3743 United States
 
       <div class="row">
         <div class="form-group col-xs-3">
-          <label class="control-label" for="month-{{ person }}-{{ item }}">Expiration date</label>
+          <div class="form-group has-feedback">
+  <label class="control-label" for="month-{{ person }}-{{ item }}">Expiration date</label>  
+    
+  <div class="form-group has-feedback">
   <select class="form-control" id="month-{{ person }}-{{ item }}">
       <option>Month</option>
       <option>01</option>
@@ -173,15 +183,26 @@ CHICAGO, IL, 60622-3743 United States
       <option>10</option>
       <option>11</option>
       <option>12</option>
-  </select>        </div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>
+        </div>
         <div class="form-group col-xs-3">
-          <label class="control-label" for="year-{{ person }}-{{ item }}">&nbsp;</label>
+          <div class="form-group has-feedback">
+  <label class="control-label" for="year-{{ person }}-{{ item }}">&nbsp;</label>  
+    
+  <div class="form-group has-feedback">
   <select class="form-control" id="year-{{ person }}-{{ item }}">
       <option>Year</option>
       <option>2018</option>
       <option>2019</option>
       <option>2020</option>
-  </select>        </div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>
+        </div>
         <div class="form-group col-xs-2">
           <label class="control-label" for="cvv-{{ person }}-{{ item }}">CVV Code</label>    <input type="text" class="form-control" id="cvv-{{ person }}-{{ item }}">        </div>
       </div>

@@ -1,4 +1,4 @@
-{% extends "_layouts/theme-checkout.html.twig" %}
+{% extends layouts.themes.checkout %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
@@ -17,10 +17,10 @@
   </div><!-- /.container -->
 
 
-  <div class="super-panel">
+  
     <div class="container">
  
-      {% embed '_layouts/layout-9-3.html.twig' %}
+      {% embed layouts.columns9x3 %}
 
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {# DEFINE BLOCK - MAIN #}
@@ -44,7 +44,10 @@
       {% endembed %}
 
     </div>
-  </div><!-- /.super-panel -->
+
 
 
 {% endblock %}
+
+
+

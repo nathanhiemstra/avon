@@ -223,6 +223,20 @@ ol {
     }
 }
 
+.list-inline-abutted {
+    @include list-unstyled;
+
+    margin-left: -5px;
+
+    @extend .clearfix;
+
+    > li {
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
 // Description Lists
 dl {
     margin-top: 0;

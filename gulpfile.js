@@ -92,6 +92,17 @@ gulp.task('compile', function () {
             highlightTwig:        markup.highlight.twig,
             highlightSass:        markup.highlight.sass,
             endhighlight:         markup.highlight.end,
+            layouts: {
+              base:               '_layouts/base.html.twig',
+              columns12:          '_layouts/columns-12.html.twig',
+              columns9x3:         '_layouts/columns-9x3.html.twig',
+              themes: {
+                checkout:         '_layouts/theme-checkout.html.twig'
+              },
+              utility: {
+                modal:            '_layouts/modal.html.twig',
+              }
+            },
             components: {
               elements: {
                 forms: {
@@ -100,7 +111,11 @@ gulp.task('compile', function () {
                   label:            prefix.elements + "forms/label.html.twig",
                   input:            prefix.elements + "forms/input.html.twig",
                   radio:            prefix.elements + "forms/radio.html.twig",
-                  select:           prefix.elements + "forms/select.html.twig"
+                  select:           prefix.elements + "forms/select.html.twig",
+                  selectWrapper: {
+                    start:          '<div class="form-group has-feedback">',
+                    end:            '  <span class="glyphicon glyphicon-play form-control-feedback"></span>\r\n</div>'
+                  }
                 },
                 images: {
                   logoYourAvon:     prefix.elements + "images/logo-your-avon.html.twig"
@@ -142,6 +157,7 @@ gulp.task('compile', function () {
               },
               modules: {
                 checkout: {
+                  chooseType:                   prefix.modules + "checkout/choose-type.html.twig",
                   header:                       prefix.modules + "checkout/header.html.twig",
                   orderSummary:                 prefix.modules + "checkout/order-summary.html.twig",
                   orderSummaryTabProducts:      prefix.modules + "checkout/order-summary-tab-products.html.twig",
@@ -152,8 +168,12 @@ gulp.task('compile', function () {
                   },
                   review: {
                     order: {
-                      tabContent: prefix.modules + 'checkout/review/order/tab-content.html.twig',
-                      navTab:     prefix.modules + 'checkout/review/order/nav-tab.html.twig'
+                      navTab:       prefix.modules + 'checkout/review/order/nav-tab.html.twig',
+                      tabContent:   prefix.modules + 'checkout/review/order/tab-content.html.twig',
+                      tabPane: {
+                        products:   prefix.modules + 'checkout/review-order-tab-panel-products.html.twig',
+                        incentives: prefix.modules + 'checkout/review-order-tab-panel-incentives.html.twig',
+                      }
                     },
                     item: {
                       cart:       prefix.modules + "checkout/review-item-cart.html.twig",
@@ -172,7 +192,10 @@ gulp.task('compile', function () {
                 },
                 global: {
                   footer:         prefix.modules + "global/footer.html.twig",
-                  header:         prefix.modules + "global/header.html.twig"
+                  header:         prefix.modules + "global/header.html.twig",
+                  drawer: {
+                    header:       prefix.modules + "global/drawer-header.html.twig"
+                  }
                 },            
                 product: {
                   detail: {
@@ -197,21 +220,12 @@ gulp.task('compile', function () {
               checkout: {
                 review: {
                   complete: 'checkout-review-complete.html',
-                  itemized: 'checkout-review-itemized.html',
                   order:    'checkout-review-order.html'
-                }
+                },
+                chooseType: 'checkout-choose-type.html',
               },
               product: {
                 detail:      'product-detail.html'
-              },
-              v1: {
-                order: {
-                  checkout:  'order-checkout.html',
-                  review:    'order-review.html'
-                },
-                product: {
-                  detail:    'v1-product-detail.html'
-                }
               }
             },
             styleguide: {
@@ -220,16 +234,17 @@ gulp.task('compile', function () {
             },
             fpo: {
               image: '<img src="images/utility/placeholder.png" alt="" class="img-responsive">',
-              sku: "&lt;000-000&gt;",
               paragraph: "Lorem ipsum dolor sit amet, erant dolor phaedrum ad vel, usu mundi consequuntur ne. In pri ceteros pericula argumentum, at eum veri congue consequat, no quot nibh mea. Natum aliquam pericula at vis, congue efficiendi cu mea. Tibique commune gubergren et usu, usu ne sadipscing voluptatibus comprehensam, te wisi tritani his. Ornatus comprehensam eu sed, sit nisl eruditi ocurreret.",
-              sentence: "Lorem ipsum dolor sit amet, erant dolor phaedrum.",
               person: {
                 1: 'You (Rosa Stone)',
                 2: 'Kory Rasmussen',
                 3: 'Tisha Pennington',
                 4: 'Phoebe Pope',
                 5: 'Helen Hicks' 
-              }
+              },
+              sentence: "Lorem ipsum dolor sit amet, erant dolor phaedrum.",
+              sku: "&lt;000-000&gt;",
+              video: '<img src="images/fpo/video.png" alt="" class="img-responsive">',
             },
             code: {
               hideHeaderFooter: "<style>.global-header, .global-footer {display: none;} main {margin-top: 15px;} </style>"

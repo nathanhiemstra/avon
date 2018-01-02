@@ -1,18 +1,39 @@
-<header class="navbar navbar-default navbar-static-top global-header" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="index.html" class="navbar-brand">
-        {% include components.elements.images.logoYourAvon %}
+<div class="no-reverse-bg">
+  <div class="row">
+    <div class="col-xs-12">
+      <header class="navbar navbar-default navbar-static-top global-header" role="banner">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="navbar-brand">
+              {% include components.elements.images.logoYourAvon %}
+            </a>
+          </div>
+          <div class="pull-right">
+      {% include components.groups.navigation.primary %}
+          </div>
+        </div>
+      </header>
+
+    </div>
+  </div><!-- /.row -->
+</div><!-- /.no-reverse-bg -->
+
+
+
+{# <header class="navbar navbar-isolated navbar-static-top" role="banner">
+  <div class="container-fluid">
+      <a href="index.html" class="navbar-brand ml-0">
+        <img src="/images/logos/your-avon.png" alt="Your Avon">
       </a>
-    </div>
-    <div class="pull-right">
-{% include components.groups.navigation.primary %}
-    </div>
+       <h1 class="navbar-title">Your Order</h1>
+       <a href="#drawer-order-summary" class="pull-right mt-3" data-toggle="drawer">
+        <span class="h4"><span class="glyphicon glyphicon-remove"></span></span>
+      </a>
   </div>
-</header>
+</header> #}

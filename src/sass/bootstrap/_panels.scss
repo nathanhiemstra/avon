@@ -293,6 +293,12 @@
     @include panel-variant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
 }
 
-.super-panel {
+.reverse-bg {
     background-color: $super-panel-bg;
+
+    .no-reverse-bg {
+        background-color: $body-bg;
+
+        @extend .clearfix;
+    }
 }

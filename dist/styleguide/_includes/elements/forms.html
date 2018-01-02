@@ -226,36 +226,90 @@
 
   <h3>Height sizing</h3>
   <p>Create taller or shorter form controls that match button sizes.</p>
+  <h4>Inputs</h4>
   <div class="bs-example bs-example-control-sizing">
     <form role="form">
       <div class="controls">
         <input class="form-control input-lg" type="text" placeholder=".input-lg">
         <input type="text" class="form-control" placeholder="Default input">
         <input class="form-control input-sm" type="text" placeholder=".input-sm">
-
-        <select class="form-control input-lg">
-          <option value="">.input-lg</option>
-        </select>
-        <select class="form-control">
-          <option value="">Default select</option>
-        </select>
-        <select class="form-control input-sm">
-          <option value="">.input-sm</option>
-        </select>
       </div>
     </form>
   </div><!-- /.bs-example -->
 
-  <pre><code class="language-markup"><script type="text/plain">
-  <input class="form-control input-lg" type="text" placeholder=".input-lg">
-  <input class="form-control" type="text" placeholder="Default input">
-  <input class="form-control input-sm" type="text" placeholder=".input-sm">
+<pre><code class="language-markup"><script type="text/plain">
+<input class="form-control input-lg" type="text" placeholder=".input-lg">
+<input class="form-control" type="text" placeholder="Default input">
+<input class="form-control input-sm" type="text" placeholder=".input-sm">
+</script></code></pre>
 
-  <select class="form-control input-lg">...</select>
-  <select class="form-control">...</select>
-  <select class="form-control input-sm">...</select>
-  </script></code></pre>
+  <h4>Selects</h4>
+  <div class="bs-example bs-example-control-sizing">
+    <form role="form">
+      <div class="controls">
 
+        
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-lg">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>        
+  
+                <div class="form-group has-feedback">
+  <select class="form-control">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>        
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>
+
+      </div>
+    </form>
+  </div><!-- /.bs-example -->
+
+<pre><code class="language-markup"><script type="text/plain">
+
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-lg">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>
+  
+                <div class="form-group has-feedback">
+  <select class="form-control">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></script></code></pre>
 
   
   
@@ -284,23 +338,34 @@
   <div class="bs-example">
     <form role="form">
       
-<select class="form-control">
+  
+                <div class="form-group has-feedback">
+  <select class="form-control">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>      <br>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>      <br>
       
-<select class="form-control">
+  
+                <div class="form-group has-feedback">
+  <select class="form-control">
       <option>Option Label 1</option>
       <option>Option Label 2</option>
       <option>Option Label 3</option>
-  </select>      <br>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>      <br>
       
+  <div class="form-group has-feedback">
   <select class="form-control" multiple>
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>    </form>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>    </form>
   </div><!-- /.bs-example -->
 
   <pre class="language-markup code-toolbar"><code class="language-twig">
@@ -313,17 +378,24 @@
 
   <pre><code class="language-markup"><script type="text/plain">
   
-<select class="form-control">
+  
+                <div class="form-group has-feedback">
+  <select class="form-control">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>
   
+  <div class="form-group has-feedback">
   <select class="form-control" multiple>
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>  </script></code></pre>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>  </script></code></pre>
 
   
   

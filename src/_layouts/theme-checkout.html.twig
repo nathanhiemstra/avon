@@ -1,10 +1,12 @@
-{% extends '_layouts/base.html.twig' %}
+{% extends layouts.base %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - HEADER #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block header %}
-  {% include components.modules.checkout.header %}
+  <div class="no-reverse-bg">
+    {% include components.modules.checkout.header %}
+  </div><!-- /.no-reverse-bg -->
 {% endblock %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}

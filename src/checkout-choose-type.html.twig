@@ -1,0 +1,28 @@
+{% extends layouts.themes.checkout %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="super-panel">
+    <div class="container">
+ 
+      {% embed layouts.columns12 %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - MAIN #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block main %}
+          
+          {% include components.modules.checkout.chooseType %}
+
+        {% endblock %}
+
+      {% endembed %}
+
+    </div>
+  </div><!-- /.super-panel -->
+
+
+{% endblock %}

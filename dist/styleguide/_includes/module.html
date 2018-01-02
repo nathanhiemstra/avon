@@ -1,31 +1,46 @@
+<h2 id="checkout-review-order-total" class="bs-headline">Order Total</h2>
 
-<h2 id="product-detail-checkout-review-order-total" class="bs-headline">Order Total</h2>
+
 
 <div class="bs-example">
-      <section class="text-center">
-  <h3 class="h-utility">Total</h3>
-  <dl class="clearfix border-bottom pb-3 mb-3">
-    <dt class="pull-left label-utility">Order subtotal</dt>
-    <dd class="pull-right">$90.00</dd>
-  </dl> 
-  <dl class="clearfix border-bottom pb-3 mb-3">
-    <dt class="pull-left label-utility">Discount</dt>
-    <dd class="pull-right">$36.00</dd>
-  </dl> 
-  <p>Shipping and taxes will be calculated during the checkout process</p>
-  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Add to order</a>
+      <section>
+  <div class="hidden-xs">
+    <h3 class="h-utility">Total</h3>
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Order subtotal</dt>
+      <dd class="pull-right">$90.00</dd>
+    </dl> 
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Discount</dt>
+      <dd class="pull-right">$36.00</dd>
+    </dl> 
+    <p class="text-center">Shipping and taxes will be calculated during the checkout process</p>
+  </div>
+  
+  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Checkout</a>
 </section>  </div>
+
+
 <pre><code class="language-markup"><script type="text/plain">
-      <section class="text-center">
-  <h3 class="h-utility">Total</h3>
-  <dl class="clearfix border-bottom pb-3 mb-3">
-    <dt class="pull-left label-utility">Order subtotal</dt>
-    <dd class="pull-right">$90.00</dd>
-  </dl> 
-  <dl class="clearfix border-bottom pb-3 mb-3">
-    <dt class="pull-left label-utility">Discount</dt>
-    <dd class="pull-right">$36.00</dd>
-  </dl> 
-  <p>Shipping and taxes will be calculated during the checkout process</p>
-  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Add to order</a>
+      <section>
+  <div class="hidden-xs">
+    <h3 class="h-utility">Total</h3>
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Order subtotal</dt>
+      <dd class="pull-right">$90.00</dd>
+    </dl> 
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Discount</dt>
+      <dd class="pull-right">$36.00</dd>
+    </dl> 
+    <p class="text-center">Shipping and taxes will be calculated during the checkout process</p>
+  </div>
+  
+  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Checkout</a>
 </section>  </script></code></pre>
+
+
+  <pre><code class="language-twig"><script type="text/plain">
+  {% include components.modules.checkout.order.total %}
+  _includes/modules/checkout/order-total.html.twig
+  </script></code></pre>

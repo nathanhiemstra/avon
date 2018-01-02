@@ -226,36 +226,42 @@
 
   <h3>Height sizing</h3>
   <p>Create taller or shorter form controls that match button sizes.</p>
+  <h4>Inputs</h4>
   <div class="bs-example bs-example-control-sizing">
     <form role="form">
       <div class="controls">
         <input class="form-control input-lg" type="text" placeholder=".input-lg">
         <input type="text" class="form-control" placeholder="Default input">
         <input class="form-control input-sm" type="text" placeholder=".input-sm">
-
-        <select class="form-control input-lg">
-          <option value="">.input-lg</option>
-        </select>
-        <select class="form-control">
-          <option value="">Default select</option>
-        </select>
-        <select class="form-control input-sm">
-          <option value="">.input-sm</option>
-        </select>
       </div>
     </form>
   </div><!-- /.bs-example -->
 
-  {{ highlightMarkup }}
-  <input class="form-control input-lg" type="text" placeholder=".input-lg">
-  <input class="form-control" type="text" placeholder="Default input">
-  <input class="form-control input-sm" type="text" placeholder=".input-sm">
+{{ highlightMarkup }}
+<input class="form-control input-lg" type="text" placeholder=".input-lg">
+<input class="form-control" type="text" placeholder="Default input">
+<input class="form-control input-sm" type="text" placeholder=".input-sm">
+{{ endhighlight }}
 
-  <select class="form-control input-lg">...</select>
-  <select class="form-control">...</select>
-  <select class="form-control input-sm">...</select>
-  {{ endhighlight }}
+  <h4>Selects</h4>
+  <div class="bs-example bs-example-control-sizing">
+    <form role="form">
+      <div class="controls">
 
+        {% include components.elements.forms.select with {'classes': 'input-lg'} %}
+        {% include components.elements.forms.select %}
+        {% include components.elements.forms.select with {'classes': 'input-sm'} %}
+
+
+      </div>
+    </form>
+  </div><!-- /.bs-example -->
+
+{{ highlightMarkup }}
+{% include components.elements.forms.select with {'classes': 'input-lg'} %}
+{% include components.elements.forms.select  %}
+{% include components.elements.forms.select with {'classes': 'input-sm'} %}
+{{ endhighlight }}
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# Textarea #}

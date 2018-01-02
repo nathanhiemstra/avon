@@ -16,7 +16,7 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Page Structure",
-    slug:         "product-detail-page-structure",
+    slug:         "page-structure",
     description:  'Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layouts.html#super-panel">9x3 columns inside super panel</a>',
     snippet:      '
     <body>
@@ -62,10 +62,12 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Checkout Header",
-    slug:         "product-detail-checkout-header",
+    slug:         "checkout-header",
+    twig:         "components.modules.checkout.header",
     path:         components.modules.checkout.header
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -73,7 +75,8 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Nav Tab",
-    slug:         "product-detail-checkout-review-order-navTab",
+    slug:         "checkout-review-order-navTab",
+    twig:         "components.modules.checkout.review.order.navTab",
     path:         components.modules.checkout.review.order.navTab 
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
@@ -84,8 +87,31 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Tab Content",
-    slug:         "product-detail-checkout-review-order-tabContent",
+    slug:         "checkout-review-order-tabContent",
+    twig:         "components.modules.checkout.review.order.tabContent",
     path:         components.modules.checkout.review.order.tabContent 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / TAB PANE / PRODUCTS #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Tab Pane - Products ",
+    slug:         "checkout-review-order-tabPane-products",
+    twig:         "components.modules.checkout.review.order.tabPane.products",
+    path:         components.modules.checkout.review.order.tabPane.products 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / TAB PANE / INCENTIVES #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Tab Pane - Incentives ",
+    slug:         "checkout-review-order-tabPane-incentives",
+    twig:         "components.modules.checkout.review.order.tabPane.incentives",
+    path:         components.modules.checkout.review.order.tabPane.incentives 
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -95,17 +121,24 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Person's Order",
-    slug:         "product-detail-checkout-review-order-persons"
+    slug:         "checkout-review-order-persons"
   }%}
   <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
   {{ styleguideItem.description }}
   <div class="bs-example">
     {% include components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false} %}
   </div>
+
+  {# Markup #}
   {{ highlightMarkup }}
     {% include components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false} %}
   {{ endhighlight }}
 
+  {# Twig include #}
+  {{ highlightTwig }}
+      {{ '{% include ' }} components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false}{{ ' %}' }}
+      {{ components.groups.checkout.personsOrder }}
+  {{ endhighlight }}  
 
 
 
@@ -114,7 +147,7 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Single Product in Person's Order",
-    slug:         "product-detail-checkout-review-order-persons-product"
+    slug:         "checkout-review-order-persons-product"
   }%}
   <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
   {{ styleguideItem.description }}
@@ -138,6 +171,18 @@
       classes: 'input-sm'
     }%}
   {{ endhighlight }}
+
+  {# Twig include #}
+  {{ highlightTwig}}
+      {{ '{% include ' }} components.groups.checkout.personsOrderTr with {
+      productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
+      img: '/images/fpo/agnew-ultimate.png',
+      autoReplenish: null,
+      sku: '829-957',
+      price: '30.00',
+      classes: 'input-sm'
+    }{{ ' %}' }}
+  {{ endhighlight }} 
 
 
 
@@ -147,7 +192,8 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Order Total",
-    slug:         "product-detail-checkout-review-order-total",
+    slug:         "checkout-review-order-total",
+    twig:         "components.modules.checkout.order.total",
     path:         components.modules.checkout.order.total
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}

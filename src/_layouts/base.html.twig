@@ -23,7 +23,14 @@
   <link rel="shortcut icon" href="/images/ico/favicon.ico">
 </head>
 
-<body>
+
+{% set _block = block('reverseBg') %}
+{% if _block is not empty %}
+    {% set bodyClasses = 'class="reverse-bg"' %}
+    {% set reverseBgUndoStart = '<div class="reverse-bg-undo">' %}
+    {% set reverseBgUndoEnd = '</div><!-- /.reverse-bg-undo -->' %}
+{% endif %}
+<body {{ bodyClasses }}>
 
   <section id="avon-poc">
       <a class="sr-only" href="#content">Skip to main content</a>

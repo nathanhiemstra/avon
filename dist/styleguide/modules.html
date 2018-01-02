@@ -105,9 +105,10 @@
   
   
   
-    
-<h2 id="product-detail-page-structure" class="bs-headline">Page Structure</h2>
+    <h2 id="page-structure" class="bs-headline">Page Structure</h2>
 Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layouts.html#super-panel">9x3 columns inside super panel</a>
+
+
 <div class="bs-example">
       
     <body>
@@ -146,6 +147,8 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </section>
     </body>
   </div>
+
+
 <pre><code class="language-markup"><script type="text/plain">
       
     <body>
@@ -184,11 +187,15 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </section>
     </body>
   </script></code></pre>
+
+
+
   
   
   
-    
-<h2 id="product-detail-checkout-header" class="bs-headline">Checkout Header</h2>
+    <h2 id="checkout-header" class="bs-headline">Checkout Header</h2>
+
+
 
 <div class="bs-example">
       <header class="navbar navbar-isolated navbar-static-top" role="banner">
@@ -198,13 +205,15 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
         <img src="/images/logos/your-avon.png" alt="Your Avon">
       </a>
        <h1 class="navbar-title">Checkout</h1>
-       <a href="product-detail.html" class="pull-right mt-3">
+       <a href="#drawer-order-summary" class="pull-right mt-3" data-toggle="drawer">
         <span class="h4"><span class="glyphicon glyphicon-remove"></span></span>
         
       </a>
  
   </div>
 </header>  </div>
+
+
 <pre><code class="language-markup"><script type="text/plain">
       <header class="navbar navbar-isolated navbar-static-top" role="banner">
   <div class="container">
@@ -213,7 +222,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
         <img src="/images/logos/your-avon.png" alt="Your Avon">
       </a>
        <h1 class="navbar-title">Checkout</h1>
-       <a href="product-detail.html" class="pull-right mt-3">
+       <a href="#drawer-order-summary" class="pull-right mt-3" data-toggle="drawer">
         <span class="h4"><span class="glyphicon glyphicon-remove"></span></span>
         
       </a>
@@ -221,53 +230,1504 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   </div>
 </header>  </script></code></pre>
 
+
+  <pre><code class="language-twig"><script type="text/plain">
+  {% include components.modules.checkout.header %}
+  _includes/modules/checkout/header.html.twig
+  </script></code></pre>
+
+
+
   
   
   
-    
-<h2 id="product-detail-checkout-review-order-navTab" class="bs-headline">Nav Tab</h2>
+    <h2 id="checkout-review-order-navTab" class="bs-headline">Nav Tab</h2>
+
+
 
 <div class="bs-example">
       <!-- Nav tabs -->
 <ul class="nav nav-tabs nav-justified">
-  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products (8)</a></li>
-  <li><a href="#pd-incentives" data-toggle="tab">Incentives (2)</a></li>
+  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products</a></li>
+  <li><a href="#pd-incentives" data-toggle="tab">Incentives <span class="badge">2</span></a></li>
 </ul>
 
   </div>
+
+
 <pre><code class="language-markup"><script type="text/plain">
       <!-- Nav tabs -->
 <ul class="nav nav-tabs nav-justified">
-  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products (8)</a></li>
-  <li><a href="#pd-incentives" data-toggle="tab">Incentives (2)</a></li>
+  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products</a></li>
+  <li><a href="#pd-incentives" data-toggle="tab">Incentives <span class="badge">2</span></a></li>
 </ul>
 
+  </script></code></pre>
+
+
+  <pre><code class="language-twig"><script type="text/plain">
+  {% include components.modules.checkout.review.order.navTab %}
+  _includes/modules/checkout/review/order/nav-tab.html.twig
+  </script></code></pre>
+
+
+  
+  
+  
+    <h2 id="checkout-review-order-tabContent" class="bs-headline">Tab Content</h2>
+
+
+
+<div class="bs-example">
+      <!-- Tab panes -->
+<section class="tab-content">
+  <section class="tab-pane active" id="pd-products">
+    <!-- PERSON -->
+<ul class="list-group">
+  <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-1" data-toggle="collapse" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>You (Rosa Stone) false</b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$90.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse  in " id="collapse-1">
+
+    <div class="table-responsiveX">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</li>  <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-2" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>Kory Rasmussen </b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$90.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-2">
+
+    <div class="table-responsiveX">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</li>  <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-3" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>Tisha Pennington </b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$90.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-3">
+
+    <div class="table-responsiveX">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</li>  <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-4" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>Phoebe Pope </b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$90.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-4">
+
+    <div class="table-responsiveX">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</li>  <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-5" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>Helen Hicks </b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$90.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-5">
+
+    <div class="table-responsiveX">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</li></ul>  </section>
+  <section class="tab-pane" id="pd-incentives">
+    <ul class="list-unstyled text-center">
+  <li class="my-4">
+    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
+  </li>
+  <li class="my-4">
+    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
+  </li>
+</ul>  </section>
+</section>
+
+
+  </div>
+
+
+<pre><code class="language-markup"><script type="text/plain">
+      <!-- Tab panes -->
+<section class="tab-content">
+  <section class="tab-pane active" id="pd-products">
+    <!-- PERSON -->
+<ul class="list-group">
+  <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-1" data-toggle="collapse" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>You (Rosa Stone) false</b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$90.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse  in " id="collapse-1">
+
+    <div class="table-responsiveX">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</li>  <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-2" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>Kory Rasmussen </b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$90.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-2">
+
+    <div class="table-responsiveX">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</li>  <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-3" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>Tisha Pennington </b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$90.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-3">
+
+    <div class="table-responsiveX">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</li>  <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-4" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>Phoebe Pope </b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$90.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-4">
+
+    <div class="table-responsiveX">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</li>  <li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-5" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>Helen Hicks </b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$90.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse " id="collapse-5">
+
+    <div class="table-responsiveX">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+            <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</li></ul>  </section>
+  <section class="tab-pane" id="pd-incentives">
+    <ul class="list-unstyled text-center">
+  <li class="my-4">
+    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
+  </li>
+  <li class="my-4">
+    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
+  </li>
+</ul>  </section>
+</section>
+
+
+  </script></code></pre>
+
+
+  <pre><code class="language-twig"><script type="text/plain">
+  {% include components.modules.checkout.review.order.tabContent %}
+  _includes/modules/checkout/review/order/tab-content.html.twig
   </script></code></pre>
 
   
   
   
-    
-<h2 id="product-detail-checkout-review-order-tabContent" class="bs-headline">Tab Content</h2>
+    <h2 id="checkout-review-order-tabPane-products" class="bs-headline">Tab Pane - Products </h2>
+
+
 
 <div class="bs-example">
-      <!-- Tab panes -->
-<section class="tab-content">
-  <section class="tab-pane active" id="pd-products">
-    
-    <!-- PERSON -->
-    <ul class="list-group">
-      <li class="list-group-item my-4">
+      <!-- PERSON -->
+<ul class="list-group">
+  <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-1" data-toggle="collapse" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        You (Rosa Stone) false
+        <b>You (Rosa Stone) false</b>
       </a>
     </dt>
-    <dd class="pull-right">$90.00</dd>
+    <dd class="pull-right"><b>$90.00</b></dd>
   </dl>
 
   <dl class="clearfix m-0">
@@ -278,119 +1738,134 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   <!-- DETAILS -->
   <div class="details collapse  in " id="collapse-1">
 
-
-    <div class="table-responsive">
+    <div class="table-responsiveX">
       <table class="table">
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th class="text-right">Qty</th>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
           </tr>
         </thead>
         <tbody>
 
-          
-
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
             <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Super Coverup
       <small class="text-muted ml-2">329-321</small>
     </div>
           <div>
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="d-inline-block">
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
   <select class="form-control input-sm">
       <option>Every 4 weeks</option>
       <option>Every 3 weeks</option>
       <option>Every 2 weeks</option>
       <option>Every 1 weeks</option>
-  </select></span>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
       </div>
       </td>
-  <td>
+  <td class="t-price">
      10.00
-     <br> <small class="text-muted">Each shipment</small>
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Purfume
       <small class="text-muted ml-2">856-376</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      45.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-
-          
         </tbody>
       </table>
     </div>
-
-    
   </div>
-</li>      <li class="list-group-item my-4">
+</li>  <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-2" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        Kory Rasmussen 
+        <b>Kory Rasmussen </b>
       </a>
     </dt>
-    <dd class="pull-right">$90.00</dd>
+    <dd class="pull-right"><b>$90.00</b></dd>
   </dl>
 
   <dl class="clearfix m-0">
@@ -401,119 +1876,134 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   <!-- DETAILS -->
   <div class="details collapse " id="collapse-2">
 
-
-    <div class="table-responsive">
+    <div class="table-responsiveX">
       <table class="table">
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th class="text-right">Qty</th>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
           </tr>
         </thead>
         <tbody>
 
-          
-
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
             <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Super Coverup
       <small class="text-muted ml-2">329-321</small>
     </div>
           <div>
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="d-inline-block">
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
   <select class="form-control input-sm">
       <option>Every 4 weeks</option>
       <option>Every 3 weeks</option>
       <option>Every 2 weeks</option>
       <option>Every 1 weeks</option>
-  </select></span>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
       </div>
       </td>
-  <td>
+  <td class="t-price">
      10.00
-     <br> <small class="text-muted">Each shipment</small>
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Purfume
       <small class="text-muted ml-2">856-376</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      45.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-
-          
         </tbody>
       </table>
     </div>
-
-    
   </div>
-</li>      <li class="list-group-item my-4">
+</li>  <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-3" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        Tisha Pennington 
+        <b>Tisha Pennington </b>
       </a>
     </dt>
-    <dd class="pull-right">$90.00</dd>
+    <dd class="pull-right"><b>$90.00</b></dd>
   </dl>
 
   <dl class="clearfix m-0">
@@ -524,119 +2014,134 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   <!-- DETAILS -->
   <div class="details collapse " id="collapse-3">
 
-
-    <div class="table-responsive">
+    <div class="table-responsiveX">
       <table class="table">
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th class="text-right">Qty</th>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
           </tr>
         </thead>
         <tbody>
 
-          
-
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
             <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Super Coverup
       <small class="text-muted ml-2">329-321</small>
     </div>
           <div>
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="d-inline-block">
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
   <select class="form-control input-sm">
       <option>Every 4 weeks</option>
       <option>Every 3 weeks</option>
       <option>Every 2 weeks</option>
       <option>Every 1 weeks</option>
-  </select></span>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
       </div>
       </td>
-  <td>
+  <td class="t-price">
      10.00
-     <br> <small class="text-muted">Each shipment</small>
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Purfume
       <small class="text-muted ml-2">856-376</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      45.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-
-          
         </tbody>
       </table>
     </div>
-
-    
   </div>
-</li>      <li class="list-group-item my-4">
+</li>  <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-4" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        Phoebe Pope 
+        <b>Phoebe Pope </b>
       </a>
     </dt>
-    <dd class="pull-right">$90.00</dd>
+    <dd class="pull-right"><b>$90.00</b></dd>
   </dl>
 
   <dl class="clearfix m-0">
@@ -647,119 +2152,134 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   <!-- DETAILS -->
   <div class="details collapse " id="collapse-4">
 
-
-    <div class="table-responsive">
+    <div class="table-responsiveX">
       <table class="table">
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th class="text-right">Qty</th>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
           </tr>
         </thead>
         <tbody>
 
-          
-
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
             <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Super Coverup
       <small class="text-muted ml-2">329-321</small>
     </div>
           <div>
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="d-inline-block">
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
   <select class="form-control input-sm">
       <option>Every 4 weeks</option>
       <option>Every 3 weeks</option>
       <option>Every 2 weeks</option>
       <option>Every 1 weeks</option>
-  </select></span>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
       </div>
       </td>
-  <td>
+  <td class="t-price">
      10.00
-     <br> <small class="text-muted">Each shipment</small>
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Purfume
       <small class="text-muted ml-2">856-376</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      45.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-
-          
         </tbody>
       </table>
     </div>
-
-    
   </div>
-</li>      <li class="list-group-item my-4">
+</li>  <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-5" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        Helen Hicks 
+        <b>Helen Hicks </b>
       </a>
     </dt>
-    <dd class="pull-right">$90.00</dd>
+    <dd class="pull-right"><b>$90.00</b></dd>
   </dl>
 
   <dl class="clearfix m-0">
@@ -770,133 +2290,140 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   <!-- DETAILS -->
   <div class="details collapse " id="collapse-5">
 
-
-    <div class="table-responsive">
+    <div class="table-responsiveX">
       <table class="table">
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th class="text-right">Qty</th>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
           </tr>
         </thead>
         <tbody>
 
-          
-
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
             <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Super Coverup
       <small class="text-muted ml-2">329-321</small>
     </div>
           <div>
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="d-inline-block">
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
   <select class="form-control input-sm">
       <option>Every 4 weeks</option>
       <option>Every 3 weeks</option>
       <option>Every 2 weeks</option>
       <option>Every 1 weeks</option>
-  </select></span>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
       </div>
       </td>
-  <td>
+  <td class="t-price">
      10.00
-     <br> <small class="text-muted">Each shipment</small>
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Purfume
       <small class="text-muted ml-2">856-376</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      45.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-
-          
         </tbody>
       </table>
     </div>
-
-    
   </div>
-</li>    </ul>
+</li></ul>  </div>
 
-  </section>
-  <section class="tab-pane" id="pd-incentives">
-    Incentivces
-  </section>
-</section>  </div>
+
 <pre><code class="language-markup"><script type="text/plain">
-      <!-- Tab panes -->
-<section class="tab-content">
-  <section class="tab-pane active" id="pd-products">
-    
-    <!-- PERSON -->
-    <ul class="list-group">
-      <li class="list-group-item my-4">
+      <!-- PERSON -->
+<ul class="list-group">
+  <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-1" data-toggle="collapse" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        You (Rosa Stone) false
+        <b>You (Rosa Stone) false</b>
       </a>
     </dt>
-    <dd class="pull-right">$90.00</dd>
+    <dd class="pull-right"><b>$90.00</b></dd>
   </dl>
 
   <dl class="clearfix m-0">
@@ -907,119 +2434,134 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   <!-- DETAILS -->
   <div class="details collapse  in " id="collapse-1">
 
-
-    <div class="table-responsive">
+    <div class="table-responsiveX">
       <table class="table">
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th class="text-right">Qty</th>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
           </tr>
         </thead>
         <tbody>
 
-          
-
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
             <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Super Coverup
       <small class="text-muted ml-2">329-321</small>
     </div>
           <div>
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="d-inline-block">
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
   <select class="form-control input-sm">
       <option>Every 4 weeks</option>
       <option>Every 3 weeks</option>
       <option>Every 2 weeks</option>
       <option>Every 1 weeks</option>
-  </select></span>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
       </div>
       </td>
-  <td>
+  <td class="t-price">
      10.00
-     <br> <small class="text-muted">Each shipment</small>
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Purfume
       <small class="text-muted ml-2">856-376</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      45.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-
-          
         </tbody>
       </table>
     </div>
-
-    
   </div>
-</li>      <li class="list-group-item my-4">
+</li>  <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-2" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        Kory Rasmussen 
+        <b>Kory Rasmussen </b>
       </a>
     </dt>
-    <dd class="pull-right">$90.00</dd>
+    <dd class="pull-right"><b>$90.00</b></dd>
   </dl>
 
   <dl class="clearfix m-0">
@@ -1030,119 +2572,134 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   <!-- DETAILS -->
   <div class="details collapse " id="collapse-2">
 
-
-    <div class="table-responsive">
+    <div class="table-responsiveX">
       <table class="table">
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th class="text-right">Qty</th>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
           </tr>
         </thead>
         <tbody>
 
-          
-
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
             <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Super Coverup
       <small class="text-muted ml-2">329-321</small>
     </div>
           <div>
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="d-inline-block">
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
   <select class="form-control input-sm">
       <option>Every 4 weeks</option>
       <option>Every 3 weeks</option>
       <option>Every 2 weeks</option>
       <option>Every 1 weeks</option>
-  </select></span>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
       </div>
       </td>
-  <td>
+  <td class="t-price">
      10.00
-     <br> <small class="text-muted">Each shipment</small>
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Purfume
       <small class="text-muted ml-2">856-376</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      45.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-
-          
         </tbody>
       </table>
     </div>
-
-    
   </div>
-</li>      <li class="list-group-item my-4">
+</li>  <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-3" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        Tisha Pennington 
+        <b>Tisha Pennington </b>
       </a>
     </dt>
-    <dd class="pull-right">$90.00</dd>
+    <dd class="pull-right"><b>$90.00</b></dd>
   </dl>
 
   <dl class="clearfix m-0">
@@ -1153,119 +2710,134 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   <!-- DETAILS -->
   <div class="details collapse " id="collapse-3">
 
-
-    <div class="table-responsive">
+    <div class="table-responsiveX">
       <table class="table">
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th class="text-right">Qty</th>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
           </tr>
         </thead>
         <tbody>
 
-          
-
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
             <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Super Coverup
       <small class="text-muted ml-2">329-321</small>
     </div>
           <div>
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="d-inline-block">
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
   <select class="form-control input-sm">
       <option>Every 4 weeks</option>
       <option>Every 3 weeks</option>
       <option>Every 2 weeks</option>
       <option>Every 1 weeks</option>
-  </select></span>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
       </div>
       </td>
-  <td>
+  <td class="t-price">
      10.00
-     <br> <small class="text-muted">Each shipment</small>
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Purfume
       <small class="text-muted ml-2">856-376</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      45.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-
-          
         </tbody>
       </table>
     </div>
-
-    
   </div>
-</li>      <li class="list-group-item my-4">
+</li>  <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-4" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        Phoebe Pope 
+        <b>Phoebe Pope </b>
       </a>
     </dt>
-    <dd class="pull-right">$90.00</dd>
+    <dd class="pull-right"><b>$90.00</b></dd>
   </dl>
 
   <dl class="clearfix m-0">
@@ -1276,119 +2848,134 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   <!-- DETAILS -->
   <div class="details collapse " id="collapse-4">
 
-
-    <div class="table-responsive">
+    <div class="table-responsiveX">
       <table class="table">
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th class="text-right">Qty</th>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
           </tr>
         </thead>
         <tbody>
 
-          
-
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
             <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Super Coverup
       <small class="text-muted ml-2">329-321</small>
     </div>
           <div>
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="d-inline-block">
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
   <select class="form-control input-sm">
       <option>Every 4 weeks</option>
       <option>Every 3 weeks</option>
       <option>Every 2 weeks</option>
       <option>Every 1 weeks</option>
-  </select></span>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
       </div>
       </td>
-  <td>
+  <td class="t-price">
      10.00
-     <br> <small class="text-muted">Each shipment</small>
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Purfume
       <small class="text-muted ml-2">856-376</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      45.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-
-          
         </tbody>
       </table>
     </div>
-
-    
   </div>
-</li>      <li class="list-group-item my-4">
+</li>  <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-5" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        Helen Hicks 
+        <b>Helen Hicks </b>
       </a>
     </dt>
-    <dd class="pull-right">$90.00</dd>
+    <dd class="pull-right"><b>$90.00</b></dd>
   </dl>
 
   <dl class="clearfix m-0">
@@ -1399,120 +2986,170 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   <!-- DETAILS -->
   <div class="details collapse " id="collapse-5">
 
-
-    <div class="table-responsive">
+    <div class="table-responsiveX">
       <table class="table">
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th class="text-right">Qty</th>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
           </tr>
         </thead>
         <tbody>
 
-          
-
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
             <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Super Coverup
       <small class="text-muted ml-2">329-321</small>
     </div>
           <div>
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="d-inline-block">
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
   <select class="form-control input-sm">
       <option>Every 4 weeks</option>
       <option>Every 3 weeks</option>
       <option>Every 2 weeks</option>
       <option>Every 1 weeks</option>
-  </select></span>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
       </div>
       </td>
-  <td>
+  <td class="t-price">
      10.00
-     <br> <small class="text-muted">Each shipment</small>
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Purfume
       <small class="text-muted ml-2">856-376</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      45.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-
-          
         </tbody>
       </table>
     </div>
-
-    
   </div>
-</li>    </ul>
+</li></ul>  </script></code></pre>
 
-  </section>
-  <section class="tab-pane" id="pd-incentives">
-    Incentivces
-  </section>
-</section>  </script></code></pre>
+
+  <pre><code class="language-twig"><script type="text/plain">
+  {% include components.modules.checkout.review.order.tabPane.products %}
+  _includes/modules/checkout/review-order-tab-panel-products.html.twig
+  </script></code></pre>
 
   
   
   
-    <h2 id="product-detail-checkout-review-order-persons" class="bs-headline">Person's Order</h2>
+    <h2 id="checkout-review-order-tabPane-incentives" class="bs-headline">Tab Pane - Incentives </h2>
+
+
+
+<div class="bs-example">
+      <ul class="list-unstyled text-center">
+  <li class="my-4">
+    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
+  </li>
+  <li class="my-4">
+    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
+  </li>
+</ul>  </div>
+
+
+<pre><code class="language-markup"><script type="text/plain">
+      <ul class="list-unstyled text-center">
+  <li class="my-4">
+    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
+  </li>
+  <li class="my-4">
+    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
+  </li>
+</ul>  </script></code></pre>
+
+
+  <pre><code class="language-twig"><script type="text/plain">
+  {% include components.modules.checkout.review.order.tabPane.incentives %}
+  _includes/modules/checkout/review-order-tab-panel-incentives.html.twig
+  </script></code></pre>
+
+
+  
+  
+  
+    <h2 id="checkout-review-order-persons" class="bs-headline">Person's Order</h2>
   
   <div class="bs-example">
     <li class="list-group-item my-4">
@@ -1522,10 +3159,10 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-2" data-toggle="collapse" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        Kory Rasmussen false
+        <b>Kory Rasmussen false</b>
       </a>
     </dt>
-    <dd class="pull-right">$90.00</dd>
+    <dd class="pull-right"><b>$90.00</b></dd>
   </dl>
 
   <dl class="clearfix m-0">
@@ -1536,109 +3173,126 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   <!-- DETAILS -->
   <div class="details collapse  in " id="collapse-2">
 
-
-    <div class="table-responsive">
+    <div class="table-responsiveX">
       <table class="table">
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th class="text-right">Qty</th>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
           </tr>
         </thead>
         <tbody>
 
-          
-
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
             <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Super Coverup
       <small class="text-muted ml-2">329-321</small>
     </div>
           <div>
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="d-inline-block">
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
   <select class="form-control input-sm">
       <option>Every 4 weeks</option>
       <option>Every 3 weeks</option>
       <option>Every 2 weeks</option>
       <option>Every 1 weeks</option>
-  </select></span>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
       </div>
       </td>
-  <td>
+  <td class="t-price">
      10.00
-     <br> <small class="text-muted">Each shipment</small>
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Purfume
       <small class="text-muted ml-2">856-376</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      45.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-
-          
         </tbody>
       </table>
     </div>
-
-    
   </div>
 </li>  </div>
+
+  
   <pre><code class="language-markup"><script type="text/plain">
     <li class="list-group-item my-4">
 
@@ -1647,10 +3301,10 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-2" data-toggle="collapse" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        Kory Rasmussen false
+        <b>Kory Rasmussen false</b>
       </a>
     </dt>
-    <dd class="pull-right">$90.00</dd>
+    <dd class="pull-right"><b>$90.00</b></dd>
   </dl>
 
   <dl class="clearfix m-0">
@@ -1661,204 +3315,264 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   <!-- DETAILS -->
   <div class="details collapse  in " id="collapse-2">
 
-
-    <div class="table-responsive">
+    <div class="table-responsiveX">
       <table class="table">
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th class="text-right">Qty</th>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
           </tr>
         </thead>
         <tbody>
 
-          
-
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
             <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Super Coverup
       <small class="text-muted ml-2">329-321</small>
     </div>
           <div>
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="d-inline-block">
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback">
   <select class="form-control input-sm">
       <option>Every 4 weeks</option>
       <option>Every 3 weeks</option>
       <option>Every 2 weeks</option>
       <option>Every 1 weeks</option>
-  </select></span>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
       </div>
       </td>
-  <td>
+  <td class="t-price">
      10.00
-     <br> <small class="text-muted">Each shipment</small>
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
           <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Purfume
       <small class="text-muted ml-2">856-376</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      45.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-
-          
         </tbody>
       </table>
     </div>
-
-    
   </div>
 </li>  </script></code></pre>
 
+  
+  <pre><code class="language-twig"><script type="text/plain">
+      {% include  components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false} %}
+      _includes/groups/checkout/persons-order.html.twig
+  </script></code></pre>  
 
 
 
   
   
   
-    <h2 id="product-detail-checkout-review-order-persons-product" class="bs-headline">Single Product in Person's Order</h2>
+    <h2 id="checkout-review-order-persons-product" class="bs-headline">Single Product in Person's Order</h2>
   
   <div class="bs-example">
     <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>  </div>
   <pre><code class="language-markup"><script type="text/plain">
     <tr>
-  <td>
+  <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
-  <td>
+  <td class="t-desc">
     <div>
       Anew Ultimate Supreme Advanced Performance Créme
       <small class="text-muted ml-2">829-957</small>
     </div>
       </td>
-  <td>
+  <td class="t-price">
      30.00
-     
+     <span class="hidden-xs hidden-sm"></span>
   </td>
-  <td class="text-right">
-     
-    <select class="form-control input-sm">
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback">
+  <select class="form-control input-sm">
       <option>1</option>
       <option>2</option>
       <option>3</option>
-  </select>     <div class="mt-4"><a href="#">Remove</a></div>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>  </script></code></pre>
 
+  
+  <pre><code class="language-twig"><script type="text/plain">
+      {% include  components.groups.checkout.personsOrderTr with {
+      productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
+      img: '/images/fpo/agnew-ultimate.png',
+      autoReplenish: null,
+      sku: '829-957',
+      price: '30.00',
+      classes: 'input-sm'
+    } %}
+  </script></code></pre> 
+
 
 
 
   
   
   
-    
-<h2 id="product-detail-checkout-review-order-total" class="bs-headline">Order Total</h2>
+    <h2 id="checkout-review-order-total" class="bs-headline">Order Total</h2>
+
+
 
 <div class="bs-example">
-      <section class="text-center">
-  <h3 class="h-utility">Total</h3>
-  <dl class="clearfix border-bottom pb-3 mb-3">
-    <dt class="pull-left label-utility">Order subtotal</dt>
-    <dd class="pull-right">$90.00</dd>
-  </dl> 
-  <dl class="clearfix border-bottom pb-3 mb-3">
-    <dt class="pull-left label-utility">Discount</dt>
-    <dd class="pull-right">$36.00</dd>
-  </dl> 
-  <p>Shipping and taxes will be calculated during the checkout process</p>
-  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Add to order</a>
+      <section>
+  <div class="hidden-xs">
+    <h3 class="h-utility">Total</h3>
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Order subtotal</dt>
+      <dd class="pull-right">$90.00</dd>
+    </dl> 
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Discount</dt>
+      <dd class="pull-right">$36.00</dd>
+    </dl> 
+    <p class="text-center">Shipping and taxes will be calculated during the checkout process</p>
+  </div>
+  
+  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Checkout</a>
 </section>  </div>
+
+
 <pre><code class="language-markup"><script type="text/plain">
-      <section class="text-center">
-  <h3 class="h-utility">Total</h3>
-  <dl class="clearfix border-bottom pb-3 mb-3">
-    <dt class="pull-left label-utility">Order subtotal</dt>
-    <dd class="pull-right">$90.00</dd>
-  </dl> 
-  <dl class="clearfix border-bottom pb-3 mb-3">
-    <dt class="pull-left label-utility">Discount</dt>
-    <dd class="pull-right">$36.00</dd>
-  </dl> 
-  <p>Shipping and taxes will be calculated during the checkout process</p>
-  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Add to order</a>
+      <section>
+  <div class="hidden-xs">
+    <h3 class="h-utility">Total</h3>
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Order subtotal</dt>
+      <dd class="pull-right">$90.00</dd>
+    </dl> 
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Discount</dt>
+      <dd class="pull-right">$36.00</dd>
+    </dl> 
+    <p class="text-center">Shipping and taxes will be calculated during the checkout process</p>
+  </div>
+  
+  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Checkout</a>
 </section>  </script></code></pre>
+
+
+  <pre><code class="language-twig"><script type="text/plain">
+  {% include components.modules.checkout.order.total %}
+  _includes/modules/checkout/order-total.html.twig
+  </script></code></pre>
+
 
 
 
