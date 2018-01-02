@@ -75,9 +75,13 @@ body {
     border-radius: 0;
 
     // border-width: 0;
-    background-color: #fff;
+    /* background-color: #fff;*/
     margin-top: 50px;
     z-index: 1;
+}
+
+.bs-example:not(.reverse-bg) {
+    background-color: #fff;
 }
 
 .bs-example:after {
@@ -86,6 +90,7 @@ body {
     color: #999;
 }
 
-.language-markup {
-    max-height: 250px;
+pre[class*="language-"] {
+    height: 100px;
+    resize: both;
 }

@@ -101,12 +101,18 @@
           
           
   <h1 id="product-detail" class="bs-headline">Product Detail</h1>
+  <p id="product-detail-diagram" style="margin-top: 60px;"><img src="/images/fpo/product-review-diagramed.png" class="img-responsive"></p>
 
   
   
   
-    <h2 id="page-structure" class="bs-headline">Page Structure</h2>
-Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layouts.html#super-panel">9x3 columns inside super panel</a>
+    <h2 id="product-detail-structure" class="bs-headline">Page Structure</h2>
+Layouts used: 
+    <ul>
+      <li><a href=layouts.html#columns-12>12 columns (full width)</a></li>
+      <li><a href=layouts.html#columns-9>9 columns</a></li>
+      <li><a href=layouts.html#super-panel">9x3 columns</a></li>
+    </ul>
 
 
 <div class="bs-example">
@@ -115,7 +121,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       <section id="avon-poc">
 
         <!-- Header -->
-        <header>Checkout header</header>
+        <header>Drawer header</header>
 
         <!-- Tab Nav - Layout: 9 columns wide -->
         <div class="container">
@@ -155,7 +161,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       <section id="avon-poc">
 
         <!-- Header -->
-        <header>Checkout header</header>
+        <header>Drawer header</header>
 
         <!-- Tab Nav - Layout: 9 columns wide -->
         <div class="container">
@@ -190,58 +196,53 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
 
 
 
-  
-  
-  
-    <h2 id="checkout-header" class="bs-headline">Checkout Header</h2>
 
 
 
-<div class="bs-example">
-      <header class="navbar navbar-isolated navbar-static-top" role="banner">
-  <div class="container">
   
+  
+  
+    <h2 id="product-detail-header" class="bs-headline">Header</h2>
+  
+  <div class="bs-example">
+    <header class="navbar navbar-isolated navbar-static-top" role="banner">
+  <div class="container-fluid">
       <a href="index.html" class="navbar-brand ml-0">
         <img src="/images/logos/your-avon.png" alt="Your Avon">
       </a>
-       <h1 class="navbar-title">Checkout</h1>
+       <h1 class="navbar-title">Your Order</h1>
        <a href="#drawer-order-summary" class="pull-right mt-3" data-toggle="drawer">
         <span class="h4"><span class="glyphicon glyphicon-remove"></span></span>
-        
       </a>
- 
   </div>
 </header>  </div>
 
-
-<pre><code class="language-markup"><script type="text/plain">
-      <header class="navbar navbar-isolated navbar-static-top" role="banner">
-  <div class="container">
   
+  <pre><code class="language-markup"><script type="text/plain">
+    <header class="navbar navbar-isolated navbar-static-top" role="banner">
+  <div class="container-fluid">
       <a href="index.html" class="navbar-brand ml-0">
         <img src="/images/logos/your-avon.png" alt="Your Avon">
       </a>
-       <h1 class="navbar-title">Checkout</h1>
+       <h1 class="navbar-title">Your Order</h1>
        <a href="#drawer-order-summary" class="pull-right mt-3" data-toggle="drawer">
         <span class="h4"><span class="glyphicon glyphicon-remove"></span></span>
-        
       </a>
- 
   </div>
 </header>  </script></code></pre>
 
-
+  
   <pre><code class="language-twig"><script type="text/plain">
-  {% include components.modules.checkout.header %}
-  _includes/modules/checkout/header.html.twig
-  </script></code></pre>
+      {% include  components.modules.global.drawer.header with { drawerLabel: 'Your Order', drawerId: 'drawer-order-summary' } %}
+      _includes/modules/global/drawer-header.html.twig
+  </script></code></pre> 
 
 
 
   
   
   
-    <h2 id="checkout-review-order-navTab" class="bs-headline">Nav Tab</h2>
+    <h2 id="product-detail-tabs" class="bs-headline">Nav Tab</h2>
 
 
 
@@ -274,7 +275,8 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   
   
   
-    <h2 id="checkout-review-order-tabContent" class="bs-headline">Tab Content</h2>
+  
+  <h2 id="product-detail-tab-content" class="bs-headline">Tab Content</h2>
 
 
 
@@ -291,7 +293,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-1" data-toggle="collapse" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>You (Rosa Stone) false</b>
+        <b>You (Rosa Stone)</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -328,7 +330,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -371,7 +373,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -400,7 +402,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -429,7 +431,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-2" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Kory Rasmussen </b>
+        <b>Kory Rasmussen</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -466,7 +468,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -509,7 +511,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -538,7 +540,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -567,7 +569,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-3" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Tisha Pennington </b>
+        <b>Tisha Pennington</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -604,7 +606,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -647,7 +649,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -676,7 +678,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -705,7 +707,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-4" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Phoebe Pope </b>
+        <b>Phoebe Pope</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -742,7 +744,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -785,7 +787,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -814,7 +816,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -843,7 +845,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-5" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Helen Hicks </b>
+        <b>Helen Hicks</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -880,7 +882,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -923,7 +925,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -952,7 +954,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1003,7 +1005,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-1" data-toggle="collapse" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>You (Rosa Stone) false</b>
+        <b>You (Rosa Stone)</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -1040,7 +1042,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1083,7 +1085,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -1112,7 +1114,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1141,7 +1143,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-2" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Kory Rasmussen </b>
+        <b>Kory Rasmussen</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -1178,7 +1180,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1221,7 +1223,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -1250,7 +1252,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1279,7 +1281,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-3" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Tisha Pennington </b>
+        <b>Tisha Pennington</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -1316,7 +1318,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1359,7 +1361,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -1388,7 +1390,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1417,7 +1419,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-4" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Phoebe Pope </b>
+        <b>Phoebe Pope</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -1454,7 +1456,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1497,7 +1499,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -1526,7 +1528,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1555,7 +1557,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-5" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Helen Hicks </b>
+        <b>Helen Hicks</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -1592,7 +1594,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1635,7 +1637,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -1664,7 +1666,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1708,9 +1710,11 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   </script></code></pre>
 
   
+
   
   
-    <h2 id="checkout-review-order-tabPane-products" class="bs-headline">Tab Pane - Products </h2>
+  
+    <h2 id="product-detail-tab-pane-products" class="bs-headline">Tab Pane - Products </h2>
 
 
 
@@ -1724,7 +1728,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-1" data-toggle="collapse" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>You (Rosa Stone) false</b>
+        <b>You (Rosa Stone)</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -1761,7 +1765,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1804,7 +1808,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -1833,7 +1837,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1862,7 +1866,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-2" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Kory Rasmussen </b>
+        <b>Kory Rasmussen</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -1899,7 +1903,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -1942,7 +1946,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -1971,7 +1975,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2000,7 +2004,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-3" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Tisha Pennington </b>
+        <b>Tisha Pennington</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -2037,7 +2041,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2080,7 +2084,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -2109,7 +2113,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2138,7 +2142,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-4" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Phoebe Pope </b>
+        <b>Phoebe Pope</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -2175,7 +2179,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2218,7 +2222,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -2247,7 +2251,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2276,7 +2280,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-5" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Helen Hicks </b>
+        <b>Helen Hicks</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -2313,7 +2317,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2356,7 +2360,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -2385,7 +2389,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2420,7 +2424,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-1" data-toggle="collapse" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>You (Rosa Stone) false</b>
+        <b>You (Rosa Stone)</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -2457,7 +2461,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2500,7 +2504,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -2529,7 +2533,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2558,7 +2562,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-2" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Kory Rasmussen </b>
+        <b>Kory Rasmussen</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -2595,7 +2599,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2638,7 +2642,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -2667,7 +2671,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2696,7 +2700,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-3" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Tisha Pennington </b>
+        <b>Tisha Pennington</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -2733,7 +2737,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2776,7 +2780,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -2805,7 +2809,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2834,7 +2838,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-4" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Phoebe Pope </b>
+        <b>Phoebe Pope</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -2871,7 +2875,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2914,7 +2918,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -2943,7 +2947,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -2972,7 +2976,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-5" data-toggle="collapse"  class="collapsed" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Helen Hicks </b>
+        <b>Helen Hicks</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -3009,7 +3013,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -3052,7 +3056,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -3081,7 +3085,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -3111,45 +3115,13 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   _includes/modules/checkout/review-order-tab-panel-products.html.twig
   </script></code></pre>
 
-  
-  
-  
-    <h2 id="checkout-review-order-tabPane-incentives" class="bs-headline">Tab Pane - Incentives </h2>
 
-
-
-<div class="bs-example">
-      <ul class="list-unstyled text-center">
-  <li class="my-4">
-    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
-  </li>
-  <li class="my-4">
-    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
-  </li>
-</ul>  </div>
-
-
-<pre><code class="language-markup"><script type="text/plain">
-      <ul class="list-unstyled text-center">
-  <li class="my-4">
-    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
-  </li>
-  <li class="my-4">
-    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
-  </li>
-</ul>  </script></code></pre>
-
-
-  <pre><code class="language-twig"><script type="text/plain">
-  {% include components.modules.checkout.review.order.tabPane.incentives %}
-  _includes/modules/checkout/review-order-tab-panel-incentives.html.twig
-  </script></code></pre>
 
 
   
   
   
-    <h2 id="checkout-review-order-persons" class="bs-headline">Person's Order</h2>
+    <h2 id="product-detail-tab-pane-products-person" class="bs-headline">Person's Order</h2>
   
   <div class="bs-example">
     <li class="list-group-item my-4">
@@ -3159,7 +3131,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-2" data-toggle="collapse" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Kory Rasmussen false</b>
+        <b>Kory Rasmussen</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -3196,7 +3168,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -3239,7 +3211,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -3268,7 +3240,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -3301,7 +3273,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     <dt class="pull-left">
       <a href="#collapse-2" data-toggle="collapse" >
         <span class="glyphicon glyphicon-play collapse-indicator"></span> 
-        <b>Kory Rasmussen false</b>
+        <b>Kory Rasmussen</b>
       </a>
     </dt>
     <dd class="pull-right"><b>$90.00</b></dd>
@@ -3338,7 +3310,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     30.00
+     $30.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -3381,7 +3353,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       </div>
       </td>
   <td class="t-price">
-     10.00
+     $10.00
      <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
   </td>
   <td class="t-qty text-right">
@@ -3410,7 +3382,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
     </div>
       </td>
   <td class="t-price">
-     45.00
+     $45.00
      <span class="hidden-xs hidden-sm"></span>
   </td>
   <td class="t-qty text-right">
@@ -3445,7 +3417,7 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
   
   
   
-    <h2 id="checkout-review-order-persons-product" class="bs-headline">Single Product in Person's Order</h2>
+    <h2 id="product-detail-tab-pane-products-product" class="bs-headline">Single Product</h2>
   
   <div class="bs-example">
     <tr>
@@ -3518,15 +3490,50 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
       price: '30.00',
       classes: 'input-sm'
     } %}
+    _includes/groups/checkout/persons-order-tr.html.twig
   </script></code></pre> 
 
+    
+  
+  
+    <h2 id="product-detail-tab-pane-incentives" class="bs-headline">Tab Pane - Incentives </h2>
+
+
+
+<div class="bs-example">
+      <ul class="list-unstyled text-center">
+  <li class="my-4">
+    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
+  </li>
+  <li class="my-4">
+    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
+  </li>
+</ul>  </div>
+
+
+<pre><code class="language-markup"><script type="text/plain">
+      <ul class="list-unstyled text-center">
+  <li class="my-4">
+    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
+  </li>
+  <li class="my-4">
+    <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
+  </li>
+</ul>  </script></code></pre>
+
+
+  <pre><code class="language-twig"><script type="text/plain">
+  {% include components.modules.checkout.review.order.tabPane.incentives %}
+  _includes/modules/checkout/review-order-tab-panel-incentives.html.twig
+  </script></code></pre>
+
 
 
 
   
   
   
-    <h2 id="checkout-review-order-total" class="bs-headline">Order Total</h2>
+    <h2 id="product-detail-total" class="bs-headline">Order Total</h2>
 
 
 
@@ -3594,13 +3601,16 @@ Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layo
 <li>
   <a href="#product-detail">Product Detail</a>
   <ul class="nav">
-    <li><a href="#product-detail-page-structure">Page Structure</a></li>
-    <li><a href="#product-detail-checkout-header">Header</a></li>
-    <li><a href="#product-detail-checkout-review-order-navTab">Nav Tabs</a></li>
-    <li><a href="#product-detail-checkout-review-order-tabContent">Tab Contents</a></li>
-    <li><a href="#product-detail-checkout-review-order-persons">Tab Content - Person's Order</a></li>
-    <li><a href="#product-detail-checkout-review-order-persons-product">Tab Content - Product</a></li>
-    <li><a href="#product-detail-checkout-review-order-total">Order Total</a></li>
+    <li><a href="#product-detail-diagram">Diagram</a></li>
+    <li><a href="#product-detail-structure">Structure</a></li>
+    <li><a href="#product-detail-header">Header</a></li>
+    <li><a href="#product-detail-tabs">Tabs</a></li>
+    <li><a href="#product-detail-tab-content">Tab Contents</a></li>
+    <li><a href="#product-detail-tab-pane-products">Tab Pane: Products</a></li>
+    <li style="padding-left: 15px;"><a href="#product-detail-tab-pane-products-person">Person's Order</a></li>
+    <li style="padding-left: 15px;"><a href="#product-detail-tab-pane-products-product">Single Product</a></li>
+    <li><a href="#product-detail-tab-pane-incentives">Tab Pane - Incentives</a></li>
+    <li><a href="#product-detail-total">Order Total</a></li>
   </ul>
 </li>
 

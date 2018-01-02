@@ -1,8 +1,11 @@
-<h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+{% if styleguideItem.reverseBg %}
+  {% set reverseBgClass = ' reverse-bg ' %}
+{% endif %}
+<h2 id="{{ styleguideItem.slug }}" class="bs-headline{{ reverseBgClass }}">{{ styleguideItem.title }}</h2>
 {{ styleguideItem.description }}
 
 {# Example #}
-<div class="bs-example">
+<div class="bs-example{{reverseBgClass}}">
   {% if styleguideItem.snippet %}
     {{ styleguideItem.snippet }}
   {% else %}

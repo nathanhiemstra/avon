@@ -6,7 +6,7 @@
 {% block content %}
 
 
-  <div class="container">
+  <section class="container">
     <div class="row">
       <div class="col-sm-9">
         
@@ -14,36 +14,37 @@
 
       </div>
     </div><!-- /.row -->
-  </div><!-- /.container -->
+  </section><!-- /.container -->
 
 
-  
-    <div class="container">
- 
-      {% embed layouts.columns9x3 %}
+  <section class="reverse-bg">
+  <div class="container">
 
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {# DEFINE BLOCK - MAIN #}
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {% block main %}
-          
-          {% include components.modules.checkout.review.order.tabContent %}
+    {% embed layouts.columns9x3 %}
 
-        {% endblock %}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+        
+        {% include components.modules.checkout.review.order.tabContent %}
+
+      {% endblock %}
 
 
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {# DEFINE BLOCK - ASIDE #}
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {% block aside %}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - ASIDE #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block aside %}
 
-          <!-- ORDER TOTAL -->
-          {% include components.modules.checkout.order.total %}
+        <!-- ORDER TOTAL -->
+        {% include components.modules.checkout.order.total %}
 
-        {% endblock %}
-      {% endembed %}
+      {% endblock %}
+    {% endembed %}
 
-    </div>
+  </div>
+  </section>
 
 
 

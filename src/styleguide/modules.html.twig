@@ -10,20 +10,26 @@
 {% block styleguideContent %}
 
   <h1 id="product-detail" class="bs-headline">Product Detail</h1>
+  <p id="product-detail-diagram" style="margin-top: 60px;"><img src="/images/fpo/product-review-diagramed.png" class="img-responsive"></p>
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# BASE #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Page Structure",
-    slug:         "page-structure",
-    description:  'Layouts used: <a href=layouts.html#columns-9>9 columns wide</a> and <a href=layouts.html#super-panel">9x3 columns inside super panel</a>',
+    slug:         "product-detail-structure",
+    description:  'Layouts used: 
+    <ul>
+      <li><a href=layouts.html#columns-12>12 columns (full width)</a></li>
+      <li><a href=layouts.html#columns-9>9 columns</a></li>
+      <li><a href=layouts.html#super-panel">9x3 columns</a></li>
+    </ul>',
     snippet:      '
     <body>
       <section id="avon-poc">
 
         <!-- Header -->
-        <header>Checkout header</header>
+        <header>Drawer header</header>
 
         <!-- Tab Nav - Layout: 9 columns wide -->
         <div class="container">
@@ -57,16 +63,32 @@
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
+
+
+
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# CHECKOUT HEADER #}
+  {# CHECKOUT / REVIEW / ORDER / PERSON #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Checkout Header",
-    slug:         "checkout-header",
-    twig:         "components.modules.checkout.header",
-    path:         components.modules.checkout.header
+    title:        "Header",
+    slug:         "product-detail-header"
   }%}
-  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  {{ styleguideItem.description }}
+  <div class="bs-example">
+    {% include components.modules.global.drawer.header with { drawerLabel: 'Your Order', drawerId: 'drawer-order-summary'} %}
+  </div>
+
+  {# Markup #}
+  {{ highlightMarkup }}
+    {% include components.modules.global.drawer.header with { drawerLabel: 'Your Order', drawerId: 'drawer-order-summary' } %}
+  {{ endhighlight }}
+
+  {# Twig include #}
+  {{ highlightTwig }}
+      {{ '{% include ' }} components.modules.global.drawer.header with { drawerLabel: 'Your Order', drawerId: 'drawer-order-summary' }{{ ' %}' }}
+      {{ components.modules.global.drawer.header }}
+  {{ endhighlight }} 
 
 
 
@@ -75,7 +97,7 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Nav Tab",
-    slug:         "checkout-review-order-navTab",
+    slug:         "product-detail-tabs",
     twig:         "components.modules.checkout.review.order.navTab",
     path:         components.modules.checkout.review.order.navTab 
   }%}
@@ -87,33 +109,27 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Tab Content",
-    slug:         "checkout-review-order-tabContent",
+    slug:         "product-detail-tab-content",
     twig:         "components.modules.checkout.review.order.tabContent",
-    path:         components.modules.checkout.review.order.tabContent 
+    path:         components.modules.checkout.review.order.tabContent
   }%}
+
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+  
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# CHECKOUT / REVIEW / ORDER / TAB PANE / PRODUCTS #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Tab Pane - Products ",
-    slug:         "checkout-review-order-tabPane-products",
+    slug:         "product-detail-tab-pane-products",
     twig:         "components.modules.checkout.review.order.tabPane.products",
     path:         components.modules.checkout.review.order.tabPane.products 
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# CHECKOUT / REVIEW / ORDER / TAB PANE / INCENTIVES #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% set styleguideItem = {
-    title:        "Tab Pane - Incentives ",
-    slug:         "checkout-review-order-tabPane-incentives",
-    twig:         "components.modules.checkout.review.order.tabPane.incentives",
-    path:         components.modules.checkout.review.order.tabPane.incentives 
-  }%}
-  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -121,7 +137,7 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Person's Order",
-    slug:         "checkout-review-order-persons"
+    slug:         "product-detail-tab-pane-products-person"
   }%}
   <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
   {{ styleguideItem.description }}
@@ -146,8 +162,8 @@
   {# CHECKOUT / REVIEW / ORDER / PERSON / SINGLE PRODUCT #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Single Product in Person's Order",
-    slug:         "checkout-review-order-persons-product"
+    title:        "Single Product",
+    slug:         "product-detail-tab-pane-products-product"
   }%}
   <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
   {{ styleguideItem.description }}
@@ -182,7 +198,19 @@
       price: '30.00',
       classes: 'input-sm'
     }{{ ' %}' }}
+    {{ components.groups.checkout.personsOrderTr }}
   {{ endhighlight }} 
+
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / TAB PANE / INCENTIVES #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Tab Pane - Incentives ",
+    slug:         "product-detail-tab-pane-incentives",
+    twig:         "components.modules.checkout.review.order.tabPane.incentives",
+    path:         components.modules.checkout.review.order.tabPane.incentives 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
 
 
@@ -192,7 +220,7 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Order Total",
-    slug:         "checkout-review-order-total",
+    slug:         "product-detail-total",
     twig:         "components.modules.checkout.order.total",
     path:         components.modules.checkout.order.total
   }%}
