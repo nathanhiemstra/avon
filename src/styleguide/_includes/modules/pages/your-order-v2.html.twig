@@ -1,0 +1,101 @@
+<h1 id="your-order" class="bs-headline" style="margin-top: 100px;">Your Order - Alternative</h1>
+<p>An alternative way of displaying dynamic text.</p>
+
+
+
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / TAB PANE / PRODUCTS #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Tab Pane - Products ",
+    slug:         "your-order-tab-pane-products",
+    twig:         "styleguide/_includes/modules/pages/tab-content.html.twig",
+    path:         "styleguide/_includes/modules/pages/tab-content.html.twig"
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / TAB PANE / PRODUCTS #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{#   {% set styleguideItem = {
+    title:        "Tab Pane - Products ",
+    slug:         "your-order-tab-pane-products",
+    twig:         "styleguide/_includes/modules/pages/your-order-tab-panel-products.html.twig",
+    path:         "styleguide/_includes/modules/pages/your-order-tab-panel-products.html.twig" 
+  }%}
+  {% include styleguid #}e.item with 'styleguideItem': styleguideItem %}
+
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / PERSON #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+ {#  {% set styleguideItem = {
+    title:        "Person's Order",
+    slug:         "your-order-tab-pane-products-person"
+  }%}
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  {{ styleguideItem.description }}
+  <div class="bs-example">
+    {% include 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' with {indexNum: '2', personName: fpo.person.2, itemCount: '[0]', total: '[00.00]', collapsed: false} %}
+  </div>
+
+  {# Markup #}
+{#   {{ highlightMarkup }}
+    {% include 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' with {indexNum: '2', personName: fpo.person.2, itemCount: '[0]', total: '[00.00]', collapsed: false} %}
+  {{ endhighlight }} #}
+
+  {# Twig include #}
+{#   {{ highlightTwig }}
+      {{ '{% include ' }} 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' with {indexNum: '2', personName: fpo.person.2, itemCount: '[0]', total: '[00.00]', collapsed: false}{{ ' %}' }}
+      {{ 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' }}
+  {{ endhighlight }}   #}
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / PERSON / SINGLE PRODUCT #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# {% set styleguideItem = {
+    title:        "Single Product",
+    slug:         "your-order-tab-pane-products-product"
+  }%}
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  {{ styleguideItem.description }}
+  <div class="bs-example">
+    {% include components.groups.checkout.personsOrderTr with {
+      productName: '[Product Name]', 
+      img: '/images/fpo/product-thumb-grey.png',
+      autoReplenish: null,
+      sku: '[000-000]',
+      price: '$[00.00]',
+      classes: 'input-sm'
+    }%}
+  </div>
+  {{ highlightMarkup }}
+    {% include components.groups.checkout.personsOrderTr with {
+      productName: '[Product Name]', 
+      img: '/images/fpo/product-thumb-grey.png',
+      autoReplenish: null,
+      sku: '[000-000]',
+      price: '$[00.00]',
+      classes: 'input-sm'
+    }%}
+  {{ endhighlight }} #}
+
+  {# Twig include #}
+{#   {{ highlightTwig}}
+      {{ '{% include ' }} components.groups.checkout.personsOrderTr with {
+      productName: '[Product Name]', 
+      img: '/images/fpo/product-thumb-grey.png',
+      autoReplenish: null,
+      sku: '[000-000]',
+      price: '$[00.00]',
+      classes: 'input-sm'
+    }{{ ' %}' }}
+    {{ components.groups.checkout.personsOrderTr }}
+  {{ endhighlight }} 
+ #}
+

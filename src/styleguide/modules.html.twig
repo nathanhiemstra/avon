@@ -9,8 +9,7 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block styleguideContent %}
 
-  <!-- SECTION -  YOUR ORDER -->
-  {% include "styleguide/_includes/modules/pages/your-order.html.twig" %}
+  
 
 
 
@@ -59,7 +58,7 @@
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# GLOBAL - HEADER #}
+  {# GLOBAL - FOOTER #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Global Footer",
@@ -68,6 +67,14 @@
     path:         components.modules.global.footer
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+  <!-- SECTION -  YOUR ORDER -->
+  {% include "styleguide/_includes/modules/pages/your-order.html.twig" %}
+
+    <!-- SECTION -  YOUR ORDER -->
+  {% include "styleguide/_includes/modules/pages/your-order-v2.html.twig" %}
 
 
 
