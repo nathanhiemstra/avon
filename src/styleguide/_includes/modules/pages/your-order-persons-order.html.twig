@@ -1,3 +1,4 @@
+<!-- START - PERSON'S ORDER (LIST ITEM) -->
 <li class="list-group-item my-4">
 
   <!-- SUMMARY -->
@@ -16,9 +17,10 @@
     <dd class="pull-right">Discount: $[00.00]</dd>
   </dl> 
 
-  <!-- DETAILS -->
+  <!-- DETAILS (COLLAPSBLE) -->
   <div class="details collapse {% if collapsed == false %} in {% endif %}" id="collapse-{{ indexNum }}">
 
+    <!-- START - TABLE OF PRODUCTS -->
     <div class="table-responsiveX">
       <table class="table">
         <thead>
@@ -31,15 +33,7 @@
         </thead>
         <tbody>
 
-          {% include 'styleguide/_includes/modules/pages/your-order-persons-order-tr.html.twig' with {
-            productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
-            img: '/images/fpo/agnew-ultimate.png',
-            autoReplenish: null,
-            sku: '829-957',
-            price: '$30.00',
-            classes: 'input-sm'
-          }%}
-
+          <!-- START - LOOP THOUGH TABLE ROWS -->
           {% include 'styleguide/_includes/modules/pages/your-order-persons-order-tr.html.twig' with {
             productName: '[Product Name]', 
             img: '/images/fpo/product-thumb-grey.png',
@@ -57,9 +51,13 @@
             price: '$[00.00]',
             classes: 'input-sm'
           }%}
+          <!-- END - LOOP THOUGH TABLE ROWS -->
 
         </tbody>
       </table>
     </div>
+    <!-- END - TABLE OF PRODUCTS -->
+
   </div>
 </li>
+<!-- END - PERSON'S ORDER (LIST ITEM) -->

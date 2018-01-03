@@ -1061,7 +1061,7 @@ h1[id] {
 
 /* List groups */
 .bs-example > .list-group {
-    max-width: 400px;
+    /*max-width: 400px;*/
 }
 
 /* Navbars */

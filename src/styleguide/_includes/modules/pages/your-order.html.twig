@@ -80,12 +80,44 @@
   {{ endhighlight }} 
 
 
+ {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / PERSON ORDER (LIST CONTAINER) #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Tab Structure",
+    slug:         "your-order-tab-structure"
+  }%}
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  {{ styleguideItem.description }}
+
+  <p>Tab content containing the tab panes below</p>
+
+  {{ highlightMarkup }}
+  <!-- START - TAB CONTENT -->
+  <section class="tab-content">
+
+    <!-- START - TAB PANE - PRODUCTS -->
+    <section class="tab-pane active" id="pd-products">
+      <!-- Content -->
+    </section>
+    <!-- END - TAB PANE - PRODUCT -->
+
+    <!-- START - TAB PANE - INCENTIVES -->
+    <section class="tab-pane" id="pd-incentives">
+      <!-- Content -->
+    </section>
+    <!-- END - TAB PANE - INCENTIVES -->
+
+  </section>
+  <!-- END - TAB CONTENT -->
+  {{ endhighlight }}
+
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# CHECKOUT / REVIEW / ORDER / NAV TAB #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Nav Tab",
+    title:        "Tab Navigation",
     slug:         "your-order-tabs",
     twig:         "components.modules.checkout.review.order.navTab",
     path:         components.modules.checkout.review.order.navTab 
@@ -97,26 +129,63 @@
   {# CHECKOUT / REVIEW / ORDER / TAB CONTENT #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Tab Content",
+    title:        "Tab Content (Both Products and Incentives)",
     slug:         "your-order-tab-content",
-    twig:         "components.modules.checkout.review.order.tabContent",
-    path:         components.modules.checkout.review.order.tabContent
+    twig:         "styleguide/_includes/modules/pages/tab-content.html.twig",
+    path:         'styleguide/_includes/modules/pages/tab-content.html.twig'
   }%}
 
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
   
 
+  
+
+
+ 
+
+
+
+
+
+
+
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# CHECKOUT / REVIEW / ORDER / TAB PANE / PRODUCTS #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Tab Pane - Products ",
+    title:        "Person's Order (List of summaries and product lists) ",
     slug:         "your-order-tab-pane-products",
-    twig:         "components.modules.checkout.review.order.tabPane.products",
-    path:         components.modules.checkout.review.order.tabPane.products 
+    twig:         "styleguide/_includes/modules/pages/your-order-tab-panel-products.html.twig",
+    path:         "styleguide/_includes/modules/pages/your-order-tab-panel-products.html.twig" 
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / PERSON ORDER (LIST CONTAINER) #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Person's Order (List Container)",
+    slug:         "your-order-tab-pane-products-list-structure"
+  }%}
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  {{ styleguideItem.description }}
+
+  <p>List containing the list items below</p>
+
+  {{ highlightMarkup }}
+  <!-- START - LIST OF PERSONS -->
+  <ul class="list-group">
+    
+    <!-- List items -->
+
+  </ul>
+  <!-- END - LIST OF PERSONS -->
+  {{ endhighlight }}
+
+
 
 
 
@@ -125,25 +194,60 @@
   {# CHECKOUT / REVIEW / ORDER / PERSON #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Person's Order",
+    title:        "Person's Order (List Item)",
     slug:         "your-order-tab-pane-products-person"
   }%}
   <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
   {{ styleguideItem.description }}
   <div class="bs-example">
-    {% include components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false} %}
+    {% include 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' with {indexNum: 'x-1', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
   </div>
 
   {# Markup #}
   {{ highlightMarkup }}
-    {% include components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false} %}
+    {% include 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
   {{ endhighlight }}
 
   {# Twig include #}
   {{ highlightTwig }}
-      {{ '{% include ' }} components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false}{{ ' %}' }}
-      {{ components.groups.checkout.personsOrder }}
+      {{ '{% include ' }} 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false}{{ ' %}' }}
+      {{ 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' }}
   {{ endhighlight }}  
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / PERSON (TABLE) #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Products (Table)",
+    slug:         "your-order-tab-pane-products-person-table-structure"
+  }%}
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  <p>Table containing the rows below</p>
+
+  {{ highlightMarkup }}
+  <!-- TABLE OF PRODUCTS -->
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+          <th class="d-none t-desc">Description</th>
+          <th class="d-none t-price">Price</th>
+          <th class="d-none t-qty text-right">Qty</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- Table rows -->
+
+      </tbody>
+    </table>
+  </div>
+  {{ endhighlight }}
+
+
+
 
 
 
@@ -151,44 +255,95 @@
   {# CHECKOUT / REVIEW / ORDER / PERSON / SINGLE PRODUCT #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Single Product",
-    slug:         "your-order-tab-pane-products-product"
+    title:        "Single Product (Table Row)",
+    slug:         "your-order-tab-pane-products-product",
+    description:  "This is <code>tr</code> gets looped to show products in a person's order."
   }%}
   <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
-  {{ styleguideItem.description }}
+  
+
+  <div class="bs-callout bs-callout-info">
+    {{ styleguideItem.description }}
+  </div>
+
+  <div class="bs-callout bs-callout-warning">
+    The formatting looks strange here because the <code>tr</code> is not within a <code>table</code>. 
+  </div>
+
+
+  
   <div class="bs-example">
     {% include components.groups.checkout.personsOrderTr with {
-      productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
-      img: '/images/fpo/agnew-ultimate.png',
-      autoReplenish: null,
-      sku: '829-957',
-      price: '30.00',
+      productName: '[Product Name]', 
+      img: '/images/fpo/product-thumb-grey.png',
+      autoReplenish: true,
+      sku: '[000-000]',
+      price: '$[00.00]',
       classes: 'input-sm'
     }%}
   </div>
+  
+
+  {# Twig include #}
+  <h3>Variables being passed to template</h3>
+  {{ highlightTwig}}
+      {{ '{% include ' }} '{{ components.groups.checkout.personsOrderTr }}' with {
+      productName: '[Product Name]', 
+      img: '/images/fpo/product-thumb-grey.png',
+      autoReplenish: true,
+      sku: '[000-000]',
+      price: '$[00.00]',
+      classes: 'input-sm'
+    }{{ ' %}' }}
+    
+  {{ endhighlight }} 
+
+  <h3>Template</h3>
+  {{ highlightTwig}}
+    {{ '{%' }} if autoReplenish != null {{ '%}' }}
+      {{ '{%' }} set eachShipment = '<br> <small class="text-muted">Each shipment</small>' {{ '%}' }}
+    {{ '{%' }} endif {{ '%}' }}
+    <tr>
+      <td class="t-item hidden-xs hidden-sm">
+         <img src="{{ '{{' }} img {{ '}}' }}" class="img-responsive" alt="">
+      </td>
+      <td class="t-desc">
+        <div>
+          {{ '{{' }} productName {{ '}}' }}
+          <small class="text-muted ml-2">{{ '{{' }} sku {{ '}}' }}</small>
+        </div>
+        {{ '{%' }} if autoReplenish != null {{ '%}' }}
+          <div>
+            <span class="label label-default label-sm">Auto-replenish</span>
+            <span class="hidden-xs hidden-sm">{{ '{%' }} include components.elements.forms.select with { groupClasses: 'd-inline-block', 'items': [{'label': 'Every 4 weeks'}, {'label': 'Every 3 weeks'}, {'label': 'Every 2 weeks'}, {'label': 'Every 1 weeks'}] } {{ '%}' }}</span>
+          </div>
+        {{ '{%' }} endif {{ '%}' }}
+      </td>
+      <td class="t-price">
+         {{ '{{' }} price {{ '}}' }}
+         <span class="hidden-xs hidden-sm">{{ '{{' }} eachShipment {{ '}}' }}</span>
+      </td>
+      <td class="t-qty text-right">
+        <span class="hidden-xs">{{ '{%' }} include components.elements.forms.select {{ '%}' }}</span>
+        <small class="visible-xs">1 unit</small>
+        <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+      </td>
+    </tr>
+  {{ endhighlight }} 
+
+  <h3>Rendered HTML</h3>
   {{ highlightMarkup }}
     {% include components.groups.checkout.personsOrderTr with {
-      productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
-      img: '/images/fpo/agnew-ultimate.png',
-      autoReplenish: null,
-      sku: '829-957',
-      price: '30.00',
+      productName: '[Product Name]', 
+      img: '/images/fpo/product-thumb-grey.png',
+      autoReplenish: true,
+      sku: '[000-000]',
+      price: '$[00.00]',
       classes: 'input-sm'
     }%}
   {{ endhighlight }}
 
-  {# Twig include #}
-  {{ highlightTwig}}
-      {{ '{% include ' }} components.groups.checkout.personsOrderTr with {
-      productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
-      img: '/images/fpo/agnew-ultimate.png',
-      autoReplenish: null,
-      sku: '829-957',
-      price: '30.00',
-      classes: 'input-sm'
-    }{{ ' %}' }}
-    {{ components.groups.checkout.personsOrderTr }}
-  {{ endhighlight }} 
+
 
     {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# CHECKOUT / REVIEW / ORDER / TAB PANE / INCENTIVES #}

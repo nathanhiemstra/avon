@@ -90,7 +90,12 @@ body {
     color: #999;
 }
 
+pre[class*="language-markup"] {
+    max-height: 500px;
+    resize: both;
+}
+
 pre[class*="language-"] {
-    height: 100px;
+    /*height: 200px;*/
     resize: both;
 }
