@@ -1,0 +1,217 @@
+<h1 id="your-order" class="bs-headline">Your Order</h1>
+  <p id="your-order-diagram" style="margin-top: 60px;"><img src="/images/fpo/product-review-diagramed.png" class="img-responsive"></p>
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# BASE #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Page Structure",
+    slug:         "your-order-structure",
+    description:  'Layouts used: 
+    <ul>
+      <li><a href=layouts.html#columns-12>12 columns (full width)</a></li>
+      <li><a href=layouts.html#columns-9>9 columns</a></li>
+      <li><a href=layouts.html#super-panel">9x3 columns</a></li>
+    </ul>',
+    snippet:      '
+    <body>
+      <section id="avon-poc">
+
+        <!-- Header -->
+        <header>Drawer header</header>
+
+        <!-- Tab Nav - Layout: 9 columns wide -->
+        <div class="container">
+          <div class="row">
+            <main class="col-md-9">
+              Tab Nav
+            </main>
+          </div>
+        </div>
+
+        <!-- Content - Layout: 9x3 columns -->
+        <!-- Note: "super-panel" = full bleed grey backgournd -->
+        <div class="super-panel">
+          <div class="container">
+            <div class="row">
+              <main class="col-md-9" role="main">
+                Tab Content
+              </main>
+              <aside class="col-md-3" role="complementary">
+                Aside content
+              </aside>
+            </div>
+          </div>
+        </div> 
+
+        <!-- Footer -->
+        (No footer)
+
+      </section>
+    </body>' 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / PERSON #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Header",
+    slug:         "your-order-header"
+  }%}
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  {{ styleguideItem.description }}
+  <div class="bs-example">
+    {% include components.modules.global.drawer.header with { drawerLabel: 'Your Order', drawerId: 'drawer-order-summary'} %}
+  </div>
+
+  {# Markup #}
+  {{ highlightMarkup }}
+    {% include components.modules.global.drawer.header with { drawerLabel: 'Your Order', drawerId: 'drawer-order-summary' } %}
+  {{ endhighlight }}
+
+  {# Twig include #}
+  {{ highlightTwig }}
+      {{ '{% include ' }} components.modules.global.drawer.header with { drawerLabel: 'Your Order', drawerId: 'drawer-order-summary' }{{ ' %}' }}
+      {{ components.modules.global.drawer.header }}
+  {{ endhighlight }} 
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / NAV TAB #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Nav Tab",
+    slug:         "your-order-tabs",
+    twig:         "components.modules.checkout.review.order.navTab",
+    path:         components.modules.checkout.review.order.navTab 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / TAB CONTENT #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Tab Content",
+    slug:         "your-order-tab-content",
+    twig:         "components.modules.checkout.review.order.tabContent",
+    path:         components.modules.checkout.review.order.tabContent
+  }%}
+
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+  
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / TAB PANE / PRODUCTS #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Tab Pane - Products ",
+    slug:         "your-order-tab-pane-products",
+    twig:         "components.modules.checkout.review.order.tabPane.products",
+    path:         components.modules.checkout.review.order.tabPane.products 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / PERSON #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Person's Order",
+    slug:         "your-order-tab-pane-products-person"
+  }%}
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  {{ styleguideItem.description }}
+  <div class="bs-example">
+    {% include components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false} %}
+  </div>
+
+  {# Markup #}
+  {{ highlightMarkup }}
+    {% include components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false} %}
+  {{ endhighlight }}
+
+  {# Twig include #}
+  {{ highlightTwig }}
+      {{ '{% include ' }} components.groups.checkout.personsOrder with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', collapsed: false}{{ ' %}' }}
+      {{ components.groups.checkout.personsOrder }}
+  {{ endhighlight }}  
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / PERSON / SINGLE PRODUCT #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Single Product",
+    slug:         "your-order-tab-pane-products-product"
+  }%}
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  {{ styleguideItem.description }}
+  <div class="bs-example">
+    {% include components.groups.checkout.personsOrderTr with {
+      productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
+      img: '/images/fpo/agnew-ultimate.png',
+      autoReplenish: null,
+      sku: '829-957',
+      price: '30.00',
+      classes: 'input-sm'
+    }%}
+  </div>
+  {{ highlightMarkup }}
+    {% include components.groups.checkout.personsOrderTr with {
+      productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
+      img: '/images/fpo/agnew-ultimate.png',
+      autoReplenish: null,
+      sku: '829-957',
+      price: '30.00',
+      classes: 'input-sm'
+    }%}
+  {{ endhighlight }}
+
+  {# Twig include #}
+  {{ highlightTwig}}
+      {{ '{% include ' }} components.groups.checkout.personsOrderTr with {
+      productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
+      img: '/images/fpo/agnew-ultimate.png',
+      autoReplenish: null,
+      sku: '829-957',
+      price: '30.00',
+      classes: 'input-sm'
+    }{{ ' %}' }}
+    {{ components.groups.checkout.personsOrderTr }}
+  {{ endhighlight }} 
+
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / TAB PANE / INCENTIVES #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Tab Pane - Incentives ",
+    slug:         "your-order-tab-pane-incentives",
+    twig:         "components.modules.checkout.review.order.tabPane.incentives",
+    path:         components.modules.checkout.review.order.tabPane.incentives 
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# CHECKOUT / REVIEW / ORDER / TOTAL #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Order Total",
+    slug:         "your-order-total",
+    twig:         "components.modules.checkout.order.total",
+    path:         components.modules.checkout.order.total
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
