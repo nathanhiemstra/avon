@@ -1,0 +1,65 @@
+<li class="list-group-item my-4">
+
+  <!-- SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-{{ indexNum }}" data-toggle="collapse" {% if collapsed != false %} class="collapsed" {% endif %}>
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>{{ personName }}</b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>${{ total }}</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">{{ itemCount }} items</dt>
+    <dd class="pull-right">Discount: $[00.00]</dd>
+  </dl> 
+
+  <!-- DETAILS -->
+  <div class="details collapse {% if collapsed == false %} in {% endif %}" id="collapse-{{ indexNum }}">
+
+    <div class="table-responsiveX">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+            <th class="d-none t-desc">Description</th>
+            <th class="d-none t-price">Price</th>
+            <th class="d-none t-qty text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {% include 'styleguide/_includes/modules/pages/your-order-persons-order-tr.html.twig' with {
+            productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
+            img: '/images/fpo/agnew-ultimate.png',
+            autoReplenish: null,
+            sku: '829-957',
+            price: '$30.00',
+            classes: 'input-sm'
+          }%}
+
+          {% include 'styleguide/_includes/modules/pages/your-order-persons-order-tr.html.twig' with {
+            productName: '[Product Name]', 
+            img: '/images/fpo/product-thumb-grey.png',
+            autoReplenish: true,
+            sku: '[000-000]',
+            price: '$[00.00]',
+            classes: 'input-sm'
+          }%}
+
+          {% include 'styleguide/_includes/modules/pages/your-order-persons-order-tr.html.twig' with {
+            productName: '[Product Name]', 
+            img: '/images/fpo/product-thumb-grey.png',
+            autoReplenish: null,
+            sku: '[000-000]',
+            price: '$[00.00]',
+            classes: 'input-sm'
+          }%}
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</li>
