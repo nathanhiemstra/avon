@@ -6,7 +6,7 @@
 {% block header %}
   <!-- START - HEADER -->
   <div class="no-reverse-bg">
-    {% include components.modules.checkout.header %}
+    {% include components.modules.global.drawer.header with { drawerLabel: 'Your Order', drawerId: drawerId } %}
   </div><!-- /.no-reverse-bg -->
   <!-- END - HEADER -->
 {% endblock %}
