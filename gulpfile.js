@@ -220,7 +220,7 @@ gulp.task('compile', function () {
               checkout: {
                 review: {
                   complete: 'checkout-review-complete.html',
-                  order:    'checkout-review-order.html'
+                  order:    'your-order.html'
                 },
                 chooseType: 'checkout-choose-type.html',
               },

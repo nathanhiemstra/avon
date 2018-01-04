@@ -1,0 +1,57 @@
+{% extends layouts.themes.checkout %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <!-- START - TAB NAVIGATION -->
+  <section class="container">
+    <div class="row">
+      <div class="col-sm-9">
+        
+        {% include '_includes/modules/checkout/review/order/nav-tab.html.twig' %}
+
+      </div>
+    </div><!-- /.row -->
+  </section><!-- /.container -->
+  <!-- END - TAB NAVIGATION -->
+
+
+  <!-- START - MAIN AND ASIDE -->
+  <section class="reverse-bg">
+    <div class="container">
+
+      {% embed layouts.columns9x3 %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - MAIN #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block main %}
+          
+          {% include '_includes/modules/checkout/review/order/tab-content.html.twig' %}
+
+        {% endblock %}
+
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - ASIDE #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block aside %}
+
+          <!-- ORDER TOTAL -->
+          {% include components.modules.checkout.order.total %}
+
+        {% endblock %}
+      {% endembed %}
+
+    </div>
+  </section>
+  <!-- END - MAIN AND ASIDE -->
+
+
+
+{% endblock %}
+
+
+

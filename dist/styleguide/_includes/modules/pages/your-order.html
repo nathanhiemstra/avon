@@ -19,20 +19,27 @@ Layouts used:
       <section id="avon-poc">
 
         <!-- Header -->
-        <header>Drawer header</header>
+        <section class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <header>Drawer header</header>
+            </main>
+          </div>
+        </section>
+
+
 
         <!-- Tab Nav - Layout: 9 columns wide -->
-        <div class="container">
+        <section class="container">
           <div class="row">
             <main class="col-md-9">
               Tab Nav
             </main>
           </div>
-        </div>
+        </section>
 
         <!-- Content - Layout: 9x3 columns -->
-        <!-- Note: "super-panel" = full bleed grey backgournd -->
-        <div class="super-panel">
+        <section class="reverse-bg">
           <div class="container">
             <div class="row">
               <main class="col-md-9" role="main">
@@ -43,7 +50,7 @@ Layouts used:
               </aside>
             </div>
           </div>
-        </div> 
+        </section> 
 
         <!-- Footer -->
         (No footer)
@@ -59,20 +66,27 @@ Layouts used:
       <section id="avon-poc">
 
         <!-- Header -->
-        <header>Drawer header</header>
+        <section class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <header>Drawer header</header>
+            </main>
+          </div>
+        </section>
+
+
 
         <!-- Tab Nav - Layout: 9 columns wide -->
-        <div class="container">
+        <section class="container">
           <div class="row">
             <main class="col-md-9">
               Tab Nav
             </main>
           </div>
-        </div>
+        </section>
 
         <!-- Content - Layout: 9x3 columns -->
-        <!-- Note: "super-panel" = full bleed grey backgournd -->
-        <div class="super-panel">
+        <section class="reverse-bg">
           <div class="container">
             <div class="row">
               <main class="col-md-9" role="main">
@@ -83,7 +97,7 @@ Layouts used:
               </aside>
             </div>
           </div>
-        </div> 
+        </section> 
 
         <!-- Footer -->
         (No footer)
@@ -131,15 +145,52 @@ Layouts used:
 
   
   <pre><code class="language-twig"><script type="text/plain">
-      {% include  components.modules.global.drawer.header with { drawerLabel: 'Your Order', drawerId: 'drawer-order-summary' } %}
-      _includes/modules/global/drawer-header.html.twig
+      {% include  '_includes/modules/global/drawer-header.html.twig' with { drawerLabel: 'Your Order', drawerId: 'drawer-order-summary' } %}
   </script></code></pre> 
 
 
  
+
+
   
   
-    <h2 id="your-order-tab-structure" class="bs-headline">Tab Structure</h2>
+  
+    <h2 id="your-order-tabs" class="bs-headline">Tab Navigation</h2>
+
+
+
+<div class="bs-example">
+      <!-- START - TAB NAVIGATION -->
+<ul class="nav nav-tabs nav-justified">
+  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products</a></li>
+  <li><a href="#pd-incentives" data-toggle="tab">Incentives <span class="badge">2</span></a></li>
+</ul>
+<!-- END - TAB NAVIGATION -->
+
+  </div>
+
+
+<pre><code class="language-markup"><script type="text/plain">
+      <!-- START - TAB NAVIGATION -->
+<ul class="nav nav-tabs nav-justified">
+  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products</a></li>
+  <li><a href="#pd-incentives" data-toggle="tab">Incentives <span class="badge">2</span></a></li>
+</ul>
+<!-- END - TAB NAVIGATION -->
+
+  </script></code></pre>
+
+
+  <pre><code class="language-twig"><script type="text/plain">
+  {% include _includes/modules/checkout/review/order/nav-tab.html.twig %}
+  _includes/modules/checkout/review/order/nav-tab.html.twig
+  </script></code></pre>
+
+
+  
+  
+  
+    <h2 id="your-order-tab-content-structure" class="bs-headline">Tab Content Structure</h2>
   
 
   <p>Tab content containing the tab panes below</p>
@@ -162,39 +213,6 @@ Layouts used:
 
   </section>
   <!-- END - TAB CONTENT -->
-  </script></code></pre>
-
-
-  
-  
-  
-    <h2 id="your-order-tabs" class="bs-headline">Tab Navigation</h2>
-
-
-
-<div class="bs-example">
-      <!-- Nav tabs -->
-<ul class="nav nav-tabs nav-justified">
-  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products</a></li>
-  <li><a href="#pd-incentives" data-toggle="tab">Incentives <span class="badge">2</span></a></li>
-</ul>
-
-  </div>
-
-
-<pre><code class="language-markup"><script type="text/plain">
-      <!-- Nav tabs -->
-<ul class="nav nav-tabs nav-justified">
-  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products</a></li>
-  <li><a href="#pd-incentives" data-toggle="tab">Incentives <span class="badge">2</span></a></li>
-</ul>
-
-  </script></code></pre>
-
-
-  <pre><code class="language-twig"><script type="text/plain">
-  {% include components.modules.checkout.review.order.navTab %}
-  _includes/modules/checkout/review/order/nav-tab.html.twig
   </script></code></pre>
 
 
@@ -1754,7 +1772,8 @@ Layouts used:
 
 
 <div class="bs-example">
-      <section>
+      <!-- START - ORDER TOTAL -->
+<section>
   <div class="hidden-xs">
     <h3 class="h-utility">Total</h3>
     <dl class="clearfix border-bottom pb-3 mb-3">
@@ -1769,11 +1788,13 @@ Layouts used:
   </div>
   
   <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Checkout</a>
-</section>  </div>
+</section>
+<!-- START - ORDER TOTAL -->  </div>
 
 
 <pre><code class="language-markup"><script type="text/plain">
-      <section>
+      <!-- START - ORDER TOTAL -->
+<section>
   <div class="hidden-xs">
     <h3 class="h-utility">Total</h3>
     <dl class="clearfix border-bottom pb-3 mb-3">
@@ -1788,7 +1809,8 @@ Layouts used:
   </div>
   
   <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Checkout</a>
-</section>  </script></code></pre>
+</section>
+<!-- START - ORDER TOTAL -->  </script></code></pre>
 
 
   <pre><code class="language-twig"><script type="text/plain">

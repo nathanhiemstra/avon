@@ -1,6 +1,6 @@
 <li class="list-group-item my-4">
 
-  <!-- SUMMARY -->
+  <!-- START - PRODUCT SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-" data-toggle="collapse"  class="collapsed" >
@@ -15,23 +15,25 @@
     <dt class="pull-left"> items</dt>
     <dd class="pull-right">Discount: $45.55</dd>
   </dl> 
+  <!-- END - PRODUCT SUMMARY -->
 
-  <!-- DETAILS -->
+  <!-- START - PRODUCT DETAILS (EXPANDABLE) -->
   <div class="details collapse " id="collapse-">
 
-    <div class="table-responsiveX">
-      <table class="table">
-        <thead>
-          <tr>
-            <th class="d-none t-item hidden-xs hidden-sm">Item</th>
-            <th class="d-none t-desc">Description</th>
-            <th class="d-none t-price">Price</th>
-            <th class="d-none t-qty text-right">Qty</th>
-          </tr>
-        </thead>
-        <tbody>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+          <th class="d-none t-desc">Description</th>
+          <th class="d-none t-price">Price</th>
+          <th class="d-none t-qty text-right">Qty</th>
+        </tr>
+      </thead>
+      <tbody>
 
-          <tr>
+        <!-- START - REPEATABLE ITEMS -->
+
+        <tr>
   <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
   </td>
@@ -60,7 +62,7 @@
     <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-            <tr>
+          <tr>
   <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
   </td>
@@ -103,7 +105,7 @@
     <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-          <tr>
+        <tr>
   <td class="t-item hidden-xs hidden-sm">
      <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
   </td>
@@ -132,8 +134,12 @@
     <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
   </td>
 </tr>
-        </tbody>
-      </table>
-    </div>
+         <!-- END - REPEATABLE ITEMS -->
+
+      </tbody>
+    </table>
+
   </div>
+  <!-- END - PRODUCT DETAILS (EXPANDABLE) -->
+
 </li>
