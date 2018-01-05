@@ -18,11 +18,12 @@
         {% block main %}
 
             <!-- START - MESSAGE -->
-            <section class="container-fluid alert alert-info">
+            <section class="container-fluid alert alert-reverse">
               <div class="container">
                 <div class="row">
                   <span class="glyphicon glyphicon-asterisk"></span>
-                Campaign 3 is due by 11:59 PM Local Time on Wednesday 01/17/2018 21 day(s) left
+                  Campaign 3 is due by 11:59 PM Local Time on Wednesday 01/17/2018 21 days(s) left
+                  <a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
               </div><!-- /.row -->
             </div>
           </section>
@@ -59,7 +60,11 @@
           <!-- Related Products -->
           <section class="reverse-bg py-5">
             <div class="container">
-              <h2 class="text-center my-5 ">Related Products</h2>
+              <div class="text-center clearfix my-5">
+                <h2 class="d-inline-block my-0">Related Products</h2>
+                <a href="#" class="pull-right">View all <span class="glyphicon glyphicon-chevron-right"></span></a>
+              </div>
+              
 
 
               {% set relatedProduct = '<div class="col-xs-4 col-sm-3">
@@ -144,7 +149,7 @@
                     <li>Enriched with minerals including zinc, magnesium, iron, and copper</li>
                   </ul>
                   <h4>Ingredients</h4>
-                  <ul class="list-unstyled"
+                  <ul>
                     <li>Diisopropyl Dimer Dilinoleate</li>
                     <li>Ethylhexyl Methoxycinnamate</li>
                     <li>Lanolin</li>
