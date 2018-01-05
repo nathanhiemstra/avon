@@ -95,8 +95,8 @@
   {% set styleguideItem = {
     title:        "Tab Navigation",
     slug:         "your-order-tabs",
-    twig:         "_includes/modules/checkout/review/order/nav-tab.html.twig",
-    path:         '_includes/modules/checkout/review/order/nav-tab.html.twig' 
+    twig:         "_includes/modules/your-order/review/order/nav-tab.html.twig",
+    path:         "_includes/modules/your-order/review/order/nav-tab.html.twig"
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -140,8 +140,8 @@
   {% set styleguideItem = {
     title:        "Tab Content (Both Products and Incentives)",
     slug:         "your-order-tab-content",
-    twig:         "styleguide/_includes/modules/pages/tab-content.html.twig",
-    path:         'styleguide/_includes/modules/pages/tab-content.html.twig'
+    twig:         "styleguide/_includes/modules/pages/your-order/tab-content.html.twig",
+    path:         'styleguide/_includes/modules/pages/your-order/tab-content.html.twig'
   }%}
 
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
@@ -165,8 +165,8 @@
   {% set styleguideItem = {
     title:        "Person's Order (List of summaries and product lists) ",
     slug:         "your-order-tab-pane-products",
-    twig:         "styleguide/_includes/modules/pages/your-order-tab-panel-products.html.twig",
-    path:         "styleguide/_includes/modules/pages/your-order-tab-panel-products.html.twig" 
+    twig:         "styleguide/_includes/modules/pages/your-order/tab-panel-products.html.twig",
+    path:         "styleguide/_includes/modules/pages/your-order/tab-panel-products.html.twig" 
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -209,18 +209,18 @@
   <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
   {{ styleguideItem.description }}
   <div class="bs-example">
-    {% include 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' with {indexNum: 'x-1', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
+    {% include 'styleguide/_includes/modules/pages/your-order/persons-order.html.twig' with {indexNum: 'x-1', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
   </div>
 
   {# Markup #}
   {{ highlightMarkup }}
-    {% include 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
+    {% include 'styleguide/_includes/modules/pages/your-order/persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
   {{ endhighlight }}
 
   {# Twig include #}
   {{ highlightTwig }}
-      {{ '{% include ' }} 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false}{{ ' %}' }}
-      {{ 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' }}
+      {{ '{% include ' }} 'styleguide/_includes/modules/pages/your-order/persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false}{{ ' %}' }}
+      {{ 'styleguide/_includes/modules/pages/your-order/persons-order.html.twig' }}
   {{ endhighlight }}  
 
 
@@ -282,7 +282,7 @@
 
   
   <div class="bs-example">
-    {% include '_includes/groups/checkout/persons-order-tr.html.twig' with {
+    {% include '_includes/groups/yourOrder/persons-order-tr.html.twig' with {
       productName: '[Product Name]', 
       img: '/images/fpo/product-thumb-grey.png',
       autoReplenish: true,

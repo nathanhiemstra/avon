@@ -182,8 +182,8 @@ Layouts used:
 
 
   <pre><code class="language-twig"><script type="text/plain">
-  {% include _includes/modules/checkout/review/order/nav-tab.html.twig %}
-  _includes/modules/checkout/review/order/nav-tab.html.twig
+  {% include _includes/modules/your-order/review/order/nav-tab.html.twig %}
+  _includes/modules/your-order/review/order/nav-tab.html.twig
   </script></code></pre>
 
 
@@ -753,8 +753,8 @@ Layouts used:
 
 
   <pre><code class="language-twig"><script type="text/plain">
-  {% include styleguide/_includes/modules/pages/tab-content.html.twig %}
-  styleguide/_includes/modules/pages/tab-content.html.twig
+  {% include styleguide/_includes/modules/pages/your-order/tab-content.html.twig %}
+  styleguide/_includes/modules/pages/your-order/tab-content.html.twig
   </script></code></pre>
 
   
@@ -1258,8 +1258,8 @@ Layouts used:
 
 
   <pre><code class="language-twig"><script type="text/plain">
-  {% include styleguide/_includes/modules/pages/your-order-tab-panel-products.html.twig %}
-  styleguide/_includes/modules/pages/your-order-tab-panel-products.html.twig
+  {% include styleguide/_includes/modules/pages/your-order/tab-panel-products.html.twig %}
+  styleguide/_includes/modules/pages/your-order/tab-panel-products.html.twig
   </script></code></pre>
 
 
@@ -1533,8 +1533,8 @@ Layouts used:
 
   
   <pre><code class="language-twig"><script type="text/plain">
-      {% include  'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
-      styleguide/_includes/modules/pages/your-order-persons-order.html.twig
+      {% include  'styleguide/_includes/modules/pages/your-order/persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
+      styleguide/_includes/modules/pages/your-order/persons-order.html.twig
   </script></code></pre>  
 
 
@@ -1635,7 +1635,7 @@ Layouts used:
   
   <h3>Variables being passed to template</h3>
   <pre><code class="language-twig"><script type="text/plain">
-      {% include  '_includes/groups/checkout/persons-order-tr.html.twig' with {
+      {% include  '_includes/groups/yourOrder/persons-order-tr.html.twig' with {
       productName: '[Product Name]', 
       img: '/images/fpo/product-thumb-grey.png',
       autoReplenish: true,
@@ -1758,7 +1758,7 @@ Layouts used:
 
   <pre><code class="language-twig"><script type="text/plain">
   {% include components.modules.yourOrder.tabPane.incentives %}
-  _includes/modules/checkout/review-order-tab-panel-incentives.html.twig
+  _includes/modules/your-order/review-order-tab-panel-incentives.html.twig
   </script></code></pre>
 
 
@@ -1815,6 +1815,6 @@ Layouts used:
 
   <pre><code class="language-twig"><script type="text/plain">
   {% include components.modules.yourOrder.total %}
-  _includes/modules/checkout/order-total.html.twig
+  _includes/modules/your-order/order-total.html.twig
   </script></code></pre>
 

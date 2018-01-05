@@ -144,8 +144,8 @@ gulp.task('compile', function () {
                 },
                
                 yourOrder: {
-                  personsOrderLi:     prefix.groups + "checkout/persons-order.html.twig",
-                  singleProductTr:   prefix.groups + "checkout/persons-order-tr.html.twig"
+                  personsOrderLi:   prefix.groups + "yourOrder/persons-order.html.twig",
+                  singleProductTr:  prefix.groups + "yourOrder/persons-order-tr.html.twig"
                 },
               },
               modules: {
@@ -154,15 +154,14 @@ gulp.task('compile', function () {
                   header:       prefix.modules + "checkout/header.html.twig"
                 },
                 yourOrder: {
-                  drawer:       prefix.modules + "checkout/order-summary.html.twig",
-                  tabNav:       prefix.modules + 'checkout/review/order/nav-tab.html.twig',
-                  tabContent:   prefix.modules + 'checkout/review/order/tab-content.html.twig',
+                  drawer:       prefix.modules + "your-order/order-summary.html.twig",
+                  tabNav:       prefix.modules + 'your-order/review/order/nav-tab.html.twig',
+                  tabContent:   prefix.modules + 'your-order/review/order/tab-content.html.twig',
                   tabPane: {
-                    products:   prefix.modules + 'checkout/review-order-tab-panel-products.html.twig',
-                    incentives: prefix.modules + 'checkout/review-order-tab-panel-incentives.html.twig',
+                    products:   prefix.modules + 'your-order/review-order-tab-panel-products.html.twig',
+                    incentives: prefix.modules + 'your-order/review-order-tab-panel-incentives.html.twig',
                   },
-
-                  total:        prefix.modules + 'checkout/order-total.html.twig'
+                  total:        prefix.modules + 'your-order/order-total.html.twig'
                 },
                 global: {
                   footer:         prefix.modules + "global/footer.html.twig",

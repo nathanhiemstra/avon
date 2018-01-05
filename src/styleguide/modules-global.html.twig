@@ -1,0 +1,77 @@
+{# styleguide/index.html.twig #}
+{% set title = "Styleguide Modules" %}
+{% set slug = "styleguide-modules-global" %}
+{% extends "styleguide/_layouts/styleguide-main.html.twig" %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - STYLEGUIDE CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block styleguideContent %}
+
+  
+
+
+  <h1 id="global" class="bs-headline">Global</h1>
+
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# GLOBAL - LOGO #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Logo",
+    slug:         "global-logo",
+    twig:         "components.elements.images.logoYourAvon",
+    path:         components.elements.images.logoYourAvon
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# GLOBAL - MAIN NAVIGATIONS #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Primary Navigation",
+    slug:         "global-primary-nav",
+    twig:         "components.groups.navigation.primary",
+    path:         components.groups.navigation.primary
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# GLOBAL - HEADER #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Global Header",
+    slug:         "global-header",
+    twig:         "components.modules.global.header",
+    path:         components.modules.global.header
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# GLOBAL - FOOTER #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Global Footer",
+    slug:         "global-footer",
+    twig:         "components.modules.global.footer",
+    path:         components.modules.global.footer
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+
+
+
+{% endblock %}
+
+

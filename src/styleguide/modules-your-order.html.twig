@@ -1,3 +1,15 @@
+{# styleguide/index.html.twig #}
+{% set title = "Styleguide Modules" %}
+{% set slug = "styleguide-modules-your-order" %}
+{% extends "styleguide/_layouts/styleguide-main.html.twig" %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - STYLEGUIDE CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block styleguideContent %}
+
+
 <h1 id="your-order" class="bs-headline">Your Order</h1>
   <p id="your-order-diagram" style="margin-top: 60px;"><img src="/images/fpo/product-review-diagramed.png" class="img-responsive"></p>
 
@@ -18,20 +30,27 @@
       <section id="avon-poc">
 
         <!-- Header -->
-        <header>Drawer header</header>
+        <section class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <header>Drawer header</header>
+            </main>
+          </div>
+        </section>
+
+
 
         <!-- Tab Nav - Layout: 9 columns wide -->
-        <div class="container">
+        <section class="container">
           <div class="row">
             <main class="col-md-9">
               Tab Nav
             </main>
           </div>
-        </div>
+        </section>
 
         <!-- Content - Layout: 9x3 columns -->
-        <!-- Note: "super-panel" = full bleed grey backgournd -->
-        <div class="super-panel">
+        <section class="reverse-bg">
           <div class="container">
             <div class="row">
               <main class="col-md-9" role="main">
@@ -42,7 +61,7 @@
               </aside>
             </div>
           </div>
-        </div> 
+        </section> 
 
         <!-- Footer -->
         (No footer)
@@ -88,8 +107,8 @@
   {% set styleguideItem = {
     title:        "Tab Navigation",
     slug:         "your-order-tabs",
-    twig:         "_includes/modules/checkout/review/order/nav-tab.html.twig",
-    path:         '_includes/modules/checkout/review/order/nav-tab.html.twig' 
+    twig:         "_includes/modules/your-order/review/order/nav-tab.html.twig",
+    path:         "_includes/modules/your-order/review/order/nav-tab.html.twig"
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -133,8 +152,8 @@
   {% set styleguideItem = {
     title:        "Tab Content (Both Products and Incentives)",
     slug:         "your-order-tab-content",
-    twig:         "styleguide/_includes/modules/pages/tab-content.html.twig",
-    path:         'styleguide/_includes/modules/pages/tab-content.html.twig'
+    twig:         "styleguide/_includes/modules/pages/your-order/tab-content.html.twig",
+    path:         'styleguide/_includes/modules/pages/your-order/tab-content.html.twig'
   }%}
 
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
@@ -158,8 +177,8 @@
   {% set styleguideItem = {
     title:        "Person's Order (List of summaries and product lists) ",
     slug:         "your-order-tab-pane-products",
-    twig:         "styleguide/_includes/modules/pages/your-order-tab-panel-products.html.twig",
-    path:         "styleguide/_includes/modules/pages/your-order-tab-panel-products.html.twig" 
+    twig:         "styleguide/_includes/modules/pages/your-order/tab-panel-products.html.twig",
+    path:         "styleguide/_includes/modules/pages/your-order/tab-panel-products.html.twig" 
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -202,18 +221,18 @@
   <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
   {{ styleguideItem.description }}
   <div class="bs-example">
-    {% include 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' with {indexNum: 'x-1', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
+    {% include 'styleguide/_includes/modules/pages/your-order/persons-order.html.twig' with {indexNum: 'x-1', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
   </div>
 
   {# Markup #}
   {{ highlightMarkup }}
-    {% include 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
+    {% include 'styleguide/_includes/modules/pages/your-order/persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
   {{ endhighlight }}
 
   {# Twig include #}
   {{ highlightTwig }}
-      {{ '{% include ' }} 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false}{{ ' %}' }}
-      {{ 'styleguide/_includes/modules/pages/your-order-persons-order.html.twig' }}
+      {{ '{% include ' }} 'styleguide/_includes/modules/pages/your-order/persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false}{{ ' %}' }}
+      {{ 'styleguide/_includes/modules/pages/your-order/persons-order.html.twig' }}
   {{ endhighlight }}  
 
 
@@ -275,7 +294,7 @@
 
   
   <div class="bs-example">
-    {% include '_includes/groups/checkout/persons-order-tr.html.twig' with {
+    {% include '_includes/groups/yourOrder/persons-order-tr.html.twig' with {
       productName: '[Product Name]', 
       img: '/images/fpo/product-thumb-grey.png',
       autoReplenish: true,
@@ -372,3 +391,4 @@
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
+{% endblock %}
