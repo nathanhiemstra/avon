@@ -289,7 +289,7 @@
   {# Twig include #}
   <h3>Variables being passed to template</h3>
   {{ highlightTwig}}
-      {{ '{% include ' }} '{{ components.groups.checkout.personsOrderTr }}' with {
+      {{ '{% include ' }} '{{ components.groups.yourOrder.singleProductTr }}' with {
       productName: '[Product Name]', 
       img: '/images/fpo/product-thumb-grey.png',
       autoReplenish: true,
@@ -335,7 +335,7 @@
 
   <h3>Rendered HTML</h3>
   {{ highlightMarkup }}
-    {% include components.groups.checkout.personsOrderTr with {
+    {% include components.groups.yourOrder.singleProductTr with {
       productName: '[Product Name]', 
       img: '/images/fpo/product-thumb-grey.png',
       autoReplenish: true,
@@ -353,8 +353,8 @@
   {% set styleguideItem = {
     title:        "Tab Pane - Incentives ",
     slug:         "your-order-tab-pane-incentives",
-    twig:         "components.modules.checkout.review.order.tabPane.incentives",
-    path:         components.modules.checkout.review.order.tabPane.incentives 
+    twig:         "components.modules.yourOrder.tabPane.incentives",
+    path:         components.modules.yourOrder.tabPane.incentives 
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -367,8 +367,8 @@
   {% set styleguideItem = {
     title:        "Order Total",
     slug:         "your-order-total",
-    twig:         "components.modules.checkout.order.total",
-    path:         components.modules.checkout.order.total
+    twig:         "components.modules.yourOrder.total",
+    path:         components.modules.yourOrder.total
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 

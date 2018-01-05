@@ -97,7 +97,8 @@ gulp.task('compile', function () {
               columns12:          '_layouts/columns-12.html.twig',
               columns9x3:         '_layouts/columns-9x3.html.twig',
               themes: {
-                checkout:         '_layouts/theme-checkout.html.twig'
+                checkout:         '_layouts/theme-checkout.html.twig',
+                yourOrder:        '_layouts/theme-your-order.html.twig'
               },
               utility: {
                 modal:            '_layouts/modal.html.twig',
@@ -137,58 +138,31 @@ gulp.task('compile', function () {
                   primary:          prefix.groups + "navigation/primary.html.twig",
                   breadcrumbs:      prefix.groups + "navigation/breadcrumb.html.twig"
                 },
-                checkout: {
-                  personsOrder:     prefix.groups + "checkout/persons-order.html.twig",
-                  personsOrderTr:   prefix.groups + "checkout/persons-order-tr.html.twig",
-                  productSummary:   prefix.groups + "checkout/product-summary.html.twig",
-                  orderSummary:     prefix.groups + "checkout/order-summary.html.twig"
-                },
+                
                 ratings: {
                   unit:             prefix.groups + "ratings/unit.html.twig"
                 },
-                tables: {
-                  ordersCheckout: {
-                    tr:             prefix.groups + "tables/orders-checkout-tr.html.twig"
-                  },
-                  ordersReview: {
-                    tr:             prefix.groups + "tables/orders-review-tr.html.twig"
-                  }
-                }
+               
+                yourOrder: {
+                  personsOrderLi:     prefix.groups + "checkout/persons-order.html.twig",
+                  singleProductTr:   prefix.groups + "checkout/persons-order-tr.html.twig"
+                },
               },
               modules: {
                 checkout: {
-                  chooseType:                   prefix.modules + "checkout/choose-type.html.twig",
-                  header:                       prefix.modules + "checkout/header.html.twig",
-                  orderSummary:                 prefix.modules + "checkout/order-summary.html.twig",
-                  orderSummaryTabProducts:      prefix.modules + "checkout/order-summary-tab-products.html.twig",
-                  orderSummaryTabIncentives:    prefix.modules + "checkout/order-summary-tab-incentives.html.twig",
-                  order: {
-                    summary:      prefix.modules + "checkout/order-summary.html.twig",
-                    total:        prefix.modules + "checkout/order-total.html.twig"
+                  chooseType:   prefix.modules + "checkout/choose-type.html.twig",
+                  header:       prefix.modules + "checkout/header.html.twig"
+                },
+                yourOrder: {
+                  drawer:       prefix.modules + "checkout/order-summary.html.twig",
+                  tabNav:       prefix.modules + 'checkout/review/order/nav-tab.html.twig',
+                  tabContent:   prefix.modules + 'checkout/review/order/tab-content.html.twig',
+                  tabPane: {
+                    products:   prefix.modules + 'checkout/review-order-tab-panel-products.html.twig',
+                    incentives: prefix.modules + 'checkout/review-order-tab-panel-incentives.html.twig',
                   },
-                  review: {
-                    order: {
-                      navTab:       prefix.modules + 'checkout/review/order/nav-tab.html.twig',
-                      tabContent:   prefix.modules + 'checkout/review/order/tab-content.html.twig',
-                      tabPane: {
-                        products:   prefix.modules + 'checkout/review-order-tab-panel-products.html.twig',
-                        incentives: prefix.modules + 'checkout/review-order-tab-panel-incentives.html.twig',
-                      }
-                    },
-                    item: {
-                      cart:       prefix.modules + "checkout/review-item-cart.html.twig",
-                      shipTo:     prefix.modules + "checkout/review-item-ship-to.html.twig",
-                      shipMethod: prefix.modules + "checkout/review-item-ship-method.html.twig",
-                      payMethod:  prefix.modules + "checkout/review-item-pay-method.html.twig"
-                    },
-                    drawer: {
-                      orderTotal: prefix.modules + "checkout/drawer-total-order.html.twig"
-                    },
-                    tab: {
-                      cart:       prefix.modules + "checkout/tab-review-cart.html.twig"
-                    }
-                  },
-                  triage:         prefix.modules + "checkout/triage.html.twig"
+
+                  total:        prefix.modules + 'checkout/order-total.html.twig'
                 },
                 global: {
                   footer:         prefix.modules + "global/footer.html.twig",
@@ -204,16 +178,6 @@ gulp.task('compile', function () {
                     images:       prefix.modules + "product/detail/images.html.twig"
                   }                 
                 },
-                v1: {
-                  product: {
-                    detail: {
-                      details:    prefix.modules + "v1/product/detail/details.html.twig",
-                      features:   prefix.modules + "v1/product/detail/features.html.twig",
-                      header:     prefix.modules + "v1/product/detail/header.html.twig",
-                      images:     prefix.modules + "v1/product/detail/images.html.twig"
-                    }
-                  }
-                }
               }
             },
             pages: {
