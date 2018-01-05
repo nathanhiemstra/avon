@@ -1,5 +1,6 @@
 .drawer {
-    overflow: hidden;
+    // Hiding for now so popovers will work
+    // overflow: hidden;
 
     &:not(.reverse-bg) {
         background-color: $body-bg;
