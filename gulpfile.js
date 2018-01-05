@@ -182,17 +182,20 @@ gulp.task('compile', function () {
             pages: {
               checkout: {
                 review: {
-                  complete: 'checkout-review-complete.html',
-                  order:    'your-order.html'
+                  complete:   'checkout-review-complete.html'
                 },
-                chooseType: 'checkout-choose-type.html',
+                chooseType:   'checkout-choose-type.html',
               },
               product: {
-                detail:      'product-detail.html'
+                detail:       'product-detail.html'
+              },
+              yourOrder:      'your-order.html',
+              search: {
+                results:      'search-results.html'
               }
             },
             styleguide: {
-              item:     "styleguide/_includes/module.html.twig",
+              item:     "styleguide/_includes/example-template.html.twig",
               snippet:  "styleguide/_includes/snippet.html.twig"
             },
             fpo: {
