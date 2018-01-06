@@ -32,14 +32,15 @@ Plugins:
 
 ### Setup ###
 
-1. Get aded to our [Avon team](https://bitbucket.org/account/user/craftsmanshipstudio/projects/AVON) in Bitbucket.
-2. Get aded to the [avon-poc](https://bitbucket.org/craftsmanshipstudio/avon-poc) repo in Bitbucket.
+1. Get added to our [Avon team](https://bitbucket.org/account/user/craftsmanshipstudio/projects/AVON) in Bitbucket.
+2. Get added to the [avon-poc](https://bitbucket.org/craftsmanshipstudio/avon-poc) repo in Bitbucket.
 3. Create a local folder for the repo
 4. CD to that folder. Example: ```cd /Users/yoursweetusername/Sites/avon-poc```
 3. Clone the repo: ```git clone https://studio4digitalcraftsmanship@bitbucket.org/craftsmanshipstudio/avon-poc.git```
 
 ### How run local server ###
 1. CD to the folder where you cloned the repo. Example: ```cd /Users/yoursweetusername/Sites/avon-poc```
+1. ```npm install``` to install dependencies
 2. ```gulp```
 3. Website will be available at http://localhost:3000
 You should see something like this:
