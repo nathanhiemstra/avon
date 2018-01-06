@@ -65,7 +65,9 @@ $(document).ready(function() {
   // INT
   ////////////////////////////////////////////////////////
 
- 
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+  });
 
 
 });
