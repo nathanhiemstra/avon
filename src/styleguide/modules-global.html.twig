@@ -9,7 +9,7 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block styleguideContent %}
 
-  
+
 
 
   <h1 id="global" class="bs-headline">Global</h1>
@@ -31,10 +31,28 @@
   {# GLOBAL - MAIN NAVIGATIONS #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Primary Navigation",
+    title:        "Header Navigation - Static",
+    slug:         "global-static-nav",
+    twig:         "components.groups.navigation.headerStatic",
+    path:         components.groups.navigation.headerStatic
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+  {% set styleguideItem = {
+    title:        "Header Navigation - User",
+    slug:         "global-user-nav",
+    twig:         "components.groups.navigation.headerUser",
+    path:         components.groups.navigation.headerUser
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+  {% set styleguideItem = {
+    title:        "Header Navigation - Primary",
     slug:         "global-primary-nav",
-    twig:         "components.groups.navigation.primary",
-    path:         components.groups.navigation.primary
+    twig:         "components.groups.navigation.headerPrimary",
+    path:         components.groups.navigation.headerPrimary
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -49,6 +67,7 @@
   {% set styleguideItem = {
     title:        "Global Header",
     slug:         "global-header",
+    description:  'The global header combines the three header navigations shown above: Static, User and Primary',
     twig:         "components.modules.global.header",
     path:         components.modules.global.header
   }%}
@@ -73,5 +92,3 @@
 
 
 {% endblock %}
-
-

@@ -39,11 +39,11 @@ path.src = {
   fonts:            "src/fonts/*",
   html:             "src/**/*.html",
   images:           "src/images/**/*",
-  js:               "src/js/**/*.js", 
+  js:               "src/js/**/*.js",
   sass:             "src/sass/**/*.scss",
   twig:             "src/**/*.twig",
   styleguide:       "src/styleguide/*.twig"
-  
+
 };
 
 path.staticFilesToCopy = [
@@ -135,14 +135,16 @@ gulp.task('compile', function () {
                   radioAndLabel:    prefix.groups + "forms/radio-and-label.html.twig"
                 },
                 navigation: {
-                  primary:          prefix.groups + "navigation/primary.html.twig",
+                  headerStatic:     prefix.groups + "navigation/header-static-nav.html.twig",
+                  headerUser:       prefix.groups + "navigation/header-user-nav.html.twig",
+                  headerPrimary:    prefix.groups + "navigation/header-primary-nav.html.twig",
                   breadcrumbs:      prefix.groups + "navigation/breadcrumb.html.twig"
                 },
-                
+
                 ratings: {
                   unit:             prefix.groups + "ratings/unit.html.twig"
                 },
-               
+
                 yourOrder: {
                   personsOrderLi:   prefix.groups + "yourOrder/persons-order.html.twig",
                   singleProductTr:  prefix.groups + "yourOrder/persons-order-tr.html.twig"
@@ -169,13 +171,13 @@ gulp.task('compile', function () {
                   drawer: {
                     header:       prefix.modules + "global/drawer-header.html.twig"
                   }
-                },            
+                },
                 product: {
                   detail: {
                     addToOrder:   prefix.modules + "product/detail/add-to-order.html.twig",
                     details:      prefix.modules + "product/detail/details.html.twig",
                     images:       prefix.modules + "product/detail/images.html.twig"
-                  }                 
+                  }
                 },
               }
             },
@@ -206,7 +208,7 @@ gulp.task('compile', function () {
                 2: 'Kory Rasmussen',
                 3: 'Tisha Pennington',
                 4: 'Phoebe Pope',
-                5: 'Helen Hicks' 
+                5: 'Helen Hicks'
               },
               sentence: "Lorem ipsum dolor sit amet, erant dolor phaedrum.",
               sku: "&lt;000-000&gt;",
@@ -223,7 +225,7 @@ gulp.task('compile', function () {
       }))
       .pipe(gulp.dest('./dist/'));
 });
- 
+
 gulp.task('default', ['compile']);
 
 // gulp.task('fileinclude', function() {
@@ -265,7 +267,3 @@ gulp.task('watch', function() {
 
 gulp.task('build', gulpSequence('clean', 'sass', 'compile', 'copy'));
 gulp.task('default', gulpSequence('build', 'watch', 'server'));
-
-
-
-

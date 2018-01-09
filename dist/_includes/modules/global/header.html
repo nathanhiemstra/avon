@@ -1,40 +1,114 @@
 <div class="no-reverse-bg">
   <div class="row">
     <div class="col-xs-12">
-      <header class="navbar navbar-default navbar-static-top global-header" role="banner">
-        <div class="container">
-          <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a href="index.html" class="navbar-brand">
-              <img src="/images/logos/your-avon.png" alt="Your Avon">
-            </a>
+      <header class="global-header mb-5" role="banner">
+
+        <!-- Static top navbar -->
+        <nav class="navbar navbar-default navbar-static-top navbar--static-nav visible-lg-block border-0">
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a class="py-0 px-4 small" href="#">Avon U</a>
+      </li>
+      <li>
+        <a class="py-0 px-4 small" href="#">Campaign Central</a>
+      </li>
+      <li>
+        <a class="py-0 px-4 small" href="#">Marketing Tools</a>
+      </li>
+      <li>
+        <a class="py-0 px-4 small" href="#">Social Tools</a>
+      </li>
+      <li>
+        <a class="py-0 px-4 small" href="#">ALMA</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+        <!-- User navbar -->
+        <nav class="navbar navbar-default navbar-static-top navbar--user-nav visible-lg-block border-0 mb-0">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="/images/logos/your-avon.png" alt="Your Avon">
+    </a>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#">
+          <span class="profile-img"></span>Jane Johnson</a>
+      </li>
+      <li>
+        <a class="small" href="#">Profile</a>
+      </li>
+      <li>
+        <a class="small" href="#">Settings</a>
+      </li>
+      <li>
+        <a class="small" href="#">Español</a>
+      </li>
+      <li>
+        <a class="small" href="#">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+        <!-- Primary navbar -->
+        <div class="navbar-header">
+  <button class="navbar-toggle pull-left pl-4" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+</div>
+
+<nav class="navbar navbar--primary-nav collapse navbar-collapse navbar-default bs-navbar-collapse border-bottom" role="navigation">
+  <div class="container px-0">
+
+    <ul class="nav navbar-nav navbar-left">
+      <li class="active">
+        <a class="small pb-4" href="#">Home</a>
+      </li>
+      <li>
+        <a class="small pb-4" href="#">Products</a>
+      </li>
+      <li>
+        <a class="small pb-4" href="#">Customers</a>
+      </li>
+      <li>
+        <a class="small pb-4" href="#">Orders</a>
+      </li>
+      <li>
+        <a class="small pb-4" href="#">Earnings</a>
+      </li>
+      <li class="visible-xs-block">
+        <a class="small pb-4" href="#">Item Entry</a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right visible-lg-block">
+      <li>
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
           </div>
-          <div class="pull-right">
-          <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="#">Nav item</a>
-        </li>
-        <li>
-          <a href="#">Nav item</a>
-        </li>
-        <li>
-          <a href="#">Nav item</a>
-        </li>
-      </ul>
-    </nav>
-          </div>
-        </div>
+        </form>
+      </li>
+      <li>
+        <a class="small" href="#">Item Entry</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
       </header>
 
     </div>
-  </div><!-- /.row -->
-</div><!-- /.no-reverse-bg -->
-
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.no-reverse-bg -->
 
 

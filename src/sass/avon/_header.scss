@@ -1,0 +1,49 @@
+.navbar {
+  .profile-img {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    background-color: $gray-lighter;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    background-image: url("../images/fpo/img_avatar.png");
+  }
+
+  // &--static-nav,
+  // &--user-nav {
+  // border: none;
+  // }
+
+  &--static-nav {
+    background-color: $gray-lighter;
+    height: 36px;
+    margin: 0;
+
+    li > a {
+      line-height: 1;
+    }
+  }
+
+  // &--user-nav {
+  //
+  // }
+
+  &--primary-nav {
+    .navbar-nav > li {
+      &.active a,
+      &.active a:hover,
+      a:hover {
+        background-color: transparent;
+        color: $brand-primary;
+        border-bottom: 4px solid $brand-primary;
+      }
+
+      a {
+        text-transform: uppercase;
+      }
+
+    }
+  }
+}
+// end .navbar
