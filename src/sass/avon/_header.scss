@@ -30,17 +30,57 @@
   // }
 
   &--primary-nav {
+    @media (min-width: $screen-xs-min) {
+      padding-bottom: 0;
+    }
+
+    #mobile-header-navbar {
+      .navbar-form {
+        .input-group {
+          input {
+            border: none;
+            box-shadow: none;
+          }
+
+          .input-group-btn {}
+        }
+      }
+    }
+
+    .navbar-toggle,
+    .navbar-toggle:focus,
+    .navbar-toggle:hover {
+      background-color: transparent;
+      border: none;
+
+      .icon-bar {}
+    }
+
+    .navbar-header {
+      .navbar-right {
+        max-width: 80%;
+      }
+    }
+
     .navbar-nav > li {
       &.active a,
       &.active a:hover,
       a:hover {
         background-color: transparent;
         color: $brand-primary;
-        border-bottom: 4px solid $brand-primary;
+        border-bottom: none;
+
+        @media (min-width: $screen-sm-min) {
+          border-bottom: 4px solid $brand-primary;
+        }
       }
 
       a {
         text-transform: uppercase;
+
+        @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+          font-size: 1.1rem;
+        }
       }
 
     }

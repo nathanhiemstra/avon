@@ -63,4 +63,17 @@
 @import "avon/drawers";
 @import "avon/footer";
 @import "avon/header";
+@import "avon/page-search-results";
 @import "avon/spacing";
+
+
+// dropping in some global generic styles for Avon here
+html, body {
+  overflow-x: hidden;
+}
+
+input,
+textarea,
+[contenteditable] {
+  caret-color: $brand-primary;
+}

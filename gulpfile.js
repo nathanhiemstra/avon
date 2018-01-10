@@ -96,6 +96,7 @@ gulp.task('compile', function () {
               base:               '_layouts/base.html.twig',
               columns12:          '_layouts/columns-12.html.twig',
               columns9x3:         '_layouts/columns-9x3.html.twig',
+              columns3x9:         '_layouts/columns-3x9.html.twig',
               themes: {
                 checkout:         '_layouts/theme-checkout.html.twig',
                 yourOrder:        '_layouts/theme-your-order.html.twig'
@@ -152,18 +153,24 @@ gulp.task('compile', function () {
               },
               modules: {
                 checkout: {
-                  chooseType:   prefix.modules + "checkout/choose-type.html.twig",
-                  header:       prefix.modules + "checkout/header.html.twig"
+                  chooseType:     prefix.modules + "checkout/choose-type.html.twig",
+                  header:         prefix.modules + "checkout/header.html.twig"
                 },
                 yourOrder: {
-                  drawer:       prefix.modules + "your-order/order-summary.html.twig",
-                  tabNav:       prefix.modules + 'your-order/review/order/nav-tab.html.twig',
-                  tabContent:   prefix.modules + 'your-order/review/order/tab-content.html.twig',
+                  drawer:         prefix.modules + "your-order/order-summary.html.twig",
+                  tabNav:         prefix.modules + 'your-order/review/order/nav-tab.html.twig',
+                  tabContent:     prefix.modules + 'your-order/review/order/tab-content.html.twig',
                   tabPane: {
-                    products:   prefix.modules + 'your-order/review-order-tab-panel-products.html.twig',
-                    incentives: prefix.modules + 'your-order/review-order-tab-panel-incentives.html.twig',
+                    products:     prefix.modules + 'your-order/review-order-tab-panel-products.html.twig',
+                    incentives:   prefix.modules + 'your-order/review-order-tab-panel-incentives.html.twig',
                   },
-                  total:        prefix.modules + 'your-order/order-total.html.twig'
+                  total:          prefix.modules + 'your-order/order-total.html.twig'
+                },
+                search: {
+                  resultsList:    prefix.modules + "search/results-list.html.twig",
+                  resultsFilter:  prefix.modules + "search/results-filter.html.twig",
+                  searchInput:    prefix.modules + "search/search-input.html.twig",
+                  searchInputDt:  prefix.modules + "search/search-input-desktop.html.twig"
                 },
                 global: {
                   footer:         prefix.modules + "global/footer.html.twig",

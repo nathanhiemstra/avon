@@ -5,11 +5,31 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
- <section class="container">TODO</section>
+  <section class="container container--search-results">
+    {% embed layouts.columns3x9 %}
 
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - ASIDE #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block aside %}
 
+        {% include components.modules.search.resultsFilter %}
+
+      {% endblock %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        {% include components.modules.search.resultsList %}
+
+      {% endblock %}
+
+    {% endembed %}
+
+    <div class="main-content-overlay hidden"></div>
+
+  </section>
 
 {% endblock %}
-
-
-

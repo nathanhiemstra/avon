@@ -36,10 +36,10 @@
               <div class="no-reverse-bg">
   <div class="row">
     <div class="col-xs-12">
-      <header class="global-header mb-5" role="banner">
+      <header class="global-header" role="banner">
 
         <!-- Static top navbar -->
-        <nav class="navbar navbar-default navbar-static-top navbar--static-nav visible-lg-block border-0">
+        <nav class="navbar navbar-default navbar-static-top navbar--static-nav hidden-xs border-0">
   <div class="container">
     <ul class="nav navbar-nav navbar-right">
       <li>
@@ -62,7 +62,7 @@
 </nav>
 
         <!-- User navbar -->
-        <nav class="navbar navbar-default navbar-static-top navbar--user-nav visible-lg-block border-0 mb-0">
+        <nav class="navbar navbar-default navbar-static-top navbar--user-nav hidden-xs border-0 mb-0">
   <div class="container">
     <a href="index.html" class="navbar-brand">
       <img src="/images/logos/your-avon.png" alt="Your Avon">
@@ -89,19 +89,36 @@
 </nav>
 
         <!-- Primary navbar -->
-        <div class="navbar-header">
-  <button class="navbar-toggle pull-left pl-4" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-    <span class="sr-only">Toggle navigation</span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
-</div>
+        <nav class="navbar navbar--primary-nav navbar-default border-bottom my-0" role="navigation">
+  <div class="container pl-0">
 
-<nav class="navbar navbar--primary-nav collapse navbar-collapse navbar-default bs-navbar-collapse border-bottom" role="navigation">
-  <div class="container px-0">
+    <div class="navbar-header">
 
-    <ul class="nav navbar-nav navbar-left">
+      <button class="navbar-toggle pull-left" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <ul class="nav navbar-nav navbar-right pull-right my-0" id="mobile-header-navbar">
+  <li class="mr-4">
+    <form class="navbar-form border-0 p-0 m-0 visible-xs-block" role="search">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="q" id="mobile-search-input">
+        <div class="input-group-btn">
+          <button class="btn btn-icon" type="submit" aria-label="Search">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </li>
+</ul>
+
+    </div>
+
+    <ul class="nav navbar-nav navbar-left navbar-collapse collapse pl-0">
       <li class="active">
         <a class="small pb-4" href="#">Home</a>
       </li>
@@ -122,13 +139,15 @@
       </li>
     </ul>
 
-    <ul class="nav navbar-nav navbar-right visible-lg-block">
+    <ul class="nav navbar-nav navbar-right hidden-xs">
       <li>
+
         <form class="navbar-form navbar-right" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-        </form>
+  <div class="form-group">
+    <input id="desktop-header-search" type="text" class="form-control" placeholder="Search">
+  </div>
+</form>
+
       </li>
       <li>
         <a class="small" href="#">Item Entry</a>
@@ -152,9 +171,66 @@
       
       
       
- <section class="container">TODO</section>
+  <section class="container container--search-results">
+    <div class="row">
+  <aside class="col-md-3" role="complementary">
+    
+        <h4>Refine By:</h4>
+<h5>Brands</h5>
+<ul>
+  <li>Anew</li>
+  <li>Haiku</li>
+  <li>Brand</li>
+  <li>Another Brand</li>
+</ul>
+<h5>Skin Type</h5>
+<ul>
+  <li>Dry to Very Dry</li>
+  <li>Normal to Very Dry</li>
+  <li>Normal</li>
+  <li>Combination</li>
+  <li>Oily</li>
+</ul>
+<h5>Moisturizer</h5>
+<ul>
+  <li>Day Cream</li>
+  <li>Night Cream</li>
+</ul>
+<h5>Avg. Rating</h5>
+<ul>
+  <li>5 Stars</li>
+  <li>4 Stars or More</li>
+  <li>3 Stars or More</li>
+  <li>2 Stars or More</li>
+  <li>1 Stars or More</li>
+  <li>Not Rated</li>
+</ul>
 
+        </aside>
+  <main class="col-md-9" role="main">
+    
+        <h1>Search Results for "Haiku"</h1>
+<ul id="search-results-list">
+  <li>
+    <a href="#">Anew Ultimate Supreme Advanced Performance Créme</a>
+  </li>
+  <li>
+    <a href="#">Haiku Bonus Size Roll-On</a>
+  </li>
+  <li>
+    <a href="#">Haiku Kyoto Flower Eau de Parfum</a>
+  </li>
+  <li>
+    <a href="#">Haiku Reflection Perfumed Skin</a>
+  </li>
+</ul>
 
+        </main>
+</div><!-- /.row -->
+
+    <div class="main-content-overlay hidden"></div>
+
+  </section>
 
 
       
