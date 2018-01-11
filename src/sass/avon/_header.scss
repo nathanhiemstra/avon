@@ -34,6 +34,44 @@
       padding-bottom: 0;
     }
 
+    // predictive search - general
+    ul.predictive-list {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      a:hover {
+        text-decoration: none;
+      }
+      &.expanded {
+        display: block;
+      }
+      &.collapsed {
+        display: none;
+      }
+    }
+
+    // mobile predictive
+    .container > .navbar-header {
+      ul.predictive-list {
+        // background-color: red;
+      }
+    }
+
+    // desktop predictive
+    .container > .navbar-right {
+      ul.predictive-list {
+        position: absolute;
+        top: 36px;
+        left: 15px;
+        width: 100%;
+        background-color: $body-bg;
+        border: 1px solid $gray-light;
+        border-top: 0px;
+      }
+    }
+
+    // mobile nav
     #mobile-header-navbar {
       .navbar-form {
         .input-group {
@@ -45,6 +83,11 @@
           .input-group-btn {}
         }
       }
+    }
+
+    // desktop search input
+    #desktop-header-search {
+      min-width: 250px; // TODO :: this is arbitrary or now, it should be small initially and widen on click
     }
 
     .navbar-toggle,
@@ -81,6 +124,7 @@
       }
 
       a {
+        display: inline-block;
         text-transform: uppercase;
 
         @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {

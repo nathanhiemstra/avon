@@ -17,7 +17,8 @@ var PredictiveSearch = (function () {
       searchBtn: $('#mobile-search-toggle'),
       searchNavbar: $('#mobile-header-navbar'),
       menuButton: $('.navbar-header .navbar-toggle'),
-      predictiveList: $('#predictive-list'),
+      plMobile: $('.navbar--pimary-nav > .container > .navbar-header .predictive-list'),
+      plDesktop: $('.navbar--primary-nav > .container > .navbar-right .predictive-list'),
       resultsList: $('#search-results-list'),
       searchOverlay: $('.container--search-results .main-content-overlay')
     };
@@ -38,26 +39,43 @@ var PredictiveSearch = (function () {
         _toggleVisibility($els.searchInputMobile);
         _toggleDisplay($els.searchOverlay);
         _toggleDisplay($els.menuButton);
-        _toggleExpand($els.predictiveList);
+        _toggleExpand($els.plMobile);
+        _toggleExpand($els.plDesktop);
         $els.searchBtn.on('click', _toggleSearchExpand);
       })
       .keyup(function () {
-        _runFilters();
+        _runFilters($els.searchInputMobile);
       });
 
     $els.searchInputDesktop
-      .keyup(function() {
-        _runFilters();
+      .focus(function () {
+        _toggleSearchExpand();
+      })
+      .blur(function () {
+        _toggleExpand($els.searchNavbar);
+        _toggleVisibility($els.searchInputMobile);
+        _toggleDisplay($els.searchOverlay);
+        _toggleDisplay($els.menuButton);
+        _toggleExpand($els.plMobile);
+        _toggleExpand($els.plDesktop);
+        // $els.searchBtn.on('click', _toggleSearchExpand);
+      })
+      .keyup(function (e) {
+        _runFilters($els.searchInputDesktop);
+        // console.log('hi :: ', e.target);
       });
   };
 
-  var _runFilters = function () {
-    var input = $els.searchInputMobile.val().toUpperCase();
-    var predItems = $els.predictiveList.find('li');
-    var resultItems = $els.resultsList.find('li');
+  var _runFilters = function (inputEl) {
+    var input = inputEl.val().toUpperCase();
+    var predItemsMobile = $els.plMobile.find('li');
+    var predItemsDesktop = $els.plDesktop.find('li');
+    // console.log(predItemsDesktop);
+    // var resultItems = $els.resultsList.find('li');
 
-    filterList(predItems);
-    filterList(resultItems);
+    filterList(predItemsMobile);
+    filterList(predItemsDesktop);
+    // filterList(resultItems);
 
     function filterList(items) {
       var itemTitle;
@@ -82,7 +100,11 @@ var PredictiveSearch = (function () {
     $els.searchBtn.off('click');
     $els.searchInputMobile.one('keypress', function () {
       // first keypress
-      _toggleExpand($els.predictiveList);
+      _toggleExpand($els.plMobile);
+    });
+    $els.searchInputDesktop.one('keypress', function () {
+      // first keypress
+      _toggleExpand($els.plDesktop);
     });
   };
 
@@ -100,7 +122,7 @@ var PredictiveSearch = (function () {
 
   // Toggle predictive search list under search input
   // function togglePredictiveSearch() {
-  //   $els.predictiveList.toggleClass('collapsed').toggleClass('expanded');
+  //   $els.plMobile.toggleClass('collapsed').toggleClass('expanded');
   // }
 
   return {
