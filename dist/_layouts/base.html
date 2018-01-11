@@ -101,18 +101,161 @@
         <span class="icon-bar"></span>
       </button>
 
-      <ul class="nav navbar-nav navbar-right pull-right my-0" id="mobile-header-navbar">
+      <ul class="nav navbar-nav navbar-right pull-right my-0 collapsed" id="mobile-header-navbar">
   <li class="mr-4">
+
     <form class="navbar-form border-0 p-0 m-0 visible-xs-block" role="search">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="q" id="mobile-search-input">
-        <div class="input-group-btn">
-          <button class="btn btn-icon" type="submit" aria-label="Search">
+        <input type="text" class="form-control invisible" placeholder="Search" name="q" id="mobile-search-input" autocomplete="off">
+        <div class="input-group-btn" id="mobile-search-toggle">
+          <span class="btn btn-icon" type="submit" aria-label="Search">
             <i class="glyphicon glyphicon-search"></i>
-          </button>
+          </span>
         </div>
       </div>
     </form>
+
+    <ul class="predictive-list collapsed" id="predictive-list">
+
+  <!-- START - LIST ITEMS LOOP -->
+
+  <li class="predictive-list__item container border-bottom p-4">
+  <a href="#">
+    <div class="row">
+      <div class="col col-xs-3">
+        <!-- <img src="./images/fpo/agnew-ultimate.png" class="product-img img-responsive"> -->
+        <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
+      </div>
+      <div class="col col-xs-9">
+        <!-- <p class="title">Anew Ultimate Supreme Advanced Performance Créme</p> -->
+        <p class="title">Anew Ultimate Supreme Advanced Performance Créme</p>
+        <p>
+          <!-- <span class="sale-price">$30.00</span> -->
+          <span class="sale-price">$30.00</span>
+          <!-- <span class="reg-price small">Regular Price: $36.00</span> -->
+          <span class="reg-price small">Regular Price: $36.00</span>
+        </p>
+        <p>
+          <span class="rating small">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <!-- <span class="num-ratings">73</span> -->
+            <span class="num-ratings">73</span>
+          </span>
+          <!-- <span class="stock small"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> In Stock</span> -->
+          <span class="stock small"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> In Stock</span>
+        </p>
+      </div>
+    </div>
+  </a>
+</li>
+
+  <li class="predictive-list__item container border-bottom p-4">
+  <a href="#">
+    <div class="row">
+      <div class="col col-xs-3">
+        <!-- <img src="./images/fpo/agnew-ultimate.png" class="product-img img-responsive"> -->
+        <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
+      </div>
+      <div class="col col-xs-9">
+        <!-- <p class="title">Anew Ultimate Supreme Advanced Performance Créme</p> -->
+        <p class="title">Haiku Bonus Size Roll-On</p>
+        <p>
+          <!-- <span class="sale-price">$30.00</span> -->
+          <span class="sale-price">$30.00</span>
+          <!-- <span class="reg-price small">Regular Price: $36.00</span> -->
+          <span class="reg-price small">Regular Price: $36.00</span>
+        </p>
+        <p>
+          <span class="rating small">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <!-- <span class="num-ratings">73</span> -->
+            <span class="num-ratings">73</span>
+          </span>
+          <!-- <span class="stock small"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> In Stock</span> -->
+          <span class="stock small"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> In Stock</span>
+        </p>
+      </div>
+    </div>
+  </a>
+</li>
+
+  <li class="search-results-list__item container border-bottom p-4">
+  <a href="#">
+    <div class="row">
+      <div class="col col-xs-3">
+        <!-- <img src="./images/fpo/agnew-ultimate.png" class="product-img img-responsive"> -->
+        <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
+      </div>
+      <div class="col col-xs-9">
+        <!-- <p class="title">Anew Ultimate Supreme Advanced Performance Créme</p> -->
+        <p class="title">Another Product</p>
+        <p>
+          <!-- <span class="sale-price">$30.00</span> -->
+          <span class="sale-price">$30.00</span>
+          <!-- <span class="reg-price small">Regular Price: $36.00</span> -->
+          <span class="reg-price small">Regular Price: $36.00</span>
+        </p>
+        <p>
+          <span class="rating small">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <!-- <span class="num-ratings">73</span> -->
+            <span class="num-ratings">73</span>
+          </span>
+          <!-- <span class="stock small"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> In Stock</span> -->
+          <span class="stock small"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> In Stock</span>
+        </p>
+      </div>
+    </div>
+  </a>
+</li>
+
+  <li class="search-results-list__item container border-bottom p-4">
+  <a href="#">
+    <div class="row">
+      <div class="col col-xs-3">
+        <!-- <img src="./images/fpo/agnew-ultimate.png" class="product-img img-responsive"> -->
+        <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
+      </div>
+      <div class="col col-xs-9">
+        <!-- <p class="title">Anew Ultimate Supreme Advanced Performance Créme</p> -->
+        <p class="title">And Another</p>
+        <p>
+          <!-- <span class="sale-price">$30.00</span> -->
+          <span class="sale-price">$30.00</span>
+          <!-- <span class="reg-price small">Regular Price: $36.00</span> -->
+          <span class="reg-price small">Regular Price: $36.00</span>
+        </p>
+        <p>
+          <span class="rating small">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <!-- <span class="num-ratings">73</span> -->
+            <span class="num-ratings">73</span>
+          </span>
+          <!-- <span class="stock small"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> In Stock</span> -->
+          <span class="stock small"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> In Stock</span>
+        </p>
+      </div>
+    </div>
+  </a>
+</li>
+
+  <!-- END - LIST ITEMS LOOP -->
+
+</ul>
+<!-- // .predictive-list -->
+
   </li>
 </ul>
 
@@ -144,7 +287,7 @@
 
         <form class="navbar-form navbar-right" role="search">
   <div class="form-group">
-    <input id="desktop-header-search" type="text" class="form-control" placeholder="Search">
+    <input id="desktop-header-search" type="text" class="form-control" placeholder="Search" autocomplete="off">
   </div>
 </form>
 
@@ -195,6 +338,8 @@
   <script src="./js/vendor/jquery/1.10.2/jquery.min.js"></script>
   <script src="./js/vendor/bootstrap.js"></script>
   <script src="./js/avon-main.js"></script>
+  <script src="./js/modules/predictiveSearch.js"></script>
+  <!-- TODO :: probably want to bundle the above scripts with a gulp task -->
   <script>
     window.twttr = (function (d,s,id) {
       var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -206,5 +351,3 @@
 
 </body>
 </html>
-
-

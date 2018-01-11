@@ -1,23 +1,18 @@
+$(document).ready(function () {
 
-$(document).ready(function() {
-
-////////////////////////////////////////////////////////
-// VARIABLES
-////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////
+  // VARIABLES
+  ////////////////////////////////////////////////////////
 
 
   var selectors = {
-    main:                       "#avon-poc",
+    main: "#avon-poc",
     triggers: {
-      drawerOrderSummary:       ".trigger-drawer-order-summary",
-      searchInput:              "#mobile-search-input"
+      drawerOrderSummary: ".trigger-drawer-order-summary"
     },
     drawers: {
-      all:                      '[data-toggle="drawer"]',
-      orderSummary:             ".drawer-order-summary"
-    },
-    overlays: {
-      searchOverlay:            ".container--search-results .main-content-overlay"
+      all: '[data-toggle="drawer"]',
+      orderSummary: ".drawer-order-summary"
     }
   }
   var $objects = {
@@ -26,25 +21,13 @@ $(document).ready(function() {
     body: $('body'),
     main: $(selectors.main),
     triggers: {
-      drawerOrderSummary:   $(selectors.main).find(selectors.triggers.drawerOrderSummary)
+      drawerOrderSummary: $(selectors.main).find(selectors.triggers.drawerOrderSummary)
     },
     drawers: {
-      all:                  $(selectors.main).find(selectors.drawers.all),
-      orderSummary:         $(selectors.main).find(selectors.drawers.orderSummary)
-    },
-    overlays: {
-      searchOverlay:        $(selectors.overlays.searchOverlay)
+      all: $(selectors.main).find(selectors.drawers.all),
+      orderSummary: $(selectors.main).find(selectors.drawers.orderSummary)
     }
   }
-
-  // Listener to toggle content overlay on focus and blur of search input
-  $(selectors.triggers.searchInput)
-    .focus(function() {
-      toggleContentOverlay($objects.overlays.searchOverlay);
-    })
-    .blur(function() {
-      toggleContentOverlay($objects.overlays.searchOverlay);
-    });
 
 
 
@@ -58,11 +41,6 @@ $(document).ready(function() {
     $(targetId).toggleClass('drawer-expanded');
   }
 
-  // Toggle content overlay where $el is overlay
-  function toggleContentOverlay($el) {
-    $el.toggleClass('hidden').toggleClass('show');
-  }
-
 
 
   ////////////////////////////////////////////////////////
@@ -70,7 +48,7 @@ $(document).ready(function() {
   ////////////////////////////////////////////////////////
 
 
-  $objects.drawers.all.on("click", function() {
+  $objects.drawers.all.on("click", function () {
     toggleDrawer($(this));
   });
 
@@ -83,12 +61,13 @@ $(document).ready(function() {
 
 
   ////////////////////////////////////////////////////////
-  // INT
+  // INIT
   ////////////////////////////////////////////////////////
 
-  $(document).ready(function(){
+  $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
   });
 
+  PredictiveSearch.init();
 
 });

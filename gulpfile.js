@@ -150,6 +150,13 @@ gulp.task('compile', function () {
                   personsOrderLi:   prefix.groups + "yourOrder/persons-order.html.twig",
                   singleProductTr:  prefix.groups + "yourOrder/persons-order-tr.html.twig"
                 },
+
+                search: {
+                  searchList:       prefix.groups + "search/search-list.html.twig",
+                  searchListItem:   prefix.groups + "search/search-list-item.html.twig",
+                  resultsList:      prefix.groups + "search/results-list.html.twig",
+                  resultsListItem:  prefix.groups + "search/results-list-item.html.twig"
+                },
               },
               modules: {
                 checkout: {
@@ -167,7 +174,7 @@ gulp.task('compile', function () {
                   total:          prefix.modules + 'your-order/order-total.html.twig'
                 },
                 search: {
-                  resultsList:    prefix.modules + "search/results-list.html.twig",
+                  searchResults:  prefix.modules + "search/search-results.html.twig",
                   resultsFilter:  prefix.modules + "search/results-filter.html.twig",
                   searchInput:    prefix.modules + "search/search-input.html.twig",
                   searchInputDt:  prefix.modules + "search/search-input-desktop.html.twig"
@@ -258,6 +265,7 @@ gulp.task('sass', function(){
 gulp.task('server', function() {
   browserSync.init({
     server: {
+      notify: false,
       baseDir: "./dist",
       directory: false
     }

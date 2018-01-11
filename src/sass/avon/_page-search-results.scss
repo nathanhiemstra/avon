@@ -1,12 +1,23 @@
 .container--search-results {
   position: relative;
 
+  .search-results-filter {
+    // TODO :: this is temporary
+    @media (max-width: $screen-xs-max) {
+      display: none !important;
+    }
+  }
+
   .main-content-overlay {
     position: absolute;
     top: 0; left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.75);
+
+    @media (min-width: $screen-sm-min) {
+      display: none !important;
+    }
 
     // &.hidden {
     //   display: none;
@@ -23,7 +34,29 @@
     margin: 0;
 
     li a {
-      border: 1px solid $brand-primary;
+      // border: 1px solid $brand-primary;
       // padding: 1rem;
     }
+}
+
+// Predictive search list styles
+ul.predictive-list,
+ul.search-results-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.predictive-list {
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  &.expanded {
+    display: block;
+  }
+  &.collapsed {
+    display: none;
+  }
 }
