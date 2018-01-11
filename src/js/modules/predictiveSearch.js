@@ -17,7 +17,7 @@ var PredictiveSearch = (function () {
       searchBtn: $('#mobile-search-toggle'),
       searchNavbar: $('#mobile-header-navbar'),
       menuButton: $('.navbar-header .navbar-toggle'),
-      plMobile: $('.navbar--pimary-nav > .container > .navbar-header .predictive-list'),
+      plMobile: $('.navbar--primary-nav > .container > .navbar-header .predictive-list'),
       plDesktop: $('.navbar--primary-nav > .container > .navbar-right .predictive-list'),
       resultsList: $('#search-results-list'),
       searchOverlay: $('.container--search-results .main-content-overlay')
