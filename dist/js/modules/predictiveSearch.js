@@ -19,7 +19,6 @@ var PredictiveSearch = (function () {
       menuButton: $('.navbar-header .navbar-toggle'),
       plMobile: $('.navbar--primary-nav > .container > .navbar-header .predictive-list'),
       plDesktop: $('.navbar--primary-nav > .container > .navbar-right .predictive-list'),
-      resultsList: $('#search-results-list'),
       searchOverlay: $('.container--search-results .main-content-overlay')
     };
 
@@ -30,39 +29,33 @@ var PredictiveSearch = (function () {
   // private methods
   var _addListeners = function () {
 
+    // mobile
     $els.searchBtn.on('click', _toggleSearchExpand);
-
     $els.searchInputMobile
-      .focus(function () {})
+      .focus(function () {
+        console.log('FOCUS');
+        _togglePredictiveSearch();
+      })
       .blur(function () {
-        _toggleExpand($els.searchNavbar);
-        _toggleVisibility($els.searchInputMobile);
-        _toggleDisplay($els.searchOverlay);
-        _toggleDisplay($els.menuButton);
-        _toggleExpand($els.plMobile);
-        _toggleExpand($els.plDesktop);
-        $els.searchBtn.on('click', _toggleSearchExpand);
+        console.log('BLUR');
+        _togglePredictiveSearch();
+        _toggleSearchExpand();
       })
       .keyup(function () {
         _runFilters($els.searchInputMobile);
       });
 
+    // desktop
     $els.searchInputDesktop
       .focus(function () {
-        _toggleSearchExpand();
+        _togglePredictiveSearch();
       })
       .blur(function () {
-        _toggleExpand($els.searchNavbar);
-        _toggleVisibility($els.searchInputMobile);
-        _toggleDisplay($els.searchOverlay);
-        _toggleDisplay($els.menuButton);
-        _toggleExpand($els.plMobile);
-        _toggleExpand($els.plDesktop);
-        // $els.searchBtn.on('click', _toggleSearchExpand);
+        _togglePredictiveSearch();
+        _toggleSearchExpand();
       })
       .keyup(function (e) {
         _runFilters($els.searchInputDesktop);
-        // console.log('hi :: ', e.target);
       });
   };
 
@@ -70,12 +63,9 @@ var PredictiveSearch = (function () {
     var input = inputEl.val().toUpperCase();
     var predItemsMobile = $els.plMobile.find('li');
     var predItemsDesktop = $els.plDesktop.find('li');
-    // console.log(predItemsDesktop);
-    // var resultItems = $els.resultsList.find('li');
 
     filterList(predItemsMobile);
     filterList(predItemsDesktop);
-    // filterList(resultItems);
 
     function filterList(items) {
       var itemTitle;
@@ -89,40 +79,52 @@ var PredictiveSearch = (function () {
         }
       }
     };
+  };
 
+  var _togglePredictiveSearch = function() {
+    console.log('TOGGLE PRED MENU :: ', $els.searchOverlay.hasClass('expanded'));
+    if($els.plMobile.hasClass('expanded')) {
+      // expanded, let's collapse
+      $els.plMobile.removeClass('expanded').addClass('collapsed');
+      $els.plDesktop.removeClass('expanded').addClass('collapsed');
+    } else {
+      // collapsed, let's expand
+      $els.plMobile.removeClass('collapsed').addClass('expanded');
+      $els.plDesktop.removeClass('collapsed').addClass('expanded');
+    }
+    //
+    // $els.searchBtn.off('click');
+    // $els.searchBtn.on('click', _toggleSearchExpand);
   };
 
   var _toggleSearchExpand = function () {
-    _toggleExpand($els.searchNavbar);
-    _toggleVisibility($els.searchInputMobile);
-    _toggleDisplay($els.searchOverlay);
-    _toggleDisplay($els.menuButton);
-    $els.searchBtn.off('click');
-    $els.searchInputMobile.one('keypress', function () {
-      // first keypress
-      _toggleExpand($els.plMobile);
-    });
-    $els.searchInputDesktop.one('keypress', function () {
-      // first keypress
-      _toggleExpand($els.plDesktop);
-    });
+    if($els.searchNavbar.hasClass('expanded')) {
+      // expanded, let's collapse
+      $els.searchNavbar.removeClass('expanded').addClass('collapsed');
+      $els.searchOverlay.removeClass('show').addClass('hidden');
+      $els.searchInputMobile.addClass('invisible');
+
+      $els.menuButton.removeClass('hidden').addClass('show');
+    } else {
+      // collapsed, let's expand
+      $els.searchNavbar.removeClass('collapsed').addClass('expanded');
+      $els.searchOverlay.removeClass('hidden').addClass('show');
+      $els.searchInputMobile.removeClass('invisible');
+
+      $els.menuButton.removeClass('show').addClass('hidden');
+    }
   };
 
-  var _toggleExpand = function ($el) {
-    $el.toggleClass('collapsed').toggleClass('expanded');
-  }
+  // var _toggleExpand = function ($el) {
+  //   $el.toggleClass('collapsed').toggleClass('expanded');
+  // }
 
-  var _toggleDisplay = function ($el) {
-    $el.toggleClass('hidden').toggleClass('show');
-  };
+  // var _toggleDisplay = function ($el) {
+  //   $el.toggleClass('hidden').toggleClass('show');
+  // };
 
-  var _toggleVisibility = function ($el) {
-    $el.toggleClass('invisible');
-  }
-
-  // Toggle predictive search list under search input
-  // function togglePredictiveSearch() {
-  //   $els.plMobile.toggleClass('collapsed').toggleClass('expanded');
+  // var _toggleVisibility = function ($el) {
+  //   $el.toggleClass('invisible');
   // }
 
   return {

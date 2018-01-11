@@ -1,11 +1,10 @@
 .container--search-results {
   position: relative;
-  z-index: -1;
 
   .search-results-filter {
     // TODO :: this is temporary
     @media (max-width: $screen-xs-max) {
-      display: none !important;
+      // display: none !important;
     }
   }
 
@@ -45,4 +44,10 @@ ul.search-results-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+li.search-results-list__item {
+  &:last-child {
+    border-bottom: none !important;
+  }
 }

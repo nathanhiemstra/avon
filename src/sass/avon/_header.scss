@@ -1,3 +1,7 @@
+.avon-header {
+  position: relative;
+  z-index: 9;
+}
 .navbar {
   .profile-img {
     position: absolute;
@@ -81,6 +85,19 @@
           }
 
           .input-group-btn {}
+        }
+      }
+      #mobile-search-toggle {
+        .btn {
+          border: none;
+          &:focus, &:active {
+            border: none;
+            outline: none;
+            box-shadow: none;
+          }
+        }
+        &:hover .btn i {
+          color: $brand-primary-emphasize;
         }
       }
     }
