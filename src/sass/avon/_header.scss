@@ -156,6 +156,9 @@
     }
 
     .navbar-header {
+      .navbar-toggle {
+        z-index: 9;
+      }
       .navbar-right {
         width: 80%;
         transition: 0.2s width ease;

@@ -5,7 +5,15 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  <section class="container container--search-results">
+  <!-- START - BREADCRUMBS -->
+  <section class="container">
+    <div class="row">
+      {% include components.groups.navigation.breadcrumbs %}
+    </div><!-- /.row -->
+  </section>
+  <!-- END - BREADCRUMBS -->
+
+  <section class="container container--product-landing-page">
     {% embed layouts.columns3x9 %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -13,6 +21,8 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block aside %}
 
+        {% include components.modules.product.filters.productCategories %}
+        {% include components.modules.product.filters.productFeatures %}
         {% include components.modules.product.filters.productFilters %}
 
       {% endblock %}
@@ -22,7 +32,7 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
-        {% include components.modules.search.searchResults %}
+        {% include components.modules.product.landing.body %}
 
       {% endblock %}
 

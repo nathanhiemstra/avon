@@ -63,9 +63,11 @@
 @import "avon/drawers";
 @import "avon/footer";
 @import "avon/header";
-@import "avon/page-search-results";
+@import "avon/product-lists";
 @import "avon/spacing";
 
+// PAGE SPECIFIC STYLES
+@import "avon/pages/page-search-results";
 
 // dropping in some global generic styles for Avon here
 html, body {

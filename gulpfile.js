@@ -153,31 +153,13 @@ gulp.task('compile', function () {
 
                 search: {
                   searchList:       prefix.groups + "search/search-list.html.twig",
-                  searchListItem:   prefix.groups + "search/search-list-item.html.twig",
-                  resultsList:      prefix.groups + "search/results-list.html.twig",
-                  resultsListItem:  prefix.groups + "search/results-list-item.html.twig"
+                  searchListItem:   prefix.groups + "search/search-list-item.html.twig"
                 },
               },
               modules: {
                 checkout: {
                   chooseType:     prefix.modules + "checkout/choose-type.html.twig",
                   header:         prefix.modules + "checkout/header.html.twig"
-                },
-                yourOrder: {
-                  drawer:         prefix.modules + "your-order/order-summary.html.twig",
-                  tabNav:         prefix.modules + 'your-order/review/order/nav-tab.html.twig',
-                  tabContent:     prefix.modules + 'your-order/review/order/tab-content.html.twig',
-                  tabPane: {
-                    products:     prefix.modules + 'your-order/review-order-tab-panel-products.html.twig',
-                    incentives:   prefix.modules + 'your-order/review-order-tab-panel-incentives.html.twig',
-                  },
-                  total:          prefix.modules + 'your-order/order-total.html.twig'
-                },
-                search: {
-                  searchResults:  prefix.modules + "search/search-results.html.twig",
-                  resultsFilter:  prefix.modules + "search/results-filter.html.twig",
-                  searchInput:    prefix.modules + "search/search-input.html.twig",
-                  searchInputDt:  prefix.modules + "search/search-input-desktop.html.twig"
                 },
                 global: {
                   footer:         prefix.modules + "global/footer.html.twig",
@@ -191,7 +173,35 @@ gulp.task('compile', function () {
                     addToOrder:   prefix.modules + "product/detail/add-to-order.html.twig",
                     details:      prefix.modules + "product/detail/details.html.twig",
                     images:       prefix.modules + "product/detail/images.html.twig"
+                  },
+                  filters: {
+                    productCategories: prefix.modules + "product/filters/product-categories.html.twig",
+                    productFeatures: prefix.modules + "product/filters/product-features.html.twig",
+                    productFilters: prefix.modules + "product/filters/product-filters.html.twig"
+                  },
+                  list: {
+                    productList:      prefix.modules + "product/list/product-list-html.twig",
+                    productListItem:  prefix.modules + "product/list/product-list-item.html.twig"
+                  },
+                  landing: {
+                    landingFilter:    prefix.modules + "product/landing/landing-filter.html.twig",
+                    body:             prefix.modules + "product/landing/landing-body.html.twig"
                   }
+                },
+                search: {
+                  searchResults:  prefix.modules + "search/search-results-body.html.twig",
+                  searchInput:    prefix.modules + "search/search-input.html.twig",
+                  searchInputDt:  prefix.modules + "search/search-input-desktop.html.twig"
+                },
+                yourOrder: {
+                  drawer:         prefix.modules + "your-order/order-summary.html.twig",
+                  tabNav:         prefix.modules + 'your-order/review/order/nav-tab.html.twig',
+                  tabContent:     prefix.modules + 'your-order/review/order/tab-content.html.twig',
+                  tabPane: {
+                    products:     prefix.modules + 'your-order/review-order-tab-panel-products.html.twig',
+                    incentives:   prefix.modules + 'your-order/review-order-tab-panel-incentives.html.twig',
+                  },
+                  total:          prefix.modules + 'your-order/order-total.html.twig'
                 },
               }
             },
@@ -203,7 +213,8 @@ gulp.task('compile', function () {
                 chooseType:   'checkout-choose-type.html',
               },
               product: {
-                detail:       'product-detail.html'
+                detail:       'product-detail.html',
+                landing:      'product-landing.html'
               },
               yourOrder:      'your-order.html',
               search: {
