@@ -22,7 +22,7 @@
     stockStatus: 'In Stock'
   }%}
 
-  {% include components.groups.search.resultsListItem with {
+  {% include components.groups.search.searchListItem with {
     itemUrl: '#',
     imgUrl: '/images/fpo/agnew-ultimate.png',
     itemTitle: 'Another Product',
@@ -32,7 +32,7 @@
     stockStatus: 'In Stock'
   }%}
 
-  {% include components.groups.search.resultsListItem with {
+  {% include components.groups.search.searchListItem with {
     itemUrl: '#',
     imgUrl: '/images/fpo/agnew-ultimate.png',
     itemTitle: 'And Another',
@@ -43,6 +43,12 @@
   }%}
 
   <!-- END - LIST ITEMS LOOP -->
+
+  <div class="btn-group btn-group-justified">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">View all results</button>
+    </div>
+  </div>
 
 </ul>
 <!-- // .predictive-list -->

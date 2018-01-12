@@ -2,6 +2,7 @@
   position: relative;
   z-index: 9;
 }
+
 .navbar {
   .profile-img {
     position: absolute;
@@ -20,7 +21,7 @@
   // }
 
   &--static-nav {
-    background-color: $gray-lighter;
+    background-color: $brand-primary-muted;
     height: 36px;
     margin: 0;
 
@@ -38,6 +39,20 @@
       padding-bottom: 0;
     }
 
+    .navbar-brand {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 23px;
+      text-align: center;
+      margin: 0 auto;
+
+      img {
+        display: inline;
+        height: 16px;
+      }
+    }
+
     // predictive search - general
     ul.predictive-list {
       margin: 0;
@@ -47,11 +62,24 @@
       a:hover {
         text-decoration: none;
       }
+
       &.expanded {
         display: block;
       }
+
       &.collapsed {
         display: none;
+      }
+
+      li {
+        a {
+          color: $text-color;
+
+          &:hover {
+            color: $text-color;
+            border-bottom: none;
+          }
+        }
       }
     }
 
@@ -68,10 +96,11 @@
         position: absolute;
         top: 36px;
         left: 15px;
-        width: 100%;
+        width: 400px;
         background-color: $body-bg;
         border: 1px solid $gray-light;
-        border-top: 0px;
+        border-top: 0;
+        box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
       }
     }
 
@@ -87,15 +116,19 @@
           .input-group-btn {}
         }
       }
+
       #mobile-search-toggle {
         .btn {
           border: none;
-          &:focus, &:active {
+
+          &:active,
+          &:focus {
             border: none;
             outline: none;
             box-shadow: none;
           }
         }
+
         &:hover .btn i {
           color: $brand-primary-emphasize;
         }
@@ -104,7 +137,13 @@
 
     // desktop search input
     #desktop-header-search {
-      min-width: 250px; // TODO :: this is arbitrary or now, it should be small initially and widen on click
+      width: 200px;
+      transition: 0.2s width ease, 0.2s box-shadow ease;
+
+      &.expanded {
+        width: 400px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+      }
     }
 
     .navbar-toggle,
@@ -147,6 +186,18 @@
         @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
           font-size: 1.1rem;
         }
+      }
+
+      &.link {
+        a {
+          color: $brand-primary;
+
+          &:hover {
+            color: $brand-primary-emphasize;
+            border: none;
+          }
+        }
+
       }
 
     }

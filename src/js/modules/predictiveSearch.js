@@ -33,11 +33,9 @@ var PredictiveSearch = (function () {
     $els.searchBtn.on('click', _toggleSearchExpand);
     $els.searchInputMobile
       .focus(function () {
-        console.log('FOCUS');
         _togglePredictiveSearch();
       })
       .blur(function () {
-        console.log('BLUR');
         _togglePredictiveSearch();
         _toggleSearchExpand();
       })
@@ -49,6 +47,7 @@ var PredictiveSearch = (function () {
     $els.searchInputDesktop
       .focus(function () {
         _togglePredictiveSearch();
+        _toggleSearchExpand();
       })
       .blur(function () {
         _togglePredictiveSearch();
@@ -82,7 +81,6 @@ var PredictiveSearch = (function () {
   };
 
   var _togglePredictiveSearch = function() {
-    console.log('TOGGLE PRED MENU :: ', $els.searchOverlay.hasClass('expanded'));
     if($els.plMobile.hasClass('expanded')) {
       // expanded, let's collapse
       $els.plMobile.removeClass('expanded').addClass('collapsed');
@@ -92,12 +90,10 @@ var PredictiveSearch = (function () {
       $els.plMobile.removeClass('collapsed').addClass('expanded');
       $els.plDesktop.removeClass('collapsed').addClass('expanded');
     }
-    //
-    // $els.searchBtn.off('click');
-    // $els.searchBtn.on('click', _toggleSearchExpand);
   };
 
   var _toggleSearchExpand = function () {
+    // mobile
     if($els.searchNavbar.hasClass('expanded')) {
       // expanded, let's collapse
       $els.searchNavbar.removeClass('expanded').addClass('collapsed');
@@ -112,6 +108,15 @@ var PredictiveSearch = (function () {
       $els.searchInputMobile.removeClass('invisible');
 
       $els.menuButton.removeClass('show').addClass('hidden');
+
+      $els.searchInputMobile.focus();
+    }
+
+    // desktop
+    if($els.searchInputDesktop.hasClass('expanded')) {
+      $els.searchInputDesktop.removeClass('expanded').addClass('collapsed');
+    } else {
+      $els.searchInputDesktop.removeClass('collapsed').addClass('expanded');
     }
   };
 

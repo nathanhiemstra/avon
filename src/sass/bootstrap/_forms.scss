@@ -158,7 +158,7 @@ output {
         opacity: 1;
 
         // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
-   
+
     }
 
     &[disabled],
@@ -515,7 +515,7 @@ select.form-control.input-lg {
         top: $line-height-computed + 5;
 
         // Height of the `label` and its margin
-   
+
     }
 
     &.sr-only ~ .form-control-feedback {
@@ -646,7 +646,7 @@ select.form-control.input-lg {
         padding-top: $padding-base-vertical + 1;
 
         // Default padding plus a border
-   
+
     }
 
     // Account for padding we're adding to ensure the alignment and of help text
@@ -670,7 +670,7 @@ select.form-control.input-lg {
             padding-top: $padding-base-vertical + 1;
 
             // Default padding plus a border
-       
+
         }
     }
 
