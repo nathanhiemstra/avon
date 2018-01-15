@@ -1,115 +1,135 @@
-.drawer {
-    // Hiding for now so popovers will work
-    // overflow: hidden;
-
-    &:not(.reverse-bg) {
-        background-color: $body-bg;
-    }
-
-    @include box-shadow(0 -1px 9px rgba(0, 0, 0, 0.175));
-
-    &-fixed-bottom {
-        position: fixed;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        z-index: $zindex-drawer-fixed;
-        transition: height 0.5s;
-    }
-
-    .drawer-valign-middle,
-    .drawer-summary-header {
-        line-height: $navbar-drawer-height;
-
-        @media (min-width: $screen-md-min) {
-            line-height: $navbar-drawer-height-lg;
-        }
-    }
-
-    .drawer-summary-header {
-        margin: 0;
-    }
-
-    &-list-default {
-        text-align: center;
-        margin-top: 0;
-        margin-bottom: 0;
-
-        > li,
-        > .list-group-item {
-            height: $navbar-drawer-height;
-
-            @media (min-width: $screen-md-min) {
-                height: $navbar-drawer-height-lg;
-            }
-
-            border-top: 0;
-            border-bottom: 0;
-        }
-
-        .list-group-item-heading {
-            margin-top: 5px;
-        }
-
-        // Large screens
-        @media (min-width: $screen-md-min) {
-            .list-group-item {
-                padding-left: 3rem;
-                padding-right: 3rem;
-
-                > dl {
-                    overflow: hidden;
-                }
-            }
-        }
-
-        // Small screens
-        @media (max-width: $screen-md-min) {
-            > li,
-            > .list-group-item {
-                padding-top: 0;
-                padding-bottom: 0;
-                border: none;
-            }
-
-            .list-group-item-heading,
-            .list-group-item-text {
-                display: inline-block;
-                line-height: $navbar-drawer-height;
-            }
-
-            .list-group-item-heading {
-                float: right;
-                margin: 0  0 0 0.5rem;
-            }
-
-            .list-group-item-text {
-                float: left;
-            }
-        }
-
-        @extend .list-inline-abutted;
-    }
-
-    &.drawer-expanded {
-        height: 100vh;
-
-        .drawer-content {
-            height: 100vh;
-        }
-
-        .drawer-summary {
-            display: none;
-        }
-    }
-}
-
 .drawer,
 .drawer-height,
 .drawer-summary {
-    height: $navbar-drawer-height;
+  height: $navbar-drawer-height;
+
+  @media (min-width: $screen-md-min) {
+    height: $navbar-drawer-height-lg;
+  }
+}
+
+.drawer {
+  // Hiding for now so popovers will work
+  // overflow: hidden;
+
+  &:not(.reverse-bg) {
+    background-color: $body-bg;
+  }
+
+  @include box-shadow(0 -1px 9px rgba(0, 0, 0, 0.175));
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: $zindex-drawer-fixed;
+  transition: height 0.5s ease;
+
+  &-fixed-top {
+    top: 0;
+  }
+
+  &-fixed-bottom {
+    bottom: 0;
+  }
+
+  .drawer-summary-header,
+  .drawer-valign-middle {
+    line-height: $navbar-drawer-height;
 
     @media (min-width: $screen-md-min) {
-        height: $navbar-drawer-height-lg;
+      line-height: $navbar-drawer-height-lg;
     }
+  }
+
+  .drawer-summary-header {
+    margin: 0;
+  }
+
+  &-list-default {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    > .list-group-item,
+    > li {
+      height: $navbar-drawer-height;
+
+      @media (min-width: $screen-md-min) {
+        height: $navbar-drawer-height-lg;
+      }
+
+      border-top: 0;
+      border-bottom: 0;
+    }
+
+    .list-group-item-heading {
+      margin-top: 5px;
+    }
+
+    // Large screens
+    @media (min-width: $screen-md-min) {
+      .list-group-item {
+        padding-left: 3rem;
+        padding-right: 3rem;
+
+        > dl {
+          overflow: hidden;
+        }
+      }
+    }
+
+    // Small screens
+    @media (max-width: $screen-md-min) {
+      > .list-group-item,
+      > li {
+        padding-top: 0;
+        padding-bottom: 0;
+        border: none;
+      }
+
+      .list-group-item-heading,
+      .list-group-item-text {
+        display: inline-block;
+        line-height: $navbar-drawer-height;
+      }
+
+      .list-group-item-heading {
+        float: right;
+        margin: 0 0 0 0.5rem;
+      }
+
+      .list-group-item-text {
+        float: left;
+      }
+    }
+
+    @extend .list-inline-abutted;
+  }
+
+  &.drawer-expanded {
+    height: 100vh;
+
+    .drawer-content {
+      height: 100vh;
+    }
+
+    .drawer-summary {
+      display: none;
+    }
+  }
+
+  &-hidden {
+    height: auto;
+    transform: translateY(-100%);
+    transition: 0.5s transform ease;
+
+    &.drawer-expanded {
+      height: auto;
+      transform: translateY(0);
+
+      .drawer-content {
+        height: auto;
+      }
+    }
+  }
 }

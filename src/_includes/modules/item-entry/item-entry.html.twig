@@ -1,0 +1,83 @@
+{% if page == 'product-detail' %}
+  {% set itemsTotal = '9' %}
+  {% set priceTotal = '54.00' %}
+  {% set ctaButton = 'Continue' %}
+
+{% elseif page == 'checkout' %}
+  {% set itemsTotal = '55' %}
+  {% set priceTotal = '484.87' %}
+  {% set ctaButton = 'Place Order' %}
+
+{% else %}
+  {% set ctaButton = 'Continue' %}
+{% endif %}
+
+{% set drawerId = 'drawer-item-entry' %}
+
+<!-- DRAWER -->
+<section id="{{ drawerId }}" class="drawer drawer-fixed-top drawer-hidden drawer-item-entry">
+
+  <!-- DRAWER CONTENT -->
+  <section class="drawer-content">
+
+    <div class="no-reverse-bg">
+
+      <!-- HEADER -->
+      {% include components.modules.global.drawer.header with {
+        drawerLabel: 'Item Entry',
+        drawerId: drawerId
+      } %}
+
+    </div>
+    <!-- /.no-reverse-bg -->
+
+    <div class="container-fluid p-5">
+
+      <div class="row">
+
+        <div class="col-xs-12 text-center">
+
+          <!-- FORM -->
+          <form class="form-inline" role="form">
+            <div class="form-group align-bottom px-2">
+              <div class="text-left">Product Name or Number</div>
+              <input id="itemEntryProduct" type="text" class="form-control collapsed" placeholder="" autocomplete="off">
+            </div>
+            <div class="form-group align-bottom px-2">
+              <div class="text-left">Qty</div>
+              <div class="form-group has-feedback d-inline-block">
+                <select id="itemEntryQty" class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+                <span class="glyphicon glyphicon-play form-control-feedback"></span>
+              </div>
+            </div>
+            <div class="form-group align-bottom px-2">
+              <div class="text-left">Who is this for?</div>
+              <div class="form-group has-feedback d-inline-block">
+                <select id="itemEntryCustomer" class="form-control">
+                  <option>Jane Johnson</option>
+                  <option>John Doe</option>
+                  <option>Lisa Anyname</option>
+                </select>
+                <span class="glyphicon glyphicon-play form-control-feedback"></span>
+              </div>
+            </div>
+            <div class="form-group align-bottom px-2">
+              <button type="submit" class="btn btn-default">Add to List</button>
+            </div>
+          </form>
+
+        </div>
+        <!-- /.col -->
+
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+  </section>
+</section>
+<!-- /.drawer -->

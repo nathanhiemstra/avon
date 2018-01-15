@@ -447,12 +447,89 @@
 
       </li>
       <li class="link">
-        <a class="small" href="#"><span class="glyphicon glyphicon-th-list pr-2" aria-hidden="true"></span>Item Entry</a>
+        <a class="small trigger-drawer-item-entry" href="#drawer-item-entry" data-toggle="drawer"><span class="glyphicon glyphicon-th-list pr-2" aria-hidden="true"></span>Item Entry</a>
       </li>
     </ul>
 
   </div>
 </nav>
+
+        <!-- Item entry drawer -->
+          
+
+<!-- DRAWER -->
+<section id="drawer-item-entry" class="drawer drawer-fixed-top drawer-hidden drawer-item-entry">
+
+  <!-- DRAWER CONTENT -->
+  <section class="drawer-content">
+
+    <div class="no-reverse-bg">
+
+      <!-- HEADER -->
+      <header class="navbar navbar-isolated navbar-static-top" role="banner">
+  <div class="container-fluid">
+      <a href="index.html" class="navbar-brand ml-0">
+        <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
+      </a>
+       <h1 class="navbar-title">Item Entry</h1>
+       <a href="#drawer-item-entry" class="pull-right mt-3" data-toggle="drawer">
+        <span class="h4"><span class="glyphicon glyphicon-remove"></span></span>
+      </a>
+  </div>
+</header>
+    </div>
+    <!-- /.no-reverse-bg -->
+
+    <div class="container-fluid p-5">
+
+      <div class="row">
+
+        <div class="col-xs-12 text-center">
+
+          <!-- FORM -->
+          <form class="form-inline" role="form">
+            <div class="form-group align-bottom px-2">
+              <div class="text-left">Product Name or Number</div>
+              <input id="itemEntryProduct" type="text" class="form-control collapsed" placeholder="" autocomplete="off">
+            </div>
+            <div class="form-group align-bottom px-2">
+              <div class="text-left">Qty</div>
+              <div class="form-group has-feedback d-inline-block">
+                <select id="itemEntryQty" class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+                <span class="glyphicon glyphicon-play form-control-feedback"></span>
+              </div>
+            </div>
+            <div class="form-group align-bottom px-2">
+              <div class="text-left">Who is this for?</div>
+              <div class="form-group has-feedback d-inline-block">
+                <select id="itemEntryCustomer" class="form-control">
+                  <option>Jane Johnson</option>
+                  <option>John Doe</option>
+                  <option>Lisa Anyname</option>
+                </select>
+                <span class="glyphicon glyphicon-play form-control-feedback"></span>
+              </div>
+            </div>
+            <div class="form-group align-bottom px-2">
+              <button type="submit" class="btn btn-default">Add to List</button>
+            </div>
+          </form>
+
+        </div>
+        <!-- /.col -->
+
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+  </section>
+</section>
+<!-- /.drawer -->
 
       </header>
 

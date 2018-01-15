@@ -85,3 +85,16 @@
 .affix {
     position: fixed;
 }
+
+// Vertical Alignment
+// -------------------------
+
+.align-top {
+    vertical-align: top !important;
+}
+.align-middle {
+    vertical-align: middle !important;
+}
+.align-bottom {
+    vertical-align: bottom !important;
+}

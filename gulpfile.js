@@ -161,6 +161,9 @@ gulp.task('compile', function () {
                   chooseType:     prefix.modules + "checkout/choose-type.html.twig",
                   header:         prefix.modules + "checkout/header.html.twig"
                 },
+                itemEntry: {
+                  drawer:         prefix.modules + "item-entry/item-entry.html.twig"
+                },
                 global: {
                   footer:         prefix.modules + "global/footer.html.twig",
                   header:         prefix.modules + "global/header.html.twig",

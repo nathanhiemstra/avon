@@ -8,11 +8,13 @@ $(document).ready(function () {
   var selectors = {
     main: "#avon-poc",
     triggers: {
-      drawerOrderSummary: ".trigger-drawer-order-summary"
+      drawerOrderSummary: ".trigger-drawer-order-summary",
+      drawerItemEntry: ".trigger-drawer-item-entry"
     },
     drawers: {
       all: '[data-toggle="drawer"]',
-      orderSummary: ".drawer-order-summary"
+      orderSummary: ".drawer-order-summary",
+      itemEntry: ".drawer-item-entry"
     }
   }
   var $objects = {
@@ -21,11 +23,13 @@ $(document).ready(function () {
     body: $('body'),
     main: $(selectors.main),
     triggers: {
-      drawerOrderSummary: $(selectors.main).find(selectors.triggers.drawerOrderSummary)
+      drawerOrderSummary: $(selectors.main).find(selectors.triggers.drawerOrderSummary),
+      drawerItemEntry: $(selectors.main).find(selectors.triggers.drawerItemEntry)
     },
     drawers: {
       all: $(selectors.main).find(selectors.drawers.all),
-      orderSummary: $(selectors.main).find(selectors.drawers.orderSummary)
+      orderSummary: $(selectors.main).find(selectors.drawers.orderSummary),
+      itemEntry: $(selectors.main).find(selectors.drawers.itemEntry)
     }
   }
 
@@ -38,7 +42,22 @@ $(document).ready(function () {
 
   function toggleDrawer(clickedItem) {
     var targetId = $(clickedItem).attr("href");
-    $(targetId).toggleClass('drawer-expanded');
+    var targetEl = $(targetId);
+    var isDrawerTypeHidden = targetEl.hasClass('drawer-hidden');
+    var isExpanded = targetEl.hasClass('drawer-expanded');
+
+    if(isDrawerTypeHidden) {
+      if(isExpanded) {
+        setTimeout(function() {
+          // completely hide after delay
+          targetEl.css('opacity', 0);
+        }, 500);
+      } else {
+        targetEl.css('opacity', 1);
+      }
+    }
+    targetEl.toggleClass('drawer-expanded');
+
   }
 
 
