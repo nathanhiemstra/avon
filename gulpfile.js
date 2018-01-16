@@ -195,11 +195,11 @@ gulp.task('compile', function () {
                 },
                 yourOrder: {
                   drawer:         prefix.modules + "your-order/order-summary.html.twig",
-                  tabNav:         prefix.modules + 'your-order/review/order/nav-tab.html.twig',
-                  tabContent:     prefix.modules + 'your-order/review/order/tab-content.html.twig',
+                  tabNav:         prefix.modules + 'your-order/tab-nav.html.twig',
+                  tabContent:     prefix.modules + 'your-order/tab-content.html.twig',
                   tabPane: {
-                    products:     prefix.modules + 'your-order/review-order-tab-panel-products.html.twig',
-                    incentives:   prefix.modules + 'your-order/review-order-tab-panel-incentives.html.twig',
+                    products:     prefix.modules + 'your-order/tab-panel-carts.html.twig',
+                    incentives:   prefix.modules + 'your-order/tab-panel-offers.html.twig',
                   },
                   total:          prefix.modules + 'your-order/order-total.html.twig'
                 },

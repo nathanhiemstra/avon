@@ -95,8 +95,8 @@
   {% set styleguideItem = {
     title:        "Tab Navigation",
     slug:         "your-order-tabs",
-    twig:         "_includes/modules/your-order/review/order/nav-tab.html.twig",
-    path:         "_includes/modules/your-order/review/order/nav-tab.html.twig"
+    twig:         "_includes/modules/your-order/tab-nav.html.twig",
+    path:         "_includes/modules/your-order/tab-nav.html.twig"
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -118,13 +118,13 @@
   <section class="tab-content">
 
     <!-- START - TAB PANE - PRODUCTS -->
-    <section class="tab-pane active" id="pd-products">
+    <section class="tab-pane active" id="pd-carts">
       <!-- Content -->
     </section>
     <!-- END - TAB PANE - PRODUCT -->
 
     <!-- START - TAB PANE - INCENTIVES -->
-    <section class="tab-pane" id="pd-incentives">
+    <section class="tab-pane" id="pd-offers">
       <!-- Content -->
     </section>
     <!-- END - TAB PANE - INCENTIVES -->
@@ -165,8 +165,8 @@
   {% set styleguideItem = {
     title:        "Person's Order (List of summaries and product lists) ",
     slug:         "your-order-tab-pane-products",
-    twig:         "styleguide/_includes/modules/pages/your-order/tab-panel-products.html.twig",
-    path:         "styleguide/_includes/modules/pages/your-order/tab-panel-products.html.twig" 
+    twig:         "styleguide/_includes/modules/pages/your-order/tab-panel-carts.html.twig",
+    path:         "styleguide/_includes/modules/pages/your-order/tab-panel-carts.html.twig" 
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 

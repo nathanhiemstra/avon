@@ -170,8 +170,8 @@ Layouts used:
 <div class="bs-example">
       <!-- START - TAB NAVIGATION -->
 <ul class="nav nav-tabs nav-justified">
-  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products</a></li>
-  <li><a href="#pd-incentives" data-toggle="tab">Incentives <span class="badge">2</span></a></li>
+  <li class="active ml-4"><a href="#pd-carts" data-toggle="tab">Carts</a></li>
+  <li><a href="#pd-offers" data-toggle="tab">Offers <span class="badge">2</span></a></li>
 </ul>
 <!-- END - TAB NAVIGATION -->
 
@@ -181,8 +181,8 @@ Layouts used:
 <pre><code class="language-markup"><script type="text/plain">
       <!-- START - TAB NAVIGATION -->
 <ul class="nav nav-tabs nav-justified">
-  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products</a></li>
-  <li><a href="#pd-incentives" data-toggle="tab">Incentives <span class="badge">2</span></a></li>
+  <li class="active ml-4"><a href="#pd-carts" data-toggle="tab">Carts</a></li>
+  <li><a href="#pd-offers" data-toggle="tab">Offers <span class="badge">2</span></a></li>
 </ul>
 <!-- END - TAB NAVIGATION -->
 
@@ -190,8 +190,8 @@ Layouts used:
 
 
   <pre><code class="language-twig"><script type="text/plain">
-  {% include _includes/modules/your-order/review/order/nav-tab.html.twig %}
-  _includes/modules/your-order/review/order/nav-tab.html.twig
+  {% include _includes/modules/your-order/tab-nav.html.twig %}
+  _includes/modules/your-order/tab-nav.html.twig
   </script></code></pre>
 
 
@@ -208,13 +208,13 @@ Layouts used:
   <section class="tab-content">
 
     <!-- START - TAB PANE - PRODUCTS -->
-    <section class="tab-pane active" id="pd-products">
+    <section class="tab-pane active" id="pd-carts">
       <!-- Content -->
     </section>
     <!-- END - TAB PANE - PRODUCT -->
 
     <!-- START - TAB PANE - INCENTIVES -->
-    <section class="tab-pane" id="pd-incentives">
+    <section class="tab-pane" id="pd-offers">
       <!-- Content -->
     </section>
     <!-- END - TAB PANE - INCENTIVES -->
@@ -237,7 +237,7 @@ Layouts used:
 <section class="tab-content">
 
   <!-- START - TAB PANE - PRODUCTS -->
-  <section class="tab-pane active" id="pd-products">
+  <section class="tab-pane active" id="pd-carts">
     <!-- START - LIST OF PERSONS -->
 <ul class="list-group">
   <!-- START - PERSON'S ORDER (LIST ITEM) -->
@@ -478,7 +478,7 @@ Layouts used:
   <!-- END - TAB PANE - PRODUCT -->
 
   <!-- START - TAB PANE - INCENTIVES -->
-  <section class="tab-pane" id="pd-incentives">
+  <section class="tab-pane" id="pd-offers">
     <ul class="list-unstyled text-center">
   <li class="my-4">
     <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
@@ -501,7 +501,7 @@ Layouts used:
 <section class="tab-content">
 
   <!-- START - TAB PANE - PRODUCTS -->
-  <section class="tab-pane active" id="pd-products">
+  <section class="tab-pane active" id="pd-carts">
     <!-- START - LIST OF PERSONS -->
 <ul class="list-group">
   <!-- START - PERSON'S ORDER (LIST ITEM) -->
@@ -742,7 +742,7 @@ Layouts used:
   <!-- END - TAB PANE - PRODUCT -->
 
   <!-- START - TAB PANE - INCENTIVES -->
-  <section class="tab-pane" id="pd-incentives">
+  <section class="tab-pane" id="pd-offers">
     <ul class="list-unstyled text-center">
   <li class="my-4">
     <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
@@ -1266,8 +1266,8 @@ Layouts used:
 
 
   <pre><code class="language-twig"><script type="text/plain">
-  {% include styleguide/_includes/modules/pages/your-order/tab-panel-products.html.twig %}
-  styleguide/_includes/modules/pages/your-order/tab-panel-products.html.twig
+  {% include styleguide/_includes/modules/pages/your-order/tab-panel-carts.html.twig %}
+  styleguide/_includes/modules/pages/your-order/tab-panel-carts.html.twig
   </script></code></pre>
 
 
@@ -1766,7 +1766,7 @@ Layouts used:
 
   <pre><code class="language-twig"><script type="text/plain">
   {% include components.modules.yourOrder.tabPane.incentives %}
-  _includes/modules/your-order/review-order-tab-panel-incentives.html.twig
+  _includes/modules/your-order/tab-panel-offers.html.twig
   </script></code></pre>
 
 

@@ -64,8 +64,8 @@
         
         <!-- START - TAB NAVIGATION -->
 <ul class="nav nav-tabs nav-justified">
-  <li class="active ml-4"><a href="#pd-products" data-toggle="tab">Products</a></li>
-  <li><a href="#pd-incentives" data-toggle="tab">Incentives <span class="badge">2</span></a></li>
+  <li class="active ml-4"><a href="#pd-carts" data-toggle="tab">Carts</a></li>
+  <li><a href="#pd-offers" data-toggle="tab">Offers <span class="badge">2</span></a></li>
 </ul>
 <!-- END - TAB NAVIGATION -->
 
@@ -86,8 +86,8 @@
           <!-- START - TAB CONTENT -->
 <section class="tab-content">
 
-  <!-- START - TAB PANEL PRODUCTS -->
-  <section class="tab-pane active" id="pd-products">
+  <!-- START - TAB PANEL CARTS -->
+  <section class="tab-pane active" id="pd-carts">
     <ul class="list-group">
 
   <!-- START - LOOPING ITEMS -->
@@ -815,10 +815,10 @@
 
 </ul>
   </section>
-  <!-- END - TAB PANEL PRODUCTS -->
+  <!-- END - TAB PANEL CARTS -->
 
-  <!-- START - TAB PANEL INCENTIVES -->
-  <section class="tab-pane" id="pd-incentives">
+  <!-- START - TAB PANEL OFFERS -->
+  <section class="tab-pane" id="pd-offers">
     <ul class="list-unstyled text-center">
   <li class="my-4">
     <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
@@ -827,7 +827,7 @@
     <a href="#" class="border-primary d-inline-block"><img src="/images/fpo/free-gift.jpg" class="img-responsive"></a>
   </li>
 </ul>  </section>
-  <!-- END - TAB PANEL INCENTIVES -->
+  <!-- END - TAB PANEL OFFERS -->
 
 </section>
 
@@ -838,8 +838,24 @@
   <aside class="col-md-3" role="complementary">
     
           <!-- ORDER TOTAL -->
-          
-
+          <!-- START - ORDER TOTAL -->
+<section>
+  <div class="hidden-xs">
+    <h3 class="h-utility">Total</h3>
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Order subtotal</dt>
+      <dd class="pull-right">$90.00</dd>
+    </dl> 
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Discount</dt>
+      <dd class="pull-right">$36.00</dd>
+    </dl> 
+    <p class="text-center">Shipping and taxes will be calculated during the checkout process</p>
+  </div>
+  
+  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Checkout</a>
+</section>
+<!-- START - ORDER TOTAL -->
           </aside>
 </div><!-- /.row -->
 
