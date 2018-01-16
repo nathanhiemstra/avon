@@ -20,6 +20,7 @@ $(document).ready(function () {
   var $objects = {
     window: $(window),
     document: $(document),
+    html: $('html'),
     body: $('body'),
     main: $(selectors.main),
     triggers: {
@@ -46,9 +47,11 @@ $(document).ready(function () {
     var isDrawerTypeHidden = targetEl.hasClass('drawer-hidden');
     var isExpanded = targetEl.hasClass('drawer-expanded');
 
-    if(isDrawerTypeHidden) {
-      if(isExpanded) {
-        setTimeout(function() {
+    $objects.html.toggleClass('drawer-open');
+
+    if (isDrawerTypeHidden) {
+      if (isExpanded) {
+        setTimeout(function () {
           // completely hide after delay
           targetEl.css('opacity', 0);
         }, 500);

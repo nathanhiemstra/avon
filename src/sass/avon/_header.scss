@@ -133,6 +133,14 @@
           color: $brand-primary-emphasize;
         }
       }
+
+      .autocomplete-suggestions {
+        width: 100vw !important;
+        top: 60px;
+        left: 0;
+        border-left: none;
+        border-right: none;
+      }
     }
 
     // desktop search input
@@ -141,7 +149,7 @@
       transition: 0.2s width ease, 0.2s box-shadow ease;
 
       &.expanded {
-        width: 400px;
+        width: 360px;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
       }
     }

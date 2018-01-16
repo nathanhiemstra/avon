@@ -1,11 +1,12 @@
 /**
- * Predictive search - handles all product search behavior
+ * Predictive search - handles all product search input behavior
  * @return {init} [description]
  */
 
 var PredictiveSearch = (function () {
 
   var $els = {};
+  var autoCompleteOptions = {};
 
   // public methods
   var init = function () {
@@ -14,11 +15,12 @@ var PredictiveSearch = (function () {
     $els = {
       searchInputMobile: $('#mobile-search-input'),
       searchInputDesktop: $('#desktop-header-search'),
+      searchInputItemEntry: $('#itemEntryProduct'),
       searchBtn: $('#mobile-search-toggle'),
       searchNavbar: $('#mobile-header-navbar'),
       menuButton: $('.navbar-header .navbar-toggle'),
-      plMobile: $('.navbar--primary-nav > .container > .navbar-header .predictive-list'),
-      plDesktop: $('.navbar--primary-nav > .container > .navbar-right .predictive-list'),
+      // plMobile: $('.navbar--primary-nav > .container > .navbar-header .predictive-list'),
+      // plDesktop: $('.navbar--primary-nav > .container > .navbar-right .predictive-list'),
       searchOverlay: $('.container--search-results .main-content-overlay')
     };
 
@@ -29,67 +31,76 @@ var PredictiveSearch = (function () {
   // private methods
   var _addListeners = function () {
 
+    //
+    // https://github.com/devbridge/jQuery-Autocomplete
+    //
+
+    $els.searchInputItemEntry.autocomplete({
+      // serviceUrl: '/autocomplete/data', // ajax
+      lookup: FAKE_PRODUCTS, // no ajax, just a js object
+      onSelect: function (suggestion) {
+        console.log('You selected: ' + suggestion.value);
+        // $(this).val('');
+      },
+      formatResult: function (suggestion, currentVal) {
+        return _constructItemTemplate(suggestion);
+      },
+      maxHeight: 400,
+      showNoSuggestionNotice: true,
+      noSuggestionNotice: 'Sorry, nothing matches that query',
+      triggerSelectOnValidInput: false,
+      preserveInput: true
+    });
+
+    $els.searchInputMobile.autocomplete({
+      lookup: FAKE_PRODUCTS,
+      onSelect: function (suggestion) {
+        console.log('You selected: ' + suggestion.value);
+        // $(this).val('');
+      },
+      formatResult: function (suggestion, currentVal) {
+        return _constructItemTemplate(suggestion);
+      },
+      width: 'auto',
+      appendTo: $els.searchNavbar,
+      maxHeight: 400,
+      showNoSuggestionNotice: true,
+      noSuggestionNotice: 'Sorry, nothing matches that query',
+      triggerSelectOnValidInput: false,
+      preserveInput: true
+    });
+
+    $els.searchInputDesktop.autocomplete({
+      lookup: FAKE_PRODUCTS,
+      onSelect: function (suggestion) {
+        console.log('You selected: ' + suggestion.value);
+        // $(this).val('');
+      },
+      formatResult: function (suggestion, currentVal) {
+        return _constructItemTemplate(suggestion);
+      },
+      maxHeight: 400,
+      showNoSuggestionNotice: true,
+      noSuggestionNotice: 'Sorry, nothing matches that query',
+      triggerSelectOnValidInput: false,
+      preserveInput: true
+    });
+
     // mobile
     $els.searchBtn.on('click', _toggleSearchExpand);
     $els.searchInputMobile
-      .focus(function () {
-        _togglePredictiveSearch();
-      })
       .blur(function () {
-        _togglePredictiveSearch();
         _toggleSearchExpand();
-      })
-      .keyup(function () {
-        _runFilters($els.searchInputMobile);
       });
 
     // desktop
     $els.searchInputDesktop
       .focus(function () {
-        _togglePredictiveSearch();
         _toggleSearchExpand();
       })
       .blur(function () {
-        _togglePredictiveSearch();
         _toggleSearchExpand();
-      })
-      .keyup(function (e) {
-        _runFilters($els.searchInputDesktop);
       });
-  };
-
-  var _runFilters = function (inputEl) {
-    var input = inputEl.val().toUpperCase();
-    var predItemsMobile = $els.plMobile.find('li');
-    var predItemsDesktop = $els.plDesktop.find('li');
-
-    filterList(predItemsMobile);
-    filterList(predItemsDesktop);
-
-    function filterList(items) {
-      var itemTitle;
-      // Loop through all items, and hide those that don't match the search query
-      for (i = 0; i < items.length; i++) {
-        itemTitle = $(items[i]).find('.title').text();
-        if (itemTitle.toUpperCase().indexOf(input) > -1) {
-          $(items[i]).addClass('show').removeClass('hidden');
-        } else {
-          $(items[i]).addClass('hidden').removeClass('show');
-        }
-      }
-    };
-  };
-
-  var _togglePredictiveSearch = function() {
-    if($els.plMobile.hasClass('expanded')) {
-      // expanded, let's collapse
-      $els.plMobile.removeClass('expanded').addClass('collapsed');
-      $els.plDesktop.removeClass('expanded').addClass('collapsed');
-    } else {
-      // collapsed, let's expand
-      $els.plMobile.removeClass('collapsed').addClass('expanded');
-      $els.plDesktop.removeClass('collapsed').addClass('expanded');
-    }
   };
 
   var _toggleSearchExpand = function () {
@@ -120,17 +131,34 @@ var PredictiveSearch = (function () {
     }
   };
 
-  // var _toggleExpand = function ($el) {
-  //   $el.toggleClass('collapsed').toggleClass('expanded');
-  // }
-
-  // var _toggleDisplay = function ($el) {
-  //   $el.toggleClass('hidden').toggleClass('show');
-  // };
-
-  // var _toggleVisibility = function ($el) {
-  //   $el.toggleClass('invisible');
-  // }
+  var _constructItemTemplate = function(suggestion) {
+    return '<div class="item border-bottom p-4">' +
+        '<a href="' + suggestion.itemUrl + '">' +
+          '<div class="row">' +
+            '<div class="col col-xs-2 col-sm-3">' +
+              '<img src="' + suggestion.imgUrl + '" class="product-img img-responsive">' +
+            '</div>' +
+            '<div class="col col-xs-10 col-sm-9">' +
+              '<p class="title">' + suggestion.value + '</p>' +
+              '<p>' +
+                '<span class="sale-price">' + suggestion.salePrice + '</span>' +
+                '<span class="reg-price small">Regular Price: ' + suggestion.salePrice + '</span>' +
+              '</p>' +
+              '<p>' +
+                '<span class="rating small">' +
+                  '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>' +
+                  '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>' +
+                  '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>' +
+                  '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>' +
+                  '<span class="num-ratings">' + suggestion.numRatings + '</span>' +
+                '</span>' +
+                '<span class="stock small"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> ' + suggestion.stockStatus + '</span>' +
+              '</p>' +
+            '</div>' +
+          '</div>' +
+        '</a>' +
+      '</div>';
+  };
 
   return {
     init: init

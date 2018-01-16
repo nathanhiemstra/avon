@@ -21,7 +21,10 @@
   <section class="drawer-summary">
     <div class="container-fluid">
       <div class="pull-left">
-        <h4 class="drawer-summary-header"><a href="#{{ drawerId }}" data-toggle="drawer">Your order </a></h4>
+        <h4 class="drawer-summary-header">
+          <a href="#{{ drawerId }}" data-toggle="drawer">Your order
+          </a>
+        </h4>
       </div>
       <div class="pull-right">
         <ul class="list-group pull-left drawer-list-default">
@@ -44,7 +47,12 @@
             </dl>
           </li>
           <li class="list-group-item hidden-xs hidden-sm">
-            <a href="javascript://" data-toggle="popover" data-placement="top" data-html="true" data-content='
+            <a
+              href="javascript://"
+              data-toggle="popover"
+              data-placement="top"
+              data-html="true"
+              data-content='
               <!-- TODO: Create style for this kind of horizontal list and remove inline styles -->
               <div class="clearfixX" style="display:table">
                 <div class="pr-3" style="display:table-cell; vertical-align:middle">1</div>
@@ -54,7 +62,7 @@
                   <small>289-076</small>
                 </div>
               </div>
-             
+
 
 
             '>
@@ -82,36 +90,42 @@
         </div>
       </div>
     </div>
-  </section><!-- /.drawer-summary -->
+  </section>
+  <!-- /.drawer-summary -->
 
   <!-- DRAWER CONTENT -->
   <section class="drawer-content reverse-bg">
 
-    
     <div class="no-reverse-bg">
 
       <!-- HEADER -->
-      {% include components.modules.global.drawer.header with { drawerLabel: 'Your Order', drawerId: drawerId } %}
+      {% include components.modules.global.drawer.header with {
+        drawerLabel: 'Your Order',
+        drawerId: drawerId,
+        drawerLogoMobile: true
+      } %}
 
       <!-- NAV TABS -->
       <div class="container">
         <div class="row">
           <div class="col-sm-9">
-            
+
             {% include "_includes/modules/your-order/review/order/nav-tab.html.twig" %}
 
           </div>
-        </div><!-- /.row -->
-      </div><!-- /.container -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
 
-    </div><!-- /.no-reverse-bg -->
-
+    </div>
+    <!-- /.no-reverse-bg -->
 
     <div class="container">
       <div class="row">
         <div class="col-sm-9">
 
-           {% include components.modules.yourOrder.tabContent %}
+          {% include components.modules.yourOrder.tabContent %}
 
         </div>
         <div class="col-sm-3">
@@ -119,9 +133,11 @@
           {% include components.modules.yourOrder.total %}
 
         </div>
-      </div><!-- /.row -->
-    </div><!-- /.container -->
-
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
 
   </section>
-</section><!-- /.drawer -->
+</section>
+<!-- /.drawer -->

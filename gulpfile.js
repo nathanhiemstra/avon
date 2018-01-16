@@ -40,6 +40,7 @@ path.src = {
   html:             "src/**/*.html",
   images:           "src/images/**/*",
   js:               "src/js/**/*.js",
+  json:             "src/js/**/*.json",
   sass:             "src/sass/**/*.scss",
   twig:             "src/**/*.twig",
   styleguide:       "src/styleguide/*.twig"
@@ -53,7 +54,8 @@ path.staticFilesToCopy = [
   path.src.examplesJpg,
   path.src.fonts,
   path.src.images,
-  path.src.js
+  path.src.js,
+  path.src.json,
 ];
 
 page.styleguideHome = {
@@ -149,11 +151,6 @@ gulp.task('compile', function () {
                 yourOrder: {
                   personsOrderLi:   prefix.groups + "yourOrder/persons-order.html.twig",
                   singleProductTr:  prefix.groups + "yourOrder/persons-order-tr.html.twig"
-                },
-
-                search: {
-                  searchList:       prefix.groups + "search/search-list.html.twig",
-                  searchListItem:   prefix.groups + "search/search-list-item.html.twig"
                 },
               },
               modules: {

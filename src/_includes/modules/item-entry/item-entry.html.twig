@@ -1,17 +1,3 @@
-{% if page == 'product-detail' %}
-  {% set itemsTotal = '9' %}
-  {% set priceTotal = '54.00' %}
-  {% set ctaButton = 'Continue' %}
-
-{% elseif page == 'checkout' %}
-  {% set itemsTotal = '55' %}
-  {% set priceTotal = '484.87' %}
-  {% set ctaButton = 'Place Order' %}
-
-{% else %}
-  {% set ctaButton = 'Continue' %}
-{% endif %}
-
 {% set drawerId = 'drawer-item-entry' %}
 
 <!-- DRAWER -->
@@ -25,57 +11,86 @@
       <!-- HEADER -->
       {% include components.modules.global.drawer.header with {
         drawerLabel: 'Item Entry',
-        drawerId: drawerId
+        drawerId: drawerId,
+        drawerLogoMobile: false
       } %}
 
     </div>
     <!-- /.no-reverse-bg -->
 
-    <div class="container-fluid p-5">
+    <!-- <div class="container m-0 p-0"> -->
 
-      <div class="row">
+      <div class="row m-0 p-4 content-top">
 
-        <div class="col-xs-12 text-center">
-
-          <!-- FORM -->
-          <form class="form-inline" role="form">
-            <div class="form-group align-bottom px-2">
-              <div class="text-left">Product Name or Number</div>
-              <input id="itemEntryProduct" type="text" class="form-control collapsed" placeholder="" autocomplete="off">
-            </div>
-            <div class="form-group align-bottom px-2">
-              <div class="text-left">Qty</div>
-              <div class="form-group has-feedback d-inline-block">
-                <select id="itemEntryQty" class="form-control">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                </select>
-                <span class="glyphicon glyphicon-play form-control-feedback"></span>
-              </div>
-            </div>
-            <div class="form-group align-bottom px-2">
-              <div class="text-left">Who is this for?</div>
-              <div class="form-group has-feedback d-inline-block">
-                <select id="itemEntryCustomer" class="form-control">
-                  <option>Jane Johnson</option>
-                  <option>John Doe</option>
-                  <option>Lisa Anyname</option>
-                </select>
-                <span class="glyphicon glyphicon-play form-control-feedback"></span>
-              </div>
-            </div>
-            <div class="form-group align-bottom px-2">
-              <button type="submit" class="btn btn-default">Add to List</button>
-            </div>
-          </form>
-
+        <div class="visible-xs-block">
+          <h3>Item Entry</h3>
         </div>
-        <!-- /.col -->
+
+        <!-- FORM -->
+        <form class="" role="form">
+
+          <div class="form-group d-inline-block align-bottom px-2 col-xs-12 col-sm-4">
+            <div class="text-left">Product Name or Number</div>
+            <input id="itemEntryProduct" type="text" class="form-control collapsed" placeholder="" autocomplete="off">
+          </div>
+
+          <div class="form-group d-inline-block align-bottom px-2 col-xs-3 col-sm-2">
+            <div class="text-left">Qty</div>
+            <div class="form-group has-feedback d-inline-block">
+              <select id="itemEntryQty" class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+              <span class="glyphicon glyphicon-play form-control-feedback"></span>
+            </div>
+          </div>
+
+          <div class="form-group d-inline-block align-bottom px-2 col-xs-9 col-sm-4">
+            <div class="text-left">Who is this for?</div>
+            <div class="form-group has-feedback d-inline-block">
+              <select id="itemEntryCustomer" class="form-control">
+                <option>Jane Johnson</option>
+                <option>John Doe</option>
+                <option>Lisa Anyname</option>
+              </select>
+              <span class="glyphicon glyphicon-play form-control-feedback"></span>
+            </div>
+          </div>
+
+          <div class="form-group d-inline-block align-bottom px-2 col-xs-3 col-sm-2">
+            <button type="submit" class="btn btn-default">Add to List</button>
+          </div>
+
+        </form>
 
       </div>
       <!-- /.row -->
-    </div>
+
+      <!-- Content Area - Mobile -->
+      <div class="row m-0 p-4 reverse-bg visible-xs-block content-middle">
+        <ul class="list-group">
+
+          <!-- START - LOOPING ITEMS -->
+          {% include components.groups.yourOrder.personsOrderLi with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
+          {% include components.groups.yourOrder.personsOrderLi with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block'} %}
+          <!-- END - LOOPING ITEMS -->
+
+        </ul>
+      </div>
+
+      <!-- Bottom Button - Mobile -->
+      <div class="visible-xs-block content-bottom">
+        <div class="container">
+          <div class="btn-group btn-group-justified">
+            <div class="btn-group">
+              <button type="submit" class="btn btn-default">Add all items to order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- </div> -->
     <!-- /.container -->
 
   </section>

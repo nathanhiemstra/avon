@@ -63,6 +63,7 @@
 @import "avon/drawers";
 @import "avon/footer";
 @import "avon/header";
+@import "avon/predictive-search";
 @import "avon/product-lists";
 @import "avon/spacing";
 
@@ -78,4 +79,11 @@ input,
 textarea,
 [contenteditable] {
   caret-color: $brand-primary;
+}
+
+// prevent double scrollbars when drawers open
+html {
+  &.drawer-open {
+    overflow-y: hidden;
+  }
 }

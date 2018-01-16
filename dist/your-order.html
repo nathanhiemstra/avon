@@ -37,15 +37,20 @@
   <div class="no-reverse-bg">
     <header class="navbar navbar-isolated navbar-static-top" role="banner">
   <div class="container-fluid">
-      <a href="index.html" class="navbar-brand ml-0">
-        <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
-      </a>
-       <h1 class="navbar-title">Your Order</h1>
-       <a href="#" class="pull-right mt-3" data-toggle="drawer">
-        <span class="h4"><span class="glyphicon glyphicon-remove"></span></span>
-      </a>
+
+    <a href="index.html" class="navbar-brand ml-0 ">
+      <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
+    </a>
+
+    <h1 class="navbar-title">Your Order</h1>
+    <a href="#" class="pull-right mt-3" data-toggle="drawer">
+      <span class="h4">
+        <span class="glyphicon glyphicon-remove"></span></span>
+    </a>
   </div>
-</header>  </div><!-- /.no-reverse-bg -->
+</header>
+  </div>
+  <!-- /.no-reverse-bg -->
   <!-- END - HEADER -->
 
       
@@ -853,10 +858,13 @@
   <!-- END - PAGE CONTENT -->
 
   <script src="./js/vendor/jquery/1.10.2/jquery.min.js"></script>
+  <script src="./js/vendor/jquery.autocomplete.min.js"></script>
   <script src="./js/vendor/bootstrap.js"></script>
   <script src="./js/avon-main.js"></script>
   <script src="./js/modules/predictiveSearch.js"></script>
-  <!-- TODO :: probably want to bundle the above scripts with a gulp task -->
+  <script src="./js/fakeData.js"></script>
+  <!-- TODO :: probably want to bundle the above scripts with a gulp task
+            :: and remove the fake data, of course -->
   <script>
     window.twttr = (function (d,s,id) {
       var t, js, fjs = d.getElementsByTagName(s)[0];
