@@ -7,6 +7,7 @@ var PredictiveSearch = (function () {
 
   var $els = {};
   var autoCompleteOptions = {};
+  var itemEntryObj = {};
 
   // public methods
   var init = function () {
@@ -15,14 +16,23 @@ var PredictiveSearch = (function () {
     $els = {
       searchInputMobile: $('#mobile-search-input'),
       searchInputDesktop: $('#desktop-header-search'),
-      searchInputItemEntry: $('#itemEntryProduct'),
       searchBtn: $('#mobile-search-toggle'),
       searchNavbar: $('#mobile-header-navbar'),
       menuButton: $('.navbar-header .navbar-toggle'),
-      // plMobile: $('.navbar--primary-nav > .container > .navbar-header .predictive-list'),
-      // plDesktop: $('.navbar--primary-nav > .container > .navbar-right .predictive-list'),
-      searchOverlay: $('.container--search-results .main-content-overlay')
+      searchOverlay: $('.container--search-results .main-content-overlay'),
+
+      itemEntrySearchInput: $('#itemEntryProduct'),
+      itemEntryCustomer: $('#itemEntryCustomer'),
+      itemEntryQty: $('#itemEntryQty'),
+      itemEntryAdd: $('#itemEntryAdd'),
+      itemEntryAddAll: $('#itemEntryAddAll')
     };
+
+    itemEntryObj = {
+      customer: undefined,
+      product: undefined,
+      qty: undefined
+    }
 
     _addListeners();
 
@@ -35,11 +45,12 @@ var PredictiveSearch = (function () {
     // https://github.com/devbridge/jQuery-Autocomplete
     //
 
-    $els.searchInputItemEntry.autocomplete({
+    $els.itemEntrySearchInput.autocomplete({
       // serviceUrl: '/autocomplete/data', // ajax
       lookup: FAKE_PRODUCTS, // no ajax, just a js object
       onSelect: function (suggestion) {
         console.log('You selected: ' + suggestion.value);
+        _handleItemEntrySelection(this, suggestion);
         // $(this).val('');
       },
       formatResult: function (suggestion, currentVal) {
@@ -56,12 +67,12 @@ var PredictiveSearch = (function () {
       lookup: FAKE_PRODUCTS,
       onSelect: function (suggestion) {
         console.log('You selected: ' + suggestion.value);
+        // _handleSearchInputSelection(this, suggestion);
         // $(this).val('');
       },
       formatResult: function (suggestion, currentVal) {
         return _constructItemTemplate(suggestion);
       },
-      width: 'auto',
       appendTo: $els.searchNavbar,
       maxHeight: 400,
       showNoSuggestionNotice: true,
@@ -74,6 +85,7 @@ var PredictiveSearch = (function () {
       lookup: FAKE_PRODUCTS,
       onSelect: function (suggestion) {
         console.log('You selected: ' + suggestion.value);
+        // _handleSearchInputSelection(this, suggestion);
         // $(this).val('');
       },
       formatResult: function (suggestion, currentVal) {
@@ -84,6 +96,23 @@ var PredictiveSearch = (function () {
       noSuggestionNotice: 'Sorry, nothing matches that query',
       triggerSelectOnValidInput: false,
       preserveInput: true
+    });
+
+    $els.itemEntryCustomer.on('change', function() {
+      // console.log($(this).val());
+      itemEntryObj.customer = $(this).val();
+      _checkBtnState();
+    });
+
+    $els.itemEntryQty.on('change', function() {
+      // console.log($(this).val());
+      itemEntryObj.qty = $(this).val();
+      _checkBtnState();
+    });
+
+    $els.itemEntryAdd.on('click', function() {
+      alert('Add item to list: ' + itemEntryObj.qty + 'X ' + itemEntryObj.product + ' for ' + itemEntryObj.customer);
+      $(this).addClass('btn-success');
     });
 
     // mobile
@@ -128,6 +157,25 @@ var PredictiveSearch = (function () {
       $els.searchInputDesktop.removeClass('expanded').addClass('collapsed');
     } else {
       $els.searchInputDesktop.removeClass('collapsed').addClass('expanded');
+    }
+  };
+
+  var _handleItemEntrySelection = function(input, item) {
+    console.log(input, item);
+    $(input).val('');
+    $(input).next('.selected-item').text(item.value);
+    itemEntryObj.product = item.value;
+    _checkBtnState();
+  };
+
+  var _checkBtnState = function() {
+    var hasUndefined = Object.keys(itemEntryObj).some(function(key) {
+      if(itemEntryObj[key] === undefined) return true;
+      return false;
+    });
+    if(!hasUndefined) {
+      $els.itemEntryAdd.prop('disabled', false);
+      $els.itemEntryAddAll.prop('disabled', false);
     }
   };
 

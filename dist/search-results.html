@@ -203,15 +203,17 @@
         <!-- FORM -->
         <form class="" role="form">
 
-          <div class="form-group d-inline-block align-bottom px-2 col-xs-12 col-sm-4">
+          <div class="form-group col-xs-12 col-sm-4">
             <div class="text-left">Product Name or Number</div>
             <input id="itemEntryProduct" type="text" class="form-control collapsed" placeholder="" autocomplete="off">
+            <p class="selected-item my-4"></p>
           </div>
 
-          <div class="form-group d-inline-block align-bottom px-2 col-xs-3 col-sm-2">
+          <div class="form-group col-xs-3 col-sm-2">
             <div class="text-left">Qty</div>
-            <div class="form-group has-feedback d-inline-block">
+            <div class="form-group has-feedback">
               <select id="itemEntryQty" class="form-control">
+                <option disabled selected value></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -220,10 +222,11 @@
             </div>
           </div>
 
-          <div class="form-group d-inline-block align-bottom px-2 col-xs-9 col-sm-4">
+          <div class="form-group col-xs-9 col-sm-4">
             <div class="text-left">Who is this for?</div>
-            <div class="form-group has-feedback d-inline-block">
+            <div class="form-group has-feedback">
               <select id="itemEntryCustomer" class="form-control">
+                <option disabled selected value>Select a Customer</option>
                 <option>Jane Johnson</option>
                 <option>John Doe</option>
                 <option>Lisa Anyname</option>
@@ -232,8 +235,9 @@
             </div>
           </div>
 
-          <div class="form-group d-inline-block align-bottom px-2 col-xs-3 col-sm-2">
-            <button type="submit" class="btn btn-default">Add to List</button>
+          <div class="form-group col-xs-3 col-sm-2">
+            <div class="text-left">&#8203;</div>
+            <button id="itemEntryAdd" type="submit" class="btn btn-default" disabled="disabled">Add to List</button>
           </div>
 
         </form>
@@ -242,7 +246,7 @@
       <!-- /.row -->
 
       <!-- Content Area - Mobile -->
-      <div class="row m-0 p-4 reverse-bg visible-xs-block content-middle">
+      <div class="row m-0 p-4 reverse-bg content-middle">
         <ul class="list-group">
 
           <!-- START - LOOPING ITEMS -->
@@ -540,11 +544,11 @@
       </div>
 
       <!-- Bottom Button - Mobile -->
-      <div class="visible-xs-block content-bottom">
+      <div class="content-bottom">
         <div class="container">
           <div class="btn-group btn-group-justified">
             <div class="btn-group">
-              <button type="submit" class="btn btn-default">Add all items to order</button>
+              <button id="itemEntryAddAll" type="submit" class="btn btn-default" disabled="disabled">Add all items to order</button>
             </div>
           </div>
         </div>
@@ -991,7 +995,7 @@
   <script src="./js/vendor/jquery.autocomplete.min.js"></script>
   <script src="./js/vendor/bootstrap.js"></script>
   <script src="./js/avon-main.js"></script>
-  <script src="./js/modules/predictiveSearch.js"></script>
+  <script src="./js/modules/searchForms.js"></script>
   <script src="./js/fakeData.js"></script>
   <!-- TODO :: probably want to bundle the above scripts with a gulp task
             :: and remove the fake data, of course -->
