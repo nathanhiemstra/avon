@@ -282,7 +282,7 @@
 
   
   <div class="bs-example">
-    {% include '_includes/groups/yourOrder/persons-order-tr.html.twig' with {
+    {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
       productName: '[Product Name]', 
       img: '/images/fpo/product-thumb-grey.png',
       autoReplenish: true,
@@ -296,7 +296,7 @@
   {# Twig include #}
   <h3>Variables being passed to template</h3>
   {{ highlightTwig}}
-      {{ '{% include ' }} '{{ components.groups.yourOrder.singleProductTr }}' with {
+      {{ '{% include ' }} '{{ '_includes/groups/your-order/single-product-tr.html.twig' }}' with {
       productName: '[Product Name]', 
       img: '/images/fpo/product-thumb-grey.png',
       autoReplenish: true,
@@ -342,7 +342,7 @@
 
   <h3>Rendered HTML</h3>
   {{ highlightMarkup }}
-    {% include components.groups.yourOrder.singleProductTr with {
+    {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
       productName: '[Product Name]', 
       img: '/images/fpo/product-thumb-grey.png',
       autoReplenish: true,

@@ -149,8 +149,8 @@ gulp.task('compile', function () {
                 },
 
                 yourOrder: {
-                  personsOrderLi:   prefix.groups + "yourOrder/persons-order.html.twig",
-                  singleProductTr:  prefix.groups + "yourOrder/persons-order-tr.html.twig"
+                  personsOrderLi:   prefix.groups + "your-order/single-cart-li.html.twig",
+                  singleProductTr:  prefix.groups + "your-order/single-product-tr.html.twig"
                 },
               },
               modules: {

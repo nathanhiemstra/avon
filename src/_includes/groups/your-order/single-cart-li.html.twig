@@ -1,6 +1,6 @@
 <li class="list-group-item my-4">
 
-  <!-- START - PRODUCT SUMMARY -->
+  <!-- START - CART SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-{{ indexNum }}" data-toggle="collapse" {% if collapsed != false %} class="collapsed" {% endif %}>
@@ -15,9 +15,9 @@
     <dt class="pull-left">{{ itemCount }} items</dt>
     <dd class="pull-right">Discount: $45.55</dd>
   </dl> 
-  <!-- END - PRODUCT SUMMARY -->
+  <!-- END - CART SUMMARY -->
 
-  <!-- START - PRODUCT DETAILS (EXPANDABLE) -->
+  <!-- START - CART DETAILS (EXPANDABLE) -->
   <div class="details collapse {% if collapsed == false %} in {% endif %}" id="collapse-{{ indexNum }}">
 
     <table class="table">
@@ -33,7 +33,7 @@
 
         <!-- START - REPEATABLE ITEMS -->
 
-        {% include components.groups.yourOrder.singleProductTr with {
+        {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
           productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
           img: '/images/fpo/agnew-ultimate.png',
           autoReplenish: null,
@@ -42,7 +42,7 @@
           classes: 'input-sm'
         }%}
 
-        {% include components.groups.yourOrder.singleProductTr with {
+        {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
           productName: 'Anew Super Coverup', 
           img: '/images/fpo/cover-up.png',
           autoReplenish: true,
@@ -51,7 +51,7 @@
           classes: 'input-sm'
         }%}
 
-        {% include components.groups.yourOrder.singleProductTr with {
+        {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
           productName: 'Anew Purfume', 
           img: '/images/fpo/purfume.png',
           autoReplenish: null,
@@ -65,7 +65,29 @@
       </tbody>
     </table>
 
+    <!-- START - VIEW OFFERS -->
+    <div>
+
+      <!-- EXPANDABLE TRIGGER -->
+      <a href="#collapse-{{ indexNum }}-view-offer" data-toggle="collapse">
+        <b>View offers</b>
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+      </a>
+
+      <!-- START - VIEW OFFERS CONTENT (EXPANDABLE) -->
+      <div class="details collapse" id="collapse-{{ indexNum }}-view-offer">
+        XXX
+      </div>
+      <!-- END - VIEW OFFERS CONTENT (EXPANDABLE) -->
+
+    </div>
+    <!-- END - VIEW OFFERS -->
+
+    
+
+
+
   </div>
-  <!-- END - PRODUCT DETAILS (EXPANDABLE) -->
+  <!-- END - CART DETAILS (EXPANDABLE) -->
 
 </li>
