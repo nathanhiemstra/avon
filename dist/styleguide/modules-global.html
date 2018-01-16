@@ -596,7 +596,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
 
     <!-- <div class="container m-0 p-0"> -->
 
-      <div class="row m-0 p-4 content-top">
+      <div class="row m-0 p-4 item-entry-content--form">
 
         <div class="visible-xs-block">
           <h3>Item Entry</h3>
@@ -647,9 +647,9 @@ The global header is composed of the three navs shown above: Static, User and Pr
       </div>
       <!-- /.row -->
 
-      <!-- Content Area - Mobile -->
-      <div class="row m-0 p-4 reverse-bg content-middle">
-        <ul class="list-group">
+      <!-- Main List of Items to be Added -->
+      <div class="row m-0 reverse-bg item-entry-content--list hidden">
+        <ul class="list-group p-4 col-xs-12 col-sm-8">
 
           <!-- START - LOOPING ITEMS -->
           <li class="list-group-item my-4">
@@ -810,7 +810,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
   </dl>
 
   <dl class="clearfix m-0">
-    <dt class="pull-left">8 items</dt>
+    <dt class="pull-left">4 items</dt>
     <dd class="pull-right">Discount: $45.55</dd>
   </dl> 
   <!-- END - PRODUCT SUMMARY -->
@@ -940,13 +940,176 @@ The global header is composed of the three navs shown above: Static, User and Pr
   </div>
   <!-- END - PRODUCT DETAILS (EXPANDABLE) -->
 
+</li>          <li class="list-group-item my-4">
+
+  <!-- START - PRODUCT SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-3" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>Tisha Pennington</b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$12.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">2 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+  <!-- END - PRODUCT SUMMARY -->
+
+  <!-- START - PRODUCT DETAILS (EXPANDABLE) -->
+  <div class="details collapse " id="collapse-3">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+          <th class="d-none t-desc">Description</th>
+          <th class="d-none t-price">Price</th>
+          <th class="d-none t-qty text-right">Qty</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- START - REPEATABLE ITEMS -->
+
+        <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     $30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     $10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     $45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+         <!-- END - REPEATABLE ITEMS -->
+
+      </tbody>
+    </table>
+
+  </div>
+  <!-- END - PRODUCT DETAILS (EXPANDABLE) -->
+
 </li>          <!-- END - LOOPING ITEMS -->
 
         </ul>
+        <div class="item-entry-total hidden-xs col-sm-4">
+          <h3>Total</h3>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="badge">$90.00</span>
+              Order Subtotal
+            </li>
+            <li class="list-group-item">
+              <span class="badge">$36.00</span>
+              Discount
+            </li>
+          </ul>
+          <p>
+            Shipping and taxes will be calculated durind the checkout process
+          </p>
+          <div class="btn-group">
+            <button id="itemEntryAddAllAside" type="submit" class="btn btn-default">Add all items to order</button>
+          </div>
+        </div>
       </div>
 
-      <!-- Bottom Button - Mobile -->
-      <div class="content-bottom">
+      <!-- Submit All Button -->
+      <div class="item-entry-content--submit visible-xs-block">
         <div class="container">
           <div class="btn-group btn-group-justified">
             <div class="btn-group">
@@ -1137,7 +1300,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
 
     <!-- <div class="container m-0 p-0"> -->
 
-      <div class="row m-0 p-4 content-top">
+      <div class="row m-0 p-4 item-entry-content--form">
 
         <div class="visible-xs-block">
           <h3>Item Entry</h3>
@@ -1188,9 +1351,9 @@ The global header is composed of the three navs shown above: Static, User and Pr
       </div>
       <!-- /.row -->
 
-      <!-- Content Area - Mobile -->
-      <div class="row m-0 p-4 reverse-bg content-middle">
-        <ul class="list-group">
+      <!-- Main List of Items to be Added -->
+      <div class="row m-0 reverse-bg item-entry-content--list hidden">
+        <ul class="list-group p-4 col-xs-12 col-sm-8">
 
           <!-- START - LOOPING ITEMS -->
           <li class="list-group-item my-4">
@@ -1351,7 +1514,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
   </dl>
 
   <dl class="clearfix m-0">
-    <dt class="pull-left">8 items</dt>
+    <dt class="pull-left">4 items</dt>
     <dd class="pull-right">Discount: $45.55</dd>
   </dl> 
   <!-- END - PRODUCT SUMMARY -->
@@ -1481,13 +1644,176 @@ The global header is composed of the three navs shown above: Static, User and Pr
   </div>
   <!-- END - PRODUCT DETAILS (EXPANDABLE) -->
 
+</li>          <li class="list-group-item my-4">
+
+  <!-- START - PRODUCT SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-3" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>Tisha Pennington</b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$12.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">2 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+  <!-- END - PRODUCT SUMMARY -->
+
+  <!-- START - PRODUCT DETAILS (EXPANDABLE) -->
+  <div class="details collapse " id="collapse-3">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="d-none t-item hidden-xs hidden-sm">Item</th>
+          <th class="d-none t-desc">Description</th>
+          <th class="d-none t-price">Price</th>
+          <th class="d-none t-qty text-right">Qty</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- START - REPEATABLE ITEMS -->
+
+        <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     $30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     $10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     $45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+         <!-- END - REPEATABLE ITEMS -->
+
+      </tbody>
+    </table>
+
+  </div>
+  <!-- END - PRODUCT DETAILS (EXPANDABLE) -->
+
 </li>          <!-- END - LOOPING ITEMS -->
 
         </ul>
+        <div class="item-entry-total hidden-xs col-sm-4">
+          <h3>Total</h3>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="badge">$90.00</span>
+              Order Subtotal
+            </li>
+            <li class="list-group-item">
+              <span class="badge">$36.00</span>
+              Discount
+            </li>
+          </ul>
+          <p>
+            Shipping and taxes will be calculated durind the checkout process
+          </p>
+          <div class="btn-group">
+            <button id="itemEntryAddAllAside" type="submit" class="btn btn-default">Add all items to order</button>
+          </div>
+        </div>
       </div>
 
-      <!-- Bottom Button - Mobile -->
-      <div class="content-bottom">
+      <!-- Submit All Button -->
+      <div class="item-entry-content--submit visible-xs-block">
         <div class="container">
           <div class="btn-group btn-group-justified">
             <div class="btn-group">

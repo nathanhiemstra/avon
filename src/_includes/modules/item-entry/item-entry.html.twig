@@ -20,7 +20,7 @@
 
     <!-- <div class="container m-0 p-0"> -->
 
-      <div class="row m-0 p-4 content-top">
+      <div class="row m-0 p-4 item-entry-content--form">
 
         <div class="visible-xs-block">
           <h3>Item Entry</h3>
@@ -71,20 +71,40 @@
       </div>
       <!-- /.row -->
 
-      <!-- Content Area - Mobile -->
-      <div class="row m-0 p-4 reverse-bg content-middle">
-        <ul class="list-group">
+      <!-- Main List of Items to be Added -->
+      <div class="row m-0 reverse-bg item-entry-content--list hidden">
+        <ul class="list-group p-4 col-xs-12 col-sm-8">
 
           <!-- START - LOOPING ITEMS -->
           {% include components.groups.yourOrder.personsOrderLi with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
-          {% include components.groups.yourOrder.personsOrderLi with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block'} %}
+          {% include components.groups.yourOrder.personsOrderLi with {indexNum: '2', personName: fpo.person.2, itemCount: '4', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
+          {% include components.groups.yourOrder.personsOrderLi with {indexNum: '3', personName: fpo.person.3, itemCount: '2', total: '12.00', classes: 'd-inline-block', collapsed: true} %}
           <!-- END - LOOPING ITEMS -->
 
         </ul>
+        <div class="item-entry-total hidden-xs col-sm-4">
+          <h3>Total</h3>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="badge">$90.00</span>
+              Order Subtotal
+            </li>
+            <li class="list-group-item">
+              <span class="badge">$36.00</span>
+              Discount
+            </li>
+          </ul>
+          <p>
+            Shipping and taxes will be calculated durind the checkout process
+          </p>
+          <div class="btn-group">
+            <button id="itemEntryAddAllAside" type="submit" class="btn btn-default">Add all items to order</button>
+          </div>
+        </div>
       </div>
 
-      <!-- Bottom Button - Mobile -->
-      <div class="content-bottom">
+      <!-- Submit All Button -->
+      <div class="item-entry-content--submit visible-xs-block">
         <div class="container">
           <div class="btn-group btn-group-justified">
             <div class="btn-group">
