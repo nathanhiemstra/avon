@@ -3,7 +3,7 @@
  * @return {init} [description]
  */
 
-var PredictiveSearch = (function () {
+var FormDemo = (function () {
 
   var $els = {};
   var autoCompleteOptions = {};

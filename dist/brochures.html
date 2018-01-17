@@ -1,4 +1,170 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title></title>
+
+  <!-- Core CSS - containts customized bootstrap plus new CSS -->
+  <link href="./css/avon-main.css" rel="stylesheet">
+  <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+</head>
+
+
+<body >
+
+  <!-- START - PAGE CONTENT -->
+  <section id="avon-poc">
+      <a class="sr-only" href="#content">Skip to main content</a>
+
+      
+      
+      
+              <div class="no-reverse-bg avon-header">
+  <div class="row">
+    <div class="col-xs-12">
+      <header class="global-header" role="banner">
+
+        <!-- Static top navbar -->
+        <nav class="navbar navbar-default navbar-static-top navbar--static-nav hidden-xs border-0">
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a class="py-0 px-4 small" href="#">Avon U</a>
+      </li>
+      <li>
+        <a class="py-0 px-4 small" href="#">Campaign Central</a>
+      </li>
+      <li>
+        <a class="py-0 px-4 small" href="#">Marketing Tools</a>
+      </li>
+      <li>
+        <a class="py-0 px-4 small" href="#">Social Tools</a>
+      </li>
+      <li>
+        <a class="py-0 px-4 small" href="#">ALMA</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+        <!-- User navbar -->
+        <nav class="navbar navbar-default navbar-static-top navbar--user-nav hidden-xs border-0 mb-0">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
+    </a>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#">
+          <span class="profile-img"></span>Jane Johnson</a>
+      </li>
+      <li>
+        <a class="small" href="#">Profile</a>
+      </li>
+      <li>
+        <a class="small" href="#">Settings</a>
+      </li>
+      <li>
+        <a class="small" href="#">Español</a>
+      </li>
+      <li>
+        <a class="small" href="#">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+        <!-- Primary navbar -->
+        <nav class="navbar navbar--primary-nav navbar-default border-bottom my-0" role="navigation">
+  <div class="container pl-0">
+
+    <div class="navbar-header visible-xs-block">
+
+      <button class="navbar-toggle pull-left" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="#"><img src="/images/logos/avon_logo.png" alt="Avon"></a>
+
+      <ul class="nav navbar-nav navbar-right pull-right my-0 collapsed hidden-md hidden-lg" id="mobile-header-navbar">
+  <li class="mr-4">
+
+    <form class="navbar-form border-0 p-0 m-0" role="search">
+      <div class="input-group">
+        <input id="mobile-search-input" type="text" class="form-control invisible" placeholder="Search" name="q" autocomplete="off">
+        <div class="input-group-btn" id="mobile-search-toggle">
+          <span class="btn btn-icon" type="submit" aria-label="Search">
+            <i class="glyphicon glyphicon-search"></i>
+          </span>
+        </div>
+      </div>
+    </form>
+
+  </li>
+</ul>
+
+    </div>
+
+    <ul class="nav navbar-nav navbar-left navbar-collapse collapse pl-0">
+      <li class="active">
+        <a class="small pb-4" href="#">Home</a>
+      </li>
+      <li>
+        <a class="small pb-4" href="#">Products</a>
+      </li>
+      <li>
+        <a class="small pb-4" href="#">Customers</a>
+      </li>
+      <li>
+        <a class="small pb-4" href="#">Orders</a>
+      </li>
+      <li>
+        <a class="small pb-4" href="#">Earnings</a>
+      </li>
+      <li class="visible-xs-block">
+        <a class="small pb-4 trigger-drawer-item-entry" href="#drawer-item-entry" data-toggle="drawer">
+          <span class="glyphicon glyphicon-th-list pr-2" aria-hidden="true"></span>Item Entry</a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right hidden-xs">
+      <li>
+
+        <form class="navbar-form navbar-right" role="search">
+  <div class="form-group">
+    <input id="desktop-header-search" type="text" class="form-control" placeholder="Search" autocomplete="off">
+  </div>
+</form>
+
+      </li>
+      <li class="link">
+        <a class="small trigger-drawer-item-entry" href="#drawer-item-entry" data-toggle="drawer">
+          <span class="glyphicon glyphicon-th-list pr-2" aria-hidden="true"></span>Item Entry</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+        <!-- Item entry drawer -->
+        
 <!-- DRAWER -->
 <section id="drawer-item-entry" class="drawer drawer-fixed-top drawer-hidden drawer-item-entry">
 
@@ -135,7 +301,7 @@
   </td>
   <td class="t-qty text-right">
     <span class="hidden-xs">
-    
+      
                 <div class="form-group has-feedback d-inline-block">
   <select class="form-control input-sm">
       <option>1</option>
@@ -178,7 +344,7 @@
   </td>
   <td class="t-qty text-right">
     <span class="hidden-xs">
-    
+      
                 <div class="form-group has-feedback d-inline-block">
   <select class="form-control input-sm">
       <option>1</option>
@@ -207,7 +373,7 @@
   </td>
   <td class="t-qty text-right">
     <span class="hidden-xs">
-    
+      
                 <div class="form-group has-feedback d-inline-block">
   <select class="form-control input-sm">
       <option>1</option>
@@ -279,7 +445,7 @@
   </td>
   <td class="t-qty text-right">
     <span class="hidden-xs">
-    
+      
                 <div class="form-group has-feedback d-inline-block">
   <select class="form-control input-sm">
       <option>1</option>
@@ -322,7 +488,7 @@
   </td>
   <td class="t-qty text-right">
     <span class="hidden-xs">
-    
+      
                 <div class="form-group has-feedback d-inline-block">
   <select class="form-control input-sm">
       <option>1</option>
@@ -351,7 +517,7 @@
   </td>
   <td class="t-qty text-right">
     <span class="hidden-xs">
-    
+      
                 <div class="form-group has-feedback d-inline-block">
   <select class="form-control input-sm">
       <option>1</option>
@@ -423,7 +589,7 @@
   </td>
   <td class="t-qty text-right">
     <span class="hidden-xs">
-    
+      
                 <div class="form-group has-feedback d-inline-block">
   <select class="form-control input-sm">
       <option>1</option>
@@ -466,7 +632,7 @@
   </td>
   <td class="t-qty text-right">
     <span class="hidden-xs">
-    
+      
                 <div class="form-group has-feedback d-inline-block">
   <select class="form-control input-sm">
       <option>1</option>
@@ -495,7 +661,7 @@
   </td>
   <td class="t-qty text-right">
     <span class="hidden-xs">
-    
+      
                 <div class="form-group has-feedback d-inline-block">
   <select class="form-control input-sm">
       <option>1</option>
@@ -562,3 +728,148 @@
   </section>
 </section>
 <!-- /.drawer -->
+
+      </header>
+
+    </div>
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.no-reverse-bg -->
+
+
+      
+      <div class="global-content-overlay hidden"></div>
+
+      
+      
+      
+      
+  <section class="container container--brochures">
+
+    <div class="container">
+      <div class="row mt-5">
+        <h3 class="mb-5 pull-left">Virtual Brochures</h3>
+<form class="form-inline pull-right">
+
+  <div class="form-group has-feedback">
+    <label>Select Campaign</label>
+    <select class="form-control">
+      <option>Current - CO1</option>
+      <option>Something Else</option>
+      <option>And Another</option>
+    </select>
+    <span class="glyphicon glyphicon-play form-control-feedback"></span>
+  </div>
+
+</form>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="row">
+  <div class="brochure-item col-xs-6 col-sm-3 p-4">
+    <a href="javascript:void(0)">
+      <div class="brochure-img" style="background-image: url(./images/fpo/brochures/01.jpg);"></div>
+      <div class="text-center mt-3">Brochure Title</div>
+    </a>
+  </div>
+  <div class="brochure-item col-xs-6 col-sm-3 p-4">
+    <a href="javascript:void(0)">
+      <div class="brochure-img" style="background-image: url(./images/fpo/brochures/02.jpg);"></div>
+      <div class="text-center mt-3">Brochure Title</div>
+    </a>
+  </div>
+  <div class="brochure-item col-xs-6 col-sm-3 p-4">
+    <a href="javascript:void(0)">
+      <div class="brochure-img" style="background-image: url(./images/fpo/brochures/03.jpg);"></div>
+      <div class="text-center mt-3">Brochure Title</div>
+    </a>
+  </div>
+  <div class="brochure-item col-xs-6 col-sm-3 p-4">
+    <a href="javascript:void(0)">
+      <div class="brochure-img" style="background-image: url(./images/fpo/brochures/04.jpg);"></div>
+      <div class="text-center mt-3">Brochure Title</div>
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="brochure-item col-xs-6 col-sm-3 p-4">
+    <a href="javascript:void(0)">
+      <div class="brochure-img" style="background-image: url(./images/fpo/brochures/04.jpg);"></div>
+      <div class="text-center mt-3">Brochure Title</div>
+    </a>
+  </div>
+  <div class="brochure-item col-xs-6 col-sm-3 p-4">
+    <a href="javascript:void(0)">
+      <div class="brochure-img" style="background-image: url(./images/fpo/brochures/03.jpg);"></div>
+      <div class="text-center mt-3">Brochure Title</div>
+    </a>
+  </div>
+  <div class="brochure-item col-xs-6 col-sm-3 p-4">
+    <a href="javascript:void(0)">
+      <div class="brochure-img" style="background-image: url(./images/fpo/brochures/02.jpg);"></div>
+      <div class="text-center mt-3">Brochure Title</div>
+    </a>
+  </div>
+  <div class="brochure-item col-xs-6 col-sm-3 p-4">
+    <a href="javascript:void(0)">
+      <div class="brochure-img" style="background-image: url(./images/fpo/brochures/01.jpg);"></div>
+      <div class="text-center mt-3">Brochure Title</div>
+    </a>
+  </div>
+</div>
+      </div>
+      <div class="container hidden">
+        <div class="row">
+  <div class="brochure-deatil-container">
+    <img src="./images/fpo/brochures/page01.jpg" class="brochure-dtail-page img-responsive">
+  </div>
+</div>
+      </div>
+    </section>
+  </section>
+
+
+      
+      
+      
+              <!--Footer-->
+<footer class="my-5 footer global-footer">
+    <hr>
+    
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container">
+            Footer
+        </div>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->      
+  </section>
+  <!-- END - PAGE CONTENT -->
+
+  <script src="./js/vendor/jquery/1.10.2/jquery.min.js"></script>
+  <script src="./js/vendor/jquery.autocomplete.min.js"></script>
+  <script src="./js/vendor/bootstrap.js"></script>
+  <script src="./js/avon-main.js"></script>
+  <script src="./js/modules/formDemo.js"></script>
+  <script src="./js/fakeData.js"></script>
+  <!-- TODO :: probably want to bundle the above scripts with a gulp task
+            :: and remove the fake data, of course -->
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+
+</body>
+</html>

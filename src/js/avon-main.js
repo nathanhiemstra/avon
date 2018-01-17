@@ -92,6 +92,6 @@ $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
   });
 
-  PredictiveSearch.init();
+  FormDemo.init();
 
 });

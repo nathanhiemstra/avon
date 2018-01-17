@@ -63,7 +63,7 @@
 
           <div class="form-group col-xs-3 col-sm-2">
             <div class="text-left">&#8203;</div>
-            <button id="itemEntryAdd" type="submit" class="btn btn-default" disabled="disabled">Add to List</button>
+            <button href="javascript:void(0)" id="itemEntryAdd" type="submit" class="btn btn-default" disabled="disabled">Add to List</button>
           </div>
 
         </form>
@@ -82,25 +82,13 @@
           <!-- END - LOOPING ITEMS -->
 
         </ul>
+
         <div class="item-entry-total hidden-xs col-sm-4">
-          <h3>Total</h3>
-          <ul class="list-group">
-            <li class="list-group-item">
-              <span class="badge">$90.00</span>
-              Order Subtotal
-            </li>
-            <li class="list-group-item">
-              <span class="badge">$36.00</span>
-              Discount
-            </li>
-          </ul>
-          <p>
-            Shipping and taxes will be calculated durind the checkout process
-          </p>
-          <div class="btn-group">
-            <button id="itemEntryAddAllAside" type="submit" class="btn btn-default">Add all items to order</button>
-          </div>
+
+          {% include components.modules.yourOrder.total with { btnText: 'Add All Items to Order' } %}
+
         </div>
+
       </div>
 
       <!-- Submit All Button -->

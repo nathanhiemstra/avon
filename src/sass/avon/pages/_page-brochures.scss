@@ -1,0 +1,29 @@
+.container--brochures {
+  .brochure-item {
+    // border: 1px solid red;
+  }
+
+  .brochure-img {
+    min-height: 200px;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.25);
+
+    @media (min-width: $screen-xs-min) {
+      min-height: 350px;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      min-height: 210px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      min-height: 275px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      min-height: 325px;
+    }
+
+  }
+}

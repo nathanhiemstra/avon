@@ -237,7 +237,7 @@
 
           <div class="form-group col-xs-3 col-sm-2">
             <div class="text-left">&#8203;</div>
-            <button id="itemEntryAdd" type="submit" class="btn btn-default" disabled="disabled">Add to List</button>
+            <button href="javascript:void(0)" id="itemEntryAdd" type="submit" class="btn btn-default" disabled="disabled">Add to List</button>
           </div>
 
         </form>
@@ -685,25 +685,30 @@
 </li>          <!-- END - LOOPING ITEMS -->
 
         </ul>
+
         <div class="item-entry-total hidden-xs col-sm-4">
-          <h3>Total</h3>
-          <ul class="list-group">
-            <li class="list-group-item">
-              <span class="badge">$90.00</span>
-              Order Subtotal
-            </li>
-            <li class="list-group-item">
-              <span class="badge">$36.00</span>
-              Discount
-            </li>
-          </ul>
-          <p>
-            Shipping and taxes will be calculated durind the checkout process
-          </p>
-          <div class="btn-group">
-            <button id="itemEntryAddAllAside" type="submit" class="btn btn-default">Add all items to order</button>
-          </div>
+
+          <!-- START - ORDER TOTAL -->
+<section>
+  <div class="hidden-xs">
+    <h3 class="h-utility">Total</h3>
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Order subtotal</dt>
+      <dd class="pull-right">$90.00</dd>
+    </dl>
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Discount</dt>
+      <dd class="pull-right">$36.00</dd>
+    </dl>
+    <p class="text-center">Shipping and taxes will be calculated during the checkout process</p>
+  </div>
+
+  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Add All Items to Order</a>
+</section>
+<!-- START - ORDER TOTAL -->
+
         </div>
+
       </div>
 
       <!-- Submit All Button -->
@@ -765,7 +770,7 @@
   <script src="./js/vendor/jquery.autocomplete.min.js"></script>
   <script src="./js/vendor/bootstrap.js"></script>
   <script src="./js/avon-main.js"></script>
-  <script src="./js/modules/searchForms.js"></script>
+  <script src="./js/modules/formDemo.js"></script>
   <script src="./js/fakeData.js"></script>
   <!-- TODO :: probably want to bundle the above scripts with a gulp task
             :: and remove the fake data, of course -->
