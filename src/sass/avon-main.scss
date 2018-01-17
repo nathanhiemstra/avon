@@ -59,6 +59,7 @@
 
 // AVON ADDITIONS
 @import "avon/borders";
+@import "avon/backgrounds";
 @import "avon/display";
 @import "avon/drawers";
 @import "avon/footer";
@@ -72,18 +73,18 @@
 
 // dropping in some global generic styles for Avon here
 html, body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 input,
 textarea,
 [contenteditable] {
-  caret-color: $brand-primary;
+    caret-color: $brand-primary;
 }
 
 // prevent double scrollbars when drawers open
 html {
-  &.drawer-open {
-    overflow-y: hidden;
-  }
+    &.drawer-open {
+        overflow-y: hidden;
+    }
 }
