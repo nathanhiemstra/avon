@@ -10,9 +10,9 @@
 .carousel-inner {
     position: relative;
     overflow: hidden;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+    width: 100%;
+    // margin-left: 5%;
+    // margin-right: 5%;
 
     > .item {
         display: none;
@@ -112,7 +112,6 @@
     font-size: $carousel-control-font-size;
     color: $carousel-control-color;
     text-align: center;
-    text-shadow: $carousel-text-shadow;
     background-color: rgba(0, 0, 0, 0);
 
     // Fix IE9 click-thru bug
@@ -122,7 +121,7 @@
     // Set gradients for backgrounds
     &.left {
         // @include gradient-horizontal($start-color: rgba(0,0,0,.5), $end-color: rgba(0,0,0,.0001));
-   
+
     }
 
     &.right {
@@ -130,7 +129,7 @@
         right: 0;
 
         // @include gradient-horizontal($start-color: rgba(0,0,0,.0001), $end-color: rgba(0,0,0,.5));
-   
+
     }
 
     // Hover/focus state
@@ -147,30 +146,38 @@
     .icon-prev,
     .icon-next,
     .glyphicon-chevron-left,
-    .glyphicon-chevron-right {
+    .glyphicon-chevron-right,
+    .glyphicon-arrow-left,
+    .glyphicon-arrow-right {
         position: absolute;
         top: 50%;
-        margin-top: -10px;
+        margin-top: -40px;
         z-index: 5;
         display: inline-block;
+        width: 60px;
+        height: 80px;
+        background-color: $body-bg;
+        line-height: 76px;
     }
 
     .icon-prev,
-    .glyphicon-chevron-left {
+    .glyphicon-chevron-left,
+    .glyphicon-arrow-left {
         left: 50%;
-        margin-left: -10px;
+        margin-left: -6px;
     }
 
     .icon-next,
-    .glyphicon-chevron-right {
+    .glyphicon-chevron-right,
+    .glyphicon-arrow-right {
         right: 50%;
-        margin-right: -10px;
+        margin-right: -6px;
     }
 
     .icon-prev,
     .icon-next {
-        width: 20px;
-        height: 20px;
+        width: 60px;
+        height: 80px;
         line-height: 1;
         font-family: serif;
     }
@@ -180,7 +187,7 @@
             content: '\2039';
 
             // SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
-       
+
         }
     }
 
@@ -189,7 +196,7 @@
             content: '\203a';
 
             // SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
-       
+
         }
     }
 }
@@ -235,7 +242,7 @@
         background-color: rgba(0, 0, 0, 0);
 
         // IE9
-   
+
     }
 
     .active {
@@ -265,7 +272,7 @@
         text-shadow: none;
 
         // No shadow for button elements in carousel-caption
-   
+
     }
 }
 
@@ -275,22 +282,28 @@
     .carousel-control {
         .glyphicon-chevron-left,
         .glyphicon-chevron-right,
+        .glyphicon-arrow-left,
+        .glyphicon-arrow-right,
         .icon-prev,
         .icon-next {
-            width: $carousel-control-font-size * 1.5;
-            height: $carousel-control-font-size * 1.5;
-            margin-top: $carousel-control-font-size / -2;
-            font-size: $carousel-control-font-size * 1.5;
+            width: 60px;
+            height: 80px;
+            margin-top: -40px;
+            background-color: $body-bg;
+            line-height: 76px;
+            // font-size: $carousel-control-font-size * 1.5;
         }
 
         .glyphicon-chevron-left,
+        .glyphicon-arrow-left,
         .icon-prev {
-            margin-left: $carousel-control-font-size / -2;
+            margin-left: -6px;
         }
 
         .glyphicon-chevron-right,
+        .glyphicon-arrow-right,
         .icon-next {
-            margin-right: $carousel-control-font-size / -2;
+            margin-right: -6px;
         }
     }
 

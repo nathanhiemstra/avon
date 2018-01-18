@@ -93,5 +93,6 @@ $(document).ready(function () {
   });
 
   FormDemo.init();
+  Brochures.init();
 
 });
