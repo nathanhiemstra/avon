@@ -1,5 +1,13 @@
 .container--brochures {
 
+  .header--has-nav {
+    .lg-right {
+      @media (min-width: $screen-sm-min) {
+        text-align: right;
+      }
+    }
+  }
+
   .brochure-item {
   }
 
@@ -32,11 +40,12 @@
   }
 
   .carousel {
-
+    .item {
+    }
   }
 
-  .progress {
-
+  .progress-bar {
+    transition: 0.5s width ease, 0.5s transform ease;
   }
 
 }

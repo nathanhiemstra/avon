@@ -6,6 +6,8 @@
 var Brochures = (function () {
 
   var $els = {};
+  var totalSteps = 0;
+  var currentStep = 1;
 
   // public methods
   var init = function () {
@@ -15,12 +17,20 @@ var Brochures = (function () {
       gridView: $('.brochure-grid-view'),
       detailView: $('.brochure-detail-view'),
       brochureGridItems: $('.brochure-item'),
+      brochureCarousel: $('#brochure-carousel'),
+      brochureSlides: $('#brochure-carousel .item'),
+      brochureProgress: $('#brochure-carousel-progress'),
+      brochureProgressBar: $('#brochure-carousel-progress .progress-bar'),
       backBtn: $('.brochures-back-btn'),
       mobileNav: $('.brochure-mobile-nav'),
       desktopNav: $('.brochure-desktop-nav')
     };
 
+    totalSteps = $els.brochureSlides.length;
+    currentStep = $els.brochureCarousel.find('.item.active').data('step');
+
     _addListeners();
+    _updateProgress(null);
 
   };
 
@@ -28,17 +38,35 @@ var Brochures = (function () {
   var _addListeners = function () {
 
     $els.brochureGridItems.on('click', function() {
-      $els.gridView.toggleClass('hidden');
-      $els.detailView.toggleClass('hidden');
-      $els.backBtn.toggleClass('hidden');
+      _toggleView();
     });
 
     $els.backBtn.on('click', function() {
-      $els.gridView.toggleClass('hidden');
-      $els.detailView.toggleClass('hidden');
-      $(this).toggleClass('hidden');
+      _toggleView();
     });
 
+    $els.brochureCarousel.on('slide.bs.carousel', function (e) {
+      _updateProgress(e);
+    });
+
+  };
+
+  var _toggleView = function() {
+    $els.gridView.toggleClass('hidden');
+    $els.detailView.toggleClass('hidden');
+    $els.backBtn.toggleClass('hidden');
+  };
+
+  var _updateProgress = function(e) {
+    if(e) currentStep = $(e.relatedTarget).data('step');
+    // console.log('CURRENT STEP :: ', currentStep);
+
+    var stepWidth = (1 / totalSteps) * 100;
+
+    $els.brochureProgressBar.css({
+      width: stepWidth + '%',
+      transform: 'translateX(' + (currentStep - 1) * 100 + '%)'
+    });
   };
 
   return {
