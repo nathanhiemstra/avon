@@ -148,6 +148,10 @@ gulp.task('compile', function () {
                   unit:             prefix.groups + "ratings/unit.html.twig"
                 },
 
+                social: {
+                  links:            prefix.groups + "social/social-links.html.twig"
+                },
+
                 yourOrder: {
                   personsOrderLi:   prefix.groups + "yourOrder/persons-order.html.twig",
                   singleProductTr:  prefix.groups + "yourOrder/persons-order-tr.html.twig"
@@ -157,7 +161,8 @@ gulp.task('compile', function () {
                 brochures: {
                   header:         prefix.modules + "brochures/header.html.twig",
                   gridView:       prefix.modules + "brochures/grid-view.html.twig",
-                  detailView:     prefix.modules + "brochures/detail-view.html.twig"
+                  detailView:     prefix.modules + "brochures/detail-view.html.twig",
+                  quickLook:      prefix.modules + "brochures/quick-look.html.twig"
                 },
                 checkout: {
                   chooseType:     prefix.modules + "checkout/choose-type.html.twig",

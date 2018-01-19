@@ -1,6 +1,13 @@
 .container--brochures {
 
   .header--has-nav {
+    .header-title {
+      display: none;
+
+      @media (min-width: $screen-sm-min) {
+        display: block;
+      }
+    }
     .lg-right {
       @media (min-width: $screen-sm-min) {
         text-align: right;
@@ -39,13 +46,12 @@
     display: inline-block;
   }
 
-  .carousel {
-    .item {
-    }
+  .brochure-container {
+    cursor: pointer;
   }
 
-  .progress-bar {
-    transition: 0.5s width ease, 0.5s transform ease;
-  }
+  // .progress-bar {
+  //   transition: 0.5s width ease, 0.5s transform ease;
+  // }
 
 }

@@ -1,0 +1,16 @@
+// vertical center - use with html comments to achieve: https://stackoverflow.com/questions/20547819/vertical-align-with-bootstrap-3/25517025#25517025
+.vcenter {
+   display: inline-block;
+   vertical-align: middle;
+   float: none;
+}
+
+// justified inline lists hack: https://stackoverflow.com/questions/6879467/how-do-i-justify-a-horizontal-list
+ul.text-justify {
+   text-align: justify;
+}
+
+li.stretch {
+    display: inline-block;
+    width: 100%;
+}

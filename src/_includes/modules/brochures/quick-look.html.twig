@@ -1,0 +1,38 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'brochure-quick-look' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h4 class="modal-title text-center" id="myModalLabel">Quick Look</h4>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+  <section class="py-5">
+    <!-- Product Details -->
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 vcenter">
+        {% include components.modules.product.detail.images %}
+        <div class="hidden-xs">  
+          {% include components.groups.social.links %}
+        </div>
+      </div><!--
+      --><div class="col-xs-12 col-sm-8 vcenter">
+        {% include components.modules.product.detail.details %}
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#product-add-to-order">
+          Add to order
+        </button>
+      </div>
+    </div>
+    <!-- /.row -->
+  </section>
+
+{% endblock %}
