@@ -1,0 +1,65 @@
+.your-order-offers {
+    .offer-item {
+        @extend .my-4;
+
+        background-color: $body-bg;
+    }
+
+    .offer-banner {
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .offer-description {
+        position: relative;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        // Don't let content collide with position-absolute stuff
+        padding-bottom: 50px;
+    }
+
+    .offer-ctas {
+        position: absolute;
+        bottom: 10px;
+        padding-right: 30px;
+        width: 100%;
+    }
+
+    .has-free-label {
+        .offer-description {
+            // Don't let content collide with position-absolute stuff
+            padding-right: 60px;
+
+            &:after {
+                content: 'FREE';
+                position: absolute;
+                right: 20px;
+                top: 0;
+                color: $brand-primary;
+                font-size: $font-size-small;
+                font-weight: bold;
+                text-align: right;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+        }
+    }
+
+    .has-offer-cta {
+        .offer-description {
+            // Don't let content collide with position-absolute stuff
+            padding-bottom: 50px;
+        }
+    }
+
+    $offer-item-height: 150px;
+
+    @media (min-width: $screen-sm-min) {
+        .offer-item,
+        .offer-banner,
+        .offer-description {
+            height: $offer-item-height;
+        }
+    }
+}
