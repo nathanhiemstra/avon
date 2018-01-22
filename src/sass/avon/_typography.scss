@@ -21,20 +21,25 @@ html:hover [class^="lt-"] {
 	-ms-zoom: 1;
 }
 
+.lt-icon, .lt-icon.lt-icons-regular {
+	display: inline-block;
+	position: relative;
+	bottom: 1px;
+	line-height: 1;
+}
+
 .lt-icon, .lt-icon.lt-icons-regular,
 [class^="lt-"]:before, [class*=" lt-"]:before,
 [class^="lt-"].lt-icons-regular:before, [class*=" lt-"].lt-icons-regular:before,
 [class^="lt-"].after:after, [class*=" lt-"].after:after,
 [class^="lt-"].lt-icons-regular.after:after, [class*=" lt-"].lt-icons-regular.after:after {
 	font-family: "LushIcons";
-  // font-size: $font-size-base * 1.5;
 	font-style: normal;
 	font-weight: normal;
 	text-decoration: none;
 	text-rendering: optimizeLegibility;
 	white-space: nowrap;
 	color: $brand-primary;
-	/*-webkit-font-feature-settings: "liga"; */
 	-moz-font-feature-settings: "liga=1";
 	-moz-font-feature-settings: "liga";
 	-ms-font-feature-settings: "liga" 1;
