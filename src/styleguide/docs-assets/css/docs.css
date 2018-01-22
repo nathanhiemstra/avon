@@ -953,7 +953,7 @@ h1[id] {
         border-radius: 4px 4px 0 0;
 
         // box-shadow: none;
-   
+
     }
 
     .bs-example + .highlight {
@@ -1332,17 +1332,17 @@ h1[id] {
  * Special styles for displaying the icons and their classes in the docs.
  */
 
-.bs-glyphicons {
+.bs-glyphicons, .bs-lushicons {
     margin: 0 -19px 20px -16px;
     overflow: hidden;
 }
 
-.bs-glyphicons-list {
+.bs-glyphicons-list, .bs-lushicons-list {
     padding-left: 0;
     list-style: none;
 }
 
-.bs-glyphicons li {
+.bs-glyphicons li, .bs-lushicons li {
     float: left;
     width: 25%;
     height: 115px;
@@ -1354,13 +1354,19 @@ h1[id] {
     background-color: #f9f9f9;
 }
 
-.bs-glyphicons .glyphicon {
+.bs-glyphicons .glyphicon,
+.bs-lushicons .lt-icon {
     margin-top: 5px;
     margin-bottom: 10px;
     font-size: 24px;
 }
 
-.bs-glyphicons .glyphicon-class {
+.bs-lushicons .lt-icon {
+    font-size: 28px;
+}
+
+.bs-glyphicons .glyphicon-class,
+.bs-lushicons .lushicon-class {
     display: block;
     text-align: center;
     word-wrap: break-word;
@@ -1368,18 +1374,21 @@ h1[id] {
     /* Help out IE10+ with class names */
 }
 
-.bs-glyphicons li:hover {
+.bs-glyphicons li:hover,
+.bs-lushicons li:hover {
     color: #fff;
     background-color: #563d7c;
 }
 
 @media (min-width: 768px) {
-    .bs-glyphicons {
+    .bs-glyphicons,
+    .bs-lushicons {
         margin-left: 0;
         margin-right: 0;
     }
 
-    .bs-glyphicons li {
+    .bs-glyphicons li,
+    .bs-lushicons li {
         width: 12.5%;
         font-size: 12px;
     }

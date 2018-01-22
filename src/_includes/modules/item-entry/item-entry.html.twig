@@ -20,7 +20,7 @@
 
     <!-- <div class="container m-0 p-0"> -->
 
-      <div class="row m-0 p-4 content-top">
+      <div class="row m-0 p-4 item-entry-content--form">
 
         <div class="visible-xs-block">
           <h3>Item Entry</h3>
@@ -63,7 +63,7 @@
 
           <div class="form-group col-xs-3 col-sm-2">
             <div class="text-left">&#8203;</div>
-            <button id="itemEntryAdd" type="submit" class="btn btn-default" disabled="disabled">Add to List</button>
+            <button href="javascript:void(0)" id="itemEntryAdd" type="submit" class="btn btn-default" disabled="disabled">Add to List</button>
           </div>
 
         </form>
@@ -71,20 +71,28 @@
       </div>
       <!-- /.row -->
 
-      <!-- Content Area - Mobile -->
-      <div class="row m-0 p-4 reverse-bg content-middle">
-        <ul class="list-group">
+      <!-- Main List of Items to be Added -->
+      <div class="row m-0 reverse-bg item-entry-content--list hidden">
+        <ul class="list-group p-4 col-xs-12 col-sm-8">
 
           <!-- START - LOOPING ITEMS -->
           {% include components.groups.yourOrder.personsOrderLi with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
-          {% include components.groups.yourOrder.personsOrderLi with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block'} %}
+          {% include components.groups.yourOrder.personsOrderLi with {indexNum: '2', personName: fpo.person.2, itemCount: '4', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
+          {% include components.groups.yourOrder.personsOrderLi with {indexNum: '3', personName: fpo.person.3, itemCount: '2', total: '12.00', classes: 'd-inline-block', collapsed: true} %}
           <!-- END - LOOPING ITEMS -->
 
         </ul>
+
+        <div class="item-entry-total hidden-xs col-sm-4">
+
+          {% include components.modules.yourOrder.total with { btnText: 'Add All Items to Order' } %}
+
+        </div>
+
       </div>
 
-      <!-- Bottom Button - Mobile -->
-      <div class="content-bottom">
+      <!-- Submit All Button -->
+      <div class="item-entry-content--submit visible-xs-block">
         <div class="container">
           <div class="btn-group btn-group-justified">
             <div class="btn-group">

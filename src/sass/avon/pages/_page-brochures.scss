@@ -1,0 +1,57 @@
+.container--brochures {
+
+  .header--has-nav {
+    .header-title {
+      display: none;
+
+      @media (min-width: $screen-sm-min) {
+        display: block;
+      }
+    }
+    .lg-right {
+      @media (min-width: $screen-sm-min) {
+        text-align: right;
+      }
+    }
+  }
+
+  .brochure-item {
+  }
+
+  .brochure-img {
+    min-height: 200px;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.25);
+
+    @media (min-width: $screen-xs-min) {
+      min-height: 350px;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      min-height: 210px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      min-height: 275px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      min-height: 325px;
+    }
+
+  }
+
+  .brochures-back-btn {
+    display: inline-block;
+  }
+
+  .brochure-container {
+    cursor: pointer;
+  }
+
+  // .progress-bar {
+  //   transition: 0.5s width ease, 0.5s transform ease;
+  // }
+
+}

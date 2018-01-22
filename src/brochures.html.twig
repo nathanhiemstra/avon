@@ -1,0 +1,36 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--brochures">
+
+      <div class="container">
+        <div class="row mt-5">
+          {% include components.modules.brochures.header %}
+        </div>
+      </div>
+
+      <section>
+        <div class="container brochure-grid-view">
+          {% include components.modules.brochures.gridView %}
+        </div>
+        <div class="container brochure-detail-view hidden">
+          {% include components.modules.brochures.detailView %}
+        </div>
+      </section>
+    </section>
+
+  {% endblock %}
+
+  <!-- MODAL - Brochure Quick Look -->
+  {% include components.modules.brochures.quickLook %}
+
+{% endblock %}

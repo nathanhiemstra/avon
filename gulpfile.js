@@ -36,7 +36,7 @@ path.src = {
   examplesHtml:     "src/styleguide/examples/**/*.html",
   examplesCss:      "src/styleguide/examples/**/*.css",
   examplesJpg:      "src/styleguide/examples/**/*.jpg",
-  fonts:            "src/fonts/*",
+  fonts:            "src/fonts/**/*",
   html:             "src/**/*.html",
   images:           "src/images/**/*",
   js:               "src/js/**/*.js",
@@ -148,12 +148,22 @@ gulp.task('compile', function () {
                   unit:             prefix.groups + "ratings/unit.html.twig"
                 },
 
+                social: {
+                  links:            prefix.groups + "social/social-links.html.twig"
+                },
+
                 yourOrder: {
                   personsOrderLi:   prefix.groups + "your-order/single-cart-li.html.twig",
                   singleProductTr:  prefix.groups + "your-order/single-product-tr.html.twig"
                 },
               },
               modules: {
+                brochures: {
+                  header:         prefix.modules + "brochures/header.html.twig",
+                  gridView:       prefix.modules + "brochures/grid-view.html.twig",
+                  detailView:     prefix.modules + "brochures/detail-view.html.twig",
+                  quickLook:      prefix.modules + "brochures/quick-look.html.twig"
+                },
                 checkout: {
                   chooseType:     prefix.modules + "checkout/choose-type.html.twig",
                   header:         prefix.modules + "checkout/header.html.twig"
@@ -206,6 +216,9 @@ gulp.task('compile', function () {
               }
             },
             pages: {
+              brochures: {
+                landing:      'brochures.html'
+              },
               checkout: {
                 review: {
                   complete:   'checkout-review-complete.html'

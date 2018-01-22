@@ -111,7 +111,7 @@
         <input id="mobile-search-input" type="text" class="form-control invisible" placeholder="Search" name="q" autocomplete="off">
         <div class="input-group-btn" id="mobile-search-toggle">
           <span class="btn btn-icon" type="submit" aria-label="Search">
-            <i class="glyphicon glyphicon-search"></i>
+            <i class="lt-icon lt-search"></i>
           </span>
         </div>
       </div>
@@ -140,7 +140,7 @@
       </li>
       <li class="visible-xs-block">
         <a class="small pb-4 trigger-drawer-item-entry" href="#drawer-item-entry" data-toggle="drawer">
-          <span class="glyphicon glyphicon-th-list pr-2" aria-hidden="true"></span>Item Entry</a>
+          <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
       </li>
     </ul>
 
@@ -156,7 +156,7 @@
       </li>
       <li class="link">
         <a class="small trigger-drawer-item-entry" href="#drawer-item-entry" data-toggle="drawer">
-          <span class="glyphicon glyphicon-th-list pr-2" aria-hidden="true"></span>Item Entry</a>
+          <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
       </li>
     </ul>
 
@@ -182,9 +182,8 @@
     </a>
 
     <h1 class="navbar-title">Item Entry</h1>
-    <a href="#drawer-item-entry" class="pull-right mt-3" data-toggle="drawer">
-      <span class="h4">
-        <span class="glyphicon glyphicon-remove"></span></span>
+    <a href="#drawer-item-entry" class="close" data-toggle="drawer">
+      <span class="lt-icon lt-close"></span>
     </a>
   </div>
 </header>
@@ -194,7 +193,7 @@
 
     <!-- <div class="container m-0 p-0"> -->
 
-      <div class="row m-0 p-4 content-top">
+      <div class="row m-0 p-4 item-entry-content--form">
 
         <div class="visible-xs-block">
           <h3>Item Entry</h3>
@@ -237,7 +236,7 @@
 
           <div class="form-group col-xs-3 col-sm-2">
             <div class="text-left">&#8203;</div>
-            <button id="itemEntryAdd" type="submit" class="btn btn-default" disabled="disabled">Add to List</button>
+            <button href="javascript:void(0)" id="itemEntryAdd" type="submit" class="btn btn-default" disabled="disabled">Add to List</button>
           </div>
 
         </form>
@@ -245,9 +244,9 @@
       </div>
       <!-- /.row -->
 
-      <!-- Content Area - Mobile -->
-      <div class="row m-0 p-4 reverse-bg content-middle">
-        <ul class="list-group">
+      <!-- Main List of Items to be Added -->
+      <div class="row m-0 reverse-bg item-entry-content--list hidden">
+        <ul class="list-group p-4 col-xs-12 col-sm-8">
 
           <!-- START - LOOPING ITEMS -->
           <li class="list-group-item my-4">
@@ -411,7 +410,7 @@
   </dl>
 
   <dl class="clearfix m-0">
-    <dt class="pull-left">8 items</dt>
+    <dt class="pull-left">4 items</dt>
     <dd class="pull-right">Discount: $45.55</dd>
   </dl> 
   <!-- END - CART SUMMARY -->
@@ -544,13 +543,184 @@
 
 
   
+</li>          <li class="list-group-item my-4">
+
+  <!-- START - CART SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-3" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>Tisha Pennington</b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$12.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">2 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+  <!-- END - CART SUMMARY -->
+
+  <!-- START - CART DETAILS (EXPANDABLE) -->
+  <div class="details collapse " id="collapse-3">
+
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th class="t-item hidden-xs hidden-sm">Item</th>
+          <th class="t-desc invisible">Description</th>
+          <th class="t-price">Price</th>
+          <th class="t-qty text-right">Qty</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- START - REPEATABLE ITEMS -->
+
+        <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     $30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     $10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     $45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+         <!-- END - REPEATABLE ITEMS -->
+ 
+      </tbody>
+    </table>
+
+
+  </div>
+  <!-- END - CART DETAILS (EXPANDABLE) -->
+
+
+  
 </li>          <!-- END - LOOPING ITEMS -->
 
         </ul>
+
+        <div class="item-entry-total hidden-xs col-sm-4">
+
+          <!-- START - ORDER TOTAL -->
+<section>
+  <div class="hidden-xs hidden-sm">
+    <h3 class="h-utility">Total</h3>
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Order subtotal</dt>
+      <dd class="pull-right">$90.00</dd>
+    </dl>
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Discount</dt>
+      <dd class="pull-right">$36.00</dd>
+    </dl>
+    <p class="text-center">Shipping and taxes will be calculated during the checkout process</p>
+  </div>
+
+  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Add All Items to Order</a>
+</section>
+<!-- START - ORDER TOTAL -->
+
+        </div>
+
       </div>
 
-      <!-- Bottom Button - Mobile -->
-      <div class="content-bottom">
+      <!-- Submit All Button -->
+      <div class="item-entry-content--submit visible-xs-block">
         <div class="container">
           <div class="btn-group btn-group-justified">
             <div class="btn-group">
@@ -574,15 +744,15 @@
   <!-- /.row -->
 </div>
 <!-- /.no-reverse-bg -->
+      
+      <div class="global-content-overlay hidden"></div>
+
+      
+      
+      
+      
 
 
-      
-      
-      
-      
-      
-    
- 
       <main role="main">
 
   
@@ -594,7 +764,7 @@
                 <div class="row">
                   <span class="glyphicon glyphicon-asterisk"></span>
                   Campaign 3 is due by 11:59 PM Local Time on Wednesday 01/17/2018 21 days(s) left
-                  <a href="#" class="pull-right" data-dismiss="alert"><span class="glyphicon glyphicon-remove"></span></a>
+                  <a href="#" class="close" data-dismiss="alert"><span class="lt-icon lt-close"></span></a>
               </div><!-- /.row -->
             </div>
           </section>
@@ -637,7 +807,7 @@
 <h3>Anew Skinvincible Deep Recovery Cream</h3>
 <p><span>
   <a href="#"><span class="glyphicon glyphicon-star"></span></a>  <a href="#"><span class="glyphicon glyphicon-star"></span></a>  <a href="#"><span class="glyphicon glyphicon-star"></span></a>  <a href="#"><span class="glyphicon glyphicon-star"></span></a>  <a href="#"><span class="glyphicon glyphicon-star-empty"></span></a></span> (134)
-<span class="glyphicon glyphicon-ok"></span> In stock</p>
+<span class="lt-icon lt-checkmark"></span> In stock</p>
 <p>You love the sun, but not the damage it can do to your skin! Anew Skinvincible Multi-Shield Lotion contains Broad Spectrum SPF50 to take the worry away. Protect yourself against the visible effects of environmental skin damage while healing from past injury.</p>
 <p><a href="#">Learn more</a></p>
 <h4>$9.99 <small style="text-decoration: line-through;">Regular price: $12.99</small></h4>
@@ -648,7 +818,7 @@
             </div><!-- /.row -->
           </section>
 
-         
+
           <!-- Related Products -->
           <section class="reverse-bg py-5">
             <div class="container">
@@ -656,7 +826,7 @@
                 <h2 class="d-inline-block my-0">Related Products</h2>
                 <a href="#" class="pull-right">View all <span class="glyphicon glyphicon-chevron-right"></span></a>
               </div>
-              
+
 
 
               
@@ -794,7 +964,7 @@
               </div>
             </div><!-- /.container -->
           </section><!-- /.reverse-bg -->
- 
+
 
           <section class="py-5">
             <div class="container">
@@ -998,9 +1168,8 @@
     </a>
 
     <h1 class="navbar-title">Your Order</h1>
-    <a href="#drawer-order-summary" class="pull-right mt-3" data-toggle="drawer">
-      <span class="h4">
-        <span class="glyphicon glyphicon-remove"></span></span>
+    <a href="#drawer-order-summary" class="close" data-toggle="drawer">
+      <span class="lt-icon lt-close"></span>
     </a>
   </div>
 </header>
@@ -1975,17 +2144,18 @@
     <dl class="clearfix border-bottom pb-3 mb-3">
       <dt class="pull-left label-utility">Order subtotal</dt>
       <dd class="pull-right">$90.00</dd>
-    </dl> 
+    </dl>
     <dl class="clearfix border-bottom pb-3 mb-3">
       <dt class="pull-left label-utility">Discount</dt>
       <dd class="pull-right">$36.00</dd>
-    </dl> 
+    </dl>
     <p class="text-center">Shipping and taxes will be calculated during the checkout process</p>
   </div>
-  
+
   <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Checkout</a>
 </section>
 <!-- START - ORDER TOTAL -->
+
         </div>
       </div>
       <!-- /.row -->
@@ -2114,7 +2284,8 @@
   <script src="./js/vendor/jquery.autocomplete.min.js"></script>
   <script src="./js/vendor/bootstrap.js"></script>
   <script src="./js/avon-main.js"></script>
-  <script src="./js/modules/searchForms.js"></script>
+  <script src="./js/modules/brochures.js"></script>
+  <script src="./js/modules/formDemo.js"></script>
   <script src="./js/fakeData.js"></script>
   <!-- TODO :: probably want to bundle the above scripts with a gulp task
             :: and remove the fake data, of course -->

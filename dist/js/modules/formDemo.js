@@ -3,7 +3,7 @@
  * @return {init} [description]
  */
 
-var PredictiveSearch = (function () {
+var FormDemo = (function () {
 
   var $els = {};
   var autoCompleteOptions = {};
@@ -19,13 +19,16 @@ var PredictiveSearch = (function () {
       searchBtn: $('#mobile-search-toggle'),
       searchNavbar: $('#mobile-header-navbar'),
       menuButton: $('.navbar-header .navbar-toggle'),
-      searchOverlay: $('.container--search-results .main-content-overlay'),
+      globalOverlay: $('.global-content-overlay'),
 
+      itemEntryDrawer: $('#drawer-item-entry'),
       itemEntrySearchInput: $('#itemEntryProduct'),
       itemEntryCustomer: $('#itemEntryCustomer'),
       itemEntryQty: $('#itemEntryQty'),
       itemEntryAdd: $('#itemEntryAdd'),
-      itemEntryAddAll: $('#itemEntryAddAll')
+      itemEntryContent: $('#drawer-item-entry .drawer-content'),
+      itemEntryList: $('.item-entry-content--list'),
+      itemEntryAddAllBtns: $('.item-entry-total button')
     };
 
     itemEntryObj = {
@@ -110,9 +113,20 @@ var PredictiveSearch = (function () {
       _checkBtnState();
     });
 
-    $els.itemEntryAdd.on('click', function() {
-      alert('Add item to list: ' + itemEntryObj.qty + 'X ' + itemEntryObj.product + ' for ' + itemEntryObj.customer);
-      $(this).addClass('btn-success');
+    $els.itemEntryAdd.on('click', function(e) {
+      e.preventDefault();
+      _handleItemEntry(itemEntryObj);
+      itemEntryObj = {};
+      // alert('Add item to list: ' + itemEntryObj.qty + 'X ' + itemEntryObj.product + ' for ' + itemEntryObj.customer);
+      $(this).html('<span class="lt-icon lt-checkmark" aria-hidden="true"></span>');
+      $(this).addClass('btn-primary');
+    });
+
+    $els.itemEntryAddAllBtns.on('click', function() {
+      // console.log('BTN CLICKED :: ');
+      $('html').toggleClass('drawer-open');
+      $els.itemEntryDrawer.toggleClass('drawer-expanded');
+      $els.globalOverlay.toggleClass('hidden');
     });
 
     // mobile
@@ -132,19 +146,42 @@ var PredictiveSearch = (function () {
       });
   };
 
+  var _handleItemEntry = function(obj) {
+    _clearItemEntryForm();
+    $els.itemEntryList.removeClass('hidden');
+    $els.itemEntryContent.css('height', '100vh');
+  };
+
+  var _clearItemEntryForm = function() {
+    // TODO :: below is for demo purposes only
+    setTimeout(function() {
+      $els.itemEntrySearchInput.val('');
+      $els.itemEntrySearchInput.next('.selected-item').text('');
+      $els.itemEntryQty.find('option').prop('selected', function() {
+          return this.defaultSelected;
+      });
+      $els.itemEntryCustomer.find('option').prop('selected', function() {
+          return this.defaultSelected;
+      });
+      $els.itemEntryAdd.html('Add Item');
+      $els.itemEntryAdd.prop('disabled', true);
+      $els.itemEntryAdd.removeClass('btn-primary');
+    }, 500);
+  };
+
   var _toggleSearchExpand = function () {
     // mobile
     if($els.searchNavbar.hasClass('expanded')) {
       // expanded, let's collapse
       $els.searchNavbar.removeClass('expanded').addClass('collapsed');
-      $els.searchOverlay.removeClass('show').addClass('hidden');
+      $els.globalOverlay.removeClass('show').addClass('hidden');
       $els.searchInputMobile.addClass('invisible');
 
       $els.menuButton.removeClass('hidden').addClass('show');
     } else {
       // collapsed, let's expand
       $els.searchNavbar.removeClass('collapsed').addClass('expanded');
-      $els.searchOverlay.removeClass('hidden').addClass('show');
+      $els.globalOverlay.removeClass('hidden').addClass('show');
       $els.searchInputMobile.removeClass('invisible');
 
       $els.menuButton.removeClass('show').addClass('hidden');
@@ -175,7 +212,7 @@ var PredictiveSearch = (function () {
     });
     if(!hasUndefined) {
       $els.itemEntryAdd.prop('disabled', false);
-      $els.itemEntryAddAll.prop('disabled', false);
+      $els.itemEntryAddAllBtns.prop('disabled', false);
     }
   };
 

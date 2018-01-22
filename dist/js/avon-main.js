@@ -4,7 +4,6 @@ $(document).ready(function () {
   // VARIABLES
   ////////////////////////////////////////////////////////
 
-
   var selectors = {
     main: "#avon-poc",
     triggers: {
@@ -15,7 +14,8 @@ $(document).ready(function () {
       all: '[data-toggle="drawer"]',
       orderSummary: ".drawer-order-summary",
       itemEntry: ".drawer-item-entry"
-    }
+    },
+    overlay: ".global-content-overlay"
   }
   var $objects = {
     window: $(window),
@@ -31,7 +31,8 @@ $(document).ready(function () {
       all: $(selectors.main).find(selectors.drawers.all),
       orderSummary: $(selectors.main).find(selectors.drawers.orderSummary),
       itemEntry: $(selectors.main).find(selectors.drawers.itemEntry)
-    }
+    },
+    overlay: $(selectors.overlay)
   }
 
 
@@ -50,6 +51,7 @@ $(document).ready(function () {
     $objects.html.toggleClass('drawer-open');
 
     if (isDrawerTypeHidden) {
+      $objects.overlay.toggleClass('hidden');
       if (isExpanded) {
         setTimeout(function () {
           // completely hide after delay
@@ -90,6 +92,7 @@ $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
   });
 
-  PredictiveSearch.init();
+  FormDemo.init();
+  Brochures.init();
 
 });

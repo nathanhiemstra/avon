@@ -58,6 +58,7 @@
 @import "bootstrap/responsive-utilities";
 
 // AVON ADDITIONS
+@import "avon/alignment";
 @import "avon/borders";
 @import "avon/backgrounds";
 @import "avon/display";
@@ -67,12 +68,14 @@
 @import "avon/predictive-search";
 @import "avon/product-lists";
 @import "avon/spacing";
+@import "avon/typography";
 
 // PAGE SPECIFIC STYLES
+@import "avon/pages/page-brochures";
 @import "avon/pages/page-search-results";
 @import "avon/pages/page-your-order";
 
-// dropping in some global generic styles for Avon here
+// Dropping in some global styles for Avon here
 html, body {
     overflow-x: hidden;
 }
@@ -85,7 +88,17 @@ textarea,
 
 // prevent double scrollbars when drawers open
 html {
-    &.drawer-open {
-        overflow-y: hidden;
-    }
+  &.drawer-open {
+    overflow-y: hidden;
+  }
+}
+
+.global-content-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.75);
 }

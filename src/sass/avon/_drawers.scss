@@ -132,25 +132,27 @@
       overflow-y: scroll;
       transition: 0.5s opacity ease;
 
-      .content-top {
+      .item-entry-content--form {
+        .selected-item {
+          height: 10px;
+        }
       }
-      .content-middle {
+      .item-entry-content--list {
         flex: 1;
         box-shadow: inset 0px 10px 10px -10px rgba(0, 0, 0, 0.2),
                     inset 0px -10px 10px -10px rgba(0, 0, 0, 0.2);
+
       }
-      .content-bottom {
+      .item-entry-content--submit {
         padding: 2rem;
       }
     }
 
     @media (min-width: $screen-sm-min) {
       height: auto;
-      max-height: auto;
       transform: translateY(-100%);
 
       .drawer-content {
-        height: auto;
         min-height: auto;
       }
     }
@@ -166,10 +168,9 @@
 
       @media (min-width: $screen-sm-min) {
         height: auto;
-        transform: translateY(0);
 
         .drawer-content {
-          height: auto;
+          height: auto; // TODO :: update this with js
           min-height: auto;
         }
       }

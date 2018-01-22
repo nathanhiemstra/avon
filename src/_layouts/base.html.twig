@@ -43,6 +43,8 @@
         {% include components.modules.global.header %}
       {% endblock %}
 
+      <div class="global-content-overlay hidden"></div>
+
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {# RENDER BLOCK - CONTENT #}
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -62,7 +64,8 @@
   <script src="./js/vendor/jquery.autocomplete.min.js"></script>
   <script src="./js/vendor/bootstrap.js"></script>
   <script src="./js/avon-main.js"></script>
-  <script src="./js/modules/searchForms.js"></script>
+  <script src="./js/modules/brochures.js"></script>
+  <script src="./js/modules/formDemo.js"></script>
   <script src="./js/fakeData.js"></script>
   <!-- TODO :: probably want to bundle the above scripts with a gulp task
             :: and remove the fake data, of course -->

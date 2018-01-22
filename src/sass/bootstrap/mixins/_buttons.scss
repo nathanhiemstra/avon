@@ -50,6 +50,10 @@
     }
   }
 
+  .icon, .glyphicon, .lt-icon {
+    color: $color;
+  }
+
   .badge {
     color: $background;
     background-color: $color;
