@@ -67,12 +67,13 @@
 @import "avon/predictive-search";
 @import "avon/product-lists";
 @import "avon/spacing";
+@import "avon/typography";
 
 // PAGE SPECIFIC STYLES
 @import "avon/pages/page-brochures";
 @import "avon/pages/page-search-results";
 
-// dropping in some global generic styles for Avon here
+// Dropping in some global styles for Avon here
 html, body {
   overflow-x: hidden;
 }

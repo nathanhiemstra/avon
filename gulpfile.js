@@ -36,7 +36,7 @@ path.src = {
   examplesHtml:     "src/styleguide/examples/**/*.html",
   examplesCss:      "src/styleguide/examples/**/*.css",
   examplesJpg:      "src/styleguide/examples/**/*.jpg",
-  fonts:            "src/fonts/*",
+  fonts:            "src/fonts/**/*",
   html:             "src/**/*.html",
   images:           "src/images/**/*",
   js:               "src/js/**/*.js",

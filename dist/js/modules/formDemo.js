@@ -113,16 +113,17 @@ var FormDemo = (function () {
       _checkBtnState();
     });
 
-    $els.itemEntryAdd.on('click', function() {
+    $els.itemEntryAdd.on('click', function(e) {
+      e.preventDefault();
       _handleItemEntry(itemEntryObj);
       itemEntryObj = {};
       // alert('Add item to list: ' + itemEntryObj.qty + 'X ' + itemEntryObj.product + ' for ' + itemEntryObj.customer);
-      $(this).html('<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>');
+      $(this).html('<span class="lt-icon lt-checkmark" aria-hidden="true"></span>');
       $(this).addClass('btn-primary');
     });
 
     $els.itemEntryAddAllBtns.on('click', function() {
-      console.log('BTN CLICKED :: ');
+      // console.log('BTN CLICKED :: ');
       $('html').toggleClass('drawer-open');
       $els.itemEntryDrawer.toggleClass('drawer-expanded');
       $els.globalOverlay.toggleClass('hidden');
