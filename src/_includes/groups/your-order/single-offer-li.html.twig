@@ -1,0 +1,63 @@
+{# Developer note: This should not have a progress bar AND a CTA #}
+{% if hasFreeLabel %}
+  {% set hasFreeLabelClass = 'has-free-label' %}
+{% endif %}
+
+{% if hasCtaAddToOrder or hasCtaViewDetails or hasCtaViewDetailsSecondary %}
+  {% set hasOfferCtaClass = 'has-offer-ctas' %}
+{% endif %}
+
+<!-- START - REPEATABLE ITEM -->
+<li class="row offer-item {{ hasOfferCtaClass }} {{ hasFreeLabelClass }}">
+
+  <!-- START - BANNER (IMAGE) -->
+  <div class="col-sm-4 offer-banner">
+    <img src="{{ img }}" class="product-img">
+  </div>
+  <!-- END - BANNER (IMAGE) -->
+
+  <!-- START - DESCRIPTION -->
+  <div class="col-sm-8 offer-description">
+    
+    <!-- START - DESCRIPTION TEXT -->
+    <div class="description-text">
+      {{ descriptionText }}
+    </div>
+    <!-- END - DESCRIPTION TEXT -->
+      
+
+    {% if offerProgress  %}
+    <!-- START - OFFER PROGRESS -->
+    <div class="offer-progress">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="{{ offerProgress }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ offerProgress }}%;">
+          <span class="sr-only">{{ offerProgress }}% Complete</span>
+        </div>
+      </div>
+      <p><strong>Progress: {{ offerProgress }}%</strong> (Add $30 to unlock)</p>
+    </div>
+    <!-- END - OFFER PROGRESS -->
+    {% endif %}
+
+
+    {% if hasOfferCtaClass %}
+    <!-- START - CTAS -->
+    <div class="offer-ctas">
+      {% if hasCtaAddToOrder %}
+        <a href="#" class="btn btn-default btn-sm" role="button">Add to Order</a>
+      {% endif %}
+      {% if hasCtaViewDetails %}
+        <a href="javascript:void(0)" class="btn btn-default btn-sm view-offer-details" role="button">View details</a>
+      {% endif %}
+      {% if hasCtaViewDetailsSecondary %}
+        <a href="#" class="pull-right">View details <span class="lt-icon lt-right"></span></a>
+      {% endif %}
+    </div>
+    <!-- END - CTAS-->
+    {% endif %}
+
+  </div>
+  <!-- END - DESCRIPTION -->
+
+</li><!-- /.row -->
+<!-- END - REPEATABLE ITEM -->
