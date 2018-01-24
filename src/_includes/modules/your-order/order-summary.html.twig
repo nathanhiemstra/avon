@@ -84,7 +84,7 @@
 
         <div class="pull-right pl-5 pr-4 drawer-valign-middle">
           <a href="#drawer-order-summary" data-toggle="drawer" class="btn btn-default hidden-xs hidden-sm">
-            <span class="hidden-xs hidden-sm">Continue</span>
+            <span class="hidden-xs hidden-sm">View Details</span>
           </a>
           <a href="#drawer-order-summary" data-toggle="drawer" class="visible-xs visible-sm">
             <span class="glyphicon glyphicon-chevron-up"></span>
@@ -132,7 +132,7 @@
         </div>
         <div class="col-sm-3">
 
-          {% include components.modules.yourOrder.total with { btnText: 'Checkout' } %}
+          {% include "_includes/modules/your-order/order-total.html.twig" with { btnText: 'Checkout' } %}
 
         </div>
       </div>

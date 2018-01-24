@@ -6,7 +6,6 @@
     }
 
     .offer-banner {
-        text-align: center;
         overflow: hidden;
     }
 
@@ -60,6 +59,10 @@
         .offer-banner,
         .offer-description {
             height: $offer-item-height;
+        }
+
+        .offer-banner {
+            text-align: center;
         }
     }
 }

@@ -8,7 +8,16 @@ $(document).ready(function () {
     main: "#avon-poc",
     triggers: {
       drawerOrderSummary: ".trigger-drawer-order-summary",
-      drawerItemEntry: ".trigger-drawer-item-entry"
+      drawerItemEntry: ".trigger-drawer-item-entry",
+      
+    },
+    yourOrder: {
+      offers: {
+        list:         '#your-order-offers',
+        details:      '#your-order-offer-details',
+        showDetails:  '.view-offer-details',
+        hideDetails:  '.back-to-all-offers'
+      }
     },
     drawers: {
       all: '[data-toggle="drawer"]',
@@ -27,6 +36,14 @@ $(document).ready(function () {
       drawerOrderSummary: $(selectors.main).find(selectors.triggers.drawerOrderSummary),
       drawerItemEntry: $(selectors.main).find(selectors.triggers.drawerItemEntry)
     },
+    yourOrder: {
+      offers: {
+        list:           $(selectors.main).find(selectors.yourOrder.offers.list),
+        details:        $(selectors.main).find(selectors.yourOrder.offers.details),
+        showDetails:    $(selectors.main).find(selectors.yourOrder.offers.showDetails),
+        hideDetails:    $(selectors.main).find(selectors.yourOrder.offers.hideDetails)
+      }
+    },
     drawers: {
       all: $(selectors.main).find(selectors.drawers.all),
       orderSummary: $(selectors.main).find(selectors.drawers.orderSummary),
@@ -34,6 +51,8 @@ $(document).ready(function () {
     },
     overlay: $(selectors.overlay)
   }
+
+  console.log('selectors: ',selectors); 
 
 
 
@@ -67,6 +86,19 @@ $(document).ready(function () {
 
 
 
+  // YOUR OFFERS
+  function yourOrderOffersShowDetails() {
+    $objects.yourOrder.offers.list.addClass('hide');
+    $objects.yourOrder.offers.details.removeClass('hide');
+  }
+
+  function yourOrderOffersHideDetails() {
+    $objects.yourOrder.offers.list.removeClass('hide');
+    $objects.yourOrder.offers.details.addClass('hide');
+  }
+
+
+
   ////////////////////////////////////////////////////////
   // LISTENERS
   ////////////////////////////////////////////////////////
@@ -80,6 +112,20 @@ $(document).ready(function () {
   $('[data-tab-select]').on('change', function (e) {
     var $optionSelected = $("option:selected", this);
     $optionSelected.tab('show')
+  });
+
+
+  // YOUR OFFERS
+  console.log('$objects.yourOrder.offers.showDetails: ',$objects.yourOrder.offers.showDetails); 
+  $objects.yourOrder.offers.showDetails.on("click", function () {
+    yourOrderOffersShowDetails();
+    console.log('showDetails'); 
+
+  });
+
+  $objects.yourOrder.offers.hideDetails.on("click", function () {
+    yourOrderOffersHideDetails();
+    console.log('hideDetails'); 
   });
 
 
