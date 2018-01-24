@@ -217,6 +217,7 @@ gulp.task('compile', function () {
               }
             },
             pages: {
+              
               brochures: {
                 landing:      'brochures.html'
               },
@@ -226,9 +227,12 @@ gulp.task('compile', function () {
                 },
                 chooseType:   'checkout-choose-type.html',
               },
+              home:           'home.html',
+              login:          'login.html',
               product: {
+                category:     'product-category.html',
                 detail:       'product-detail.html',
-                landing:      'product-list.html'
+                landing:      'product-landing.html'
               },
               yourOrder:      'your-order.html',
               search: {

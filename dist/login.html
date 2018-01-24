@@ -1,0 +1,820 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title></title>
+
+  <!-- Core CSS - containts customized bootstrap plus new CSS -->
+  <link href="./css/avon-main.css" rel="stylesheet">
+  <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+</head>
+
+
+<body >
+
+  <!-- START - PAGE CONTENT -->
+  <section id="avon-poc">
+      <a class="sr-only" href="#content">Skip to main content</a>
+
+      
+      
+      
+              <div class="no-reverse-bg avon-header">
+  <div class="row">
+    <div class="col-xs-12">
+      <header class="global-header mb-5" role="banner">
+
+        <!-- Static top navbar -->
+        <nav class="navbar navbar-default navbar-static-top navbar--static-nav hidden-xs border-0">
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a class="py-0 px-4 small" href="#">Avon U</a>
+      </li>
+      <li>
+        <a class="py-0 px-4 small" href="#">Campaign Central</a>
+      </li>
+      <li>
+        <a class="py-0 px-4 small" href="#">Marketing Tools</a>
+      </li>
+      <li>
+        <a class="py-0 px-4 small" href="#">Social Tools</a>
+      </li>
+      <li>
+        <a class="py-0 px-4 small" href="#">ALMA</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+        <!-- User navbar -->
+        <nav class="navbar navbar-default navbar-static-top navbar--user-nav hidden-xs border-0 mb-0">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
+    </a>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#">
+          <span class="profile-img"></span>Jane Johnson</a>
+      </li>
+      <li>
+        <a class="small" href="#">Profile</a>
+      </li>
+      <li>
+        <a class="small" href="#">Settings</a>
+      </li>
+      <li>
+        <a class="small" href="#">Español</a>
+      </li>
+      <li>
+        <a class="small" href="#">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+        <!-- Primary navbar -->
+        <nav class="navbar navbar--primary-nav navbar-default border-bottom my-0" role="navigation">
+  <div class="container pl-0">
+
+    <div class="navbar-header visible-xs-block">
+
+      <button class="navbar-toggle pull-left" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="#"><img src="/images/logos/avon_logo.png" alt="Avon"></a>
+
+      <ul class="nav navbar-nav navbar-right pull-right my-0 collapsed hidden-md hidden-lg" id="mobile-header-navbar">
+  <li class="mr-4">
+
+    <form class="navbar-form border-0 p-0 m-0" role="search">
+      <div class="input-group">
+        <input id="mobile-search-input" type="text" class="form-control invisible" placeholder="Search" name="q" autocomplete="off">
+        <div class="input-group-btn" id="mobile-search-toggle">
+          <span class="btn btn-icon" type="submit" aria-label="Search">
+            <i class="lt-icon lt-search"></i>
+          </span>
+        </div>
+      </div>
+    </form>
+
+  </li>
+</ul>
+
+    </div>
+
+    <ul class="nav navbar-nav navbar-left navbar-collapse collapse pl-0">
+      <li class="active">
+        <a class="small pb-4" href="#">Home</a>
+      </li>
+      <li>
+        <a class="small pb-4" href="#">Products</a>
+      </li>
+      <li>
+        <a class="small pb-4" href="#">Customers</a>
+      </li>
+      <li>
+        <a class="small pb-4" href="#">Orders</a>
+      </li>
+      <li>
+        <a class="small pb-4" href="#">Earnings</a>
+      </li>
+      <li class="visible-xs-block">
+        <a class="small pb-4 trigger-drawer-item-entry" href="#drawer-item-entry" data-toggle="drawer">
+          <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right hidden-xs">
+      <li>
+
+        <form class="navbar-form navbar-right" role="search">
+  <div class="form-group">
+    <input id="desktop-header-search" type="text" class="form-control" placeholder="Search" autocomplete="off">
+  </div>
+</form>
+
+      </li>
+      <li class="link">
+        <a class="small trigger-drawer-item-entry" href="#drawer-item-entry" data-toggle="drawer">
+          <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+        <!-- Global alert message -->
+        <section id="global-alert-msg" class="container-fluid alert alert-success collapsed">
+  <div class="container text-center">
+    <div class="row">
+      <span class="alert-msg-icon lt-icon lt-checkmark"></span>
+      <span class="alert-msg-txt">8 items have been added.</span>
+      <button type="button" class="alert-msg-btn btn btn-default btn-sm">View your Order</button>
+    </div>
+    <!-- /.row -->
+  </div>
+</section>
+
+        <!-- Item entry drawer -->
+        
+<!-- DRAWER -->
+<section id="drawer-item-entry" class="drawer drawer-fixed-top drawer-hidden drawer-item-entry">
+
+  <!-- DRAWER CONTENT -->
+  <section class="drawer-content">
+
+    <div class="no-reverse-bg">
+
+      <!-- HEADER -->
+      <header class="navbar navbar-isolated navbar-static-top" role="banner">
+  <div class="container-fluid">
+
+    <a href="index.html" class="navbar-brand ml-0 hidden-xs">
+      <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
+    </a>
+
+    <h1 class="navbar-title">Item Entry</h1>
+    <a href="#drawer-item-entry" class="close" data-toggle="drawer">
+      <span class="lt-icon lt-close"></span>
+    </a>
+  </div>
+</header>
+
+    </div>
+    <!-- /.no-reverse-bg -->
+
+    <!-- <div class="container m-0 p-0"> -->
+
+      <div class="row m-0 p-4 item-entry-content--form">
+
+        <div class="visible-xs-block">
+          <h3>Item Entry</h3>
+        </div>
+
+        <!-- FORM -->
+        <form class="" role="form">
+
+          <div class="form-group col-xs-12 col-sm-4">
+            <div class="text-left">Product Name or Number</div>
+            <input id="itemEntryProduct" type="text" class="form-control collapsed" placeholder="" autocomplete="off">
+            <p class="selected-item my-4"></p>
+          </div>
+
+          <div class="form-group col-xs-3 col-sm-2">
+            <div class="text-left">Qty</div>
+            <div class="form-group has-feedback">
+              <select id="itemEntryQty" class="form-control">
+                <option disabled selected value></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+              <span class="glyphicon glyphicon-play form-control-feedback"></span>
+            </div>
+          </div>
+
+          <div class="form-group col-xs-9 col-sm-4">
+            <div class="text-left">Who is this for?</div>
+            <div class="form-group has-feedback">
+              <select id="itemEntryCustomer" class="form-control">
+                <option disabled selected value>Select a Customer</option>
+                <option>Jane Johnson</option>
+                <option>John Doe</option>
+                <option>Lisa Anyname</option>
+              </select>
+              <span class="glyphicon glyphicon-play form-control-feedback"></span>
+            </div>
+          </div>
+
+          <div class="form-group col-xs-3 col-sm-2">
+            <div class="text-left">&#8203;</div>
+            <button href="javascript:void(0)" id="itemEntryAdd" type="submit" class="btn btn-default" disabled="disabled">Add to List</button>
+          </div>
+
+        </form>
+
+      </div>
+      <!-- /.row -->
+
+      <!-- Main List of Items to be Added -->
+      <div class="row m-0 reverse-bg item-entry-content--list hidden">
+        <ul class="list-group p-4 col-xs-12 col-sm-8">
+
+          <!-- START - LOOPING ITEMS -->
+          <li class="list-group-item my-4">
+
+  <!-- START - CART SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-1" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>You (Rosa Stone)</b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$90.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">8 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+  <!-- END - CART SUMMARY -->
+
+  <!-- START - CART DETAILS (EXPANDABLE) -->
+  <div class="details collapse " id="collapse-1">
+
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th class="t-item hidden-xs hidden-sm">Item</th>
+          <th class="t-desc invisible">Description</th>
+          <th class="t-price">Price</th>
+          <th class="t-qty text-right">Qty</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- START - REPEATABLE ITEMS -->
+
+        <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     $30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     $10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     $45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+         <!-- END - REPEATABLE ITEMS -->
+ 
+      </tbody>
+    </table>
+
+
+  </div>
+  <!-- END - CART DETAILS (EXPANDABLE) -->
+
+
+  
+</li>          <li class="list-group-item my-4">
+
+  <!-- START - CART SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-2" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>Kory Rasmussen</b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$90.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">4 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+  <!-- END - CART SUMMARY -->
+
+  <!-- START - CART DETAILS (EXPANDABLE) -->
+  <div class="details collapse " id="collapse-2">
+
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th class="t-item hidden-xs hidden-sm">Item</th>
+          <th class="t-desc invisible">Description</th>
+          <th class="t-price">Price</th>
+          <th class="t-qty text-right">Qty</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- START - REPEATABLE ITEMS -->
+
+        <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     $30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     $10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     $45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+         <!-- END - REPEATABLE ITEMS -->
+ 
+      </tbody>
+    </table>
+
+
+  </div>
+  <!-- END - CART DETAILS (EXPANDABLE) -->
+
+
+  
+</li>          <li class="list-group-item my-4">
+
+  <!-- START - CART SUMMARY -->
+  <dl class="clearfix m-0">
+    <dt class="pull-left">
+      <a href="#collapse-3" data-toggle="collapse"  class="collapsed" >
+        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <b>Tisha Pennington</b>
+      </a>
+    </dt>
+    <dd class="pull-right"><b>$12.00</b></dd>
+  </dl>
+
+  <dl class="clearfix m-0">
+    <dt class="pull-left">2 items</dt>
+    <dd class="pull-right">Discount: $45.55</dd>
+  </dl> 
+  <!-- END - CART SUMMARY -->
+
+  <!-- START - CART DETAILS (EXPANDABLE) -->
+  <div class="details collapse " id="collapse-3">
+
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th class="t-item hidden-xs hidden-sm">Item</th>
+          <th class="t-desc invisible">Description</th>
+          <th class="t-price">Price</th>
+          <th class="t-qty text-right">Qty</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- START - REPEATABLE ITEMS -->
+
+        <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Ultimate Supreme Advanced Performance Créme
+      <small class="text-muted ml-2">829-957</small>
+    </div>
+      </td>
+  <td class="t-price">
+     $30.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+          <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/cover-up.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Super Coverup
+      <small class="text-muted ml-2">329-321</small>
+    </div>
+          <div>
+        <span class="label label-default label-sm">Auto-replenish</span>
+        <span class="hidden-xs hidden-sm">
+    
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>Every 4 weeks</option>
+      <option>Every 3 weeks</option>
+      <option>Every 2 weeks</option>
+      <option>Every 1 weeks</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+      </div>
+      </td>
+  <td class="t-price">
+     $10.00
+     <span class="hidden-xs hidden-sm"><br> <small class="text-muted">Each shipment</small></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+        <tr>
+  <td class="t-item hidden-xs hidden-sm">
+     <img src="/images/fpo/purfume.png" class="img-responsive" alt="">
+  </td>
+  <td class="t-desc">
+    <div>
+      Anew Purfume
+      <small class="text-muted ml-2">856-376</small>
+    </div>
+      </td>
+  <td class="t-price">
+     $45.00
+     <span class="hidden-xs hidden-sm"></span>
+  </td>
+  <td class="t-qty text-right">
+    <span class="hidden-xs">
+      
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control input-sm">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div></span>
+    <small class="visible-xs">1 unit</small>
+    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+  </td>
+</tr>
+         <!-- END - REPEATABLE ITEMS -->
+ 
+      </tbody>
+    </table>
+
+
+  </div>
+  <!-- END - CART DETAILS (EXPANDABLE) -->
+
+
+  
+</li>          <!-- END - LOOPING ITEMS -->
+
+        </ul>
+
+        <div class="item-entry-total hidden-xs col-sm-4">
+
+          <!-- START - ORDER TOTAL -->
+<section>
+  <div class="hidden-xs hidden-sm">
+    <h3 class="h-utility">Total</h3>
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Order subtotal</dt>
+      <dd class="pull-right">$90.00</dd>
+    </dl>
+    <dl class="clearfix border-bottom pb-3 mb-3">
+      <dt class="pull-left label-utility">Discount</dt>
+      <dd class="pull-right">$36.00</dd>
+    </dl>
+    <p class="text-center">Shipping and taxes will be calculated during the checkout process</p>
+  </div>
+
+  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">Add All Items to Order</a>
+</section>
+<!-- START - ORDER TOTAL -->
+
+        </div>
+
+      </div>
+
+      <!-- Submit All Button -->
+      <div class="item-entry-content--submit visible-xs-block">
+        <div class="container">
+          <div class="btn-group btn-group-justified">
+            <div class="btn-group">
+              <button id="itemEntryAddAll" type="submit" class="btn btn-default" disabled="disabled">Add all items to order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- </div> -->
+    <!-- /.container -->
+
+  </section>
+</section>
+<!-- /.drawer -->
+
+      </header>
+
+    </div>
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.no-reverse-bg -->
+      
+      <div class="global-content-overlay hidden"></div>
+
+      
+      
+      
+      
+  
+  
+  
+  
+    <section class="container">
+
+      <h1>Login - FPO</h1>
+      <button type="button" class="btn btn-default">Login</button>
+     
+    </section>
+
+  
+
+
+      
+      
+      
+              <!--Footer-->
+<footer class="my-5 footer global-footer">
+    <hr>
+    
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container">
+            Footer
+        </div>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->      
+  </section>
+  <!-- END - PAGE CONTENT -->
+
+  <script src="./js/vendor/jquery/1.10.2/jquery.min.js"></script>
+  <script src="./js/vendor/jquery.autocomplete.min.js"></script>
+  <script src="./js/vendor/bootstrap.js"></script>
+  <script src="./js/avon-main.js"></script>
+  <script src="./js/modules/brochures.js"></script>
+  <script src="./js/modules/formDemo.js"></script>
+  <script src="./js/fakeData.js"></script>
+  <!-- TODO :: probably want to bundle the above scripts with a gulp task
+            :: and remove the fake data, of course -->
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+
+</body>
+</html>
