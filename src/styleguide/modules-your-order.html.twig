@@ -11,7 +11,7 @@
 
 
 <h1 id="your-order" class="bs-headline">Your Order</h1>
-  <p id="your-order-diagram" style="margin-top: 60px;"><img src="/images/fpo/product-review-diagramed.png" class="img-responsive"></p>
+
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# BASE #}
@@ -75,7 +75,7 @@
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# CHECKOUT / REVIEW / ORDER / PERSON #}
+  {# YOUR ORDER - HEADER #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Header",
@@ -102,7 +102,7 @@
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# CHECKOUT / REVIEW / ORDER / NAV TAB #}
+  {# YOUR ORDER / TAB NAV #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Tab Navigation",
@@ -114,7 +114,7 @@
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# CHECKOUT / REVIEW / ORDER / PERSON ORDER (LIST CONTAINER) #}
+  {# YOUR ORDER / TAB CONTENT STRUCTURE #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Tab Content Structure",
@@ -146,98 +146,72 @@
   {{ endhighlight }}
 
 
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# CHECKOUT / REVIEW / ORDER / TAB CONTENT #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% set styleguideItem = {
-    title:        "Tab Content (Both Products and Incentives)",
-    slug:         "your-order-tab-content",
-    twig:         "styleguide/_includes/modules/pages/your-order/tab-content.html.twig",
-    path:         'styleguide/_includes/modules/pages/your-order/tab-content.html.twig'
-  }%}
-
-  {% include styleguide.item with 'styleguideItem': styleguideItem %}
-
-  
-
-  
-
-
- 
-
-
 
 
 
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# CHECKOUT / REVIEW / ORDER / TAB PANE / PRODUCTS #}
+  {# YOUR ORDER / TAB PANE / CARTS #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Person's Order (List of summaries and product lists) ",
-    slug:         "your-order-tab-pane-products",
-    twig:         "styleguide/_includes/modules/pages/your-order/tab-panel-carts.html.twig",
-    path:         "styleguide/_includes/modules/pages/your-order/tab-panel-carts.html.twig" 
+    title:        "Tab Pane - Cart",
+    slug:         "your-order-tab-pane-cart"
   }%}
-  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+  {% set offer10Discount = '<h4>$10 Discount</h4>
+<p>Get $10 off of all purchases of Anew Platinum Night Cream during this campaign</p>
+<a href="#" class="btn btn-default btn-sm" role="button">Add to Order</a>' %}
 
-
-
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# CHECKOUT / REVIEW / ORDER / PERSON ORDER (LIST CONTAINER) #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% set styleguideItem = {
-    title:        "Person's Order (List Container)",
-    slug:         "your-order-tab-pane-products-list-structure"
-  }%}
   <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
-  {{ styleguideItem.description }}
 
-  <p>List containing the list items below</p>
-
-  {{ highlightMarkup }}
-  <!-- START - LIST OF PERSONS -->
-  <ul class="list-group">
-    
-    <!-- List items -->
-
-  </ul>
-  <!-- END - LIST OF PERSONS -->
-  {{ endhighlight }}
-
-
-
-
-
-
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# CHECKOUT / REVIEW / ORDER / PERSON #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% set styleguideItem = {
-    title:        "Person's Order (List Item)",
-    slug:         "your-order-tab-pane-products-person"
-  }%}
-  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
-  {{ styleguideItem.description }}
   <div class="bs-example">
-    {% include 'styleguide/_includes/modules/pages/your-order/persons-order.html.twig' with {indexNum: 'x-1', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
+    {% include '_includes/modules/your-order/tab-panel-carts.html.twig' with {offer10Discount: offer10Discount} %}
   </div>
 
   {# Markup #}
   {{ highlightMarkup }}
-    {% include 'styleguide/_includes/modules/pages/your-order/persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false} %}
+    {% include '_includes/modules/your-order/tab-panel-carts.html.twig' with {offer10Discount: offer10Discount} %}
   {{ endhighlight }}
 
   {# Twig include #}
   {{ highlightTwig }}
-      {{ '{% include ' }} 'styleguide/_includes/modules/pages/your-order/persons-order.html.twig' with {indexNum: 'x-2', personName: '[Person&rsquo;s Name]', itemCount: '[0]', total: '[00.00]', collapsed: false}{{ ' %}' }}
-      {{ 'styleguide/_includes/modules/pages/your-order/persons-order.html.twig' }}
+
+      {{ '{% include ' }} '_includes/modules/your-order/tab-panel-carts.html.twig' with {offer10Discount: offer10Discount}{{ ' %}' }}
+  {{ endhighlight }} 
+
+
+
+
+
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# YOUR ORDER / SINGLE CART ITEM #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Single Cart (List Item)",
+    slug:         "your-order-tab-pane-single-cart-li"
+  }%}
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  {{ styleguideItem.description }}
+  <div class="bs-example">
+      {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: false, viewOffers: true} %}
+  </div>
+
+  {# Markup #}
+  {{ highlightMarkup }}
+      {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: false, viewOffers: true} %}
+  {{ endhighlight }}
+
+  {# Twig include #}
+  {{ highlightTwig }}
+      {{ '{% include ' }} '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: false, viewOffers: true}{{ ' %}' }}
   {{ endhighlight }}  
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# CHECKOUT / REVIEW / ORDER / PERSON (TABLE) #}
+  {# YOUR ORDER / PERSON (TABLE) #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Products (Table)",
@@ -248,23 +222,21 @@
 
   {{ highlightMarkup }}
   <!-- TABLE OF PRODUCTS -->
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th class="d-none t-item hidden-xs hidden-sm">Item</th>
-          <th class="d-none t-desc">Description</th>
-          <th class="d-none t-price">Price</th>
-          <th class="d-none t-qty text-right">Qty</th>
-        </tr>
-      </thead>
-      <tbody>
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th class="t-item hidden-xs hidden-sm">Item</th>
+        <th class="t-desc invisible">Description</th>
+        <th class="t-price">Price</th>
+        <th class="t-qty text-right">Qty</th>
+      </tr>
+    </thead>
+    <tbody>
 
-        <!-- Table rows -->
+      <!-- Table rows -->
 
-      </tbody>
-    </table>
-  </div>
+    </tbody>
+  </table>
   {{ endhighlight }}
 
 
@@ -273,7 +245,7 @@
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# CHECKOUT / REVIEW / ORDER / PERSON / SINGLE PRODUCT #}
+  {# YOUR ORDER / CART / SINGLE PRODUCT #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Single Product (Table Row)",
@@ -295,87 +267,69 @@
   
   <div class="bs-example">
     {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
-      productName: '[Product Name]', 
-      img: '/images/fpo/product-thumb-grey.png',
-      autoReplenish: true,
-      sku: '[000-000]',
-      price: '$[00.00]',
+      productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
+      img: '/images/fpo/agnew-ultimate.png',
+      autoReplenish: null,
+      sku: '829-957',
+      price: '$30.00',
       classes: 'input-sm'
     }%}
   </div>
+
+  {# Markup #}
+  {{ highlightMarkup }}
+    {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
+      productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
+      img: '/images/fpo/agnew-ultimate.png',
+      autoReplenish: null,
+      sku: '829-957',
+      price: '$30.00',
+      classes: 'input-sm'
+    }%}
+  {{ endhighlight }}
   
 
   {# Twig include #}
   <h3>Variables being passed to template</h3>
   {{ highlightTwig}}
       {{ '{% include ' }} '{{ '_includes/groups/your-order/single-product-tr.html.twig' }}' with {
-      productName: '[Product Name]', 
-      img: '/images/fpo/product-thumb-grey.png',
-      autoReplenish: true,
-      sku: '[000-000]',
-      price: '$[00.00]',
-      classes: 'input-sm'
+        productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
+        img: '/images/fpo/agnew-ultimate.png',
+        autoReplenish: null,
+        sku: '829-957',
+        price: '$30.00',
+        classes: 'input-sm'
     }{{ ' %}' }}
     
   {{ endhighlight }} 
 
-  <h3>Template</h3>
-  {{ highlightTwig}}
-    {{ '{%' }} if autoReplenish != null {{ '%}' }}
-      {{ '{%' }} set eachShipment = '<br> <small class="text-muted">Each shipment</small>' {{ '%}' }}
-    {{ '{%' }} endif {{ '%}' }}
-    <tr>
-      <td class="t-item hidden-xs hidden-sm">
-         <img src="{{ '{{' }} img {{ '}}' }}" class="img-responsive" alt="">
-      </td>
-      <td class="t-desc">
-        <div>
-          {{ '{{' }} productName {{ '}}' }}
-          <small class="text-muted ml-2">{{ '{{' }} sku {{ '}}' }}</small>
-        </div>
-        {{ '{%' }} if autoReplenish != null {{ '%}' }}
-          <div>
-            <span class="label label-default label-sm">Auto-replenish</span>
-            <span class="hidden-xs hidden-sm">{{ '{%' }} include components.elements.forms.select with { groupClasses: 'd-inline-block', 'items': [{'label': 'Every 4 weeks'}, {'label': 'Every 3 weeks'}, {'label': 'Every 2 weeks'}, {'label': 'Every 1 weeks'}] } {{ '%}' }}</span>
-          </div>
-        {{ '{%' }} endif {{ '%}' }}
-      </td>
-      <td class="t-price">
-         {{ '{{' }} price {{ '}}' }}
-         <span class="hidden-xs hidden-sm">{{ '{{' }} eachShipment {{ '}}' }}</span>
-      </td>
-      <td class="t-qty text-right">
-        <span class="hidden-xs">{{ '{%' }} include components.elements.forms.select {{ '%}' }}</span>
-        <small class="visible-xs">1 unit</small>
-        <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
-      </td>
-    </tr>
-  {{ endhighlight }} 
-
-  <h3>Rendered HTML</h3>
-  {{ highlightMarkup }}
-    {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
-      productName: '[Product Name]', 
-      img: '/images/fpo/product-thumb-grey.png',
-      autoReplenish: true,
-      sku: '[000-000]',
-      price: '$[00.00]',
-      classes: 'input-sm'
-    }%}
-  {{ endhighlight }}
+  
 
 
 
     {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# CHECKOUT / REVIEW / ORDER / TAB PANE / INCENTIVES #}
+  {# YOUR ORDER / TAB PANE / OFFERS #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Tab Pane - Incentives ",
-    slug:         "your-order-tab-pane-incentives",
-    twig:         "components.modules.yourOrder.tabPane.incentives",
-    path:         components.modules.yourOrder.tabPane.incentives 
+    title:        "Tab Pane - Offers ",
+    slug:         "your-order-tab-pane-offers"
   }%}
-  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  <div class="bs-example">
+    {% include '_includes/modules/your-order/tab-panel-offers.html.twig' with {offer10Discount: offer10Discount} %}
+  </div>
+
+  {# Markup #}
+  {{ highlightMarkup }}
+    {% include '_includes/modules/your-order/tab-panel-offers.html.twig' with {offer10Discount: offer10Discount} %}
+  {{ endhighlight }}
+
+  {# Twig include #}
+  {{ highlightTwig }}
+
+      {{ '{% include ' }} '_includes/modules/your-order/tab-panel-offers.html.twig' with {offer10Discount: offer10Discount}{{ ' %}' }}
+  {{ endhighlight }}
 
 
 
