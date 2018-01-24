@@ -28,7 +28,7 @@ var FormDemo = (function () {
       itemEntryAdd: $('#itemEntryAdd'),
       itemEntryContent: $('#drawer-item-entry .drawer-content'),
       itemEntryList: $('.item-entry-content--list'),
-      itemEntryAddAllBtns: $('.item-entry-total button')
+      itemEntryAddAllBtns: $('.item-entry-total .btn').add('#itemEntryAddAll')
     };
 
     itemEntryObj = {
@@ -49,12 +49,12 @@ var FormDemo = (function () {
     //
 
     $els.itemEntrySearchInput.autocomplete({
-      // serviceUrl: '/autocomplete/data', // ajax
+      // serviceUrl: '/autocomplete/data/somepath', // ajax
       lookup: FAKE_PRODUCTS, // no ajax, just a js object
       onSelect: function (suggestion) {
         console.log('You selected: ' + suggestion.value);
         _handleItemEntrySelection(this, suggestion);
-        // $(this).val('');
+        $(this).val(suggestion.sku);
       },
       formatResult: function (suggestion, currentVal) {
         return _constructItemTemplate(suggestion);
@@ -67,6 +67,7 @@ var FormDemo = (function () {
     });
 
     $els.searchInputMobile.autocomplete({
+      // serviceUrl: '/autocomplete/data/somepath', // ajax
       lookup: FAKE_PRODUCTS,
       onSelect: function (suggestion) {
         console.log('You selected: ' + suggestion.value);
@@ -123,10 +124,15 @@ var FormDemo = (function () {
     });
 
     $els.itemEntryAddAllBtns.on('click', function() {
-      // console.log('BTN CLICKED :: ');
       $('html').toggleClass('drawer-open');
       $els.itemEntryDrawer.toggleClass('drawer-expanded');
       $els.globalOverlay.toggleClass('hidden');
+
+      // show alert message demo
+      $('#global-alert-msg').removeClass('collapsed');
+      setTimeout(function() {
+        $('#global-alert-msg').addClass('collapsed');        
+      }, 3000);
     });
 
     // mobile
@@ -166,7 +172,7 @@ var FormDemo = (function () {
       $els.itemEntryAdd.html('Add Item');
       $els.itemEntryAdd.prop('disabled', true);
       $els.itemEntryAdd.removeClass('btn-primary');
-    }, 500);
+    }, 3000);
   };
 
   var _toggleSearchExpand = function () {

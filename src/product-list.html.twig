@@ -9,11 +9,12 @@
   <section class="container">
     <div class="row">
       {% include components.groups.navigation.breadcrumbs %}
-    </div><!-- /.row -->
+    </div>
+    <!-- /.row -->
   </section>
   <!-- END - BREADCRUMBS -->
 
-  <section class="container container--product-landing-page">
+  <section class="container container--product-list-page">
     {% embed layouts.columns3x9 %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -39,5 +40,8 @@
     {% endembed %}
 
   </section>
+
+  <!-- MODAL - ADD TO ORDER -->
+  {% include components.modules.product.detail.addToOrder %}
 
 {% endblock %}

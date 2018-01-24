@@ -1,7 +1,7 @@
 <div class="no-reverse-bg avon-header">
   <div class="row">
     <div class="col-xs-12">
-      <header class="global-header" role="banner">
+      <header class="global-header mb-5" role="banner">
 
         <!-- Static top navbar -->
         {% include components.groups.navigation.headerStatic %}
@@ -11,6 +11,9 @@
 
         <!-- Primary navbar -->
         {% include components.groups.navigation.headerPrimary %}
+
+        <!-- Global alert message -->
+        {% include components.modules.global.alertMessage %}
 
         <!-- Item entry drawer -->
         {% include components.modules.itemEntry.drawer %}

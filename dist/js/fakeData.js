@@ -7,6 +7,7 @@ var FAKE_PRODUCTS = [
     regPrice: '$36.00',
     numRatings: '73',
     stockStatus: 'In Stock',
+    sku: 'SKU1234'
   },
   {
     value: 'Haiku Bonus Size Roll-On',
@@ -16,6 +17,7 @@ var FAKE_PRODUCTS = [
     regPrice: '$36.00',
     numRatings: '73',
     stockStatus: 'In Stock',
+    sku: 'SKU2345'
   },
   {
     value: 'Haiku Something Else',
@@ -25,6 +27,7 @@ var FAKE_PRODUCTS = [
     regPrice: '$36.00',
     numRatings: '73',
     stockStatus: 'Out of Stock',
+    sku: 'SKU3456'
   },
   {
     value: 'Another Product',
@@ -34,5 +37,6 @@ var FAKE_PRODUCTS = [
     regPrice: '$36.00',
     numRatings: '73',
     stockStatus: 'In Stock',
+    sku: 'SKU4567'
   },
 ]

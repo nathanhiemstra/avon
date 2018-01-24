@@ -31,13 +31,13 @@
         <!-- Footer -->
 
       </section>
-    </body>' 
+    </body>'
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
 
 
- 
+
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# COLUMN 12 #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -49,7 +49,7 @@
       <main role="main">
         <p>' ~ fpo.paragraph ~ '</p>
       </main>
-    </div>' 
+    </div>'
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -67,7 +67,28 @@
           <p>' ~ fpo.paragraph ~ '</p>
         </main>
       </div>
-    </div>' 
+    </div>'
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMNS 3x9 #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Columns: 3x9",
+    slug:         "columns-3-x-9",
+    snippet:      '
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-3" role="complementary">
+          <p>' ~ fpo.paragraph ~ '</p>
+        </aside>
+        <main class="col-md-9" role="main">
+          <p>' ~ fpo.paragraph ~ '</p>
+        </main>
+      </div>
+    </div>'
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -88,7 +109,7 @@
           <p>' ~ fpo.paragraph ~ '</p>
         </aside>
       </div>
-    </div>' 
+    </div>'
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -111,7 +132,7 @@
           </aside>
         </div>
       </div>
-    </div>' 
+    </div>'
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -121,5 +142,3 @@
 
 
 {% endblock %}
-
-
