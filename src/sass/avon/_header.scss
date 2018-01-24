@@ -218,7 +218,8 @@
 
 // GLOBAL ALERT MESSAGE
 #global-alert-msg {
-  position: relative;
+  position: absolute;
+  width: 100%;
   z-index: -1;
   transform: translateY(0);
   transition: 0.3s transform ease;
@@ -248,5 +249,10 @@
     border-color: $body-bg;
     color: $body-bg;
     background-color: transparent;
+    margin-top: 1rem;
+
+    @media (min-width: $screen-sm-min) {
+      margin-top: 0;
+    }
   }
 }
