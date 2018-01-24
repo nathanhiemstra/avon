@@ -172,6 +172,7 @@ gulp.task('compile', function () {
                   drawer:         prefix.modules + "item-entry/item-entry.html.twig"
                 },
                 global: {
+                  alertMessage:   prefix.modules + "global/alert-message.html.twig",
                   footer:         prefix.modules + "global/footer.html.twig",
                   header:         prefix.modules + "global/header.html.twig",
                   drawer: {
@@ -227,7 +228,7 @@ gulp.task('compile', function () {
               },
               product: {
                 detail:       'product-detail.html',
-                landing:      'product-landing.html'
+                landing:      'product-list.html'
               },
               yourOrder:      'your-order.html',
               search: {

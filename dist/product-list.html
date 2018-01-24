@@ -163,6 +163,18 @@
   </div>
 </nav>
 
+        <!-- Global alert message -->
+        <section id="global-alert-msg" class="container-fluid alert alert-success collapsed">
+  <div class="container text-center">
+    <div class="row">
+      <span class="alert-msg-icon lt-icon lt-checkmark"></span>
+      <span class="alert-msg-txt">8 items have been added.</span>
+      <button type="button" class="alert-msg-btn btn btn-default btn-sm">View your Order</button>
+    </div>
+    <!-- /.row -->
+  </div>
+</section>
+
         <!-- Item entry drawer -->
         
 <!-- DRAWER -->
@@ -768,11 +780,12 @@
       <li class="active">
         Link 3
       </li>
-      </ol>    </div><!-- /.row -->
+      </ol>    </div>
+    <!-- /.row -->
   </section>
   <!-- END - BREADCRUMBS -->
 
-  <section class="container container--product-landing-page">
+  <section class="container container--product-list-page">
     <div class="row">
   <aside class="col-md-3" role="complementary">
     
@@ -990,11 +1003,6 @@
       </ul>
     </nav>
 
-    <!-- <div class="btn-group"> <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Filter <span class="caret"></span> </button> <ul class="dropdown-menu" role="menu"> <li> <a href="#">Action</a> </li> <li> <a
-    href="#">Another action</a> </li> <li> <a href="#">Something else here</a> </li> <li class="divider"></li> <li> <a href="#">Separated link</a> </li> </ul> </div> <div class="btn-group"> <button type="button" class="btn btn-default dropdown-toggle"
-    data-toggle="dropdown"> Sort <span class="caret"></span> </button> <ul class="dropdown-menu" role="menu"> <li> <a href="#">Action</a> </li> <li> <a href="#">Another action</a> </li> <li> <a href="#">Something else here</a> </li> <li
-    class="divider"></li> <li> <a href="#">Separated link</a> </li> </ul> </div> -->
-
   </div>
 </div>
 <!-- // Mobile Filter and Sort -->
@@ -1062,7 +1070,10 @@
         </p>
       </div>
       <div class="col col-xs-0 col-md-2">
-        <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button>
+        <!-- <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button> -->
+        <button type="button" class="btn btn-primary btn-lg pull-right hidden-xs" data-toggle="modal" data-target="#product-add-to-order">
+          Add to order
+        </button>
       </div>
     </div>
   </a>
@@ -1092,7 +1103,10 @@
         </p>
       </div>
       <div class="col col-xs-0 col-md-2">
-        <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button>
+        <!-- <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button> -->
+        <button type="button" class="btn btn-primary btn-lg pull-right hidden-xs" data-toggle="modal" data-target="#product-add-to-order">
+          Add to order
+        </button>
       </div>
     </div>
   </a>
@@ -1122,7 +1136,10 @@
         </p>
       </div>
       <div class="col col-xs-0 col-md-2">
-        <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button>
+        <!-- <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button> -->
+        <button type="button" class="btn btn-primary btn-lg pull-right hidden-xs" data-toggle="modal" data-target="#product-add-to-order">
+          Add to order
+        </button>
       </div>
     </div>
   </a>
@@ -1152,7 +1169,10 @@
         </p>
       </div>
       <div class="col col-xs-0 col-md-2">
-        <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button>
+        <!-- <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button> -->
+        <button type="button" class="btn btn-primary btn-lg pull-right hidden-xs" data-toggle="modal" data-target="#product-add-to-order">
+          Add to order
+        </button>
       </div>
     </div>
   </a>
@@ -1167,6 +1187,97 @@
 
   </section>
 
+  <!-- MODAL - ADD TO ORDER -->
+  <!-- Modal -->
+<div class="modal fade" id="product-add-to-order" tabindex="-1" role="dialog" aria-labelledby="product-add-to-order" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        
+        
+        
+                
+            <div class="modal-header">
+              
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h4 class="modal-title" id="myModalLabel">Add product to order</h4>
+
+
+            </div>
+
+        
+
+        <div class="modal-body">
+
+          
+          
+          
+          
+  <div class="form-group">
+    <div class="form-group has-feedback d-inline-block">
+  <label class="control-label" for="who-product-for">Who is this product for?</label>  
+    
+  
+<select class="form-control" id="who-product-for">
+  <option>You (Rosa Stone)</option>
+  <option>Kory Rasmussen</option>
+  <option>Tisha Pennington</option>
+  <option>Phoebe Pope</option>
+</select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <div class="form-group has-feedback d-inline-block">
+  <label class="control-label" for="quantity">Quantity</label>  
+      
+  
+<select class="form-control" id="quantity">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+</select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <b>Sub-total</b><br>
+      $25.00
+    </div>
+  </div><!-- /.row -->
+
+  <div class="form-inline">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Auto-replenish
+      </label>
+    </div>
+  </div>
+
+  <div class="alert alert-info"><span class="glyphicon glyphicon-info-sign"></span> Shipping and taxes will be calculated during the checkout process</div>
+
+          
+        </div>
+
+        
+        
+        
+                
+            <div class="modal-footer">
+              
+  <button type="button" class="btn btn-primary" data-dismiss="modal">Add to order</button>
+
+
+            </div>
+
+        
+      </div>
+    </div>
+  </div>
 
       
       
