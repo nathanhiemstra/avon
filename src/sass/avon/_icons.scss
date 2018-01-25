@@ -21,13 +21,6 @@ html:hover [class^="lt-"] {
 	-ms-zoom: 1;
 }
 
-.lt-icon, .lt-icon.lt-icons-regular {
-	display: inline-block;
-	position: relative;
-	bottom: 1px;
-	line-height: 1;
-}
-
 .lt-icon, .lt-icon.lt-icons-regular,
 [class^="lt-"]:before, [class*=" lt-"]:before,
 [class^="lt-"].lt-icons-regular:before, [class*=" lt-"].lt-icons-regular:before,
@@ -40,6 +33,11 @@ html:hover [class^="lt-"] {
 	text-rendering: optimizeLegibility;
 	white-space: nowrap;
 	color: $brand-primary;
+	display: inline-block;
+	bottom: 1px;
+	position: relative;
+	line-height: 1;
+  vertical-align: text-bottom;
 	-moz-font-feature-settings: "liga=1";
 	-moz-font-feature-settings: "liga";
 	-ms-font-feature-settings: "liga" 1;
