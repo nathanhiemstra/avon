@@ -10,27 +10,37 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
+    <!-- START - MAIN CONTENT -->
     <section class="container container--brochures">
 
-      <div class="container">
+      <!-- START - VIRTUAL BROCHURE HEADER -->
+      <section class="container">
         <div class="row mt-5">
           {% include components.modules.brochures.header %}
         </div>
-      </div>
+      </section>
+      <!-- END - VIRTUAL BROCHURE HEADER -->
 
       <section>
+        <!-- START - GRID -->
         <div class="container brochure-grid-view">
           {% include components.modules.brochures.gridView %}
         </div>
+        <!-- END - GRID -->
+
+        <!-- START - DETAILS -->
         <div class="container brochure-detail-view hidden">
           {% include components.modules.brochures.detailView %}
         </div>
+        <!-- END - DETAILS -->
       </section>
+
     </section>
+    <!-- END - MAIN CONTENT -->
 
   {% endblock %}
 
-  <!-- MODAL - Brochure Quick Look -->
+  {# MODAL - Brochure Quick Look #}
   {% include components.modules.brochures.quickLook %}
 
 {% endblock %}
