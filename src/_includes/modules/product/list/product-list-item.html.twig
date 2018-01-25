@@ -12,10 +12,11 @@
         </p>
         <p>
           <span class="rating small">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            {% include components.elements.ratings.selected %}
+            {% include components.elements.ratings.selected %}
+            {% include components.elements.ratings.selected %}
+            {% include components.elements.ratings.selected %}
+            {% include components.elements.ratings.unselected %}
             <span class="num-ratings">{{ numRatings }}</span>
           </span>
           <span class="stock small"><span class="lt-icon lt-checkmark" aria-hidden="true"></span> {{ stockStatus }}</span>
