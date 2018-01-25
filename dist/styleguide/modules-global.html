@@ -136,7 +136,8 @@
 
 
 <div class="bs-example">
-      <nav class="navbar navbar-default navbar-static-top navbar--static-nav hidden-xs border-0">
+      <!-- START - STATIC NAV -->
+<nav class="navbar navbar-default navbar-static-top navbar--static-nav hidden-xs border-0">
   <div class="container">
     <ul class="nav navbar-nav navbar-right">
       <li>
@@ -157,11 +158,13 @@
     </ul>
   </div>
 </nav>
+<!-- END - STATIC NAV -->
   </div>
 
 
 <pre><code class="language-markup"><script type="text/plain">
-      <nav class="navbar navbar-default navbar-static-top navbar--static-nav hidden-xs border-0">
+      <!-- START - STATIC NAV -->
+<nav class="navbar navbar-default navbar-static-top navbar--static-nav hidden-xs border-0">
   <div class="container">
     <ul class="nav navbar-nav navbar-right">
       <li>
@@ -182,6 +185,7 @@
     </ul>
   </div>
 </nav>
+<!-- END - STATIC NAV -->
   </script></code></pre>
 
 
@@ -196,7 +200,8 @@
 
 
 <div class="bs-example">
-      <nav class="navbar navbar-default navbar-static-top navbar--user-nav hidden-xs border-0 mb-0">
+      <!-- START - USER NAV -->
+<nav class="navbar navbar-default navbar-static-top navbar--user-nav hidden-xs border-0 mb-0">
   <div class="container">
     <a href="index.html" class="navbar-brand">
       <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
@@ -221,11 +226,12 @@
     </ul>
   </div>
 </nav>
-  </div>
+<!-- END - USER NAV -->  </div>
 
 
 <pre><code class="language-markup"><script type="text/plain">
-      <nav class="navbar navbar-default navbar-static-top navbar--user-nav hidden-xs border-0 mb-0">
+      <!-- START - USER NAV -->
+<nav class="navbar navbar-default navbar-static-top navbar--user-nav hidden-xs border-0 mb-0">
   <div class="container">
     <a href="index.html" class="navbar-brand">
       <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
@@ -250,7 +256,7 @@
     </ul>
   </div>
 </nav>
-  </script></code></pre>
+<!-- END - USER NAV -->  </script></code></pre>
 
 
   <pre><code class="language-twig"><script type="text/plain">
@@ -264,7 +270,8 @@
 
 
 <div class="bs-example">
-      <nav class="navbar navbar--primary-nav navbar-default border-bottom my-0" role="navigation">
+      <!-- START - PRIMARY NAV -->
+<nav class="navbar navbar--primary-nav navbar-default border-bottom my-0" role="navigation">
   <div class="container pl-0">
 
     <div class="navbar-header visible-xs-block">
@@ -337,11 +344,13 @@
 
   </div>
 </nav>
+<!-- END - PRIMARY NAV -->
   </div>
 
 
 <pre><code class="language-markup"><script type="text/plain">
-      <nav class="navbar navbar--primary-nav navbar-default border-bottom my-0" role="navigation">
+      <!-- START - PRIMARY NAV -->
+<nav class="navbar navbar--primary-nav navbar-default border-bottom my-0" role="navigation">
   <div class="container pl-0">
 
     <div class="navbar-header visible-xs-block">
@@ -414,6 +423,7 @@
 
   </div>
 </nav>
+<!-- END - PRIMARY NAV -->
   </script></code></pre>
 
 
@@ -435,13 +445,15 @@ The global header is composed of the three navs shown above: Static, User and Pr
 
 
 <div class="bs-example">
-      <div class="no-reverse-bg avon-header">
+      <!-- START - HEADER -->
+<div class="no-reverse-bg avon-header">
   <div class="row">
     <div class="col-xs-12">
       <header class="global-header mb-5" role="banner">
 
         <!-- Static top navbar -->
-        <nav class="navbar navbar-default navbar-static-top navbar--static-nav hidden-xs border-0">
+        <!-- START - STATIC NAV -->
+<nav class="navbar navbar-default navbar-static-top navbar--static-nav hidden-xs border-0">
   <div class="container">
     <ul class="nav navbar-nav navbar-right">
       <li>
@@ -462,9 +474,11 @@ The global header is composed of the three navs shown above: Static, User and Pr
     </ul>
   </div>
 </nav>
+<!-- END - STATIC NAV -->
 
         <!-- User navbar -->
-        <nav class="navbar navbar-default navbar-static-top navbar--user-nav hidden-xs border-0 mb-0">
+        <!-- START - USER NAV -->
+<nav class="navbar navbar-default navbar-static-top navbar--user-nav hidden-xs border-0 mb-0">
   <div class="container">
     <a href="index.html" class="navbar-brand">
       <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
@@ -489,9 +503,10 @@ The global header is composed of the three navs shown above: Static, User and Pr
     </ul>
   </div>
 </nav>
-
+<!-- END - USER NAV -->
         <!-- Primary navbar -->
-        <nav class="navbar navbar--primary-nav navbar-default border-bottom my-0" role="navigation">
+        <!-- START - PRIMARY NAV -->
+<nav class="navbar navbar--primary-nav navbar-default border-bottom my-0" role="navigation">
   <div class="container pl-0">
 
     <div class="navbar-header visible-xs-block">
@@ -564,6 +579,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
 
   </div>
 </nav>
+<!-- END - PRIMARY NAV -->
 
         <!-- Global alert message -->
         <section id="global-alert-msg" class="container-fluid alert alert-success collapsed">
@@ -580,7 +596,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
         <!-- Item entry drawer -->
         
 
-<!-- DRAWER -->
+<!-- START - ITEM ENTRY DRAWER -->
 <section id="drawer-item-entry" class="drawer drawer-fixed-top drawer-hidden drawer-item-entry">
 
   <!-- DRAWER CONTENT -->
@@ -1152,6 +1168,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
 
 </section>
 <!-- /.drawer -->
+<!-- END - ITEM ENTRY DRAWER -->
 
       </header>
 
@@ -1160,17 +1177,19 @@ The global header is composed of the three navs shown above: Static, User and Pr
   <!-- /.row -->
 </div>
 <!-- /.no-reverse-bg -->
-  </div>
+<!-- END - HEADER -->  </div>
 
 
 <pre><code class="language-markup"><script type="text/plain">
-      <div class="no-reverse-bg avon-header">
+      <!-- START - HEADER -->
+<div class="no-reverse-bg avon-header">
   <div class="row">
     <div class="col-xs-12">
       <header class="global-header mb-5" role="banner">
 
         <!-- Static top navbar -->
-        <nav class="navbar navbar-default navbar-static-top navbar--static-nav hidden-xs border-0">
+        <!-- START - STATIC NAV -->
+<nav class="navbar navbar-default navbar-static-top navbar--static-nav hidden-xs border-0">
   <div class="container">
     <ul class="nav navbar-nav navbar-right">
       <li>
@@ -1191,9 +1210,11 @@ The global header is composed of the three navs shown above: Static, User and Pr
     </ul>
   </div>
 </nav>
+<!-- END - STATIC NAV -->
 
         <!-- User navbar -->
-        <nav class="navbar navbar-default navbar-static-top navbar--user-nav hidden-xs border-0 mb-0">
+        <!-- START - USER NAV -->
+<nav class="navbar navbar-default navbar-static-top navbar--user-nav hidden-xs border-0 mb-0">
   <div class="container">
     <a href="index.html" class="navbar-brand">
       <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
@@ -1218,9 +1239,10 @@ The global header is composed of the three navs shown above: Static, User and Pr
     </ul>
   </div>
 </nav>
-
+<!-- END - USER NAV -->
         <!-- Primary navbar -->
-        <nav class="navbar navbar--primary-nav navbar-default border-bottom my-0" role="navigation">
+        <!-- START - PRIMARY NAV -->
+<nav class="navbar navbar--primary-nav navbar-default border-bottom my-0" role="navigation">
   <div class="container pl-0">
 
     <div class="navbar-header visible-xs-block">
@@ -1293,6 +1315,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
 
   </div>
 </nav>
+<!-- END - PRIMARY NAV -->
 
         <!-- Global alert message -->
         <section id="global-alert-msg" class="container-fluid alert alert-success collapsed">
@@ -1309,7 +1332,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
         <!-- Item entry drawer -->
         
 
-<!-- DRAWER -->
+<!-- START - ITEM ENTRY DRAWER -->
 <section id="drawer-item-entry" class="drawer drawer-fixed-top drawer-hidden drawer-item-entry">
 
   <!-- DRAWER CONTENT -->
@@ -1881,6 +1904,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
 
 </section>
 <!-- /.drawer -->
+<!-- END - ITEM ENTRY DRAWER -->
 
       </header>
 
@@ -1889,7 +1913,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
   <!-- /.row -->
 </div>
 <!-- /.no-reverse-bg -->
-  </script></code></pre>
+<!-- END - HEADER -->  </script></code></pre>
 
 
   <pre><code class="language-twig"><script type="text/plain">
@@ -1907,7 +1931,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
 
 
 <div class="bs-example">
-      <!--Footer-->
+      <!-- START - FOOTER -->
 <footer class="my-5 footer global-footer">
     <hr>
     
@@ -1921,11 +1945,12 @@ The global header is composed of the three navs shown above: Static, User and Pr
     <!--/.Copyright-->
 
 </footer>
-<!--/.Footer-->  </div>
+<!--/.Footer-->
+<!-- END - FOOTER -->  </div>
 
 
 <pre><code class="language-markup"><script type="text/plain">
-      <!--Footer-->
+      <!-- START - FOOTER -->
 <footer class="my-5 footer global-footer">
     <hr>
     
@@ -1939,7 +1964,8 @@ The global header is composed of the three navs shown above: Static, User and Pr
     <!--/.Copyright-->
 
 </footer>
-<!--/.Footer-->  </script></code></pre>
+<!--/.Footer-->
+<!-- END - FOOTER -->  </script></code></pre>
 
 
   <pre><code class="language-twig"><script type="text/plain">
@@ -1957,7 +1983,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
   <div class="bs-example">
     
 
-<!-- DRAWER -->
+<!-- START - ITEM ENTRY DRAWER -->
 
   <!-- DRAWER CONTENT -->
   <section class="drawer-content">
@@ -2527,13 +2553,14 @@ The global header is composed of the three navs shown above: Static, User and Pr
   </section>
 
 <!-- /.drawer -->
+<!-- END - ITEM ENTRY DRAWER -->
   </div>
 
   
   <pre><code class="language-markup"><script type="text/plain">
     
 
-<!-- DRAWER -->
+<!-- START - ITEM ENTRY DRAWER -->
 
   <!-- DRAWER CONTENT -->
   <section class="drawer-content">
@@ -3103,6 +3130,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
   </section>
 
 <!-- /.drawer -->
+<!-- END - ITEM ENTRY DRAWER -->
   </script></code></pre>
 
 
