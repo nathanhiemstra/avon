@@ -1,7 +1,11 @@
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
 .your-order-offers {
     .offer-item {
-        @extend .my-4;
-
+        margin-top: $spacing-4;
+        margin-bottom: $spacing-4;
         background-color: $body-bg;
     }
 
@@ -11,8 +15,8 @@
 
     .offer-description {
         position: relative;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: $spacing-3;
+        padding-bottom: $spacing-3;
 
         // Don't let content collide with position-absolute stuff
         padding-bottom: 50px;
@@ -39,8 +43,8 @@
                 font-size: $font-size-small;
                 font-weight: bold;
                 text-align: right;
-                padding-top: 1rem;
-                padding-bottom: 1rem;
+                padding-top: $spacing-3;
+                padding-bottom: $spacing-3;
             }
         }
     }
