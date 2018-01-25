@@ -232,7 +232,8 @@ gulp.task('compile', function () {
               product: {
                 category:     'product-category.html',
                 detail:       'product-detail.html',
-                landing:      'product-landing.html'
+                landing:      'product-landing.html',
+                list:         'product-list.html'
               },
               yourOrder:      'your-order.html',
               search: {
