@@ -1,23 +1,47 @@
-<p>This order contains multiple carts. You can quickly check out by applying the same settings to all carts or customize each cart’s individual settings.</p>
-
-<div class="row">
-  <div class="col-md-6" role="main">
-    <a href="#" class="btn btn-default btn-block my-4">
-      <div  class="text-left">
-        <h3>Quick Checkout</h3>
-        <p>Apply a single shipping address and payment method to all carts</p>
-      </div>
-    </a>
+<div class="container mt-5">
+  <div class="row">
+    <p class="col-sm-6 col-sm-offset-3">This order contains multiple carts. You can quickly check out by applying the same settings to all carts or customize each cart’s individual settings.</p>
   </div>
-  <div class="col-md-6" role="complementary">
-    <a href="{{ pages.checkout.review.itemized }}" class="btn btn-default btn-block my-4">
-      <div  class="text-left">
-        <h3>Itemized Checkout</h3>
-        <p>Use unique shipping and payments options for individual carts</p>
+
+  <div class="row my-4">
+
+    <div class="col-sm-6" role="main">
+      <div class="panel panel-default panel-button">
+        <a href="#">
+          <div class="panel-body p-4">
+            <div class="row">
+              <div class="col-sm-10 text-left vcenter">
+                <h4 class="mt-0 panel-header">Quick Checkout</h3>
+                <p class="mb-0">Apply a single shipping address and payment method to all carts</p>
+              </div><!--
+              --><div class="col-sm-2 vcenter">
+                <span class="lt-icon lt-rightbutton"></span>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
-    </a>
+    </div>
+
+    <div class="col-sm-6" role="complementary">
+      <div class="panel panel-default panel-button">
+        <a href="{{ pages.checkout.review.itemized }}">
+          <div class="panel-body p-4">
+            <div class="row">
+              <div class="col-sm-10 text-left vcenter">
+                <h4 class="mt-0 panel-header">Itemized Checkout</h3>
+                <p class="mb-0">Use unique shipping and payments options for individual carts</p>
+              </div><!--
+              --><div class="col-sm-2 vcenter">
+                <span class="lt-icon lt-rightbutton"></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
   </div>
-</div><!-- /.row -->
-
-
-
+  <!-- /.row -->
+</div>
+<!-- /.container -->
