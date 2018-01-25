@@ -166,7 +166,8 @@ gulp.task('compile', function () {
                 },
                 checkout: {
                   chooseType:     prefix.modules + "checkout/choose-type.html.twig",
-                  header:         prefix.modules + "checkout/header.html.twig"
+                  header:         prefix.modules + "checkout/header.html.twig",
+                  reviewComplete: prefix.modules + "checkout/review-complete.html.twig",
                 },
                 itemEntry: {
                   drawer:         prefix.modules + "item-entry/item-entry.html.twig"

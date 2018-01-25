@@ -6,10 +6,10 @@
 .panel {
     margin-bottom: $line-height-computed;
     background-color: $panel-bg;
-    border: 1px solid transparent;
+    border: none;
     border-radius: $panel-border-radius;
 
-    @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+    // @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
 }
 
 // Panel contents
@@ -291,6 +291,22 @@
 
 .panel-danger {
     @include panel-variant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
+}
+
+// Custom panel that's basically a big button
+.panel-button {
+    a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        color: $text-color;
+    }
+    .panel-header {
+        color: $brand-primary;
+    }
+    .lt-icon {
+        font-size: 36px;
+    }
 }
 
 .reverse-bg {
