@@ -1,7 +1,10 @@
 {% set drawerId = 'drawer-item-entry' %}
 
+
 <!-- DRAWER -->
+{% if isInStyleguide != true %}
 <section id="{{ drawerId }}" class="drawer drawer-fixed-top drawer-hidden drawer-item-entry">
+{% endif %}
 
   <!-- DRAWER CONTENT -->
   <section class="drawer-content">
@@ -106,5 +109,8 @@
     <!-- /.container -->
 
   </section>
+
+{% if isInStyleguide != true  %}
 </section>
+{% endif %}
 <!-- /.drawer -->

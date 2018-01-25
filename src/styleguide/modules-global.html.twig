@@ -88,6 +88,26 @@
 
 
 
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# ITEM ENTRY #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Item Entry (Drawer Content)",
+    slug:         "global-item-entry-drawer-content"
+  }%}
+
+  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
+  <div class="bs-example">
+    {% include components.modules.itemEntry.drawer with {isInStyleguide: true} %}
+  </div>
+
+  {# Markup #}
+  {{ highlightMarkup }}
+    {% include components.modules.itemEntry.drawer with {isInStyleguide: true} %}
+  {{ endhighlight }}
+
+
+
 
 
 
