@@ -532,34 +532,17 @@ a {
 //## Gray and brand colors for use across Bootstrap.
 
 $gray-base: #000 !default;
-
-// #222
-// $gray-dark: lighten($gray-base, 20%) !default;
 $gray-dark: $gray-base !default;
-
-// #333
-// $gray: lighten($gray-base, 33.5%) !default;
 $gray: #666 !default;
-
-// #555
-// $gray-light: lighten($gray-base, 46.7%) !default;
 $gray-light: #CCC !default;
-
-// #777
-// $gray-lighter: lighten($gray-base, 93.5%) !default;
 $gray-lighter: #F2F2F2 !default;
 
-// #eee
 
 $brand-primary: #ED008C !default;
 $brand-primary-emphasize: #D4027B !default;
 $brand-primary-muted: #FEF4F8 !default;
 
-// #337ab7
-// $brand-success: #5cb85c !default;
-// $brand-info: #5bc0de !default;
-// $brand-warning: #f0ad4e !default;
-// $brand-danger: #d9534f !default;
+
 
 $brand-success: #3EA572 !default;
 $brand-info: #2C97D0 !default;
@@ -596,30 +579,39 @@ $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 
-$font-size-base: 14px !default;
-$font-size-large: ceil($font-size-base * 1.25) !default;
+$font-size-base: 15px !default;
 
-// ~18px
-$font-size-small: ceil($font-size-base * 0.85) !default;
+// 18px
+$font-size-large: ceil($font-size-base * 1.2) !default;
 
-// ~12px
+// 12px
+$font-size-small: ceil($font-size-base * 0.83333) !default;
 
-$font-size-h1: floor($font-size-base * 2.6) !default;
+// 40px
 
-// ~36px
-$font-size-h2: floor($font-size-base * 2.15) !default;
+// H1
+$font-size-h1:          floor($font-size-base * 2.8) !default; // 42px
+$font-size-h1-desktop:  floor($font-size-base * 3.2) !default; // 48px
 
-// ~30px
-$font-size-h3: ceil($font-size-base * 1.7) !default;
+$font-size-h2:          floor($font-size-base * 2.0) !default; // 30px
+$font-size-h2-desktop:  floor($font-size-base * 2.4) !default; // 36px
 
-// ~24px
-$font-size-h4: ceil($font-size-base * 1.25) !default;
+$font-size-h3:          ceil($font-size-base * 1.4666) !default; // 22px
+$font-size-h3-desktop:  ceil($font-size-base * 2.0) !default; // 30px
 
-// ~18px
-$font-size-h5: $font-size-base !default;
-$font-size-h6: ceil($font-size-base * 0.85) !default;
+$font-size-h4:          ceil($font-size-base * 1.2) !default; // 18px
+$font-size-h4-desktop:  ceil($font-size-base * 1.6) !default; // 24px
 
-// ~12px
+$font-size-h5:          $font-size-base !default; // 15px
+$font-size-h5-desktop:  ceil($font-size-base * 1.2) !default; // 18px
+
+$font-size-h6:          ceil($font-size-base * 0.8666) !default; // 13px
+$font-size-h6-desktop:  ceil($font-size-base * 0.9333) !default; // 14px
+
+$font-size-h7:          ceil($font-size-base * 0.7333) !default; // 11px
+$font-size-h7-desktop:  ceil($font-size-base * 0.83333) !default; // 12px
+
+// 12px
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base: 1.42857 !default;
@@ -628,7 +620,7 @@ $line-height-base: 1.42857 !default;
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 $line-height-computed: floor($font-size-base * $line-height-base) !default;
 
-// ~20px
+// 20px
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family: inherit !default;
