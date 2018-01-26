@@ -1,0 +1,149 @@
+<div class="container">
+
+  <!-- <h3 class="mb-5">Quick Checkout</h3> -->
+
+  <!-- START - ORDER OVERVIEW -->
+  <section class="list-group mt-4">
+
+    <!-- header -->
+    <div class="list-group-item border-0">
+      <h4 class="mt-2 mb-0">Order Overview</h4>
+    </div>
+
+    <div class="list-group-item border-0">
+
+      <!-- customer list -->
+      <dl class="clearfix my-2">
+        <dt class="pull-left">You (Rosa Stone)</dt>
+        <dt class="pull-right text-right">$123.99</dd>
+      </dl>
+      <dl class="clearfix my-2">
+        <dt class="pull-left">Kory Rasmussen</dt>
+        <dt class="pull-right text-right">$51.72</dd>
+      </dl>
+      <dl class="clearfix my-2">
+        <dt class="pull-left">Tisha Pennington</dt>
+        <dt class="pull-right text-right"></dd>
+      </dl>
+
+      <hr>
+
+      <!-- subtotals -->
+      <dl class="clearfix my-2">
+        <dd class="pull-left">Shipping Subtotal</dt>
+        <dd class="pull-right text-right">
+          $12.99
+        </dd>
+      </dl>
+      <dl class="clearfix my-2">
+        <dd class="pull-left">Tax Subtotal</dt>
+        <dd class="pull-right text-right">
+          $42.66
+        </dd>
+      </dl>
+
+      <hr>
+
+      <!-- totals -->
+      <dl class="clearfix my-2">
+        <dt class="pull-left text-uppercase">Order Total:</dt>
+        <dt class="pull-right text-right">
+          $484.87
+        </dd>
+      </dl>
+      <dl class="clearfix my-2">
+        <dd class="pull-left text-uppercase">Discount:</dt>
+        <dd class="pull-right text-right">
+          $50.56
+        </dd>
+      </dl>
+
+    </div>
+  </section>
+  <!-- END - ORDER OVERVIEW -->
+
+  <!-- START - SHIPPING ADDRESS -->
+  <section class="list-group">
+
+    <!-- header -->
+    <div class="list-group-item border-0">
+      <h4 class="mt-2 mb-0">Ship To</h4>
+    </div>
+
+    <!-- shipping address -->
+    <div class="list-group-item border-0">
+      <div class="clearfix">
+        1153 W Grand Ave<br>
+        Chicago, IL, 60642-5808
+      </div>
+    </div>
+
+  </section>
+  <!-- END - SHIPPING ADDRESS -->
+
+  <!-- START - SHIPPING METHOD -->
+  <section class="list-group">
+
+    <!-- header -->
+    <div class="list-group-item border-0">
+      <h4 class="mt-2 mb-0">Shipping Method</h4>
+    </div>
+
+    <!-- shipping method -->
+    <div class="list-group-item border-0">
+      <div class="clearfix">
+        USPS Ground (4–7 business days)<br>
+        $5.95
+      </div>
+    </div>
+
+  </section>
+  <!-- END - SHIPPING METHOD -->
+
+  <!-- START - PAYMENT METHOD -->
+  <section class="list-group">
+
+    <!-- header -->
+    <div class="list-group-item border-0">
+      <h4 class="mt-2 mb-0">Payment Method</h4>
+    </div>
+
+    <!-- payment method -->
+    <div id="payment-method-form" class="list-group-item border-0">
+      <form class="clearfix">
+        {% include components.groups.forms.radioAndLabel with {
+          name: 'paymentMethod',
+          label: 'Credit Card',
+          theValue: 'Credit Card',
+          checked: 'checked'
+        } %}
+        {% include components.groups.forms.radioAndLabel with {
+          name: 'paymentMethod',
+          label: 'Avon Quikpay',
+          theValue: 'Avon Quikpay'
+        } %}
+        {% include components.groups.forms.radioAndLabel with {
+          name: 'paymentMethod',
+          label: 'Avon Credit',
+          theValue: 'Avon Credit'
+        } %}
+      </form>
+    </div>
+
+    <!-- pay with Credit Card view -->
+    {% include "_includes/modules/checkout/quick-checkout-cc.html.twig" %}
+
+    <!-- pay with Avon Quikpay view -->
+    {% include "_includes/modules/checkout/quick-checkout-aq.html.twig" %}
+
+    <!-- pay with Avon Credit view -->
+    {% include "_includes/modules/checkout/quick-checkout-ac.html.twig" %}
+
+    <!-- summary view -->
+    {% include "_includes/modules/checkout/quick-checkout-summary.html.twig" %}
+
+  </section>
+  <!-- END - PAYMENT METHOD -->
+
+</div>
+<!-- /.container -->

@@ -1,82 +1,6 @@
+<div class="container">
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <title></title>
-
-  <!-- Core CSS - containts customized bootstrap plus new CSS -->
-  <link href="./css/avon-main.css" rel="stylesheet">
-
-  <!-- Page specific -->
-  <link href="./css/avon-page-brochures.css" rel="stylesheet">
-  <link href="./css/avon-page-search-results.css" rel="stylesheet">
-  <link href="./css/avon-page-your-order.css" rel="stylesheet">
-
-
-
-  <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Favicons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/images/ico/favicon.ico">
-</head>
-
-
-<body >
-
-  <!-- START - PAGE CONTENT -->
-  <section id="avon-poc">
-      <a class="sr-only" href="#content">Skip to main content</a>
-
-      
-      
-      
-        <!-- START - HEADER -->
-  <div class="no-reverse-bg">
-    <header class="navbar navbar-isolated navbar-static-top" role="banner">
-  <div class="container">
-
-      <a href="index.html" class="navbar-brand ml-0">
-        <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
-      </a>
-       <h1 class="navbar-title">Checkout</h1>
-       <a href="#drawer-order-summary" class="close mt-3" data-toggle="drawer">
-        <span class="h4"><span class="lt-icon lt-close"></span></span>
-
-      </a>
-
-  </div>
-</header>
-  </div><!-- /.no-reverse-bg -->
-  <!-- END - HEADER -->
-
-      <div class="global-content-overlay hidden"></div>
-
-      
-      
-      
-      
-  <div class="super-panel reverse-bg">
-    <div class="container">
-
-      <main role="main">
-
-  
-  
-  
-          <div class="container">
-
-  <h3 class="mb-5">Review and Complete Order</h3>
+  <h3 class="mb-5">Itemized Checkout FPO</h3>
 
   <section class="list-group">
     <div class="list-group-item">
@@ -117,7 +41,7 @@
         <span class="lt-icon lt-bag"></span>
         You (Rosa Stone)
       </h4>
-      <a href="" class="btn btn-default btn-sm pull-right">Edit</a>
+      <a href="{{ pages.checkout.review.itemized }}" class="btn btn-default btn-sm pull-right">Edit</a>
     </div>
     <div class="list-group-item">
 
@@ -166,7 +90,7 @@
         <span class="lt-icon lt-bag"></span>
         Kory Rasmussen
       </h4>
-      <a href="" class="btn btn-default btn-sm pull-right">Edit</a>
+      <a href="{{ pages.checkout.review.itemized }}" class="btn btn-default btn-sm pull-right">Edit</a>
     </div>
     <div class="list-group-item">
 
@@ -215,7 +139,7 @@
         <span class="lt-icon lt-bag"></span>
         Tisha Pennington
       </h4>
-      <a href="" class="btn btn-default btn-sm pull-right">Edit</a>
+      <a href="{{ pages.checkout.review.itemized }}" class="btn btn-default btn-sm pull-right">Edit</a>
     </div>
     <div class="list-group-item">
 
@@ -267,40 +191,3 @@
   <section class="clearfix text-center mb-4">
     <a class="btn btn-primary btn-lg">Complete &amp; process order</a>
   </section>
-
-          
-
-</main>
-    </div>
-  </div><!-- /.super-panel -->
-
-
-
-      
-      
-      
-      
-  </section>
-  <!-- END - PAGE CONTENT -->
-
-  <script src="./js/vendor/jquery/1.10.2/jquery.min.js"></script>
-  <script src="./js/vendor/jquery.autocomplete.min.js"></script>
-  <script src="./js/vendor/bootstrap.js"></script>
-  <script src="./js/avon-main.js"></script>
-  <script src="./js/modules/brochures.js"></script>
-  <script src="./js/modules/checkoutDemo.js"></script>
-  <script src="./js/modules/formDemo.js"></script>
-  <script src="./js/fakeData.js"></script>
-  <!-- TODO :: probably want to bundle the above scripts with a gulp task
-            :: and remove the fake data, of course -->
-  <script>
-    window.twttr = (function (d,s,id) {
-      var t, js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
-      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
-      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
-    }(document, "script", "twitter-wjs"));
-  </script>
-
-</body>
-</html>

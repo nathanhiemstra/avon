@@ -1,8 +1,8 @@
 
-<div class="checkbox">
+<div class="radio">
   <label>
-    {% include components.elements.forms.radio with {id: id, theValue: theValue} %}
-    
+    {% include components.elements.forms.radio with {id: id, name: name, theValue: theValue, checked: checked} %}
+
     {{ label }}
   </label>
 </div>

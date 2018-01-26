@@ -165,9 +165,11 @@ gulp.task('compile', function () {
                   quickLook:      prefix.modules + "brochures/quick-look.html.twig"
                 },
                 checkout: {
-                  chooseType:     prefix.modules + "checkout/choose-type.html.twig",
-                  header:         prefix.modules + "checkout/header.html.twig",
-                  reviewComplete: prefix.modules + "checkout/review-complete.html.twig",
+                  chooseType:       prefix.modules + "checkout/choose-type.html.twig",
+                  header:           prefix.modules + "checkout/header.html.twig",
+                  itemizedCheckout: prefix.modules + "checkout/itemized-checkout.html.twig",
+                  reviewComplete:   prefix.modules + "checkout/review-complete.html.twig",
+                  quickCheckout:    prefix.modules + "checkout/quick-checkout.html.twig",
                 },
                 itemEntry: {
                   drawer:         prefix.modules + "item-entry/item-entry.html.twig"
@@ -218,7 +220,7 @@ gulp.task('compile', function () {
               }
             },
             pages: {
-              
+
               brochures: {
                 landing:      'brochures.html'
               },

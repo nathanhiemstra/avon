@@ -9,7 +9,7 @@ $(document).ready(function () {
     triggers: {
       drawerOrderSummary: ".trigger-drawer-order-summary",
       drawerItemEntry: ".trigger-drawer-item-entry",
-      
+
     },
     yourOrder: {
       offers: {
@@ -52,7 +52,7 @@ $(document).ready(function () {
     overlay: $(selectors.overlay)
   }
 
-  console.log('selectors: ',selectors); 
+  console.log('selectors: ',selectors);
 
 
 
@@ -116,16 +116,16 @@ $(document).ready(function () {
 
 
   // YOUR OFFERS
-  console.log('$objects.yourOrder.offers.showDetails: ',$objects.yourOrder.offers.showDetails); 
+  console.log('$objects.yourOrder.offers.showDetails: ',$objects.yourOrder.offers.showDetails);
   $objects.yourOrder.offers.showDetails.on("click", function () {
     yourOrderOffersShowDetails();
-    console.log('showDetails'); 
+    console.log('showDetails');
 
   });
 
   $objects.yourOrder.offers.hideDetails.on("click", function () {
     yourOrderOffersHideDetails();
-    console.log('hideDetails'); 
+    console.log('hideDetails');
   });
 
 
@@ -138,6 +138,7 @@ $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
   });
 
+  CheckoutDemo.init();
   FormDemo.init();
   Brochures.init();
 

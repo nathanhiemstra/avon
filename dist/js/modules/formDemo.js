@@ -131,8 +131,8 @@ var FormDemo = (function () {
       // show alert message demo
       $('#global-alert-msg').removeClass('collapsed');
       setTimeout(function() {
-        $('#global-alert-msg').addClass('collapsed');        
-      }, 3000);
+        $('#global-alert-msg').addClass('collapsed');
+      }, 5000);
     });
 
     // mobile

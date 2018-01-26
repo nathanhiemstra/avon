@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title></title>
+
+  <!-- Core CSS - containts customized bootstrap plus new CSS -->
+  <link href="./css/avon-main.css" rel="stylesheet">
+
+  <!-- Page specific -->
+  <link href="./css/avon-page-brochures.css" rel="stylesheet">
+  <link href="./css/avon-page-search-results.css" rel="stylesheet">
+  <link href="./css/avon-page-your-order.css" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+</head>
+
+
+<body >
+
+  <!-- START - PAGE CONTENT -->
+  <section id="avon-poc">
+      <a class="sr-only" href="#content">Skip to main content</a>
+
+      
+      
+      
+        <!-- START - HEADER -->
+  <div class="no-reverse-bg">
+    <header class="navbar navbar-isolated navbar-static-top" role="banner">
+  <div class="container">
+
+      <a href="index.html" class="navbar-brand ml-0">
+        <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
+      </a>
+       <h1 class="navbar-title">Checkout</h1>
+       <a href="#drawer-order-summary" class="close mt-3" data-toggle="drawer">
+        <span class="h4"><span class="lt-icon lt-close"></span></span>
+
+      </a>
+
+  </div>
+</header>
+  </div><!-- /.no-reverse-bg -->
+  <!-- END - HEADER -->
+
+      <div class="global-content-overlay hidden"></div>
+
+      
+      
+      
+      
+  <div class="super-panel reverse-bg">
+    <div class="container">
+
+      <main role="main">
+
+  
+  
+  
+          <div class="container">
+
+  <!-- <h3 class="mb-5">Quick Checkout</h3> -->
+
+  <!-- START - ORDER OVERVIEW -->
+  <section class="list-group mt-4">
+
+    <!-- header -->
+    <div class="list-group-item border-0">
+      <h4 class="mt-2 mb-0">Order Overview</h4>
+    </div>
+
+    <div class="list-group-item border-0">
+
+      <!-- customer list -->
+      <dl class="clearfix my-2">
+        <dt class="pull-left">You (Rosa Stone)</dt>
+        <dt class="pull-right text-right">$123.99</dd>
+      </dl>
+      <dl class="clearfix my-2">
+        <dt class="pull-left">Kory Rasmussen</dt>
+        <dt class="pull-right text-right">$51.72</dd>
+      </dl>
+      <dl class="clearfix my-2">
+        <dt class="pull-left">Tisha Pennington</dt>
+        <dt class="pull-right text-right"></dd>
+      </dl>
+
+      <hr>
+
+      <!-- subtotals -->
+      <dl class="clearfix my-2">
+        <dd class="pull-left">Shipping Subtotal</dt>
+        <dd class="pull-right text-right">
+          $12.99
+        </dd>
+      </dl>
+      <dl class="clearfix my-2">
+        <dd class="pull-left">Tax Subtotal</dt>
+        <dd class="pull-right text-right">
+          $42.66
+        </dd>
+      </dl>
+
+      <hr>
+
+      <!-- totals -->
+      <dl class="clearfix my-2">
+        <dt class="pull-left text-uppercase">Order Total:</dt>
+        <dt class="pull-right text-right">
+          $484.87
+        </dd>
+      </dl>
+      <dl class="clearfix my-2">
+        <dd class="pull-left text-uppercase">Discount:</dt>
+        <dd class="pull-right text-right">
+          $50.56
+        </dd>
+      </dl>
+
+    </div>
+  </section>
+  <!-- END - ORDER OVERVIEW -->
+
+  <!-- START - SHIPPING ADDRESS -->
+  <section class="list-group">
+
+    <!-- header -->
+    <div class="list-group-item border-0">
+      <h4 class="mt-2 mb-0">Ship To</h4>
+    </div>
+
+    <!-- shipping address -->
+    <div class="list-group-item border-0">
+      <div class="clearfix">
+        1153 W Grand Ave<br>
+        Chicago, IL, 60642-5808
+      </div>
+    </div>
+
+  </section>
+  <!-- END - SHIPPING ADDRESS -->
+
+  <!-- START - SHIPPING METHOD -->
+  <section class="list-group">
+
+    <!-- header -->
+    <div class="list-group-item border-0">
+      <h4 class="mt-2 mb-0">Shipping Method</h4>
+    </div>
+
+    <!-- shipping method -->
+    <div class="list-group-item border-0">
+      <div class="clearfix">
+        USPS Ground (4–7 business days)<br>
+        $5.95
+      </div>
+    </div>
+
+  </section>
+  <!-- END - SHIPPING METHOD -->
+
+  <!-- START - PAYMENT METHOD -->
+  <section class="list-group">
+
+    <!-- header -->
+    <div class="list-group-item border-0">
+      <h4 class="mt-2 mb-0">Payment Method</h4>
+    </div>
+
+    <!-- payment method -->
+    <div id="payment-method-form" class="list-group-item border-0">
+      <form class="clearfix">
+        
+<div class="radio">
+  <label>
+          <input type="radio"  name="paymentMethod" value="Credit Card" checked >
+    Credit Card
+  </label>
+</div>
+        
+<div class="radio">
+  <label>
+        <input type="radio"  name="paymentMethod" value="Avon Quikpay">
+    Avon Quikpay
+  </label>
+</div>
+        
+<div class="radio">
+  <label>
+        <input type="radio"  name="paymentMethod" value="Avon Credit">
+    Avon Credit
+  </label>
+</div>
+      </form>
+    </div>
+
+    <!-- pay with Credit Card view -->
+    <!-- START - PAY WITH CREDIT CARD -->
+<section class="quick-checkout-cc">
+
+  <!-- card type -->
+  <div class="list-group-item border-0">
+
+    <h5 class="mb-4">Card Type</h5>
+
+    <div class="clearfix">
+      
+  
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control">
+      <option>VISA</option>
+      <option>MasterCard</option>
+      <option>Other</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>    </div>
+
+  </div>
+
+  <!-- card number -->
+  <div class="list-group-item border-0">
+
+    <h5 class="mb-4">Card Number</h5>
+
+    <div class="clearfix">
+        <input type="text" class="form-control">    </div>
+
+  </div>
+
+  <!-- name on card -->
+  <div class="list-group-item border-0">
+
+    <h5 class="mb-4">Name on Card</h5>
+
+    <div class="row">
+      <div class="col-xs-6">
+            <input type="text" class="form-control" placeholder="First Name">      </div>
+      <div class="col-xs-6">
+            <input type="text" class="form-control" placeholder="Last Name">      </div>
+    </div>
+
+  </div>
+
+  <!-- card expiration -->
+  <div class="list-group-item border-0">
+
+    <div class="clearfix row">
+      <h5 class="mb-4 pull-left col-xs-10">Expiration Date</h5>
+      <h5 class="mb-4 pull-right col-xs-2">CVV<span class="lt-icon lt-info pull-right"></span></h5>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-5">
+        
+  
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control">
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>      </div>
+      <div class="col-xs-5">
+        
+  
+                <div class="form-group has-feedback d-inline-block">
+  <select class="form-control">
+      <option>2018</option>
+      <option>2019</option>
+      <option>2020</option>
+    </select>
+  <span class="glyphicon glyphicon-play form-control-feedback"></span>
+</div>      </div>
+      <div class="col-xs-2">
+          <input type="text" class="form-control">      </div>
+    </div>
+
+  </div>
+
+  <!-- save card -->
+  <div class="list-group-item border-0">
+    <div class="clearfix">
+      
+<div class="checkbox">
+  <label>
+      <input type="checkbox" checked>    
+    Save this card for future use
+  </label>
+</div>    </div>
+  </div>
+
+  <!-- submit button -->
+  <div class="list-group-item border-0">
+    <div class="clearfix">
+      <a class="btn btn-primary btn-lg quick-checkout-submit">Continue</a>
+    </div>
+  </div>
+
+</section>
+<!-- END - PAY WITH CREDIT CARD -->
+
+    <!-- pay with Avon Quikpay view -->
+    <!-- START - PAY WITH CREDIT CARD -->
+<section class="quick-checkout-aq hidden">
+
+  <!-- card type -->
+  <div class="list-group-item border-0">
+
+    <h5 class="mb-4">FPO Avon Quikpay FPO</h5>
+
+  </div>
+
+</section>
+<!-- END - PAY WITH CREDIT CARD -->
+
+    <!-- pay with Avon Credit view -->
+    <!-- START - PAY WITH CREDIT CARD -->
+<section class="quick-checkout-ac hidden">
+
+  <!-- card type -->
+  <div class="list-group-item border-0">
+
+    <h5 class="mb-4">FPO Avon Credit FPO</h5>
+
+  </div>
+
+</section>
+<!-- END - PAY WITH CREDIT CARD -->
+
+    <!-- summary view -->
+    <!-- START - CHECKOUT SUMMARY -->
+<section class="list-group quick-checkout-summary hidden">
+
+  <!-- shipping method -->
+  <div class="list-group-item border-0">
+    <div class="clearfix">
+      <span class="lt-icon lt-checkmark"></span> VISA ending in 1234
+    </div>
+  </div>
+
+</section>
+<!-- END - CHECKOUT SUMMARY -->
+
+  </section>
+  <!-- END - PAYMENT METHOD -->
+
+</div>
+<!-- /.container -->
+
+          
+
+</main>
+    </div>
+  </div><!-- /.super-panel -->
+
+
+
+      
+      
+      
+      
+  </section>
+  <!-- END - PAGE CONTENT -->
+
+  <script src="./js/vendor/jquery/1.10.2/jquery.min.js"></script>
+  <script src="./js/vendor/jquery.autocomplete.min.js"></script>
+  <script src="./js/vendor/bootstrap.js"></script>
+  <script src="./js/avon-main.js"></script>
+  <script src="./js/modules/brochures.js"></script>
+  <script src="./js/modules/checkoutDemo.js"></script>
+  <script src="./js/modules/formDemo.js"></script>
+  <script src="./js/fakeData.js"></script>
+  <!-- TODO :: probably want to bundle the above scripts with a gulp task
+            :: and remove the fake data, of course -->
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+
+</body>
+</html>

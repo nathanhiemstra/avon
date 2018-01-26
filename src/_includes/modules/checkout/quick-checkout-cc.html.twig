@@ -1,0 +1,112 @@
+<!-- START - PAY WITH CREDIT CARD -->
+<section class="quick-checkout-cc">
+
+  <!-- card type -->
+  <div class="list-group-item border-0">
+
+    <h5 class="mb-4">Card Type</h5>
+
+    <div class="clearfix">
+      {% include components.elements.forms.select with {
+        items: [
+          {
+            'label': 'VISA'
+          }, {
+            'label': 'MasterCard'
+          }, {
+            'label': 'Other'
+          }
+        ]
+      } %}
+    </div>
+
+  </div>
+
+  <!-- card number -->
+  <div class="list-group-item border-0">
+
+    <h5 class="mb-4">Card Number</h5>
+
+    <div class="clearfix">
+      {% include components.elements.forms.input with {} %}
+    </div>
+
+  </div>
+
+  <!-- name on card -->
+  <div class="list-group-item border-0">
+
+    <h5 class="mb-4">Name on Card</h5>
+
+    <div class="row">
+      <div class="col-xs-6">
+        {% include components.elements.forms.input with {placeholder: 'First Name'} %}
+      </div>
+      <div class="col-xs-6">
+        {% include components.elements.forms.input with {placeholder: 'Last Name'} %}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- card expiration -->
+  <div class="list-group-item border-0">
+
+    <div class="clearfix row">
+      <h5 class="mb-4 pull-left col-xs-10">Expiration Date</h5>
+      <h5 class="mb-4 pull-right col-xs-2">CVV<span class="lt-icon lt-info pull-right"></span></h5>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-5">
+        {% include components.elements.forms.select with {
+          items: [
+            {
+              'label': 'January'
+            }, {
+              'label': 'February'
+            }, {
+              'label': 'March'
+            }
+          ]
+        } %}
+      </div>
+      <div class="col-xs-5">
+        {% include components.elements.forms.select with {
+          items: [
+            {
+              'label': '2018'
+            }, {
+              'label': '2019'
+            }, {
+              'label': '2020'
+            }
+          ]
+        } %}
+      </div>
+      <div class="col-xs-2">
+        {% include components.elements.forms.input with {placeholder: ''} %}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- save card -->
+  <div class="list-group-item border-0">
+    <div class="clearfix">
+      {% include components.groups.forms.checkboxAndLabel with {
+        label: 'Save this card for future use',
+        checked: 'checked'
+      } %}
+    </div>
+  </div>
+
+  <!-- submit button -->
+  <div class="list-group-item border-0">
+    <div class="clearfix">
+      <a class="btn btn-primary btn-lg quick-checkout-submit">Continue</a>
+    </div>
+  </div>
+
+</section>
+<!-- END - PAY WITH CREDIT CARD -->
