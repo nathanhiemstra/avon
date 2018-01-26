@@ -233,7 +233,7 @@ gulp.task('compile', function () {
               home:           'home.html',
               login:          'login.html',
               product: {
-                category:     'product-category.html',
+                category:     'product-categories.html',
                 detail:       'product-detail.html',
                 landing:      'product-landing.html',
                 list:         'product-list.html'
