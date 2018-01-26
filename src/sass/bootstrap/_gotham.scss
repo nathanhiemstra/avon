@@ -12,6 +12,15 @@
         font-family: 'Gotham';
         src: url("#{$base-font-path}#{$base-font-name}medium-webfont.eot");
         src: url("#{$base-font-path}#{$base-font-name}medium-webfont.eot?#iefix") format("embedded-opentype"), url("#{$base-font-path}#{$base-font-name}medium-webfont.woff2") format("woff2"), url("#{$base-font-path}#{$base-font-name}medium-webfont.woff") format("woff"), url("#{$base-font-path}#{$base-font-name}medium-webfont.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+        font-variant: normal;
+    }
+
+    @font-face {
+        font-family: 'Gotham';
+        src: url("#{$base-font-path}#{$base-font-name}medium-webfont.eot");
+        src: url("#{$base-font-path}#{$base-font-name}medium-webfont.eot?#iefix") format("embedded-opentype"), url("#{$base-font-path}#{$base-font-name}medium-webfont.woff2") format("woff2"), url("#{$base-font-path}#{$base-font-name}medium-webfont.woff") format("woff"), url("#{$base-font-path}#{$base-font-name}medium-webfont.ttf") format("truetype");
         font-weight: bold;
         font-style: normal;
         font-variant: normal;
