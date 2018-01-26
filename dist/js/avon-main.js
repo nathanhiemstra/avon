@@ -116,16 +116,12 @@ $(document).ready(function () {
 
 
   // YOUR OFFERS
-  console.log('$objects.yourOrder.offers.showDetails: ',$objects.yourOrder.offers.showDetails);
   $objects.yourOrder.offers.showDetails.on("click", function () {
     yourOrderOffersShowDetails();
-    console.log('showDetails');
-
   });
 
   $objects.yourOrder.offers.hideDetails.on("click", function () {
     yourOrderOffersHideDetails();
-    console.log('hideDetails');
   });
 
 
