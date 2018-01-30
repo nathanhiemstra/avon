@@ -194,7 +194,7 @@ gulp.task('compile', function () {
                     productFilters: prefix.modules + "product/filters/product-filters.html.twig"
                   },
                   list: {
-                    productList:      prefix.modules + "product/list/product-list-html.twig",
+                    productList:      prefix.modules + "product/list/product-list.html.twig",
                     productListItem:  prefix.modules + "product/list/product-list-item.html.twig"
                   },
                   landing: {
