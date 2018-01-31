@@ -956,7 +956,7 @@ h1[id] {
         border-radius: 4px 4px 0 0;
 
         // box-shadow: none;
-   
+
     }
 
     .bs-example + .highlight {
@@ -1164,6 +1164,27 @@ h1[id] {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Example drawers */
+.bs-example-drawer {
+    background-color: #f5f5f5;
+}
+
+// .bs-example-drawer .modal {
+//     position: relative;
+//     top: auto;
+//     right: auto;
+//     left: auto;
+//     bottom: auto;
+//     z-index: 1;
+//     display: block;
+// }
+//
+// .bs-example-drawer .modal-dialog {
+//     left: auto;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
 
 /* Example dropdowns */
 .bs-example > .dropdown > .dropdown-menu {

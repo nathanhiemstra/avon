@@ -9,7 +9,7 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block styleguideContent %}
 
-  
+
 <!-- Overview
 ================================================== -->
 <div class="bs-docs-section">
@@ -319,7 +319,7 @@ $('#myModal').on('show.bs.modal', function (e) {
 
   <h3>Via JavaScript</h3>
   <p>Call a modal with id <code>myModal</code> with a single line of JavaScript:</p>
-  
+
   {{ highlightJavascript }}$('#myModal').modal(options){{ endhighlight }}
 
   <h3>Options</h3>
@@ -381,17 +381,17 @@ $('#myModal').modal({
 
   <h4>.modal('toggle')</h4>
   <p>Manually toggles a modal. <strong>Returns to the caller before the modal has actually been shown or hidden</strong> (i.e. before the <code>shown.bs.modal</code> or <code>hidden.bs.modal</code> event occurs).</p>
-  
+
   {{ highlightJavascript }}$('#myModal').modal('toggle'){{ endhighlight }}
 
   <h4>.modal('show')</h4>
   <p>Manually opens a modal. <strong>Returns to the caller before the modal has actually been shown</strong> (i.e. before the <code>shown.bs.modal</code> event occurs).</p>
-  
+
   {{ highlightJavascript }}$('#myModal').modal('show'){{ endhighlight }}
 
   <h4>.modal('hide')</h4>
   <p>Manually hides a modal. <strong>Returns to the caller before the modal has actually been hidden</strong> (i.e. before the <code>hidden.bs.modal</code> event occurs).</p>
-  
+
   {{ highlightJavascript }}$('#myModal').modal('hide'){{ endhighlight }}
 
   <h3>Events</h3>
@@ -434,6 +434,211 @@ $('#myModal').on('hidden.bs.modal', function (e) {
   // do something...
 })
 {{ endhighlight }}
+</div>
+
+
+
+<!-- Drawer
+================================================== -->
+<div class="bs-docs-section">
+  <h1 id="drawers" class="page-header">Drawers</h1>
+
+  <h2 id="drawers-examples">Examples</h2>
+
+  <h3>Live demo - Top down hidden</h3>
+  <p>Toggle a hidden drawer via JavaScript by clicking the button below. It will slide down from the top of the page.</p>
+
+  <!-- START - DEMO DRAWER -->
+  <section id="myDrawerTop" class="drawer drawer-fixed-top drawer-hidden">
+
+    <!-- DRAWER CONTENT -->
+    <section class="drawer-content">
+
+      <!-- DRAWER HEADER -->
+      <div class="no-reverse-bg">
+        {% include components.modules.global.drawer.header with {
+          drawerLabel: 'Drawer Demo',
+          drawerId: 'myDrawerTop',
+          drawerLogoMobile: false
+        } %}
+      </div> <!-- /.no-reverse-bg -->
+
+      <!-- MAIN CONTENT -->
+      <div class="row m-0 reverse-bg hidden">
+        <h1>Drawer Content</h1>
+      </div>
+
+    </section> <!-- /.drawer-content -->
+
+  </section> <!-- /.drawer -->
+  <!-- END - DEMO DRAWER -->
+
+  <div class="bs-example py-2 px-3">
+    <button class="btn btn-primary btn-lg" data-toggle="drawer" data-target="#myDrawerTop">
+      Launch demo drawer (top down)
+    </button>
+  </div><!-- /example -->
+
+{{ highlightJavascript }}
+<!-- Button trigger drawer -->
+<button class="btn btn-primary btn-lg" data-toggle="drawer" data-target="#myDrawerTop">
+  Launch demo drawer
+</button>
+
+<!-- Drawer -->
+<section id="myDrawerTop" class="drawer drawer-fixed-top drawer-hidden">
+
+  <!-- DRAWER CONTENT -->
+  <section class="drawer-content">
+
+    <!-- DRAWER HEADER -->
+    <div class="no-reverse-bg">
+      {% include components.modules.global.drawer.header with {
+        drawerLabel: 'Drawer Demo',
+        drawerId: 'myDrawerTop',
+        drawerLogoMobile: false
+      } %}
+    </div> <!-- /.no-reverse-bg -->
+
+    <!-- MAIN CONTENT -->
+    <div class="row m-0 reverse-bg hidden">
+      <h1>Drawer Content</h1>
+    </div>
+
+  </section> <!-- /.drawer-content -->
+
+</section> <!-- /.drawer -->
+{{ endhighlight }}
+
+
+
+<h3>Live demo - Bottom up with persistent bottom bar</h3>
+<p>Toggle visibility of the persistent bar by clicking the button below (In a normal setting, the bar would always be visible at the bottom of the page). Then, click the expand button to see it in action. It will slide up from the bottom of the page.</p>
+
+<!-- START - DEMO DRAWER -->
+<section id="myDrawerBottom" class="drawer drawer-fixed-bottom hidden">
+
+  <!-- DRAWER SUMMARY -->
+  <section class="drawer-summary">
+    <div class="container-fluid">
+      <div class="pull-left pl-5 pr-4 drawer-valign-middle">
+        <p>Content Left</p>
+      </div>
+      <div class="pull-right pl-5 pr-4 drawer-valign-middle">
+        <a href="#myDrawerBottom" data-toggle="drawer" class="btn btn-default hidden-xs hidden-sm">
+          <span class="hidden-xs hidden-sm">Expand Drawer</span>
+        </a>
+        <a href="#myDrawerBottom" data-toggle="drawer" class="visible-xs visible-sm">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRAWER CONTENT -->
+  <section class="drawer-content">
+
+    <!-- DRAWER HEADER -->
+    <div class="no-reverse-bg">
+      {% include components.modules.global.drawer.header with {
+        drawerLabel: 'Drawer Demo',
+        drawerId: 'myDrawerBottom',
+        drawerLogoMobile: false
+      } %}
+    </div> <!-- /.no-reverse-bg -->
+
+    <!-- MAIN CONTENT -->
+    <div class="row m-0 reverse-bg">
+      <div class="container">
+        <h3>Drawer Content</h3>
+        <p>Est magna labore aute deserunt id adipisicing qui laborum minim cillum excepteur consectetur quis irure excepteur. Minim quis ea ullamco ad et fugiat adipisicing ut. Eiusmod consectetur ad minim nulla nisi ex labore adipisicing quis. Commodo occaecat do duis do ad aliqua duis elit in nulla exercitation culpa. Do commodo aute magna esse magna et velit culpa et ipsum voluptate.</p>
+      </div>
+    </div>
+
+  </section> <!-- /.drawer-content -->
+
+</section> <!-- /.drawer -->
+<!-- END - DEMO DRAWER -->
+
+<div class="bs-example py-2 px-3">
+  <button class="btn btn-primary btn-lg" data-toggle="drawer-demo" data-target="#myDrawerBottom">
+    Toggle demo drawer (bottom up)
+  </button>
+</div><!-- /example -->
+
+{{ highlightJavascript }}
+<!-- Button trigger drawer -->
+<button class="btn btn-primary btn-lg" data-toggle="drawer" data-target="#myDrawerBottom">
+Launch demo drawer
+</button>
+
+<!-- Drawer -->
+<section id="myDrawerBottom" class="drawer drawer-fixed-bottom hidden">
+
+  <!-- DRAWER SUMMARY -->
+  <section class="drawer-summary">
+    <div class="container-fluid">
+      <div class="pull-left pl-5 pr-4 drawer-valign-middle">
+        <p>Content Left</p>
+      </div>
+      <div class="pull-right pl-5 pr-4 drawer-valign-middle">
+        <a href="#myDrawerBottom" data-toggle="drawer" class="btn btn-default hidden-xs hidden-sm">
+          <span class="hidden-xs hidden-sm">Expand Drawer</span>
+        </a>
+        <a href="#myDrawerBottom" data-toggle="drawer" class="visible-xs visible-sm">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRAWER CONTENT -->
+  <section class="drawer-content">
+
+    <!-- DRAWER HEADER -->
+    <div class="no-reverse-bg">
+      {% include components.modules.global.drawer.header with {
+        drawerLabel: 'Drawer Demo',
+        drawerId: 'myDrawerBottom',
+        drawerLogoMobile: false
+      } %}
+    </div> <!-- /.no-reverse-bg -->
+
+    <!-- MAIN CONTENT -->
+    <div class="row m-0 reverse-bg">
+      <div class="container">
+        <h3>Drawer Content</h3>
+        <p>Est magna labore aute deserunt id adipisicing qui laborum minim cillum excepteur consectetur quis irure excepteur. Minim quis ea ullamco ad et fugiat adipisicing ut. Eiusmod consectetur ad minim nulla nisi ex labore adipisicing quis. Commodo occaecat do duis do ad aliqua duis elit in nulla exercitation culpa. Do commodo aute magna esse magna et velit culpa et ipsum voluptate.</p>
+      </div>
+    </div>
+
+  </section> <!-- /.drawer-content -->
+
+</section> <!-- /.drawer -->
+{{ endhighlight }}
+
+  <h2 id="drawers-sizes">Placement</h2>
+  <p>Drawers have two placements, available via modifier classes to be placed on a <code>.drawer</code>.</p>
+  <p><code>drawer-fixed-top</code> and <code>drawer-fixed-bottom</code> can be used for positioning. The fixed bottom drawer's <code>.drawer-content</code> will be persistently visible at the bottom of the page in which it is contained while a fixed top drawer should also include a <code>.drawer-hidden</code> class initially.</p>
+
+  {{ highlightJavascript }}
+    <!-- Fixed Top -->
+    <section id="myDrawer" class="drawer drawer-fixed-top drawer-hidden">
+      ...
+    </section>
+
+    <!-- Fixed Bottom -->
+    <section id="myDrawer" class="drawer drawer-fixed-bottom">
+      ...
+    </section>
+  {{ endhighlight }}
+
+
+  <h2 id="drawers-usage">Usage</h2>
+  <p>
+    Add some usage notes here
+  </p>
+
 </div>
 
 
@@ -1071,22 +1276,22 @@ $('#example').tooltip(options)
 
   <h4>.tooltip('show')</h4>
   <p>Reveals an element's tooltip.</p>
-  
+
   {{ highlightJavascript }}$('#element').tooltip('show'){{ endhighlight }}
 
   <h4>.tooltip('hide')</h4>
   <p>Hides an element's tooltip.</p>
-  
+
   {{ highlightJavascript }}$('#element').tooltip('hide'){{ endhighlight }}
 
   <h4>.tooltip('toggle')</h4>
   <p>Toggles an element's tooltip.</p>
-  
+
   {{ highlightJavascript }}$('#element').tooltip('toggle'){{ endhighlight }}
 
   <h4>.tooltip('destroy')</h4>
   <p>Hides and destroys an element's tooltip.</p>
-  
+
   {{ highlightJavascript }}$('#element').tooltip('destroy'){{ endhighlight }}
 
   <h3>Events</h3>
@@ -1240,7 +1445,7 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 
   <h2 id="popovers-usage">Usage</h2>
   <p>Enable popovers via JavaScript:</p>
-  
+
   {{ highlightJavascript }}$('#example').popover(options){{ endhighlight }}
 
   <h3>Options</h3>
@@ -1330,22 +1535,22 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 
   <h4>.popover('show')</h4>
   <p>Reveals an elements popover.</p>
-  
+
   {{ highlightJavascript }}$('#element').popover('show'){{ endhighlight }}
 
   <h4>.popover('hide')</h4>
   <p>Hides an elements popover.</p>
-  
+
   {{ highlightJavascript }}$('#element').popover('hide'){{ endhighlight }}
 
   <h4>.popover('toggle')</h4>
   <p>Toggles an elements popover.</p>
-  
+
   {{ highlightJavascript }}$('#element').popover('toggle'){{ endhighlight }}
 
   <h4>.popover('destroy')</h4>
   <p>Hides and destroys an element's popover.</p>
-  
+
   {{ highlightJavascript }}$('#element').popover('destroy'){{ endhighlight }}
   <h3>Events</h3>
   <div class="table-responsive">
@@ -1415,12 +1620,12 @@ $('#myPopover').on('hidden.bs.popover', function () {
 
   <h2 id="alerts-usage">Usage</h2>
   <p>Enable dismissal of an alert via JavaScript:</p>
-  
+
   {{ highlightJavascript }}$(".alert").alert(){{ endhighlight }}
 
   <h3>Markup</h3>
   <p>Just add <code>data-dismiss="alert"</code> to your close button to automatically give an alert close functionality.</p>
-  
+
   {{ highlightJavascript }}<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>{{ endhighlight }}
 
   <h3>Methods</h3>
@@ -1430,7 +1635,7 @@ $('#myPopover').on('hidden.bs.popover', function () {
 
   <h4>.alert('close')</h4>
   <p>Closes an alert.</p>
-  
+
   {{ highlightJavascript }}$(".alert").alert('close'){{ endhighlight }}
 
 

@@ -21,8 +21,9 @@ $(document).ready(function () {
     },
     drawers: {
       all: '[data-toggle="drawer"]',
+      demoToggle: '[data-toggle="drawer-demo"]',
+      itemEntry: ".drawer-item-entry",
       orderSummary: ".drawer-order-summary",
-      itemEntry: ".drawer-item-entry"
     },
     overlay: ".global-content-overlay"
   }
@@ -45,14 +46,15 @@ $(document).ready(function () {
       }
     },
     drawers: {
-      all: $(selectors.main).find(selectors.drawers.all),
+      all: $(selectors.drawers.all),
+      demoToggle: $(selectors.drawers.demoToggle),
       orderSummary: $(selectors.main).find(selectors.drawers.orderSummary),
       itemEntry: $(selectors.main).find(selectors.drawers.itemEntry)
     },
     overlay: $(selectors.overlay)
   }
 
-  console.log('selectors: ',selectors);
+  // console.log('selectors: ',selectors);
 
 
 
@@ -62,12 +64,14 @@ $(document).ready(function () {
 
 
   function toggleDrawer(clickedItem) {
-    var targetId = $(clickedItem).attr("href");
+    var targetId = $(clickedItem).attr('href') || $(clickedItem).data('target') ;
     var targetEl = $(targetId);
     var isDrawerTypeHidden = targetEl.hasClass('drawer-hidden');
     var isExpanded = targetEl.hasClass('drawer-expanded');
 
     $objects.html.toggleClass('drawer-open');
+
+    // console.log('TOGGLE DRAWER :: ', targetId);
 
     if (isDrawerTypeHidden) {
       $objects.overlay.toggleClass('hidden');
@@ -108,6 +112,10 @@ $(document).ready(function () {
     toggleDrawer($(this));
   });
 
+  $objects.drawers.demoToggle.on("click", function (e) {
+    var targetId = $(this).data('target');
+    $(targetId).toggleClass('hidden');
+  });
 
   $('[data-tab-select]').on('change', function (e) {
     var $optionSelected = $("option:selected", this);
@@ -134,8 +142,8 @@ $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
   });
 
-  CheckoutDemo.init();
-  FormDemo.init();
-  Brochures.init();
+  if(typeof CheckoutDemo !== 'undefined') CheckoutDemo.init();
+  if(typeof FormDemo !== 'undefined') FormDemo.init();
+  if(typeof Brochures !== 'undefined') Brochures.init();
 
 });
