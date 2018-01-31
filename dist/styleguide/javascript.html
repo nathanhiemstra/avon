@@ -532,8 +532,6 @@ $('#myModal').on('hidden.bs.modal', function (e) {
 <div class="bs-docs-section">
   <h1 id="drawers" class="page-header">Drawers</h1>
 
-  <h2 id="drawers-examples">Examples</h2>
-
   <h3>Live demo - Top down hidden</h3>
   <p>Toggle a hidden drawer via JavaScript by clicking the button below. It will slide down from the top of the page.</p>
 
@@ -576,7 +574,7 @@ $('#myModal').on('hidden.bs.modal', function (e) {
     </button>
   </div><!-- /example -->
 
-<pre><code class="language-javascript"><script type="text/plain">
+<pre><code class="language-twig"><script type="text/plain">
 <!-- Button trigger drawer -->
 <button class="btn btn-primary btn-lg" data-toggle="drawer" data-target="#myDrawerTop">
   Launch demo drawer
@@ -679,7 +677,7 @@ $('#myModal').on('hidden.bs.modal', function (e) {
   </button>
 </div><!-- /example -->
 
-<pre><code class="language-javascript"><script type="text/plain">
+<pre><code class="language-twig"><script type="text/plain">
 <!-- Button trigger drawer -->
 <button class="btn btn-primary btn-lg" data-toggle="drawer" data-target="#myDrawerBottom">
 Launch demo drawer
@@ -742,7 +740,7 @@ Launch demo drawer
   <p>Drawers have two placements, available via modifier classes to be placed on a <code>.drawer</code>.</p>
   <p><code>drawer-fixed-top</code> and <code>drawer-fixed-bottom</code> can be used for positioning. The fixed bottom drawer's <code>.drawer-content</code> will be persistently visible at the bottom of the page in which it is contained while a fixed top drawer should also include a <code>.drawer-hidden</code> class initially.</p>
 
-  <pre><code class="language-javascript"><script type="text/plain">
+  <pre><code class="language-twig"><script type="text/plain">
     <!-- Fixed Top -->
     <section id="myDrawer" class="drawer drawer-fixed-top drawer-hidden">
       ...
@@ -756,9 +754,14 @@ Launch demo drawer
 
 
   <h2 id="drawers-usage">Usage</h2>
-  <p>
-    Add some usage notes here
-  </p>
+  <h3>Via data attributes</h3>
+  <p>Add <code>data-toggle="drawer"</code> and <code>data-target="#myDrawerId"</code> to a link or button to toggle a dropdown.</p>
+
+  <pre><code class="language-twig"><script type="text/plain">
+  <button class="btn btn-primary" data-toggle="drawer" data-target="#myDrawer">
+    Toggle drawer
+  </button>
+  </script></code></pre>
 
 </div>
 
@@ -2572,7 +2575,7 @@ $('#myCarousel').on('slide.bs.carousel', function () {
   </ul>
 </li>
 <li>
-  <a href="#modals">Drawer</a>
+  <a href="#drawers">Drawer</a>
   <ul class="nav">
     <li><a href="#drawers-examples">Examples</a></li>
     <li><a href="#drawers-sizes">Placement</a></li>
