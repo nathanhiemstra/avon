@@ -1,10 +1,10 @@
-<li class="list-group-item my-4">
+<li class="list-group-item panel panel-avon my-4">
 
   <!-- START - CART SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-{{ indexNum }}" data-toggle="collapse" {% if collapsed != false %} class="collapsed" {% endif %}>
-        <span class="lt-icon lt-rightside collapse-indicator"></span> 
+        <span class="lt-icon lt-rightside collapse-indicator"></span>
         <b>{{ personName }}</b>
       </a>
     </dt>
@@ -14,7 +14,7 @@
   <dl class="clearfix m-0">
     <dt class="pull-left">{{ itemCount }} items</dt>
     <dd class="pull-right">Discount: $45.55</dd>
-  </dl> 
+  </dl>
   <!-- END - CART SUMMARY -->
 
   <!-- START - CART DETAILS (EXPANDABLE) -->
@@ -34,7 +34,7 @@
         <!-- START - REPEATABLE ITEMS -->
 
         {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
-          productName: 'Anew Ultimate Supreme Advanced Performance Créme', 
+          productName: 'Anew Ultimate Supreme Advanced Performance Créme',
           img: '/images/fpo/agnew-ultimate.png',
           autoReplenish: null,
           sku: '829-957',
@@ -43,7 +43,7 @@
         }%}
 
         {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
-          productName: 'Anew Super Coverup', 
+          productName: 'Anew Super Coverup',
           img: '/images/fpo/cover-up.png',
           autoReplenish: true,
           sku: '329-321',
@@ -52,7 +52,7 @@
         }%}
 
         {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
-          productName: 'Anew Purfume', 
+          productName: 'Anew Purfume',
           img: '/images/fpo/purfume.png',
           autoReplenish: null,
           sku: '856-376',
@@ -61,7 +61,7 @@
         }%}
 
          <!-- END - REPEATABLE ITEMS -->
- 
+
       </tbody>
     </table>
 
@@ -78,7 +78,7 @@
     <div class="details collapse pt-3" id="collapse-{{ indexNum }}-view-offer">
       <!-- TODO: Make repeatable style for this, if it gets used again -->
       <ul class="list-unstyled row border-secondary d-table">
-        
+
 
         <li class="col-sm-6 p-3 border-secondary d-table-cell">
           {{ offer10Discount }}
@@ -97,7 +97,7 @@
     <div class="text-center border-top pt-3">
       <a href="#collapse-{{ indexNum }}-view-offer" data-toggle="collapse">
         <b>View offers</b>
-        <span class="lt-icon lt-rightside collapse-indicator"></span> 
+        <span class="lt-icon lt-rightside collapse-indicator"></span>
       </a>
     </div>
     <!-- END - EXPANDABLE TRIGGER -->

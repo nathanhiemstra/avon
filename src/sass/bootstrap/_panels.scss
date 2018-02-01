@@ -293,6 +293,12 @@
     @include panel-variant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
 }
 
+.panel-avon {
+  @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
+  border-radius: 4px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+}
+
 // Custom panel that's basically a big button
 .panel-button {
     a {
