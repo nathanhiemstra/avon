@@ -71,14 +71,9 @@
 @import "avon/icons";
 
 // Dropping in some global styles for Avon here
+// TODO: I'm concerned about doing this globally. Can we opt-in only when needed? Is it related to .drawer-open below?
 html, body {
     overflow-x: hidden;
-}
-
-input,
-textarea,
-[contenteditable] {
-    caret-color: $brand-primary;
 }
 
 // prevent double scrollbars when drawers open
@@ -86,14 +81,4 @@ html {
     &.drawer-open {
         overflow-y: hidden;
     }
-}
-
-.global-content-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.75);
 }
