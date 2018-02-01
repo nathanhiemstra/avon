@@ -28,7 +28,7 @@ Plugins:
 ** Toolbar
 ** Unescaped Markup
 
-* Deploys are triggered manually in [Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/)
+* Deploys are triggered in [Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/)
 
 ### Setup ###
 
@@ -78,9 +78,15 @@ n:avon-poc yoursweetusername$ gulp
 
 **Development** [s4dc-dev.dreamhosters.com](http://s4dc-dev.dreamhosters.com/)
   1. Commit changes to ```develop``` branch
-  2. Automaticall deploys via [Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/)
+  2. Automatically deploys via [Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/)
+
+  **Hotfixes** [s4dc-hotfix.dreamhosters.com](http://s4dc-hotfix.dreamhosters.com/)
+  1. Commit changes to ```hotfix-approval``` branch
+  2. Automatically deploys via [Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/)
+
 
 
 ### Who do I talk to? ###
 
 * Nathan Hiemstra nayt@s4dc.org
+* Danny Davis <danny@wondergiant.com>
