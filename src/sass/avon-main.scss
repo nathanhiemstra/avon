@@ -23,6 +23,14 @@
 @import "bootstrap/forms";
 @import "bootstrap/buttons";
 
+// Avon additions
+@import "bootstrap/alignment";
+@import "bootstrap/borders";
+@import "bootstrap/backgrounds";
+@import "bootstrap/display";
+@import "bootstrap/spacing";
+@import "bootstrap/icons";
+
 // Components
 @import "bootstrap/component-animations";
 @import "bootstrap/dropdowns";
@@ -47,6 +55,13 @@
 @import "bootstrap/close";
 @import "bootstrap/collapse";
 
+// Avon additions
+@import "bootstrap/drawers";
+@import "bootstrap/footer";
+@import "bootstrap/header";
+@import "bootstrap/predictive-search";
+@import "bootstrap/product-lists";
+
 // Components w/ JavaScript
 @import "bootstrap/modals";
 @import "bootstrap/tooltip";
@@ -57,28 +72,10 @@
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
 
-// AVON ADDITIONS
-@import "avon/alignment";
-@import "avon/borders";
-@import "avon/backgrounds";
-@import "avon/display";
-@import "avon/drawers";
-@import "avon/footer";
-@import "avon/header";
-@import "avon/predictive-search";
-@import "avon/product-lists";
-@import "avon/spacing";
-@import "avon/icons";
-
 // Dropping in some global styles for Avon here
+// TODO: I'm concerned about doing this globally. Can we opt-in only when needed? Is it related to .drawer-open below?
 html, body {
     overflow-x: hidden;
-}
-
-input,
-textarea,
-[contenteditable] {
-    caret-color: $brand-primary;
 }
 
 // prevent double scrollbars when drawers open
@@ -86,14 +83,4 @@ html {
     &.drawer-open {
         overflow-y: hidden;
     }
-}
-
-.global-content-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.75);
 }
