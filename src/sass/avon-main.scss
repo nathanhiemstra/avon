@@ -70,6 +70,11 @@
 @import "avon/spacing";
 @import "avon/icons";
 
+// PAGES
+@import "pages/brochures";
+@import "pages/search-results";
+@import "pages/your-order";
+
 // Dropping in some global styles for Avon here
 html, body {
     overflow-x: hidden;
