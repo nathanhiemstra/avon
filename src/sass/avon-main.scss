@@ -23,6 +23,14 @@
 @import "bootstrap/forms";
 @import "bootstrap/buttons";
 
+// Avon additions
+@import "bootstrap/alignment";
+@import "bootstrap/borders";
+@import "bootstrap/backgrounds";
+@import "bootstrap/display";
+@import "bootstrap/spacing";
+@import "bootstrap/icons";
+
 // Components
 @import "bootstrap/component-animations";
 @import "bootstrap/dropdowns";
@@ -47,6 +55,13 @@
 @import "bootstrap/close";
 @import "bootstrap/collapse";
 
+// Avon additions
+@import "bootstrap/drawers";
+@import "bootstrap/footer";
+@import "bootstrap/header";
+@import "bootstrap/predictive-search";
+@import "bootstrap/product-lists";
+
 // Components w/ JavaScript
 @import "bootstrap/modals";
 @import "bootstrap/tooltip";
@@ -56,19 +71,6 @@
 // Utility classes
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
-
-// AVON ADDITIONS
-@import "avon/alignment";
-@import "avon/borders";
-@import "avon/backgrounds";
-@import "avon/display";
-@import "avon/drawers";
-@import "avon/footer";
-@import "avon/header";
-@import "avon/predictive-search";
-@import "avon/product-lists";
-@import "avon/spacing";
-@import "avon/icons";
 
 // Dropping in some global styles for Avon here
 // TODO: I'm concerned about doing this globally. Can we opt-in only when needed? Is it related to .drawer-open below?
