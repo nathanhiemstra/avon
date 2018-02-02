@@ -293,9 +293,9 @@
     @include panel-variant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
 }
 
-.panel-avon {
+.panel-secondary {
   @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
-  border-radius: 4px;
+  border-radius: $border-radius-secondary !important;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
 }
 
