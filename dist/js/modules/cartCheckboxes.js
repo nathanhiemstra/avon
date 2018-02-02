@@ -6,6 +6,7 @@
 var CartCheckboxes = (function () {
 
   var $els = {};
+  var $checkboxes;
   var totalNumChecked = 0;
 
   // public methods
@@ -14,11 +15,14 @@ var CartCheckboxes = (function () {
     $els = {
       checkboxList: $('.list-group--checkboxed'),
       selectAllCheckbox: $('.list-group--checkboxed .checkbox-select-all'),
-      checkboxes: $('.list-group--checkboxed input[type=checkbox]:not(.checkbox-select-all)'),
-      checkoutBtn: $('.checkout-order-total .btn')
+      carts: $('.list-group--checkboxed .single-cart-item'),
+      checkoutBtn: $('.checkout-order-total .btn'),
+      checkoutSubtotal: $('.checkout-order-total .subtotal'),
+      checkoutDiscount: $('.checkout-order-total .discount')
     };
 
-    totalNumChecked = $els.checkboxes.length;
+    totalNumChecked = $els.carts.length;
+    checkboxes = $els.carts.find('input[type=checkbox]');
 
     _addListeners();
     _updateCheckoutBtn();
@@ -33,7 +37,7 @@ var CartCheckboxes = (function () {
       _updateCheckoutBtn();
     });
 
-    $els.checkboxes.click(function(e) {
+    checkboxes.click(function(e) {
       _handleCheckbox(this);
       _updateCheckoutBtn();
     });
@@ -43,12 +47,12 @@ var CartCheckboxes = (function () {
   var _toggleSelectAll = function (el) {
 
     if (el.checked) {
-      $els.checkboxes.each(function () {
+      checkboxes.each(function () {
         this.checked = true;
       });
-      totalNumChecked = $els.checkboxes.length;
+      totalNumChecked = $els.carts.length;
     } else {
-      $els.checkboxes.each(function () {
+      checkboxes.each(function () {
         this.checked = false;
       });
       totalNumChecked = 0;
@@ -58,10 +62,10 @@ var CartCheckboxes = (function () {
 
   var _handleCheckbox = function(el) {
 
-    var totalCheckboxes = $els.checkboxes.length;
+    var totalCheckboxes = $els.carts.length;
     var numChecked = 0;
 
-    $els.checkboxes.each(function () {
+    checkboxes.each(function () {
 
       if(this.checked) numChecked++;
 
@@ -89,13 +93,13 @@ var CartCheckboxes = (function () {
         $els.checkoutBtn.attr('disabled', 'disabled');
         btnText = 'Checkout';
         break;
-      case $els.checkboxes.length:
+      case $els.carts.length:
         $els.checkoutBtn.attr('disabled', false);
         btnText = 'Checkout - All Carts';
         break;
       default:
         $els.checkoutBtn.attr('disabled', false);
-        btnText = 'Checkout - ' + totalNumChecked + ' Carts';
+        btnText = 'Checkout - ' + totalNumChecked + (totalNumChecked === 1 ? ' Cart' : ' Carts');
     }
 
     $els.checkoutBtn.html(btnText);
