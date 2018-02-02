@@ -142,8 +142,9 @@ $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
   });
 
+  if(typeof Brochures !== 'undefined') Brochures.init();
+  if(typeof CartCheckboxes !== 'undefined') CartCheckboxes.init();
   if(typeof CheckoutDemo !== 'undefined') CheckoutDemo.init();
   if(typeof FormDemo !== 'undefined') FormDemo.init();
-  if(typeof Brochures !== 'undefined') Brochures.init();
 
 });
