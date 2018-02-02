@@ -573,6 +573,7 @@ $brand-success:   $green !default;
 $brand-info:      $blue !default;
 $brand-warning:   $orange !default;
 $brand-danger:    $red !default;
+$brand-disabled:  $gray-light !default;
 
 
 
@@ -768,25 +769,29 @@ $btn-default-hover-color: $brand-primary-emphasize !default
 
 $btn-primary-color: $white !default;
 $btn-primary-bg: $brand-primary !default;
-$btn-primary-border: darken($btn-primary-bg, 5%) !default;
+$btn-primary-border: $brand-primary !default;
 
 $btn-success-color: $white !default;
 $btn-success-bg: $brand-success !default;
-$btn-success-border: darken($btn-success-bg, 5%) !default;
+$btn-success-border: $brand-success !default;
 
 $btn-info-color: $white !default;
 $btn-info-bg: $brand-info !default;
-$btn-info-border: darken($btn-info-bg, 5%) !default;
+$btn-info-border: $brand-info !default;
 
 $btn-warning-color: $white !default;
 $btn-warning-bg: $brand-warning !default;
-$btn-warning-border: darken($btn-warning-bg, 5%) !default;
+$btn-warning-border: $brand-warning !default;
 
 $btn-danger-color: $white !default;
 $btn-danger-bg: $brand-danger !default;
-$btn-danger-border: darken($btn-danger-bg, 5%) !default;
+$btn-danger-border: $brand-danger  !default;
 
-$btn-link-disabled-color: $gray-light !default;
+$btn-disabled-color: $brand-disabled !default;
+$btn-disabled-bg: $brand-disabled !default;
+$btn-disabled-border: $brand-disabled  !default;
+
+$btn-link-disabled-color: $brand-disabled !default;
 
 // Allows for customizing button radius independently from global border radius
 $btn-border-radius-base: $border-radius-base !default;
