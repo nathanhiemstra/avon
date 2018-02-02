@@ -38,6 +38,11 @@ var CartCheckboxes = (function () {
     });
 
     checkboxes.click(function(e) {
+      var cartItem = $(this).closest('.single-cart-item');
+      var cartTotal = cartItem.find('.cart-total').data('total');
+      var cartDiscount = cartItem.find('.cart-discount').data('discount');
+      console.log( 'total :: ', parseFloat(cartTotal) );
+      console.log( 'discount :: ', parseFloat(cartDiscount) );
       _handleCheckbox(this);
       _updateCheckoutBtn();
     });

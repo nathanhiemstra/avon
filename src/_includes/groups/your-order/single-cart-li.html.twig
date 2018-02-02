@@ -16,12 +16,12 @@
         <b>{{ personName }}</b>
       </a>
     </dt>
-    <dd class="pull-right cart-total">${{ total }}</dd>
+    <dd class="pull-right cart-total" data-total="{{ total }}">${{ total }}</dd>
   </dl>
 
   <dl class="clearfix m-0">
     <dt class="pull-left">{{ itemCount }} items</dt>
-    <dd class="pull-right cart-discount">Discount: $45.55</dd>
+    <dd class="pull-right cart-discount" data-discount="45.55">Discount: $45.55</dd>
   </dl>
   <!-- END - CART SUMMARY -->
 
