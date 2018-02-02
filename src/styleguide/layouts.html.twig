@@ -54,6 +54,29 @@
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
 
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMN 12 - Slim #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Full Width - Slim",
+    slug:         "columns-12-slim",
+    snippet:      '
+    <div class="container">
+      <main role="main" class="slim">
+        <div class="container">
+          <p><b>Slim variation of a 12 column layout. Any .container within this layout will have a set max-width.</b></p>
+          <p>' ~ fpo.paragraph ~ '</p>
+        </div>
+      </main>
+    </div>'
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# COLUMN 9 #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
