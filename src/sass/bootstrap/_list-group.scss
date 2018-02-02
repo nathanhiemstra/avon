@@ -11,7 +11,22 @@
     margin-bottom: 20px;
     padding-left: 0;
 
-    // reset padding because ul and ol
+    $checkbox-width: 24px;
+    $checkbox-padding: 10px;
+
+    &--checkboxed {
+        .list-group-item:not(.list-group-item-checkbox) {
+            dl, .details {
+                padding-left: $checkbox-width + ($checkbox-padding * 2);
+            }
+            .checkbox {
+                position: absolute;
+                top: 0;
+                left: 10px;
+            }
+        }
+    }
+
 }
 
 // Individual list items
@@ -127,6 +142,11 @@ button.list-group-item {
 @include list-group-item-variant(info, $state-info-bg, $state-info-text);
 @include list-group-item-variant(warning, $state-warning-bg, $state-warning-text);
 @include list-group-item-variant(danger, $state-danger-bg, $state-danger-text);
+@include list-group-item-variant(checkbox, transparent, $text-color);
+
+.list-group-item-checkbox {
+    border: none;
+}
 
 // Custom content options
 //
