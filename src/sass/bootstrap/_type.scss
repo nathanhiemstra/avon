@@ -5,8 +5,8 @@
 // Headings
 // -------------------------
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1, h2, h3, h4, h5, h6, h7,
+.h1, .h2, .h3, .h4, .h5, .h6, .h7 {
     font-family: $headings-font-family;
     font-weight: $headings-font-weight;
     line-height: $headings-line-height;
@@ -34,7 +34,8 @@ h3, .h3 {
 
 h4, .h4,
 h5, .h5,
-h6, .h6 {
+h6, .h6,
+h7, .h7 {
     margin-top: $line-height-computed / 2;
     margin-bottom: $line-height-computed / 2;
 
@@ -72,6 +73,10 @@ h7, .h7 {
     font-size: $font-size-h7;
 }
 
+h5, .h5, h6, .h6, h7, .h7 {
+    text-transform: uppercase;
+}
+
 @media (min-width: $screen-sm-min) {
     h1, .h1 {
         font-size: $font-size-h1-desktop;
@@ -99,10 +104,6 @@ h7, .h7 {
 
     h7, .h7 {
         font-size: $font-size-h7-desktop;
-    }
-
-    h5, .h5, h6, .h6, h7, .h7 {
-        text-transform: uppercase;
     }
 }
 
