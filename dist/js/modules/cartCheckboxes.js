@@ -8,6 +8,8 @@ var CartCheckboxes = (function () {
   var $els = {};
   var $checkboxes;
   var totalNumChecked = 0;
+  var totalPrice = 0;
+  var totalDiscount = 0;
 
   // public methods
   var init = function () {
@@ -22,29 +24,24 @@ var CartCheckboxes = (function () {
     };
 
     totalNumChecked = $els.carts.length;
-    checkboxes = $els.carts.find('input[type=checkbox]');
+    $checkboxes = $els.carts.find('input[type=checkbox]');
 
     _addListeners();
-    _updateCheckoutBtn();
+    _updateCheckoutTotals();
 
   };
 
   // private methods
   var _addListeners = function () {
 
-    $els.selectAllCheckbox.click(function (e) {
+    $els.selectAllCheckbox.on('click', function (e) {
       _toggleSelectAll(this);
-      _updateCheckoutBtn();
+      _updateCheckoutTotals();
     });
 
-    checkboxes.click(function(e) {
-      var cartItem = $(this).closest('.single-cart-item');
-      var cartTotal = cartItem.find('.cart-total').data('total');
-      var cartDiscount = cartItem.find('.cart-discount').data('discount');
-      console.log( 'total :: ', parseFloat(cartTotal) );
-      console.log( 'discount :: ', parseFloat(cartDiscount) );
+    $checkboxes.on('click', function(e) {
       _handleCheckbox(this);
-      _updateCheckoutBtn();
+      _updateCheckoutTotals();
     });
 
   };
@@ -52,12 +49,12 @@ var CartCheckboxes = (function () {
   var _toggleSelectAll = function (el) {
 
     if (el.checked) {
-      checkboxes.each(function () {
+      $checkboxes.each(function () {
         this.checked = true;
       });
       totalNumChecked = $els.carts.length;
     } else {
-      checkboxes.each(function () {
+      $checkboxes.each(function () {
         this.checked = false;
       });
       totalNumChecked = 0;
@@ -65,12 +62,14 @@ var CartCheckboxes = (function () {
 
   };
 
-  var _handleCheckbox = function(el) {
+  var _handleCheckbox = function() {
 
     var totalCheckboxes = $els.carts.length;
     var numChecked = 0;
 
-    checkboxes.each(function () {
+
+    // loop through each cart
+    $checkboxes.each(function () {
 
       if(this.checked) numChecked++;
 
@@ -90,24 +89,46 @@ var CartCheckboxes = (function () {
 
   };
 
-  var _updateCheckoutBtn = function() {
+  var _updateCheckoutTotals = function() {
+
+    // handle checkout totals
+    totalPrice = 0;
+    totalDiscount = 0;
+
+    $els.carts.each(function() {
+      var $this = $(this);
+      var checkbox = $this.find('input[type=checkbox]');
+      if(checkbox[0].checked) {
+        totalPrice += parseFloat($this.find('.cart-total').data('total'));
+        totalDiscount += parseFloat($this.find('.cart-discount').data('discount'));
+      }
+    });
+
+    $els.checkoutSubtotal.html('$' + totalPrice.toFixed(2));
+    $els.checkoutDiscount.html('$' + totalDiscount.toFixed(2));
+
+    // handle checkout button text
     var btnText = '';
 
     switch (totalNumChecked) {
-      case 0:
+      case 0: // None selected
         $els.checkoutBtn.attr('disabled', 'disabled');
         btnText = 'Checkout';
         break;
-      case $els.carts.length:
+      case $els.carts.length: // All selected
         $els.checkoutBtn.attr('disabled', false);
         btnText = 'Checkout - All Carts';
         break;
-      default:
+      default: // Some selected
         $els.checkoutBtn.attr('disabled', false);
         btnText = 'Checkout - ' + totalNumChecked + (totalNumChecked === 1 ? ' Cart' : ' Carts');
     }
 
     $els.checkoutBtn.html(btnText);
+
+  };
+
+  var _getCartTotals = function(el) {
 
   };
 
