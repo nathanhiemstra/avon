@@ -100,19 +100,6 @@ var CartCheckboxes = (function () {
 
     $els.checkoutBtn.html(btnText);
 
-    // if(allChecked) {
-    //   $els.checkoutBtn.html('Checkout - All Carts');
-    // } else if(totalNumChecked > 0) {
-    //   if(totalNumChecked === 1) {
-    //     $els.checkoutBtn.html('Checkout - ' + totalNumChecked + ' Cart');
-    //   } else {
-    //     $els.checkoutBtn.html('Checkout - ' + totalNumChecked + ' Carts');
-    //   }
-    // } else {
-    //   $els.checkoutBtn.html('Checkout Nothing');
-    // }
-
-
   };
 
   return {
