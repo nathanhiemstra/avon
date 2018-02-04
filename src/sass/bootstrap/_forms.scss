@@ -270,9 +270,9 @@ input[type="search"] {
 
     label {
         min-height: $line-height-computed;
-
+        line-height: 24px;
         // Ensure the input doesn't jump when there is no text
-        padding-left: 20px;
+        // padding-left: 20px;
         margin-bottom: 0;
         font-weight: normal;
         cursor: pointer;
@@ -346,6 +346,101 @@ input[type="checkbox"] {
             cursor: $cursor-disabled;
         }
     }
+}
+
+// Better Checkboxes and radios
+.checkbox label:after,
+.radio label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox span,
+.radio span {
+    position: relative;
+    display: inline-block;
+    border: 2px solid $gray-light;
+    width: 24px;
+    height: 24px;
+    float: left;
+}
+
+.radio span {
+    border-radius: 50%;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 50%;
+        height: 50%;
+        margin-top: 25%;
+        margin-left: 25%;
+        background-color: $brand-primary;
+        border-radius: 50%;
+        opacity: 0;
+        transition: 0.1s opacity ease;
+    }
+}
+
+.checkbox span i,
+.radio span i {
+    position: absolute;
+    line-height: 0;
+    top: 3px;
+    left: 3px;
+
+    &.indeterminate {
+        left: 4px;
+    }
+}
+
+.radio span i {
+    margin-left: 0.04em;
+}
+
+.checkbox label input[type="checkbox"],
+.radio label input[type="radio"] {
+    display: none;
+}
+
+.checkbox label input[type="checkbox"] + span > i,
+.radio label input[type="radio"] + span > i {
+    opacity: 0;
+    transition: 0.1s opacity ease;
+
+    &.indeterminate {
+        opacity: 0;
+    }
+}
+
+.checkbox label input[type="checkbox"]:checked + span > i,
+.radio label input[type="radio"]:checked + span > i {
+    opacity: 1;
+
+    &.indeterminate {
+        opacity: 0;
+    }
+}
+
+.radio label input[type="radio"]:checked + span {
+    &:after {
+        opacity: 1;
+    }
+}
+
+.checkbox label input[type="checkbox"]:indeterminate + span > i,
+.radio label input[type="radio"]:indeterminate + span > i {
+    opacity: 0;
+
+    &.indeterminate {
+        opacity: 1;
+    }
+}
+
+.checkbox label input[type="checkbox"]:disabled + span,
+.radio label input[type="radio"]:disabled + span {
+    opacity: .5;
 }
 
 // Static form control text

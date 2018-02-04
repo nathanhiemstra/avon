@@ -12,17 +12,17 @@
     padding-left: 0;
 
     $checkbox-width: 24px;
-    $checkbox-padding: 10px;
+    $checkbox-pad-right: 14px;
 
     &--checkboxed {
         .list-group-item:not(.list-group-item-checkbox) {
             dl, .details {
-                padding-left: $checkbox-width + ($checkbox-padding * 2);
+                padding-left: $checkbox-width + $checkbox-pad-right;
             }
             .checkbox {
                 position: absolute;
-                top: 0;
-                left: 10px;
+                // top: 0;
+                // left: 10px;
             }
         }
     }

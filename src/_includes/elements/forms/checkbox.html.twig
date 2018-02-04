@@ -1,5 +1,5 @@
 {% if classes %}
-  {% set classes = ' classes="' ~ classes ~ '"' %}
+  {% set classes = ' class="' ~ classes ~ '"' %}
 {% endif %}
 {% if id %}
   {% set id = ' id="' ~ id ~ '"' %}
@@ -13,4 +13,13 @@
 {% if checked %}
   {% set checked = ' checked' %}
 {% endif %}
-<input type="checkbox"{{ classes }}{{ id }}{{ name }}{{ theValue }}{{ checked }}>
+
+{{ thelabel ? theLabel : '' }}
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox" {{ classes }}{{ id }}{{ name }}{{ theValue }}{{ checked }}>
+    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
+    {{ theLabel }}
+  </label>
+</div>
