@@ -11,6 +11,17 @@
     margin-bottom: 20px;
     padding-left: 0;
 
+    &--basic {
+      .list-group-item {
+        border: none;
+        padding: 0.5rem 0;
+
+        a {
+            color: $text-color;
+        }
+      }
+    }
+
     $checkbox-width: 24px;
     $checkbox-pad-right: 14px;
 

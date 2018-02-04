@@ -7,120 +7,35 @@
 
     <div class="form-group border-bottom py-4">
       <label>Brands</label>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          Anew
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          Haiku
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          Other
-        </label>
-      </div>
+      {% include components.elements.forms.checkbox with { theLabel: 'Anew', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Haiku', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Other', checked: false } %}
     </div>
 
     <div class="form-group border-bottom py-4">
       <label>Skin Type</label>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          Dry to Very Dry
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          Normal to Very Dry
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          Normal
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          Combination
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          Oily
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          Sensitive
-        </label>
-      </div>
+      {% include components.elements.forms.checkbox with { theLabel: 'Dry to Very Dry', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Normal to Very Dry', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Normal', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Combination', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Oily', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Sensitive', checked: false } %}
     </div>
 
     <div class="form-group border-bottom py-4">
       <label>Moisturizer</label>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          Day Cream
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          Night Cream
-        </label>
-      </div>
+      {% include components.elements.forms.checkbox with { theLabel: 'Day Cream', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Night Cream', checked: false } %}
     </div>
 
     <div class="form-group border-bottom py-4">
       <label>Avg Rating</label>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          5 Stars
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          4 Stars or More
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          3 Stars or More
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          2 Stars or More
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          1 Star or More
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">
-          Not Rated
-        </label>
-      </div>
+      {% include components.elements.forms.checkbox with { theLabel: '5 Stars', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: '4 Stars or More', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: '3 Stars or More', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: '2 Stars or More', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: '1 Star or More', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Not Rated', checked: false } %}
     </div>
 
   </form>
