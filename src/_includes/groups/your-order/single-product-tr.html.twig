@@ -1,27 +1,27 @@
 {% if autoReplenish != null %}
   {% set eachShipment = '<br> <small class="text-muted">Each shipment</small>' %}
 {% endif %}
-<tr>
-  <td class="t-item hidden-xs hidden-sm">
+<tr class="pt-3">
+  <td class="t-item hidden-xs hidden-sm pl-0 pb-3 pt-5">
      <img src="{{ img }}" class="img-responsive" alt="">
   </td>
-  <td class="t-desc">
+  <td class="t-desc pb-3 pt-5">
     <div>
-      {{ productName }}
-      <small class="text-muted ml-2">{{ sku }}</small>
+      <span class="mr-4">{{ productName }}</span>
+      <span class="text-muted">{{ sku }}</span>
     </div>
     {% if autoReplenish != null %}
-      <div>
+      <div class="mt-3">
         <span class="label label-default label-sm">Auto-replenish</span>
         <span class="hidden-xs hidden-sm">{% include components.elements.forms.select with { groupClasses: 'd-inline-block', 'items': [{'label': 'Every 4 weeks'}, {'label': 'Every 3 weeks'}, {'label': 'Every 2 weeks'}, {'label': 'Every 1 weeks'}] } %}</span>
       </div>
     {% endif %}
   </td>
-  <td class="t-price">
+  <td class="t-price pb-3 pt-5">
      {{ price }}
      <span class="hidden-xs hidden-sm">{{ eachShipment }}</span>
   </td>
-  <td class="t-qty text-right">
+  <td class="t-qty text-right pb-3 pt-5">
     <span class="hidden-xs">{% include components.elements.forms.select %}</span>
     <small class="visible-xs">1 unit</small>
     <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>

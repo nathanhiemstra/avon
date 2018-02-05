@@ -2,11 +2,6 @@
 
   <!-- START - CHECKBOX -->
   {% include components.elements.forms.checkbox with {checked: true, classes: ""} %}
-  <!-- <div class="checkbox">
-    <label>
-      <input type="checkbox" checked>
-    </label>
-  </div> -->
   <!-- END - CHECKBOX -->
 
   <!-- START - CART SUMMARY -->
@@ -14,13 +9,13 @@
     <dt class="pull-left">
       <a href="#collapse-{{ indexNum }}" data-toggle="collapse" class="plain {% if collapsed != false %} collapsed {% endif %}">
         <span class="lt-icon lt-rightside collapse-indicator"></span>
-        <span>{{ personName }}</span>
+        <span class="ml-3">{{ personName }}</span>
       </a>
     </dt>
     <dd class="pull-right cart-total" data-total="{{ total }}">${{ total }}</dd>
   </dl>
 
-  <dl class="clearfix m-0">
+  <dl class="clearfix cart-item-ml my-3 mr-0">
     <dd class="pull-left small text-muted">{{ itemCount }} items</dd>
     <dd class="pull-right cart-discount small text-muted" data-discount="45.55">Discount: $45.55</dd>
   </dl>
@@ -29,13 +24,13 @@
   <!-- START - CART DETAILS (EXPANDABLE) -->
   <div class="details collapse {% if collapsed == false %} in {% endif %}" id="collapse-{{ indexNum }}">
 
-    <table class="table mt-4">
+    <table class="table">
       <thead>
         <tr>
           <th class="t-item hidden-xs hidden-sm small text-muted">Item</th>
           <th class="t-desc invisible small text-muted">Description</th>
           <th class="t-price small text-muted">Price</th>
-          <th class="t-qty text-right small text-muted">Qty</th>
+          <th class="t-qty small text-muted pl-4">Qty</th>
         </tr>
       </thead>
       <tbody>
@@ -84,10 +79,9 @@
   <section>
 
     <!-- START - VIEW OFFERS CONTENT (EXPANDABLE) -->
-    <div class="details collapse pt-3" id="collapse-{{ indexNum }}-view-offer">
+    <div class="details collapse" id="collapse-{{ indexNum }}-view-offer">
       <!-- TODO: Make repeatable style for this, if it gets used again -->
       <ul class="list-unstyled row border-secondary d-table">
-
 
         <li class="col-sm-6 p-3 border-secondary d-table-cell">
           {{ offer10Discount }}

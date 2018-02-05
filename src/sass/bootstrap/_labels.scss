@@ -6,7 +6,7 @@
     display: inline;
     padding: .2em .6em .3em;
     font-size: 75%;
-    font-weight: bold;
+    text-transform: uppercase;
     line-height: 1;
     color: $label-color;
     text-align: center;
@@ -43,6 +43,7 @@ a.label {
 
 .label-default {
     @include label-variant($label-default-bg);
+    color: $text-muted;
 }
 
 .label-primary {

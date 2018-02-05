@@ -219,7 +219,7 @@ $table-bg-hover: $gray-lighter !default;
 $table-bg-active: $table-bg-hover !default;
 
 //** Border color for table and cell borders.
-$table-border-color: $gray-light !default;
+$table-border-color: $gray-lighter !default;
 
 //== Buttons
 //
@@ -693,7 +693,7 @@ $popover-arrow-outer-fallback-color: darken($popover-fallback-border-color, 20%)
 //##
 
 //** Default label background color
-$label-default-bg: $gray-light !default;
+$label-default-bg: $gray-lighter !default;
 
 //** Primary label background color
 $label-primary-bg: $brand-primary !default;
@@ -818,7 +818,7 @@ $progress-bar-info-bg: $brand-info !default;
 $list-group-bg: $white !default;
 
 //** `.list-group-item` border color
-$list-group-border: $gray-light !default;
+$list-group-border: $gray-lighter !default;
 
 //** List group border radius
 $list-group-border-radius: $border-radius-base !default;
@@ -1006,7 +1006,7 @@ $pre-scrollable-max-height: 340px !default;
 $component-offset-horizontal: 180px !default;
 
 //** Text muted color
-$text-muted: $gray-light !default;
+$text-muted: $gray !default;
 
 //** Abbreviations and acronyms border color
 $abbr-border-color: $gray-light !default;

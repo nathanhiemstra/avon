@@ -27,7 +27,6 @@
 
   &--checkboxed {
     .list-group-item:not(.list-group-item-checkbox) {
-      .details,
       dl {
         padding-left: $checkbox-width + $checkbox-pad-right;
       }
@@ -72,6 +71,13 @@
   // INACTIVE STATE
   &.inactive {
     opacity: 0.5;
+  }
+
+  // CART ITEM SPECIFIC STYLES
+  &.single-cart-item {
+    .cart-item-ml {
+      margin-left: 24px;
+    }
   }
 
 }
