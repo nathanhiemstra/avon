@@ -529,7 +529,6 @@ a {
 
 //== Colors
 
-
 // Colors by name
 // $colors: (
 //   black:         #000,
@@ -548,35 +547,31 @@ a {
 //   white:         #fff
 // ),
 
-
-$black:         #000 !default;
-$blue:          #2C97D0 !default;
-$gray:          #666 !default;
-  $gray-base:     $black !default;
-  $gray-dark:     $gray-base !default;
-  $gray-light:    #CCC !default;
-  $gray-lighter:  #F2F2F2 !default;
-$green:         #3EA572 !default;
-$orange:        #FAA342 !default;
-$pink:          #ED008C !default;
-  $pink-dark:     #D4027B !default;
-  $pink-light:    #FEF4F8 !default;
-$red:           #E54530 !default;
-$white:         #fff !default;
+$black: #000 !default;
+$blue: #2C97D0 !default;
+$gray: #666 !default;
+$gray-base: $black !default;
+$gray-dark: $gray-base !default;
+$gray-light: #CCC !default;
+$gray-lighter: #F2F2F2 !default;
+$green: #3EA572 !default;
+$orange: #FAA342 !default;
+$pink: #ED008C !default;
+$pink-dark: #D4027B !default;
+$pink-light: #FEF4F8 !default;
+$red: #E54530 !default;
+$white: #fff !default;
 
 // Colors by function
-$brand-primary:           $pink !default;
+$brand-primary: $pink !default;
 $brand-primary-emphasize: $pink-dark !default;
-$brand-primary-muted:     $pink-light !default;
+$brand-primary-muted: $pink-light !default;
 
-$brand-success:   $green !default;
-$brand-info:      $blue !default;
-$brand-warning:   $orange !default;
-$brand-danger:    $red !default;
-$brand-disabled:  $gray-light !default;
-
-
-
+$brand-success: $green !default;
+$brand-info: $blue !default;
+$brand-warning: $orange !default;
+$brand-danger: $red !default;
+$brand-disabled: $gray-light !default;
 
 //== Scaffolding
 //
@@ -619,26 +614,26 @@ $font-size-small: ceil($font-size-base * 0.83333) !default;
 // 40px
 
 // H1
-$font-size-h1:          floor($font-size-base * 2.8) !default; // 42px
-$font-size-h1-desktop:  floor($font-size-base * 3.2) !default; // 48px
+$font-size-h1: floor($font-size-base * 2.8) !default; // 42px
+$font-size-h1-desktop: floor($font-size-base * 3.2) !default; // 48px
 
-$font-size-h2:          floor($font-size-base * 2.0) !default; // 30px
-$font-size-h2-desktop:  floor($font-size-base * 2.4) !default; // 36px
+$font-size-h2: floor($font-size-base * 2.0) !default; // 30px
+$font-size-h2-desktop: floor($font-size-base * 2.4) !default; // 36px
 
-$font-size-h3:          ceil($font-size-base * 1.4666) !default; // 22px
-$font-size-h3-desktop:  ceil($font-size-base * 2.0) !default; // 30px
+$font-size-h3: ceil($font-size-base * 1.4666) !default; // 22px
+$font-size-h3-desktop: ceil($font-size-base * 2.0) !default; // 30px
 
-$font-size-h4:          ceil($font-size-base * 1.2) !default; // 18px
-$font-size-h4-desktop:  ceil($font-size-base * 1.6) !default; // 24px
+$font-size-h4: ceil($font-size-base * 1.2) !default; // 18px
+$font-size-h4-desktop: ceil($font-size-base * 1.6) !default; // 24px
 
-$font-size-h5:          $font-size-base !default; // 15px
-$font-size-h5-desktop:  ceil($font-size-base * 1.2) !default; // 18px
+$font-size-h5: $font-size-base !default; // 15px
+$font-size-h5-desktop: ceil($font-size-base * 1.2) !default; // 18px
 
-$font-size-h6:          ceil($font-size-base * 0.8666) !default; // 13px
-$font-size-h6-desktop:  ceil($font-size-base * 0.9333) !default; // 14px
+$font-size-h6: ceil($font-size-base * 0.8666) !default; // 13px
+$font-size-h6-desktop: ceil($font-size-base * 0.9333) !default; // 14px
 
-$font-size-h7:          ceil($font-size-base * 0.7333) !default; // 11px
-$font-size-h7-desktop:  ceil($font-size-base * 0.83333) !default; // 12px
+$font-size-h7: ceil($font-size-base * 0.7333) !default; // 11px
+$font-size-h7-desktop: ceil($font-size-base * 0.83333) !default; // 12px
 
 // 12px
 
@@ -675,9 +670,6 @@ $base-font-name: "gotham" !default;
 //** Element ID within SVG icon file.
 $icon-font-svg-id: "glyphicons_halflingsregular" !default;
 
-
-
-
 //== Spacing
 //
 //## Define common spacing
@@ -686,7 +678,6 @@ $spacing-2: 0.5rem;
 $spacing-3: 1rem;
 $spacing-4: 1.5rem;
 $spacing-5: 3rem;
-
 
 //== Components
 //
@@ -703,7 +694,6 @@ $padding-small-horizontal: 10px !default;
 
 $padding-xs-vertical: 2px !default;
 $padding-xs-horizontal: 5px !default;
-
 
 $line-height-large: 1.33333 !default;
 
@@ -765,9 +755,7 @@ $btn-default-color: $brand-primary !default;
 $btn-default-bg: $white !default;
 $btn-default-border: $brand-primary !default;
 
-$btn-default-hover-color: $brand-primary-emphasize !default
-
-$btn-primary-color: $white !default;
+$btn-default-hover-color: $brand-primary-emphasize !default $btn-primary-color:$white !default;
 $btn-primary-bg: $brand-primary !default;
 $btn-primary-border: $brand-primary !default;
 
@@ -785,11 +773,11 @@ $btn-warning-border: $brand-warning !default;
 
 $btn-danger-color: $white !default;
 $btn-danger-bg: $brand-danger !default;
-$btn-danger-border: $brand-danger  !default;
+$btn-danger-border: $brand-danger !default;
 
 $btn-disabled-color: $brand-disabled !default;
 $btn-disabled-bg: $brand-disabled !default;
-$btn-disabled-border: $brand-disabled  !default;
+$btn-disabled-border: $brand-disabled !default;
 
 $btn-link-disabled-color: $brand-disabled !default;
 
@@ -1026,9 +1014,9 @@ $navbar-default-border: darken($navbar-default-bg, 6.5%) !default;
 
 // Navbar links
 $navbar-default-link-color: #777 !default;
-$navbar-default-link-hover-color: $link-hover-color  !default;
+$navbar-default-link-hover-color: $link-hover-color !default;
 $navbar-default-link-hover-bg: transparent !default;
-$navbar-default-link-active-color: $link-hover-color  !default;
+$navbar-default-link-active-color: $link-hover-color !default;
 $navbar-default-link-active-bg: darken($navbar-default-bg, 6.5%) !default;
 $navbar-default-link-disabled-color: $gray-light !default;
 $navbar-default-link-disabled-bg: transparent !default;
@@ -1074,8 +1062,6 @@ $navbar-drawer-bg: $white !default;
 $navbar-drawer-border: transparent !default;
 $navbar-drawer-height: 60px !default;
 $navbar-drawer-height-lg: 80px !default;
-
-
 
 //== Navs
 //

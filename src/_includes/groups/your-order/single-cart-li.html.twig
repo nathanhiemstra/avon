@@ -1,4 +1,4 @@
-<li class="list-group-item single-cart-item panel box-emphasize my-4">
+<li class="list-group-item single-cart-item box-emphasize my-4">
 
   <!-- START - CHECKBOX -->
   {% include components.elements.forms.checkbox with {checked: true, classes: ""} %}
@@ -12,17 +12,17 @@
   <!-- START - CART SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
-      <a href="#collapse-{{ indexNum }}" data-toggle="collapse" {% if collapsed != false %} class="collapsed" {% endif %}>
+      <a href="#collapse-{{ indexNum }}" data-toggle="collapse" class="plain {% if collapsed != false %} collapsed {% endif %}">
         <span class="lt-icon lt-rightside collapse-indicator"></span>
-        <b>{{ personName }}</b>
+        <span>{{ personName }}</span>
       </a>
     </dt>
     <dd class="pull-right cart-total" data-total="{{ total }}">${{ total }}</dd>
   </dl>
 
   <dl class="clearfix m-0">
-    <dt class="pull-left">{{ itemCount }} items</dt>
-    <dd class="pull-right cart-discount" data-discount="45.55">Discount: $45.55</dd>
+    <dd class="pull-left small text-muted">{{ itemCount }} items</dd>
+    <dd class="pull-right cart-discount small text-muted" data-discount="45.55">Discount: $45.55</dd>
   </dl>
   <!-- END - CART SUMMARY -->
 
@@ -32,10 +32,10 @@
     <table class="table mt-4">
       <thead>
         <tr>
-          <th class="t-item hidden-xs hidden-sm">Item</th>
-          <th class="t-desc invisible">Description</th>
-          <th class="t-price">Price</th>
-          <th class="t-qty text-right">Qty</th>
+          <th class="t-item hidden-xs hidden-sm small text-muted">Item</th>
+          <th class="t-desc invisible small text-muted">Description</th>
+          <th class="t-price small text-muted">Price</th>
+          <th class="t-qty text-right small text-muted">Qty</th>
         </tr>
       </thead>
       <tbody>

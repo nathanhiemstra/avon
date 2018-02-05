@@ -51,11 +51,13 @@ var CartCheckboxes = (function () {
     if (el.checked) {
       $checkboxes.each(function () {
         this.checked = true;
+        $(this).closest('.single-cart-item').removeClass('inactive');
       });
       totalNumChecked = $els.carts.length;
     } else {
       $checkboxes.each(function () {
         this.checked = false;
+        $(this).closest('.single-cart-item').addClass('inactive');
       });
       totalNumChecked = 0;
     }
@@ -71,8 +73,15 @@ var CartCheckboxes = (function () {
     // loop through each cart
     $checkboxes.each(function () {
 
-      if(this.checked) numChecked++;
+      // count number checked and set active / inactive states
+      if(this.checked) {
+        $(this).closest('.single-cart-item').removeClass('inactive');
+        numChecked++;
+      } else {
+        $(this).closest('.single-cart-item').addClass('inactive');
+      }
 
+      // set checkbox states
       if(numChecked === 0) {
         $els.selectAllCheckbox.prop('indeterminate', false);
         $els.selectAllCheckbox.prop('checked', false);
@@ -125,10 +134,6 @@ var CartCheckboxes = (function () {
     }
 
     $els.checkoutBtn.html(btnText);
-
-  };
-
-  var _getCartTotals = function(el) {
 
   };
 

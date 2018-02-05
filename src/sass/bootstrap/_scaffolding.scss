@@ -66,6 +66,16 @@ a {
   &:focus {
     @include tab-focus;
   }
+
+  &.plain {
+    color: $text-color;
+    font-weight: normal;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
 }
 
 

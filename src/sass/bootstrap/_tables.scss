@@ -43,7 +43,7 @@ th {
     > thead > tr > th {
         vertical-align: bottom;
         text-transform: uppercase;
-        border-bottom: 2px solid $table-border-color;
+        border-bottom: 1px solid $table-border-color;
     }
 
     // Remove top border from thead by default
