@@ -1,0 +1,6 @@
+// Box style with rounded corners and a slight drop shadow
+.box-emphasize {
+  @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
+  border-radius: $border-radius-secondary !important;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+}

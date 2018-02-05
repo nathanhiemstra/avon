@@ -1025,6 +1025,16 @@ h1[id] {
     padding: 15px;
 }
 
+/* Box styles */
+.bs-example-box-classes {
+    padding: 15px !important;
+
+    div {
+        padding: 15px;
+        margin: 15px;
+    }
+}
+
 /* Images */
 .bs-example > .img-circle,
 .bs-example > .img-rounded,
