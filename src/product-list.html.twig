@@ -8,7 +8,16 @@
   <!-- START - BREADCRUMBS -->
   <section class="container">
     <div class="row">
-      {% include components.groups.navigation.breadcrumbs %}
+      {% include components.groups.navigation.breadcrumbs with {
+        'items': [{
+            'slug': '#',
+            'label': 'Products'
+          }, {
+            'slug': '#',
+            'label': 'Skincare'
+          }
+        ]
+      }%}
     </div>
     <!-- /.row -->
   </section>

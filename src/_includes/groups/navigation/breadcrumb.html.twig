@@ -1,7 +1,8 @@
 {# If no list items have been passed in, use these FPO items  #}
 
 {% if items is empty %}
-  {% set items = [{
+  {% set items = [
+    {
       'slug': '#',
       'label': 'Link 1'
     }, {
@@ -11,8 +12,9 @@
       'slug': '#',
       'label': 'Link 3'
     }
-    ] %}
+  ] %}
 {% endif %}
+
 {# Build the breadcrumb #}
 <ol class="breadcrumb {{ classes }}">
   {% for item in items %}
