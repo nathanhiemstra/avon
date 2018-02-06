@@ -80,6 +80,11 @@
     > li {
         float: left;
         text-transform: uppercase;
+        font-size: $font-size-h6;
+
+        @media (min-width: $screen-sm-min) {
+            font-size: $font-size-h6-desktop;
+        }
 
         // Make the list-items overlay the bottom border
         // margin-bottom: -1px;
@@ -194,6 +199,18 @@
             }
         }
     }
+
+    &--inline {
+        > li {
+            display: table-cell;
+            width: 1%;
+
+            > a {
+                margin-bottom: 0;
+            }
+        }
+    }
+
 }
 
 // Move borders to anchors instead of bottom of list

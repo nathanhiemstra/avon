@@ -1715,7 +1715,7 @@
   
   
   <h2 id="nav-justified">Justified</h2>
-  <p>Easily make tabs or pills equal widths of their parent at screens wider than 768px with <code>.nav-justified</code>. On smaller screens, the nav links are stacked.</p>
+  <p>Easily make tabs or pills equal widths of their parent at screens wider than 768px with <code>.nav-justified</code>. On smaller screens, the nav links are stacked. Use the modifier <code>.nav-justified--inline</code> for justified nav that doesn't collapse to a stack below 768px, ideal for justified nav with only two items.</p>
   <div class="bs-callout bs-callout-warning">
     <h4>Safari and responsive justified navs</h4>
     <p>Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing. This bug is also shown in the <a href="../examples/justified-nav/">justified nav example</a>.</p>
@@ -1732,12 +1732,20 @@
       <li><a href="#">Profile</a></li>
       <li><a href="#">Messages</a></li>
     </ul>
+    <br>
+    <ul class="nav nav-tabs nav-justified nav-justified--inline">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+    </ul>
   </div>
   <pre><code class="language-markup"><script type="text/plain">
   <ul class="nav nav-tabs nav-justified">
     ...
   </ul>
   <ul class="nav nav-pills nav-justified">
+    ...
+  </ul>
+  <ul class="nav nav-tabs nav-justified--inline">
     ...
   </ul>
   </script></code></pre>
@@ -1844,6 +1852,7 @@
   </ul>
   </script></code></pre>
 </div>
+
   <!-- SECTION - NAVBAR -->
   
 
