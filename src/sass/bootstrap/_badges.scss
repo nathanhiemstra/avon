@@ -17,6 +17,7 @@
   text-align: center;
   background-color: $badge-bg;
   border-radius: $badge-border-radius;
+  vertical-align: text-bottom;
 
   // Empty badges collapse automatically (not available in IE8)
   &:empty {
@@ -42,6 +43,10 @@
   .nav-pills > .active > a > & {
     color: $badge-active-color;
     background-color: $badge-active-bg;
+  }
+  .nav-tabs a > & {
+    background-color: $brand-primary;
+    color: $body-bg;
   }
 
   .list-group-item > & {

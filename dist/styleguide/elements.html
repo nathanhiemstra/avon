@@ -173,8 +173,10 @@ $alert-message-background: $brand-info;
     <li>Set <code>background-color: #fff;</code> on the <code>body</code></li>
     <li>Use the <code>$font-family-base</code>, <code>$font-size-base</code>, and <code>$line-height-base</code> attributes as our typographic base</li>
     <li>Set the global link color via <code>$link-color</code> and apply link underlines only on <code>:hover</code></li>
+    <li>Use <code>.link-muted</code> for a muted link and <code>.link-plain</code> for a completely undecorated link.
   </ul>
   <p>These styles can be found within <code>scaffolding.scss</code>.</p>
+  <p>Here is an example of a <a href="#">default link</a>, a <a href="#" class="link-muted">muted link</a>, and a <a href="#" class="link-plain">plain link</a></p>
 
 
   <!-- Headings -->
@@ -266,7 +268,7 @@ $alert-message-background: $brand-info;
   <h2 id="type-body-copy">Body copy</h2>
   <p>Bootstrap's global default <code>font-size</code> is <strong>15px</strong>, with a <code>line-height</code> of <strong>1.428</strong>. This is applied to the <code>&lt;body&gt;</code> and all paragraphs. In addition, <code>&lt;p&gt;</code> (paragraphs) receive a bottom margin of half their computed line-height (10px by default).</p>
 
- 
+
 
   <div class="bs-example">
     <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
@@ -681,7 +683,6 @@ $alert-message-background: $brand-info;
 
 
 </div>
-
 
   <!-- SECTION - TABLES -->
     

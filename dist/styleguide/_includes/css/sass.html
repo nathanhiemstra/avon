@@ -552,6 +552,7 @@ $blue: #2C97D0 !default;
 $gray: #666 !default;
 $gray-base: $black !default;
 $gray-dark: $gray-base !default;
+$gray-medium: #8e8e8e !default;
 $gray-light: #CCC !default;
 $gray-lighter: #F2F2F2 !default;
 $green: #3EA572 !default;
@@ -585,6 +586,9 @@ $text-color: $gray-dark !default;
 
 //** Global textual link color.
 $link-color: $brand-primary !default;
+
+//** Global muted link color.
+$link-color-muted: $gray-medium !default;
 
 //** Link hover color set via `darken()` function.
 $link-hover-color: $brand-primary-emphasize !default;
@@ -1459,7 +1463,7 @@ $badge-active-color: $link-color !default;
 //** Badge background color in active nav link
 $badge-active-bg: $white !default;
 
-$badge-font-weight: bold !default;
+$badge-font-weight: normal !default;
 $badge-line-height: 1 !default;
 $badge-border-radius: 10px !default;
 
@@ -1474,10 +1478,10 @@ $breadcrumb-padding-horizontal: 15px !default;
 $breadcrumb-bg: transparent !default;
 
 //** Breadcrumb text color
-$breadcrumb-color: $gray-light !default;
+$breadcrumb-color: $gray !default;
 
 //** Text color of current page in the breadcrumb
-$breadcrumb-active-color: $gray-light !default;
+$breadcrumb-active-color: $brand-primary !default;
 
 //** Textual separator for between breadcrumb elements
 $breadcrumb-separator: "|" !default;
