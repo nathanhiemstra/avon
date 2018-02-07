@@ -857,21 +857,55 @@
 
   <label>Categories</label>
 
+  <!-- START - LEVEL 1 - LIST -->
   <ul class="list-group list-group--basic">
     <li class="list-group-item">
+
+      <!-- START - LEVEL 2 - COLLAPSABLE TRIGGER -->
+      <!-- Developer note: must have data-toggle="collapse" and href value must match ID of "COLLAPSABLE CONTENT"-->
       <a href="#skincare-items" data-toggle="collapse">Skincare</a>
-      <div class="collapse" id="skincare-items">
+      <!-- END - LEVEL 2 - COLLAPSABLE TRIGGER -->
+
+      <!-- START - LEVEL 2 - COLLAPSABLE CONTENT -->
+      <!-- Developer note: Remove class "in" for production. that just makes it expaned for demo -->
+      <div class="collapse in" id="skincare-items">
+
+        <!-- START - LEVEL 2 - LIST -->
         <ul class="list-group list-group--basic mb-0 mt-2">
-          <li class="list-group-item ml-5"><a href="#" class="active">Moisturizers</a></li>
+          <li class="list-group-item ml-5">
+
+            <!-- START - LEVEL 3 - COLLAPSABLE TRIGGER -->
+            <a href="#moisturizers-items"  data-toggle="collapse" class="active">Moisturizers</a>
+            <!-- END - LEVEL 3 - COLLAPSABLE TRIGGER -->
+
+            <!-- START - LEVEL 3 - COLLAPSABLE CONTENT -->
+              <div class="collapse in" id="moisturizers-items">
+
+                <!-- START - LEVEL 3 - LIST -->
+                <ul class="list-group list-group--basic mb-0 mt-2">
+                  <li class="list-group-item ml-5"><a href="#">Moisturizer Product</a></li>
+                  <li class="list-group-item ml-5"><a href="#">Moisturizer Product</a></li>
+                  <li class="list-group-item ml-5"><a href="#">Moisturizer Product</a></li>
+                </ul>
+                <!-- END - LEVEL 3 - LIST -->
+
+              </div>
+            <!-- END - LEVEL 3 - COLLAPSABLE CONTENT -->
+
+          </li>
           <li class="list-group-item ml-5"><a href="#">Cleansers &amp; Toners</a></li>
           <li class="list-group-item ml-5"><a href="#">Scrubs &amp; Masks</a></li>
           <li class="list-group-item ml-5"><a href="#">Treatments</a></li>
           <li class="list-group-item ml-5"><a href="#">Eye Care</a></li>
           <li class="list-group-item ml-5"><a href="#">Travel Sizes</a></li>
         </ul>
-      </div>
-    </li>
+        <!-- END - LEVEL 2 - LIST -->
 
+
+      </div>
+      <!-- END - LEVEL 2 - COLLAPSABLE CONTENT -->
+
+    </li>
     <li class="list-group-item"><a href="#">Fragrance</a></li>
     <li class="list-group-item"><a href="#">Personal Care</a></li>
     <li class="list-group-item"><a href="#">Beauty</a></li>
@@ -884,6 +918,7 @@
     <li class="list-group-item"><a href="#">Samples</a></li>
     <li class="list-group-item"><a href="#">Sales Aides &amp; Tools</a></li>
   </ul>
+  <!-- END  - LEVEL 1 - LIST -->
 
 </section>
 <!-- END - CATEGORY FILTERS -->
@@ -1150,17 +1185,16 @@
   </a>
   <ul class="dropdown-menu">
     <li>
-      <a href="#">Price</a>
+      <a href="#">Alphabetical A-Z</a>
     </li>
     <li>
-      <a href="#">Date</a>
+      <a href="#">Alphabetical Z-A</a>
     </li>
     <li>
-      <a href="#">Something Else</a>
+      <a href="#">Price Low-High</a>
     </li>
-    <li class="divider"></li>
     <li>
-      <a href="#">Separated link</a>
+      <a href="#">Price High-Low</a>
     </li>
   </ul>
 </li>
@@ -1191,17 +1225,16 @@
   </a>
   <ul class="dropdown-menu">
     <li>
-      <a href="#">Price</a>
+      <a href="#">Alphabetical A-Z</a>
     </li>
     <li>
-      <a href="#">Date</a>
+      <a href="#">Alphabetical Z-A</a>
     </li>
     <li>
-      <a href="#">Something Else</a>
+      <a href="#">Price Low-High</a>
     </li>
-    <li class="divider"></li>
     <li>
-      <a href="#">Separated link</a>
+      <a href="#">Price High-Low</a>
     </li>
   </ul>
 </li>
@@ -1226,17 +1259,12 @@
         <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
       </div>
       <div class="col col-xs-9 col-md-8">
-        <p class="title">Anew Ultimate Supreme Advanced Performance Créme</p>
+        <p class="title link-reverse">Anew Ultimate Supreme Advanced Performance Créme</p>
         <p>
           <span class="sale-price">$30.00</span>
-          <span class="reg-price small">Regular Price: $36.00</span>
+          <span class="reg-price small link-reverse">Regular Price: <span class="strike-through">$36.00</span></span>
         </p>
-        <p>
-          <span class="rating small">
-            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-halfstar" aria-hidden="true"></span></a>            <span class="num-ratings">73</span>
-          </span>
-          <span class="stock small"><span class="lt-icon lt-checkmark" aria-hidden="true"></span> In Stock</span>
-        </p>
+        
       </div>
       <div class="col col-xs-0 col-md-2">
         <!-- <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button> -->
@@ -1255,17 +1283,12 @@
         <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
       </div>
       <div class="col col-xs-9 col-md-8">
-        <p class="title">Haiku Bonus Size Roll-On</p>
+        <p class="title link-reverse">Haiku Bonus Size Roll-On</p>
         <p>
           <span class="sale-price">$30.00</span>
-          <span class="reg-price small">Regular Price: $36.00</span>
+          <span class="reg-price small link-reverse">Regular Price: <span class="strike-through">$36.00</span></span>
         </p>
-        <p>
-          <span class="rating small">
-            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-halfstar" aria-hidden="true"></span></a>            <span class="num-ratings">73</span>
-          </span>
-          <span class="stock small"><span class="lt-icon lt-checkmark" aria-hidden="true"></span> In Stock</span>
-        </p>
+        
       </div>
       <div class="col col-xs-0 col-md-2">
         <!-- <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button> -->
@@ -1284,17 +1307,12 @@
         <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
       </div>
       <div class="col col-xs-9 col-md-8">
-        <p class="title">Another Product</p>
+        <p class="title link-reverse">Another Product</p>
         <p>
           <span class="sale-price">$30.00</span>
-          <span class="reg-price small">Regular Price: $36.00</span>
+          <span class="reg-price small link-reverse">Regular Price: <span class="strike-through">$36.00</span></span>
         </p>
-        <p>
-          <span class="rating small">
-            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-halfstar" aria-hidden="true"></span></a>            <span class="num-ratings">73</span>
-          </span>
-          <span class="stock small"><span class="lt-icon lt-checkmark" aria-hidden="true"></span> In Stock</span>
-        </p>
+        
       </div>
       <div class="col col-xs-0 col-md-2">
         <!-- <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button> -->
@@ -1313,17 +1331,12 @@
         <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
       </div>
       <div class="col col-xs-9 col-md-8">
-        <p class="title">And Another</p>
+        <p class="title link-reverse">And Another</p>
         <p>
           <span class="sale-price">$30.00</span>
-          <span class="reg-price small">Regular Price: $36.00</span>
+          <span class="reg-price small link-reverse">Regular Price: <span class="strike-through">$36.00</span></span>
         </p>
-        <p>
-          <span class="rating small">
-            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-star" aria-hidden="true"></span></a>            <a href="#"><span class="lt-icon lt-halfstar" aria-hidden="true"></span></a>            <span class="num-ratings">73</span>
-          </span>
-          <span class="stock small"><span class="lt-icon lt-checkmark" aria-hidden="true"></span> In Stock</span>
-        </p>
+        
       </div>
       <div class="col col-xs-0 col-md-2">
         <!-- <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button> -->
