@@ -12,17 +12,6 @@
     overflow: hidden;
 }
 
-// TODO: Since this shares a lot with .modal, can we make an add-on class with only the differences?
-// .drawer-backdrop {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     z-index: 1;
-//     background-color: rgba(0, 0, 0, 0.75);
-// }
-
 // Container that the modal scrolls within
 .modal {
     display: none;
