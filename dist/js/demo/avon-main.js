@@ -24,14 +24,15 @@ $(document).ready(function () {
       demoToggle: '[data-toggle="drawer-demo"]',
       itemEntry: ".drawer-item-entry",
       orderSummary: ".drawer-order-summary",
-    },
-    overlay: ".global-content-overlay"
+    }
+    // backDrop: ".drawer-backdrop"
   }
   var $objects = {
     window: $(window),
     document: $(document),
     html: $('html'),
     body: $('body'),
+    globalHeader: $('.global-header'),
     main: $(selectors.main),
     triggers: {
       drawerOrderSummary: $(selectors.main).find(selectors.triggers.drawerOrderSummary),
@@ -50,11 +51,11 @@ $(document).ready(function () {
       demoToggle: $(selectors.drawers.demoToggle),
       orderSummary: $(selectors.main).find(selectors.drawers.orderSummary),
       itemEntry: $(selectors.main).find(selectors.drawers.itemEntry)
-    },
-    overlay: $(selectors.overlay)
+    }
+    // backDrop: $(selectors.backDrop)
   }
 
-  // console.log('selectors: ',selectors);
+  // $objects.backDrop.addClass('hidden');
 
 
 
@@ -69,12 +70,19 @@ $(document).ready(function () {
     var isDrawerTypeHidden = targetEl.hasClass('drawer-hidden');
     var isExpanded = targetEl.hasClass('drawer-expanded');
 
+    var backdropAdded = $('.drawer-backdrop').length;
+    var backdropDiv;
+
+    if ( backdropAdded ) {
+      $('.drawer-backdrop').remove();
+    } else {
+      backdropDiv = $('<div class="drawer-backdrop in"></div>').appendTo($objects.globalHeader);
+    }
+
     $objects.html.toggleClass('drawer-open');
 
-    // console.log('TOGGLE DRAWER :: ', targetId);
-
     if (isDrawerTypeHidden) {
-      $objects.overlay.toggleClass('hidden');
+      // backdropDiv.toggleClass('fade').toggleClass('in');
       if (isExpanded) {
         setTimeout(function () {
           // completely hide after delay
