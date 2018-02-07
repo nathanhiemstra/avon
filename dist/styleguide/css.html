@@ -2017,14 +2017,20 @@ $text-color: $gray-dark !default;
 //** Global textual link color.
 $link-color: $brand-primary !default;
 
-//** Global muted link color.
-$link-color-muted: $gray-medium !default;
+//** Sometimes the link should not be pink
+$link-reverse-color: $text-color !default;
+$link-reverse-hover-color: $black!default;
+
+
 
 //** Link hover color set via `darken()` function.
 $link-hover-color: $brand-primary-emphasize !default;
 
 //** Link hover decoration.
 $link-hover-decoration: underline !default;
+
+//** Global muted link color.
+$link-color-muted: $gray-medium !default;
 
 //== Typography
 //
