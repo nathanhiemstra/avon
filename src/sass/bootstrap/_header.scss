@@ -15,18 +15,17 @@
     background-image: url("../images/fpo/img_avatar.png");
   }
 
-  // &--static-nav,
-  // &--user-nav {
-  // border: none;
-  // }
-
   &--static-nav {
-    background-color: $brand-primary-muted;
-    height: 36px;
+    height: 48px;
     margin: 0;
 
     li > a {
       line-height: 1;
+
+      img {
+        height: 22px;
+        width: auto;
+      }
     }
   }
 
