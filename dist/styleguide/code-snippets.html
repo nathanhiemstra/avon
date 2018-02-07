@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>Code Snippets</title>
+
+  <!-- Documentation extras -->
+  <link href="docs-assets/css/prism.css" rel="stylesheet">
+
+  <!-- Core CSS - containts customized bootstrap plus new CSS -->
+  <link href="../css/avon-main.css" rel="stylesheet">
+  <link href="../css/styleguide.css" rel="stylesheet">
+  <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+</head>
+
+<body class="styleguide-body">
+
+  <section>
+      <a class="sr-only" href="#content">Skip to main content</a>
+
+
+      
+      
+      
+       
+
+    <!-- Docs master nav -->
+    
+<header class="navbar navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li >
+          <a href="index.html">Home</a>
+        </li>
+        <li >
+          <a href="css.html">CSS</a>
+        </li>
+        <li >
+          <a href="elements.html">Elements</a>
+        </li>
+        <li >
+          <a href="groups.html">Groups</a>
+        </li>
+        <li >
+          <a href="modules.html">Modules</a>
+        </li>
+        <li >
+          <a href="layouts.html">Layouts</a>
+        </li>
+        <li >
+          <a href="javascript.html">Javascript</a>
+        </li>
+        <li >
+          <a href="examples.html">Examples</a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content">
+      <div class="container">
+        <h1>Code Snippets</h1>
+      </div>
+    </div>
+
+    <div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-md-9" role="main">
+
+
+          
+          
+          
+  
+
+
+<div class="bs-docs-section">
+  <h1 id="code-snippets" class="page-header">Code Snippets</h1>
+
+  
+
+  <h2 id="facebook-login">Facebook Login Button</h2>
+  <p>Example code withing Avon's live home page code.</p>
+
+  <div class="bs-example">
+    
+    
+    
+    <!-- START - NEW FROM S4DC -->
+    <!-- Demo: https://codepen.io/studio4dc/pen/mXOBjm -->
+    <style>
+      .login-facebook {
+        margin-top: 20px;
+      }
+      .login-facebook img {
+        width: 100%;
+      }
+      .login-divider {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: #666;
+        overflow: hidden;
+        text-align: center;
+      }
+      .login-divider span {
+        display: inline-block;
+        position: relative; 
+        line-height: 0.5;
+      }
+      .login-divider span:before,
+      .login-divider span:after {
+        content: "";
+        position: absolute;
+        height: 5px;
+        border-bottom: 1px solid #CCC;
+        top: 0;
+        width: 1000px;
+      }
+      .login-divider span:before {
+        right: 100%;
+        margin-right: 15px;
+      }
+      .login-divider span:after {
+        left: 100%;
+        margin-left: 15px;
+      }
+    </style>
+
+    <div class="form-group">
+      <div class="login-divider"><span>or</span></div>
+      <a href="#" class="login-facebook">
+        <img src="https://scontent.ford1-1.fna.fbcdn.net/v/t39.2365-6/17639236_1785253958471956_282550797298827264_n.png?oh=8ba4730dd8728f6fc0a63c7c6f924739&amp;oe=5AD919EA" alt="Continue with Facebook">
+      </a>
+    </div>
+    <!-- END - NEW FROM S4DC -->
+
+
+
+  </div><!-- /.bs-example -->
+
+  
+  <pre><code class="language-markup"><script type="text/plain">
+  <form class="login ng-pristine ng-invalid ng-invalid-required ng-submitted ng-valid-pattern ng-valid-maxlength" name="login" id="login" novalidate="" method="post">
+
+    <div id="error-msg" ng-show="login.$submitted &amp;&amp; (login.userId.$touched || login.userId.$untouched 
+        || login.password.$touched || login.password.$untouched)" class="ng-hide" aria-hidden="true">
+      <span class="has-error ng-binding" ng-show="login.userId.$error.required || 
+        login.password.$error.required" aria-hidden="false">
+        All fields required.</span> <span ng-hide="login.userId.$error.required || 
+        login.password.$error.required" class="has-error ng-binding ng-hide" aria-hidden="true">  </span>
+    </div>
+
+    <div class="form-group">
+      <input id="user_id" class="form-control textinput ng-pristine ng-invalid ng-invalid-required ng-touched ng-untouched ng-isolate-scope ng-valid-pattern ng-valid-maxlength" name="userId" numeric="" ng-trim="false" ng-pattern="/^[0-9]*$/" type="text" required="" ng-model="userId" maxlength="8" size="8" placeholder="Account Number" onfocus="this.ph=this.placeholder;this.placeholder=''" onblur="this.placeholder=this.ph" focus="true" style="cursor: auto; background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;" aria-invalid="true">
+      <label class="control-label ng-binding" for="userId">Account Number</label>
+    </div>
+
+    <div class="form-group">
+      <input id="password" class="form-control textinput ng-pristine ng-invalid ng-invalid-required ng-touched ng-untouched" name="password" type="password" required="" ng-model="password" placeholder="Password" onfocus="this.ph=this.placeholder;this.placeholder=''" onblur="this.placeholder=this.ph" style="cursor: auto; background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;" aria-invalid="true">
+      <label class="control-label ng-binding" for="password">Password</label>
+    </div>
+
+    <input id="login_submit" type="submit" class="btn btn-primary" ng-click="login.$valid &amp;&amp; doLogin()" ng-disabled="isDisabled" value="Log In"> <a class="forgot-pwd ng-binding" ng-click="pswdHint()">Forgot your password?</a>
+    
+    <!-- START - NEW FROM S4DC -->
+    <!-- Demo: https://codepen.io/studio4dc/pen/mXOBjm -->
+    <style>
+      .login-facebook {
+        margin-top: 20px;
+      }
+      .login-facebook img {
+        width: 100%;
+      }
+      .login-divider {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: #666;
+        overflow: hidden;
+        text-align: center;
+      }
+      .login-divider span {
+        display: inline-block;
+        position: relative; 
+        line-height: 0.5;
+      }
+      .login-divider span:before,
+      .login-divider span:after {
+        content: "";
+        position: absolute;
+        height: 5px;
+        border-bottom: 1px solid #CCC;
+        top: 0;
+        width: 1000px;
+      }
+      .login-divider span:before {
+        right: 100%;
+        margin-right: 15px;
+      }
+      .login-divider span:after {
+        left: 100%;
+        margin-left: 15px;
+      }
+    </style>
+
+    <div class="form-group">
+      <div class="login-divider"><span>or</span></div>
+      <a href="#" class="login-facebook">
+        <img src="https://scontent.ford1-1.fna.fbcdn.net/v/t39.2365-6/17639236_1785253958471956_282550797298827264_n.png?oh=8ba4730dd8728f6fc0a63c7c6f924739&amp;oe=5AD919EA" alt="Continue with Facebook">
+      </a>
+    </div>
+    <!-- END - NEW FROM S4DC -->
+
+  </form>
+  </script></code></pre>
+
+</div>
+
+          
+
+
+        </div>
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print" role="complementary">
+            <ul class="nav bs-sidenav">
+
+              
+              
+              
+
+                  
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </section>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- <script src="docs-assets/js/email-decode.min.js"></script> -->
+  <script src="../js/vendor/jquery/1.10.2/jquery.min.js"></script>
+  <script src="../js/vendor/bootstrap.js"></script>
+  <script src="docs-assets/js/prism.js"></script>
+  <script src="../js/vendor/holder.js"></script>
+  <script src="../js/vendor/prism-normalize-whitespace.js"></script>
+  <script src="../js/avon-main.js"></script>
+  <script type="text/javascript">
+  // Optional
+  Prism.plugins.NormalizeWhitespace.setDefaults({
+    'remove-trailing': true,
+    'remove-indent': true,
+    'remove-initial-line-feed': true,
+    'left-trim': true,
+    'right-trim': true,
+  });
+  </script>
+  <script src="docs-assets/js/application.js"></script>
+
+
+
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+
+</body>
+</html>
