@@ -19,7 +19,7 @@ var FormDemo = (function () {
       searchBtn: $('#mobile-search-toggle'),
       searchNavbar: $('#mobile-header-navbar'),
       menuButton: $('.navbar-header .navbar-toggle'),
-      globalOverlay: $('.global-content-overlay'),
+      drawerBackdrop: $('.drawer-backdrop'),
 
       itemEntryDrawer: $('#drawer-item-entry'),
       itemEntrySearchInput: $('#itemEntryProduct'),
@@ -126,7 +126,7 @@ var FormDemo = (function () {
     $els.itemEntryAddAllBtns.on('click', function() {
       $('html').toggleClass('drawer-open');
       $els.itemEntryDrawer.toggleClass('drawer-expanded');
-      $els.globalOverlay.toggleClass('hidden');
+      $els.drawerBackdrop.toggleClass('fade').toggleClass('in');
 
       // show alert message demo
       $('#global-alert-msg').removeClass('collapsed');
@@ -180,14 +180,14 @@ var FormDemo = (function () {
     if($els.searchNavbar.hasClass('expanded')) {
       // expanded, let's collapse
       $els.searchNavbar.removeClass('expanded').addClass('collapsed');
-      $els.globalOverlay.removeClass('show').addClass('hidden');
+      $els.drawerBackdrop.removeClass('in').addClass('fade');
       $els.searchInputMobile.addClass('invisible');
 
       $els.menuButton.removeClass('hidden').addClass('show');
     } else {
       // collapsed, let's expand
       $els.searchNavbar.removeClass('collapsed').addClass('expanded');
-      $els.globalOverlay.removeClass('hidden').addClass('show');
+      $els.drawerBackdrop.removeClass('fade').addClass('in');
       $els.searchInputMobile.removeClass('invisible');
 
       $els.menuButton.removeClass('show').addClass('hidden');

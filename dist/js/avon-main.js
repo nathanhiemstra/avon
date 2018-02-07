@@ -25,7 +25,7 @@ $(document).ready(function () {
       itemEntry: ".drawer-item-entry",
       orderSummary: ".drawer-order-summary",
     },
-    overlay: ".global-content-overlay"
+    backDrop: ".drawer-backdrop"
   }
   var $objects = {
     window: $(window),
@@ -51,7 +51,7 @@ $(document).ready(function () {
       orderSummary: $(selectors.main).find(selectors.drawers.orderSummary),
       itemEntry: $(selectors.main).find(selectors.drawers.itemEntry)
     },
-    overlay: $(selectors.overlay)
+    backDrop: $(selectors.backDrop)
   }
 
   // console.log('selectors: ',selectors);
@@ -74,7 +74,7 @@ $(document).ready(function () {
     // console.log('TOGGLE DRAWER :: ', targetId);
 
     if (isDrawerTypeHidden) {
-      $objects.overlay.toggleClass('hidden');
+      $objects.backDrop.toggleClass('fade').toggleClass('in');
       if (isExpanded) {
         setTimeout(function () {
           // completely hide after delay
