@@ -67,6 +67,36 @@ a {
     @include tab-focus;
   }
 
+  // Sometimes we need to force our primary brand color on links in navbars and such
+  &.link-primary {
+    color: $link-color !important;
+    .lt-icon, .lt-icon:before {
+      color: $link-color !important;
+    }
+
+    &:hover, &:focus {
+      color: $link-hover-color !important;
+      .lt-icon, .lt-icon:before {
+        color: $link-hover-color !important;
+      }
+    }
+  }
+
+  // Secondary link uses the default body text color but a primary hover state
+  &.link-secondary {
+    color: $text-color;
+    .lt-icon, .lt-icon:before {
+      color: $text-color;
+    }
+
+    &:hover, &:focus {
+      color: $link-hover-color;
+      .lt-icon, .lt-icon:before {
+        color: $link-hover-color;
+      }
+    }
+  }
+
   &.link-plain {
     color: $text-color;
     font-weight: normal;
