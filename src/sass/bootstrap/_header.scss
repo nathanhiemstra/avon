@@ -17,6 +17,7 @@
 
   &--static-nav {
     height: 48px;
+    z-index: 9;
 
     li > a {
       line-height: 1;
@@ -30,25 +31,36 @@
 
   &--user-nav {
     height: 44px;
+    z-index: 8;
   }
 
   &--primary-nav {
-    @media (min-width: $screen-sm-min) {
-      padding-bottom: 0;
-    }
+    // @media (min-width: $screen-sm-min) {
+    //   padding-bottom: 0;
+    // }
 
     .navbar-brand {
-      position: absolute;
-      width: 100%;
-      left: 0;
-      top: 23px;
-      text-align: center;
-      margin: 0 auto;
+    //   position: absolute;
+    //   width: 100%;
+    //   left: 0;
+    //   top: 23px;
+    //   text-align: center;
+    //   margin: 0 auto;
 
       img {
-        display: inline;
-        height: 16px;
+        height: 39px;
       }
+
+      &--mobile {
+        float: none;
+        height: auto;
+
+        img {
+          height: 20px;
+          width: auto;
+        }
+      }
+
     }
 
     // predictive search - general
@@ -143,12 +155,13 @@
 
     // desktop search input
     #desktop-header-search {
-      width: 160px;
-      transition: 0.2s width ease, 0.2s box-shadow ease;
+      width: 100px;
+      transform: scaleX(0);
+      transition: 0.2s transform ease, 0.2s box-shadow ease;
 
       &.expanded {
-        width: 360px;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        transform: scaleX(1);
+        // box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
       }
     }
 
@@ -162,6 +175,8 @@
     }
 
     .navbar-header {
+      width: 100%;
+      
       .navbar-toggle {
         z-index: 9;
       }

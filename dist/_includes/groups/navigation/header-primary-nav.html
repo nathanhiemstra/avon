@@ -1,75 +1,114 @@
 <!-- START - PRIMARY NAV -->
-<nav class="navbar navbar--primary-nav navbar-default border-bottom my-0" role="navigation">
-  <div class="container pl-0">
+<nav class="navbar navbar--primary-nav navbar-default border-bottom m-0 p-0" role="navigation">
 
-    <div class="navbar-header visible-xs-block">
+  <!-- START - UPPER SECTION -->
+  <div class="container my-5 hidden-xs">
 
-      <button class="navbar-toggle pull-left" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <div class="row d-flex align-items-center">
 
-      <a class="navbar-brand" href="#"><img src="/images/logos/avon_logo.png" alt="Avon"></a>
+      <!-- desktop search -->
+      <div class="ml-4 flex-fill hidden-xs">
+  <a href="#" class="link-plain">
+    <span class="lt-icon lt-search lt-large"></span><span class="small text-uppercase text-muted"> Search</span>
+    <!-- <input id="desktop-header-search" type="text" class="form-inline" placeholder="" autocomplete="off"> -->
+  </a>
+</div>
 
-      <ul class="nav navbar-nav navbar-right pull-right my-0 collapsed hidden-md hidden-lg" id="mobile-header-navbar">
-  <li class="mr-4">
+      <!-- desktop logo -->
+      <a href="index.html" class="navbar-brand flex-fill">
+        <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
+      </a>
 
-    <form class="navbar-form border-0 p-0 m-0" role="search">
-      <div class="input-group">
-        <input id="mobile-search-input" type="text" class="form-control invisible" placeholder="Search" name="q" autocomplete="off">
-        <div class="input-group-btn" id="mobile-search-toggle">
-          <span class="btn btn-icon" type="submit" aria-label="Search">
-            <i class="lt-icon lt-search"></i>
-          </span>
-        </div>
-      </div>
-    </form>
-
-  </li>
-</ul>
+      <!-- order / cart -->
+      <div class="mr-4 hidden-xs">
+  <a href="#" class="link-plain">
+    <span class="small text-uppercase text-muted">Order </span><span class="lt-icon lt-shoppingcart lt-large"></span>
+  </a>
+</div>
 
     </div>
-
-    <ul class="nav navbar-nav navbar-left navbar-collapse collapse pl-0">
-      <li class="active">
-        <a class="small pb-4" href="#">Home</a>
-      </li>
-      <li>
-        <a class="small pb-4" href="#">Products</a>
-      </li>
-      <li>
-        <a class="small pb-4" href="#">Customers</a>
-      </li>
-      <li>
-        <a class="small pb-4" href="#">Orders</a>
-      </li>
-      <li>
-        <a class="small pb-4" href="#">Earnings</a>
-      </li>
-      <li class="visible-xs-block">
-        <a class="small pb-4 trigger-drawer-item-entry" href="#drawer-item-entry" data-toggle="drawer">
-          <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
-      </li>
-    </ul>
-
-    <ul class="nav navbar-nav navbar-right hidden-xs">
-      <li>
-
-        <form class="navbar-form navbar-right" role="search">
-  <div class="form-group">
-    <input id="desktop-header-search" type="text" class="form-control" placeholder="Search" autocomplete="off">
-  </div>
-</form>
-
-      </li>
-      <li class="link">
-        <a class="small trigger-drawer-item-entry" href="#drawer-item-entry" data-toggle="drawer">
-          <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
-      </li>
-    </ul>
+    <!-- /.row -->
 
   </div>
+  <!-- END - UPPER SECTION -->
+
+  <!-- START - LOWER SECTION -->
+  <div class="container">
+
+    <div class="row d-flex align-items-center justify-content-center">
+
+      <!-- START - MOBILE NAV -->
+      <div class="navbar-header visible-xs-flex align-items-center">
+
+        <!-- hamburger toggle -->
+        <button class="navbar-toggle flex-fill" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <!-- mobile logo -->
+        <a href="index.html" class="navbar-brand navbar-brand--mobile flex-fill">
+          <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
+        </a>
+
+        <!-- mobile search -->
+        <!-- <ul class="nav navbar-nav navbar-right pull-right my-0 collapsed hidden-md hidden-lg" id="mobile-header-navbar">
+  <li class="mr-4"> -->
+<span>
+    <!-- <form class="navbar-form border-0 p-0 m-0" role="search"> -->
+      <!-- <div class="input-group"> -->
+        <!-- <input id="mobile-search-input" type="text" class="invisible d-inline-block" placeholder="Search" name="q" autocomplete="off"> -->
+        <div class="" id="mobile-search-toggle">
+          <span class="btn btn-icon py-2 px-4" type="submit" aria-label="Search">
+            <i class="lt-icon lt-search lt-medium"></i>
+          </span>
+        </div>
+      <!-- </div> -->
+    <!-- </form> -->
+  </span>
+
+  <!-- </li>
+</ul> -->
+
+      </div>
+      <!-- END - MOBILE NAV -->
+
+      <!-- START - MAIN MENU -->
+      <ul class="nav navbar-nav navbar-left navbar-collapse collapse pl-0">
+        <li class="active">
+          <a class="small pb-4" href="#">Products</a>
+        </li>
+        <li>
+          <a class="small pb-4" href="#">Orders</a>
+        </li>
+        <li>
+          <a class="small pb-4" href="#">Team</a>
+        </li>
+        <li>
+          <a class="small pb-4" href="#">Campaigns</a>
+        </li>
+        <li>
+          <a class="small pb-4" href="#">Customers</a>
+        </li>
+        <li>
+          <a class="small pb-4" href="#">Earnings</a>
+        </li>
+        <li>
+          <a class="small pb-4" href="#">Marketing Tools</a>
+        </li>
+        <li>
+          <a class="small pb-4" href="#">Education</a>
+        </li>
+      </ul>
+      <!-- END - MAIN MENU -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- END - LOWER SECTION -->
+
 </nav>
 <!-- END - PRIMARY NAV -->

@@ -179,9 +179,8 @@ mark,
 }
 
 // Contextual colors
-.text-muted {
-    color: $text-muted;
-}
+.text-default { color: $text-color; }
+.text-muted { color: $text-muted; }
 
 @include text-emphasis-variant(".text-primary", $brand-primary);
 
@@ -311,7 +310,7 @@ dd {
         @include clearfix;
 
         // Clear the floated `dt` if an empty `dd` is present
-   
+
     }
 
     @media (min-width: $dl-horizontal-breakpoint) {
@@ -377,7 +376,7 @@ blockquote {
             content: '\2014 \00A0';
 
             // em dash, nbsp
-       
+
         }
     }
 }
@@ -405,7 +404,7 @@ blockquote.pull-right {
             content: '\00A0 \2014';
 
             // nbsp, em dash
-       
+
         }
     }
 }

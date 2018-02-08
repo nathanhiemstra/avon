@@ -100,10 +100,16 @@ a {
   &.link-plain {
     color: $text-color;
     font-weight: normal;
+    .lt-icon, .lt-icon:before {
+      color: $text-color;
+    }
 
     &:hover,
     &:focus {
       text-decoration: none;
+      .lt-icon, .lt-icon:before {
+        color: $text-color;
+      }
     }
   }
 

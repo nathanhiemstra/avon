@@ -46,6 +46,18 @@ html:hover [class^="lt-"] {
 	-webkit-font-smoothing: antialiased;
 }
 
+.lt-large {
+	font-size: 1.8em;
+}
+
+.lt-medium {
+  font-size: 1.2em;
+}
+
+.lt-small {
+  font-size: 0.8em;
+}
+
 [class^="lt-"].after:before, [class*=" lt-"].after:before {
 	display: none;
 	content: '';

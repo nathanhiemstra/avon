@@ -227,14 +227,14 @@
     // Bars
     .icon-bar {
         display: block;
-        width: 22px;
-        height: 2px;
+        width: 24px;
+        height: 1px;
         border-radius: 1px;
         background-color: $brand-primary;
     }
 
     .icon-bar + .icon-bar {
-        margin-top: 4px;
+        margin-top: 6px;
     }
 
     @media (min-width: $grid-float-breakpoint) {
