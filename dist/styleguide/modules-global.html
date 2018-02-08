@@ -130,7 +130,7 @@
   
   
   
-    <h2 id="global-static-nav" class="bs-headline">Header Navigation - Static</h2>
+    <h2 id="global-static-nav" class="bs-headline">Header Navigation - Utility #2</h2>
 
 
 
@@ -245,12 +245,12 @@
 
 
   <pre><code class="language-twig"><script type="text/plain">
-  {% include components.groups.navigation.headerStatic %}
-  _includes/groups/navigation/header-static-nav.html.twig
+  {% include _includes/groups/navigation/header-utility-nav-2.html.twig %}
+  _includes/groups/navigation/header-utility-nav-2.html.twig
   </script></code></pre>
 
 
-    <h2 id="global-user-nav" class="bs-headline">Header Navigation - User</h2>
+    <h2 id="global-user-nav" class="bs-headline">Header Navigation - Utlity #1</h2>
 
 
 
@@ -353,8 +353,8 @@
 
 
   <pre><code class="language-twig"><script type="text/plain">
-  {% include components.groups.navigation.headerUser %}
-  _includes/groups/navigation/header-user-nav.html.twig
+  {% include _includes/groups/navigation/header-utility-nav-1.html.twig %}
+  _includes/groups/navigation/header-utility-nav-1.html.twig
   </script></code></pre>
 
 
@@ -659,7 +659,7 @@
 
 
   <pre><code class="language-twig"><script type="text/plain">
-  {% include components.groups.navigation.headerPrimary %}
+  {% include _includes/groups/navigation/header-primary-nav.html.twig %}
   _includes/groups/navigation/header-primary-nav.html.twig
   </script></code></pre>
 
@@ -685,7 +685,56 @@ The global header is composed of the three navs shown above: Static, User and Pr
         <!-- Nav Container -->
         <div class="container-fluid p-0 m-0 border-bottom">
 
-          <!-- Static top navbar -->
+          <!-- Utility nav 1 -->
+          <div class="col-xs-12 p-0 m-0 hidden-xs">
+            <!-- START - USER NAV -->
+<nav class="navbar navbar-default navbar-static-top navbar--user-nav border-0 m-0 p-0 d-flex">
+  <div class="container d-flex align-items-center">
+
+    <ul class="nav navbar-nav flex-fill">
+      <li class="">
+        <a class="small pl-2 trigger-drawer-item-entry link-primary text-uppercase" href="#drawer-item-entry" data-toggle="drawer">
+          <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
+      </li>
+      <li class="">
+        <a class="small pb-4 trigger-drawer-item-entry link-primary text-uppercase" href="#">
+          <span class="lt-icon lt-book pr-2" aria-hidden="true"></span>Brochures</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" id="estoreDrop" role="button" class="dropdown-toggle link-secondary" data-toggle="dropdown"><span class="lt-icon lt-home"></span> My eStore <b class="caret"></b></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="estoreDrop">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+        </ul>
+      </li>
+      <li>
+        <a class="link-secondary" href="#"><span class="lt-icon lt-tip"></span> Support</a>
+      </li>
+      <!-- <li>
+        <a href="#"><span class="profile-img"></span>Jane Johnson</a>
+      </li>
+      <li>
+        <a class="small" href="#">Profile</a>
+      </li>
+      <li>
+        <a class="small" href="#">Settings</a>
+      </li>
+      <li>
+        <a class="small" href="#">Español</a>
+      </li>
+      <li>
+        <a class="small" href="#">Log Out</a>
+      </li> -->
+    </ul>
+  </div>
+</nav>
+<!-- END - USER NAV -->
+          </div>
+
+          <!-- Utility nav 2 -->
           <div class="col-xs-12 p-0 m-0 hidden-xs">
             <!-- START - STATIC NAV -->
 <nav class="navbar navbar-inverse navbar-static-top navbar--static-nav border-0 m-0 d-flex">
@@ -738,55 +787,6 @@ The global header is composed of the three navs shown above: Static, User and Pr
   </div>
 </nav>
 <!-- END - STATIC NAV -->
-          </div>
-
-          <!-- User navbar -->
-          <div class="col-xs-12 p-0 m-0 hidden-xs">
-            <!-- START - USER NAV -->
-<nav class="navbar navbar-default navbar-static-top navbar--user-nav border-0 m-0 p-0 d-flex">
-  <div class="container d-flex align-items-center">
-
-    <ul class="nav navbar-nav flex-fill">
-      <li class="">
-        <a class="small pl-2 trigger-drawer-item-entry link-primary text-uppercase" href="#drawer-item-entry" data-toggle="drawer">
-          <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
-      </li>
-      <li class="">
-        <a class="small pb-4 trigger-drawer-item-entry link-primary text-uppercase" href="#">
-          <span class="lt-icon lt-book pr-2" aria-hidden="true"></span>Brochures</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <a href="#" id="estoreDrop" role="button" class="dropdown-toggle link-secondary" data-toggle="dropdown"><span class="lt-icon lt-home"></span> My eStore <b class="caret"></b></a>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="estoreDrop">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="link-secondary" href="#"><span class="lt-icon lt-tip"></span> Support</a>
-      </li>
-      <!-- <li>
-        <a href="#"><span class="profile-img"></span>Jane Johnson</a>
-      </li>
-      <li>
-        <a class="small" href="#">Profile</a>
-      </li>
-      <li>
-        <a class="small" href="#">Settings</a>
-      </li>
-      <li>
-        <a class="small" href="#">Español</a>
-      </li>
-      <li>
-        <a class="small" href="#">Log Out</a>
-      </li> -->
-    </ul>
-  </div>
-</nav>
-<!-- END - USER NAV -->
           </div>
 
         </div>
@@ -1598,7 +1598,56 @@ The global header is composed of the three navs shown above: Static, User and Pr
         <!-- Nav Container -->
         <div class="container-fluid p-0 m-0 border-bottom">
 
-          <!-- Static top navbar -->
+          <!-- Utility nav 1 -->
+          <div class="col-xs-12 p-0 m-0 hidden-xs">
+            <!-- START - USER NAV -->
+<nav class="navbar navbar-default navbar-static-top navbar--user-nav border-0 m-0 p-0 d-flex">
+  <div class="container d-flex align-items-center">
+
+    <ul class="nav navbar-nav flex-fill">
+      <li class="">
+        <a class="small pl-2 trigger-drawer-item-entry link-primary text-uppercase" href="#drawer-item-entry" data-toggle="drawer">
+          <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
+      </li>
+      <li class="">
+        <a class="small pb-4 trigger-drawer-item-entry link-primary text-uppercase" href="#">
+          <span class="lt-icon lt-book pr-2" aria-hidden="true"></span>Brochures</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" id="estoreDrop" role="button" class="dropdown-toggle link-secondary" data-toggle="dropdown"><span class="lt-icon lt-home"></span> My eStore <b class="caret"></b></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="estoreDrop">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+        </ul>
+      </li>
+      <li>
+        <a class="link-secondary" href="#"><span class="lt-icon lt-tip"></span> Support</a>
+      </li>
+      <!-- <li>
+        <a href="#"><span class="profile-img"></span>Jane Johnson</a>
+      </li>
+      <li>
+        <a class="small" href="#">Profile</a>
+      </li>
+      <li>
+        <a class="small" href="#">Settings</a>
+      </li>
+      <li>
+        <a class="small" href="#">Español</a>
+      </li>
+      <li>
+        <a class="small" href="#">Log Out</a>
+      </li> -->
+    </ul>
+  </div>
+</nav>
+<!-- END - USER NAV -->
+          </div>
+
+          <!-- Utility nav 2 -->
           <div class="col-xs-12 p-0 m-0 hidden-xs">
             <!-- START - STATIC NAV -->
 <nav class="navbar navbar-inverse navbar-static-top navbar--static-nav border-0 m-0 d-flex">
@@ -1651,55 +1700,6 @@ The global header is composed of the three navs shown above: Static, User and Pr
   </div>
 </nav>
 <!-- END - STATIC NAV -->
-          </div>
-
-          <!-- User navbar -->
-          <div class="col-xs-12 p-0 m-0 hidden-xs">
-            <!-- START - USER NAV -->
-<nav class="navbar navbar-default navbar-static-top navbar--user-nav border-0 m-0 p-0 d-flex">
-  <div class="container d-flex align-items-center">
-
-    <ul class="nav navbar-nav flex-fill">
-      <li class="">
-        <a class="small pl-2 trigger-drawer-item-entry link-primary text-uppercase" href="#drawer-item-entry" data-toggle="drawer">
-          <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
-      </li>
-      <li class="">
-        <a class="small pb-4 trigger-drawer-item-entry link-primary text-uppercase" href="#">
-          <span class="lt-icon lt-book pr-2" aria-hidden="true"></span>Brochures</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <a href="#" id="estoreDrop" role="button" class="dropdown-toggle link-secondary" data-toggle="dropdown"><span class="lt-icon lt-home"></span> My eStore <b class="caret"></b></a>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="estoreDrop">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="link-secondary" href="#"><span class="lt-icon lt-tip"></span> Support</a>
-      </li>
-      <!-- <li>
-        <a href="#"><span class="profile-img"></span>Jane Johnson</a>
-      </li>
-      <li>
-        <a class="small" href="#">Profile</a>
-      </li>
-      <li>
-        <a class="small" href="#">Settings</a>
-      </li>
-      <li>
-        <a class="small" href="#">Español</a>
-      </li>
-      <li>
-        <a class="small" href="#">Log Out</a>
-      </li> -->
-    </ul>
-  </div>
-</nav>
-<!-- END - USER NAV -->
           </div>
 
         </div>

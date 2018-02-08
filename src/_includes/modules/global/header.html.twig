@@ -7,26 +7,26 @@
         <!-- Nav Container -->
         <div class="container-fluid p-0 m-0 border-bottom">
 
-          <!-- Static top navbar -->
+          <!-- Utility nav 1 -->
           <div class="col-xs-12 p-0 m-0 hidden-xs">
-            {% include components.groups.navigation.headerStatic %}
+            {% include '_includes/groups/navigation/header-utility-nav-1.html.twig' %}
           </div>
 
-          <!-- User navbar -->
+          <!-- Utility nav 2 -->
           <div class="col-xs-12 p-0 m-0 hidden-xs">
-            {% include components.groups.navigation.headerUser %}
+            {% include '_includes/groups/navigation/header-utility-nav-2.html.twig' %}
           </div>
 
         </div>
 
         <!-- Primary navbar -->
-        {% include components.groups.navigation.headerPrimary %}
+        {% include '_includes/groups/navigation/header-primary-nav.html.twig' %}
 
         <!-- Global alert message -->
-        {% include components.modules.global.alertMessage %}
+        {% include '_includes/modules/global/alert-message.html.twig' %}
 
         <!-- Item entry drawer -->
-        {% include components.modules.itemEntry.drawer %}
+        {% include '_includes/modules/item-entry/item-entry.html.twig' %}
 
       </header>
 

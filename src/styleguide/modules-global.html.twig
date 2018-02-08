@@ -31,19 +31,19 @@
   {# GLOBAL - MAIN NAVIGATIONS #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Header Navigation - Static",
+    title:        "Header Navigation - Utility #2",
     slug:         "global-static-nav",
-    twig:         "components.groups.navigation.headerStatic",
-    path:         components.groups.navigation.headerStatic
+    twig:         "_includes/groups/navigation/header-utility-nav-2.html.twig",
+    path:         "_includes/groups/navigation/header-utility-nav-2.html.twig"
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
 
   {% set styleguideItem = {
-    title:        "Header Navigation - User",
+    title:        "Header Navigation - Utlity #1",
     slug:         "global-user-nav",
-    twig:         "components.groups.navigation.headerUser",
-    path:         components.groups.navigation.headerUser
+    twig:         "_includes/groups/navigation/header-utility-nav-1.html.twig",
+    path:         "_includes/groups/navigation/header-utility-nav-1.html.twig"
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -51,8 +51,8 @@
   {% set styleguideItem = {
     title:        "Header Navigation - Primary",
     slug:         "global-primary-nav",
-    twig:         "components.groups.navigation.headerPrimary",
-    path:         components.groups.navigation.headerPrimary
+    twig:         "_includes/groups/navigation/header-primary-nav.html.twig",
+    path:         "_includes/groups/navigation/header-primary-nav.html.twig"
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
@@ -98,12 +98,12 @@
 
   <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
   <div class="bs-example">
-    {% include components.modules.itemEntry.drawer with {isInStyleguide: true} %}
+    {% include "_includes/modules/item-entry/item-entry.html.twig" with {isInStyleguide: true} %}
   </div>
 
   {# Markup #}
   {{ highlightMarkup }}
-    {% include components.modules.itemEntry.drawer with {isInStyleguide: true} %}
+    {% include "_includes/modules/item-entry/item-entry.html.twig" with {isInStyleguide: true} %}
   {{ endhighlight }}
 
 

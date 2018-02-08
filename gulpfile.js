@@ -138,9 +138,6 @@ gulp.task('compile', function () {
                   radioAndLabel:    prefix.groups + "forms/radio-and-label.html.twig"
                 },
                 navigation: {
-                  headerStatic:     prefix.groups + "navigation/header-static-nav.html.twig",
-                  headerUser:       prefix.groups + "navigation/header-user-nav.html.twig",
-                  headerPrimary:    prefix.groups + "navigation/header-primary-nav.html.twig",
                   breadcrumbs:      prefix.groups + "navigation/breadcrumb.html.twig"
                 },
 
@@ -171,11 +168,7 @@ gulp.task('compile', function () {
                   reviewComplete:   prefix.modules + "checkout/review-complete.html.twig",
                   quickCheckout:    prefix.modules + "checkout/quick-checkout.html.twig",
                 },
-                itemEntry: {
-                  drawer:         prefix.modules + "item-entry/item-entry.html.twig"
-                },
                 global: {
-                  alertMessage:   prefix.modules + "global/alert-message.html.twig",
                   footer:         prefix.modules + "global/footer.html.twig",
                   header:         prefix.modules + "global/header.html.twig",
                   drawer: {
