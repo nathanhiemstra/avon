@@ -157,6 +157,7 @@
     <!-- END - LOGOS SECTION -->
 
     <!-- BEGIN - ACCOUNT SECTION -->
+    <!-- TODO :: make this nav an include, we're using it in mobile menu also -->
     <ul class="nav navbar-nav navbar-right">
       <li>
         <a href="#">
@@ -211,6 +212,7 @@
     <!-- END - LOGOS SECTION -->
 
     <!-- BEGIN - ACCOUNT SECTION -->
+    <!-- TODO :: make this nav an include, we're using it in mobile menu also -->
     <ul class="nav navbar-nav navbar-right">
       <li>
         <a href="#">
@@ -439,32 +441,62 @@
       <!-- END - MOBILE NAV -->
 
       <!-- START - MAIN MENU -->
-      <ul class="nav navbar-nav navbar-left navbar-collapse collapse pl-0">
-        <li class="active">
-          <a class="small pb-4" href="#">Products</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Orders</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Team</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Campaigns</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Customers</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Earnings</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Marketing Tools</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Education</a>
-        </li>
-      </ul>
+      <div class="nav navbar-nav navbar-collapse collapse">
+
+        <!-- BEGIN - ACCOUNT SECTION -->
+        <!-- TODO :: make this nav an include, we're using it in mobile menu also, classes are different here though -->
+        <ul class="nav navbar-nav navbar-header visible-xs-flex">
+          <li>
+            <a href="#">
+              <span class="profile-img visible-xs-inline"></span>
+              <span class="text-uppercase">Jane Johnson</span>
+            </a>
+          </li>
+          <!-- TODO :: make below dropdown an include -->
+          <li class="dropdown">
+            <a href="#" id="accountDrop" role="button" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="accountDrop">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="small" href="#">Español</a>
+          </li>
+          <li>
+            <a class="small" href="#">Log Out</a>
+          </li>
+        </ul>
+        <!-- END - ACCOUNT SECTION -->
+
+        <ul class="nav navbar-nav navbar-list">
+          <li class="active">
+            <a class="small pb-4" href="#">Products</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Orders</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Team</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Campaigns</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Customers</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Earnings</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Marketing Tools</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Education</a>
+          </li>
+        </ul>
+      </div>
       <!-- END - MAIN MENU -->
 
     </div>
@@ -557,32 +589,62 @@
       <!-- END - MOBILE NAV -->
 
       <!-- START - MAIN MENU -->
-      <ul class="nav navbar-nav navbar-left navbar-collapse collapse pl-0">
-        <li class="active">
-          <a class="small pb-4" href="#">Products</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Orders</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Team</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Campaigns</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Customers</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Earnings</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Marketing Tools</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Education</a>
-        </li>
-      </ul>
+      <div class="nav navbar-nav navbar-collapse collapse">
+
+        <!-- BEGIN - ACCOUNT SECTION -->
+        <!-- TODO :: make this nav an include, we're using it in mobile menu also, classes are different here though -->
+        <ul class="nav navbar-nav navbar-header visible-xs-flex">
+          <li>
+            <a href="#">
+              <span class="profile-img visible-xs-inline"></span>
+              <span class="text-uppercase">Jane Johnson</span>
+            </a>
+          </li>
+          <!-- TODO :: make below dropdown an include -->
+          <li class="dropdown">
+            <a href="#" id="accountDrop" role="button" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="accountDrop">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="small" href="#">Español</a>
+          </li>
+          <li>
+            <a class="small" href="#">Log Out</a>
+          </li>
+        </ul>
+        <!-- END - ACCOUNT SECTION -->
+
+        <ul class="nav navbar-nav navbar-list">
+          <li class="active">
+            <a class="small pb-4" href="#">Products</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Orders</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Team</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Campaigns</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Customers</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Earnings</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Marketing Tools</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Education</a>
+          </li>
+        </ul>
+      </div>
       <!-- END - MAIN MENU -->
 
     </div>
@@ -647,6 +709,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
     <!-- END - LOGOS SECTION -->
 
     <!-- BEGIN - ACCOUNT SECTION -->
+    <!-- TODO :: make this nav an include, we're using it in mobile menu also -->
     <ul class="nav navbar-nav navbar-right">
       <li>
         <a href="#">
@@ -807,32 +870,62 @@ The global header is composed of the three navs shown above: Static, User and Pr
       <!-- END - MOBILE NAV -->
 
       <!-- START - MAIN MENU -->
-      <ul class="nav navbar-nav navbar-left navbar-collapse collapse pl-0">
-        <li class="active">
-          <a class="small pb-4" href="#">Products</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Orders</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Team</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Campaigns</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Customers</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Earnings</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Marketing Tools</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Education</a>
-        </li>
-      </ul>
+      <div class="nav navbar-nav navbar-collapse collapse">
+
+        <!-- BEGIN - ACCOUNT SECTION -->
+        <!-- TODO :: make this nav an include, we're using it in mobile menu also, classes are different here though -->
+        <ul class="nav navbar-nav navbar-header visible-xs-flex">
+          <li>
+            <a href="#">
+              <span class="profile-img visible-xs-inline"></span>
+              <span class="text-uppercase">Jane Johnson</span>
+            </a>
+          </li>
+          <!-- TODO :: make below dropdown an include -->
+          <li class="dropdown">
+            <a href="#" id="accountDrop" role="button" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="accountDrop">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="small" href="#">Español</a>
+          </li>
+          <li>
+            <a class="small" href="#">Log Out</a>
+          </li>
+        </ul>
+        <!-- END - ACCOUNT SECTION -->
+
+        <ul class="nav navbar-nav navbar-list">
+          <li class="active">
+            <a class="small pb-4" href="#">Products</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Orders</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Team</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Campaigns</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Customers</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Earnings</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Marketing Tools</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Education</a>
+          </li>
+        </ul>
+      </div>
       <!-- END - MAIN MENU -->
 
     </div>
@@ -1529,6 +1622,7 @@ The global header is composed of the three navs shown above: Static, User and Pr
     <!-- END - LOGOS SECTION -->
 
     <!-- BEGIN - ACCOUNT SECTION -->
+    <!-- TODO :: make this nav an include, we're using it in mobile menu also -->
     <ul class="nav navbar-nav navbar-right">
       <li>
         <a href="#">
@@ -1689,32 +1783,62 @@ The global header is composed of the three navs shown above: Static, User and Pr
       <!-- END - MOBILE NAV -->
 
       <!-- START - MAIN MENU -->
-      <ul class="nav navbar-nav navbar-left navbar-collapse collapse pl-0">
-        <li class="active">
-          <a class="small pb-4" href="#">Products</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Orders</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Team</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Campaigns</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Customers</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Earnings</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Marketing Tools</a>
-        </li>
-        <li>
-          <a class="small pb-4" href="#">Education</a>
-        </li>
-      </ul>
+      <div class="nav navbar-nav navbar-collapse collapse">
+
+        <!-- BEGIN - ACCOUNT SECTION -->
+        <!-- TODO :: make this nav an include, we're using it in mobile menu also, classes are different here though -->
+        <ul class="nav navbar-nav navbar-header visible-xs-flex">
+          <li>
+            <a href="#">
+              <span class="profile-img visible-xs-inline"></span>
+              <span class="text-uppercase">Jane Johnson</span>
+            </a>
+          </li>
+          <!-- TODO :: make below dropdown an include -->
+          <li class="dropdown">
+            <a href="#" id="accountDrop" role="button" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="accountDrop">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="small" href="#">Español</a>
+          </li>
+          <li>
+            <a class="small" href="#">Log Out</a>
+          </li>
+        </ul>
+        <!-- END - ACCOUNT SECTION -->
+
+        <ul class="nav navbar-nav navbar-list">
+          <li class="active">
+            <a class="small pb-4" href="#">Products</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Orders</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Team</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Campaigns</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Customers</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Earnings</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Marketing Tools</a>
+          </li>
+          <li>
+            <a class="small pb-4" href="#">Education</a>
+          </li>
+        </ul>
+      </div>
       <!-- END - MAIN MENU -->
 
     </div>
