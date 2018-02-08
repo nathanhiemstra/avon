@@ -5,12 +5,12 @@
         <img src="{{ imgUrl }}" class="product-img img-responsive">
       </div>
       <div class="col col-xs-9 col-md-8">
-        <p class="title">{{ itemTitle }}</p>
+        <p class="title link-plain">{{ itemTitle }}</p>
         <p>
           <span class="sale-price">{{ itemPrice }}</span>
-          <span class="reg-price small">Regular Price: {{ regPrice }}</span>
+          <span class="reg-price small link-plain">Regular Price: <span class="strike-through">{{ regPrice }}</span></span>
         </p>
-        <p>
+        {# <p>
           <span class="rating small">
             {% include components.elements.ratings.selected %}
             {% include components.elements.ratings.selected %}
@@ -20,7 +20,7 @@
             <span class="num-ratings">{{ numRatings }}</span>
           </span>
           <span class="stock small"><span class="lt-icon lt-checkmark" aria-hidden="true"></span> {{ stockStatus }}</span>
-        </p>
+        </p> #}
       </div>
       <div class="col col-xs-0 col-md-2">
         <!-- <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button> -->

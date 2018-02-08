@@ -1,0 +1,153 @@
+{# styleguide/index.html.twig #}
+{% set title = "Code Snippets" %}
+{% set slug = "code-snippets" %}
+{% extends "styleguide/_layouts/styleguide-main.html.twig" %}
+
+{# DEFINE BLOCK - STYLEGUIDE CONTENT #}
+{% block styleguideContent %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# SECTION -  FORMS #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+<div class="bs-docs-section">
+  <h1 id="code-snippets" class="page-header">Code Snippets</h1>
+
+  
+
+  <h2 id="facebook-login">Facebook Login Button</h2>
+  <p>Example code withing Avon's live home page code.</p>
+
+  <div class="bs-example">
+    
+    
+    
+    <!-- START - NEW FROM S4DC -->
+    <!-- Demo: https://codepen.io/studio4dc/pen/mXOBjm -->
+    <style>
+      .login-facebook {
+        margin-top: 20px;
+      }
+      .login-facebook img {
+        width: 100%;
+      }
+      .login-divider {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: #666;
+        overflow: hidden;
+        text-align: center;
+      }
+      .login-divider span {
+        display: inline-block;
+        position: relative; 
+        line-height: 0.5;
+      }
+      .login-divider span:before,
+      .login-divider span:after {
+        content: "";
+        position: absolute;
+        height: 5px;
+        border-bottom: 1px solid #CCC;
+        top: 0;
+        width: 1000px;
+      }
+      .login-divider span:before {
+        right: 100%;
+        margin-right: 15px;
+      }
+      .login-divider span:after {
+        left: 100%;
+        margin-left: 15px;
+      }
+    </style>
+
+    <div class="form-group">
+      <div class="login-divider"><span>or</span></div>
+      <a href="#" class="login-facebook">
+        <img src="https://scontent.ford1-1.fna.fbcdn.net/v/t39.2365-6/17639236_1785253958471956_282550797298827264_n.png?oh=8ba4730dd8728f6fc0a63c7c6f924739&amp;oe=5AD919EA" alt="Continue with Facebook">
+      </a>
+    </div>
+    <!-- END - NEW FROM S4DC -->
+
+
+
+  </div><!-- /.bs-example -->
+
+  
+  {{ highlightMarkup }}
+  <form class="login ng-pristine ng-invalid ng-invalid-required ng-submitted ng-valid-pattern ng-valid-maxlength" name="login" id="login" novalidate="" method="post">
+
+    <div id="error-msg" ng-show="login.$submitted &amp;&amp; (login.userId.$touched || login.userId.$untouched 
+        || login.password.$touched || login.password.$untouched)" class="ng-hide" aria-hidden="true">
+      <span class="has-error ng-binding" ng-show="login.userId.$error.required || 
+        login.password.$error.required" aria-hidden="false">
+        All fields required.</span> <span ng-hide="login.userId.$error.required || 
+        login.password.$error.required" class="has-error ng-binding ng-hide" aria-hidden="true">  </span>
+    </div>
+
+    <div class="form-group">
+      <input id="user_id" class="form-control textinput ng-pristine ng-invalid ng-invalid-required ng-touched ng-untouched ng-isolate-scope ng-valid-pattern ng-valid-maxlength" name="userId" numeric="" ng-trim="false" ng-pattern="/^[0-9]*$/" type="text" required="" ng-model="userId" maxlength="8" size="8" placeholder="Account Number" onfocus="this.ph=this.placeholder;this.placeholder=''" onblur="this.placeholder=this.ph" focus="true" style="cursor: auto; background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;" aria-invalid="true">
+      <label class="control-label ng-binding" for="userId">Account Number</label>
+    </div>
+
+    <div class="form-group">
+      <input id="password" class="form-control textinput ng-pristine ng-invalid ng-invalid-required ng-touched ng-untouched" name="password" type="password" required="" ng-model="password" placeholder="Password" onfocus="this.ph=this.placeholder;this.placeholder=''" onblur="this.placeholder=this.ph" style="cursor: auto; background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;" aria-invalid="true">
+      <label class="control-label ng-binding" for="password">Password</label>
+    </div>
+
+    <input id="login_submit" type="submit" class="btn btn-primary" ng-click="login.$valid &amp;&amp; doLogin()" ng-disabled="isDisabled" value="Log In"> <a class="forgot-pwd ng-binding" ng-click="pswdHint()">Forgot your password?</a>
+    
+    <!-- START - NEW FROM S4DC -->
+    <!-- Demo: https://codepen.io/studio4dc/pen/mXOBjm -->
+    <style>
+      .login-facebook {
+        margin-top: 20px;
+      }
+      .login-facebook img {
+        width: 100%;
+      }
+      .login-divider {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: #666;
+        overflow: hidden;
+        text-align: center;
+      }
+      .login-divider span {
+        display: inline-block;
+        position: relative; 
+        line-height: 0.5;
+      }
+      .login-divider span:before,
+      .login-divider span:after {
+        content: "";
+        position: absolute;
+        height: 5px;
+        border-bottom: 1px solid #CCC;
+        top: 0;
+        width: 1000px;
+      }
+      .login-divider span:before {
+        right: 100%;
+        margin-right: 15px;
+      }
+      .login-divider span:after {
+        left: 100%;
+        margin-left: 15px;
+      }
+    </style>
+
+    <div class="form-group">
+      <div class="login-divider"><span>or</span></div>
+      <a href="#" class="login-facebook">
+        <img src="https://scontent.ford1-1.fna.fbcdn.net/v/t39.2365-6/17639236_1785253958471956_282550797298827264_n.png?oh=8ba4730dd8728f6fc0a63c7c6f924739&amp;oe=5AD919EA" alt="Continue with Facebook">
+      </a>
+    </div>
+    <!-- END - NEW FROM S4DC -->
+
+  </form>
+  {{ endhighlight }}
+
+</div>
+
+{% endblock %}
