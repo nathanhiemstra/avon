@@ -108,20 +108,20 @@ a {
 
 // Reverse link
 .link-reverse-plain {
-  color: $white;
+  color: $white !important;
 
   .lt-icon,
   .lt-icon:before {
-    color: $white;
+    color: $white !important;
   }
 
   &:focus,
   &:hover {
-    color: $white;
+    color: $white !important;
 
     .lt-icon,
     .lt-icon:before {
-      color: $white;
+      color: $white !important;
     }
   }
 }

@@ -420,12 +420,12 @@
 
           <!-- hamburger toggle -->
           <a class="flex-fill ml-0">
-            <span class="lt-icon lt-left"></span>
-            <span class=""> Ordering</span>
+            <span class="lt-icon lt-left lt-medium mr-2"></span>
+            <span class="text-light"> Products</span>
           </a>
 
           <!-- close button -->
-          <button class="navbar-toggle link-reverse-plain mr-0" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-products">
+          <button class="navbar-toggle link-reverse-plain mr-0 mt-1" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-products">
             <span class="sr-only">Close navigation</span>
             <span class="lt-icon lt-close lt-medium pb-0"></span>
           </button>
@@ -435,35 +435,47 @@
 
         <!-- START - PRODUCTS SUB-MENU LIST -->
         <ul class="nav navbar-nav navbar-sub__sub-list m-0 visible-xs-block">
-          <li>
-            <a class="pb-4" data-toggle="collapse" data-target="#submenu-cat1">Category</a>
+          <li class="sub-list-item">
+            <a class="link-reverse-plain py-4 collapsed" data-toggle="collapse" data-target="#submenu-cat1">Category<span class="lt-icon lt-plus lt-medium pull-right mt-1"></span></a>
             <div id="submenu-cat1" class="collapse navbar-sub__sub-child">
-              <ul class="list-unstyled text-uppercase pl-5">
-                <li class="small">Item</li>
-                <li class="small">Item</li>
-                <li class="small">Item</li>
-                <li class="small">Item</li>
-                <li class="small">Item</li>
+              <ul class="nav list-unstyled text-uppercase">
+                <li class="small">
+                  <a class="link-reverse-plain pl-5 py-4 collapsed" data-toggle="collapse" data-target="#submenu-subcat1">Eye<span class="lt-icon lt-plus lt-medium pull-right mt-1"></span></a>
+                  <div id="submenu-subcat1" class="collapse navbar-sub__sub-child">
+                    <ul class="nav list-unstyled text-uppercase pl-5 pr-4">
+                      <li class="small py-4"><a class="link-reverse-plain">Mascara</a></li>
+                      <li class="small py-4"><a class="link-reverse-plain">Eyeshadow</a></li>
+                      <li class="small py-4"><a class="link-reverse-plain">Eye Liner</a></li>
+                      <li class="small py-4"><a class="link-reverse-plain">Brows</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="small"><a class="link-reverse-plain pl-5 py-4">Lips</a></li>
+                <li class="small"><a class="link-reverse-plain pl-5 py-4">Face</a></li>
+                <li class="small"><a class="link-reverse-plain pl-5 py-4">Nails</a></li>
+                <li class="small"><a class="link-reverse-plain pl-5 py-4">Tools &amp; Brushes</a></li>
+                <li class="small"><a class="link-reverse-plain pl-5 py-4">Features</a></li>
+                <li class="small"><a class="link-reverse-plain pl-5 py-4">Brands</a></li>
               </ul>
             </div>
           </li>
-          <li>
-            <a class="pb-4" href="#">Category</a>
+          <li class="sub-list-item">
+            <a class="link-reverse-plain py-4 collapsed" href="#">Category</a>
           </li>
-          <li>
-            <a class="pb-4" href="#">Category</a>
+          <li class="sub-list-item">
+            <a class="link-reverse-plain py-4 collapsed" href="#">Category</a>
           </li>
-          <li>
-            <a class="pb-4" href="#">Category</a>
+          <li class="sub-list-item">
+            <a class="link-reverse-plain py-4 collapsed" href="#">Category</a>
           </li>
-          <li>
-            <a class="pb-4" href="#">Category</a>
+          <li class="sub-list-item">
+            <a class="link-reverse-plain py-4 collapsed" href="#">Category</a>
           </li>
-          <li>
-            <a class="pb-4" href="#">Category</a>
+          <li class="sub-list-item">
+            <a class="link-reverse-plain py-4 collapsed" href="#">Category</a>
           </li>
-          <li>
-            <a class="pb-4" href="#">Category</a>
+          <li class="sub-list-item">
+            <a class="link-reverse-plain py-4 collapsed" href="#">Category</a>
           </li>
         </ul>
         <!-- END - PRODUCTS SUB-MENU LIST -->

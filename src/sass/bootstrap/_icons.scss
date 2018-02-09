@@ -48,15 +48,15 @@ html:hover [class^="lt-"] {
 
 // TODO :: add these size classes to styleguide
 .lt-large {
-	font-size: 1.8em !important;
+	font-size: 28px !important;
 }
 
 .lt-medium {
-  font-size: 1.3em !important;
+  font-size: 20px !important;
 }
 
 .lt-small {
-  font-size: 0.8em !important;
+  font-size: 12px !important;
 }
 
 [class^="lt-"].after:before, [class*=" lt-"].after:before {
