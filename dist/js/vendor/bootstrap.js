@@ -627,6 +627,40 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
     $target.collapse(option)
   })
 
+
+
+  // COLLAPSE OFF-CANVAS DATA-API
+  // =================
+
+  // mobile menu slide from the left
+  // $('[data-toggle="slide-collapse"]').on('click', function() {
+  //   $navMenuCont = $($(this).data('target'));
+  //   $navMenuCont.animate({'width':'toggle'}, 350);
+  // });
+
+  $(document).on('click.bs.collapse.data-api', '[data-toggle=off-canvas-collapse]', function (e) {
+    var $this   = $(this), href
+    var target  = $this.attr('data-target')
+        || e.preventDefault()
+        || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
+    var $target = $(target)
+    var data    = $target.data('bs.collapse')
+    var option  = data ? 'toggle' : $this.data()
+    var parent  = $this.attr('data-parent')
+    var $parent = parent && $(parent)
+    
+    console.log(data, option);
+
+    $target.toggleClass('collapse--off-canvas');
+
+    // if (!data || !data.transitioning) {
+    //   if ($parent) $parent.find('[data-toggle=off-canvas-collapse][data-parent="' + parent + '"]').not($this).addClass('collapsed')
+    //   $this[$target.hasClass('in') ? 'addClass' : 'removeClass']('collapsed')
+    // }
+    //
+    // $target.collapse(option)
+  })
+
 }(jQuery);
 
 /* ========================================================================

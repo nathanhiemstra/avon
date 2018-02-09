@@ -28,11 +28,11 @@
 
     <div class="row d-flex align-items-center justify-content-center">
 
-      <!-- START - MOBILE NAV -->
+      <!-- START - MOBILE HEADER -->
       <div class="navbar-header visible-xs-flex align-items-center">
 
         <!-- hamburger toggle -->
-        <button class="navbar-toggle flex-fill" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <button class="navbar-toggle flex-fill" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -48,64 +48,153 @@
         {% include components.modules.search.searchInput %}
 
       </div>
-      <!-- END - MOBILE NAV -->
+      <!-- END - MOBILE HEADER -->
+
+      <!-- TODO :: remove js that sets menu to height: auto; add .menu-open class to body to prevent double scrollbars -->
 
       <!-- START - MAIN MENU -->
-      <div class="nav navbar-nav navbar-collapse collapse">
+      <div class="nav navbar-nav navbar-main navbar-collapse off-canvas">
 
-        <!-- BEGIN - ACCOUNT SECTION -->
+        <!-- BEGIN - MOBILE NAV HEADER SECTION -->
         <!-- TODO :: make this nav an include, we're using it in mobile menu also, classes are different here though -->
-        <ul class="nav navbar-nav navbar-header visible-xs-flex">
+        <ul class="nav navbar-main__header visible-xs-flex flex-column list-unstyled">
+
           <li>
-            <a href="#">
-              <span class="profile-img visible-xs-inline"></span>
-              <span class="text-uppercase">Jane Johnson</span>
+            <!-- User info -->
+            <a href="#" class="link-reverse-plain pull-left">
+              <span class="profile-img visible-xs-inline-block align-middle mr-3"></span>
+              <span class="text-uppercase d-inline-block align-middle">Jane Johnson</span>
             </a>
+            <!-- close button -->
+            <button class="navbar-toggle link-reverse-plain" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Close navigation</span>
+              <span class="lt-icon lt-close lt-large"></span>
+            </button>
           </li>
-          <!-- TODO :: make below dropdown an include -->
-          <li class="dropdown">
-            <a href="#" id="accountDrop" role="button" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="accountDrop">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+
+          <li>
+            <ul class="nav d-flex">
+              <!-- TODO :: make below dropdown an include, lot's of different classes though -->
+              <li class="dropdown flex-fill">
+                <a href="#" id="accountDrop" role="button" class="dropdown-toggle link-reverse-plain small underline" data-toggle="dropdown">My Account
+                  <b class="caret text-primary"></b>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="accountDrop">
+                  <li role="presentation">
+                    <a class="link-reverse-plain" role="menuitem" tabindex="-1" href="#">Something</a>
+                  </li>
+                  <li role="presentation">
+                    <a class="link-reverse-plain" role="menuitem" tabindex="-1" href="#">Another action</a>
+                  </li>
+                  <li role="presentation">
+                    <a class="link-reverse-plain" role="menuitem" tabindex="-1" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="small underline link-reverse-plain" href="#">Español</a>
+              </li>
+              <li>
+                <a class="small underline link-reverse-plain" href="#">Log Out</a>
+              </li>
             </ul>
           </li>
-          <li>
-            <a class="small" href="#">Español</a>
-          </li>
-          <li>
-            <a class="small" href="#">Log Out</a>
-          </li>
-        </ul>
-        <!-- END - ACCOUNT SECTION -->
 
-        <ul class="nav navbar-nav navbar-list">
+        </ul>
+        <!-- END - MOBILE NAV HEADER SECTION -->
+
+        <!-- START - MAIN MENU LIST -->
+        <ul class="nav navbar-nav navbar-main__list m-0">
           <li class="active">
-            <a class="small pb-4" href="#">Products</a>
+            <a class="pb-4" href="#">Products</a>
           </li>
           <li>
-            <a class="small pb-4" href="#">Orders</a>
+            <a class="pb-4" href="#">Orders</a>
           </li>
           <li>
-            <a class="small pb-4" href="#">Team</a>
+            <a class="pb-4" href="#">Team</a>
           </li>
           <li>
-            <a class="small pb-4" href="#">Campaigns</a>
+            <a class="pb-4" href="#">Campaigns</a>
           </li>
           <li>
-            <a class="small pb-4" href="#">Customers</a>
+            <a class="pb-4" href="#">Customers</a>
           </li>
           <li>
-            <a class="small pb-4" href="#">Earnings</a>
+            <a class="pb-4" href="#">Earnings</a>
           </li>
           <li>
-            <a class="small pb-4" href="#">Marketing Tools</a>
+            <a class="pb-4" href="#">Marketing Tools</a>
           </li>
           <li>
-            <a class="small pb-4" href="#">Education</a>
+            <a class="pb-4" href="#">Education</a>
           </li>
         </ul>
+        <!-- END - MAIN MENU LIST -->
+
+        <!-- START - MOBILE NAV FOOTER SECTION -->
+        <div class="nav navbar-main__footer visible-xs-block container m-0 p-4">
+
+          <!-- BEGIN - BUTTONS -->
+          <ul class="list-unstyled row my-1">
+            <li class="col-xs-6 text-center pr-2">
+              <button class="btn btn-primary w-100">
+                <i class="lt-icon lt-home mr-2"></i>My Store</button>
+            </li>
+            <li class="col-xs-6 text-center pl-2">
+              <button class="btn btn-primary w-100">
+                <i class="lt-icon lt-tip mr-2"></i>Support</button>
+            </li>
+          </ul>
+          <!-- END - BUTTONS -->
+
+          <!-- BEGIN - LOGOS SECTION -->
+          <!-- TODO :: make this an include, also being used in mobile menu, needs passable classes -->
+          <ul class="list-unstyled d-flex flex-row flex-wrap logo-list mt-4 mb-2">
+            <li class="text-center my-4">
+              <a class="d-inline-block" href="#"><img class="img-responsive" src="/images/logos/logo_avonU.png" alt="Avon U"></a>
+            </li>
+            <li class="text-center my-4">
+              <a class="d-inline-block" href="#"><img class="img-responsive" src="/images/logos/logo_alma.png" alt="Alma"></a>
+            </li>
+            <li class="text-center my-4">
+              <a class="d-inline-block" href="#"><img class="img-responsive" src="/images/logos/logo_vibe.png" alt="Vibe"></a>
+            </li>
+            <li class="text-center my-4">
+              <a class="d-inline-block" href="#"><img class="img-responsive" src="/images/logos/logo_avon_social.png" alt="Avon Social"></a>
+            </li>
+          </ul>
+          <!-- END - LOGOS SECTION -->
+
+          <!-- BEGIN - LINKS SECTION -->
+          <ul class="list-unstyled link-list d-flex flex-wrap justify-content-center mb-4">
+            <li class="px-3 py-2">
+              <a class="small underline link-reverse-plain" href="#">Conditions of Use</a>
+            </li>
+            <li class="px-3 py-2">
+              <a class="small underline link-reverse-plain" href="#">Privacy Statement</a>
+            </li>
+            <li class="px-3 py-2">
+              <a class="small underline link-reverse-plain" href="#">Site Map</a>
+            </li>
+            <li class="px-3 py-2">
+              <a class="small underline link-reverse-plain" href="#">Product Recall</a>
+            </li>
+            <li class="px-3 py-2">
+              <a class="small underline link-reverse-plain" href="#">Product Safety Certificates</a>
+            </li>
+            <li class="px-3 py-2">
+              <a class="small underline link-reverse-plain" href="#">California Supply Chains Act</a>
+            </li>
+            <li class="px-3 py-2">
+              <a class="small underline link-reverse-plain" href="#">Animal Welfare Policy</a>
+            </li>
+          </ul>
+          <!-- END - LINKS SECTION -->
+
+        </div>
+        <!-- END - MOBILE NAV FOOTER SECTION -->
+
       </div>
       <!-- END - MAIN MENU -->
 

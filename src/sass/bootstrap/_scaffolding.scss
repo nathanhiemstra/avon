@@ -106,6 +106,26 @@ a {
   }
 }
 
+// Reverse link
+.link-reverse-plain {
+  color: $white;
+
+  .lt-icon,
+  .lt-icon:before {
+    color: $white;
+  }
+
+  &:focus,
+  &:hover {
+    color: $white;
+
+    .lt-icon,
+    .lt-icon:before {
+      color: $white;
+    }
+  }
+}
+
 // Plain link uses the default text color and no decoration
 .link-plain {
   color: $link-reverse-color;
