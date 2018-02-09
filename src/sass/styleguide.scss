@@ -1848,6 +1848,18 @@ pre[class*="language-"] {
     background-color: $brand-primary-muted;
 }
 
+.color-swatches .color-brand-alt {
+    background-color: $brand-alt;
+}
+
+.color-swatches .color-brand-alt-emphasize {
+    background-color: $brand-alt-emphasize;
+}
+
+.color-swatches .color-brand-alt-deep {
+    background-color: $brand-alt-deep;
+}
+
 .color-swatches .color-brand-success {
     background-color: $brand-success;
 }

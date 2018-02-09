@@ -211,7 +211,7 @@
       }
 
       .navbar-main__header {
-        background-color: $magenta-deep;
+        background-color: $brand-alt-deep;
 
         .profile-img {
           background-color: $gray-lighter;
@@ -225,7 +225,7 @@
       .navbar-main__list {
         // MOBILE
         @media (max-width: $screen-xs-max) {
-          background-color: $magenta;
+          background-color: $brand-alt;
 
           a {
             width: 100%;
@@ -234,7 +234,7 @@
       }
 
       .navbar-main__footer {
-        background-color: $magenta-dark;
+        background-color: $brand-alt-emphasize;
 
         .logo-list li {
           width: 50%;
