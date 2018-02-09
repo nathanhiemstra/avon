@@ -199,7 +199,9 @@
           </li>
           <li class="active has-sub-items">
             <a class="pb-4" href="#">Products</a>
-            <a class="toggle text-right visible-xs-inline-block" href="#toggle"><span class="lt-icon lt-next"></span></a> 
+            <!-- sub-menu toggle -->
+            <a class="toggle text-right visible-xs-inline-block" data-toggle="off-canvas-collapse" data-target=".navbar-products"><span class="lt-icon lt-next"></span></a>
+            <span class="sr-only">Toggle sub-menu</span>
           </li>
           <li>
             <a class="pb-4" href="#">Orders</a>
@@ -290,6 +292,65 @@
 
       </div>
       <!-- END - MAIN MENU -->
+
+      <!-- START - PRODUCTS SUB-MENU -->
+      <div class="nav navbar-nav navbar-products navbar-sub off-canvas off-canvas--right">
+
+        <!-- START - SUB-MENU HEADER -->
+        <div class="navbar-header visible-xs-flex align-items-center px-4">
+
+          <!-- hamburger toggle -->
+          <a class="flex-fill ml-0">
+            <span class="lt-icon lt-left"></span>
+            <span class=""> Ordering</span>
+          </a>
+
+          <!-- close button -->
+          <button class="navbar-toggle link-reverse-plain mr-0" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-products">
+            <span class="sr-only">Close navigation</span>
+            <span class="lt-icon lt-close lt-medium pb-0"></span>
+          </button>
+
+        </div>
+        <!-- END - SUB-MENU HEADER -->
+
+        <!-- START - PRODUCTS SUB-MENU LIST -->
+        <ul class="nav navbar-nav navbar-sub__sub-list m-0">
+          <li>
+            <a class="pb-4" data-toggle="collapse" data-target="#submenu-cat1">Category</a>
+            <div id="submenu-cat1" class="collapse navbar-sub__sub-child">
+              <ul class="list-unstyled text-uppercase pl-5">
+                <li class="small">Item</li>
+                <li class="small">Item</li>
+                <li class="small">Item</li>
+                <li class="small">Item</li>
+                <li class="small">Item</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a class="pb-4" href="#">Category</a>
+          </li>
+          <li>
+            <a class="pb-4" href="#">Category</a>
+          </li>
+          <li>
+            <a class="pb-4" href="#">Category</a>
+          </li>
+          <li>
+            <a class="pb-4" href="#">Category</a>
+          </li>
+          <li>
+            <a class="pb-4" href="#">Category</a>
+          </li>
+          <li>
+            <a class="pb-4" href="#">Category</a>
+          </li>
+        </ul>
+        <!-- END - PRODUCTS SUB-MENU LIST -->
+
+      </div>
+      <!-- END - PRODUCTS SUB-MENU -->
 
     </div>
     <!-- /.row -->

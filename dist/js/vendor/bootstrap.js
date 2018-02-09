@@ -648,10 +648,11 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
     var option  = data ? 'toggle' : $this.data()
     var parent  = $this.attr('data-parent')
     var $parent = parent && $(parent)
-    
+
     console.log(data, option);
 
     $target.toggleClass('collapse--off-canvas');
+    $('body').toggleClass('modal-open');
 
     // if (!data || !data.transitioning) {
     //   if ($parent) $parent.find('[data-toggle=off-canvas-collapse][data-parent="' + parent + '"]').not($this).addClass('collapsed')

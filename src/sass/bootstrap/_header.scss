@@ -84,8 +84,7 @@
 
     // MOBILE predictive
     .container > .navbar-header {
-      ul.predictive-list {
-        }
+      ul.predictive-list {}
     }
 
     // desktop predictive
@@ -104,7 +103,6 @@
 
     // MOBILE nav
     #mobile-header-navbar {
-
       .navbar-form {
         .input-group {
           input {
@@ -166,28 +164,6 @@
 
     // START - MAIN NAV - mobile and desktop
     .navbar-main {
-
-      // MOBILE
-      @media (max-width: $screen-xs-max) {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: 9;
-        top: 0;
-        left: 0;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        transform: translateX(-100%);
-        transition: 0.3s transform ease;
-
-        // show menu - animate from left
-        &.collapse--off-canvas {
-          transform: translateX(0);
-        }
-      }
-
       .navbar-main__footer,
       .navbar-main__header,
       .navbar-main__list {
@@ -291,6 +267,56 @@
   }
 }
 // end .navbar
+
+// MOBILE OFF-CANVAS
+.nav.off-canvas {
+
+  @media (max-width: $screen-xs-max) {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    // overflow-y: scroll;
+    transform: translateX(-100%);
+    transition: 0.3s transform ease;
+
+    &.off-canvas--right {
+      transform: translateX(100%);
+      // transform: translateX(0);
+    }
+
+    // show menu
+    &.collapse--off-canvas {
+      transform: translateX(0);
+    }
+  }
+}
+
+// MOBILE SUB-MENU
+.navbar-sub {
+  background-color: $brand-alt-deep;
+
+  .navbar-header {
+    background-color: $brand-alt-emphasize;
+  }
+
+  .navbar-sub__sub-list {
+    li {
+      // background-color: red;
+    }
+  }
+
+  .navbar-sub__sub-child {
+    color: $white;
+    background-color: $black;
+  }
+
+}
 
 #mobile-search-toggle {
   .btn {
