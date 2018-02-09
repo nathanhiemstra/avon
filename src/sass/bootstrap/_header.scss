@@ -184,7 +184,7 @@
     .navbar-main {
 
       // MOBILE
-      @media (max-width: $screen-sm-max) {
+      @media (max-width: $screen-xs-max) {
         position: fixed;
         width: 100%;
         height: 100%;
@@ -211,7 +211,7 @@
       }
 
       .navbar-main__header {
-        background-color: $black;
+        background-color: $magenta-deep;
 
         .profile-img {
           background-color: $gray-lighter;
@@ -224,7 +224,7 @@
 
       .navbar-main__list {
         // MOBILE
-        @media (max-width: $screen-sm-max) {
+        @media (max-width: $screen-xs-max) {
           background-color: $magenta;
 
           a {
@@ -253,16 +253,13 @@
         a:hover {
           background-color: transparent;
           color: $brand-primary;
-          border-bottom: none;
-
-          @media (min-width: $screen-sm-min) {
-            border-bottom: 4px solid $brand-primary;
-          }
+          border-bottom: 4px solid $brand-primary;
 
           // MOBILE
-          @media (max-width: $screen-sm-max) {
+          @media (max-width: $screen-xs-max) {
             color: $white;
             border-left: 4px solid $brand-primary;
+            border-bottom: none;
           }
         }
 
@@ -275,7 +272,7 @@
           }
 
           // MOBILE
-          @media (max-width: $screen-sm-max) {
+          @media (max-width: $screen-xs-max) {
             color: $white;
             text-transform: none;
             border-left: 4px solid transparent;
