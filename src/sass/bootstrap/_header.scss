@@ -104,6 +104,7 @@
 
     // MOBILE nav
     #mobile-header-navbar {
+
       .navbar-form {
         .input-group {
           input {
@@ -112,23 +113,6 @@
           }
 
           .input-group-btn {}
-        }
-      }
-
-      #mobile-search-toggle {
-        .btn {
-          border: none;
-
-          &:active,
-          &:focus {
-            border: none;
-            outline: none;
-            box-shadow: none;
-          }
-        }
-
-        &:hover .btn i {
-          color: $brand-primary-emphasize;
         }
       }
 
@@ -231,6 +215,14 @@
             width: 100%;
           }
         }
+
+        .has-sub-items {
+          a.toggle {
+            position: absolute;
+            z-index: 1;
+          }
+        }
+
       }
 
       .navbar-main__footer {
@@ -299,6 +291,19 @@
   }
 }
 // end .navbar
+
+#mobile-search-toggle {
+  .btn {
+    border: none;
+
+    &:active,
+    &:focus {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
 
 // GLOBAL ALERT MESSAGE
 #global-alert-msg {

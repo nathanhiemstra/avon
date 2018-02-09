@@ -187,3 +187,18 @@
   }
 
 }
+
+// TODO :: make this a drawer class, fixed top but not 100 vertical height content?
+#searchDrawer {
+  .drawer-content {
+    min-height: auto;
+  }
+  &.drawer-hidden {
+    min-height: auto;
+    height: auto;
+    transform: translateY(-100px);
+  }
+  &.drawer-expanded {
+    transform: translateY(0);
+  }
+}

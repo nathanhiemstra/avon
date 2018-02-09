@@ -17,8 +17,7 @@ var FormDemo = (function () {
       searchInputMobile: $('#mobile-search-input'),
       searchInputDesktop: $('#desktop-header-search'),
       searchBtn: $('#mobile-search-toggle'),
-      searchNavbar: $('#mobile-header-navbar'),
-      menuButton: $('.navbar-header .navbar-toggle'),
+      searchNavbar: $('#mobile-header-navbar'), // TODO :: update this for auto-complete demo
       drawerBackdrop: $('.drawer-backdrop'),
 
       itemEntryDrawer: $('#drawer-item-entry'),
@@ -176,31 +175,28 @@ var FormDemo = (function () {
   };
 
   var _toggleSearchExpand = function () {
+    console.log(':: TOGGLE SEARCH EXPAND ::');
     // mobile
-    if($els.searchNavbar.hasClass('expanded')) {
-      // expanded, let's collapse
-      $els.searchNavbar.removeClass('expanded').addClass('collapsed');
-      $els.drawerBackdrop.removeClass('in').addClass('fade');
-      $els.searchInputMobile.addClass('invisible');
-
-      $els.menuButton.removeClass('hidden').addClass('show');
-    } else {
-      // collapsed, let's expand
-      $els.searchNavbar.removeClass('collapsed').addClass('expanded');
-      $els.drawerBackdrop.removeClass('fade').addClass('in');
-      $els.searchInputMobile.removeClass('invisible');
-
-      $els.menuButton.removeClass('show').addClass('hidden');
-
-      $els.searchInputMobile.focus();
-    }
+    // if($els.searchNavbar.hasClass('expanded')) {
+    //   // expanded, let's collapse
+    //   $els.searchNavbar.removeClass('expanded').addClass('collapsed');
+    //   $els.drawerBackdrop.removeClass('in').addClass('fade');
+    //   $els.searchInputMobile.addClass('invisible');
+    // } else {
+    //   // collapsed, let's expand
+    //   $els.searchNavbar.removeClass('collapsed').addClass('expanded');
+    //   $els.drawerBackdrop.removeClass('fade').addClass('in');
+    //   $els.searchInputMobile.removeClass('invisible');
+    //
+    //   $els.searchInputMobile.focus();
+    // }
 
     // desktop
-    if($els.searchInputDesktop.hasClass('expanded')) {
-      $els.searchInputDesktop.removeClass('expanded').addClass('collapsed');
-    } else {
-      $els.searchInputDesktop.removeClass('collapsed').addClass('expanded');
-    }
+    // if($els.searchInputDesktop.hasClass('expanded')) {
+    //   $els.searchInputDesktop.removeClass('expanded').addClass('collapsed');
+    // } else {
+    //   $els.searchInputDesktop.removeClass('collapsed').addClass('expanded');
+    // }
   };
 
   var _handleItemEntrySelection = function(input, item) {
