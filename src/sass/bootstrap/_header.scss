@@ -276,19 +276,19 @@
     position: fixed;
     width: 100%;
     height: 100%;
+    background-color: $brand-alt-emphasize;
     z-index: 9;
     top: 0;
     left: 0;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    // overflow-y: scroll;
     transform: translateX(-100%);
     transition: 0.3s transform ease;
 
     &.off-canvas--right {
-      // transform: translateX(100%);
-      transform: translateX(0);
+      transform: translateX(100%);
+      background-color: $brand-alt-deep;
     }
 
     // show menu
@@ -311,22 +311,51 @@
 
       border-bottom: 1px solid rgba($white, 0.05);
 
+      // first level child
       > a {
         background-color: $brand-primary;
         transition: background-color 0.15s ease;
       }
 
+      // second level child
+      li.sub-list-item {
+        > a {
+          background-color: $brand-alt-deep;
+          transition: background-color 0.15s ease;
+
+          &.collapsed {
+            background-color: transparent;
+          }
+        }
+
+        // third level child
+        li {
+          border-bottom: 1px solid rgba($white, 0.1);
+        }
+
+      }
+
       a {
-        .lt-icon {
+        .lt-next {
+          opacity: 1;
+          transform: translateX(10px);
+          transition: 0.25s opacity ease, transform 0.25s ease-in-out;
+        }
+        .lt-plus {
           opacity: 1;
           transform: rotate(-45deg);
-          transition: opacity 0.15s ease, transform 0.15s ease;
+          transition: opacity 0.25s ease, transform 0.25s ease-in-out;
         }
 
         &.collapsed {
           background-color: transparent;
 
-          .lt-icon {
+          .lt-next {
+            opacity: 0;
+            transform: translateX(0);
+          }
+
+          .lt-plus {
             opacity: 0.2;
             transform: rotate(0);
           }
@@ -401,4 +430,35 @@
       margin-top: 0;
     }
   }
+}
+
+.arrow-box {
+
+  &.collapsed {
+    &:after {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+  }
+
+  &:after {
+  	top: 100%;
+  	left: 15px;
+  	border: solid transparent;
+  	content: " ";
+  	height: 0;
+  	width: 0;
+  	position: absolute;
+  	pointer-events: none;
+  	border-color: transparent;
+  	border-top-color: $brand-primary;
+  	border-width: 7px;
+  	margin-left: 0;
+    z-index: 9;
+
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.15s opacity ease, 0.15s transform ease-in-out;
+  }
+
 }

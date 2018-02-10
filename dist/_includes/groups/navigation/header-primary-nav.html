@@ -125,14 +125,14 @@
 
           <li>
             <!-- User info -->
-            <a href="#" class="link-reverse-plain pull-left">
+            <a href="#" class="link-reverse-plain pull-left py-3">
               <span class="profile-img visible-xs-inline-block align-middle mr-3"></span>
               <span class="text-uppercase d-inline-block align-middle">Jane Johnson</span>
             </a>
             <!-- close button -->
-            <button class="navbar-toggle link-reverse-plain" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
+            <button class="navbar-toggle link-reverse-plain py-4 pl-4 pr-1" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
               <span class="sr-only">Close navigation</span>
-              <span class="lt-icon lt-close lt-large"></span>
+              <span class="lt-icon lt-close lt-medium"></span>
             </button>
           </li>
 
@@ -177,16 +177,7 @@
               </li>
             </ul>
             <!-- END - BUTTONS -->
-            <!-- <ul class="nav">
-              <li class="">
-                <a class="small pl-2 trigger-drawer-item-entry link-primary text-uppercase" href="#drawer-item-entry" data-toggle="drawer">
-                  <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
-              </li>
-              <li class="">
-                <a class="small pb-4 trigger-drawer-item-entry link-primary text-uppercase" href="#">
-                  <span class="lt-icon lt-book pr-2" aria-hidden="true"></span>Brochures</a>
-              </li>
-            </ul> -->
+
           </li>
 
         </ul>
@@ -198,7 +189,7 @@
             <a class="pb-4" href="#">Home</a>
           </li>
           <li class="active has-sub-items">
-            <a class="pb-4" href="#">Products</a>
+            <a class="pb-4" href="./product-list.html">Products</a>
             <!-- sub-menu toggle -->
             <a class="toggle text-right visible-xs-inline-block" data-toggle="off-canvas-collapse" data-target=".navbar-products"><span class="lt-icon lt-next"></span></a>
             <span class="sr-only">Toggle sub-menu</span>
@@ -299,14 +290,16 @@
         <!-- START - SUB-MENU HEADER -->
         <div class="navbar-header visible-xs-flex align-items-center px-4">
 
-          <!-- hamburger toggle -->
+          <!-- back button -->
           <a class="flex-fill ml-0">
-            <span class="lt-icon lt-left lt-medium mr-2"></span>
-            <span class="text-light"> Products</span>
+            <span data-toggle="off-canvas-collapse" data-target=".navbar-products">
+              <span class="lt-icon lt-left lt-medium mr-2"></span>
+              <span class="text-light"> Products</span>
+            </span>
           </a>
 
           <!-- close button -->
-          <button class="navbar-toggle link-reverse-plain mr-0 mt-1" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-products">
+          <button class="navbar-toggle link-reverse-plain pr-1 pl-4 mr-0 mt-1" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-products, .navbar-collapse">
             <span class="sr-only">Close navigation</span>
             <span class="lt-icon lt-close lt-medium pb-0"></span>
           </button>
@@ -317,46 +310,71 @@
         <!-- START - PRODUCTS SUB-MENU LIST -->
         <ul class="nav navbar-nav navbar-sub__sub-list m-0 visible-xs-block">
           <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" data-toggle="collapse" data-target="#submenu-cat1">Category<span class="lt-icon lt-plus lt-medium pull-right mt-1"></span></a>
+
+            <!-- START - NESTED ITEMS LEVEL 1 -->
+            <a class="link-reverse-plain py-4 collapsed arrow-box" data-toggle="collapse" data-target="#submenu-cat1">
+              Makeup
+              <span class="lt-icon lt-next"></span>
+              <span class="lt-icon lt-plus lt-medium pull-right mt-1"></span>
+            </a>
             <div id="submenu-cat1" class="collapse navbar-sub__sub-child">
               <ul class="nav list-unstyled text-uppercase">
-                <li class="small">
-                  <a class="link-reverse-plain pl-5 py-4 collapsed" data-toggle="collapse" data-target="#submenu-subcat1">Eye<span class="lt-icon lt-plus lt-medium pull-right mt-1"></span></a>
+                <li class="small sub-list-item">
+
+                  <!-- START - NESTED ITEMS LEVEL 2 -->
+                  <a class="link-reverse-plain pl-5 py-4 collapsed" data-toggle="collapse" data-target="#submenu-subcat1">
+                    Eye
+                    <span class="lt-icon lt-next"></span>
+                    <span class="lt-icon lt-plus lt-medium pull-right mt-1"></span>
+                  </a>
                   <div id="submenu-subcat1" class="collapse navbar-sub__sub-child">
-                    <ul class="nav list-unstyled text-uppercase pl-5 pr-4">
-                      <li class="small py-4"><a class="link-reverse-plain">Mascara</a></li>
-                      <li class="small py-4"><a class="link-reverse-plain">Eyeshadow</a></li>
-                      <li class="small py-4"><a class="link-reverse-plain">Eye Liner</a></li>
-                      <li class="small py-4"><a class="link-reverse-plain">Brows</a></li>
+                    <ul class="nav list-unstyled text-uppercase">
+                      <li class="small pl-5 pr-4"><a class="link-reverse-plain py-4 pl-4">Mascara</a></li>
+                      <li class="small pl-5 pr-4"><a class="link-reverse-plain py-4 pl-4">Eyeshadow</a></li>
+                      <li class="small pl-5 pr-4"><a class="link-reverse-plain py-4 pl-4">Eye Liner</a></li>
+                      <li class="small pl-5 pr-4"><a class="link-reverse-plain py-4 pl-4">Brows</a></li>
                     </ul>
                   </div>
+                  <!-- END - NESTED ITEMS LEVEL 2 -->
+
                 </li>
-                <li class="small"><a class="link-reverse-plain pl-5 py-4">Lips</a></li>
-                <li class="small"><a class="link-reverse-plain pl-5 py-4">Face</a></li>
-                <li class="small"><a class="link-reverse-plain pl-5 py-4">Nails</a></li>
-                <li class="small"><a class="link-reverse-plain pl-5 py-4">Tools &amp; Brushes</a></li>
-                <li class="small"><a class="link-reverse-plain pl-5 py-4">Features</a></li>
-                <li class="small"><a class="link-reverse-plain pl-5 py-4">Brands</a></li>
+                <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Lips</a></li>
+                <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Face</a></li>
+                <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Nails</a></li>
+                <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Tools &amp; Brushes</a></li>
+                <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Features</a></li>
+                <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Brands</a></li>
               </ul>
             </div>
+            <!-- END - NESTED ITEMS LEVEL 1 -->
+
           </li>
           <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Category</a>
+            <a class="link-reverse-plain py-4 collapsed" href="#">Skincare</a>
           </li>
           <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Category</a>
+            <a class="link-reverse-plain py-4 collapsed" href="#">Bath &amp; Body</a>
           </li>
           <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Category</a>
+            <a class="link-reverse-plain py-4 collapsed" href="#">Fragrance</a>
           </li>
           <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Category</a>
+            <a class="link-reverse-plain py-4 collapsed" href="#">Jewelry</a>
           </li>
           <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Category</a>
+            <a class="link-reverse-plain py-4 collapsed" href="#">Fashion</a>
           </li>
           <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Category</a>
+            <a class="link-reverse-plain py-4 collapsed" href="#">mark. <span class="text-uppercase">by avon</span></a>
+          </li>
+          <li class="sub-list-item">
+            <a class="link-reverse-plain py-4 collapsed" href="#">Avon Living</a>
+          </li>
+          <li class="sub-list-item">
+            <a class="link-reverse-plain py-4 collapsed" href="#">Men</a>
+          </li>
+          <li class="sub-list-item">
+            <a class="link-reverse-plain py-4 collapsed" href="#">Outlet</a>
           </li>
         </ul>
         <!-- END - PRODUCTS SUB-MENU LIST -->

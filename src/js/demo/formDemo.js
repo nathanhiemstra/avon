@@ -175,7 +175,7 @@ var FormDemo = (function () {
   };
 
   var _toggleSearchExpand = function () {
-    console.log(':: TOGGLE SEARCH EXPAND ::');
+    // console.log(':: TOGGLE SEARCH EXPAND ::');
     // mobile
     // if($els.searchNavbar.hasClass('expanded')) {
     //   // expanded, let's collapse
