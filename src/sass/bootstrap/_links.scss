@@ -1,0 +1,126 @@
+// Sometimes we need to force our primary brand color on links in navbars and such
+.link-primary {
+  color: $link-color !important;
+
+  .lt-icon,
+  .lt-icon:before {
+    color: $link-color !important;
+  }
+
+  &:focus,
+  &:hover {
+    color: $link-hover-color !important;
+
+    .lt-icon,
+    .lt-icon:before {
+      color: $link-hover-color !important;
+    }
+  }
+}
+
+// Secondary link uses the default body text color but a primary hover state
+.link-secondary {
+  color: $text-color !important;
+
+  .lt-icon,
+  .lt-icon:before {
+    color: $text-color !important;
+  }
+
+  &:focus,
+  &:hover {
+    color: $link-hover-color !important;
+
+    .lt-icon,
+    .lt-icon:before {
+      color: $link-hover-color !important;
+    }
+  }
+}
+
+// Reverse link - light color to be used on darker bg
+.link-reverse-plain {
+  color: $white !important;
+
+  .lt-icon,
+  .lt-icon:before {
+    color: $white !important;
+  }
+
+  &:focus,
+  &:hover {
+    color: $white !important;
+
+    .lt-icon,
+    .lt-icon:before {
+      color: $white !important;
+    }
+  }
+}
+
+// Reverse underline link uses light color with underline decoration
+.link-reverse-underline {
+  color: $white !important;
+  text-decoration: underline !important;
+
+  .lt-icon,
+  .lt-icon:before {
+    color: $white !important;
+  }
+
+  &:focus,
+  &:hover {
+    color: $white !important;
+    text-decoration: none !important;
+
+    .lt-icon,
+    .lt-icon:before {
+      color: $white !important;
+    }
+  }
+}
+
+// Plain link uses the default text color and no decoration
+.link-plain {
+  color: $link-reverse-color !important;
+  font-weight: normal !important;
+  text-transform: none !important;
+  border: none !important;
+
+  .lt-icon,
+  .lt-icon:before {
+    color: $link-reverse-color !important;
+  }
+
+  &:focus,
+  &:hover {
+    text-decoration: none !important;
+    color: $link-reverse-hover-color !important;
+
+    .lt-icon,
+    .lt-icon:before {
+      color: $text-color !important;
+    }
+
+  }
+}
+
+// Muted link uses muted colors with default link behavior
+.link-muted {
+  color: $gray-medium !important;
+
+  .lt-icon,
+  .lt-icon:before {
+    color: $gray-medium !important;
+  }
+
+  &:focus,
+  &:hover {
+    color: $gray !important;
+
+    .lt-icon,
+    .lt-icon:before {
+      color: $gray-medium !important;
+    }
+  }
+}
