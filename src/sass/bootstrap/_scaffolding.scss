@@ -106,7 +106,7 @@ a {
   }
 }
 
-// Reverse link
+// Reverse link - light color to be used on darker bg
 .link-reverse-plain {
   color: $white !important;
 
@@ -118,6 +118,28 @@ a {
   &:focus,
   &:hover {
     color: $white !important;
+
+    .lt-icon,
+    .lt-icon:before {
+      color: $white !important;
+    }
+  }
+}
+
+// Reverse underline link uses light color with underline decoration
+.link-reverse-underline {
+  color: $white !important;
+  text-decoration: underline !important;
+
+  .lt-icon,
+  .lt-icon:before {
+    color: $white !important;
+  }
+
+  &:focus,
+  &:hover {
+    color: $white !important;
+    text-decoration: none !important;
 
     .lt-icon,
     .lt-icon:before {
