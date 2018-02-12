@@ -9,7 +9,6 @@
     z-index: 9;
 
     li > a {
-      line-height: 1;
 
       img {
         height: 22px;
@@ -217,9 +216,8 @@
       }
 
       .navbar-main__list > li {
-        &.active a,
-        &.active a:hover,
-        a:hover {
+        &.active > a,
+        &.active > a:hover {
           background-color: transparent;
           color: $brand-primary;
           border-bottom: 4px solid $brand-primary;
@@ -233,7 +231,6 @@
         }
 
         a {
-          display: inline-block;
           text-transform: uppercase;
 
           @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
