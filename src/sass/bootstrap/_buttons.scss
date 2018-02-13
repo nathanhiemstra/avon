@@ -183,6 +183,27 @@ a.btn {
     width: 100%;
 }
 
+@media (min-width: $screen-sm-min) {
+    .btn-block-sm {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .btn-block-md {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (min-width: $screen-lg-min) {
+    .btn-block-lg {
+        display: block;
+        width: 100%;
+    }
+}
+
 // Vertically space out multiple block buttons
 .btn-block + .btn-block {
     margin-top: 5px;
