@@ -1,6 +1,9 @@
 <!-- START - PRIMARY NAV -->
 <nav class="navbar navbar--primary-nav navbar-default border-bottom d-flex flex-wrap align-items-center justify-content-center" role="navigation">
 
+  <!-- ghost - this invisible div holds a relative position for utility nav on desktop -->
+  <div class="primary-nav__ghost"></div>
+
   <!-- search -->
   <div class="primary-nav__search">
     {% include '_includes/modules/search/global-search.html.twig' %}
@@ -24,8 +27,8 @@
     <span class="icon-bar"></span>
   </button>
 
-  <!-- primary nav links -->
-  <div class="primary-nav__links d-flex align-items-center justify-content-center">
+  <!-- primary nav links & off-canvas mobile menu -->
+  <div class="primary-nav__content navbar-collapse off-canvas d-flex flex-wrap align-content-start justify-content-center">
     {% include '_includes/groups/navigation/items/global-nav-list.html.twig' %}
   </div>
 

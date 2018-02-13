@@ -4,12 +4,54 @@
     <div class="col-xs-12">
       <header class="global-header mb-5" role="banner">
 
-        <!-- START - Utility Nav Container -->
-        <div class="container-fluid p-0 m-0 border-bottom">
+        <!-- Primary navbar -->
+        <!-- START - PRIMARY NAV -->
+<nav class="navbar navbar--primary-nav navbar-default border-bottom d-flex flex-wrap align-items-center justify-content-center" role="navigation">
 
-          <!-- Utility nav 2 -->
-          <div class="col-xs-12 p-0 m-0 hidden-xs">
-            <!-- START - STATIC NAV -->
+  <!-- ghost - this invisible div holds a relative position for utility nav on desktop -->
+  <div class="primary-nav__ghost"></div>
+
+  <!-- search -->
+  <div class="primary-nav__search">
+    <a href="#" class="">
+  <span class="lt-icon lt-search lt-medium"></span>
+  <span class="small text-uppercase text-muted hidden-xs">Search</span>
+  <!-- <input id="desktop-header-search" type="text" class="form-inline" placeholder="" autocomplete="off"> -->
+</a>
+  </div>
+
+  <!-- logo -->
+  <a href="index.html" class="primary-nav__logo flex-fill">
+    <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
+  </a>
+
+  <!-- order / cart -->
+  <div class="primary-nav__cart hidden-xs">
+    <a href="#" class="link-plain">
+  <span class="small text-uppercase text-muted">Order
+  </span>
+  <span class="lt-icon lt-shoppingcart lt-large"></span>
+</a>
+  </div>
+
+  <!-- hamburger toggle -->
+  <button class="primary-nav__toggle navbar-toggle flex-fill p-0 m-0" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+
+  <!-- primary nav links & off-canvas mobile menu -->
+  <div class="primary-nav__content navbar-collapse off-canvas d-flex flex-wrap align-content-start justify-content-center">
+    <!-- close button -->
+<button class="navbar-toggle primary-nav__close link-reverse-plain pr-1 pl-4 mr-0 mt-1" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
+  <span class="sr-only">Close navigation</span>
+  <span class="lt-icon lt-close lt-medium pb-0"></span>
+</button>
+
+<!-- Utility nav 2 -->
+<!-- START - STATIC NAV -->
 <nav class="navbar navbar-inverse navbar-static-top navbar--utility-2 border-0 m-0 d-flex">
   <div class="container d-flex align-items-center">
 
@@ -77,11 +119,9 @@
   </div>
 </nav>
 <!-- END - STATIC NAV -->
-          </div>
 
-          <!-- Utility nav 1 -->
-          <div class="col-xs-12 p-0 m-0 hidden-xs">
-            <!-- START - USER NAV -->
+<!-- Utility nav 1 -->
+<!-- START - USER NAV -->
 <nav class="navbar navbar-default navbar-static-top navbar--utility-1 border-0 m-0 p-0 d-flex">
   <div class="container d-flex align-items-center">
 
@@ -138,51 +178,9 @@
   </div>
 </nav>
 <!-- END - USER NAV -->
-          </div>
 
-        </div>
-        <!-- END - Utility Nav Container -->
-
-        <!-- Primary navbar -->
-        <!-- START - PRIMARY NAV -->
-<nav class="navbar navbar--primary-nav navbar-default border-bottom d-flex flex-wrap align-items-center justify-content-center" role="navigation">
-
-  <!-- search -->
-  <div class="primary-nav__search">
-    <a href="#" class="">
-  <span class="lt-icon lt-search lt-medium"></span>
-  <span class="small text-uppercase text-muted hidden-xs">Search</span>
-  <!-- <input id="desktop-header-search" type="text" class="form-inline" placeholder="" autocomplete="off"> -->
-</a>
-  </div>
-
-  <!-- logo -->
-  <a href="index.html" class="primary-nav__logo flex-fill">
-    <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
-  </a>
-
-  <!-- order / cart -->
-  <div class="primary-nav__cart hidden-xs">
-    <a href="#" class="link-plain">
-  <span class="small text-uppercase text-muted">Order
-  </span>
-  <span class="lt-icon lt-shoppingcart lt-large"></span>
-</a>
-  </div>
-
-  <!-- hamburger toggle -->
-  <button class="primary-nav__toggle navbar-toggle flex-fill p-0 m-0" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
-    <span class="sr-only">Toggle navigation</span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
-
-  <!-- primary nav links -->
-  <div class="primary-nav__links d-flex align-items-center justify-content-center">
-    <!-- START - MAIN MENU LIST -->
-
-<ul class="nav nav-tabs navbar-collapse off-canvas navbar-main__list m-0">
+<!-- Primary nav list -->
+<ul class="nav nav-tabs navbar-main__list m-0">
   <li class="visible-xs-block">
     <a class="pb-4" href="#">Home</a>
   </li>
@@ -243,6 +241,7 @@
   </li>
 </ul>
 <!-- END - MAIN MENU LIST -->
+
 
 
 

@@ -1,66 +1,18 @@
-<!-- START - MAIN MENU LIST -->
+<!-- close button -->
+<button class="navbar-toggle primary-nav__close link-reverse-plain pr-1 pl-4 mr-0 mt-1" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
+  <span class="sr-only">Close navigation</span>
+  <span class="lt-icon lt-close lt-medium pb-0"></span>
+</button>
 
-<ul class="nav nav-tabs navbar-collapse off-canvas navbar-main__list m-0">
-  <li class="visible-xs-block">
-    <a class="pb-4" href="#">Home</a>
-  </li>
-  <li class="active has-sub-items dropdown">
+<!-- Utility nav 2 -->
+{% include '_includes/groups/navigation/header-utility-nav-2.html.twig' %}
 
-    <a class="pb-4 dropdown-toggle" href="#" id="productsDrop" data-toggle="dropdown">Products</a>
+<!-- Utility nav 1 -->
+{% include '_includes/groups/navigation/header-utility-nav-1.html.twig' %}
 
-    <!-- sub-menu toggle - mobile -->
-    <a class="toggle text-right visible-xs-inline-block" data-toggle="off-canvas-collapse" data-target=".navbar-products"><span class="lt-icon lt-next"></span></a>
-    <span class="sr-only">Toggle sub-menu</span>
+<!-- Primary nav list -->
+{% include '_includes/groups/navigation/items/primary-nav-list.html.twig' %}
 
-    <!-- sub-menu - desktop -->
-    <ul class="dropdown-menu" role="menu" aria-labelledby="productsDrop">
-      <li role="presentation">
-        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Makeup</a>
-      </li>
-      <li role="presentation">
-        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Skincare</a>
-      </li>
-      <li role="presentation">
-        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Bath &amp; Body</a>
-      </li>
-      <li role="presentation">
-        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Fragrance</a>
-      </li>
-      <li role="presentation">
-        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Jewelry</a>
-      </li>
-      <li role="presentation">
-        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Fashion</a>
-      </li>
-      <li role="presentation">
-        <a role="menuitem" class="link-plain" tabindex="-1" href="#">mark. BY AVON</a>
-      </li>
-      <li role="presentation">
-        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Avon Living</a>
-      </li>
-      <li role="presentation">
-        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Men</a>
-      </li>
-      <li role="presentation">
-        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Outlet</a>
-      </li>
-    </ul>
-
-  </li>
-  <li>
-    <a class="pb-4" href="#">Web Office</a>
-  </li>
-  <li>
-    <a class="pb-4" href="#">Campaigns</a>
-  </li>
-  <li>
-    <a class="pb-4" href="#">Earnings</a>
-  </li>
-  <li>
-    <a class="pb-4" href="#">Resources</a>
-  </li>
-</ul>
-<!-- END - MAIN MENU LIST -->
 
 
 
