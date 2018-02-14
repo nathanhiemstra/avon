@@ -8,12 +8,12 @@
 
 @font-face {
   font-family: 'lt2';
-  src:  url('../fonts/lt2/lt2.eot?gr7vzj');
-  src:  url('../fonts/lt2/lt2.eot?gr7vzj#iefix') format('embedded-opentype'),
-    url('../fonts/lt2/lt2.woff2?gr7vzj') format('woff2'),
-    url('../fonts/lt2/lt2.ttf?gr7vzj') format('truetype'),
-    url('../fonts/lt2/lt2.woff?gr7vzj') format('woff'),
-    url('../fonts/lt2/lt2.svg?gr7vzj#lt2') format('svg');
+  src:  url('../fonts/lt2/lt2.eot?bw6st1');
+  src:  url('../fonts/lt2/lt2.eot?bw6st1#iefix') format('embedded-opentype'),
+    url('../fonts/lt2/lt2.woff2?bw6st1') format('woff2'),
+    url('../fonts/lt2/lt2.ttf?bw6st1') format('truetype'),
+    url('../fonts/lt2/lt2.woff?bw6st1') format('woff'),
+    url('../fonts/lt2/lt2.svg?bw6st1#lt2') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -178,4 +178,17 @@ html:hover [class^="lt-"] {
 }
 .lt-warning:before {
   content: "\e927";
+}
+.lt-right-button:before {
+  content: "\e92a";
+}
+.lt-minus:before {
+  content: "\e928";
+}
+.lt-triangle-down:before {
+  content: "\e929";
+}
+.lt-star:before {
+  content: "\e92b";
+  color: #ed008c;
 }
