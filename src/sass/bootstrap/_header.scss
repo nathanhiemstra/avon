@@ -1,3 +1,7 @@
+.global-header {
+  position: relative;
+}
+
 .navbar {
   &--utility-2 {
     height: 48px;
@@ -229,33 +233,33 @@
 //       }
 //     }
 //
-//     .navbar-toggle,
-//     .navbar-toggle:focus,
-//     .navbar-toggle:hover {
-//       background-color: transparent;
-//       border: none;
-//
-//       .icon-bar {}
-//     }
-//
-//     .navbar-header {
-//       width: 100%;
-//       height: 60px;
-//
-//       .navbar-toggle {
-//         z-index: 9;
-//       }
-//
-//       .navbar-right {
-//         width: 80%;
-//         transition: 0.2s width ease;
-//
-//         &.expanded {
-//           width: 100%;
-//         }
-//       }
-//     }
-//
+    .navbar-toggle,
+    .navbar-toggle:focus,
+    .navbar-toggle:hover {
+      background-color: transparent;
+      border: none;
+
+      .icon-bar {}
+    }
+
+    .navbar-header {
+      width: 100%;
+      height: 60px;
+
+      .navbar-toggle {
+        z-index: 9;
+      }
+
+      .navbar-right {
+        width: 80%;
+        transition: 0.2s width ease;
+
+        &.expanded {
+          width: 100%;
+        }
+      }
+    }
+
     // START - MAIN NAV - mobile and desktop
     .navbar-main {
       .navbar-main__footer,
@@ -547,79 +551,3 @@ $utility-height: $height-1 + $height-2;
 //     }
 //   }
 // }
-//
-
-
-// GLOBAL ALERT MESSAGE
-// TODO :: get this outta here and make it a global style!
-#global-alert-msg {
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  transform: translateY(0);
-  transition: 0.3s transform ease;
-
-  &.collapsed {
-    transform: translateY(-100%);
-  }
-
-  .alert-msg-icon {
-    color: $body-bg;
-    display: inline-block;
-    margin-right: 1em;
-
-    &:before {
-      color: $body-bg;
-    }
-  }
-
-  .alert-msg-txt {
-    text-transform: uppercase;
-    color: $body-bg;
-    margin-right: 1em;
-  }
-
-  .alert-msg-btn {
-    border-width: 1px;
-    border-color: $body-bg;
-    color: $body-bg;
-    background-color: transparent;
-    margin-top: 1rem;
-
-    @media (min-width: $screen-sm-min) {
-      margin-top: 0;
-    }
-  }
-}
-//
-.arrow-box {
-
-  &.collapsed {
-    &:after {
-      opacity: 0;
-      transform: translateY(-4px);
-    }
-  }
-
-  &:after {
-  	top: 100%;
-  	left: 15px;
-  	border: solid transparent;
-  	content: " ";
-  	height: 0;
-  	width: 0;
-  	position: absolute;
-  	pointer-events: none;
-  	border-color: transparent;
-  	border-top-color: $brand-primary;
-  	border-width: 7px;
-  	margin-left: 0;
-    z-index: 9;
-
-    opacity: 1;
-    transform: translateY(0);
-    transition: 0.15s opacity ease, 0.15s transform ease-in-out;
-  }
-
-}
-// END .arrow-box

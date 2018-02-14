@@ -1,15 +1,16 @@
-<!-- close button -->
+<!-- Close button -->
 <button class="navbar-toggle primary-nav__close link-reverse-plain pr-1 pl-4 mr-0 mt-1" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
   <span class="sr-only">Close navigation</span>
   <span class="lt-icon lt-close lt-medium pb-0"></span>
 </button>
 
 <!-- Utility nav 2 -->
-<!-- START - STATIC NAV -->
+<!-- START - UTILITY NAV 2 -->
 <nav class="navbar navbar-inverse navbar-static-top navbar--utility-2 border-0 m-0 d-flex">
+
   <div class="container d-flex align-items-center">
 
-    <!-- BEGIN - MORE TOOLS LOGOS - DESKTOP -->
+    <!-- BEGIN - MORE TOOLS LOGOS -->
     <ul class="nav navbar-nav flex-fill visible-lg-flex">
   <li>
     <a class="py-0 pl-0 pr-4" href="#"><img class="p-1" src="/images/logos/logo_avonU.png" alt="Avon U"></a>
@@ -24,114 +25,104 @@
     <a class="py-0 px-4" href="#"><img class="p-1" src="/images/logos/logo_avon_social.png" alt="Avon Social"></a>
   </li>
 </ul>
-    <!-- END - MORE TOOLS LOGOS - DESKTOP -->
+    <!-- END - MORE TOOLS LOGOS -->
 
     <!-- BEGIN - ACCOUNT SECTION -->
-    <!-- TODO :: make this nav an include, we're using it in mobile menu also -->
     <ul class="nav navbar-nav navbar-right">
 
-      <li>
-        <a class="pl-2" href="#">
-          <span class="profile-img visible-xs-inline"></span>
-          <span class="text-uppercase">Jane Johnson</span>
-        </a>
-      </li>
+  <li>
+    <a class="pl-2" href="#">
+      <span class="profile-img visible-xs-inline"></span>
+      <span class="text-uppercase">Jane Johnson</span>
+    </a>
+  </li>
 
-      <!-- TODO :: make below dropdown an include -->
-      <li class="dropdown">
-        <a href="#" id="accountDrop" role="button" class="dropdown-toggle" data-toggle="dropdown">My Account <i class="lt-icon lt-navigatedown lt-medium ml-2"></i></a>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="accountDrop">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-        </ul>
-      </li>
-
-      <!-- BEGIN - MORE TOOLS - TABLET -->
-      <li class="dropdown hidden-lg">
-  <a href="#" id="toolsDrop" role="button" class="dropdown-toggle" data-toggle="dropdown">More Tools <i class="lt-icon lt-navigatedown lt-medium ml-2"></i></a>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="toolsDrop">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Avon U</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">ALMA</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Vibe</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Avon Social</a></li>
-  </ul>
-</li>
-      <!-- END - MORE TOOLS - TABLET -->
-
-      <li>
-        <a class="small link-reverse-underline" href="#">Español</a>
-      </li>
-
-      <li>
-        <a class="small link-reverse-underline" href="#">Log Out</a>
-      </li>
-
+  <li class="dropdown">
+    <a href="#" id="accountDrop" role="button" class="dropdown-toggle" data-toggle="dropdown">My Account <i class="lt-icon lt-navigatedown lt-medium ml-2"></i></a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="accountDrop">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
     </ul>
+  </li>
+
+  <li>
+    <a class="small link-reverse-underline" href="#">Español</a>
+  </li>
+
+  <li>
+    <a class="small link-reverse-underline" href="#">Log Out</a>
+  </li>
+
+</ul>
     <!-- END - ACCOUNT SECTION -->
 
   </div>
+
 </nav>
-<!-- END - STATIC NAV -->
+<!-- END - UTILITY NAV 2 -->
 
 <!-- Utility nav 1 -->
-<!-- START - USER NAV -->
+<!-- START - UTILITY NAV 1 -->
 <nav class="navbar navbar-default navbar-static-top navbar--utility-1 border-0 m-0 p-0 d-flex">
+
   <div class="container d-flex align-items-center">
 
+    <!-- START - ITEM ENTRY / BROCHURES BUTTONS -->
     <ul class="nav navbar-nav flex-fill">
-      <li class="">
-        <a class="small pl-2 trigger-drawer-item-entry link-primary text-uppercase text-bold" href="#drawer-item-entry" data-toggle="drawer">
-          <strong>
-            <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
-        </strong>
-      </li>
-      <li class="">
-        <a class="small pb-4 trigger-drawer-item-entry link-primary text-uppercase" href="#">
-          <strong>
-            <span class="lt-icon lt-book pr-2" aria-hidden="true"></span>Brochures</a>
-        </strong>
-      </li>
-    </ul>
-
-    <ul class="nav navbar-nav">
-
-      <li class="dropdown">
-        <a href="#" id="estoreDrop" role="button" class="dropdown-toggle small text-uppercase link-primary" data-toggle="dropdown">
-          <strong>
-            <span class="lt-icon lt-home pr-2"></span>
-            My
-            <span class="text-lowercase">e</span>Store
-            <i class="lt-icon lt-navigatedown lt-medium ml-2"></i>
-          </strong>
-        </a>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="estoreDrop">
-          <li role="presentation">
-            <a role="menuitem" tabindex="-1" href="#">Something</a>
-          </li>
-          <li role="presentation">
-            <a role="menuitem" tabindex="-1" href="#">Another action</a>
-          </li>
-          <li role="presentation">
-            <a role="menuitem" tabindex="-1" href="#">Something else here</a>
-          </li>
-        </ul>
-      </li>
-
       <li>
-        <a class="small text-uppercase link-primary pl-2" href="#">
-          <strong>
-            <span class="lt-icon lt-tip pr-2"></span>
-            Support
-          </strong>
-        </a>
-      </li>
-
+  <a class="small pl-2 trigger-drawer-item-entry link-primary text-uppercase text-bold" href="#drawer-item-entry" data-toggle="drawer">
+    <strong>
+      <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
+  </strong>
+</li>
+      <li>
+  <a class="small pb-4 trigger-drawer-item-entry link-primary text-uppercase" href="#">
+    <strong>
+      <span class="lt-icon lt-book pr-2" aria-hidden="true"></span>Brochures</a>
+  </strong>
+</li>
     </ul>
+    <!-- END - ITEM ENTRY / BROCHURES BUTTONS -->
+
+    <!-- START - ESTORE / SUPPORT BUTTONS -->
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+  <a href="#" id="estoreDrop" role="button" class="dropdown-toggle small text-uppercase link-primary" data-toggle="dropdown">
+    <strong>
+      <span class="lt-icon lt-home pr-2"></span>
+      My
+      <span class="text-lowercase">e</span>Store
+      <i class="lt-icon lt-navigatedown lt-medium ml-2"></i>
+    </strong>
+  </a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="estoreDrop">
+    <li role="presentation">
+      <a role="menuitem" tabindex="-1" href="#">Something</a>
+    </li>
+    <li role="presentation">
+      <a role="menuitem" tabindex="-1" href="#">Another action</a>
+    </li>
+    <li role="presentation">
+      <a role="menuitem" tabindex="-1" href="#">Something else here</a>
+    </li>
+  </ul>
+</li>
+      <li>
+  <a class="small text-uppercase link-primary pl-2" href="#">
+    <strong>
+      <span class="lt-icon lt-tip pr-2"></span>
+      Support
+    </strong>
+  </a>
+</li>
+    </ul>
+    <!-- END - ESTORE / SUPPORT BUTTONS -->
 
   </div>
+
 </nav>
-<!-- END - USER NAV -->
+<!-- END - UTILITY NAV 1 -->
 
 <!-- Primary nav list -->
 <ul class="nav nav-tabs navbar-main__list m-0">

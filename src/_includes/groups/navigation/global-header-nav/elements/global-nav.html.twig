@@ -1,5 +1,7 @@
 <!-- Close button -->
-{% include '_includes/groups/navigation/global-header-nav/elements/btn-close.html.twig' %}
+{% include '_includes/groups/navigation/global-header-nav/elements/btn-close.html.twig' with {
+  dataTarget: '.navbar-collapse'
+}%}
 
 <!-- Utility nav 2 -->
 {% include '_includes/groups/navigation/global-header-nav/header-utility-nav-2.html.twig' %}
