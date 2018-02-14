@@ -1265,135 +1265,209 @@
   <aside class="col-md-3" role="complementary">
     
         <!-- START - PRODUCT FILTERS -->
-<section class="aside-product-filters hidden-xs hidden-sm mt-5">
+<section class="aside-product-filters hidden-xsX hidden-smX mt-5">
 
-  <h4 class="text-uppercase"><small>Refine By</small></h4>
+  <h7 class="my-5">Refine By</h7>
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
 
-  <form>
+ 
 
-    <div class="form-group border-bottom py-4">
-      <label>Brands</label>
-      
+
+
+            <form>
+
+        <!-- START - EXAMPLE FILTER GROUP 1 -->
+        <div class="form-group border-bottom pb-4">
+
+          <!-- START - TITLE - TRIGGER THAT EXPANDS CHECKBOX CONTAINER ON MOBILE -->
+
+
+          <!-- Dev note: This href must match ID on div below -->
+          <a data-toggle="collapse" href="#filter-group-1" class="filter-collapse--trigger">
+            
+            <!-- Dev note: There must be no space between This <span> and <label class="mb-0"> -->
+            <span class="lt-icon lt-increasebutton filter-collapse--icon visible-xs-block"></span><label class="mb-0">Star Rating</label>
+            
+            <!-- Dev note: This badge must match the number of checked checkboxes. If none checked, add class "hidden-xs" -->
+            <span class="badge pull-right visible-xs-block">3</span>
+          </a>
+          <!-- END - TITLE - TRIGGER THAT EXPANDS CHECKBOX CONTAINER ON MOBILE -->
+
+          <!-- START - CHECKBOX CONTAINER -->
+          <!-- Dev note: This ID must be unique for each filter group -->
+          <div id="filter-group-1" class="filter-collapse--body collapse in">
+
+            <!-- START - CHECKBOX LOOP -->
+              
+
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox"  checked>
+    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
+    <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
+  </label>
+</div>
+              
+
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox"  checked>
+    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
+    <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
+  </label>
+</div>
+              
+
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox"  checked>
+    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
+    <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
+  </label>
+</div>
+            
 
 
 <div class="checkbox">
   <label>
     <input type="checkbox" false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    Anew
+    <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
   </label>
 </div>
-      
+            
 
 
 <div class="checkbox">
   <label>
     <input type="checkbox" false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    Haiku
+    <i class="lt-icon lt-star"></i> 
   </label>
 </div>
-      
+            
 
 
 <div class="checkbox">
   <label>
     <input type="checkbox" false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    Other
+    Not rated
   </label>
 </div>
-    </div>
+            <!-- END - CHECKBOX LOOP -->
 
-    <div class="form-group border-bottom py-4">
-      <label>Skin Type</label>
-      
+          </div>
+          <!-- START - EXAMPLE FILTER GROUP 1 -->
+
+        </div>
+        <!-- END - GROUP OF FILTERS -->
+
+
+        <!-- START - EXAMPLE FILTER GROUP 2 -->
+        <div class="form-group border-bottom pb-4">
+          <a data-toggle="collapse" data-parent="#accordion" href="#filter-group-2" class="filter-collapse--trigger collapsed">
+            <span class="lt-icon lt-increasebutton filter-collapse--icon visible-xs-block"></span><label class="mb-0">Filter Name</label>
+            <span class="badge pull-right visible-xs-block">1</span>
+          </a>
+          <div id="filter-group-2" class="filter-collapse--body collapse">
+            
 
 
 <div class="checkbox">
   <label>
     <input type="checkbox" false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    Dry to Very Dry
+    Filter Item
   </label>
 </div>
-      
+              
+
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox"  checked>
+    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
+    Filter Item
+  </label>
+</div>
+            
 
 
 <div class="checkbox">
   <label>
     <input type="checkbox" false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    Normal to Very Dry
+    Filter Item
   </label>
 </div>
-      
+          </div>
+        </div>
+        <!-- END - EXAMPLE FILTER GROUP 2 -->
+
+        <!-- START - EXAMPLE FILTER GROUP 3 -->
+        <div class="form-group border-bottom pb-4">
+          <a data-toggle="collapse" data-parent="#accordion" href="#filter-group-3" class="filter-collapse--trigger collapsed">
+            <span class="lt-icon lt-increasebutton filter-collapse--icon visible-xs-block"></span><label class="mb-0">Filter Name</label>
+            <span class="badge pull-right visible-xs-block hidden-xs">0</span>
+          </a>
+          <div id="filter-group-3" class="filter-collapse--body collapse">
+            
 
 
 <div class="checkbox">
   <label>
     <input type="checkbox" false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    Normal
+    Filter Item
   </label>
 </div>
-      
+            
 
 
 <div class="checkbox">
   <label>
     <input type="checkbox" false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    Combination
+    Filter Item
   </label>
 </div>
-      
+            
 
 
 <div class="checkbox">
   <label>
     <input type="checkbox" false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    Oily
+    Filter Item
   </label>
 </div>
-      
+          </div>
+        </div>
+        <!-- END - EXAMPLE FILTER GROUP 3 -->
+
+      </form>
 
 
-<div class="checkbox">
-  <label>
-    <input type="checkbox" false>
-    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    Sensitive
-  </label>
-</div>
-    </div>
-
-    <div class="form-group border-bottom py-4">
-      <label>Moisturizer</label>
-      
 
 
-<div class="checkbox">
-  <label>
-    <input type="checkbox" false>
-    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    Day Cream
-  </label>
-</div>
-      
+
+    
+
+    
 
 
-<div class="checkbox">
-  <label>
-    <input type="checkbox" false>
-    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    Night Cream
-  </label>
-</div>
-    </div>
+       </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
-  </form>
+
 
 </section>
 <!-- END - PRODUCT FILTERS -->
@@ -1780,6 +1854,7 @@
   <script src="./js/demo/checkoutDemo.js"></script>
   <script src="./js/demo/formDemo.js"></script>
   <script src="./js/demo/fakeData.js"></script>
+  <script src="./js/demo/product-filters.js"></script>
   <!-- END - DEMO SCRIPTS -->
 
   <script>
