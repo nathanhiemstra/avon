@@ -1,7 +1,7 @@
-<!-- START - PRIMARY NAV -->
+<!-- START - GLOBAL HEADER NAV -->
 <nav class="navbar navbar--primary-nav navbar-default border-bottom d-flex flex-wrap align-items-center justify-content-center" role="navigation">
 
-  <!-- ghost - this invisible div holds a relative position for utility nav on desktop -->
+  <!-- ghost placeholder - this invisible div holds a relative position for utility nav on desktop -->
   <div class="primary-nav__ghost"></div>
 
   <!-- search -->
@@ -16,10 +16,10 @@
 
   <!-- order / cart -->
   <div class="primary-nav__cart hidden-xs">
-    {% include '_includes/groups/navigation/items/order-btn.html.twig' %}
+    {% include '_includes/groups/navigation/global-header-nav/elements/btn-cart.html.twig' %}
   </div>
 
-  <!-- hamburger toggle -->
+  <!-- mobile menu toggle / hamburger -->
   <button class="primary-nav__toggle navbar-toggle flex-fill p-0 m-0" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
     <span class="sr-only">Toggle navigation</span>
     <span class="icon-bar"></span>
@@ -29,8 +29,8 @@
 
   <!-- primary nav links & off-canvas mobile menu -->
   <div class="primary-nav__content navbar-collapse off-canvas d-flex flex-wrap align-content-start justify-content-center">
-    {% include '_includes/groups/navigation/items/global-nav-list.html.twig' %}
+    {% include '_includes/groups/navigation/global-header-nav/elements/global-nav.html.twig' %}
   </div>
 
 </nav>
-<!-- END - PRIMARY NAV -->
+<!-- END - GLOBAL HEADER NAV -->

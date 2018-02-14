@@ -1,4 +1,43 @@
-<!-- close button -->
+<!-- START - GLOBAL HEADER NAV -->
+<nav class="navbar navbar--primary-nav navbar-default border-bottom d-flex flex-wrap align-items-center justify-content-center" role="navigation">
+
+  <!-- ghost placeholder - this invisible div holds a relative position for utility nav on desktop -->
+  <div class="primary-nav__ghost"></div>
+
+  <!-- search -->
+  <div class="primary-nav__search">
+    <a href="#" class="">
+  <span class="lt-icon lt-search lt-medium"></span>
+  <span class="small text-uppercase text-muted hidden-xs">Search</span>
+  <!-- <input id="desktop-header-search" type="text" class="form-inline" placeholder="" autocomplete="off"> -->
+</a>
+  </div>
+
+  <!-- logo -->
+  <a href="index.html" class="primary-nav__logo flex-fill">
+    <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
+  </a>
+
+  <!-- order / cart -->
+  <div class="primary-nav__cart hidden-xs">
+    <a href="#" class="link-plain">
+  <span class="small text-uppercase text-muted">Order
+  </span>
+  <span class="lt-icon lt-shoppingcart lt-large"></span>
+</a>
+  </div>
+
+  <!-- mobile menu toggle / hamburger -->
+  <button class="primary-nav__toggle navbar-toggle flex-fill p-0 m-0" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+
+  <!-- primary nav links & off-canvas mobile menu -->
+  <div class="primary-nav__content navbar-collapse off-canvas d-flex flex-wrap align-content-start justify-content-center">
+    <!-- close button -->
 <button class="navbar-toggle primary-nav__close link-reverse-plain pr-1 pl-4 mr-0 mt-1" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
   <span class="sr-only">Close navigation</span>
   <span class="lt-icon lt-close lt-medium pb-0"></span>
@@ -196,12 +235,7 @@
 </ul>
 <!-- END - MAIN MENU LIST -->
 
-
-
-
-
-
-
+<!-- Sub nav list -->
 <!-- START - PRODUCTS SUB-MENU -->
 <div class="nav navbar-nav navbar-products navbar-sub off-canvas off-canvas--right">
 
@@ -299,3 +333,7 @@
 
 </div>
 <!-- END - PRODUCTS SUB-MENU -->
+  </div>
+
+</nav>
+<!-- END - GLOBAL HEADER NAV -->
