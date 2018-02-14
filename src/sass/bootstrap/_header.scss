@@ -3,22 +3,99 @@
 }
 
 .navbar {
+
+  &--utility-1,
   &--utility-2 {
-    height: 48px;
+    flex-wrap: wrap;
+    background-color: $brand-alt-deep;
+  }
+
+  &--utility-2 {
+
+    min-height: 48px;
     z-index: 9;
 
     li > a {
 
+      // logo images
       img {
         height: 22px;
         width: auto;
       }
     }
+
+    .account-list {
+
+      flex-wrap: wrap;
+      order: 1;
+      width: 100%;
+
+      // desktop
+      @media (min-width: $screen-md-min) {
+        // flex-wrap: wrap;
+        // padding-bottom: 0;
+      }
+
+      .account-list__user {
+
+        width: 100%;
+
+        .profile-img {
+          background-color: $gray-lighter;
+          border-radius: 50%;
+          width: 36px;
+          height: 36px;
+          background-image: url("../images/fpo/img_avatar.png");
+        }
+
+      }
+
+    }
+
+    .tools-list {
+
+      order: 2;
+
+      // desktop
+      @media (min-width: $screen-md-min) {
+        // flex-wrap: wrap;
+        // padding-bottom: 0;
+      }
+
+    }
+
   }
 
   &--utility-1 {
-    height: 44px;
+
+    min-height: 44px;
     z-index: 8;
+
+    .navbar-nav {
+
+      width: 100%;
+      justify-content: center;
+
+      > li {
+        flex: 1 1 50%;
+        margin: 5px;
+        text-align: center;
+      }
+
+      // TODO :: make a list item button style for this
+      // > li, > li.open {
+      //
+      //   background-color: $brand-primary;
+      //
+      //   > a, > a span, > a:focus, , > a span:before, > a i:before {
+      //     background-color: $brand-primary;
+      //     color: $white;
+      //   }
+      //
+      // }
+
+    }
+
   }
 
   &--primary-nav {
@@ -74,6 +151,7 @@
     // START - CART
     .primary-nav__cart {
 
+      order: 4;
       // desktop
       @media (min-width: $screen-md-min) {
         order: 3;
@@ -102,6 +180,83 @@
         width: 100%;
         order: 4;
         margin-top: 2rem;
+      }
+
+      // MAIN NAV LIST
+      .navbar-main__list {
+
+        width: 100%;
+        background-color: $brand-alt;
+
+        // desktop
+        @media (min-width: $screen-md-min) {
+          background-color: red;
+          a {
+            width: auto;
+          }
+          li {
+            float: left;
+          }
+        }
+
+        a { width: 100%; }
+
+        li {
+          // display: block;
+          float: none;
+        }
+
+        > li {
+          &.active > a,
+          &.active > a:hover {
+            background-color: transparent;
+            color: $brand-primary;
+            border-bottom: 4px solid $brand-primary;
+
+            // MOBILE
+            @media (max-width: $screen-xs-max) {
+              color: $white;
+              border-left: 4px solid $brand-primary;
+              border-bottom: none;
+            }
+          }
+
+          a {
+            text-transform: uppercase;
+
+            @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+              font-size: 1.1rem;
+            }
+
+            // MOBILE
+            @media (max-width: $screen-xs-max) {
+              color: $white;
+              text-transform: none;
+              border-left: 4px solid transparent;
+            }
+          }
+
+          &.link {
+            a {
+              color: $brand-primary;
+
+              &:hover {
+                color: $brand-primary-emphasize;
+                border: none;
+              }
+            }
+          }
+
+        } // end li
+
+        .has-sub-items {
+          a.toggle {
+            position: absolute;
+            top: 0;
+            z-index: 1;
+          }
+        } // end .has-sub-items
+
       }
 
     }
@@ -262,43 +417,6 @@
 
     // START - MAIN NAV - mobile and desktop
     .navbar-main {
-      .navbar-main__footer,
-      .navbar-main__header,
-      .navbar-main__list {
-        position: relative;
-      }
-
-      .navbar-main__header {
-        background-color: $brand-alt-deep;
-
-        .profile-img {
-          background-color: $gray-lighter;
-          border-radius: 50%;
-          width: 36px;
-          height: 36px;
-          background-image: url("../images/fpo/img_avatar.png");
-        }
-      }
-
-      .navbar-main__list {
-        // MOBILE
-        @media (max-width: $screen-xs-max) {
-          background-color: $brand-alt;
-
-          a {
-            width: 100%;
-          }
-        }
-
-        .has-sub-items {
-          a.toggle {
-            position: absolute;
-            top: 0;
-            z-index: 1;
-          }
-        }
-
-      }
 
       .navbar-main__footer {
         background-color: $brand-alt-emphasize;
@@ -314,52 +432,39 @@
         }
       }
 
-      .navbar-main__list > li {
-        &.active > a,
-        &.active > a:hover {
-          background-color: transparent;
-          color: $brand-primary;
-          border-bottom: 4px solid $brand-primary;
-
-          // MOBILE
-          @media (max-width: $screen-xs-max) {
-            color: $white;
-            border-left: 4px solid $brand-primary;
-            border-bottom: none;
-          }
-        }
-
-        a {
-          text-transform: uppercase;
-
-          @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
-            font-size: 1.1rem;
-          }
-
-          // MOBILE
-          @media (max-width: $screen-xs-max) {
-            color: $white;
-            text-transform: none;
-            border-left: 4px solid transparent;
-          }
-        }
-
-        &.link {
-          a {
-            color: $brand-primary;
-
-            &:hover {
-              color: $brand-primary-emphasize;
-              border: none;
-            }
-          }
-        }
-
-      }
-      // end li
-
     }
     // end .navbar-nav
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
 
 $height-1: 42px;
 $height-2: 48px;

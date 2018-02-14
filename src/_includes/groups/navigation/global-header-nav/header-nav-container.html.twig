@@ -1,4 +1,4 @@
-<!-- START - GLOBAL HEADER NAV -->
+<!-- START - GLOBAL HEADER NAV CONTAINER -->
 <nav class="navbar navbar--primary-nav navbar-default border-bottom d-flex flex-wrap align-items-center justify-content-center" role="navigation">
 
   <!-- ghost placeholder - this invisible div holds a relative position for utility nav on desktop -->
@@ -15,8 +15,8 @@
   </a>
 
   <!-- order / cart -->
-  <div class="primary-nav__cart hidden-xs">
-    {% include '_includes/groups/navigation/global-header-nav/elements/btn-cart.html.twig' %}
+  <div class="primary-nav__cart">
+    {% include '_includes/groups/navigation/global-header-nav/elements/primary-nav/btn-cart.html.twig' %}
   </div>
 
   <!-- mobile menu toggle / hamburger -->
@@ -27,10 +27,10 @@
     <span class="icon-bar"></span>
   </button>
 
-  <!-- primary nav links & off-canvas mobile menu -->
+  <!-- header nav & off-canvas mobile menu -->
   <div class="primary-nav__content navbar-collapse off-canvas d-flex flex-wrap align-content-start justify-content-center">
-    {% include '_includes/groups/navigation/global-header-nav/elements/global-nav.html.twig' %}
+    {% include '_includes/groups/navigation/global-header-nav/header-nav.html.twig' %}
   </div>
 
 </nav>
-<!-- END - GLOBAL HEADER NAV -->
+<!-- END - GLOBAL HEADER NAV CONTAINER -->
