@@ -75,6 +75,7 @@ h7, .h7 {
 
 h5, .h5, h6, .h6, h7, .h7 {
     text-transform: uppercase;
+    font-weight: $headings-font-weight-heavy;
 }
 
 @media (min-width: $screen-sm-min) {
@@ -179,9 +180,17 @@ mark,
 }
 
 // Contextual colors
-.text-default { color: $text-color; }
-.text-muted { color: $text-muted; }
-.text-light { color: $white; }
+.text-default {
+    color: $text-color;
+}
+
+.text-muted {
+    color: $text-muted;
+}
+
+.text-light {
+    color: $white;
+}
 
 @include text-emphasis-variant(".text-primary", $brand-primary);
 
@@ -311,7 +320,7 @@ dd {
         @include clearfix;
 
         // Clear the floated `dt` if an empty `dd` is present
-
+   
     }
 
     @media (min-width: $dl-horizontal-breakpoint) {
@@ -377,7 +386,7 @@ blockquote {
             content: '\2014 \00A0';
 
             // em dash, nbsp
-
+       
         }
     }
 }
@@ -405,7 +414,7 @@ blockquote.pull-right {
             content: '\00A0 \2014';
 
             // nbsp, em dash
-
+       
         }
     }
 }
@@ -422,5 +431,5 @@ address {
 }
 
 .underline {
-  text-decoration: underline;
+    text-decoration: underline;
 }

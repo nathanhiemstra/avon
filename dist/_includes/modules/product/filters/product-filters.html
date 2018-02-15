@@ -1,10 +1,12 @@
 <!-- START - PRODUCT FILTERS -->
-<section class="aside-product-filters mt-5">
+<section class="aside-product-filters mt-4 pb-4 border-bottom">
 
+  <!-- START - FILTERS HEADLINE AND CHECKBOXES ON DESKTOP -->
   <div class="hidden-xs hidden-sm">
-    <h7 class="my-5">Refine By</h7>
-    <div id="product-filter-container">
+    <h7 class="my-4 d-block text-muted">Refine By: </h7>
+    <div id="product-filter-container" class="small">
 
+      <!-- START - FORM -->
       <form id="product-filters-form">
 
   <!-- START - EXAMPLE FILTER GROUP 1 -->
@@ -22,7 +24,6 @@
       <!-- Dev note: Badges:
         - Default: HIDDEN (hidden-md hidden-lg)
         - Mobile with checkbox area collapsed: VISIBLE (default)
-        - Mobile with checkbox area expanded: HIDDEN (opacity via CSS)
         - Mobile when 0 checkboxes selected: HIDDEN (d-none). 
           - This must be done when page loads.
           - This must be done when checkboxes are clicked (Currently demostrated in product-filters.js )
@@ -37,62 +38,62 @@
     <div id="filter-group-1" class="checkbox-group filter-collapse--body collapse in">
 
       <!-- START - CHECKBOX LOOP -->
-        
+          
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox"  checked>
+    <input type="checkbox"  class="input-sm" checked>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
   </label>
 </div>
-        
+          
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox"  checked>
+    <input type="checkbox"  class="input-sm" checked>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
   </label>
 </div>
+          
+
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox"  class="input-sm" checked>
+    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
+    <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
+  </label>
+</div>
         
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox"  checked>
-    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
-  </label>
-</div>
-      
-
-
-<div class="checkbox">
-  <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
   </label>
 </div>
-      
+        
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     <i class="lt-icon lt-star"></i> 
   </label>
 </div>
-      
+        
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     Not rated
   </label>
@@ -113,12 +114,22 @@
       <span class="badge pull-right hidden-md hidden-lg">1</span>
     </a>
     <div id="filter-group-2" class="checkbox-group filter-collapse--body collapse">
-      
+        
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
+    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
+    Filter Item
+  </label>
+</div>
+          
+
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox"  class="input-sm" checked>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     Filter Item
   </label>
@@ -128,17 +139,7 @@
 
 <div class="checkbox">
   <label>
-    <input type="checkbox"  checked>
-    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    Filter Item
-  </label>
-</div>
-      
-
-
-<div class="checkbox">
-  <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     Filter Item
   </label>
@@ -156,32 +157,32 @@
       <span class="badge pull-right d-none hidden-md hidden-lg">0</span>
     </a>
     <div id="filter-group-3" class="checkbox-group filter-collapse--body collapse">
-      
+        
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     Filter Item
   </label>
 </div>
-      
+        
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     Filter Item
   </label>
 </div>
-      
+        
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     Filter Item
   </label>
@@ -190,12 +191,14 @@
   </div>
   <!-- END - EXAMPLE FILTER GROUP 3 -->
 
-</form>
+</form>      <!-- END - FORM -->
+
     </div>
   </div>
+  <!-- END - FILTERS HEADLINE AND CHECKBOXES ON DESKTOP -->
   
 
-
+  <!-- START - MODAL FOR FILTERS (ONLY FOR MOBILE) -->
   <div class="modal modal-fullscreen-sm fade" id="product-filter-modal" tabindex="-1" role="dialog" aria-labelledby="product-filter-modal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -205,7 +208,7 @@
         </div>
         <div id="product-filter-container-modal" class="modal-body">
 
-    
+          <!-- CHECKBOXES GET MOVED HERE WITH JAVASCRIPT WHEN MODAL OPENS -->
 
         </div>
         <div class="modal-footer">
@@ -214,8 +217,7 @@
        </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-
-
+  <!-- END - MODAL FOR FILTERS (ONLY FOR MOBILE) -->
 
 </section>
 <!-- END - PRODUCT FILTERS -->

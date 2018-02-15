@@ -1,17 +1,21 @@
 <!-- START - PRODUCT FILTERS -->
-<section class="aside-product-filters mt-5">
+<section class="aside-product-filters mt-4 pb-4 border-bottom">
 
+  <!-- START - FILTERS HEADLINE AND CHECKBOXES ON DESKTOP -->
   <div class="hidden-xs hidden-sm">
-    <h7 class="my-5">Refine By</h7>
-    <div id="product-filter-container">
+    <h7 class="my-4 d-block text-muted">Refine By: </h7>
+    <div id="product-filter-container" class="small">
 
+      <!-- START - FORM -->
       {% include '_includes/modules/product/filters/product-filters-form.html.twig' %}
+      <!-- END - FORM -->
 
     </div>
   </div>
+  <!-- END - FILTERS HEADLINE AND CHECKBOXES ON DESKTOP -->
   
 
-
+  <!-- START - MODAL FOR FILTERS (ONLY FOR MOBILE) -->
   <div class="modal modal-fullscreen-sm fade" id="product-filter-modal" tabindex="-1" role="dialog" aria-labelledby="product-filter-modal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -21,7 +25,7 @@
         </div>
         <div id="product-filter-container-modal" class="modal-body">
 
-    
+          <!-- CHECKBOXES GET MOVED HERE WITH JAVASCRIPT WHEN MODAL OPENS -->
 
         </div>
         <div class="modal-footer">
@@ -30,8 +34,7 @@
        </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-
-
+  <!-- END - MODAL FOR FILTERS (ONLY FOR MOBILE) -->
 
 </section>
 <!-- END - PRODUCT FILTERS -->

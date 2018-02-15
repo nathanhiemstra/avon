@@ -1265,12 +1265,14 @@
   <aside class="col-md-3" role="complementary">
     
         <!-- START - PRODUCT FILTERS -->
-<section class="aside-product-filters mt-5">
+<section class="aside-product-filters mt-4 pb-4 border-bottom">
 
+  <!-- START - FILTERS HEADLINE AND CHECKBOXES ON DESKTOP -->
   <div class="hidden-xs hidden-sm">
-    <h7 class="my-5">Refine By</h7>
-    <div id="product-filter-container">
+    <h7 class="my-4 d-block text-muted">Refine By: </h7>
+    <div id="product-filter-container" class="small">
 
+      <!-- START - FORM -->
       <form id="product-filters-form">
 
   <!-- START - EXAMPLE FILTER GROUP 1 -->
@@ -1288,7 +1290,6 @@
       <!-- Dev note: Badges:
         - Default: HIDDEN (hidden-md hidden-lg)
         - Mobile with checkbox area collapsed: VISIBLE (default)
-        - Mobile with checkbox area expanded: HIDDEN (opacity via CSS)
         - Mobile when 0 checkboxes selected: HIDDEN (d-none). 
           - This must be done when page loads.
           - This must be done when checkboxes are clicked (Currently demostrated in product-filters.js )
@@ -1303,62 +1304,62 @@
     <div id="filter-group-1" class="checkbox-group filter-collapse--body collapse in">
 
       <!-- START - CHECKBOX LOOP -->
-        
+          
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox"  checked>
+    <input type="checkbox"  class="input-sm" checked>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
   </label>
 </div>
-        
+          
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox"  checked>
+    <input type="checkbox"  class="input-sm" checked>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
   </label>
 </div>
+          
+
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox"  class="input-sm" checked>
+    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
+    <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
+  </label>
+</div>
         
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox"  checked>
-    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
-  </label>
-</div>
-      
-
-
-<div class="checkbox">
-  <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> 
   </label>
 </div>
-      
+        
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     <i class="lt-icon lt-star"></i> 
   </label>
 </div>
-      
+        
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     Not rated
   </label>
@@ -1379,12 +1380,22 @@
       <span class="badge pull-right hidden-md hidden-lg">1</span>
     </a>
     <div id="filter-group-2" class="checkbox-group filter-collapse--body collapse">
-      
+        
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
+    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
+    Filter Item
+  </label>
+</div>
+          
+
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox"  class="input-sm" checked>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     Filter Item
   </label>
@@ -1394,17 +1405,7 @@
 
 <div class="checkbox">
   <label>
-    <input type="checkbox"  checked>
-    <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
-    Filter Item
-  </label>
-</div>
-      
-
-
-<div class="checkbox">
-  <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     Filter Item
   </label>
@@ -1422,32 +1423,32 @@
       <span class="badge pull-right d-none hidden-md hidden-lg">0</span>
     </a>
     <div id="filter-group-3" class="checkbox-group filter-collapse--body collapse">
-      
+        
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     Filter Item
   </label>
 </div>
-      
+        
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     Filter Item
   </label>
 </div>
-      
+        
 
 
 <div class="checkbox">
   <label>
-    <input type="checkbox" false>
+    <input type="checkbox"  class="input-sm"false>
     <span class="mr-4"><i class="lt-icon lt-checkmark"></i><i class="indeterminate lt-icon lt-minus"></i></span>
     Filter Item
   </label>
@@ -1456,12 +1457,14 @@
   </div>
   <!-- END - EXAMPLE FILTER GROUP 3 -->
 
-</form>
+</form>      <!-- END - FORM -->
+
     </div>
   </div>
+  <!-- END - FILTERS HEADLINE AND CHECKBOXES ON DESKTOP -->
   
 
-
+  <!-- START - MODAL FOR FILTERS (ONLY FOR MOBILE) -->
   <div class="modal modal-fullscreen-sm fade" id="product-filter-modal" tabindex="-1" role="dialog" aria-labelledby="product-filter-modal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -1471,7 +1474,7 @@
         </div>
         <div id="product-filter-container-modal" class="modal-body">
 
-    
+          <!-- CHECKBOXES GET MOVED HERE WITH JAVASCRIPT WHEN MODAL OPENS -->
 
         </div>
         <div class="modal-footer">
@@ -1480,8 +1483,7 @@
        </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-
-
+  <!-- END - MODAL FOR FILTERS (ONLY FOR MOBILE) -->
 
 </section>
 <!-- END - PRODUCT FILTERS -->
@@ -1585,18 +1587,18 @@
 
   <!-- START - LIST ITEMS LOOP -->
 
-  <li class="avon-product-list__item container-fluid border-bottom p-4">
+  <li class="avon-product-list__item container-fluid border-bottom py-5">
   <a href="#">
     <div class="row">
       <div class="col col-xs-3 col-sm-2">
-        <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
+        <img src="/images/fpo/agnew-ultimate-lg.png" class="product-img img-responsive">
       </div>
       <div class="col col-xs-9 col-sm-10">
         <div class="col col-xs-12 col-sm-8">
-          <p class="title link-plain">Anew Ultimate Supreme Advanced Performance Créme</p>
+          <p class="title link-plain"><strong>Anew Ultimate Supreme Advanced Performance Créme</strong></p>
           <p>
-            <span class="sale-price">$30.00</span>
-            <span class="reg-price small link-plain">Regular Price: <span class="strike-through">$36.00</span></span>
+            <span class="sale-price"><strong>$30.00</strong></span>
+            <span class="reg-price small link-plain ml-4">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
           </p>
           
         </div>
@@ -1612,18 +1614,18 @@
   </a>
 </li>
 
-  <li class="avon-product-list__item container-fluid border-bottom p-4">
+  <li class="avon-product-list__item container-fluid border-bottom py-5">
   <a href="#">
     <div class="row">
       <div class="col col-xs-3 col-sm-2">
-        <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
+        <img src="/images/fpo/agnew-ultimate-lg.png" class="product-img img-responsive">
       </div>
       <div class="col col-xs-9 col-sm-10">
         <div class="col col-xs-12 col-sm-8">
-          <p class="title link-plain">Haiku Bonus Size Roll-On</p>
+          <p class="title link-plain"><strong>Haiku Bonus Size Roll-On</strong></p>
           <p>
-            <span class="sale-price">$30.00</span>
-            <span class="reg-price small link-plain">Regular Price: <span class="strike-through">$36.00</span></span>
+            <span class="sale-price"><strong>$30.00</strong></span>
+            <span class="reg-price small link-plain ml-4">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
           </p>
           
         </div>
@@ -1639,18 +1641,18 @@
   </a>
 </li>
 
-  <li class="avon-product-list__item container-fluid border-bottom p-4">
+  <li class="avon-product-list__item container-fluid border-bottom py-5">
   <a href="#">
     <div class="row">
       <div class="col col-xs-3 col-sm-2">
-        <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
+        <img src="/images/fpo/agnew-ultimate-lg.png" class="product-img img-responsive">
       </div>
       <div class="col col-xs-9 col-sm-10">
         <div class="col col-xs-12 col-sm-8">
-          <p class="title link-plain">Another Product</p>
+          <p class="title link-plain"><strong>Another Product</strong></p>
           <p>
-            <span class="sale-price">$30.00</span>
-            <span class="reg-price small link-plain">Regular Price: <span class="strike-through">$36.00</span></span>
+            <span class="sale-price"><strong>$30.00</strong></span>
+            <span class="reg-price small link-plain ml-4">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
           </p>
           
         </div>
@@ -1666,18 +1668,18 @@
   </a>
 </li>
 
-  <li class="avon-product-list__item container-fluid border-bottom p-4">
+  <li class="avon-product-list__item container-fluid border-bottom py-5">
   <a href="#">
     <div class="row">
       <div class="col col-xs-3 col-sm-2">
-        <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
+        <img src="/images/fpo/agnew-ultimate-lg.png" class="product-img img-responsive">
       </div>
       <div class="col col-xs-9 col-sm-10">
         <div class="col col-xs-12 col-sm-8">
-          <p class="title link-plain">And Another</p>
+          <p class="title link-plain"><strong>And Another</strong></p>
           <p>
-            <span class="sale-price">$30.00</span>
-            <span class="reg-price small link-plain">Regular Price: <span class="strike-through">$36.00</span></span>
+            <span class="sale-price"><strong>$30.00</strong></span>
+            <span class="reg-price small link-plain ml-4">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
           </p>
           
         </div>
