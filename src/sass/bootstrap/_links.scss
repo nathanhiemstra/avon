@@ -92,8 +92,7 @@
     }
 }
 
-// Plain link uses the default text color and no decoration
-.link-plain {
+@mixin link-plain {
     color: $link-reverse-color !important;
     font-weight: normal !important;
     text-transform: none !important;
@@ -114,6 +113,11 @@
             color: $text-color !important;
         }
     }
+}
+
+// Plain link uses the default text color and no decoration
+.link-plain {
+    @include link-plain;
 }
 
 // Muted link uses muted colors with default link behavior

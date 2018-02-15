@@ -1,0 +1,77 @@
+<form id="product-filters-form">
+
+  <!-- START - EXAMPLE FILTER GROUP 1 -->
+  <div class="form-group border-bottom pb-4">
+
+    <!-- START - TITLE - TRIGGER THAT EXPANDS CHECKBOX CONTAINER ON MOBILE -->
+
+
+    <!-- Dev note: This href must match ID on div below -->
+    <a data-toggle="collapse" href="#filter-group-1" class="filter-collapse--trigger">
+      
+      <!-- Dev note: There must be no space between <span> and <label> -->
+      <span class="lt-icon lt-increasebutton filter-collapse--icon"></span><label class="mb-0">Star Rating</label>
+      
+      <!-- Dev note: Badges:
+        - Default: HIDDEN (hidden-md hidden-lg)
+        - Mobile with checkbox area collapsed: VISIBLE (default)
+        - Mobile when 0 checkboxes selected: HIDDEN (d-none). 
+          - This must be done when page loads.
+          - This must be done when checkboxes are clicked (Currently demostrated in product-filters.js )
+
+      This badge must match the number of checked checkboxes. -->
+      <span class="badge pull-right hidden-md hidden-lg">3</span>
+    </a>
+    <!-- END - TITLE - TRIGGER THAT EXPANDS CHECKBOX CONTAINER ON MOBILE -->
+
+    <!-- START - CHECKBOX CONTAINER -->
+    <!-- Dev note: This ID must be unique for each filter group -->
+    <div id="filter-group-1" class="checkbox-group filter-collapse--body collapse in">
+
+      <!-- START - CHECKBOX LOOP -->
+      {% include components.elements.forms.checkbox with { theLabel: '<i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> ', classes: 'input-sm', checked: true } %}
+      {% include components.elements.forms.checkbox with { theLabel: '<i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> ', classes: 'input-sm', checked: true } %}
+      {% include components.elements.forms.checkbox with { theLabel: '<i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> ', classes: 'input-sm', checked: true } %}
+      {% include components.elements.forms.checkbox with { theLabel: '<i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> ', classes: 'input-sm', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: '<i class="lt-icon lt-star"></i> ', classes: 'input-sm', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Not rated', classes: 'input-sm', checked: false } %}
+      <!-- END - CHECKBOX LOOP -->
+
+    </div>
+    <!-- START - EXAMPLE FILTER GROUP 1 -->
+
+  </div>
+  <!-- END - GROUP OF FILTERS -->
+
+
+  <!-- START - EXAMPLE FILTER GROUP 2 -->
+  <div class="form-group border-bottom pb-4">
+    <a data-toggle="collapse" data-parent="#accordion" href="#filter-group-2" class="filter-collapse--trigger collapsed">
+      <span class="lt-icon lt-increasebutton filter-collapse--icon"></span><label class="mb-0">Filter Name</label>
+      <span class="badge pull-right hidden-md hidden-lg">1</span>
+    </a>
+    <div id="filter-group-2" class="checkbox-group filter-collapse--body collapse">
+      {% include components.elements.forms.checkbox with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Filter Item', classes: 'input-sm', checked: true } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
+    </div>
+  </div>
+  <!-- END - EXAMPLE FILTER GROUP 2 -->
+
+  <!-- START - EXAMPLE FILTER GROUP 3 -->
+  <!-- Dev note: The last form-group has no "border-bottom" class -->
+  <div class="form-group pb-4">
+    <a data-toggle="collapse" data-parent="#accordion" href="#filter-group-3" class="filter-collapse--trigger collapsed">
+      <span class="lt-icon lt-increasebutton filter-collapse--icon"></span><label class="mb-0">Filter Name</label>
+      <!-- Dev note: When page loads, if this number is 0, add class "d-none" -->
+      <span class="badge pull-right d-none hidden-md hidden-lg">0</span>
+    </a>
+    <div id="filter-group-3" class="checkbox-group filter-collapse--body collapse">
+      {% include components.elements.forms.checkbox with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
+      {% include components.elements.forms.checkbox with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
+    </div>
+  </div>
+  <!-- END - EXAMPLE FILTER GROUP 3 -->
+
+</form>

@@ -75,6 +75,7 @@ h7, .h7 {
 
 h5, .h5, h6, .h6, h7, .h7 {
     text-transform: uppercase;
+    font-weight: $headings-font-weight-heavy;
 }
 
 @media (min-width: $screen-sm-min) {
@@ -422,5 +423,5 @@ address {
 }
 
 .underline {
-  text-decoration: underline;
+    text-decoration: underline;
 }

@@ -1,4 +1,4 @@
-<li class="avon-product-list__item container-fluid border-bottom p-4">
+<li class="avon-product-list__item container-fluid border-bottom py-5">
   <a href="{{ itemUrl }}">
     <div class="row">
       <div class="col col-xs-3 col-sm-2">
@@ -6,10 +6,10 @@
       </div>
       <div class="col col-xs-9 col-sm-10">
         <div class="col col-xs-12 col-sm-8">
-          <p class="title link-plain">{{ itemTitle }}</p>
+          <p class="title link-plain"><strong>{{ itemTitle }}</strong></p>
           <p>
-            <span class="sale-price">{{ itemPrice }}</span>
-            <span class="reg-price small link-plain">Regular Price: <span class="strike-through">{{ regPrice }}</span></span>
+            <span class="sale-price"><strong>{{ itemPrice }}</strong></span>
+            <span class="reg-price small link-plain ml-4">Regular Price: <span class="strike-through text-muted">{{ regPrice }}</span></span>
           </p>
           {# <p>
             <span class="rating small">
