@@ -10,7 +10,7 @@
     background-color: $brand-alt-deep;
 
     // desktop
-    @media (min-width: $screen-md-min) {
+    @media (min-width: $screen-sm-min) {
       align-items: center;
       justify-content: center;
       flex-wrap: nowrap;
@@ -38,8 +38,9 @@
       width: 100%;
 
       // desktop
-      @media (min-width: $screen-md-min) {
+      @media (min-width: $screen-sm-min) {
         order: 2;
+        width: auto;
         align-items: center;
         justify-content: flex-end;
         flex-wrap: nowrap;
@@ -55,6 +56,13 @@
 
         .profile-name {
           max-width: 250px;
+
+          // desktop
+          @media (min-width: $screen-sm-min) {
+            max-width: unset;
+            width: 17vw;
+          }
+
         }
 
         .profile-img {
@@ -65,8 +73,13 @@
         }
 
         // desktop
-        @media (min-width: $screen-md-min) {
+        @media (min-width: $screen-sm-min) {
           width: auto;
+
+          .profile-img {
+            width: 32px;
+            height: 32px;
+          }
         }
 
       }
@@ -82,10 +95,9 @@
       }
 
       // desktop
-      @media (min-width: $screen-md-min) {
+      @media (min-width: $screen-sm-min) {
         order: 1;
-        // flex-wrap: wrap;
-        // padding-bottom: 0;
+        flex: 1 1 auto;
       }
 
     }
@@ -107,24 +119,39 @@
         text-align: center;
 
         // desktop
-        @media (min-width: $screen-md-min) {}
+        @media (min-width: $screen-sm-min) {}
 
       }
 
     }
 
     // desktop
-    @media (min-width: $screen-md-min) {
+    @media (min-width: $screen-sm-min) {
       align-items: center;
       justify-content: flex-start;
       background-color: $body-bg;
 
       ul:first-of-type {
+
         flex: 1 1 auto;
+
+        li:first-of-type {
+          padding-left: 8px !important;
+        }
+
+      }
+
+      .nav > li:first-of-type {
+        margin-right: 15px !important;
       }
 
       .nav, .nav > li {
         width: auto;
+
+        a {
+          padding: 0;
+        }
+
       }
     }
 
@@ -136,7 +163,7 @@
     padding: 2rem 1.5rem;
 
     // desktop
-    @media (min-width: $screen-md-min) {
+    @media (min-width: $screen-sm-min) {
       flex-wrap: wrap;
       padding-bottom: 0;
     }
@@ -147,7 +174,7 @@
       order: 3;
 
       // desktop
-      @media (min-width: $screen-md-min) {
+      @media (min-width: $screen-sm-min) {
         order: 1;
         flex: 1 1 auto;
         margin: 2rem 1rem;
@@ -163,7 +190,7 @@
       flex: 1 1 auto;
 
       // desktop
-      @media (min-width: $screen-md-min) {
+      @media (min-width: $screen-sm-min) {
         margin: 2rem 1rem;
       }
 
@@ -171,7 +198,7 @@
         height: 20px;
 
         // desktop
-        @media (min-width: $screen-md-min) {
+        @media (min-width: $screen-sm-min) {
           height: 39px;
         }
 
@@ -185,7 +212,7 @@
 
       order: 4;
       // desktop
-      @media (min-width: $screen-md-min) {
+      @media (min-width: $screen-sm-min) {
         order: 3;
         margin: 2rem 1rem;
       }
@@ -208,7 +235,7 @@
       order: 3;
 
       // desktop
-      @media (min-width: $screen-md-min) {
+      @media (min-width: $screen-sm-min) {
         width: 100%;
         order: 4;
         margin-top: 2rem;
@@ -227,7 +254,7 @@
         }
 
         // desktop
-        @media (min-width: $screen-md-min) {
+        @media (min-width: $screen-sm-min) {
 
           width: auto;
           background-color: $body-bg;
@@ -260,7 +287,7 @@
           a {
             text-transform: uppercase;
 
-            @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+            @media (min-width: $screen-sm-min) and (max-width: $screen-sm-min) {
               font-size: 1.1rem;
             }
 
@@ -322,7 +349,7 @@
       //   height: 20px;
       //
       //   // desktop
-      //   @media (min-width: $screen-md-min) {
+      //   @media (min-width: $screen-sm-min) {
       //     height: 39px;
       //   }
       //
@@ -511,7 +538,7 @@ $utility-height: $height-1 + $height-2;
   display: none;
 
   // desktop
-  @media (min-width: $screen-md-min) {
+  @media (min-width: $screen-sm-min) {
     display: block;
     background-color: red;
     width: 100%;
@@ -529,7 +556,8 @@ $utility-height: $height-1 + $height-2;
   padding: 15px;
 
  // desktop
-  @media (min-width: $screen-md-min) {
+  @media (min-width: $screen-sm-min) {
+    justify-content: flex-start;
     position: absolute;
     display: block;
     top: 0;
@@ -548,7 +576,7 @@ $utility-height: $height-1 + $height-2;
   padding: 15px;
 
   // desktop
-  @media (min-width: $screen-md-min) {
+  @media (min-width: $screen-sm-min) {
     position: absolute;
     display: block;
     top: $height-2;
