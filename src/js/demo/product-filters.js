@@ -3,6 +3,7 @@
  * @return {init} [description]
  */
 
+
 var ProductFilters = (function () {
 
   var $els = {};
@@ -14,7 +15,11 @@ var ProductFilters = (function () {
     $els = {
       filterCheckboxes: $('.aside-product-filters .checkbox-group :checkbox'),
       checkboxGroup:    $('.aside-product-filters .checkbox-group'),
-      collapseBody:     $('.aside-product-filters .filter-collapse--body')
+      collapseBody:     $('.aside-product-filters .filter-collapse--body'),
+      modal:            $('.aside-product-filters #product-filter-modal'),
+      containerDesktop: $('.aside-product-filters #product-filter-container'),
+      containerModal:   $('.aside-product-filters #product-filter-container-modal'),
+      form:             $('.aside-product-filters #product-filters-form'),
     };
 
     _addListeners();
@@ -22,10 +27,28 @@ var ProductFilters = (function () {
 
   // private methods
   var _addListeners = function () {
+    
+    // Before modal begin to open
+    $els.modal.on('show.bs.modal', function() {
+      console.log('_moveMarkupToModal: ',_moveMarkupToModal); 
+      _moveMarkupToModal();
+    })
+
+    // After modal finishes closing
+    $els.modal.on('hidden.bs.modal', function() {
+      console.log('_moveMarkupOutOfModal: ',_moveMarkupOutOfModal); 
+      _moveMarkupOutOfModal();
+    });
+
+    $els.collapseBody.on('show.bs.collapse', function (e) {
+      _preventCollapsedForDesktop(e);
+    });
+
     $els.checkboxGroup.on('click', function() {
       _updateBadgeCount(this);
     });
 
+    
     // Before show begins
     $els.collapseBody.on('show.bs.collapse', function (e) {
       _preventCollapsedForDesktop(e);
@@ -43,6 +66,17 @@ var ProductFilters = (function () {
 
   };
 
+  // When modal opens move filters into it
+  var _moveMarkupToModal = function() {
+    $els.form.detach().appendTo($els.containerModal)
+  };
+
+  // When modal closes move back to default location
+  var _moveMarkupOutOfModal = function() {
+    $els.form.detach().appendTo($els.containerDesktop)
+  };
+
+
   var _updateBadgeCount = function(itemClicked) {
     
     // Find out how many checkboxes are checked
@@ -53,9 +87,9 @@ var ProductFilters = (function () {
     // Update number in badge
     $badge.text( checkedCount );
     if ( checkedCount == 0 ) {
-      $badge.addClass('hidden-xs');
+      $badge.addClass('d-none');
     } else {
-      $badge.removeClass('hidden-xs');
+      $badge.removeClass('d-none');
     }
   };
 

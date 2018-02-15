@@ -15,7 +15,7 @@ li.avon-product-list__item {
     .form-group {
         padding-left: 2.2rem;
 
-        @media (min-width: $screen-sm-min) {
+        @media (min-width: $screen-md-min) {
             // Because icon is hidden on desktop
             padding-left: 0;
         }
@@ -24,14 +24,20 @@ li.avon-product-list__item {
     .filter-collapse--trigger {
         position: relative;
 
+        .badge {
+            transition: 0.5s opacity ease;
+            opacity: 1;
+        }
+
         // Only show badge if collapsed
         &:not(.collapsed) {
             .badge {
-                visibility: hidden;
+                transition: 0.5s opacity ease;
+                opacity: 0;
             }
         }
 
-        @media (min-width: $screen-sm-min) {
+        @media (min-width: $screen-md-min) {
             // Remove indication that this is a link on desktop
             @include link-plain;
         }
@@ -40,10 +46,14 @@ li.avon-product-list__item {
     .filter-collapse--icon {
         left: -2.2rem;
         position: absolute;
+
+        @media (min-width: $screen-md-min) {
+            display: none;
+        }
     }
 
     .filter-collapse--body {
-        @media (min-width: $screen-sm-min) {
+        @media (min-width: $screen-md-min) {
             // Remove collapsability on desktop
             &.collapse {
                 display: block;
@@ -54,7 +64,7 @@ li.avon-product-list__item {
     label:hover {
         cursor: pointer;
 
-        @media (min-width: $screen-sm-min) {
+        @media (min-width: $screen-md-min) {
             cursor: default;
         }
     }
