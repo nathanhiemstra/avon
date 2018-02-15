@@ -134,20 +134,39 @@ a.btn {
     line-height: 0; // prevent larger icons increasing button height
   }
 
-  > a,
-  > a i,
-  > a i:before,
-  > a span,
-  > a span:before,
-  > a:focus,
-  > a:hover,
-  > a {
+  > i,
+  > i:before,
+  > span,
+  > span:before,
+  &:focus,
+  &:hover {
     background-color: $brand-primary !important;
     color: $white !important;
   }
 
   // desktop
   @media (min-width: $screen-md-min) {
+
+    background-color: transparent;
+    color: $text-color;
+
+    // dropdowns
+    .dropdown-menu {
+      background-color: transparent;
+      li a {
+        color: $text-color;
+      }
+    }
+
+    > i,
+    > i:before,
+    > span,
+    > span:before,
+    &:focus,
+    &:hover {
+      background-color: transparent !important;
+      color: $text-color !important;
+    }
 
   }
 

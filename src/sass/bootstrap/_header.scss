@@ -8,6 +8,13 @@
   &--utility-2 {
     flex-wrap: wrap;
     background-color: $brand-alt-deep;
+
+    // desktop
+    @media (min-width: $screen-md-min) {
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
   }
 
   &--utility-2 {
@@ -32,8 +39,14 @@
 
       // desktop
       @media (min-width: $screen-md-min) {
-        // flex-wrap: wrap;
-        // padding-bottom: 0;
+        order: 2;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+
+        li {
+          white-space: nowrap;
+        }
       }
 
       .account-list__user {
@@ -65,6 +78,7 @@
 
       // desktop
       @media (min-width: $screen-md-min) {
+        order: 1;
         // flex-wrap: wrap;
         // padding-bottom: 0;
       }
@@ -81,11 +95,9 @@
     .nav {
 
       width: 100%;
-      // justify-content: center;
 
       li {
         width: 50%;
-        // flex: 1 1 50%;
         margin: 5px;
         text-align: center;
 
@@ -94,6 +106,21 @@
 
       }
 
+    }
+
+    // desktop
+    @media (min-width: $screen-md-min) {
+      align-items: center;
+      justify-content: flex-start;
+      background-color: $body-bg;
+
+      ul:first-of-type {
+        flex: 1 1 auto;
+      }
+
+      .nav, .nav > li {
+        width: auto;
+      }
     }
 
   }
@@ -188,22 +215,26 @@
         width: 100%;
         background-color: $brand-alt;
 
-        // desktop
-        @media (min-width: $screen-md-min) {
-          background-color: red;
-          a {
-            width: auto;
-          }
-          li {
-            float: left;
-          }
-        }
-
         a { width: 100%; }
 
         li {
-          // display: block;
           float: none;
+        }
+
+        // desktop
+        @media (min-width: $screen-md-min) {
+
+          width: auto;
+          background-color: $body-bg;
+
+          a {
+            width: auto;
+          }
+
+          li {
+            float: left;
+          }
+
         }
 
         > li {
