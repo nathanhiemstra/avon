@@ -179,9 +179,9 @@ mark,
 }
 
 // Contextual colors
-.text-default { color: $text-color; }
-.text-muted { color: $text-muted; }
-.text-light { color: $white; }
+.text-default { color: $text-color !important; }
+.text-muted { color: $text-muted !important; }
+.text-light { color: $white !important; }
 
 @include text-emphasis-variant(".text-primary", $brand-primary);
 

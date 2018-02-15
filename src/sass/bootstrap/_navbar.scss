@@ -204,12 +204,12 @@
 // JavaScript plugin.
 
 .navbar-toggle {
-    position: relative;
-    float: right;
-    margin-right: $navbar-padding-horizontal;
-    padding: 9px 10px;
-
-    @include navbar-vertical-align(34px);
+    // position: relative;
+    // float: right;
+    // margin-right: $navbar-padding-horizontal;
+    // padding: 9px 10px;
+    //
+    // @include navbar-vertical-align(34px);
 
     background-color: transparent;
     background-image: none;
@@ -420,7 +420,7 @@
 // Default navbar
 .navbar-default {
     background-color: $navbar-default-bg;
-    border-color: $navbar-default-border;
+    // border-color: $navbar-default-border;
     padding-top: $navbar-padding-horizontal;
     padding-bottom: $navbar-padding-horizontal;
     padding-left: $navbar-padding-horizontal;
@@ -470,7 +470,7 @@
     }
 
     .navbar-toggle {
-        border-color: $navbar-default-toggle-border-color;
+        // border-color: $navbar-default-toggle-border-color;
 
         &:hover,
         &:focus {
