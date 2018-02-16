@@ -192,3 +192,9 @@ html:hover [class^="lt-"] {
   content: "\e92b";
   color: #ed008c;
 }
+
+// lt-plus is a rotated .lt-close
+.lt-plus {
+  @extend .lt-close;
+  transform: rotate(-45deg);
+}

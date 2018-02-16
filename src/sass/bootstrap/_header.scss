@@ -314,10 +314,7 @@
           a,
           a:hover {
             text-transform: uppercase;
-
-            // @media (min-width: $screen-sm-min) and (max-width: $screen-sm-min) {
-            //   font-size: 1.1rem;
-            // }
+            padding-bottom: 1.5rem;
 
             // MOBILE
             @media (max-width: $screen-xs-max) {
@@ -325,6 +322,7 @@
               text-transform: none;
               border-left: 4px solid transparent;
               border-bottom: none;
+              padding: 10px 15px;
             }
           }
 
@@ -689,7 +687,7 @@
       }
 
       a {
-        .lt-next {
+        .lt-carat-right {
           opacity: 1;
           transform: translateX(5px);
           transition: $ui-animation-time opacity $ui-animation-ease, $ui-animation-time transform ease-in-out;
@@ -697,21 +695,21 @@
 
         .lt-plus {
           opacity: 1;
-          transform: rotate(-45deg);
+          transform: rotate(-90deg);
           transition: $ui-animation-time opacity $ui-animation-ease, $ui-animation-time transform ease-in-out;
         }
 
         &.collapsed {
           background-color: transparent;
 
-          .lt-next {
+          .lt-carat-right {
             opacity: 0;
             transform: translateX(0);
           }
 
           .lt-plus {
             opacity: 0.2;
-            transform: rotate(0);
+            transform: rotate(-45deg);
           }
 
         }

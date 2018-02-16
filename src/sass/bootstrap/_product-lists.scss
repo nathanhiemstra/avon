@@ -46,13 +46,13 @@ li.avon-product-list__item {
         > a[data-toggle="collapse"] {
             &.collapsed {
                 .filter-collapse--icon {
-                    @extend .lt-increasebutton;
+                    @extend .lt-carat-up;
                 }
             }
 
             &:not(.collapsed) {
                 .filter-collapse--icon {
-                    @extend .lt-decreasebutton;
+                    @extend .lt-carat-down;
                 }
             }
         }
@@ -74,7 +74,7 @@ li.avon-product-list__item {
 
             // transition: 0.5s opacity ease;
             // opacity: 1;
-       
+
         }
 
         // // Only show badge if collapsed
