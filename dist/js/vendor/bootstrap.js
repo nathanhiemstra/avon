@@ -632,12 +632,6 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
   // COLLAPSE OFF-CANVAS DATA-API
   // =================
 
-  // mobile menu slide from the left
-  // $('[data-toggle="slide-collapse"]').on('click', function() {
-  //   $navMenuCont = $($(this).data('target'));
-  //   $navMenuCont.animate({'width':'toggle'}, 350);
-  // });
-
   $(document).on('click.bs.collapse.data-api', '[data-toggle=off-canvas-collapse]', function (e) {
     var $this   = $(this), href
     var target  = $this.attr('data-target')

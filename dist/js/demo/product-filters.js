@@ -30,11 +30,13 @@ var ProductFilters = (function () {
     
     // Before modal begin to open
     $els.modal.on('show.bs.modal', function() {
+      console.log('_moveMarkupToModal: ',_moveMarkupToModal); 
       _moveMarkupToModal();
     })
 
     // After modal finishes closing
     $els.modal.on('hidden.bs.modal', function() {
+      console.log('_moveMarkupOutOfModal: ',_moveMarkupOutOfModal); 
       _moveMarkupOutOfModal();
     });
 
