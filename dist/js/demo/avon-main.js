@@ -154,5 +154,6 @@ $(document).ready(function () {
   if(typeof CartCheckboxes !== 'undefined') CartCheckboxes.init();
   if(typeof CheckoutDemo !== 'undefined') CheckoutDemo.init();
   if(typeof FormDemo !== 'undefined') FormDemo.init();
+  if(typeof ProductFilters !== 'undefined') ProductFilters.init();
 
 });

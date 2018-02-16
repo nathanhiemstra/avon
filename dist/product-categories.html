@@ -43,514 +43,340 @@
     <div class="col-xs-12">
       <header class="global-header mb-5" role="banner">
 
-        <!-- START - Utility Nav Container -->
-        <div class="container-fluid p-0 m-0 border-bottom">
-
-          <!-- Utility nav 2 -->
-          <div class="col-xs-12 p-0 m-0 hidden-xs">
-            <!-- START - STATIC NAV -->
-<nav class="navbar navbar-inverse navbar-static-top navbar--utility-2 border-0 m-0 d-flex">
-  <div class="container d-flex align-items-center">
-
-    <!-- BEGIN - LOGOS SECTION -->
-    <!-- TODO :: make this an include, also being used in mobile menu -->
-    <ul class="nav navbar-nav flex-fill">
-      <li>
-        <a class="py-0 pl-0 pr-4" href="#"><img class="p-1" src="/images/logos/logo_avonU.png" alt="Avon U"></a>
-      </li>
-      <li>
-        <a class="py-0 px-4" href="#"><img class="p-1" src="/images/logos/logo_alma.png" alt="Alma"></a>
-      </li>
-      <li>
-        <a class="py-0 px-4" href="#"><img class="p-1" src="/images/logos/logo_vibe.png" alt="Vibe"></a>
-      </li>
-      <li>
-        <a class="py-0 px-4" href="#"><img class="p-1" src="/images/logos/logo_avon_social.png" alt="Avon Social"></a>
-      </li>
-    </ul>
-    <!-- END - LOGOS SECTION -->
-
-    <!-- BEGIN - ACCOUNT SECTION -->
-    <!-- TODO :: make this nav an include, we're using it in mobile menu also -->
-    <ul class="nav navbar-nav navbar-right">
-      <li>
-        <a href="#">
-          <span class="profile-img visible-xs-inline"></span>
-          <span class="text-uppercase">Jane Johnson</span>
-        </a>
-      </li>
-      <!-- TODO :: make below dropdown an include -->
-      <li class="dropdown">
-        <a href="#" id="accountDrop" role="button" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="accountDrop">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="small" href="#">Español</a>
-      </li>
-      <li>
-        <a class="small" href="#">Log Out</a>
-      </li>
-    </ul>
-    <!-- END - ACCOUNT SECTION -->
-
-  </div>
-</nav>
-<!-- END - STATIC NAV -->
-          </div>
-
-          <!-- Utility nav 1 -->
-          <div class="col-xs-12 p-0 m-0 hidden-xs">
-            <!-- START - USER NAV -->
-<nav class="navbar navbar-default navbar-static-top navbar--utility-1 border-0 m-0 p-0 d-flex">
-  <div class="container d-flex align-items-center">
-
-    <ul class="nav navbar-nav flex-fill">
-      <li class="">
-        <a class="small pl-2 trigger-drawer-item-entry link-primary text-uppercase" href="#drawer-item-entry" data-toggle="drawer">
-          <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
-      </li>
-      <li class="">
-        <a class="small pb-4 trigger-drawer-item-entry link-primary text-uppercase" href="#">
-          <span class="lt-icon lt-book pr-2" aria-hidden="true"></span>Brochures</a>
-      </li>
-    </ul>
-    
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <a href="#" id="estoreDrop" role="button" class="dropdown-toggle link-secondary" data-toggle="dropdown"><span class="lt-icon lt-home"></span> My eStore <b class="caret"></b></a>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="estoreDrop">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="link-secondary" href="#"><span class="lt-icon lt-tip"></span> Support</a>
-      </li>
-      <!-- <li>
-        <a href="#"><span class="profile-img"></span>Jane Johnson</a>
-      </li>
-      <li>
-        <a class="small" href="#">Profile</a>
-      </li>
-      <li>
-        <a class="small" href="#">Settings</a>
-      </li>
-      <li>
-        <a class="small" href="#">Español</a>
-      </li>
-      <li>
-        <a class="small" href="#">Log Out</a>
-      </li> -->
-    </ul>
-  </div>
-</nav>
-<!-- END - USER NAV -->
-          </div>
-
-        </div>
-        <!-- END - Utility Nav Container -->
-
         <!-- Primary navbar -->
-        <!-- START - PRIMARY NAV -->
-<nav class="navbar navbar--primary-nav navbar-default border-bottom m-0 p-0" role="navigation">
+        <!-- START - GLOBAL HEADER NAV CONTAINER -->
+<nav class="navbar navbar--primary-nav navbar-default border-bottom d-flex flex-wrap align-items-center justify-content-center" role="navigation">
 
-  <!-- START - UPPER SECTION -->
-  <div class="container my-5 hidden-xs">
+  <!-- ghost placeholder - this invisible div holds a relative position for utility nav on desktop -->
+  <div class="primary-nav__ghost"></div>
 
-    <div class="row d-flex align-items-center">
+  <!-- search -->
+  <div class="primary-nav__search">
+    <a href="#" class="responsive-primary-plain-link">
+  <span class="lt-icon lt-search lt-medium"></span>
+  <span class="small text-uppercase text-muted hidden-xs">Search</span>
+  <!-- <input id="desktop-header-search" type="text" class="form-inline" placeholder="" autocomplete="off"> -->
+</a>
+  </div>
 
-      <!-- desktop search -->
-      <div class="ml-4 flex-fill hidden-xs">
-  <a href="#" class="link-plain">
-    <span class="lt-icon lt-search lt-large"></span><span class="small text-uppercase text-muted"> Search</span>
-    <!-- <input id="desktop-header-search" type="text" class="form-inline" placeholder="" autocomplete="off"> -->
+  <!-- logo -->
+  <a href="index.html" class="primary-nav__logo flex-fill">
+    <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
   </a>
-</div>
 
-      <!-- desktop logo -->
-      <a href="index.html" class="navbar-brand flex-fill">
-        <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
+  <!-- order / cart -->
+  <div class="primary-nav__cart">
+    <a href="#" class="responsive-primary-plain-link">
+  <span class="small text-uppercase text-muted hidden-xs">Order
+  </span>
+  <span class="lt-icon lt-shoppingcart lt-large"></span>
+</a>
+  </div>
+
+  <!-- mobile menu toggle / hamburger -->
+  <button class="primary-nav__toggle navbar-toggle flex-fill p-0 m-0" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+
+  <!-- header nav & off-canvas mobile menu -->
+  <div class="primary-nav__content navbar-collapse off-canvas d-flex flex-wrap align-content-start justify-content-center">
+    <!-- Close button -->
+<button class="navbar-toggle primary-nav__close link-reverse-plain m-0 p-4" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
+  <span class="sr-only">Close navigation</span>
+  <span class="lt-icon lt-close lt-medium px-2 py-3"></span>
+</button>
+
+<!-- Utility nav 2 -->
+<!-- START - UTILITY NAV 2 -->
+<nav class="navbar navbar-inverse navbar-static-top navbar--utility-2 border-0 m-0 px-4 pt-4 d-flex">
+
+<!-- START - MORE TOOLS LOGOS -->
+<!-- START - MORE TOOLS -->
+<ul class="nav navbar-nav tools-list mx-0 d-flex">
+  <li>
+    <a class="py-0 pl-2 pr-3 link-reverse-underline" href="#">
+      <img class="p-1 visible-md visible-lg" src="/images/logos/logo_avonU.png" alt="Avon U">
+      <span class="hidden-md hidden-lg">Avon U</span>
+    </a>
+  </li>
+  <li>
+    <a class="py-0 px-3 link-reverse-underline" href="#">
+      <img class="p-1 visible-md visible-lg" src="/images/logos/logo_alma.png" alt="Alma">
+      <span class="hidden-md hidden-lg">ALMA</span>
+    </a>
+  </li>
+  <li>
+    <a class="py-0 px-3 link-reverse-underline" href="#">
+      <img class="p-1 visible-md visible-lg" src="/images/logos/logo_vibe.png" alt="Vibe">
+      <span class="hidden-md hidden-lg">Vibe</span>
+    </a>
+  </li>
+  <li>
+    <a class="py-0 px-3 link-reverse-underline" href="#">
+      <img class="p-1 visible-md visible-lg" src="/images/logos/logo_avon_social.png" alt="Avon Social">
+      <span class="hidden-md hidden-lg">Avon Social</span>
+    </a>
+  </li>
+</ul>
+<!-- END - MORE TOOLS -->
+<!-- END - MORE TOOLS LOGOS -->
+
+<!-- START - ACCOUNT SECTION -->
+<!-- START - ACCOUNT SECTION -->
+<ul class="nav navbar-nav account-list d-flex m-0 p-0">
+
+  <li class="account-list__user pr-4">
+    <a class="p-0" href="#">
+      <span class="profile-img align-middle d-inline-block mr-2"></span>
+      <span class="profile-name text-uppercase d-inline-block align-middle overflow-ellipsis">Jane Johnson</span>
+    </a>
+  </li>
+
+  <li class="dropdown">
+    <a href="#" id="accountDrop" role="button" class="dropdown-toggle pl-2" data-toggle="dropdown">My Account <i class="lt-icon lt-navigatedown lt-medium ml-2"></i></a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="accountDrop">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else</a></li>
+    </ul>
+  </li>
+
+  <li>
+    <a class="small link-reverse-underline" href="#">Español</a>
+  </li>
+
+  <li>
+    <a class="small link-reverse-underline pr-2" href="#">Log Out</a>
+  </li>
+
+</ul>
+<!-- END - ACCOUNT SECTION -->
+<!-- END - ACCOUNT SECTION -->
+
+</nav>
+<!-- END - UTILITY NAV 2 -->
+
+<!-- Utility nav 1 -->
+<!-- START - UTILITY NAV 1 -->
+<nav class="navbar navbar-default navbar-static-top navbar--utility-1 border-0 m-0 px-4 d-flex">
+
+    <!-- START - ITEM ENTRY / BROCHURES BUTTONS -->
+    <ul class="nav row m-0">
+      <li class="col-xs-6 p-2 m-0">
+  <a class="small trigger-drawer-item-entry text-uppercase btn-primary-responsive" href="#drawer-item-entry" data-toggle="drawer">
+  <span class="lt-icon lt-addlist lt-medium pr-2" aria-hidden="true"></span>Item Entry</a>
+</li>
+      <li class="col-xs-6 p-2 m-0">
+  <a class="small trigger-drawer-item-entry text-uppercase btn-primary-responsive" href="#">
+  <span class="lt-icon lt-book lt-medium pr-2" aria-hidden="true"></span>Brochures</a>
+</li>
+    </ul>
+    <!-- END - ITEM ENTRY / BROCHURES BUTTONS -->
+
+    <!-- START - ESTORE / SUPPORT BUTTONS -->
+    <ul class="nav row m-0">
+      <li class="col-xs-6 dropdown p-2 m-0">
+  <a href="#" id="estoreDrop" role="button" class="dropdown-toggle small text-uppercase btn-primary-responsive" data-toggle="dropdown">
+    <span class="lt-icon lt-home lt-medium pr-2"></span>
+    My
+    <span class="text-lowercase">e</span>Store
+    <i class="lt-icon lt-navigatedown lt-medium ml-1"></i>
+  </a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="estoreDrop">
+    <li >
+      <a role="menuitem" tabindex="-1" href="#">Something</a>
+    </li>
+    <li role="presentation">
+      <a role="menuitem" tabindex="-1" href="#">Another action</a>
+    </li>
+    <li role="presentation">
+      <a role="menuitem" tabindex="-1" href="#">Something else here</a>
+    </li>
+  </ul>
+</li>
+      <li class="col-xs-6 p-2 m-0">
+  <a class="small text-uppercase btn-primary-responsive" href="#">
+  <span class="lt-icon lt-tip lt-medium pr-2"></span>Support</a>
+</li>
+    </ul>
+    <!-- END - ESTORE / SUPPORT BUTTONS -->
+
+</nav>
+<!-- END - UTILITY NAV 1 -->
+
+<!-- Primary nav list -->
+<ul class="nav nav-tabs navbar-main__list m-0">
+
+  <li class="visible-xs-block">
+    <a class="pb-4" href="#">Home</a>
+  </li>
+
+  <li class="active has-sub-items dropdown">
+
+    <a class="pb-4 dropdown-toggle" href="#" id="productsDrop" data-toggle="dropdown">Products<i class="lt-icon lt-navigatedown lt-medium ml-2 hidden-xs"></i></a>
+
+    <!-- sub-menu toggle -->
+    <a class="toggle text-right visible-xs-inline-block" data-toggle="off-canvas-collapse" data-target=".navbar-products"><span class="lt-icon lt-next text-light"></span></a>
+    <span class="sr-only">Toggle sub-menu</span>
+
+    <!-- dropdown menu -->
+    <ul class="dropdown-menu" role="menu" aria-labelledby="productsDrop">
+      <li role="presentation">
+        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Makeup</a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Skincare</a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Bath &amp; Body</a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Fragrance</a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Jewelry</a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Fashion</a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" class="link-plain" tabindex="-1" href="#">mark. BY AVON</a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Avon Living</a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Men</a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" class="link-plain" tabindex="-1" href="#">Outlet</a>
+      </li>
+    </ul>
+
+  </li>
+
+  <li>
+    <a class="pb-4" href="#">Web Office</a>
+  </li>
+  <li>
+    <a class="pb-4" href="#">Campaigns</a>
+  </li>
+  <li>
+    <a class="pb-4" href="#">Earnings</a>
+  </li>
+  <li>
+    <a class="pb-4" href="#">Resources</a>
+  </li>
+</ul>
+<!-- END - MAIN MENU LIST -->
+  </div>
+
+  <!-- Sub nav list (Products) -->
+  <!-- START - PRODUCTS SUB-MENU -->
+<div class="nav navbar-nav navbar-products navbar-sub off-canvas off-canvas--right">
+
+  <!-- START - SUB-MENU HEADER -->
+  <div class="navbar-header visible-xs-flex align-items-center px-4">
+
+    <!-- back button & menu title -->
+    <a class="flex-fill ml-0">
+      <span data-toggle="off-canvas-collapse" data-target=".navbar-products">
+        <span class="lt-icon lt-left lt-medium mr-2"></span>
+        <span class="text-light"> Products</span>
+      </span>
+    </a>
+
+    <!-- close button -->
+    <button class="navbar-toggle primary-nav__close link-reverse-plain m-0 p-4" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-products, .navbar-collapse">
+  <span class="sr-only">Close navigation</span>
+  <span class="lt-icon lt-close lt-medium px-2 py-3"></span>
+</button>
+
+  </div>
+  <!-- END - SUB-MENU HEADER -->
+
+  <!-- START - PRODUCTS SUB-MENU LIST -->
+  <ul class="nav navbar-nav navbar-sub__sub-list m-0 visible-xs-block">
+    <li class="sub-list-item">
+
+      <!-- START - NESTED ITEMS LEVEL 1 -->
+      <a class="link-reverse-plain py-4 collapsed arrow-box" data-toggle="collapse" data-target="#submenu-cat1">
+        Makeup
+        <span class="lt-icon lt-next ml-1"></span>
+        <span class="lt-icon lt-plus lt-medium pull-right mt-1"></span>
       </a>
+      <div id="submenu-cat1" class="collapse navbar-sub__sub-child">
+        <ul class="nav list-unstyled text-uppercase">
+          <li class="small sub-list-item">
 
-      <!-- order / cart -->
-      <div class="mr-4 hidden-xs">
-  <a href="#" class="link-plain">
-    <span class="small text-uppercase text-muted">Order </span><span class="lt-icon lt-shoppingcart lt-large"></span>
-  </a>
-</div>
-
-    </div>
-    <!-- /.row -->
-
-  </div>
-  <!-- END - UPPER SECTION -->
-
-  <!-- START - LOWER SECTION -->
-  <div class="container">
-
-    <div class="row d-flex align-items-center justify-content-center">
-
-      <!-- START - MOBILE HEADER -->
-      <div class="navbar-header visible-xs-flex align-items-center">
-
-        <!-- hamburger toggle -->
-        <button class="navbar-toggle flex-fill" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <!-- mobile logo -->
-        <a href="index.html" class="navbar-brand navbar-brand--mobile flex-fill">
-          <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
-        </a>
-
-        <!-- mobile search -->
-        <!-- <ul class="nav navbar-nav navbar-right pull-right my-0 collapsed hidden-md hidden-lg" id="mobile-header-navbar"> <li class="mr-4"> -->
-<span>
-  <!-- <form class="navbar-form border-0 p-0 m-0" role="search"> -->
-  <!-- <div class="input-group"> -->
-  <!-- <input id="mobile-search-input" type="text" class="invisible d-inline-block" placeholder="Search" name="q" autocomplete="off"> -->
-  <div class="" id="mobile-search-toggle">
-    <span class="btn btn-icon py-2 px-4" aria-label="Search" data-toggle="drawer" data-target="#searchDrawer">
-      <i class="lt-icon lt-search lt-medium"></i>
-    </span>
-  </div>
-  <!-- </div> -->
-  <!-- </form> -->
-</span>
-
-<!-- </li> </ul> -->
-
-<!-- Drawer -->
-<section id="searchDrawer" class="drawer drawer-fixed-top drawer-hidden">
-
-  <!-- DRAWER CONTENT -->
-  <section class="drawer-content">
-
-    <!-- DRAWER HEADER -->
-    <div class="no-reverse-bg">
-      <header class="navbar navbar-isolated navbar-static-top" role="banner">
-        <div class="container-fluid d-flex align-items-center">
-
-          <!-- SEARCH INPUT -->
-          <form class="navbar-form border-0 p-0 m-0 flex-fill" role="search">
-            <div class="input-group">
-              <span class="input-group-addon lt-icon lt-search lt-medium pt-2 pr-1 pb-0 pl-0"></span>
-              <input id="mobile-search-input" type="text" class="form-control border-0 shadow-0" placeholder="Search Products" name="q" autocomplete="off">
-            </div>
-          </form>
-          <!-- <h1 class="navbar-title">Drawer Demo</h1> -->
-
-          <!-- CLOSE BUTTON -->
-          <a href="#searchDrawer" class="close link-muted" data-toggle="drawer">
-            <span class="lt-icon lt-close"></span>
-          </a>
-
-        </div>
-      </header>
-    </div>
-    <!-- /.no-reverse-bg -->
-
-    <!-- MAIN CONTENT -->
-    <div class="row m-0 reverse-bg hidden">
-      <h1>Drawer Content</h1>
-    </div>
-
-  </section>
-  <!-- /.drawer-content -->
-
-</section>
-<!-- /.drawer -->
-
-      </div>
-      <!-- END - MOBILE HEADER -->
-
-      <!-- TODO :: remove js that sets menu to height: auto; add .menu-open class to body to prevent double scrollbars -->
-
-      <!-- START - MAIN MENU -->
-      <div class="nav navbar-nav navbar-main navbar-collapse off-canvas">
-
-        <!-- BEGIN - MOBILE NAV HEADER SECTION -->
-        <!-- TODO :: make this nav an include, we're using it in mobile menu also, classes are different here though -->
-        <ul class="nav navbar-main__header visible-xs-flex flex-column list-unstyled">
-
-          <li>
-            <!-- User info -->
-            <a href="#" class="link-reverse-plain pull-left py-3">
-              <span class="profile-img visible-xs-inline-block align-middle mr-3"></span>
-              <span class="text-uppercase d-inline-block align-middle">Jane Johnson</span>
-            </a>
-            <!-- close button -->
-            <button class="navbar-toggle link-reverse-plain py-4 pl-4 pr-1" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Close navigation</span>
-              <span class="lt-icon lt-close lt-medium"></span>
-            </button>
-          </li>
-
-          <li>
-            <ul class="nav d-flex">
-              <!-- TODO :: make below dropdown an include, lot's of different classes though -->
-              <li class="dropdown flex-fill">
-                <a href="#" id="accountDrop" role="button" class="dropdown-toggle link-reverse-plain small underline" data-toggle="dropdown">My Account
-                  <b class="caret text-primary"></b>
-                </a>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="accountDrop">
-                  <li role="presentation">
-                    <a class="link-reverse-plain" role="menuitem" tabindex="-1" href="#">Something</a>
-                  </li>
-                  <li role="presentation">
-                    <a class="link-reverse-plain" role="menuitem" tabindex="-1" href="#">Another action</a>
-                  </li>
-                  <li role="presentation">
-                    <a class="link-reverse-plain" role="menuitem" tabindex="-1" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="small underline link-reverse-plain" href="#">Español</a>
-              </li>
-              <li>
-                <a class="small underline link-reverse-plain" href="#">Log Out</a>
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <!-- BEGIN - BUTTONS -->
-            <ul class="list-unstyled row m-0 py-4">
-              <li class="col-xs-6 text-center pr-2">
-                <button class="btn btn-primary btn-sm w-100 trigger-drawer-item-entry" href="#drawer-item-entry" data-toggle="drawer">
-                  <i class="lt-icon lt-addlist mr-2" aria-hidden="true"></i>Item Entry</button>
-              </li>
-              <li class="col-xs-6 text-center pl-2">
-                <button class="btn btn-primary btn-sm w-100">
-                  <i class="lt-icon lt-book mr-2" aria-hidden="true"></i>Brochures</button>
-              </li>
-            </ul>
-            <!-- END - BUTTONS -->
-
-          </li>
-
-        </ul>
-        <!-- END - MOBILE NAV HEADER SECTION -->
-
-        <!-- START - MAIN MENU LIST -->
-        <ul class="nav navbar-nav navbar-main__list m-0">
-          <li class="visible-xs-block">
-            <a class="pb-4" href="#">Home</a>
-          </li>
-          <li class="active has-sub-items">
-            <a class="pb-4" href="./product-list.html">Products</a>
-            <!-- sub-menu toggle -->
-            <a class="toggle text-right visible-xs-inline-block" data-toggle="off-canvas-collapse" data-target=".navbar-products"><span class="lt-icon lt-next"></span></a>
-            <span class="sr-only">Toggle sub-menu</span>
-          </li>
-          <li>
-            <a class="pb-4" href="#">Orders</a>
-          </li>
-          <li>
-            <a class="pb-4" href="#">Team</a>
-          </li>
-          <li>
-            <a class="pb-4" href="#">Campaigns</a>
-          </li>
-          <li>
-            <a class="pb-4" href="#">Customers</a>
-          </li>
-          <li>
-            <a class="pb-4" href="#">Earnings</a>
-          </li>
-          <li>
-            <a class="pb-4" href="#">Marketing Tools</a>
-          </li>
-          <li>
-            <a class="pb-4" href="#">Education</a>
-          </li>
-        </ul>
-        <!-- END - MAIN MENU LIST -->
-
-        <!-- START - MOBILE NAV FOOTER SECTION -->
-        <div class="nav navbar-main__footer visible-xs-block container m-0 p-4">
-
-          <!-- BEGIN - BUTTONS -->
-          <ul class="list-unstyled row my-1">
-            <li class="col-xs-6 text-center pr-2">
-              <button class="btn btn-primary btn-sm w-100">
-                <i class="lt-icon lt-home mr-2"></i>My Store</button>
-            </li>
-            <li class="col-xs-6 text-center pl-2">
-              <button class="btn btn-primary btn-sm w-100">
-                <i class="lt-icon lt-tip mr-2"></i>Support</button>
-            </li>
-          </ul>
-          <!-- END - BUTTONS -->
-
-          <!-- BEGIN - LOGOS SECTION -->
-          <!-- TODO :: make this an include, also being used in mobile menu, needs passable classes -->
-          <ul class="list-unstyled d-flex flex-row flex-wrap logo-list mt-4 mb-2">
-            <li class="text-center my-4">
-              <a class="d-inline-block" href="#"><img class="img-responsive" src="/images/logos/logo_avonU.png" alt="Avon U"></a>
-            </li>
-            <li class="text-center my-4">
-              <a class="d-inline-block" href="#"><img class="img-responsive" src="/images/logos/logo_alma.png" alt="Alma"></a>
-            </li>
-            <li class="text-center my-4">
-              <a class="d-inline-block" href="#"><img class="img-responsive" src="/images/logos/logo_vibe.png" alt="Vibe"></a>
-            </li>
-            <li class="text-center my-4">
-              <a class="d-inline-block" href="#"><img class="img-responsive" src="/images/logos/logo_avon_social.png" alt="Avon Social"></a>
-            </li>
-          </ul>
-          <!-- END - LOGOS SECTION -->
-
-          <!-- BEGIN - LINKS SECTION -->
-          <ul class="list-unstyled link-list d-flex flex-wrap justify-content-center mb-4">
-            <li class="px-3 py-2">
-              <a class="small underline link-reverse-plain" href="#">Conditions of Use</a>
-            </li>
-            <li class="px-3 py-2">
-              <a class="small underline link-reverse-plain" href="#">Privacy Statement</a>
-            </li>
-            <li class="px-3 py-2">
-              <a class="small underline link-reverse-plain" href="#">Site Map</a>
-            </li>
-            <li class="px-3 py-2">
-              <a class="small underline link-reverse-plain" href="#">Product Recall</a>
-            </li>
-            <li class="px-3 py-2">
-              <a class="small underline link-reverse-plain" href="#">Product Safety Certificates</a>
-            </li>
-            <li class="px-3 py-2">
-              <a class="small underline link-reverse-plain" href="#">California Supply Chains Act</a>
-            </li>
-            <li class="px-3 py-2">
-              <a class="small underline link-reverse-plain" href="#">Animal Welfare Policy</a>
-            </li>
-          </ul>
-          <!-- END - LINKS SECTION -->
-
-        </div>
-        <!-- END - MOBILE NAV FOOTER SECTION -->
-
-      </div>
-      <!-- END - MAIN MENU -->
-
-      <!-- START - PRODUCTS SUB-MENU -->
-      <div class="nav navbar-nav navbar-products navbar-sub off-canvas off-canvas--right">
-
-        <!-- START - SUB-MENU HEADER -->
-        <div class="navbar-header visible-xs-flex align-items-center px-4">
-
-          <!-- back button -->
-          <a class="flex-fill ml-0">
-            <span data-toggle="off-canvas-collapse" data-target=".navbar-products">
-              <span class="lt-icon lt-left lt-medium mr-2"></span>
-              <span class="text-light"> Products</span>
-            </span>
-          </a>
-
-          <!-- close button -->
-          <button class="navbar-toggle link-reverse-plain pr-1 pl-4 mr-0 mt-1" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-products, .navbar-collapse">
-            <span class="sr-only">Close navigation</span>
-            <span class="lt-icon lt-close lt-medium pb-0"></span>
-          </button>
-
-        </div>
-        <!-- END - SUB-MENU HEADER -->
-
-        <!-- START - PRODUCTS SUB-MENU LIST -->
-        <ul class="nav navbar-nav navbar-sub__sub-list m-0 visible-xs-block">
-          <li class="sub-list-item">
-
-            <!-- START - NESTED ITEMS LEVEL 1 -->
-            <a class="link-reverse-plain py-4 collapsed arrow-box" data-toggle="collapse" data-target="#submenu-cat1">
-              Makeup
+            <!-- START - NESTED ITEMS LEVEL 2 -->
+            <a class="link-reverse-plain pl-5 py-4 collapsed" data-toggle="collapse" data-target="#submenu-subcat1">
+              Eye
               <span class="lt-icon lt-next ml-1"></span>
               <span class="lt-icon lt-plus lt-medium pull-right mt-1"></span>
             </a>
-            <div id="submenu-cat1" class="collapse navbar-sub__sub-child">
+            <div id="submenu-subcat1" class="collapse navbar-sub__sub-child">
               <ul class="nav list-unstyled text-uppercase">
-                <li class="small sub-list-item">
-
-                  <!-- START - NESTED ITEMS LEVEL 2 -->
-                  <a class="link-reverse-plain pl-5 py-4 collapsed" data-toggle="collapse" data-target="#submenu-subcat1">
-                    Eye
-                    <span class="lt-icon lt-next ml-1"></span>
-                    <span class="lt-icon lt-plus lt-medium pull-right mt-1"></span>
-                  </a>
-                  <div id="submenu-subcat1" class="collapse navbar-sub__sub-child">
-                    <ul class="nav list-unstyled text-uppercase">
-                      <li class="small pl-5 pr-4"><a class="link-reverse-plain py-4 pl-4">Mascara</a></li>
-                      <li class="small pl-5 pr-4"><a class="link-reverse-plain py-4 pl-4">Eyeshadow</a></li>
-                      <li class="small pl-5 pr-4"><a class="link-reverse-plain py-4 pl-4">Eye Liner</a></li>
-                      <li class="small pl-5 pr-4"><a class="link-reverse-plain py-4 pl-4">Brows</a></li>
-                    </ul>
-                  </div>
-                  <!-- END - NESTED ITEMS LEVEL 2 -->
-
-                </li>
-                <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Lips</a></li>
-                <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Face</a></li>
-                <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Nails</a></li>
-                <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Tools &amp; Brushes</a></li>
-                <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Features</a></li>
-                <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Brands</a></li>
+                <li class="small pl-5 pr-4"><a class="link-reverse-plain py-4 pl-4">Mascara</a></li>
+                <li class="small pl-5 pr-4"><a class="link-reverse-plain py-4 pl-4">Eyeshadow</a></li>
+                <li class="small pl-5 pr-4"><a class="link-reverse-plain py-4 pl-4">Eye Liner</a></li>
+                <li class="small pl-5 pr-4"><a class="link-reverse-plain py-4 pl-4">Brows</a></li>
               </ul>
             </div>
-            <!-- END - NESTED ITEMS LEVEL 1 -->
+            <!-- END - NESTED ITEMS LEVEL 2 -->
 
           </li>
-          <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Skincare</a>
-          </li>
-          <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Bath &amp; Body</a>
-          </li>
-          <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Fragrance</a>
-          </li>
-          <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Jewelry</a>
-          </li>
-          <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Fashion</a>
-          </li>
-          <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">mark. <span class="text-uppercase">by avon</span></a>
-          </li>
-          <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Avon Living</a>
-          </li>
-          <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Men</a>
-          </li>
-          <li class="sub-list-item">
-            <a class="link-reverse-plain py-4 collapsed" href="#">Outlet</a>
-          </li>
+          <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Lips</a></li>
+          <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Face</a></li>
+          <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Nails</a></li>
+          <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Tools &amp; Brushes</a></li>
+          <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Features</a></li>
+          <li class="small sub-list-item"><a class="link-reverse-plain pl-5 py-4 collapsed">Brands</a></li>
         </ul>
-        <!-- END - PRODUCTS SUB-MENU LIST -->
-
       </div>
-      <!-- END - PRODUCTS SUB-MENU -->
+      <!-- END - NESTED ITEMS LEVEL 1 -->
 
-    </div>
-    <!-- /.row -->
+    </li>
+    <li class="sub-list-item">
+      <a class="link-reverse-plain py-4 collapsed" href="#">Skincare</a>
+    </li>
+    <li class="sub-list-item">
+      <a class="link-reverse-plain py-4 collapsed" href="#">Bath &amp; Body</a>
+    </li>
+    <li class="sub-list-item">
+      <a class="link-reverse-plain py-4 collapsed" href="#">Fragrance</a>
+    </li>
+    <li class="sub-list-item">
+      <a class="link-reverse-plain py-4 collapsed" href="#">Jewelry</a>
+    </li>
+    <li class="sub-list-item">
+      <a class="link-reverse-plain py-4 collapsed" href="#">Fashion</a>
+    </li>
+    <li class="sub-list-item">
+      <a class="link-reverse-plain py-4 collapsed" href="#">mark. <span class="text-uppercase">by avon</span></a>
+    </li>
+    <li class="sub-list-item">
+      <a class="link-reverse-plain py-4 collapsed" href="#">Avon Living</a>
+    </li>
+    <li class="sub-list-item">
+      <a class="link-reverse-plain py-4 collapsed" href="#">Men</a>
+    </li>
+    <li class="sub-list-item">
+      <a class="link-reverse-plain py-4 collapsed" href="#">Outlet</a>
+    </li>
+  </ul>
+  <!-- END - PRODUCTS SUB-MENU LIST -->
 
-  </div>
-  <!-- END - LOWER SECTION -->
+</div>
+<!-- END - PRODUCTS SUB-MENU -->
 
 </nav>
-<!-- END - PRIMARY NAV -->
+<!-- END - GLOBAL HEADER NAV CONTAINER -->
 
         <!-- Global alert message -->
-        <!-- TODO :: I think this is the cause of the X overflow  -->
         <section id="global-alert-msg" class="container-fluid alert alert-success collapsed">
   <div class="container text-center">
     <div class="row">
@@ -1196,7 +1022,6 @@
   </div>
   <!-- /.row -->
 </div>
-<!-- /.no-reverse-bg -->
 <!-- END - HEADER -->
       
       <!-- <div class="drawer-backdrop fade"></div> -->
@@ -1322,13 +1147,12 @@
                 <div class="footer-group mb-5">
                     <ul class="list-unstyled list-inline">
                         <li class="my-1"><a href="#!">Site Map</a></li>
-                        <li class="my-1"><a href="#!">Provacy Statement</a></li>
+                        <li class="my-1"><a href="#!">Privacy Statement</a></li>
                         <li class="my-1"><a href="#!">Conditions of Use</a></li>
-                        <li class="my-1"><a href="#!">Product Recal</a></li>
+                        <li class="my-1"><a href="#!">Product Recall</a></li>
                         <li class="my-1"><a href="#!">Direct Selling Messaging</a></li>
                         <li class="my-1"><a href="#!">Product Safety Certificates</a></li>
-                        <li class="my-1"><a href="#!">California Supply</a></li>
-                        <li class="my-1"><a href="#!">Chains Act</a></li>
+                        <li class="my-1"><a href="#!">California Supply Chains Act</a></li>
                         <li class="my-1"><a href="#!">Animal Welfare Policy</a></li>
                     </ul>
                 </div>
@@ -1336,8 +1160,8 @@
                 <div class="footer-group my-5">
                     <h6 class="title mb-2">Call Support</h6>
                     <ul class="list-unstyled list-inline">
-                        <li class="my-1">English: <a href="tel:1-866-513-2866">(866) 513-AVON</a></li>
-                        <li class="my-1">Espanol: <a href="tel:1-866-588-2866">(866) 588-AVON</a></li>
+                        <li class="my-1">English: <a href="tel:1-866-513-2866" class="link-phone-number">(866) 513-AVON</a></li>
+                        <li class="my-1">Espanol: <a href="tel:1-866-588-2866" class="link-phone-number">(866) 588-AVON</a></li>
                     </ul>
                 </div>
 
@@ -1367,6 +1191,7 @@
   <script src="./js/demo/checkoutDemo.js"></script>
   <script src="./js/demo/formDemo.js"></script>
   <script src="./js/demo/fakeData.js"></script>
+  <script src="./js/demo/product-filters.js"></script>
   <!-- END - DEMO SCRIPTS -->
 
   <script>

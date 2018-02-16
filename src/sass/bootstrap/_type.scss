@@ -75,6 +75,7 @@ h7, .h7 {
 
 h5, .h5, h6, .h6, h7, .h7 {
     text-transform: uppercase;
+    font-weight: $headings-font-weight-heavy;
 }
 
 @media (min-width: $screen-sm-min) {
@@ -138,6 +139,10 @@ small,
     font-size: floor(100% * $font-size-small / $font-size-base);
 }
 
+.large {
+    font-size: $font-size-large;
+}
+
 mark,
 .mark {
     background-color: $state-warning-bg;
@@ -179,9 +184,20 @@ mark,
 }
 
 // Contextual colors
-.text-default { color: $text-color; }
-.text-muted { color: $text-muted; }
-.text-light { color: $white; }
+.text-default {
+    color: $text-color !important;
+}
+
+.text-muted {
+    color: $text-muted !important;
+}
+
+.text-light {
+    color: $white !important;
+    &:before, &:after {
+      color: $white !important;
+    }
+}
 
 @include text-emphasis-variant(".text-primary", $brand-primary);
 
@@ -422,5 +438,9 @@ address {
 }
 
 .underline {
-  text-decoration: underline;
+    text-decoration: underline;
+}
+
+.nowrap {
+    white-space: nowrap;
 }

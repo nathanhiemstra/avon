@@ -67,7 +67,7 @@
     padding: 3px 20px;
     clear: both;
     font-weight: normal;
-    line-height: $line-height-base;
+    line-height: $line-height-base * 1.4;
     color: $dropdown-link-color;
     white-space: nowrap; // prevent links from randomly breaking onto new lines
   }

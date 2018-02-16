@@ -1,3 +1,10 @@
 .footer {
     color: $gray;
+
+    @media (min-width: $screen-sm-min) {
+        .link-phone-number,
+        .link-phone-number:hover {
+            color: $gray;
+        }
+    }
 }

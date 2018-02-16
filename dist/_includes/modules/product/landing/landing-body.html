@@ -1,208 +1,158 @@
-<!-- START - LIST PAGE HEADER -->
-<div>
-  <h3>Moisturizers</h3>
-  </div>
-<!-- END - LIST PAGE HEADER -->
-
-
-
-<!-- START - MOBILE FILTER AND SORT -->
-<section class="container hidden-md hidden-lg">
+<section class="mb-4 ">
   <div class="row">
+      <div class="col-sm-7">
+        
 
-    <nav class="navbar navbar-default border-0 px-0">
-      <ul class="nav nav-pills">
+  <h2 class="d-inline-block my-0">Moisturizers</h2>
+        </div>
+
+      <div class="col-sm-5 product-list-header--filters">
 
         <!-- START - FILTER DROPDOWN -->
-        <li role="presentation" class="dropdown">
-  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-    Filter
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu">
-    <li>
-      <a href="#">Price</a>
-    </li>
-    <li>
-      <a href="#">Date</a>
-    </li>
-    <li>
-      <a href="#">Something Else</a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="#">Separated link</a>
-    </li>
-  </ul>
-</li>
-        <!-- END - FILTER DROPDOWN -->
+        <span role="presentation" class="dropdown mr-4 hidden-md hidden-lg">
+  <a class="dropdown-toggle" data-toggle="modal" data-target="#product-filter-modal" href="#" role="button">
+    Filter <span class="caret"></span></a>
+</span>        <!-- END - FILTER DROPDOWN -->
 
         <!-- START - SORT DROPDOWN -->
-        <li role="presentation" class="dropdown">
-  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-    Alphabetical
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu">
-    <li>
-      <a href="#">Alphabetical A-Z</a>
-    </li>
-    <li>
-      <a href="#">Alphabetical Z-A</a>
-    </li>
-    <li>
-      <a href="#">Price Low-High</a>
-    </li>
-    <li>
-      <a href="#">Price High-Low</a>
-    </li>
-  </ul>
-</li>
+        <div class="d-inline-block mt-4">
+  <h7 class="hidden-xs mr-3 text-muted">Sort By:</h7>
+  <span role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Alphabetical
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="javascript:(0)">Alphabetical A-Z</a>
+      </li>
+      <li>
+        <a href="javascript:(0)">Alphabetical Z-A</a>
+      </li>
+      <li>
+        <a href="javascript:(0)">Price Low-High</a>
+      </li>
+      <li>
+        <a href="javascript:(0)">Price High-Low</a>
+      </li>
+    </ul>
+  </span>
+
+</div>
         <!-- END - SORT DROPDOWN -->
 
-      </ul>
-    </nav>
-
+      </div>
   </div>
 </section>
-<!-- END - MOBILE FILTER AND SORT -->
 
 
-
-<!-- START - DESKTOP FILTER AND SORT -->
-<section class="row hidden-xs hidden-sm">
-
-  <nav class="navbar navbar-default border-0">
-    <ul class="nav nav-pills pull-right">
-      <p class="navbar-text">Sort By:
-      </p>
-
-      <!-- START - SORT DROPDOWN -->
-      <li role="presentation" class="dropdown">
-  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-    Alphabetical
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu">
-    <li>
-      <a href="#">Alphabetical A-Z</a>
-    </li>
-    <li>
-      <a href="#">Alphabetical Z-A</a>
-    </li>
-    <li>
-      <a href="#">Price Low-High</a>
-    </li>
-    <li>
-      <a href="#">Price High-Low</a>
-    </li>
-  </ul>
-</li>
-      <!-- END - SORT DROPDOWN -->
-
-    </ul>
-  </nav>
-
-</section>
-<!-- END - DESKTOP FILTER AND SORT -->
-
-
-
-<ul class="avon-product-list">
+<ul class="avon-product-list border-top mt-5">
 
   <!-- START - LIST ITEMS LOOP -->
 
-  <li class="avon-product-list__item container-fluid border-bottom p-4">
+  <li class="avon-product-list__item container-fluid border-bottom py-5 px-0">
   <a href="#">
     <div class="row">
-      <div class="col col-xs-3 col-md-2">
-        <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
+      <div class="col col-xs-3 col-sm-2">
+        <img src="/images/fpo/agnew-ultimate-lg.png" class="product-img img-responsive">
       </div>
-      <div class="col col-xs-9 col-md-8">
-        <p class="title link-plain">Anew Ultimate Supreme Advanced Performance Créme</p>
-        <p>
-          <span class="sale-price">$30.00</span>
-          <span class="reg-price small link-plain">Regular Price: <span class="strike-through">$36.00</span></span>
-        </p>
-        
-      </div>
-      <div class="col col-xs-0 col-md-2">
-        <!-- <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button> -->
-        <button type="button" class="btn btn-primary btn-lg pull-right hidden-xs" data-toggle="modal" data-target="#product-add-to-order">
-          Add to order
-        </button>
+      <div class="col col-xs-9 col-sm-10 pr-0">
+        <div class="col col-xs-12 col-sm-8">
+          <p class="title link-plain"><strong>Anew Ultimate Supreme Advanced Performance Créme</strong></p>
+          <p>
+            <span class="sale-price mr-4 link-plain large"><strong>$30.00</strong></span>
+            <span class="reg-price small link-plain nowrap">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
+          </p>
+          
+        </div>
+        <div class="col col-xs-12 col-sm-4">
+          <p>
+            <button type="button" class="btn btn-default btn-sm pull-right-sm" data-toggle="modal" data-target="#product-add-to-order">
+              Add to order
+            </button>
+          </p>
+        </div>
       </div>
     </div>
   </a>
 </li>
 
-  <li class="avon-product-list__item container-fluid border-bottom p-4">
+  <li class="avon-product-list__item container-fluid border-bottom py-5 px-0">
   <a href="#">
     <div class="row">
-      <div class="col col-xs-3 col-md-2">
-        <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
+      <div class="col col-xs-3 col-sm-2">
+        <img src="/images/fpo/agnew-ultimate-lg.png" class="product-img img-responsive">
       </div>
-      <div class="col col-xs-9 col-md-8">
-        <p class="title link-plain">Haiku Bonus Size Roll-On</p>
-        <p>
-          <span class="sale-price">$30.00</span>
-          <span class="reg-price small link-plain">Regular Price: <span class="strike-through">$36.00</span></span>
-        </p>
-        
-      </div>
-      <div class="col col-xs-0 col-md-2">
-        <!-- <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button> -->
-        <button type="button" class="btn btn-primary btn-lg pull-right hidden-xs" data-toggle="modal" data-target="#product-add-to-order">
-          Add to order
-        </button>
+      <div class="col col-xs-9 col-sm-10 pr-0">
+        <div class="col col-xs-12 col-sm-8">
+          <p class="title link-plain"><strong>Haiku Bonus Size Roll-On</strong></p>
+          <p>
+            <span class="sale-price mr-4 link-plain large"><strong>$30.00</strong></span>
+            <span class="reg-price small link-plain nowrap">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
+          </p>
+          
+        </div>
+        <div class="col col-xs-12 col-sm-4">
+          <p>
+            <button type="button" class="btn btn-default btn-sm pull-right-sm" data-toggle="modal" data-target="#product-add-to-order">
+              Add to order
+            </button>
+          </p>
+        </div>
       </div>
     </div>
   </a>
 </li>
 
-  <li class="avon-product-list__item container-fluid border-bottom p-4">
+  <li class="avon-product-list__item container-fluid border-bottom py-5 px-0">
   <a href="#">
     <div class="row">
-      <div class="col col-xs-3 col-md-2">
-        <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
+      <div class="col col-xs-3 col-sm-2">
+        <img src="/images/fpo/agnew-ultimate-lg.png" class="product-img img-responsive">
       </div>
-      <div class="col col-xs-9 col-md-8">
-        <p class="title link-plain">Another Product</p>
-        <p>
-          <span class="sale-price">$30.00</span>
-          <span class="reg-price small link-plain">Regular Price: <span class="strike-through">$36.00</span></span>
-        </p>
-        
-      </div>
-      <div class="col col-xs-0 col-md-2">
-        <!-- <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button> -->
-        <button type="button" class="btn btn-primary btn-lg pull-right hidden-xs" data-toggle="modal" data-target="#product-add-to-order">
-          Add to order
-        </button>
+      <div class="col col-xs-9 col-sm-10 pr-0">
+        <div class="col col-xs-12 col-sm-8">
+          <p class="title link-plain"><strong>Another Product</strong></p>
+          <p>
+            <span class="sale-price mr-4 link-plain large"><strong>$30.00</strong></span>
+            <span class="reg-price small link-plain nowrap">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
+          </p>
+          
+        </div>
+        <div class="col col-xs-12 col-sm-4">
+          <p>
+            <button type="button" class="btn btn-default btn-sm pull-right-sm" data-toggle="modal" data-target="#product-add-to-order">
+              Add to order
+            </button>
+          </p>
+        </div>
       </div>
     </div>
   </a>
 </li>
 
-  <li class="avon-product-list__item container-fluid border-bottom p-4">
+  <li class="avon-product-list__item container-fluid border-bottom py-5 px-0">
   <a href="#">
     <div class="row">
-      <div class="col col-xs-3 col-md-2">
-        <img src="/images/fpo/agnew-ultimate.png" class="product-img img-responsive">
+      <div class="col col-xs-3 col-sm-2">
+        <img src="/images/fpo/agnew-ultimate-lg.png" class="product-img img-responsive">
       </div>
-      <div class="col col-xs-9 col-md-8">
-        <p class="title link-plain">And Another</p>
-        <p>
-          <span class="sale-price">$30.00</span>
-          <span class="reg-price small link-plain">Regular Price: <span class="strike-through">$36.00</span></span>
-        </p>
-        
-      </div>
-      <div class="col col-xs-0 col-md-2">
-        <!-- <button type="button" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">Add to Order</button> -->
-        <button type="button" class="btn btn-primary btn-lg pull-right hidden-xs" data-toggle="modal" data-target="#product-add-to-order">
-          Add to order
-        </button>
+      <div class="col col-xs-9 col-sm-10 pr-0">
+        <div class="col col-xs-12 col-sm-8">
+          <p class="title link-plain"><strong>And Another</strong></p>
+          <p>
+            <span class="sale-price mr-4 link-plain large"><strong>$30.00</strong></span>
+            <span class="reg-price small link-plain nowrap">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
+          </p>
+          
+        </div>
+        <div class="col col-xs-12 col-sm-4">
+          <p>
+            <button type="button" class="btn btn-default btn-sm pull-right-sm" data-toggle="modal" data-target="#product-add-to-order">
+              Add to order
+            </button>
+          </p>
+        </div>
       </div>
     </div>
   </a>

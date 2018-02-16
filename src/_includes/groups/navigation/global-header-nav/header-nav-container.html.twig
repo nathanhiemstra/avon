@@ -1,0 +1,39 @@
+<!-- START - GLOBAL HEADER NAV CONTAINER -->
+<nav class="navbar navbar--primary-nav navbar-default border-bottom d-flex flex-wrap align-items-center justify-content-center" role="navigation">
+
+  <!-- ghost placeholder - this invisible div holds a relative position for utility nav on desktop -->
+  <div class="primary-nav__ghost"></div>
+
+  <!-- search -->
+  <div class="primary-nav__search">
+    {% include '_includes/modules/search/global-search.html.twig' %}
+  </div>
+
+  <!-- logo -->
+  <a href="index.html" class="primary-nav__logo flex-fill">
+    {% include '_includes/elements/images/logo-your-avon.html.twig' %}
+  </a>
+
+  <!-- order / cart -->
+  <div class="primary-nav__cart">
+    {% include '_includes/groups/navigation/global-header-nav/elements/primary-nav/btn-cart.html.twig' %}
+  </div>
+
+  <!-- mobile menu toggle / hamburger -->
+  <button class="primary-nav__toggle navbar-toggle flex-fill p-0 m-0" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+
+  <!-- header nav & off-canvas mobile menu -->
+  <div class="primary-nav__content navbar-collapse off-canvas d-flex flex-wrap align-content-start justify-content-center">
+    {% include '_includes/groups/navigation/global-header-nav/header-nav.html.twig' %}
+  </div>
+
+  <!-- Sub nav list (Products) -->
+  {% include '_includes/groups/navigation/global-header-nav/elements/primary-nav/sub-nav-list.html.twig' %}
+
+</nav>
+<!-- END - GLOBAL HEADER NAV CONTAINER -->

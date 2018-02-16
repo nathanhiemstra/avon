@@ -81,3 +81,47 @@
         text-decoration: underline;
     }
 }
+
+// Global header alert message
+//
+// TODO :: should be a dismissable alert? see .alert-dismissable above
+
+#global-alert-msg {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  transform: translateY(0);
+  transition: 0.3s transform ease;
+
+  &.collapsed {
+    transform: translateY(-102%);
+  }
+
+  .alert-msg-icon {
+    color: $body-bg;
+    display: inline-block;
+    margin-right: 1em;
+
+    &:before {
+      color: $body-bg;
+    }
+  }
+
+  .alert-msg-txt {
+    text-transform: uppercase;
+    color: $body-bg;
+    margin-right: 1em;
+  }
+
+  .alert-msg-btn {
+    border-width: 1px;
+    border-color: $body-bg;
+    color: $body-bg;
+    background-color: transparent;
+    margin-top: 1rem;
+
+    @media (min-width: $screen-sm-min) {
+      margin-top: 0;
+    }
+  }
+}
