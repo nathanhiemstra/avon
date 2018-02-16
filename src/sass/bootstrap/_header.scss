@@ -176,7 +176,7 @@
 
       // desktop
       @media (min-width: $screen-sm-min) {
-        order: 2;
+        order: 1;
         margin: 2rem 0 2rem 1rem;
       }
 
@@ -190,8 +190,7 @@
 
       // desktop
       @media (min-width: $screen-sm-min) {
-        order: 1;
-        width: 100%;
+        order: 2;
         margin: 2rem 0.5rem;
         text-align: center;
       }
@@ -217,7 +216,7 @@
 
       // desktop
       @media (min-width: $screen-sm-min) {
-        order: 4;
+        order: 3;
         margin: 2rem 0.5rem 2rem 0;
       }
 
@@ -240,7 +239,7 @@
 
       // desktop
       @media (min-width: $screen-sm-min) {
-        order: 3;
+        order: 4;
         margin-top: 2rem;
       }
 
@@ -256,6 +255,12 @@
 
         a {
           width: 100%;
+        }
+
+        .dropdown-toggle {
+          i, i:before, i:after {
+            line-height: 0;
+          }
         }
 
         .dropdown-menu {
