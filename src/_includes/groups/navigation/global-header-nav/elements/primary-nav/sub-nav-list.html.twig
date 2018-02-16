@@ -13,10 +13,9 @@
     </a>
 
     <!-- close button -->
-    <button class="navbar-toggle link-reverse-plain pr-1 pl-4 mr-0 mt-1" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-products, .navbar-collapse">
-      <span class="sr-only">Close navigation</span>
-      <span class="lt-icon lt-close lt-medium pb-0"></span>
-    </button>
+    {% include '_includes/groups/navigation/global-header-nav/elements/shared/btn-close.html.twig' with {
+      dataTarget: '.navbar-products, .navbar-collapse'
+    }%}
 
   </div>
   <!-- END - SUB-MENU HEADER -->

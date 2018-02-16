@@ -1,5 +1,5 @@
 <!-- START - GLOBAL HEADER NAV CONTAINER -->
-<nav class="navbar navbar--primary-nav navbar-default border-bottom d-flex flex-wrap align-items-center justify-content-center" role="navigation">
+<nav class="navbar navbar--primary-nav navbar-default border-bottom d-flex flex-wrap align-items-center justify-content-between" role="navigation">
 
   <!-- ghost placeholder - this invisible div holds a relative position for utility nav on desktop -->
   <div class="primary-nav__ghost"></div>
@@ -31,6 +31,9 @@
   <div class="primary-nav__content navbar-collapse off-canvas d-flex flex-wrap align-content-start justify-content-center">
     {% include '_includes/groups/navigation/global-header-nav/header-nav.html.twig' %}
   </div>
+
+  <!-- Sub nav list (Products) -->
+  {% include '_includes/groups/navigation/global-header-nav/elements/primary-nav/sub-nav-list.html.twig' %}
 
 </nav>
 <!-- END - GLOBAL HEADER NAV CONTAINER -->
