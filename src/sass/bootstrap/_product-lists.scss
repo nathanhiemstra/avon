@@ -8,8 +8,7 @@
 
 .avon-product-list {
     .product-img {
-        min-width: 5rem;
-        max-height: 10rem;
+        min-width: 60px;
     }
 }
 
@@ -28,21 +27,35 @@ li.avon-product-list__item {
 
 .aside-product-filters {
     .form-group {
-        padding-left: 2.2rem;
+        padding-left: 4rem;
+
+        > a[data-toggle="collapse"] {
+            &.collapsed {
+                .filter-collapse--icon {
+                    @extend .lt-decreasebutton;
+                }
+            }
+        }
 
         @media (min-width: $screen-md-min) {
             // Because icon is hidden on desktop
             padding-left: 0;
+            margin-top: 22px;
+            margin-bottom: 22px;
+            padding-bottom: 22px;
         }
     }
 
     .filter-collapse--trigger {
         position: relative;
 
-        // .badge {
-        //     transition: 0.5s opacity ease;
-        //     opacity: 1;
-        // }
+        .badge {
+            margin-top: 2px;
+
+            // transition: 0.5s opacity ease;
+            // opacity: 1;
+       
+        }
 
         // // Only show badge if collapsed
         // &:not(.collapsed) {
@@ -52,14 +65,23 @@ li.avon-product-list__item {
         //     }
         // }
 
-        @media (min-width: $screen-md-min) {
-            // Remove indication that this is a link on desktop
-            @include link-plain;
+        // label {
+        //   @include link-plain;
+        // }
+
+        @media (max-width: $screen-sm-max) {
+            font-size: $font-size-large;
+
+            label {
+                font-weight: normal;
+            }
         }
     }
 
     .filter-collapse--icon {
-        left: -2.2rem;
+        left: -4rem;
+        font-size: 24px;
+        top: -3px;
         position: absolute;
 
         @media (min-width: $screen-md-min) {

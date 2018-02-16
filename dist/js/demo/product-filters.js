@@ -18,7 +18,7 @@ var ProductFilters = (function () {
       collapseBody:     $('.aside-product-filters .filter-collapse--body'),
       modal:            $('.aside-product-filters #product-filter-modal'),
       containerDesktop: $('.aside-product-filters #product-filter-container'),
-      containerModal:   $('.aside-product-filters #product-filter-container-modal'),
+      containerModal:   $('.aside-product-filters #product-filter-modal .modal-body'),
       form:             $('.aside-product-filters #product-filters-form'),
     };
 

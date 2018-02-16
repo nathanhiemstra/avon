@@ -1,21 +1,25 @@
-<!-- START - LIST PAGE HEADER -->
-{% include "_includes/modules/product/list/page-header.html.twig" with {
-  title: 'Moisturizers',
-  showResultsInfo: false
-} %}
-<!-- END - LIST PAGE HEADER -->
+<section class="mb-4">
+  <div class="row">
+      <div class="col-sm-8">
+        {% include "_includes/modules/product/list/page-header.html.twig" with {
+          title: 'Moisturizers',
+          showResultsInfo: false
+        } %}
+      </div>
 
+      <div class="col-sm-4">
 
+        <!-- START - FILTER DROPDOWN -->
+        {% include "_includes/modules/product/list/menu-items/filter-dropdown.html.twig" %}
+        <!-- END - FILTER DROPDOWN -->
 
-<!-- START - MOBILE FILTER AND SORT -->
-{% include "_includes/modules/product/list/filter-sort-mobile.html.twig" %}
-<!-- END - MOBILE FILTER AND SORT -->
+        <!-- START - SORT DROPDOWN -->
+        {% include "_includes/modules/product/list/menu-items/sort-dropdown.html.twig" %}
+        <!-- END - SORT DROPDOWN -->
 
-
-
-<!-- START - DESKTOP FILTER AND SORT -->
-{% include "_includes/modules/product/list/filter-sort-desktop.html.twig" %}
-<!-- END - DESKTOP FILTER AND SORT -->
+      </div>
+  </div>
+</section>
 
 
 {% include "_includes/modules/product/list/product-list.html.twig" %}

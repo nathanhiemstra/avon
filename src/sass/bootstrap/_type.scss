@@ -139,6 +139,10 @@ small,
     font-size: floor(100% * $font-size-small / $font-size-base);
 }
 
+.large {
+    font-size: $font-size-large;
+}
+
 mark,
 .mark {
     background-color: $state-warning-bg;
@@ -180,9 +184,17 @@ mark,
 }
 
 // Contextual colors
-.text-default { color: $text-color !important; }
-.text-muted { color: $text-muted !important; }
-.text-light { color: $white !important; }
+.text-default {
+    color: $text-color !important;
+}
+
+.text-muted {
+    color: $text-muted !important;
+}
+
+.text-light {
+    color: $white !important;
+}
 
 @include text-emphasis-variant(".text-primary", $brand-primary);
 
@@ -312,7 +324,7 @@ dd {
         @include clearfix;
 
         // Clear the floated `dt` if an empty `dd` is present
-
+   
     }
 
     @media (min-width: $dl-horizontal-breakpoint) {
@@ -378,7 +390,7 @@ blockquote {
             content: '\2014 \00A0';
 
             // em dash, nbsp
-
+       
         }
     }
 }
@@ -406,7 +418,7 @@ blockquote.pull-right {
             content: '\00A0 \2014';
 
             // nbsp, em dash
-
+       
         }
     }
 }
@@ -424,4 +436,8 @@ address {
 
 .underline {
     text-decoration: underline;
+}
+
+.nowrap {
+    white-space: nowrap;
 }
