@@ -8,6 +8,7 @@
     list-style: none;
     background-color: $breadcrumb-bg;
     border-radius: $border-radius-base;
+    font-size: $font-size-small;
 
     > li {
         display: inline-block;
@@ -20,6 +21,10 @@
 
             // Unicode space added since inline-block means non-collapsing white-space
             padding: 0 4px 0 5px;
+            color: $breadcrumb-color;
+        }
+
+        a {
             color: $breadcrumb-color;
         }
     }

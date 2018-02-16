@@ -33,6 +33,12 @@ li.avon-product-list__item {
     }
 }
 
+.filter-collapse--body {
+    .lt-star:before {
+        color: $text-color;
+    }
+}
+
 .aside-product-filters {
     .form-group {
         padding-left: 4rem;
