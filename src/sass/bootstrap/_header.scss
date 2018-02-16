@@ -239,6 +239,7 @@
 
       // desktop
       @media (min-width: $screen-sm-min) {
+        width: 100%;
         order: 4;
         margin-top: 2rem;
       }
