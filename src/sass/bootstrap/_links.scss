@@ -1,140 +1,156 @@
 // Sometimes we need to force our primary brand color on links in navbars and such
-.link-primary {
+@mixin link-primary {
+  color: $link-color !important;
+
+  .lt-icon,
+  .lt-icon:before {
     color: $link-color !important;
+  }
+
+  &:focus,
+  &:hover {
+    color: $link-hover-color !important;
 
     .lt-icon,
     .lt-icon:before {
-        color: $link-color !important;
+      color: $link-hover-color !important;
     }
-
-    &:focus,
-    &:hover {
-        color: $link-hover-color !important;
-
-        .lt-icon,
-        .lt-icon:before {
-            color: $link-hover-color !important;
-        }
-    }
+  }
+}
+.link-primary {
+  @include link-primary;
 }
 
 // Secondary link uses the default body text color but a primary hover state
 .link-secondary {
+  color: $text-color !important;
+
+  .lt-icon,
+  .lt-icon:before {
     color: $text-color !important;
+  }
+
+  &:focus,
+  &:hover {
+    color: $link-hover-color !important;
 
     .lt-icon,
     .lt-icon:before {
-        color: $text-color !important;
+      color: $link-hover-color !important;
     }
-
-    &:focus,
-    &:hover {
-        color: $link-hover-color !important;
-
-        .lt-icon,
-        .lt-icon:before {
-            color: $link-hover-color !important;
-        }
-    }
+  }
 }
 
 // Reverse link - light color to be used on darker bg
 .link-reverse-plain {
+  color: $white !important;
+
+  .lt-icon,
+  .lt-icon:before {
+    color: $white !important;
+  }
+
+  &:focus,
+  &:hover {
     color: $white !important;
 
     .lt-icon,
     .lt-icon:before {
-        color: $white !important;
+      color: $white !important;
     }
-
-    &:focus,
-    &:hover {
-        color: $white !important;
-
-        .lt-icon,
-        .lt-icon:before {
-            color: $white !important;
-        }
-    }
+  }
 }
 
 @media (min-width: $screen-sm-min) {
-    .link-phone-number,
-    .link-phone-number:hover {
-        color: $text-color;
-    }
+  .link-phone-number,
+  .link-phone-number:hover {
+    color: $text-color;
+  }
 
-    .link-phone-number:hover {
-        text-decoration: none;
-        cursor: default;
-    }
+  .link-phone-number:hover {
+    text-decoration: none;
+    cursor: default;
+  }
 }
 
 // Reverse underline link uses light color with underline decoration
 .link-reverse-underline {
+  color: $white !important;
+  text-decoration: underline !important;
+
+  .lt-icon,
+  .lt-icon:before {
     color: $white !important;
-    text-decoration: underline !important;
+  }
+
+  &:focus,
+  &:hover {
+    color: $white !important;
+    text-decoration: none !important;
 
     .lt-icon,
     .lt-icon:before {
-        color: $white !important;
+      color: $white !important;
     }
-
-    &:focus,
-    &:hover {
-        color: $white !important;
-        text-decoration: none !important;
-
-        .lt-icon,
-        .lt-icon:before {
-            color: $white !important;
-        }
-    }
+  }
 }
 
 @mixin link-plain {
+  color: $link-reverse-color !important;
+  text-transform: none !important;
+  border: none !important;
+
+  .lt-icon,
+  .lt-icon:before {
     color: $link-reverse-color !important;
-    text-transform: none !important;
-    border: none !important;
+  }
+
+  &:focus,
+  &:hover {
+    text-decoration: none !important;
+    color: $link-reverse-hover-color !important;
 
     .lt-icon,
     .lt-icon:before {
-        color: $link-reverse-color !important;
+      color: $text-color !important;
     }
-
-    &:focus,
-    &:hover {
-        text-decoration: none !important;
-        color: $link-reverse-hover-color !important;
-
-        .lt-icon,
-        .lt-icon:before {
-            color: $text-color !important;
-        }
-    }
+  }
 }
 
 // Plain link uses the default text color and no decoration
 .link-plain {
-    @include link-plain;
+  @include link-plain;
 }
 
 // Muted link uses muted colors with default link behavior
 .link-muted {
+  color: $gray-medium !important;
+
+  .lt-icon,
+  .lt-icon:before {
     color: $gray-medium !important;
+  }
+
+  &:focus,
+  &:hover {
+    color: $gray !important;
 
     .lt-icon,
     .lt-icon:before {
-        color: $gray-medium !important;
+      color: $gray-medium !important;
     }
+  }
+}
 
-    &:focus,
-    &:hover {
-        color: $gray !important;
+// responsive primary plain link is .link-primary on small screens and .link-plain on large screens
+@mixin responsive-primary-plain-link {
+  @include link-primary;
+  // desktop
+  @media (min-width: $screen-sm-min) {
+    @include link-plain;
+  }
+}
 
-        .lt-icon,
-        .lt-icon:before {
-            color: $gray-medium !important;
-        }
-    }
+.responsive-primary-plain-link {
+  @include responsive-primary-plain-link;
 }

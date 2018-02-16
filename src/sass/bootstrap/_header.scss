@@ -52,16 +52,10 @@
       .account-list__user {
 
         width: 100%;
+        margin-bottom: 0.5rem;
 
         .profile-name {
           max-width: 250px;
-
-          // desktop
-          @media (min-width: $screen-sm-min) {
-            max-width: unset;
-            width: 17vw;
-          }
-
         }
 
         .profile-img {
@@ -74,11 +68,18 @@
         // desktop
         @media (min-width: $screen-sm-min) {
           width: auto;
+          margin-bottom: 0;
+
+          .profile-name {
+            max-width: unset;
+            max-width: 17vw;
+          }
 
           .profile-img {
             width: 32px;
             height: 32px;
           }
+
         }
 
       }
@@ -212,6 +213,8 @@
     .primary-nav__cart {
 
       order: 4;
+      margin-left: 1rem;
+
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 4;
@@ -287,6 +290,7 @@
         }
 
         > li {
+          a:hover,
           &.active > a,
           &.active > a:hover {
             background-color: transparent;
@@ -586,12 +590,13 @@
       order: 2;
       width: 100%;
       margin: 0;
-      padding: 15px;
+      padding: 0 15px 15px;
 
       // desktop
       @media (min-width: $screen-sm-min) {
         position: absolute;
         display: block;
+        padding: 15px;
         top: $height-2;
         left: 0;
         height: $height-1;
