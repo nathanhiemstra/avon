@@ -40,6 +40,12 @@ li.avon-product-list__item {
         > a[data-toggle="collapse"] {
             &.collapsed {
                 .filter-collapse--icon {
+                    @extend .lt-increasebutton;
+                }
+            }
+
+            &:not(.collapsed) {
+                .filter-collapse--icon {
                     @extend .lt-decreasebutton;
                 }
             }
