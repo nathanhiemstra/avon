@@ -1,3 +1,11 @@
+.product-list-header {
+    &--filters {
+        @media (min-width: $screen-sm-min) {
+            text-align: right;
+        }
+    }
+}
+
 .list-group {
     .list-group-item {
         > a[data-toggle="collapse"]:not(.collapsed) {
