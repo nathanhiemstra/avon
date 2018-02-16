@@ -18,7 +18,7 @@ var ProductFilters = (function () {
       collapseBody:     $('.aside-product-filters .filter-collapse--body'),
       modal:            $('.aside-product-filters #product-filter-modal'),
       containerDesktop: $('.aside-product-filters #product-filter-container'),
-      containerModal:   $('.aside-product-filters #product-filter-container-modal'),
+      containerModal:   $('.aside-product-filters #product-filter-modal .modal-body'),
       form:             $('.aside-product-filters #product-filters-form'),
     };
 
@@ -30,13 +30,11 @@ var ProductFilters = (function () {
     
     // Before modal begin to open
     $els.modal.on('show.bs.modal', function() {
-      console.log('_moveMarkupToModal: ',_moveMarkupToModal); 
       _moveMarkupToModal();
     })
 
     // After modal finishes closing
     $els.modal.on('hidden.bs.modal', function() {
-      console.log('_moveMarkupOutOfModal: ',_moveMarkupOutOfModal); 
       _moveMarkupOutOfModal();
     });
 

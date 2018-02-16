@@ -1269,8 +1269,9 @@
 
 <ol class="breadcrumb ">
             <li><a href="#">Products</a></li>
+                <li><a href="#">Skincare</a></li>
                 
-      <li class="active">Skincare</li>
+      <li class="active">Mousturizers</li>
       </ol>
     </div>
     <!-- /.row -->
@@ -1369,7 +1370,7 @@
 </section>
 <!-- END - FEATURE FILTERS -->
         <!-- START - PRODUCT FILTERS -->
-<section class="aside-product-filters mt-4 pb-4 border-bottom">
+<section class="aside-product-filters mt-4 ">
 
   <!-- START - FILTERS HEADLINE AND CHECKBOXES ON DESKTOP -->
   <div class="hidden-xs hidden-sm">
@@ -1377,10 +1378,10 @@
     <div id="product-filter-container" class="small">
 
       <!-- START - FORM -->
-      <form id="product-filters-form">
+      <form id="product-filters-form" >
 
   <!-- START - EXAMPLE FILTER GROUP 1 -->
-  <div class="form-group border-bottom pb-4">
+  <div class="form-group border-bottom pb-4 my-4">
 
     <!-- START - TITLE - TRIGGER THAT EXPANDS CHECKBOX CONTAINER ON MOBILE -->
 
@@ -1389,7 +1390,7 @@
     <a data-toggle="collapse" href="#filter-group-1" class="filter-collapse--trigger">
       
       <!-- Dev note: There must be no space between <span> and <label> -->
-      <span class="lt-icon lt-increasebutton filter-collapse--icon"></span><label class="mb-0">Star Rating</label>
+      <span class="lt-icon lt-increasebutton filter-collapse--icon"></span><label class="mb-0 link-plain">Star Rating</label>
       
       <!-- Dev note: Badges:
         - Default: HIDDEN (hidden-md hidden-lg)
@@ -1478,9 +1479,9 @@
 
 
   <!-- START - EXAMPLE FILTER GROUP 2 -->
-  <div class="form-group border-bottom pb-4">
+  <div class="form-group border-bottom pb-4 my-4">
     <a data-toggle="collapse" data-parent="#accordion" href="#filter-group-2" class="filter-collapse--trigger collapsed">
-      <span class="lt-icon lt-increasebutton filter-collapse--icon"></span><label class="mb-0">Filter Name</label>
+      <span class="lt-icon lt-increasebutton filter-collapse--icon"></span><label class="mb-0 link-plain">Filter Name</label>
       <span class="badge pull-right hidden-md hidden-lg">1</span>
     </a>
     <div id="filter-group-2" class="checkbox-group filter-collapse--body collapse">
@@ -1520,9 +1521,9 @@
 
   <!-- START - EXAMPLE FILTER GROUP 3 -->
   <!-- Dev note: The last form-group has no "border-bottom" class -->
-  <div class="form-group pb-4">
+  <div class="form-group pb-4 my-4">
     <a data-toggle="collapse" data-parent="#accordion" href="#filter-group-3" class="filter-collapse--trigger collapsed">
-      <span class="lt-icon lt-increasebutton filter-collapse--icon"></span><label class="mb-0">Filter Name</label>
+      <span class="lt-icon lt-increasebutton filter-collapse--icon"></span><label class="mb-0 link-plain">Filter Name</label>
       <!-- Dev note: When page loads, if this number is 0, add class "d-none" -->
       <span class="badge pull-right d-none hidden-md hidden-lg">0</span>
     </a>
@@ -1568,27 +1569,54 @@
   <!-- END - FILTERS HEADLINE AND CHECKBOXES ON DESKTOP -->
   
 
-  <!-- START - MODAL FOR FILTERS (ONLY FOR MOBILE) -->
-  <div class="modal modal-fullscreen-sm fade" id="product-filter-modal" tabindex="-1" role="dialog" aria-labelledby="product-filter-modal" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Filters</h4>
-        </div>
-        <div id="product-filter-container-modal" class="modal-body">
+  <!-- START - MODAL -->
+<section class="modal fade  modal-fullscreen-sm " id="product-filter-modal" tabindex="-1" role="dialog" aria-labelledby="product-filter-modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
-          <!-- CHECKBOXES GET MOVED HERE WITH JAVASCRIPT WHEN MODAL OPENS -->
+      
+      
+      
+            
+          <div class="modal-header">
+            
+  <a href="javascript:void(0)" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="lt-icon lt-close"></span>
+  </a>
+  <h4 class="modal-title mt-2">Filters</h4>
 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Done</button>
-        </div>
-       </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
-  <!-- END - MODAL FOR FILTERS (ONLY FOR MOBILE) -->
 
+          </div>
+
+      
+
+      <div class="modal-body">
+
+        
+        
+        
+        
+    <!-- CHECKBOXES GET MOVED HERE WITH JAVASCRIPT WHEN MODAL OPENS -->
+
+        
+      </div>
+
+      
+      
+      
+            
+          <div class="modal-footer">
+            
+  <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Done</button>
+
+
+          </div>
+
+      
+    </div>
+  </div>
+</section>
+<!-- END - MODAL -->
 </section>
 <!-- END - PRODUCT FILTERS -->
 
@@ -1611,14 +1639,12 @@
       <ul class="nav nav-pills">
 
         <!-- START - FILTER DROPDOWN -->
-        <!-- START - THIS IS FPO, DESIGN IS STILL BEING APPROVED AS OF FEB 12-->
-<li role="presentation" class="dropdown">
-  <a class="dropdown-toggle" data-toggle="modal" data-target="#product-filter-modal" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        <li role="presentation" class="dropdown">
+  <a class="dropdown-toggle" data-toggle="modal" data-target="#product-filter-modal" href="#" role="button">
     Filter
     <span class="caret"></span>
   </a>
-</li>
-<!-- END - THIS IS FPO, DESIGN IS STILL BEING APPROVED AS OF FEB 12-->        <!-- END - FILTER DROPDOWN -->
+</li>        <!-- END - FILTER DROPDOWN -->
 
         <!-- START - SORT DROPDOWN -->
         <li role="presentation" class="dropdown">
@@ -1704,8 +1730,8 @@
         <div class="col col-xs-12 col-sm-8">
           <p class="title link-plain"><strong>Anew Ultimate Supreme Advanced Performance Créme</strong></p>
           <p>
-            <span class="sale-price"><strong>$30.00</strong></span>
-            <span class="reg-price small link-plain ml-4">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
+            <span class="sale-price mr-4 large"><strong>$30.00</strong></span>
+            <span class="reg-price small link-plain nowrap">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
           </p>
           
         </div>
@@ -1731,8 +1757,8 @@
         <div class="col col-xs-12 col-sm-8">
           <p class="title link-plain"><strong>Haiku Bonus Size Roll-On</strong></p>
           <p>
-            <span class="sale-price"><strong>$30.00</strong></span>
-            <span class="reg-price small link-plain ml-4">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
+            <span class="sale-price mr-4 large"><strong>$30.00</strong></span>
+            <span class="reg-price small link-plain nowrap">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
           </p>
           
         </div>
@@ -1758,8 +1784,8 @@
         <div class="col col-xs-12 col-sm-8">
           <p class="title link-plain"><strong>Another Product</strong></p>
           <p>
-            <span class="sale-price"><strong>$30.00</strong></span>
-            <span class="reg-price small link-plain ml-4">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
+            <span class="sale-price mr-4 large"><strong>$30.00</strong></span>
+            <span class="reg-price small link-plain nowrap">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
           </p>
           
         </div>
@@ -1785,8 +1811,8 @@
         <div class="col col-xs-12 col-sm-8">
           <p class="title link-plain"><strong>And Another</strong></p>
           <p>
-            <span class="sale-price"><strong>$30.00</strong></span>
-            <span class="reg-price small link-plain ml-4">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
+            <span class="sale-price mr-4 large"><strong>$30.00</strong></span>
+            <span class="reg-price small link-plain nowrap">Regular Price: <span class="strike-through text-muted">$36.00</span></span>
           </p>
           
         </div>
@@ -1813,7 +1839,7 @@
 
   <!-- MODAL - ADD TO ORDER -->
   <!-- START - MODAL -->
-<section class="modal fade" id="product-add-to-order" tabindex="-1" role="dialog" aria-labelledby="product-add-to-order" aria-hidden="true">
+<section class="modal fade " id="product-add-to-order" tabindex="-1" role="dialog" aria-labelledby="product-add-to-order" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
 

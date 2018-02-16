@@ -1,0 +1,40 @@
+<!-- START - MODAL FOR FILTERS (ONLY FOR MOBILE) -->
+{% extends "_layouts/modal.html.twig" %}
+  {% set modalId = 'product-filter-modal' %}
+  {% set modalClasses = ' modal-fullscreen-sm ' %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <a href="javascript:void(0)" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="lt-icon lt-close"></span>
+  </a>
+  <h4 class="modal-title mt-2">Filters</h4>
+
+{% endblock %}
+
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+    <!-- CHECKBOXES GET MOVED HERE WITH JAVASCRIPT WHEN MODAL OPENS -->
+
+{% endblock %}
+
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Done</button>
+
+{% endblock %}
+<!-- END - MODAL FOR FILTERS (ONLY FOR MOBILE) -->

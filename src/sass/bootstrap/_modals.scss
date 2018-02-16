@@ -99,6 +99,9 @@
 .modal-header {
     padding: $modal-title-padding;
     border-bottom: 1px solid $modal-header-border-color;
+    text-align: center;
+    text-transform: uppercase;
+    color: $text-muted;
 
     @include clearfix;
 }
