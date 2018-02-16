@@ -145,16 +145,16 @@ a.btn {
   }
 
   // desktop
-  @media (min-width: $screen-md-min) {
+  @media (min-width: $screen-sm-min) {
 
     background-color: transparent;
-    color: $text-color;
+    color: $brand-primary;
 
     // dropdowns
     .dropdown-menu {
       background-color: transparent;
       li a {
-        color: $text-color;
+        color: $brand-primary;
       }
     }
 
@@ -165,7 +165,7 @@ a.btn {
     &:focus,
     &:hover {
       background-color: transparent !important;
-      color: $text-color !important;
+      color: $brand-primary !important;
     }
 
   }

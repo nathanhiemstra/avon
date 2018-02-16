@@ -1,12 +1,12 @@
 <!-- START - GLOBAL HEADER NAV CONTAINER -->
-<nav class="navbar navbar--primary-nav navbar-default border-bottom d-flex flex-wrap align-items-center justify-content-center" role="navigation">
+<nav class="navbar navbar--primary-nav navbar-default border-bottom d-flex flex-wrap align-items-center justify-content-between" role="navigation">
 
   <!-- ghost placeholder - this invisible div holds a relative position for utility nav on desktop -->
   <div class="primary-nav__ghost"></div>
 
   <!-- search -->
   <div class="primary-nav__search">
-    <a href="#" class="">
+    <a href="#" class="link-plain">
   <span class="lt-icon lt-search lt-medium"></span>
   <span class="small text-uppercase text-muted hidden-xs">Search</span>
   <!-- <input id="desktop-header-search" type="text" class="form-inline" placeholder="" autocomplete="off"> -->
@@ -51,25 +51,25 @@
 <!-- START - MORE TOOLS -->
 <ul class="nav navbar-nav tools-list m-0 d-flex">
   <li>
-    <a class="py-0 pl-2 pr-4" href="#">
+    <a class="py-0 pl-2 pr-2" href="#">
       <img class="p-1 visible-md visible-lg" src="/images/logos/logo_avonU.png" alt="Avon U">
       <span class="hidden-md hidden-lg">Avon U</span>
     </a>
   </li>
   <li>
-    <a class="py-0 px-4" href="#">
+    <a class="py-0 px-2" href="#">
       <img class="p-1 visible-md visible-lg" src="/images/logos/logo_alma.png" alt="Alma">
       <span class="hidden-md hidden-lg">ALMA</span>
     </a>
   </li>
   <li>
-    <a class="py-0 px-4" href="#">
+    <a class="py-0 px-2" href="#">
       <img class="p-1 visible-md visible-lg" src="/images/logos/logo_vibe.png" alt="Vibe">
       <span class="hidden-md hidden-lg">Vibe</span>
     </a>
   </li>
   <li>
-    <a class="py-0 px-4" href="#">
+    <a class="py-0 px-2" href="#">
       <img class="p-1 visible-md visible-lg" src="/images/logos/logo_avon_social.png" alt="Avon Social">
       <span class="hidden-md hidden-lg">Avon Social</span>
     </a>
@@ -82,9 +82,9 @@
 <!-- START - ACCOUNT SECTION -->
 <ul class="nav navbar-nav account-list d-flex m-0 p-0">
 
-  <li class="account-list__user">
+  <li class="account-list__user pr-4">
     <a class="p-0" href="#">
-      <span class="profile-img visible-xs-inline-block align-middle mr-2"></span>
+      <span class="profile-img align-middle d-inline-block mr-2"></span>
       <span class="profile-name text-uppercase d-inline-block align-middle overflow-ellipsis">Jane Johnsonmcderminsteinershmidt</span>
     </a>
   </li>
@@ -103,7 +103,7 @@
   </li>
 
   <li>
-    <a class="small link-reverse-underline" href="#">Log Out</a>
+    <a class="small link-reverse-underline pr-2" href="#">Log Out</a>
   </li>
 
 </ul>
@@ -121,11 +121,11 @@
     <ul class="nav row m-0">
       <li class="col-xs-6 p-2 m-0">
   <a class="small trigger-drawer-item-entry text-uppercase btn-primary-responsive" href="#drawer-item-entry" data-toggle="drawer">
-  <span class="lt-icon lt-addlist pr-2" aria-hidden="true"></span>Item Entry</a>
+  <span class="lt-icon lt-addlist lt-medium pr-2" aria-hidden="true"></span>Item Entry</a>
 </li>
       <li class="col-xs-6 p-2 m-0">
   <a class="small trigger-drawer-item-entry text-uppercase btn-primary-responsive" href="#">
-  <span class="lt-icon lt-book pr-2" aria-hidden="true"></span>Brochures</a>
+  <span class="lt-icon lt-book lt-medium pr-2" aria-hidden="true"></span>Brochures</a>
 </li>
     </ul>
     <!-- END - ITEM ENTRY / BROCHURES BUTTONS -->
@@ -134,10 +134,10 @@
     <ul class="nav row m-0">
       <li class="col-xs-6 dropdown p-2 m-0">
   <a href="#" id="estoreDrop" role="button" class="dropdown-toggle small text-uppercase btn-primary-responsive" data-toggle="dropdown">
-    <span class="lt-icon lt-home pr-2"></span>
+    <span class="lt-icon lt-home lt-medium pr-2"></span>
     My
     <span class="text-lowercase">e</span>Store
-    <i class="lt-icon lt-navigatedown lt-medium ml-2"></i>
+    <i class="lt-icon lt-navigatedown lt-medium ml-1"></i>
   </a>
   <ul class="dropdown-menu" role="menu" aria-labelledby="estoreDrop">
     <li >
@@ -153,7 +153,7 @@
 </li>
       <li class="col-xs-6 p-2 m-0">
   <a class="small text-uppercase btn-primary-responsive" href="#">
-  <span class="lt-icon lt-tip pr-2"></span>Support</a>
+  <span class="lt-icon lt-tip lt-medium pr-2"></span>Support</a>
 </li>
     </ul>
     <!-- END - ESTORE / SUPPORT BUTTONS -->
@@ -170,7 +170,7 @@
 
   <li class="active has-sub-items dropdown">
 
-    <a class="pb-4 dropdown-toggle" href="#" id="productsDrop" data-toggle="dropdown">Products</a>
+    <a class="pb-4 dropdown-toggle" href="#" id="productsDrop" data-toggle="dropdown">Products<i class="lt-icon lt-navigatedown lt-medium ml-2 hidden-xs"></i></a>
 
     <!-- sub-menu toggle -->
     <a class="toggle text-right visible-xs-inline-block" data-toggle="off-canvas-collapse" data-target=".navbar-products"><span class="lt-icon lt-next"></span></a>
@@ -226,9 +226,10 @@
   </li>
 </ul>
 <!-- END - MAIN MENU LIST -->
+  </div>
 
-<!-- Sub nav list (Products) -->
-<!-- START - PRODUCTS SUB-MENU -->
+  <!-- Sub nav list (Products) -->
+  <!-- START - PRODUCTS SUB-MENU -->
 <div class="nav navbar-nav navbar-products navbar-sub off-canvas off-canvas--right">
 
   <!-- START - SUB-MENU HEADER -->
@@ -243,10 +244,10 @@
     </a>
 
     <!-- close button -->
-    <button class="navbar-toggle link-reverse-plain pr-1 pl-4 mr-0 mt-1" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-products, .navbar-collapse">
-      <span class="sr-only">Close navigation</span>
-      <span class="lt-icon lt-close lt-medium pb-0"></span>
-    </button>
+    <button class="navbar-toggle primary-nav__close link-reverse-plain m-0 p-4" type="button" data-toggle="off-canvas-collapse" data-target=".navbar-products, .navbar-collapse">
+  <span class="sr-only">Close navigation</span>
+  <span class="lt-icon lt-close lt-medium px-2 py-3"></span>
+</button>
 
   </div>
   <!-- END - SUB-MENU HEADER -->
@@ -325,7 +326,6 @@
 
 </div>
 <!-- END - PRODUCTS SUB-MENU -->
-  </div>
 
 </nav>
 <!-- END - GLOBAL HEADER NAV CONTAINER -->

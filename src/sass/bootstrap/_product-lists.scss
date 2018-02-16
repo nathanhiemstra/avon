@@ -1,3 +1,17 @@
+.list-group {
+    .list-group-item {
+        > a[data-toggle="collapse"]:not(.collapsed) {
+            color: $brand-primary;
+        }
+    }
+}
+
+.avon-product-list {
+    .product-img {
+        min-width: 60px;
+    }
+}
+
 // product list styles
 ul.avon-product-list {
     margin: 0;
@@ -8,5 +22,87 @@ ul.avon-product-list {
 li.avon-product-list__item {
     &:last-child {
         border-bottom: none !important;
+    }
+}
+
+.aside-product-filters {
+    .form-group {
+        padding-left: 4rem;
+
+        > a[data-toggle="collapse"] {
+            &.collapsed {
+                .filter-collapse--icon {
+                    @extend .lt-decreasebutton;
+                }
+            }
+        }
+
+        @media (min-width: $screen-md-min) {
+            // Because icon is hidden on desktop
+            padding-left: 0;
+            margin-top: 22px;
+            margin-bottom: 22px;
+            padding-bottom: 22px;
+        }
+    }
+
+    .filter-collapse--trigger {
+        position: relative;
+
+        .badge {
+            margin-top: 2px;
+
+            // transition: 0.5s opacity ease;
+            // opacity: 1;
+       
+        }
+
+        // // Only show badge if collapsed
+        // &:not(.collapsed) {
+        //     .badge {
+        //         transition: 0.5s opacity ease;
+        //         opacity: 0;
+        //     }
+        // }
+
+        // label {
+        //   @include link-plain;
+        // }
+
+        @media (max-width: $screen-sm-max) {
+            font-size: $font-size-large;
+
+            label {
+                font-weight: normal;
+            }
+        }
+    }
+
+    .filter-collapse--icon {
+        left: -4rem;
+        font-size: 24px;
+        top: -3px;
+        position: absolute;
+
+        @media (min-width: $screen-md-min) {
+            display: none;
+        }
+    }
+
+    .filter-collapse--body {
+        @media (min-width: $screen-md-min) {
+            // Remove collapsability on desktop
+            &.collapse {
+                display: block;
+            }
+        }
+    }
+
+    label:hover {
+        cursor: pointer;
+
+        @media (min-width: $screen-md-min) {
+            cursor: default;
+        }
     }
 }

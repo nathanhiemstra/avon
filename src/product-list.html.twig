@@ -16,6 +16,10 @@
             'slug': '#',
             'label': 'Skincare'
           }
+          , {
+            'slug': '#',
+            'label': 'Mousturizers'
+          }
         ]
       }%}
     </div>
@@ -31,9 +35,9 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block aside %}
 
-        {% include components.modules.product.filters.productCategories %}
-        {% include components.modules.product.filters.productFeatures %}
-        {% include components.modules.product.filters.productFilters %}
+        {% include "_includes/modules/product/filters/product-categories.html.twig" %}
+        {% include "_includes/modules/product/filters/product-features.html.twig" %}
+        {% include "_includes/modules/product/filters/product-filters.html.twig" %}
 
       {% endblock %}
 
@@ -42,7 +46,7 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
-        {% include components.modules.product.landing.body %}
+        {% include "_includes/modules/product/landing/landing-body.html.twig" %}
 
       {% endblock %}
 
