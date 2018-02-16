@@ -177,6 +177,7 @@
       @media (min-width: $screen-sm-min) {
         order: 2;
         margin: 2rem 1rem;
+        margin-right: 0;
       }
 
     }
@@ -191,7 +192,7 @@
       @media (min-width: $screen-sm-min) {
         order: 1;
         width: 100%;
-        margin: 2rem 1rem;
+        margin: 2rem 0.5rem;
         text-align: center;
       }
 
@@ -215,7 +216,8 @@
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 4;
-        margin: 2rem 1rem;
+        margin: 2rem 0.5rem;
+        margin-left: 0;
       }
 
     }
@@ -237,7 +239,6 @@
 
       // desktop
       @media (min-width: $screen-sm-min) {
-        // width: 100%;
         order: 3;
         margin-top: 2rem;
       }
@@ -248,10 +249,24 @@
         width: 100%;
         background-color: $brand-alt;
 
-        a { width: 100%; }
-
         li {
           float: none;
+        }
+
+        a { width: 100%; }
+
+        .dropdown-menu {
+          li, a {
+            width: 100%;
+          }
+        }
+
+        // tablet
+        @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+          a {
+            padding-right: 8px;
+            padding-left: 8px;
+          }
         }
 
         // desktop
@@ -315,10 +330,19 @@
         } // end li
 
         .has-sub-items {
+
           a.toggle {
             position: absolute;
-            top: 0;
+            top: 0; right: 0; bottom: 0; left: 0;
             z-index: 1;
+          }
+
+          // desktop
+          @media (min-width: $screen-sm-min) {
+            &:hover .dropdown-menu {
+              cursor: pointer;
+              display: block;
+            }
           }
         } // end .has-sub-items
 
