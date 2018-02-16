@@ -643,10 +643,19 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
     var parent  = $this.attr('data-parent')
     var $parent = parent && $(parent)
 
-    // console.log(data, option);
+    console.log($this, $target);
 
     $target.toggleClass('collapse--off-canvas');
-    $('html').toggleClass('drawer-open');
+
+    // nested toggles need special treatment for .drawer-open class
+    if($this.hasClass('off-canvas-nested')) {
+      if($this.hasClass('toggle') === false) {
+        // only remove .drawer open if the nested close btn is clicked
+        $('html').removeClass('drawer-open');
+      }
+    } else {
+      $('html').toggleClass('drawer-open');
+    }
 
     // if (!data || !data.transitioning) {
     //   if ($parent) $parent.find('[data-toggle=off-canvas-collapse][data-parent="' + parent + '"]').not($this).addClass('collapsed')

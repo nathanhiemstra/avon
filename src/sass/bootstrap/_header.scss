@@ -316,13 +316,19 @@
             text-transform: uppercase;
             padding-bottom: 1.5rem;
 
+            &[role=menuitem] {
+              padding-bottom: 0;
+            }
+
             // MOBILE
             @media (max-width: $screen-xs-max) {
+              display: flex;
+              align-items: center;
               color: $white;
               text-transform: none;
               border-left: 4px solid transparent;
               border-bottom: none;
-              padding: 10px 15px;
+              padding: 15px;
             }
           }
 
