@@ -187,7 +187,7 @@
     <span class="lt-icon lt-store lt-medium pr-2"></span>
     My
     <span class="text-lowercase">e</span>Store
-    <i class="lt-icon lt-carat-down lt-medium"></i>
+    <span class="lt-icon lt-carat-down lt-medium"></span>
   </a>
   <ul class="dropdown-menu" role="menu" aria-labelledby="estoreDrop">
     <li >
@@ -220,7 +220,7 @@
 
   <li class="active has-sub-items dropdown">
 
-    <a class="dropdown-toggle" href="#" id="productsDrop" data-toggle="dropdown">Products<i class="lt-icon lt-carat-down lt-medium hidden-xs"></i></a>
+    <a class="dropdown-toggle" href="#" id="productsDrop" data-toggle="dropdown">Products<span class="lt-icon lt-carat-down lt-medium hidden-xs"></span></a>
 
     <!-- sub-menu toggle -->
     <a class="toggle off-canvas-nested text-right visible-xs-flex" data-toggle="off-canvas-collapse" data-target=".navbar-products">
@@ -1367,9 +1367,10 @@
             
           <div class="modal-header">
             
-  <a href="javascript:void(0)" class="close link-muted" data-dismiss="modal" aria-hidden="true">
-    <span class="lt-icon lt-close"></span>
-  </a>
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
   <h4 class="modal-title mt-2">Filters</h4>
 
 
@@ -1385,7 +1386,7 @@
         
     <!-- CHECKBOXES GET MOVED HERE WITH JAVASCRIPT WHEN MODAL OPENS -->
 
-        
+
       </div>
 
       
@@ -1404,6 +1405,7 @@
   </div>
 </section>
 <!-- END - MODAL -->
+
 </section>
 <!-- END - PRODUCT FILTERS -->
 
@@ -1582,7 +1584,7 @@
   <!-- MODAL - QUICK SHOP -->
   <!-- START - MODAL -->
 <section class="modal fade " id="product-quick-shop" tabindex="-1" role="dialog" aria-labelledby="product-quick-shop" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
 
       
@@ -1591,7 +1593,10 @@
             
           <div class="modal-header">
             
-  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
   <h4 class="modal-title" id="myModalLabel">Quick Shop</h4>
 
 
@@ -1605,72 +1610,273 @@
         
         
         
-  <div class="form-group">
-    <div class="form-group has-feedback d-inline-block">
-  <label class="control-label" for="who-product-for">Who is this product for?</label>  
-    
-  
-<select class="form-control" id="who-product-for">
-  <option>You (Rosa Stone)</option>
-  <option>Kory Rasmussen</option>
-  <option>Tisha Pennington</option>
-  <option>Phoebe Pope</option>
-</select>
-  <span class="glyphicon glyphicon-play form-control-feedback"></span>
-</div>
-  </div>
-
+  <!-- Product Details -->
   <div class="row">
-    <div class="col-xs-6">
-      <div class="form-group">
-        <div class="form-group has-feedback d-inline-block">
-  <label class="control-label" for="quantity">Quantity</label>  
-      
-  
-<select class="form-control" id="quantity">
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-</select>
-  <span class="glyphicon glyphicon-play form-control-feedback"></span>
-</div>
-      </div>
-    </div>
-    <div class="col-xs-6">
-      <b>Sub-total</b><br>
-      $25.00
-    </div>
-  </div><!-- /.row -->
+    <div class="col-sm-6 px-5">
 
-  <div class="form-inline">
-    <div class="checkbox">
-      <label>
-        <input type="checkbox"> Auto-replenish
-      </label>
-    </div>
+      
+
+  <!-- CURRENT IMAGE -->
+  <img src="/images/utility/placeholder_thumb.png" alt="" class="img-responsive pdp-imgs__img">
+
+  <!-- THUMBNAILS -->
+  <div class="pdp-imgs__thumbs mt-4">
+      <div class="row">
+        <div class="col-xs-3">
+          <a href="#" class="thumbnail thumbnail--square">
+            <img src="/images/utility/placeholder_thumb.png" alt="..."/>
+          </a>
+        </div>
+        <div class="col-xs-3">
+          <a href="#" class="thumbnail thumbnail--square">
+            <img src="/images/utility/placeholder_thumb.png" alt="..."/>
+          </a>
+        </div>
+        <div class="col-xs-3">
+          <a href="#" class="thumbnail thumbnail--square">
+            <img src="/images/utility/placeholder_thumb.png" alt="..."/>
+          </a>
+        </div>
+        <div class="col-xs-3">
+          <a href="#" class="thumbnail thumbnail--square">
+            <img src="/images/utility/placeholder_thumb.png" alt="..."/>
+          </a>
+        </div>
+        <div class="col-xs-3">
+          <a href="#" class="thumbnail thumbnail--square">
+            <img src="/images/utility/placeholder_thumb.png" alt="..."/>
+          </a>
+        </div>
+        <div class="col-xs-3">
+          <a href="#" class="thumbnail thumbnail--square thumbnail--video">
+            <img src="/images/utility/placeholder_thumb.png" alt="..."/>
+          </a>
+        </div>
+      </div>
   </div>
 
-  <div class="alert alert-info"><span class="glyphicon glyphicon-info-sign"></span> Shipping and taxes will be calculated during the checkout process</div>
+  <!-- SOCIAL ICONS -->
+  <div class="pdp-imgs__social mt-4">
+    <ul class="list-unstyled list-inline text-center">
+  <li class="border-right pr-3">
+    <span class="lt-icon lt-warning lt-large"></span>
+  </li>
+  <li class="border-right pr-3">
+    <span class="lt-icon lt-warning lt-large"></span>
+  </li>
+  <li class="border-right pr-3">
+    <span class="lt-icon lt-warning lt-large"></span>
+  </li>
+  <li class="">
+    <span class="lt-icon lt-warning lt-large"></span>
+  </li>
+</ul>
+  </div>
 
-        
+    </div>
+    <div class="col-sm-6 px-5">
+
+      <!-- START - PRODUCT DETAILS -->
+
+<!-- product id -->
+<p>
+  <small class="pdp-product-id">728-402</small>
+</p>
+
+<!-- product title -->
+<h3 class="pdp-product-title">Anew Skinvincible Deep Recovery Cream</h3>
+
+<!-- price and campaign select -->
+<h3 class="d-inline-block align-middle my-2">
+  <span class="pdp-price">$9.99</span>
+</h3>
+
+<div class="form-group has-feedback d-inline-block align-middle my-2">
+  <div class="dropdown">
+    <button class="btn btn-select input-sm form-control pdp-campaign-select dropdown-toggle" id="pdpCampaignSelect" data-toggle="dropdown">
+      <span class="campaign-name">CO4</span>
+    </button>
+    <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="pdpCampaignSelect">
+      <li role="presentation">
+        <a class="d-flex justify-content-between" role="menuitem" tabindex="-1" href="#">
+          <span class="d-inline-block mr-5">CO5 - Next Campaign</span>
+          <span class="d-inline-block strong"><strong>$9.99</strong></span>
+        </a>
+      </li>
+      <li role="presentation">
+        <a class="d-flex justify-content-between" role="menuitem" tabindex="-1" href="#">
+          <span class="d-inline-block mr-5">CO4 - Current Campaign</span>
+          <span class="d-inline-block strong"><strong>$9.99</strong></span>
+        </a>
+      </li>
+      <li role="presentation">
+        <a class="d-flex justify-content-between" role="menuitem" tabindex="-1" href="#">
+          <span class="d-inline-block mr-5">CO3 - Previous Campaign</span>
+          <span class="d-inline-block strong"><strong>$9.99</strong></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- customer price and offers -->
+<p class="mt-2">
+  <span>Customer price:
+    <span class="pdp-customer-price">$12.99</span>
+  </span>
+  <span class="pull-right">
+    <a class="link-plain underline" href="#">View Offers
+      <span class="pdp-offers">(1)</span>
+    </a>
+  </span>
+</p>
+
+<!-- variant select -->
+<div class="pdp-variant-select container-fluid px-0 py-3 my-3">
+  <div class="form-group has-feedback d-inline-block">
+    <label class="control-label" for="pdpVariantSelect">Shade</label>
+    <div class="dropdown">
+      <button class="btn btn-select form-control dropdown-toggle" id="pdpVariantSelect" data-toggle="dropdown">
+        <span class="variant-swatch d-inline-block align-middle mr-2" style="background-color: #E0B0FF; width: 25px; height: 25px;"></span>
+        <span class="variant-title d-inline-block align-middle">Mad for Mauve</span>
+        -
+        <span class="variant-id d-inline-block align-middle">654-473</span>
+        <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="pdpVariantSelect">
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">
+            <span class="variant-swatch d-inline-block align-middle mr-2" style="background-color: salmon; width: 25px; height: 25px;"></span>
+            <span class="variant-title d-inline-block align-middle">Salmon</span>
+            -
+            <span class="variant-id d-inline-block align-middle">654-473</span>
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">
+            <span class="variant-swatch d-inline-block align-middle mr-2" style="background-color: #000; width: 25px; height: 25px;"></span>
+            <span class="variant-title d-inline-block align-middle">Black</span>
+            -
+            <span class="variant-id d-inline-block align-middle">654-473</span>
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">
+            <span class="variant-swatch d-inline-block align-middle mr-2" style="background-color: yellow; width: 25px; height: 25px;"></span>
+            <span class="variant-title d-inline-block align-middle">Yellow</span>
+            -
+            <span class="variant-id d-inline-block align-middle">654-473</span>
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">
+            <span class="variant-swatch d-inline-block align-middle mr-2" style="background-color: #f00; width: 25px; height: 25px;"></span>
+            <span class="variant-title d-inline-block align-middle">Red</span>
+            -
+            <span class="variant-id d-inline-block align-middle">654-473</span>
+          </a>
+        </li>
+      </ul>
+      <!-- end .dropdown-menu -->
+    </div>
+    <!-- end .dropdown -->
+  </div>
+  <!-- end .form-group -->
+</div>
+<!-- end .pdp-variant-select -->
+
+<!-- product stock status -->
+<div class="pdp-stock-status container-fluid px-0 py-3 my-3">
+  <span>
+    <span class="lt-icon lt-checkmark lt-medium"></span>In stock
+  </span>
+  <span>
+    <span class="lt-icon lt-close lt-medium"></span>Out of stock
+  </span>
+  <span>
+    <span class="lt-icon lt-warning lt-medium"></span>Sold out
+  </span>
+</div>
+
+<!-- quantity input -->
+<div class="pdp-quantity-input container-fluid px-0 py-3 my-3">
+  <div class="form-group col-xs-6 p-0 m-0">
+    <label class="control-label" for="pdpQuantity">Quantity</label>
+    <input type="text" class="form-control" id="pdpQuantity" placeholder="1">
+  </div>
+</div>
+
+<!-- customer select -->
+<div class="pdp-customer-select container-fluid px-0 py-3 mt-3 mb-0">
+  <div class="form-group has-feedback d-inline-block col-xs-12 p-0">
+    <label class="control-label" for="pdpCustomerSelect">Who is this for?</label>
+    <div class="dropdown">
+      <button class="btn btn-select form-control pdp-customer-select dropdown-toggle" id="pdpCustomerSelect" data-toggle="dropdown">
+        <span class="campaign-name">Jane Johnson</span>
+        <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="pdpCustomerSelect">
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">Johnny Doe</a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">Ronald Clontle</a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">Larry Labello</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Out of stock message -->
+<div class="pdp-stock-msg clearfix border-top container-fluid px-0 pt-5 my-3">
+  <div class="form-group has-feedback d-inline-block col-xs-12 p-0">
+    <label class="control-label text-muted">More on the way</label>
+    <p>Culpa duis esse sit officia ea consequat anim aute in nostrud id eiusmod laboris commodo excepteur consequat.</p>
+  </div>
+  <div class="form-group has-feedback d-inline-block col-xs-12 p-0">
+    <label class="control-label text-muted">This product is sold out</label>
+    <p>Culpa duis esse sit officia ea consequat anim aute in nostrud id eiusmod laboris commodo excepteur consequat.</p>
+  </div>
+</div>
+
+<!-- similar products button -->
+<button class="btn btn-primary btn-lg mt-4" data-toggle="modal" data-target="">
+  Notify me when in stock
+</button>
+
+<!-- similar products button -->
+<button class="btn btn-default btn-lg mt-4" data-toggle="modal" data-target="">
+  View similar products
+</button>
+
+<!-- add to order button -->
+<button class="btn btn-primary btn-lg mt-4" data-toggle="modal" data-target="#product-add-to-order">
+  Add to order
+</button>
+
+<!-- future order button -->
+<button class="btn btn-default btn-lg mt-4" data-toggle="modal" data-target="#product-add-to-order">
+  Add to future order
+</button>
+
+<!-- END - PRODUCT DETAILS -->
+
+    </div>
+  </div>
+  <!-- /.row -->
+
+
       </div>
 
-      
-      
-      
-            
-          <div class="modal-footer">
-            
-  <button type="button" class="btn btn-primary" data-dismiss="modal">Add to order</button>
-
-
-          </div>
-
-      
     </div>
   </div>
 </section>
 <!-- END - MODAL -->
+
 
       
       

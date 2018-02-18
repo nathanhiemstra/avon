@@ -1,6 +1,6 @@
 <!-- START - MODAL -->
 <section class="modal fade {{ modalClasses }}" id="{{ modalId }}" tabindex="-1" role="dialog" aria-labelledby="{{ modalId }}" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -24,18 +24,6 @@
         {% block modalBody %}{% endblock %}
 
       </div>
-
-      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-      {# RENDER BLOCK - modalFooter #}
-      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-      {% set _block = block('modalFooter') %}
-      {% if _block is not empty %}
-
-          <div class="modal-footer">
-            {{ _block|raw }}
-          </div>
-
-      {% endif %}
 
     </div>
   </div>

@@ -178,6 +178,7 @@ a.btn {
   border: 1px solid $gray-light;
   box-shadow: none;
   text-transform: none;
+  text-align: left;
   color: $text-color;
   padding: $btn-padding-small-vertical $btn-padding-small-horizontal;
 
@@ -185,10 +186,8 @@ a.btn {
     color: $text-color;
   }
 
-  .variant-swatch {
-    width: 25px;
-    height: 25px;
-    background-color: salmon;
+  .form-control-feedback {
+    line-height: $input-height-base;
   }
 
 }

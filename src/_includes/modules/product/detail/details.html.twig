@@ -9,10 +9,11 @@
 <h3 class="pdp-product-title">Anew Skinvincible Deep Recovery Cream</h3>
 
 <!-- price and campaign select -->
-<h3 class="d-inline-block align-middle m-0">
+<h3 class="d-inline-block align-middle my-2">
   <span class="pdp-price">$9.99</span>
 </h3>
-<div class="form-group has-feedback d-inline-block align-middle m-0">
+
+<div class="form-group has-feedback d-inline-block align-middle my-2">
   <div class="dropdown">
     <button class="btn btn-select input-sm form-control pdp-campaign-select dropdown-toggle" id="pdpCampaignSelect" data-toggle="dropdown">
       <span class="campaign-name">CO4</span>
@@ -20,101 +21,168 @@
     <span class="lt-icon lt-triangle-down form-control-feedback"></span>
     <ul class="dropdown-menu" role="menu" aria-labelledby="pdpCampaignSelect">
       <li role="presentation">
-        <a role="menuitem" tabindex="-1" href="#">CO5 - Next Campaign</a>
+        <a class="d-flex justify-content-between" role="menuitem" tabindex="-1" href="#">
+          <span class="d-inline-block mr-5">CO5 - Next Campaign</span>
+          <span class="d-inline-block strong"><strong>$9.99</strong></span>
+        </a>
       </li>
       <li role="presentation">
-        <a role="menuitem" tabindex="-1" href="#">CO4 - Current Campaign</a>
+        <a class="d-flex justify-content-between" role="menuitem" tabindex="-1" href="#">
+          <span class="d-inline-block mr-5">CO4 - Current Campaign</span>
+          <span class="d-inline-block strong"><strong>$9.99</strong></span>
+        </a>
       </li>
       <li role="presentation">
-        <a role="menuitem" tabindex="-1" href="#">CO3 - Previous Campaign</a>
+        <a class="d-flex justify-content-between" role="menuitem" tabindex="-1" href="#">
+          <span class="d-inline-block mr-5">CO3 - Previous Campaign</span>
+          <span class="d-inline-block strong"><strong>$9.99</strong></span>
+        </a>
       </li>
     </ul>
   </div>
 </div>
 
 <!-- customer price and offers -->
-<div>
+<p class="mt-2">
   <span>Customer price:
     <span class="pdp-customer-price">$12.99</span>
   </span>
   <span class="pull-right">
     <a class="link-plain underline" href="#">View Offers
-      <span class="pdp-offers">(1)</a>
-    </span>
-  </div>
+      <span class="pdp-offers">(1)</span>
+    </a>
+  </span>
+</p>
 
-  <!-- variant select -->
-  <p class="pdp-variant-select">
-    <div class="form-group has-feedback d-inline-block">
-      <label class="control-label" for="pdpVariantSelect">Shade</label>
-      <div class="dropdown">
-        <button class="btn btn-select form-control pdp-variant-select dropdown-toggle" id="pdpVariantSelect" data-toggle="dropdown">
-          <span class="variant-swatch d-inline-block align-middle mr-2"></span>
-          <span class="variant-title d-inline-block align-middle">Mad for Mauve</span>
-          -
-          <span class="variant-id d-inline-block align-middle">654-473</span>
-        </button>
+<!-- variant select -->
+<div class="pdp-variant-select container-fluid px-0 py-3 my-3">
+  <div class="form-group has-feedback d-inline-block">
+    <label class="control-label" for="pdpVariantSelect">Shade</label>
+    <div class="dropdown">
+      <button class="btn btn-select form-control dropdown-toggle" id="pdpVariantSelect" data-toggle="dropdown">
+        <span class="variant-swatch d-inline-block align-middle mr-2" style="background-color: #E0B0FF; width: 25px; height: 25px;"></span>
+        <span class="variant-title d-inline-block align-middle">Mad for Mauve</span>
+        -
+        <span class="variant-id d-inline-block align-middle">654-473</span>
         <span class="lt-icon lt-triangle-down form-control-feedback"></span>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="pdpVariantSelect">
-          <li role="presentation">
-            <a role="menuitem" tabindex="-1" href="#">Action</a>
-          </li>
-          <li role="presentation">
-            <a role="menuitem" tabindex="-1" href="#">Another action</a>
-          </li>
-          <li role="presentation">
-            <a role="menuitem" tabindex="-1" href="#">Something else here</a>
-          </li>
-          <li role="presentation">
-            <a role="menuitem" tabindex="-1" href="#">Another</a>
-          </li>
-        </ul>
-      </div>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="pdpVariantSelect">
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">
+            <span class="variant-swatch d-inline-block align-middle mr-2" style="background-color: salmon; width: 25px; height: 25px;"></span>
+            <span class="variant-title d-inline-block align-middle">Salmon</span>
+            -
+            <span class="variant-id d-inline-block align-middle">654-473</span>
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">
+            <span class="variant-swatch d-inline-block align-middle mr-2" style="background-color: #000; width: 25px; height: 25px;"></span>
+            <span class="variant-title d-inline-block align-middle">Black</span>
+            -
+            <span class="variant-id d-inline-block align-middle">654-473</span>
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">
+            <span class="variant-swatch d-inline-block align-middle mr-2" style="background-color: yellow; width: 25px; height: 25px;"></span>
+            <span class="variant-title d-inline-block align-middle">Yellow</span>
+            -
+            <span class="variant-id d-inline-block align-middle">654-473</span>
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">
+            <span class="variant-swatch d-inline-block align-middle mr-2" style="background-color: #f00; width: 25px; height: 25px;"></span>
+            <span class="variant-title d-inline-block align-middle">Red</span>
+            -
+            <span class="variant-id d-inline-block align-middle">654-473</span>
+          </a>
+        </li>
+      </ul>
+      <!-- end .dropdown-menu -->
     </div>
-  </p>
+    <!-- end .dropdown -->
+  </div>
+  <!-- end .form-group -->
+</div>
+<!-- end .pdp-variant-select -->
 
-  <!-- product stock status -->
-  <p class="pdp-stock-status">
-    <span>
-      <span class="lt-icon lt-checkmark lt-medium"></span>In stock
-    </span>
-    <span>
-      <span class="lt-icon lt-close lt-medium"></span>Out of stock
-    </span>
-    <span>
-      <span class="lt-icon lt-warning lt-medium"></span>Sold out
-    </span>
-  </p>
+<!-- product stock status -->
+<div class="pdp-stock-status container-fluid px-0 py-3 my-3">
+  <span>
+    <span class="lt-icon lt-checkmark lt-medium"></span>In stock
+  </span>
+  <span>
+    <span class="lt-icon lt-close lt-medium"></span>Out of stock
+  </span>
+  <span>
+    <span class="lt-icon lt-warning lt-medium"></span>Sold out
+  </span>
+</div>
 
-  <!-- quantity input -->
-  <p class="pdp-quantity-input">
-    <div class="form-group col-xs-6 p-0">
-      <label class="control-label" for="pdpQuantity">Quantity</label>
-      <input type="text" class="form-control" id="pdpQuantity">
+<!-- quantity input -->
+<div class="pdp-quantity-input container-fluid px-0 py-3 my-3">
+  <div class="form-group col-xs-6 p-0 m-0">
+    <label class="control-label" for="pdpQuantity">Quantity</label>
+    <input type="text" class="form-control" id="pdpQuantity" placeholder="1">
+  </div>
+</div>
+
+<!-- customer select -->
+<div class="pdp-customer-select container-fluid px-0 py-3 mt-3 mb-0">
+  <div class="form-group has-feedback d-inline-block col-xs-12 p-0">
+    <label class="control-label" for="pdpCustomerSelect">Who is this for?</label>
+    <div class="dropdown">
+      <button class="btn btn-select form-control pdp-customer-select dropdown-toggle" id="pdpCustomerSelect" data-toggle="dropdown">
+        <span class="campaign-name">Jane Johnson</span>
+        <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="pdpCustomerSelect">
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">Johnny Doe</a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">Ronald Clontle</a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">Larry Labello</a>
+        </li>
+      </ul>
     </div>
-  </p>
+  </div>
+</div>
 
-  <!-- customer select -->
-  <p class="pdp-customer-select">
-    <div class="form-group has-feedback d-inline-block col-xs-12 p-0">
-      <label class="control-label" for="pdpCustomerSelect">Who is this for?</label>
-      <select class="form-control pdp-campaign-select" id="pdpCustomerSelect">
-        <option selected="selected">Jane Johnson</option>
-        <option>Maude Laupellin</option>
-        <option>Larry Westover</option>
-      </select>
-      <span class="lt-icon lt-triangle-down form-control-feedback"></span>
-    </div>
-  </p>
+<!-- Out of stock message -->
+<div class="pdp-stock-msg clearfix border-top container-fluid px-0 pt-5 my-3">
+  <div class="form-group has-feedback d-inline-block col-xs-12 p-0">
+    <label class="control-label text-muted">More on the way</label>
+    <p>Culpa duis esse sit officia ea consequat anim aute in nostrud id eiusmod laboris commodo excepteur consequat.</p>
+  </div>
+  <div class="form-group has-feedback d-inline-block col-xs-12 p-0">
+    <label class="control-label text-muted">This product is sold out</label>
+    <p>Culpa duis esse sit officia ea consequat anim aute in nostrud id eiusmod laboris commodo excepteur consequat.</p>
+  </div>
+</div>
 
-  <!-- add to order button -->
-  <button class="btn btn-primary btn-lg mt-4" data-toggle="modal" data-target="#product-add-to-order">
-    Add to order
-  </button>
+<!-- similar products button -->
+<button class="btn btn-primary btn-lg mt-4" data-toggle="modal" data-target="">
+  Notify me when in stock
+</button>
 
-  <!-- future order button -->
-  <button class="btn btn-default btn-lg mt-4" data-toggle="modal" data-target="#product-add-to-order">
-    Add to future order
-  </button>
+<!-- similar products button -->
+<button class="btn btn-default btn-lg mt-4" data-toggle="modal" data-target="">
+  View similar products
+</button>
 
-  <!-- END - PRODUCT DETAILS -->
+<!-- add to order button -->
+<button class="btn btn-primary btn-lg mt-4" data-toggle="modal" data-target="#product-add-to-order">
+  Add to order
+</button>
+
+<!-- future order button -->
+<button class="btn btn-default btn-lg mt-4" data-toggle="modal" data-target="#product-add-to-order">
+  Add to future order
+</button>
+
+<!-- END - PRODUCT DETAILS -->
