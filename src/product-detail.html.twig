@@ -1,179 +1,200 @@
 {% extends layouts.base %}
 
-
-
-
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
+  {% embed layouts.columns12 %}
 
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {# DEFINE BLOCK - MAIN #}
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {% block main %}
 
-      {% embed layouts.columns12 %}
+      <!-- START - MESSAGE -->
+      <!-- <section class="container-fluid alert alert-reverse"> <div class="container"> <div class="row"> <span class="glyphicon glyphicon-asterisk"></span> Campaign 3 is due by 11:59 PM Local Time on Wednesday 01/17/2018 21 days(s) left <a href="#"
+      class="close" data-dismiss="alert"><span class="lt-icon lt-close"></span></a> </div> </div> </section> -->
+      <!-- END - MESSAGE -->
 
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {# DEFINE BLOCK - MAIN #}
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {% block main %}
+      <!-- START - BREADCRUMBS -->
+      <section class="container">
+        <div class="row">
+          {% include components.groups.navigation.breadcrumbs %}
+        </div>
+        <!-- /.row -->
+      </section>
+      <!-- END - BREADCRUMBS -->
 
-            <!-- START - MESSAGE -->
-            <section class="container-fluid alert alert-reverse">
-              <div class="container">
-                <div class="row">
-                  <span class="glyphicon glyphicon-asterisk"></span>
-                  Campaign 3 is due by 11:59 PM Local Time on Wednesday 01/17/2018 21 days(s) left
-                  <a href="#" class="close" data-dismiss="alert"><span class="lt-icon lt-close"></span></a>
-              </div><!-- /.row -->
-            </div>
-          </section>
-          <!-- END - MESSAGE -->
+      <section class="container py-5 border-bottom">
+        <!-- Product Details -->
+        <div class="row">
+          <div class="col-sm-6 px-5">
 
-          <!-- START - BREADCRUMBS -->
-          <section class="container">
-            <div class="row">
-              {% include components.groups.navigation.breadcrumbs %}
-            </div><!-- /.row -->
-          </section>
-          <!-- END - BREADCRUMBS -->
+            {% include "_includes/modules/product/detail/images.html.twig" %}
 
+          </div>
+          <div class="col-sm-6 px-5">
 
+            {% include "_includes/modules/product/detail/details.html.twig" %}
 
-
-          <section class="container py-5 mb-5">
-            <!-- Product Details -->
-            <div class="row">
-              <div class="col-sm-6">
-
-                {% include components.modules.product.detail.images %}
-              </div>
-              <div class="col-sm-6">
-                {% include components.modules.product.detail.details %}
-                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#product-add-to-order">
-                  Add to order
-                </button>
-              </div>
-            </div><!-- /.row -->
-          </section>
-
-
-          <!-- Related Products -->
-          <section class="reverse-bg py-5">
-            <div class="container">
-              <div class="text-center clearfix my-5">
-                <h2 class="d-inline-block my-0">Related Products</h2>
-                <a href="#" class="pull-right">View all <span class="glyphicon glyphicon-chevron-right"></span></a>
-              </div>
+          </div>
+        </div>
+        <!-- /.row -->
+      </section>
 
 
 
-              {% set relatedProduct = '<div class="col-xs-4 col-sm-3">
-                  <div class="thumbnail">
-                    <img src="/images/utility/placeholder.png" alt="" class="img-responsive">
-                    <div class="caption">
-                      <p>Product name lorem ipsum dolor sit amet, consectetur</p>
-                      <h5>$XX.XX</h5>
-                    </div>
+      <section class="container p-5 border-bottom">
+
+        <!-- Product Detail Tabs -->
+        <ul class="nav nav-pills">
+          <li class="active">
+            <a href="#pdpDescription" data-toggle="tab">Description</a>
+          </li>
+          <li>
+            <a href="#pdpIngredients" data-toggle="tab">Ingredients</a>
+          </li>
+          <li>
+            <a href="#pdpFacts" data-toggle="tab">Supplement Facts</a>
+          </li>
+        </ul>
+
+        <!-- Product Detail Tab Panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="pdpDescription">
+            {% include "_includes/modules/product/detail/tab-description.html.twig" %}
+          </div>
+          <div class="tab-pane" id="pdpIngredients">
+            {% include "_includes/modules/product/detail/tab-ingredients.html.twig" %}
+          </div>
+          <div class="tab-pane" id="pdpFacts">
+            {% include "_includes/modules/product/detail/tab-facts.html.twig" %}
+          </div>
+        </div>
+
+      </section>
+
+
+
+      <!-- Related Products -->
+      <section class="p-5">
+        <div class="container">
+          <div class="clearfix my-5">
+            <h3 class="d-inline-block my-0">Related Products</h3>
+            <!-- <a href="#" class="pull-right">View all
+              <span class="glyphicon glyphicon-chevron-right"></span></a> -->
+          </div>
+
+          {% set relatedProduct = '<div class="col-xs-4 col-sm-3">
+                  <div class="thumbnail thumbnail--square">
+                    <img src="/images/utility/placeholder_thumb.png" alt="" class="img-responsive">
+                  </div>
+                  <div class="caption text-center">
+                    <p>Product name lorem ipsum dolor sit amet, consectetur</p>
+                    <h5>$XX.XX</h5>
                   </div>
                 </div>' %}
 
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="10000">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
 
-              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="10000">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                  <div class="item active">
-                    <div class="row">
-                      {{ relatedProduct }}
-                      {{ relatedProduct }}
-                      {{ relatedProduct }}
-                      {{ relatedProduct }}
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="row">
-                      {{ relatedProduct }}
-                      {{ relatedProduct }}
-                      {{ relatedProduct }}
-                      {{ relatedProduct }}
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="row">
-                      {{ relatedProduct }}
-                      {{ relatedProduct }}
-                      {{ relatedProduct }}
-                    </div>
-                  </div>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <div class="row">
+                  {{ relatedProduct }}
+                  {{ relatedProduct }}
+                  {{ relatedProduct }}
+                  {{ relatedProduct }}
                 </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
               </div>
-            </div><!-- /.container -->
-          </section><!-- /.reverse-bg -->
-
-
-          <section class="py-5">
-            <div class="container">
-              <h2 class="text-center my-5 ">Features</h2>
-              <div class="row">
-                <div class="col-sm-7">
-                  <p>Wipe away the day with Makeup Remover Wipes with Mineral Complex. Use the face wipes to wipe away all your face and eye makeup. The cleansing wipes easily remove makeup and everything else! Leaving your skin feeling clean and refreshed. Carry the wipes in your gym bag or purse for easy access to clean skin all the time! Includes 24 cleansing wipes.</p>
-                  <div class="my-5">{{ fpo.video }}</div>
-                  <h4>To use</h4>
-                  <ul>
-                    <li>Lift the resealable adhesive strip and remove one towelete, wipe over entire face including eye area to remove all traces of makeup</li>
-                    <li>Immediately close the adhesive strip after each use to protect wipes from drying out </li>
-                    <li>Do not flush</li>
-                  </ul>
+              <div class="item">
+                <div class="row">
+                  {{ relatedProduct }}
+                  {{ relatedProduct }}
+                  {{ relatedProduct }}
+                  {{ relatedProduct }}
                 </div>
-                <div class="col-sm-5">
-                  <h4>Benefits</h4>
-                  <ul>
-                    <li>Non-greasy and gentle</li>
-                    <li>Easily removes any face or eye makeup</li>
-                    <li>Great for home or travel!</li>
-                    <li>Skin feels totally cleansed and refreshed</li>
-                    <li>Enriched with minerals including zinc, magnesium, iron, and copper</li>
-                  </ul>
-                  <h4>Ingredients</h4>
-                  <ul>
-                    <li>Diisopropyl Dimer Dilinoleate</li>
-                    <li>Ethylhexyl Methoxycinnamate</li>
-                    <li>Lanolin</li>
-                    <li>Tridecyl Trimellitate</li>
-                    <li>Synthetic Wax</li>
-                 </ul>
-                  <a href="#">View all</a>
-                </div>
-              </div><!-- /.row -->
-            </div><!-- /.container -->
-          </section>
-
-          <!-- Reviews -->
-          <section class="reverse-bg py-5">
-            <div class="container">
-              <div class="clearfix">
-                  <h2 class="pull-left">Reviews</h2>
-                  <button class="btn btn-default btn-xs pull-right">
-                    Write a review
-                  </button>
               </div>
+              <div class="item">
+                <div class="row">
+                  {{ relatedProduct }}
+                  {{ relatedProduct }}
+                  {{ relatedProduct }}
+                </div>
+              </div>
+            </div>
 
-              <hr>
-              {% set review = '
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          </div>
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.reverse-bg -->
+
+      <!-- <section class="py-5">
+        <div class="container">
+          <h2 class="text-center my-5 ">Features</h2>
+          <div class="row">
+            <div class="col-sm-7">
+              <p>Wipe away the day with Makeup Remover Wipes with Mineral Complex. Use the face wipes to wipe away all your face and eye makeup. The cleansing wipes easily remove makeup and everything else! Leaving your skin feeling clean and refreshed. Carry the
+                wipes in your gym bag or purse for easy access to clean skin all the time! Includes 24 cleansing wipes.</p>
+              <div class="my-5">{{ fpo.video }}</div>
+              <h4>To use</h4>
+              <ul>
+                <li>Lift the resealable adhesive strip and remove one towelete, wipe over entire face including eye area to remove all traces of makeup</li>
+                <li>Immediately close the adhesive strip after each use to protect wipes from drying out
+                </li>
+                <li>Do not flush</li>
+              </ul>
+            </div>
+            <div class="col-sm-5">
+              <h4>Benefits</h4>
+              <ul>
+                <li>Non-greasy and gentle</li>
+                <li>Easily removes any face or eye makeup</li>
+                <li>Great for home or travel!</li>
+                <li>Skin feels totally cleansed and refreshed</li>
+                <li>Enriched with minerals including zinc, magnesium, iron, and copper</li>
+              </ul>
+              <h4>Ingredients</h4>
+              <ul>
+                <li>Diisopropyl Dimer Dilinoleate</li>
+                <li>Ethylhexyl Methoxycinnamate</li>
+                <li>Lanolin</li>
+                <li>Tridecyl Trimellitate</li>
+                <li>Synthetic Wax</li>
+              </ul>
+              <a href="#">View all</a>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- Reviews -->
+      <!-- <section class="reverse-bg py-5">
+        <div class="container">
+          <div class="clearfix">
+            <h2 class="pull-left">Reviews</h2>
+            <button class="btn btn-default btn-xs pull-right">
+              Write a review
+            </button>
+          </div>
+
+          <hr>
+          {% set review = '
               <h4>Very happily surprised!</h4>
               <p>By Starlite77 on 8/1/2017</p>
               <p>
@@ -193,31 +214,26 @@
                 You may also <a href="#">flag this review</a>
               </p>'%}
 
-              <div class="my-5 p-5 no-reverse-bg">
-                {% include components.groups.ratings.unit %}
-                {{ review }}
-              </div>
+          <div class="my-5 p-5 no-reverse-bg">
+            {% include components.groups.ratings.unit %}
+            {{ review }}
+          </div>
 
-              <div class="my-5 p-5 no-reverse-bg">
-                {% include components.groups.ratings.unit %}
-                {{ review }}
-              </div>
-            </div><!-- /.container -->
-          </section><!-- /.reverse-bg -->
+          <div class="my-5 p-5 no-reverse-bg">
+            {% include components.groups.ratings.unit %}
+            {{ review }}
+          </div>
+        </div>
+      </section> -->
 
-        {% endblock %}
+    {% endblock %}
 
-      {% endembed %}
-
-
-
-
+  {% endembed %}
 
   <!-- DRAWER -->
   {% include '_includes/modules/your-order/order-summary.html.twig' %}
 
   <!-- MODAL - ADD TO ORDER -->
   {% include '_includes/modules/product/detail/add-to-order.html.twig' %}
-
 
 {% endblock %}

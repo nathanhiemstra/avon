@@ -172,6 +172,27 @@ a.btn {
 
 }
 
+// button that looks like a select
+.btn-select {
+
+  border: 1px solid $gray-light;
+  box-shadow: none;
+  text-transform: none;
+  color: $text-color;
+  padding: $btn-padding-small-vertical $btn-padding-small-horizontal;
+
+  &:hover, &:focus {
+    color: $text-color;
+  }
+
+  .variant-swatch {
+    width: 25px;
+    height: 25px;
+    background-color: salmon;
+  }
+
+}
+
 // Link buttons
 // -------------------------
 
