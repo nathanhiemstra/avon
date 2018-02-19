@@ -8,14 +8,14 @@
 
     <!-- Dev note: This href must match ID on div below -->
     <a data-toggle="collapse" href="#filter-group-1" class="filter-collapse--trigger">
-      
+
       <!-- Dev note: There must be no space between <span> and <label> -->
       <span class="lt-icon lt-increasebutton filter-collapse--icon"></span><label class="mb-0 link-plain">Star Rating</label>
-      
+
       <!-- Dev note: Badges:
         - Default: HIDDEN (hidden-md hidden-lg)
         - Mobile with checkbox area collapsed: VISIBLE (default)
-        - Mobile when 0 checkboxes selected: HIDDEN (d-none). 
+        - Mobile when 0 checkboxes selected: HIDDEN (d-none).
           - This must be done when page loads.
           - This must be done when checkboxes are clicked (Currently demostrated in product-filters.js )
 
@@ -29,12 +29,12 @@
     <div id="filter-group-1" class="checkbox-group filter-collapse--body collapse in">
 
       <!-- START - CHECKBOX LOOP -->
-      {% include components.elements.forms.checkbox with { theLabel: '<i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> ', classes: 'input-sm', checked: true } %}
-      {% include components.elements.forms.checkbox with { theLabel: '<i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> ', classes: 'input-sm', checked: true } %}
-      {% include components.elements.forms.checkbox with { theLabel: '<i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> ', classes: 'input-sm', checked: true } %}
-      {% include components.elements.forms.checkbox with { theLabel: '<i class="lt-icon lt-star"></i> <i class="lt-icon lt-star"></i> ', classes: 'input-sm', checked: false } %}
-      {% include components.elements.forms.checkbox with { theLabel: '<i class="lt-icon lt-star"></i> ', classes: 'input-sm', checked: false } %}
-      {% include components.elements.forms.checkbox with { theLabel: 'Not rated', classes: 'input-sm', checked: false } %}
+      {% include "_includes/elements/forms/checkbox.html.twig" with { theLabel: '<i class="lt-icon lt-star vunset"></i> <i class="lt-icon lt-star vunset"></i> <i class="lt-icon lt-star vunset"></i> <i class="lt-icon lt-star vunset"></i> <i class="lt-icon lt-star vunset"></i> ', classes: 'input-sm', checked: true } %}
+      {% include "_includes/elements/forms/checkbox.html.twig" with { theLabel: '<i class="lt-icon lt-star vunset"></i> <i class="lt-icon lt-star vunset"></i> <i class="lt-icon lt-star vunset"></i> <i class="lt-icon lt-star vunset"></i> ', classes: 'input-sm', checked: true } %}
+      {% include "_includes/elements/forms/checkbox.html.twig" with { theLabel: '<i class="lt-icon lt-star vunset"></i> <i class="lt-icon lt-star vunset"></i> <i class="lt-icon lt-star vunset"></i> ', classes: 'input-sm', checked: true } %}
+      {% include "_includes/elements/forms/checkbox.html.twig" with { theLabel: '<i class="lt-icon lt-star vunset"></i> <i class="lt-icon lt-star vunset"></i> ', classes: 'input-sm', checked: false } %}
+      {% include "_includes/elements/forms/checkbox.html.twig" with { theLabel: '<i class="lt-icon lt-star vunset"></i> ', classes: 'input-sm', checked: false } %}
+      {% include "_includes/elements/forms/checkbox.html.twig" with { theLabel: 'Not rated', classes: 'input-sm', checked: false } %}
       <!-- END - CHECKBOX LOOP -->
 
     </div>
@@ -51,9 +51,9 @@
       <span class="badge pull-right hidden-md hidden-lg">1</span>
     </a>
     <div id="filter-group-2" class="checkbox-group filter-collapse--body collapse">
-      {% include components.elements.forms.checkbox with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
-      {% include components.elements.forms.checkbox with { theLabel: 'Filter Item', classes: 'input-sm', checked: true } %}
-      {% include components.elements.forms.checkbox with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
+      {% include "_includes/elements/forms/checkbox.html.twig" with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
+      {% include "_includes/elements/forms/checkbox.html.twig" with { theLabel: 'Filter Item', classes: 'input-sm', checked: true } %}
+      {% include "_includes/elements/forms/checkbox.html.twig" with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
     </div>
   </div>
   <!-- END - EXAMPLE FILTER GROUP 2 -->
@@ -67,9 +67,9 @@
       <span class="badge pull-right d-none hidden-md hidden-lg">0</span>
     </a>
     <div id="filter-group-3" class="checkbox-group filter-collapse--body collapse">
-      {% include components.elements.forms.checkbox with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
-      {% include components.elements.forms.checkbox with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
-      {% include components.elements.forms.checkbox with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
+      {% include "_includes/elements/forms/checkbox.html.twig" with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
+      {% include "_includes/elements/forms/checkbox.html.twig" with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
+      {% include "_includes/elements/forms/checkbox.html.twig" with { theLabel: 'Filter Item', classes: 'input-sm', checked: false } %}
     </div>
   </div>
   <!-- END - EXAMPLE FILTER GROUP 3 -->

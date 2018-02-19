@@ -277,6 +277,27 @@ input[type="search"] {
         font-weight: normal;
         cursor: pointer;
     }
+
+    // small checkboxes and radios
+    &.input-sm {
+        height: 20px;
+        padding: 0;
+
+        label {
+            line-height: 16px;
+
+            span {
+                width: 16px;
+                height: 16px;
+
+                i {
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+
 }
 
 .radio input[type="radio"],
