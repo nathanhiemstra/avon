@@ -314,6 +314,7 @@
           a,
           a:hover {
             text-transform: uppercase;
+            font-size: $font-size-h6-desktop;
 
             &[role=menuitem] {
               padding-bottom: 0;
@@ -323,6 +324,7 @@
             @media (max-width: $screen-xs-max) {
               display: flex;
               align-items: center;
+              font-size: $font-size-h4;
               color: $white;
               text-transform: none;
               border-left: 4px solid transparent;
@@ -534,6 +536,8 @@
       // second level child
       li.sub-list-item {
         > a {
+          font-size: $font-size-h6;
+          text-transform: uppercase;
           background-color: $brand-alt-deep;
           transition: $ui-animation-time background-color $ui-animation-ease;
 
@@ -545,6 +549,11 @@
         // third level child
         li {
           border-bottom: 1px solid rgba($white, 0.1);
+
+          > a {
+            font-size: $font-size-h6;
+            text-transform: uppercase;
+          }
         }
 
       }
