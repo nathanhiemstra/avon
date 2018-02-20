@@ -632,6 +632,11 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
   // COLLAPSE OFF-CANVAS DATA-API
   // =================
 
+  $('li.has-sub-items a.toggle').on('click touchstart', function(e) {
+    //
+    // do nothing? but for some reason the menu works on ios if this is here
+    //
+  });
   $(document).on('click.bs.collapse.data-api', '[data-toggle=off-canvas-collapse]', function (e) {
     var $this   = $(this), href
     var target  = $this.attr('data-target')
@@ -643,7 +648,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
     var parent  = $this.attr('data-parent')
     var $parent = parent && $(parent)
 
-    console.log($this, $target);
+    // console.log($this, $target);
 
     $target.toggleClass('collapse--off-canvas');
 
