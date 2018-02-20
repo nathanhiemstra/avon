@@ -73,9 +73,9 @@
 
 // Dropping in some global styles for Avon here
 // TODO: I'm concerned about doing this globally. Can we opt-in only when needed? Is it related to .drawer-open below?
-html, body {
-    overflow-x: hidden;
-}
+// html, body {
+//     overflow-x: hidden;
+// }
 
 // prevent double scrollbars when drawers open
 html {
