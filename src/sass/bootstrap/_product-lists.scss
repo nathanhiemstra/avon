@@ -121,8 +121,8 @@ li.avon-product-list__item {
     label:hover {
         cursor: pointer;
 
-        @media (min-width: $screen-md-min) {
-            cursor: default;
-        }
+        // @media (min-width: $screen-md-min) {
+        //     cursor: default;
+        // }
     }
 }

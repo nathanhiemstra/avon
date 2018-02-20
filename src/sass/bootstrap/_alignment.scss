@@ -5,6 +5,11 @@
    float: none;
 }
 
+// vertical align reset - Use to disable any default vertical-align
+.vunset {
+  vertical-align: unset !important;
+}
+
 // justified inline lists hack: https://stackoverflow.com/questions/6879467/how-do-i-justify-a-horizontal-list
 ul.text-justify {
    text-align: justify;
