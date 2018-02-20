@@ -198,3 +198,19 @@ html:hover [class^="lt-"] {
   @extend .lt-close;
   transform: rotate(-45deg);
 }
+
+// badge icon - icon with an overlayed badge
+// assumes a nested .badge
+.badged-icon {
+  position: relative;
+
+  .badge {
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    padding: 3px 6px;
+    font-family: $font-family-base;
+    font-size: $font-size-small;
+    height: $font-size-large;
+  }
+}
