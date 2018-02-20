@@ -1,0 +1,54 @@
+<!-- START - ACCOUNT STATEMENT SEARCH -->
+<section>
+  <div class="row">
+
+  <!-- start date -->
+    <div class="list-group-item border-0">
+      <p class="text-muted">Start Date</p>
+
+      <div class="clearfix">
+        {% include components.elements.forms.input with {placeholder: '11/17/2017'} %}
+      </div>
+    </div>
+
+  <!-- end date -->
+  <div class="list-group-item border-0">
+
+      <p class="text-muted">End Date</p>
+
+      <div class="clearfix">
+        {% include components.elements.forms.input with {placeholder: '02/15/2018'} %}
+      </div>
+
+  </div>
+
+  <!-- transaction type -->
+  <div class="list-group-item border-0">
+
+      <p class="text-muted">Transaction Type</p>
+
+      <div class="clearfix">
+        {% include components.elements.forms.select with {
+          items: [
+            {
+              'label': 'All Transactions'
+            }, {
+              'label': 'Transaction Type I'
+            }, {
+              'label': 'Transaction Type II'
+            }
+          ]
+        } %}
+      </div>
+  </div>
+
+  <!-- search button -->
+  <div class="list-group-item border-0">
+
+      <div class="clearfix">
+        <a class="btn btn-primary btn-lg">Search</a>
+      </div>
+  </div>
+
+</section>
+<!-- END - ACCOUNT STATEMENT SEARCH -->
