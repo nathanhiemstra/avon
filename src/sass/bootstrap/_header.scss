@@ -314,7 +314,6 @@
           a,
           a:hover {
             text-transform: uppercase;
-            padding-bottom: 1.5rem;
 
             &[role=menuitem] {
               padding-bottom: 0;
@@ -347,7 +346,7 @@
         // end li
 
         .has-sub-items {
-          a.toggle {
+          a.toggle:not(.toggle-back) {
             position: absolute;
             top: 0;
             right: 0;
@@ -382,133 +381,17 @@
     }
     // END - CLOSE BUTTON
 
-    // .primary-nav__logo {
-    //       //   position: absolute;
-    //       //   width: 100%;
-    //       //   left: 0;
-    //       //   top: 23px;
-    //       //   text-align: center;
-    //       //   margin: 0 auto;
-    //
-    // START - LOGO
-    // img {
-    //   height: 20px;
-    //
-    //   // desktop
-    //   @media (min-width: $screen-sm-min) {
-    //     height: 39px;
-    //   }
-    //
-    // }
-    // END - LOGO
-    //
-    //       &--mobile {
-    //         float: none;
-    //         height: auto;
-    //
-    //         img {
-    //           height: 20px;
-    //           width: auto;
-    //         }
-    //       }
-    //
-    // }
-    //
-    //     // predictive search - general
-    //     ul.predictive-list {
-    //       margin: 0;
-    //       padding: 0;
-    //       list-style-type: none;
-    //
-    //       a:hover {
-    //         text-decoration: none;
-    //       }
-    //
-    //       &.expanded {
-    //         display: block;
-    //       }
-    //
-    //       &.collapsed {
-    //         display: none;
-    //       }
-    //
-    //       li {
-    //         a {
-    //           color: $text-color;
-    //
-    //           &:hover {
-    //             color: $text-color;
-    //             border-bottom: none;
-    //           }
-    //         }
-    //       }
-    //     }
-    //
-    //     // MOBILE predictive
-    //     .container > .navbar-header {
-    //       ul.predictive-list {}
-    //     }
-    //
-    //     // desktop predictive
-    //     .container > .navbar-right {
-    //       ul.predictive-list {
-    //         position: absolute;
-    //         top: 36px;
-    //         left: 15px;
-    //         width: 400px;
-    //         background-color: $body-bg;
-    //         border: 1px solid $gray-light;
-    //         border-top: 0;
-    //         box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
-    //       }
-    //     }
-    //
-    //     // MOBILE nav
-    //     #mobile-header-navbar {
-    //       .navbar-form {
-    //         .input-group {
-    //           input {
-    //             border: none;
-    //             box-shadow: none;
-    //           }
-    //
-    //           .input-group-btn {}
-    //         }
-    //       }
-    //
-    //       .autocomplete-suggestions {
-    //         width: 100vw !important;
-    //         top: 60px;
-    //         left: 0;
-    //         border-left: none;
-    //         border-right: none;
-    //       }
-    //     }
-    //
-    //     // desktop search input
-    //     #desktop-header-search {
-    //       width: 100px;
-    //       transform: scaleX(0);
-    //       transition: 0.2s transform ease, 0.2s box-shadow ease;
-    //
-    //       &.expanded {
-    //         transform: scaleX(1);
-    //         // box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    //       }
-    //     }
-    //
+
     .navbar-toggle,
     .navbar-toggle:focus,
     .navbar-toggle:hover {
       background-color: transparent;
       border: none;
-
-      .icon-bar {}
     }
 
     .navbar-header {
       width: 100%;
-      height: 70px;
+      height: 64px;
 
       .navbar-toggle {
         z-index: 9;
@@ -523,38 +406,6 @@
         }
       }
     }
-
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
 
     $height-1: 42px;
     $height-2: 48px;
@@ -625,8 +476,8 @@
   // end --primary-nav
 }
 // end .navbar
-//
-// MOBILE OFF-CANVAS
+
+// OFF-CANVAS
 .off-canvas {
 
   @media (max-width: $screen-xs-max) {
@@ -655,7 +506,7 @@
   }
 }
 
-// // MOBILE SUB-MENU
+// SUB-MENU
 .navbar-sub {
   background-color: $brand-alt-deep;
 
@@ -664,12 +515,18 @@
   }
 
   .navbar-sub__sub-list {
+
     li.sub-list-item {
 
       border-bottom: 1px solid rgba($white, 0.05);
 
+      a {
+        text-transform: none;
+        padding: 1.5rem 15px;
+      }
+
       // first level child
-      > a {
+      > a, > a:hover, > a:focus {
         background-color: $brand-primary;
         transition: $ui-animation-time background-color $ui-animation-ease;
       }
@@ -695,12 +552,14 @@
       a {
         .lt-carat-right {
           opacity: 1;
+          color: $white;
           transform: translateX(5px);
           transition: $ui-animation-time opacity $ui-animation-ease, $ui-animation-time transform ease-in-out;
         }
 
         .lt-plus {
           opacity: 1;
+          color: $white;
           transform: rotate(-90deg);
           transition: $ui-animation-time opacity $ui-animation-ease, $ui-animation-time transform ease-in-out;
         }
@@ -718,10 +577,27 @@
             transform: rotate(-45deg);
           }
 
+        } // end .sub-list-item a.collapsed
+
+      } // end .sub-list-item a
+
+      // desktop
+      @media (min-width: $screen-sm-min) {
+        .lt-icon, .arrow-box { display: none !important }
+
+        a {
+          padding: 1rem 15px;
+        }
+
+        a:hover, a:focus {
+          text-transform: none;
+          border-bottom: none;
+          color: $text-color;
         }
       }
 
-    }
+    } // end .sub-list-item
+
   }
 
   .navbar-sub__sub-child {
@@ -736,16 +612,3 @@
 
 }
 // END .navbar-sub
-
-// #mobile-search-toggle {
-//   .btn {
-//     border: none;
-//
-//     &:active,
-//     &:focus {
-//       border: none;
-//       outline: none;
-//       box-shadow: none;
-//     }
-//   }
-// }

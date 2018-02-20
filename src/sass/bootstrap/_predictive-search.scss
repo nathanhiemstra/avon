@@ -50,3 +50,89 @@
     display: block;
     border-bottom: 1px solid $table-border-color;
 }
+
+// TODO :: leaving this here for when we re-enable predictive search - taken from the _header.scss
+
+//     // predictive search - general
+//     ul.predictive-list {
+//       margin: 0;
+//       padding: 0;
+//       list-style-type: none;
+//
+//       a:hover {
+//         text-decoration: none;
+//       }
+//
+//       &.expanded {
+//         display: block;
+//       }
+//
+//       &.collapsed {
+//         display: none;
+//       }
+//
+//       li {
+//         a {
+//           color: $text-color;
+//
+//           &:hover {
+//             color: $text-color;
+//             border-bottom: none;
+//           }
+//         }
+//       }
+//     }
+//
+//     // MOBILE predictive
+//     .container > .navbar-header {
+//       ul.predictive-list {}
+//     }
+//
+//     // desktop predictive
+//     .container > .navbar-right {
+//       ul.predictive-list {
+//         position: absolute;
+//         top: 36px;
+//         left: 15px;
+//         width: 400px;
+//         background-color: $body-bg;
+//         border: 1px solid $gray-light;
+//         border-top: 0;
+//         box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+//       }
+//     }
+//
+//     // MOBILE nav
+//     #mobile-header-navbar {
+//       .navbar-form {
+//         .input-group {
+//           input {
+//             border: none;
+//             box-shadow: none;
+//           }
+//
+//           .input-group-btn {}
+//         }
+//       }
+//
+//       .autocomplete-suggestions {
+//         width: 100vw !important;
+//         top: 60px;
+//         left: 0;
+//         border-left: none;
+//         border-right: none;
+//       }
+//     }
+//
+//     // desktop search input
+//     #desktop-header-search {
+//       width: 100px;
+//       transform: scaleX(0);
+//       transition: 0.2s transform ease, 0.2s box-shadow ease;
+//
+//       &.expanded {
+//         transform: scaleX(1);
+//         // box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+//       }
+//     }
+//

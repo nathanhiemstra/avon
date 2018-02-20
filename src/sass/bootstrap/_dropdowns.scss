@@ -71,6 +71,29 @@
     color: $dropdown-link-color;
     white-space: nowrap; // prevent links from randomly breaking onto new lines
   }
+
+  // responsive dropdown behaves normally on desktop but is block-level on mobile
+  &--responsive {
+
+    // DESKTOP
+    @media (min-width: $screen-sm-min) {
+      background-color: $dropdown-bg;
+    }
+
+    // MOBILE
+    @media (max-width: $screen-xs-max) {
+      position: relative;
+      top: 0;
+      display: block;
+      float: none;
+      padding: 0;
+      background-color: $brand-alt-deep;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+
 }
 
 // Hover/Focus state
