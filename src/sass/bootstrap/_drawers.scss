@@ -116,6 +116,7 @@
   &-hidden {
     height: 100vh;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(-100vh);
     transition: 0.5s transform ease;
 
@@ -179,6 +180,7 @@
 
     &.drawer-expanded {
       min-height: auto;
+      visibility: visible;
     }
   }
 
