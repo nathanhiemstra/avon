@@ -121,6 +121,10 @@ h5, .h5, h6, .h6, h7, .h7 {
 
 p {
     margin: 0 0 ($line-height-computed / 2);
+
+    @media (max-width: $screen-sm-min) {
+        font-size: 13px;
+    }
 }
 
 .lead {
@@ -136,6 +140,10 @@ p {
 
 .larger-line-spacing {
   line-height: 1.6;
+
+  @media (max-width: $screen-sm-min) {
+      line-height: 1.9;
+  }
 }
 
 // Emphasis & misc
@@ -455,4 +463,12 @@ address {
 
 .normal {
   font-weight: normal;
+}
+
+.new-mobile-line {
+  display: inline;
+
+  @media (max-width: $screen-sm-min) {
+      display: block;
+  }
 }
