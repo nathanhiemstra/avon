@@ -1,0 +1,18 @@
+// add a gradient overlay on swatches
+
+span.variant-swatch {
+
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.5));
+    opacity: 0.5;
+  }
+
+}

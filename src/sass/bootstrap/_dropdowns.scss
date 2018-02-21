@@ -106,6 +106,19 @@
   }
 }
 
+// Alternate hover/focus state
+.dropdown-menu--alt-hover > li > a {
+
+  border-left: 4px solid rgba($brand-primary, 0);
+  padding-left: $spacing-4;
+
+  &:hover, &:focus {
+    border-left: 4px solid $brand-primary;
+    background-color: $brand-primary-muted;
+  }
+
+}
+
 // Active state
 .dropdown-menu > .active > a {
   &,
