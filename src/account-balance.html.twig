@@ -10,11 +10,38 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
-    <section class="container">
+    <div class="container">
 
-      <h1>Account Balance - FPO</h1>
+      <div class="col-md-8 col-md-offset-2">
 
-    </section>
+        <!-- START - ACCOUNT STATEMENT BALANCES -->
+        <section>
+          {% include "_includes/modules/account/account-statements-balances.html.twig" %}
+
+        </section>
+        <!-- END - ACCOUNT STATEMENT BALANCES -->
+
+        <!-- START - ACCOUNT STATEMENT SEARCH -->
+        <section>
+
+          {% include "_includes/modules/account/account-statements-search.html.twig" %}
+
+        </section>
+        <!-- END - ACCOUNT STATEMENT SEARCH -->
+
+        <!-- START - ACCOUNT STATEMENT SEARCH RESULTS-->
+        <section>
+
+          {% include "_includes/modules/account/account-statements-search-results.html.twig" %}
+
+        </section>
+        <!-- END - ACCOUNT STATEMENT SEARCH RESULTS -->
+
+        <p class="text-muted text-center">Print</p>
+
+      </div>
+
+    </div>
 
   {% endblock %}
 

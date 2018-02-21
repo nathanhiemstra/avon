@@ -78,6 +78,10 @@ h5, .h5, h6, .h6, h7, .h7 {
     font-weight: $headings-font-weight-heavy;
 }
 
+.h5-nonbold {
+  font-weight: normal;
+}
+
 @media (min-width: $screen-sm-min) {
     h1, .h1 {
         font-size: $font-size-h1-desktop;
@@ -117,6 +121,10 @@ h5, .h5, h6, .h6, h7, .h7 {
 
 p {
     margin: 0 0 ($line-height-computed / 2);
+
+    @media (max-width: $screen-sm-min) {
+        font-size: 13px;
+    }
 }
 
 .lead {
@@ -128,6 +136,14 @@ p {
     @media (min-width: $screen-sm-min) {
         font-size: $font-size-base * 1.5;
     }
+}
+
+.larger-line-spacing {
+  line-height: 1.6;
+
+  @media (max-width: $screen-sm-min) {
+      line-height: 1.9;
+  }
 }
 
 // Emphasis & misc
@@ -443,4 +459,16 @@ address {
 
 .nowrap {
     white-space: nowrap;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+.new-mobile-line {
+  display: inline;
+
+  @media (max-width: $screen-sm-min) {
+      display: block;
+  }
 }
