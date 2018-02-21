@@ -10,167 +10,190 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
-    <section class="container">
-    	<div class="row">
-    		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<h1>Track Submitted Orders</h1>
-				<p>Click on Confirmation numbers below to see order details. Items not available can be viewed on your invoice.</p>
-				<div class="table-responsive">
-					<table class="table">
-						<thead>
-							<tr>
-								<th>Conf<br>Number</th>
-								<th>Date</th>
-								<th>C#</th>
-								<th>Source</th>
-								<th>Order<br>Amount</th>
-								<th>Items Not<br>Available</th>
-								<th>Type</th>
-								<th>Status</th>
-								<th>Status<br>Date</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td><a href="#">451316356</a></td>
-								<td>02/09/2018</td>
-								<td>05</td>
-								<td>INTERNET</td>
-								<td>NA</td>
-								<td></td>
-								<td></td>
-								<td>Submitted</td>
-								<td>02/09/2018</td>
-							</tr>
-							<tr>
-								<td><a href="#">451316356</a></td>
-								<td>02/09/2018</td>
-								<td>05</td>
-								<td>INTERNET</td>
-								<td>NA</td>
-								<td></td>
-								<td></td>
-								<td>Submitted</td>
-								<td>02/09/2018</td>
-							</tr>
-							<tr>
-								<td><a href="#">451316356</a></td>
-								<td>02/09/2018</td>
-								<td>05</td>
-								<td>INTERNET</td>
-								<td>NA</td>
-								<td></td>
-								<td></td>
-								<td>Submitted</td>
-								<td>02/09/2018</td>
-							</tr>
-							<tr>
-								<td><a href="#">451316356</a></td>
-								<td>02/09/2018</td>
-								<td>05</td>
-								<td>INTERNET</td>
-								<td>NA</td>
-								<td></td>
-								<td>AVON</td>
-								<td>Cancelled</td>
-								<td>02/09/2018</td>
-							</tr>
-							<tr>
-								<td><a href="#">451316356</a></td>
-								<td>02/09/2018</td>
-								<td>05</td>
-								<td>INTERNET</td>
-								<td>NA</td>
-								<td></td>
-								<td>AVON</td>
-								<td>Cancelled</td>
-								<td>02/09/2018</td>
-							</tr>
-							<tr>
-								<td><a href="#">451316356</a></td>
-								<td>02/09/2018</td>
-								<td>05</td>
-								<td>INTERNET</td>
-								<td>NA</td>
-								<td></td>
-								<td>AVON</td>
-								<td>Cancelled</td>
-								<td>02/09/2018</td>
-							</tr>
-							<tr>
-								<td><a href="#">451316356</a></td>
-								<td>02/09/2018</td>
-								<td>05</td>
-								<td>INTERNET</td>
-								<td>NA</td>
-								<td></td>
-								<td>AVON</td>
-								<td>Cancelled</td>
-								<td>02/09/2018</td>
-							</tr>
-							<tr>
-								<td><a href="#">451316356</a></td>
-								<td>02/09/2018</td>
-								<td>05</td>
-								<td>INTERNET</td>
-								<td>NA</td>
-								<td></td>
-								<td>AVON</td>
-								<td>Cancelled</td>
-								<td>02/09/2018</td>
-							</tr>
-							<tr>
-								<td><a href="#">451316356</a></td>
-								<td>02/09/2018</td>
-								<td>05</td>
-								<td>INTERNET</td>
-								<td>NA</td>
-								<td></td>
-								<td>AVON</td>
-								<td>Cancelled</td>
-								<td>02/09/2018</td>
-							</tr>
-							<tr>
-								<td><a href="#">451316356</a></td>
-								<td>02/09/2018</td>
-								<td>05</td>
-								<td>INTERNET</td>
-								<td>NA</td>
-								<td></td>
-								<td>AVON</td>
-								<td>Cancelled</td>
-								<td>02/09/2018</td>
-							</tr>
-							<tr>
-								<td><a href="#">451316356</a></td>
-								<td>02/09/2018</td>
-								<td>05</td>
-								<td>INTERNET</td>
-								<td>NA</td>
-								<td></td>
-								<td>AVON</td>
-								<td>Merged</td>
-								<td>02/09/2018</td>
-							</tr>
-							<tr>
-								<td><a href="#">450742512</a></td>
-								<td>01/24/2018</td>
-								<td>05</td>
-								<td>INTERNET</td>
-								<td>NA</td>
-								<td></td>
-								<td>AVON</td>
-								<td>Cancelled</td>
-								<td>02/09/2018</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
+    <section class="container pt-5">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="mb-5 mt-5">Track Submitted Orders</h2>
+          <p>Click on Confirmation numbers below to see order details. Items not available can be viewed on your invoice.</p>
+          <div class="table-responsive">
+            <table class="table table-striped border">
+              <thead>
+                <tr>
+                  <th>Conf<br>Number</th>
+                  <th>Date</th>
+                  <th>C#</th>
+                  <th>Source</th>
+                  <th>Order<br>Amount</th>
+                  <th>Items Not<br>Available</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Status<br>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="#">451316356</a>
+                  </td>
+                  <td>02/09/2018</td>
+                  <td>05</td>
+                  <td>INTERNET</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>AVON</td>
+                  <td>Submitted</td>
+                  <td>02/09/2018</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">451316356</a>
+                  </td>
+                  <td>02/09/2018</td>
+                  <td>05</td>
+                  <td>INTERNET</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>AVON</td>
+                  <td>Submitted</td>
+                  <td>02/09/2018</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">451316356</a>
+                  </td>
+                  <td>02/09/2018</td>
+                  <td>05</td>
+                  <td>INTERNET</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>AVON</td>
+                  <td>Submitted</td>
+                  <td>02/09/2018</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">451316356</a>
+                  </td>
+                  <td>02/09/2018</td>
+                  <td>05</td>
+                  <td>INTERNET</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>AVON</td>
+                  <td>Cancelled</td>
+                  <td>02/09/2018</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">451316356</a>
+                  </td>
+                  <td>02/09/2018</td>
+                  <td>05</td>
+                  <td>INTERNET</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>AVON</td>
+                  <td>Cancelled</td>
+                  <td>02/09/2018</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">451316356</a>
+                  </td>
+                  <td>02/09/2018</td>
+                  <td>05</td>
+                  <td>INTERNET</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>AVON</td>
+                  <td>Cancelled</td>
+                  <td>02/09/2018</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">451316356</a>
+                  </td>
+                  <td>02/09/2018</td>
+                  <td>05</td>
+                  <td>INTERNET</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>AVON</td>
+                  <td>Cancelled</td>
+                  <td>02/09/2018</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">451316356</a>
+                  </td>
+                  <td>02/09/2018</td>
+                  <td>05</td>
+                  <td>INTERNET</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>AVON</td>
+                  <td>Cancelled</td>
+                  <td>02/09/2018</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">451316356</a>
+                  </td>
+                  <td>02/09/2018</td>
+                  <td>05</td>
+                  <td>INTERNET</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>AVON</td>
+                  <td>Cancelled</td>
+                  <td>02/09/2018</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">451316356</a>
+                  </td>
+                  <td>02/09/2018</td>
+                  <td>05</td>
+                  <td>INTERNET</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>AVON</td>
+                  <td>Cancelled</td>
+                  <td>02/09/2018</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">451316356</a>
+                  </td>
+                  <td>02/09/2018</td>
+                  <td>05</td>
+                  <td>INTERNET</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>AVON</td>
+                  <td>Merged</td>
+                  <td>02/09/2018</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">450742512</a>
+                  </td>
+                  <td>01/24/2018</td>
+                  <td>05</td>
+                  <td>INTERNET</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>AVON</td>
+                  <td>Cancelled</td>
+                  <td>02/09/2018</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </section>
 
   {% endblock %}
-
 
 {% endblock %}
