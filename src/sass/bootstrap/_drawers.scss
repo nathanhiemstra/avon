@@ -114,8 +114,11 @@
   }
 
   &-hidden {
+      // TODO :: hiding this temporarily
+      display: none;
     height: 100vh;
     opacity: 0;
+    pointer-events: none;
     transform: translateY(-100vh);
     transition: 0.5s transform ease;
 
@@ -156,6 +159,8 @@
     &.drawer-expanded {
       transform: translateY(0);
       opacity: 1;
+      display: none;
+      pointer-events: all;
 
       .drawer-content {
         opacity: 1;
