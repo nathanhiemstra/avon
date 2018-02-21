@@ -10,6 +10,8 @@
     margin-bottom: $line-height-computed;
     border: 1px solid transparent;
     border-radius: $alert-border-radius;
+    font-size: $font-size-h6-desktop;
+    text-align: center;
 
     // Headings for larger alerts
     h4 {
@@ -46,7 +48,7 @@
     // Adjust close link position
     .close {
         position: relative;
-        top: -2px;
+        top: -5px;
         right: -21px;
         color: inherit;
     }
