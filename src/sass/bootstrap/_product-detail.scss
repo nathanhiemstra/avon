@@ -16,3 +16,20 @@ span.variant-swatch {
   }
 
 }
+
+// Related Items
+.pdp-related {
+
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+
+  .pdp-related-link {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding-right: 15px;
+    transform: translateY(-50%);
+  }
+
+}
