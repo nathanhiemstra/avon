@@ -24,7 +24,7 @@
     li > a {
 
       // logo images
-      img {
+      img:not(.avatar) {
         height: 22px;
         width: auto;
       }
@@ -62,7 +62,6 @@
           border-radius: 50%;
           width: 36px;
           height: 36px;
-          background-image: url("../images/fpo/img_avatar.png");
         }
 
         // desktop
