@@ -31,12 +31,12 @@
       <section class="container py-5 border-bottom">
         <!-- Product Details -->
         <div class="row">
-          <div class="col-sm-6 px-5">
+          <div class="col-sm-6 pr-md-4 pr-lg-5">
 
             {% include "_includes/modules/product/detail/images.html.twig" %}
 
           </div>
-          <div class="col-sm-6 px-5">
+          <div class="col-sm-6 pl-md-4 pl-lg-5">
 
             {% include "_includes/modules/product/detail/details.html.twig" %}
 
@@ -47,7 +47,7 @@
 
 
 
-      <section class="container p-5 border-bottom">
+      <section class="container py-5">
 
         <!-- Product Detail Tabs -->
         <ul class="nav nav-pills">
@@ -80,36 +80,35 @@
 
 
       <!-- Related Products -->
-      <section class="p-5">
+      <section class="reverse-bg p-5">
         <div class="container">
-          <div class="clearfix my-5">
-            <h3 class="d-inline-block my-0">Related Products</h3>
-            <!-- <a href="#" class="pull-right">View all
-              <span class="glyphicon glyphicon-chevron-right"></span></a> -->
+          <div class="clearfix mt-4 mb-5 pdp-related">
+            <h3 class="text-center my-0 pdp-related-head">Related Products</h3>
+            <a href="#" class="pdp-related-link">View all <span class="lt-icon lt-right lt-medium"></span></a>
           </div>
 
           {% set relatedProduct = '<div class="col-xs-4 col-sm-3">
                   <div class="thumbnail thumbnail--square">
-                    <img src="/images/utility/placeholder_thumb.png" alt="" class="img-responsive">
+                    <img src="/images/fpo/product-details/related_01.png" alt="" class="img-responsive">
                   </div>
-                  <div class="caption text-center">
-                    <p>Product name lorem ipsum dolor sit amet, consectetur</p>
-                    <h5>$XX.XX</h5>
+                  <div class="caption text-center p-3">
+                    <p class="small">Product name lorem ipsum dolor</p>
+                    <p class="large m-0">$99.99</p>
                   </div>
                 </div>' %}
 
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="10000">
+          <div id="carousel-related-products" class="carousel slide pt-5" data-ride="carousel" data-interval="0">
             <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            </ol>
+            <!-- <ol class="carousel-indicators">
+              <li data-target="#carousel-related-products" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-related-products" data-slide-to="1"></li>
+              <li data-target="#carousel-related-products" data-slide-to="2"></li>
+            </ol> -->
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
               <div class="item active">
-                <div class="row">
+                <div class="row px-4">
                   {{ relatedProduct }}
                   {{ relatedProduct }}
                   {{ relatedProduct }}
@@ -117,7 +116,7 @@
                 </div>
               </div>
               <div class="item">
-                <div class="row">
+                <div class="row px-4">
                   {{ relatedProduct }}
                   {{ relatedProduct }}
                   {{ relatedProduct }}
@@ -125,7 +124,7 @@
                 </div>
               </div>
               <div class="item">
-                <div class="row">
+                <div class="row px-4">
                   {{ relatedProduct }}
                   {{ relatedProduct }}
                   {{ relatedProduct }}
@@ -134,11 +133,11 @@
             </div>
 
             <!-- Controls -->
-            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
+            <a class="left carousel-control" href="#carousel-related-products" data-slide="prev">
+              <span class="lt-icon lt-left lt-large"></span>
             </a>
-            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
+            <a class="right carousel-control" href="#carousel-related-products" data-slide="next">
+              <span class="lt-icon lt-right lt-large"></span>
             </a>
           </div>
         </div>

@@ -4,9 +4,19 @@
 @mixin text-emphasis-variant($parent, $color) {
   #{$parent} {
     color: $color;
+    // icons within should have same color
+    &:after,
+    &:before,
+    .lt-icon,
+    .lt-icon:after,
+    .lt-icon:before,
+    i {
+      color: $color;
+    }
   }
-  a#{$parent}:hover,
-  a#{$parent}:focus {
+
+  a#{$parent}:focus,
+  a#{$parent}:hover {
     color: darken($color, 10%);
   }
 }

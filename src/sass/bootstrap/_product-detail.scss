@@ -1,0 +1,35 @@
+// add a gradient overlay on swatches
+
+span.variant-swatch {
+
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.5));
+    opacity: 0.5;
+  }
+
+}
+
+// Related Items
+.pdp-related {
+
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+
+  .pdp-related-link {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding-right: 15px;
+    transform: translateY(-50%);
+  }
+
+}

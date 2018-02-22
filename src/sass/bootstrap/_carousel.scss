@@ -10,15 +10,19 @@
 .carousel-inner {
     position: relative;
     overflow: hidden;
-    width: 100%;
-    // margin-left: 5%;
-    // margin-right: 5%;
+    width: 90%;
+    margin: 0 auto;
 
     > .item {
         display: none;
         position: relative;
 
         @include transition(0.6s ease-in-out left);
+
+        // add a white bg to items
+        .thumbnail, .caption {
+            background-color: $body-bg;
+        }
 
         // Account for jankitude on images
         > img,
@@ -148,7 +152,9 @@
     .glyphicon-chevron-left,
     .glyphicon-chevron-right,
     .glyphicon-arrow-left,
-    .glyphicon-arrow-right {
+    .glyphicon-arrow-right,
+    .lt-left,
+    .lt-right {
         position: absolute;
         top: 50%;
         margin-top: -40px;
@@ -156,20 +162,22 @@
         display: inline-block;
         width: 60px;
         height: 80px;
-        background-color: $body-bg;
+        // background-color: $body-bg;
         line-height: 76px;
     }
 
     .icon-prev,
     .glyphicon-chevron-left,
-    .glyphicon-arrow-left {
+    .glyphicon-arrow-left,
+    .lt-left {
         left: 50%;
         margin-left: -6px;
     }
 
     .icon-next,
     .glyphicon-chevron-right,
-    .glyphicon-arrow-right {
+    .glyphicon-arrow-right,
+    .lt-right {
         right: 50%;
         margin-right: -6px;
     }
@@ -255,7 +263,7 @@
 
 // Optional captions
 // -----------------------------
-// Hidden by default for smaller viewports
+// Hidden by default for smaller viewports 
 .carousel-caption {
     position: absolute;
     left: 15%;
