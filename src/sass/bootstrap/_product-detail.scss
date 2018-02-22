@@ -43,7 +43,7 @@ span.variant-swatch {
 
 }
 
-// Related Items
+// Related Items Header
 .pdp-related {
 
   position: relative;
@@ -51,11 +51,103 @@ span.variant-swatch {
   margin: 0 auto;
 
   .pdp-related-link {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    padding-right: 15px;
-    transform: translateY(-50%);
+    margin-top: $spacing-4;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+  // desktop
+  @media (min-width: $screen-sm-min) {
+    .pdp-related-link {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: auto;
+      margin-top: 0;
+      padding-right: 15px;
+      transform: translateY(-50%);
+    }
+  }
+
+}
+
+// Product detail tabs which collapse to an accordian
+
+// accordion styles
+#pdpTabs-accordion {
+  .panel {
+    .panel-heading {
+
+      background-color: $body-bg;
+      border-bottom: none;
+
+      a {
+
+        display: inline-block;
+        text-decoration: none;
+
+        .lt-expand-circle {
+          display: none;
+        }
+
+        .lt-collapse-circle {
+          display: inline-block;
+        }
+
+        &.collapsed {
+          .lt-expand-circle {
+            display: inline-block;
+          }
+
+          .lt-collapse-circle {
+            display: none;
+          }
+        }
+
+        span {
+          vertical-align: middle;
+        }
+
+      }
+    }
+    // end .panel-heading
+
+    .panel-body {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+}
+// end #pdpTabs-accordion
+
+// tab styles
+#pdpTabs {
+  .lt-icon {
+    display: none;
+  }
+}
+// end #pdpTabs
+
+// Related items carousel
+#carousel-related-products {
+  .carousel-inner {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .item > .row > div {
+    padding: $spacing-3;
+  }
+
+  // desktop
+  @media (min-width: $screen-sm-min) {
+    .carousel-inner {
+      width: 90%;
+      margin: 0 auto;
+    }
   }
 
 }
