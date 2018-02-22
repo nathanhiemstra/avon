@@ -172,6 +172,27 @@ a.btn {
 
 }
 
+.btn-black {
+  background-color: black;
+  border: solid black 1px;
+  vertical-align: bottom;
+
+  @media (max-width: $screen-xs-max) {
+    width: 100%;
+  }
+}
+
+.btn-full-width {
+  width: 100%;
+}
+
+.button-full-width-mobile {
+
+  @media (max-width: $screen-sm-min) {
+      width: 100%;
+  }
+}
+
 // button that looks like a select
 .btn-select {
 

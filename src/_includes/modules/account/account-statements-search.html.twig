@@ -1,27 +1,33 @@
 <!-- START - ACCOUNT STATEMENT SEARCH -->
   <div class="row">
 
-    <h3 class="text-muted mb-4">My Statements</h3>
-    <p class="text-muted">Click "Search" below to see your most recent transactions.<br/>
-    You can also choose a custom date range.</p>
-    <div class="row">
+    <h3 class="h2 mb-4 mt-0">My Statements</h3>
+    <p class="pt-2 pb-5">Click "Search" below to see your most recent transactions. You can also choose a custom date range.</p>
+
+    <!-- search form -->
+      <form class="form-inline mb-5" role="form">
+
         <!-- start date -->
-        <div class="form-group col-xs-6 col-sm-3 d-inline-block has-feedback">
-          <label class="text-muted normal">Start Date</label>
-          <input type="text" class="form-control" placeholder="11/17/2017">
-          <span class="lt-icon lt-calendar form-control-feedback"></span>
+        <div class="form-group">
+          <label class="text-muted normal pb-1">Start Date</label><br/>
+          <div class="inner-addon right-addon">
+            <i class="lt-icon lt-calendar"></i>
+            <input type="text" class="form-control" placeholder="11/17/2017">
+          </div>
         </div>
 
         <!-- end date -->
-        <div class="form-group col-xs-6 col-sm-3 d-inline-block has-feedback">
-          <label class="text-muted normal">End Date</label>
-          <input type="text" class="form-control" placeholder="02/15/2018">
-          <span class="lt-icon lt-calendar form-control-feedback"></span>
+        <div class="form-group">
+          <label class="text-muted normal pb-1">End Date</label><br/>
+          <div class="inner-addon right-addon">
+            <i class="lt-icon lt-calendar"></i>
+            <input type="text" class="form-control" placeholder="02/15/2018">
+          </div>
         </div>
 
         <!-- transaction type -->
-        <div class="form-group col-xs-6 col-sm-3 d-inline-block">
-          <label class="text-muted normal">Transaction Type</label>
+        <div class="form-group">
+          <label class="text-muted normal pb-1">Transaction Type</label>
             <div class="clearfix">
             {% include components.elements.forms.select with {
                 items: [
@@ -34,14 +40,14 @@
                   }
                 ]
               } %}
+            </div>
           </div>
-        </div>
 
         <!-- search button -->
-        <div class="form-group col-xs-6 col-sm-3 d-inline-block mt-4">
-              <a class="btn btn-primary btn-lg">Search</a>
-          </div>
-        </div>
+          <button type="submit" class="btn btn-primary btn-black">Search</button>
+      </form>
+
+      <!-- end search form -->
   </div>
 
 <!-- END - ACCOUNT STATEMENT SEARCH -->

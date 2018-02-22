@@ -78,10 +78,6 @@ h5, .h5, h6, .h6, h7, .h7 {
     font-weight: $headings-font-weight-heavy;
 }
 
-.h5-nonbold {
-  font-weight: normal;
-}
-
 @media (min-width: $screen-sm-min) {
     h1, .h1 {
         font-size: $font-size-h1-desktop;
@@ -185,6 +181,11 @@ mark,
 
 .text-capitalize {
     text-transform: capitalize;
+}
+
+// Font weight and italics
+.font-weight-bold {
+  font-weight: bold;
 }
 
 // Contextual colors
