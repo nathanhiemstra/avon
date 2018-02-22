@@ -139,4 +139,13 @@ span.variant-swatch {
   .item > .row > div {
     padding: $spacing-3;
   }
+
+  // desktop
+  @media (min-width: $screen-sm-min) {
+    .carousel-inner {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
 }
