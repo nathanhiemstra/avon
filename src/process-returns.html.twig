@@ -5,23 +5,23 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# DEFINE BLOCK - MAIN #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% block main %}
+  <div class="container container--process-return-page">
 
-    <section class="container process-return-page pt-5">
+    {% embed "_layouts/columns-10-max.html.twig" %}
 
-      <div class="row">
-        <div class="col-xs-12">
-          <h2 class="mb-5 mt-5">Process Returns</h2>
-          <!-- Developer note: For the "src", for demo purposes, we added "https://www.youravon.com" to the "src" in production: "/us-home/my-account/process-returns-iframe.html" -->
-          <iframe class="embed-responsive-item" id="avnIframeUrl" src="https://www.youravon.com/us-home/my-account/process-returns-iframe.html" width="800px" height="800px" scrolling="yes" frameborder="0"></iframe>
-        </div>
-      </div>
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
 
-    </section>
+        <h2 class="pb-3">Process Returns</h2>
+        <!-- Developer note: For the "src", for demo purposes, we added "https://www.youravon.com" to the "src" in production: "/us-home/my-account/process-returns-iframe.html" -->
+        <iframe class="embed-responsive-item" id="avnIframeUrl" src="https://www.youravon.com/us-home/my-account/process-returns-iframe.html" width="800px" height="800px" scrolling="yes" frameborder="0"></iframe>
 
-  {% endblock %}
+      {% endblock %}
+
+    {% endembed %}
+
+  </div>
 
 {% endblock %}
