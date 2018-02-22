@@ -12,6 +12,11 @@
   // For input.btn
   font-weight: $btn-font-weight;
   letter-spacing: $btn-letter-spacing;
+
+  .dropdown & {
+    letter-spacing: normal;
+  }
+
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
@@ -68,7 +73,7 @@ a.btn {
     pointer-events: none;
 
     // Future-proof disabling of clicks on `<a>` elements
-
+ 
   }
 }
 
@@ -125,13 +130,17 @@ a.btn {
   // dropdowns
   .dropdown-menu {
     background-color: $brand-primary;
+
     li a {
       color: $white;
     }
   }
 
   i, i:after, i:before {
-    line-height: 0; // prevent larger icons increasing button height
+    line-height: 0;
+
+    // prevent larger icons increasing button height
+ 
   }
 
   > i,
@@ -146,13 +155,13 @@ a.btn {
 
   // desktop
   @media (min-width: $screen-sm-min) {
-
     background-color: transparent;
     color: $brand-primary;
 
     // dropdowns
     .dropdown-menu {
       background-color: transparent;
+
       li a {
         color: $brand-primary;
       }
@@ -167,9 +176,7 @@ a.btn {
       background-color: transparent !important;
       color: $brand-primary !important;
     }
-
   }
-
 }
 
 .btn-bottom-align {
@@ -181,15 +188,13 @@ a.btn {
 }
 
 .button-full-width-mobile {
-
   @media (max-width: $screen-xs-max) {
-      width: 100%;
+    width: 100%;
   }
 }
 
 // button that looks like a select
 .btn-select {
-
   border: 1px solid $gray-light;
   box-shadow: none;
   text-transform: none;
@@ -204,7 +209,6 @@ a.btn {
   .form-control-feedback {
     line-height: $input-height-base;
   }
-
 }
 
 // Link buttons

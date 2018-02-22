@@ -69,55 +69,62 @@
       <!-- START - TABS SECTION -->
       <section class="container py-5">
 
-        <!-- START - TABS NAV -->
-        <ul id="pdpTabs" class="nav nav-pills">
-          <li class="active">
-            <a href="#pdpDescription" data-toggle="tab">
-              <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
-              <span class="lt-icon lt-icon lt-collapse-circle lt-large"></span>
-              <span>Description</span>
-            </a>
-          </li>
-          <li>
-            <a href="#pdpIngredients" data-toggle="tab">
-              <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
-              <span class="lt-icon lt-icon lt-collapse-circle lt-large"></span>
-              <span>Ingredients</span>
-            </a>
-          </li>
-          <li>
-            <a href="#pdpFacts" data-toggle="tab">
-              <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
-              <span class="lt-icon lt-icon lt-collapse-circle lt-large"></span>
-              <span>Supplement Facts</span>
-            </a>
-          </li>
-        </ul>
-        <!-- END - TABS NAV -->
+        <div class="row">
+          <div class="col-md-8">
 
-        <!-- START - TAB PANES -->
-        <div class="tab-content">
+            <!-- START - TABS NAV -->
+            <ul id="pdpTabs" class="nav nav-pills">
+              <li class="active">
+                <a href="#pdpDescription" data-toggle="tab">
+                  <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
+                  <span class="lt-icon lt-icon lt-collapse-circle lt-large"></span>
+                  <span>Description</span>
+                </a>
+              </li>
+              <li>
+                <a href="#pdpIngredients" data-toggle="tab">
+                  <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
+                  <span class="lt-icon lt-icon lt-collapse-circle lt-large"></span>
+                  <span>Ingredients</span>
+                </a>
+              </li>
+              <li>
+                <a href="#pdpFacts" data-toggle="tab">
+                  <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
+                  <span class="lt-icon lt-icon lt-collapse-circle lt-large"></span>
+                  <span>Supplement Facts</span>
+                </a>
+              </li>
+            </ul>
+            <!-- END - TABS NAV -->
 
-          <!-- START - DESCRIPTION TAB -->
-          <div class="tab-pane active" id="pdpDescription">
-            {% include "_includes/modules/product/detail/tab-description.html.twig" %}
+            <!-- START - TAB PANES -->
+            <div class="tab-content">
+
+              <!-- START - DESCRIPTION TAB -->
+              <div class="tab-pane active" id="pdpDescription">
+                {% include "_includes/modules/product/detail/tab-description.html.twig" %}
+              </div>
+              <!-- END - DESCRIPTION TAB -->
+
+              <!-- START - INGREDIENTS TAB -->
+              <div class="tab-pane" id="pdpIngredients">
+                {% include "_includes/modules/product/detail/tab-ingredients.html.twig" %}
+              </div>
+              <!-- END - INGREDIENTS TAB -->
+
+              <!-- START - FACTS TAB -->
+              <div class="tab-pane" id="pdpFacts">
+                {% include "_includes/modules/product/detail/tab-facts.html.twig" %}
+              </div>
+              <!-- END - FACTS TAB -->
+
+            </div>
+            <!-- END - TAB PANES -->
+
+
           </div>
-          <!-- END - DESCRIPTION TAB -->
-
-          <!-- START - INGREDIENTS TAB -->
-          <div class="tab-pane" id="pdpIngredients">
-            {% include "_includes/modules/product/detail/tab-ingredients.html.twig" %}
-          </div>
-          <!-- END - INGREDIENTS TAB -->
-
-          <!-- START - FACTS TAB -->
-          <div class="tab-pane" id="pdpFacts">
-            {% include "_includes/modules/product/detail/tab-facts.html.twig" %}
-          </div>
-          <!-- END - FACTS TAB -->
-
         </div>
-        <!-- END - TAB PANES -->
 
       </section>
       <!-- END - TABS SECTION -->

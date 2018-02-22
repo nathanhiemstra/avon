@@ -222,14 +222,14 @@ $table-bg-hover: $gray-lighter !default;
 $table-bg-active: $table-bg-hover !default;
 
 //** Border color for table and cell borders.
-$table-border-color: $gray-lighter !default;
+$table-border-color: $gray-light !default;
 
 //== Buttons
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-font-weight: normal !default;
-$btn-letter-spacing: 0.5px !default;
+$btn-font-weight: bold !default;
+$btn-letter-spacing: 1.5px !default;
 
 $btn-default-color: $brand-primary !default;
 $btn-default-bg: $white !default;
