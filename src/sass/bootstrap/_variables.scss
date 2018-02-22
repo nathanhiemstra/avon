@@ -311,6 +311,12 @@ $input-border-focus: $gray-light !default;
 //** Placeholder text color
 $input-color-placeholder: #999 !default;
 
+//** Form labels text color
+$input-label-text-color: $gray-light;
+
+//** Form labels font size
+$input-label-font-size: 14px;
+
 //** Default `.form-control` height
 $input-height-base: $line-height-computed + $padding-base-vertical * 2 + 2 !default;
 
