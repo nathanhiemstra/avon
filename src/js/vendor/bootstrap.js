@@ -458,6 +458,65 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
 
 }(jQuery);
 
+// thumbnails.carousel.js jQuery plugin
+(function(window, $, undefined) {
+
+	var conf = {
+		center: false,
+		backgroundControl: false
+	};
+
+	var cache = {
+		$carouselContainer: $('.carousel-thumbs').parent(),
+		$thumbnailItems: $('.carousel-thumbs .thumbnail'),
+		$controls: $('.carousel-thumbs').parent().find('.carousel-control')
+	};
+
+	function init() {
+		cache.$carouselContainer.find('ol.carousel-indicators').addClass('indicators-fix');
+		cache.$thumbnailItems.first().addClass('active-thumbnail');
+
+		if(!conf.backgroundControl) {
+			cache.$carouselContainer.find('.carousel-control').addClass('controls-background-reset');
+		}
+		else {
+			cache.$controls.height(cache.$carouselContainer.find('.carousel-inner').height());
+		}
+
+		if(conf.center) {
+			cache.$thumbnailItems.wrapAll("<div class='center clearfix'></div>");
+		}
+	}
+
+	function refreshOpacities(domEl) {
+		cache.$thumbnailItems.removeClass('active-thumbnail');
+		cache.$thumbnailItems.eq($(domEl).index()).addClass('active-thumbnail');
+	}
+
+	function bindUiActions() {
+		cache.$carouselContainer.on('slide.bs.carousel', function(e) {
+  			refreshOpacities(e.relatedTarget);
+		});
+
+		cache.$thumbnailItems.click(function(e){
+      e.preventDefault();
+			cache.$carouselContainer.carousel(cache.$thumbnailItems.index( $(this) ));
+		});
+	}
+
+	$.fn.thumbnailsCarousel = function(options) {
+		conf = $.extend(conf, options);
+
+		init();
+		bindUiActions();
+
+		return this;
+	}
+
+})(window, jQuery);
+
+$('.carousel-thumbs').thumbnailsCarousel();
+
 /* ========================================================================
  * Bootstrap: collapse.js v3.1.0
  * http://getbootstrap.com/javascript/#collapse

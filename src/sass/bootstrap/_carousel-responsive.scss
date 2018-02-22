@@ -1,0 +1,25 @@
+//
+// Responsive carousel - extends normal carousel in _carousel.scss
+//  Mobile: a carousel with arrow and dot navigation
+//  Desktop: a slider with only thumbnail navigation
+// --------------------------------------------------
+
+// Wrapper for the slide container and indicators
+.carousel--responsive {
+
+  .carousel-inner {
+    width: 70%;
+    margin: 0 auto;
+
+    > .item {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .carousel-indicators {
+    bottom: -35px;
+  }
+  
+}

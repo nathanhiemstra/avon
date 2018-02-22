@@ -231,9 +231,10 @@
         height: 10px;
         margin: 1px;
         text-indent: -999px;
-        border: 1px solid $carousel-indicator-border-color;
+        border: none;
         border-radius: 10px;
         cursor: pointer;
+        transition: $ui-animation-time background-color ease;
 
         // IE8-9 hack for event handling
         //
@@ -244,26 +245,23 @@
         //
         // For IE8, we set solid black as it doesn't support `rgba()`. For IE9, we
         // set alpha transparency for the best results possible.
-        background-color: #000 \9;
+        background-color: #999 \9;
 
         // IE8
-        background-color: rgba(0, 0, 0, 0);
+        background-color: $gray-light;
 
         // IE9
 
     }
 
     .active {
-        margin: 0;
-        width: 12px;
-        height: 12px;
         background-color: $carousel-indicator-active-bg;
     }
 }
 
 // Optional captions
 // -----------------------------
-// Hidden by default for smaller viewports 
+// Hidden by default for smaller viewports
 .carousel-caption {
     position: absolute;
     left: 15%;
