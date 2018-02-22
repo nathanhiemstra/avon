@@ -8,13 +8,22 @@
 <h3 class="pdp-product-title">Anew Skinvincible Deep Recovery Cream</h3>
 <!-- END - TITLE -->
 
+<!-- START - VIEW MORE INFO LINK -->
+<!-- Dev note: Only appears in Quick SHop modal -->
+<a href="#" class="w-100 my-4 underline">View more info</a>
+<!-- END - VIEW MORE INFO LINK -->
+
+
 <!-- START - DETAILS LINK -->
 <a href="#pdpTabs-accordion" class="w-100 text-center visible-xs my-4 underline">View product details</a>
 <!-- END - DETAILS LINK -->
 
+
+
 <!-- START - PRICE -->
 <h3 class="d-inline-block align-middle mr-4 my-3 my-md-4">
-  <span class="pdp-price">$9.99</span>
+  <!-- Developer note: If "Regular price" is not shown below, remove .text-primary to make the proce black.-->
+  <span class="pdp-price text-primary">$9.99</span>
 </h3>
 <!-- END - PRICE -->
 
@@ -51,8 +60,8 @@
 
 <!-- START - PRICE AND OFFERS -->
 <p class="my-0 my-md-4 w-100">
-  <span class="text-muted col-xs-12 col-sm-6 px-0 my-3 my-md-0">Customer price:
-    <span>$12.99</span>
+  <span class="text-muted col-xs-12 col-sm-6 px-0 my-3 my-md-0">Regular price:
+    <span class="strike-through">$12.99</span>
   </span>
   <a class="underline col-xs-12 col-sm-6 px-0 my-3 my-md-0" href="#">View Offers <span class="pdp-offers">(1)</span></a>
 </p>
@@ -168,7 +177,7 @@
 
   <!-- START - OUT OF STOCK MESSAGE -->
   <div class="form-group has-feedback d-inline-block col-xs-12 p-0 m-0">
-    <p>More on the way</p>
+    <p><strong>More on the way</strong></p>
     <p class="small">This item is currently out of stock, but we are expecting more soon. Sign up to be notified as soon as it's available.</p>
     <p class="small">Thanks! We'll email you at jane.johnson@gmail.com as soon as it's back in stock.</p>
   </div>
@@ -176,7 +185,7 @@
 
   <!-- START - SOLD OUT MESSAGE -->
   <div class="form-group has-feedback d-inline-block col-xs-12 p-0 m-0">
-    <p><span class="lt-icon lt-warning lt-medium text-danger"></span> This product is sold out</p>
+    <p><span class="lt-icon lt-warning lt-medium text-danger"></span> <strong>This product is sold out</strong></p>
     <p class="small">This item is currently unavailable. Lorem ipsum dolor sit amet, and view similar products.</p>
   </div>
   <!-- END - SOLD OUT MESSAGE -->
@@ -185,7 +194,7 @@
 <!-- END - STOCK MESSAGES CONTAINER -->
 
 <!-- START - NOTIFY BUTTON -->
-<button class="btn btn-primary btn-lg mt-4 col-xs-12" data-toggle="modal" data-target="">
+<button class="btn btn-default btn-lg mt-4 col-xs-12" data-toggle="modal" data-target="">
   Notify me when in stock
 </button>
 <!-- END - NOTIFY BUTTON -->
