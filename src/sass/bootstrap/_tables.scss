@@ -15,7 +15,8 @@ caption {
 
 th {
     text-align: left;
-    font-weight: normal;
+    @extend .h6;
+    color: $gray-light;
 }
 
 // Baseline styles
