@@ -1,14 +1,14 @@
 <!-- START - ACCOUNT STATEMENT SEARCH -->
 
-<h3 class="h2 mb-4 mt-0">My Statements</h3>
-<p class="pt-2 pb-5">Click "Search" below to see your most recent transactions. You can also choose a custom date range.</p>
+<h3 class="h2">My Statements</h3>
+<p class="mt-4">Click "Search" below to see your most recent transactions. You can also choose a custom date range.</p>
 
 <!-- search form -->
-<form class="form-inline mb-5" role="form">
+<form class="form-inline my-5" role="form">
 
   <!-- start date -->
   <div class="form-group">
-    <label class="text-muted normal pb-1">Start Date</label><br/>
+    <label class="pb-1">Start Date</label><br/>
     <div class="inner-addon right-addon">
       <i class="lt-icon lt-calendar"></i>
       <input type="text" class="form-control" placeholder="11/17/2017">
@@ -17,7 +17,7 @@
 
   <!-- end date -->
   <div class="form-group">
-    <label class="text-muted normal pb-1">End Date</label><br/>
+    <label class="pb-1">End Date</label><br/>
     <div class="inner-addon right-addon">
       <i class="lt-icon lt-calendar"></i>
       <input type="text" class="form-control" placeholder="02/15/2018">
@@ -26,7 +26,7 @@
 
   <!-- transaction type -->
   <div class="form-group">
-    <label class="text-muted normal pb-1">Transaction Type</label>
+    <label class="pb-1">Transaction Type</label>
     <div class="clearfix">
       {% include components.elements.forms.select with {
         items: [
