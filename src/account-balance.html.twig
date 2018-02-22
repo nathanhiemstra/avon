@@ -5,46 +5,41 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# DEFINE BLOCK - MAIN #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% block main %}
+  <div class="container container--account-balance-page">
 
-    <div class="container">
+    {% embed "_layouts/columns-10-max.html.twig" %}
 
-      <div class="col-md-10 col-md-offset-1">
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
 
         <!-- START - ACCOUNT STATEMENT BALANCES -->
-        <section>
 
-          {% include "_includes/modules/account/account-statements-balances.html.twig" %}
+        {% include "_includes/modules/account/account-statements-balances.html.twig" %}
 
-        </section>
         <!-- END - ACCOUNT STATEMENT BALANCES -->
 
         <!-- START - ACCOUNT STATEMENT SEARCH -->
-        <section>
 
-          {% include "_includes/modules/account/account-statements-search.html.twig" %}
+        {% include "_includes/modules/account/account-statements-search.html.twig" %}
 
-        </section>
         <!-- END - ACCOUNT STATEMENT SEARCH -->
 
         <!-- START - ACCOUNT STATEMENT SEARCH RESULTS-->
-        <section>
 
-          {% include "_includes/modules/account/account-statements-search-results.html.twig" %}
+        {% include "_includes/modules/account/account-statements-search-results.html.twig" %}
 
-        </section>
         <!-- END - ACCOUNT STATEMENT SEARCH RESULTS -->
 
-        <p class="text-center visible-sm"><a class="text-center" href="#">Print</a></p>
+        <p class="text-center visible-sm">
+          <a class="text-center" href="#">Print</a>
+        </p>
 
-      </div>
+      {% endblock %}
 
-    </div>
+    {% endembed %}
 
-  {% endblock %}
-
+  </div>
 
 {% endblock %}

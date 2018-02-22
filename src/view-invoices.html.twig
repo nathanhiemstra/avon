@@ -5,30 +5,44 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# DEFINE BLOCK - MAIN #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% block main %}
+  <div class="container container--view-invoices-page">
 
-    <section class="container">
+    {% embed "_layouts/columns-10-max.html.twig" %}
 
-      <div class="row">
-        <div class="col-xs-12">
-          <h2 class="pt-5 pb-4">View Invoices</h2>
-          <p class="pb-1">You have <a href="#" class="underline">0 invoice(s) ready to print</a>
-          </p>
-          <p class="pb-2 larger-line-spacing">Customer Invoices for the last 45 Days are shown below. To see others, go to <a href="#" class="underline"><span class="new-mobile-line">View Saved Invoices.</span></a></p>
-          <hr>
-          <h6 class="pt-2 pb-3">STEP 1: Identify missing Items</h6>
-          <p class="larger-line-spacing">Using your Avon generated invoice, answer the question below. Once complete, the confirmation number becomes a link. To access the customer invoices within this order click the appropriate link below.</p>
-          <div class="invoice-iframe-holder">
-            <iframe src="https://data.youravon.com/repinvoicing/AvonRemoteLogin?from=old&amp;loginId=68991654&amp;repId=*68991654*" id="viewInvoicesIframeUrl" scrolling="yes" onload="resizeIframe(this)" frameborder="0" width="680" height="400" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-          </div>
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        <h2 class="pb-3">View Invoices</h2>
+        <p class="pb-1">You have
+          <a href="#" class="underline">0 invoice(s) ready to print</a>
+        </p>
+        <p class="pb-2 larger-line-spacing">Customer Invoices for the last 45 Days are shown below. To see others, go to
+          <a href="#" class="underline">
+            <span class="new-mobile-line">View Saved Invoices.</span></a>
+        </p>
+        <hr>
+        <h6 class="pt-2 pb-3">STEP 1: Identify missing Items</h6>
+        <p class="larger-line-spacing">Using your Avon generated invoice, answer the question below. Once complete, the confirmation number becomes a link. To access the customer invoices within this order click the appropriate link below.</p>
+        <div class="invoice-iframe-holder">
+          <iframe
+            src="https://data.youravon.com/repinvoicing/AvonRemoteLogin?from=old&amp;loginId=68991654&amp;repId=*68991654*"
+            id="viewInvoicesIframeUrl"
+            scrolling="yes"
+            onload="resizeIframe(this)"
+            frameborder="0"
+            width="680"
+            height="400"
+            webkitallowfullscreen=""
+            mozallowfullscreen=""
+            allowfullscreen=""></iframe>
         </div>
-      </div>
 
-    </section>
+      {% endblock %}
 
-  {% endblock %}
+    {% endembed %}
+
+  </div>
 
 {% endblock %}
