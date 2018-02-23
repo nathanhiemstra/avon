@@ -112,7 +112,7 @@
 
       width: 100%;
 
-      li {
+      > li {
         width: 50%;
         margin: 5px;
         text-align: center;
@@ -130,7 +130,7 @@
       justify-content: flex-start;
       background-color: $body-bg;
 
-      ul:first-of-type {
+      > ul:first-of-type {
 
         flex: 1 1 auto;
 
@@ -148,12 +148,12 @@
       .nav > li {
         width: auto;
 
-        a {
+        > a {
           padding: 0;
         }
 
       }
-    }
+    } // end desktop
 
   }
 
