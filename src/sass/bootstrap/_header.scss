@@ -152,6 +152,11 @@
           padding: 0;
         }
 
+        &.open > .dropdown-toggle.btn-primary-responsive {
+          background-color: $body-bg;
+          color: $brand-primary;
+        }
+
       }
     } // end desktop
 
