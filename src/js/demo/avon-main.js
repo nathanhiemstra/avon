@@ -148,12 +148,6 @@ $(document).ready(function () {
 
   $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
-
-    // !! DEVELOPER NOTE !!
-    // this script is required for tabs to collapse into an accordion
-    // Currently being used on product detail page
-    $('#pdpTabs').tabCollapse();
-
   });
 
   if(typeof Brochures !== 'undefined') Brochures.init();
@@ -161,5 +155,6 @@ $(document).ready(function () {
   if(typeof CheckoutDemo !== 'undefined') CheckoutDemo.init();
   if(typeof FormDemo !== 'undefined') FormDemo.init();
   if(typeof ProductFilters !== 'undefined') ProductFilters.init();
+  if(typeof ProductDetail !== 'undefined') ProductDetail.init();
 
 });

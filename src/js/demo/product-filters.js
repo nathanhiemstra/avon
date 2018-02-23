@@ -1,5 +1,5 @@
 /**
- * Brochures - handles all brochure view behavior
+ * ProductFilters
  * @return {init} [description]
  */
 
@@ -27,16 +27,16 @@ var ProductFilters = (function () {
 
   // private methods
   var _addListeners = function () {
-    
+
     // Before modal begin to open
     $els.modal.on('show.bs.modal', function() {
-      console.log('_moveMarkupToModal: ',_moveMarkupToModal); 
+      console.log('_moveMarkupToModal: ',_moveMarkupToModal);
       _moveMarkupToModal();
     })
 
     // After modal finishes closing
     $els.modal.on('hidden.bs.modal', function() {
-      console.log('_moveMarkupOutOfModal: ',_moveMarkupOutOfModal); 
+      console.log('_moveMarkupOutOfModal: ',_moveMarkupOutOfModal);
       _moveMarkupOutOfModal();
     });
 
@@ -48,7 +48,7 @@ var ProductFilters = (function () {
       _updateBadgeCount(this);
     });
 
-    
+
     // Before show begins
     $els.collapseBody.on('show.bs.collapse', function (e) {
       _preventCollapsedForDesktop(e);
@@ -78,12 +78,12 @@ var ProductFilters = (function () {
 
 
   var _updateBadgeCount = function(itemClicked) {
-    
+
     // Find out how many checkboxes are checked
     var $parent = $(itemClicked).parents('.form-group');
     var $badge = $('.badge',$parent );
     var checkedCount = $( "input:checked" ,$parent).length;
-    
+
     // Update number in badge
     $badge.text( checkedCount );
     if ( checkedCount == 0 ) {
@@ -97,13 +97,13 @@ var ProductFilters = (function () {
 
     // See if we're at "mobile" width by testing if this icon is visible
     var numberOfVisibeIcons = $('.aside-product-filters .filter-collapse--icon:eq(0):visible').length;
-    
+
     // If we're wider than mobile width, prevent collapse
     if (numberOfVisibeIcons == 0) {
       e.preventDefault();
     }
   }
-  
+
   var _cleanupCollapsedForDesktop = function(itemCollpsed) {
     // Remove inline style height:0 so if browser window is widened past mobile, checkboxes in a collapsed become visible
     $(itemCollpsed).css( "height", "" );
@@ -115,4 +115,3 @@ var ProductFilters = (function () {
   };
 
 })();
-
