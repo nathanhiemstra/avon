@@ -294,3 +294,14 @@ table {
     }
   }
 }
+
+.table {
+  td {
+
+    &.in {
+      display: table-cell;
+    }
+
+  }
+
+}
