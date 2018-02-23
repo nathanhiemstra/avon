@@ -43,17 +43,22 @@ var ProductDetail = (function () {
       _handleOffersModalOpen();
     });
 
+    $els.offersModal.on('hidden.bs.modal', function (e) {
+      // if Quick Shop modal is visible, back button was clicked, re-add 'modal-open' to body
+      if( ($els.quickShopModal.data('bs.modal') || {}).isShown ) {
+        // wait for Quick Shop modal to be shown, then add 'modal-open' to body
+        $els.quickShopModal.on('shown.bs.modal', function(e) {
+          $('body').addClass('modal-open');
+        });
+      }
+    });
+
   };
-
-
 
   // When page loads, make copy of icons in other part of markup. Couldn't acvieve this with CSS
   var _cloneSocialIcons = function() {
-    $els.socialIcons.clone().appendTo($els.socialIconsContainerMobile)
-    
+    $els.socialIcons.clone().appendTo($els.socialIconsContainerMobile);
   };
-
-
 
   // If Quick Shop modal is open, close Quick Shop and open Offers modal with back button visible
   // If Quick Ship modal is not open, Offers modal displays without back button
@@ -74,9 +79,9 @@ var ProductDetail = (function () {
     }
 
     if(offersIsOpen) {
-      // close Quick Shop modal
+      // close Offers modal
       $els.offersModal.modal('hide');
-      // show quick shop modal
+      // show Quick Shop modal
       $els.quickShopModal.modal('show');
     }
   };
