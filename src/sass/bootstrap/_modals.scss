@@ -142,7 +142,7 @@
         margin-bottom: 0;
 
         // account for input[type="submit"] which gets the bottom margin like all other inputs
-   
+
     }
 
     // but override that for button groups
@@ -180,6 +180,10 @@
     // Modal sizes
     .modal-sm {
         width: $modal-sm;
+    }
+
+    .modal-lg {
+        width: $screen-sm; // 768px
     }
 }
 

@@ -26,14 +26,11 @@ var ProductDetail = (function () {
     };
 
     _addListeners();
+    _cloneSocialIcons();
   };
 
   // private methods
   var _addListeners = function () {
-
-    $( document ).ready(function() {
-        _cloneSocialIcons();
-    });
 
     $els.viewOffersLink.on('click touchstart', function(e) {
       _handleOffersModalOpen();
@@ -55,9 +52,10 @@ var ProductDetail = (function () {
 
   };
 
-  // When page loads, make copy of icons in other part of markup. Couldn't acvieve this with CSS
+  // When page loads, make copy of icons in other part of markup for mobile view.
+  // Couldn't acvieve this with CSS
   var _cloneSocialIcons = function() {
-    $els.socialIcons.clone().appendTo($els.socialIconsContainerMobile);
+    $els.socialIcons.clone().appendTo($els.socialIconsContainerMobile).addClass('visible-xs mt-5');
   };
 
   // If Quick Shop modal is open, close Quick Shop and open Offers modal with back button visible
