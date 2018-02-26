@@ -59,6 +59,10 @@ html:hover [class^="lt-"] {
 	content: '';
 }
 
+.lt-icon:before {
+  color: $brand-primary;
+}
+
 .lt-bell:before {
   content: "\e901";
 }
