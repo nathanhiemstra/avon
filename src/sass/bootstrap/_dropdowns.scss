@@ -26,6 +26,13 @@
   }
 }
 
+// dropdown toggle icons should inherit color
+.dropdown-toggle {
+  .lt-icon {
+    color: inherit;
+  }
+}
+
 // Prevent the focus on the dropdown toggle when closing dropdowns
 .dropdown-toggle:focus {
   outline: 0;
@@ -170,11 +177,11 @@
   }
 
   // if there's a down arrow, flip it
-  .lt-carat-down {
-    // transform: scaleY(-1);
-    transform: rotate(180deg);
-    transform-origin: center center;
-  }
+  // .lt-carat-down {
+  //   // transform: scaleY(-1);
+  //   transform: rotate(180deg);
+  //   transform-origin: center center;
+  // }
 
 }
 
