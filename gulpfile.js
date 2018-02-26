@@ -36,6 +36,7 @@ path.src = {
   examplesHtml:     "src/styleguide/examples/**/*.html",
   examplesCss:      "src/styleguide/examples/**/*.css",
   examplesJpg:      "src/styleguide/examples/**/*.jpg",
+  diffReoprts:      "src/_demo/diff-reports/**/*",
   fonts:            "src/fonts/**/*",
   html:             "src/**/*.html",
   images:           "src/images/**/*",
@@ -49,6 +50,7 @@ path.src = {
 
 path.staticFilesToCopy = [
   path.src.docsAssets,
+  path.src.diffReoprts,
   path.src.examplesHtml,
   path.src.examplesCss,
   path.src.examplesJpg,
