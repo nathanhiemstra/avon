@@ -7,6 +7,7 @@
 var ProductDetail = (function () {
 
   var $els = {};
+  var tempModalEvent = null;
 
   // public methods
   var init = function () {
@@ -62,12 +63,20 @@ var ProductDetail = (function () {
   // If Quick Ship modal is not open, Offers modal displays without back button
   var _handleOffersModalOpen = function() {
 
+    tempModalEvent = null;
+
     var quickShopIsOpen = ($els.quickShopModal.data('bs.modal') || {}).isShown;
     var offersIsOpen = ($els.offersModal.data('bs.modal') || {}).isShown;
 
     if(quickShopIsOpen) {
+      // hijack offers modal
+      $els.offersModal.off('show.bs.modal');
       // close Quick Shop modal
       $els.quickShopModal.modal('hide');
+      // wait for hidden, then show offers modal
+      tempModalEvent = $els.quickShopModal.on('hidden.bs.modal', function(e) {
+        $els.offersModal.modal('show');
+      });
       // show back button in offers modal
       $els.offersModalBackBtn.css('display', 'block');
 

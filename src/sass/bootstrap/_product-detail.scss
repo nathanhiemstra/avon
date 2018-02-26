@@ -15,8 +15,8 @@
 }
 
 // display more info link only in modal
-.pdp-more-info-link { display: none; }
-body.modal-open .pdp-more-info-link { display: block; }
+main .pdp-more-info-link { display: none; }
+.modal .pdp-more-info-link { display: block; }
 
 // product title
 .pdp-product-title {
