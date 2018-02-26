@@ -24,6 +24,10 @@ $(document).ready(function () {
       demoToggle: '[data-toggle="drawer-demo"]',
       itemEntry: ".drawer-item-entry",
       orderSummary: ".drawer-order-summary",
+    },
+    datePicker: {
+      trigger: ".lt-calendar",
+      target: ".demo-datePicker-from-angular"
     }
     // backDrop: ".drawer-backdrop"
   }
@@ -51,6 +55,10 @@ $(document).ready(function () {
       demoToggle: $(selectors.drawers.demoToggle),
       orderSummary: $(selectors.main).find(selectors.drawers.orderSummary),
       itemEntry: $(selectors.main).find(selectors.drawers.itemEntry)
+    },
+    datePicker: {
+      trigger:  $(selectors.main).find(selectors.datePicker.trigger),
+      target:   $(selectors.main).find(selectors.datePicker.target)
     }
     // backDrop: $(selectors.backDrop)
   }
@@ -110,6 +118,18 @@ $(document).ready(function () {
   }
 
 
+  function toggleDatePicker(itemClicked) {
+    var $parent = $(itemClicked).parents('.form-group');
+    var $target = $parent.find(selectors.datePicker.target);
+    $target.toggleClass("d-none");
+  }
+
+
+
+
+
+
+
 
   ////////////////////////////////////////////////////////
   // LISTENERS
@@ -138,6 +158,11 @@ $(document).ready(function () {
 
   $objects.yourOrder.offers.hideDetails.on("click", function () {
     yourOrderOffersHideDetails();
+  });
+
+  // DATEPICKER
+  $objects.datePicker.trigger.on("click", function (e) {
+    toggleDatePicker(this);
   });
 
 
