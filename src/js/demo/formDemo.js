@@ -1,12 +1,12 @@
 /**
- * Predictive search - handles all product search input behavior
+ * Item Entry - handles all behavior related to Item Entry Drawer
+ * // TODO :: rename this file item-entry.js
  * @return {init} [description]
  */
 
 var FormDemo = (function () {
 
   var $els = {};
-  var autoCompleteOptions = {};
   var itemEntryObj = {};
 
   // public methods
@@ -14,12 +14,6 @@ var FormDemo = (function () {
 
     // grab the DOM els we need
     $els = {
-      searchInputMobile: $('#mobile-search-input'),
-      searchInputDesktop: $('#desktop-header-search'),
-      searchBtn: $('#mobile-search-toggle'),
-      searchNavbar: $('#mobile-header-navbar'), // TODO :: update this for auto-complete demo
-      drawerBackdrop: $('.drawer-backdrop'),
-
       itemEntryDrawer: $('#drawer-item-entry'),
       itemEntrySearchInput: $('#itemEntryProduct'),
       itemEntryCustomer: $('#itemEntryCustomer'),
@@ -42,64 +36,6 @@ var FormDemo = (function () {
 
   // private methods
   var _addListeners = function () {
-
-    //
-    // https://github.com/devbridge/jQuery-Autocomplete
-    //
-
-    $els.itemEntrySearchInput.autocomplete({
-      // serviceUrl: '/autocomplete/data/somepath', // ajax
-      lookup: FAKE_PRODUCTS, // no ajax, just a js object
-      onSelect: function (suggestion) {
-        console.log('You selected: ' + suggestion.value);
-        _handleItemEntrySelection(this, suggestion);
-        $(this).val(suggestion.sku);
-      },
-      formatResult: function (suggestion, currentVal) {
-        return _constructItemTemplate(suggestion);
-      },
-      maxHeight: 400,
-      showNoSuggestionNotice: true,
-      noSuggestionNotice: 'Sorry, nothing matches that query',
-      triggerSelectOnValidInput: false,
-      preserveInput: true
-    });
-
-    $els.searchInputMobile.autocomplete({
-      // serviceUrl: '/autocomplete/data/somepath', // ajax
-      lookup: FAKE_PRODUCTS,
-      onSelect: function (suggestion) {
-        console.log('You selected: ' + suggestion.value);
-        // _handleSearchInputSelection(this, suggestion);
-        // $(this).val('');
-      },
-      formatResult: function (suggestion, currentVal) {
-        return _constructItemTemplate(suggestion);
-      },
-      appendTo: $els.searchNavbar,
-      maxHeight: 400,
-      showNoSuggestionNotice: true,
-      noSuggestionNotice: 'Sorry, nothing matches that query',
-      triggerSelectOnValidInput: false,
-      preserveInput: true
-    });
-
-    $els.searchInputDesktop.autocomplete({
-      lookup: FAKE_PRODUCTS,
-      onSelect: function (suggestion) {
-        console.log('You selected: ' + suggestion.value);
-        // _handleSearchInputSelection(this, suggestion);
-        // $(this).val('');
-      },
-      formatResult: function (suggestion, currentVal) {
-        return _constructItemTemplate(suggestion);
-      },
-      maxHeight: 400,
-      showNoSuggestionNotice: true,
-      noSuggestionNotice: 'Sorry, nothing matches that query',
-      triggerSelectOnValidInput: false,
-      preserveInput: true
-    });
 
     $els.itemEntryCustomer.on('change', function() {
       // console.log($(this).val());
@@ -134,21 +70,6 @@ var FormDemo = (function () {
       }, 5000);
     });
 
-    // mobile
-    $els.searchBtn.on('click', _toggleSearchExpand);
-    $els.searchInputMobile
-      .blur(function () {
-        _toggleSearchExpand();
-      });
-
-    // desktop
-    $els.searchInputDesktop
-      .focus(function () {
-        _toggleSearchExpand();
-      })
-      .blur(function () {
-        _toggleSearchExpand();
-      });
   };
 
   var _handleItemEntry = function(obj) {
@@ -158,7 +79,7 @@ var FormDemo = (function () {
   };
 
   var _clearItemEntryForm = function() {
-    // TODO :: below is for demo purposes only
+    // TODO :: below is for demo purposes only, should never be used in production
     setTimeout(function() {
       $els.itemEntrySearchInput.val('');
       $els.itemEntrySearchInput.next('.selected-item').text('');
@@ -172,31 +93,6 @@ var FormDemo = (function () {
       $els.itemEntryAdd.prop('disabled', true);
       $els.itemEntryAdd.removeClass('btn-primary');
     }, 3000);
-  };
-
-  var _toggleSearchExpand = function () {
-    // console.log(':: TOGGLE SEARCH EXPAND ::');
-    // mobile
-    // if($els.searchNavbar.hasClass('expanded')) {
-    //   // expanded, let's collapse
-    //   $els.searchNavbar.removeClass('expanded').addClass('collapsed');
-    //   $els.drawerBackdrop.removeClass('in').addClass('fade');
-    //   $els.searchInputMobile.addClass('invisible');
-    // } else {
-    //   // collapsed, let's expand
-    //   $els.searchNavbar.removeClass('collapsed').addClass('expanded');
-    //   $els.drawerBackdrop.removeClass('fade').addClass('in');
-    //   $els.searchInputMobile.removeClass('invisible');
-    //
-    //   $els.searchInputMobile.focus();
-    // }
-
-    // desktop
-    // if($els.searchInputDesktop.hasClass('expanded')) {
-    //   $els.searchInputDesktop.removeClass('expanded').addClass('collapsed');
-    // } else {
-    //   $els.searchInputDesktop.removeClass('collapsed').addClass('expanded');
-    // }
   };
 
   var _handleItemEntrySelection = function(input, item) {
@@ -216,35 +112,6 @@ var FormDemo = (function () {
       $els.itemEntryAdd.prop('disabled', false);
       $els.itemEntryAddAllBtns.prop('disabled', false);
     }
-  };
-
-  var _constructItemTemplate = function(suggestion) {
-    return '<div class="item border-bottom p-4">' +
-        '<a href="' + suggestion.itemUrl + '">' +
-          '<div class="row">' +
-            '<div class="col col-xs-2 col-sm-3">' +
-              '<img src="' + suggestion.imgUrl + '" class="product-img img-responsive">' +
-            '</div>' +
-            '<div class="col col-xs-10 col-sm-9">' +
-              '<p class="title">' + suggestion.value + '</p>' +
-              '<p>' +
-                '<span class="sale-price">' + suggestion.salePrice + '</span>' +
-                '<span class="reg-price small">Regular Price: ' + suggestion.salePrice + '</span>' +
-              '</p>' +
-              '<p>' +
-                '<span class="rating small">' +
-                  '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>' +
-                  '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>' +
-                  '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>' +
-                  '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>' +
-                  '<span class="num-ratings">' + suggestion.numRatings + '</span>' +
-                '</span>' +
-                '<span class="stock small"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> ' + suggestion.stockStatus + '</span>' +
-              '</p>' +
-            '</div>' +
-          '</div>' +
-        '</a>' +
-      '</div>';
   };
 
   return {
