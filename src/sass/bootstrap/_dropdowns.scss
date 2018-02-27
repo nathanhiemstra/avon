@@ -20,6 +20,17 @@
 .dropup,
 .dropdown {
   position: relative;
+
+  .lt-carat-down, .lt-carat-up {
+    transition: transform $ui-animation-time $ui-animation-ease;
+  }
+}
+
+// dropdown toggle icons should inherit color
+.dropdown-toggle {
+  .lt-icon {
+    color: inherit;
+  }
 }
 
 // Prevent the focus on the dropdown toggle when closing dropdowns
@@ -164,6 +175,14 @@
   > a {
     outline: 0;
   }
+
+  // if there's a down arrow, flip it
+  // .lt-carat-down {
+  //   // transform: scaleY(-1);
+  //   transform: rotate(180deg);
+  //   transform-origin: center center;
+  // }
+
 }
 
 // Menu positioning

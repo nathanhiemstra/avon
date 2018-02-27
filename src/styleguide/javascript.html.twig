@@ -306,6 +306,48 @@ $('#myModal').on('show.bs.modal', function (e) {
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
+  <h2 id="modals-templates">Using Modal Templates</h2>
+  <p>When creating a new modal, an existing modal layout should be extended. For example:</p>
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+  &#123;% extends "_layouts/modal.html.twig" %}
+  &#123;% set modalId = "my-new-modal" %}
+  {{ endhighlight }}
+
+  <p>Then, we can define the content blocks:</p>
+
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+    &#123;% block modalHeader %}
+      {{ highlightMarkup }}
+      <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+        <span class="sr-only">Close modal</span>
+        <span class="lt-icon lt-close lt-large py-1"></span>
+      </button>
+      <h4 class="modal-title" id="myModalLabel">My New Modal</h4>
+    {{ endhighlight }}
+    &#123;% endblock %}
+
+    &#123;% block modalBody %}
+      {{ highlightMarkup }}
+      <div class="row">
+        <p>Quis esse ullamco dolore anim dolore aliquip veniam do proident magna ullamco.</p>
+      </div>
+    {{ endhighlight }}
+    &#123;% endblock %}
+
+    &#123;% block modalFooter %}
+      {{ highlightMarkup }}
+      <div class="row">
+        <p>Consectetur sit incididunt qui ex occaecat exercitation aliquip.</p>
+      </div>
+    {{ endhighlight }}
+    &#123;% endblock %}
+  {{ endhighlight }}
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Note modal template variation</h4>
+    <p>Be sure to note modal template variations. The <code>modal-lg-no-footer.html.twig</code> template, for example, does not contain a <code>modalFooter</code> block.</p>
+  </div>
+
 
   <h2 id="modals-usage">Usage</h2>
   <p>The modal plugin toggles your hidden content on demand, via data attributes or JavaScript. It also adds <code>.modal-open</code> to the <code>&lt;body&gt;</code> to override default scrolling behavior and generates a <code>.modal-backdrop</code> to provide a click area for dismissing shown modals when clicking outside the modal.</p>

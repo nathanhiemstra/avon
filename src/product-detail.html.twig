@@ -40,7 +40,7 @@
       <!-- END - BREADCRUMBS -->
 
       <!-- START - MAIN PRODUCT DETAILS -->
-      <section class="container pt-0 pt-md-5 pb-5 border-bottom">
+      <section class="container pt-0 pt-md-5">
 
         <!-- DEVELOPER NOTE :: this markup, starting with the .row below is shared
           between Product Detail Page and Quick Shop Modal -->
@@ -60,6 +60,8 @@
 
         </div>
         <!-- /.row -->
+
+        <hr>
 
       </section>
       <!-- END - MAIN PRODUCT DETAILS -->
@@ -95,6 +97,13 @@
                   <span>Supplement Facts</span>
                 </a>
               </li>
+              <li>
+                <a href="#pdpOtherInfo" data-toggle="tab">
+                  <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
+                  <span class="lt-icon lt-icon lt-collapse-circle lt-large"></span>
+                  <span>Other</span>
+                </a>
+              </li>
             </ul>
             <!-- END - TABS NAV -->
 
@@ -118,6 +127,12 @@
                 {% include "_includes/modules/product/detail/tab-facts.html.twig" %}
               </div>
               <!-- END - FACTS TAB -->
+
+              <!-- START - OTHER INFO TAB -->
+              <div class="tab-pane" id="pdpOtherInfo">
+                {% include "_includes/modules/product/detail/tab-other-info.html.twig" %}
+              </div>
+              <!-- END - OTHER INFO TAB -->
 
             </div>
             <!-- END - TAB PANES -->

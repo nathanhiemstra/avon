@@ -15,7 +15,22 @@
     <span class="sr-only">Toggle sub-menu</span>
 
     <!-- Sub nav list -->
-    {% include '_includes/groups/navigation/global-header-nav/elements/primary-nav/sub-nav-list.html.twig' %}
+    {% include '_includes/groups/navigation/global-header-nav/elements/primary-nav/sub-nav-list-products.html.twig' %}
+
+  </li>
+
+  <li class="has-sub-items dropdown">
+
+    <a class="dropdown-toggle large" href="#" id="ordersDrop" data-toggle="dropdown">Orders<span class="lt-icon lt-carat-down lt-medium hidden-xs"></span></a>
+
+    <!-- sub-menu toggle -->
+    <a class="toggle off-canvas-nested text-right visible-xs-flex" data-toggle="off-canvas-collapse" data-target=".navbar-orders">
+      <span class="lt-icon lt-carat-right lt-large text-light flex-ml-auto"></span>
+    </a>
+    <span class="sr-only">Toggle sub-menu</span>
+
+    <!-- Sub nav list -->
+    {% include '_includes/groups/navigation/global-header-nav/elements/primary-nav/sub-nav-list-orders.html.twig' %}
 
   </li>
 

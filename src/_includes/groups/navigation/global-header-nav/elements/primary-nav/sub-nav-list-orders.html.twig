@@ -1,0 +1,52 @@
+<!-- START - ORDERS SUB-MENU -->
+<div class="nav navbar-nav navbar-orders navbar-sub off-canvas off-canvas--right">
+
+  <!-- START - SUB-MENU HEADER -->
+  <div class="navbar-header visible-xs-flex align-items-center px-4">
+
+    <!-- back button & menu title -->
+    <a class="toggle toggle-back off-canvas-nested flex-fill ml-0 p-0" data-toggle="off-canvas-collapse" data-target=".navbar-orders">
+      <div>
+        <span class="lt-icon lt-left lt-medium mr-2 vunset"></span>
+        <!-- Developer note: This is the label or the parent. If Magnolia won't let you print the name twice, use the word "Back" -->
+        <h3 class="text-light d-inline">Orders</h3>
+      </div>
+    </a>
+
+    <!-- close button -->
+    {% include '_includes/groups/navigation/global-header-nav/elements/shared/btn-close.html.twig' with {
+      class: 'off-canvas-nested',
+      dataTarget: '.navbar-orders, .navbar-collapse'
+    }%}
+
+  </div>
+  <!-- END - SUB-MENU HEADER -->
+
+  <!-- START - ORDERS SUB-MENU LIST -->
+  <ul class="nav navbar-nav navbar-sub__sub-list dropdown-menu dropdown-menu--responsive m-0">
+    <li class="sub-list-item">
+      <a class="collapsed d-flex align-items-center" href="#"><span>Online Order History</span></a>
+    </li>
+    <li class="sub-list-item">
+      <a class="collapsed d-flex align-items-center" href="#"><span>Direct Delivery Orders</span></a>
+    </li>
+    <li class="sub-list-item">
+      <a class="collapsed d-flex align-items-center" href="#"><span>Customer Product Reminders</span></a>
+    </li>
+    <li class="sub-list-item">
+      <a class="collapsed d-flex align-items-center" href="#"><span>Invoices</span></a>
+    </li>
+    <li class="sub-list-item">
+      <a class="collapsed d-flex align-items-center" href="#"><span>Invoice Addendums</span></a>
+    </li>
+    <li class="sub-list-item">
+      <a class="collapsed d-flex align-items-center" href="#"><span>Track Submitted Orders</span></a>
+    </li>
+    <li class="sub-list-item">
+      <a class="collapsed d-flex align-items-center" href="#"><span>Returns</span></a>
+    </li>
+  </ul>
+  <!-- END - ORDERS SUB-MENU LIST -->
+
+</div>
+<!-- END - ORDERS SUB-MENU -->

@@ -14,6 +14,10 @@
 
 }
 
+// display more info link only in modal
+main .pdp-more-info-link { display: none; }
+.modal .pdp-more-info-link { display: block; }
+
 // product title
 .pdp-product-title {
   text-align: center;
