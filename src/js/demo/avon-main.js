@@ -27,7 +27,7 @@ $(document).ready(function () {
     },
     datePicker: {
       trigger: ".lt-calendar",
-      target: ".demo-datePicker-from-angular"
+      target: ".demo-datepicker-from-angular"
     }
     // backDrop: ".drawer-backdrop"
   }
@@ -121,7 +121,7 @@ $(document).ready(function () {
   function toggleDatePicker(itemClicked) {
     var $parent = $(itemClicked).parents('.form-group');
     var $target = $parent.find(selectors.datePicker.target);
-    $target.toggleClass("d-none");
+    $target.toggleClass('d-none');
   }
 
 
