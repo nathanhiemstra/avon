@@ -12,12 +12,17 @@
     {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
     {% block main %}
 
-      <!-- START - MESSAGE -->
-      <!-- <section class="alert alert-info">
+      <!-- START - MESSAGES -->
+      {# <section class="alert alert-info">
         <span class="lt-icon lt-warning lt-medium"></span>
         <span class="h6 m-0">Campaign 3 is due by 11:59 PM Local Time on Wednesday 01/17/2018 21 days(s) left</span>
-      </section> -->
-      <!-- END - MESSAGE -->
+      </section> -#}
+      <!-- Developer note: To toggle message, toggle the class "collapse" -->
+      <section class="alert alert-success">Success message</section>
+      <!-- END - MESSAGES -->
+      <script>
+      $(".alert").alert()
+      </script>
 
       <!-- START - BREADCRUMBS -->
       <section class="container">
