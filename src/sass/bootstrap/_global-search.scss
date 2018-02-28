@@ -13,6 +13,13 @@
     .primary-nav__search-input {
       display: none;
     }
+
+    a {
+      span:nth-child(2) {
+        display: inline-block;
+      }
+    }
+
   }
 
   .primary-nav__cart,
@@ -44,6 +51,10 @@
         align-items: center;
         justify-content: flex-start;
         width: 100%;
+
+        span:nth-child(2) {
+          display: none;
+        }
 
         .lt-icon {
           padding: $spacing-3;
