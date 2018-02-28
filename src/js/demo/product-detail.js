@@ -55,11 +55,11 @@ var ProductDetail = (function () {
     // Customer input select auto-complete
     $els.customerSelectInput.autocomplete({
       // serviceUrl: '/autocomplete/data/somepath', // ajax
-      lookup: FAKE_CUSTOMER_DATA, // no ajax, just a js object
+      lookup: FAKE_CUSTOMER_DATA, // no ajax, just a js object located in fakeData.js
       onSelect: function (suggestion) {
-        console.log('You selected: ' + suggestion.value);
+        // console.log('You selected: ' + suggestion.value);
         // _handleItemEntrySelection(this, suggestion);
-        $(this).val(suggestion.sku);
+        $(this).val(suggestion.value);
       },
       formatResult: function (suggestion, currentVal) {
         return _constructItemTemplate(suggestion);
@@ -110,11 +110,13 @@ var ProductDetail = (function () {
   // construct the html for predictive search template
   var _constructItemTemplate = function(suggestion) {
     return '<div class="item border-bottom p-4">' +
-      '<div class="row">' +
-        '<div class="col col-xs-12">' +
-          '<p class="title m-0">' + suggestion.value + '</p>' +
+      '<a href="javascript:void(0)">' +
+        '<div class="row">' +
+          '<div class="col col-xs-12">' +
+            '<p class="title m-0">' + suggestion.value + '</p>' +
+          '</div>' +
         '</div>' +
-      '</div>' +
+      '</a>' +
     '</div>';
   };
 
