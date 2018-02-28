@@ -1,54 +1,58 @@
-{% extends layouts.themes.yourOrder %}
+{% extends layouts.base %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
   <!-- START - TAB NAVIGATION -->
-  <section class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <section class="container">
+      <h2>YOUR ORDER</h2>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      
+          {% include "_includes/modules/your-order/tab-nav.html.twig" %}
 
-        {% include "_includes/modules/your-order/tab-nav.html.twig" %}
+        </div>
+      </div><!-- /.row -->
+    </section><!-- /.container -->
+     <!-- END - TAB NAVIGATION -->
 
-      </div>
-    </div><!-- /.row -->
-  </section><!-- /.container -->
-  <!-- END - TAB NAVIGATION -->
+      <section class="reverse-bg">
+        <div class="container">
 
+          {% embed layouts.columns9x3 %}
 
-  <!-- START - MAIN AND ASIDE -->
-  <section class="reverse-bg">
-    <div class="container">
+            {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+            {# DEFINE BLOCK - MAIN #}
+            {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+            {% block main %}
 
-      {% embed layouts.columns9x3 %}
+              {% include '_includes/modules/your-order/tab-content.html.twig' %}
 
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {# DEFINE BLOCK - MAIN #}
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {% block main %}
-
-          {% include '_includes/modules/your-order/tab-content.html.twig' %}
-
-        {% endblock %}
+            {% endblock %}
 
 
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {# DEFINE BLOCK - ASIDE #}
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {% block aside %}
+            {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+            {# DEFINE BLOCK - ASIDE #}
+            {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+            {% block aside %}
 
-          <!-- ORDER TOTAL -->
-          {% include components.modules.yourOrder.total %}
+              <!-- ORDER TOTAL -->
+              {% include components.modules.yourOrder.total %}
 
-        {% endblock %}
-      {% endembed %}
+            {% endblock %}
+          {% endembed %}
 
-    </div>
-  </section>
-  <!-- END - MAIN AND ASIDE -->
+        </div>
+      </section>
 
+  {% endblock %}
 
 
 {% endblock %}
