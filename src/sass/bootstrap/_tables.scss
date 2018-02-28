@@ -18,7 +18,7 @@ th {
 
   @extend .h6;
 
-  color: $gray-light;
+  color: $gray;
 }
 
 // Baseline styles
@@ -137,6 +137,27 @@ th {
       > th,
       > td {
         padding: $table-condensed-cell-padding;
+      }
+    }
+  }
+}
+
+// Sparse table - 1st column aligned left, last column aligned right, others aligned center
+// Ideal for styling a sparsly populated table
+.table-sparse {
+  > thead,
+  > tbody,
+  > tfoot {
+    tr {
+      th, td {
+        text-align: center;
+
+        &:first-of-type {
+          text-align: left;
+        }
+        &:last-of-type {
+          text-align: right;
+        }
       }
     }
   }
@@ -294,6 +315,7 @@ table {
     }
   }
 }
+<<<<<<< HEAD
 
 .table {
   td {
@@ -305,3 +327,5 @@ table {
   }
 
 }
+=======
+>>>>>>> develop
