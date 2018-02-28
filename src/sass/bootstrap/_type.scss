@@ -118,10 +118,6 @@ h5, .h5, h6, .h6, h7, .h7 {
 
 p {
   margin: 0 0 ($line-height-computed / 2);
-
-  @media (max-width: $screen-sm-min) {
-    font-size: 13px;
-  }
 }
 
 .lead {
