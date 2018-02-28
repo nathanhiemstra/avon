@@ -23,6 +23,7 @@ var ProductDetail = (function () {
       socialIcons:                  $('#pdp-imgs__social'),
       socialIconsContainerDesktop:  $('#pdp-imgs__social-desktop'),
       socialIconsContainerMobile:   $('#pdp-imgs__social-mobile'),
+      customerSelectInput:          $('#pdpCustomerSelect')
     };
 
     _addListeners();
@@ -49,6 +50,25 @@ var ProductDetail = (function () {
           $('body').addClass('modal-open');
         });
       }
+    });
+
+    // Customer input select auto-complete
+    $els.customerSelectInput.autocomplete({
+      // serviceUrl: '/autocomplete/data/somepath', // ajax
+      lookup: FAKE_CUSTOMER_DATA, // no ajax, just a js object
+      onSelect: function (suggestion) {
+        console.log('You selected: ' + suggestion.value);
+        // _handleItemEntrySelection(this, suggestion);
+        $(this).val(suggestion.sku);
+      },
+      formatResult: function (suggestion, currentVal) {
+        return _constructItemTemplate(suggestion);
+      },
+      maxHeight: 400,
+      showNoSuggestionNotice: true,
+      noSuggestionNotice: 'Sorry, nothing matches that query',
+      triggerSelectOnValidInput: false,
+      preserveInput: true
     });
 
   };
@@ -85,6 +105,17 @@ var ProductDetail = (function () {
       // show Quick Shop modal
       $els.quickShopModal.modal('show');
     }
+  };
+
+  // construct the html for predictive search template
+  var _constructItemTemplate = function(suggestion) {
+    return '<div class="item border-bottom p-4">' +
+      '<div class="row">' +
+        '<div class="col col-xs-12">' +
+          '<p class="title m-0">' + suggestion.value + '</p>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
   };
 
   return {
