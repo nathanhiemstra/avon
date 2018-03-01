@@ -12,12 +12,16 @@
     {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
     {% block main %}
 
-      <!-- START - MESSAGE -->
-      <!-- <section class="alert alert-info">
-        <span class="lt-icon lt-warning lt-medium"></span>
-        <span class="h6 m-0">Campaign 3 is due by 11:59 PM Local Time on Wednesday 01/17/2018 21 days(s) left</span>
-      </section> -->
-      <!-- END - MESSAGE -->
+      <!-- START - GLOBAL ALERT MESSAGE -->
+      {% include "_includes/modules/global/global-alert-message.html.twig" with {
+          'alertId': '',
+          'alertClasses': 'alert-success collapsed',
+          'alertIcon': 'lt-checkmark',
+          'alertMsg': 'Item has been added',
+          'alertBtnText': 'View your Order',
+        }
+      %}
+      <!-- END - GLOBAL ALERT MESSAGE -->
 
       <!-- START - BREADCRUMBS -->
       <section class="container">
