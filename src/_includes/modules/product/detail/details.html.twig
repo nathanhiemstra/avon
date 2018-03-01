@@ -14,11 +14,6 @@
 <!-- END - VIEW MORE INFO LINK -->
 
 
-<!-- START - DETAILS LINK -->
-<a href="#pdpTabs-accordion" class="w-100 text-center visible-xs my-4 underline">View product details</a>
-<!-- END - DETAILS LINK -->
-
-
 
 <!-- START - PRICE -->
 <h3 class="d-inline-block align-middle mr-4 my-3 my-md-4">
@@ -150,23 +145,8 @@
   <div class="pdp-customer-select col-xs-9 col-sm-12 px-0 py-3 mt-3 mb-0 mb-md-3">
     <div class="form-group text-left has-feedback d-inline-block col-xs-12 p-0 m-0">
       <label class="control-label" for="pdpCustomerSelect">Who is this for?</label>
-      <div class="dropdown">
-        <button class="btn btn-select form-control pdp-customer-select dropdown-toggle" id="pdpCustomerSelect" data-toggle="dropdown">
-          <span class="campaign-name">Jane Johnson</span>
-          <span class="lt-icon lt-triangle-down form-control-feedback"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="pdpCustomerSelect">
-          <li role="presentation">
-            <a role="menuitem" tabindex="-1" href="#">Johnny Doe</a>
-          </li>
-          <li role="presentation">
-            <a role="menuitem" tabindex="-1" href="#">Ronald Clontle</a>
-          </li>
-          <li role="presentation">
-            <a role="menuitem" tabindex="-1" href="#">Larry Labello</a>
-          </li>
-        </ul>
-      </div>
+      <input type="text" class="form-control" id="pdpCustomerSelect" placeholder="Jane Johnson">
+      <span class="lt-icon lt-triangle-down form-control-feedback"></span>
     </div>
   </div>
   <!-- END - CUSTOMER SELECT -->
@@ -197,25 +177,25 @@
 <div>
 
   <!-- START - NOTIFY BUTTON -->
-  <button class="btn btn-default btn-lg mt-4 col-xs-12" data-toggle="modal" data-target="">
+  <button class="btn btn-default btn-lg mt-4 col-xs-12">
     Notify me when in stock
   </button>
   <!-- END - NOTIFY BUTTON -->
 
   <!-- START - SIMILAR PRODUCTS BUTTON -->
-  <button class="btn btn-default btn-lg mt-4 col-xs-12" data-toggle="modal" data-target="">
+  <button class="btn btn-default btn-lg mt-4 col-xs-12">
     View similar products
   </button>
   <!-- END - SIMILAR PRODUCTS BUTTON -->
 
   <!-- START - ADD TO ORDER BUTTON -->
-  <button class="btn btn-primary btn-lg mt-4 col-xs-12" data-toggle="modal" data-target="#product-add-to-order">
+  <button class="btn btn-primary btn-lg mt-4 col-xs-12">
     Add to order
   </button>
   <!-- END - ADD TO ORDER BUTTON -->
 
   <!-- START - FUTURE ORDER BUTTON -->
-  <button class="btn btn-default btn-lg mt-4 col-xs-12" data-toggle="modal" data-target="#product-add-to-order">
+  <button class="btn btn-default btn-lg mt-4 col-xs-12">
     Add to future order
   </button>
   <!-- END - FUTURE ORDER BUTTON -->

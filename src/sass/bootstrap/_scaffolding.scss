@@ -117,8 +117,11 @@ img {
 // Horizontal rules
 
 hr {
-  margin-top: $line-height-computed * 1.71429;
-  margin-bottom: $line-height-computed * 1.71429;
+  // 28px
+  margin-top: $line-height-computed * 1.03704;
+
+  // 28px
+  margin-bottom: $line-height-computed * 1.03704;
   border: 0;
   border-top: 1px solid $hr-border;
 }
