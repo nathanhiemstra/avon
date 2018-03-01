@@ -88,6 +88,7 @@
 // TODO :: should be a dismissable alert? see .alert-dismissable above
 
 .global-alert-msg {
+  overflow: hidden;
   transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
 
   &.collapsed {
