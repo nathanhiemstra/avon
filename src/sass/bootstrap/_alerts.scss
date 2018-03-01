@@ -97,18 +97,16 @@
   }
 
   .alert-msg-icon {
-    color: $body-bg;
+    color: inherit;
     display: inline-block;
     vertical-align: middle;
 
     &:before {
-      color: $body-bg;
+      color: inherit;
     }
   }
 
   .alert-msg-txt {
-    text-transform: uppercase;
-    color: $body-bg;
     vertical-align: middle;
   }
 
