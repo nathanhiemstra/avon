@@ -643,6 +643,18 @@ select.form-control.input-lg {
 
         // Height of the `label` and its margin
 
+        // make sure lt icons are vertically centered
+        &.lt-icon:before {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+        // enable mouse events on feedback
+        &.lt-icon {
+            cursor: pointer;
+            pointer-events: all;
+        }
     }
 
     &.sr-only ~ .form-control-feedback {

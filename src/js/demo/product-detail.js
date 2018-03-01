@@ -23,7 +23,8 @@ var ProductDetail = (function () {
       socialIcons:                  $('#pdp-imgs__social'),
       socialIconsContainerDesktop:  $('#pdp-imgs__social-desktop'),
       socialIconsContainerMobile:   $('#pdp-imgs__social-mobile'),
-      customerSelectInput:          $('#pdpCustomerSelect')
+      customerSelectInput:          $('#pdpCustomerSelect'),
+      customerSelectTrigger:        $('#pdpCustomerSelect + .form-control-feedback')
     };
 
     _addListeners();
@@ -52,7 +53,13 @@ var ProductDetail = (function () {
       }
     });
 
-    // Customer input select auto-complete
+    var _handleDropdownClick = function(e) {
+      $els.customerSelectInput.focus();
+      // $els.customerSelectTrigger.off();
+    };
+    $els.customerSelectTrigger.on('click', _handleDropdownClick);
+
+    // Customer input select auto-complete - https://github.com/devbridge/jQuery-Autocomplete
     $els.customerSelectInput.autocomplete({
       // serviceUrl: '/autocomplete/data/somepath', // ajax
       lookup: FAKE_CUSTOMER_DATA, // no ajax, just a js object located in fakeData.js
@@ -64,8 +71,10 @@ var ProductDetail = (function () {
       formatResult: function (suggestion, currentVal) {
         return _constructItemTemplate(suggestion);
       },
+      showOnFocus: true,
+      minChars: 0,
       maxHeight: 400,
-      showNoSuggestionNotice: true,
+      showNoSuggestionNotice: false,
       noSuggestionNotice: 'Sorry, nothing matches that query',
       triggerSelectOnValidInput: false,
       preserveInput: true
