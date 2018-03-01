@@ -12,7 +12,7 @@
   padding-left: 0;
 
 
-  // BASIC LIST GROUP
+  // BASIC LIST GROUP - no borders
   &--basic {
     .list-group-item {
       border: none;
@@ -24,36 +24,24 @@
     }
   }
 
-  // FLEX LIST GROUP - list-group-items are flex coontainers
-  &--flex {
+  // CLEAN SLICED LIST GROUP - borders between items, luxurious padding-left
+  // DAMN, these some nice list items
+  &--clean-sliced {
 
     .list-group-item {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
       border: none;
       border-top: 1px solid $border-color;
+      padding: $spacing-4;
       padding-left: 0;
       padding-right: 0;
       color: $text-color;
-      cursor: pointer;
 
       &:first-of-type {
         border-top: none;
       }
 
-      &:focus, &:hover {
-        background-color: $body-bg;
-      }
-
       p {
         margin: 0;
-      }
-
-      .right {
-        flex: 1 0 auto;
-        text-align: right;
-        margin-left: $spacing-4;
       }
 
     }

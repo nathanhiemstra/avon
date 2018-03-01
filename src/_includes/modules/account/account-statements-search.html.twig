@@ -1,6 +1,7 @@
 <!-- START - ACCOUNT STATEMENT SEARCH -->
 
-<h3 class="h2">My Statements</h3>
+<h3 class="h2 d-inline-block">My Statements</h3>
+<a class="d-inline-block ml-sm-4" href="#">View order history</a>
 <p class="mt-4">Click "Search" below to see your most recent transactions. You can also choose a custom date range.</p>
 
 <!-- search form -->
@@ -12,6 +13,7 @@
     <div class="inner-addon right-addon">
       <i class="lt-icon lt-calendar"></i>
       <input type="text" class="form-control" placeholder="11/17/2017">
+      {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig'  %}
     </div>
   </div>
 
@@ -21,6 +23,7 @@
     <div class="inner-addon right-addon">
       <i class="lt-icon lt-calendar"></i>
       <input type="text" class="form-control" placeholder="02/15/2018">
+      {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig'  %}
     </div>
   </div>
 

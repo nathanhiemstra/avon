@@ -17,12 +17,10 @@
   }
 
   &--utility-2 {
-
     min-height: 48px;
     z-index: 9;
 
     li > a {
-
       // logo images
       img:not(.avatar) {
         height: 22px;
@@ -31,7 +29,6 @@
     }
 
     .account-list {
-
       flex-wrap: wrap;
       order: 1;
       width: 100%;
@@ -54,7 +51,6 @@
       }
 
       .account-list__user {
-
         width: 100%;
         margin-bottom: 0.5rem;
 
@@ -82,15 +78,11 @@
             width: 32px;
             height: 32px;
           }
-
         }
-
       }
-
     }
 
     .tools-list {
-
       order: 2;
 
       li {
@@ -102,36 +94,32 @@
         order: 1;
         flex: 1 1 auto;
       }
-
     }
 
     // Account dropdown
     #accountDrop {
-
       // mobile
       @media (max-width: $screen-xs-max) {
         + .dropdown-menu {
           margin-bottom: $spacing-3;
+
           li {
             padding: $spacing-2 0;
           }
+
           li > a {
             padding-left: $spacing-2;
           }
         }
       }
-
     }
-
   }
 
   &--utility-1 {
-
     min-height: 44px;
     z-index: 8;
 
     .nav {
-
       width: 100%;
 
       > li {
@@ -141,9 +129,7 @@
 
         // desktop
         @media (min-width: $screen-sm-min) {}
-
       }
-
     }
 
     // desktop
@@ -153,13 +139,11 @@
       background-color: $body-bg;
 
       > ul:first-of-type {
-
         flex: 1 1 auto;
 
         li:first-of-type {
           padding-left: 8px !important;
         }
-
       }
 
       .nav > li:first-of-type {
@@ -178,15 +162,16 @@
           background-color: $body-bg;
           color: $brand-primary;
         }
-
       }
     }
-    // end desktop
 
+    // end desktop
+ 
   }
 
-  &--primary-nav {
+  $primary-nav-x-space: 2rem;
 
+  &--primary-nav {
     margin: 0;
     padding: 2rem 1.5rem;
 
@@ -198,27 +183,25 @@
 
     // START - SEARCH
     .primary-nav__search {
-
       order: 3;
 
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 1;
-        margin: 2rem 0 2rem 1rem;
+        margin: $primary-nav-x-space 0 $primary-nav-x-space 1rem;
       }
-
     }
+
     // END - SEARCH
 
     // START - LOGO
     .primary-nav__logo {
-
       order: 2;
 
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 2;
-        margin: 2rem 0.5rem;
+        margin: $primary-nav-x-space 0.5rem;
         text-align: center;
       }
 
@@ -229,54 +212,48 @@
         @media (min-width: $screen-sm-min) {
           height: 39px;
         }
-
       }
-
     }
+
     // END - LOGO
 
     // START - CART / ORDER
     .primary-nav__cart {
-
       order: 4;
       margin-left: 1rem;
 
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 3;
-        margin: 2rem 0.5rem 2rem 0;
+        margin: $primary-nav-x-space 0.5rem $primary-nav-x-space 0;
       }
-
     }
+
     // END - CART
 
     // START - HAMBURGER TOGGLE
     .primary-nav__toggle {
-
       order: 1;
       flex: 1 1 auto;
       z-index: 9;
-
     }
+
     // END - HAMBURGER TOGGLE
 
     // START - MAIN NAV CONTENT
     .primary-nav__content {
-
       order: 3;
 
       // desktop
       @media (min-width: $screen-sm-min) {
-
         display: flex;
         width: 100%;
         order: 4;
-        margin-top: 2rem;
+        margin-top: $primary-nav-x-space;
       }
 
       // MAIN NAV LIST
       .navbar-main__list {
-
         width: 100%;
         background-color: $brand-alt;
 
@@ -313,7 +290,6 @@
 
         // desktop
         @media (min-width: $screen-sm-min) {
-
           width: auto;
           background-color: $body-bg;
 
@@ -324,7 +300,6 @@
           li {
             float: left;
           }
-
         }
 
         > li {
@@ -375,8 +350,8 @@
               }
             }
           }
-
         }
+
         // end li
 
         .has-sub-items {
@@ -407,11 +382,12 @@
             }
           }
         }
+
         // end .has-sub-items
-
+     
       }
-
     }
+
     // END - MAIN NAV CONTENT
 
     // START - CLOSE BUTTON
@@ -423,6 +399,7 @@
       color: white;
       border: none;
     }
+
     // END - CLOSE BUTTON
 
     .navbar-toggle,
@@ -487,7 +464,6 @@
         height: $height-2;
         min-height: $height-2;
       }
-
     }
 
     // UTLITY NAV 1
@@ -507,22 +483,21 @@
         height: $height-1;
         min-height: $height-1;
       }
-
     }
 
     // MAIN NAV LIST
     .navbar-main__list {
       order: 3;
     }
-
   }
+
   // end --primary-nav
 }
+
 // end .navbar
 
 // OFF-CANVAS
 .off-canvas {
-
   @media (max-width: $screen-xs-max) {
     position: fixed;
     width: 100%;
@@ -534,18 +509,23 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+
     // transform: translateX(-100%);
     display: none;
+
     // transition: $ui-animation-time transform $ui-animation-ease;
 
     // show menu
     &.collapse--off-canvas {
       display: flex;
+
       // transform: translateX(0);
+   
     }
 
     &.off-canvas--right {
       display: none;
+
       // transform: translateX(-200%);
       background-color: $brand-alt-deep;
 
@@ -553,7 +533,6 @@
         display: block;
       }
     }
-
   }
 }
 
@@ -567,7 +546,6 @@
 
   .navbar-sub__sub-list {
     li.sub-list-item {
-
       border-bottom: 1px solid rgba($white, 0.05);
 
       a {
@@ -577,7 +555,7 @@
 
       // first level child
       > a:focus,
-       > a:hover,
+      > a:hover,
       > a {
         background-color: $brand-primary;
         transition: $ui-animation-time background-color $ui-animation-ease;
@@ -605,7 +583,6 @@
             text-transform: uppercase;
           }
         }
-
       }
 
       a {
@@ -635,11 +612,12 @@
             opacity: 0.2;
             transform: rotate(-45deg);
           }
-
         }
-        // end .sub-list-item a.collapsed
 
+        // end .sub-list-item a.collapsed
+     
       }
+
       // end .sub-list-item a
 
       // desktop
@@ -660,11 +638,11 @@
           color: $text-color;
         }
       }
-
     }
+
     // end .sub-list-item
-
+ 
   }
-
 }
+
 // END .navbar-sub
