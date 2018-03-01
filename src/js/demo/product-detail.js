@@ -53,10 +53,6 @@ var ProductDetail = (function () {
       }
     });
 
-    var _handleDropdownClick = function(e) {
-      $els.customerSelectInput.focus();
-      // $els.customerSelectTrigger.off();
-    };
     $els.customerSelectTrigger.on('click', _handleDropdownClick);
 
     // Customer input select auto-complete - https://github.com/devbridge/jQuery-Autocomplete
@@ -71,6 +67,10 @@ var ProductDetail = (function () {
       formatResult: function (suggestion, currentVal) {
         return _constructItemTemplate(suggestion);
       },
+      onHide: function() {
+        // re-add click listener on down arrow
+        $els.customerSelectTrigger.on('click', _handleDropdownClick);
+      },
       showOnFocus: true,
       minChars: 0,
       maxHeight: 400,
@@ -80,6 +80,13 @@ var ProductDetail = (function () {
       preserveInput: true
     });
 
+  };
+
+
+  // handle customer dropdown arrow click
+  var _handleDropdownClick = function(e) {
+    $els.customerSelectInput.focus();
+    $els.customerSelectTrigger.off();
   };
 
   // When page loads, make copy of icons in other part of markup for mobile view.
