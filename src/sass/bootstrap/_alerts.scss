@@ -97,14 +97,19 @@
     border: 0;
   }
 
-  .alert-msg-icon {
+  // make sure icons and text inherit alert class colors
+  .alert-msg-icon,
+  .alert-msg-icon:before,
+  .close,
+  .close .lt-icon,
+  .close .lt-icon:before,
+  .close:hover {
     color: inherit;
+  }
+
+  .alert-msg-icon {
     display: inline-block;
     vertical-align: middle;
-
-    &:before {
-      color: inherit;
-    }
   }
 
   .alert-msg-txt {
