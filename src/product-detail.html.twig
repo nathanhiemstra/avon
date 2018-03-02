@@ -35,27 +35,23 @@
       <!-- END - GLOBAL ALERT MESSAGE -->
 
       <!-- START - BREADCRUMBS -->
-      <section class="container">
-        <div class="row my-4">
-          {% include "_includes/groups/navigation/breadcrumb.html.twig" with {
-            'items': [{
-              'slug': '#',
-              'label': 'Products'
-            }, {
-              'slug': '#',
-              'label': 'Moisturizers'
-            }, {
-              'slug': '#',
-              'label': 'Skinvincible'
-            }],
-            'classes': 'm-0' }
-          %}
-        </div>
-      </section>
+      {% include "_includes/groups/navigation/breadcrumb.html.twig" with {
+        'items': [{
+          'slug': '#',
+          'label': 'Products'
+        }, {
+          'slug': '#',
+          'label': 'Moisturizers'
+        }, {
+          'slug': '#',
+          'label': 'Skinvincible'
+        }],
+        'classes': 'm-0' }
+      %}
       <!-- END - BREADCRUMBS -->
 
       <!-- START - MAIN PRODUCT DETAILS -->
-      <section class="container">
+      <section class="container mt-4">
 
         <!-- DEVELOPER NOTE :: this markup, starting with the .row below is shared
           between Product Detail Page and Quick Shop Modal -->
