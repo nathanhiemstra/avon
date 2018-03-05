@@ -12,8 +12,31 @@
     </div>
     {% if autoReplenish != null %}
       <div class="mt-3">
+
+      <form class="form-inline mb-5">
+      <div class="form-group has-feedback">
+
         <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="hidden-xs hidden-sm">{% include components.elements.forms.select with { groupClasses: 'd-inline-block', 'items': [{'label': 'Every 4 weeks'}, {'label': 'Every 3 weeks'}, {'label': 'Every 2 weeks'}, {'label': 'Every 1 weeks'}] } %}</span>
+        <span class="hidden-xs hidden-sm">
+
+
+        <div class="form-group has-feedback">
+            <div class="dropdown inner-addon right-addon">
+            <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+              <select class="input input-sm form-control form-inline" data-toggle="dropdown">
+
+
+              <option class="input input-sm d-inline-block mr-5">Every 4 weeks</option>
+              <option class="input input-sm d-inline-block mr-5">Every 3 weeks</option>
+                <option class="input input-sm d-inline-block mr-5">Every 2 weeks</option>
+                <option class="input input-sm d-inline-block mr-5">Every 1 weeks</option>
+
+              </select>
+            </div>
+          </div>
+          </div>
+        </form>
+        </span>
       </div>
     {% endif %}
   </td>

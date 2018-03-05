@@ -343,6 +343,38 @@
     } %}
   {{ endhighlight }}
 
+
+
+  <p>With .input-sm applied</p>
+
+  <div class="bs-example">
+    {% include components.elements.forms.checkbox with {
+      id: 'checkbox1',
+      name: 'checkbox1',
+      classes: 'input-sm',
+      theValue: 'option1',
+      theLabel: 'Checkbox Label w .input-sm',
+      checked: true
+    } %}
+  </div><!-- /.bs-example -->
+
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+    &#123;% include components.elements.forms.checkbox with {id: 'checkbox1', name: 'checkbox1', classes: 'input-sm', theValue: 'option1', theLabel: 'Checkbox Label w.input-sm', checked: true} %}
+  {{ endhighlight }}
+
+  {{ highlightMarkup }}
+    {% include components.elements.forms.checkbox with {
+      id: 'checkbox1',
+      name: 'checkbox1',
+      classes: 'input-sm',
+      theValue: 'option1',
+      theLabel: 'Checkbox Label',
+      checked: true
+    } %}
+  {{ endhighlight }}
+
+
+
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# Radios #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}

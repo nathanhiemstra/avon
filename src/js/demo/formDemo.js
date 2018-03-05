@@ -64,10 +64,10 @@ var FormDemo = (function () {
       $els.drawerBackdrop.toggleClass('fade').toggleClass('in');
 
       // show alert message demo
-      $('#global-alert-msg').removeClass('collapsed');
-      setTimeout(function() {
-        $('#global-alert-msg').addClass('collapsed');
-      }, 5000);
+      // $('#global-alert-msg').removeClass('collapsed');
+      // setTimeout(function() {
+      //   $('#global-alert-msg').addClass('collapsed');
+      // }, 5000);
     });
 
   };

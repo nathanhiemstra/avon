@@ -6,34 +6,34 @@
 // -------------------------
 
 .alert {
-    padding: $alert-padding;
-    margin-bottom: $line-height-computed;
-    border: 1px solid transparent;
-    border-radius: $alert-border-radius;
-    text-align: center;
+  padding: $alert-padding;
+  margin-bottom: $line-height-computed;
+  border: 1px solid transparent;
+  border-radius: $alert-border-radius;
+  text-align: center;
 
-    // Headings for larger alerts
-    h4 {
-        margin-top: 0;
+  // Headings for larger alerts
+  h4 {
+    margin-top: 0;
 
-        // Specified for the h4 to prevent conflicts of changing $headings-color
-        color: inherit;
-    }
+    // Specified for the h4 to prevent conflicts of changing $headings-color
+    color: inherit;
+  }
 
-    // Provide class for links that match alerts
-    .alert-link {
-        font-weight: $alert-link-font-weight;
-    }
+  // Provide class for links that match alerts
+  .alert-link {
+    font-weight: $alert-link-font-weight;
+  }
 
-    // Improve alignment and spacing of inner content
-    > p,
-    > ul {
-        margin-bottom: 0;
-    }
+  // Improve alignment and spacing of inner content
+  > p,
+  > ul {
+    margin-bottom: 0;
+  }
 
-    > p + p {
-        margin-top: 5px;
-    }
+  > p + p {
+    margin-top: 5px;
+  }
 }
 
 // Dismissible alerts
@@ -42,15 +42,15 @@
 
 .alert-dismissable,
 .alert-dismissible {
-    padding-right: $alert-padding + 20;
+  padding-right: $alert-padding + 20;
 
-    // Adjust close link position
-    .close {
-        position: relative;
-        top: -5px;
-        right: -21px;
-        color: inherit;
-    }
+  // Adjust close link position
+  .close {
+    position: relative;
+    top: -5px;
+    right: -21px;
+    color: inherit;
+  }
 }
 
 // Alternate styles
@@ -58,71 +58,66 @@
 // Generate contextual modifier classes for colorizing the alert.
 
 .alert-success {
-    @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+  @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
 }
 
 .alert-info {
-    @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+  @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
 }
 
 .alert-warning {
-    @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+  @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
 }
 
 .alert-danger {
-    @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
+  @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 }
 
 .alert-reverse {
-    @include alert-variant($alert-reverse-bg, $alert-reverse-border, $alert-reverse-text);
+  @include alert-variant($alert-reverse-bg, $alert-reverse-border, $alert-reverse-text);
 }
 
 .alert-reverse {
-    .alert-link {
-        text-decoration: underline;
-    }
+  .alert-link {
+    text-decoration: underline;
+  }
 }
 
 // Global header alert message
 //
 // TODO :: should be a dismissable alert? see .alert-dismissable above
 
-#global-alert-msg {
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  transform: translateY(0);
-  transition: 0.3s transform ease;
+.global-alert-msg {
+  overflow: hidden;
+  transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
 
   &.collapsed {
-    transform: translateY(-102%);
+    height: 0;
+    padding: 0;
+    border: 0;
   }
 
   .alert-msg-icon {
-    color: $body-bg;
+    color: inherit;
     display: inline-block;
-    margin-right: 1em;
+    vertical-align: middle;
 
     &:before {
-      color: $body-bg;
+      color: inherit;
     }
   }
 
   .alert-msg-txt {
-    text-transform: uppercase;
-    color: $body-bg;
-    margin-right: 1em;
+    vertical-align: middle;
   }
 
   .alert-msg-btn {
-    border-width: 1px;
-    border-color: $body-bg;
-    color: $body-bg;
-    background-color: transparent;
-    margin-top: 1rem;
+    text-transform: none;
+  }
 
-    @media (min-width: $screen-sm-min) {
-      margin-top: 0;
+  .container {
+    .modal & {
+      width: auto;
     }
   }
 }
