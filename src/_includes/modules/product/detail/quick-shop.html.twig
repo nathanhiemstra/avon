@@ -14,10 +14,32 @@
 
 {% endblock %}
 
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeaderMessage #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeaderMessage %}
+
+  <!-- START - GLOBAL ALERT MESSAGE -->
+  {% include "_includes/modules/global/global-alert-message.html.twig" with {
+      'alertId': '',
+      'alertClasses': 'alert-success',
+      'alertIcon': 'lt-checkmark',
+      'alertMsg': 'Item has been added',
+      'alertBtnText': 'View your Order',
+    }
+  %}
+  <!-- END - GLOBAL ALERT MESSAGE -->
+
+{% endblock %}
+
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - modalBody #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
+
+
 
   <!-- DEVELOPER NOTE :: this markup, starting with the .row below is shared
     between Product Detail Page and Quick Shop Modal -->
