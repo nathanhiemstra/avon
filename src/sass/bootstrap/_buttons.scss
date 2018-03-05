@@ -73,7 +73,7 @@ a.btn {
     pointer-events: none;
 
     // Future-proof disabling of clicks on `<a>` elements
- 
+
   }
 }
 
@@ -98,6 +98,13 @@ a.btn {
   fieldset[disabled] & {
     background-color: $btn-disabled-bg;
   }
+}
+
+// transparent light has a trasparent bg with light border & text and a thinner border & text
+.btn-transparent-light {
+  @include button-variant($btn-success-color, transparent, $btn-success-color);
+  border-width: 1px;
+  font-weight: 100;
 }
 
 // Success appears as green
@@ -140,7 +147,7 @@ a.btn {
     line-height: 0;
 
     // prevent larger icons increasing button height
- 
+
   }
 
   > i,

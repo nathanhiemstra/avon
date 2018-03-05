@@ -6,11 +6,13 @@
 
 // Wrapper for the slide container and indicators
 .carousel--responsive {
+  .carousel-inner,
+  .carousel-thumbs {
+    width: 80%;
+    margin: 0 auto;
+  }
 
   .carousel-inner {
-    width: 70%;
-    margin: 0 auto;
-
     > .item {
       img {
         width: 100%;
@@ -21,5 +23,4 @@
   .carousel-indicators {
     bottom: -35px;
   }
-  
 }
