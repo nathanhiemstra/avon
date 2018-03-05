@@ -381,7 +381,6 @@
   <h2 id="forms-radios">Radios</h2>
   <p>For selecting one option from many.</p>
 
-
   <div class="bs-example">
     {% include components.elements.forms.radio with {
       id: 'radio1',
@@ -441,5 +440,31 @@
   } %}
   {{ endhighlight }}
 
+  <p>With .input-sm applied</p>
 
+  <div class="bs-example">
+    {% include components.elements.forms.radio with {
+      id: 'radio4',
+      name: 'radio4',
+      classes: 'input-sm',
+      theValue: 'radio4',
+      theLabel: 'Radio Label w .input-sm',
+      checked: false
+    } %}
+  </div><!-- /.bs-example -->
+
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+    &#123;% include components.elements.forms.radio with {id: 'radio4', name: 'radio4', classes: 'input-sm', theValue: 'radio4', theLabel: 'Radio Label w.input-sm', checked: false} %}
+  {{ endhighlight }}
+
+  {{ highlightMarkup }}
+    {% include components.elements.forms.radio with {
+      id: 'radio4',
+      name: 'radio4',
+      classes: 'input-sm',
+      theValue: 'radio4',
+      theLabel: 'Radio Label',
+      checked: false
+    } %}
+  {{ endhighlight }}
 </div>
