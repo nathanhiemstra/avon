@@ -1,9 +1,6 @@
 {% if name %}
   {% set name = ' name="' ~ name ~ '"' %}
 {% endif %}
-{% if classes %}
-  {% set classes = ' classes="' ~ classes ~ '"' %}
-{% endif %}
 {% if id %}
   {% set id = ' id="' ~ id ~ '"' %}
 {% endif %}
@@ -16,9 +13,9 @@
 
 {{ thelabel ? theLabel : '' }}
 
-<div class="radio">
+<div class="radio {{ classes }}">
   <label>
-    <input type="radio" {{ name }}{{ classes }}{{ id }}{{ theValue }}{{ checked }}>
+    <input type="radio" {{ name }} {{ id }}{{ theValue }}{{ checked }}>
     <span class="mr-4"></span>
     {{ theLabel }}
   </label>
