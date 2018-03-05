@@ -5,7 +5,19 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
+  <!-- START - GLOBAL ALERT MESSAGE -->
+  {% include "_includes/modules/global/global-alert-message.html.twig" with {
+      'alertId': '',
+      'alertClasses': 'alert-danger',
+      'alertIcon': '',
+      'alertMsg': 'FPO Error message'
+    }
+  %}
+  <!-- END - GLOBAL ALERT MESSAGE -->
+
+
   <div class="container container--track-orders-page">
+
 
     {% embed "_layouts/columns-10-max.html.twig" %}
 

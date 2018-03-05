@@ -40,3 +40,17 @@ var FAKE_PRODUCTS = [
     sku: 'SKU4567'
   },
 ]
+
+var FAKE_CUSTOMER_DATA = [
+  { value: 'Jane Johnson' },
+  { value: 'John Doe' },
+  { value: 'Jennifer Jones' },
+  { value: 'Mary Lee' },
+  { value: 'John Clontle' },
+  { value: 'Jerry Lewis' },
+  { value: 'Johnny Carson' },
+  { value: 'Johnny Cash' },
+  { value: 'Justice Crone' },
+  { value: 'Jenn Lewis' },
+  { value: 'Jera Thomas' },
+]

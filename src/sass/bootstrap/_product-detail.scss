@@ -11,12 +11,16 @@
     justify-content: flex-start;
     text-align: left;
   }
-
 }
 
 // display more info link only in modal
-main .pdp-more-info-link { display: none; }
-.modal .pdp-more-info-link { display: block; }
+main .pdp-more-info-link {
+  display: none;
+}
+
+.modal .pdp-more-info-link {
+  display: block;
+}
 
 // product title
 .pdp-product-title {
@@ -26,13 +30,13 @@ main .pdp-more-info-link { display: none; }
   @media (min-width: $screen-sm-min) {
     text-align: left;
   }
-
 }
 
 // gradient overlay on variant swatches
 span.variant-swatch {
-
   position: relative;
+  height: 25px;
+  width: 25px;
 
   &:after {
     content: '';
@@ -41,15 +45,13 @@ span.variant-swatch {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to bottom right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.5));
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
     opacity: 0.5;
   }
-
 }
 
 // Related Items Header
 .pdp-related {
-
   position: relative;
   width: 90%;
   margin: 0 auto;
@@ -73,7 +75,6 @@ span.variant-swatch {
       transform: translateY(-50%);
     }
   }
-
 }
 
 // Product detail tabs which collapse to an accordian
@@ -82,12 +83,10 @@ span.variant-swatch {
 #pdpTabs-accordion {
   .panel {
     .panel-heading {
-
       background-color: $body-bg;
       border-bottom: none;
 
       a {
-
         display: inline-block;
         text-decoration: none;
 
@@ -112,9 +111,9 @@ span.variant-swatch {
         span {
           vertical-align: middle;
         }
-
       }
     }
+
     // end .panel-heading
 
     .panel-body {
@@ -122,8 +121,8 @@ span.variant-swatch {
       padding-top: 0;
     }
   }
-
 }
+
 // end #pdpTabs-accordion
 
 // tab styles
@@ -132,6 +131,7 @@ span.variant-swatch {
     display: none;
   }
 }
+
 // end #pdpTabs
 
 // Related items carousel
@@ -153,5 +153,15 @@ span.variant-swatch {
       margin: 0 auto;
     }
   }
+}
 
+// Dropdown
+@media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+  .dropdown--pdp-campaign-select {
+    // Emulate .pull-right
+    .dropdown-menu {
+      right: 0;
+      left: auto;
+    }
+  }
 }
