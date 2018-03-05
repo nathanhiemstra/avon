@@ -16,6 +16,21 @@
       {% endif %}
 
 
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# RENDER BLOCK - modalHeaderMessage #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% set _block = block('modalHeaderMessage') %}
+      {% if _block is not empty %}
+
+          <div class="modal-header-message">
+            {{ _block|raw }}
+          </div>
+
+      {% endif %}
+
+
+
       <div class="modal-body">
 
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
