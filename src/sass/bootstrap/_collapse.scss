@@ -3,14 +3,33 @@
 // --------------------------------------------------
 
 [data-toggle="collapse"] {
+
     .collapse-indicator {
+        // points right
         transform: rotate(-90deg);
         @include transition(transform $ui-animation-time $ui-animation-ease);
     }
 
     &:not(.collapsed) {
         .collapse-indicator {
+            // points down
             transform: rotate(0);
         }
     }
+
+    // .collapse-updown arrow points down when collapsed and up when expanded
+    &.collapse-updown {
+        .collapse-indicator {
+            // points down
+            transform: rotate(0);
+        }
+
+        &:not(.collapsed) {
+            .collapse-indicator {
+                // points up
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
 }
