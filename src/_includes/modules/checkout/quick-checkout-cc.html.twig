@@ -3,23 +3,23 @@
 
   <!-- card type -->
   <div class="list-group-item border-0">
-
     <h5 class="mb-4">Card Type</h5>
-
-    <div class="clearfix">
-      {% include components.elements.forms.select with {
-        items: [
-          {
-            'label': 'VISA'
-          }, {
-            'label': 'MasterCard'
-          }, {
-            'label': 'Other'
-          }
-        ]
-      } %}
+    <div class="row clearfix">
+      <div class="col-xs-5">
+        <form class="form-inline">
+        <div class="form-group has-feedback">
+          <div class="dropdown inner-addon right-addon">
+            <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+            <select class="input form-control form-inline" data-toggle="dropdown">
+              <option class="input d-inline-block mr-5">VISA</option>
+              <option class="input d-inline-block mr-5">MasterCard</option>
+              <option class="input d-inline-block mr-5">Other</option>
+            </select>
+          </div>
+        </div>
+        </form>
+      </div>
     </div>
-
   </div>
 
   <!-- card number -->
@@ -59,30 +59,33 @@
 
     <div class="row">
       <div class="col-xs-5">
-        {% include components.elements.forms.select with {
-          items: [
-            {
-              'label': 'January'
-            }, {
-              'label': 'February'
-            }, {
-              'label': 'March'
-            }
-          ]
-        } %}
+        <form class="form-inline">
+        <div class="form-group has-feedback">
+          <div class="dropdown inner-addon right-addon">
+            <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+            <select class="input form-control form-inline" data-toggle="dropdown">
+              <option class="input d-inline-block mr-5">January</option>
+              <option class="input d-inline-block mr-5">February</option>
+              <option class="input d-inline-block mr-5">March</option>
+            </select>
+          </div>
+        </div>
+        </form>
       </div>
       <div class="col-xs-5">
-        {% include components.elements.forms.select with {
-          items: [
-            {
-              'label': '2018'
-            }, {
-              'label': '2019'
-            }, {
-              'label': '2020'
-            }
-          ]
-        } %}
+
+        <form class="form-inline">
+        <div class="form-group has-feedback">
+          <div class="dropdown inner-addon right-addon">
+            <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+            <select class="input form-control form-inline" data-toggle="dropdown">
+              <option class="input d-inline-block mr-5">2018</option>
+              <option class="input d-inline-block mr-5">2019</option>
+              <option class="input d-inline-block mr-5">2020</option>
+            </select>
+          </div>
+        </div>
+        </form>
       </div>
       <div class="col-xs-2">
         {% include components.elements.forms.input with {placeholder: ''} %}

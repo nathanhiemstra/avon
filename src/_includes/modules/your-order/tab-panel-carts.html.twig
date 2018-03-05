@@ -1,20 +1,15 @@
 <ul class="list-group list-group--checkboxed mt-3">
 
   <li class="list-group-item list-group-item-checkbox">
-    {% include components.elements.forms.checkbox with {classes: 'checkbox-select-all', theLabel: 'Select Carts for Checkout', checked: true} %}
-    <!-- <div class="checkbox">
-      <label>
-        <input type="checkbox" class="checkbox-select-all" checked> Select Carts for Checkout
-      </label>
-    </div> -->
+    {% include "_includes/elements/forms/checkbox.html.twig" with {classes: 'checkbox-select-all', theLabel: 'Select Carts for Checkout', checked: true} %}
   </li>
 
   <!-- START - LOOPING ITEMS -->
   {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: false, viewOffers: true} %}
-  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', viewOffers: true} %}
-  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '3', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block'} %}
-  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '4', personName: fpo.person.4, itemCount: '8', total: '90.00', classes: 'd-inline-block'} %}
-  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '5', personName: fpo.person.5, itemCount: '8', total: '90.00', classes: 'd-inline-block'} %}
+  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, viewOffers: true} %}
+  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '3', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
+  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '4', personName: fpo.person.4, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
+  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '5', personName: fpo.person.5, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
   <!-- END - LOOPING ITEMS -->
 
 </ul>
