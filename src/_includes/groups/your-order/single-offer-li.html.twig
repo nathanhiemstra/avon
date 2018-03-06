@@ -8,7 +8,7 @@
 {% endif %}
 
 <!-- START - REPEATABLE ITEM -->
-<li class="row offer-item {{ hasOfferCtaClass }} {{ hasFreeLabelClass }}">
+<li class="list-group-item row offer-item box-emphasize mt-3 mb-3 {{ hasOfferCtaClass }} {{ hasFreeLabelClass }}">
 
   <!-- START - BANNER (IMAGE) -->
   <div class="col-sm-4 offer-banner">
@@ -18,13 +18,13 @@
 
   <!-- START - DESCRIPTION -->
   <div class="col-sm-8 offer-description">
-    
+
     <!-- START - DESCRIPTION TEXT -->
     <div class="description-text">
       {{ descriptionText }}
     </div>
     <!-- END - DESCRIPTION TEXT -->
-      
+
 
     {% if offerProgress  %}
     <!-- START - OFFER PROGRESS -->
@@ -44,7 +44,7 @@
     <!-- START - CTAS -->
     <div class="offer-ctas">
       {% if hasCtaAddToOrder %}
-        <a href="#" class="btn btn-default btn-sm" role="button">Add to Order</a>
+        <a href="#" class="btn btn-default btn-sm mt-4 mb-4" role="button">Add to Order</a>
       {% endif %}
       {% if hasCtaViewDetails %}
         <a href="javascript:void(0)" class="btn btn-default btn-sm view-offer-details" role="button">View details</a>
