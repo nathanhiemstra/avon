@@ -53,7 +53,7 @@
         width: 100%;
 
         span:nth-child(2) {
-          display: none;
+          // display: none;
         }
 
         .lt-icon {
@@ -157,9 +157,12 @@
           }
 
           input.primary-nav__search-input {
-            width: 200px;
-            flex: none;
-            margin-right: initial;
+            position: absolute;
+            padding: 6px;
+            top: -5px;
+            left: $icon-size-md - 6;
+            width: 300px;
+            border: none;
           }
         }
         // end a
