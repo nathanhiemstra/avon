@@ -145,4 +145,18 @@
   > .arrow {
     display: none;
   }
+
+  // mobile - need overrides here
+  @media (max-width: $screen-xs-max) {
+      left: $spacing-1 !important;
+      right: $spacing-1 !important;
+
+      &.fade {
+        transform: translateX(0);
+      }
+
+      &.in {
+        transform: translateX(0);
+      }
+  }
 }
