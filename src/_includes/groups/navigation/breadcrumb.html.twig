@@ -16,8 +16,8 @@
 {% endif %}
 
 {# Build the breadcrumb #}
-<section class="container">
-  <div class="row mt-4">
+<section class="container container--breadcrumb">
+  <div class="row">
     <ol class="breadcrumb {{ classes }}">
       {% for item in items %}
         {% if loop.last == false %}

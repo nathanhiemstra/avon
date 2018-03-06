@@ -5,7 +5,7 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  <div class="container container--view-invoices-page">
+  <div class="container container--page">
 
     {% embed "_layouts/columns-10-max.html.twig" %}
 
@@ -15,7 +15,7 @@
       {% block main %}
 
         <h2>View Invoices</h2>
-        
+
         <div class="invoice-iframe-holder mt-4">
           <iframe
             src="https://data.youravon.com/repinvoicing/AvonRemoteLogin?from=old&amp;loginId=68991654&amp;repId=*68991654*"
@@ -29,8 +29,7 @@
             mozallowfullscreen=""
             allowfullscreen=""></iframe>
         </div>
-        <p>We recommend you also check your <a href="#">Invoice Addendums</a>.</p>
-
+        <p>We recommend you also check your<a href="#">Invoice Addendums</a>.</p>
 
       {% endblock %}
 
