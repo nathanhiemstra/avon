@@ -40,14 +40,29 @@ body {
   &.container--page {
     margin-top: $spacing-page-top;
 
-    // add margin top to aside and main for pages with sidebars
-    // also account for other elements here with an optional page-inner class
-    .page-inner, aside, main {
+    h1:first-of-type,
+    h2:first-of-type,
+    h3:first-of-type {
+      margin-top: 0;
+    }
+
+    // account for other elements here with an optional page-inner class
+    // we can use .page-inner to provide proper top spacing for any odd
+    // content that doesn't fit the format above
+    .page-inner {
       margin-top: $line-height-computed;
     }
   }
 }
 
+// account for aside and main in pages with breadcrumbs
+.container--breadcrumb + .container--page {
+  aside, main {
+    margin-top: $line-height-computed;
+  }
+}
+
+// slim variation on main container
 main.slim {
   .container {
     max-width: $container-slim-width;
