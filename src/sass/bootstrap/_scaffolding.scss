@@ -41,7 +41,8 @@ body {
     margin-top: $spacing-page-top;
 
     // add margin top to aside and main for pages with sidebars
-    aside, main {
+    // also account for other elements here with an optional page-inner class
+    .page-inner, aside, main {
       margin-top: $line-height-computed;
     }
   }
