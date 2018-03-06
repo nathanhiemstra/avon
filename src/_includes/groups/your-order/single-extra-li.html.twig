@@ -1,0 +1,124 @@
+{% if hasFreeLabel %}
+  {% set hasFreeLabelClass = 'has-free-label' %}
+{% endif %}
+
+{% if hasCtaAddToOrder or hasCtaViewDetails or hasCtaViewDetailsSecondary %}
+  {% set hasOfferCtaClass = 'has-offer-ctas' %}
+{% endif %}
+
+<!-- START - REPEATABLE ITEM -->
+<li class="list-group-item row offer-item box-emphasize mt-3 mb-3 {{ hasOfferCtaClass }} {{ hasFreeLabelClass }}">
+
+  <!-- START - BANNER (IMAGE) -->
+  <div class="col-sm-4 offer-banner brochure-img">
+    <img src="{{ img }}" class="img-responsive">
+  </div>
+  <!-- END - BANNER (IMAGE) -->
+
+  <!-- START - DESCRIPTION -->
+  <div class="col-sm-8 offer-description">
+
+    <!-- START - DESCRIPTION TEXT -->
+    <div class="description-text">
+      {{ descriptionText }}
+    </div>
+    <!-- END - DESCRIPTION TEXT -->
+
+    {% if hasPricingInfo %}
+    <!-- START - PRICING INFO -->
+    <div class="mb-4">
+      <a href="#" class="underline">Pricing Info <div class="lt-icon lt-warning lt-medium"></div></a>
+    </div>
+    <!-- END - PRICING INFO -->
+    {% endif %}
+
+    {% if hasShowContents %}
+    <!-- START - SHOW CONTENTS -->
+    <div class="mb-4">
+      <a href="#" class="underline">Show contents <div class="lt-icon lt-triangle-down lt-medium"></div></a>
+    </div>
+    <!-- END - SHOW CONTENTS -->
+    {% endif %}
+
+    {% if hasPrice %}
+    <!-- START - PRICE -->
+    <div class="mb-4">
+      <p><span class="lead">${{ price }}</span>
+      {% if hasValue %}
+        <span class="text-muted">(${{ value }} value)</span></p>
+      {% endif %}
+    </div>
+    <!-- END - PRICE -->
+    {% endif %}
+
+    {% if hasBrochureLanguage %}
+    <!-- START - ENGLISH QTY -->
+    <div>
+      <h6 class="text-muted">QUANTITY - ENGLISH</h6>
+      <form class="form-inline mb-3">
+      <div class="form-group has-feedback">
+        <span class="hidden-xs hidden-sm">
+        <div class="form-group has-feedback">
+            <div class="inner-addon right-addon">
+            <span class="form-control-feedback"></span>
+              <input class="input input-sm form-control form-inline" type="number" placeholder="1"></input> x 10 Brochures
+            </div>
+          </div>
+          </div>
+        </form>
+    <!-- END - ENGLISH QTY -->
+
+    <!-- START - SPANISH QTY -->
+    <div>
+      <h6 class="text-muted">QUANTITY - SPANISH</h6>
+      <form class="form-inline mb-5">
+      <div class="form-group has-feedback">
+        <span class="hidden-xs hidden-sm">
+        <div class="form-group has-feedback">
+            <span class="form-control-feedback"></span>
+              <input class="input input-sm form-control form-inline" placeholder="1"></input> x 10 Brochures
+          </div>
+          </div>
+        </form>
+    <!-- END - SPANISH QTY -->
+    {% endif %}
+
+    {% if hasExtraQty %}
+    <!-- START - EXTRA QTY -->
+    <div>
+      <h6 class="text-muted">QUANTITY</h6>
+      <form class="form-inline mb-5">
+      <div class="form-group has-feedback">
+        <span class="hidden-xs hidden-sm">
+        <div class="form-group has-feedback">
+            <div class="inner-addon right-addon">
+            <span class="form-control-feedback"></span>
+              <input class="input input-sm form-control form-inline" type="number" placeholder="1"></input>
+            </div>
+          </div>
+          </div>
+        </form>
+    <!-- END - EXTRA QTY -->
+    {% endif %}
+
+    {% if hasOfferCtaClass %}
+    <!-- START - CTAS -->
+    <div class="offer-ctas">
+      {% if hasCtaAddToOrder %}
+        <a href="#" class="btn btn-default btn-sm mt-0 mb-4" role="button">Add to Order</a>
+      {% endif %}
+      {% if hasCtaViewDetails %}
+        <a href="javascript:void(0)" class="btn btn-default btn-sm view-offer-details" role="button">View details</a>
+      {% endif %}
+      {% if hasCtaViewDetailsSecondary %}
+        <a href="#" class="pull-right">View details <span class="lt-icon lt-right"></span></a>
+      {% endif %}
+    </div>
+    <!-- END - CTAS-->
+    {% endif %}
+
+  </div>
+  <!-- END - DESCRIPTION -->
+
+</li><!-- /.row -->
+<!-- END - REPEATABLE ITEM -->
