@@ -93,9 +93,9 @@ var GlobalSearch = (function () {
 
     $els.searchBtn.on('click', _toggleSearchExpand);
 
-    // $els.searchInput.blur(function () {
-    //   _toggleSearchExpand();
-    // });
+    $els.searchInput.blur(function () {
+      _toggleSearchExpand();
+    });
 
     // desktop
     // $els.searchInputDesktop
@@ -160,13 +160,13 @@ var GlobalSearch = (function () {
   };
 
   var _constructItemTemplate = function(suggestion) {
-    return '<div class="item border-bottom p-4">' +
-        '<a href="' + suggestion.itemUrl + '">' +
+    return '<div class="item border-bottom p-3">' +
+        '<a href="' + suggestion.itemUrl + '" class="link-plain">' +
           '<div class="row d-flex align-items-center">' +
-            '<div class="col col-xs-2 col-sm-3">' +
+            '<div class="col col-xs-2 col-sm-3 pr-0">' +
               '<img src="' + suggestion.imgUrl + '" class="product-img img-responsive">' +
             '</div>' +
-            '<div class="col col-xs-10 col-sm-9">' +
+            '<div class="col col-xs-10 col-sm-9 pl-3">' +
               '<p class="title">' + suggestion.value + '</p>' +
               '<p>' +
                 '<span class="sale-price mr-4">' + suggestion.salePrice + '</span>' +
