@@ -16,13 +16,19 @@
 {% endif %}
 
 {# Build the breadcrumb #}
-<ol class="breadcrumb {{ classes }}">
-  {% for item in items %}
-    {% if loop.last == false %}
-      <li><a href="{{ item.slug }}">{{ item.label }}</a></li>
-    {% else %}
-      {# If it's the last one, don't have a link and gicve it ".active" #}
-      <li class="active">{{ item.label }}</li>
-    {% endif %}
-  {% endfor %}
-</ol>
+<section class="container container--breadcrumb">
+  <div class="row">
+    <ol class="breadcrumb {{ classes }}">
+      {% for item in items %}
+        {% if loop.last == false %}
+          <li>
+            <a href="{{ item.slug }}">{{ item.label }}</a>
+          </li>
+        {% else %}
+          {# If it's the last one, don't have a link and gicve it ".active" #}
+          <li class="active">{{ item.label }}</li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+  </div>
+</section>

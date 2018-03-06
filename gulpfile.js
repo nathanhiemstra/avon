@@ -120,7 +120,7 @@ gulp.task('compile', function () {
                   select:           prefix.elements + "forms/select.html.twig",
                   selectWrapper: {
                     start:          '<div class="form-group has-feedback d-inline-block">',
-                    end:            '  <span class="glyphicon glyphicon-play form-control-feedback"></span>\r\n</div>'
+                    end:            '  <span class="lt-icon lt-triangle-down form-control-feedback"></span>\r\n</div>'
                   }
                 },
                 images: {

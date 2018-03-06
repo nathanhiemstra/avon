@@ -96,23 +96,23 @@
 }
 
 @mixin link-plain {
-  color: $link-reverse-color !important;
-  text-transform: none !important;
-  border: none !important;
+  color: $link-reverse-color;
+  text-transform: none;
+  border: none;
 
-  .lt-icon,
-  .lt-icon:before {
-    color: $link-reverse-color !important;
+  .lt-icon:not(.collapse-indicator),
+  .lt-icon:not(.collapse-indicator):before {
+    color: $link-reverse-color;
   }
 
   &:focus,
   &:hover {
-    text-decoration: none !important;
-    color: $link-reverse-hover-color !important;
+    text-decoration: none;
+    color: $link-reverse-hover-color;
 
-    .lt-icon,
-    .lt-icon:before {
-      color: $text-color !important;
+    .lt-icon:not(.collapse-indicator),
+    .lt-icon:not(.collapse-indicator):before {
+      color: $text-color;
     }
   }
 }

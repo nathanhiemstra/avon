@@ -150,6 +150,10 @@ $base-font-name: "gotham" !default;
 //** Element ID within SVG icon file.
 $icon-font-svg-id: "glyphicons_halflingsregular" !default;
 
+$icon-size-sm: 12px;
+$icon-size-md: 20px;
+$icon-size-lg: 28px;
+
 //== Spacing
 //
 //## Define common spacing
@@ -158,6 +162,7 @@ $spacing-2: 0.5rem;
 $spacing-3: 1rem;
 $spacing-4: 1.5rem;
 $spacing-5: 3rem;
+$spacing-page-top: 4rem;
 
 //== Components
 //

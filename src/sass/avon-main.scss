@@ -59,9 +59,10 @@
 @import "bootstrap/drawers";
 @import "bootstrap/footer";
 @import "bootstrap/header";
-@import "bootstrap/predictive-search";
 @import "bootstrap/product-detail";
 @import "bootstrap/product-lists";
+@import "bootstrap/global-search";
+@import "bootstrap/brochures";
 
 // Components w/ JavaScript
 @import "bootstrap/modals";
@@ -73,16 +74,3 @@
 // Utility classes
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
-
-// Dropping in some global styles for Avon here
-// TODO: I'm concerned about doing this globally. Can we opt-in only when needed? Is it related to .drawer-open below?
-// html, body {
-//     overflow-x: hidden;
-// }
-
-// prevent double scrollbars when drawers open
-html {
-    &.drawer-open {
-        overflow-y: hidden;
-    }
-}

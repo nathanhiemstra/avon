@@ -5,57 +5,60 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# DEFINE BLOCK - MAIN #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% block main %}
+  <div class="container container--page">
 
-    <section class="container">
+    {% embed "_layouts/columns-10-max.html.twig" %}
 
-      <h2 class="mb-5">Support</h2>
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
 
-		<div class="row">
-		  <div class="col-sm-6 col-md-4">
-		    <div class="thumbnail">
-		      <img src="images/utility/placeholder.png" alt="...">
-		    </div>
-		  </div>
+        <h2>Support</h2>
 
-		  <div class="col-sm-6 col-md-4">
-		    <div class="thumbnail">
-		      <img src="images/utility/placeholder.png" alt="...">
-		    </div>
-		  </div>
+        <div class="row mt-5">
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="images/utility/placeholder.png" alt="...">
+            </div>
+          </div>
 
-		  <div class="col-sm-6 col-md-4">
-		    <div class="thumbnail">
-		      <img src="images/utility/placeholder.png" alt="...">
-		    </div>
-		  </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="images/utility/placeholder.png" alt="...">
+            </div>
+          </div>
 
-		  <div class="col-sm-6 col-md-4">
-		    <div class="thumbnail">
-		      <img src="images/utility/placeholder.png" alt="...">
-		    </div>
-		  </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="images/utility/placeholder.png" alt="...">
+            </div>
+          </div>
 
-		  <div class="col-sm-6 col-md-4">
-		    <div class="thumbnail">
-		      <img src="images/utility/placeholder.png" alt="...">
-		    </div>
-		  </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="images/utility/placeholder.png" alt="...">
+            </div>
+          </div>
 
-		  <div class="col-sm-6 col-md-4">
-		    <div class="thumbnail">
-		      <img src="images/utility/placeholder.png" alt="...">
-		    </div>
-		  </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="images/utility/placeholder.png" alt="...">
+            </div>
+          </div>
 
-		</div>
-     
-    </section>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="images/utility/placeholder.png" alt="...">
+            </div>
+          </div>
 
-  {% endblock %}
+        </div>
 
+      {% endblock %}
+
+    {% endembed %}
+
+  </div>
 
 {% endblock %}

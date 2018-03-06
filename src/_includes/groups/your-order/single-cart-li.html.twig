@@ -1,15 +1,15 @@
 <li class="list-group-item single-cart-item box-emphasize my-4">
 
   <!-- START - CHECKBOX -->
-  {% include components.elements.forms.checkbox with {checked: true, classes: ""} %}
+  {% include "_includes/elements/forms/checkbox.html.twig" with {checked: true, classes: "mt-1"} %}
   <!-- END - CHECKBOX -->
 
   <!-- START - CART SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
-      <a href="#collapse-{{ indexNum }}" data-toggle="collapse" class="link-plain {% if collapsed != false %} collapsed {% endif %}">
-        <span class="lt-icon lt-rightside collapse-indicator"></span>
-        <span class="ml-3">{{ personName }}</span>
+      <a href="javascript:void(0)" data-toggle="collapse" data-target="#collapse-{{ indexNum }}-cart-item" class="link-plain {% if collapsed != false %} collapsed {% endif %}">
+        <span class="lt-icon lt-triangle-down collapse-indicator align-middle"></span>
+        <span class="ml-3 align-middle">{{ personName }}</span>
       </a>
     </dt>
     <dd class="pull-right cart-total" data-total="{{ total }}">${{ total }}</dd>
@@ -22,7 +22,7 @@
   <!-- END - CART SUMMARY -->
 
   <!-- START - CART DETAILS (EXPANDABLE) -->
-  <div class="details collapse {% if collapsed == false %} in {% endif %}" id="collapse-{{ indexNum }}">
+  <div class="details collapse {% if collapsed == false %} in {% endif %}" id="collapse-{{ indexNum }}-cart-item">
 
     <table class="table">
       <thead>
@@ -98,9 +98,9 @@
     <!-- START - EXPANDABLE TRIGGER -->
     <!-- TODO: Make option where if collapsable is above content, arrow is reversed -->
     <div class="text-center border-top pt-3">
-      <a href="#collapse-{{ indexNum }}-view-offer" data-toggle="collapse">
+      <a href="javascript:void(0)" data-toggle="collapse" data-target="#collapse-{{ indexNum }}-view-offer" class="collapse-updown collapsed">
         <b>View offers</b>
-        <span class="lt-icon lt-rightside collapse-indicator"></span>
+        <span class="lt-icon lt-triangle-down collapse-indicator"></span>
       </a>
     </div>
     <!-- END - EXPANDABLE TRIGGER -->

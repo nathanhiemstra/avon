@@ -79,10 +79,12 @@
         <ul class="list-group p-4 col-xs-12 col-sm-8">
 
           <!-- START - LOOPING ITEMS -->
-          {% include components.groups.yourOrder.personsOrderLi with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
-          {% include components.groups.yourOrder.personsOrderLi with {indexNum: '2', personName: fpo.person.2, itemCount: '4', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
-          {% include components.groups.yourOrder.personsOrderLi with {indexNum: '3', personName: fpo.person.3, itemCount: '2', total: '12.00', classes: 'd-inline-block', collapsed: true} %}
+          <!-- TODO :: updating indexes for now as it is conflicting with Your Order page and breaking dropdowns -->
+          {% include "_includes/groups/your-order/single-cart-li.html.twig" with {indexNum: '100', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
+          {% include "_includes/groups/your-order/single-cart-li.html.twig" with {indexNum: '101', personName: fpo.person.2, itemCount: '4', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
+          {% include "_includes/groups/your-order/single-cart-li.html.twig" with {indexNum: '102', personName: fpo.person.3, itemCount: '2', total: '12.00', classes: 'd-inline-block', collapsed: true} %}
           <!-- END - LOOPING ITEMS -->
+
 
         </ul>
 

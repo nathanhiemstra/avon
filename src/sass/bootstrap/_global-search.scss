@@ -1,0 +1,338 @@
+.navbar--primary-nav {
+
+  /*
+   * ----------
+   * MOBILE
+   * ----------
+   */
+
+  .primary-nav__search {
+    min-width: 0;
+    transition: min-width $ui-animation-time $ui-animation-ease;
+
+    .primary-nav__search-input {
+      display: none;
+    }
+
+    a {
+      span:nth-child(2) {
+        display: inline-block;
+      }
+    }
+
+  }
+
+  .primary-nav__cart,
+  .primary-nav__logo,
+  .primary-nav__toggle {
+    transition: opacity $ui-animation-time $ui-animation-ease;
+  }
+
+  &.search-expanded {
+    .primary-nav__cart,
+    .primary-nav__logo,
+    .primary-nav__toggle {
+      opacity: 0;
+    }
+
+    .primary-nav__search {
+      min-width: 100%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      right: 0;
+      height: 69px; // TODO :: make this header height var?
+      z-index: 10;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+
+        span:nth-child(2) {
+          // display: none;
+        }
+
+        .lt-icon {
+          padding: $spacing-3;
+        }
+
+        input {
+          flex: 1 1 auto;
+          margin-right: $spacing-4;
+        }
+      }
+      // end a
+
+      .primary-nav__search-input {
+        display: inline-block;
+      }
+
+    }
+    // end primary-nav__search
+
+  }
+  // end search-expanded
+
+  // in progress expanding and collapsing states
+  &.collapsing,
+  &.expanding {
+    height: 69px;
+    z-index: 10;
+
+    .primary-nav__cart,
+    .primary-nav__logo,
+    .primary-nav__toggle {
+      opacity: 0;
+    }
+  }
+
+  &.expanding {
+    .primary-nav__cart,
+    .primary-nav__logo,
+    .primary-nav__toggle {
+      transition: opacity 0s;
+    }
+  }
+
+  /*
+   * ----------
+   * DESKTOP
+   * ----------
+   */
+
+  @media (min-width: $screen-sm-min) {
+    .primary-nav__search {
+      min-width: auto;
+      transition: none;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+
+    .primary-nav__search-input {
+      width: 1px;
+      transition: width $ui-animation-time $ui-animation-ease;
+    }
+
+    .primary-nav__cart,
+    .primary-nav__logo,
+    .primary-nav__toggle {
+      transition: none;
+    }
+
+    &.search-expanded {
+
+      .primary-nav__cart,
+      .primary-nav__logo,
+      .primary-nav__toggle {
+        opacity: 1;
+      }
+
+      .primary-nav__search {
+        min-width: auto;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // top: 0;
+        // right: 0;
+        // z-index: 10;
+        height: auto;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          // width: 100%;
+
+          .lt-icon {
+            padding: initial;
+          }
+
+          input.primary-nav__search-input {
+            position: absolute;
+            padding: 6px;
+            top: -5px;
+            left: $icon-size-md - 6;
+            width: 300px;
+            border: none;
+          }
+        }
+        // end a
+
+      }
+      // end primary-nav__search
+
+    }
+    // end search-expanded
+
+    // in progress expanding and collapsing states
+    &.collapsing,
+    &.expanding {
+      height: auto;
+      // z-index: 10;
+
+      .primary-nav__cart,
+      .primary-nav__logo,
+      .primary-nav__toggle {
+        opacity: 1;
+      }
+    }
+
+    // &.expanding {
+    //   .primary-nav__cart,
+    //   .primary-nav__logo,
+    //   .primary-nav__toggle {
+    //     transition: opacity 0s;
+    //   }
+    // }
+  }
+
+}
+// end navbar--primary-nav
+
+.autocomplete-suggestions {
+  border: 1px solid $border-color;
+  border-top: none;
+  background: $body-bg;
+  overflow: auto;
+}
+
+.autocomplete-suggestion {
+  padding: 2px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 0.2s background-color ease;
+
+  .item {
+    a {
+      color: $text-color;
+    }
+
+    p.title {
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    img {
+      mix-blend-mode: multiply;
+    }
+  }
+
+  &:last-child {
+    .item {
+      border-bottom: none !important;
+    }
+  }
+
+  &.autocomplete-selected {
+    background-color: $gray-lighter;
+  }
+}
+
+.autocomplete-suggestions strong {
+  font-weight: normal;
+  color: $blue;
+}
+
+.autocomplete-group {
+  padding: 2px 5px;
+}
+
+.autocomplete-group strong {
+  display: block;
+  border-bottom: 1px solid $table-border-color;
+}
+
+// TODO :: leaving this here for when we re-enable predictive search - taken from the _header.scss
+
+//     // predictive search - general
+//     ul.predictive-list {
+//       margin: 0;
+//       padding: 0;
+//       list-style-type: none;
+//
+//       a:hover {
+//         text-decoration: none;
+//       }
+//
+//       &.expanded {
+//         display: block;
+//       }
+//
+//       &.collapsed {
+//         display: none;
+//       }
+//
+//       li {
+//         a {
+//           color: $text-color;
+//
+//           &:hover {
+//             color: $text-color;
+//             border-bottom: none;
+//           }
+//         }
+//       }
+//     }
+//
+//     // MOBILE predictive
+//     .container > .navbar-header {
+//       ul.predictive-list {}
+//     }
+//
+//     // desktop predictive
+//     .container > .navbar-right {
+//       ul.predictive-list {
+//         position: absolute;
+//         top: 36px;
+//         left: 15px;
+//         width: 400px;
+//         background-color: $body-bg;
+//         border: 1px solid $gray-light;
+//         border-top: 0;
+//         box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+//       }
+//     }
+//
+//     // MOBILE nav
+//     #mobile-header-navbar {
+//       .navbar-form {
+//         .input-group {
+//           input {
+//             border: none;
+//             box-shadow: none;
+//           }
+//
+//           .input-group-btn {}
+//         }
+//       }
+//
+//       .autocomplete-suggestions {
+//         width: 100vw !important;
+//         top: 60px;
+//         left: 0;
+//         border-left: none;
+//         border-right: none;
+//       }
+//     }
+//
+//     // search input
+//     .primary-nav__search-input {
+//       width: 100px;
+//       transform: scaleX(0);
+//       transition: 0.2s transform ease, 0.2s box-shadow ease;
+//
+//       &.expanded {
+//         transform: scaleX(1);
+//         // box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+//       }
+//     }
+//

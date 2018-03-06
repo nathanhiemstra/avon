@@ -6,28 +6,23 @@
 {% block content %}
 
   <!-- START - BREADCRUMBS -->
-  <section class="container">
-    <div class="row">
-      {% include components.groups.navigation.breadcrumbs with {
-        'items': [{
-            'slug': '#',
-            'label': 'Products'
-          }, {
-            'slug': '#',
-            'label': 'Skincare'
-          }
-          , {
-            'slug': '#',
-            'label': 'Mousturizers'
-          }
-        ]
-      }%}
-    </div>
-    <!-- /.row -->
-  </section>
+  {% include components.groups.navigation.breadcrumbs with {
+    'items': [{
+        'slug': '#',
+        'label': 'Products'
+      }, {
+        'slug': '#',
+        'label': 'Skincare'
+      }
+      , {
+        'slug': '#',
+        'label': 'Mousturizers'
+      }
+    ]
+  }%}
   <!-- END - BREADCRUMBS -->
 
-  <section class="container container--product-list-page">
+  <section class="container container--page">
     {% embed layouts.columns3x9 %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
