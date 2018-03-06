@@ -1,7 +1,12 @@
-<a href="#" class="link-plain">
+<a href="#" class="link-plain" data-toggle="popover" data-container="body" data-placement="bottom" data-html="true" id="popover-cart">
   <span class="small text-uppercase text-muted hidden-xs">Order
   </span>
   <span class="lt-icon lt-cart lt-large badged-icon">
     <span class="badge">12</span>
   </span>
 </a>
+
+<!-- Note :: js for the cart popover is located in avon-main.js near the bottom on document ready - $("#popover-cart") -->
+<div id="popover-cart-content" class="hide">
+  {% include "_includes/modules/your-order/order-total.html.twig" with { btnText: 'Checkout', isPopover: true } %}
+</div>

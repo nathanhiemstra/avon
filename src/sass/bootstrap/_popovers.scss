@@ -129,3 +129,20 @@
     }
   }
 }
+
+.popover--cart {
+  max-width: unset;
+
+  &.fade {
+    transform: translateX(0);
+    transition: transform $ui-animation-time $ui-animation-ease;
+  }
+
+  &.in {
+    transform: translateX(-$spacing-3);
+  }
+
+  > .arrow {
+    display: none;
+  }
+}
