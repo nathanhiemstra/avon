@@ -10,7 +10,7 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
-  <!-- START - TAB NAVIGATION -->
+    <!-- START - TAB NAVIGATION -->
     <section class="container container--page">
       <h2>YOUR ORDER</h2>
       <div class="row">
@@ -19,40 +19,40 @@
           {% include "_includes/modules/your-order/tab-nav.html.twig" %}
 
         </div>
-      </div><!-- /.row -->
-    </section><!-- /.container -->
-     <!-- END - TAB NAVIGATION -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.container -->
+    <!-- END - TAB NAVIGATION -->
 
-      <section class="reverse-bg">
-        <div class="container">
+    <section class="reverse-bg">
+      <div class="container">
 
-          {% embed layouts.columns9x3 %}
+        {% embed layouts.columns9x3 %}
 
-            {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-            {# DEFINE BLOCK - MAIN #}
-            {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-            {% block main %}
+          {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+          {# DEFINE BLOCK - MAIN #}
+          {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+          {% block main %}
 
-              {% include '_includes/modules/your-order/tab-content.html.twig' %}
+            {% include '_includes/modules/your-order/tab-content.html.twig' %}
 
-            {% endblock %}
+          {% endblock %}
 
+          {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+          {# DEFINE BLOCK - ASIDE #}
+          {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+          {% block aside %}
 
-            {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-            {# DEFINE BLOCK - ASIDE #}
-            {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-            {% block aside %}
+            <!-- ORDER TOTAL -->
+            {% include components.modules.yourOrder.total %}
 
-              <!-- ORDER TOTAL -->
-              {% include components.modules.yourOrder.total %}
+          {% endblock %}
+        {% endembed %}
 
-            {% endblock %}
-          {% endembed %}
-
-        </div>
-      </section>
+      </div>
+    </section>
 
   {% endblock %}
-
 
 {% endblock %}
