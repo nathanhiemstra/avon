@@ -31,11 +31,25 @@ body {
   background-color: $body-bg;
 }
 
-main {
-  &.slim {
-    .container {
-      max-width: $container-slim-width;
+.container {
+  &.container--breadcrumb {
+    margin-top: $spacing-4;
+    margin-bottom: -$spacing-page-top;
+  }
+
+  &.container--page {
+    margin-top: $spacing-page-top;
+
+    // add margin top to aside and main for pages with sidebars
+    aside, main {
+      margin-top: $line-height-computed;
     }
+  }
+}
+
+main.slim {
+  .container {
+    max-width: $container-slim-width;
   }
 }
 

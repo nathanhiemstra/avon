@@ -19,6 +19,7 @@
           'alertIcon': 'lt-checkmark',
           'alertMsg': 'Item has been added',
           'alertBtnText': 'View your Order',
+          'alertDismissable': true
         }
       %}
       <!-- END - GLOBAL ALERT MESSAGE -->
@@ -30,32 +31,29 @@
           'alertIcon': 'lt-tip',
           'alertMsg': 'Another alert, something awesome happened',
           'alertBtnText': false,
+          'alertDismissable': true
         }
       %}
       <!-- END - GLOBAL ALERT MESSAGE -->
 
       <!-- START - BREADCRUMBS -->
-      <section class="container">
-        <div class="row my-4">
-          {% include "_includes/groups/navigation/breadcrumb.html.twig" with {
-            'items': [{
-              'slug': '#',
-              'label': 'Products'
-            }, {
-              'slug': '#',
-              'label': 'Moisturizers'
-            }, {
-              'slug': '#',
-              'label': 'Skinvincible'
-            }],
-            'classes': 'm-0' }
-          %}
-        </div>
-      </section>
+      {% include "_includes/groups/navigation/breadcrumb.html.twig" with {
+        'items': [{
+          'slug': '#',
+          'label': 'Products'
+        }, {
+          'slug': '#',
+          'label': 'Moisturizers'
+        }, {
+          'slug': '#',
+          'label': 'Skinvincible'
+        }],
+        'classes': 'm-0' }
+      %}
       <!-- END - BREADCRUMBS -->
 
       <!-- START - MAIN PRODUCT DETAILS -->
-      <section class="container">
+      <section class="container container--page">
 
         <!-- DEVELOPER NOTE :: this markup, starting with the .row below is shared
           between Product Detail Page and Quick Shop Modal -->

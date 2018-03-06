@@ -1,3 +1,10 @@
+// prevent background scrolling when drawer open
+html {
+    &.drawer-open {
+        overflow-y: hidden;
+    }
+}
+
 .drawer,
 .drawer-height,
 .drawer-summary {

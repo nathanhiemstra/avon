@@ -1,15 +1,15 @@
 <li class="list-group-item single-cart-item box-emphasize my-4">
 
   <!-- START - CHECKBOX -->
-  {% include "_includes/elements/forms/checkbox.html.twig" with {checked: true, classes: ""} %}
+  {% include "_includes/elements/forms/checkbox.html.twig" with {checked: true, classes: "mt-1"} %}
   <!-- END - CHECKBOX -->
 
   <!-- START - CART SUMMARY -->
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="javascript:void(0)" data-toggle="collapse" data-target="#collapse-{{ indexNum }}-cart-item" class="link-plain {% if collapsed != false %} collapsed {% endif %}">
-        <span class="lt-icon lt-triangle-down collapse-indicator"></span>
-        <span class="ml-3">{{ personName }}</span>
+        <span class="lt-icon lt-triangle-down collapse-indicator align-middle"></span>
+        <span class="ml-3 align-middle">{{ personName }}</span>
       </a>
     </dt>
     <dd class="pull-right cart-total" data-total="{{ total }}">${{ total }}</dd>

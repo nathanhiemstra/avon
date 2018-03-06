@@ -1,9 +1,9 @@
 /**
- * CartCheckboxes - handles all shopping cart checkbox behavior
+ * YourOrderCartsTab - handles all behavior for 'Carts' tab on Your Order Page
  * @return {init}
  */
 
-var CartCheckboxes = (function () {
+var YourOrderCartsTab = (function () {
 
   var $els = {};
   var $checkboxes;
@@ -15,8 +15,7 @@ var CartCheckboxes = (function () {
   var init = function () {
     // grab the DOM els we need
     $els = {
-      checkboxList: $('.list-group--checkboxed'),
-      selectAllCheckbox: $('.list-group--checkboxed .checkbox-select-all'),
+      selectAllCheckbox: $('.list-group--checkboxed .checkbox-select-all :checkbox'),
       carts: $('.list-group--checkboxed .single-cart-item'),
       checkoutBtn: $('.checkout-order-total .btn'),
       checkoutSubtotal: $('.checkout-order-total .subtotal'),
@@ -27,19 +26,19 @@ var CartCheckboxes = (function () {
     $checkboxes = $els.carts.find('input[type=checkbox]');
 
     _addListeners();
-    _updateCheckoutTotals();
+    _updateCheckoutTotals(); // TODO :: zero out checkout totals
 
   };
 
   // private methods
   var _addListeners = function () {
 
-    $els.selectAllCheckbox.on('click', function (e) {
+    $els.selectAllCheckbox.change(function () {
       _toggleSelectAll(this);
       _updateCheckoutTotals();
     });
 
-    $checkboxes.on('click', function(e) {
+    $checkboxes.change(function () {
       _handleCheckbox(this);
       _updateCheckoutTotals();
     });
@@ -47,6 +46,8 @@ var CartCheckboxes = (function () {
   };
 
   var _toggleSelectAll = function (el) {
+
+    console.log('toggle select all');
 
     if (el.checked) {
       $checkboxes.each(function () {
