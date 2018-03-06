@@ -12,50 +12,40 @@
 
     <section class="container pt-4">
 
-		<div class="alert alert-info">
+		{#~~~~~~~ <div class="alert alert-info">
 			Optional urgent message content area
-		</div>
+		</div> ~~~~~~~#}
 
-		<div class="jumbotron mb-4">
+		{#~~~~~~~ <div class="jumbotron mb-4">
 	        <h1>A-Spot</h1>
 	        <p class="lead">FPO: loreum ipsum doler sit loreum ipsum doler sit loreum ipsum doler sit loreum ipsum doler sit loreum ipsum doler sit loreum ipsum doler sit loreum ipsum doler sit loreum ipsum doler sit loreum ipsum doler sit</p>
-	    </div>
-	    <div class="row no-gutters mb-4">
-	    	<div class="col-md-3 col-xs-12 border">
-	    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
-	    	</div>
-	    	<div class="col-md-3 col-xs-12 border">
-	    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
-	    	</div>
-	    	<div class="col-md-3 col-xs-12 border">
-	    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
-	    	</div>
-	    	<div class="col-md-3 col-xs-12 border">
-	    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
+	    </div> ~~~~~~~#}
+	    
+	    <div class="mt-5 mb-5 border-y py-5 px-5">
+	    	<div class="row">
+	    		<div class="col-md-12 com-xs-12 text-center">
+	    			<p class="m-0 lead">
+	    				FPO Content - Open HTML Section amet, lorum ipsum dolor sit lorum ipsum dolor sitlorum ipsum dolor sitlorum ipsum dolor sitlorum ipsum dolor sitlorum ipsum dolor sitlorum 
+	    			</p>
+	    		</div>
 	    	</div>
 	    </div>
-	    <div class="row no-gutters mb-4">
-	    	<div class="col-md-3 col-xs-12 border">
-	    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
-	    	</div>
-	    	<div class="col-md-3 col-xs-12 border">
-	    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
-	    	</div>
-	    	<div class="col-md-3 col-xs-12 border">
-	    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
-	    	</div>
-	    	<div class="col-md-3 col-xs-12 border">
-	    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
-	    	</div>
+		<div class="mb-4">
+		    <div class="row">
+		    	<div class="col-md-12 col-xs-12">
+		    		<img height="300" src="images/utility/placeholder.png" alt="..." class="img-responsive">
+		    	</div>
+		    </div>
 	    </div>
-	    <a href="#" class="underline mb-4 d-inline-block">View full dashboard</a>
-	    {% embed layouts.columns9x3 %}
+
+	    {# ~~~ {% embed layouts.columns9x3 %} ~~~ #}
 
 	      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 	      {# DEFINE BLOCK - MAIN #}
 	      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-	      {% block main %}
+	      {# ~~~ {% block main %} ~~~ #}
 			
+			{# ~~~~~~~~
 			<h4 class="text-center">Video Carousel</h4>
 	        <!-- START - RESPONSIVE CAROUSEL -->
 			<div id="home_videos" class="carousel carousel--responsive slide mt-md-2 mb-5 mb-md-0" data-ride="carousel" data-interval="false">	  
@@ -111,14 +101,16 @@
 
 			  </div>
 			  <!-- END - RESPONSIVE CAROUSEL -->
+			  ~~~~~~~~ #}
 
-	      {% endblock %}
+	      {# ~~~ {% endblock %} ~~~ #}
 
 	      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 	      {# DEFINE BLOCK - ASIDE #}
 	      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-	      {% block aside %}
-
+	      {# ~~~ {% block aside %} ~~~ #}
+			
+			{# ~~~~~~~
 	        <h4 class="text-center">Avon beauty Buzz</h4>
 	        <div class="border mb-4 pre-scrollable p-3">
 	        	<ul class="list-unstyled m-0">
@@ -240,11 +232,13 @@
 	        	<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio.</p>
 	        	<a href="#" class="underline">Learn More</a>
 	        </div>
+	        ~~~~~~~ #}
 
-	      {% endblock %}
+	      {# ~~~ {% endblock %} ~~~ #}
 
-	    {% endembed %}
-
+	    {# ~~~ {% endembed %} ~~~ #}
+		
+		{# ~~~~~~~
 	    <div class="row mb-4 mt-4">
 	    	<div class="col-md-3 col-xs-12 my-4 mx-md-0">
 		    	<div class="border text-center">
@@ -278,8 +272,52 @@
 	    <div class="alert alert-info">
 			Optional urgent message content area
 		</div>
+		~~~~~~~ #}
      
     </section>
+    <div class="py-5 reverse-bg">
+		<section class="container">
+			<h5 class="text-center">FROM AVON</h5>
+		    <div class="row mb-4">
+		    	<div class="col-md-3 col-xs-12 my-4 my-md-0">
+		    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
+		    	</div>
+		    	<div class="col-md-3 col-xs-12 my-4 my-md-0">
+		    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
+		    	</div>
+		    	<div class="col-md-3 col-xs-12 my-4 my-md-0">
+		    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
+		    	</div>
+		    	<div class="col-md-3 col-xs-12 my-4 my-md-0">
+		    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
+		    	</div>
+		    </div>
+		    <h5 class="text-center mt-5">JUST FOR YOU <i class="glyphicon glyphicon-info-sign"></i> </h5>
+		    <div class="row mb-4">
+		    	<div class="col-md-3 col-xs-12 my-4 my-md-0">
+		    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
+		    	</div>
+		    	<div class="col-md-3 col-xs-12 my-4 my-md-0">
+		    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
+		    	</div>
+		    	<div class="col-md-3 col-xs-12 my-4 my-md-0">
+		    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
+		    	</div>
+		    	<div class="col-md-3 col-xs-12 my-4 my-md-0">
+		    		<img src="images/utility/placeholder.png" alt="..." class="img-responsive">
+		    	</div>
+		    </div>
+		    <button type="button" class="btn btn-default my-4">View full dashboard</button>
+	    </section>
+	</div>
+	<section class="container py-5">
+		FPO text
+	</section>
+	<div class="reverse-bg">
+		<section class="container py-5">
+			FPO text
+		</section>
+	</div>
 
   {% endblock %}
 
