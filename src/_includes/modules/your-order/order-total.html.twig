@@ -3,7 +3,8 @@
 {% endif %}
 <!-- START - ORDER TOTAL -->
 <section class="checkout-order-total">
-  <div class="hidden-xs hidden-sm">
+  {# add classes to hide if it's not the cart popover #}
+  <div class="{% if not isPopover %} hidden-xs hidden-sm {% endif %}">
     <h3 class="h-utility text-center">Total</h3>
     <dl class="clearfix border-bottom pb-3 mb-3">
       <dt class="pull-left label-utility text-primary">Order total</dt>
@@ -17,6 +18,8 @@
   </div>
 
   <a href="#" class="btn btn-primary btn-lg btn-block" role="button">{{ btnText }}</a>
-  <p class="text-center"><a href="#"><strong><span class="lt-icon lt-warning lt-medium pr-1 pt-4"></span>Update Total</a></strong> to apply changes</p>
+  {% if not isPopover %}
+    <p class="text-center"><a href="#"><strong><span class="lt-icon lt-warning lt-medium pr-1 pt-4"></span>Update Total</a></strong> to apply changes</p>
+  {% endif %}
 </section>
 <!-- END - ORDER TOTAL -->
