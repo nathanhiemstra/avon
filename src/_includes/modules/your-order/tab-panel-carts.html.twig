@@ -1,15 +1,38 @@
-<ul class="list-group list-group--checkboxed mt-3">
+<ul class="list-group list-group--checkboxed mt-3 mb-5">
 
   <li class="list-group-item list-group-item-checkbox">
     {% include "_includes/elements/forms/checkbox.html.twig" with {classes: 'checkbox-select-all', theLabel: 'Select Carts for Checkout', checked: true} %}
   </li>
 
-  <!-- START - LOOPING ITEMS -->
+  <!-- START - MAIN CARTS -->
   {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: false, viewOffers: true} %}
   {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, viewOffers: true} %}
   {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '3', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
   {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '4', personName: fpo.person.4, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
   {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '5', personName: fpo.person.5, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
-  <!-- END - LOOPING ITEMS -->
+  <!-- END - MAIN CARTS -->
 
 </ul>
+
+<ul class="list-group list-group--checkboxed mt-3 mb-5">
+  <h5>Representative Delivery</h5>
+  <p>Customer carts from Avon.com</p>
+
+  <!-- START - REPRESENTATIVE DELIVERY CARTS -->
+  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '6', personName: fpo.person.4, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
+  <!-- END - REPRESENTATIVE DELIVERY CARTS -->
+</ul>
+
+<ul class="list-group list-group--checkboxed mt-3 mb-5">
+  <h5>Future Orders</h5>
+  <p>Available for checkout in the next campaign</p>
+
+  <!-- START - REPRESENTATIVE DELIVERY CARTS -->
+  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '7', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
+  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '8', personName: fpo.person.4, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
+  <!-- END - REPRESENTATIVE DELIVERY CARTS -->
+</ul>
+
+<div class="border-top py-4">
+  <a class="link-primary"><span class="lt-icon lt-warning lt-medium"></span>Delete selected carts</a>
+</div>
