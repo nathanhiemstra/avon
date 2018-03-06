@@ -162,25 +162,15 @@ var GlobalSearch = (function () {
   var _constructItemTemplate = function(suggestion) {
     return '<div class="item border-bottom p-4">' +
         '<a href="' + suggestion.itemUrl + '">' +
-          '<div class="row">' +
+          '<div class="row d-flex align-items-center">' +
             '<div class="col col-xs-2 col-sm-3">' +
               '<img src="' + suggestion.imgUrl + '" class="product-img img-responsive">' +
             '</div>' +
             '<div class="col col-xs-10 col-sm-9">' +
               '<p class="title">' + suggestion.value + '</p>' +
               '<p>' +
-                '<span class="sale-price">' + suggestion.salePrice + '</span>' +
-                '<span class="reg-price small">Regular Price: ' + suggestion.salePrice + '</span>' +
-              '</p>' +
-              '<p>' +
-                '<span class="rating small">' +
-                  '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>' +
-                  '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>' +
-                  '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>' +
-                  '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>' +
-                  '<span class="num-ratings">' + suggestion.numRatings + '</span>' +
-                '</span>' +
-                '<span class="stock small"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> ' + suggestion.stockStatus + '</span>' +
+                '<span class="sale-price mr-4">' + suggestion.salePrice + '</span>' +
+                '<span class="reg-price small strike-through">Regular Price: ' + suggestion.salePrice + '</span>' +
               '</p>' +
             '</div>' +
           '</div>' +
