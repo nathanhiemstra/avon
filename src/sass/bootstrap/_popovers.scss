@@ -131,7 +131,7 @@
 }
 
 .popover--cart {
-  max-width: unset;
+  max-width: inherit;
 
   &.fade {
     transform: translateX(0);

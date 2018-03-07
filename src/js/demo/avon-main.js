@@ -174,19 +174,24 @@ $(document).ready(function () {
   $(document).ready(function () {
     $('[data-toggle="popover"]:not(#popover-cart)').popover();
 
+
     // handle cart popover and add a custom class for styling
-    $("#popover-cart")
-      .popover({
-        html: true,
-        content: function() {
-          var id = $(this).attr('id')
-          return $('#' + id + '-content').html();
-        }
-      })
-      .data('bs.popover')
-      .tip()
-      .addClass('popover--cart');
-      
+    var cartPopover = $("#popover-cart");
+
+    if(cartPopover.length) {
+      $("#popover-cart")
+        .popover({
+          html: true,
+          content: function() {
+            var id = $(this).attr('id')
+            return $('#' + id + '-content').html();
+          }
+        })
+        .data('bs.popover')
+        .tip()
+        .addClass('popover--cart');
+    }
+
   });
 
 

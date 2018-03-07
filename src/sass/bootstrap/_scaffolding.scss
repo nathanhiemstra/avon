@@ -34,7 +34,7 @@ body {
 .container {
   &.container--breadcrumb {
     margin-top: $spacing-4;
-    margin-bottom: -$spacing-page-top;
+    margin-bottom: -0.5rem;
   }
 
   &.container--page {

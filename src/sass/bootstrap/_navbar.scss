@@ -170,6 +170,13 @@
     border-width: 1px 0 0;
 }
 
+// customize our order summary navbar
+.navbar-fixed-bottom--order-summary {
+    height: auto;
+    min-height: 100px;
+    box-shadow: $box-shadow;
+}
+
 // Brand/project name
 
 .navbar-brand {
@@ -723,4 +730,17 @@
         display: inline-block;
         margin-bottom: 0;
     }
+}
+
+// flex-based navbar with left, center and right items
+// NOTE :: requires 3 items with .navbar-item class
+.navbar-thirds {
+  .navbar-item {
+      min-width: 33.3%;
+  }
+  .navbar-brand {
+      @media (max-width: $screen-xs-max) {
+          opacity: 0;
+      }
+  }
 }
