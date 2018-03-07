@@ -7,24 +7,47 @@
   {% set hasOfferCtaClass = 'has-offer-ctas' %}
 {% endif %}
 
-<!-- START - REPEATABLE ITEM -->
-<li class="list-group-item row offer-item box-emphasize mt-3 mb-3 {{ hasOfferCtaClass }} {{ hasFreeLabelClass }}">
+<li class="list-group-item box-emphasize my-4">
+
+  <!-- START - OFFERS -->
+  <dl class="clearfix cart-item-ml my-3 mr-0">
 
   <!-- START - BANNER (IMAGE) -->
-  <div class="col-sm-4 offer-banner">
-    <img src="{{ img }}" class="product-img">
+  <div class="col-sm-4 offer-banner pt-2">
+    <img src="{{ img }}" class="img-responsive">
   </div>
   <!-- END - BANNER (IMAGE) -->
 
   <!-- START - DESCRIPTION -->
   <div class="col-sm-8 offer-description">
 
-    <!-- START - DESCRIPTION TEXT -->
+    <!-- START - HEADER TEXT -->
     <div class="description-text">
+      {{ headerText }}
+    </div>
+    <!-- END - HEADER TEXT -->
+
+    <!-- START - DESCRIPTION TEXT -->
+    <div class="description-text text-muted">
       {{ descriptionText }}
     </div>
     <!-- END - DESCRIPTION TEXT -->
 
+    {% if hasQty %}
+    <!-- START - QTY -->
+    <div class="pt-1 pb-0">
+      <h6 class="text-muted">QUANTITY</h6>
+      <form>
+        <div class="form-group row">
+          <div class="col-sm-3">
+            <input type="text" class="form-control input-sm" placeholder="0">
+          </div>
+          <div class="col-sm-9 pt-1 pl-0"></div>
+        </div>
+      </form>
+    </div>
+    <!-- END - EXTRA QTY -->
+    {% endif %}
 
     {% if offerProgress  %}
     <!-- START - OFFER PROGRESS -->
@@ -44,7 +67,7 @@
     <!-- START - CTAS -->
     <div class="offer-ctas">
       {% if hasCtaAddToOrder %}
-        <a href="#" class="btn btn-default btn-sm mt-4 mb-4" role="button">Add to Order</a>
+        <a href="#" class="btn btn-default btn-sm mt-2 mb-4" role="button">Add to Order</a>
       {% endif %}
       {% if hasCtaViewDetails %}
         <a href="javascript:void(0)" class="btn btn-default btn-sm view-offer-details" role="button">View details</a>
@@ -57,7 +80,6 @@
     {% endif %}
 
   </div>
-  <!-- END - DESCRIPTION -->
 
-</li><!-- /.row -->
-<!-- END - REPEATABLE ITEM -->
+  </dl>
+  <!-- END - OFFERS -->
