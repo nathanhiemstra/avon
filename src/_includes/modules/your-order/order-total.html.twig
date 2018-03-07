@@ -27,5 +27,11 @@
 
   </div>
 
+
+  {% if not isPopover %}
+    <p class="text-center pb-4"><a href="#"><strong><span class="lt-icon lt-warning lt-medium pr-1 pt-4"></span>Update Total</a></strong> to apply changes</p>
+  {% endif %}
+
+    <a href="#" class="btn btn-primary btn-lg btn-block" role="button">{{ btnText }}</a>
 </section>
 <!-- END - ORDER TOTAL -->
