@@ -76,6 +76,9 @@
 .alert-reverse {
   @include alert-variant($alert-reverse-bg, $alert-reverse-border, $alert-reverse-text);
 }
+.alert-promo {
+  @include alert-variant($alert-promo-bg, $alert-promo-border, $alert-promo-text);
+}
 
 .alert-reverse {
   .alert-link {
