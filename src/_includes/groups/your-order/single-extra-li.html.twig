@@ -1,16 +1,16 @@
-{% if hasFreeLabel %}
-  {% set hasFreeLabelClass = 'has-free-label' %}
-{% endif %}
+<li class="list-group-item single-cart-item box-emphasize my-4">
 
 {% if hasCtaAddToOrder or hasCtaViewDetails or hasCtaViewDetailsSecondary %}
   {% set hasOfferCtaClass = 'has-offer-ctas' %}
 {% endif %}
 
-<!-- START - REPEATABLE ITEM -->
-<li class="list-group-item row offer-item box-emphasize mt-3 mb-3 {{ hasOfferCtaClass }} {{ hasFreeLabelClass }}">
+  <!-- START - CART SUMMARY -->
+
+
+  <dl class="clearfix my-3 mr-0">
 
   <!-- START - BANNER (IMAGE) -->
-  <div class="col-sm-4 offer-banner brochure-img">
+  <div class="col-sm-4 mt-3 offer-banner brochure-img">
     <img src="{{ img }}" class="img-responsive">
   </div>
   <!-- END - BANNER (IMAGE) -->
@@ -27,7 +27,7 @@
     {% if hasPricingInfo %}
     <!-- START - PRICING INFO -->
     <div class="mb-4">
-      <a href="#" class="underline">Pricing Info <div class="lt-icon lt-warning lt-medium"></div></a>
+      <a href="#" class="underline">View pricing info</a>
     </div>
     <!-- END - PRICING INFO -->
     {% endif %}
@@ -43,7 +43,7 @@
     {% if hasPrice %}
     <!-- START - PRICE -->
     <div class="mb-4">
-      <p><span class="lead">${{ price }}</span>
+      <p><span class="lead pr-2">${{ price }}</span>
       {% if hasValue %}
         <span class="text-muted">(${{ value }} value)</span></p>
       {% endif %}
@@ -53,51 +53,47 @@
 
     {% if hasBrochureLanguage %}
     <!-- START - ENGLISH QTY -->
-    <div>
+    <div class="pt-1">
       <h6 class="text-muted">QUANTITY - ENGLISH</h6>
-      <form class="form-inline mb-3">
-      <div class="form-group has-feedback">
-        <span class="hidden-xs hidden-sm">
-        <div class="form-group has-feedback">
-            <div class="inner-addon right-addon">
-            <span class="form-control-feedback"></span>
-              <input class="input input-sm form-control form-inline" type="number" placeholder="1"></input> x 10 Brochures
-            </div>
+      <form>
+        <div class="form-group row">
+          <div class="col-sm-3">
+            <input type="text" class="form-control input-sm" placeholder="0">
           </div>
-          </div>
-        </form>
+          <div class="col-sm-9 pt-1 pl-0">x 10 Brochures</div>
+        </div>
+      </form>
+    </div>
     <!-- END - ENGLISH QTY -->
 
     <!-- START - SPANISH QTY -->
-    <div>
+    <div class="pt-1 pb-3">
       <h6 class="text-muted">QUANTITY - SPANISH</h6>
-      <form class="form-inline mb-5">
-      <div class="form-group has-feedback">
-        <span class="hidden-xs hidden-sm">
-        <div class="form-group has-feedback">
-            <span class="form-control-feedback"></span>
-              <input class="input input-sm form-control form-inline" placeholder="1"></input> x 10 Brochures
+      <form>
+        <div class="form-group row">
+          <div class="col-sm-3">
+            <input type="text" class="form-control input-sm" placeholder="0">
           </div>
-          </div>
-        </form>
+          <div class="col-sm-9 pt-1 pl-0">x 10 Brochures</div>
+        </div>
+      </form>
+    </div>
     <!-- END - SPANISH QTY -->
     {% endif %}
 
     {% if hasExtraQty %}
     <!-- START - EXTRA QTY -->
-    <div>
+    <div class="pt-1 pb-3">
       <h6 class="text-muted">QUANTITY</h6>
-      <form class="form-inline mb-5">
-      <div class="form-group has-feedback">
-        <span class="hidden-xs hidden-sm">
-        <div class="form-group has-feedback">
-            <div class="inner-addon right-addon">
-            <span class="form-control-feedback"></span>
-              <input class="input input-sm form-control form-inline" type="number" placeholder="1"></input>
-            </div>
+      <form>
+        <div class="form-group row">
+          <div class="col-sm-3">
+            <input type="text" class="form-control input-sm" placeholder="0">
           </div>
-          </div>
-        </form>
+          <div class="col-sm-9 pt-1 pl-0"></div>
+        </div>
+      </form>
+    </div>
     <!-- END - EXTRA QTY -->
     {% endif %}
 
@@ -120,5 +116,8 @@
   </div>
   <!-- END - DESCRIPTION -->
 
-</li><!-- /.row -->
-<!-- END - REPEATABLE ITEM -->
+  </dl>
+  <!-- END - CART SUMMARY -->
+
+
+</li>
