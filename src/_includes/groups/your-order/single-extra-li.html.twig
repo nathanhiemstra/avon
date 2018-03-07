@@ -10,13 +10,13 @@
   <dl class="clearfix my-3 mr-0">
 
   <!-- START - BANNER (IMAGE) -->
-  <div class="col-sm-4 mt-3 offer-banner brochure-img">
+  <div class="col-sm-4 mt-3 offer-banner brochure-img pl-0 pt-2">
     <img src="{{ img }}" class="img-responsive">
   </div>
   <!-- END - BANNER (IMAGE) -->
 
   <!-- START - DESCRIPTION -->
-  <div class="col-sm-8 offer-description">
+  <div class="col-sm-8 offer-description pr-0">
 
     <!-- START - DESCRIPTION TEXT -->
     <div class="description-text">
@@ -35,7 +35,16 @@
     {% if hasShowContents %}
     <!-- START - SHOW CONTENTS -->
     <div class="mb-4">
-      <a href="#" class="underline">Show contents <div class="lt-icon lt-triangle-down lt-medium"></div></a>
+      <a href="#contents" data-toggle="collapse" class="underline">Show contents <div class="lt-icon lt-triangle-down lt-medium"></div></a>
+
+      <div class="collapse" id="contents">
+      <ul class="list-group list-group--basic mb-0 mt-2">
+        <li class="list-group-item ml-4">Content 1</li>
+        <li class="list-group-item ml-4">Content 2</li>
+        <li class="list-group-item ml-4">Content 3</li>
+      </ul>
+      </div>
+
     </div>
     <!-- END - SHOW CONTENTS -->
     {% endif %}
@@ -57,10 +66,10 @@
       <h6 class="text-muted">QUANTITY - ENGLISH</h6>
       <form>
         <div class="form-group row">
-          <div class="col-sm-3">
+          <div class="col-xs-3 col-sm-3">
             <input type="text" class="form-control input-sm" placeholder="0">
           </div>
-          <div class="col-sm-9 pt-1 pl-0">x 10 Brochures</div>
+          <label class="col-sm-9 pt-1 pl-0">x 10 Brochures</label>
         </div>
       </form>
     </div>
@@ -71,10 +80,10 @@
       <h6 class="text-muted">QUANTITY - SPANISH</h6>
       <form>
         <div class="form-group row">
-          <div class="col-sm-3">
+          <div class="col-xs-3 col-sm-3">
             <input type="text" class="form-control input-sm" placeholder="0">
           </div>
-          <div class="col-sm-9 pt-1 pl-0">x 10 Brochures</div>
+          <label class="col-sm-9 pt-1 pl-0">x 10 Brochures</label>
         </div>
       </form>
     </div>
@@ -87,7 +96,7 @@
       <h6 class="text-muted">QUANTITY</h6>
       <form>
         <div class="form-group row">
-          <div class="col-sm-3">
+          <div class="col-xs-3 col-sm-3">
             <input type="text" class="form-control input-sm" placeholder="0">
           </div>
           <div class="col-sm-9 pt-1 pl-0"></div>
