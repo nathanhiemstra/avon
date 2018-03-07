@@ -19,11 +19,13 @@
       <dd class="pull-right discount">$10.00</dd>
     </dl>
     <p class="text-center">Shipping and taxes will be calculated during the checkout process</p>
+
+    <a href="#" class="btn btn-primary btn-lg btn-block" role="button">{{ btnText }}</a>
+    {% if not isPopover %}
+      <p class="update-totals-link text-center fade out"><a href="javascript:void(0)"><strong><span class="lt-icon lt-warning lt-medium pr-1 pt-4"></span>Update Total</a></strong> to apply changes</p>
+    {% endif %}
+
   </div>
 
-  <a href="#" class="btn btn-primary btn-lg btn-block" role="button">{{ btnText }}</a>
-  {% if not isPopover %}
-    <p class="update-totals-link text-center fade out"><a href="javascript:void(0)"><strong><span class="lt-icon lt-warning lt-medium pr-1 pt-4"></span>Update Total</a></strong> to apply changes</p>
-  {% endif %}
 </section>
 <!-- END - ORDER TOTAL -->

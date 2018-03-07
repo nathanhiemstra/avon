@@ -46,10 +46,18 @@
           {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
           {% block aside %}
 
-            <!-- ORDER TOTAL -->
-            {% include components.modules.yourOrder.total %}
+            <!-- START - ORDER TOTAL ASIDE -->
+            {% include '_includes/modules/your-order/order-total.html.twig' %}
+            <!-- END - ORDER TOTAL ASIDE -->
+
+            <!-- START - ORDER TOTAL STICKY FOOTER -->
+            <!-- NOTE :: This sticky footer relies on js found in js/demo/your-order-carts-tab.js -->
+            <!--      :: it is required to add padding to <body> -->
+            {% include '_includes/modules/your-order/order-sticky-footer.html.twig' %}
+            <!-- END - ORDER TOTAL STICKY FOOTER -->
 
           {% endblock %}
+
         {% endembed %}
 
       </div>

@@ -170,6 +170,13 @@
     border-width: 1px 0 0;
 }
 
+// customize our order summary navbar
+.navbar-fixed-bottom--order-summary {
+    height: auto;
+    min-height: 100px;
+    box-shadow: $box-shadow;
+}
+
 // Brand/project name
 
 .navbar-brand {
