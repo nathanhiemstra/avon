@@ -10,6 +10,7 @@ var YourOrderCartsTab = (function () {
   var totalNumChecked = 0;
   var totalPrice = 0;
   var totalDiscount = 0;
+  var totalsOff = false;
 
   // public methods
   var init = function () {
@@ -18,15 +19,17 @@ var YourOrderCartsTab = (function () {
       selectAllCheckbox: $('.list-group--checkboxed .checkbox-select-all :checkbox'),
       carts: $('.list-group--checkboxed .single-cart-item'),
       checkoutBtn: $('.checkout-order-total .btn'),
-      checkoutSubtotal: $('.checkout-order-total .subtotal'),
-      checkoutDiscount: $('.checkout-order-total .discount')
+      subtotal: $('.checkout-order-total .subtotal'),
+      offersTotal: $('.checkout-order-total .offers-total'),
+      discountTotal: $('.checkout-order-total .discount'),
+      updateTotalsLink: $('.checkout-order-total .update-totals-link')
     };
 
     totalNumChecked = $els.carts.length;
     $checkboxes = $els.carts.find('input[type=checkbox]');
 
     _addListeners();
-    _updateCheckoutTotals(); // TODO :: zero out checkout totals
+    _updateCheckoutTotals();
 
   };
 
@@ -34,20 +37,37 @@ var YourOrderCartsTab = (function () {
   var _addListeners = function () {
 
     $els.selectAllCheckbox.change(function () {
+      totalsOff = true;
       _toggleSelectAll(this);
-      _updateCheckoutTotals();
+      _toggleUpdateTotals();
     });
 
     $checkboxes.change(function () {
+      totalsOff = true;
       _handleCheckbox(this);
+      _toggleUpdateTotals();
+    });
+
+    $els.updateTotalsLink.on('click', function() {
+      totalsOff = false;
       _updateCheckoutTotals();
+      _toggleUpdateTotals();
     });
 
   };
 
-  var _toggleSelectAll = function (el) {
+  var _toggleUpdateTotals = function() {
+    if(totalsOff) {
+      // show update link
+      $els.updateTotalsLink.removeClass('out').addClass('in');
+      _zeroOutTotals();
+    } else {
+      // hide update link
+      $els.updateTotalsLink.addClass('out').removeClass('in');
+    }
+  };
 
-    console.log('toggle select all');
+  var _toggleSelectAll = function (el) {
 
     if (el.checked) {
       $checkboxes.each(function () {
@@ -69,7 +89,6 @@ var YourOrderCartsTab = (function () {
 
     var totalCheckboxes = $els.carts.length;
     var numChecked = 0;
-
 
     // loop through each cart
     $checkboxes.each(function () {
@@ -99,6 +118,14 @@ var YourOrderCartsTab = (function () {
 
   };
 
+  var _zeroOutTotals = function() {
+    $els.subtotal.html('$-');
+    $els.offersTotal.html('$-');
+    $els.discountTotal.html('$-');
+
+    totalsOff = true;
+  };
+
   var _updateCheckoutTotals = function() {
 
     // handle checkout totals
@@ -114,8 +141,9 @@ var YourOrderCartsTab = (function () {
       }
     });
 
-    $els.checkoutSubtotal.html('$' + totalPrice.toFixed(2));
-    $els.checkoutDiscount.html('$' + totalDiscount.toFixed(2));
+    $els.subtotal.html('$' + totalPrice.toFixed(2));
+    $els.offersTotal.html('$' + totalPrice.toFixed(2)); // TODO :: <-- calculate this
+    $els.discountTotal.html('$' + totalDiscount.toFixed(2));
 
     // handle checkout button text
     var btnText = '';
@@ -135,6 +163,8 @@ var YourOrderCartsTab = (function () {
     }
 
     $els.checkoutBtn.html(btnText);
+
+    totalsOff = false;
 
   };
 
