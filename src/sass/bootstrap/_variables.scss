@@ -1057,8 +1057,13 @@ $hr-border: $gray-light !default;
 
 // AVON ADDITIONS
 
+// borders
 $border-width: 1px !default;
 $border-color: $gray-light !default;
 
-$ui-animation-time: 0.2s;
-$ui-animation-ease: ease;
+// animation
+$ui-animation-time: 0.2s !default;
+$ui-animation-ease: ease !default;
+
+// shadows
+$box-shadow: 0 0 6px rgba(0, 0, 0, 0.16) !default;
