@@ -6,10 +6,8 @@
 {% block header %}
   <!-- START - HEADER -->
   <div class="no-reverse-bg">
-    {% include components.modules.global.drawer.header with {
-      drawerLabel: 'Your Order',
-      drawerId: drawerId,
-      drawerLogoMobile: true
+    {% include "_includes/modules/global/simple-header.html.twig" with {
+      'title': 'Your Order'
     } %}
   </div>
   <!-- /.no-reverse-bg -->

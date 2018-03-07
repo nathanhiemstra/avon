@@ -6,7 +6,9 @@
 {% block header %}
   <!-- START - HEADER -->
   <div class="no-reverse-bg">
-    {% include components.modules.checkout.header %}
+    {% include "_includes/modules/global/simple-header.html.twig" with {
+      'title': 'Checkout'
+    } %}
   </div><!-- /.no-reverse-bg -->
   <!-- END - HEADER -->
 {% endblock %}
