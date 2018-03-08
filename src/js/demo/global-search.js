@@ -60,9 +60,9 @@ var GlobalSearch = (function () {
 
     $els.searchBtn.on('click', _toggleSearchExpand);
 
-    // $els.searchInput.blur(function () {
-    //   _toggleSearchExpand();
-    // });
+    $els.searchInput.blur(function () {
+      _toggleSearchExpand();
+    });
 
   };
 
