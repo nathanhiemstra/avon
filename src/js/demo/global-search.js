@@ -18,12 +18,7 @@ var GlobalSearch = (function () {
       searchParent: $('.navbar--primary-nav'),
       searchContainer: $('.primary-nav__search'),
       searchBtn: $('.primary-nav__search span'),
-      searchInput : $('.primary-nav__search-input'),
-      // searchInputMobile: $('#mobile-search-input'),
-      // searchInputDesktop: $('#primary-nav__search-input'),
-      // searchBtn: $('#mobile-search-toggle'),
-      // searchNavbar: $('#mobile-header-navbar'), // TODO :: update this for auto-complete demo
-      // drawerBackdrop: $('.drawer-backdrop')
+      searchInput : $('.primary-nav__search-input')
     };
 
     _addListeners();
@@ -37,25 +32,9 @@ var GlobalSearch = (function () {
     // https://github.com/devbridge/jQuery-Autocomplete
     //
 
-    // $els.itemEntrySearchInput.autocomplete({
-    //   // serviceUrl: '/autocomplete/data/somepath', // ajax
-    //   lookup: FAKE_PRODUCTS, // no ajax, just a js object
-    //   onSelect: function (suggestion) {
-    //     console.log('You selected: ' + suggestion.value);
-    //     _handleItemEntrySelection(this, suggestion);
-    //     $(this).val(suggestion.sku);
-    //   },
-    //   formatResult: function (suggestion, currentVal) {
-    //     return _constructItemTemplate(suggestion);
-    //   },
-    //   maxHeight: 400,
-    //   showNoSuggestionNotice: true,
-    //   noSuggestionNotice: 'Sorry, nothing matches that query',
-    //   triggerSelectOnValidInput: false,
-    //   preserveInput: true
-    // });
-
     $els.searchInput.autocomplete({
+      // NOTE :: the 'serviceUrl' below should be used in production, for
+      //      :: now we're using fake data with 'lookup'
       // serviceUrl: '/autocomplete/data/somepath', // ajax
       lookup: FAKE_PRODUCTS,
       onSelect: function (suggestion) {
@@ -66,45 +45,24 @@ var GlobalSearch = (function () {
       formatResult: function (suggestion, currentVal) {
         return _constructItemTemplate(suggestion);
       },
-      appendTo: $els.searchNavbar,
+      // beforeRender: function(container, suggestions) {
+      //   console.log(container);
+      // },
+      appendTo: $els.searchContainer,
       maxHeight: 400,
+      width: 372,
       showNoSuggestionNotice: true,
       noSuggestionNotice: 'Sorry, nothing matches that query',
       triggerSelectOnValidInput: false,
       preserveInput: true
     });
 
-    // $els.searchInputDesktop.autocomplete({
-    //   lookup: FAKE_PRODUCTS,
-    //   onSelect: function (suggestion) {
-    //     console.log('You selected: ' + suggestion.value);
-    //     // _handleSearchInputSelection(this, suggestion);
-    //     // $(this).val('');
-    //   },
-    //   formatResult: function (suggestion, currentVal) {
-    //     return _constructItemTemplate(suggestion);
-    //   },
-    //   maxHeight: 400,
-    //   showNoSuggestionNotice: true,
-    //   noSuggestionNotice: 'Sorry, nothing matches that query',
-    //   triggerSelectOnValidInput: false,
-    //   preserveInput: true
-    // });
-
     $els.searchBtn.on('click', _toggleSearchExpand);
 
-    $els.searchInput.blur(function () {
-      _toggleSearchExpand();
-    });
+    // $els.searchInput.blur(function () {
+    //   _toggleSearchExpand();
+    // });
 
-    // desktop
-    // $els.searchInputDesktop
-    //   .focus(function () {
-    //     _toggleSearchExpand();
-    //   })
-    //   .blur(function () {
-    //     _toggleSearchExpand();
-    //   });
   };
 
   var _toggleSearchExpand = function (e) {
