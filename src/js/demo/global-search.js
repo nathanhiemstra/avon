@@ -45,14 +45,15 @@ var GlobalSearch = (function () {
       formatResult: function (suggestion, currentVal) {
         return _constructItemTemplate(suggestion);
       },
-      // beforeRender: function(container, suggestions) {
-      //   console.log(container);
-      // },
+      beforeRender: function(container, suggestions) {
+        console.log(container);
+        $(container).append('<button class="btn btn-default btn-block" style="position: absolute; bottom: 0; height: 50px;">View all results</button>');
+      },
       appendTo: $els.searchContainer,
       maxHeight: 400,
       width: 372,
       showNoSuggestionNotice: true,
-      noSuggestionNotice: 'Sorry, nothing matches that query',
+      noSuggestionNotice: 'Nothing matches that search',
       triggerSelectOnValidInput: false,
       preserveInput: true
     });

@@ -29,7 +29,9 @@ $gray-ultralight: lighten($gray-lighter, 2%);
     }
 
     .autocomplete-suggestions {
+      // TODO :: bring shadows in this file inline with global shadows
       box-shadow: -4px 4px 4px rgba(0,0,0,0.05), 4px 4px 4px rgba(0,0,0,0.05);
+      padding-bottom: 50px; // accomodates fixed bottom button
     }
 
     // mobile only styles for autocomplete
