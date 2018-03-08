@@ -208,6 +208,10 @@ mark,
 
 .text-muted {
   color: $text-muted !important;
+
+  &:before, &:after {
+    color: $text-muted !important;
+  }
 }
 
 .text-light {
@@ -346,7 +350,7 @@ dd {
     @include clearfix;
 
     // Clear the floated `dt` if an empty `dd` is present
- 
+
   }
 
   @media (min-width: $dl-horizontal-breakpoint) {
@@ -412,7 +416,7 @@ blockquote {
       content: '\2014 \00A0';
 
       // em dash, nbsp
-   
+
     }
   }
 }
@@ -440,7 +444,7 @@ blockquote.pull-right {
       content: '\00A0 \2014';
 
       // nbsp, em dash
-   
+
     }
   }
 }

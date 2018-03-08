@@ -86,36 +86,8 @@ var GlobalSearch = (function () {
       }, animationTime);
     }
 
-
     // show / hide
     $els.searchParent.toggleClass('search-expanded');
-    // $els.searchInput.toggleClass('hidden');
-
-    // $els.searchContainer.animate({
-    //   width: "100%"
-    // }, 150, function() {
-    //   console.log('COMPLETE');
-    // });
-
-    // if($els.searchNavbar.hasClass('expanded')) {
-    //   // expanded, let's collapse
-    //   $els.searchNavbar.removeClass('expanded').addClass('collapsed');
-    //   // $els.drawerBackdrop.removeClass('in').addClass('fade');
-    //   $els.searchInputMobile.addClass('invisible');
-    // } else {
-    //   // collapsed, let's expand
-    //   $els.searchNavbar.removeClass('collapsed').addClass('expanded');
-    //   // $els.drawerBackdrop.removeClass('fade').addClass('in');
-    //   $els.searchInputMobile.removeClass('invisible');
-    //
-    //   $els.searchInputMobile.focus();
-    // }
-
-    // if($els.searchInputDesktop.hasClass('expanded')) {
-    //   $els.searchInputDesktop.removeClass('expanded').addClass('collapsed');
-    // } else {
-    //   $els.searchInputDesktop.removeClass('collapsed').addClass('expanded');
-    // }
   };
 
   var _constructItemTemplate = function(suggestion) {
