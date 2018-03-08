@@ -47,7 +47,7 @@ var GlobalSearch = (function () {
       },
       beforeRender: function(container, suggestions) {
         console.log(container);
-        $(container).append('<button class="btn btn-default btn-block" style="position: absolute; bottom: 0; height: 50px;">View all results</button>');
+        $(container).append('<a id="all-results-link" class="link-primary border-top">View all results</button>');
       },
       appendTo: $els.searchContainer,
       maxHeight: 400,
