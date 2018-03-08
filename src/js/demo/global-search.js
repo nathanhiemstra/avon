@@ -93,7 +93,7 @@ var GlobalSearch = (function () {
   var _constructItemTemplate = function(suggestion) {
     return '<div class="item border-bottom p-3">' +
         '<a href="' + suggestion.itemUrl + '" class="link-plain">' +
-          '<div class="row d-flex align-items-center">' +
+          '<div class="row d-flex align-items-center flex-fill">' +
             '<div class="col col-xs-2 col-sm-3 pr-0">' +
               '<img src="' + suggestion.imgUrl + '" class="product-img img-responsive">' +
             '</div>' +

@@ -12,10 +12,10 @@
         <span class="ml-3 align-middle">{{ personName }}</span>
       </a>
     </dt>
-    <dd class="pull-right cart-total" data-total="{{ total }}">${{ total }}</dd>
+    <dt class="pull-right cart-total" data-total="{{ total }}">${{ total }}</dd>
   </dl>
 
-  <dl class="clearfix cart-item-ml my-3 mr-0">
+  <dl class="clearfix ml-5 my-3 mr-0">
     <dd class="pull-left small text-muted">{{ itemCount }} items</dd>
     <dd class="pull-right cart-discount small text-muted" data-discount="45.55">Discount: $45.55</dd>
   </dl>
@@ -96,13 +96,12 @@
 
 
     <!-- START - EXPANDABLE TRIGGER -->
-    <!-- TODO: Make option where if collapsable is above content, arrow is reversed -->
-    <div class="text-center border-top pt-3">
+    {# <div class="text-center border-top pt-3">
       <a href="javascript:void(0)" data-toggle="collapse" data-target="#collapse-{{ indexNum }}-view-offer" class="collapse-updown collapsed">
         <b>View offers</b>
         <span class="lt-icon lt-triangle-down collapse-indicator"></span>
       </a>
-    </div>
+    </div> #}
     <!-- END - EXPANDABLE TRIGGER -->
 
   </section>
