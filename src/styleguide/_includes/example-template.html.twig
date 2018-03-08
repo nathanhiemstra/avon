@@ -25,7 +25,6 @@
 {# Twig include and HTML path #}
 {% if styleguideItem.path %}
   {{ highlightTwig}}
-{#   {% if styleguideItem.twig %}{{ '{% include ' }}{{ styleguideItem.twig }}{{ ' %}' }} #}
-  {% endif %}{{ styleguideItem.path  }}
+  {{ styleguideItem.path  }}
   {{ endhighlight }}
 {% endif %}
