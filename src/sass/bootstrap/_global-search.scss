@@ -1,3 +1,5 @@
+$gray-ultralight: lighten($gray-lighter, 2%);
+
 .navbar--primary-nav {
 
   /*
@@ -26,6 +28,10 @@
       }
     }
 
+    .autocomplete-suggestions {
+      box-shadow: -4px 4px 4px rgba(0,0,0,0.05), 4px 4px 4px rgba(0,0,0,0.05);
+    }
+
     // mobile only styles for autocomplete
     @media (max-width: $screen-xs-max) {
       .autocomplete-suggestions {
@@ -33,7 +39,7 @@
         left: 0;
         border-left: none;
         border-right: none;
-        width: 100% !important;
+        width: 101% !important;
       }
     }
 
@@ -181,6 +187,7 @@
         border-top: 1px solid $border-color;
         border-left: 1px solid $border-color;
         border-bottom: 1px solid $border-color;
+        box-shadow: -4px -4px 4px $gray-lighter, -4px 4px 4px $gray-lighter;
 
         a {
 
@@ -196,6 +203,7 @@
             border-top: 1px solid $border-color;
             border-right: 1px solid $border-color;
             border-bottom: 1px solid $border-color;
+            box-shadow: 4px -4px 4px $gray-lighter, 4px 4px 4px $gray-lighter;
 
             &:focus {
               outline: none;
