@@ -2,7 +2,6 @@
 // Badges
 // --------------------------------------------------
 
-
 // Base class
 .badge {
   display: inline-block;
@@ -44,9 +43,12 @@
     color: $badge-active-color;
     background-color: $badge-active-bg;
   }
+
   .nav-tabs a > & {
     background-color: $brand-primary;
     color: $body-bg;
+    margin-top: -2px;
+    margin-bottom: -2px;
   }
 
   .list-group-item > & {
