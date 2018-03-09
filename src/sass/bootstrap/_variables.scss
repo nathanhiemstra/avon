@@ -133,8 +133,6 @@ $headings-line-height: 1.1 !default;
 $headings-color: inherit !default;
 
 //== Iconography
-//
-//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
 
 //** Load fonts from this directory.
 
@@ -143,12 +141,7 @@ $headings-color: inherit !default;
 $icon-font-path: "../fonts/" !default;
 $base-font-path: $icon-font-path;
 
-//** File name for all font files.
-$icon-font-name: "glyphicons-halflings-regular" !default;
 $base-font-name: "gotham" !default;
-
-//** Element ID within SVG icon file.
-$icon-font-svg-id: "glyphicons_halflingsregular" !default;
 
 $icon-size-sm: 12px;
 $icon-size-md: 20px;

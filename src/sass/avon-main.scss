@@ -11,7 +11,7 @@
 // Reset and dependencies
 @import "bootstrap/normalize";
 @import "bootstrap/print";
-@import "bootstrap/glyphicons";
+@import "bootstrap/icons";
 @import "bootstrap/gotham";
 
 // Core CSS
@@ -21,7 +21,7 @@
 @import "bootstrap/grid";
 @import "bootstrap/tables";
 @import "bootstrap/forms";
-@import "bootstrap/form-field-w-icon-and-text";
+// @import "bootstrap/form-field-w-icon-and-text";
 @import "bootstrap/buttons";
 @import "bootstrap/alignment";
 @import "bootstrap/borders";
@@ -30,7 +30,6 @@
 @import "bootstrap/display";
 @import "bootstrap/flex";
 @import "bootstrap/spacing";
-@import "bootstrap/icons";
 
 // Components
 @import "bootstrap/component-animations";
