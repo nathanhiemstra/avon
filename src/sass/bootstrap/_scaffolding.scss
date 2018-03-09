@@ -53,6 +53,11 @@ body {
       margin-top: $line-height-computed;
     }
   }
+
+  // For pages with little content
+  &.container--min-height {
+    min-height: 22rem;
+  }
 }
 
 // account for aside and main in pages with breadcrumbs
