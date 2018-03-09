@@ -142,6 +142,11 @@ th {
   }
 }
 
+// table with fixed layout
+.table-fixed {
+  table-layout: fixed;
+}
+
 // Sparse table - 1st column aligned left, last column aligned right, others aligned center
 // Ideal for styling a sparsly populated table
 .table-sparse {
@@ -329,8 +334,16 @@ table {
 
 // Your Order cart table specific styles
 .table {
+  .t-item {
+    width: 10%;
+  }
+  .t-desc {
+    width: 60%;
+  }
+  .t-price {
+    width: 15%;
+  }
   .t-qty {
-    width: 75px;
-    max-width: 75px;
+    width: 15%;
   }
 }

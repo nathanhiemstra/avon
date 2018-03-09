@@ -12,27 +12,18 @@
     </div>
     {% if autoReplenish != null %}
       <div class="mt-3">
-
         <form class="form-inline mb-5">
-          <div class="form-group has-feedback">
-
-            <span class="label label-default label-sm">Auto-replenish</span>
-            <span class="hidden-xs hidden-sm">
-
-              <div class="form-group has-feedback">
-                <div class="dropdown inner-addon right-addon">
-                  <span class="lt-icon lt-triangle-down form-control-feedback"></span>
-                  <select class="input input-sm form-control form-inline" data-toggle="dropdown">
-                    <option class="input input-sm d-inline-block mr-5">Every 4 weeks</option>
-                    <option class="input input-sm d-inline-block mr-5">Every 3 weeks</option>
-                    <option class="input input-sm d-inline-block mr-5">Every 2 weeks</option>
-                    <option class="input input-sm d-inline-block mr-5">Every 1 weeks</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </form>
-        </span>
+          <label for="replenish-select" class="label label-default label-sm">Auto-replenish</label>
+          <div class="form-group has-feedback hidden-xs hidden-sm">
+            <select id="replenish-select" class="input-sm form-control">
+              <option>Every 4 weeks</option>
+              <option>Every 3 weeks</option>
+              <option>Every 2 weeks</option>
+              <option>Every 1 weeks</option>
+            </select>
+            <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+          </div>
+        </form>
       </div>
     {% endif %}
   </td>
