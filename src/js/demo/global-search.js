@@ -58,7 +58,7 @@ var GlobalSearch = (function () {
       },
       appendTo: $els.searchContainer,
       maxHeight: 400,
-      width: 372,
+      width: 373,
       showNoSuggestionNotice: true,
       noSuggestionNotice: 'Nothing matches that search',
       triggerSelectOnValidInput: false,
