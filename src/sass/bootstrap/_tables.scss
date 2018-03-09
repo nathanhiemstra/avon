@@ -318,10 +318,19 @@ table {
   }
 }
 
+// important for callapsible table rows
 .table {
   td {
     &.in {
       display: table-cell;
     }
+  }
+}
+
+// Your Order cart table specific styles
+.table {
+  .t-qty {
+    width: 75px;
+    max-width: 75px;
   }
 }

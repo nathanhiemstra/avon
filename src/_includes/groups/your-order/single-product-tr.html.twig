@@ -3,7 +3,7 @@
 {% endif %}
 <tr class="pt-3">
   <td class="t-item hidden-xs hidden-sm pl-0 pb-3 pt-5">
-     <img src="{{ img }}" class="img-responsive" alt="">
+    <img src="{{ img }}" class="img-responsive" alt="">
   </td>
   <td class="t-desc pb-3 pt-5">
     <div>
@@ -13,40 +13,40 @@
     {% if autoReplenish != null %}
       <div class="mt-3">
 
-      <form class="form-inline mb-5">
-      <div class="form-group has-feedback">
+        <form class="form-inline mb-5">
+          <div class="form-group has-feedback">
 
-        <span class="label label-default label-sm">Auto-replenish</span>
-        <span class="hidden-xs hidden-sm">
+            <span class="label label-default label-sm">Auto-replenish</span>
+            <span class="hidden-xs hidden-sm">
 
-
-        <div class="form-group has-feedback">
-            <div class="dropdown inner-addon right-addon">
-            <span class="lt-icon lt-triangle-down form-control-feedback"></span>
-              <select class="input input-sm form-control form-inline" data-toggle="dropdown">
-
-
-              <option class="input input-sm d-inline-block mr-5">Every 4 weeks</option>
-              <option class="input input-sm d-inline-block mr-5">Every 3 weeks</option>
-                <option class="input input-sm d-inline-block mr-5">Every 2 weeks</option>
-                <option class="input input-sm d-inline-block mr-5">Every 1 weeks</option>
-
-              </select>
+              <div class="form-group has-feedback">
+                <div class="dropdown inner-addon right-addon">
+                  <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+                  <select class="input input-sm form-control form-inline" data-toggle="dropdown">
+                    <option class="input input-sm d-inline-block mr-5">Every 4 weeks</option>
+                    <option class="input input-sm d-inline-block mr-5">Every 3 weeks</option>
+                    <option class="input input-sm d-inline-block mr-5">Every 2 weeks</option>
+                    <option class="input input-sm d-inline-block mr-5">Every 1 weeks</option>
+                  </select>
+                </div>
+              </div>
             </div>
-          </div>
-          </div>
-        </form>
+          </form>
         </span>
       </div>
     {% endif %}
   </td>
   <td class="t-price pb-3 pt-5">
-     {{ price }}
-     <span class="hidden-xs hidden-sm">{{ eachShipment }}</span>
+    {{ price }}
+    <span class="hidden-xs hidden-sm">{{ eachShipment }}</span>
   </td>
   <td class="t-qty text-right pb-3 pt-5">
-    <span class="hidden-xs">{% include components.elements.forms.select %}</span>
+    <span class="hidden-xs">
+      {% include "_includes/elements/forms/input.html.twig" with { 'classes': 'text-right input-sm' } %}
+    </span>
     <small class="visible-xs">1 unit</small>
-    <div class="mt-4 hidden-xs hidden-sm"><a href="#">Remove</a></div>
+    <div class="mt-4 hidden-xs hidden-sm">
+      <a href="#">Remove</a>
+    </div>
   </td>
 </tr>
