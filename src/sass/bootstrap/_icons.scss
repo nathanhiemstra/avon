@@ -63,6 +63,24 @@ html:hover [class^="lt-"] {
   color: $brand-primary;
 }
 
+.lt-refresh:before {
+  content: "\e930";
+}
+.lt-checkbox-on:before {
+  content: "\e92f";
+}
+.lt-checkbox-checkmark:before {
+  content: "\e92e";
+}
+.lt-refresh:before {
+  content: "\e930";
+}
+.lt-pdf:before {
+  content: "\e92d";
+}
+.lt-trash:before {
+  content: "\e92c";
+}
 .lt-bell:before {
   content: "\e901";
 }
@@ -196,6 +214,7 @@ html:hover [class^="lt-"] {
   content: "\e92b";
   color: #ed008c;
 }
+
 
 // lt-plus is a rotated .lt-close
 .lt-plus {
