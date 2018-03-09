@@ -46,8 +46,15 @@ var GlobalSearch = (function () {
         return _constructItemTemplate(suggestion);
       },
       beforeRender: function(container, suggestions) {
-        console.log(container);
-        $(container).append('<a id="all-results-link" class="link-primary border-top">View all results</button>');
+        // only show 'view all results' button if we have suggestions
+        if(suggestions.length) {
+          $(container)
+            .append('<a id="autocomplete-all-results-link" class="link-primary border-top">View all results</button>');
+        } else {
+          $(container)
+            .find('.autocomplete-suggestion:last-of-type')
+            .css('padding-bottom', 0);
+        }
       },
       appendTo: $els.searchContainer,
       maxHeight: 400,
@@ -100,8 +107,9 @@ var GlobalSearch = (function () {
             '<div class="col col-xs-10 col-sm-9 pl-3">' +
               '<p class="title">' + suggestion.value + '</p>' +
               '<p>' +
-                '<span class="sale-price mr-4">' + suggestion.salePrice + '</span>' +
-                '<span class="reg-price small strike-through">Regular Price: ' + suggestion.salePrice + '</span>' +
+                '<!-- DEVELOPER NOTE :: If "Regular price" is not shown here, remove .text-primary to make the price black -->' +
+                '<span class="sale-price text-primary mr-4">' + suggestion.salePrice + '</span>' +
+                '<span class="reg-price small">Regular Price: <span class="strike-through">' + suggestion.regPrice + '</span></span>' +
               '</p>' +
             '</div>' +
           '</div>' +

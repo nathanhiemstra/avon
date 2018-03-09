@@ -16,8 +16,6 @@ $gray-ultralight: lighten($gray-lighter, 2%);
       display: none;
 
       &:focus {
-        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-        -webkit-tap-highlight-color: transparent;  // i.e. Nexus5/Chrome and Kindle Fire HD 7''
         outline: none;
       }
     }
@@ -38,7 +36,6 @@ $gray-ultralight: lighten($gray-lighter, 2%);
     .autocomplete-suggestions {
       // TODO :: bring shadows in this file inline with global shadows
       box-shadow: -4px 4px 4px rgba(0,0,0,0.05), 4px 4px 4px rgba(0,0,0,0.05);
-      padding-bottom: 60px; // accomodates fixed bottom button -- TODO :: move this to global, and add a class with js if autocomplete has 'view-all' link
     }
 
     // mobile only styles for autocomplete
@@ -166,7 +163,7 @@ $gray-ultralight: lighten($gray-lighter, 2%);
       width: 0;
       opacity: 0;
       top: -1px;
-      left: 36px;
+      left: 37px;
       height: calc(100% + 2px);
       border: none;
       border-top: 1px solid transparent;
@@ -290,18 +287,18 @@ $gray-ultralight: lighten($gray-lighter, 2%);
   border-top: none;
   background: $body-bg;
   overflow: auto;
+}
 
-  #all-results-link {
-    position: absolute;
-    bottom: 0;
-    display: block;
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    background-color: white;
-    cursor: pointer;
-  }
+#autocomplete-all-results-link {
+  position: sticky;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
 }
 
 .autocomplete-suggestion {
@@ -351,4 +348,9 @@ $gray-ultralight: lighten($gray-lighter, 2%);
 .autocomplete-group strong {
   display: block;
   border-bottom: 1px solid $table-border-color;
+}
+
+.autocomplete-no-suggestion {
+  text-align: center;
+  padding: $spacing-4;
 }
