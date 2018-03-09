@@ -55,33 +55,29 @@
 
 
 
-
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# COLUMN 12 - Slim #}
+  {# COLUMN 10 - Centered #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Full Width - Slim",
-    slug:         "columns-12-slim",
+    title:        "Column: 10 - Centered",
+    slug:         "columns-10-centered",
     snippet:      '
     <div class="container">
-      <main role="main" class="slim">
-        <div class="container">
-          <p><b>Slim variation of a 12 column layout. Any .container within this layout will have a set max-width.</b></p>
+      <div class="row">
+        <main class="col-md-10 col-md-offset-1">
           <p>' ~ fpo.paragraph ~ '</p>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>'
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
 
-
-
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# COLUMN 9 #}
+  {# COLUMN 9 - Left Aligned #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Column: 9 x (nothing)",
+    title:        "Column: 9 - Left Aligned",
     slug:         "columns-9",
     snippet:      '
     <div class="container">
@@ -95,25 +91,7 @@
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
 
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# COLUMNS 3x9 #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% set styleguideItem = {
-    title:        "Columns: 3x9",
-    slug:         "columns-3-x-9",
-    snippet:      '
-    <div class="container">
-      <div class="row">
-        <aside class="col-md-3" role="complementary">
-          <p>' ~ fpo.paragraph ~ '</p>
-        </aside>
-        <main class="col-md-9" role="main">
-          <p>' ~ fpo.paragraph ~ '</p>
-        </main>
-      </div>
-    </div>'
-  }%}
-  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+  
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -140,7 +118,8 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# COLUMNS 9x3 INSIDE SUPER PANEL #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% set styleguideItem = {
+ {#  TODO: Show after make a demo where you can actually see the grey background. Maybe open in a new window. #}
+ {#  {% set styleguideItem = {
     title:        "Super Panel (Full bleed grey background)",
     slug:         "super-panel",
     snippet:      '
@@ -154,6 +133,27 @@
             <p>' ~ fpo.paragraph ~ '</p>
           </aside>
         </div>
+      </div>
+    </div>'
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %} #}
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMNS 3x9 #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Columns: 3x9",
+    slug:         "columns-3-x-9",
+    snippet:      '
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-3" role="complementary">
+          <p>' ~ fpo.paragraph ~ '</p>
+        </aside>
+        <main class="col-md-9" role="main">
+          <p>' ~ fpo.paragraph ~ '</p>
+        </main>
       </div>
     </div>'
   }%}
