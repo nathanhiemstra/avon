@@ -42,15 +42,15 @@ html:hover [class^="lt-"] {
 }
 
 .lt-large {
-	font-size: $icon-size-lg !important;
+	font-size: $icon-size-lg;
 }
 
 .lt-medium {
-  font-size: $icon-size-md !important;
+  font-size: $icon-size-md;
 }
 
 .lt-small {
-  font-size: $icon-size-sm !important;
+  font-size: $icon-size-sm;
 }
 
 [class^="lt-"].after:before, [class*=" lt-"].after:before {
