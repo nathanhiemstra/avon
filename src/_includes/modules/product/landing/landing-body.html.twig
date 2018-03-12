@@ -1,25 +1,22 @@
-<section class="mb-4 ">
-  <div class="row">
-      <div class="col-sm-7">
-        {% include "_includes/modules/product/list/page-header.html.twig" with {
+<div class="row">
+  <div class="col-sm-8">
+    {% include "_includes/modules/product/list/page-header.html.twig" with {
           title: 'Moisturizers',
           showResultsInfo: false
         } %}
-      </div>
-
-      <div class="col-sm-5 product-list-header--filters">
-
-        <!-- START - FILTER DROPDOWN -->
-        {% include "_includes/modules/product/list/menu-items/filter-dropdown.html.twig" %}
-        <!-- END - FILTER DROPDOWN -->
-
-        <!-- START - SORT DROPDOWN -->
-        {% include "_includes/modules/product/list/menu-items/sort-dropdown.html.twig" %}
-        <!-- END - SORT DROPDOWN -->
-
-      </div>
   </div>
-</section>
 
+  <div class="col-sm-4 vbottom-dt product-list-header--filters">
+
+    <!-- START - FILTER DROPDOWN -->
+    {% include "_includes/modules/product/list/menu-items/filter-dropdown.html.twig" %}
+    <!-- END - FILTER DROPDOWN -->
+
+    <!-- START - SORT DROPDOWN -->
+    {% include "_includes/modules/product/list/menu-items/sort-dropdown.html.twig" %}
+    <!-- END - SORT DROPDOWN -->
+
+  </div>
+</div>
 
 {% include "_includes/modules/product/list/product-list.html.twig" %}
