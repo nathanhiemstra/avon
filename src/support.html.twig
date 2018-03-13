@@ -7,7 +7,7 @@
 
   <div class="container container--page">
 
-    {% embed "_layouts/columns-10-max.html.twig" %}
+    {% embed "_layouts/columns-12.html.twig" %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {# DEFINE BLOCK - MAIN #}
@@ -16,72 +16,44 @@
 
         <h2>Support</h2>
 
-        <div class="row mt-5">
-          <!-- START - ITEM -->
-          <div class="col-sm-6 col-md-4">
-            <a class="thumbnail box-emphasize link-plain">
-              <div class="caption text-center">
-                <p class="m-0">FPO label</p>
-              </div>
-              <img src="images/utility/placeholder.png" alt="...">
-            </a>
-          </div>
-          <!-- END - ITEM -->
+        <div class="row d-flex flex-wrap mt-5">
+          <!-- START - ITEMS -->
+          {% include "_includes/groups/support/support-page-item.html.twig" with {
+            'indexNum': 1,
+            'title': 'Frequently Asked Questions',
+            'imgUrl': 'images/utility/placeholder.png'
+          } %}
 
-          <!-- START - ITEM -->
-          <div class="col-sm-6 col-md-4">
-            <a class="thumbnail box-emphasize link-plain">
-              <div class="caption text-center">
-                <p class="m-0">FPO label</p>
-              </div>
-              <img src="images/utility/placeholder.png" alt="...">
-            </a>
-          </div>
-          <!-- END - ITEM -->
+          {% include "_includes/groups/support/support-page-item.html.twig" with {
+            'indexNum': 2,
+            'title': 'Contact Your Sales Leader',
+            'imgUrl': 'images/utility/placeholder.png'
+          } %}
 
-          <!-- START - ITEM -->
-          <div class="col-sm-6 col-md-4">
-            <a class="thumbnail box-emphasize link-plain">
-              <div class="caption text-center">
-                <p class="m-0">FPO label</p>
-              </div>
-              <img src="images/utility/placeholder.png" alt="...">
-            </a>
-          </div>
-          <!-- END - ITEM -->
+          {% include "_includes/groups/support/support-page-item.html.twig" with {
+            'indexNum': 3,
+            'title': 'Live Chat with Avon',
+            'imgUrl': 'images/utility/placeholder.png'
+          } %}
 
-          <!-- START - ITEM -->
-          <div class="col-sm-6 col-md-4">
-            <a class="thumbnail box-emphasize link-plain">
-              <div class="caption text-center">
-                <p class="m-0">FPO label</p>
-              </div>
-              <img src="images/utility/placeholder.png" alt="...">
-            </a>
-          </div>
-          <!-- END - ITEM -->
+          {% include "_includes/groups/support/support-page-item.html.twig" with {
+            'indexNum': 4,
+            'title': 'Email Avon',
+            'imgUrl': 'images/utility/placeholder.png'
+          } %}
 
-          <!-- START - ITEM -->
-          <div class="col-sm-6 col-md-4">
-            <a class="thumbnail box-emphasize link-plain">
-              <div class="caption text-center">
-                <p class="m-0">FPO label</p>
-              </div>
-              <img src="images/utility/placeholder.png" alt="...">
-            </a>
-          </div>
-          <!-- END - ITEM -->
+          {% include "_includes/groups/support/support-page-item.html.twig" with {
+            'indexNum': 5,
+            'title': 'Call Avon',
+            'imgUrl': 'images/utility/placeholder.png'
+          } %}
 
-          <!-- START - ITEM -->
-          <div class="col-sm-6 col-md-4">
-            <a class="thumbnail box-emphasize link-plain">
-              <div class="caption text-center">
-                <p class="m-0">FPO label</p>
-              </div>
-              <img src="images/utility/placeholder.png" alt="...">
-            </a>
-          </div>
-          <!-- END - ITEM -->
+          {% include "_includes/groups/support/support-page-item.html.twig" with {
+            'indexNum': 6,
+            'title': 'Avon Mailing Address',
+            'imgUrl': 'images/utility/placeholder.png'
+          } %}
+          <!-- END - ITEMS -->
 
         </div>
 
