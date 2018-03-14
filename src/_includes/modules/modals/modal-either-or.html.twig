@@ -1,5 +1,5 @@
 {% extends "_layouts/modal.html.twig" %}
-{% set modalId = 'delete-carts' %}
+{% set modalId = 'blank-modal-either-or' %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - modalHeader #}
@@ -10,7 +10,8 @@
     <span class="sr-only">Close modal</span>
     <span class="lt-icon lt-close lt-large py-1"></span>
   </button>
-  <h4 class="modal-title text-center" id="myModalLabel">DELETE CARTS</h4>
+  <h4 class="modal-title text-center" id="myModalLabel">FPO: Either/Or Modal</h4>
+
 
 {% endblock %}
 
@@ -19,17 +20,14 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
-  <section class="py-5">
-    <!-- Product Details -->
-    <div class="row">
-      <div class="col-md-12 vcenter">
-       <p>
-        {{ fpo.paragraph }}
-       </p>
-      </div>
-    </div>
-    <!-- /.row -->
-  </section>
+
+   <p>
+    {{ fpo.paragraph }}
+   </p>
+   <p>
+    <strong>{{ fpo.sentence }}</strong>
+   </p>
+
 
 {% endblock %}
 
@@ -38,8 +36,15 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalFooter %}
 
-  <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">CANCEL</button>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-default btn-block" data-dismiss="modal" aria-hidden="true">No</button>
+    </div>
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-primary btn-block">Yes</button>
+    </div>
+  </div><!-- /.row -->
+  
 
-  <button type="button" class="btn btn-primary">DELETE CARTS</button>
 
 {% endblock %}
