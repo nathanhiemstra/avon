@@ -35,6 +35,17 @@
       width: 50%;
     }
   }
+
+  .img-responsive {
+    min-width: 80px;
+    max-width: 190px;
+    width: 100%;
+  }
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 // This is for a single box in a group container. Used on Contact Sales Leader page
