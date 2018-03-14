@@ -29,7 +29,7 @@
 
 // Used initially on Support
 .box-group--secondary {
-  // Keep the boxes side by sise in that weird tablet landscape width
+  // Keep the boxes side by side in that weird tablet landscape width
   @media (min-width: 420px) and (max-width: $screen-sm-min) {
     .box-group--item {
       width: 50%;
@@ -74,21 +74,26 @@
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
+    justify-content: center;
 
     .column {
       display: inline-block;
-      width: 50%;
 
-      &:last-of-type {
-        margin-left: auto;
+      &:not(:first-of-type) {
+        margin-left: $spacing-4;
       }
 
       p {
         padding: 0;
         margin: 0;
+        max-width: 160px;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+
+        @media (min-width: $screen-xs-min) {
+          max-width: 100%;
+        }
       }
     }
   }
@@ -106,6 +111,10 @@
     .header {
       text-align: left;
       margin-bottom: $spacing-4;
+    }
+
+    .details {
+      justify-content: flex-start;
     }
   }
 }
