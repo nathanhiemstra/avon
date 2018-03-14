@@ -18,11 +18,11 @@ var YourOrderCartsTab = (function () {
     $els = {
       selectAllCheckbox: $('.list-group--checkboxed .checkbox-select-all :checkbox'),
       carts: $('.list-group--checkboxed .single-cart-item'),
-      checkoutBtn: $('.checkout-order-total .btn'),
+      checkoutBtn: $('.checkout-order-total .btn-checkout'),
       subtotal: $('.checkout-order-total .subtotal'),
       offersTotal: $('.checkout-order-total .offers-total'),
       discountTotal: $('.checkout-order-total .discount'),
-      updateTotalsLink: $('.checkout-order-total .update-totals-link'),
+      updateTotalsBtn: $('.checkout-order-total .update-totals-link'),
       fixedBottomSummary: $('.navbar-fixed-bottom--order-summary')
     };
 
@@ -50,7 +50,7 @@ var YourOrderCartsTab = (function () {
       _toggleUpdateTotals();
     });
 
-    $els.updateTotalsLink.on('click', function () {
+    $els.updateTotalsBtn.on('click', function () {
       totalsOff = false;
       _updateCheckoutTotals();
       _toggleUpdateTotals();
@@ -64,12 +64,23 @@ var YourOrderCartsTab = (function () {
 
   var _toggleUpdateTotals = function () {
     if (totalsOff) {
+      // hide checkout button
+      $els.checkoutBtn.addClass('out').removeClass('in');
       // show update link
-      $els.updateTotalsLink.removeClass('out').addClass('in');
+      $els.checkoutBtn.on('transitionend',function() {
+        $(this).addClass('hide');
+        $els.updateTotalsBtn.removeClass('hide out').addClass('in');
+      });
       _zeroOutTotals();
     } else {
       // hide update link
-      $els.updateTotalsLink.addClass('out').removeClass('in');
+      $els.updateTotalsBtn.addClass('out').removeClass('in');
+      // show checkout button
+      $els.updateTotalsBtn.on('transitionend',function() {
+        $(this).addClass('hide');
+        $els.checkoutBtn.removeClass('hide out').addClass('in');
+      });
+      // $els.checkoutBtn.removeClass('out').addClass('in');
     }
   };
 
@@ -125,9 +136,9 @@ var YourOrderCartsTab = (function () {
   };
 
   var _zeroOutTotals = function () {
-    $els.subtotal.html('$-');
-    $els.offersTotal.html('$-');
-    $els.discountTotal.html('$-');
+    $els.subtotal.html('$&mdash;.&mdash;');
+    $els.offersTotal.html('$&mdash;.&mdash;');
+    $els.discountTotal.html('$&mdash;.&mdash;');
 
     totalsOff = true;
   };
