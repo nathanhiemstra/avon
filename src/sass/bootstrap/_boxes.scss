@@ -27,6 +27,16 @@
   }
 }
 
+// Used initially on Support
+.box-group--secondary {
+  // Keep the boxes side by sise in that weird tablet landscape width
+  @media (min-width: 420px) and (max-width: $screen-sm-min) {
+    .box-group--item {
+      width: 50%;
+    }
+  }
+}
+
 // This is for a single box in a group container. Used on Contact Sales Leader page
 .box-group--single {
   display: flex;
@@ -66,11 +76,10 @@
         padding: 0;
         margin: 0;
         text-overflow: ellipsis;
-      	white-space: nowrap;
-      	overflow: hidden;
+        white-space: nowrap;
+        overflow: hidden;
       }
     }
-
   }
 
   // desktop
@@ -88,5 +97,4 @@
       margin-bottom: $spacing-4;
     }
   }
-
 }
