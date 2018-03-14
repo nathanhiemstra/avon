@@ -14,6 +14,7 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
+        {% include "_includes/groups/navigation/back-link.twig" with {label: "Back"} %}
         <h1>10 Columns - Centered</h1>
         <p style="margin-bottom: 400px">{{ fpo.paragraph }} {{ fpo.paragraph }}</p>
 
