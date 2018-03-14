@@ -62,6 +62,9 @@ html:hover [class^="lt-"] {
   color: $brand-primary;
 }
 
+.lt-checkbox-minus:before {
+  content: "\e931";
+}
 .lt-refresh:before {
   content: "\e930";
 }
