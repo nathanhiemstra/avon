@@ -22,7 +22,8 @@ var YourOrderCartsTab = (function () {
       subtotal: $('.checkout-order-total .subtotal'),
       offersTotal: $('.checkout-order-total .offers-total'),
       discountTotal: $('.checkout-order-total .discount'),
-      updateTotalsBtn: $('.checkout-order-total .update-totals-link'),
+      cartsMessaging: $('.checkout-order-total .carts-messaging'),
+      refreshOrderBtn: $('.checkout-order-total .update-totals-link'),
       fixedBottomSummary: $('.navbar-fixed-bottom--order-summary')
     };
 
@@ -50,7 +51,7 @@ var YourOrderCartsTab = (function () {
       _toggleUpdateTotals();
     });
 
-    $els.updateTotalsBtn.on('click', function () {
+    $els.refreshOrderBtn.on('click', function () {
       totalsOff = false;
       _updateCheckoutTotals();
       _toggleUpdateTotals();
@@ -66,21 +67,22 @@ var YourOrderCartsTab = (function () {
     if (totalsOff) {
       // hide checkout button
       $els.checkoutBtn.addClass('out').removeClass('in');
-      // show update link
+      // show 'refresh order' button
       $els.checkoutBtn.on('transitionend',function() {
         $(this).addClass('hide');
-        $els.updateTotalsBtn.removeClass('hide out').addClass('in');
+        $els.refreshOrderBtn.removeClass('hide out').addClass('in');
+        $els.cartsMessaging.removeClass('hide out').addClass('in');
       });
       _zeroOutTotals();
     } else {
-      // hide update link
-      $els.updateTotalsBtn.addClass('out').removeClass('in');
+      // hide 'refresh order' button
+      $els.refreshOrderBtn.addClass('out').removeClass('in');
+      $els.cartsMessaging.addClass('out').removeClass('in');
       // show checkout button
-      $els.updateTotalsBtn.on('transitionend',function() {
+      $els.refreshOrderBtn.on('transitionend',function() {
         $(this).addClass('hide');
         $els.checkoutBtn.removeClass('hide out').addClass('in');
       });
-      // $els.checkoutBtn.removeClass('out').addClass('in');
     }
   };
 
