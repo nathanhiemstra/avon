@@ -1,0 +1,189 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+  <section class="container container--page">
+  	{% embed layouts.columns3x9 %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - ASIDE #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block aside %}
+
+        <h5>MY ACCOUNT</h5>
+        <ul class="nav nav-pills nav-stacked">
+        	<li class="active"><a href="#">Profile</a></li>
+        	<li><a href="#">Password</a></li>
+        	<li><a href="#">Account Balance</a></li>
+        	<li><a href="#">Pay Avon</a></li>
+        	<li><a href="#">Get Paid by Avon</a></li>
+        </ul>
+
+      {% endblock %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        <h2 class="mb-5">My Profile</h2>
+        <!-- Name and Address section-->
+        <div class="border-top pt-4 mb-5">
+        	<h4 class="mb-4">NAME &amp; ADDRESS</h4>
+        	<dl class="row my-5">
+		        <dt class="col-md-3">NAME</dt>
+		        <dd class="col-md-9 text-left">Janet Johnson</dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">HOME/BILLING ADDRESS</dt>
+		        <dd class="col-md-9 text-left">9072 Rialto St <br>Napls, FL 34113</dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">SHIPPING ADDRESS</dt>
+		        <dd class="col-md-9 text-left">9072 Rialto St <br>Napls, FL 34113</dd>
+		    </dl>
+		    <button class="btn btn-primary" data-toggle="modal" data-target="#requestchange">
+			  REQUEST CHANGE
+			</button>
+			{# MODAL - Request Change #}
+  			{% include "_includes/modules/profile/request-change.html.twig" %} 
+        </div>
+		
+		<!--Profile Picture section-->
+        <div class="border-top pt-4 mb-5">
+        	<h4 class="mb-4">PROFILE PICTURE</h4>
+        	<h1>FPO</h1>
+        </div>
+
+        <!--Contact Information section-->
+        <div class="border-top pt-4 mb-5">
+        	<h4 class="mb-4">CONTACT INFORMATION</h4>
+        	<dl class="row my-5">
+		        <dt class="col-md-3">NICKNAME</dt>
+		        <dd class="col-md-9 text-left">
+		        	 Janet Jo <input value="Janet Joe">
+		        </dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">EMAIL ADDRESS</dt>
+		        <dd class="col-md-9 text-left">janet.johnson@aol.com <input value="janet.johnson@aol.com"></dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">HOME/CELL PHONE</dt>
+		        <dd class="col-md-9 text-left">(513) 123-4567 <input value="(513) 123-4567"></dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">BUSINESS/CELL PHONE</dt>
+		        <dd class="col-md-9 text-left">(513) 123-8901 <input value="(513) 123-8901"></dd>
+		    </dl>
+		    <button class="btn btn-primary">
+			  EDIT
+			</button>
+        </div>
+
+        <!--Representative section-->
+        <div class="border-top pt-4 mb-5">
+        	<h4 class="mb-4">REPRESENTATIVE ID</h4>
+        	<dl class="row my-5">
+		        <dt class="col-md-3">DISTRICT NUMBER</dt>
+		        <dd class="col-md-9 text-left">5999</dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">ACCOUNT NUMBER</dt>
+		        <dd class="col-md-9 text-left">45619986</dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">PAY BY CHECK</dt>
+		        <dd class="col-md-9 text-left">Yes</dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">AVON ANNIVERSARY</dt>
+		        <dd class="col-md-9 text-left">NOV 12, 1999</dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">INSTANT CREDIT</dt>
+		        <dd class="col-md-9 text-left">Yes</dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">LEADERSHIP LEVEL</dt>
+		        <dd class="col-md-9 text-left">Silver Leader</dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">SALES LEVEL</dt>
+		        <dd class="col-md-9 text-left">David H. McConnell Club</dd>
+		    </dl>
+        </div>
+
+        <!--Settings section-->
+        <div class="border-top pt-4 mb-5">
+        	<h4 class="mb-4">SETTINGS</h4>
+        	<dl class="row my-5">
+		        <dt class="col-md-3">LANGUAGE PREFERENCE</dt>
+		        <dd class="col-md-9 text-left clearfix">
+			        {% include components.elements.forms.radio with {id: 'language-1', name: 'language', classes: 'pull-left my-2 mr-4', theValue: 'English', theLabel: 'English', checked: true} %}
+
+			        {% include components.elements.forms.radio with {id: 'language-2', name: 'language', classes: 'pull-left my-2', theValue: 'Language-2', theLabel: 'Language-2', checked: false} %}
+		    </dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">PUBLICITY RELESE <a href="#" data-toggle="modal" data-target="#learnmore">Learn More</a></dt>
+		        <dd class="col-md-9 text-left">
+		        	{% include components.elements.forms.radio with {id: 'relese-yes', name: 'publicity-relese', classes: 'pull-left my-2 mr-4', theValue: 'Yes', theLabel: 'Yes', checked: true} %}
+
+		        	{% include components.elements.forms.radio with {id: 'relese-no', name: 'publicity-relese', classes: 'pull-left my-2', theValue: 'No', theLabel: 'No', checked: false} %}
+		        </dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">PAPERLESS INVOICE <a href="#" data-toggle="modal" data-target="#learnmore">Learn More</a></dt>
+		        <dd class="col-md-9 text-left">
+		        	{% include components.elements.forms.radio with {id: 'paperless-invoice-yes', name: 'paperless-invoice', classes: 'pull-left my-2 mr-4', theValue: 'Yes', theLabel: 'Yes', checked: true} %}
+
+		        	{% include components.elements.forms.radio with {id: 'paperless-invoice-no', name: 'paperless-invoice', classes: 'pull-left my-2', theValue: 'No', theLabel: 'No', checked: false} %}
+		        </dd>
+		    </dl>
+		    <button class="btn btn-primary">
+			  EDIT
+			</button>
+        </div>
+
+        <!--Programs section-->
+        <div class="border-top pt-4 mb-5">
+        	<h4 class="mb-4">PROGRAMS</h4>
+        	<dl class="row my-5">
+		        <dt class="col-md-3">FACEBOOK ACCOUNT <a href="#" data-toggle="modal" data-target="#learnmore">Learn More</a></dt>
+		        <dd class="col-md-9 text-left"><a href="#" class="btn btn-primary" target="_blank">Connect</a></dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">EMAIL PREFERENCES <a href="#" data-toggle="modal" data-target="#learnmore">Learn More</a></dt>
+		        <dd class="col-md-9 text-left"><a href="#" class="btn btn-primary" target="_blank">Open</a></dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">SMS PREFERENCES <a href="#" data-toggle="modal" data-target="#learnmore">Learn More</a></dt>
+		        <dd class="col-md-9 text-left"><a href="#" class="btn btn-primary" target="_blank">Open</a></dd>
+		    </dl>
+		    <dl class="row my-5">
+		        <dt class="col-md-3">LET NEW CUSTOMERS FIND ME <br> <a href="#" data-toggle="modal" data-target="#learnmore">Learn More</a></dt>
+		        <dd class="col-md-9 text-left"><a href="#" class="btn btn-primary">Enroll Now</a></dd>
+		    </dl>
+        </div>
+        
+        {# MODAL - Learn More common modal #}
+  		{% include "_includes/modules/profile/learn-more.html.twig" %} 
+
+      {% endblock %}
+
+    {% endembed %}
+  </section>
+
+  {% endblock %}
+
+
+{% endblock %}
