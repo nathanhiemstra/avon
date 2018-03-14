@@ -62,7 +62,7 @@
   }
 
   .content {
-    width: 100%;
+    width: auto;
   }
 
   .header {
@@ -86,12 +86,16 @@
       p {
         padding: 0;
         margin: 0;
-        max-width: 160px;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+        max-width: 125px;
 
         @media (min-width: $screen-xs-min) {
+          max-width: 175px;
+        }
+
+        @media (min-width: $screen-sm-min) {
           max-width: 100%;
         }
       }
@@ -99,7 +103,7 @@
   }
 
   // desktop
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: $screen-xs-min) {
     flex-wrap: nowrap;
 
     .img {
