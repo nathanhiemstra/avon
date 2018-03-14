@@ -1,0 +1,45 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'delete-carts' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+  <h4 class="modal-title text-center" id="myModalLabel">DELETE CARTS</h4>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+  <section class="py-5">
+    <!-- Product Details -->
+    <div class="row">
+      <div class="col-md-12 vcenter">
+       <p>
+        {{ fpo.paragraph }}
+       </p>
+      </div>
+    </div>
+    <!-- /.row -->
+  </section>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">CANCEL</button>
+
+  <button type="button" class="btn btn-primary">DELETE CARTS</button>
+
+{% endblock %}
