@@ -1,0 +1,72 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="container container--page">
+
+    {% embed "_layouts/columns-8-max.html.twig" %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        {% include "_includes/groups/navigation/back-link.twig" with {label: "Support"} %}
+
+        <h2>Contact My Sales Leader</h2>
+
+        <section class="mt-5">
+
+          <div class="mt-5 p-5 box-emphasize box-group--single">
+
+            <!-- START - IMAGE -->
+            <div class="img">
+              <img src="images/utility/placeholder_thumb.png" alt="..." class="circular-img circular-img--lg">
+            </div>
+            <!-- END - IMAGE -->
+
+            <!-- START - CONTENT -->
+            <div class="p-0 p-sm-4 content">
+
+              <!-- START - HEADER -->
+              <div class="header">
+                <h5 class="text-capitalize mt-0 mb-2">Lydia Washington</h5>
+                <p class="text-muted">Issaquah, WA</p>
+              </div>
+              <!-- END - HEADER -->
+
+              <!-- START - DETAILS -->
+              <div class="details">
+
+                <div class="column small">
+                  <p class="mt-2"><strong>With Avon Since:</strong></p>
+                  <p class="mt-2"><strong>Email:</strong></p>
+                  <p class="mt-2"><strong>Phone Number:</strong></p>
+                </div>
+
+                <div class="column small">
+                  <p class="mt-2">Nov 16, 2000</p>
+                  <p class="mt-2"><a href="#">lydiawashington@gmail.com</a></p>
+                  <p class="mt-2"><a href="#">(555) 555-1234</a></p>
+                </div>
+
+              </div>
+              <!-- END - DETAILS -->
+
+            </div>
+            <!-- END - CONTENT -->
+
+          </div>
+
+        </section>
+
+      {% endblock %}
+
+    {% endembed %}
+
+  </div>
+
+{% endblock %}

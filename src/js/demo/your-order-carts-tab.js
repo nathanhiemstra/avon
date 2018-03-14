@@ -18,11 +18,12 @@ var YourOrderCartsTab = (function () {
     $els = {
       selectAllCheckbox: $('.list-group--checkboxed .checkbox-select-all :checkbox'),
       carts: $('.list-group--checkboxed .single-cart-item'),
-      checkoutBtn: $('.checkout-order-total .btn'),
+      checkoutBtn: $('.checkout-order-total .btn-checkout'),
       subtotal: $('.checkout-order-total .subtotal'),
       offersTotal: $('.checkout-order-total .offers-total'),
       discountTotal: $('.checkout-order-total .discount'),
-      updateTotalsLink: $('.checkout-order-total .update-totals-link'),
+      cartsMessaging: $('.checkout-order-total .carts-messaging'),
+      refreshOrderBtn: $('.checkout-order-total .update-totals-link'),
       fixedBottomSummary: $('.navbar-fixed-bottom--order-summary')
     };
 
@@ -50,7 +51,7 @@ var YourOrderCartsTab = (function () {
       _toggleUpdateTotals();
     });
 
-    $els.updateTotalsLink.on('click', function () {
+    $els.refreshOrderBtn.on('click', function () {
       totalsOff = false;
       _updateCheckoutTotals();
       _toggleUpdateTotals();
@@ -64,12 +65,24 @@ var YourOrderCartsTab = (function () {
 
   var _toggleUpdateTotals = function () {
     if (totalsOff) {
-      // show update link
-      $els.updateTotalsLink.removeClass('out').addClass('in');
+      // hide checkout button
+      $els.checkoutBtn.addClass('out').removeClass('in');
+      // show 'refresh order' button
+      $els.checkoutBtn.on('transitionend',function() {
+        $(this).addClass('hide');
+        $els.refreshOrderBtn.removeClass('hide out').addClass('in');
+        $els.cartsMessaging.removeClass('hide out').addClass('in');
+      });
       _zeroOutTotals();
     } else {
-      // hide update link
-      $els.updateTotalsLink.addClass('out').removeClass('in');
+      // hide 'refresh order' button
+      $els.refreshOrderBtn.addClass('out').removeClass('in');
+      $els.cartsMessaging.addClass('out').removeClass('in');
+      // show checkout button
+      $els.refreshOrderBtn.on('transitionend',function() {
+        $(this).addClass('hide');
+        $els.checkoutBtn.removeClass('hide out').addClass('in');
+      });
     }
   };
 
@@ -125,9 +138,9 @@ var YourOrderCartsTab = (function () {
   };
 
   var _zeroOutTotals = function () {
-    $els.subtotal.html('$-');
-    $els.offersTotal.html('$-');
-    $els.discountTotal.html('$-');
+    $els.subtotal.html('$&mdash;.&mdash;');
+    $els.offersTotal.html('$&mdash;.&mdash;');
+    $els.discountTotal.html('$&mdash;.&mdash;');
 
     totalsOff = true;
   };

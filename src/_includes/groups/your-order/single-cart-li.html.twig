@@ -1,7 +1,9 @@
 <li class="list-group-item single-cart-item box-emphasize my-4">
 
   <!-- START - CHECKBOX -->
-  {% include "_includes/elements/forms/checkbox.html.twig" with {checked: true, classes: "mt-1"} %}
+  {% if includeCheckbox is not defined or includeCheckbox == true  %}
+    {% include "_includes/elements/forms/checkbox.html.twig" with {checked: true, classes: "mt-1"} %}
+  {% endif %}
   <!-- END - CHECKBOX -->
 
   <!-- START - CART SUMMARY -->
@@ -17,7 +19,9 @@
 
   <dl class="clearfix ml-5 my-3 mr-0">
     <dd class="pull-left small text-muted">{{ itemCount }} items</dd>
-    <dd class="pull-right cart-discount small text-muted" data-discount="45.55">Discount: $45.55</dd>
+    <dd class="pull-right cart-delete small text-muted">
+      <a href="javascript:void(0);" class="link-muted underline" data-toggle="modal" data-target="#delete-carts">Delete</a>
+    </dd>
   </dl>
   <!-- END - CART SUMMARY -->
 
