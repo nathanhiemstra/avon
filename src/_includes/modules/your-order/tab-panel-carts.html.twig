@@ -34,5 +34,8 @@
 </ul>
 
 <div class="border-top py-4">
-  <a class="link-primary"><span class="lt-icon lt-trash lt-medium mr-2"></span>Delete selected carts</a>
+  <a class="link-primary" data-toggle="modal" data-target="#delete-carts"><span class="lt-icon lt-trash lt-medium mr-2"></span>Delete selected carts</a>
+  
+  {# MODAL - Delete Carts modal #}
+  {% include "_includes/modules/your-order/delete-cart-modal.html.twig" %}
 </div>
