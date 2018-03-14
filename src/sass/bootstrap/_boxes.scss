@@ -26,3 +26,13 @@
     background-color: $body-bg;
   }
 }
+
+// Used initially on Support
+.box-group--secondary {
+  // Keep the boxes side by sise in that weird tablet landscape width
+  @media (min-width: 420px) and (max-width: $screen-sm-min) {
+    .box-group--item {
+      width: 50%;
+    }
+  }
+}
