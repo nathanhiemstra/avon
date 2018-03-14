@@ -109,7 +109,7 @@ var GlobalSearch = (function () {
               '<p>' +
                 '<!-- DEVELOPER NOTE :: If "Regular price" is not shown here, remove .text-primary to make the price black -->' +
                 '<span class="sale-price text-primary mr-4">' + suggestion.salePrice + '</span>' +
-                '<span class="reg-price small">Regular Price: <span class="strike-through">' + suggestion.regPrice + '</span></span>' +
+                '<span class="reg-price small text-muted">Regular Price: <span class="strike-through">' + suggestion.regPrice + '</span></span>' +
               '</p>' +
             '</div>' +
           '</div>' +
