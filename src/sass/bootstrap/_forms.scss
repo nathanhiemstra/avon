@@ -418,6 +418,10 @@ input[type="checkbox"] {
   font-size: 7px;
   top: 3px;
   left: 2px;
+
+  &.indeterminate {
+    left: 3px;
+  }
 }
 
 .radio span i {

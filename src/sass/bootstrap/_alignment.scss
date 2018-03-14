@@ -5,6 +5,15 @@
    float: none;
 }
 
+// align bottom on desktop only
+.vbottom-dt {
+  @media (min-width: $screen-sm-min) {
+    display: table-cell;
+    float: none;
+    vertical-align: bottom;
+  }
+}
+
 // vertical align reset - Use to disable any default vertical-align
 .vunset {
   vertical-align: unset !important;
