@@ -117,7 +117,7 @@ $font-size-h7-desktop: ceil($font-size-base * 0.83333) !default; // 12px
 // 12px
 
 //** Unit-less `line-height` for use in components like buttons.
-$line-height-base: 1.42857 !default;
+$line-height-base: 1.6 !default;
 
 // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
@@ -173,10 +173,10 @@ $padding-small-horizontal: 10px !default;
 $padding-xs-vertical: 2px !default;
 $padding-xs-horizontal: 5px !default;
 
-$line-height-large: 1.33333 !default;
+$line-height-large: 2 !default;
 
 // extra decimals for Win 8.1 Chrome
-$line-height-small: 1.5 !default;
+$line-height-small: 1.385 !default;
 
 // $border-radius-base: 4px !default;
 // $border-radius-large: 6px !default;
