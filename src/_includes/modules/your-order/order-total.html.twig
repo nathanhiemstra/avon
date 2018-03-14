@@ -20,14 +20,13 @@
     </dl>
     <p class="text-center small text-muted p-3"><i>Shipping and taxes will be calculated during the checkout process</i></p>
 
-    <a href="#" class="btn btn-primary btn-lg btn-block mb-3" role="button">{{ btnText }}</a>
+    <a href="#" class="btn btn-primary btn-checkout btn-lg btn-block mb-3 fade in" role="button">{{ btnText }}</a>
 
     {% if not isPopover %}
-      <p class="update-totals-link text-center reverse-bg fade out p-3">
-        <a href="javascript:void(0)">
-          <strong><span class="lt-icon lt-refresh lt-medium pr-1"></span>Update Total
-        </a></strong> to apply changes
+      <p class="update-totals-link fade out">
+        <button class="btn btn-default btn-lg btn-block"><span class="lt-icon lt-refresh lt-medium mr-2"></span>Refresh Order</button>
       </p>
+      <p class="carts-messaging fade out">{{ fpo.sentence }}</p>
     {% endif %}
 
   </div>
