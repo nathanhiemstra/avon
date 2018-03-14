@@ -36,3 +36,65 @@
     }
   }
 }
+
+// This is for a single box in a group container. Used on Contact Sales Leader page
+.box-group--single {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  .img {
+    padding: 0;
+    margin-bottom: $spacing-5;
+    margin-right: 0;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: $spacing-5;
+  }
+
+  .details {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+
+    .column {
+      display: inline-block;
+      width: 50%;
+
+      &:last-of-type {
+        margin-left: auto;
+      }
+
+      p {
+        padding: 0;
+        margin: 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+
+  // desktop
+  @media (min-width: $screen-sm-min) {
+    flex-wrap: nowrap;
+
+    .img {
+      padding: $spacing-4;
+      margin-bottom: 0;
+      margin-right: $spacing-4;
+    }
+
+    .header {
+      text-align: left;
+      margin-bottom: $spacing-4;
+    }
+  }
+}
