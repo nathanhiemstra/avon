@@ -30,9 +30,13 @@
 
 // Used initially on Support
 .box-group--secondary {
-  // Keep the boxes side by side in that weird tablet landscape width
-  @media (min-width: 420px) and (max-width: $screen-sm-min) {
-    .box-group--item {
+  .box-group--item {
+    // full width for mobile
+    @media (max-width: $screen-sm-min) {
+        width: 100%;
+    }
+    // Keep the boxes side by side in that weird tablet landscape width
+    @media (min-width: 420px) and (max-width: $screen-sm-min) {
       width: 50%;
     }
   }
