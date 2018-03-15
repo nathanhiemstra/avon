@@ -97,12 +97,16 @@
         max-width: 135px;
 
         // custom queries for text truncation
+        @media (max-width: 400px) {
+          max-width: 120px;
+        }
+
         @media (min-width: 400px) {
-          max-width: 230px;
+          max-width: 210px;
         }
 
         @media (min-width: $screen-xs-min) {
-          max-width: 150px;
+          max-width: 120px;
         }
 
         @media (min-width: 550px) {
