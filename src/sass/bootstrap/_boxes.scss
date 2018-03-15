@@ -13,16 +13,19 @@
   flex-wrap: wrap;
   justify-content: center;
 
+  // Margins are to compensate for the margin of the boxes, so the borders of the boxes will go will width of container
+  margin-left: -15px;
+  margin-right: -15px;
+
   .box-group--pair {
-    width: 460px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .box-group--item {
-    height: 200px;
-    width: 200px;
+    height: 262px;
+    width: 262px;
     margin: 15px;
     background-color: $body-bg;
   }
@@ -33,8 +36,9 @@
   .box-group--item {
     // full width for mobile
     @media (max-width: $screen-sm-min) {
-        width: 100%;
+      width: 100%;
     }
+
     // Keep the boxes side by side in that weird tablet landscape width
     @media (min-width: 420px) and (max-width: $screen-sm-min) {
       width: 50%;
