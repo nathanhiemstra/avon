@@ -1,4 +1,5 @@
 // Box style with rounded corners and a slight drop shadow
+
 .box-emphasize {
   @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
 
@@ -89,13 +90,22 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        max-width: 125px;
+        max-width: 135px;
+
+        // custom queries for text truncation
+        @media (min-width: 400px) {
+          max-width: 230px;
+        }
 
         @media (min-width: $screen-xs-min) {
           max-width: 150px;
         }
 
-        @media (min-width: $screen-sm-min) {
+        @media (min-width: 550px) {
+          max-width: 200px;
+        }
+
+        @media (min-width: 600px) {
           max-width: 100%;
         }
       }
