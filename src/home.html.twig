@@ -58,12 +58,35 @@
     <!-- START - GREY BACKGROUND SECTION -->
     <section class="reverse-bg">
       <div class="container">
+        <section id="carousel-widgets-from-avon" class="carousel slide" data-ride="carousel">
 
+          <!-- START - INDICATORS -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-widgets-from-avon" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-widgets-from-avon" data-slide-to="1"></li>
+            <li data-target="#carousel-widgets-from-avon" data-slide-to="2"></li>
+          </ol>
+          <!-- END - INDICATORS -->
+
+          <!-- START - WRAPPER FOR SLIDES -->
+          <div class="carousel-inner">
         
-        {% include "_includes/modules/home/boxes-primary-home-from-avon.html.twig" %}
-    {#     {% include "_includes/modules/home/boxes-primary-home-just-for-you.html.twig" %} #}
+            {% include "_includes/modules/home/boxes-primary-home-from-avon.html.twig" %}
+            {# {% include "_includes/modules/home/boxes-primary-home-just-for-you.html.twig" %} #}
 
+          </div>
+          <!-- END - WRAPPER FOR SLIDES -->
 
+          <!-- START - CONTROLS -->
+          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="lt-icon lt-carat-left lt-medium"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="lt-icon lt-carat-right lt-medium"></span>
+          </a>
+          <!-- END - CONTROLS -->
+
+        </section>
       </div><!-- /.container -->
     </section>
     <!-- END - GREY BACKGROUND SECTION -->
@@ -81,6 +104,37 @@
     </section>
     <!-- END - WHITE BACKGROUND SECTION -->
 
+
+{# <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+       <img src="images/fpo/home/1.png" alt="FPO image">
+    </div>
+    <div class="item">
+       <img src="images/fpo/home/2.png" alt="FPO image">
+    </div>
+    <div class="item">
+       <img src="images/fpo/home/3.png" alt="FPO image">
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="lt-icon lt-carat-left lt-medium">aa</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="lt-icon lt-carat-right lt-medium">aa</span>
+  </a>
+</div> #}
 
 
 
