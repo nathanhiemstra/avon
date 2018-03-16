@@ -229,15 +229,27 @@ html:hover [class^="lt-"] {
 .badged-icon {
   position: relative;
 
+  &:not(.badge-align--right) {
+    &.badge {
+      left: 50%;
+    }
+  }
+  .badge--align-right {
+    &.badge {
+      right: -42%;
+    }
+  }
+
   .badge {
     position: absolute;
-    top: -3px;
-    left: 50%;
+    top: -6px;
     padding: 3px 6px;
     font-family: $font-family-base;
     font-size: $font-size-small;
     height: $font-size-large;
+
   }
+
 }
 
 // Social icons and social icons list
