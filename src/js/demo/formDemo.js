@@ -21,7 +21,7 @@ var FormDemo = (function () {
       itemEntryAdd: $('#itemEntryAdd'),
       itemEntryContent: $('#drawer-item-entry .drawer-content'),
       itemEntryList: $('.item-entry-content--list'),
-      itemEntryAddAllBtns: $('.item-entry-total .btn').add('#itemEntryAddAll')
+      // itemEntryAddAllBtns: $('.item-entry-total').find('.btn').add('#itemEntryAddAll')
     };
 
     itemEntryObj = {
@@ -58,17 +58,11 @@ var FormDemo = (function () {
       $(this).addClass('btn-primary');
     });
 
-    $els.itemEntryAddAllBtns.on('click', function() {
-      $('html').toggleClass('drawer-open');
-      $els.itemEntryDrawer.toggleClass('drawer-expanded');
-      $els.drawerBackdrop.toggleClass('fade').toggleClass('in');
-
-      // show alert message demo
-      // $('#global-alert-msg').removeClass('collapsed');
-      // setTimeout(function() {
-      //   $('#global-alert-msg').addClass('collapsed');
-      // }, 5000);
-    });
+    // $els.itemEntryAddAllBtns.on('click', function() {
+    //   $('html').toggleClass('drawer-open');
+    //   $els.itemEntryDrawer.toggleClass('drawer-expanded');
+    //   $els.drawerBackdrop.toggleClass('fade').toggleClass('in');
+    // });
 
   };
 
@@ -110,7 +104,7 @@ var FormDemo = (function () {
     });
     if(!hasUndefined) {
       $els.itemEntryAdd.prop('disabled', false);
-      $els.itemEntryAddAllBtns.prop('disabled', false);
+      // $els.itemEntryAddAllBtns.prop('disabled', false);
     }
   };
 

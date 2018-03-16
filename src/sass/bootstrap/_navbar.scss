@@ -165,16 +165,16 @@
 .navbar-fixed-bottom {
     bottom: 0;
     margin-bottom: 0;
+    box-shadow: $box-shadow;
 
     // override .navbar defaults
     border-width: 1px 0 0;
 }
 
-// customize our order summary navbar
-.navbar-fixed-bottom--order-summary {
+// Note: fixed bottom auto height is used in conjunction with js to calculate appropriate
+// body padding - Used initially for Your Order Carts tab buttons on mobile
+.navbar-fixed-bottom--auto-height {
     height: auto;
-    min-height: 100px;
-    box-shadow: $box-shadow;
 }
 
 // Brand/project name

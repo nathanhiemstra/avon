@@ -1,5 +1,11 @@
 <ul class="list-group list-group--checkboxed pt-3 mb-4">
 
+  <div id="carts-summary-container-mobile">
+
+    <!-- NOTE :: Cart summary information is moved here with js on small screens -->
+
+  </div>
+
   <li class="list-group-item list-group-item-checkbox">
     {% include "_includes/elements/forms/checkbox.html.twig" with {classes: 'checkbox-select-all', theLabel: 'Select Carts for Checkout', checked: true} %}
   </li>
@@ -34,7 +40,7 @@
 </ul>
 
 <!-- START - MODAL CONTENT -->
-{% include "_includes/modules/modals/modal-either-or.html.twig" %} 
+{% include "_includes/modules/modals/modal-either-or.html.twig" %}
 <!-- END - MODAL CONTENT -->
 
 {#<div class="border-top py-4">
