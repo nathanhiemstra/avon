@@ -2,41 +2,61 @@
   {% set btnText = 'Checkout' %}
 {% endif %}
 <!-- START - ORDER TOTAL -->
-<section class="checkout-order-total">
+<section class="checkout-order-total invisible">
   {# add classes to hide if it's not the cart popover #}
-  <div class="{% if not isPopover %} hidden-xs hidden-sm {% endif %}">
-    <h3 class="h-utility text-center">Total</h3>
-    <dl class="clearfix border-bottom pb-3 mb-3">
-      <dt class="pull-left label-utility text-primary">Order total</dt>
-      <dd class="pull-right subtotal text-primary">$90.00</dd>
-    </dl>
-    <dl class="clearfix border-bottom pb-3 mb-3">
-      <dt class="pull-left label-utility">Total with offers</dt>
-      <dd class="pull-right offers-total">$80.00</dd>
-    </dl>
-    <dl class="clearfix border-bottom pb-3 mb-3">
-      <dt class="pull-left label-utility">Discount</dt>
-      <dd class="pull-right discount">$10.00</dd>
-    </dl>
-    <p class="text-center small text-muted p-3"><i>Shipping and taxes will be calculated during the checkout process</i></p>
+  <div id="carts-summary-container-dt" class="{% if not isPopover %} hidden-xs hidden-sm {% endif %}">
 
-    <div class="alert alert-promo small mb-4 p-3">
-      <strong>Buy $9.99 more to get an extra discount applied to this order!</strong>
+    <h3 class="h-utility text-center">Total</h3>
+
+    <div id="carts-details" class="mt-3 mt-md-5">
+
+      <dl class="clearfix border-bottom pb-3 mb-3">
+        <dt class="pull-left label-utility text-primary">Order total</dt>
+        <dd class="pull-right subtotal text-primary">$90.00</dd>
+      </dl>
+      <dl class="clearfix border-bottom pb-3 mb-3">
+        <dt class="pull-left label-utility">Total with offers</dt>
+        <dd class="pull-right offers-total">$80.00</dd>
+      </dl>
+      <dl class="clearfix border-bottom pb-3 mb-3">
+        <dt class="pull-left label-utility">Discount</dt>
+        <dd class="pull-right discount">$10.00</dd>
+      </dl>
+
+      <p class="text-center small text-muted p-3"><i>Shipping and taxes will be calculated during the checkout process</i></p>
+
+      <div id="carts-promo-alert" class="alert alert-promo small mb-4 p-3 fade in">
+        <strong>Buy $9.99 more to get an extra discount applied to this order!</strong>
+      </div>
+
+      <div id="carts-refresh-alert" class="alert alert-promo--abs-icon small mb-4 p-3 fade out hidden">
+        <strong><span class="lt-icon lt-info lt-medium align-middle mr-2"></span><span class="align-middle">[Message that explains why the user need to refresh to view their order totals]</span></strong>
+      </div>
+
     </div>
 
-    <a href="#" class="btn btn-primary btn-checkout btn-lg btn-block mb-3 fade in" role="button">{{ btnText }}</a>
+    <div id="carts-buttons">
+      <a id="carts-checkout-btn"
+        class="btn btn-primary btn-lg btn-block mb-0 mb-md-3 fade in"
+        role="button"
+        data-toggle="modal"
+        data-target="#order-checkout-modal">{{ btnText }}</a>
 
-    {% if not isPopover %}
-      <p class="update-totals-link fade out">
-        <button class="btn btn-default btn-lg btn-block">
+      {% if not isPopover %}
+        <button id="carts-refresh-btn" class="btn btn-default btn-lg btn-block fade out hidden">
           <span class="lt-icon lt-refresh lt-medium mr-2 align-middle"></span>
           <span class="align-middle">Refresh Order</span>
         </button>
-      </p>
-      <p class="carts-messaging fade out">{{ fpo.sentence }}</p>
-    {% endif %}
+
+        <p id="carts-refresh-msg" class="fade out text-center--mobile mt-3 mb-0 hidden">{{ fpo.sentence }}</p>
+      {% endif %}
+    </div>
 
   </div>
+
+  <!-- START - CHECKOUT MODAL -->
+  {% include "_includes/modules/modals/modal-either-or.html.twig" with { 'modalId': 'order-checkout-modal' } %}
+  <!-- END - CHECKOUT MODAL -->
 
 </section>
 <!-- END - ORDER TOTAL -->

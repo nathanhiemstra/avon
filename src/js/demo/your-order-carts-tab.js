@@ -17,14 +17,24 @@ var YourOrderCartsTab = (function () {
     // grab the DOM els we need
     $els = {
       selectAllCheckbox: $('.list-group--checkboxed .checkbox-select-all :checkbox'),
+
       carts: $('.list-group--checkboxed .single-cart-item'),
-      checkoutBtn: $('.checkout-order-total .btn-checkout'),
+
       subtotal: $('.checkout-order-total .subtotal'),
       offersTotal: $('.checkout-order-total .offers-total'),
-      discountTotal: $('.checkout-order-total .discount'),
-      cartsMessaging: $('.checkout-order-total .carts-messaging'),
-      refreshOrderBtn: $('.checkout-order-total .update-totals-link'),
-      fixedBottomSummary: $('.navbar-fixed-bottom--order-summary')
+
+      checkoutSummary: $('section.checkout-order-total'),
+
+      checkoutBtn: $('#carts-checkout-btn'),
+      refreshOrderBtn: $('#carts-refresh-btn'),
+      cartsRefreshMsg: $('#carts-refresh-msg'),
+      cartsButtons: $('#carts-buttons'),
+      cartsDetails: $('#carts-details'),
+      cartsSummaryContainerDesktop: $('#carts-summary-container-dt'),
+      cartsSummaryContainerMobile: $('#carts-summary-container-mobile'),
+      cartsBtnsFixedContainer: $('#carts-fixed-btns-container'),
+      cartsPromoAlert: $('#carts-promo-alert'),
+      cartsRefreshAlert: $('#carts-refresh-alert')
     };
 
     totalNumChecked = $els.carts.length;
@@ -33,6 +43,7 @@ var YourOrderCartsTab = (function () {
     _addListeners();
     _updateCheckoutTotals();
     _calculateBottomPadding();
+    _checkWidthAndMoveSummary();
 
   };
 
@@ -59,29 +70,40 @@ var YourOrderCartsTab = (function () {
 
     $(window).resize(function () {
       _calculateBottomPadding();
+      _checkWidthAndMoveSummary();
     });
 
   };
 
   var _toggleUpdateTotals = function () {
     if (totalsOff) {
-      // hide checkout button
-      $els.checkoutBtn.addClass('out').removeClass('in');
-      // show 'refresh order' button
+      // hide checkout button and carts promo
+      $els.checkoutBtn.removeClass('in').addClass('out');
+      $els.cartsPromoAlert.removeClass('in').addClass('out');
+      // show 'refresh order' button and messaging
       $els.checkoutBtn.on('transitionend',function() {
-        $(this).addClass('hide');
-        $els.refreshOrderBtn.removeClass('hide out').addClass('in');
-        $els.cartsMessaging.removeClass('hide out').addClass('in');
+        $(this).addClass('hidden');
+        $els.cartsPromoAlert.addClass('hidden');
+
+        $els.refreshOrderBtn.removeClass('hidden out').addClass('in');
+        $els.cartsRefreshMsg.removeClass('hidden out').addClass('in');
+        $els.cartsRefreshAlert.removeClass('hidden out').addClass('in');
       });
       _zeroOutTotals();
     } else {
-      // hide 'refresh order' button
-      $els.refreshOrderBtn.addClass('out').removeClass('in');
-      $els.cartsMessaging.addClass('out').removeClass('in');
-      // show checkout button
+      // hide 'refresh order' button and messaging
+      $els.refreshOrderBtn.removeClass('in').addClass('out');
+      $els.cartsRefreshMsg.removeClass('in').addClass('out');
+      $els.cartsRefreshAlert.removeClass('in').addClass('out');
+
       $els.refreshOrderBtn.on('transitionend',function() {
-        $(this).addClass('hide');
-        $els.checkoutBtn.removeClass('hide out').addClass('in');
+        $(this).addClass('hidden');
+        $els.cartsRefreshMsg.addClass('hidden');
+        $els.cartsRefreshAlert.addClass('hidden');
+        
+        // show checkout button and carts promo
+        $els.checkoutBtn.removeClass('hidden out').addClass('in');
+        $els.cartsPromoAlert.removeClass('hidden out').addClass('in');
       });
     }
   };
@@ -138,9 +160,9 @@ var YourOrderCartsTab = (function () {
   };
 
   var _zeroOutTotals = function () {
-    $els.subtotal.html('$&mdash;.&mdash;');
+    // $els.subtotal.html('$&mdash;.&mdash;');
     $els.offersTotal.html('$&mdash;.&mdash;');
-    $els.discountTotal.html('$&mdash;.&mdash;');
+    // $els.discountTotal.html('$&mdash;.&mdash;');
 
     totalsOff = true;
   };
@@ -162,7 +184,7 @@ var YourOrderCartsTab = (function () {
 
     $els.subtotal.html('$' + totalPrice.toFixed(2));
     $els.offersTotal.html('$' + totalPrice.toFixed(2)); // TODO :: <-- calculate this
-    $els.discountTotal.html('$' + totalDiscount.toFixed(2));
+    // $els.discountTotal.html('$' + totalDiscount.toFixed(2));
 
     // handle checkout button text
     var btnText = '';
@@ -188,9 +210,39 @@ var YourOrderCartsTab = (function () {
   };
 
   var _calculateBottomPadding = function () {
-    // var isVisible = $els.fixedBottomSummary
-    var footerHeight = $els.fixedBottomSummary.outerHeight();
+    var footerHeight = $els.cartsBtnsFixedContainer.outerHeight();
     $('body').css('padding-bottom', footerHeight);
+  };
+
+  var _checkWidthAndMoveSummary = function () {
+
+    if($(window).width() > 991) {
+      // desktop view
+      $els.cartsBtnsFixedContainer.addClass('invisible');
+      $els.checkoutSummary.removeClass('invisible');
+
+      // move summary block to sidebar
+      $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerDesktop);
+
+      // move 'checkout' & 'refresh' buttons to sidebar summary
+      $els.cartsButtons.detach().appendTo($els.cartsSummaryContainerDesktop);
+      $els.checkoutSummary.removeClass('invisible');
+      $els.cartsBtnsFixedContainer.addClass('invisible');
+    } else {
+      // mobile view
+      $els.cartsBtnsFixedContainer.removeClass('invisible');
+      $els.checkoutSummary.addClass('invisible');
+
+      // move summary block to top of page
+      $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerMobile);
+
+      // move 'checkout' & 'refresh' buttons to fixed bottom nav
+      $els.cartsButtons.detach().appendTo($els.cartsBtnsFixedContainer);
+      $els.cartsBtnsFixedContainer.removeClass('invisible');
+      $els.checkoutSummary.addClass('invisible');
+    }
+
+    _calculateBottomPadding();
   };
 
   return {

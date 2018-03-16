@@ -1,5 +1,7 @@
 {% extends "_layouts/modal.html.twig" %}
-{% set modalId = 'blank-modal-either-or' %}
+{% if not modalId %}
+  {% set modalId = 'blank-modal-either-or' %}
+{% endif %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - modalHeader #}
@@ -44,7 +46,7 @@
       <button type="button" class="btn btn-primary btn-block">Yes</button>
     </div>
   </div><!-- /.row -->
-  
+
 
 
 {% endblock %}
