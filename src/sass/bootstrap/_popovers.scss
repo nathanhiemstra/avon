@@ -130,6 +130,13 @@
   }
 }
 
+// Cart Summary popover
+#popover-cart {
+  // This allows us to pinpoint the outer popover trigger easily with js
+  * {
+    pointer-events: none;
+  }
+}
 .popover--cart {
   max-width: inherit;
   min-width: 325px;
@@ -153,8 +160,9 @@
 
   // mobile - need overrides here
   @media (max-width: $screen-xs-max) {
-      left: $spacing-1 !important;
-      right: $spacing-1 !important;
+      top: 58px !important;
+      left: 0 !important;
+      right: 0 !important;
 
       &.fade {
         transform: translateX(0);
