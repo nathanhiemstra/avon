@@ -54,6 +54,10 @@
           {% include '_includes/modules/your-order/order-sticky-footer.html.twig' %}
           <!-- END - ORDER TOTAL STICKY FOOTER -->
 
+          <!-- START - CHECKOUT MODAL -->
+          {% include "_includes/modules/modals/modal-either-or.html.twig" with { 'modalId': 'order-checkout-modal' } %}
+          <!-- END - CHECKOUT MODAL -->
+
         {% endblock %}
 
       {% endembed %}
