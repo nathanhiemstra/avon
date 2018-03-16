@@ -8,35 +8,95 @@
 }
 
 // This is for 4 square boxes acros that turn into carousel on mobile.
-.box-group--primary {
-  $box-group-item-margin: 10px;
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+$box-group--primary-item-margin: 10px;
+$box-group--primary-item-width: 220px;
 
-  // Margins are to compensate for the margin of the boxes, so the borders of the boxes will go will width of container
-  margin-left: -$box-group-item-margin;
-  margin-right: -$box-group-item-margin;
+.carousel--box-group-primary {
+  // Mobile
+  @media (max-width: $screen-sm) {
+    // So that the indicators are below the slides
+    padding-bottom: 40px;
 
-  @media (min-width: $screen-sm) and (max-width: $screen-md) {
-    margin-left: 30px;
-    margin-right: 30px;
+    .carousel-inner {
+      // Don't let the slide get smushed
+      min-width: $box-group--primary-item-width;
+    }
+
+    .carousel-control .lt-left {
+      width: 100%;
+    }
+
+    .carousel-control .lt-right {
+      width: 150%;
+    }
   }
 
-  .box-group--item {
-    margin: $box-group-item-margin;
-    background-color: $body-bg;
-    overflow: hidden;
+  @media (max-width: 300px) {
+    .carousel-control .lt-left,
+    .carousel-control .lt-right {
+      display: none;
+    }
+  }
 
-    @media (min-width: $screen-md-min) {
+  // Tablet and above
+  @media (min-width: $screen-sm) {
+    .carousel-indicators,
+    .carousel-control {
+      display: none;
+    }
+
+    .carousel-inner > .item {
+      // Make all slides appear
+      display: block;
+    }
+
+    .carousel-inner {
+      width: inherit;
+
+      // Margins are to compensate for the margin of the boxes, so the borders of the boxes will go will width of container
+      margin-left: -$box-group--primary-item-margin;
+      margin-right: -$box-group--primary-item-margin;
+    }
+
+    .item {
       flex-grow: 1;
     }
 
-    .item-content {
+    // Tablet only
+    @media (min-width: $screen-sm) and (max-width: $screen-md) {
+      .carousel-inner {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+.box-group--primary {
+  .box-group--item {
+    margin: $box-group--primary-item-margin;
+    background-color: $body-bg;
+    overflow: hidden;
+    width: $box-group--primary-item-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // // Starting at tablet
+  @media (min-width: $screen-sm) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+
+    .box-group--item {
+      margin-left: $box-group--primary-item-margin;
+      margin-right: $box-group--primary-item-margin;
+      flex-grow: 1;
+      width: inherit;
       display: flex;
       justify-content: center;
-      min-width: 220px;
     }
   }
 }

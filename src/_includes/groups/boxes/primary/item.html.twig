@@ -1,11 +1,16 @@
+{% if active %}
+  {% set classes = ' active ' %}
+{% endif %}
 <!-- START - SINGLE BOX -->
-<div class="item box-group--item box-emphasize">
-  <div class="item-content">
-    
-    <!-- START - FPO CONTENT -->
-    <img src="images/fpo/home/{{ label }}.png" alt="FPO image">
-    <!-- END - FPO CONTENT -->
+<div class="item  {{ classes }}">
+  <div class="box-group--item box-emphasize">
+    <div class="item-content">
+      
+      <!-- START - FPO CONTENT -->
+      <img src="images/fpo/home/{{ label }}.png" alt="FPO image">
+      <!-- END - FPO CONTENT -->
 
+    </div>
   </div>
 </div><!-- /.box-group-item -->
 <!-- END - SINGLE BOX -->

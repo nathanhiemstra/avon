@@ -7,29 +7,66 @@
   </div>
   <!-- END - FPO HEADLINE -->
 
-  <!-- START - BOX GROUP OF 4 -->
-  <section class="box-group--primary carousel-inner">
+  <div id="carousel-widgets-from-avon" class="carousel carousel--box-group-primary slide" data-ride="carousel"  data-interval="false">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-widgets-from-avon" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-widgets-from-avon" data-slide-to="1"></li>
+      <li data-target="#carousel-widgets-from-avon" data-slide-to="2"></li>
+      <li data-target="#carousel-widgets-from-avon" data-slide-to="3"></li>
+    </ol>
 
-    <!-- START - BOX GROUP PAIR -->
-    {# <div class="box-group--pair"> #}
-
-      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '1' } %}
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner box-group--primary ">
+   
+      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '1', active: 'true' } %}
       {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '2' } %}
-
-{#     </div><!-- /.box-group-pair --> #}
-    <!-- END - BOX GROUP PAIR -->
-
-
-    <!-- START - BOX GROUP PAIR-->
-    {# <div class="box-group--pair"> #}
-
       {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '3' } %}
       {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '4' } %}
 
-  {#   </div><!-- /.box-group-pair --> #}
-    <!-- END - BOX GROUP PAIR -->
+    </div>
 
-  </section><!-- /.box-group-primary -->
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-widgets-from-avon" data-slide="prev">
+      <span class="lt-icon lt-left lt-large"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-widgets-from-avon" data-slide="next">
+      <span class="lt-icon lt-right lt-large"></span>
+    </a>
+  </div>
+
+  {# <div id="carousel-widgets-from-avon" class="carousel slide" data-ride="carousel">
+
+    <!-- START - INDICATORS -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-widgets-from-avon" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-widgets-from-avon" data-slide-to="1"></li>
+      <li data-target="#carousel-widgets-from-avon" data-slide-to="2"></li>
+    </ol>
+    <!-- END - INDICATORS -->
+
+    <!-- START - WRAPPER FOR SLIDES -->
+    <div class="box-group--primary carousel-inner">
+
+        {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '1' } %}
+        {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '2' } %}
+        {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '3' } %}
+        {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '4' } %}
+
+    </div><!-- /.box-group-primary -->
+
+    <!-- END - WRAPPER FOR SLIDES -->
+
+    <!-- START - CONTROLS -->
+    <a class="left carousel-control" href="#carousel-widgets-from-avon" data-slide="prev">
+      <span class="lt-icon lt-carat-left lt-medium"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-widgets-from-avon" data-slide="next">
+      <span class="lt-icon lt-carat-right lt-medium"></span>
+    </a>
+    <!-- END - CONTROLS -->
+
+  </div> #}
 
 </section>
 <!-- END - FULL WIDTH CONTAINER -->
