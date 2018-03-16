@@ -35,7 +35,9 @@ var YourOrderCartsTab = (function () {
       cartsSummaryContainerMobile: $('#carts-summary-container-mobile'),
       cartsBtnsFixedContainer: $('#carts-fixed-btns-container'),
       cartsPromoAlert: $('#carts-promo-alert'),
-      cartsRefreshAlert: $('#carts-refresh-alert')
+      cartsRefreshAlert: $('#carts-refresh-alert'),
+
+      columnQty: $('.single-cart-item .t-qty')
     };
 
     totalNumChecked = $els.carts.length;
@@ -222,6 +224,9 @@ var YourOrderCartsTab = (function () {
       $els.cartsBtnsFixedContainer.addClass('invisible');
       $els.checkoutSummary.removeClass('invisible');
 
+      // reset 'colspan' attribute from quantity
+      $els.columnQty.attr('colspan', 1);
+
       // move summary block to sidebar
       $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerDesktop);
 
@@ -233,6 +238,9 @@ var YourOrderCartsTab = (function () {
       // mobile view
       $els.cartsBtnsFixedContainer.removeClass('invisible');
       $els.checkoutSummary.addClass('invisible');
+
+      // widen 'colspan' attribute on quantity
+      $els.columnQty.attr('colspan', 2);
 
       // move summary block to top of page
       $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerMobile);
