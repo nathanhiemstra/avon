@@ -20,35 +20,9 @@
   {% set styleguideItem = {
     title:        "Logo",
     slug:         "global-logo",
-    twig:         "'_includes/elements/images/logo-your-avon.html.twig'",
     path:         "_includes/elements/images/logo-your-avon.html.twig"
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
-
-
-
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# GLOBAL - MAIN NAVIGATIONS #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% set styleguideItem = {
-    title:        "Header Navigation - Utility #2",
-    slug:         "global-nav-utility-2",
-    twig:         "'_includes/groups/navigation/global-header-nav/header-utility-nav-2.html.twig'",
-    path:         "_includes/groups/navigation/global-header-nav/header-utility-nav-2.html.twig"
-  }%}
-  {% include styleguide.item with 'styleguideItem': styleguideItem %}
-
-
-  {% set styleguideItem = {
-    title:        "Header Navigation - Utlity #1",
-    slug:         "global-nav-utility-1",
-    twig:         "'_includes/groups/navigation/global-header-nav/header-utility-nav-1.html.twig'",
-    path:         "_includes/groups/navigation/global-header-nav/header-utility-nav-1.html.twig"
-  }%}
-  {% include styleguide.item with 'styleguideItem': styleguideItem %}
-
-
-
 
 
 
@@ -59,7 +33,6 @@
     title:        "Global Header",
     slug:         "global-header",
     description:  "The global header is composed of the two utility navs shown above and the primary navigation list",
-    twig:         "'_includes/groups/navigation/global-header-nav/header-nav-container.html.twig'",
     path:         "_includes/groups/navigation/global-header-nav/header-nav-container.html.twig"
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
@@ -72,30 +45,10 @@
   {% set styleguideItem = {
     title:        "Global Footer",
     slug:         "global-footer",
-    twig:         "components.modules.global.footer",
     path:         components.modules.global.footer
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
-
-
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# ITEM ENTRY #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% set styleguideItem = {
-    title:        "Item Entry (Drawer Content)",
-    slug:         "global-item-entry-drawer-content"
-  }%}
-
-  <h2 id="{{ styleguideItem.slug }}" class="bs-headline">{{ styleguideItem.title }}</h2>
-  <div class="bs-example">
-    {% include "_includes/modules/item-entry/item-entry.html.twig" with {isInStyleguide: true} %}
-  </div>
-
-  {# Markup #}
-  {{ highlightMarkup }}
-    {% include "_includes/modules/item-entry/item-entry.html.twig" with {isInStyleguide: true} %}
-  {{ endhighlight }}
 
 
 

@@ -117,7 +117,7 @@ $font-size-h7-desktop: ceil($font-size-base * 0.83333) !default; // 12px
 // 12px
 
 //** Unit-less `line-height` for use in components like buttons.
-$line-height-base: 1.42857 !default;
+$line-height-base: 1.6 !default;
 
 // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
@@ -133,8 +133,6 @@ $headings-line-height: 1.1 !default;
 $headings-color: inherit !default;
 
 //== Iconography
-//
-//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
 
 //** Load fonts from this directory.
 
@@ -143,12 +141,7 @@ $headings-color: inherit !default;
 $icon-font-path: "../fonts/" !default;
 $base-font-path: $icon-font-path;
 
-//** File name for all font files.
-$icon-font-name: "glyphicons-halflings-regular" !default;
 $base-font-name: "gotham" !default;
-
-//** Element ID within SVG icon file.
-$icon-font-svg-id: "glyphicons_halflingsregular" !default;
 
 $icon-size-sm: 12px;
 $icon-size-md: 20px;
@@ -180,10 +173,10 @@ $padding-small-horizontal: 10px !default;
 $padding-xs-vertical: 2px !default;
 $padding-xs-horizontal: 5px !default;
 
-$line-height-large: 1.33333 !default;
+$line-height-large: 2 !default;
 
 // extra decimals for Win 8.1 Chrome
-$line-height-small: 1.5 !default;
+$line-height-small: 1.385 !default;
 
 // $border-radius-base: 4px !default;
 // $border-radius-large: 6px !default;
@@ -568,6 +561,7 @@ $nav-disabled-link-hover-color: $gray-light !default;
 
 //== Tabs
 $nav-tabs-border-color: $brand-primary !default;
+$nav-tabs-container-border-color: $gray-light !default;
 
 $nav-tabs-link-hover-border-color: $gray-lighter !default;
 
@@ -1032,10 +1026,10 @@ $text-muted: $gray !default;
 $abbr-border-color: $gray-light !default;
 
 //** Headings small color
-$headings-small-color: $gray-light !default;
+$headings-small-color: $gray !default;
 
 //** Blockquote small color
-$blockquote-small-color: $gray-light !default;
+$blockquote-small-color: $gray !default;
 
 //** Blockquote font size
 $blockquote-font-size: $font-size-base * 1.25 !default;

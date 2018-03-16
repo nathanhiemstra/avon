@@ -142,6 +142,11 @@ th {
   }
 }
 
+// table with fixed layout
+.table-fixed {
+  table-layout: fixed;
+}
+
 // Sparse table - 1st column aligned left, last column aligned right, others aligned center
 // Ideal for styling a sparsly populated table
 .table-sparse {
@@ -233,6 +238,18 @@ table {
   }
 }
 
+.submitted-order-column {
+  width: 13%;
+}
+
+.submitted-order-shipping-column {
+  width: 22%;
+}
+
+.submitted-order-double-column {
+  width: 33%;
+}
+
 // Table backgrounds
 //
 // Exact selectors below required to override `.table-striped` and prevent
@@ -318,10 +335,27 @@ table {
   }
 }
 
+// important for callapsible table rows
 .table {
   td {
     &.in {
       display: table-cell;
     }
+  }
+}
+
+// Your Order cart table specific styles
+.table {
+  .t-item {
+    width: 10%;
+  }
+  .t-desc {
+    width: 60%;
+  }
+  .t-price {
+    width: 15%;
+  }
+  .t-qty {
+    width: 15%;
   }
 }

@@ -1,0 +1,41 @@
+{% if btnText is empty %}
+  {% set btnText = 'View Order' %}
+{% endif %}
+<!-- START - ORDER OVERVIEW -->
+<!-- <section class="checkout-order-total"> -->
+<section class="checkout-order-overview">
+  <!-- <div class=""> -->
+    <h6 class="mb-4">Order Overview</h6>
+    <ul class="list-unstyled order-overview-items">
+      <li class="clearfix mb-4">
+        <span class="pull-left customer-name overflow-ellipsis">Rosa Kim</span>
+        <span class="pull-right subtotal">$190.00</span>
+      </li>
+      <li class="clearfix mb-4">
+        <span class="pull-left customer-name overflow-ellipsis">Phoebe Page</span>
+        <span class="pull-right offers-total">$80.00</span>
+      </li>
+      <li class="clearfix mb-4">
+        <span class="pull-left customer-name overflow-ellipsis">Tisha Pentagram</span>
+        <span class="pull-right discount">$100.00</span>
+      </li>
+      <li class="clearfix mb-3">
+        <span class="pull-left small text-muted">+ <span class="num-carts">12</span> additional carts</span>
+      </li>
+    </ul>
+
+    <hr class="my-3">
+
+    <p class="clearfix">
+      <strong class="pull-left">Order Subtotal:</strong>
+      <strong class="pull-right offers-total">$90.00</strong>
+    </p>
+
+    <hr class="mt-3 mb-4">
+
+    <button href="javascript:void(0)" class="btn btn-primary btn-lg btn-block" role="button">{{ btnText }}</button>
+
+  <!-- </div> -->
+
+</section>
+<!-- END - ORDER OVERVIEW -->

@@ -31,7 +31,7 @@
  * Examples
  * Code snippets (highlight)
  * Responsive tests
- * Glyphicons
+ * Icons
  * Customizer
  * Miscellaneous
  */
@@ -1061,7 +1061,7 @@ h1[id] {
 /* Forms */
 .bs-example-control-sizing select,
 .bs-example-control-sizing input[type="text"] + input[type="text"] {
-    margin-top: 10px;
+    // margin-top: 10px;
 }
 
 .bs-example-form .input-group {
@@ -1361,22 +1361,22 @@ h1[id] {
 }
 
 /*
- * Glyphicons
+ * Icons
  *
  * Special styles for displaying the icons and their classes in the docs.
  */
 
-.bs-glyphicons, .bs-lushicons {
+.bs-customicons {
     margin: 0 -19px 20px -16px;
     overflow: hidden;
 }
 
-.bs-glyphicons-list, .bs-lushicons-list {
+.bs-customicons-list {
     padding-left: 0;
     list-style: none;
 }
 
-.bs-glyphicons li, .bs-lushicons li {
+.bs-customicons li {
     float: left;
     width: 25%;
     height: 115px;
@@ -1388,19 +1388,13 @@ h1[id] {
     background-color: #f9f9f9;
 }
 
-.bs-glyphicons .glyphicon,
-.bs-lushicons .lt-icon {
+.bs-customicons .lt-icon {
     margin-top: 5px;
     margin-bottom: 10px;
-    font-size: 24px;
-}
-
-.bs-lushicons .lt-icon {
     font-size: 28px;
 }
 
-.bs-glyphicons .glyphicon-class,
-.bs-lushicons .lushicon-class {
+.bs-customicons .customicon-class {
     display: block;
     text-align: center;
     word-wrap: break-word;
@@ -1408,21 +1402,18 @@ h1[id] {
     /* Help out IE10+ with class names */
 }
 
-.bs-glyphicons li:hover,
-.bs-lushicons li:hover {
+.bs-customicons li:hover {
     color: #fff;
     background-color: #563d7c;
 }
 
 @media (min-width: 768px) {
-    .bs-glyphicons,
-    .bs-lushicons {
+    .bs-customicons {
         margin-left: 0;
         margin-right: 0;
     }
 
-    .bs-glyphicons li,
-    .bs-lushicons li {
+    .bs-customicons li {
         width: 12.5%;
         font-size: 12px;
     }
@@ -1520,7 +1511,8 @@ h1[id] {
     margin-bottom: 0;
 }
 
-.bs-customizer-alert .glyphicon {
+.bs-customizer-alert .lt-icon,
+.bs-customizer-alert .lt-icon:before  {
     margin-right: 5px;
 }
 
@@ -1577,7 +1569,8 @@ h1[id] {
 }
 
 /* Make the icons stand out on what is/isn't okay */
-.bs-brand-item .glyphicon {
+.bs-brand-item .lt-icon,
+.bs-brand-item .lt-icon:before {
     width: 30px;
     height: 30px;
     margin: 10px auto -10px;
@@ -1586,11 +1579,13 @@ h1[id] {
     border-radius: 50%;
 }
 
-.bs-brand-item .glyphicon-ok {
+.bs-brand-item .lt-checkmark,
+.bs-brand-item .lt-checkmark:before, {
     background-color: #5cb85c;
 }
 
-.bs-brand-item .glyphicon-remove {
+.bs-brand-item .lt-close,
+.bs-brand-item .lt-close:before, {
     background-color: #d9534f;
 }
 

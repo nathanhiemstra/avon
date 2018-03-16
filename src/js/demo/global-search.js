@@ -18,12 +18,7 @@ var GlobalSearch = (function () {
       searchParent: $('.navbar--primary-nav'),
       searchContainer: $('.primary-nav__search'),
       searchBtn: $('.primary-nav__search span'),
-      searchInput : $('.primary-nav__search-input'),
-      // searchInputMobile: $('#mobile-search-input'),
-      // searchInputDesktop: $('#primary-nav__search-input'),
-      // searchBtn: $('#mobile-search-toggle'),
-      // searchNavbar: $('#mobile-header-navbar'), // TODO :: update this for auto-complete demo
-      // drawerBackdrop: $('.drawer-backdrop')
+      searchInput : $('.primary-nav__search-input')
     };
 
     _addListeners();
@@ -37,25 +32,9 @@ var GlobalSearch = (function () {
     // https://github.com/devbridge/jQuery-Autocomplete
     //
 
-    // $els.itemEntrySearchInput.autocomplete({
-    //   // serviceUrl: '/autocomplete/data/somepath', // ajax
-    //   lookup: FAKE_PRODUCTS, // no ajax, just a js object
-    //   onSelect: function (suggestion) {
-    //     console.log('You selected: ' + suggestion.value);
-    //     _handleItemEntrySelection(this, suggestion);
-    //     $(this).val(suggestion.sku);
-    //   },
-    //   formatResult: function (suggestion, currentVal) {
-    //     return _constructItemTemplate(suggestion);
-    //   },
-    //   maxHeight: 400,
-    //   showNoSuggestionNotice: true,
-    //   noSuggestionNotice: 'Sorry, nothing matches that query',
-    //   triggerSelectOnValidInput: false,
-    //   preserveInput: true
-    // });
-
     $els.searchInput.autocomplete({
+      // NOTE :: the 'serviceUrl' below should be used in production, for
+      //      :: now we're using fake data with 'lookup'
       // serviceUrl: '/autocomplete/data/somepath', // ajax
       lookup: FAKE_PRODUCTS,
       onSelect: function (suggestion) {
@@ -66,30 +45,25 @@ var GlobalSearch = (function () {
       formatResult: function (suggestion, currentVal) {
         return _constructItemTemplate(suggestion);
       },
-      appendTo: $els.searchNavbar,
+      beforeRender: function(container, suggestions) {
+        // only show 'view all results' button if we have suggestions
+        if(suggestions.length) {
+          $(container)
+            .append('<a id="autocomplete-all-results-link" class="link-primary border-top">View all results</button>');
+        } else {
+          $(container)
+            .find('.autocomplete-suggestion:last-of-type')
+            .css('padding-bottom', 0);
+        }
+      },
+      appendTo: $els.searchContainer,
       maxHeight: 400,
+      width: 373,
       showNoSuggestionNotice: true,
-      noSuggestionNotice: 'Sorry, nothing matches that query',
+      noSuggestionNotice: 'Nothing matches that search',
       triggerSelectOnValidInput: false,
       preserveInput: true
     });
-
-    // $els.searchInputDesktop.autocomplete({
-    //   lookup: FAKE_PRODUCTS,
-    //   onSelect: function (suggestion) {
-    //     console.log('You selected: ' + suggestion.value);
-    //     // _handleSearchInputSelection(this, suggestion);
-    //     // $(this).val('');
-    //   },
-    //   formatResult: function (suggestion, currentVal) {
-    //     return _constructItemTemplate(suggestion);
-    //   },
-    //   maxHeight: 400,
-    //   showNoSuggestionNotice: true,
-    //   noSuggestionNotice: 'Sorry, nothing matches that query',
-    //   triggerSelectOnValidInput: false,
-    //   preserveInput: true
-    // });
 
     $els.searchBtn.on('click', _toggleSearchExpand);
 
@@ -97,14 +71,6 @@ var GlobalSearch = (function () {
       _toggleSearchExpand();
     });
 
-    // desktop
-    // $els.searchInputDesktop
-    //   .focus(function () {
-    //     _toggleSearchExpand();
-    //   })
-    //   .blur(function () {
-    //     _toggleSearchExpand();
-    //   });
   };
 
   var _toggleSearchExpand = function (e) {
@@ -127,50 +93,23 @@ var GlobalSearch = (function () {
       }, animationTime);
     }
 
-
     // show / hide
     $els.searchParent.toggleClass('search-expanded');
-    // $els.searchInput.toggleClass('hidden');
-
-    // $els.searchContainer.animate({
-    //   width: "100%"
-    // }, 150, function() {
-    //   console.log('COMPLETE');
-    // });
-
-    // if($els.searchNavbar.hasClass('expanded')) {
-    //   // expanded, let's collapse
-    //   $els.searchNavbar.removeClass('expanded').addClass('collapsed');
-    //   // $els.drawerBackdrop.removeClass('in').addClass('fade');
-    //   $els.searchInputMobile.addClass('invisible');
-    // } else {
-    //   // collapsed, let's expand
-    //   $els.searchNavbar.removeClass('collapsed').addClass('expanded');
-    //   // $els.drawerBackdrop.removeClass('fade').addClass('in');
-    //   $els.searchInputMobile.removeClass('invisible');
-    //
-    //   $els.searchInputMobile.focus();
-    // }
-
-    // if($els.searchInputDesktop.hasClass('expanded')) {
-    //   $els.searchInputDesktop.removeClass('expanded').addClass('collapsed');
-    // } else {
-    //   $els.searchInputDesktop.removeClass('collapsed').addClass('expanded');
-    // }
   };
 
   var _constructItemTemplate = function(suggestion) {
     return '<div class="item border-bottom p-3">' +
         '<a href="' + suggestion.itemUrl + '" class="link-plain">' +
-          '<div class="row d-flex align-items-center">' +
+          '<div class="row d-flex align-items-center flex-fill">' +
             '<div class="col col-xs-2 col-sm-3 pr-0">' +
               '<img src="' + suggestion.imgUrl + '" class="product-img img-responsive">' +
             '</div>' +
             '<div class="col col-xs-10 col-sm-9 pl-3">' +
               '<p class="title">' + suggestion.value + '</p>' +
               '<p>' +
-                '<span class="sale-price mr-4">' + suggestion.salePrice + '</span>' +
-                '<span class="reg-price small strike-through">Regular Price: ' + suggestion.salePrice + '</span>' +
+                '<!-- DEVELOPER NOTE :: If "Regular price" is not shown here, remove .text-primary to make the price black -->' +
+                '<span class="sale-price text-primary mr-4">' + suggestion.salePrice + '</span>' +
+                '<span class="reg-price small text-muted">Regular Price: <span class="strike-through">' + suggestion.regPrice + '</span></span>' +
               '</p>' +
             '</div>' +
           '</div>' +

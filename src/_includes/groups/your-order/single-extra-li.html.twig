@@ -35,6 +35,7 @@
     {% if hasShowContents %}
     <!-- START - SHOW CONTENTS -->
     <div class="mb-4">
+<<<<<<< HEAD
       <a href="#contents" data-toggle="collapse" class="underline">Show contents <div class="lt-icon lt-triangle-down lt-medium"></div></a>
 
       <div class="collapse" id="contents">
@@ -45,6 +46,19 @@
       </ul>
       </div>
 
+=======
+      <a href="javascript:void(0)" class="underline collapse-updown collapsed" data-toggle="collapse" data-target="#collapse-{{ indexNum }}-show-contents">
+        Show contents
+        <span class="lt-icon lt-triangle-down align-middle ml-2 collapse-indicator"></span>
+      </a>
+      <div id="collapse-{{ indexNum }}-show-contents" class="collapse">
+        <ul class="m-0 pt-3">
+          <li>Contents item 1</li>
+          <li>Contents item 2</li>
+          <li>Contents item 3</li>
+        </ul>
+      </div>
+>>>>>>> a6a18958771386e9957235f3d31d7cf172f52b6e
     </div>
     <!-- END - SHOW CONTENTS -->
     {% endif %}

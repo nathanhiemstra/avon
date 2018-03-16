@@ -191,16 +191,12 @@ select.form-control {
     display: none;
   }
 
-  + .glyphicon {
+  + .lt-icon, + .lt-icon:before {
     color: $link-color;
   }
 
-  + .lt-icon {
-    color: $link-color;
-  }
-
-  + .glyphicon-play.form-control-feedback {
-    transform: rotate(90deg);
+  + .lt-triangle-down.form-control-feedback {
+    // transform: rotate(90deg);
   }
 }
 
@@ -405,15 +401,33 @@ input[type="checkbox"] {
   }
 }
 
-.checkbox span i,
-.radio span i {
+.checkbox label span i,
+.checkbox span i {
   position: absolute;
-  top: 2px;
+  top: 4px;
   left: 3px;
+
+  &.indeterminate {
+    top: 3px;
+    left: 3px;
+  }
+}
+
+.checkbox.input-sm label span i,
+.checkbox.input-sm span i {
+  font-size: 7px;
+  top: 3px;
+  left: 2px;
 
   &.indeterminate {
     left: 3px;
   }
+}
+
+.radio span i {
+  position: absolute;
+  top: 2px;
+  left: 3px;
 }
 
 .radio span i {
@@ -587,10 +601,14 @@ select.form-control.input-lg {
   // Since we're hijacking ".has-feedback" for the <select> arrow, adjust a little
   select.form-control {
     padding-right: $input-height-base;
+    // disable mouse events on select icon so it falls through
+    & + span.lt-icon {
+      pointer-events: none;
+    }
   }
 }
 
-// Feedback icon (requires .glyphicon classes)
+// Feedback icon (requires .lt-icon classes)
 .form-control-feedback {
   position: absolute;
   top: 0;
@@ -604,6 +622,29 @@ select.form-control.input-lg {
   line-height: $input-height-base;
   text-align: center;
   pointer-events: none;
+}
+
+// handle .has-feedback when contained in padded columns
+.has-feedback {
+
+  &.pr-md-2 {
+    .form-control-feedback {
+      right: $spacing-2;
+    }
+  }
+
+  // inline-block elements' icons need some love
+  &.d-inline-block {
+    .lt-icon {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    // handle cases where label is grouped in
+    label + input + .lt-icon {
+      transform: translateY(-17%);
+    }
+  }
+
 }
 
 .form-group-lg .form-control + .form-control-feedback,

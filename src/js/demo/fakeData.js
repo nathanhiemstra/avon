@@ -2,7 +2,7 @@ var FAKE_PRODUCTS = [
   {
     value: 'Anew Ultimate Supreme Advanced Performance Créme',
     itemUrl: '#',
-    imgUrl: '/images/fpo/agnew-ultimate.png',
+    imgUrl: '/images/fpo/product-thumb-grey.png',
     salePrice: '$30.00',
     regPrice: '$36.00',
     numRatings: '73',
@@ -12,7 +12,7 @@ var FAKE_PRODUCTS = [
   {
     value: 'Haiku Bonus Size Roll-On',
     itemUrl: '#',
-    imgUrl: '/images/fpo/agnew-ultimate.png',
+    imgUrl: '/images/fpo/product-thumb-grey.png',
     salePrice: '$30.00',
     regPrice: '$36.00',
     numRatings: '73',
@@ -22,7 +22,7 @@ var FAKE_PRODUCTS = [
   {
     value: 'Haiku Something Else',
     itemUrl: '#',
-    imgUrl: '/images/fpo/agnew-ultimate.png',
+    imgUrl: '/images/fpo/product-thumb-grey.png',
     salePrice: '$30.00',
     regPrice: '$36.00',
     numRatings: '73',
@@ -32,7 +32,7 @@ var FAKE_PRODUCTS = [
   {
     value: 'Another Product',
     itemUrl: '#',
-    imgUrl: '/images/fpo/agnew-ultimate.png',
+    imgUrl: '/images/fpo/product-thumb-grey.png',
     salePrice: '$30.00',
     regPrice: '$36.00',
     numRatings: '73',

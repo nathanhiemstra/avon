@@ -1,3 +1,5 @@
+$gray-ultralight: lighten($gray-lighter, 2%);
+
 .navbar--primary-nav {
 
   /*
@@ -10,13 +12,40 @@
     min-width: 0;
     transition: min-width $ui-animation-time $ui-animation-ease;
 
-    .primary-nav__search-input {
+    input.primary-nav__search-input {
       display: none;
+
+      &:focus {
+        outline: none;
+      }
     }
 
     a {
       span:nth-child(2) {
         display: inline-block;
+      }
+
+      .lt-close {
+        display: none;
+        position: absolute;
+        left: 330px;
+        z-index: 99;
+      }
+    }
+
+    .autocomplete-suggestions {
+      // TODO :: bring shadows in this file inline with global shadows
+      box-shadow: -4px 4px 4px rgba(0,0,0,0.05), 4px 4px 4px rgba(0,0,0,0.05);
+    }
+
+    // mobile only styles for autocomplete
+    @media (max-width: $screen-xs-max) {
+      .autocomplete-suggestions {
+        top: 48px;
+        left: 0;
+        border-left: none;
+        border-right: none;
+        width: 101% !important;
       }
     }
 
@@ -52,11 +81,11 @@
         justify-content: flex-start;
         width: 100%;
 
-        span:nth-child(2) {
-          // display: none;
+        .lt-search, .lt-search:before {
+          color: $brand-primary;
         }
 
-        .lt-icon {
+        .lt-search {
           padding: $spacing-3;
         }
 
@@ -69,6 +98,7 @@
 
       .primary-nav__search-input {
         display: inline-block;
+        border: none;
       }
 
     }
@@ -105,20 +135,41 @@
    */
 
   @media (min-width: $screen-sm-min) {
+
     .primary-nav__search {
       min-width: auto;
       transition: none;
+      border-top: 1px solid transparent;
+      border-left: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      padding: $spacing-3;
+      transition: border-color 0 $ui-animation-ease;
 
       a {
         display: flex;
         align-items: center;
         justify-content: flex-start;
       }
+
+      .autocomplete-suggestions {
+        top: 48px;
+        left: -1px;
+      }
+
     }
 
-    .primary-nav__search-input {
-      width: 1px;
-      transition: width $ui-animation-time $ui-animation-ease;
+    input.primary-nav__search-input {
+      position: absolute;
+      width: 0;
+      opacity: 0;
+      top: -1px;
+      left: 37px;
+      height: calc(100% + 2px);
+      border: none;
+      border-top: 1px solid transparent;
+      border-right: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      // transition: opacity $ui-animation-time $ui-animation-ease, border-color $ui-animation-time $ui-animation-ease;
     }
 
     .primary-nav__cart,
@@ -127,7 +178,8 @@
       transition: none;
     }
 
-    &.search-expanded {
+    &.search-expanded,
+    &.expanding {
 
       .primary-nav__cart,
       .primary-nav__logo,
@@ -141,34 +193,38 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        // top: 0;
-        // right: 0;
-        // z-index: 10;
         height: auto;
+        border-top: 1px solid $border-color;
+        border-left: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        box-shadow: -4px -4px 4px $gray-lighter, -4px 4px 4px $gray-lighter;
 
         a {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          // width: 100%;
 
-          .lt-icon {
+          .lt-search, .lt-search:before {
             padding: initial;
+            pointer-events: none;
+          }
+
+          .lt-close {
+            display: inline-block;
           }
 
           input.primary-nav__search-input {
-            position: absolute;
-            padding: 6px;
-            top: -5px;
-            left: $icon-size-md - 6;
+            display: inline-block;
             width: 330px;
-            border: none;
+            opacity: 1;
+            border-top: 1px solid $border-color;
+            border-right: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
+            box-shadow: 4px -4px 4px $gray-lighter, 4px 4px 4px $gray-lighter;
 
             &:focus {
               outline: none;
-              border-bottom: 1px solid $gray-light;
             }
           }
+          // end input
+
         }
         // end a
 
@@ -182,12 +238,32 @@
     &.collapsing,
     &.expanding {
       height: auto;
-      // z-index: 10;
 
       .primary-nav__cart,
       .primary-nav__logo,
       .primary-nav__toggle {
         opacity: 1;
+      }
+    }
+
+    &.expanding {
+      input.primary-nav__search-input {
+        width: 330px;
+      }
+    }
+
+    &.collapsing {
+
+      .primary-nav__search {
+        position: relative;
+      }
+
+      input.primary-nav__search-input {
+        width: 330px;
+      }
+
+      .autocomplete-suggestions {
+        opacity: 0;
       }
     }
 
@@ -199,15 +275,30 @@
     //   }
     // }
   }
+  // end DESKTOP
 
 }
 // end navbar--primary-nav
 
+
+// TODO :: move general auto complete styles to it's own file, these are global
 .autocomplete-suggestions {
   border: 1px solid $border-color;
   border-top: none;
   background: $body-bg;
   overflow: auto;
+}
+
+#autocomplete-all-results-link {
+  position: sticky;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
 }
 
 .autocomplete-suggestion {
@@ -234,7 +325,7 @@
     }
   }
 
-  &:last-child {
+  &:last-of-type {
     .item {
       border-bottom: none !important;
     }
@@ -259,88 +350,7 @@
   border-bottom: 1px solid $table-border-color;
 }
 
-// TODO :: leaving this here for when we re-enable predictive search - taken from the _header.scss
-
-//     // predictive search - general
-//     ul.predictive-list {
-//       margin: 0;
-//       padding: 0;
-//       list-style-type: none;
-//
-//       a:hover {
-//         text-decoration: none;
-//       }
-//
-//       &.expanded {
-//         display: block;
-//       }
-//
-//       &.collapsed {
-//         display: none;
-//       }
-//
-//       li {
-//         a {
-//           color: $text-color;
-//
-//           &:hover {
-//             color: $text-color;
-//             border-bottom: none;
-//           }
-//         }
-//       }
-//     }
-//
-//     // MOBILE predictive
-//     .container > .navbar-header {
-//       ul.predictive-list {}
-//     }
-//
-//     // desktop predictive
-//     .container > .navbar-right {
-//       ul.predictive-list {
-//         position: absolute;
-//         top: 36px;
-//         left: 15px;
-//         width: 400px;
-//         background-color: $body-bg;
-//         border: 1px solid $gray-light;
-//         border-top: 0;
-//         box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
-//       }
-//     }
-//
-//     // MOBILE nav
-//     #mobile-header-navbar {
-//       .navbar-form {
-//         .input-group {
-//           input {
-//             border: none;
-//             box-shadow: none;
-//           }
-//
-//           .input-group-btn {}
-//         }
-//       }
-//
-//       .autocomplete-suggestions {
-//         width: 100vw !important;
-//         top: 60px;
-//         left: 0;
-//         border-left: none;
-//         border-right: none;
-//       }
-//     }
-//
-//     // search input
-//     .primary-nav__search-input {
-//       width: 100px;
-//       transform: scaleX(0);
-//       transition: 0.2s transform ease, 0.2s box-shadow ease;
-//
-//       &.expanded {
-//         transform: scaleX(1);
-//         // box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-//       }
-//     }
-//
+.autocomplete-no-suggestion {
+  text-align: center;
+  padding: $spacing-4;
+}

@@ -4,49 +4,35 @@
 <a class="d-inline-block ml-sm-4" href="#">View order history</a>
 <p class="mt-4">Click "Search" below to see your most recent transactions. You can also choose a custom date range.</p>
 
-<!-- search form -->
-<form class="form-inline my-5" role="form">
-
-  <!-- start date -->
-  <div class="form-group">
-    <label class="pb-1">Start Date</label><br/>
-    <div class="inner-addon right-addon">
-      <i class="lt-icon lt-calendar"></i>
-      <input type="text" class="form-control" placeholder="11/17/2017">
-      {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig'  %}
+<!-- START - SEARCH FORM -->
+<form class="clearfix my-5">
+    <div class="form-group has-feedback col-xs-12 col-sm-3 p-0 pr-md-2">
+        <label for="order-history-start-date" class="control-label">Start Date</label>
+        <input id="order-history-start-date" type="text" class="form-control" placeholder="11/17/2017">
+        <span class="lt-icon lt-calendar form-control-feedback"></span>
+        {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig'  %}
     </div>
-  </div>
-
-  <!-- end date -->
-  <div class="form-group">
-    <label class="pb-1">End Date</label><br/>
-    <div class="inner-addon right-addon">
-      <i class="lt-icon lt-calendar"></i>
-      <input type="text" class="form-control" placeholder="02/15/2018">
-      {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig'  %}
+    <div class="form-group has-feedback col-xs-12 col-sm-3 p-0 pl-md-2 pr-md-2">
+        <label for="order-history-end-date" class="control-label">End Date</label>
+        <input id="order-history-end-date" type="text" class="form-control" placeholder="02/15/2018">
+        <span class="lt-icon lt-calendar form-control-feedback"></span>
+        {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig'  %}
     </div>
-  </div>
-
-  <!-- transaction type -->
-  <div class="form-group">
-    <label>Transaction Type</label>
-    <div class="clearfix">
-      <form class="form-inline">
-      <div class="form-group has-feedback">
-        <div class="dropdown inner-addon right-addon">
-          <span class="lt-icon lt-triangle-down form-control-feedback"></span>
-          <select class="input form-control form-inline" data-toggle="dropdown">
-            <option class="input d-inline-block mr-5">All Transactions</option>
-            <option class="input d-inline-block mr-5">Transaction Type I</option>
-            <option class="input d-inline-block mr-5">Transaction Type II</option>
-          </select>
-        </div>
-      </div>
-      <!-- search button -->
-      <button type="submit" class="btn btn-primary button-full-width-mobile btn-bottom-align">Search</button>
-      </form>
+    <div class="form-group has-feedback col-xs-12 col-sm-3 p-0 pl-md-2 pr-md-2">
+        <label for="order-history-trans-type" class="control-label">Transaction Type</label>
+        <select class="form-control">
+          <option>All Transactions</option>
+          <option>Transaction Type I</option>
+          <option>Transaction Type II</option>
+        </select>
+        <span class="lt-icon lt-triangle-down form-control-feedback"></span>
     </div>
-  </div>
-<!-- end search form -->
+    <!-- search button -->
+    <div class="form-group col-xs-12 col-sm-3 p-0 pl-md-2">
+        <label class="control-label hidden-xs">&nbsp;</label>
+        <button type="submit" class="form-control btn btn-primary">Search</button>
+    </div>
+</form>
+<!-- END - SEARCH FORM -->
 
 <!-- END - ACCOUNT STATEMENT SEARCH -->

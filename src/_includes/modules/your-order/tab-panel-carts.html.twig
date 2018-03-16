@@ -1,4 +1,4 @@
-<ul class="list-group list-group--checkboxed mt-3 mb-5">
+<ul class="list-group list-group--checkboxed pt-3 mb-4">
 
   <li class="list-group-item list-group-item-checkbox">
     {% include "_includes/elements/forms/checkbox.html.twig" with {classes: 'checkbox-select-all', theLabel: 'Select Carts for Checkout', checked: true} %}
@@ -14,18 +14,18 @@
 
 </ul>
 
-<ul class="list-group list-group--checkboxed mt-3 mb-5">
-  <h5>Representative Delivery</h5>
-  <p>Customer carts from Avon.com</p>
+<ul class="list-group list-group--checkboxed pt-3 mb-4">
+  <h6 class="mb-1">Representative Delivery</h6>
+  <p class="small text-muted">Customer carts from Avon.com</p>
 
   <!-- START - REPRESENTATIVE DELIVERY CARTS -->
   {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '6', personName: fpo.person.4, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
   <!-- END - REPRESENTATIVE DELIVERY CARTS -->
 </ul>
 
-<ul class="list-group list-group--checkboxed mt-3 mb-5">
-  <h5>Future Orders</h5>
-  <p>Available for checkout in the next campaign</p>
+<ul class="list-group list-group--checkboxed pt-3 mb-4">
+  <h6 class="mb-1">Future Orders</h6>
+  <p class="small text-muted">Available for checkout in the next campaign</p>
 
   <!-- START - REPRESENTATIVE DELIVERY CARTS -->
   {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '7', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
@@ -34,5 +34,5 @@
 </ul>
 
 <div class="border-top py-4">
-  <a class="link-primary"><span class="lt-icon lt-warning lt-medium"></span>Delete selected carts</a>
+  <a class="link-primary"><span class="lt-icon lt-trash lt-medium mr-2"></span>Delete selected carts</a>
 </div>

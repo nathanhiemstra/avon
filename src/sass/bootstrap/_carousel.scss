@@ -149,10 +149,6 @@
     // Toggles
     .icon-prev,
     .icon-next,
-    .glyphicon-chevron-left,
-    .glyphicon-chevron-right,
-    .glyphicon-arrow-left,
-    .glyphicon-arrow-right,
     .lt-left,
     .lt-right {
         position: absolute;
@@ -167,16 +163,12 @@
     }
 
     .icon-prev,
-    .glyphicon-chevron-left,
-    .glyphicon-arrow-left,
     .lt-left {
         left: 50%;
         margin-left: -6px;
     }
 
     .icon-next,
-    .glyphicon-chevron-right,
-    .glyphicon-arrow-right,
     .lt-right {
         right: 50%;
         margin-right: -6px;
@@ -286,10 +278,6 @@
 @media screen and (min-width: $screen-sm-min) {
     // Scale up the controls a smidge
     .carousel-control {
-        .glyphicon-chevron-left,
-        .glyphicon-chevron-right,
-        .glyphicon-arrow-left,
-        .glyphicon-arrow-right,
         .icon-prev,
         .icon-next {
             width: 60px;
@@ -300,14 +288,10 @@
             // font-size: $carousel-control-font-size * 1.5;
         }
 
-        .glyphicon-chevron-left,
-        .glyphicon-arrow-left,
         .icon-prev {
             margin-left: -6px;
         }
-
-        .glyphicon-chevron-right,
-        .glyphicon-arrow-right,
+        
         .icon-next {
             margin-right: -6px;
         }

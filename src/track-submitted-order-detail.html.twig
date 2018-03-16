@@ -1,0 +1,96 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="container container--page">
+
+    {% embed "_layouts/columns-10-max.html.twig" %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        {# {% include "_includes/groups/navigation/back-link.twig" with {label: "Back"} %} #}
+
+        <h2 class="pb-3">Order #844365269</h2>
+        <p>Payment Information: Your account is up-to-date</p>
+        <div class="table-responsive mt-5 border-top">
+          <table class="table mb-0">
+            <thead>
+              <tr>
+                <th class="border-0 submitted-order-column">Type</th>
+                <th class="border-0 submitted-order-column">Ship Date</th>
+                <th class="border-0 submitted-order-column"># Boxes</th>
+                <th class="border-0 submitted-order-shipping-column">Carrier</th>
+                <th class="border-0 submitted-order-double-column">Tracking Number(S)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-0">Innerware</td>
+                <td class="border-0">02/12/2018</td>
+                <td class="border-0">100</td>
+                <td class="border-0">United Parcel Service <br> 1-800-742-5877</td>
+                <td class="border-0" colspan="2">
+                  <ol class="ordered-list-align-left">
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                  </ol>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-responsive mt-5 border-top">
+          <table class="table mb-0">
+            <thead>
+              <tr>
+                <th class="border-0 submitted-order-column">Type</th>
+                <th class="border-0 submitted-order-column">Ship Date</th>
+                <th class="border-0 submitted-order-column"># Boxes</th>
+                <th class="border-0 submitted-order-shipping-column">Carrier</th>
+                <th class="border-0 submitted-order-double-column" colspan="2">Tracking Number(S)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-0">Avon</td>
+                <td class="border-0">02/12/2018</td>
+                <td class="border-0">17</td>
+                <td class="border-0">US Postal Service</td>
+                <td class="border-0" colspan="2">
+                  <ol class="ordered-list-align-left">
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                    <li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>
+                  </ol>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      {% endblock %}
+
+    {% endembed %}
+
+  </div>
+
+{% endblock %}

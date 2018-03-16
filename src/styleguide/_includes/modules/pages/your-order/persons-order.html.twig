@@ -5,7 +5,7 @@
   <dl class="clearfix m-0">
     <dt class="pull-left">
       <a href="#collapse-{{ indexNum }}" data-toggle="collapse" {% if collapsed != false %} class="collapsed" {% endif %}>
-        <span class="glyphicon glyphicon-play collapse-indicator"></span> 
+        <span class="lt-icon lt-triangle-down collapse-indicator"></span> 
         <b>{{ personName }}</b>
       </a>
     </dt>
@@ -15,7 +15,7 @@
   <dl class="clearfix m-0">
     <dt class="pull-left">{{ itemCount }} items</dt>
     <dd class="pull-right">Discount: $[00.00]</dd>
-  </dl> 
+  </dl>
 
   <!-- DETAILS (COLLAPSBLE) -->
   <div class="details collapse {% if collapsed == false %} in {% endif %}" id="collapse-{{ indexNum }}">
@@ -35,7 +35,7 @@
 
           <!-- START - LOOP THOUGH TABLE ROWS -->
           {% include 'styleguide/_includes/modules/pages/your-order/persons-order-tr.html.twig' with {
-            productName: '[Product Name]', 
+            productName: '[Product Name]',
             img: '/images/fpo/product-thumb-grey.png',
             autoReplenish: true,
             sku: '[000-000]',
@@ -44,7 +44,7 @@
           }%}
 
           {% include 'styleguide/_includes/modules/pages/your-order/persons-order-tr.html.twig' with {
-            productName: '[Product Name]', 
+            productName: '[Product Name]',
             img: '/images/fpo/product-thumb-grey.png',
             autoReplenish: null,
             sku: '[000-000]',

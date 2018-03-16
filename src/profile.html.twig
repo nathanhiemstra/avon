@@ -1,0 +1,237 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+      {% embed layouts.columns3x9 %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - ASIDE #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block aside %}
+
+          <h5>My Account</h5>
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active">
+              <a href="#">Profile</a>
+            </li>
+            <li>
+              <a href="#">Password</a>
+            </li>
+            <li>
+              <a href="#">Account Balance</a>
+            </li>
+            <li>
+              <a href="#">Pay Avon</a>
+            </li>
+            <li>
+              <a href="#">Get Paid by Avon</a>
+            </li>
+          </ul>
+
+        {% endblock %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - MAIN #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block main %}
+
+          <h2 class="mb-5">My Profile</h2>
+
+          <!-- Name and Address section-->
+          <div class="border-top pt-4 mb-5">
+            <h5 class="mb-4">Name &amp; Address</h5>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Name</dt>
+              <dd class="col-md-8 text-left">Janet Johnson</dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Home/Billing Address</dt>
+              <dd class="col-md-8 text-left">9072 Rialto St
+                <br>Napls, FL 34113</dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Shipping Address</dt>
+              <dd class="col-md-8 text-left">9072 Rialto St
+                <br>Napls, FL 34113</dd>
+            </dl>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#requestchange">Request Change</button>
+            {# MODAL - Request Change #}
+            {% include "_includes/modules/profile/request-change.html.twig" %}
+          </div>
+
+          <!--Profile Picture section-->
+          <div class="border-top pt-4 mb-5">
+            <h5 class="mb-4">Profile Picture</h5>
+            <h1>FPO</h1>
+          </div>
+
+          <!--Contact Information section-->
+          <div class="border-top pt-4 mb-5">
+            <h5 class="mb-4">Contact Information</h5>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Nickname</dt>
+              <dd class="col-md-8 text-left">
+                <span>Janet Johnson</span>
+                {% include "_includes/elements/forms/input.html.twig" with {
+                  'placeholder': 'Janet Johnson',
+                  'theValue': 'Janet Johnson'
+                } %}
+              </dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Email Address</dt>
+              <dd class="col-md-8 text-left">
+                <span>janet.johnson@aol.com</span>
+                {% include "_includes/elements/forms/input.html.twig" with {
+                  'placeholder': 'janet.johnson@aol.com',
+                  'theValue': 'janet.johnson@aol.com'
+                } %}
+              </dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Home/Cell Phone</dt>
+              <dd class="col-md-8 text-left">
+                <span>(513) 123-4567</span>
+                {% include "_includes/elements/forms/input.html.twig" with {
+                  'placeholder': '(513) 123-4567',
+                  'theValue': '(513) 123-4567'
+                } %}
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Business/Cell Phone</dt>
+              <dd class="col-md-8 text-left">
+                <span>(513) 123-8901</span>
+                {% include "_includes/elements/forms/input.html.twig" with {
+                  'placeholder': '(513) 123-8901',
+                  'theValue': '(513) 123-8901'
+                } %}
+            </dl>
+            <button class="btn btn-primary">
+              EDIT
+            </button>
+          </div>
+
+          <!--Representative section-->
+          <div class="border-top pt-4 mb-5">
+            <h5 class="mb-4">Representative ID</h5>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">District Number</dt>
+              <dd class="col-md-8 text-left">5999</dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Account Number</dt>
+              <dd class="col-md-8 text-left">45619986</dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Pay by Check</dt>
+              <dd class="col-md-8 text-left">Yes</dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Avon Anniversary</dt>
+              <dd class="col-md-8 text-left">NOV 12, 1999</dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Instant Credit</dt>
+              <dd class="col-md-8 text-left">Yes</dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Leadership Level</dt>
+              <dd class="col-md-8 text-left">Silver Leader</dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Sales Level</dt>
+              <dd class="col-md-8 text-left">David H. McConnell Club</dd>
+            </dl>
+          </div>
+
+          <!--Settings section-->
+          <div class="border-top pt-4 mb-5">
+            <h5 class="mb-4">Settings</h5>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Language Preference</dt>
+              <dd class="col-md-8 text-left clearfix">
+                {% include components.elements.forms.radio with {id: 'language-1', name: 'language', classes: 'pull-left my-2 mr-4', theValue: 'English', theLabel: 'English', checked: true} %}
+                {% include components.elements.forms.radio with {id: 'language-2', name: 'language', classes: 'pull-left my-2', theValue: 'Language-2', theLabel: 'Language-2', checked: false} %}
+              </dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Publicity Release
+                <a href="#" class="d-block" data-toggle="modal" data-target="#learnmore">Learn More</a>
+              </dt>
+              <dd class="col-md-8 text-left">
+                {% include components.elements.forms.radio with {id: 'relese-yes', name: 'publicity-relese', classes: 'pull-left my-2 mr-4', theValue: 'Yes', theLabel: 'Yes', checked: true} %}
+                {% include components.elements.forms.radio with {id: 'relese-no', name: 'publicity-relese', classes: 'pull-left my-2', theValue: 'No', theLabel: 'No', checked: false} %}
+              </dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Paperless Invoice
+                <a href="#" class="d-block" data-toggle="modal" data-target="#learnmore">Learn More</a>
+              </dt>
+              <dd class="col-md-8 text-left">
+                {% include components.elements.forms.radio with {id: 'paperless-invoice-yes', name: 'paperless-invoice', classes: 'pull-left my-2 mr-4', theValue: 'Yes', theLabel: 'Yes', checked: true} %}
+                {% include components.elements.forms.radio with {id: 'paperless-invoice-no', name: 'paperless-invoice', classes: 'pull-left my-2', theValue: 'No', theLabel: 'No', checked: false} %}
+              </dd>
+            </dl>
+            <button class="btn btn-primary">
+              EDIT
+            </button>
+          </div>
+
+          <!--Programs section-->
+          <div class="border-top pt-4 mb-5">
+            <h5 class="mb-4">Programs</h5>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Facebook Account
+                <a href="#" class="d-block" data-toggle="modal" data-target="#learnmore">Learn More</a>
+              </dt>
+              <dd class="col-md-8 text-left">
+                <a href="#" class="btn btn-primary" target="_blank">Connect</a>
+              </dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Email Preferences
+                <a href="#" class="d-block" data-toggle="modal" data-target="#learnmore">Learn More</a>
+              </dt>
+              <dd class="col-md-8 text-left">
+                <a href="#" class="btn btn-primary" target="_blank">Open</a>
+              </dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">SMS Preferences
+                <a href="#" class="d-block" data-toggle="modal" data-target="#learnmore">Learn More</a>
+              </dt>
+              <dd class="col-md-8 text-left">
+                <a href="#" class="btn btn-primary" target="_blank">Open</a>
+              </dd>
+            </dl>
+            <dl class="row my-5">
+              <dt class="text-uppercase col-md-4">Let New Customers Find Me
+                <br>
+                <a href="#" class="d-block" data-toggle="modal" data-target="#learnmore">Learn More</a>
+              </dt>
+              <dd class="col-md-8 text-left">
+                <a href="#" class="btn btn-primary">Enroll Now</a>
+              </dd>
+            </dl>
+          </div>
+
+          {# MODAL - Learn More common modal #}
+          {% include "_includes/modules/profile/learn-more.html.twig" %}
+
+        {% endblock %}
+
+      {% endembed %}
+    </section>
+
+  {% endblock %}
+
+{% endblock %}

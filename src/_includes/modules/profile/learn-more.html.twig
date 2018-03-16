@@ -1,0 +1,37 @@
+{% extends "_layouts/modal-lg-no-footer.html.twig" %}
+{% set modalId = 'learnmore' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+  <section class="py-5">
+    <!-- Product Details -->
+    <div class="row">
+      <div class="col-md-12 vcenter">
+       <p>
+        {{ fpo.paragraph }}
+        {{ fpo.paragraph }}
+        {{ fpo.paragraph }}
+        {{ fpo.paragraph }}
+        {{ fpo.paragraph }}
+       </p>
+      </div>
+    </div>
+    <!-- /.row -->
+  </section>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "_layouts/theme-your-order.html.twig" %}
+{% extends layouts.base %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
@@ -9,12 +9,13 @@
   {# DEFINE BLOCK - MAIN #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
+    
 
     <!-- START - TAB NAVIGATION -->
     <section class="container container--page">
-
+      <h2 class="mb-5">Your Order</h2>
       <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <div class="col-xs-12 col-sm-12">
 
           {% include "_includes/modules/your-order/tab-nav.html.twig" %}
 
@@ -30,7 +31,7 @@
         <strong>Buy $9.99 more to get an extra discount applied to this order!</strong>
       </div>
 
-      {% embed layouts.columns9x3 %}
+      {% embed "_layouts/columns-8x4.html.twig" %}
 
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {# DEFINE BLOCK - MAIN #}
