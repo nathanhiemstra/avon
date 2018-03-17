@@ -54,21 +54,23 @@ $box-group--primary-item-width: 220px;
     .carousel-inner {
       width: inherit;
 
-      // Margins are to compensate for the margin of the boxes, so the borders of the boxes will go will width of container
+      // Margins are to compensate for the margin of the boxes, so the borders of the boxes will align with the width of container
       margin-left: -$box-group--primary-item-margin;
       margin-right: -$box-group--primary-item-margin;
     }
 
     // Tablet only
     @media (min-width: $screen-sm) and (max-width: $screen-md) {
+      // Force boxes to wrap in groups of two
       .carousel-inner {
         margin-left: 30px;
         margin-right: 30px;
       }
     }
 
-    // Desktop and up
+    // Desktop and above
     @media (min-width: $screen-md) {
+      // Make boxes fill availble width (but content stays fixed width)
       .item {
         flex-grow: 1;
       }
@@ -86,7 +88,7 @@ $box-group--primary-item-width: 220px;
     margin-right: auto;
   }
 
-  // // Starting at tablet
+  // Tablet and above
   @media (min-width: $screen-sm) {
     display: flex;
     flex-wrap: wrap;
@@ -102,7 +104,7 @@ $box-group--primary-item-width: 220px;
     }
   }
 
-  // Desktop and up
+  // Desktop and above
   @media (min-width: $screen-md) {
     .box-group--item {
       width: inherit;
