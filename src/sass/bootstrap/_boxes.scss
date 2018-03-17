@@ -28,7 +28,7 @@ $box-group--primary-item-width: 220px;
     }
 
     .carousel-control .lt-right {
-      width: 150%;
+      width: 200%;
     }
   }
 
@@ -59,15 +59,18 @@ $box-group--primary-item-width: 220px;
       margin-right: -$box-group--primary-item-margin;
     }
 
-    .item {
-      flex-grow: 1;
-    }
-
     // Tablet only
     @media (min-width: $screen-sm) and (max-width: $screen-md) {
       .carousel-inner {
         margin-left: 30px;
         margin-right: 30px;
+      }
+    }
+
+    // Desktop and up
+    @media (min-width: $screen-md) {
+      .item {
+        flex-grow: 1;
       }
     }
   }
@@ -94,9 +97,15 @@ $box-group--primary-item-width: 220px;
       margin-left: $box-group--primary-item-margin;
       margin-right: $box-group--primary-item-margin;
       flex-grow: 1;
-      width: inherit;
       display: flex;
       justify-content: center;
+    }
+  }
+
+  // Desktop and up
+  @media (min-width: $screen-md) {
+    .box-group--item {
+      width: inherit;
     }
   }
 }
