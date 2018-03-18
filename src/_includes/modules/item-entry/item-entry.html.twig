@@ -90,7 +90,14 @@
 
         <div class="item-entry-total hidden-xs col-sm-4">
 
-          {% include components.modules.yourOrder.total with { btnText: 'Add All Items to Order' } %}
+          {#
+
+            NOTE :: Removing this for now in SPRINT 5 - The include conflicts
+            with JS we need for Your Orders page. If we need to re-use the yourOrder
+            template later, we're going to have to customize / remove the IDs 
+
+           #}
+          {# {% include components.modules.yourOrder.total with { btnText: 'Add All Items to Order' } %} #}
 
         </div>
 

@@ -73,6 +73,25 @@
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
 
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMN 8 - Centered #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Column: 8 - Centered",
+    slug:         "columns-8-centered",
+    snippet:      '
+    <div class="container">
+      <div class="row">
+        <main class="col-md-8 col-md-offset-2">
+          <p>' ~ fpo.paragraph ~ '</p>
+        </main>
+      </div>
+    </div>'
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# COLUMN 9 - Left Aligned #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -91,7 +110,7 @@
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
 
-  
+
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}

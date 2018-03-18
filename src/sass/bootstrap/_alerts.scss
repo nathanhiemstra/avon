@@ -76,8 +76,29 @@
 .alert-reverse {
   @include alert-variant($alert-reverse-bg, $alert-reverse-border, $alert-reverse-text);
 }
+
 .alert-promo {
   @include alert-variant($alert-promo-bg, $alert-promo-border, $alert-promo-text);
+}
+
+// promo alert with an absolutely positioned icon and left aligned text
+.alert-promo--abs-icon {
+  @extend .alert-promo;
+
+  strong {
+    position: relative;
+    display: inline-block;
+  }
+  .lt-icon {
+    position: absolute;
+    top: 1px;
+    left: 0;
+  }
+  span:not(.lt-icon) {
+    display: inline-block;
+    text-align: left;
+    padding-left: $spacing-5;
+  }
 }
 
 .alert-reverse {

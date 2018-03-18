@@ -2,13 +2,13 @@
   {% set eachShipment = '<br> <small class="text-muted">Each shipment</small>' %}
 {% endif %}
 <tr class="pt-3">
-  <td class="t-item hidden-xs hidden-sm pl-0 pb-3 pt-5">
+  <td class="t-item hidden-xs hidden-sm pl-0 pb-0 pb-md-3 pt-0 pt-md-5 pl-0 pl-md-3">
     <img src="{{ img }}" class="img-responsive" alt="">
   </td>
-  <td class="t-desc pb-3 pt-5">
+  <td class="t-desc pb-0 pb-md-3 pt-3 pt-md-5 pl-0 pl-md-3">
     <div>
       <span class="mr-4">{{ productName }}</span>
-      <span class="text-muted">{{ sku }}</span>
+      <span class="product-sku text-muted">{{ sku }}</span>
     </div>
     {% if autoReplenish != null %}
       <div class="mt-3">
@@ -27,17 +27,17 @@
       </div>
     {% endif %}
   </td>
-  <td class="t-price pb-3 pt-5">
+  <td class="t-price pb-0 pb-md-3 pt-3 pt-md-5 pr-0 pr-md-3">
     {{ price }}
     <span class="hidden-xs hidden-sm">{{ eachShipment }}</span>
   </td>
-  <td class="t-qty text-right pb-3 pt-5">
-    <span class="hidden-xs">
-      {% include "_includes/elements/forms/input.html.twig" with { 'classes': 'text-right input-sm' } %}
+  <td class="t-qty text-right pb-0 pb-md-3 pt-0 pt-md-5 pr-0 pr-md-3">
+    <span class="d-flex align-items-center">
+      <label class="mb-0 mr-3 visible-xs visible-sm">QTY:</label>
+      {% include "_includes/elements/forms/input.html.twig" with { 'classes': 'text-right input-sm mt-2 mt-md-0' } %}
     </span>
-    <small class="visible-xs">1 unit</small>
-    <div class="mt-4 hidden-xs hidden-sm">
-      <a href="#">Remove</a>
+    <div class="mt-2 mt-md-4">
+      <a href="javascript:void(0);" class="small link-muted underline" data-toggle="modal" data-target="#blank-modal-either-or">Delete</a>
     </div>
   </td>
 </tr>
