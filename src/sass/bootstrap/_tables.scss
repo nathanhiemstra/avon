@@ -333,17 +333,86 @@ table {
 }
 
 // Your Order cart table specific styles
-.table {
+.table--carts {
+
+  margin-bottom: 0;
+
+  thead {
+    display: none;
+    .t-qty {
+      visibility: hidden;
+    }
+  }
+
+  > tbody > tr {
+    border-top: 1px solid $border-color;
+  }
+
+  > tbody > tr > td {
+    border-top: none;
+  }
+
   .t-item {
-    width: 10%;
+    width: 0;
   }
+
   .t-desc {
-    width: 60%;
+    width: 66.66%;
+
+    .product-sku {
+      display: block;
+    }
   }
-  .t-price {
-    width: 15%;
+
+  > tbody .t-price {
+    width: 100%;
+    text-align: right;
+    font-size: $font-size-small;
   }
-  .t-qty {
-    width: 15%;
+
+  .t-price, .t-qty {
+    display: block;
   }
+
+  // desktop
+  @media (min-width: $screen-sm-min) {
+
+    thead {
+      display: table-header-group;
+      .t-qty {
+        visibility: visible;
+      }
+    }
+
+    > tbody > tr {
+      border-top: 1px solid $border-color;
+    }
+
+    > tbody > tr > td {
+      border-top: none;
+    }
+
+    .t-item {
+      width: 10%;
+    }
+
+    .t-desc {
+      width: 60%;
+
+      .product-sku {
+        display: inline;
+      }
+    }
+
+    > tbody .t-price {
+      text-align: left;
+      font-size: $font-size-base;
+    }
+
+    .t-price, .t-qty {
+      display: table-cell;
+    }
+
+  }
+
 }

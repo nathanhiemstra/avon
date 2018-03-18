@@ -169,18 +169,19 @@
   <h3>Bold</h3>
   <p>For emphasizing a snippet of text with a heavier font-weight.</p>
 
-   <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info">
     <code>font-weight</code> settings of <code>bold</code> and <code>600</code> use Gotham Medium.
   </div>
   <div class="bs-callout bs-callout-info">
     <code>font-weight: 900</code> uses Gotham Bold. Use this is for very small bold text.
   </div>
   <div class="bs-example">
-    <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
+    <p>The following snippet of text is <strong>rendered as bold text</strong>. <span class="font-weight-bold">As is this</span>.</p>
   </div>
 
   {{ highlightMarkup }}
-  <strong>rendered as bold text</strong>
+  <strong>rendered as bold text</strong>.
+  <span class="font-weight-bold">As is this</span>
   {{ endhighlight }}
 
 
@@ -192,6 +193,39 @@
 
   {{ highlightMarkup }}
   <em>rendered as italicized text</em>
+  {{ endhighlight }}
+
+
+  <h3>Uppercase</h3>
+  <p>Display text as uppercase.</p>
+  <div class="bs-example">
+    <p>The following snippet of text is <span class="text-uppercase">rendered as uppercase</span>.</p>
+  </div>
+
+  {{ highlightMarkup }}
+  <span class="text-uppercase">rendered as uppercase</span>
+  {{ endhighlight }}
+
+
+  <h3>Lowercase</h3>
+  <p>Display text as lowercase.</p>
+  <div class="bs-example">
+    <p>The following snippet of text is <span class="text-lowercase">RENDERED AS LOWERCASE</span>.</p>
+  </div>
+
+  {{ highlightMarkup }}
+  <span class="text-lowercase">RENDERED AS LOWERCASE</span>
+  {{ endhighlight }}
+
+
+  <h3>Capitalize</h3>
+  <p>Capitalize each word.</p>
+  <div class="bs-example">
+    <p>The following snippet of text is <span class="text-capitalize">rendered with capitalization</span>.</p>
+  </div>
+
+  {{ highlightMarkup }}
+  <span class="text-capitalize">rendered with capitalization</span>
   {{ endhighlight }}
 
 

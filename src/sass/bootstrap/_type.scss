@@ -335,6 +335,22 @@ ol {
   }
 }
 
+// ordered list with left-aligned numbers
+.ordered-list-align-left {
+  counter-reset: item;
+  padding-left: 0;
+  li {
+    display: block;
+
+    &:before {
+      content: counter(item) ". ";
+      counter-increment: item;
+      width: 2em;
+      display: inline-block;
+    }
+  }
+}
+
 // Description Lists
 dl {
   margin-top: 0;

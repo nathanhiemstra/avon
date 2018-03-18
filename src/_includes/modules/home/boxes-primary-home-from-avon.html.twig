@@ -1,35 +1,45 @@
-<!-- START - FULL WIDTH CONTAINER -->
-        <section class="my-5">
+<!-- START - FULL WIDTH CONTAINER ! -->
+<section class="my-5">
 
-          <!-- START - FPO HEADLINE -->
-          <div class="pt-5">
-            <h5 class="text-center mb-4">FROM AVON</h5>
-          </div>
-          <!-- END - FPO HEADLINE -->
+  <!-- START - FPO HEADLINE -->
+  <h5 class="text-center my-4 pt-5">From Avon</h5>
+  <!-- END - FPO HEADLINE -->
 
-          <!-- START - BOX GROUP OF 4 -->
-          <section class="box-group--primary">
+  <!-- START - CAROUSEL - FROM AVON -->
+  <div id="carousel-from-avon" class="carousel carousel--box-group-primary slide" data-ride="carousel"  data-interval="false">
+    
+    <!-- START - INDICATORS -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-from-avon" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-from-avon" data-slide-to="1"></li>
+      <li data-target="#carousel-from-avon" data-slide-to="2"></li>
+      <li data-target="#carousel-from-avon" data-slide-to="3"></li>
+    </ol>
+    <!-- END - INDICATORS -->
 
-            <!-- START - BOX GROUP PAIR -->
-            <div class="box-group--pair">
+    <!-- START - SLIDES -->
+    <div class="carousel-inner box-group--primary ">
+   
+      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '1', active: 'true' } %}
+      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '2' } %}
+      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '3' } %}
+      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '4' } %}
 
-              {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '1' } %}
-              {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '2' } %}
+    </div>
+    <!-- END - SLIDES -->
 
-            </div><!-- /.box-group-pair -->
-            <!-- END - BOX GROUP PAIR -->
+    <!-- START - CONTROLS -->
+    <a class="left carousel-control" href="#carousel-from-avon" data-slide="prev">
+      <span class="lt-icon lt-left lt-large"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-from-avon" data-slide="next">
+      <span class="lt-icon lt-right lt-large"></span>
+    </a>
+    <!-- END - CONTROLS -->
+
+  </div>
+  <!-- START - CAROUSEL - FROM AVON -->
 
 
-            <!-- START - BOX GROUP PAIR-->
-            <div class="box-group--pair">
-
-              {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '3' } %}
-              {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '4' } %}
-
-            </div><!-- /.box-group-pair -->
-            <!-- END - BOX GROUP PAIR -->
-
-          </section><!-- /.box-group-primary -->
-
-        </section>
-        <!-- END - FULL WIDTH CONTAINER -->
+</section>
+<!-- END - FULL WIDTH CONTAINER -->

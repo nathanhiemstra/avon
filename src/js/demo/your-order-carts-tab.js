@@ -22,6 +22,7 @@ var YourOrderCartsTab = (function () {
 
       subtotal: $('.checkout-order-total .subtotal'),
       offersTotal: $('.checkout-order-total .offers-total'),
+      discountTotal: $('.checkout-order-total .discount'),
 
       checkoutSummary: $('section.checkout-order-total'),
 
@@ -34,7 +35,9 @@ var YourOrderCartsTab = (function () {
       cartsSummaryContainerMobile: $('#carts-summary-container-mobile'),
       cartsBtnsFixedContainer: $('#carts-fixed-btns-container'),
       cartsPromoAlert: $('#carts-promo-alert'),
-      cartsRefreshAlert: $('#carts-refresh-alert')
+      cartsRefreshAlert: $('#carts-refresh-alert'),
+
+      columnQty: $('.single-cart-item .t-qty')
     };
 
     totalNumChecked = $els.carts.length;
@@ -100,7 +103,7 @@ var YourOrderCartsTab = (function () {
         $(this).addClass('hidden');
         $els.cartsRefreshMsg.addClass('hidden');
         $els.cartsRefreshAlert.addClass('hidden');
-        
+
         // show checkout button and carts promo
         $els.checkoutBtn.removeClass('hidden out').addClass('in');
         $els.cartsPromoAlert.removeClass('hidden out').addClass('in');
@@ -162,7 +165,7 @@ var YourOrderCartsTab = (function () {
   var _zeroOutTotals = function () {
     // $els.subtotal.html('$&mdash;.&mdash;');
     $els.offersTotal.html('$&mdash;.&mdash;');
-    // $els.discountTotal.html('$&mdash;.&mdash;');
+    $els.discountTotal.html('$&mdash;.&mdash;');
 
     totalsOff = true;
   };
@@ -171,20 +174,20 @@ var YourOrderCartsTab = (function () {
 
     // handle checkout totals
     totalPrice = 0;
-    totalDiscount = 0;
+    totalDiscount = 10;
 
     $els.carts.each(function () {
       var $this = $(this);
       var checkbox = $this.find('input[type=checkbox]');
       if (checkbox[0].checked) {
         totalPrice += parseFloat($this.find('.cart-total').data('total'));
-        totalDiscount += parseFloat($this.find('.cart-discount').data('discount'));
+        // totalDiscount += parseFloat($this.find('.cart-discount').data('discount'));
       }
     });
 
     $els.subtotal.html('$' + totalPrice.toFixed(2));
-    $els.offersTotal.html('$' + totalPrice.toFixed(2)); // TODO :: <-- calculate this
-    // $els.discountTotal.html('$' + totalDiscount.toFixed(2));
+    $els.offersTotal.html('$' + (totalPrice - totalDiscount).toFixed(2) );
+    $els.discountTotal.html('$' + totalDiscount.toFixed(2));
 
     // handle checkout button text
     var btnText = '';
@@ -221,6 +224,9 @@ var YourOrderCartsTab = (function () {
       $els.cartsBtnsFixedContainer.addClass('invisible');
       $els.checkoutSummary.removeClass('invisible');
 
+      // reset 'colspan' attribute from quantity
+      $els.columnQty.attr('colspan', 1);
+
       // move summary block to sidebar
       $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerDesktop);
 
@@ -232,6 +238,9 @@ var YourOrderCartsTab = (function () {
       // mobile view
       $els.cartsBtnsFixedContainer.removeClass('invisible');
       $els.checkoutSummary.addClass('invisible');
+
+      // widen 'colspan' attribute on quantity
+      $els.columnQty.attr('colspan', 2);
 
       // move summary block to top of page
       $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerMobile);
