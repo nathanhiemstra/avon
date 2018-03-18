@@ -100,11 +100,8 @@ var GlobalSearch = (function () {
   var _constructItemTemplate = function(suggestion) {
     return '<div class="item border-bottom p-3">' +
         '<a href="' + suggestion.itemUrl + '" class="link-plain">' +
-          '<div class="row d-flex align-items-center flex-fill">' +
-            '<div class="col col-xs-2 col-sm-3 pr-0">' +
-              '<img src="' + suggestion.imgUrl + '" class="product-img img-responsive">' +
-            '</div>' +
-            '<div class="col col-xs-10 col-sm-9 pl-3">' +
+          '<div class="d-flex align-items-center flex-fill">' +
+            '<div>' +
               '<p class="title">' + suggestion.value + '</p>' +
               '<p>' +
                 '<!-- DEVELOPER NOTE :: If "Regular price" is not shown here, remove .text-primary to make the price black -->' +

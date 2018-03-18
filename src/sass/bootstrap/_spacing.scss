@@ -4,6 +4,10 @@
     max-width: 100% !important;
 }
 
+.h-100 {
+  height: 100% !important;
+}
+
 .mh-100 {
     max-height: 100% !important;
 }
@@ -322,6 +326,15 @@
 .ml-auto,
 .mx-auto {
     margin-left: auto !important;
+}
+
+@media (min-width: 300px) {
+   .ml-xs-auto, .mx-xs-auto {
+        margin-left: auto !important;
+    }
+    .mr-xs-auto, .mx-xs-auto {
+        margin-right: auto !important;
+    }
 }
 
 @media (min-width: 576px) {

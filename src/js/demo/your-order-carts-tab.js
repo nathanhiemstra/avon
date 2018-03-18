@@ -17,13 +17,27 @@ var YourOrderCartsTab = (function () {
     // grab the DOM els we need
     $els = {
       selectAllCheckbox: $('.list-group--checkboxed .checkbox-select-all :checkbox'),
+
       carts: $('.list-group--checkboxed .single-cart-item'),
-      checkoutBtn: $('.checkout-order-total .btn'),
+
       subtotal: $('.checkout-order-total .subtotal'),
       offersTotal: $('.checkout-order-total .offers-total'),
       discountTotal: $('.checkout-order-total .discount'),
-      updateTotalsLink: $('.checkout-order-total .update-totals-link'),
-      fixedBottomSummary: $('.navbar-fixed-bottom--order-summary')
+
+      checkoutSummary: $('section.checkout-order-total'),
+
+      checkoutBtn: $('#carts-checkout-btn'),
+      refreshOrderBtn: $('#carts-refresh-btn'),
+      cartsRefreshMsg: $('#carts-refresh-msg'),
+      cartsButtons: $('#carts-buttons'),
+      cartsDetails: $('#carts-details'),
+      cartsSummaryContainerDesktop: $('#carts-summary-container-dt'),
+      cartsSummaryContainerMobile: $('#carts-summary-container-mobile'),
+      cartsBtnsFixedContainer: $('#carts-fixed-btns-container'),
+      cartsPromoAlert: $('#carts-promo-alert'),
+      cartsRefreshAlert: $('#carts-refresh-alert'),
+
+      columnQty: $('.single-cart-item .t-qty')
     };
 
     totalNumChecked = $els.carts.length;
@@ -32,6 +46,7 @@ var YourOrderCartsTab = (function () {
     _addListeners();
     _updateCheckoutTotals();
     _calculateBottomPadding();
+    _checkWidthAndMoveSummary();
 
   };
 
@@ -50,7 +65,7 @@ var YourOrderCartsTab = (function () {
       _toggleUpdateTotals();
     });
 
-    $els.updateTotalsLink.on('click', function () {
+    $els.refreshOrderBtn.on('click', function () {
       totalsOff = false;
       _updateCheckoutTotals();
       _toggleUpdateTotals();
@@ -58,18 +73,41 @@ var YourOrderCartsTab = (function () {
 
     $(window).resize(function () {
       _calculateBottomPadding();
+      _checkWidthAndMoveSummary();
     });
 
   };
 
   var _toggleUpdateTotals = function () {
     if (totalsOff) {
-      // show update link
-      $els.updateTotalsLink.removeClass('out').addClass('in');
+      // hide checkout button and carts promo
+      $els.checkoutBtn.removeClass('in').addClass('out');
+      $els.cartsPromoAlert.removeClass('in').addClass('out');
+      // show 'refresh order' button and messaging
+      $els.checkoutBtn.on('transitionend',function() {
+        $(this).addClass('hidden');
+        $els.cartsPromoAlert.addClass('hidden');
+
+        $els.refreshOrderBtn.removeClass('hidden out').addClass('in');
+        $els.cartsRefreshMsg.removeClass('hidden out').addClass('in');
+        $els.cartsRefreshAlert.removeClass('hidden out').addClass('in');
+      });
       _zeroOutTotals();
     } else {
-      // hide update link
-      $els.updateTotalsLink.addClass('out').removeClass('in');
+      // hide 'refresh order' button and messaging
+      $els.refreshOrderBtn.removeClass('in').addClass('out');
+      $els.cartsRefreshMsg.removeClass('in').addClass('out');
+      $els.cartsRefreshAlert.removeClass('in').addClass('out');
+
+      $els.refreshOrderBtn.on('transitionend',function() {
+        $(this).addClass('hidden');
+        $els.cartsRefreshMsg.addClass('hidden');
+        $els.cartsRefreshAlert.addClass('hidden');
+
+        // show checkout button and carts promo
+        $els.checkoutBtn.removeClass('hidden out').addClass('in');
+        $els.cartsPromoAlert.removeClass('hidden out').addClass('in');
+      });
     }
   };
 
@@ -125,9 +163,9 @@ var YourOrderCartsTab = (function () {
   };
 
   var _zeroOutTotals = function () {
-    $els.subtotal.html('$-');
-    $els.offersTotal.html('$-');
-    $els.discountTotal.html('$-');
+    // $els.subtotal.html('$&mdash;.&mdash;');
+    $els.offersTotal.html('$&mdash;.&mdash;');
+    $els.discountTotal.html('$&mdash;.&mdash;');
 
     totalsOff = true;
   };
@@ -136,19 +174,19 @@ var YourOrderCartsTab = (function () {
 
     // handle checkout totals
     totalPrice = 0;
-    totalDiscount = 0;
+    totalDiscount = 10;
 
     $els.carts.each(function () {
       var $this = $(this);
       var checkbox = $this.find('input[type=checkbox]');
       if (checkbox[0].checked) {
         totalPrice += parseFloat($this.find('.cart-total').data('total'));
-        totalDiscount += parseFloat($this.find('.cart-discount').data('discount'));
+        // totalDiscount += parseFloat($this.find('.cart-discount').data('discount'));
       }
     });
 
     $els.subtotal.html('$' + totalPrice.toFixed(2));
-    $els.offersTotal.html('$' + totalPrice.toFixed(2)); // TODO :: <-- calculate this
+    $els.offersTotal.html('$' + (totalPrice - totalDiscount).toFixed(2) );
     $els.discountTotal.html('$' + totalDiscount.toFixed(2));
 
     // handle checkout button text
@@ -175,9 +213,45 @@ var YourOrderCartsTab = (function () {
   };
 
   var _calculateBottomPadding = function () {
-    // var isVisible = $els.fixedBottomSummary
-    var footerHeight = $els.fixedBottomSummary.outerHeight();
+    var footerHeight = $els.cartsBtnsFixedContainer.outerHeight();
     $('body').css('padding-bottom', footerHeight);
+  };
+
+  var _checkWidthAndMoveSummary = function () {
+
+    if($(window).width() > 991) {
+      // desktop view
+      $els.cartsBtnsFixedContainer.addClass('invisible');
+      $els.checkoutSummary.removeClass('invisible');
+
+      // reset 'colspan' attribute from quantity
+      $els.columnQty.attr('colspan', 1);
+
+      // move summary block to sidebar
+      $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerDesktop);
+
+      // move 'checkout' & 'refresh' buttons to sidebar summary
+      $els.cartsButtons.detach().appendTo($els.cartsSummaryContainerDesktop);
+      $els.checkoutSummary.removeClass('invisible');
+      $els.cartsBtnsFixedContainer.addClass('invisible');
+    } else {
+      // mobile view
+      $els.cartsBtnsFixedContainer.removeClass('invisible');
+      $els.checkoutSummary.addClass('invisible');
+
+      // widen 'colspan' attribute on quantity
+      $els.columnQty.attr('colspan', 2);
+
+      // move summary block to top of page
+      $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerMobile);
+
+      // move 'checkout' & 'refresh' buttons to fixed bottom nav
+      $els.cartsButtons.detach().appendTo($els.cartsBtnsFixedContainer);
+      $els.cartsBtnsFixedContainer.removeClass('invisible');
+      $els.checkoutSummary.addClass('invisible');
+    }
+
+    _calculateBottomPadding();
   };
 
   return {

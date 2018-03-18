@@ -2,6 +2,13 @@
 // Typography
 // --------------------------------------------------
 
+// Smoother Font Rendering
+// -------------------------
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 // Headings
 // -------------------------
 
@@ -169,6 +176,17 @@ mark,
 
 .text-center {
   text-align: center;
+
+	// text centered on small screens, left-aligned on larger screens
+	&--mobile {
+		text-align: center;
+    font-size: $font-size-small;
+
+    @media (min-width: $screen-md-min) {
+      text-align: left;
+      font-size: $font-size-base;
+    }
+	}
 }
 
 .text-center-sm {

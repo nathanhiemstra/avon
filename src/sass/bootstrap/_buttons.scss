@@ -73,7 +73,7 @@ a.btn {
     pointer-events: none;
 
     // Future-proof disabling of clicks on `<a>` elements
-
+ 
   }
 }
 
@@ -87,6 +87,13 @@ a.btn {
   &[disabled],
   fieldset[disabled] & {
     color: $btn-disabled-color;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: darken($btn-default-color, 12%);
+    background-color: transparent;
   }
 }
 
@@ -103,6 +110,7 @@ a.btn {
 // transparent light has a trasparent bg with light border & text and a thinner border & text
 .btn-transparent-light {
   @include button-variant($btn-success-color, transparent, $btn-success-color);
+
   border-width: 1px;
   font-weight: 100;
 }
@@ -147,7 +155,7 @@ a.btn {
     line-height: 0;
 
     // prevent larger icons increasing button height
-
+ 
   }
 
   > i,
@@ -209,7 +217,8 @@ a.btn {
   color: $text-color;
   padding: $btn-padding-small-vertical $btn-padding-small-horizontal;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: $text-color;
   }
 

@@ -190,6 +190,14 @@ $(document).ready(function () {
         .data('bs.popover')
         .tip()
         .addClass('popover--cart');
+
+        // hide cart popover on body click
+        $('body').on('click', function (e) {
+        if ($(e.target).data('toggle') !== 'popover'
+            && $(e.target).parents('.popover.in').length === 0) {
+            $('#popover-cart').popover('hide');
+        }
+    });
     }
 
   });

@@ -1,0 +1,13 @@
+/*
+    Styles for custom layouts that either:
+    a) don't rely on Bootstrap columns
+    b) extend Bootstrap columns in some way
+*/
+
+// centered content with a max-width. Add to col-md-8
+.col-md-8--max-width {
+  float: none;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}

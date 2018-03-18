@@ -1,9 +1,16 @@
-<!-- START - SINGLE BOX -->
-<div class="box-group--item box-emphasize">
+{% if active %}
+  {% set classes = ' active ' %}
+{% endif %}
+<!-- START - SINGLE SLIDE -->
+<div class="item  {{ classes }}">
+  <div class="box-group--item box-emphasize">
+    <div class="item-content">
+      
+      <!-- START - FPO CONTENT -->
+      <img src="images/fpo/home/{{ label }}.png" alt="FPO image">
+      <!-- END - FPO CONTENT -->
 
-  <!-- START - FPO CONTENT -->
-  <h3 class="m-0" style="text-align: center; padding-top: 80px;">{{ label }}</h3>
-  <!-- END - FPO CONTENT -->
-
+    </div>
+  </div>
 </div><!-- /.box-group-item -->
-<!-- END - SINGLE BOX -->
+<!-- END - SINGLE SLIDE -->
