@@ -4,6 +4,9 @@
 {% if classes %}
   {% set classes = ' ' ~ classes %}
 {% endif %}
+{% if size %}
+  {% set size = ' size="' ~ size ~ '"' %}
+{% endif %}
 {% if id %}
   {% set id = ' id="' ~ id ~ '"' %}
 {% endif %}
@@ -13,4 +16,4 @@
 {% if theValue %}
   {% set theValue = ' value="' ~ theValue ~ '"' %}
 {% endif %}
-<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}>
+<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}>

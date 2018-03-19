@@ -116,7 +116,15 @@ output {
 
 .form-control {
   display: block;
-  width: 100%;
+
+  &:not(.form-control-inline) {
+    width: 100%;
+  }
+
+  &.form-control-inline {
+    display: inline;
+  }
+
   height: $input-height-base;
 
   // Make inputs at least the height of their button counterpart (base line-height + padding + border)
@@ -159,7 +167,7 @@ output {
     opacity: 1;
 
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
-
+ 
   }
 
   &[disabled],
@@ -197,6 +205,7 @@ select.form-control {
 
   + .lt-triangle-down.form-control-feedback {
     // transform: rotate(90deg);
+ 
   }
 }
 
@@ -268,6 +277,7 @@ input[type="search"] {
   label {
     min-height: $line-height-computed;
     line-height: 24px;
+
     // Ensure the input doesn't jump when there is no text
     // padding-left: 20px;
     margin-bottom: 0;
@@ -294,7 +304,6 @@ input[type="search"] {
       }
     }
   }
-
 }
 
 .radio input[type="radio"],
@@ -601,6 +610,7 @@ select.form-control.input-lg {
   // Since we're hijacking ".has-feedback" for the <select> arrow, adjust a little
   select.form-control {
     padding-right: $input-height-base;
+
     // disable mouse events on select icon so it falls through
     & + span.lt-icon {
       pointer-events: none;
@@ -626,7 +636,6 @@ select.form-control.input-lg {
 
 // handle .has-feedback when contained in padded columns
 .has-feedback {
-
   &.pr-md-2 {
     .form-control-feedback {
       right: $spacing-2;
@@ -639,12 +648,12 @@ select.form-control.input-lg {
       top: 50%;
       transform: translateY(-50%);
     }
+
     // handle cases where label is grouped in
     label + input + .lt-icon {
       transform: translateY(-17%);
     }
   }
-
 }
 
 .form-group-lg .form-control + .form-control-feedback,
@@ -690,12 +699,12 @@ select.form-control.input-lg {
       right: 10px;
       transform: translateY(-50%);
     }
+
     // enable mouse events on feedback
     &.lt-icon {
       cursor: pointer;
       pointer-events: all;
     }
-
   }
 
   &.sr-only ~ .form-control-feedback {
@@ -826,7 +835,7 @@ select.form-control.input-lg {
     padding-top: $padding-base-vertical + 1;
 
     // Default padding plus a border
-
+ 
   }
 
   // Account for padding we're adding to ensure the alignment and of help text
@@ -850,7 +859,7 @@ select.form-control.input-lg {
       padding-top: $padding-base-vertical + 1;
 
       // Default padding plus a border
-
+   
     }
   }
 
