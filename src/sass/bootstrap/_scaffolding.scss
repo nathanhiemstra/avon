@@ -149,6 +149,22 @@ img {
   // set radius in percents
 }
 
+.img-min-xs {
+  min-width: 60px;
+}
+
+.img-min-sm {
+  min-width: 100px;
+}
+
+.img-min-md {
+  min-width: 150px;
+}
+
+.img-min-lg {
+  min-width: 200px;
+}
+
 // Horizontal rules
 
 hr {

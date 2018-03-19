@@ -30,7 +30,7 @@ th {
 
   // Cells
   > tbody,
-   > tfoot,
+  > tfoot,
   > thead {
     > tr {
       > td,
@@ -52,7 +52,7 @@ th {
 
   // Remove top border from thead by default
   > colgroup + thead,
-   > thead:first-child,
+  > thead:first-child,
   > caption + thead {
     > tr:first-child {
       > td,
@@ -80,7 +80,7 @@ th {
 
   // Cells
   > tbody,
-   > tfoot,
+  > tfoot,
   > thead {
     > tr {
       > th {
@@ -90,7 +90,7 @@ th {
       }
 
       ,
-       > td {
+      > td {
         padding: 10px 20px 10px 0;
         line-height: $line-height-base;
         vertical-align: top;
@@ -106,7 +106,7 @@ th {
 
   // Remove top border from thead by default
   > colgroup + thead,
-   > thead:first-child,
+  > thead:first-child,
   > caption + thead {
     > tr:first-child {
       > td,
@@ -131,7 +131,7 @@ th {
 
 .table-condensed {
   > tbody,
-   > tfoot,
+  > tfoot,
   > thead {
     > tr {
       > td,
@@ -151,7 +151,7 @@ th {
 // Ideal for styling a sparsly populated table
 .table-sparse {
   > tbody,
-   > tfoot,
+  > tfoot,
   > thead {
     tr {
       td,
@@ -170,6 +170,70 @@ th {
   }
 }
 
+.table-last-col-right {
+  > tbody,
+  > tfoot,
+  > thead {
+    tr {
+      td,
+      th {
+        &:last-of-type {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+.table-flush-left {
+  > tbody,
+  > tfoot,
+  > thead {
+    tr {
+      td,
+      th {
+        &:first-of-type {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.table-flush-right {
+  > tbody,
+  > tfoot,
+  > thead {
+    tr {
+      td,
+      th {
+        &:last-of-type {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.table-flush {
+  > tbody,
+  > tfoot,
+  > thead {
+    tr {
+      td,
+      th {
+        &:first-of-type {
+          padding-left: 0;
+        }
+
+        &:last-of-type {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
 // Bordered version
 //
 // Add borders all around the table and between all the columns.
@@ -178,7 +242,7 @@ th {
   border: 1px solid $table-border-color;
 
   > tbody,
-   > tfoot,
+  > tfoot,
   > thead {
     > tr {
       > td,
@@ -287,7 +351,7 @@ table {
 
       // Ensure the content doesn't wrap
       > tbody,
-       > tfoot,
+      > tfoot,
       > thead {
         > tr {
           > td,
@@ -304,7 +368,7 @@ table {
 
       // Nuke the appropriate borders so that the parent can handle them
       > tbody,
-       > tfoot,
+      > tfoot,
       > thead {
         > tr {
           > td:first-child,
@@ -346,11 +410,11 @@ table {
 
 // Your Order cart table specific styles
 .table--carts {
-
   margin-bottom: 0;
 
   thead {
     display: none;
+
     .t-qty {
       visibility: hidden;
     }
@@ -388,9 +452,9 @@ table {
 
   // desktop
   @media (min-width: $screen-sm-min) {
-
     thead {
       display: table-header-group;
+
       .t-qty {
         visibility: visible;
       }
@@ -424,19 +488,20 @@ table {
     .t-price, .t-qty {
       display: table-cell;
     }
-
   }
-
 }
+
 // Quick checkout specific styles
-.table--checkout{
-  .c-item{
+.table--checkout {
+  .c-item {
     width: 20%;
   }
-  .c-desc{
+
+  .c-desc {
     width: 60%;
   }
-  .c-price{
-    width: 20%
+
+  .c-price {
+    width: 20%;
   }
 }

@@ -1,128 +1,134 @@
 .product-list-header {
-    &--filters {
-        @media (min-width: $screen-sm-min) {
-            text-align: right;
-        }
+  &--filters {
+    @media (min-width: $screen-sm-min) {
+      text-align: right;
     }
+  }
 }
 
 .list-group {
-    .list-group-item {
-        > a[data-toggle="collapse"]:not(.collapsed) {
-            color: $brand-primary;
-        }
+  .list-group-item {
+    > a[data-toggle="collapse"]:not(.collapsed) {
+      color: $brand-primary;
     }
+  }
 }
 
 .avon-product-list {
-    .product-img {
-        min-width: 60px;
-    }
+  .product-img {
+    min-width: 60px;
+  }
 }
 
 // product list styles
 ul.avon-product-list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 li.avon-product-list__item {
-    &:last-child {
-        border-bottom: none !important;
-    }
+  &:last-child {
+    border-bottom: none !important;
+  }
 }
 
 .filter-collapse--body {
-    .lt-star:before {
-        color: $text-color;
-    }
+  .lt-star:before {
+    color: $text-color;
+  }
 }
 
 .aside-product-filters {
-    .form-group {
-        padding-left: 4rem;
+  .form-group {
+    padding-left: 4rem;
 
-        > a[data-toggle="collapse"] {
-            &.collapsed {
-                .filter-collapse--icon {
-                    @extend .lt-expand-circle;
-                }
-            }
-
-            &:not(.collapsed) {
-                .filter-collapse--icon {
-                    @extend .lt-collapse-circle;
-                }
-            }
+    > a[data-toggle="collapse"] {
+      &.collapsed {
+        .filter-collapse--icon {
+          @extend .lt-expand-circle;
         }
+      }
 
-        @media (min-width: $screen-md-min) {
-            // Because icon is hidden on desktop
-            padding-left: 0;
-            margin-top: 22px;
-            margin-bottom: 22px;
-            padding-bottom: 22px;
+      &:not(.collapsed) {
+        .filter-collapse--icon {
+          @extend .lt-collapse-circle;
         }
+      }
     }
 
-    .filter-collapse--trigger {
-        position: relative;
+    @media (min-width: $screen-md-min) {
+      // Because icon is hidden on desktop
+      padding-left: 0;
+      margin-top: 22px;
+      margin-bottom: 22px;
+      padding-bottom: 22px;
+    }
+  }
 
-        .badge {
-            margin-top: 2px;
+  .filter-collapse--trigger {
+    position: relative;
 
-            // transition: 0.5s opacity ease;
-            // opacity: 1;
+    .badge {
+      margin-top: 2px;
 
-        }
-
-        // // Only show badge if collapsed
-        // &:not(.collapsed) {
-        //     .badge {
-        //         transition: 0.5s opacity ease;
-        //         opacity: 0;
-        //     }
-        // }
-
-        // label {
-        //   @include link-plain;
-        // }
-
-        @media (max-width: $screen-sm-max) {
-            font-size: $font-size-large;
-
-            label {
-                font-weight: normal;
-            }
-        }
+      // transition: 0.5s opacity ease;
+      // opacity: 1;
+   
     }
 
-    .filter-collapse--icon {
-        left: -4rem;
-        font-size: 24px;
-        top: -3px;
-        position: absolute;
+    // // Only show badge if collapsed
+    // &:not(.collapsed) {
+    //     .badge {
+    //         transition: 0.5s opacity ease;
+    //         opacity: 0;
+    //     }
+    // }
 
-        @media (min-width: $screen-md-min) {
-            display: none;
-        }
+    // label {
+    //   @include link-plain;
+    // }
+
+    @media (max-width: $screen-sm-max) {
+      font-size: $font-size-large;
+
+      label {
+        font-weight: normal;
+      }
     }
+  }
 
-    .filter-collapse--body {
-        @media (min-width: $screen-md-min) {
-            // Remove collapsability on desktop
-            &.collapse {
-                display: block;
-            }
-        }
+  .filter-collapse--icon {
+    left: -4rem;
+    font-size: 24px;
+    top: -3px;
+    position: absolute;
+
+    @media (min-width: $screen-md-min) {
+      display: none;
     }
+  }
 
-    label:hover {
-        cursor: pointer;
-
-        // @media (min-width: $screen-md-min) {
-        //     cursor: default;
-        // }
+  .filter-collapse--body {
+    @media (min-width: $screen-md-min) {
+      // Remove collapsability on desktop
+      &.collapse {
+        display: block;
+      }
     }
+  }
+
+  label:hover {
+    cursor: pointer;
+
+    // @media (min-width: $screen-md-min) {
+    //     cursor: default;
+    // }
+ 
+  }
+}
+
+.product-img-fixed-size {
+  width: 60px;
+  height: auto;
 }
