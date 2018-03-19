@@ -1,12 +1,15 @@
-<!-- START - PAY WITH AVON QUIKPAY -->
-<section class="quick-checkout-aq hidden">
-
-  <!-- card type -->
-  <div class="list-group-item border-0">
-
-    <h5 class="mb-4">FPO Avon Quikpay FPO</h5>
-
+<section class="list-group">
+  <div class="list-group-item">
+    <div class="clearfix mb-4">
+      <h6 class="pull-left m-0 mt-2">Pay With QuickPAY</h6>
+      <a class="pull-right underline" href="#">Cancel</a>
+    </div>
+    <p>USSA federal Savings Bank (...1234)</p>
+    <div class="form-group form-inline">
+       <label class="control-label d-block mb-2">Your 4-digit PIN</label>
+       {% include components.elements.forms.input with {placeholder: ' '} %}
+    </div>
+     <!--Continue Button-->
+    <a class="btn btn-primary">Continue</a>
   </div>
-
 </section>
-<!-- END - PAY WITH AVON QUIKPAY -->
