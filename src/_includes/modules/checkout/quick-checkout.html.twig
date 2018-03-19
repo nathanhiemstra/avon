@@ -4,146 +4,401 @@
 
   <!-- START - ORDER OVERVIEW -->
   <section class="list-group">
+    <div class="list-group-item">
+      <h6 class="mb-4">Order Overview</h6>
+      <div class="item-count">
+        <dl class="clearfix py-4 m-0">
+          <dt class="pull-left">
+            <a href="javascript:void(0)" data-toggle="collapse" data-target="#item-count" class="link-plain">
+              <span class="lt-icon lt-triangle-down collapse-indicator align-middle"></span>
+              <span class="ml-3 align-middle">3 Items in order</span>
+            </a>
+          </dt>
+          <dd class="pull-right text-right">$XXX.XX</dd>
+        </dl>
+        <div class="collapse in border-bottom" id="item-count">
+          <table class="table table-fixed table--checkout m-0">
+            <tbody>
+              <tr class="pt-3">
+                <td class="c-item pl-0 pb-3">
+                  <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+                </td>
 
-    <!-- header -->
-    <div class="list-group-item border-0">
-      <h4 class="mt-2 mb-0">Order Overview</h4>
-    </div>
+                <td class="c-desc pb-3">
+                  <div>
+                    <span class="mr-4"><strong>Avon Tru Color Ultra Hydrating Lip Color</strong></span>
+                    <span class="text-muted d-block">829-957</span>
+                  </div>
+                </td>
 
-    <div class="list-group-item border-0">
+                <td class="c-price pb-3 px-1">
+                  $XXX.XX
+                  <span class="text-muted">QTY: XX</span>
+                </td>
+              </tr>
+              <tr class="pt-3">
+                <td class="c-item pl-0 pb-3">
+                  <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+                </td>
 
-      <!-- customer list -->
-      <dl class="clearfix my-2">
-        <dt class="pull-left">You (Rosa Stone)</dt>
-        <dt class="pull-right text-right">$123.99</dd>
+                <td class="c-desc pb-3">
+                  <div>
+                    <span class="mr-4"><strong>Avon Tru Color Ultra Hydrating Lip Color</strong></span>
+                    <span class="text-muted d-block">829-957</span>
+                  </div>
+                </td>
+
+                <td class="c-price pb-3 px-1">
+                  $XXX.XX
+                  <span class="text-muted">QTY: XX</span>
+                </td>
+              </tr>
+              <tr class="pt-3">
+                <td class="c-item pl-0 pb-3">
+                  <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+                </td>
+
+                <td class="c-desc pb-3">
+                  <div>
+                    <span class="mr-4"><strong>Avon Tru Color Ultra Hydrating Lip Color</strong></span>
+                    <span class="text-muted d-block">829-957</span>
+                  </div>
+                </td>
+
+                <td class="c-price pb-3 px-1">
+                  $XXX.XX
+                  <span class="text-muted">QTY: XX</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="item-count">
+        <dl class="clearfix py-4 m-0">
+          <dt class="pull-left">
+            <a href="javascript:void(0)" data-toggle="collapse" data-target="#free-items" class="link-plain collapsed">
+              <span class="lt-icon lt-triangle-down collapse-indicator align-middle"></span>
+              <span class="ml-3 align-middle">2 Free items</span>
+            </a>
+          </dt>
+          <dd class="pull-right text-right">$0.00</dd>
+        </dl>
+        <div class="collapse border-top" id="free-items">
+          <table class="table table-fixed table--checkout m-0">
+            <tbody>
+              <tr class="pt-3">
+                <td class="c-item pl-0 pb-3">
+                  <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+                </td>
+
+                <td class="c-desc pb-3">
+                  <div>
+                    <span class="mr-4"><strong>Avon Tru Color Ultra Hydrating Lip Color</strong></span>
+                    <span class="text-muted d-block">829-957</span>
+                  </div>
+                </td>
+
+                <td class="c-price pb-3 px-1">
+                  $XXX.XX
+                  <span class="text-muted">QTY: XX</span>
+                </td>
+              </tr>
+              <tr class="pt-3">
+                <td class="t-item pl-0 pb-3">
+                  <img src="/images/fpo/agnew-ultimate.png" class="img-responsive" alt="">
+                </td>
+
+                <td class="c-desc pb-3">
+                  <div>
+                    <span class="mr-4"><strong>Avon Tru Color Ultra Hydrating Lip Color</strong></span>
+                    <span class="text-muted d-block">829-957</span>
+                  </div>
+                </td>
+
+                <td class="c-price pb-3 px-1">
+                  $XXX.XX
+                  <span class="text-muted">QTY: XX</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <dl class="clearfix my-2 border-top pt-4 text-muted">
+        <dt class="pull-left">Shipping</dt>
+        <dd class="pull-right text-right">+ $XX.XX</dd>
       </dl>
-      <dl class="clearfix my-2">
-        <dt class="pull-left">Kory Rasmussen</dt>
-        <dt class="pull-right text-right">$51.72</dd>
+      <dl class="clearfix my-2 text-muted">
+        <dt class="pull-left">Taxes</dt>
+        <dd class="pull-right text-right">+ $XX.XX</dd>
       </dl>
-      <dl class="clearfix my-2">
-        <dt class="pull-left">Tisha Pennington</dt>
-        <dt class="pull-right text-right"></dd>
+      <dl class="clearfix my-2 pb-4 text-muted">
+        <dt class="pull-left">Earnings/Discount</dt>
+        <dd class="pull-right text-right">- $XX.XX</dd>
       </dl>
 
-      <hr>
-
-      <!-- subtotals -->
-      <dl class="clearfix my-2">
-        <dd class="pull-left">Shipping Subtotal</dt>
+      <dl class="clearfix my-2 text-primary border-y py-4">
+        <dt class="pull-left">ORDER TOTAL:</dt>
         <dd class="pull-right text-right">
-          $12.99
+          <b>$XXX.XX</b>
         </dd>
       </dl>
-      <dl class="clearfix my-2">
-        <dd class="pull-left">Tax Subtotal</dt>
+
+      <dl class="clearfix my-2 text-muted">
+        <dt class="pull-left">Account balance<span class="lt-icon lt-info lt-medium ml-2 align-middle"></span></dt>
         <dd class="pull-right text-right">
-          $42.66
-        </dd>
-      </dl>
-
-      <hr>
-
-      <!-- totals -->
-      <dl class="clearfix my-2">
-        <dt class="pull-left text-uppercase">Order Total:</dt>
-        <dt class="pull-right text-right">
-          $484.87
+          - $XX.XX
         </dd>
       </dl>
       <dl class="clearfix my-2">
-        <dd class="pull-left text-uppercase">Discount:</dt>
+        <dt class="pull-left"><strong>Pay this amount</strong></dt>
         <dd class="pull-right text-right">
-          $50.56
+          <b>$XXX.XX</b>
         </dd>
       </dl>
-
     </div>
   </section>
   <!-- END - ORDER OVERVIEW -->
 
   <!-- START - SHIPPING ADDRESS -->
   <section class="list-group">
-
-    <!-- header -->
-    <div class="list-group-item border-0">
-      <h4 class="mt-2 mb-0">Ship To</h4>
-    </div>
-
-    <!-- shipping address -->
-    <div class="list-group-item border-0">
-      <div class="clearfix">
+    <div class="list-group-item">
+      <h6 class="mb-3">Ship to</h6>
+      <p>
         1153 W Grand Ave<br>
         Chicago, IL, 60642-5808
-      </div>
+      </p>
     </div>
-
   </section>
   <!-- END - SHIPPING ADDRESS -->
 
   <!-- START - SHIPPING METHOD -->
   <section class="list-group">
-
-    <!-- header -->
-    <div class="list-group-item border-0">
-      <h4 class="mt-2 mb-0">Shipping Method</h4>
-    </div>
-
-    <!-- shipping method -->
-    <div class="list-group-item border-0">
-      <div class="clearfix">
-        USPS Ground (4–7 business days)<br>
+    <div class="list-group-item">
+      <h6 class="mb-3">Shipping Method</h6>
+      <p>
+        USPS Ground (4–7 business days) <br>
         $5.95
-      </div>
+      </p>
     </div>
-
   </section>
   <!-- END - SHIPPING METHOD -->
 
-  <!-- START - PAYMENT METHOD -->
+  <!--START: PAYMENT METHOD-->
   <section class="list-group">
+    <div class="list-group-item">
+      <div class="mb-2">
+        <h6 class="mb-3">Choose Payment Method</h6>
+      </div>
+
+      <div class="clearfix border-bottom py-4">
+        <div class="pull-left mr-3 border">
+          Img
+        </div>
+        <div class="pull-left">
+          Card Card
+        </div>
+      </div>
+
+      <div class="clearfix border-bottom py-4">
+        <div class="pull-left mr-3 border">
+          Img
+        </div>
+        <div class="pull-left">
+          Avon Credit Line <br>
+          <span class="text-muted d-block">($85 available)</span>
+        </div>
+      </div>
+
+      <div class="clearfix border-bottom py-4">
+        <div class="pull-left mr-3 border">
+          Img
+        </div>
+        <div class="pull-left">
+          QuickPay
+        </div>
+      </div>
+
+      <div class="clearfix pt-4">
+        <div class="pull-left">
+          <a href="#">Split Payments</a>
+        </div>
+        <div class="pull-right">
+          <span class="lt-icon lt-right lt-large"></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!--END: PAYMENT METHOD-->
+
+  <!-- START - CREDIT CARD PAYMENT METHOD -->
+  <section class="list-group border">
 
     <!-- header -->
     <div class="list-group-item border-0">
-      <h4 class="mt-2 mb-0">Payment Method</h4>
+      <div class="clearfix mb-4">
+        <h6 class="pull-left m-0 mt-2">Pay with credit card</h6>
+        <a class="pull-right underline" href="#">Cancel</a>
+      </div>
+
+      <div class="form-group has-feedback">
+        <label class="control-label">Card Type</label>
+        <select class="form-control">
+          <option>VISA</option>
+          <option>MasterCard</option>
+          <option>Other</option>
+        </select>
+        <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+      </div>
+
+      <div class="form-group has-feedback">
+        <label class="control-label">Card Number</label>
+        {% include components.elements.forms.input with {placeholder: ''} %}
+      </div>
+
+      <div class="list-group-item border-0 p-1 mb-4">
+        <label class="control-label">Name on Card</label>
+        <div class="row">
+          <div class="col-xs-6">
+                {% include components.elements.forms.input with {placeholder: 'First Name'} %}
+          </div>
+          <div class="col-xs-6">
+                {% include components.elements.forms.input with {placeholder: 'Last Name'} %}
+          </div>
+        </div>
+      </div>
+
+      <div class="list-group-item border-0 p-0 mb-3">
+        <div class="row">
+          <div class="col-xs-9">
+            <label class="control-label">Expiration Date</label>
+            <div class="row">
+              <div class="col-xs-6">
+                <select class="form-control form-inline">
+                  <option>January</option>
+                  <option>February</option>
+                  <option>March</option>
+                </select>
+                <span class="lt-icon lt-triangle-down form-control-feedback mr-4"></span>
+              </div>
+              <div class="col-xs-6">
+                <select class="form-control form-inline">
+                  <option>2018</option>
+                  <option>2019</option>
+                  <option>2020</option>
+                </select>
+                <span class="lt-icon lt-triangle-down form-control-feedback mr-4"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <label class="control-label">CVV <span class="lt-icon lt-info lt-medium ml-2 align-middle"></span></label>
+            {% include components.elements.forms.input with {placeholder: ''} %}
+          </div>
+        </div>
+      </div>
+
+      <div class="from-group">
+        <div class="clearfix">
+          {% include components.elements.forms.checkbox with {id: 'checkbox1', name: 'checkbox1', classes: '', theValue: 'option1', theLabel: 'Billing Address is same as Shipping', checked: true} %}
+        </div>
+      </div>
+
+      <!--BILLING ADDRESS FORM FIELDS-->
+      <div class="billing-address">
+        <h6>Billing Address</h6>
+        
+        <div class="form-group">
+          <label class="control-label">Address</label>
+          {% include components.elements.forms.input with {placeholder: ''} %}
+        </div>
+        
+        <div class="form-group">
+          <label class="control-label">Apartment, Suite, etc</label>
+          {% include components.elements.forms.input with {placeholder: ''} %}
+        </div>
+        
+        <div class="list-group-item border-0 p-1 mb-4">
+          <div class="row">
+            <div class="col-xs-6">
+                <label class="control-label">ZIP</label>
+                {% include components.elements.forms.input with {placeholder: ' '} %}
+            </div>
+            <div class="col-xs-6">
+                <label class="control-label">City</label>
+                {% include components.elements.forms.input with {placeholder: ' '} %}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Apartment, Suite, etc</label>
+          {% include components.elements.forms.input with {placeholder: ''} %}
+        </div>
+
+        <div class="form-group has-feedback">
+          <label class="control-label">State</label>
+          <select class="form-control">
+            <option>Select..</option>
+            <option>State 1</option>
+            <option>State 2</option>
+          </select>
+          <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+        </div>
+      </div>
+      
+      <!--Continue Button-->
+      <a class="btn btn-primary btn-lg">Continue</a>
+
     </div>
-
-    <!-- payment method -->
-    <div id="payment-method-form" class="list-group-item border-0">
-      <form class="clearfix">
-        {% include components.groups.forms.radioAndLabel with {
-          name: 'paymentMethod',
-          label: 'Credit Card',
-          theValue: 'Credit Card',
-          checked: 'checked'
-        } %}
-        {% include components.groups.forms.radioAndLabel with {
-          name: 'paymentMethod',
-          label: 'Avon Quikpay',
-          theValue: 'Avon Quikpay'
-        } %}
-        {% include components.groups.forms.radioAndLabel with {
-          name: 'paymentMethod',
-          label: 'Avon Credit',
-          theValue: 'Avon Credit'
-        } %}
-      </form>
-    </div>
-
-    <!-- pay with Credit Card view -->
-    {% include "_includes/modules/checkout/quick-checkout-cc.html.twig" %}
-
-    <!-- pay with Avon Quikpay view -->
-    {% include "_includes/modules/checkout/quick-checkout-aq.html.twig" %}
-
-    <!-- pay with Avon Credit view -->
-    {% include "_includes/modules/checkout/quick-checkout-ac.html.twig" %}
-
-    <!-- summary view -->
-    {% include "_includes/modules/checkout/quick-checkout-summary.html.twig" %}
 
   </section>
-  <!-- END - PAYMENT METHOD -->
+  <!-- END - CREDIT CARD PAYMENT METHOD -->
+
+  <!-- START: PAY WITH AVON-->
+  <section class="list-group">
+    <div class="list-group-item">
+      <div class="clearfix mb-4">
+        <h6 class="pull-left m-0 mt-2">Pay With Avon Credit</h6>
+        <a class="pull-right underline" href="#">Cancel</a>
+      </div>
+      <dl class="clearfix my-2 text-muted">
+        <dt class="pull-left">Available credit</dt>
+        <dd class="pull-right text-right">+ $XX.XX</dd>
+      </dl>
+      <dl class="clearfix my-2 text-muted">
+        <dt class="pull-left">Order Total</dt>
+        <dd class="pull-right text-right">+ $XX.XX</dd>
+      </dl>
+      <dl class="clearfix my-4 py-4 border-y">
+        <dt class="pull-left">Credit after purchase</dt>
+        <dd class="pull-right text-right"><strong>$XX.XX</strong></dd>
+      </dl>
+       <!--Continue Button-->
+      <a class="btn btn-primary">Continue</a>
+    </div>
+  </section>
+  <!-- END: PAY WITH AVON-->
+
+  <!-- START: PAY WITH QUICKPAY-->
+  <section class="list-group">
+    <div class="list-group-item">
+      <div class="clearfix mb-4">
+        <h6 class="pull-left m-0 mt-2">Pay With QuickPAY</h6>
+        <a class="pull-right underline" href="#">Cancel</a>
+      </div>
+      <p>USSA federal Savings Bank (...1234)</p>
+      <div class="form-group form-inline">
+         <label class="control-label d-block mb-2">Your 4-digit PIN</label>
+         {% include components.elements.forms.input with {placeholder: ' '} %}
+      </div>
+       <!--Continue Button-->
+      <a class="btn btn-primary">Continue</a>
+    </div>
+  </section>
+  <!-- END: PAY WITH AUICKPAY-->
 
 </div>
 <!-- /.container -->
