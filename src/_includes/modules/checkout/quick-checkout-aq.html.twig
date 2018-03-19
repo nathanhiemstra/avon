@@ -1,5 +1,5 @@
-<section class="list-group">
-  <div class="list-group-item">
+<section class="list-group box-emphasize box-emphasize--focused">
+  <div class="list-group-item border-0">
     <div class="clearfix mb-4">
       <h6 class="pull-left m-0 mt-2">Pay With QuickPAY</h6>
       <a class="pull-right underline" href="#">Cancel</a>
@@ -7,7 +7,11 @@
     <p>USSA federal Savings Bank (...1234)</p>
     <div class="form-group form-inline">
        <label class="control-label d-block mb-2">Your 4-digit PIN</label>
-       {% include components.elements.forms.input with {placeholder: ' '} %}
+       {% include components.elements.forms.input with {
+        type: 'number',
+        placeholder: '',
+        maxlength: '4'
+      } %}
     </div>
      <!--Continue Button-->
     <a class="btn btn-primary">Continue</a>

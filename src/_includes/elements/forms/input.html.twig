@@ -13,4 +13,4 @@
 {% if theValue %}
   {% set theValue = ' value="' ~ theValue ~ '"' %}
 {% endif %}
-<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}>
+<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }} maxlength="{{ maxlength }}">
