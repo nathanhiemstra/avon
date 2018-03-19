@@ -11,7 +11,6 @@
   margin-bottom: 20px;
   padding-left: 0;
 
-
   // BASIC LIST GROUP - no borders
   &--basic {
     .list-group-item {
@@ -27,7 +26,6 @@
   // CLEAN SLICED LIST GROUP - borders between items, luxurious padding-left
   // DAMN, these some nice list items
   &--clean-sliced {
-
     .list-group-item {
       border: none;
       border-top: 1px solid $border-color;
@@ -43,10 +41,8 @@
       p {
         margin: 0;
       }
-
     }
   }
-
 
   // CHECKBOXED LIST GROUP
   $checkbox-width: 24px;
@@ -60,12 +56,13 @@
 
       .checkbox {
         position: absolute;
+
         // top: 0;
         // left: 10px;
+     
       }
     }
   }
-
 }
 
 // Individual list items
@@ -80,7 +77,10 @@
   // Place the border on the list items and negative margin up for better styling
   margin-bottom: -1px;
   background-color: $list-group-bg;
-  border: 1px solid $list-group-border;
+
+  &:not(.box-emphasize) {
+    border: 1px solid $list-group-border;
+  }
 
   transition: opacity 0.15s ease;
 
@@ -99,7 +99,6 @@
   &.inactive {
     opacity: 0.5;
   }
-
 }
 
 // Interactive list items
