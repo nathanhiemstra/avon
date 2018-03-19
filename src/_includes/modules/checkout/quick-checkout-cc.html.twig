@@ -1,110 +1,163 @@
-<!-- START - PAY WITH CREDIT CARD -->
-<section class="quick-checkout-cc">
+<section class="list-group border">
 
-  <!-- card type -->
   <div class="list-group-item border-0">
-    <h5 class="mb-4">Card Type</h5>
-    <div class="row clearfix">
-      <div class="col-xs-5">
-        <form class="form-inline">
-          <div class="form-group has-feedback">
-            <select class="form-control form-inline">
-              <option>VISA</option>
-              <option>MasterCard</option>
-              <option>Other</option>
-            </select>
-            <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+
+    <!-- START - HEADER -->
+    <div class="clearfix mb-4">
+      <h6 class="pull-left m-0 mt-2">Pay with credit card</h6>
+      <a class="pull-right underline" href="#">Cancel</a>
+    </div>
+    <!-- END - HEADER -->
+
+    <!-- START - FORM -->
+    <form role="form">
+      <div class="form-group has-feedback">
+        <label class="control-label">Card Type</label>
+        <select class="form-control">
+          <option>VISA</option>
+          <option>MasterCard</option>
+          <option>Other</option>
+        </select>
+        <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+      </div>
+
+      <div class="form-group has-feedback">
+        <label class="control-label">Card Number</label>
+        {% include components.elements.forms.input with {
+          placeholder: ''
+        } %}
+      </div>
+
+      <div class="list-group-item border-0 p-1 mb-4">
+        <label class="control-label">Name on Card</label>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 mb-3 mb-xs-0">
+            {% include components.elements.forms.input with {
+              placeholder: 'First Name'
+            } %}
           </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- card number -->
-  <div class="list-group-item border-0">
-
-    <h5 class="mb-4">Card Number</h5>
-
-    <div class="clearfix">
-      {% include components.elements.forms.input with {} %}
-    </div>
-
-  </div>
-
-  <!-- name on card -->
-  <div class="list-group-item border-0">
-
-    <h5 class="mb-4">Name on Card</h5>
-
-    <div class="row">
-      <div class="col-xs-6">
-        {% include components.elements.forms.input with {placeholder: 'First Name'} %}
-      </div>
-      <div class="col-xs-6">
-        {% include components.elements.forms.input with {placeholder: 'Last Name'} %}
-      </div>
-    </div>
-
-  </div>
-
-  <!-- card expiration -->
-  <div class="list-group-item border-0">
-
-    <div class="clearfix row">
-      <h5 class="mb-4 pull-left col-xs-10">Expiration Date</h5>
-      <h5 class="mb-4 pull-right col-xs-2">CVV<span class="lt-icon lt-info pull-right"></span></h5>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-5">
-        <form class="form-inline">
-          <div class="form-group has-feedback">
-            <select class="form-control form-inline">
-              <option>January</option>
-              <option>February</option>
-              <option>March</option>
-            </select>
-            <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+          <div class="col-xs-12 col-sm-6">
+            {% include components.elements.forms.input with {
+              placeholder: 'Last Name'
+            } %}
           </div>
-        </form>
+        </div>
       </div>
 
-      <div class="col-xs-5">
-        <form class="form-inline">
-          <div class="form-group has-feedback">
-            <select class="form-control form-inline">
-              <option>2018</option>
-              <option>2019</option>
-              <option>2020</option>
-            </select>
-            <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+      <div class="list-group-item border-0 p-0 mb-3">
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-9 mb-4 mb-xs-0">
+            <label class="control-label">Expiration Date</label>
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 mb-3 mb-xs-0">
+                <select class="form-control form-inline">
+                  <option>January</option>
+                  <option>February</option>
+                  <option>March</option>
+                </select>
+                <span class="lt-icon lt-triangle-down form-control-feedback mr-4"></span>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <select class="form-control form-inline">
+                  <option>2018</option>
+                  <option>2019</option>
+                  <option>2020</option>
+                </select>
+                <span class="lt-icon lt-triangle-down form-control-feedback mr-4"></span>
+              </div>
+            </div>
+
           </div>
-        </form>
+
+          <div class="col-xs-12 col-sm-3">
+            <label class="control-label">CVV</label>
+            <span class="lt-icon lt-info lt-medium mb-2 align-middle"
+              data-container="body"
+              data-toggle="popover"
+              data-placement="bottom"
+              data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+            </span>
+            {% include components.elements.forms.input with {
+              placeholder: ''
+            } %}
+          </div>
+        </div>
       </div>
 
-      <div class="col-xs-2">
-        {% include components.elements.forms.input with {placeholder: ''} %}
+      <div class="from-group">
+        <div class="clearfix">
+          {% include components.elements.forms.checkbox with {
+            id: 'checkbox1',
+            name: 'checkbox1',
+            classes: '',
+            theValue: 'option1',
+            theLabel: 'Billing Address is same as Shipping',
+            checked: true
+          } %}
+        </div>
       </div>
-    </div>
 
-  </div>
+      <!--BILLING ADDRESS FORM FIELDS-->
+      <div class="billing-address">
+        <h6>Billing Address</h6>
 
-  <!-- save card -->
-  <div class="list-group-item border-0">
-    <div class="clearfix">
-      {% include components.groups.forms.checkboxAndLabel with {
-        label: 'Save this card for future use',
-        checked: 'checked'
-      } %}
-    </div>
-  </div>
+        <div class="form-group">
+          <label class="control-label">Address</label>
+          {% include components.elements.forms.input with {
+            placeholder: ''
+          } %}
+        </div>
 
-  <!-- submit button -->
-  <div class="list-group-item border-0">
-    <div class="clearfix">
-      <a class="btn btn-primary btn-lg quick-checkout-submit">Continue</a>
-    </div>
+        <div class="form-group">
+          <label class="control-label">Apartment, Suite, etc</label>
+          {% include components.elements.forms.input with {
+            placeholder: ''
+          } %}
+        </div>
+
+        <div class="list-group-item border-0 p-1 mb-4">
+          <div class="row">
+            <div class="col-xs-6">
+              <label class="control-label">ZIP</label>
+              {% include components.elements.forms.input with {
+                placeholder: ' '
+              } %}
+            </div>
+            <div class="col-xs-6">
+              <label class="control-label">City</label>
+              {% include components.elements.forms.input with {
+                placeholder: ' '
+              } %}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Apartment, Suite, etc</label>
+          {% include components.elements.forms.input with {
+            placeholder: ''
+          } %}
+        </div>
+
+        <div class="form-group has-feedback">
+          <label class="control-label">State</label>
+          <select class="form-control">
+            <option>Select..</option>
+            <option>State 1</option>
+            <option>State 2</option>
+          </select>
+          <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+        </div>
+      </div>
+
+      <!--Continue Button-->
+      <a class="btn btn-primary btn-lg">Continue</a>
+
+    </form>
+    <!-- END - FORM -->
+
   </div>
 
 </section>
-<!-- END - PAY WITH CREDIT CARD -->
