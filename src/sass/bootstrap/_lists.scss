@@ -1,0 +1,156 @@
+// Lists
+// -------------------------
+
+// Unordered and Ordered lists
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: $line-height-computed / 2;
+
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+// List options
+
+// [converter] extracted from `.list-unstyled` for libsass compatibility
+@mixin list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+// [converter] extracted as `@mixin list-unstyled` for libsass compatibility
+.list-unstyled {
+  @include list-unstyled;
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+  @include list-unstyled;
+
+  margin-left: -5px;
+
+  > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.list-inline-abutted {
+  @include list-unstyled;
+
+  margin-left: -5px;
+
+  @extend .clearfix;
+
+  > li {
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+// ordered list with counter
+.list-counter {
+  counter-reset: item;
+  padding-left: 2em;
+
+  li {
+    display: block;
+
+    &:before {
+      content: counter(item) ". ";
+      counter-increment: item;
+      margin-left: -2em;
+      display: inline-block;
+      float: left;
+    }
+  }
+
+  &--1-char {
+    padding-left: 1.5em;
+
+    li:before {
+      margin-left: -1.5em;
+    }
+  }
+
+  &--3-char {
+    padding-left: 2.5em;
+
+    li:before {
+      margin-left: -2.5em;
+    }
+  }
+
+  &--4-char {
+    padding-left: 3em;
+
+    li:before {
+      margin-left: -3em;
+    }
+  }
+
+  &--5-char {
+    padding-left: 3.5em;
+
+    li:before {
+      margin-left: -3.5em;
+    }
+  }
+}
+
+// Description Lists
+dl {
+  margin-top: 0;
+
+  // Remove browser default
+  margin-bottom: $line-height-computed;
+}
+
+dt,
+dd {
+  line-height: $line-height-base;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0;
+
+  // Undo browser default
+}
+
+// Horizontal description lists
+//
+// Defaults to being stacked without any of the below styles applied, until the
+// grid breakpoint is reached (default of ~768px).
+
+.dl-horizontal {
+  dd {
+    @include clearfix;
+
+    // Clear the floated `dt` if an empty `dd` is present
+ 
+  }
+
+  @media (min-width: $dl-horizontal-breakpoint) {
+    dt {
+      float: left;
+      width: $dl-horizontal-offset - 20;
+      clear: left;
+      text-align: right;
+
+      @include text-overflow;
+    }
+
+    dd {
+      margin-left: $dl-horizontal-offset;
+    }
+  }
+}

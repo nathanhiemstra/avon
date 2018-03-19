@@ -38,62 +38,6 @@ th {
         padding: $table-cell-padding;
         line-height: $line-height-base;
         vertical-align: top;
-        border-top: 1px solid $table-border-color;
-      }
-    }
-  }
-
-  // Bottom align for column headings
-  > thead > tr > th {
-    vertical-align: bottom;
-    text-transform: uppercase;
-    border-bottom: 1px solid $table-border-color;
-  }
-
-  // Remove top border from thead by default
-  > colgroup + thead,
-  > thead:first-child,
-  > caption + thead {
-    > tr:first-child {
-      > td,
-      > th {
-        border-top: 0;
-      }
-    }
-  }
-
-  // Account for multiple tbody instances
-  > tbody + tbody {
-    border-top: 2px solid $table-border-color;
-  }
-
-  // Nesting
-  .table {
-    background-color: $body-bg;
-  }
-}
-
-.table-no-borders {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: $line-height-computed;
-
-  // Cells
-  > tbody,
-  > tfoot,
-  > thead {
-    > tr {
-      > th {
-        padding: 25px 20px 0 0;
-        line-height: $line-height-base;
-        vertical-align: top;
-      }
-
-      ,
-      > td {
-        padding: 10px 20px 10px 0;
-        line-height: $line-height-base;
-        vertical-align: top;
       }
     }
   }
@@ -116,9 +60,28 @@ th {
     }
   }
 
-  // Account for multiple tbody instances
-  > tbody + tbody {
-    border-top: 2px solid $table-border-color;
+  &:not(.table-no-borders) {
+    // Cells
+    > tbody,
+    > tfoot,
+    > thead {
+      > tr {
+        > td,
+        > th {
+          border-top: 1px solid $table-border-color;
+        }
+      }
+    }
+
+    // Bottom align for column headings
+    > thead > tr > th {
+      border-bottom: 1px solid $table-border-color;
+    }
+
+    // Account for multiple tbody instances
+    > tbody + tbody {
+      border-top: 2px solid $table-border-color;
+    }
   }
 
   // Nesting
@@ -302,17 +265,17 @@ table {
   }
 }
 
-.submitted-order-column {
-  width: 16%;
-}
+// .submitted-order-column {
+//   width: 16%;
+// }
 
-.submitted-order-shipping-column {
-  width: 22%;
-}
+// .submitted-order-shipping-column {
+//   width: 22%;
+// }
 
-.submitted-order-double-column {
-  width: 30%;
-}
+// .submitted-order-double-column {
+//   width: 30%;
+// }
 
 // Table backgrounds
 //
