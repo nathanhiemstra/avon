@@ -1,0 +1,243 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+      {% embed layouts.columns3x9 %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - ASIDE #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block aside %}
+
+          <h3>FPO: Side nav</h3>
+
+        {% endblock %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - MAIN #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block main %}
+
+          <h2 class="mb-5">Pay Avon</h2>
+          <div class="border-top pt-5">
+            <p>How much are you paying today?</p>
+             <div class="ml-4">
+               <div class="form-group">
+                 {% include components.elements.forms.radio with {
+                      name: 'pay-option', 
+                      classes: '', 
+                      theValue: 'credit', 
+                      theLabel: '<b>-$1.00</b>(current balance as of March 08, 2018 at 03:15 PM EST)
+                      <i class="lt-icon lt-tip lt-medium align-middle"
+                      data-container="body"
+                      data-toggle="popover"
+                      data-placement="bottom"
+                      data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                    </i>'} 
+                    %}
+               </div>
+
+               <div class="form-group">
+                 {% include components.elements.forms.radio with {
+                      name: 'pay-option', 
+                      classes: '', 
+                      theValue: 'credit', 
+                      theLabel: '<b>$0.00</b>(Amount Due with Campaign 07)
+                      <i class="lt-icon lt-tip lt-medium align-middle"
+                      data-container="body"
+                      data-toggle="popover"
+                      data-placement="bottom"
+                      data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                    </i>'} 
+                    %}
+               </div>
+
+               <div class="clearfix mb-2">
+                 <div class="pull-left">
+                   {% include components.elements.forms.radio with {
+                      name: 'pay-option', 
+                      classes: '', 
+                      theValue: 'credit', 
+                      theLabel: '<b>Other Amount: $</b>', checked: true} 
+                    %}
+                 </div>
+                 <div class="pull-left mt-3 ml-2 clearfix">
+                  {% include components.elements.forms.input with {
+                    placeholder: '',
+                    value: '25,00.23',
+                    classes: 'form-control-inline pull-left'
+                  } %}
+                   <span class="lt-icon lt-tip lt-medium align-middle pull-left ml-2"
+                    data-container="body"
+                    data-toggle="popover"
+                    data-placement="bottom"
+                    data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                  </span>
+                 </div>
+               </div>
+               <p class="text-danger">
+                 we are sorry, we are unable to process this request. Please review payment amount to ensure it is not greater than $25,000 or does not exceed your balance by more than $1,000.
+               </p>
+             </div>
+          </div>
+          <div class="pt-5">
+            <p><strong>Please select a payment type;</strong></p>
+            <div class="ml-4">
+              {% include components.elements.forms.radio with {
+                  name: 'pay-type', 
+                  classes: 'mb-5', 
+                  theValue: 'quick-pay', 
+                  theLabel: 'QuickPAY (your are not enrolled. <strong class="text-uppercase">Enroll Now</strong>)'} 
+              %}
+              {% include components.elements.forms.radio with {
+                name: 'pay-type', 
+                classes: '', 
+                theValue: 'cc-cards', 
+                theLabel: 'Credit Card(s)',
+                checked: 'true'} 
+              %}
+
+              <div class="ml-sm-4">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                      <select class="form-control">
+                        <opttion>Select Credit Card Type*</opttion>
+                        <option>VISA</option>
+                        <option>MasterCard</option>
+                        <option>Other</option>
+                      </select>
+                      <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+                    </div>
+
+                    <div class="form-group">
+                      {% include components.elements.forms.input with {
+                        placeholder: 'Name on Card*'
+                      } %}
+                    </div>
+
+                    <div class="form-group">
+                      {% include components.elements.forms.input with {
+                        placeholder: 'Card Number*'
+                      } %}
+                    </div>
+
+                    <div class="row">
+
+                      <div class="col-xs-12 col-sm-8 mb-4 mb-sm-0">
+
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-6 mb-4 mb-sm-0">
+                            <select class="form-control form-inline">
+                              <option>MM*</option>
+                              <option>January</option>
+                              <option>February</option>
+                              <option>March</option>
+                            </select>
+                            <span class="lt-icon lt-triangle-down form-control-feedback mr-4"></span>
+                          </div>
+                          <div class="col-xs-12 col-sm-6">
+                            <select class="form-control form-inline">
+                              <option>YYYY*</option>
+                              <option>2018</option>
+                              <option>2019</option>
+                              <option>2020</option>
+                            </select>
+                            <span class="lt-icon lt-triangle-down form-control-feedback mr-4"></span>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="col-xs-12 col-sm-4">
+                        {% include components.elements.forms.input with {
+                          placeholder: 'CVV*'
+                        } %}
+                        
+                      </div>
+                    </div>
+
+                    <div class="clearfix">
+                      <a href="#" class="pull-left">Add Card</a>
+                      <a href="javascript:void(0)" class="pull-right underline" 
+                        data-container="body" 
+                        data-toggle="popover" 
+                        data-placement="bottom" 
+                        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><small>What is this?</small></a>
+                    </div>
+
+                    <div class="pt-3">
+                      <h6 class="mb-4">billing Address</h6>
+                      <div class="form-group">
+                        {% include components.elements.forms.input with {
+                          placeholder: 'Address Line 1*'
+                        } %}
+                      </div>
+                      <div class="form-group">
+                        {% include components.elements.forms.input with {
+                          placeholder: 'Address Line 2*'
+                        } %}
+                      </div>
+                      <div class="form-group">
+                        {% include components.elements.forms.input with {
+                          placeholder: 'City*'
+                        } %}
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group has-feedback">
+                            <select class="form-control">
+                              <opttion>State*</opttion>
+                              <option>State 1</option>
+                              <option>State 2</option>
+                              <option>State 3</option>
+                            </select>
+                            <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            {% include components.elements.forms.input with {
+                              placeholder: 'Zip*'
+                            } %}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group has-feedback">
+                        <select class="form-control">
+                          <opttion>Country*</opttion>
+                          <option>Country 1</option>
+                          <option>Country 2</option>
+                          <option>Country 3</option>
+                        </select>
+                        <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+                      </div>
+
+                      <!-- START - Continue Button -->
+                      <a class="btn btn-primary d-block disabled">Continue</a>
+                      <!-- END - Continue Button -->
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        {% endblock %}
+
+      {% endembed %}
+    </section>
+
+  {% endblock %}
+
+{% endblock %}
