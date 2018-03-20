@@ -18,24 +18,7 @@
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block aside %}
 
-          <h5>My Account</h5>
-          <ul class="nav nav-pills nav-stacked">
-            <li class="active">
-              <a href="#">Profile</a>
-            </li>
-            <li>
-              <a href="#">Password</a>
-            </li>
-            <li>
-              <a href="#">Account Balance</a>
-            </li>
-            <li>
-              <a href="#">Pay Avon</a>
-            </li>
-            <li>
-              <a href="#">Get Paid by Avon</a>
-            </li>
-          </ul>
+          {% include '_includes/groups/navigation/my-account-nav.html.twig' %}
 
         {% endblock %}
 
@@ -44,38 +27,59 @@
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block main %}
 
-          <h2 class="mb-5">My Profile</h2>
+          <h2>My Profile</h2>
 
-          <!-- Name and Address section-->
-          <div class="border-top pt-4 mb-5">
-            <h5 class="mb-4">Name &amp; Address</h5>
-            <dl class="row my-5">
-              <dt class="text-uppercase col-md-4">Name</dt>
-              <dd class="col-md-8 text-left">Janet Johnson</dd>
-            </dl>
-            <dl class="row my-5">
-              <dt class="text-uppercase col-md-4">Home/Billing Address</dt>
-              <dd class="col-md-8 text-left">9072 Rialto St
-                <br>Napls, FL 34113</dd>
-            </dl>
-            <dl class="row my-5">
-              <dt class="text-uppercase col-md-4">Shipping Address</dt>
-              <dd class="col-md-8 text-left">9072 Rialto St
-                <br>Napls, FL 34113</dd>
-            </dl>
+          <hr>
+
+          <!-- START: NAME AND ADDRESS-->
+          <div class="">
+            <h5 class="my-5">Name &amp; Address</h5>
+
+            <div class="row my-5">
+              <h6 class="col-sm-4 my-md-2">Name</h6>
+              <div class="col-md-8">Janet Johnson</div>
+            </div>
+
+            <div class="row my-5">
+              <h6 class="col-sm-4 my-md-2">Home/Billing Address</h6>
+              <div class="col-md-8">9072 Rialto St
+                <br>Napls, FL 34113</div>
+            </div>
+
+            <div class="row my-5">
+              <h6 class="col-sm-4 my-md-2">Shipping Address</h6>
+              <div class="col-md-8">9072 Rialto St
+                <br>Napls, FL 34113</div>
+            </div>
+
             <button class="btn btn-primary" data-toggle="modal" data-target="#requestchange">Request Change</button>
             {# MODAL - Request Change #}
             {% include "_includes/modules/profile/request-change.html.twig" %}
           </div>
+          <!-- END: NAME AND ADDRESS-->
 
-          <!--Profile Picture section-->
-          <div class="border-top pt-4 mb-5">
-            <h5 class="mb-4">Profile Picture</h5>
-            <h1>FPO</h1>
+          <hr>
+
+          <!-- START: PROFILE PICTURE -->
+          <div class="">
+            <h5 class="my-5">Profile Picture</h5>
+            <div class="row my-5">
+              <div class="col-sm-3">
+                <img src="images/fpo/pretty_lady.png" class="w-100">
+              </div>
+              <div class="col-sm-9">
+                <p class="">Fugiat ut excepteur esse occaecat occaecat do id laboris consectetur est ex et enim ea dolore velit adipisicing.</p>
+                <p class="text-muted small">(PNG, JPEG, or GIF formats only, 10MB max file size)</p>
+                <button class="btn btn--soft btn-default btn-sm mt-4">Choose Image</button>
+              </div>
+            </div>
           </div>
+          <!-- END: PROFILE PICTURE -->
 
-          <!--Contact Information section-->
-          <div class="border-top pt-4 mb-5">
+          <hr>
+
+          <!-- START: CONTACT INFORMATION -->
+          <div class="">
             <h5 class="mb-4">Contact Information</h5>
             <dl class="row my-5">
               <dt class="text-uppercase col-md-4">Nickname</dt>
@@ -119,8 +123,9 @@
               EDIT
             </button>
           </div>
+          <!-- END: CONTACT INFORMATION -->
 
-          <!--Representative section-->
+          <!-- START: REPRESENTATIVE ID -->
           <div class="border-top pt-4 mb-5">
             <h5 class="mb-4">Representative ID</h5>
             <dl class="row my-5">
@@ -152,8 +157,9 @@
               <dd class="col-md-8 text-left">David H. McConnell Club</dd>
             </dl>
           </div>
+          <!-- END: REPRESENTATIVE ID -->
 
-          <!--Settings section-->
+          <!-- START: SETTINGS -->
           <div class="border-top pt-4 mb-5">
             <h5 class="mb-4">Settings</h5>
             <dl class="row my-5">
@@ -185,8 +191,9 @@
               EDIT
             </button>
           </div>
+          <!-- END: SETTINGS -->
 
-          <!--Programs section-->
+          <!-- START: PROGRAMS -->
           <div class="border-top pt-4 mb-5">
             <h5 class="mb-4">Programs</h5>
             <dl class="row my-5">
@@ -223,6 +230,7 @@
               </dd>
             </dl>
           </div>
+          <!-- END: PROGRAMS -->
 
           {# MODAL - Learn More common modal #}
           {% include "_includes/modules/profile/learn-more.html.twig" %}

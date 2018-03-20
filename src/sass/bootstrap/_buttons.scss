@@ -73,7 +73,7 @@ a.btn {
     pointer-events: none;
 
     // Future-proof disabling of clicks on `<a>` elements
- 
+
   }
 }
 
@@ -155,7 +155,7 @@ a.btn {
     line-height: 0;
 
     // prevent larger icons increasing button height
- 
+
   }
 
   > i,
@@ -285,6 +285,14 @@ a.btn {
 
 .btn-xs {
   @include button-size($btn-padding-xs-vertical, $btn-padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+}
+
+// soft modifier - small button with normal text, thinner border and slightly rounded corners
+.btn--soft {
+  @include button-size($btn-padding-small-vertical, $btn-padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-secondary);
+  border-width: 1px;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 // Block button
