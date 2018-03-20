@@ -2,16 +2,16 @@
   {% set eachShipment = '<br> <small class="text-muted">Each shipment</small>' %}
 {% endif %}
 <tr class="pt-3">
-  <td class="t-item hidden-xs hidden-sm pl-0 pb-0 pb-md-3 pt-0 pt-md-5 pl-0 pl-md-3">
-    <img src="{{ img }}" class="img-responsive" alt="">
+  <td class="t-item pl-0 pb-0 pb-md-3 pt-0 pt-md-5 pl-0 pl-md-3">
+    <img src="{{ img }}" alt="">
   </td>
   <td class="t-desc pb-0 pb-md-3 pt-3 pt-md-5 pl-0 pl-md-3">
     <div>
       <span class="mr-4">{{ productName }}</span>
       <span class="product-sku text-muted">{{ sku }}</span>
     </div>
-    {% if autoReplenish != null %}
-      <div class="mt-3">
+    {# {% if autoReplenish != null %}
+       <div class="mt-3">
         <form class="form-inline mb-5">
           <label for="replenish-select" class="label label-default label-sm">Auto-replenish</label>
           <div class="form-group has-feedback hidden-xs hidden-sm">
@@ -25,16 +25,26 @@
           </div>
         </form>
       </div>
-    {% endif %}
+    {% endif %} #}
   </td>
-  <td class="t-price pb-0 pb-md-3 pt-3 pt-md-5 pr-0 pr-md-3">
-    {{ price }}
+  <td class="t-price {% if salePrice %}t-price--reduced{% endif %} pb-0 pb-md-3 pt-3 pt-md-5 pr-0 pr-md-3">
+    {% if salePrice %}
+      <span class="text-primary d-block">{{ salePrice }}</span>
+      <span class="d-block small text-muted strike-through">{{ price }}</span>
+    {% else %}
+      <span>{{ price }}</span>
+    {% endif %}
     <span class="hidden-xs hidden-sm">{{ eachShipment }}</span>
   </td>
   <td class="t-qty text-right pb-0 pb-md-3 pt-0 pt-md-5 pr-0 px-md-3">
     <span class="d-flex align-items-center">
-      <label class="mb-0 mr-3 visible-xs">QTY:</label>
-      {% include "_includes/elements/forms/input.html.twig" with { 'classes': 'text-right input-sm mt-2 mt-md-0' } %}
+      {# <label class="mb-0 mr-3 hidden-xs hidden-md hidden-lg">QTY:</label> #}
+      {% include "_includes/elements/forms/input.html.twig" with {
+        classes: 'text-right input-sm mt-2 mt-md-0',
+        size: '6',
+        type: 'number',
+        placeholder: '1'
+      } %}
     </span>
     <div class="mt-2 mt-md-4">
       <a href="javascript:void(0);" class="small link-muted underline" data-toggle="modal" data-target="#blank-modal-either-or">Delete</a>

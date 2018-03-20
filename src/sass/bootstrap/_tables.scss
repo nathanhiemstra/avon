@@ -339,7 +339,7 @@ table {
 
   thead {
     display: none;
-    .t-qty {
+    .t-desc, .t-qty {
       visibility: hidden;
     }
   }
@@ -352,20 +352,13 @@ table {
     border-top: none;
   }
 
-  .t-item {
-    width: 0;
-  }
-
   .t-desc {
-    width: 66.66%;
-
     .product-sku {
       display: block;
     }
   }
 
   > tbody .t-price {
-    width: 100%;
     text-align: right;
     font-size: $font-size-small;
   }
@@ -374,11 +367,18 @@ table {
     display: block;
   }
 
+  .t-price {
+    &--reduced {
+      
+    }
+  }
+
   // desktop
   @media (min-width: $screen-sm-min) {
 
     thead {
       display: table-header-group;
+
       .t-qty {
         visibility: visible;
       }
@@ -392,13 +392,7 @@ table {
       border-top: none;
     }
 
-    .t-item {
-      width: 10%;
-    }
-
     .t-desc {
-      width: 60%;
-
       .product-sku {
         display: inline;
       }
