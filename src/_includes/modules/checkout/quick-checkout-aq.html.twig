@@ -8,9 +8,11 @@
     <div class="form-group form-inline">
        <label class="control-label d-block mb-2">Your 4-digit PIN</label>
        {% include components.elements.forms.input with {
+        classes: 'form-control-inline',
         type: 'number',
         placeholder: '',
-        maxlength: '4'
+        maxlength: '4',
+        size: '4'
       } %}
     </div>
      <!--Continue Button-->
