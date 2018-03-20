@@ -27,40 +27,59 @@
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block main %}
 
-          <h2 class="mb-5">My Profile</h2>
+          <h2>My Profile</h2>
+
+          <hr>
 
           <!-- START: NAME AND ADDRESS-->
-          <div class="border-top pt-4 mb-5">
-            <h5 class="mb-4">Name &amp; Address</h5>
-            <dl class="row my-5">
-              <dt class="text-uppercase col-md-4">Name</dt>
-              <dd class="col-md-8 text-left">Janet Johnson</dd>
-            </dl>
-            <dl class="row my-5">
-              <dt class="text-uppercase col-md-4">Home/Billing Address</dt>
-              <dd class="col-md-8 text-left">9072 Rialto St
-                <br>Napls, FL 34113</dd>
-            </dl>
-            <dl class="row my-5">
-              <dt class="text-uppercase col-md-4">Shipping Address</dt>
-              <dd class="col-md-8 text-left">9072 Rialto St
-                <br>Napls, FL 34113</dd>
-            </dl>
+          <div class="">
+            <h5 class="my-5">Name &amp; Address</h5>
+
+            <div class="row my-5">
+              <h6 class="col-sm-4 my-md-2">Name</h6>
+              <div class="col-md-8">Janet Johnson</div>
+            </div>
+
+            <div class="row my-5">
+              <h6 class="col-sm-4 my-md-2">Home/Billing Address</h6>
+              <div class="col-md-8">9072 Rialto St
+                <br>Napls, FL 34113</div>
+            </div>
+
+            <div class="row my-5">
+              <h6 class="col-sm-4 my-md-2">Shipping Address</h6>
+              <div class="col-md-8">9072 Rialto St
+                <br>Napls, FL 34113</div>
+            </div>
+
             <button class="btn btn-primary" data-toggle="modal" data-target="#requestchange">Request Change</button>
             {# MODAL - Request Change #}
             {% include "_includes/modules/profile/request-change.html.twig" %}
           </div>
           <!-- END: NAME AND ADDRESS-->
 
+          <hr>
+
           <!-- START: PROFILE PICTURE -->
-          <div class="border-top pt-4 mb-5">
-            <h5 class="mb-4">Profile Picture</h5>
-            <h1>FPO</h1>
+          <div class="">
+            <h5 class="my-5">Profile Picture</h5>
+            <div class="row my-5">
+              <div class="col-sm-3">
+                <img src="images/fpo/pretty_lady.png" class="w-100">
+              </div>
+              <div class="col-sm-9">
+                <p class="">Fugiat ut excepteur esse occaecat occaecat do id laboris consectetur est ex et enim ea dolore velit adipisicing.</p>
+                <p class="text-muted small">(PNG, JPEG, or GIF formats only, 10MB max file size)</p>
+                <button class="btn btn--soft btn-default btn-sm mt-4">Choose Image</button>
+              </div>
+            </div>
           </div>
           <!-- END: PROFILE PICTURE -->
 
+          <hr>
+
           <!-- START: CONTACT INFORMATION -->
-          <div class="border-top pt-4 mb-5">
+          <div class="">
             <h5 class="mb-4">Contact Information</h5>
             <dl class="row my-5">
               <dt class="text-uppercase col-md-4">Nickname</dt>
