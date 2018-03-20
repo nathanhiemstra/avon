@@ -31,7 +31,7 @@
 
           <hr>
 
-          <!-- START: NAME AND ADDRESS-->
+          <!-- START - NAME AND ADDRESS-->
           <div class="">
             <h5 class="my-5">Name &amp; Address</h5>
 
@@ -56,11 +56,11 @@
             {# MODAL - Request Change #}
             {% include "_includes/modules/profile/request-change.html.twig" %}
           </div>
-          <!-- END: NAME AND ADDRESS-->
+          <!-- END - NAME AND ADDRESS-->
 
-          <hr>
+          {# <hr>
 
-          <!-- START: PROFILE PICTURE -->
+          <!-- START - PROFILE PICTURE -->
           <div class="">
             <h5 class="my-5">Profile Picture</h5>
             <div class="row my-5">
@@ -74,11 +74,11 @@
               </div>
             </div>
           </div>
-          <!-- END: PROFILE PICTURE -->
+          <!-- END - PROFILE PICTURE --> #}
 
           <hr>
 
-          <!-- START: CONTACT INFORMATION -->
+          <!-- START - CONTACT INFORMATION -->
           <div class="">
             <h5 class="mb-4">Contact Information</h5>
             <dl class="row my-5">
@@ -86,8 +86,8 @@
               <dd class="col-md-8 text-left">
                 <span>Janet Johnson</span>
                 {% include "_includes/elements/forms/input.html.twig" with {
-                  'placeholder': 'Janet Johnson',
-                  'theValue': 'Janet Johnson'
+                  placeholder: 'Janet Johnson',
+                  theValue: 'Janet Johnson'
                 } %}
               </dd>
             </dl>
@@ -96,8 +96,8 @@
               <dd class="col-md-8 text-left">
                 <span>janet.johnson@aol.com</span>
                 {% include "_includes/elements/forms/input.html.twig" with {
-                  'placeholder': 'janet.johnson@aol.com',
-                  'theValue': 'janet.johnson@aol.com'
+                  placeholder: 'janet.johnson@aol.com',
+                  theValue: 'janet.johnson@aol.com'
                 } %}
               </dd>
             </dl>
@@ -106,8 +106,8 @@
               <dd class="col-md-8 text-left">
                 <span>(513) 123-4567</span>
                 {% include "_includes/elements/forms/input.html.twig" with {
-                  'placeholder': '(513) 123-4567',
-                  'theValue': '(513) 123-4567'
+                  placeholder: '(513) 123-4567',
+                  theValue: '(513) 123-4567'
                 } %}
             </dl>
             <dl class="row my-5">
@@ -115,17 +115,17 @@
               <dd class="col-md-8 text-left">
                 <span>(513) 123-8901</span>
                 {% include "_includes/elements/forms/input.html.twig" with {
-                  'placeholder': '(513) 123-8901',
-                  'theValue': '(513) 123-8901'
+                  placeholder: '(513) 123-8901',
+                  theValue: '(513) 123-8901'
                 } %}
             </dl>
             <button class="btn btn-primary">
               EDIT
             </button>
           </div>
-          <!-- END: CONTACT INFORMATION -->
+          <!-- END - CONTACT INFORMATION -->
 
-          <!-- START: REPRESENTATIVE ID -->
+          <!-- START - REPRESENTATIVE ID -->
           <div class="border-top pt-4 mb-5">
             <h5 class="mb-4">Representative ID</h5>
             <dl class="row my-5">
@@ -157,9 +157,9 @@
               <dd class="col-md-8 text-left">David H. McConnell Club</dd>
             </dl>
           </div>
-          <!-- END: REPRESENTATIVE ID -->
+          <!-- END - REPRESENTATIVE ID -->
 
-          <!-- START: SETTINGS -->
+          <!-- START - SETTINGS -->
           <div class="border-top pt-4 mb-5">
             <h5 class="mb-4">Settings</h5>
             <dl class="row my-5">
@@ -191,9 +191,9 @@
               EDIT
             </button>
           </div>
-          <!-- END: SETTINGS -->
+          <!-- END - SETTINGS -->
 
-          <!-- START: PROGRAMS -->
+          <!-- START - PROGRAMS -->
           <div class="border-top pt-4 mb-5">
             <h5 class="mb-4">Programs</h5>
             <dl class="row my-5">
@@ -230,7 +230,7 @@
               </dd>
             </dl>
           </div>
-          <!-- END: PROGRAMS -->
+          <!-- END - PROGRAMS -->
 
           {# MODAL - Learn More common modal #}
           {% include "_includes/modules/profile/learn-more.html.twig" %}
