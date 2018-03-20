@@ -1,0 +1,20 @@
+<div class="container container--page">
+
+  <!-- START - BALANCE DUE METHOD -->
+  {% include '_includes/modules/checkout/quick-checkout-balance-due.html.twig' %}
+  <!-- END - SHIPPING METHOD -->
+
+  <!--START: PAYMENT METHOD-->
+  {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {hideSplitPayment: true} %}
+  <!--END: PAYMENT METHOD-->
+
+  <!-- START - CREDIT CARD PAYMENT METHOD -->
+  {% include '_includes/modules/checkout/quick-checkout-cc.html.twig' %}
+  <!-- END - CREDIT CARD PAYMENT METHOD -->
+
+  <!-- START: PAY WITH QUICKPAY-->
+  {% include '_includes/modules/checkout/quick-checkout-aq.html.twig' %}
+  <!-- END: PAY WITH AUICKPAY-->
+
+</div>
+<!-- /.container -->

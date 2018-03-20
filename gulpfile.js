@@ -168,6 +168,7 @@ gulp.task('compile', function () {
                   itemizedCheckout: prefix.modules + "checkout/itemized-checkout.html.twig",
                   reviewComplete:   prefix.modules + "checkout/review-complete.html.twig",
                   quickCheckout:    prefix.modules + "checkout/quick-checkout.html.twig",
+                  pastBalanceDue:    prefix.modules + "checkout/quick-checkout-past-balance-due.html.twig",
                 },
                 global: {
                   footer:         prefix.modules + "global/footer.html.twig",
