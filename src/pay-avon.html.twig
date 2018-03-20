@@ -33,41 +33,41 @@
              <div class="ml-4">
                <div class="form-group">
                  {% include components.elements.forms.radio with {
-                      name: 'pay-option', 
-                      classes: '', 
-                      theValue: 'credit', 
+                      name: 'pay-option',
+                      classes: '',
+                      theValue: 'credit',
                       theLabel: '<b>-$1.00</b>(current balance as of March 08, 2018 at 03:15 PM EST)
                       <i class="lt-icon lt-tip lt-medium align-middle"
                       data-container="body"
                       data-toggle="popover"
                       data-placement="bottom"
                       data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    </i>'} 
+                    </i>'}
                     %}
                </div>
 
                <div class="form-group">
                  {% include components.elements.forms.radio with {
-                      name: 'pay-option', 
-                      classes: '', 
-                      theValue: 'credit', 
+                      name: 'pay-option',
+                      classes: '',
+                      theValue: 'credit',
                       theLabel: '<b>$0.00</b>(Amount Due with Campaign 07)
                       <i class="lt-icon lt-tip lt-medium align-middle"
                       data-container="body"
                       data-toggle="popover"
                       data-placement="bottom"
                       data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    </i>'} 
+                    </i>'}
                     %}
                </div>
 
                <div class="clearfix mb-2">
                  <div class="pull-left">
                    {% include components.elements.forms.radio with {
-                      name: 'pay-option', 
-                      classes: '', 
-                      theValue: 'credit', 
-                      theLabel: '<b>Other Amount: $</b>', checked: true} 
+                      name: 'pay-option',
+                      classes: '',
+                      theValue: 'credit',
+                      theLabel: '<b>Other Amount: $</b>', checked: true}
                     %}
                  </div>
                  <div class="pull-left mt-3 ml-2 clearfix">
@@ -93,17 +93,17 @@
             <p><strong>Please select a payment type;</strong></p>
             <div class="ml-4">
               {% include components.elements.forms.radio with {
-                  name: 'pay-type', 
-                  classes: 'mb-5', 
-                  theValue: 'quick-pay', 
-                  theLabel: 'QuickPAY (your are not enrolled. <strong class="text-uppercase">Enroll Now</strong>)'} 
+                  name: 'pay-type',
+                  classes: 'mb-5',
+                  theValue: 'quick-pay',
+                  theLabel: 'QuickPAY (you are not enrolled. <strong class="text-uppercase" data-toggle="modal" data-target="#checkout-quickpay-enrollment-modal">Enroll Now</strong>)'}
               %}
               {% include components.elements.forms.radio with {
-                name: 'pay-type', 
-                classes: '', 
-                theValue: 'cc-cards', 
+                name: 'pay-type',
+                classes: '',
+                theValue: 'cc-cards',
                 theLabel: 'Credit Card(s)',
-                checked: 'true'} 
+                checked: 'true'}
               %}
 
               <div class="ml-sm-4">
@@ -162,16 +162,16 @@
                         {% include components.elements.forms.input with {
                           placeholder: 'CVV*'
                         } %}
-                        
+
                       </div>
                     </div>
 
                     <div class="clearfix">
                       <a href="#" class="pull-left">Add Card</a>
-                      <a href="javascript:void(0)" class="pull-right underline" 
-                        data-container="body" 
-                        data-toggle="popover" 
-                        data-placement="bottom" 
+                      <a href="javascript:void(0)" class="pull-right underline"
+                        data-container="body"
+                        data-toggle="popover"
+                        data-placement="bottom"
                         data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><small>What is this?</small></a>
                     </div>
 
@@ -239,5 +239,8 @@
     </section>
 
   {% endblock %}
+
+  <!-- MODAL - QUICKPAY ENROLLMENT -->
+  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-modal.html.twig" %}
 
 {% endblock %}

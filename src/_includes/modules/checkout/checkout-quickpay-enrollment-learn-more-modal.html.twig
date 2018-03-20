@@ -1,0 +1,43 @@
+{% extends "_layouts/modal-lg-no-footer.html.twig" %}
+{% set modalId = 'checkout-quickpay-enrollment-learn-more-modal' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" id="offers-modal-back-btn" class="close link-muted pull-left" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Go back</span>
+    <span class="lt-icon lt-left lt-large py-1"></span>
+  </button>
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+  <h6 class="modal-title" id="myModalLabel">Bank Name</h6>
+
+{% endblock %}
+
+
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+<div class="row pb-4">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
+
+<div class="row">
+
+  <section class="clearfix text-center mb-4">
+    <button type="button" class="btn btn-primary">OK</button>
+  </section>
+
+</div>
+  <!-- /.row -->
+
+{% endblock %}
