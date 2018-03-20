@@ -18,24 +18,7 @@
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block aside %}
 
-          <h5>My Account</h5>
-          <ul class="nav nav-pills nav-stacked">
-            <li class="active">
-              <a href="#">Profile</a>
-            </li>
-            <li>
-              <a href="#">Password</a>
-            </li>
-            <li>
-              <a href="#">Account Balance</a>
-            </li>
-            <li>
-              <a href="#">Pay Avon</a>
-            </li>
-            <li>
-              <a href="#">Get Paid by Avon</a>
-            </li>
-          </ul>
+          {% include '_includes/groups/navigation/my-account-nav.html.twig' %}
 
         {% endblock %}
 

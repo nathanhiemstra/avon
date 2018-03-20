@@ -8,7 +8,8 @@
 
 .list-group {
   .list-group-item {
-    > a[data-toggle="collapse"]:not(.collapsed) {
+    > a[data-toggle="collapse"]:not(.collapsed),
+    > a.active {
       color: $brand-primary;
     }
   }
@@ -74,7 +75,7 @@ li.avon-product-list__item {
 
       // transition: 0.5s opacity ease;
       // opacity: 1;
-   
+
     }
 
     // // Only show badge if collapsed
@@ -124,7 +125,7 @@ li.avon-product-list__item {
     // @media (min-width: $screen-md-min) {
     //     cursor: default;
     // }
- 
+
   }
 }
 
