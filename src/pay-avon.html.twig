@@ -28,91 +28,125 @@
         {% block main %}
 
           <h2 class="mb-5">Pay Avon</h2>
-          <div class="border-top pt-5">
+
+          <hr>
+
+          <!-- START - PAYMENT AMOUNT SECTION -->
+          <div class="">
+
             <p>How much are you paying today?</p>
-             <div class="ml-4">
-               <div class="form-group">
-                 {% include components.elements.forms.radio with {
-                      name: 'pay-option',
-                      classes: '',
-                      theValue: 'credit',
-                      theLabel: '<b>-$1.00</b>(current balance as of March 08, 2018 at 03:15 PM EST)
-                      <i class="lt-icon lt-tip lt-medium align-middle"
+
+            <div class="ml-4">
+
+              <div class="form-group">
+                {% include components.elements.forms.radio with {
+                    name: 'pay-option',
+                    classes: '',
+                    theValue: 'credit',
+                    theLabel: '<b>-$1.00</b>(current balance as of March 08, 2018 at 03:15 PM EST)
+                    <i class="lt-icon lt-tip lt-medium align-middle"
                       data-container="body"
                       data-toggle="popover"
                       data-placement="bottom"
                       data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    </i>'}
-                    %}
-               </div>
+                    </i>'
+                  } %}
+              </div>
 
-               <div class="form-group">
-                 {% include components.elements.forms.radio with {
-                      name: 'pay-option',
-                      classes: '',
-                      theValue: 'credit',
-                      theLabel: '<b>$0.00</b>(Amount Due with Campaign 07)
-                      <i class="lt-icon lt-tip lt-medium align-middle"
+              <div class="form-group">
+                {% include components.elements.forms.radio with {
+                    name: 'pay-option',
+                    classes: '',
+                    theValue: 'credit',
+                    theLabel: '<b>$0.00</b>(Amount Due with Campaign 07)
+                    <i class="lt-icon lt-tip lt-medium align-middle"
                       data-container="body"
                       data-toggle="popover"
                       data-placement="bottom"
                       data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    </i>'}
-                    %}
-               </div>
+                    </i>'
+                  } %}
+              </div>
 
-               <div class="clearfix mb-2">
-                 <div class="pull-left">
-                   {% include components.elements.forms.radio with {
-                      name: 'pay-option',
-                      classes: '',
-                      theValue: 'credit',
-                      theLabel: '<b>Other Amount: $</b>', checked: true}
-                    %}
-                 </div>
-                 <div class="pull-left mt-3 ml-2 clearfix">
+              <div class="form-group has-error">
+
+                <div class="">
+
+                  {% include components.elements.forms.radio with {
+                    name: 'pay-option',
+                    classes: 'd-inline',
+                    theValue: 'credit',
+                    theLabel: '<b>Other Amount: $</b>', checked: true
+                  } %}
+
                   {% include components.elements.forms.input with {
                     placeholder: '',
-                    value: '25,00.23',
-                    classes: 'form-control-inline pull-left'
+                    theValue: '25,000.23',
+                    classes: 'input-sm form-control form-control-inline'
                   } %}
-                   <span class="lt-icon lt-tip lt-medium align-middle pull-left ml-2"
-                    data-container="body"
-                    data-toggle="popover"
-                    data-placement="bottom"
-                    data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                  </span>
-                 </div>
-               </div>
-               <p class="text-danger">
-                 we are sorry, we are unable to process this request. Please review payment amount to ensure it is not greater than $25,000 or does not exceed your balance by more than $1,000.
-               </p>
-             </div>
+
+                  <span class="lt-icon lt-tip lt-medium align-middle ml-2" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></span>
+
+                </div>
+
+              </div>
+
+              <p class="text-danger">
+                we are sorry, we are unable to process this request. Please review payment amount to ensure it is not greater than $25,000 or does not exceed your balance by more than $1,000.
+              </p>
+
+            </div>
+
           </div>
+          <!-- END - PAYMENT AMOUNT SECTION -->
+
+          <!-- START - PAYMENT TYPE SECTION -->
           <div class="pt-5">
-            <p><strong>Please select a payment type;</strong></p>
+
+            <p><strong>Please select a payment type:</strong></p>
+
             <div class="ml-4">
               {% include components.elements.forms.radio with {
                 name: 'pay-type',
-                classes: 'mb-5',
                 theValue: 'quick-pay',
                 theLabel: 'QuickPAY (your are enrolled. <strong class="text-uppercase">EDIT</strong>)',
                 disabled: false
               } %}
+
+              <div class="form-group has-error">
+                <span>Please enter your 4-digit PIN code:</span>
+                <input type="text" class="input-sm form-control form-control-inline" size="6" maxlength="4">
+                <i class="lt-icon lt-tip lt-medium align-middle"
+                  data-container="body"
+                  data-toggle="popover"
+                  data-placement="bottom"
+                  data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                </i>
+                <p class="text-danger">Field PIN is mandatory, please fill it in.</p>
+              </div>
+
               {% include components.elements.forms.radio with {
                 name: 'pay-type',
-                classes: 'mb-5',
                 theValue: 'quick-pay',
-                theLabel: 'QuickPAY (your are not enrolled. <strong class="text-uppercase">Enroll Now</strong>)',
+                theLabel: 'QuickPAY (your are not enrolled. <a class="text-uppercase">Enroll Now</a>)',
                 disabled: true
               } %}
+
+              <div class="">
+                <p>QuickPAY is the safer, easier way to pay online without revealing your credit card number.</p>
+              </div>
+
               {% include components.elements.forms.radio with {
                 name: 'pay-type',
-                classes: 'mb-5',
                 theValue: 'quick-pay',
                 theLabel: 'QuickPAY (<strong class="text-uppercase">Account is currently being processed</strong>)',
                 disabled: true
               } %}
+
+              <div class="">
+                <p>Mollit veniam et eiusmod ut elit nulla laboris minim quis voluptate et amet nisi voluptate ex deserunt. Velit sint mollit amet dolore ad fugiat sint sint magna incididunt consequat irure aliqua commodo sunt. Culpa nisi officia sit et esse officia ipsum.</p>
+              </div>
+
               {% include components.elements.forms.radio with {
                 name: 'pay-type',
                 classes: '',
@@ -183,11 +217,9 @@
 
                     <div class="clearfix">
                       <a href="#" class="pull-left">Add Card</a>
-                      <a href="javascript:void(0)" class="pull-right underline"
-                        data-container="body"
-                        data-toggle="popover"
-                        data-placement="bottom"
-                        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><small>What is this?</small></a>
+                      <a href="javascript:void(0)" class="pull-right underline" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                        <small>What is this?</small>
+                      </a>
                     </div>
 
                     <div class="pt-3">
@@ -247,6 +279,7 @@
               </div>
             </div>
           </div>
+          <!-- END - PAYMENT TYPE SECTION -->
 
         {% endblock %}
 
