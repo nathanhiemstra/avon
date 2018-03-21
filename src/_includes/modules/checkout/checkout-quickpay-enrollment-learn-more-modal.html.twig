@@ -1,4 +1,4 @@
-{% extends "_layouts/modal-lg-no-footer.html.twig" %}
+{% extends "_layouts/modal.html.twig" %}
 {% set modalId = 'checkout-quickpay-enrollment-learn-more-modal' %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -20,24 +20,22 @@
 {% endblock %}
 
 
-
-
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - modalBody #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
-<div class="row pb-4">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-</div>
+  <p>{{ fpo.paragraph }}</p>
 
-<div class="row">
+{% endblock %}
 
-  <section class="clearfix text-center mb-4">
-    <button type="button" class="btn btn-primary">OK</button>
-  </section>
 
-</div>
-  <!-- /.row -->
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
 
 {% endblock %}
