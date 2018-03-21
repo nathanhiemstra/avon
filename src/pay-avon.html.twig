@@ -111,54 +111,89 @@
             <p><strong>Please select a payment type:</strong></p>
 
             <div class="ml-4">
-              {% include components.elements.forms.radio with {
-                name: 'pay-type',
-                theValue: 'quick-pay',
-                theLabel: 'QuickPAY (your are enrolled. <strong class="text-uppercase">EDIT</strong>)',
-                disabled: false
-              } %}
 
-              <div class="form-group has-error">
-                <span>Please enter your 4-digit PIN code:</span>
-                <input type="text" class="input-sm form-control form-control-inline" size="6" maxlength="4">
-                <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle no-underline"
-                  data-container="body"
-                  data-toggle="popover"
-                  data-placement="bottom"
-                  data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                </a>
-                <p class="text-danger">Field PIN is mandatory, please fill it in.</p>
+              <!-- START - PAY TYPE - QUICKPAY -->
+
+              <!-- Developer note: The following demonstrates three "QUICKPAY STATES" for the QuickPAY radio button.--> 
+              
+              <!-- START - QUICKPAY STATE - ENROLLED -->
+              <div class="form-group">
+                {% include components.elements.forms.radio with {
+                  name: 'pay-type',
+                  theValue: 'quick-pay',
+                  theLabel: 'QuickPAY (your are enrolled. <strong class="text-uppercase"><a href="#">EDIT</a></strong>)',
+                  dataAttrs: 'data-toggle="collapse" data-target=".collapseOne:not(.in)"',
+                  disabled: false,
+                  checked: true,
+                } %}
+
+                <!-- START - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
+                <!-- Developer note: This gets shown when this radio is selected. It relies on "data-toggle" and "data-target". Demo: https://jsfiddle.net/kuzbktph/ -->
+                <!-- Developer note: Add class has-error if there is an error. --> 
+                <div id="quickpay-pin" class="form-group has-error collapseOne panel-collapse in mb-3">
+                  <span>Please enter your 4-digit PIN code:</span>
+                  <input type="text" class="input-sm form-control form-control-inline" size="6" maxlength="4">
+                  <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle no-underline"
+                    data-container="body"
+                    data-toggle="popover"
+                    data-placement="bottom"
+                    data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                  </a>
+
+                  <!-- Developer note: Show if there is an error. --> 
+                  <p class="m-0 text-danger">Field PIN is mandatory, please fill it in.</p>
+                </div>
+                <!-- END - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
               </div>
+              <!-- END - QUICKPAY STATE - ENROLLED -->
 
-              {% include components.elements.forms.radio with {
-                name: 'pay-type',
-                theValue: 'quick-pay',
-                theLabel: 'QuickPAY (your are not enrolled. <a class="text-uppercase">Enroll Now</a>)',
-                disabled: true
-              } %}
+              <!-- START - QUICKPAY STATE - NOT ENROLLED -->
+              <div class="form-group">
+                <!-- Developer note: This is disabled. --> 
+                {% include components.elements.forms.radio with {
+                  name: 'pay-type',
+                  theValue: 'quick-pay',
+                  theLabel: 'QuickPAY (your are not enrolled. <a class="text-uppercase">Enroll Now</a>)',
+                  dataAttrs: 'data-toggle="collapse" data-target=".collapseOne:not(.in)"',
+                  disabled: true
+                } %}
 
-              <div class="">
-                <p>QuickPAY is the safer, easier way to pay online without revealing your credit card number.</p>
+                <div>
+                  <p>QuickPAY is the safer, easier way to pay online without revealing your credit card number.</p>
+                </div>
               </div>
+              <!-- END - QUICKPAY STATE - NOT ENROLLED -->
 
-              {% include components.elements.forms.radio with {
-                name: 'pay-type',
-                theValue: 'quick-pay',
-                theLabel: 'QuickPAY (<strong class="text-uppercase">Account is currently being processed</strong>)',
-                disabled: true
-              } %}
-
-              <div class="">
-                <p>Mollit veniam et eiusmod ut elit nulla laboris minim quis voluptate et amet nisi voluptate ex deserunt. Velit sint mollit amet dolore ad fugiat sint sint magna incididunt consequat irure aliqua commodo sunt. Culpa nisi officia sit et esse officia ipsum.</p>
+              <!-- START - QUICKPAY STATE - ENROLLMENT IN PROCESS -->
+              <div class="form-group">
+                <!-- Developer note: This is disabled. --> 
+                {% include components.elements.forms.radio with {
+                  name: 'pay-type',
+                  theValue: 'quick-pay',
+                  theLabel: 'QuickPAY (<strong class="text-uppercase">Account is currently being processed</strong>)',
+                  dataAttrs: 'data-toggle="collapse" data-target=".collapseOne:not(.in)"',
+                  disabled: true
+                } %}
+                <div>
+                  <p>The enrollment process takes 6 days to complete from the date you submitted your request. Once the enrollment process has completed, please activate your QuikPAY account by calling 1-877-QuikPAY (1-877-784-5729) and resetting your PIN #. After activating your QuikPAY Pin, please allow 24 hours before it updates on the site.</p>
+                </div>
               </div>
+              <!-- END - QUICKPAY STATE - ENROLLMENT IN PROCESS -->
 
-              {% include components.elements.forms.radio with {
-                name: 'pay-type',
-                classes: '',
-                theValue: 'cc-cards',
-                theLabel: 'Credit Card(s)',
-                checked: 'true'
-              } %}
+              <!-- END - PAY TYPE - QUICKPAY -->
+
+              <!-- START - PAY TYPE - CREDIT CARD -->
+              <div class="form-group">
+                {% include components.elements.forms.radio with {
+                  name: 'pay-type',
+                  classes: '',
+                  theValue: 'cc-cards',
+                  theLabel: 'Credit Card(s)',
+                  dataAttrs: 'data-toggle="collapse" data-target=".collapseOne.in"'
+                } %}
+              </div>
+              <!-- END - PAY TYPE - CREDIT CARD -->
+
 
               <div class="ml-sm-4">
                 <div class="row">
