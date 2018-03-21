@@ -10,11 +10,38 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
+
+    <!-- START - TAB NAVIGATION -->
     <section class="container container--page">
+      <h2 class="mb-5">Dashboard!</h2>
 
-      <h2>Dashboard</h2>
+      {% include "_includes/modules/dashboard/tab-nav.html.twig" %}
 
-      {% include "_includes/modules/home/boxes-primary-home-from-avon.html.twig" %}
+
+    </section>
+    <!-- /.container -->
+    <!-- END - TAB NAVIGATION -->
+
+
+ 
+    <section class="container my-5">
+
+     {% include '_includes/modules/dashboard/tab-content.html.twig' %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     {#  {% include "_includes/modules/home/boxes-primary-home-from-avon.html.twig" %}
       
       <!-- START - FULL WIDTH CONTAINER -->
       <section class="my-5">
@@ -80,7 +107,7 @@
       <!-- END - FULL WIDTH CONTAINER -->
 
 
-
+ #}
 
 
       
