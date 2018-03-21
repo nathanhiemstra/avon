@@ -32,36 +32,39 @@
           <hr>
 
           <!-- START - NAME AND ADDRESS-->
-          <div class="">
+          <section class="">
+
             <h5 class="my-5">Name &amp; Address</h5>
 
             <div class="row my-5">
               <h6 class="col-sm-4 my-md-2">Name</h6>
-              <div class="col-md-8">Janet Johnson</div>
+              <div class="col-sm-8">Janet Johnson</div>
             </div>
 
             <div class="row my-5">
               <h6 class="col-sm-4 my-md-2">Home/Billing Address</h6>
-              <div class="col-md-8">9072 Rialto St
+              <div class="col-sm-8">9072 Rialto St
                 <br>Napls, FL 34113</div>
             </div>
 
             <div class="row my-5">
               <h6 class="col-sm-4 my-md-2">Shipping Address</h6>
-              <div class="col-md-8">9072 Rialto St
+              <div class="col-sm-8">9072 Rialto St
                 <br>Napls, FL 34113</div>
             </div>
 
-            <button class="btn btn-primary" data-toggle="modal" data-target="#requestchange">Request Change</button>
+            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#requestchange">Request Change</button>
+
             {# MODAL - Request Change #}
             {% include "_includes/modules/profile/request-change.html.twig" %}
-          </div>
+
+          </section>
           <!-- END - NAME AND ADDRESS-->
 
           {# <hr>
 
           <!-- START - PROFILE PICTURE -->
-          <div class="">
+          <section class="">
             <h5 class="my-5">Profile Picture</h5>
             <div class="row my-5">
               <div class="col-sm-3">
@@ -70,211 +73,293 @@
               <div class="col-sm-9">
                 <p class="">Fugiat ut excepteur esse occaecat occaecat do id laboris consectetur est ex et enim ea dolore velit adipisicing.</p>
                 <p class="text-muted small">(PNG, JPEG, or GIF formats only, 10MB max file size)</p>
-                <button class="btn btn--soft btn-default btn-sm mt-4">Choose Image</button>
+                <button class="btn btn-soft btn-default btn-sm mt-4">Choose Image</button>
               </div>
             </div>
-          </div>
+          </section>
           <!-- END - PROFILE PICTURE --> #}
 
           <hr>
 
           <!-- START - CONTACT INFORMATION -->
-          <div class="">
+          <section class="">
 
-            <h5 class="my-5">Contact Information</h5>
+            <form role="form">
 
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Nickname</h6>
-              <div class="col-md-8">
-                <span>Janet Johnson</span>
-                {% include "_includes/elements/forms/input.html.twig" with {
-                  type: 'text',
-                  placeholder: 'Janet Johnson',
-                  theValue: 'Janet Johnson'
-                } %}
+              <h5 class="my-5">Contact Information</h5>
+
+              <div class="row my-5">
+                <div class="form-group">
+                  <h6 class="col-sm-4 my-md-2">Nickname</h6>
+                  <div class="col-sm-8">
+                    <span>Janet Johnson</span>
+                    {% include "_includes/elements/forms/input.html.twig" with {
+                      type : 'text',
+                      placeholder: 'Janet Johnson',
+                      theValue: 'Janet Johnson'
+                    } %}
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Email Address</h6>
-              <div class="col-md-8">
-                <span>janet.johnson@aol.com</span>
-                {% include "_includes/elements/forms/input.html.twig" with {
-                  type: 'email',
-                  placeholder: 'janet.johnson@aol.com',
-                  theValue: 'janet.johnson@aol.com'
-                } %}
+              <div class="row my-5">
+                <div class="form-group">
+                  <h6 class="col-sm-4 my-md-2">Email Address</h6>
+                  <div class="col-sm-8">
+                    <span>janet.johnson@aol.com</span>
+                    {% include "_includes/elements/forms/input.html.twig" with {
+                      type : 'email',
+                      placeholder: 'janet.johnson@aol.com',
+                      theValue: 'janet.johnson@aol.com'
+                    } %}
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Home/Cell Phone</h6>
-              <div class="col-md-8">
-                <span>(513) 123-4567</span>
-                {% include "_includes/elements/forms/input.html.twig" with {
-                  type: 'tel',
-                  placeholder: '(513) 123-4567',
-                  theValue: '(513) 123-4567'
-                } %}
+              <div class="row my-5">
+                <div class="form-group">
+                  <h6 class="col-sm-4 my-md-2">Home/Cell Phone</h6>
+                  <div class="col-sm-8">
+                    <span>(513) 123-4567</span>
+                    {% include "_includes/elements/forms/input.html.twig" with {
+                      type : 'tel',
+                      placeholder: '(513) 123-4567',
+                      theValue: '(513) 123-4567'
+                    } %}
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Business/Cell Phone</h6>
-              <div class="col-md-8">
-                <span>(513) 123-8901</span>
-                {% include "_includes/elements/forms/input.html.twig" with {
-                  type: 'tel',
-                  placeholder: '(513) 123-8901',
-                  theValue: '(513) 123-8901'
-                } %}
+              <div class="row my-5">
+                <div class="form-group">
+                  <h6 class="col-sm-4 my-md-2">Business/Cell Phone</h6>
+                  <div class="col-sm-8">
+                    <span>(513) 123-8901</span>
+                    {% include "_includes/elements/forms/input.html.twig" with {
+                      type : 'tel',
+                      placeholder: '(513) 123-8901',
+                      theValue: '(513) 123-8901'
+                    } %}
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <button class="btn btn-primary">Edit</button>
+              <button class="btn btn-sm btn-primary">Edit</button>
 
-          </div>
+            </form>
+
+          </section>
           <!-- END - CONTACT INFORMATION -->
 
           <hr>
 
           <!-- START - REPRESENTATIVE ID -->
-          <div class="">
+          <section class="">
 
             <h5 class="my-5">Representative ID</h5>
 
             <div class="row my-5">
               <h6 class="col-sm-4 my-md-2">District Number</h6>
-              <div class="col-md-8">5999</div>
+              <div class="col-sm-8">5999</div>
             </div>
 
             <div class="row my-5">
-              <h6 class="col-md-4 my-md-2">Account Number</h6>
-              <div class="col-md-8">45619986</div>
+              <h6 class="col-sm-4 my-md-2">Account Number</h6>
+              <div class="col-sm-8">45619986</div>
             </div>
 
             <div class="row my-5">
-              <h6 class="col-md-4 my-md-2">Pay by Check</h6>
-              <div class="col-md-8">Yes</div>
+              <h6 class="col-sm-4 my-md-2">Pay by Check</h6>
+              <div class="col-sm-8">Yes</div>
             </div>
 
             <div class="row my-5">
-              <h6 class="col-md-4 my-md-2">Avon Anniversary</h6>
-              <div class="col-md-8">NOV 12, 1999</div>
+              <h6 class="col-sm-4 my-md-2">Avon Anniversary</h6>
+              <div class="col-sm-8">Nov 12, 1999</div>
             </div>
 
             <div class="row my-5">
-              <h6 class="col-md-4 my-md-2">Instant Credit</h6>
-              <div class="col-md-8">Yes</div>
+              <h6 class="col-sm-4 my-md-2">Instant Credit</h6>
+              <div class="col-sm-8">Yes</div>
             </div>
 
             <div class="row my-5">
-              <h6 class="col-md-4 my-md-2">Leadership Level</h6>
-              <div class="col-md-8">Silver Leader</div>
+              <h6 class="col-sm-4 my-md-2">Leadership Level</h6>
+              <div class="col-sm-8">Silver Leader</div>
             </div>
 
             <div class="row my-5">
-              <h6 class="col-md-4 my-md-2">Sales Level</h6>
-              <div class="col-md-8">David H. McConnell Club</div>
+              <h6 class="col-sm-4 my-md-2">Sales Level</h6>
+              <div class="col-sm-8">David H. McConnell Club</div>
             </div>
 
-          </div>
+          </section>
           <!-- END - REPRESENTATIVE ID -->
 
           <hr>
 
           <!-- START - SETTINGS -->
-          <div class="">
+          <section class="">
 
             <h5 class="my-5">Settings</h5>
 
-            <div class="row my-5">
-              <h6 class="col-md-4 my-md-2">Language Preference</h6>
-              <div class="col-md-8">
-                {% include components.elements.forms.radio with {id: 'language-1', name: 'language', classes: 'pull-left my-2 mr-4', theValue: 'English', theLabel: 'English', checked: true} %}
-                {% include components.elements.forms.radio with {id: 'language-2', name: 'language', classes: 'pull-left my-2', theValue: 'Language-2', theLabel: 'Language-2', checked: false} %}
-              </div>
-            </div>
+            <form role="form">
 
-            <div class="row my-5">
-              <div class="col-md-4">
-                <h6 class="my-md-2">Publicity Release</h6>
-                <a href="#" class="d-block small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
+              <div class="row my-5">
+                <div class="form-group">
+                  <h6 class="col-sm-4 my-md-2">Language Preference</h6>
+                  <div class="col-sm-8">
+                    <span>English</span>
+                    {% include components.elements.forms.radio with {
+                      id: 'language-1',
+                      name: 'language',
+                      classes: 'my-2 mr-4',
+                      theValue: 'English',
+                      theLabel: 'English',
+                      checked: true
+                    } %}
+                    {% include components.elements.forms.radio with {
+                      id: 'language-2',
+                      name: 'language',
+                      classes: 'my-2',
+                      theValue: 'Language-2',
+                      theLabel: 'Language-2',
+                      checked: false
+                    } %}
+                  </div>
+                </div>
               </div>
-              <div class="col-md-8">
-                {% include components.elements.forms.radio with {id: 'relese-yes', name: 'publicity-relese', classes: 'pull-left my-2 mr-4', theValue: 'Yes', theLabel: 'Yes', checked: true} %}
-                {% include components.elements.forms.radio with {id: 'relese-no', name: 'publicity-relese', classes: 'pull-left my-2', theValue: 'No', theLabel: 'No', checked: false} %}
-              </div>
-            </div>
 
-            <div class="row my-5">
-              <div class="col-md-4">
-                <h6 class="my-md-2">Paperless Invoice</h6>
-                <a href="#" class="d-block small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
+              <div class="row my-5">
+                <div class="form-group">
+                  <div class="col-sm-4">
+                    <h6 class="mt-md-2 mb-0">Publicity Release</h6>
+                    <a href="#" class="d-block small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
+                  </div>
+                  <div class="col-sm-8 mt-4 mt-md-0">
+                    <span>Yes</span>
+                    {% include components.elements.forms.radio with {
+                      id: 'release-yes',
+                      name: 'publicity-release',
+                      classes: 'my-2 mr-4',
+                      theValue: 'Yes',
+                      theLabel: 'Yes',
+                      checked: true
+                    } %}
+                    {% include components.elements.forms.radio with {
+                      id: 'release-no',
+                      name: 'publicity-release',
+                      classes: 'my-2',
+                      theValue: 'No',
+                      theLabel: 'No',
+                      checked: false
+                    } %}
+                  </div>
+                </div>
               </div>
-              <div class="col-md-8">
-                {% include components.elements.forms.radio with {id: 'paperless-invoice-yes', name: 'paperless-invoice', classes: 'pull-left my-2 mr-4', theValue: 'Yes', theLabel: 'Yes', checked: true} %}
-                {% include components.elements.forms.radio with {id: 'paperless-invoice-no', name: 'paperless-invoice', classes: 'pull-left my-2', theValue: 'No', theLabel: 'No', checked: false} %}
+
+              <div class="row my-5">
+                <div class="form-group">
+                  <div class="col-sm-4">
+                    <h6 class="mt-md-2 mb-0">Paperless Invoice</h6>
+                    <a href="#" class="d-block small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
+                  </div>
+                  <div class="col-sm-8 mt-4 mt-md-0">
+                    <span>Yes</span>
+                    {% include components.elements.forms.radio with {
+                      id: 'paperless-invoice-yes',
+                      name: 'paperless-invoice',
+                      classes: 'my-2 mr-4',
+                      theValue: 'Yes',
+                      theLabel: 'Yes',
+                      checked: true
+                    } %}
+                    {% include components.elements.forms.radio with {
+                      id: 'paperless-invoice-no',
+                      name: 'paperless-invoice',
+                      classes: 'my-2',
+                      theValue: 'No',
+                      theLabel: 'No',
+                      checked: false
+                    } %}
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <button class="btn btn-primary">Edit</button>
+              <button class="btn btn-sm btn-primary">Edit</button>
 
-          </div>
+            </form>
+
+          </section>
           <!-- END - SETTINGS -->
 
           <hr>
 
           <!-- START - PROGRAMS -->
-          <div class="">
+          <section class="">
 
-            <h5 class="my-5">Programs</h5>
+            <form role="form">
 
-            <div class="row my-5">
-              <div class="col-md-4">
-                <h6 class="my-md-2">Facebook Account</h6>
-                <a href="#" class="d-block small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
-              </div>
-              <div class="col-md-8">
-                <a href="#" class="btn btn-default btn--soft" target="_blank">Connect</a>
-              </div>
-            </div>
+              <h5 class="my-5">Programs</h5>
 
-            <div class="row my-5">
-              <div class="col-md-4">
-                <h6 class="my-md-2">Email Preferences</h6>
-                <a href="#" class="d-block small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
+              <div class="row my-5">
+                <div class="form-group">
+                  <div class="col-sm-4">
+                    <h6 class="mt-md-2 mb-0">Facebook Account</h6>
+                    <a href="#" class="d-block small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
+                  </div>
+                  <div class="col-sm-8 mt-4 mt-md-0">
+                    <a href="#" class="btn btn-default btn-soft btn-sm" target="_blank">Connect</a>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-8">
-                <a href="#" class="btn btn-default btn--soft" target="_blank">Open</a>
-              </div>
-            </div>
 
-            <div class="row my-5">
-              <div class="col-md-4">
-                <h6 class="my-md-2">SMS Preferences</h6>
-                <a href="#" class="d-block small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
+              <div class="row my-5">
+                <div class="form-group">
+                  <div class="col-sm-4">
+                    <h6 class="mt-md-2 mb-0">Email Preferences</h6>
+                    <a href="#" class="d-block small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
+                  </div>
+                  <div class="col-sm-8 mt-4 mt-md-0">
+                    <a href="#" class="btn btn-default btn-soft btn-sm" target="_blank">Open</a>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-8">
-                <a href="#" class="btn btn-default btn--soft" target="_blank">Open</a>
-              </div>
-            </div>
 
-            <div class="row my-5">
-              <div class="col-md-4">
-                <h6 class="my-md-2">Let New Customers Find Me</h6>
-                <a href="#" class="d-block small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
+              <div class="row my-5">
+                <div class="form-group">
+                  <div class="col-sm-4">
+                    <h6 class="mt-md-2 mb-0">SMS Preferences</h6>
+                    <a href="#" class="d-block small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
+                  </div>
+                  <div class="col-sm-8 mt-4 mt-md-0">
+                    <a href="#" class="btn btn-default btn-soft btn-sm" target="_blank">Open</a>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-8">
-                <a href="#" class="btn btn-default btn--soft">Enroll Now</a>
-              </div>
-            </div>
 
-          </div>
+              <div class="row my-5">
+                <div class="form-group">
+                  <div class="col-sm-4">
+                    <h6 class="mt-md-2 mb-0">Let New Customers Find Me</h6>
+                    <a href="#" class="d-block small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
+                  </div>
+                  <div class="col-sm-8 mt-4 mt-md-0">
+                    <a href="javascript:void(0)" class="btn btn-default btn-soft btn-sm" data-toggle="modal" data-target="#enrollnow">Enroll Now</a>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+
+          </section>
           <!-- END - PROGRAMS -->
 
           {# MODAL - Learn More common modal #}
           {% include "_includes/modules/profile/learn-more.html.twig" %}
+
+          {# MODAL - Enroll Now iframe #}
+          {% include "_includes/modules/profile/enroll-now.html.twig" %}
 
         {% endblock %}
 

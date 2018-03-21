@@ -287,9 +287,9 @@ a.btn {
   @include button-size($btn-padding-xs-vertical, $btn-padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
 }
 
-// soft modifier - small button with normal text, thinner border and slightly rounded corners
-.btn--soft {
-  @include button-size($btn-padding-small-vertical, $btn-padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-secondary);
+// soft modifier - button with normal text, thinner border and slightly rounded corners
+.btn-soft {
+  border-radius: $border-radius-secondary;
   border-width: 1px;
   text-transform: none;
   letter-spacing: 0;
