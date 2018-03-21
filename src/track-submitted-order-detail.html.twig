@@ -24,20 +24,20 @@
           <table class="table mb-0 table-no-borders">
             <thead class="border-top">
               <tr>
-                <th class="submitted-order-column ">Type</th>
-                <th class="submitted-order-column">Ship Date</th>
-                <th class="submitted-order-column nowrap"># Boxes</th>
-                <th class=" submitted-order-shipping-column">Carrier</th>
-                <th class=" ">Tracking Number(s)</th>
+                <th class="t-type">Type</th>
+                <th class="t-ship">Ship Date</th>
+                <th class="t-boxes nowrap"># Boxes</th>
+                <th class="t-carrier">Carrier</th>
+                <th class="t-tracking">Tracking Number(s)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="">Innerware</td>
-                <td class="">02/12/2018</td>
-                <td class="">100</td>
-                <td class="">United Parcel Services <br> 1-800-742-5877</td>
-                <td class="">
+                <td class="t-type">Innerware</td>
+                <td class="t-ship">02/12/2018</td>
+                <td class="t-boxes">100</td>
+                <td class="t-carrier">United Parcel Services <br> 1-800-742-5877</td>
+                <td class="t-tracking">
                   <ol class="list-counter list-counter--1-char">
                     {% for i in 0..2 %}
                       {{ listItem }}
@@ -46,24 +46,24 @@
                 </td>
               </tr>
             </tbody>
-          
+
             <thead class="border-top">
               <tr>
-                <th class="submitted-order-column">Type</th>
-                <th class="submitted-order-column">Ship Date</th>
-                <th class="submitted-order-column nowrap"># Boxes</th>
-                <th class="submitted-order-shipping-column">Carrier</th>
-                <th class=" ">Tracking Number(s)</th>
+                <th class="t-type">Type</th>
+                <th class="t-ship">Ship Date</th>
+                <th class="t-boxes nowrap"># Boxes</th>
+                <th class="t-carrier">Carrier</th>
+                <th class="t-tracking">Tracking Number(s)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="">Avon</td>
-                <td class="">02/12/2018</td>
-                <td class="">17</td>
-                <td class="">US Postal Service</td>
-                <td class="">
-                
+                <td class="t-type">Avon</td>
+                <td class="t-ship">02/12/2018</td>
+                <td class="t-boxes">17</td>
+                <td class="t-carrier">US Postal Service</td>
+                <td class="t-tracking">
+
                   <ol class="list-counter list-counter--3-char">
                     {% for i in 0..100 %}
                       {{ listItem }}
