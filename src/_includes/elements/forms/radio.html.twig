@@ -13,12 +13,15 @@
 {% if disabled %}
   {% set disabled = ' disabled ' %}
 {% endif %}
+{% if dataAttrs %}
+  {% set dataAttrs = ' ' ~ dataAttrs ~ ' ' %}
+{% endif %}
 
 {{ thelabel ? theLabel : '' }}
 
 <div class="radio {{ classes }}">
   <label>
-    <input type="radio" {{ name }} {{ id }}{{ theValue }}{{ checked }}{{ disabled }}>
+    <input type="radio" {{ name }} {{ id }}{{ theValue }}{{ checked }}{{ disabled }}{{ dataAttrs }}>
     <span class="mr-4"></span>
     {{ theLabel }}
   </label>

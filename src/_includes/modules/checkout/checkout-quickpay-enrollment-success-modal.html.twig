@@ -1,0 +1,44 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'checkout-quickpay-enrollment-success-modal' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <h6 class="modal-title">Quickpay Enrollment</h6>
+
+{% endblock %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+  <h2>Thank you for enrolling!</h2>
+  <dl>
+    <dt>Representative</dt>
+    <dd>Laura Croft</dd>
+    <dt>Account Number</dt>
+    <dd>0000000000</dd>
+  </dl>
+
+  <h5>Don’t forget to activate your account</h5>
+  <p>What to expect next: It will take up to 6 days for us to set up your QuikPAY information with your bank. You should return to the Pay Avon page for the progress updates.</p>
+  <p>Once your account has been verified by the bank you will be notified on the Pay Avon page to activate your QuikPAY account.</p>
+  <p>To "Activate" your QuikPAY account, you will be instructed to call 1-877-QuikPAY (1-877-784-5729) to set up your unique PIN #.</p>
+  <p>After activating your QuikPAY Pin, please allow 24 hours before returning to QuikPAY to access the full functionality of this option.</p>
+
+{% endblock %}
+
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+
+{% endblock %}

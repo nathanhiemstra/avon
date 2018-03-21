@@ -1,0 +1,60 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'pay-avon-review' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+
+  <h4 class="modal-title" id="myModalLabel">Review Payment Information</h4>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+    <!-- START - AMOUNT DUE MODAL CONTENT -->
+    <div class="py-4">
+      <h4 class="text-uppercase">Please Review Your Payment Information</h4>
+      <p>Loreum ipsum dolar Loreum ipsum dolarLoreum ipsum dolar Loreum ipsum dolar</p>
+      <div class="pt-5">
+        <div class="row">
+          <div class="col-sm-6 col-md-offset-3">
+            <dl class="clearfix mb-5 text-muted">
+              <dt class="pull-left text-uppercase">Method</dt>
+              <dd class="pull-right">QuickPAY</dd>
+            </dl>
+            <dl class="clearfix text-muted">
+              <dt class="pull-left text-uppercase">Amount Due</dt>
+              <dd class="pull-right">$9.00</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END - AMOUNT DUE MODAL CONTENT -->
+
+  <!-- /.row -->
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+    <!-- START - OK Button -->
+    <button type="button" class="btn btn-default">Cancel</button>
+
+    <button type="button" class="btn btn-primary">Pay Avon</button>
+    <!-- END - OK BUTTON -->
+  <!-- /.row -->
+
+{% endblock %}

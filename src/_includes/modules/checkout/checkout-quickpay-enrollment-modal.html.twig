@@ -1,4 +1,4 @@
-{% extends "_layouts/modal-lg-no-footer.html.twig" %}
+{% extends "_layouts/modal.html.twig" %}
 {% set modalId = 'checkout-quickpay-enrollment-modal' %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -10,21 +10,21 @@
     <span class="sr-only">Close modal</span>
     <span class="lt-icon lt-close lt-large py-1"></span>
   </button>
-  <h6 class="modal-title" id="myModalLabel">Quickpay Enrollment</h6>
+  <h6 class="modal-title">Quickpay Enrollment</h6>
 
 {% endblock %}
+
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - modalBody #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
-  <h5>ENROLL IN QUICKPAY</h5>
+  <h5>Enroll in QuickPAY</h5>
   <p>Enroll in Avon's secure online payment system, QuickPAY, and never worry about mailing a check again. With QuickPAY, you...</p>
   <p class="font-weight-bold">To get started, complete the form below as part of a three-step online process.</p>
 
   <form role="form">
-
     <div class="form-group">
       <label class="control-label">Name on Account*</label>
       {% include components.elements.forms.input with {
@@ -60,10 +60,16 @@
         placeholder: 'Williams'
       } %}
     </div>
-
-    <button type="button" class="btn btn-default">CANCEL</button>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#checkout-quickpay-enrollment-review-modal">SAVE</button>
-
   </form>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#checkout-quickpay-enrollment-review-modal">Save</button>
 
 {% endblock %}
