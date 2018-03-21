@@ -1,0 +1,46 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'amount-due' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+
+  <h4 class="modal-title" id="myModalLabel">Amount Due</h4>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+    <!-- START - AMOUNT DUE MODAL CONTENT -->
+    <div class="py-4">
+      <p>
+        This reflects the outstanding balance from prior campaigns, current campaign payments and credits. This is due when you place your order or on your campaign order submission day if you do not place an order. <br>
+        Payments not received when due may resut in a Late Payment Fee
+      </p>
+    </div>
+    <!-- END - AMOUNT DUE MODAL CONTENT -->
+
+  <!-- /.row -->
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+    <!-- START - OK Button -->
+    <button type="button" class="btn btn-primary">Ok</button>
+    <!-- END - OK BUTTON -->
+  <!-- /.row -->
+
+{% endblock %}

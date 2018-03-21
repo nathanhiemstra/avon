@@ -46,12 +46,12 @@
                     theLabel: '<b>-$1.00</b>(current balance as of March 08, 2018 at 03:15 PM EST)'
                   } %}
 
-                  <i class="lt-icon lt-tip lt-medium align-middle"
+                  <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle no-underline"
                     data-container="body"
                     data-toggle="popover"
                     data-placement="bottom"
                     data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                  </i>
+                  </a>
 
               </div>
 
@@ -63,12 +63,13 @@
                   theLabel: '<b>$0.00</b>(Amount Due with Campaign 07)'
                 } %}
 
-                <i class="lt-icon lt-tip lt-medium align-middle"
-                  data-container="body"
-                  data-toggle="popover"
-                  data-placement="bottom"
-                  data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                </i>
+                <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle no-underline"
+                  data-toggle="modal" data-target="#amount-due">
+                </a>
+
+                {# MODAL - AMOUNT DUE #}
+                {% include "_includes/modules/account/pay-avon-amount-due-modal.html.twig" %}
+
               </div>
 
               <div class="form-group has-error">
@@ -89,7 +90,7 @@
                     classes: 'input-sm form-control form-control-inline'
                   } %}
 
-                  <span class="lt-icon lt-tip lt-medium align-middle ml-2" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></span>
+                  <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle ml-2 no-underline" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></a>
 
                 </div>
 
@@ -120,12 +121,12 @@
               <div class="form-group has-error">
                 <span>Please enter your 4-digit PIN code:</span>
                 <input type="text" class="input-sm form-control form-control-inline" size="6" maxlength="4">
-                <i class="lt-icon lt-tip lt-medium align-middle"
+                <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle no-underline"
                   data-container="body"
                   data-toggle="popover"
                   data-placement="bottom"
                   data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                </i>
+                </a>
                 <p class="text-danger">Field PIN is mandatory, please fill it in.</p>
               </div>
 
@@ -274,8 +275,11 @@
                       </div>
 
                       <!-- START - Continue Button -->
-                      <a class="btn btn-primary d-block disabled">Continue</a>
+                      <a class="btn btn-primary d-block" data-toggle="modal" data-target="#pay-avon-review">Continue</a>
                       <!-- END - Continue Button -->
+
+                      {# MODAL - PAY AVAON REVIEW #}
+                      {% include "_includes/modules/account/pay-avon-review-modal.html.twig" %}
                     </div>
 
                   </div>
