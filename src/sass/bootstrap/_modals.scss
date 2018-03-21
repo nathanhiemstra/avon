@@ -111,6 +111,14 @@
   margin-top: -2px;
 }
 
+// modal back button
+.btn-modal-back {
+  // disable pointer events on all children so our js doesn't get confused
+  * {
+    pointer-events: none;
+  }
+}
+
 // Title text within header
 .modal-title {
   margin: 0;
@@ -146,7 +154,7 @@
     margin-bottom: 0;
 
     // account for input[type="submit"] which gets the bottom margin like all other inputs
- 
+
   }
 
   // but override that for button groups
@@ -190,7 +198,7 @@
     width: $screen-sm;
 
     // 768px
- 
+
   }
 }
 

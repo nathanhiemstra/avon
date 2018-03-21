@@ -6,7 +6,7 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalHeader %}
 
-  <button type="button" id="offers-modal-back-btn" class="close link-muted pull-left" data-dismiss="modal" aria-hidden="true">
+  <button type="button" class="close btn-modal-back link-muted pull-left" data-toggle="modal" data-target="#checkout-quickpay-enrollment-modal" aria-hidden="true">
     <span class="sr-only">Go back</span>
     <span class="lt-icon lt-left lt-large py-1"></span>
   </button>
@@ -36,6 +36,6 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalFooter %}
 
-  <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+  <button type="button" class="btn btn-primary btn-modal-back" data-toggle="modal" data-target="#checkout-quickpay-enrollment-modal">OK</button>
 
 {% endblock %}
