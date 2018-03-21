@@ -84,6 +84,14 @@ th {
     }
   }
 
+  // important for callapsible table rows
+
+  td {
+    &.in {
+      display: table-cell;
+    }
+  }
+
   // Nesting
   .table {
     background-color: $body-bg;
@@ -265,18 +273,6 @@ table {
   }
 }
 
-// .submitted-order-column {
-//   width: 16%;
-// }
-
-// .submitted-order-shipping-column {
-//   width: 22%;
-// }
-
-// .submitted-order-double-column {
-//   width: 30%;
-// }
-
 // Table backgrounds
 //
 // Exact selectors below required to override `.table-striped` and prevent
@@ -362,21 +358,13 @@ table {
   }
 }
 
-// important for callapsible table rows
-.table {
-  td {
-    &.in {
-      display: table-cell;
-    }
-  }
-}
-
 // Your Order cart table specific styles
 .table--carts {
   margin-bottom: 0;
 
   thead {
     display: none;
+
     .t-desc, .t-qty {
       visibility: hidden;
     }
@@ -406,9 +394,7 @@ table {
   }
 
   .t-price {
-    &--reduced {
-
-    }
+    &--reduced {}
   }
 
   // desktop
