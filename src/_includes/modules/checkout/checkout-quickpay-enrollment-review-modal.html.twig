@@ -1,0 +1,63 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'checkout-quickpay-enrollment-review-modal' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+  <h6 class="modal-title">Quickpay Enrollment</h6>
+
+{% endblock %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+
+  <h5>Please review your information</h5>
+  <p>Please review your payment information</p>
+
+
+  <table class="table table-no-borders table-flush">
+    <tr>
+      <td class="font-weight-bold text-uppercase">Name on account</td>
+      <td>Lara Croft</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">Routing number</td>
+      <td>*****0013</td>
+    </tr>
+    <tr>
+      <td><span class="font-weight-bold text-uppercase">Bank name</span><br/>
+      <a href="#" data-toggle="modal" data-target="#checkout-quickpay-enrollment-learn-more-modal">Learn More</a></td>
+      <td>Citi</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">Bank account number</td>
+      <td>****5345</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">Mother's maiden name</td>
+      <td>Robinson</td>
+    </tr>
+  </table>
+  
+{% endblock %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+    <button type="button" class="btn btn-default" data-dismiss="modal">Edit</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#checkout-quickpay-enrollment-modal">Confirm</button>
+
+{% endblock %}

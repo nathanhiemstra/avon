@@ -18,21 +18,21 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
-  <section class="py-5">
-    <!-- Product Details -->
-    <div class="row">
-      <div class="col-md-12 vcenter">
-        <iframe
-          align="center"
-          marginwidth="0"
-          src="/REPSuite/vendorlinks.page?linkid=75"
-          frameborder="0"
-          width="608"
-          height="900">Your browser can not display this content correctly. Please download the lastest version of Internet Explorer to view this page.
-        </iframe>
-      </div>
-    </div>
-    <!-- /.row -->
+  <section class="py-5 text-center">
+
+    <!-- START - iFRAME TAKEN DIRECTLY FROM YOURAVON.COM -->
+    <!-- Developer note, on youravon.com the iframe uses src="/REPSuite/vendorlinks.page?linkid=75".-->
+    <!-- For demo purposes we're using src="https://data.youravon.com/avoncc/enrollmentGetStarted.page?acct_nr=17078378&cmpgn_nr=08&cmpgn_yr=2018&acct_typ=R&mrkt_id=75&lang_cd=E&signature=2F0D1151E5E4D27A1C1A0D691D0C45B0" -->
+    <iframe
+      align="center"
+      marginwidth="0"
+      src="https://data.youravon.com/avoncc/enrollmentGetStarted.page?acct_nr=17078378&cmpgn_nr=08&cmpgn_yr=2018&acct_typ=R&mrkt_id=75&lang_cd=E&signature=2F0D1151E5E4D27A1C1A0D691D0C45B0"
+      frameborder="0"
+      width="608"
+      height="900">Your browser can not display this content correctly. Please download the lastest version of Internet Explorer to view this page.
+    </iframe>
+    <!-- END - iFRAME TAKEN DIRECTLY FROM YOURAVON.COM -->
+
   </section>
 
 {% endblock %}

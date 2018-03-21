@@ -1,31 +1,17 @@
-{% if autoReplenish != null %}
-  {% set eachShipment = '<br> <small class="text-muted">Each shipment</small>' %}
+{% if whichRow == 'last' %}
+  {% set bottomPadding = ' pb-0' %}
+{% else %}
+  {% set bottomPadding = ' pb-3 pb-md-4 ' %}
 {% endif %}
 <tr class="pt-3">
-  <td class="t-item pl-0 pb-0 pb-md-3 pt-0 pt-md-5 pl-0 pl-md-3">
+  <td class="t-item py-3 pt-md-5 pb-4 pl-md-3">
     <img src="{{ img }}" alt="">
   </td>
-  <td class="t-desc pb-0 pb-md-3 pt-3 pt-md-5 pl-0 pl-md-3">
+  <td class="t-desc py-3 pt-md-5 pb-4 pl-0 pl-md-3">
     <div>
       <span class="mr-4">{{ productName }}</span>
       <span class="product-sku text-muted">{{ sku }}</span>
     </div>
-    {# {% if autoReplenish != null %}
-       <div class="mt-3">
-        <form class="form-inline mb-5">
-          <label for="replenish-select" class="label label-default label-sm">Auto-replenish</label>
-          <div class="form-group has-feedback hidden-xs hidden-sm">
-            <select id="replenish-select" class="input-sm form-control">
-              <option>Every 4 weeks</option>
-              <option>Every 3 weeks</option>
-              <option>Every 2 weeks</option>
-              <option>Every 1 weeks</option>
-            </select>
-            <span class="lt-icon lt-triangle-down form-control-feedback"></span>
-          </div>
-        </form>
-      </div>
-    {% endif %} #}
   </td>
   <td class="t-price {% if salePrice %}t-price--reduced{% endif %} pb-0 pb-md-3 pt-3 pt-md-5 pr-0 pr-md-3">
     {% if salePrice %}
@@ -36,14 +22,15 @@
     {% endif %}
     <span class="hidden-xs hidden-sm">{{ eachShipment }}</span>
   </td>
-  <td class="t-qty text-right pb-0 pb-md-3 pt-0 pt-md-5 pr-0 px-md-3">
+  <!-- Developer note: If this is the last <tr> in the <table> change "pb-3 pb-md-4" to "pb-0" -->
+  <td class="t-qty text-right {{ bottomPadding }} pt-0 pt-md-5 pr-0 px-md-3">
     <span class="d-flex align-items-center">
       {# <label class="mb-0 mr-3 hidden-xs hidden-md hidden-lg">QTY:</label> #}
       {% include "_includes/elements/forms/input.html.twig" with {
         classes: 'text-right input-sm mt-2 mt-md-0',
         size: '6',
         type: 'number',
-        placeholder: '1'
+        theValue: '1'
       } %}
     </span>
     <div class="mt-2 mt-md-4">

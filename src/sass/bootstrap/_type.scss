@@ -374,7 +374,9 @@ address {
 .underline {
   text-decoration: underline;
 }
-
+.no-underline{
+  text-decoration: none !important;
+}
 .nowrap {
   white-space: nowrap;
 }
