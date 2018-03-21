@@ -122,7 +122,7 @@
                   name: 'pay-type',
                   theValue: 'quick-pay',
                   theLabel: 'QuickPAY (your are enrolled. <strong class="text-uppercase"><a href="#">EDIT</a></strong>)',
-                  dataAttrs: 'data-toggle="collapse" data-target=".collapseOne:not(.in)"',
+                  dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
                   disabled: false,
                   checked: true,
                 } %}
@@ -130,7 +130,7 @@
                 <!-- START - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
                 <!-- Developer note: This gets shown when this radio is selected. It relies on "data-toggle" and "data-target". Demo: https://jsfiddle.net/kuzbktph/ -->
                 <!-- Developer note: Add class has-error if there is an error. --> 
-                <div id="quickpay-pin" class="form-group has-error collapseOne panel-collapse in mb-3">
+                <div id="collapse-quickpay-pin" class="form-group has-error#collapse-quickpay-pin panel-collapse in mb-3">
                   <span>Please enter your 4-digit PIN code:</span>
                   <input type="text" class="input-sm form-control form-control-inline" size="6" maxlength="4">
                   <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle no-underline"
@@ -154,7 +154,7 @@
                   name: 'pay-type',
                   theValue: 'quick-pay',
                   theLabel: 'QuickPAY (your are not enrolled. <a class="text-uppercase">Enroll Now</a>)',
-                  dataAttrs: 'data-toggle="collapse" data-target=".collapseOne:not(.in)"',
+                  dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
                   disabled: true
                 } %}
 
@@ -171,7 +171,7 @@
                   name: 'pay-type',
                   theValue: 'quick-pay',
                   theLabel: 'QuickPAY (<strong class="text-uppercase">Account is currently being processed</strong>)',
-                  dataAttrs: 'data-toggle="collapse" data-target=".collapseOne:not(.in)"',
+                  dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
                   disabled: true
                 } %}
                 <div>
@@ -189,7 +189,7 @@
                   classes: '',
                   theValue: 'cc-cards',
                   theLabel: 'Credit Card(s)',
-                  dataAttrs: 'data-toggle="collapse" data-target=".collapseOne.in"'
+                  dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin.in"'
                 } %}
               </div>
               <!-- END - PAY TYPE - CREDIT CARD -->
