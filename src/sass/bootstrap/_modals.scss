@@ -154,7 +154,7 @@
     margin-bottom: 0;
 
     // account for input[type="submit"] which gets the bottom margin like all other inputs
-
+ 
   }
 
   // but override that for button groups
@@ -198,7 +198,7 @@
     width: $screen-sm;
 
     // 768px
-
+ 
   }
 }
 
@@ -230,10 +230,16 @@
 
   .modal-body {
     position: absolute;
-    top: 50px;
+    top: 62px;
     bottom: 60px;
     width: 100%;
     overflow: auto;
+  }
+
+  &.has-no-footer {
+    .modal-body {
+      bottom: 0;
+    }
   }
 
   .modal-footer {
@@ -253,7 +259,7 @@
 
 // Only fullscreen on mobible
 @media (max-width: $screen-xs-max) {
-  .modal-fullscreen-xs {
+  .modal {
     @include modal-fullscreen;
   }
 }
