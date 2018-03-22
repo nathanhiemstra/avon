@@ -13,10 +13,10 @@ $(document).ready(function () {
     },
     yourOrder: {
       offers: {
-        list:         '#your-order-offers',
-        details:      '#your-order-offer-details',
-        showDetails:  '.view-offer-details',
-        hideDetails:  '.back-to-all-offers'
+        list: '#your-order-offers',
+        details: '#your-order-offer-details',
+        showDetails: '.view-offer-details',
+        hideDetails: '.back-to-all-offers'
       }
     },
     drawers: {
@@ -44,10 +44,10 @@ $(document).ready(function () {
     },
     yourOrder: {
       offers: {
-        list:           $(selectors.main).find(selectors.yourOrder.offers.list),
-        details:        $(selectors.main).find(selectors.yourOrder.offers.details),
-        showDetails:    $(selectors.main).find(selectors.yourOrder.offers.showDetails),
-        hideDetails:    $(selectors.main).find(selectors.yourOrder.offers.hideDetails)
+        list: $(selectors.main).find(selectors.yourOrder.offers.list),
+        details: $(selectors.main).find(selectors.yourOrder.offers.details),
+        showDetails: $(selectors.main).find(selectors.yourOrder.offers.showDetails),
+        hideDetails: $(selectors.main).find(selectors.yourOrder.offers.hideDetails)
       }
     },
     drawers: {
@@ -57,8 +57,8 @@ $(document).ready(function () {
       itemEntry: $(selectors.main).find(selectors.drawers.itemEntry)
     },
     datePicker: {
-      trigger:  $(selectors.main).find(selectors.datePicker.trigger),
-      target:   $(selectors.main).find(selectors.datePicker.target)
+      trigger: $(selectors.main).find(selectors.datePicker.trigger),
+      target: $(selectors.main).find(selectors.datePicker.target)
     }
     // backDrop: $(selectors.backDrop)
   }
@@ -73,7 +73,7 @@ $(document).ready(function () {
 
 
   function toggleDrawer(clickedItem) {
-    var targetId = $(clickedItem).attr('href') || $(clickedItem).data('target') ;
+    var targetId = $(clickedItem).attr('href') || $(clickedItem).data('target');
     var targetEl = $(targetId);
     var isDrawerTypeHidden = targetEl.hasClass('drawer-hidden');
     var isExpanded = targetEl.hasClass('drawer-expanded');
@@ -81,7 +81,7 @@ $(document).ready(function () {
     var backdropAdded = $('.drawer-backdrop').length;
     var backdropDiv;
 
-    if ( backdropAdded ) {
+    if (backdropAdded) {
       $('.drawer-backdrop').remove();
     } else {
       backdropDiv = $('<div class="drawer-backdrop in"></div>').appendTo($objects.globalHeader);
@@ -165,52 +165,44 @@ $(document).ready(function () {
     toggleDatePicker(this);
   });
 
+  // POPOVERS
+  $('[data-toggle="popover"]:not(#popover-cart)').popover();
 
+  // handle cart popover and add a custom class for styling
+  var cartPopover = $("#popover-cart");
 
-  ////////////////////////////////////////////////////////
-  // INIT
-  ////////////////////////////////////////////////////////
-
-  $(document).ready(function () {
-    $('[data-toggle="popover"]:not(#popover-cart)').popover();
-
-
-    // handle cart popover and add a custom class for styling
-    var cartPopover = $("#popover-cart");
-
-    if(cartPopover.length) {
-      $("#popover-cart")
-        .popover({
-          html: true,
-          content: function() {
-            var id = $(this).attr('id')
-            return $('#' + id + '-content').html();
-          }
-        })
-        .data('bs.popover')
-        .tip()
-        .addClass('popover--cart');
-
-        // hide cart popover on body click
-        $('body').on('click', function (e) {
-        if ($(e.target).data('toggle') !== 'popover'
-            && $(e.target).parents('.popover.in').length === 0) {
-            $('#popover-cart').popover('hide');
+  if (cartPopover.length) {
+    $("#popover-cart")
+      .popover({
+        html: true,
+        content: function () {
+          var id = $(this).attr('id')
+          return $('#' + id + '-content').html();
         }
+      })
+      .data('bs.popover')
+      .tip()
+      .addClass('popover--cart');
+
+    // hide cart popover on body click
+    $('body').on('click', function (e) {
+      if ($(e.target).data('toggle') !== 'popover' &&
+        $(e.target).parents('.popover.in').length === 0) {
+        $('#popover-cart').popover('hide');
+      }
     });
-    }
-
-  });
+  }
 
 
-
-  if(typeof Brochures !== 'undefined') Brochures.init();
-  if(typeof CheckoutDemo !== 'undefined') CheckoutDemo.init();
-  if(typeof FormDemo !== 'undefined') FormDemo.init();
-  if(typeof GlobalSearch !== 'undefined') GlobalSearch.init();
-  if(typeof OnlineOrderHistory !== 'undefined') OnlineOrderHistory.init();
-  if(typeof ProductDetail !== 'undefined') ProductDetail.init();
-  if(typeof ProductFilters !== 'undefined') ProductFilters.init();
-  if(typeof YourOrderCartsTab !== 'undefined') YourOrderCartsTab.init();
+  // INIT OTHER DEMO SCRIPTS
+  if (typeof Brochures !== 'undefined') Brochures.init();
+  if (typeof CheckoutDemo !== 'undefined') CheckoutDemo.init();
+  if (typeof FormDemo !== 'undefined') FormDemo.init();
+  if (typeof GlobalSearch !== 'undefined') GlobalSearch.init();
+  if (typeof Modals !== 'undefined') Modals.init();
+  if (typeof OnlineOrderHistory !== 'undefined') OnlineOrderHistory.init();
+  if (typeof ProductDetail !== 'undefined') ProductDetail.init();
+  if (typeof ProductFilters !== 'undefined') ProductFilters.init();
+  if (typeof YourOrderCartsTab !== 'undefined') YourOrderCartsTab.init();
 
 });
