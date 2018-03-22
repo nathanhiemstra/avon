@@ -5,40 +5,23 @@
   <h5 class="text-center my-4 pt-5">From Avon</h5>
   <!-- END - FPO HEADLINE -->
 
-  <!-- START - CAROUSEL - FROM AVON -->
-  <div id="carousel-from-avon" class="carousel carousel--box-group-primary slide" data-ride="carousel"  data-interval="false">
-    
-    <!-- START - INDICATORS -->
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-from-avon" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-from-avon" data-slide-to="1"></li>
-      <li data-target="#carousel-from-avon" data-slide-to="2"></li>
-      <li data-target="#carousel-from-avon" data-slide-to="3"></li>
-    </ol>
-    <!-- END - INDICATORS -->
-
-    <!-- START - SLIDES -->
-    <div class="carousel-inner box-group--primary ">
-   
-      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '1', active: 'true' } %}
-      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '2' } %}
-      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '3' } %}
-      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '4' } %}
-
-    </div>
-    <!-- END - SLIDES -->
-
-    <!-- START - CONTROLS -->
-    <a class="left carousel-control" href="#carousel-from-avon" data-slide="prev">
-      <span class="lt-icon lt-left lt-large"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel-from-avon" data-slide="next">
-      <span class="lt-icon lt-right lt-large"></span>
-    </a>
-    <!-- END - CONTROLS -->
-
-  </div>
-  <!-- START - CAROUSEL - FROM AVON -->
+  {% include "_includes/groups/boxes/primary/template.html.twig" with { 
+    carouselId: 'carousel-from-avon', 
+    items: {
+      item1: {
+        imgPath: 'images/fpo/home/1.png'
+      },
+      item2: {
+        imgPath: 'images/fpo/home/2.png'
+      },
+      item3: {
+        imgPath: 'images/fpo/home/3.png'
+      },
+      item4: {
+        imgPath: 'images/fpo/home/4.png'
+      },
+    }
+  } %}
 
 
 </section>

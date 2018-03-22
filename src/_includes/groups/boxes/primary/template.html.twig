@@ -1,0 +1,55 @@
+{# Must pass in a "carouselId" or this will assume it's not a carousel #}
+{% if carouselId %}
+  
+
+  {# INDICATORS (DOTS) #}
+  {% set carouselIndicators = '<!-- START - INDICATORS -->
+  <ol class="carousel-indicators">
+    <li data-target="#' ~ carouselId ~ '" data-slide-to="0" class="active"></li>
+    <li data-target="#' ~ carouselId ~ '" data-slide-to="1"></li>
+    <li data-target="#' ~ carouselId ~ '" data-slide-to="2"></li>
+    <li data-target="#' ~ carouselId ~ '" data-slide-to="3"></li>
+  </ol>
+  <!-- END - INDICATORS -->' %}
+
+  {# CONTROLS (LEFT / RIGHT ARROWS) #}
+  {% set carouselControls = '<!-- START - CONTROLS -->
+  <a class="left carousel-control" href="#' ~ carouselId ~ '" data-slide="prev">
+    <span class="lt-icon lt-left lt-large"></span>
+  </a>
+  <a class="right carousel-control" href="#' ~ carouselId ~ '" data-slide="next">
+    <span class="lt-icon lt-right lt-large"></span>
+  </a>
+  <!-- END - CONTROLS -->' %}
+
+  {# CDATA ATTRIBUTES AND CLASSES #}
+  {% set carouselDataAttrs = ' data-ride="carousel"  data-interval="false"' %}
+  {% set carouselClassesInner = ' carousel-inner ' %}
+
+{% endif %}
+
+
+
+<!-- START - CAROUSEL - "{{ carouselId }}" --> 
+<div id="{{ carouselId }}" class="carousel carousel--box-group-primary slide" {{ carouselDataAttrs }}>
+  
+  {{ carouselIndicators }}
+
+  <!-- START - SLIDES -->
+  <div class="{{ carouselClassesInner }} box-group--primary">
+
+ 
+    {% set isActive = true %}
+    {% for item in items %}
+      {% include "_includes/groups/boxes/primary/item.html.twig" with { src: item.imgPath, active: isActive } %}
+      {% set isActive = null %}
+    {% endfor %}
+
+
+  </div>
+  <!-- END - SLIDES -->
+
+  {{ carouselControls }}
+
+</div>
+<!-- START - CCAROUSEL - "{{ carouselId }}" --> 

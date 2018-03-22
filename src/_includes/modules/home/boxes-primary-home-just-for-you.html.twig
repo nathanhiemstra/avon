@@ -5,40 +5,23 @@
   <h5 class="text-center my-4 pt-5">Just For You <i class="lt-icon lt-info lt-medium"></i></h5>
   <!-- END - FPO HEADLINE -->
 
-  <!-- START - CAROUSEL - FROM AVON --> 
-  <div id="carousel-just-for-you" class="carousel carousel--box-group-primary slide" data-ride="carousel"  data-interval="false">
-    
-    <!-- START - INDICATORS -->
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-just-for-you" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-just-for-you" data-slide-to="1"></li>
-      <li data-target="#carousel-just-for-you" data-slide-to="2"></li>
-      <li data-target="#carousel-just-for-you" data-slide-to="3"></li>
-    </ol>
-    <!-- END - INDICATORS -->
-
-    <!-- START - SLIDES -->
-    <div class="carousel-inner box-group--primary ">
-   
-      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '5', active: 'true' } %}
-      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '6' } %}
-      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '7' } %}
-      {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '8' } %}
-
-    </div>
-    <!-- END - SLIDES -->
-
-    <!-- START - CONTROLS -->
-    <a class="left carousel-control" href="#carousel-just-for-you" data-slide="prev">
-      <span class="lt-icon lt-left lt-large"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel-just-for-you" data-slide="next">
-      <span class="lt-icon lt-right lt-large"></span>
-    </a>
-    <!-- END - CONTROLS -->
-
-  </div>
-  <!-- START - CAROUSEL - FROM AVON -->
+  {% include "_includes/groups/boxes/primary/template.html.twig" with { 
+    carouselId: 'carousel-just-for-you', 
+    items: {
+      item1: {
+        imgPath: 'images/fpo/home/5.png'
+      },
+      item2: {
+        imgPath: 'images/fpo/home/6.png'
+      },
+      item3: {
+        imgPath: 'images/fpo/home/7.png'
+      },
+      item4: {
+        imgPath: 'images/fpo/home/8.png'
+      },
+    }
+  } %}
 
 
   <button type="button" class="btn btn-default btn-sm my-5 mx-xs-auto ml-lg-0 d-block">View full dashboard</button>
