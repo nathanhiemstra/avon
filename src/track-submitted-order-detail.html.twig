@@ -19,9 +19,14 @@
         {% set listItem = '<li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>' %}
 
         <h2 class="pb-3">Order #844365269</h2>
-        <p>Payment Information: Your account is up-to-date</p>
-        <div class="table-responsive mt-5 ">
-          <table class="table mb-0 table-no-borders">
+        <p><strong>Payment Information:</strong> Your account is up-to-date</p>
+        <div class="mt-5">
+
+          <!-- DEV NOTE :: .table-collapse-to-column requires the <th> ellements
+                        :: in <thead> to be duplicated in <tbody> as .td-label
+                        :: See below for example -->
+          <table class="table mb-0 table-no-borders table-collapse-to-column">
+
             <thead class="border-top">
               <tr>
                 <th class="t-type">Type</th>
@@ -31,12 +36,22 @@
                 <th class="t-tracking">Tracking Number(s)</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
+                <td class="td-label"><h6 class="m-0">Type</h6></td>
                 <td class="t-type">Innerware</td>
+
+                <td class="td-label"><h6 class="m-0">Ship Date</h6></td>
                 <td class="t-ship">02/12/2018</td>
+
+                <td class="td-label"><h6 class="m-0"># Boxes</h6></td>
                 <td class="t-boxes">100</td>
+
+                <td class="td-label"><h6 class="m-0">Carrier</h6></td>
                 <td class="t-carrier">United Parcel Services <br> 1-800-742-5877</td>
+
+                <td class="td-label"><h6 class="m-0">Tracking Number(s)</h6></td>
                 <td class="t-tracking">
                   <ol class="list-counter list-counter--1-char">
                     {% for i in 0..2 %}
@@ -56,12 +71,22 @@
                 <th class="t-tracking">Tracking Number(s)</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
+                <td class="td-label"><h6 class="m-0">Type</h6></td>
                 <td class="t-type">Avon</td>
+
+                <td class="td-label"><h6 class="m-0">Ship Date</h6></td>
                 <td class="t-ship">02/12/2018</td>
+
+                <td class="td-label"><h6 class="m-0"># Boxes</h6></td>
                 <td class="t-boxes">17</td>
+
+                <td class="td-label"><h6 class="m-0">Carrier</h6></td>
                 <td class="t-carrier">US Postal Service</td>
+
+                <td class="td-label"><h6 class="m-0">Tracking Number(s)</h6></td>
                 <td class="t-tracking">
 
                   <ol class="list-counter list-counter--3-char">
@@ -72,7 +97,9 @@
                 </td>
               </tr>
             </tbody>
+
           </table>
+
         </div>
 
       {% endblock %}
