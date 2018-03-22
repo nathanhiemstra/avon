@@ -69,7 +69,7 @@ var Modals = (function () {
       var $curTarget = $(curTarget);
       var $destTarget = $(destTarget);
       var curTargetData = $curTarget.data('bs.modal');
-      var destHasBackButton = $destTarget.find('.btn-modal-back').length;
+      var destHasBackButton = $destTarget.find('[data-direction="back"]').length;
 
       // check if shown
       if ((curTargetData || {}).isShown) {
@@ -86,7 +86,7 @@ var Modals = (function () {
         // if destination modal has a back button, set it's target to the modal
         // currently being closed
         if (destHasBackButton) {
-          $destTarget.find('.btn-modal-back').attr('data-target', curTarget);
+          $destTarget.find('[data-direction="back"]').attr('data-target', curTarget);
         }
       }
     });

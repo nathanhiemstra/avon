@@ -111,8 +111,8 @@
   margin-top: -2px;
 }
 
-// modal back button
-.btn-modal-back {
+// modal back buttons
+[data-direction="back"] {
   // disable pointer events on all children so our js doesn't get confused
   * {
     pointer-events: none;
