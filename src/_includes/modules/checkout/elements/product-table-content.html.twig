@@ -1,0 +1,27 @@
+<table class="table table-condensed table-last-col-right small m-0">
+  <tbody>
+
+    {% for item in items %}
+      <tr>
+        <td class="t-item">
+          <img src="{{ item.imgPath }}" class="product-img-fixed-size" alt="">
+        </td>
+
+        <td class="t-desc">
+          <span class="mr-4">
+            <strong>{{ item.title }}</strong>
+          </span>
+          <span class="text-muted d-block">829-957</span>
+        </td>
+
+        <td class="t-price">
+          {{ item.price }}
+          <div class="text-muted">QTY:
+            {{ item.qty }}</div>
+        </td>
+      </tr>
+    {% endfor %}
+
+  </tbody>
+
+</table>
