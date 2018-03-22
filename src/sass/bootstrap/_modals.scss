@@ -100,7 +100,6 @@
   padding: $modal-title-padding;
   border-bottom: 1px solid $modal-header-border-color;
   text-align: center;
-  text-transform: uppercase;
   color: $text-muted;
 
   @include clearfix;
@@ -123,6 +122,8 @@
 .modal-title {
   margin: 0;
   line-height: $modal-title-line-height;
+
+  @extend .h6;
 }
 
 // Modal body

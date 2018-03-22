@@ -358,6 +358,58 @@ table {
   }
 }
 
+// table collapse to column
+//
+// Table will display as a stacked column on mobile devices
+// Remains a normal table on large screens
+.table-collapse-to-column {
+
+  thead {
+    display: none;
+  }
+
+  tbody {
+    border-top: 1px solid $border-color;
+  }
+
+  tbody > tr > td {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+
+    &.td-label {
+      margin-top: $spacing-4;
+      padding-bottom: $spacing-2;
+    }
+
+  }
+
+  // desktop
+  @media (min-width: $screen-sm-min) {
+
+    thead {
+      display: table-header-group;
+    }
+
+    tbody {
+      border-top: none;
+    }
+
+    tbody > tr > td {
+      display: table-cell;
+      padding-left: $table-cell-padding;
+      padding-right: $table-cell-padding;
+
+      &.td-label {
+        display: none;
+      }
+
+    }
+
+  }
+
+}
+
 // Your Order cart table specific styles
 .table--carts {
   margin-bottom: 0;
