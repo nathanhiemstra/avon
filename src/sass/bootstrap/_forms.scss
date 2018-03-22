@@ -167,7 +167,7 @@ output {
     opacity: 1;
 
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
- 
+
   }
 
   &[disabled],
@@ -205,7 +205,7 @@ select.form-control {
 
   + .lt-triangle-down.form-control-feedback {
     // transform: rotate(90deg);
- 
+
   }
 }
 
@@ -835,7 +835,7 @@ select.form-control.input-lg {
     padding-top: $padding-base-vertical + 1;
 
     // Default padding plus a border
- 
+
   }
 
   // Account for padding we're adding to ensure the alignment and of help text
@@ -859,7 +859,7 @@ select.form-control.input-lg {
       padding-top: $padding-base-vertical + 1;
 
       // Default padding plus a border
-   
+
     }
   }
 

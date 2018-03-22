@@ -295,6 +295,13 @@ a.btn {
   letter-spacing: 0;
 }
 
+.btn-outlined {
+  border-radius: 0;
+  border-width: 1px;
+  border-color: $gray;
+  text-transform: none;
+}
+
 // Block button
 // --------------------------------------------------
 

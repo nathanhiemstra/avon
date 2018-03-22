@@ -6,13 +6,20 @@
       <img src="/images/logos/avon_logo_usa.png" alt="Your Avon">
     </a>
 
-    <h1 class="navbar-item navbar-title mt-0">{{ title }}</h1>
+    <h1 class="navbar-item navbar-title mt-0">{{ title }}{{foo}}</h1>
 
-    <a href="#drawer-order-summary" class="navbar-item navbar-right link-muted text-right">
-      <span class="h4">
-        <span class="lt-icon lt-close lt-large"></span>
-      </span>
-    </a>
+    {% if useSaveAndExit %}
+
+      <div class="navbar-item navbar-right text-right">
+        <a href="#drawer-order-summary" class="link-muted btn btn-outlined">Save &amp; Exit</a>
+      </div>
+    {% else %}
+      <a href="#drawer-order-summary" class="navbar-item navbar-right link-muted text-right">
+        <span class="h4">
+          <span class="lt-icon lt-close lt-large"></span>
+        </span>
+      </a>
+    {% endif %}
 
   </div>
 

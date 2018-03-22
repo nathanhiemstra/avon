@@ -84,6 +84,14 @@ th {
     }
   }
 
+  // important for callapsible table rows
+
+  td {
+    &.in {
+      display: table-cell;
+    }
+  }
+
   // Nesting
   .table {
     background-color: $body-bg;
@@ -350,21 +358,13 @@ table {
   }
 }
 
-// important for callapsible table rows
-.table {
-  td {
-    &.in {
-      display: table-cell;
-    }
-  }
-}
-
 // Your Order cart table specific styles
 .table--carts {
   margin-bottom: 0;
 
   thead {
     display: none;
+
     .t-desc, .t-qty {
       visibility: hidden;
     }
@@ -394,9 +394,7 @@ table {
   }
 
   .t-price {
-    &--reduced {
-
-    }
+    &--reduced {}
   }
 
   // desktop

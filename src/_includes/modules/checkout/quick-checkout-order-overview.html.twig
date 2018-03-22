@@ -1,123 +1,37 @@
 <section class="list-group box-emphasize">
+
   <div class="list-group-item">
+
     <h6 class="mb-4">Order Overview</h6>
+
     <div class="item-count">
-      <dl class="clearfix py-4 m-0">
-        <dt class="pull-left">
-          <a href="javascript:void(0)" data-toggle="collapse" data-target="#item-count" class="link-plain">
-            <span class="lt-icon lt-triangle-down collapse-indicator align-middle"></span>
-            <span class="ml-3 align-middle">3 Items in order</span>
-          </a>
-        </dt>
-        <dd class="pull-right text-right">$XXX.XX</dd>
-      </dl>
-      <div class="collapse in border-bottom" id="item-count">
-        <table class="table table-condensed table-last-col-right small m-0">
-          <tbody>
-            <tr>
-              <td class="t-item">
-                <img src="/images/fpo/agnew-ultimate-grey-bg.png" class="product-img-fixed-size" alt="">
-              </td>
-
-              <td class="t-desc">
-                <span class="mr-4"><strong>Avon Tru Color Ultra Hydrating Lip Color</strong></span>
-                <span class="text-muted d-block">829-957</span>
-              </td>
-
-              <td class="t-price">
-                $XXX.XX
-                <div class="text-muted">QTY: XX</div>
-              </td>
-            </tr>
-            <tr>
-              <td class="t-item">
-                <img src="/images/fpo/agnew-ultimate.png" class="product-img-fixed-size" alt="">
-              </td>
-
-              <td class="t-desc">
-                <span class="mr-4"><strong>Avon Tru Color</strong></span>
-                <span class="text-muted d-block">829-957</span>
-              </td>
-
-              <td class="t-price">
-                $XXX.XX
-                <div class="text-muted">QTY: XX</div>
-              </td>
-            </tr>
-            <tr>
-              <td class="t-item">
-                <img src="/images/fpo/agnew-ultimate.png" class="product-img-fixed-size" alt="">
-              </td>
-
-              <td class="t-desc">
-                <span class="mr-4"><strong>Avon Tru Color Ultra Hydrating Lip Color</strong></span>
-                <span class="text-muted d-block">829-957</span>
-              </td>
-
-              <td class="t-price">
-                $XXX.XX
-                <div class="text-muted">QTY: XX</div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      {% include '_includes/modules/checkout/elements/product-table-collapsible.html.twig' with {
+        id: 'item-count',
+        desc: '3 Items in order',
+        expanded: true,
+        borderBottom: true
+      } %}
     </div>
-    <div class="item-count">
-      <dl class="clearfix py-4 m-0">
-        <dt class="pull-left">
-          <a href="javascript:void(0)" data-toggle="collapse" data-target="#free-items" class="link-plain collapsed">
-            <span class="lt-icon lt-triangle-down collapse-indicator align-middle"></span>
-            <span class="ml-3 align-middle">2 Free items</span>
-          </a>
-        </dt>
-        <dd class="pull-right text-right">$0.00</dd>
-      </dl>
-      <div class="collapse border-top" id="free-items">
-        <table class="table table-condensed table-last-col-right small m-0">
-          <tbody>
-            <tr>
-              <td class="t-item">
-                <img src="/images/fpo/agnew-ultimate.png" class="product-img-fixed-size" alt="">
-              </td>
 
-              <td class="t-desc">
-                <span class="mr-4"><strong>Avon Tru Color</strong></span>
-                <span class="text-muted d-block">829-957</span>
-              </td>
-
-              <td class="t-price">
-                $XXX.XX
-                <div class="text-muted">QTY: XX</div>
-              </td>
-            </tr>
-            <tr>
-              <td class="t-item">
-                <img src="/images/fpo/agnew-ultimate.png" class="product-img-fixed-size" alt="">
-              </td>
-
-              <td class="t-desc">
-                <span class="mr-4"><strong>Avon Tru Color Ultra Hydrating Lip Color</strong></span>
-                <span class="text-muted d-block">829-957</span>
-              </td>
-
-              <td class="t-price">
-                $XXX.XX
-                <div class="text-muted">QTY: XX</div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="free-items">
+      {% include '_includes/modules/checkout/elements/product-table-collapsible.html.twig' with {
+        id: 'free-items',
+        desc: '3 Free items',
+        expanded: false,
+        borderBottom: false
+      } %}
     </div>
+
     <dl class="clearfix my-2 border-top pt-4 text-muted">
       <dt class="pull-left">Shipping</dt>
       <dd class="pull-right text-right">+ $XX.XX</dd>
     </dl>
+
     <dl class="clearfix my-2 text-muted">
       <dt class="pull-left">Taxes</dt>
       <dd class="pull-right text-right">+ $XX.XX</dd>
     </dl>
+
     <dl class="clearfix my-2 pb-4 text-muted">
       <dt class="pull-left">Earnings/Discount</dt>
       <dd class="pull-right text-right">- $XX.XX</dd>
@@ -136,11 +50,14 @@
         - $XX.XX
       </dd>
     </dl>
+
     <dl class="clearfix my-2">
       <dt class="pull-left"><strong>Pay this amount</strong></dt>
       <dd class="pull-right text-right">
         <b>$XXX.XX</b>
       </dd>
     </dl>
+
   </div>
+
 </section>

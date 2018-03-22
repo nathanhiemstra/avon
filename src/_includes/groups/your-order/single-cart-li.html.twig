@@ -28,13 +28,13 @@
   <!-- START - CART DETAILS (EXPANDABLE) -->
   <div class="details collapse {% if collapsed == false %} in {% endif %}" id="collapse-{{ indexNum }}-cart-item">
 
-    <table class="table table--carts table-no-borders">
-      <thead>
+    <table class="table table--carts table-justified table-no-borders">
+      <thead class="hidden-xs">
         <tr>
-          <th class="t-item hidden-xs small text-muted">Item</th>
-          <th class="t-desc hidden-xs small text-muted">Description</th>
-          <th class="t-price hidden-xs small text-muted">Price</th>
-          <th class="t-qty small text-muted pl-4 text-right">Qty</th>
+          <th class="t-item px-3 small">Item</th>
+          <th class="t-desc px-3 small">Description</th>
+          <th class="t-price px-3 small">Price</th>
+          <th class="t-qty px-3 small text-right">Qty</th>
         </tr>
       </thead>
       <tbody>
@@ -43,7 +43,7 @@
 
         {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
           productName: 'Anew Ultimate Supreme Advanced Performance Créme',
-          img: '/images/fpo/agnew-ultimate.png',
+          img: '/images/fpo/agnew-ultimate-grey-bg.png',
           autoReplenish: null,
           sku: '829-957',
           price: '$30.00',
@@ -68,7 +68,8 @@
           sku: '856-376',
           price: '$45.00',
           salePrice: null,
-          classes: 'input-sm'
+          classes: 'input-sm',
+          whichRow: 'last'
         }%}
 
          <!-- END - REPEATABLE ITEMS -->

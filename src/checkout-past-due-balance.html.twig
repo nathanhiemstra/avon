@@ -6,16 +6,20 @@
 {% block content %}
 
   <div class="super-panel reverse-bg">
+    <section id="" class="global-alert-msg alert container-fluid mb-0 alert-success fade in">
+      <span class="alert-msg-icon lt-icon lt-medium lt-checkmark"></span>
+      <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">Balance successfully paid</span>
+    </section>
     <div class="container">
 
-      {% embed layouts.columns12 %}
+      {% embed '_layouts/columns-12-slim.html.twig' %}
 
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {# DEFINE BLOCK - MAIN #}
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block main %}
 
-          {% include components.modules.checkout.chooseType %}
+          {% include components.modules.checkout.pastBalanceDue %}
 
         {% endblock %}
 

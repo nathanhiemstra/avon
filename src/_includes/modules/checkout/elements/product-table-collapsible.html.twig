@@ -1,0 +1,34 @@
+<dl class="clearfix py-4 m-0">
+  <dt class="pull-left">
+    <a href="javascript:void(0)" data-toggle="collapse" data-target="#{{ id }}" class="link-plain {% if not expanded %}collapsed{% endif %}">
+      <span class="lt-icon lt-triangle-down collapse-indicator align-middle"></span>
+      <span class="ml-3 align-middle">{{ desc }}</span>
+    </a>
+  </dt>
+  <dd class="pull-right text-right">$XXX.XX</dd>
+</dl>
+
+<div class="collapse {% if expanded %}in{% endif %} {% if borderBottom %}border-bottom{% endif %}" id="{{ id }}">
+  {% include '_includes/modules/checkout/elements/product-table-content.html.twig' with {
+    items: {
+      item1: {
+        imgPath: '/images/fpo/agnew-ultimate-grey-bg.png',
+        title: 'Avon Tru Color Ultra Hydrating Lip Color',
+        price: '$XXX.XX',
+        qty: 'XX'
+      },
+      item2: {
+        imgPath: '/images/fpo/agnew-ultimate.png',
+        title: 'Avon Tru Color',
+        price: '$XXX.XX',
+        qty: 'XX'
+      },
+      item3: {
+        imgPath: '/images/fpo/agnew-ultimate.png',
+        title: 'Avon Tru Color Ultra Hydrating Lip Color',
+        price: '$XXX.XX',
+        qty: 'XX'
+      }
+    }
+  } %}
+</div>

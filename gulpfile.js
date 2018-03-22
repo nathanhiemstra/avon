@@ -164,10 +164,10 @@ gulp.task('compile', function () {
                   quickLook:      prefix.modules + "brochures/quick-look.html.twig"
                 },
                 checkout: {
-                  chooseType:       prefix.modules + "checkout/choose-type.html.twig",
                   itemizedCheckout: prefix.modules + "checkout/itemized-checkout.html.twig",
                   reviewComplete:   prefix.modules + "checkout/review-complete.html.twig",
                   quickCheckout:    prefix.modules + "checkout/quick-checkout.html.twig",
+                  pastBalanceDue:    prefix.modules + "checkout/quick-checkout-past-balance-due.html.twig",
                 },
                 global: {
                   footer:         prefix.modules + "global/footer.html.twig",
@@ -222,7 +222,6 @@ gulp.task('compile', function () {
                 review: {
                   complete:   'checkout-review-complete.html'
                 },
-                chooseType:   'checkout-choose-type.html',
               },
               home:           'home.html',
               login:          'login.html',

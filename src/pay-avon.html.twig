@@ -18,7 +18,7 @@
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block aside %}
 
-          <h3>FPO: Side nav</h3>
+          {% include '_includes/groups/navigation/my-account-nav.html.twig' %}
 
         {% endblock %}
 
@@ -28,83 +28,172 @@
         {% block main %}
 
           <h2 class="mb-5">Pay Avon</h2>
-          <div class="border-top pt-5">
+
+          <hr>
+
+          <!-- START - PAYMENT AMOUNT SECTION -->
+          <div class="">
+
             <p>How much are you paying today?</p>
-             <div class="ml-4">
-               <div class="form-group">
-                 {% include components.elements.forms.radio with {
-                      name: 'pay-option', 
-                      classes: '', 
-                      theValue: 'credit', 
-                      theLabel: '<b>-$1.00</b>(current balance as of March 08, 2018 at 03:15 PM EST)
-                      <i class="lt-icon lt-tip lt-medium align-middle"
-                      data-container="body"
-                      data-toggle="popover"
-                      data-placement="bottom"
-                      data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    </i>'} 
-                    %}
-               </div>
 
-               <div class="form-group">
-                 {% include components.elements.forms.radio with {
-                      name: 'pay-option', 
-                      classes: '', 
-                      theValue: 'credit', 
-                      theLabel: '<b>$0.00</b>(Amount Due with Campaign 07)
-                      <i class="lt-icon lt-tip lt-medium align-middle"
-                      data-container="body"
-                      data-toggle="popover"
-                      data-placement="bottom"
-                      data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    </i>'} 
-                    %}
-               </div>
+            <div class="ml-4">
 
-               <div class="clearfix mb-2">
-                 <div class="pull-left">
-                   {% include components.elements.forms.radio with {
-                      name: 'pay-option', 
-                      classes: '', 
-                      theValue: 'credit', 
-                      theLabel: '<b>Other Amount: $</b>', checked: true} 
-                    %}
-                 </div>
-                 <div class="pull-left mt-3 ml-2 clearfix">
-                  {% include components.elements.forms.input with {
-                    placeholder: '',
-                    value: '25,00.23',
-                    classes: 'form-control-inline pull-left'
+              <div class="form-group">
+                {% include components.elements.forms.radio with {
+                    name: 'pay-option',
+                    classes: 'd-inline',
+                    theValue: 'credit',
+                    theLabel: '<b>-$1.00</b>(current balance as of March 08, 2018 at 03:15 PM EST)'
                   } %}
-                   <span class="lt-icon lt-tip lt-medium align-middle pull-left ml-2"
+
+                  <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle no-underline"
                     data-container="body"
                     data-toggle="popover"
                     data-placement="bottom"
                     data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                  </span>
-                 </div>
-               </div>
-               <p class="text-danger">
-                 we are sorry, we are unable to process this request. Please review payment amount to ensure it is not greater than $25,000 or does not exceed your balance by more than $1,000.
-               </p>
-             </div>
+                  </a>
+
+              </div>
+
+              <div class="form-group">
+                {% include components.elements.forms.radio with {
+                  name: 'pay-option',
+                  classes: 'd-inline',
+                  theValue: 'credit',
+                  theLabel: '<b>$0.00</b>(Amount Due with Campaign 07)'
+                } %}
+
+                <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle no-underline"
+                  data-toggle="modal" data-target="#amount-due">
+                </a>
+
+                {# MODAL - AMOUNT DUE #}
+                {% include "_includes/modules/account/pay-avon-amount-due-modal.html.twig" %}
+
+              </div>
+
+              <div class="form-group has-error">
+
+                <div class="">
+
+                  {% include components.elements.forms.radio with {
+                    name: 'pay-option',
+                    classes: 'd-inline',
+                    theValue: 'credit',
+                    theLabel: '<b>Other Amount: $</b>',
+                    checked: true
+                  } %}
+
+                  {% include components.elements.forms.input with {
+                    placeholder: '',
+                    theValue: '25,000.23',
+                    classes: 'input-sm form-control form-control-inline'
+                  } %}
+
+                  <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle ml-2 no-underline" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></a>
+
+                </div>
+
+              </div>
+
+              <p class="text-danger">
+                we are sorry, we are unable to process this request. Please review payment amount to ensure it is not greater than $25,000 or does not exceed your balance by more than $1,000.
+              </p>
+
+            </div>
+
           </div>
+          <!-- END - PAYMENT AMOUNT SECTION -->
+
+          <!-- START - PAYMENT TYPE SECTION -->
           <div class="pt-5">
-            <p><strong>Please select a payment type;</strong></p>
+
+            <p><strong>Please select a payment type:</strong></p>
+
             <div class="ml-4">
-              {% include components.elements.forms.radio with {
-                  name: 'pay-type', 
-                  classes: 'mb-5', 
-                  theValue: 'quick-pay', 
-                  theLabel: 'QuickPAY (your are not enrolled. <strong class="text-uppercase">Enroll Now</strong>)'} 
-              %}
-              {% include components.elements.forms.radio with {
-                name: 'pay-type', 
-                classes: '', 
-                theValue: 'cc-cards', 
-                theLabel: 'Credit Card(s)',
-                checked: 'true'} 
-              %}
+
+              <!-- START - PAY TYPE - QUICKPAY -->
+
+              <!-- Developer note: The following demonstrates three "QUICKPAY STATES" for the QuickPAY radio button.--> 
+              
+              <!-- START - QUICKPAY STATE - ENROLLED -->
+              <div class="form-group">
+                {% include components.elements.forms.radio with {
+                  name: 'pay-type',
+                  theValue: 'quick-pay',
+                  theLabel: 'QuickPAY (your are enrolled. <strong class="text-uppercase"><a href="#">EDIT</a></strong>)',
+                  dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
+                  disabled: false,
+                  checked: true,
+                } %}
+
+                <!-- START - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
+                <!-- Developer note: This gets shown when this radio is selected. It relies on "data-toggle" and "data-target". Demo: aqw3^ -->
+                <!-- Developer note: Add class has-error if there is an error. --> 
+                <div id="collapse-quickpay-pin" class="form-group has-error panel-collapse in mb-3">
+                  <span>Please enter your 4-digit PIN code:</span>
+                  <input type="text" class="input-sm form-control form-control-inline" size="6" maxlength="4">
+                  <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle no-underline"
+                    data-container="body"
+                    data-toggle="popover"
+                    data-placement="bottom"
+                    data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                  </a>
+
+                  <!-- Developer note: Show if there is an error. --> 
+                  <p class="m-0 text-danger">Field PIN is mandatory, please fill it in.</p>
+                </div>
+                <!-- END - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
+              </div>
+              <!-- END - QUICKPAY STATE - ENROLLED -->
+
+              <!-- START - QUICKPAY STATE - NOT ENROLLED -->
+              <div class="form-group">
+                <!-- Developer note: This is disabled. --> 
+                {% include components.elements.forms.radio with {
+                  name: 'pay-type',
+                  theValue: 'quick-pay',
+                  theLabel: 'QuickPAY (your are not enrolled. <a class="text-uppercase" data-toggle="modal" data-target="#checkout-quickpay-enrollment-modal">Enroll Now</a>)',
+                  dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
+                  disabled: true
+                } %}
+
+                <div>
+                  <p>QuickPAY is the safer, easier way to pay online without revealing your credit card number.</p>
+                </div>
+              </div>
+              <!-- END - QUICKPAY STATE - NOT ENROLLED -->
+
+              <!-- START - QUICKPAY STATE - ENROLLMENT IN PROCESS -->
+              <div class="form-group">
+                <!-- Developer note: This is disabled. --> 
+                {% include components.elements.forms.radio with {
+                  name: 'pay-type',
+                  theValue: 'quick-pay',
+                  theLabel: 'QuickPAY (<strong class="text-uppercase">Account is currently being processed</strong>)',
+                  dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
+                  disabled: true
+                } %}
+                <div>
+                  <p>The enrollment process takes 6 days to complete from the date you submitted your request. Once the enrollment process has completed, please activate your QuikPAY account by calling 1-877-QuikPAY (1-877-784-5729) and resetting your PIN #. After activating your QuikPAY Pin, please allow 24 hours before it updates on the site.</p>
+                </div>
+              </div>
+              <!-- END - QUICKPAY STATE - ENROLLMENT IN PROCESS -->
+
+              <!-- END - PAY TYPE - QUICKPAY -->
+
+              <!-- START - PAY TYPE - CREDIT CARD -->
+              <div class="form-group">
+                {% include components.elements.forms.radio with {
+                  name: 'pay-type',
+                  classes: '',
+                  theValue: 'cc-cards',
+                  theLabel: 'Credit Card(s)',
+                  dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin.in"'
+                } %}
+              </div>
+              <!-- END - PAY TYPE - CREDIT CARD -->
+
 
               <div class="ml-sm-4">
                 <div class="row">
@@ -162,17 +251,15 @@
                         {% include components.elements.forms.input with {
                           placeholder: 'CVV*'
                         } %}
-                        
+
                       </div>
                     </div>
 
                     <div class="clearfix">
                       <a href="#" class="pull-left">Add Card</a>
-                      <a href="javascript:void(0)" class="pull-right underline" 
-                        data-container="body" 
-                        data-toggle="popover" 
-                        data-placement="bottom" 
-                        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><small>What is this?</small></a>
+                      <a href="javascript:void(0)" class="pull-right underline" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                        <small>What is this?</small>
+                      </a>
                     </div>
 
                     <div class="pt-3">
@@ -223,8 +310,11 @@
                       </div>
 
                       <!-- START - Continue Button -->
-                      <a class="btn btn-primary d-block disabled">Continue</a>
+                      <a class="btn btn-primary d-block" data-toggle="modal" data-target="#pay-avon-review">Continue</a>
                       <!-- END - Continue Button -->
+
+                      {# MODAL - PAY AVAON REVIEW #}
+                      {% include "_includes/modules/account/pay-avon-review-modal.html.twig" %}
                     </div>
 
                   </div>
@@ -232,6 +322,7 @@
               </div>
             </div>
           </div>
+          <!-- END - PAYMENT TYPE SECTION -->
 
         {% endblock %}
 
@@ -239,5 +330,27 @@
     </section>
 
   {% endblock %}
+
+  <!-- START - MODAL - QUICKPAY ENROLLMENT -->
+  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-modal.html.twig" %}
+  <!-- END - MODAL - QUICKPAY ENROLLMENT -->
+
+  <!-- START - MODAL - QUICKPAY ENROLLMENT REVIEW -->
+  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-review-modal.html.twig" %}
+  <!-- END - MODAL - QUICKPAY ENROLLMENT REVIEW -->
+
+  <!-- START - MODAL - QUICKPAY ENROLLMENT SUCCESS -->
+  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-success-modal.html.twig" %}
+  <!-- END - MODAL - QUICKPAY ENROLLMENT SUCCESS -->
+
+  <!-- START - MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
+  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-learn-more-modal.html.twig" %}
+  <!-- END - MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
+
+  <!-- MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
+  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-learn-more-modal.html.twig" %}
+
+  <!-- MODAL - QUICKPAY ENROLLMENT REVIEW -->
+  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-review-modal.html.twig" %}
 
 {% endblock %}
