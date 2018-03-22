@@ -4,37 +4,75 @@
 //
 
 .d-none {
-    display: none !important;
+  display: none !important;
 }
 
 .d-inline {
-    display: inline !important;
+  display: inline !important;
 }
 
 .d-inline-block {
-    display: inline-block !important;
+  display: inline-block !important;
 }
 
 .d-block {
-    display: block !important;
+  display: block !important;
 }
 
 .d-table {
-    display: table !important;
+  display: table !important;
 }
 
 .d-table-row {
-    display: table-row !important;
+  display: table-row !important;
 }
 
 .d-table-cell {
-    display: table-cell !important;
+  display: table-cell !important;
 }
 
 .d-flex {
-    display: flex !important;
+  display: flex !important;
 }
 
 .d-inline-flex {
+  display: inline-flex !important;
+}
+
+@media (max-width: $screen-sm) {
+  .d-none-xs {
+    display: none !important;
+  }
+
+  .d-inline-xs {
+    display: inline !important;
+  }
+
+  .d-inline-block-xs {
+    display: inline-block !important;
+  }
+
+  .d-block-xs {
+    display: block !important;
+  }
+
+  .d-table-xs {
+    display: table !important;
+  }
+
+  .d-table-row-xs {
+    display: table-row !important;
+  }
+
+  .d-table-cell-xs {
+    display: table-cell !important;
+  }
+
+  .d-flex-xs {
+    display: flex !important;
+  }
+
+  .d-inline-flex-xs {
     display: inline-flex !important;
+  }
 }

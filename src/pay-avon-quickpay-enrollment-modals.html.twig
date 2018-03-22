@@ -7,7 +7,6 @@
 
   <div class="container container--page">
 
-    {% embed "_layouts/columns-8-max.html.twig" %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {# DEFINE BLOCK - MAIN #}
@@ -15,7 +14,8 @@
       {% block main %}
 
 
-        <h1 class="mb-5">Pay Avon - Modals</h1>
+        <h1 class="mb-5">Pay Avon - QuickPAY Enrollment Modals</h1>
+
         <p><a data-toggle="modal" data-target="#checkout-quickpay-enrollment-modal">Enroll Now</a></p>
 
         <p><a data-toggle="modal" data-target="#checkout-quickpay-enrollment-review-modal">Enrollment Review</a></p>
@@ -40,11 +40,9 @@
         {% include "_includes/modules/checkout/checkout-quickpay-enrollment-learn-more-modal.html.twig" %}
         <!-- END - MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
 
-        
 
       {% endblock %}
 
-    {% endembed %}
 
   </div>
 
