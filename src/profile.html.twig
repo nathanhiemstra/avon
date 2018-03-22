@@ -81,7 +81,7 @@
 
           <hr>
 
-          <!-- START - CONTACT INFORMATION -->
+          <!-- START - CONTACT INFORMATION STATIC -->
           <section class="">
 
             <form role="form">
@@ -93,9 +93,59 @@
                   <h6 class="col-sm-4 my-md-2">Nickname</h6>
                   <div class="col-sm-8">
                     <span>Janet Johnson</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row my-5">
+                <div class="form-group">
+                  <h6 class="col-sm-4 my-md-2">Email Address</h6>
+                  <div class="col-sm-8">
+                    <span>janet.johnson@aol.com</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row my-5">
+                <div class="form-group">
+                  <h6 class="col-sm-4 my-md-2">Home/Cell Phone</h6>
+                  <div class="col-sm-8">
+                    <span>(513) 123-4567</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row my-5">
+                <div class="form-group">
+                  <h6 class="col-sm-4 my-md-2">Business/Cell Phone</h6>
+                  <div class="col-sm-8">
+                    <span>(513) 123-8901</span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-sm btn-primary">Edit</button>
+
+            </form>
+
+          </section>
+          <!-- END - CONTACT INFORMATION STATIC -->
+
+          <hr>
+
+          <!-- START - CONTACT INFORMATION EDIT -->
+          <section class="">
+
+            <form role="form">
+
+              <h5 class="my-5">Contact Information</h5>
+
+              <div class="row my-5">
+                <div class="form-group">
+                  <h6 class="col-sm-4 my-md-2">Nickname</h6>
+                  <div class="col-sm-8">
                     {% include "_includes/elements/forms/input.html.twig" with {
                       type : 'text',
-                      placeholder: 'Janet Johnson',
                       theValue: 'Janet Johnson'
                     } %}
                   </div>
@@ -106,10 +156,8 @@
                 <div class="form-group">
                   <h6 class="col-sm-4 my-md-2">Email Address</h6>
                   <div class="col-sm-8">
-                    <span>janet.johnson@aol.com</span>
                     {% include "_includes/elements/forms/input.html.twig" with {
                       type : 'email',
-                      placeholder: 'janet.johnson@aol.com',
                       theValue: 'janet.johnson@aol.com'
                     } %}
                   </div>
@@ -120,10 +168,8 @@
                 <div class="form-group">
                   <h6 class="col-sm-4 my-md-2">Home/Cell Phone</h6>
                   <div class="col-sm-8">
-                    <span>(513) 123-4567</span>
                     {% include "_includes/elements/forms/input.html.twig" with {
                       type : 'tel',
-                      placeholder: '(513) 123-4567',
                       theValue: '(513) 123-4567'
                     } %}
                   </div>
@@ -134,22 +180,20 @@
                 <div class="form-group">
                   <h6 class="col-sm-4 my-md-2">Business/Cell Phone</h6>
                   <div class="col-sm-8">
-                    <span>(513) 123-8901</span>
                     {% include "_includes/elements/forms/input.html.twig" with {
                       type : 'tel',
-                      placeholder: '(513) 123-8901',
                       theValue: '(513) 123-8901'
                     } %}
                   </div>
                 </div>
               </div>
 
-              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-primary">Save</button>
 
             </form>
 
           </section>
-          <!-- END - CONTACT INFORMATION -->
+          <!-- END - CONTACT INFORMATION EDIT -->
 
           <hr>
 
