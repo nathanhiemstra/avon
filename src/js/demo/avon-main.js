@@ -30,7 +30,8 @@ $(document).ready(function () {
       target: ".demo-datepicker-from-angular"
     }
     // backDrop: ".drawer-backdrop"
-  }
+  };
+
   var $objects = {
     window: $(window),
     document: $(document),
@@ -61,7 +62,7 @@ $(document).ready(function () {
       target: $(selectors.main).find(selectors.datePicker.target)
     }
     // backDrop: $(selectors.backDrop)
-  }
+  };
 
   // $objects.backDrop.addClass('hidden');
 
@@ -147,7 +148,7 @@ $(document).ready(function () {
 
   $('[data-tab-select]').on('change', function (e) {
     var $optionSelected = $("option:selected", this);
-    $optionSelected.tab('show')
+    $optionSelected.tab('show');
   });
 
 
@@ -176,7 +177,7 @@ $(document).ready(function () {
       .popover({
         html: true,
         content: function () {
-          var id = $(this).attr('id')
+          var id = $(this).attr('id');
           return $('#' + id + '-content').html();
         }
       })
@@ -191,6 +192,17 @@ $(document).ready(function () {
         $('#popover-cart').popover('hide');
       }
     });
+  }
+
+  // Check to see if we have an 'auto-height' sticky footer
+  // If so, we need some padding on <body>
+  var stickyFooter = $('.navbar-fixed-bottom--auto-height');
+  var hasStickyFooter = stickyFooter.length;
+  var stickyFooterHeight = 0;
+
+  if(hasStickyFooter) {
+    var footerHeight = stickyFooter.outerHeight();
+    $('body').css('padding-bottom', footerHeight);
   }
 
 
