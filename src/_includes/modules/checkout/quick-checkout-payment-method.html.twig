@@ -1,12 +1,15 @@
+{% if headline is empty %}
+  {% set headline = 'Choose Payment Method' %}
+{% endif %}
 <section class="list-group box-emphasize">
-  <div class="list-group-item">
+  <div class="list-group-item remove-last-border">
     <div class="mb-2">
-      <h6 class="mb-3">Choose Payment Method</h6>
+      <h6 class="mb-3">{{ headline }}</h6>
     </div>
 
     <div class="clearfix border-bottom py-4">
       <div class="pull-left mr-3">
-        <img src="/images/fpo/credit-card.png">
+        <img src="/images/icons/payment-visa.svg">
       </div>
       <div class="pull-left">
         Card Card
@@ -15,7 +18,7 @@
 
     <div class="clearfix border-bottom py-4">
       <div class="pull-left mr-3">
-        <img src="/images/fpo/credit-card.png">
+        <img src="/images/icons/payment-avoncredit.svg">
       </div>
       <div class="pull-left">
         Avon Credit Line <br>
@@ -25,7 +28,7 @@
 
     <div class="clearfix border-bottom py-4">
       <div class="pull-left mr-3">
-        <img src="/images/fpo/credit-card.png">
+        <img src="/images/icons/payment-quickpay.svg">
       </div>
       <div class="pull-left">
         QuickPay

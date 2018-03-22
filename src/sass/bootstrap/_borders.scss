@@ -4,6 +4,10 @@
 // Border
 //
 
+.remove-last-border .border-bottom:last-of-type {
+  border-bottom:0 !important;
+}
+
 .border {
   border: $border-width solid $list-group-border !important;
 }

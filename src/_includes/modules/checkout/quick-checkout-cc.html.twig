@@ -10,36 +10,20 @@
     <!-- END - HEADER -->
 
     <!-- START - FORM -->
-    <form role="form">
-      <div class="form-group has-feedback">
-        <label class="control-label">Card Type</label>
-        <select class="form-control">
-          <option>VISA</option>
-          <option>MasterCard</option>
-          <option>Other</option>
-        </select>
-        <span class="lt-icon lt-triangle-down form-control-feedback"></span>
-      </div>
+    <form role="form" class="pt-4">
 
       <div class="form-group has-feedback">
         <label class="control-label">Card Number</label>
         {% include components.elements.forms.input with {
-          placeholder: ''
+          placeholder: 'cc'
         } %}
       </div>
 
       <div class="list-group-item border-0 p-1 mb-4">
         <label class="control-label">Name on Card</label>
         <div class="row">
-          <div class="col-xs-12 col-sm-6 mb-3 mb-xs-0">
-            {% include components.elements.forms.input with {
-              placeholder: 'First Name'
-            } %}
-          </div>
-          <div class="col-xs-12 col-sm-6">
-            {% include components.elements.forms.input with {
-              placeholder: 'Last Name'
-            } %}
+          <div class="col-xs-12 mb-3 mb-xs-0">
+            {% include components.elements.forms.input %}
           </div>
         </div>
       </div>
@@ -48,11 +32,12 @@
         <div class="row">
 
           <div class="col-xs-12 col-sm-9 mb-4 mb-xs-0">
-            <label class="control-label">Expiration Date</label>
+            <label class="control-label">Expiration date</label>
 
             <div class="row">
               <div class="col-xs-12 col-sm-6 mb-3 mb-xs-0">
                 <select class="form-control form-inline">
+                  <option value="" selected>Month</option>
                   <option>January</option>
                   <option>February</option>
                   <option>March</option>
@@ -61,6 +46,7 @@
               </div>
               <div class="col-xs-12 col-sm-6">
                 <select class="form-control form-inline">
+                  <option value="" selected>Year</option>
                   <option>2018</option>
                   <option>2019</option>
                   <option>2020</option>
@@ -86,32 +72,15 @@
         </div>
       </div>
 
-      <div class="from-group">
-        <div class="clearfix">
-          {% include components.elements.forms.checkbox with {
-            id: 'checkbox1',
-            name: 'checkbox1',
-            classes: '',
-            theValue: 'option1',
-            theLabel: 'Billing Address is same as Shipping',
-            checked: true
-          } %}
-        </div>
-      </div>
-
       <!-- START - BILLING ADDRESS FORM FIELDS -->
       <div class="billing-address">
-        <h6>Billing Address</h6>
-
         <div class="form-group">
-          <label class="control-label">Address</label>
-          {% include components.elements.forms.input with {
-            placeholder: ''
-          } %}
-        </div>
-
-        <div class="form-group">
-          <label class="control-label">Apartment, Suite, etc</label>
+          <div class="mb-3">
+            <label class="control-label">Address</label>
+            {% include components.elements.forms.input with {
+              placeholder: ''
+            } %}
+          </div>
           {% include components.elements.forms.input with {
             placeholder: ''
           } %}
@@ -119,13 +88,13 @@
 
         <div class="list-group-item border-0 p-1 mb-4">
           <div class="row">
-            <div class="col-xs-6">
+            <div class="col-xs-5">
               <label class="control-label">ZIP</label>
               {% include components.elements.forms.input with {
                 placeholder: ' '
               } %}
             </div>
-            <div class="col-xs-6">
+            <div class="col-xs-7">
               <label class="control-label">City</label>
               {% include components.elements.forms.input with {
                 placeholder: ' '
@@ -134,27 +103,38 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <label class="control-label">Apartment, Suite, etc</label>
-          {% include components.elements.forms.input with {
-            placeholder: ''
-          } %}
-        </div>
+        <div class="list-group-item border-0 p-1 mb-4">
+          <div class="row">
+            <div class="col-xs-5">
+              <div class="form-group has-feedback">
+                <label class="control-label">State</label>
+                <select class="form-control">
+                  <option value="" selected>Select...</option>
+                  <option>State 1</option>
+                  <option>State 2</option>
+                </select>
+                <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+              </div>
+            </div>
 
-        <div class="form-group has-feedback">
-          <label class="control-label">State</label>
-          <select class="form-control">
-            <option>Select..</option>
-            <option>State 1</option>
-            <option>State 2</option>
-          </select>
-          <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+            <div class="col-xs-7">
+              <div class="form-group has-feedback">
+                <label class="control-label">Country</label>
+                <select class="form-control">
+                  <option value="" selected>Select...</option>
+                  <option>State 1</option>
+                  <option>State 2</option>
+                </select>
+                <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- END - BILLING ADDRESS FORM FIELDS -->
 
       <!-- START - Continue Button -->
-      <a class="btn btn-primary btn-lg">Continue</a>
+      <a class="btn btn-primary">Continue</a>
       <!-- END - Continue Button -->
 
     </form>

@@ -1,0 +1,89 @@
+<div class="container container--page">
+
+  {% include "_includes/groups/navigation/back-link.twig" with {label: "Back to Payment Methods"} %}
+  {% include "_includes/groups/navigation/back-link.twig" with {label: "Cancel Split Payments"} %}
+
+  <!-- START - BALANCE REMAINING -->
+  {% include '_includes/modules/checkout/quick-checkout-balance-remaining.html.twig' %}
+  {% include '_includes/modules/checkout/quick-checkout-balance-remaining.html.twig' with {amount: '0.00', colorClass: 'text-success'} %}
+  <!-- END - BALANCE REMAINING -->
+
+  <!--START: PAYMENT METHOD-->
+  {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {headline: 'Add Payment Method'} %}
+  {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {headline: 'Add Another Payment Method'} %}
+  <!--END: PAYMENT METHOD-->
+
+
+  <!-- START - PAYMENTS (1) -->
+  <section class="list-group box-emphasize">
+    <div class="list-group-item remove-last-border">
+      <div class="clearfix mb-2">
+        <h6 class="mb-3 pull-left">Payments</h6>
+      </div>
+
+      {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+        type: 'Avon Credit Line',
+        icon: '/images/icons/payment-avoncredit.svg',
+        amount: '$85.00'
+      } %}
+    </div>
+  </section>
+  <!-- END - PAYMENT OPTIONS -->
+
+  <!-- START - PAYMENTS -->
+  <section class="list-group box-emphasize">
+    <div class="list-group-item remove-last-border">
+      <div class="clearfix mb-2">
+        <h6 class="mb-3 pull-left">Payments</h6>
+      </div>
+
+      {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+        type: 'Avon Credit Line',
+        icon: '/images/icons/payment-avoncredit.svg',
+        amount: '$85.00'
+      } %}
+
+      {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+        type: 'QuickPAY',
+        icon: '/images/icons/payment-quickpay.svg',
+        amount: '$10.00'
+      } %}
+
+      {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+        type: 'VISA ending 1234',
+        icon: '/images/icons/payment-visa.svg',
+        amount: '$15.00'
+      } %}
+
+      {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+        type: 'Mastercard ending in 9876',
+        icon: '/images/icons/payment-mastercard.svg',
+        amount: '$25.00'
+      } %}
+    </div>
+  </section>
+  <!-- END - PAYMENTS -->
+
+  <!-- START: PAY WITH AVON CREDIT-->
+  {% include '_includes/modules/checkout/quick-checkout-ac.html.twig' %}
+  <!-- END: PAY WITH AVON CREDIT -->
+
+  <!-- START - CREDIT CARD PAYMENT METHOD -->
+  {% include '_includes/modules/checkout/quick-checkout-cc.html.twig' %}
+  <!-- END - CREDIT CARD PAYMENT METHOD -->
+
+  <!-- START: PAY WITH QUICKPAY-->
+  {% include '_includes/modules/checkout/quick-checkout-aq.html.twig' with { showAmount:true } %}
+  <!-- END: PAY WITH QUICKPAY-->
+
+  <!-- DEV NOTE :: This sticky footer requires some js to add appropriate padding to <body>
+                :: See avon-main.js near the bottom -> "if(hasStickyFooter) {... -->
+  <!-- DEV NOTE :: add class .d-none to this div to hide it -->
+  <nav class="navbar navbar-default navbar-fixed-bottom navbar-fixed-bottom--auto-height m-0 p-3" role="navigation">
+    <div class="container">
+      <a class="btn btn-primary btn-lg btn-block">Review and Complete Order</a>
+    </div>
+  </nav>
+
+</div>
+<!-- /.container -->
