@@ -3,7 +3,7 @@
 {% if itemContainerType is empty %}
   {% set itemContainerType = 'carouselOnly' %}
 {% elseif itemContainerType == 'carouselBoxesCombo' %}
-  {% set carouselBoxesCombo_Class = 'carousel--box-group-primary' %}
+  {% set carouselBoxesCombo_Class = 'carousel--hide-on-tablet-and-above' %}
 {% endif %}
 
 <!-- START - CAROUSEL {{ carouselId }}--> 
@@ -30,7 +30,8 @@
     items: items, 
     hasToolbar: hasToolbar,
     itemContainerType: itemContainerType,
-    carouselId: carouselId
+    carouselId: carouselId,
+    loopIndex: loop.index
   } %}
   
   <!-- END - SLIDES CONTAINER  -->

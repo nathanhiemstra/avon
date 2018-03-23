@@ -3,7 +3,7 @@
     {% set classes = ' active ' %}
   {% endif %}
 
-  {% set toolbarDataAttrs = ' data-toggle="modal" data-target="#' ~ carouselId ~ '"' %}
+  {% set toolbarDataAttrs = ' data-toggle="modal" data-target="#' ~ carouselId ~ '"'  %}
 {% endif %}
 
 
@@ -15,7 +15,7 @@
     <!-- START - TOOLBAR (CUSTOMIZE DASHBOARD) -->
     <div class="toolbar">
       <span class="badge">{{ loopIndex }}</span>
-      <a href="#" class="underline"{{ toolbarDataAttrs }}>Change</a>
+      <a href="#" class="change-widget-trigger underline"{{ toolbarDataAttrs }}>Change</a>
     </div>
     <!-- END - TOOLBAR (CUSTOMIZE DASHBOARD) -->
     {% endif %}
@@ -23,7 +23,7 @@
     <div class="item-content">
 
       <!-- START - FPO CONTENT -->
-      <img src="{{ src }}" alt="FPO image">
+      <img src="{{ src }}" alt="FPO image" class="widget-img">
       <!-- END - FPO CONTENT -->
 
     </div>

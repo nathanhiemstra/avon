@@ -21,10 +21,11 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // BOX GROUP - PRIMARY WITH CAROUSEL
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// This is for 4 square boxes acros that turn into carousel on mobile.
 
 $box-group--primary-item-margin: 10px;
 $box-group--primary-item-width: 220px;
+
+// CAROUSEL ON ALL SCREEN WIDTHS
 
 .box-group--primary-with-carousel {
   // Push indicators (dots) below the slides
@@ -47,7 +48,7 @@ $box-group--primary-item-width: 220px;
     min-width: $box-group--primary-item-width;
   }
 
-  // Positiona rrows closer to the edge of screen
+  // Positiona rows closer to the edge of screen
   .carousel-control .lt-left {
     width: 100%;
   }
@@ -70,40 +71,9 @@ $box-group--primary-item-width: 220px;
       display: none;
     }
   }
-}
 
-.carousel--box-group-primary {
-  // Mobile
-  @media (max-width: $screen-sm) {
-    // So that the indicators are below the slides
-    // padding-bottom: 40px;
-
-    // .carousel-inner {
-    //   // Don't let the slide get smushed
-    //   min-width: $box-group--primary-item-width;
-    // }
-
-    .carousel-control .lt-left {
-      width: 100%;
-    }
-
-    .carousel-control .lt-right {
-      width: 200%;
-    }
-  }
-
-  // Don't let arrows touch the slide
-  @media (max-width: 300px) {
-    .carousel-control .lt-left,
-    .carousel-control .lt-right {
-      display: none;
-    }
-  }
-
-  &:not(.is-carousel-on-all-screens) {
-    // Tablet and above
-    @media (min-width: $screen-sm) {}
-
+  // BOX STYLES - SOMETIMES APPEAR WITH NO CAROUSEL
+  &.carousel--hide-on-tablet-and-above {
     // Tablet and above
     @media (min-width: $screen-sm) {
       .carousel-indicators,
@@ -114,54 +84,25 @@ $box-group--primary-item-width: 220px;
       .carousel-inner > .item {
         // Make all slides appear
         display: block;
+        flex-grow: inherit;
       }
 
-      // .carousel-inner {
-      //   width: inherit;
+      .carousel-inner {
+        width: inherit;
 
-      //   // Margins are to compensate for the margin of the boxes, so the borders of the boxes will align with the width of container
-      //   margin-left: -$box-group--primary-item-margin;
-      //   margin-right: -$box-group--primary-item-margin;
-      // }
+        // Margins are to compensate for the margin of the boxes, so the borders of the boxes will align with the width of container
 
-      // Tablet only
-      @media (min-width: $screen-sm) and (max-width: $screen-md) {
-        // Force boxes to wrap in groups of two
-        .carousel-inner {
-          margin-left: 30px;
-          margin-right: 30px;
-        }
-      }
-
-      // Desktop and above
-      @media (min-width: $screen-md) {
-        // Make boxes fill availble width (but content stays fixed width)
-        // .item {
-        //   flex-grow: 1;
-        // }
+        margin-left: -$box-group--primary-item-margin;
+        margin-right: -$box-group--primary-item-margin;
       }
     }
   }
 }
 
-// Sometimes we will ONLY have .carousel--box-group-primary (carousel-only, like in a modal),  
-// OR ONLY .box-group--primary (non carousel).
-// .carousel--box-group-primary,
-// .box-group--primary {
-//   .box-group--item {
-//     margin: $box-group--primary-item-margin auto;
-//     width: $box-group--primary-item-width;
-//   }
-// }
+//
 
+// BOX STYLES - SOMETIMES APPEAR WITH NO CAROUSEL
 .box-group--primary {
-  // Tablet only
-  @media (min-width: $screen-sm) and (max-width: $screen-md) {
-    // Force boxes to wrap in groups of two
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
   .box-group--item {
     background-color: $body-bg;
     overflow: hidden;
@@ -181,6 +122,13 @@ $box-group--primary-item-width: 220px;
     .badge {
       max-height: 20px;
     }
+  }
+
+  // Tablet only
+  @media (min-width: $screen-sm) and (max-width: $screen-md) {
+    // Force boxes to wrap in groups of two
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   // Tablet and above
