@@ -19,7 +19,6 @@
       // no border and smaller font on nested list group items
       .list-group-item {
         border-top: 1px solid $border-color;
-        // padding: $spacing-2 0;
         font-size: $font-size-small;
         font-weight: normal;
 
@@ -35,6 +34,7 @@
         width: 100%;
         color: $text-color;
         text-decoration: none;
+        display: inline-block;
 
         .lt-icon {
           transform: rotate(180deg);
@@ -48,13 +48,13 @@
           }
         }
 
-        &[data-toggle="collapse"]{
+        &[data-toggle="collapse"] {
           font-weight: bold;
           color: $text-color !important;
           cursor: pointer;
         }
 
-        &:hover{
+        &:hover {
           color: $brand-primary;
         }
       }
@@ -66,10 +66,10 @@
   // desktop
   @media (min-width: $screen-sm-min) {
     .list-group {
-
       .list-group-item {
         border: none;
         padding: $spacing-2 0;
+
         .list-group-item {
           border-top: none;
         }
