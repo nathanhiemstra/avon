@@ -377,9 +377,15 @@ table {
     padding-left: 0;
     padding-right: 0;
 
-    &.td-label {
+    .td-label {
+      display: block;
       margin-top: $spacing-4;
       padding-bottom: $spacing-2;
+    }
+
+    &.t-pair {
+      display: inline-block;
+      width: 50%;
     }
 
   }
@@ -400,8 +406,13 @@ table {
       padding-left: $table-cell-padding;
       padding-right: $table-cell-padding;
 
-      &.td-label {
+      .td-label {
         display: none;
+      }
+
+      &.t-pair {
+        display: table-cell;
+        width: auto;
       }
 
     }

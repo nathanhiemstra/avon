@@ -1,0 +1,21 @@
+{% if type is empty %}
+  {% set type = 'Undefined Method' %}
+{% endif %}
+
+{% if icon is empty %}
+  {% set icon = '/images/icons/payment-avoncredit.svg' %}
+{% endif %}
+
+{% if amount is empty %}
+  {% set amount = '$00.00' %}
+{% endif %}
+
+<div class="clearfix my-2 border-bottom py-3">
+  <div class="clearfix">
+    <div class="pull-left"><img class="mr-2" src="{{ icon }}"> {{ type }}</div>
+    <div class="pull-right text-right">{{ amount }}</div>
+  </div>
+  <div class="pull-right small mt-2">
+    <a class="underline" href="#">Edit</a> | <a class="underline" href="#">Remove</a>
+  </div>
+</div>
