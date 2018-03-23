@@ -81,7 +81,13 @@
   line-height: 1;
   color: $input-color;
   text-align: center;
+  border: 1px solid $border-color;
+  border-right: none;
   border-radius: $input-border-radius;
+
+  & + input {
+    border-left: none;
+  }
 
   // Sizing
   &.input-sm {

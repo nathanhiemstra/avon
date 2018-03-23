@@ -46,8 +46,8 @@ body {
       margin-top: 0;
     }
 
-    // on mobile, aside should butt up to header
-    aside {
+    // on mobile, secondary nav aside should butt up to header
+    aside.secondary-nav {
       margin-top: -$spacing-page-top;
 
       // on desktop, it should have no negative margin

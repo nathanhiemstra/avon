@@ -145,7 +145,13 @@
                   </a>
                   <br/>
                   <span>Please enter your 4-digit PIN code:</span>
-                  <input type="text" class="input-sm form-control form-control-inline" size="7" maxlength="4">
+
+                  <span class="form-inline-container">
+                    <input type="text" class="input-sm form-control form-control-inline has-feedback" size="7" maxlength="4">
+                    <div class="form-control-inline-feedback">
+                      <p class="text-danger small"><b>Field PIN is mandatory, please fill it in.</b></p>
+                    </div>
+                  </span>
 
                   <a href="javascript:void(0)" data-toggle="modal" data-target="#generic-modal" class="lt-icon lt-tip lt-sm align-middle no-underline"
                     data-container="body"
@@ -156,7 +162,7 @@
 
                   <!-- Developer note: Show if there is an error. -->
 
-                    <p class="text-danger small"><b>Field PIN is mandatory, please fill it in.</b></p>
+                    <!-- <p class="text-danger small"><b>Field PIN is mandatory, please fill it in.</b></p> -->
                   </div>
 
                 </div>
@@ -220,18 +226,21 @@
                 <div class="row">
                   <div class="col-sm-6 ml-5">
                     <div class="form-group">
-                    <p class="mb-3 mt-2 font-weight-bold text-muted small">Card Number</p>
+                      <p class="mb-3 mt-2 font-weight-bold text-muted small">Card Number</p>
 
-                    {% include components.elements.forms.input with {
-                      placeholder: 'cc',
-                      classes: 'font-weight-bold'
-                    } %}
+                      {% include '_includes/elements/forms/input-with-addon.html.twig' with {
+                        placeholder: '',
+                        classes: 'font-weight-bold',
+                        addon: '<img src="/images/icons/payment-visa.svg">'
+                      } %}
 
                     </div>
 
                     <div class="form-group font-weight-bold">
-                      {% include components.elements.forms.input with {
+                      {% include '_includes/elements/forms/input-with-addon.html.twig' with {
                         placeholder: '1234 5678 9098 7654',
+                        classes: 'font-weight-bold',
+                        addon: '<img src="/images/icons/payment-visa.svg">'
                       } %}
                     </div>
 
