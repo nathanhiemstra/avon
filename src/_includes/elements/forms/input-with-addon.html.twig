@@ -1,0 +1,26 @@
+{% if text is empty %}
+  {% set type = 'text' %}
+{% endif %}
+{% if classes %}
+  {% set classes = ' ' ~ classes %}
+{% endif %}
+{% if size %}
+  {% set size = ' size="' ~ size ~ '"' %}
+{% endif %}
+{% if maxlength %}
+  {% set maxlength = ' maxlength="' ~ maxlength ~ '"' %}
+{% endif %}
+{% if id %}
+  {% set id = ' id="' ~ id ~ '"' %}
+{% endif %}
+{% if placeholder %}
+  {% set placeholder = ' placeholder="' ~ placeholder ~ '"' %}
+{% endif %}
+{% if theValue %}
+  {% set theValue = ' value="' ~ theValue ~ '"' %}
+{% endif %}
+
+<div class="input-group">
+  <span class="input-group-addon">{{ addon }}</span>
+  <input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}>
+</div>
