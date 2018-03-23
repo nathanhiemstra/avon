@@ -22,7 +22,7 @@
         <p><strong>Payment Information:</strong> Your account is up-to-date</p>
         <div class="mt-5">
 
-          <!-- DEV NOTE :: .table-collapse-to-column requires the <th> ellements
+          <!-- DEV NOTE :: .table-collapse-to-column requires the <th> elements
                         :: in <thead> to be duplicated in <tbody> as .td-label
                         :: See below for example -->
           <table class="table mb-0 table-no-borders table-collapse-to-column">
@@ -39,20 +39,28 @@
 
             <tbody>
               <tr>
-                <td class="td-label"><h6 class="m-0">Type</h6></td>
-                <td class="t-type">Innerware</td>
+                <td class="t-type">
+                  <span class="td-label"><h6 class="m-0">Type</h6></span>
+                  <span>Innerware</span>
+                </td>
 
-                <td class="td-label"><h6 class="m-0">Ship Date</h6></td>
-                <td class="t-ship">02/12/2018</td>
+                <td class="t-ship t-pair">
+                  <span class="td-label"><h6 class="m-0">Ship Date</h6></span>
+                  <span>02/12/2018</span>
+                </td>
 
-                <td class="td-label"><h6 class="m-0"># Boxes</h6></td>
-                <td class="t-boxes">100</td>
+                <td class="t-boxes t-pair">
+                  <span class="td-label"><h6 class="m-0"># Boxes</h6></span>
+                  <span>100</span>
+                </td>
 
-                <td class="td-label"><h6 class="m-0">Carrier</h6></td>
-                <td class="t-carrier">United Parcel Services <br> 1-800-742-5877</td>
+                <td class="t-carrier">
+                  <span class="td-label"><h6 class="m-0">Carrier</h6></span>
+                  <span>United Parcel Services <br> 1-800-742-5877</span>
+                </td>
 
-                <td class="td-label"><h6 class="m-0">Tracking Number(s)</h6></td>
                 <td class="t-tracking">
+                  <span class="td-label"><h6 class="m-0">Tracking Number(s)</h6></span>
                   <ol class="list-counter list-counter--1-char line-height-large-xs">
                     {% for i in 0..2 %}
                       {{ listItem }}
@@ -74,27 +82,35 @@
 
             <tbody>
               <tr>
-                <td class="td-label"><h6 class="m-0">Type</h6></td>
-                <td class="t-type">Avon</td>
+                <td class="t-type">
+                  <span class="td-label"><h6 class="m-0">Type</h6></span>
+                  <span>Avon</span>
+                </td>
 
-                <td class="td-label"><h6 class="m-0">Ship Date</h6></td>
-                <td class="t-ship">02/12/2018</td>
+                <td class="t-ship t-pair">
+                  <span class="td-label"><h6 class="m-0">Ship Date</h6></span>
+                  <span>02/12/2018</span>
+                </td>
 
-                <td class="td-label"><h6 class="m-0"># Boxes</h6></td>
-                <td class="t-boxes">17</td>
+                <td class="t-boxes t-pair">
+                  <span class="td-label"><h6 class="m-0"># Boxes</h6></span>
+                  <span>17</span>
+                </td>
 
-                <td class="td-label"><h6 class="m-0">Carrier</h6></td>
-                <td class="t-carrier">US Postal Service</td>
+                <td class="t-carrier">
+                  <span class="td-label"><h6 class="m-0">Carrier</h6></span>
+                  <span>US Postal Service</span>
+                </td>
 
-                <td class="td-label"><h6 class="m-0">Tracking Number(s)</h6></td>
                 <td class="t-tracking">
-
+                  <span class="td-label"><h6 class="m-0">Tracking Number(s)</h6></span>
                   <ol class="list-counter list-counter--3-char line-height-large-xs">
                     {% for i in 0..100 %}
                       {{ listItem }}
                     {% endfor %}
                   </ol>
                 </td>
+
               </tr>
             </tbody>
 
