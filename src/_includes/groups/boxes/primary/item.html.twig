@@ -1,22 +1,27 @@
-{% if active %}
+{% if isFirstItem %}
   {% set classes = ' active ' %}
 {% endif %}
 <!-- START - SINGLE SLIDE -->
 <div class="item  {{ classes }}">
   <div class="box-group--item box-emphasize">
 
-    <div class="change-widget clearfix px-3 py-2">
-      <span class="badge pull-left">{{ loopIndex }}</span>
-      <a href="javascript:void(0)" class="pull-right underline">Change</a>
+    {% if hasToolbar %}
+    <!-- START - TOOLBAR (CUSTOMIZE DASHBOARD) -->
+    <div class="toolbar">
+      <span class="badge">{{ loopIndex }}</span>
+      <a href="javascript:void(0)" class="underline">Change</a>
     </div>
-
+    <!-- END - TOOLBAR (CUSTOMIZE DASHBOARD) -->
+    {% endif %}
 
     <div class="item-content">
+
       <!-- START - FPO CONTENT -->
       <img src="{{ src }}" alt="FPO image">
       <!-- END - FPO CONTENT -->
 
     </div>
-  </div>
-</div><!-- /.box-group-item -->
+  </div><!-- /.box-group-item -->
+</div><!-- /.item -->
 <!-- END - SINGLE SLIDE -->
+
