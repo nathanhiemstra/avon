@@ -1,0 +1,117 @@
+// Secondary Nav Styles
+
+aside.secondary-nav {
+  padding-left: 0;
+  padding-right: 0;
+
+  // desktop
+  @media (min-width: $screen-sm-min) {
+    padding-left: $spacing-3;
+    padding-right: $spacing-3;
+  }
+
+}
+
+.navbar.navbar-secondary {
+  height: $navbar-height;
+
+  // Give our outermost group some padding and a mobile shadow
+  > .list-group {
+    padding-left: $spacing-3;
+    padding-right: $spacing-3;
+    @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+    transition: $ui-animation-time box-shadow ease;
+  }
+
+  &.collapsed {
+    // remove shadow when collapsed
+    > .list-group {
+      box-shadow: none;
+    }
+  }
+
+  .list-group {
+
+    .list-group-item {
+      border: none;
+      padding: $spacing-3 0;
+      z-index: 1;
+
+      // outermost list group items get a larger font
+      font-size: $font-size-base;
+      font-weight: 500;
+
+      // no border and smaller font on nested list group items
+      .list-group-item {
+        border-top: 1px solid $border-color;
+        font-size: $font-size-small;
+        font-weight: normal;
+
+        // second-level nested items need indent, no border
+        .list-group-item {
+          border: none;
+          margin-left: $spacing-4;
+        }
+
+      }
+
+      a {
+        width: 100%;
+        color: $text-color;
+        text-decoration: none;
+        display: inline-block;
+
+        .lt-icon {
+          transform: rotate(180deg);
+          position: absolute;
+          right: 0;
+        }
+
+        &.collapsed {
+          .lt-icon {
+            transform: rotate(0deg);
+          }
+        }
+
+        &[data-toggle="collapse"] {
+          font-weight: bold;
+          color: $text-color !important;
+          cursor: pointer;
+        }
+
+        &:hover {
+          color: $brand-primary;
+        }
+      }
+
+    }
+
+  }
+
+  // desktop
+  @media (min-width: $screen-sm-min) {
+
+    // remove shadow and padding on desktop view
+    > .list-group {
+      padding-left: 0;
+      padding-right: 0;
+      box-shadow: none;
+    }
+
+    .list-group {
+
+      .list-group-item {
+
+        border: none;
+        padding: $spacing-2 0;
+
+        .list-group-item {
+          border-top: none;
+        }
+      }
+
+    }
+
+  }
+
+}
