@@ -1,3 +1,7 @@
+{% if showAmount is not defined %}
+  {% set showAmount = false %}
+{% endif %}
+
 <section class="list-group box-emphasize box-emphasize--focused">
   <div class="list-group-item border-0">
     <div class="clearfix mb-4">
@@ -5,6 +9,20 @@
       <a class="pull-right underline" href="#">Cancel</a>
     </div>
     <p>USSA federal Savings Bank (...1234)</p>
+
+    {% if showAmount %}
+      <div class="form-group form-inline">
+         <label class="control-label d-block mb-2">Amount to pay</label>
+         {% include components.elements.forms.input with {
+          classes: 'form-control-inline',
+          type: 'number',
+          placeholder: '$0.00',
+          maxlength: '',
+          size: '12'
+        } %}
+      </div>
+    {% endif %}
+
     <div class="form-group form-inline">
        <label class="control-label d-block mb-2">Your 4-digit PIN</label>
        {% include components.elements.forms.input with {
@@ -12,7 +30,7 @@
         type: 'number',
         placeholder: '',
         maxlength: '4',
-        size: '4'
+        size: '12'
       } %}
     </div>
      <!--Continue Button-->
