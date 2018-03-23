@@ -1,6 +1,11 @@
 {% if isFirstItem %}
   {% set classes = ' active ' %}
 {% endif %}
+{% if carouselId %}
+  {% set toolbarDataAttrs = ' data-toggle="modal" data-target="#' ~ carouselId ~ '"' %}
+{% endif %}
+
+
 <!-- START - SINGLE SLIDE -->
 <div class="item  {{ classes }}">
   <div class="box-group--item box-emphasize">
@@ -9,7 +14,7 @@
     <!-- START - TOOLBAR (CUSTOMIZE DASHBOARD) -->
     <div class="toolbar">
       <span class="badge">{{ loopIndex }}</span>
-      <a href="javascript:void(0)" class="underline">Change</a>
+      <a href="#" class="underline"{{ toolbarDataAttrs }}>Change</a>
     </div>
     <!-- END - TOOLBAR (CUSTOMIZE DASHBOARD) -->
     {% endif %}

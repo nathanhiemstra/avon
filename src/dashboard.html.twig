@@ -15,27 +15,21 @@
       <!-- START - TAB NAVIGATION -->
       <section class="container container--page">
         <h2 class="mb-5">Dashboard</h2>
-
         {% include "_includes/modules/dashboard/tab-nav.html.twig" %}
-
-
       </section>
       <!-- /.container -->
       <!-- END - TAB NAVIGATION -->
 
-
-   
       <section class="container my-5">
-
        {% include '_includes/modules/dashboard/tab-content.html.twig' %}
-
-
       </section>
 
     </div>
 
+    {% include "_includes/modules/dashboard/select-widget-modal.html.twig" %}
 
   {% endblock %}
+
 
 
 {% endblock %}

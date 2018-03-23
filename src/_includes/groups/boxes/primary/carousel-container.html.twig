@@ -1,18 +1,25 @@
 
 {# "itemContainerType" options: carouselOnly, boxesOnly, carouselBoxesCombo #}
-
-
 {% if itemContainerType is empty %}
   {% set itemContainerType = 'carouselOnly' %}
+{% elseif itemContainerType == 'carouselBoxesCombo' %}
+  {% set carouselBoxesCombo_Class = 'carousel--box-group-primary' %}
 {% endif %}
 
 <!-- START - CAROUSEL {{ carouselId }}--> 
-<div id="{{ carouselId }}" class="carousel slide carousel--box-group-primary" data-ride="carousel"  data-interval="false">
+<div 
+  id="{{ carouselId }}" 
+  class="carousel slide box-group--primary-with-carousel {{ carouselBoxesCombo_Class }}" 
+  data-ride="carousel"  
+  data-interval="false">
  
   <!-- START - INDICATORS (DOTS) -->
   <ol class="carousel-indicators">
     {% for item in items %}
-      <li data-target="#' ~ carouselId ~ '" data-slide-to="' ~ loop.index ~ '" {% if loop.first %} class="active" {% endif %} ></li>
+      <li 
+        data-target="#{{ carouselId }}" 
+        data-slide-to="{{ (loop.index - 1) }}" 
+        {% if loop.first %} class="active" {% endif %}></li>
     {% endfor %}
   </ol>
   <!-- END - INDICATORS (DOTS) -->
@@ -22,17 +29,18 @@
   {% include "_includes/groups/boxes/primary/item-container.html.twig" with { 
     items: items, 
     hasToolbar: hasToolbar,
-    itemContainerType: itemContainerType
+    itemContainerType: itemContainerType,
+    carouselId: carouselId
   } %}
   
   <!-- END - SLIDES CONTAINER  -->
 
 
   <!-- START - CONTROLS -->
-  <a class="left carousel-control" href="#' ~ carouselId ~ '" data-slide="prev">
+  <a class="left carousel-control" href="#{{ carouselId }}" data-slide="prev">
     <span class="lt-icon lt-left lt-large"></span>
   </a>
-  <a class="right carousel-control" href="#' ~ carouselId ~ '" data-slide="next">
+  <a class="right carousel-control" href="#{{ carouselId }}" data-slide="next">
     <span class="lt-icon lt-right lt-large"></span>
   </a>
   <!-- END - CONTROLS -->
