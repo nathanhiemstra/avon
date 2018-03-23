@@ -41,11 +41,17 @@ aside.secondary-nav {
       font-size: $font-size-base;
       font-weight: 500;
 
+      // outermost list group item should have no padding
+      // > .list-group-item {
+      //   padding: 0;
+      // }
+
       // no border and smaller font on nested list group items
       .list-group-item {
         border-top: 1px solid $border-color;
         font-size: $font-size-small;
         font-weight: normal;
+        padding: $spacing-3 0;
 
         // second-level nested items need indent, no border
         .list-group-item {
@@ -75,13 +81,18 @@ aside.secondary-nav {
 
         &[data-toggle="collapse"] {
           font-weight: bold;
-          color: $text-color !important;
+          color: $text-color;
           cursor: pointer;
         }
 
-        &:hover {
-          color: $brand-primary;
+        &:focus, &:hover {
+          color: $text-color;
         }
+
+        &.active {
+          color: $brand-primary
+        }
+
       }
 
     }
@@ -96,6 +107,19 @@ aside.secondary-nav {
       padding-left: 0;
       padding-right: 0;
       box-shadow: none;
+
+      // outermost toggle should look like a header
+      > .list-group-item > [data-toggle="collapse"] {
+        text-transform: uppercase;
+        color: $text-color;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: $spacing-3;
+        pointer-events: none;
+
+        span {
+          display: none;
+        }
+      }
     }
 
     .list-group {
@@ -103,11 +127,18 @@ aside.secondary-nav {
       .list-group-item {
 
         border: none;
-        padding: $spacing-2 0;
+        padding: $spacing-1 0 $spacing-3;
 
         .list-group-item {
           border-top: none;
         }
+
+        a {
+          &:hover {
+            color: $brand-primary;
+          }
+        }
+
       }
 
     }
