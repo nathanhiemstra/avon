@@ -1,0 +1,70 @@
+// Secondary Nav Styles
+
+.navbar.navbar-secondary {
+  height: 0;
+
+  .nav-header {}
+
+  .list-group {
+
+    .list-group-item {
+      border: none;
+      padding: $spacing-2 0;
+      z-index: 1;
+
+      // outermost list group items get a larger font
+      font-size: $font-size-base;
+      font-weight: 500;
+
+      // no border and smaller font on nested list group items
+      .list-group-item {
+        border-top: 1px solid $border-color;
+        // padding: $spacing-2 0;
+        font-size: $font-size-small;
+        font-weight: normal;
+
+        // second-level nested items need indent, no border
+        .list-group-item {
+          border: none;
+          margin-left: $spacing-4;
+        }
+
+      }
+
+      a {
+        width: 100%;
+        color: $text-color;
+
+        .lt-icon {
+          transform: rotate(180deg);
+          position: absolute;
+          right: 0;
+        }
+
+        &.collapsed {
+          .lt-icon {
+            transform: rotate(0deg);
+          }
+        }
+      }
+
+    }
+
+  }
+
+  // desktop
+  @media (min-width: $screen-sm-min) {
+    .list-group {
+
+      .list-group-item {
+        border: none;
+        padding: $spacing-2 0;
+        .list-group-item {
+          border-top: none;
+        }
+      }
+
+    }
+  }
+
+}

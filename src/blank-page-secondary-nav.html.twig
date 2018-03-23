@@ -1,0 +1,68 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+      {% embed layouts.columns3x9 %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - ASIDE #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block aside %}
+
+          {% include '_includes/groups/navigation/secondary-nav/secondary-nav.html.twig' %}
+
+        {% endblock %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - MAIN #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block main %}
+
+          <h2 class="mb-5">Secondary Nav Example</h2>
+
+          <hr>
+
+          <p>Nulla consectetur magna ullamco commodo ea proident proident labore. Ullamco adipisicing id ullamco laborum ex mollit veniam occaecat ea minim quis sunt quis culpa nulla consequat anim. Amet commodo elit do excepteur ex consectetur in elit consequat pariatur enim dolor sint nisi do tempor. Mollit commodo reprehenderit aute commodo Lorem excepteur nulla sit reprehenderit et non labore et. Pariatur commodo elit ea dolore mollit cupidatat incididunt veniam occaecat Lorem cillum officia tempor laboris enim nulla quis.</p>
+          <p>Sint consequat fugiat mollit mollit reprehenderit occaecat excepteur est sint duis. Tempor aliqua ad voluptate tempor nisi mollit dolore et. Commodo ea cupidatat labore labore qui irure incididunt sit ea consequat elit proident consequat veniam enim.</p>
+          <p>Aliquip exercitation eu labore ut ut labore est reprehenderit dolor laborum laboris commodo labore non. Magna ea tempor cillum velit laborum Lorem fugiat voluptate exercitation cupidatat non non ad eiusmod irure. Tempor ullamco amet commodo excepteur nisi aute veniam dolor mollit aliqua proident. Duis eiusmod do id minim ipsum nulla adipisicing officia.</p>
+          <p>Non tempor magna voluptate Lorem ipsum adipisicing nostrud ex fugiat laborum in cillum. Adipisicing velit et in minim ut cupidatat ut. Do Lorem magna mollit occaecat non aliqua id Lorem aute non fugiat aliquip mollit. Eiusmod magna eiusmod ea non ipsum pariatur deserunt excepteur aliquip magna cupidatat fugiat id tempor commodo enim incididunt. Aute non fugiat sint mollit cillum aliqua est sit laboris ad culpa et reprehenderit fugiat ea non. Non tempor incididunt minim ad do consequat duis ex adipisicing culpa. Lorem nostrud aliquip et magna officia cupidatat duis dolor duis commodo id. Ad dolor eiusmod quis reprehenderit id voluptate in officia labore labore sunt excepteur incididunt ea.</p>
+
+        {% endblock %}
+
+      {% endembed %}
+    </section>
+
+  {% endblock %}
+
+  <!-- START - MODAL - QUICKPAY ENROLLMENT -->
+  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-modal.html.twig" %}
+  <!-- END - MODAL - QUICKPAY ENROLLMENT -->
+
+  <!-- START - MODAL - QUICKPAY ENROLLMENT REVIEW -->
+  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-review-modal.html.twig" %}
+  <!-- END - MODAL - QUICKPAY ENROLLMENT REVIEW -->
+
+  <!-- START - MODAL - QUICKPAY ENROLLMENT SUCCESS -->
+  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-success-modal.html.twig" %}
+  <!-- END - MODAL - QUICKPAY ENROLLMENT SUCCESS -->
+
+  <!-- START - MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
+  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-learn-more-modal.html.twig" %}
+  <!-- END - MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
+
+  <!-- MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
+  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-learn-more-modal.html.twig" %}
+
+  <!-- MODAL - QUICKPAY ENROLLMENT REVIEW -->
+  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-review-modal.html.twig" %}
+
+{% endblock %}
