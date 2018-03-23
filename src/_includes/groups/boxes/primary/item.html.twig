@@ -1,7 +1,8 @@
-{% if isFirstItem %}
-  {% set classes = ' active ' %}
-{% endif %}
 {% if carouselId %}
+  {% if isFirstItem %}
+    {% set classes = ' active ' %}
+  {% endif %}
+
   {% set toolbarDataAttrs = ' data-toggle="modal" data-target="#' ~ carouselId ~ '"' %}
 {% endif %}
 

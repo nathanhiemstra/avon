@@ -1,25 +1,17 @@
 
 {# "itemContainerType" options: carouselOnly, boxesOnly, carouselBoxesCombo #}
-
 {% if itemContainerType == 'carouselOnly' %}
   {% set comment = 'SLIDES' %}
   {% set containerClasses = 'carousel-inner' %}
 {% elseif itemContainerType == 'carouselBoxesCombo' %}
-  {% set comment = 'SLIDES BOX PRIMARY CONTAINER' %}
+  {% set comment = 'SLIDES *AND* BOX PRIMARY CONTAINER' %}
   {% set containerClasses = 'carousel-inner box-group--primary' %}
 {% else %}
   {% set comment = 'BOX PRIMARY CONTAINER' %}
   {% set containerClasses = 'box-group--primary' %}
 {% endif %}
 
-
-
-
-
-
 <!-- START - {{ comment }}  -->
-
-
 <div class="{{ containerClasses }}">
   {% for item in items %}
     {% include "_includes/groups/boxes/primary/item.html.twig" with { 

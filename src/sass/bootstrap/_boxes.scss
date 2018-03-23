@@ -41,18 +41,47 @@ $box-group--primary-item-width: 220px;
     margin: $box-group--primary-item-margin auto;
     width: $box-group--primary-item-width;
   }
+
+  .carousel-inner {
+    // Don't let the slide get smushed
+    min-width: $box-group--primary-item-width;
+  }
+
+  // Positiona rrows closer to the edge of screen
+  .carousel-control .lt-left {
+    width: 100%;
+  }
+
+  .carousel-control .lt-right {
+    width: 200%;
+  }
+
+  .carousel-indicators {
+    // Don't let indicators (dots) wrap onto two lines
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  @media (max-width: 330px) {
+    // Don't let arrows touch the slide
+    .carousel-control .lt-left,
+    .carousel-control .lt-right {
+      display: none;
+    }
+  }
 }
 
 .carousel--box-group-primary {
   // Mobile
   @media (max-width: $screen-sm) {
     // So that the indicators are below the slides
-    padding-bottom: 40px;
+    // padding-bottom: 40px;
 
-    .carousel-inner {
-      // Don't let the slide get smushed
-      min-width: $box-group--primary-item-width;
-    }
+    // .carousel-inner {
+    //   // Don't let the slide get smushed
+    //   min-width: $box-group--primary-item-width;
+    // }
 
     .carousel-control .lt-left {
       width: 100%;
@@ -117,19 +146,28 @@ $box-group--primary-item-width: 220px;
 
 // Sometimes we will ONLY have .carousel--box-group-primary (carousel-only, like in a modal),  
 // OR ONLY .box-group--primary (non carousel).
-.carousel--box-group-primary,
-.box-group--primary {
-  .box-group--item {
-    margin: $box-group--primary-item-margin auto;
-    width: $box-group--primary-item-width;
-  }
-}
+// .carousel--box-group-primary,
+// .box-group--primary {
+//   .box-group--item {
+//     margin: $box-group--primary-item-margin auto;
+//     width: $box-group--primary-item-width;
+//   }
+// }
 
 .box-group--primary {
+  // Tablet only
+  @media (min-width: $screen-sm) and (max-width: $screen-md) {
+    // Force boxes to wrap in groups of two
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
   .box-group--item {
     background-color: $body-bg;
     overflow: hidden;
     flex-flow: wrap row;
+    margin: $box-group--primary-item-margin auto;
+    width: $box-group--primary-item-width;
   }
 
   .toolbar {
@@ -151,6 +189,7 @@ $box-group--primary-item-width: 220px;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    width: inherit;
 
     .box-group--item {
       margin-left: $box-group--primary-item-margin;
@@ -163,6 +202,16 @@ $box-group--primary-item-width: 220px;
 
   // Desktop and above
   @media (min-width: $screen-md) {
+    // flex-wrap: nowrap;
+
+    // Margins are to compensate for the margin of the boxes, so the borders of the boxes will align with the width of container
+    margin-left: -$box-group--primary-item-margin;
+    margin-right: -$box-group--primary-item-margin;
+
+    .item {
+      flex-basis: 25%;
+    }
+
     .box-group--item {
       width: inherit;
     }
