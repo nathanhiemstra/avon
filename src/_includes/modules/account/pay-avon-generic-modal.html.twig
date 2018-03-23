@@ -1,0 +1,45 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'generic-modal' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+
+  <h4 class="modal-title">FPO: Headline</h4>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+    <!-- START - GENERIC MODAL CONTENT -->
+    <div class="py-4">
+      <p>
+        {{ fpo.paragraph }}
+      </p>
+    </div>
+    <!-- END - GENERIC MODAL CONTENT -->
+
+  <!-- /.row -->
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+    <!-- START - OK Button -->
+    <button type="button" class="btn btn-primary">Ok</button>
+    <!-- END - OK BUTTON -->
+  <!-- /.row -->
+
+{% endblock %}

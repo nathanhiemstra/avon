@@ -34,19 +34,19 @@
           <!-- START - PAYMENT AMOUNT SECTION -->
           <div class="">
 
-            <p><strong>How much are you paying today?</strong></p>
 
             <div class="ml-4">
+            <p><strong>How much are you paying today?</strong></p>
 
               <div class="form-group">
                 {% include components.elements.forms.radio with {
                     name: 'pay-option',
                     classes: 'd-inline',
                     theValue: 'credit',
-                    theLabel: '<b>-$1.00</b> (Current balance as of March 08, 2018 at 03:15 PM EST)'
+                    theLabel: '$55.32 <small>(Current balance as of March 08, 2018 at 03:15 PM EST)</small>'
                   } %}
 
-                  <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle no-underline"
+                  <a href="javascript:void(0)" data-toggle="modal" data-target="#generic-modal" class="lt-icon lt-tip lt-sm align-middle no-underline"
                     data-container="body"
                     data-toggle="popover"
                     data-placement="bottom"
@@ -60,10 +60,10 @@
                   name: 'pay-option',
                   classes: 'd-inline',
                   theValue: 'credit',
-                  theLabel: '<b>$0.00</b> (Amount Due with Campaign 07)'
+                  theLabel: '$0.00 <small>(Amount Due with Campaign 07)</small>'
                 } %}
 
-                <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle no-underline"
+                <a href="javascript:void(0)" data-toggle="modal" data-target="#generic-modal" class="lt-icon lt-tip lt-sm align-middle no-underline"
                   data-toggle="modal" data-target="#amount-due">
                 </a>
 
@@ -80,25 +80,28 @@
                     name: 'pay-option',
                     classes: 'd-inline',
                     theValue: 'credit',
-                    theLabel: '<b>Other Amount: $</b>',
+                    theLabel: 'Other Amount: $',
                     checked: true
                   } %}
 
                   {% include components.elements.forms.input with {
                     placeholder: '',
-                    theValue: '25,000.23',
-                    classes: 'input-sm form-control form-control-inline'
+                    theValue: '30000',
+                    size: '7',
+                    classes: 'font-weight-bold input-sm form-control form-control-inline text-default'
                   } %}
 
-                  <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle ml-2 no-underline" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></a>
+                  <a href="javascript:void(0)" data-toggle="modal" data-target="#generic-modal"  class="lt-icon lt-tip lt-sm align-middle ml-2 no-underline" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></a>
 
                 </div>
 
               </div>
 
-              <p class="text-danger"><strong>
-                Sorry, we are unable to process this request. Please review payment amount to ensure it is not greater than $25,000 or does not exceed your balance by more than $1,000.
-              </strong></p>
+              <div class="pl-3">
+                <p class="text-danger small pl-5"><strong>
+                  Sorry, we are unable to process this request. Please review payment amount to ensure it is not greater than $25,000 or does not exceed your balance by more than $1,000.
+                </strong></p>
+              </div>
 
             </div>
 
@@ -108,9 +111,9 @@
           <!-- START - PAYMENT TYPE SECTION -->
           <div class="pt-5">
 
-            <p><strong>Please select a payment type:</strong></p>
 
             <div class="ml-4">
+            <p><strong>Please select a payment type:</strong></p>
 
               <!-- START - PAY TYPE - QUICKPAY -->
 
@@ -121,7 +124,7 @@
                 {% include components.elements.forms.radio with {
                   name: 'pay-type',
                   theValue: 'quick-pay',
-                  theLabel: '<b>QuikPAY</b> (you are enrolled. <u><a href="#">Edit</a></u>)',
+                  theLabel: 'QuikPAY <small>(You are enrolled. <u><a href="#">Edit</a></u>)</small>',
                   dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
                   disabled: false,
                   checked: true,
@@ -130,10 +133,10 @@
                 <!-- START - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
                 <!-- Developer note: This gets shown when this radio is selected. It relies on "data-toggle" and "data-target". Demo: aqw3^ -->
                 <!-- Developer note: Add class has-error if there is an error. -->
-                <div id="collapse-quickpay-pin" class="form-group has-error panel-collapse in mb-3">
+                <div id="collapse-quickpay-pin" class="form-group has-error panel-collapse in mb-3 pt-3">
                   <span>Please enter your 4-digit PIN code:</span>
-                  <input type="text" class="input-sm mb-3" size="6" maxlength="4">
-                  <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle no-underline"
+                  <input type="text" class="input-sm mb-3 text-default" size="7" maxlength="4" placeholder="&bull;&bull;&bull;&bull;">
+                  <a href="javascript:void(0)" data-toggle="modal" data-target="#generic-modal" class="lt-icon lt-tip lt-sm align-middle no-underline"
                     data-container="body"
                     data-toggle="popover"
                     data-placement="bottom"
@@ -141,8 +144,9 @@
                   </a>
                   <br/>
                   <span>Please enter your 4-digit PIN code:</span>
-                  <input type="text" class="input-sm form-control form-control-inline" size="6" maxlength="4">
-                  <a href="javascript:void(0)" class="lt-icon lt-tip lt-medium align-middle no-underline"
+                  <input type="text" class="input-sm form-control form-control-inline" size="7" maxlength="4">
+
+                  <a href="javascript:void(0)" data-toggle="modal" data-target="#generic-modal" class="lt-icon lt-tip lt-sm align-middle no-underline"
                     data-container="body"
                     data-toggle="popover"
                     data-placement="bottom"
@@ -150,7 +154,8 @@
                   </a>
 
                   <!-- Developer note: Show if there is an error. -->
-                  <p class="m-0 text-danger"><b>Field PIN is mandatory, please fill it in.</b></p>
+
+                    <p class="text-danger small"><b>Field PIN is mandatory, please fill it in.</b></p>
 
                 </div>
                 <!-- END - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
@@ -158,18 +163,18 @@
               <!-- END - QUICKPAY STATE - ENROLLED -->
 
               <!-- START - QUICKPAY STATE - NOT ENROLLED -->
-              <div class="form-group">
+              <div class="form-group pt-2">
                 <!-- Developer note: This is disabled. -->
                 {% include components.elements.forms.radio with {
                   name: 'pay-type',
                   theValue: 'quick-pay',
-                  theLabel: '<em>QuikPAY</em>  <b>You are not enrolled.</b> <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#checkout-quickpay-enrollment-modal"><a class="text-capitalize">Enroll Now</a></button>',
+                  theLabel: '<em>QuikPAY</em>  <small class="text-default">You are not enrolled.</small> <button class="btn btn-default btn-sm btn-soft ml-3" data-toggle="modal" data-target="#checkout-quickpay-enrollment-modal"><a class="ml-2 mr-2">Enroll now</a></button>',
                   dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
                   disabled: true
                 } %}
 
-                <div>
-                  <p><em>QuickPAY is the safer, easier way to pay online without revealing your credit card number.</em></p>
+                <div class="ml-5">
+                  <p class="text-muted small ml-3"><em>QuickPAY is the safer, easier way to pay online without revealing your credit card number.</em></p>
                 </div>
               </div>
               <!-- END - QUICKPAY STATE - NOT ENROLLED -->
@@ -177,15 +182,16 @@
               <!-- START - QUICKPAY STATE - ENROLLMENT IN PROCESS -->
               <div class="form-group">
                 <!-- Developer note: This is disabled. -->
+
                 {% include components.elements.forms.radio with {
                   name: 'pay-type',
                   theValue: 'quick-pay',
-                  theLabel: 'QuikPAY <strong class="text-danger">(Account is currently being processed)</strong>',
+                  theLabel: 'QuikPAY <strong class="text-danger small">(Account is currently being processed)</strong>',
                   dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
                   disabled: true
                 } %}
-                <div>
-                  <p><em>The enrollment process takes 6 days to complete from the date you submitted your request. Once the enrollment process has completed, please activate your QuikPAY account by calling 1-877-QuikPAY (1-877-784-5729) and resetting your PIN #. After activating your QuikPAY Pin, please allow 24 hours before it updates on the site.</em></p>
+                <div class="ml-5">
+                  <p class="small text-muted ml-3"><em>The enrollment process takes 6 days to complete from the date you submitted your request. Once the enrollment process has completed, please activate your QuikPAY account by calling 1-877-QuikPAY (1-877-784-5729) and resetting your PIN #. After activating your QuikPAY Pin, please allow 24 hours before it updates on the site.</em></p>
                 </div>
               </div>
               <!-- END - QUICKPAY STATE - ENROLLMENT IN PROCESS -->
@@ -196,11 +202,14 @@
               <div class="form-group">
                 {% include components.elements.forms.radio with {
                   name: 'pay-type',
-                  classes: '',
                   theValue: 'cc-cards',
                   theLabel: 'Credit Card(s)',
                   dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin.in"'
                 } %}
+              </div>
+
+              <div class="ml-5">
+                <p class="small text-muted ml-3"><em>Avon accepts MasterCard, VISA, Discover, American Express, and Diners Club credit cards</em></p>
               </div>
               <!-- END - PAY TYPE - CREDIT CARD -->
 
@@ -209,33 +218,36 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
-                    <p class="mb-3 font-weight-bold">Card Number</p>
+                    <p class="mb-3 mt-2 font-weight-bold text-muted small">Card Number</p>
+
                     {% include components.elements.forms.input with {
-                      placeholder: ''
+                      placeholder: 'cc',
+                      classes: 'font-weight-bold'
                     } %}
+
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group font-weight-bold">
                       {% include components.elements.forms.input with {
-                        placeholder: ''
+                        placeholder: '1234 5678 9098 7654',
                       } %}
                     </div>
 
-                    <div class="form-group">
-                    <p class="mb-3 font-weight-bold">Name on Card</p>
+                    <div class="form-group font-weight-bold">
+                    <p class="mb-3 font-weight-bold text-muted small">Name on Card</p>
                       {% include components.elements.forms.input with {
-                        placeholder: ''
+                        placeholder: 'Phoebe Pope'
                       } %}
                     </div>
 
                     <div class="row">
 
                       <div class="col-xs-12 col-sm-9 mb-4 mb-sm-0">
-                      <p class="mb-3 font-weight-bold">Expiration Date</p>
+                      <p class="mb-3 font-weight-bold text-muted small">Expiration Date</p>
 
                         <div class="row">
                           <div class="col-xs-12 col-sm-7 mb-4 mb-sm-0">
-                            <select class="form-control form-inline">
+                            <select class="form-control form-inline font-weight-bold text-default">
                               <option>05 - May</option>
                               <option>06 - June</option>
                               <option>07 - July</option>
@@ -244,7 +256,7 @@
                             <span class="lt-icon lt-triangle-down form-control-feedback mr-4"></span>
                           </div>
                           <div class="col-xs-12 col-sm-5">
-                            <select class="form-control form-inline">
+                            <select class="form-control form-inline font-weight-bold text-default">
                               <option>1984</option>
                               <option>1985</option>
                               <option>1986</option>
@@ -257,10 +269,10 @@
                       </div>
 
                       <div class="col-xs-12 col-sm-3">
-                      <p class="mb-3 font-weight-bold">CVV<span class="lt-icon lt-info lt-medium align-middle no-underline"></span></p>
-
+                      <p class="mb-3 font-weight-bold text-muted small">CVV<span class="lt-icon lt-info lt-sm align-middle ml-4 no-underline"></span></p>
                         {% include components.elements.forms.input with {
-                          placeholder: '357'
+                          placeholder: '357',
+                          classes: 'font-weight-bold'
                         } %}
 
                       </div>
@@ -270,30 +282,30 @@
 
                     <div class="pt-3">
                       <h6 class="mb-4 pt-4">billing Address</h6>
-                      <p class="mb-3">Address</p>
-                      <div class="form-group">
+                      <p class="mb-3 small text-muted font-weight-bold">Address</p>
+                      <div class="form-group font-weight-bold">
                         {% include components.elements.forms.input with {
                           placeholder: '1234 Westminster Junction'
                         } %}
                       </div>
-                      <div class="form-group">
+                      <div class="form-group font-weight-bold">
                         {% include components.elements.forms.input with {
                           placeholder: 'Unit #3289W'
                         } %}
                       </div>
                       <div class="row">
                         <div class="col-md-6">
-                        <p class="mb-3 text-danger"><strong>ZIP</strong></p>
-                          <div class="form-group">
+                        <p class="mb-3 text-danger small"><strong>ZIP</strong></p>
+                          <div class="form-group has-error">
                           {% include components.elements.forms.input with {
                             placeholder: '',
                           } %}
-                          <small class="mb-3 text-danger"><strong>This field is mandatory</strong></small>
+                          <small class="mb-3 text-danger font-weight-bold">This field is mandatory</small>
                           </div>
                         </div>
                         <div class="col-md-6">
-                        <p class="mb-3">City</p>
-                          <div class="form-group">
+                        <p class="mb-3 small text-muted font-weight-bold">City</p>
+                          <div class="form-group font-weight-bold">
                             {% include components.elements.forms.input with {
                               placeholder: 'Albuquerque'
                             } %}
@@ -303,9 +315,9 @@
 
                       <div class="row">
                         <div class="col-md-5">
-                        <p class="mb-3">State</p>
+                        <p class="mb-3 small font-weight-bold text-muted">State</p>
                           <div class="form-group has-feedback">
-                            <select class="form-control">
+                            <select class="form-control font-weight-bold text-default">
                               <option>AK - Alaska</option>
                               <option>State 1</option>
                               <option>State 2</option>
@@ -315,9 +327,9 @@
                           </div>
                         </div>
                         <div class="col-md-7">
-                        <p class="mb-3">Country</p>
+                        <p class="mb-3 small font-weight-bold text-muted">Country</p>
                         <div class="form-group has-feedback">
-                          <select class="form-control">
+                          <select class="form-control font-weight-bold text-default">
                             <option>United States</option>
                             <option>Country 1</option>
                             <option>Country 2</option>
@@ -328,7 +340,8 @@
                         </div>
                       </div>
 
-
+                      {# MODAL - MODAL EITHER OR #}
+                      {% include "_includes/modules/modals/modal-either-or.html.twig" %}
 
                       {# MODAL - PAY AVAON REVIEW #}
                       {% include "_includes/modules/account/pay-avon-review-modal.html.twig" %}
@@ -343,7 +356,7 @@
 
                       <div class="col-md-4 mt-4">
                     <!-- START - Continue Button -->
-                    <a class="btn btn-primary btn-sm d-block" data-toggle="modal" data-target="#modal-either-or">Continue</a>
+                    <a class="btn btn-primary btn-sm d-block" data-toggle="modal" data-target="#blank-modal-either-or">Continue</a>
                     <!-- END - Continue Button -->
                       </div>
                     </div>
@@ -362,6 +375,10 @@
     </section>
 
   {% endblock %}
+
+  <!-- START - MODAL - GENERIC -->
+  {% include "_includes/modules/account/pay-avon-generic-modal.html.twig" %}
+  <!-- END - MODAL - QUICKPAY ENROLLMENT -->
 
   <!-- START - MODAL - QUICKPAY ENROLLMENT -->
   {% include "_includes/modules/checkout/checkout-quickpay-enrollment-modal.html.twig" %}
