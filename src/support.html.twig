@@ -7,7 +7,7 @@
 
   <div class="container container--page">
 
-    {% embed "_layouts/columns-12.html.twig" %}
+    {% embed "_layouts/columns-10-max.html.twig" %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {# DEFINE BLOCK - MAIN #}
@@ -17,6 +17,7 @@
         <h2>Support</h2>
 
         <div class="row d-flex flex-wrap mt-5 box-group--secondary">
+
           <!-- START - ITEMS -->
           {% include "_includes/groups/support/support-page-item.html.twig" with {
             'indexNum': 1,
