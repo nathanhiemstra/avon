@@ -1,9 +1,34 @@
 // Secondary Nav Styles
 
-.navbar.navbar-secondary {
-  height: 0;
+aside.secondary-nav {
+  padding-left: 0;
+  padding-right: 0;
 
-  .nav-header {}
+  // desktop
+  @media (min-width: $screen-sm-min) {
+    padding-left: $spacing-3;
+    padding-right: $spacing-3;
+  }
+
+}
+
+.navbar.navbar-secondary {
+  height: $navbar-height;
+
+  // Give our outermost group some padding and a mobile shadow
+  > .list-group {
+    padding-left: $spacing-3;
+    padding-right: $spacing-3;
+    @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+    transition: $ui-animation-time box-shadow ease;
+  }
+
+  &.collapsed {
+    // remove shadow when collapsed
+    > .list-group {
+      box-shadow: none;
+    }
+  }
 
   .list-group {
 
@@ -65,8 +90,18 @@
 
   // desktop
   @media (min-width: $screen-sm-min) {
+
+    // remove shadow and padding on desktop view
+    > .list-group {
+      padding-left: 0;
+      padding-right: 0;
+      box-shadow: none;
+    }
+
     .list-group {
+
       .list-group-item {
+
         border: none;
         padding: $spacing-2 0;
 
@@ -76,6 +111,7 @@
       }
 
     }
+
   }
 
 }
