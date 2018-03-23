@@ -1,0 +1,16 @@
+{% if amount is empty %}
+  {% set amount = '135.00' %}
+{% endif %}
+
+{% if colorClass is empty %}
+  {% set colorClass = 'text-primary' %}
+{% endif %}
+
+<section class="list-group box-emphasize text-center">
+  <div class="list-group-item">
+    <h6 class="mb-3 h1 {{colorClass}}">${{amount}}</h6>
+    <p class="text-uppercase font-weight-bold">
+      of ${{amount}} Remaining
+    </p>
+  </div>
+</section>

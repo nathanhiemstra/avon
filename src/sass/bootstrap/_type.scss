@@ -242,7 +242,7 @@ mark,
 
 @include text-emphasis-variant(".text-primary", $brand-primary);
 
-@include text-emphasis-variant(".text-success", $state-success-text);
+@include text-emphasis-variant(".text-success", $brand-success);
 
 @include text-emphasis-variant(".text-info", $state-info-text);
 
@@ -327,7 +327,7 @@ blockquote {
       content: '\2014 \00A0';
 
       // em dash, nbsp
-   
+
     }
   }
 }
@@ -355,7 +355,7 @@ blockquote.pull-right {
       content: '\00A0 \2014';
 
       // nbsp, em dash
-   
+
     }
   }
 }
