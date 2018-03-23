@@ -10,110 +10,29 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
+    <div class="container--dashboard">
 
-    <!-- START - TAB NAVIGATION -->
-    <section class="container container--page">
-      <h2 class="mb-5">Dashboard!</h2>
+      <!-- START - TAB NAVIGATION -->
+      <section class="container container--page">
+        <h2 class="mb-5">Dashboard</h2>
 
-      {% include "_includes/modules/dashboard/tab-nav.html.twig" %}
+        {% include "_includes/modules/dashboard/tab-nav.html.twig" %}
 
-
-    </section>
-    <!-- /.container -->
-    <!-- END - TAB NAVIGATION -->
-
-
- 
-    <section class="container my-5">
-
-     {% include '_includes/modules/dashboard/tab-content.html.twig' %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     {#  {% include "_includes/modules/home/boxes-primary-home-from-avon.html.twig" %}
-      
-      <!-- START - FULL WIDTH CONTAINER -->
-      <section class="my-5">
-
-        <!-- START - FPO HEADLINE -->
-        <div class="pt-5">
-          <h5 class="text-center mb-4">JUST FOR YOU <i class="lt-icon lt-info lt-medium"></i></h5>
-        </div>
-        <!-- END - FPO HEADLINE -->
-
-
-        <section class="box-group--primary">
-
-          <!-- START - BOX GROUP PAIR -->
-          <div class="box-group--pair">
-
-            {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '5' } %}
-            {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '6' } %}
-
-          </div><!-- /.box-group-pair -->
-          <!-- END - BOX GROUP PAIR -->
-
-
-          <!-- START - BOX GROUP PAIR-->
-          <div class="box-group--pair">
-
-            {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '7' } %}
-            {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '8' } %}
-
-          </div><!-- /.box-group-pair -->
-          <!-- END - BOX GROUP PAIR -->
-
-          <!-- START - BOX GROUP PAIR -->
-          <div class="box-group--pair">
-
-            {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '9' } %}
-            {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '10' } %}
-
-          </div><!-- /.box-group-pair -->
-          <!-- END - BOX GROUP PAIR -->
-
-
-          <!-- START - BOX GROUP PAIR-->
-          <div class="box-group--pair">
-
-            {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '11' } %}
-            {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '12' } %}
-
-          </div><!-- /.box-group-pair -->
-          <!-- END - BOX GROUP PAIR -->
-
-          <!-- START - BOX GROUP PAIR-->
-          <div class="box-group--pair">
-
-            {% include "_includes/groups/boxes/primary/item.html.twig" with { label: '13' } %}
-
-          </div><!-- /.box-group-pair -->
-          <!-- END - BOX GROUP PAIR -->
-
-        </section>
 
       </section>
-      <!-- END - FULL WIDTH CONTAINER -->
+      <!-- /.container -->
+      <!-- END - TAB NAVIGATION -->
 
 
- #}
+   
+      <section class="container my-5">
+
+       {% include '_includes/modules/dashboard/tab-content.html.twig' %}
 
 
-      
+      </section>
 
-
-    </section>
+    </div>
 
 
   {% endblock %}

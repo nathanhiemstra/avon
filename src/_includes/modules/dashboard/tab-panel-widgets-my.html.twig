@@ -1,1 +1,19 @@
-My Widgets
+<div class="alert alert-info">Select the widgets you would like to appear on your home page under the “Just For You” section</div>
+
+
+{% include "_includes/groups/boxes/primary/template.html.twig" with { 
+  items: {
+    item1: {
+      imgPath: 'images/fpo/home/1.png'
+    },
+    item2: {
+      imgPath: 'images/fpo/home/2.png'
+    },
+    item3: {
+      imgPath: 'images/fpo/home/3.png'
+    },
+    item4: {
+      imgPath: 'images/fpo/home/4.png'
+    }
+  }
+} %}

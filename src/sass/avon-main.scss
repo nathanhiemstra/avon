@@ -58,12 +58,15 @@
 @import "bootstrap/drawers";
 @import "bootstrap/footer";
 @import "bootstrap/header";
+@import "bootstrap/images";
+@import "bootstrap/layouts";
+
+// Pages
+@import "bootstrap/dashboard";
+@import "bootstrap/brochures";
 @import "bootstrap/product-detail";
 @import "bootstrap/product-lists";
 @import "bootstrap/global-search";
-@import "bootstrap/brochures";
-@import "bootstrap/images";
-@import "bootstrap/layouts";
 
 // Components w/ JavaScript
 @import "bootstrap/modals";

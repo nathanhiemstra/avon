@@ -41,7 +41,7 @@
  
     {% set isActive = true %}
     {% for item in items %}
-      {% include "_includes/groups/boxes/primary/item.html.twig" with { src: item.imgPath, active: isActive } %}
+      {% include "_includes/groups/boxes/primary/item.html.twig" with { src: item.imgPath, active: isActive, loopIndex: loop.index } %}
       {% set isActive = null %}
     {% endfor %}
 
