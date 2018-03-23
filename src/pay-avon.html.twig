@@ -133,7 +133,8 @@
                 <!-- START - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
                 <!-- Developer note: This gets shown when this radio is selected. It relies on "data-toggle" and "data-target". Demo: aqw3^ -->
                 <!-- Developer note: Add class has-error if there is an error. -->
-                <div id="collapse-quickpay-pin" class="form-group has-error panel-collapse in mb-3 pt-3">
+                <div id="collapse-quickpay-pin" class="form-group has-error panel-collapse in mb-3 pt-3 ml-5">
+                <div class="ml-3">
                   <span>Please enter your 4-digit PIN code:</span>
                   <input type="text" class="input-sm mb-3 text-default" size="7" maxlength="4" placeholder="&bull;&bull;&bull;&bull;">
                   <a href="javascript:void(0)" data-toggle="modal" data-target="#generic-modal" class="lt-icon lt-tip lt-sm align-middle no-underline"
@@ -156,6 +157,7 @@
                   <!-- Developer note: Show if there is an error. -->
 
                     <p class="text-danger small"><b>Field PIN is mandatory, please fill it in.</b></p>
+                  </div>
 
                 </div>
                 <!-- END - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
@@ -216,7 +218,7 @@
 
               <div class="ml-sm-4">
                 <div class="row">
-                  <div class="col-sm-6">
+                  <div class="col-sm-6 ml-5">
                     <div class="form-group">
                     <p class="mb-3 mt-2 font-weight-bold text-muted small">Card Number</p>
 
@@ -346,24 +348,24 @@
                       {# MODAL - PAY AVAON REVIEW #}
                       {% include "_includes/modules/account/pay-avon-review-modal.html.twig" %}
                     </div>
+                </div>
 
-                    <div class="row">
-                      <div class="col-md-4 mt-4">
-                    <!-- START - Continue Button -->
-                    <a class="btn btn-primary btn-sm d-block" disabled="disabled" data-toggle="modal" data-target="#pay-avon-review">Continue</a>
-                    <!-- END - Continue Button -->
-                      </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3 col-md-2 mt-4">
+                <!-- START - Continue Button -->
+                <a class="btn btn-primary btn-sm d-block" disabled="disabled" data-toggle="modal" data-target="#pay-avon-review">Continue</a>
+                <!-- END - Continue Button -->
+                  </div>
 
-                      <div class="col-md-4 mt-4">
-                    <!-- START - Continue Button -->
-                    <a class="btn btn-primary btn-sm d-block" data-toggle="modal" data-target="#blank-modal-either-or">Continue</a>
-                    <!-- END - Continue Button -->
-                      </div>
-                    </div>
-
-
+                  <div class="col-sm-3 col-md-2 mt-4">
+                <!-- START - Continue Button -->
+                <a class="btn btn-primary btn-sm d-block" data-toggle="modal" data-target="#blank-modal-either-or">Continue</a>
+                <!-- END - Continue Button -->
                   </div>
                 </div>
+
+
               </div>
             </div>
           </div>
