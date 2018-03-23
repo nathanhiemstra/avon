@@ -217,6 +217,6 @@ $(document).ready(function () {
   if (typeof ProductFilters !== 'undefined') ProductFilters.init();
   if (typeof SecondaryNav !== 'undefined') SecondaryNav.init();
   if (typeof YourOrderCartsTab !== 'undefined') YourOrderCartsTab.init();
-  if (typeof dashboard !== 'undefined') dashboard.init();
+  if (typeof dashboardDemo !== 'undefined') dashboardDemo.init();
 
 });

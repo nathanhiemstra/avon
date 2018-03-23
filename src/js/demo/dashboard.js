@@ -4,23 +4,24 @@
  */
 
 
-var dashboard = (function () {
+var dashboardDemo = (function () {
 
   var $els = {};
 
   // public methods
   var init = function () {
 
+    console.log('dashboard.js'); 
+
     // grab the DOM els we need
     $els = {
       changeWidgetTriggers:   $('.container--dashboard #widgets-my .change-widget-trigger'),
-      changeWidgetGroup:      $('#carousel-select-widget-modal .widget-img'),
-      myCurrentWidgetGroup:    $('.container--dashboard #widgets-my .widget-img'),
+      carouselIndicators:     $('#select-widget-modal .carousel-indicators'),
       selectWidgetTrigger:    $('#select-widget-modal #select-widget-trigger'),
       
-      
-
     };
+
+    var candidateForChangeNum;
 
     _addListeners();
   };
@@ -28,64 +29,34 @@ var dashboard = (function () {
   // private methods
   var _addListeners = function () {
 
-  
-    // $els.checkboxGroup.on('click', function() {
-    //   _updateBadgeCount(this);
-    // });
+     // Click change widget trigger
+    $els.changeWidgetTriggers.on('click', function() {
+      _markCandidateForChange(this);
+    });
 
-
-    // Click change widget trigger
-
-    // Mark which of "My Widgets" is candidate for change
-
-    // When "Select Widget" is clicked, find out which widget was chosen and update 
-
-    // Update the "candidate" widget wit teh selected widget
+     // When "Select Widget" is clicked, 
+    $els.selectWidgetTrigger.on('click', function() {
+      _swapWidget();
+    });
 
   };
 
-  // When modal opens move filters into it
-  // var _moveMarkupToModal = function() {
-  //   $els.form.detach().appendTo($els.containerModal)
-  // };
-
-  // // When modal closes move back to default location
-  // var _moveMarkupOutOfModal = function() {
-  //   $els.form.detach().appendTo($els.containerDesktop)
-  // };
+  // Mark which of "My Widgets" is candidate for change
+  var _markCandidateForChange = function(itemClicked) {
+    var $parent = $(itemClicked).parents('.toolbar');
+    candidateForChangeNum = ($('.badge', $parent ).text() -1);
+  };
 
 
-  // var _updateBadgeCount = function(itemClicked) {
+  var _swapWidget = function(itemClicked) {
+    // Find out which widget is currently visible 
+    var currentVisibleWidgetNum = ($els.carouselIndicators.find('.active').data('slide-to') + 1);
 
-  //   // Find out how many checkboxes are checked
-  //   var $parent = $(itemClicked).parents('.form-group');
-  //   var $badge = $('.badge',$parent );
-  //   var checkedCount = $( "input:checked" ,$parent).length;
+    // Update the "candidate" widget with the selected widget
+    $('.container--dashboard #widgets-my .widget-img:eq(' + candidateForChangeNum + ')').attr('src','images/fpo/home/' + currentVisibleWidgetNum + '.png');
+  };
 
-  //   // Update number in badge
-  //   $badge.text( checkedCount );
-  //   if ( checkedCount == 0 ) {
-  //     $badge.addClass('d-none');
-  //   } else {
-  //     $badge.removeClass('d-none');
-  //   }
-  // };
-
-  // var _preventCollapsedForDesktop = function(e) {
-
-  //   // See if we're at "mobile" width by testing if this icon is visible
-  //   var numberOfVisibeIcons = $('.aside-product-filters .filter-collapse--icon:eq(0):visible').length;
-
-  //   // If we're wider than mobile width, prevent collapse
-  //   if (numberOfVisibeIcons == 0) {
-  //     e.preventDefault();
-  //   }
-  // }
-
-  // var _cleanupCollapsedForDesktop = function(itemCollpsed) {
-  //   // Remove inline style height:0 so if browser window is widened past mobile, checkboxes in a collapsed become visible
-  //   $(itemCollpsed).css( "height", "" );
-  // }
+  
 
 
   return {
