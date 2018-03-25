@@ -20,27 +20,29 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
-  <h5>Enroll in QuickPAY</h5>
-  <p>Enroll in Avon's secure online payment system, QuickPAY, and never worry about mailing a check again. With QuickPAY, you...</p>
-  <p class="font-weight-bold">To get started, complete the form below as part of a three-step online process.</p>
+  <h4 class="text-center my-4">Enroll in QuickPAY!</h4>
+  <p class="text-center">Enroll in Avon's secure online payment system, QuickPAY, and never worry about mailing a check again. With QuickPAY, you...</p>
+  <p class="text-center font-weight-bold">To get started, complete the form below as part of a three-step online process.</p>
 
   <form role="form">
     <div class="form-group">
-      <label class="control-label">Name on Account*</label>
+      <label class="control-label">Name on Account</label>
       {% include components.elements.forms.input with {
         placeholder: 'Janet Jo'
       } %}
     </div>
 
     <div class="form-group">
-      <label class="control-label">Routing Number*</label>
+      <label class="control-label">Routing Number</label>
+      <span class="lt-icon lt-tip lt-medium align-middle"></span>
       {% include components.elements.forms.input with {
         placeholder: '01340013'
       } %}
     </div>
 
     <div class="form-group">
-      <label class="control-label">Bank Name*</label>
+      <label class="control-label">Bank Name</label>
+      <span class="lt-icon lt-tip lt-medium align-middle"></span>
       {% include components.elements.forms.input with {
         placeholder: 'Citi'
       } %}
@@ -48,14 +50,15 @@
     </div>
 
     <div class="form-group">
-      <label class="control-label">Checking Account Number*</label>
+      <label class="control-label">Checking Account Number</label>
+      <span class="lt-icon lt-tip lt-medium align-middle"></span>
       {% include components.elements.forms.input with {
         placeholder: '83095345'
       } %}
     </div>
 
     <div class="form-group">
-      <label class="control-label">Mother's Maiden Name*</label>
+      <label class="control-label">Mother's Maiden Name</label>
       {% include components.elements.forms.input with {
         placeholder: 'Williams'
       } %}

@@ -53,6 +53,14 @@ html:hover [class^="lt-"] {
   font-size: $icon-size-sm;
 }
 
+// global adjustments for our icon font in various scenarios
+.lt-icon {
+  // nudge icons up slightly with align-middle
+  &.align-middle {
+    margin-bottom: 2px;
+  }
+}
+
 [class^="lt-"].after:before, [class*=" lt-"].after:before {
 	display: none;
 	content: '';
