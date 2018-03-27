@@ -1,0 +1,68 @@
+<section class="list-group box-emphasize">
+
+  <div class="list-group-item">
+
+    <h6 class="mb-4">Order Overview</h6>
+
+    <div class="item-count">
+      {% include '_includes/modules/checkout/elements/product-table-collapsible.html.twig' with {
+        id: 'item-count',
+        desc: '3 Items in order',
+        expanded: true,
+        borderBottom: true
+      } %}
+    </div>
+
+    <div class="free-items">
+      {% include '_includes/modules/checkout/elements/product-table-collapsible.html.twig' with {
+        id: 'free-items',
+        desc: '3 Free items',
+        expanded: false,
+        borderBottom: true
+      } %}
+    </div>
+
+    <div class="additional-shipping">
+      {% include '_includes/modules/checkout/elements/product-table-collapsible.html.twig' with {
+        id: 'additional-shipping',
+        desc: '3 Additional Shipping Items',
+        expanded: false,
+        borderBottom: false
+      } %}
+    </div>
+
+    <dl class="clearfix my-2 border-top pt-4 text-muted">
+      <dt class="pull-left">Shipping</dt>
+      <dd class="pull-right text-right">+ $XX.XX</dd>
+    </dl>
+    <dl class="clearfix my-2 text-muted">
+      <dt class="pull-left">Taxes</dt>
+      <dd class="pull-right text-right">+ $XX.XX</dd>
+    </dl>
+    <dl class="clearfix my-2 pb-4 text-muted">
+      <dt class="pull-left">Earnings/Discount</dt>
+      <dd class="pull-right text-right">- $XX.XX</dd>
+    </dl>
+
+    <dl class="clearfix my-2 text-primary border-y py-4">
+      <dt class="pull-left">ORDER TOTAL:</dt>
+      <dd class="pull-right text-right">
+        <b>$XXX.XX</b>
+      </dd>
+    </dl>
+
+    <dl class="clearfix my-2 text-muted">
+      <dt class="pull-left">Account balance<span class="lt-icon lt-info lt-medium ml-2 align-middle"></span></dt>
+      <dd class="pull-right text-right">
+        - $XX.XX
+      </dd>
+    </dl>
+    <dl class="clearfix my-2">
+      <dt class="pull-left"><strong>Pay this amount</strong></dt>
+      <dd class="pull-right text-right">
+        <b>$XXX.XX</b>
+      </dd>
+    </dl>
+  </div>
+
+</section>

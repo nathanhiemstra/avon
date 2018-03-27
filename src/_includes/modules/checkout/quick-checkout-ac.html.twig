@@ -9,8 +9,14 @@
       <dd class="pull-right text-right">+ $XX.XX</dd>
     </dl>
     <dl class="clearfix my-2 text-muted">
-      <dt class="pull-left">Order Total</dt>
-      <dd class="pull-right text-right">+ $XX.XX</dd>
+      <dt class="pull-left">Amount to pay</dt>
+      <dd class="pull-right text-right">{% include components.elements.forms.input with {
+       classes: 'form-control-inline',
+       type: 'number',
+       placeholder: '$0.00',
+       maxlength: '',
+       size: '12'
+     } %}</dd>
     </dl>
     <dl class="clearfix my-4 py-4 border-y">
       <dt class="pull-left">Credit after purchase</dt>
