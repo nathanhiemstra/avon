@@ -49,8 +49,28 @@
   {# OTHER BUTTON STYLES #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 
-  <h2 id="buttons-options">Other Button Styles</h2>
+  <h2 id="buttons-other">Other Button Styles</h2>
   <p>Other button styles which might come in handy.</p>
+
+  <h4>Soft Button</h4>
+  <p>Button with normal text and rounded corners</p>
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Note</h4>
+    <p><code>.btn-soft</code> is a modifier, meaning that it requires a base class to work. For example, you can add it to a <code>.btn-primary</code> element or a <code>.btn-default</code> but it won't work on it's own.</p>
+  </div>
+
+  <div class="bs-example">
+    <button type="button" class="btn btn-default btn-soft">Soft Default</button>
+    <button type="button" class="btn btn-primary btn-soft">Soft Primary</button>
+    <button type="button" class="btn btn-warning btn-soft btn-sm">Small Soft Warning</button>
+    <button type="button" class="btn btn-danger btn-soft btn-lg">Large Soft Danger</button>
+  </div>
+
+  {{ highlightMarkup }}
+  <!-- Transparent light button -->
+  <button type="button" class="btn btn-outlined">Outlined Button</button>
+  {{ endhighlight }}
 
   <h4>Transparent Light Button</h4>
   <p>A light colored button with a transparent background that sits well on darker colors.</p>
@@ -78,6 +98,17 @@
   <div class="p-4" style="background-color: #ED008C;">
     <button type="button" class="btn btn-primary-responsive">Primary Responsive</button>
   </div>
+  {{ endhighlight }}
+
+  <h4>Outlined Button</h4>
+  <p>Muted outline button</p>
+  <div class="bs-example">
+    <button type="button" class="btn btn-outlined">Outlined Button</button>
+  </div>
+
+  {{ highlightMarkup }}
+  <!-- Transparent light button -->
+  <button type="button" class="btn btn-outlined">Outlined Button</button>
   {{ endhighlight }}
 
 
