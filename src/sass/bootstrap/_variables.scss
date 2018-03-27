@@ -42,6 +42,7 @@ $brand-info: $blue !default;
 $brand-warning: $orange !default;
 $brand-danger: $red !default;
 $brand-disabled: $gray-light !default;
+$brand-discourage: $black !default;
 
 //== Scaffolding
 //
@@ -252,6 +253,10 @@ $btn-warning-border: $brand-warning !default;
 $btn-danger-color: $white !default;
 $btn-danger-bg: $brand-danger !default;
 $btn-danger-border: $brand-danger !default;
+
+$btn-discourage-color: $brand-discourage !default;
+$btn-discourage-bg: $white !default;
+$btn-discourage-border: $brand-discourage !default;
 
 $btn-disabled-color: $brand-disabled !default;
 $btn-disabled-bg: $brand-disabled !default;
