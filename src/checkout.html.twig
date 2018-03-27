@@ -33,13 +33,11 @@
             <!-- END - BALANCE REMAINING -->
 
             <!--START: ADD/CHOOSE PAYMENT METHOD-->
-            {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {headline: 'Add Payment Method'} %}
-            {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {headline: 'Choose Payment Method'} %} <!-- TODO NOTE: This is almost identical to the 'Add Payment Method' module above but needs to have a "split payments" option at the bottom as seen here: http://cloud.wondergiant.com/3E3L3U023n2D -->
+            {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {headline: 'Choose Payment Method', hasSplitPayment:true} %}
             <!-- END - ADD/CHOOSE PAYMENT METHOD -->
 
             <!-- START - PAYMENTS -->
-            {% include '_includes/modules/checkout/module-payments.html.twig' %}
-            {% include '_includes/modules/checkout/module-payments.html.twig' %} <!-- TODO NOTE: The second instance of this needs to be modified slightly to show other options as seen here: http://cloud.wondergiant.com/3g3t402y370b  -->
+            {% include '_includes/modules/checkout/quick-checkout-payments.html.twig' with {headline: 'Payments'} %}
             <!-- END - PAYMENTS -->
 
             <!-- START: PAY WITH AVON CREDIT-->

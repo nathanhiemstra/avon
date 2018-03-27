@@ -7,36 +7,26 @@
       <h6 class="mb-3">{{ headline }}</h6>
     </div>
 
-    <div class="clearfix border-bottom py-4">
-      <div class="pull-left mr-3">
-        <img src="/images/icons/payment-visa.svg">
-      </div>
-      <div class="pull-left">
-        Credit Card
-      </div>
-    </div>
+    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'Credit card',
+      icon: '/images/icons/payment-visa.svg',
+      subhead: null,
+      amount: null
+    } %}
 
-    {% if not hideAvonCredit  %}
-    <div class="clearfix border-bottom py-4">
-      <div class="pull-left mr-3">
-        <img src="/images/icons/payment-avoncredit.svg">
-      </div>
-      <div class="pull-left">
-        Avon Credit Line <br>
-        <span class="text-muted d-block">($85 available!)</span>
-      </div>
-    </div>
-    {% endif %}
+    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'Avon Credit Line',
+      icon: '/images/icons/payment-avoncredit.svg',
+      subhead: '($85 available!)',
+      amount: null
+    } %}
 
-
-    <div class="clearfix border-bottom py-4">
-      <div class="pull-left mr-3">
-        <img src="/images/icons/payment-quickpay.svg">
-      </div>
-      <div class="pull-left">
-        QuickPAY
-      </div>
-    </div>
+    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'QuickPAY',
+      icon: '/images/icons/payment-quickpay.svg',
+      subhead: null,
+      amount: null
+    } %}
 
     {% if hasSplitPayment %}
     <div class="clearfix pt-4">
