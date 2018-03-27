@@ -9,8 +9,19 @@
       <dd class="pull-right text-right">+ $XX.XX</dd>
     </dl>
     <dl class="clearfix my-2 text-muted">
-      <dt class="pull-left">Order Total</dt>
-      <dd class="pull-right text-right">+ $XX.XX</dd>
+      <div class="form-group py-3">
+         <!-- <label class="control-label d-block mb-2">Amount to pay</label> -->
+         <dt class="pull-left">Amount to pay</dt>
+         <!-- DEV NOTE :: to disable input, add 'disabled' attribute -->
+         {% include components.elements.forms.input with {
+          classes: 'form-control-inline pull-right text-right',
+          type: 'number',
+          placeholder: '+ $XX.XX',
+          size: '8'
+        } %}
+      </div>
+      <!-- <dt class="pull-left">Order Total</dt>
+      <dd class="pull-right text-right">+ $XX.XX</dd> -->
     </dl>
     <dl class="clearfix my-4 py-4 border-y">
       <dt class="pull-left">Credit after purchase</dt>
