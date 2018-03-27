@@ -1,21 +1,25 @@
-{% if type is empty %}
-  {% set type = 'Undefined Method' %}
-{% endif %}
-
-{% if icon is empty %}
-  {% set icon = '/images/icons/payment-avoncredit.svg' %}
-{% endif %}
-
-{% if amount is empty %}
-  {% set amount = '$00.00' %}
-{% endif %}
+<!--
+Parameters:
+  amount (dollar amount '$0.00')
+  type (name of payment type 'VISA ending in 1234')
+  icon (path to payment icon '/images/icons/payment-avoncredit.svg')
+  subhead (secondary info that appears under the payment type '$85 available' or 'Transaction ID: 12345')
+-->
 
 <div class="clearfix my-2 border-bottom py-3">
-  <div class="clearfix">
-    <div class="pull-left"><img class="mr-2" src="{{ icon }}"> {{ type }}</div>
-    <div class="pull-right text-right">{{ amount }}</div>
+  {% if icon %}
+    <div class="pull-left mr-4">
+      <img src="{{ icon }}">
+    </div>
+  {% endif %}
+  <div class="pull-left">
+    <div>{{ type }}</div>
+    {% if subhead %}<div class="text-muted small">{{ subhead }}</div>{% endif %}
   </div>
-  <div class="pull-right small mt-2">
-    <a class="underline" href="#">Edit</a> | <a class="underline" href="#">Remove</a>
+  <div class="pull-right text-right">
+    {% if amount %}
+      <div>{{ amount }}</div>
+      <div class="small"><a class="underline" href="#">Edit</a> | <a class="underline" href="#">Remove</a></div>
+    {% endif %}
   </div>
 </div>
