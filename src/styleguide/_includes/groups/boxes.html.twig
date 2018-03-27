@@ -1,0 +1,449 @@
+<div class="bs-docs-section">
+
+
+  <h1 id="boxes" class="page-header">Boxes</h1>
+
+
+
+  <h3 id="boxes-emphasis">Emphasis Box</h3>
+  <p>Adds shadow and rounded corners</p>
+
+
+  <div class="bs-example">
+    <div class="box-emphasize">
+      <p class="m-0 p-5">{{ fpo.paragraph }}</p>
+    </div>
+  </div>
+
+  {{ highlightMarkup }}
+  <div class="box-emphasize">
+    ...
+  </div>
+  {{ endhighlight }}
+
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!-- PRIMARY BOX GROUP -->
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+  <h3 id="boxes-primary">Primary Box Group</h3>
+  <p>On tablet forces boxes to stack in groups of two.</p>
+  <div class="bs-callout bs-callout-info">
+    Key class: <strong>.box-group--primary</strong>
+  </div>
+
+  <div class="bs-example">
+   {% include "_includes/groups/boxes/primary/item-container.html.twig" with {
+      hasToolbar: null,
+      items: {
+        item1: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item2: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item3: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item4: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item5: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item6: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item7: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item8: {
+          imgPath: 'data-src="holder.js/220x250"'
+        }
+      }
+    } %}
+  </div><!-- /.bs-example -->
+  {{ highlightMarkup }}
+    <div class="box-group--primary">
+      <div class="item">
+        <div class="box-group--item box-emphasize">
+          <div class="item-content">
+            ...
+          </div>
+        </div> <!-- /.box-group-item -->
+      </div> <!-- /.item -->
+    </div>
+  {{ endhighlight }}
+
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+     &#123;% include "_includes/groups/boxes/primary/item-container.html.twig" with {
+      hasToolbar: null,
+      items: {
+        item1: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item2: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item3: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item4: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item5: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item6: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item7: {
+          imgPath: 'data-src="holder.js/220x250"'
+        },
+        item8: {
+          imgPath: 'data-src="holder.js/220x250"'
+        }
+      }
+    } %}
+  </code></pre>
+
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!-- PRIMARY BOX GROUP WITH CAROUSEL -->
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+  <h3 id="boxes-primary-carousel">Primary Box Group with Carousel</h3>
+  <p>Builds on Primary Box Group by putting it inside a carousel.</p>
+  <div class="bs-callout bs-callout-info">
+    Key class: <strong>.box-group--primary-with-carousel</strong>
+  </div>
+
+
+
+  <div class="bs-example">
+   {% include "_includes/groups/boxes/primary/carousel-container.html.twig" with {
+    carouselId: 'carousel-demo-1',
+    hasToolbar: null,
+    items: {
+     item1: {
+        imgPath: 'data-src="holder.js/220x250"'
+      },
+      item2: {
+        imgPath: 'data-src="holder.js/220x250"'
+      },
+      item3: {
+        imgPath: 'data-src="holder.js/220x250"'
+      },
+      item4: {
+        imgPath: 'data-src="holder.js/220x250"'
+      }
+    }
+  } %}
+  </div><!-- /.bs-example -->
+  {{ highlightMarkup }}
+    <div id="carousel-demo-1" class="carousel slide box-group--primary-with-carousel" data-ride="carousel" data-interval="false">
+      <ol class="carousel-indicators">
+        ...
+      </ol>
+      <div class="carousel-inner box-group--primary">
+        <div class="item">
+          <div class="box-group--item box-emphasize">
+            <div class="item-content">
+              ...
+            </div>
+          </div><!-- /.box-group-item -->
+        </div><!-- /.item -->
+      </div>
+      <a class="left carousel-control" href="#carousel-demo-1" data-slide="prev">
+        <span class="lt-icon lt-left lt-large"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-demo-1" data-slide="next">
+        <span class="lt-icon lt-right lt-large"></span>
+      </a>
+    </div>
+  {{ endhighlight }}
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+     &#123;% include "_includes/groups/boxes/primary/carousel-container.html.twig" with {
+    carouselId: 'carousel-demo-1',
+    hasToolbar: null,
+    items: {
+     item1: {
+        imgPath: 'data-src="holder.js/220x250"'
+      },
+      item2: {
+        imgPath: 'data-src="holder.js/220x250"'
+      },
+      item3: {
+        imgPath: 'data-src="holder.js/220x250"'
+      },
+      item4: {
+        imgPath: 'data-src="holder.js/220x250"'
+      }
+    }
+  } %}
+  </code></pre>
+
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!-- PRIMARY BOX GROUP WITH CAROUSEL - HIDE CAROUSEL ON TABLET AND ABOVE-->
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+  <h3 id="boxes-primary-carousel-alt">Primary Box Group with Carousel - Alt</h3>
+  <p>This hides the carousel on tablet and above.</p>
+  <div class="bs-callout bs-callout-info">
+    Key class: Add <strong>.carousel--hide-on-tablet-and-above</strong> to <strong>box-group--primary-with-carousel</strong>
+  </div>
+
+
+  <div class="bs-example">
+   {% include "_includes/groups/boxes/primary/carousel-container.html.twig" with {
+    carouselId: 'carousel-demo-2',
+    itemContainerType: 'carouselBoxesCombo',
+    items: {
+     item1: {
+        imgPath: 'data-src="holder.js/220x250"'
+      },
+      item2: {
+        imgPath: 'data-src="holder.js/220x250"'
+      },
+      item3: {
+        imgPath: 'data-src="holder.js/220x250"'
+      },
+      item4: {
+        imgPath: 'data-src="holder.js/220x250"'
+      }
+    }
+  } %}
+  </div><!-- /.bs-example -->
+  {{ highlightMarkup }}
+    <div id="carousel-demo-2" class="carousel slide box-group--primary-with-carousel carousel--hide-on-tablet-and-above" data-ride="carousel" data-interval="false">
+      <ol class="carousel-indicators">
+        ...
+      </ol>
+      <div class="carousel-inner box-group--primary">
+        <div class="item">
+          <div class="box-group--item box-emphasize">
+            <div class="item-content">
+              ...
+            </div>
+          </div><!-- /.box-group-item -->
+        </div><!-- /.item -->
+      </div>
+      <a class="left carousel-control" href="#carousel-demo-2" data-slide="prev">
+        <span class="lt-icon lt-left lt-large"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-demo-2" data-slide="next">
+        <span class="lt-icon lt-right lt-large"></span>
+      </a>
+    </div>
+  {{ endhighlight }}
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+     &#123;% include "_includes/groups/boxes/primary/carousel-container.html.twig" with {
+    carouselId: 'carousel-demo-2',
+    itemContainerType: 'carouselBoxesCombo',
+    items: {
+     item1: {
+        imgPath: 'data-src="holder.js/220x250"'
+      },
+      item2: {
+        imgPath: 'data-src="holder.js/220x250"'
+      },
+      item3: {
+        imgPath: 'data-src="holder.js/220x250"'
+      },
+      item4: {
+        imgPath: 'data-src="holder.js/220x250"'
+      }
+    }
+  } %}
+  </code></pre>
+
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!-- SECONDARY BOX GROUP -->
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+  <h3 id="boxes-secondary">Secondary Box Group</h3>
+  <p>A box group that should be used with flex items. Title at the top, image below.</p>
+  <p><code>.img-respnsive</code> within the group has some constraints that work well for uniformity. The boxes will be 100% on monile, 50% on tablet, and 33% on desktop.</p>
+
+  <div class="bs-example">
+
+    <div class="row d-flex flex-wrap mt-5 box-group--secondary">
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 1</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 2</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 3</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 4</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+  </div><!-- /.bs-example -->
+
+  {{ highlightMarkup }}
+    <div class="row d-flex flex-wrap mt-5 box-group--secondary">
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 1</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 2</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 3</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 4</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+    </div>
+  {{ endhighlight }}
+
+
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!-- SINGLE BOX GROUP -->
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+  <h3 id="boxes-single">Single Box Group</h3>
+  <p>For enclosing a single box in a group container. The inner box has a two column flex layout ideal for and image on the left and other content right.</p>
+  <p>It collapses gracefully into a column on smaller screens.</p>
+
+  <div class="bs-example">
+
+    <div class="mt-5 p-5 box-emphasize box-group--single">
+
+      <div class="img">
+        <img src="../../images/utility/placeholder_thumb.png" alt="..." class="circular-img circular-img--lg">
+      </div>
+
+      <div class="p-0 p-md-4 content">
+
+        <div class="header">
+          <h5 class="text-capitalize mt-0 mb-2">Lydia Washington</h5>
+          <p class="text-muted">Issaquah, WA</p>
+        </div>
+
+        <div class="details">
+          <div class="column small">
+            <p class="mt-2"><strong>With Avon Since:</strong></p>
+            <p class="mt-2"><strong>Email:</strong></p>
+            <p class="mt-2"><strong>Phone Number:</strong></p>
+          </div>
+          <div class="column small">
+            <p class="mt-2">Nov 16, 2000</p>
+            <p class="mt-2"><a href="#">lydiachancelorwashington@gmail.com</a></p>
+            <p class="mt-2"><a href="#">(555) 555-1234</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.bs-example -->
+
+  {{ highlightMarkup }}
+  <div class="mt-5 p-5 box-emphasize box-group--single">
+
+    <div class="img">
+      <img src="../../images/utility/placeholder_thumb.png" alt="..." class="circular-img circular-img--lg">
+    </div>
+
+    <div class="p-0 p-md-4 content">
+
+      <div class="header">
+        <h5 class="text-capitalize mt-0 mb-2">Lydia Washington</h5>
+        <p class="text-muted">Issaquah, WA</p>
+      </div>
+
+      <div class="details">
+        <div class="column small">
+          <p class="mt-2"><strong>With Avon Since:</strong></p>
+          <p class="mt-2"><strong>Email:</strong></p>
+          <p class="mt-2"><strong>Phone Number:</strong></p>
+        </div>
+        <div class="column small">
+          <p class="mt-2">Nov 16, 2000</p>
+          <p class="mt-2"><a href="#">lydiachancelorwashington@gmail.com</a></p>
+          <p class="mt-2"><a href="#">(555) 555-1234</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ endhighlight }}
+
+
+
+
+
+
+</div>

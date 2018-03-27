@@ -18,7 +18,7 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
     title:        "Body",
-    slug:         "page-bosy",
+    slug:         "page-body",
     snippet:      '
     <body>
       <section id="avon-poc">
@@ -34,7 +34,6 @@
     </body>'
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
-
 
 
 
@@ -56,17 +55,17 @@
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# COLUMN 10 - Centered #}
+  {# COLUMN 10 - Max #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Column: 10 - Centered",
-    slug:         "columns-10-centered",
+    title:        "Column: 10 - Max",
+    slug:         "columns-10-max",
     snippet:      '
     <div class="container">
       <div class="row">
-        <main class="col-md-10 col-md-offset-1">
+        <div class="col-md-10 col-md-offset-1">
           <p>' ~ fpo.paragraph ~ '</p>
-        </main>
+        </div>
       </div>
     </div>'
   }%}
@@ -75,11 +74,35 @@
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# COLUMN 8 - Centered #}
+  {# COLUMN 10 - Max 3x9 #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Column: 8 - Centered",
-    slug:         "columns-8-centered",
+    title:        "Column: 10 - Max, Inner 3x9",
+    slug:         "columns-10-max-3x9",
+    snippet:      '
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <aside class="col-md-3" role="complementary">
+            <p>' ~ fpo.paragraph ~ '</p>
+          </aside>
+          <main class="col-md-9" role="main">
+            <p>' ~ fpo.paragraph ~ '</p>
+          </main>
+        </div>
+      </div>
+    </div>'
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMN 8 - Max #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Column: 8 - Max",
+    slug:         "columns-8-max",
     snippet:      '
     <div class="container">
       <div class="row">
@@ -92,24 +115,26 @@
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
 
+
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# COLUMN 9 - Left Aligned #}
+  {# COLUMNS 8x4 #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Column: 9 - Left Aligned",
-    slug:         "columns-9",
+    title:        "Columns: 8x4",
+    slug:         "columns-8-x-4",
     snippet:      '
     <div class="container">
       <div class="row">
-        <main class="col-md-9" role="main">
+        <main class="col-md-8" role="main">
           <p>' ~ fpo.paragraph ~ '</p>
         </main>
+        <aside class="col-md-4" role="complementary">
+          <p>' ~ fpo.paragraph ~ '</p>
+        </aside>
       </div>
     </div>'
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
-
-
 
 
 
