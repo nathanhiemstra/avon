@@ -13,7 +13,7 @@
       {# DEFINE BLOCK - MAIN #}
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
-        
+
         <!--START: AVON BUZZ LOGO-->
         <div class="py-4">
           <h2 class="text-uppercase text-center">Beauty Buzz</h2>
@@ -32,190 +32,27 @@
 
           <!-- START: TAB PANES -->
           <div class="tab-content">
-            <div class="tab-pane active" id="buzz-1">
 
-              <!-- START: PANEL -->
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  <h4 class="text-center"> {{ fpo.sentence }} {{ fpo.sentence }}</h4>
-                  <p class="text-center text-muted">September 25, 2018</p>
-                  <img class="img-responsive" src="images/utility/placeholder-panoramic.png" alt="">
-                  <div class="py-4">
-                    {{ fpo.paragraph }}
-                  </div>
-                </div>
-              </div>
-             <!-- END: PANEL -->
+            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
+              id: 'buzz-1',
+              classes: 'active'
+            } %}
 
-              <hr>
-              
-              <!-- START: PANEL -->
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  <h4 class="text-center"> {{ fpo.sentence }} {{ fpo.sentence }}</h4>
-                  <p class="text-center text-muted">September 25, 2018</p>
-                  <img class="img-responsive" src="images/utility/placeholder-panoramic.png" alt="">
-                  <div class="py-4">
-                    {{ fpo.paragraph }}
-                  </div>
-                </div>
-              </div>
-              <!-- END: PANEL -->
+            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
+              id: 'buzz-2',
+              classes: ''
+            } %}
 
-              <hr>
-              
-              <!-- START: PANEL -->
-              <div class="panel panel-default m-0">
-                <div class="panel-body">
-                  <h4 class="text-center"> {{ fpo.sentence }} {{ fpo.sentence }}</h4>
-                  <p class="text-center text-muted">September 25, 2018</p>
-                  <img class="img-responsive" src="images/utility/placeholder-panoramic.png" alt="">
-                  <div class="py-4">
-                    {{ fpo.paragraph }}
-                  </div>
-                </div>
-              </div>
-              <!-- END: PANEL -->
+            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
+              id: 'buzz-3',
+              classes: ''
+            } %}
 
-            </div>
-            <div class="tab-pane" id="buzz-2">
+            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
+              id: 'buzz-4',
+              classes: ''
+            } %}
 
-              <!-- START: PANEL -->
-               <div class="panel panel-default">
-                <div class="panel-body">
-                  <h4 class="text-center"> {{ fpo.sentence }} {{ fpo.sentence }}</h4>
-                  <p class="text-center text-muted">September 25, 2018</p>
-                  <img class="img-responsive" src="images/utility/placeholder-panoramic.png" alt="">
-                  <div class="py-4">
-                    {{ fpo.paragraph }}
-                  </div>
-                </div>
-              </div>
-              <!-- END: PANEL -->
-
-              <hr>
-              
-              <!-- START: PANEL -->
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  <h4 class="text-center"> {{ fpo.sentence }} {{ fpo.sentence }}</h4>
-                  <p class="text-center text-muted">September 25, 2018</p>
-                  <img class="img-responsive" src="images/utility/placeholder-panoramic.png" alt="">
-                  <div class="py-4">
-                    {{ fpo.paragraph }}
-                  </div>
-                </div>
-              </div>
-              <!-- END: PANEL -->
-
-              <hr>
-              
-              <!-- START: PANEL -->
-              <div class="panel panel-default m-0">
-                <div class="panel-body">
-                  <h4 class="text-center"> {{ fpo.sentence }} {{ fpo.sentence }}</h4>
-                  <p class="text-center text-muted">September 25, 2018</p>
-                  <img class="img-responsive" src="images/utility/placeholder-panoramic.png" alt="">
-                  <div class="py-4">
-                    {{ fpo.paragraph }}
-                  </div>
-                </div>
-              </div>
-              <!-- END: PANEL -->
-
-            </div>
-            <div class="tab-pane" id="buzz-3">
-
-              <!-- START: PANEL -->
-               <div class="panel panel-default">
-                <div class="panel-body">
-                  <h4 class="text-center"> {{ fpo.sentence }} {{ fpo.sentence }}</h4>
-                  <p class="text-center text-muted">September 25, 2018</p>
-                  <img class="img-responsive" src="images/utility/placeholder-panoramic.png" alt="">
-                  <div class="py-4">
-                    {{ fpo.paragraph }}
-                  </div>
-                </div>
-              </div>
-              <!-- END: PANEL -->
-
-              <hr>
-
-              <!-- START: PANEL -->
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  <h4 class="text-center"> {{ fpo.sentence }} {{ fpo.sentence }}</h4>
-                  <p class="text-center text-muted">September 25, 2018</p>
-                  <img class="img-responsive" src="images/utility/placeholder-panoramic.png" alt="">
-                  <div class="py-4">
-                    {{ fpo.paragraph }}
-                  </div>
-                </div>
-              </div>
-              <!-- END: PANEL -->
-
-              <hr>
-              
-              <!-- START: PANEL -->
-              <div class="panel panel-default m-0">
-                <div class="panel-body">
-                  <h4 class="text-center"> {{ fpo.sentence }} {{ fpo.sentence }}</h4>
-                  <p class="text-center text-muted">September 25, 2018</p>
-                  <img class="img-responsive" src="images/utility/placeholder-panoramic.png" alt="">
-                  <div class="py-4">
-                    {{ fpo.paragraph }}
-                  </div>
-                </div>
-              </div>
-              <!-- END: PANEL -->
-
-            </div>
-            <div class="tab-pane" id="buzz-4">
-
-              <!-- START: PANEL -->
-               <div class="panel panel-default">
-                <div class="panel-body">
-                  <h4 class="text-center"> {{ fpo.sentence }} {{ fpo.sentence }}</h4>
-                  <p class="text-center text-muted">September 25, 2018</p>
-                  <img class="img-responsive" src="images/utility/placeholder-panoramic.png" alt="">
-                  <div class="py-4">
-                    {{ fpo.paragraph }}
-                  </div>
-                </div>
-              </div>
-              <!-- END: PANEL -->
-
-              <hr>
-              
-              <!-- START: PANEL -->
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  <h4 class="text-center"> {{ fpo.sentence }} {{ fpo.sentence }}</h4>
-                  <p class="text-center text-muted">September 25, 2018</p>
-                  <img class="img-responsive" src="images/utility/placeholder-panoramic.png" alt="">
-                  <div class="py-4">
-                    {{ fpo.paragraph }}
-                  </div>
-                </div>
-              </div>
-              <!-- END: PANEL -->
-
-              <hr>
-              
-              <!-- START: PANEL -->
-              <div class="panel panel-default m-0">
-                <div class="panel-body">
-                  <h4 class="text-center"> {{ fpo.sentence }} {{ fpo.sentence }}</h4>
-                  <p class="text-center text-muted">September 25, 2018</p>
-                  <img class="img-responsive" src="images/utility/placeholder-panoramic.png" alt="">
-                  <div class="py-4">
-                    {{ fpo.paragraph }}
-                  </div>
-                </div>
-              </div>
-              <!-- END: PANEL -->
-
-            </div>
           </div>
           <!-- END: TAB PANES -->
 
