@@ -5,9 +5,17 @@
 {% block header %}
   <!-- START - HEADER -->
   <div class="no-reverse-bg">
+    {% include "_includes/modules/global/header.html.twig" %}
+
+    {# TODO :: Leaving the simple header commented out for now, remove later
+            :: once we've confirmed this is permanent
+
     {% include "_includes/modules/global/simple-header.html.twig" with {
       'title': 'Checkout'
     } %}
+
+    ######}
+
   </div><!-- /.no-reverse-bg -->
   <!-- END - HEADER -->
 {% endblock %}
