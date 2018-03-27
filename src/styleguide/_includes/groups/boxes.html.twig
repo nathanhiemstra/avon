@@ -1,5 +1,5 @@
 <div class="bs-docs-section">
-  
+
 
   <h1 id="boxes" class="page-header">Boxes</h1>
 
@@ -33,7 +33,7 @@
   </div>
 
   <div class="bs-example">
-   {% include "_includes/groups/boxes/primary/item-container.html.twig" with { 
+   {% include "_includes/groups/boxes/primary/item-container.html.twig" with {
       hasToolbar: null,
       items: {
         item1: {
@@ -76,7 +76,7 @@
   {{ endhighlight }}
 
   <pre class="language-markup code-toolbar"><code class="language-twig">
-     &#123;% include "_includes/groups/boxes/primary/item-container.html.twig" with { 
+     &#123;% include "_includes/groups/boxes/primary/item-container.html.twig" with {
       hasToolbar: null,
       items: {
         item1: {
@@ -121,8 +121,8 @@
 
 
   <div class="bs-example">
-   {% include "_includes/groups/boxes/primary/carousel-container.html.twig" with { 
-    carouselId: 'carousel-demo-1', 
+   {% include "_includes/groups/boxes/primary/carousel-container.html.twig" with {
+    carouselId: 'carousel-demo-1',
     hasToolbar: null,
     items: {
      item1: {
@@ -163,8 +163,8 @@
     </div>
   {{ endhighlight }}
   <pre class="language-markup code-toolbar"><code class="language-twig">
-     &#123;% include "_includes/groups/boxes/primary/carousel-container.html.twig" with { 
-    carouselId: 'carousel-demo-1', 
+     &#123;% include "_includes/groups/boxes/primary/carousel-container.html.twig" with {
+    carouselId: 'carousel-demo-1',
     hasToolbar: null,
     items: {
      item1: {
@@ -196,8 +196,8 @@
 
 
   <div class="bs-example">
-   {% include "_includes/groups/boxes/primary/carousel-container.html.twig" with { 
-    carouselId: 'carousel-demo-2', 
+   {% include "_includes/groups/boxes/primary/carousel-container.html.twig" with {
+    carouselId: 'carousel-demo-2',
     itemContainerType: 'carouselBoxesCombo',
     items: {
      item1: {
@@ -238,8 +238,8 @@
     </div>
   {{ endhighlight }}
   <pre class="language-markup code-toolbar"><code class="language-twig">
-     &#123;% include "_includes/groups/boxes/primary/carousel-container.html.twig" with { 
-    carouselId: 'carousel-demo-2', 
+     &#123;% include "_includes/groups/boxes/primary/carousel-container.html.twig" with {
+    carouselId: 'carousel-demo-2',
     itemContainerType: 'carouselBoxesCombo',
     items: {
      item1: {
@@ -264,16 +264,111 @@
   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
   <h3 id="boxes-secondary">Secondary Box Group</h3>
-  <p>TODO: description</p>
-  
+  <p>A box group that should be used with flex items. Title at the top, image below.</p>
+  <p><code>.img-respnsive</code> within the group has some constraints that work well for uniformity. The boxes will be 100% on monile, 50% on tablet, and 33% on desktop.</p>
+
   <div class="bs-example">
-    TODO: Example
+
+    <div class="row d-flex flex-wrap mt-5 box-group--secondary">
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 1</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 2</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 3</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 4</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+    </div>
+
   </div><!-- /.bs-example -->
 
   {{ highlightMarkup }}
-    TODO: Markup
+    <div class="row d-flex flex-wrap mt-5 box-group--secondary">
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 1</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 2</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 3</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-lg-4 my-4 box-group--item">
+        <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-between m-0 h-100">
+          <div class="caption text-center m-4">
+            <h6 class="m-0 text-muted">Box Title 4</h6>
+          </div>
+          <div class="mx-5 mb-5 px-4 pb-4 text-center">
+            <img src="../../images/utility/placeholder.png" class="img-responsive" alt="...">
+          </div>
+        </a>
+      </div>
+
+    </div>
   {{ endhighlight }}
- 
+
 
 
   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -281,14 +376,69 @@
   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
   <h3 id="boxes-single">Single Box Group</h3>
-  <p>TODO: description</p>
+  <p>For enclosing a single box in a group container. The inner box has a two column flex layout ideal for and image on the left and other content right.</p>
+  <p>It collapses gracefully into a column on smaller screens.</p>
 
   <div class="bs-example">
-    TODO: Example
+
+    <div class="mt-5 p-5 box-emphasize box-group--single">
+
+      <div class="img">
+        <img src="../../images/utility/placeholder_thumb.png" alt="..." class="circular-img circular-img--lg">
+      </div>
+
+      <div class="p-0 p-md-4 content">
+
+        <div class="header">
+          <h5 class="text-capitalize mt-0 mb-2">Lydia Washington</h5>
+          <p class="text-muted">Issaquah, WA</p>
+        </div>
+
+        <div class="details">
+          <div class="column small">
+            <p class="mt-2"><strong>With Avon Since:</strong></p>
+            <p class="mt-2"><strong>Email:</strong></p>
+            <p class="mt-2"><strong>Phone Number:</strong></p>
+          </div>
+          <div class="column small">
+            <p class="mt-2">Nov 16, 2000</p>
+            <p class="mt-2"><a href="#">lydiachancelorwashington@gmail.com</a></p>
+            <p class="mt-2"><a href="#">(555) 555-1234</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div><!-- /.bs-example -->
 
   {{ highlightMarkup }}
-    TODO: Markup
+  <div class="mt-5 p-5 box-emphasize box-group--single">
+
+    <div class="img">
+      <img src="../../images/utility/placeholder_thumb.png" alt="..." class="circular-img circular-img--lg">
+    </div>
+
+    <div class="p-0 p-md-4 content">
+
+      <div class="header">
+        <h5 class="text-capitalize mt-0 mb-2">Lydia Washington</h5>
+        <p class="text-muted">Issaquah, WA</p>
+      </div>
+
+      <div class="details">
+        <div class="column small">
+          <p class="mt-2"><strong>With Avon Since:</strong></p>
+          <p class="mt-2"><strong>Email:</strong></p>
+          <p class="mt-2"><strong>Phone Number:</strong></p>
+        </div>
+        <div class="column small">
+          <p class="mt-2">Nov 16, 2000</p>
+          <p class="mt-2"><a href="#">lydiachancelorwashington@gmail.com</a></p>
+          <p class="mt-2"><a href="#">(555) 555-1234</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
   {{ endhighlight }}
 
 
@@ -297,7 +447,3 @@
 
 
 </div>
-
-
-
-
