@@ -134,56 +134,60 @@
           <hr>
 
           <!-- START - CONTACT INFORMATION EDIT -->
-          <section class="">
+          <section class="row">
 
-            <form role="form">
+            <div class="col col-md-7">
 
-              <h5 class="my-5">Contact Information</h5>
+              <form role="form">
 
-              <div class="my-5">
-                <div class="form-group">
-                  <label class="control-label">Nickname</label>
-                  {% include "_includes/elements/forms/input.html.twig" with {
-                    type : 'text',
-                    theValue: 'Janet Johnson'
-                  } %}
+                <h5 class="my-5">Contact Information</h5>
+
+                <div class="my-5">
+                  <div class="form-group">
+                    <label class="control-label">Nickname</label>
+                    {% include "_includes/elements/forms/input.html.twig" with {
+                      type : 'text',
+                      theValue: 'Janet Johnson'
+                    } %}
+                  </div>
                 </div>
-              </div>
 
-              <div class="my-5">
-                <div class="form-group">
-                  <label class="control-label">Email Address</label>
-                  {% include "_includes/elements/forms/input.html.twig" with {
-                    type : 'email',
-                    theValue: 'janet.johnson@aol.com'
-                  } %}
+                <div class="my-5">
+                  <div class="form-group">
+                    <label class="control-label">Email Address</label>
+                    {% include "_includes/elements/forms/input.html.twig" with {
+                      type : 'email',
+                      theValue: 'janet.johnson@aol.com'
+                    } %}
+                  </div>
                 </div>
-              </div>
 
-              <div class="my-5">
-                <div class="form-group">
-                  <label class="control-label">Home/Cell Phone</label>
-                  {% include "_includes/elements/forms/input.html.twig" with {
-                    type : 'tel',
-                    theValue: '(513) 123-4567'
-                  } %}
+                <div class="my-5">
+                  <div class="form-group">
+                    <label class="control-label">Home/Cell Phone</label>
+                    {% include "_includes/elements/forms/input.html.twig" with {
+                      type : 'tel',
+                      theValue: '(513) 123-4567'
+                    } %}
+                  </div>
                 </div>
-              </div>
 
-              <div class="my-5">
-                <div class="form-group">
-                  <label class="control-label">Business/Cell Phone</label>
-                  {% include "_includes/elements/forms/input.html.twig" with {
-                    type : 'tel',
-                    theValue: '(513) 123-8901'
-                  } %}
+                <div class="my-5">
+                  <div class="form-group">
+                    <label class="control-label">Business/Cell Phone</label>
+                    {% include "_includes/elements/forms/input.html.twig" with {
+                      type : 'tel',
+                      theValue: '(513) 123-8901'
+                    } %}
+                  </div>
                 </div>
-              </div>
 
-              <button class="btn btn-sm btn-default">Cancel</button>
-              <button class="btn btn-sm btn-primary">Save</button>
+                <button class="btn btn-sm btn-default">Cancel</button>
+                <button class="btn btn-sm btn-primary">Save</button>
 
-            </form>
+              </form>
+
+            </div>
 
           </section>
           <!-- END - CONTACT INFORMATION EDIT -->
