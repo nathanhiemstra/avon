@@ -82,7 +82,7 @@
           <hr>
 
           <!-- START - CONTACT INFORMATION STATIC -->
-          <section class="row">
+          <section class="">
 
             <form role="form">
 
@@ -140,54 +140,47 @@
 
               <h5 class="my-5">Contact Information</h5>
 
-              <div class="row my-5">
+              <div class="my-5">
                 <div class="form-group">
-                  <h6 class="col-sm-4 my-md-2">Nickname</h6>
-                  <div class="col-sm-8 col-md-5">
-                    {% include "_includes/elements/forms/input.html.twig" with {
-                      type : 'text',
-                      theValue: 'Janet Johnson'
-                    } %}
-                  </div>
+                  <label class="control-label">Nickname</label>
+                  {% include "_includes/elements/forms/input.html.twig" with {
+                    type : 'text',
+                    theValue: 'Janet Johnson'
+                  } %}
                 </div>
               </div>
 
-              <div class="row my-5">
+              <div class="my-5">
                 <div class="form-group">
-                  <h6 class="col-sm-4 my-md-2">Email Address</h6>
-                  <div class="col-sm-8 col-md-5">
-                    {% include "_includes/elements/forms/input.html.twig" with {
-                      type : 'email',
-                      theValue: 'janet.johnson@aol.com'
-                    } %}
-                  </div>
+                  <label class="control-label">Email Address</label>
+                  {% include "_includes/elements/forms/input.html.twig" with {
+                    type : 'email',
+                    theValue: 'janet.johnson@aol.com'
+                  } %}
                 </div>
               </div>
 
-              <div class="row my-5">
+              <div class="my-5">
                 <div class="form-group">
-                  <h6 class="col-sm-4 my-md-2">Home/Cell Phone</h6>
-                  <div class="col-sm-8 col-md-5">
-                    {% include "_includes/elements/forms/input.html.twig" with {
-                      type : 'tel',
-                      theValue: '(513) 123-4567'
-                    } %}
-                  </div>
+                  <label class="control-label">Home/Cell Phone</label>
+                  {% include "_includes/elements/forms/input.html.twig" with {
+                    type : 'tel',
+                    theValue: '(513) 123-4567'
+                  } %}
                 </div>
               </div>
 
-              <div class="row my-5">
+              <div class="my-5">
                 <div class="form-group">
-                  <h6 class="col-sm-4 my-md-2">Business/Cell Phone</h6>
-                  <div class="col-sm-8 col-md-5">
-                    {% include "_includes/elements/forms/input.html.twig" with {
-                      type : 'tel',
-                      theValue: '(513) 123-8901'
-                    } %}
-                  </div>
+                  <label class="control-label">Business/Cell Phone</label>
+                  {% include "_includes/elements/forms/input.html.twig" with {
+                    type : 'tel',
+                    theValue: '(513) 123-8901'
+                  } %}
                 </div>
               </div>
 
+              <button class="btn btn-sm btn-default">Cancel</button>
               <button class="btn btn-sm btn-primary">Save</button>
 
             </form>
@@ -260,9 +253,6 @@
                     <h6 class="mt-md-2 mb-0 d-inline-xs mr-2">Language Preference</h6>
                     <a href="#" class="small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
                   </div>
-
-
-
 
                   <div class="col-sm-8 mt-4 mt-md-0">
                     <span>English</span>
@@ -369,8 +359,12 @@
                     <!-- Developer note: This and the previous link will not appear at the same time. Use the class "d-none" to hide/show -->
                     <span class="nowrap">
                       Connected
-                      <span class="ml-2"><a href="#" class="btn btn-discourage btn-soft btn-sm" target="_blank">Change</a></span>
-                      <span class="ml-2"><a href="#" class="btn btn-discourage btn-soft btn-sm" target="_blank">Disconnect</a></span>
+                      <span class="ml-2">
+                        <a href="#" class="btn btn-discourage btn-soft btn-sm" target="_blank">Change</a>
+                      </span>
+                      <span class="ml-2">
+                        <a href="#" class="btn btn-discourage btn-soft btn-sm" target="_blank">Disconnect</a>
+                      </span>
                     </span>
                   </div>
                 </div>
@@ -411,7 +405,9 @@
                     <!-- Developer note: This and the previous link will not appear at the same time. Use the class "d-none" to hide/show -->
                     <span class="nowrap">
                       Enrolled
-                      <span class="ml-2"><a href="#" class="btn btn-discourage btn-soft btn-sm" target="_blank">Change</a></span>
+                      <span class="ml-2">
+                        <a href="#" class="btn btn-discourage btn-soft btn-sm" target="_blank">Change</a>
+                      </span>
                     </span>
                   </div>
                 </div>
