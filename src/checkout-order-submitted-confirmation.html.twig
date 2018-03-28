@@ -15,7 +15,30 @@
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block main %}
 
-          {% include '_includes/modules/checkout/review-complete.html.twig' %}
+          <div class="container container--page">
+            <h3>Your order has been placed</h3>
+            <p>Thank you for shopping with us. Your order is being processed, and it will be shipped in 24-48 hours.</p>
+            
+            <div class="my-4 p-4">
+              <p class="text-center">Your order confirmation number: <strong class="d-block">AV01234567890</strong> </p>
+              
+              <div>
+                   {% include '_includes/modules/checkout/quick-checkout-payments.html.twig' %}
+              </div>
+
+            </div>
+
+            <div class="mb-5">
+              <h5>Track Your Order</h5>
+              <p>To check your order status at any time please go the <a href="#" class="underline">My&nbsp;orders</a> section of the website. You will also receive an email containing all the order details</p>
+            </div>
+
+            <div class="my-2">
+              <h5>Questions about your order</h5>
+              <p>Please email us or call us at 1-800-500-AVON (1-800-500-2866) if you have an questions regarding the your order.</p>
+            </div>
+
+          </div>
 
         {% endblock %}
 
