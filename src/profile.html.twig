@@ -82,7 +82,7 @@
           <hr>
 
           <!-- START - CONTACT INFORMATION STATIC -->
-          <section class="">
+          <section class="row">
 
             <form role="form">
 
@@ -143,7 +143,7 @@
               <div class="row my-5">
                 <div class="form-group">
                   <h6 class="col-sm-4 my-md-2">Nickname</h6>
-                  <div class="col-sm-8">
+                  <div class="col-sm-8 col-md-5">
                     {% include "_includes/elements/forms/input.html.twig" with {
                       type : 'text',
                       theValue: 'Janet Johnson'
@@ -155,7 +155,7 @@
               <div class="row my-5">
                 <div class="form-group">
                   <h6 class="col-sm-4 my-md-2">Email Address</h6>
-                  <div class="col-sm-8">
+                  <div class="col-sm-8 col-md-5">
                     {% include "_includes/elements/forms/input.html.twig" with {
                       type : 'email',
                       theValue: 'janet.johnson@aol.com'
@@ -167,7 +167,7 @@
               <div class="row my-5">
                 <div class="form-group">
                   <h6 class="col-sm-4 my-md-2">Home/Cell Phone</h6>
-                  <div class="col-sm-8">
+                  <div class="col-sm-8 col-md-5">
                     {% include "_includes/elements/forms/input.html.twig" with {
                       type : 'tel',
                       theValue: '(513) 123-4567'
@@ -179,7 +179,7 @@
               <div class="row my-5">
                 <div class="form-group">
                   <h6 class="col-sm-4 my-md-2">Business/Cell Phone</h6>
-                  <div class="col-sm-8">
+                  <div class="col-sm-8 col-md-5">
                     {% include "_includes/elements/forms/input.html.twig" with {
                       type : 'tel',
                       theValue: '(513) 123-8901'
@@ -235,6 +235,11 @@
             <div class="row my-5">
               <h6 class="col-sm-4 my-md-2">Sales Level</h6>
               <div class="col-sm-8">David H. McConnell Club</div>
+            </div>
+
+            <div class="row my-5">
+              <h6 class="col-sm-4 my-md-2">Beauty Advisor</h6>
+              <div class="col-sm-8">[value-goes-here]</div>
             </div>
 
           </section>
