@@ -1,0 +1,90 @@
+.scrollable-tabs-wrapper {
+	position: relative;
+	box-sizing: border-box;
+	* {
+		box-sizing: inherit;
+	}
+}
+
+.scrollable-tabs-nav {
+    /* Make this scrollable when needed */
+    overflow-x: auto;
+    /* We don't want vertical scrolling */
+    overflow-y: hidden;
+    /* For WebKit implementations, provide inertia scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* We don't want internal inline elements to wrap */
+    white-space: nowrap;
+    /* If JS present, let's hide the default scrollbar */
+    .js & {
+        /* Make an auto-hiding scroller for the 3 people using a IE */
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        /* Remove the default scrollbar for WebKit implementations */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+	/* positioning context for advancers */
+	position: relative;
+	// Crush the whitespace here
+	font-size: 0;
+}
+
+.nav-tabs--scrollable,
+.nav-tabs--scrollable {
+	float: left;
+	transition: transform $ui-animation-time $ui-animation-ease;
+	position: relative;
+}
+
+.nav-tabs--scrollable-no-transition {
+	transition: none;
+}
+
+.nav-tabs--scrollable > li {
+	float: none;
+}
+
+.nav-tabs--scrollable .scrollable-tabs-item,
+.scrollable-tabs-item a {
+	display: inline-flex;
+	align-items: center;
+}
+
+.scrollable-tabs-advancer {
+	/* Reset the button */
+	appearance: none;
+	background: transparent;
+	padding: 0;
+	border: 0;
+	&:focus {
+		outline: 0;
+	}
+	&:hover {
+		cursor: pointer;
+	}
+	/* Now style it as needed */
+	position: absolute;
+	top: -4px;
+	bottom: 0;
+	background-color: $body-bg;
+	/* Set the buttons invisible by default */
+	opacity: 0;
+	transition: opacity .3s;
+}
+
+.scrollable-tabs-advancer-left {
+	left: 0;
+	[data-overflowing="both"] ~ &,
+	[data-overflowing="left"] ~ & {
+		opacity: 1;
+	}
+}
+
+.scrollable-tabs-advancer-right {
+	right: 0;
+	[data-overflowing="both"]  ~ &,
+	[data-overflowing="right"] ~ & {
+		opacity: 1;
+	}
+}

@@ -25,7 +25,12 @@ var SecondaryNav = (function () {
   // private methods
   var _addListeners = function () {
 
-    console.log($els.outerCollapsible);
+    // console.log($els.outerCollapsible);
+
+    _checkWindowSize();
+    $(window).resize(function() {
+      _checkWindowSize();
+    });
 
     // prevent nested collapsibles from firing events on the parent
     $els.nestedCollapsible.on('hide.bs.collapse', function(e) {
@@ -43,6 +48,18 @@ var SecondaryNav = (function () {
       $els.navContainer.removeClass('collapsed');
     });
 
+  };
+
+  var _checkWindowSize = function() {
+    if ($(window).width() < 992) {
+      // $els.outerCollapsible.collapse('hide');
+      // $els.outerCollapsible.addClass('collapsed');
+      // $els.navContainer.addClass('collapsed');
+    } else {
+      $els.outerCollapsible.collapse('show');
+      // $els.outerCollapsible.removeClass('collapsed');
+      // $els.navContainer.removeClass('collapsed');
+    }
   };
 
   return {
