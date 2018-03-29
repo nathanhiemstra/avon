@@ -5,41 +5,55 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  <div class="container container--page">
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
 
-    {% embed "_layouts/columns-10-max.html.twig" %}
+    <section class="container container--page">
+      {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
 
-      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-      {# DEFINE BLOCK - MAIN #}
-      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-      {% block main %}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - ASIDE #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block aside %}
 
-        <!-- START - ACCOUNT STATEMENT BALANCES -->
+          {% include '_includes/groups/navigation/my-account-nav.html.twig' with { active : 'account-balance' } %}
 
-        {% include "_includes/modules/account/account-statements-balances.html.twig" %}
+        {% endblock %}
 
-        <!-- END - ACCOUNT STATEMENT BALANCES -->
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - MAIN #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block main %}
 
-        <!-- START - ACCOUNT STATEMENT SEARCH -->
+          <!-- START - ACCOUNT STATEMENT BALANCES -->
 
-        {% include "_includes/modules/account/account-statements-search.html.twig" %}
+          {% include "_includes/modules/account/account-statements-balances.html.twig" %}
 
-        <!-- END - ACCOUNT STATEMENT SEARCH -->
+          <!-- END - ACCOUNT STATEMENT BALANCES -->
 
-        <!-- START - ACCOUNT STATEMENT SEARCH RESULTS-->
+          <!-- START - ACCOUNT STATEMENT SEARCH -->
 
-        {% include "_includes/modules/account/account-statements-search-results.html.twig" %}
+          {% include "_includes/modules/account/account-statements-search.html.twig" %}
 
-        <!-- END - ACCOUNT STATEMENT SEARCH RESULTS -->
+          <!-- END - ACCOUNT STATEMENT SEARCH -->
 
-        <p class="text-center">
-          <a class="text-center" href="#">Print</a>
-        </p>
+          <!-- START - ACCOUNT STATEMENT SEARCH RESULTS-->
 
-      {% endblock %}
+          {% include "_includes/modules/account/account-statements-search-results.html.twig" %}
 
-    {% endembed %}
+          <!-- END - ACCOUNT STATEMENT SEARCH RESULTS -->
 
-  </div>
+          <p class="text-center">
+            <a class="text-center" href="#">Print</a>
+          </p>
+
+        {% endblock %}
+
+      {% endembed %}
+    </section>
+
+  {% endblock %}
 
 {% endblock %}

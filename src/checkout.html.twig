@@ -1,0 +1,93 @@
+{% extends layouts.themes.checkout %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="super-panel reverse-bg">
+    <section id="" class="global-alert-msg alert container-fluid mb-0 alert-success fade in">
+      <span class="alert-msg-icon lt-icon lt-medium lt-checkmark"></span>
+      <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">Balance successfully paid</span>
+    </section>
+    <section id="" class="global-alert-msg alert container-fluid mb-0 alert-danger fade in">
+      <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">There was an error...</span>
+    </section>
+    <div class="container">
+
+      {% embed '_layouts/columns-12-slim.html.twig' %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - MAIN #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block main %}
+
+          <div class="container container--page">
+
+            {% include "_includes/groups/navigation/back-link.twig" with {label: "Back to Payment Methods"} %}
+            {% include "_includes/groups/navigation/back-link.twig" with {label: "Cancel Split Payments"} %}
+
+            <!-- START - BALANCE REMAINING -->
+            {% include '_includes/modules/checkout/quick-checkout-balance-remaining.html.twig' %}
+            {% include '_includes/modules/checkout/quick-checkout-balance-remaining.html.twig' with {amount: '0.00', colorClass: 'text-success'} %}
+            <!-- END - BALANCE REMAINING -->
+
+            <!--START: ADD/CHOOSE PAYMENT METHOD-->
+            {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {headline: 'Choose Payment Method', hasSplitPayment:true} %}
+            <!-- END - ADD/CHOOSE PAYMENT METHOD -->
+
+            <!-- START - PAYMENTS -->
+            {% include '_includes/modules/checkout/quick-checkout-payments.html.twig' with {headline: 'Payments'} %}
+            <!-- END - PAYMENTS -->
+
+            <!-- START: PAY WITH AVON CREDIT-->
+            {% include '_includes/modules/checkout/quick-checkout-ac.html.twig' %}
+            <!-- END: PAY WITH AVON CREDIT -->
+
+            <!-- START - CREDIT CARD PAYMENT METHOD -->
+            {% include '_includes/modules/checkout/quick-checkout-cc.html.twig' %}
+            <!-- END - CREDIT CARD PAYMENT METHOD -->
+
+            <!-- START: PAY WITH QUICKPAY-->
+            {% include '_includes/modules/checkout/quick-checkout-aq.html.twig' with { showAmount:true } %}
+            <!-- END: PAY WITH QUICKPAY-->
+
+            <!-- START - ORDER OVERVIEW -->
+            {% include '_includes/modules/checkout/module-order-overview.html.twig' %}
+            <!-- END - ORDER OVERVIEW -->
+
+            <!-- START - ADDRESS -->
+            {% include '_includes/modules/checkout/module-ship-to.html.twig' %}
+            <!-- END - ADDRESS -->
+
+            <!-- START - SHIPPING -->
+            {% include '_includes/modules/checkout/module-shipping-method.html.twig' %}
+            <!-- END - SHIPPING -->
+
+            <!-- START - BALANCE DUE METHOD -->
+            {% include '_includes/modules/checkout/quick-checkout-balance-due.html.twig' %}
+            <!-- END - SHIPPING METHOD -->
+
+            <h3 class="mb-5 text-center">Review and Submit Order</h3>
+
+            <!-- DEV NOTE :: This sticky footer requires some js to add appropriate padding to <body>
+                          :: See avon-main.js near the bottom -> "if(hasStickyFooter) {... -->
+            <!-- DEV NOTE :: add class .d-none to this div to hide it -->
+            <nav class="navbar navbar-default navbar-fixed-bottom navbar-fixed-bottom--auto-height m-0 p-3" role="navigation">
+              <div class="container">
+                <a class="btn btn-primary btn-lg btn-block">Review and Complete Order</a>
+              </div>
+            </nav>
+
+          </div>
+          <!-- /.container -->
+
+        {% endblock %}
+
+      {% endembed %}
+
+    </div>
+  </div><!-- /.super-panel -->
+
+
+{% endblock %}

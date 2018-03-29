@@ -73,7 +73,7 @@ a.btn {
     pointer-events: none;
 
     // Future-proof disabling of clicks on `<a>` elements
-
+ 
   }
 }
 
@@ -135,6 +135,11 @@ a.btn {
   @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
 
+// Discourage - black
+.btn-discourage {
+  @include button-variant($btn-discourage-color, $btn-discourage-bg, $btn-discourage-border);
+}
+
 // Avon Custom Buttons
 // --------------------------------------------------
 
@@ -155,7 +160,7 @@ a.btn {
     line-height: 0;
 
     // prevent larger icons increasing button height
-
+ 
   }
 
   > i,

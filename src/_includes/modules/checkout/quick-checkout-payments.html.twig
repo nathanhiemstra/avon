@@ -1,0 +1,43 @@
+{% if headline is empty %}
+  {% set headline = 'Payments' %}
+{% endif %}
+<section class="list-group box-emphasize">
+  <div class="list-group-item remove-last-border">
+    <div class="clearfix mb-2">
+      <h6 class="mb-3 pull-left">Payments</h6>
+    </div>
+
+    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'Avon Credit Line',
+      icon: '/images/icons/payment-avoncredit.svg',
+      subhead: '($85 available!)',
+      amount: '$85.00'
+    } %}
+
+    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'QuickPAY',
+      icon: '/images/icons/payment-quickpay.svg',
+      amount: '$10.00'
+    } %}
+
+    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'VISA ending 1234',
+      icon: '/images/icons/payment-visa.svg',
+      amount: '$15.00',
+    } %}
+
+    {# {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'VISA ending 1234',
+      icon: '/images/icons/payment-visa.svg',
+      amount: '$15.00',
+      subhead: 'Transaction ID: 12345'
+    } %} #}
+
+    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'Mastercard ending in 9876',
+      icon: '/images/icons/payment-mastercard.svg',
+      amount: '$25.00'
+    } %}
+
+  </div>
+</section>

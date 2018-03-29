@@ -8,11 +8,12 @@
       <h6 class="pull-left m-0 mt-2">Pay With QuickPAY</h6>
       <a class="pull-right underline" href="#">Cancel</a>
     </div>
-    <p>USSA federal Savings Bank (...1234)</p>
+    <p>{{ fpo.sentence }}</p>
 
     {% if showAmount %}
       <div class="form-group form-inline">
          <label class="control-label d-block mb-2">Amount to pay</label>
+         <!-- DEV NOTE :: to disable input, add 'disabled' attribute -->
          {% include components.elements.forms.input with {
           classes: 'form-control-inline',
           type: 'number',

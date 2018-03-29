@@ -13,12 +13,12 @@
   <p>Use any of the available button classes to quickly create a styled button.</p>
   <div class="bs-example">
     <button type="button" class="btn btn-default">Default</button>
-    <button type="button" class="btn btn-outlined">Outlined</button>
     <button type="button" class="btn btn-primary">Primary</button>
     <button type="button" class="btn btn-success">Success</button>
     <button type="button" class="btn btn-info">Info</button>
     <button type="button" class="btn btn-warning">Warning</button>
     <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-discourage">Discourage</button>
     <button type="button" class="btn btn-link">Link</button>
   </div>
 
@@ -40,6 +40,9 @@
 
   <!-- Indicates a dangerous or potentially negative action -->
   <button type="button" class="btn btn-danger">Danger</button>
+
+  <!-- Indicates a non "forward moving" action -->
+  <button type="button" class="btn btn-discourage">Discourage</button>
 
   <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
   <button type="button" class="btn btn-link">Link</button>
@@ -67,10 +70,7 @@
     <button type="button" class="btn btn-danger btn-soft btn-lg">Large Soft Danger</button>
   </div>
 
-  {{ highlightMarkup }}
-  <!-- Transparent light button -->
-  <button type="button" class="btn btn-outlined">Outlined Button</button>
-  {{ endhighlight }}
+ 
 
   <h4>Transparent Light Button</h4>
   <p>A light colored button with a transparent background that sits well on darker colors.</p>
@@ -100,16 +100,7 @@
   </div>
   {{ endhighlight }}
 
-  <h4>Outlined Button</h4>
-  <p>Muted outline button</p>
-  <div class="bs-example">
-    <button type="button" class="btn btn-outlined">Outlined Button</button>
-  </div>
-
-  {{ highlightMarkup }}
-  <!-- Transparent light button -->
-  <button type="button" class="btn btn-outlined">Outlined Button</button>
-  {{ endhighlight }}
+  
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}

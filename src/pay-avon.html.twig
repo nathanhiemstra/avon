@@ -11,14 +11,14 @@
   {% block main %}
 
     <section class="container container--page">
-      {% embed layouts.columns3x9 %}
+      {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
 
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {# DEFINE BLOCK - ASIDE #}
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block aside %}
 
-          {% include '_includes/groups/navigation/my-account-nav.html.twig' %}
+          {% include '_includes/groups/navigation/my-account-nav.html.twig' with { active : 'pay-avon' } %}
 
         {% endblock %}
 
