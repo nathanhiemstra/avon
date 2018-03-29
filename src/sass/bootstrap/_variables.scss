@@ -53,6 +53,10 @@ $body-bg: $white !default;
 
 //** Global text color on `<body>`.
 $text-color: $gray-dark !default;
+$text-muted: $gray-medium !default;
+$text-muted-hover: $gray !default;
+
+ 
 
 //** Global textual link color.
 $link-color: $brand-primary !default;
@@ -635,6 +639,10 @@ $jumbotron-heading-font-size: ceil($font-size-base * 4.5) !default;
 $state-success-text: $body-bg !default;
 $state-success-bg: $brand-success !default;
 $state-success-border: darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+$state-success-secondary-text: $body-bg !default;
+$state-success-secondary-bg: $brand-success !default;
+$state-success-secondary-border: darken(adjust-hue($state-success-bg, -10), 5%) !default;
 
 $state-info-text: #31708f !default;
 $state-info-bg: #d9edf7 !default;
