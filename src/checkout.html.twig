@@ -33,7 +33,7 @@
             <!-- END - BALANCE REMAINING -->
 
             <!--START: ADD/CHOOSE PAYMENT METHOD-->
-            {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {headline: 'Choose Payment Method', hasSplitPayment:true} %}
+            {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {headline: 'Choose Payment Method', hasSplitPayment: true} %}
             <!-- END - ADD/CHOOSE PAYMENT METHOD -->
 
             <!-- START - PAYMENTS -->
@@ -78,8 +78,7 @@
 
             <h3 class="mb-5 text-center">Review and Submit Order</h3>
 
-            <!-- DEV NOTE :: This sticky footer requires some js to add appropriate padding to <body>
-                          :: See avon-main.js near the bottom -> "if(hasStickyFooter) {... -->
+            <!-- DEV NOTE :: This sticky footer requires some js to add appropriate padding to <body> :: See avon-main.js near the bottom -> "if(hasStickyFooter) {... -->
             <!-- DEV NOTE :: add class .d-none to this div to hide it -->
             <nav class="navbar navbar-default navbar-fixed-bottom navbar-fixed-bottom--auto-height m-0 p-3" role="navigation">
               <div class="container">
@@ -95,7 +94,7 @@
       {% endembed %}
 
     </div>
-  </div><!-- /.super-panel -->
-
+  </div>
+  <!-- /.super-panel -->
 
 {% endblock %}

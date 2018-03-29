@@ -11,21 +11,27 @@
       type: 'Credit card',
       icon: '/images/icons/payment-visa.svg',
       subhead: null,
-      amount: null
+      amount: null,
+      editable: false,
+      buttonMode: true
     } %}
 
     {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
       type: 'Avon Credit Line',
       icon: '/images/icons/payment-avoncredit.svg',
       subhead: '($85 available!)',
-      amount: null
+      amount: null,
+      editable: false,
+      buttonMode: true
     } %}
 
     {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
       type: 'QuickPAY',
       icon: '/images/icons/payment-quickpay.svg',
       subhead: null,
-      amount: null
+      amount: null,
+      editable: false,
+      buttonMode: true
     } %}
 
     {% if hasSplitPayment %}

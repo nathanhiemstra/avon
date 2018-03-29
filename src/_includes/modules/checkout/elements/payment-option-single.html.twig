@@ -6,6 +6,7 @@ Parameters:
   subhead (string - secondary info that appears under the payment type '$85 available' or 'Transaction ID: 12345')
   editable (boolean - will show or hide 'Edit | Remove' links)
   alertMsg (string - if present, will show an alert / warning with its value)
+  buttonMode (boolean - will make the entire row item clickable)
 -->
 
 {# set defaults #}
@@ -13,30 +14,43 @@ Parameters:
   {% set editable = true %}
 {% endif %}
 
-<div class="clearfix my-2 border-bottom py-3">
-  {% if icon %}
-    <div class="pull-left mr-4">
-      <img src="{{ icon }}">
+{% if buttonMode is not defined %}
+  {% set buttonMode = false %}
+{% endif %}
+
+{# wrap entire row in link if buttonMode is true #}
+{% if buttonMode %}
+  <a href="#" class="link-plain">
+{% endif %}
+
+  <div class="clearfix my-2 border-bottom py-3">
+    {% if icon %}
+      <div class="pull-left mr-4">
+        <img src="{{ icon }}">
+      </div>
+    {% endif %}
+    <div class="pull-left">
+      <div>{{ type }}</div>
+      {% if subhead %}<div class="text-muted small">{{ subhead }}</div>{% endif %}
     </div>
-  {% endif %}
-  <div class="pull-left">
-    <div>{{ type }}</div>
-    {% if subhead %}<div class="text-muted small">{{ subhead }}</div>{% endif %}
-  </div>
-  <div class="pull-right text-right">
-    {% if amount %}
-      <div>{{ amount }}</div>
+    <div class="pull-right text-right">
+      {% if amount %}
+        <div>{{ amount }}</div>
+      {% endif %}
+      {% if editable %}
+        <div class="small"><a class="underline" href="#">Edit</a> | <a class="underline" href="#">Remove</a></div>
+      {% endif %}
+    </div>
+
+    {% if alertMsg %}
+      <div class="clearfix"></div>
+      <div class="alert alert-promo mt-4">
+        {{ alertMsg }}
+      </div>
     {% endif %}
-    {% if editable %}
-      <div class="small"><a class="underline" href="#">Edit</a> | <a class="underline" href="#">Remove</a></div>
-    {% endif %}
+
   </div>
 
-  {% if alertMsg %}
-    <div class="clearfix"></div>
-    <div class="alert alert-promo mt-4">
-      {{ alertMsg }}
-    </div>
-  {% endif %}
-
-</div>
+{% if buttonMode %}
+  </a>
+{% endif %}
