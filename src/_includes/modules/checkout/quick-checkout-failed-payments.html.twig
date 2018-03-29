@@ -1,0 +1,31 @@
+{% if headline is empty %}
+  {% set headline = 'Failed Payments' %}
+{% endif %}
+
+<section class="list-group box-emphasize">
+  <div class="list-group-item remove-last-border">
+    <div class="clearfix mb-2">
+      <h6 class="mb-3 pull-left">
+        <span class="lt-icon lt-large lt-warning text-danger align-middle"></span>
+        <span class="align-middle text-danger">{{ headline }}</span>
+      </h6>
+    </div>
+
+    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'QuickPAY',
+      icon: '/images/icons/payment-quickpay.svg',
+      amount: '$10.00',
+      editable: false,
+      alertMsg: 'Payment failed. Proident ut officia. You can <a class="link-plain underline" href="#">Edit this method</a>, or <a class="link-plain underline" href="#">remove it and add another</a>.'
+    } %}
+
+    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'Mastercard ending in 9876',
+      icon: '/images/icons/payment-mastercard.svg',
+      amount: '$25.00',
+      editable: false,
+      alertMsg: 'Payment failed. Proident ut officia. You can <a class="link-plain underline" href="#">Edit this method</a>, or <a class="link-plain underline" href="#">remove it and add another</a>.'
+    } %}
+
+  </div>
+</section>

@@ -1,10 +1,11 @@
 <!--
 Parameters:
-  amount (dollar amount '$0.00')
-  type (name of payment type 'VISA ending in 1234')
-  icon (path to payment icon '/images/icons/payment-avoncredit.svg')
-  subhead (secondary info that appears under the payment type '$85 available' or 'Transaction ID: 12345')
-  editable (true or false) will show or hide 'Edit | Remove' links
+  amount (string - dollar amount '$0.00')
+  type (string - name of payment type 'VISA ending in 1234')
+  icon (string - path to payment icon '/images/icons/payment-avoncredit.svg')
+  subhead (string - secondary info that appears under the payment type '$85 available' or 'Transaction ID: 12345')
+  editable (boolean - will show or hide 'Edit | Remove' links)
+  alertMsg (string - if present, will show an alert / warning with its value)
 -->
 
 {# set defaults #}
@@ -30,4 +31,12 @@ Parameters:
       <div class="small"><a class="underline" href="#">Edit</a> | <a class="underline" href="#">Remove</a></div>
     {% endif %}
   </div>
+
+  {% if alertMsg %}
+    <div class="clearfix"></div>
+    <div class="alert alert-promo mt-4">
+      {{ alertMsg }}
+    </div>
+  {% endif %}
+
 </div>
