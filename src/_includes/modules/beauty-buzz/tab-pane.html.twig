@@ -1,9 +1,11 @@
 <!-- START - TAB PANE -->
 <div class="tab-pane {{ classes }} mt-5" id="{{ id }}">
 
+  {{ isLast }}
+
   {% include "_includes/modules/beauty-buzz/tab-pane-panel.html.twig" with { tabLabel: tabLabel } %}
   {% include "_includes/modules/beauty-buzz/tab-pane-panel.html.twig" with { tabLabel: tabLabel } %}
-  {% include "_includes/modules/beauty-buzz/tab-pane-panel.html.twig" with { tabLabel: tabLabel } %}
+  {% include "_includes/modules/beauty-buzz/tab-pane-panel.html.twig" with { tabLabel: tabLabel, isLast: true } %}
 
 </div>
 <!-- END - TAB PANE -->
