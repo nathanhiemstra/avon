@@ -209,6 +209,19 @@ $(document).ready(function () {
 
   // ADD COLLAPSE ALL CODE HERE
   //
+  $('a[data-toggle-all="accordion"]').on('click', function(e){
+    e.preventDefault();
+    if($(this).hasClass('expand-all')){
+      $(this).removeClass('expand-all').addClass('hide-all').text('Hide all');
+      $('.panel-collapse').addClass('in').css('height', 'auto');
+      $('a[data-toggle="collapse"]').removeClass('collapsed');
+    }
+    else{
+      $(this).removeClass('hide-all').addClass('expand-all').text('Expand all');
+      $('.panel-collapse').removeClass('in').css('height', '0');
+      $('a[data-toggle="collapse"]').addClass('collapsed');
+    }
+  });
 
 
   // INIT OTHER DEMO SCRIPTS
