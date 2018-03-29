@@ -24,8 +24,14 @@
       type: 'VISA ending 1234',
       icon: '/images/icons/payment-visa.svg',
       amount: '$15.00',
-      subhead: 'Transaction ID: 12345'
     } %}
+
+    {# {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'VISA ending 1234',
+      icon: '/images/icons/payment-visa.svg',
+      amount: '$15.00',
+      subhead: 'Transaction ID: 12345'
+    } %} #}
 
     {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
       type: 'Mastercard ending in 9876',
