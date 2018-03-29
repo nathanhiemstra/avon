@@ -100,7 +100,7 @@ aside.secondary-nav {
   }
 
   // desktop
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: $screen-md-min) {
 
     // remove shadow and padding on desktop view
     > .list-group {
