@@ -1,9 +1,9 @@
 <!-- START - TAB PANE -->
-<div class="tab-pane {{ classes }}" id="{{ id }}">
+<div class="tab-pane {{ classes }} mt-5" id="{{ id }}">
 
-  {% include "_includes/modules/beauty-buzz/tab-pane-panel.html.twig"  %}
-  {% include "_includes/modules/beauty-buzz/tab-pane-panel.html.twig"  %}
-  {% include "_includes/modules/beauty-buzz/tab-pane-panel.html.twig"  %}
+  {% include "_includes/modules/beauty-buzz/tab-pane-panel.html.twig" with { tabLabel: tabLabel } %}
+  {% include "_includes/modules/beauty-buzz/tab-pane-panel.html.twig" with { tabLabel: tabLabel } %}
+  {% include "_includes/modules/beauty-buzz/tab-pane-panel.html.twig" with { tabLabel: tabLabel } %}
 
 </div>
 <!-- END - TAB PANE -->

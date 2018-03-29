@@ -15,8 +15,8 @@
       {% block main %}
 
         <!--START: AVON BUZZ LOGO-->
-        <div class="py-4">
-          <h2 class="text-uppercase text-center">Beauty Buzz</h2>
+        <div class="my-5 pb-5 text-center">
+          <img src="images/logos/beauty-buzz.png" alt="Beauty Buzz">
         </div>
         <!--END: AVON BUZZ LOGO-->
 
@@ -26,25 +26,29 @@
           <!-- END: NAV TABS -->
 
           <!-- START: TAB PANES -->
-          <div class="tab-content">
+          <div class="tab-content border-top">
 
             {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
               id: 'buzz-1',
+              tabLabel: 'Group 1',
               classes: 'active'
             } %}
 
             {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
               id: 'buzz-2',
+              tabLabel: 'Group 2',
               classes: ''
             } %}
 
             {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
               id: 'buzz-3',
+              tabLabel: 'Group 3',
               classes: ''
             } %}
 
             {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
               id: 'buzz-4',
+              tabLabel: 'Group 4',
               classes: ''
             } %}
 
