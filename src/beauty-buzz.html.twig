@@ -15,8 +15,8 @@
       {% block main %}
 
         <!--START: AVON BUZZ LOGO-->
-        <div class="my-5 pb-5 text-center">
-          <img src="images/logos/beauty-buzz.png" alt="Beauty Buzz">
+        <div class="my-5 pb-4">
+          <img src="images/logos/beauty-buzz.png" class="img-responsive m-auto" alt="Beauty Buzz">
         </div>
         <!--END: AVON BUZZ LOGO-->
 
@@ -25,8 +25,10 @@
           {% include "_includes/groups/navigation/scrollable-tabs/scrollable-tabs.html.twig" %}
           <!-- END: NAV TABS -->
 
+          <hr class="full-width-divider m-0">
+
           <!-- START: TAB PANES -->
-          <div class="tab-content border-top">
+          <div class="tab-content">
 
             {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
               id: 'buzz-1',
@@ -51,56 +53,6 @@
               tabLabel: 'Group 4',
               classes: ''
             } %}
-
-            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
-              id: 'buzz-5',
-              tabLabel: 'Group 5',
-              classes: ''
-            } %}
-
-            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
-              id: 'buzz-6',
-              tabLabel: 'Group 6',
-              classes: ''
-            } %}
-
-            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
-              id: 'buzz-7',
-              tabLabel: 'Group 7',
-              classes: ''
-            } %}
-
-            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
-              id: 'buzz-8',
-              tabLabel: 'Group 8',
-              classes: ''
-            } %}
-
-            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
-              id: 'buzz-9',
-              tabLabel: 'Group 9',
-              classes: ''
-            } %}
-
-            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
-              id: 'buzz-10',
-              tabLabel: 'Group 10',
-              classes: ''
-            } %}
-
-            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
-              id: 'buzz-11',
-              tabLabel: 'Group 11',
-              classes: ''
-            } %}
-
-            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
-              id: 'buzz-12',
-              tabLabel: 'Group 12',
-              classes: ''
-            } %}
-
-         
 
           </div>
           <!-- END: TAB PANES -->
