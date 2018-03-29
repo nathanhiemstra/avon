@@ -4,7 +4,13 @@ Parameters:
   type (name of payment type 'VISA ending in 1234')
   icon (path to payment icon '/images/icons/payment-avoncredit.svg')
   subhead (secondary info that appears under the payment type '$85 available' or 'Transaction ID: 12345')
+  editable (true or false) will show or hide 'Edit | Remove' links
 -->
+
+{# set defaults #}
+{% if editable is not defined %}
+  {% set editable = true %}
+{% endif %}
 
 <div class="clearfix my-2 border-bottom py-3">
   {% if icon %}
@@ -19,6 +25,8 @@ Parameters:
   <div class="pull-right text-right">
     {% if amount %}
       <div>{{ amount }}</div>
+    {% endif %}
+    {% if editable %}
       <div class="small"><a class="underline" href="#">Edit</a> | <a class="underline" href="#">Remove</a></div>
     {% endif %}
   </div>
