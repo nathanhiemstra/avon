@@ -4,27 +4,9 @@
 
 <section class="list-group box-emphasize">
   <div class="list-group-item remove-last-border">
-    <div class="clearfix mb-2">
-      <h6 class="mb-3 pull-left">
-        <span class="lt-icon lt-large lt-checkmark text-success align-middle"></span>
-        <span class="align-middle">{{ headline }}</span>
-      </h6>
-    </div>
-
-    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
-      type: 'QuickPAY',
-      icon: '/images/icons/payment-quickpay.svg',
-      amount: '$10.00',
-      subhead: 'Transaction ID: 12345',
-      editable: false
-    } %}
-
-    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
-      type: 'Mastercard ending in 9876',
-      icon: '/images/icons/payment-mastercard.svg',
-      amount: '$25.00',
-      subhead: 'Transaction ID: 12345',
-      editable: false
+    
+    {% include '_includes/modules/checkout/quick-checkout-successful-payments-content.html.twig' with {
+      headline: headline
     } %}
 
   </div>

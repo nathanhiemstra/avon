@@ -5,47 +5,48 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  <div class="super-panel reverse-bg">
-    <div class="container">
+  <section class="container">
 
-      {% embed '_layouts/columns-12-slim.html.twig' %}
+    {% embed '_layouts/columns-12-slim.html.twig' %}
 
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {# DEFINE BLOCK - MAIN #}
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {% block main %}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
 
-          <div class="container container--page">
-            <h3>Your order has been placed</h3>
-            <p>Thank you for shopping with us. Your order is being processed, and it will be shipped in 24-48 hours.</p>
-            
-            <div class="my-4 p-4">
-              <p class="text-center">Your order confirmation number: <strong class="d-block">AV01234567890</strong> </p>
-              
-              <div>
-                   {% include '_includes/modules/checkout/quick-checkout-payments.html.twig' %}
+        <section class="container container--page pb-5">
+          <h2 class="text-center mb-5">Your order has been placed!</h2>
+          <section class="list-group box-emphasize">
+            <div class="list-group-item remove-last-border">
+              <p class="text-center mt-3">Thank you for shopping with us. Your order is being processed, and it will be shipped in 24-48 hours.</p>
+              <div class="my-4 ">
+                <div class="text-center alert alert-success alert-secondary">
+                  <h6 class="mt-0">Your order confirmation number is:</h6>
+                  <h2 class="mb-0">AV01234567890</h2>
+                </div>
+                
+                {% include '_includes/modules/checkout/quick-checkout-successful-payments-content.html.twig' with {headline: 'Successful Payments'} %}
               </div>
 
+              <div class="mb-5">
+                <p><strong>Track Your Order</strong></p>
+                <p class="text-muted small">To check your order status at any time please go the <a href="#" class="underline nowrap">My Orders</a> section of the website. You will also receive an email containing all the order details within the next 24 hours.</p>
+              </div>
+
+              <div class="my-2">
+                <p><strong>Questions about your order</strong></p>
+                <p class="text-muted small">Please email us or call us at <a href="tel:1-800-500-2866" class="link-phone-number nowrap">1-800-500-AVON</a> (<a href="tel:1-800-500-2866" class="link-phone-number link-muted nowrap">1-800-500-2866</a>) if you have an questions regarding the your order.</p>
+              </div>
             </div>
+          </section>
+          <button class="btn btn-primary btn-lg btn-block">Back to home</button>
+        </section>
 
-            <div class="mb-5">
-              <h5>Track Your Order</h5>
-              <p>To check your order status at any time please go the <a href="#" class="underline">My&nbsp;orders</a> section of the website. You will also receive an email containing all the order details</p>
-            </div>
+      {% endblock %}
 
-            <div class="my-2">
-              <h5>Questions about your order</h5>
-              <p>Please email us or call us at 1-800-500-AVON (1-800-500-2866) if you have an questions regarding the your order.</p>
-            </div>
+    {% endembed %}
 
-          </div>
-
-        {% endblock %}
-
-      {% endembed %}
-
-    </div>
-  </div><!-- /.super-panel -->
+  </section>
 
 
 {% endblock %}
