@@ -53,6 +53,12 @@
   }
 }
 
+// Secondary alerts (inside content area)
+.alert-secondary {
+  border-radius: $border-radius-secondary;
+  border: none;
+}
+
 // Alternate styles
 //
 // Generate contextual modifier classes for colorizing the alert.
