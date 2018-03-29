@@ -206,6 +206,11 @@ $(document).ready(function () {
   }
 
 
+
+  // ADD COLLAPSE ALL CODE HERE
+  //
+
+
   // INIT OTHER DEMO SCRIPTS
   if (typeof Brochures !== 'undefined') Brochures.init();
   if (typeof CheckoutDemo !== 'undefined') CheckoutDemo.init();
