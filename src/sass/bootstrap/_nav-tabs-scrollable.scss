@@ -47,6 +47,9 @@
 
 .nav-tabs--scrollable .scrollable-tabs-item,
 .scrollable-tabs-item a {
+	@extend .h6;
+	margin: 0;
+	padding: 0;
 	display: inline-flex;
 	align-items: center;
 }
