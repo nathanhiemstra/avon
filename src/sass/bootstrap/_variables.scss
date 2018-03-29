@@ -16,6 +16,8 @@ $gray-medium: #8e8e8e !default;
 $gray-light: #CCC !default;
 $gray-lighter: #F2F2F2 !default;
 $green: #3EA572 !default;
+$green-light: #d6f4e5 !default;
+$green-dark: #126339;
 $orange: #FAA342 !default;
 $pink: #ED008C !default;
 $pink-dark: #D4027B !default;
@@ -43,6 +45,13 @@ $brand-warning: $orange !default;
 $brand-danger: $red !default;
 $brand-disabled: $gray-light !default;
 $brand-discourage: $black !default;
+
+$brand-success-secondary: $green-light !default;
+$brand-info-secondary: $brand-info !default;
+$brand-warning-secondary: $brand-warning !default;
+$brand-danger-secondary: $brand-danger !default;
+$brand-disabled-secondary: $brand-disabled !default;
+$brand-discourage-secondary: $brand-discourage !default;
 
 //== Scaffolding
 //
@@ -640,9 +649,9 @@ $state-success-text: $body-bg !default;
 $state-success-bg: $brand-success !default;
 $state-success-border: darken(adjust-hue($state-success-bg, -10), 5%) !default;
 
-$state-success-secondary-text: $body-bg !default;
-$state-success-secondary-bg: $brand-success !default;
-$state-success-secondary-border: darken(adjust-hue($state-success-bg, -10), 5%) !default;
+$state-success-secondary-text: $brand-success !default;
+$state-success-secondary-bg: $brand-success-secondary !default;
+$state-success-secondary-border: darken(adjust-hue($state-success-secondary-bg, -10), 5%) !default;
 
 $state-info-text: #31708f !default;
 $state-info-bg: #d9edf7 !default;
@@ -787,6 +796,10 @@ $alert-link-font-weight: bold !default;
 $alert-success-bg: $state-success-bg !default;
 $alert-success-text: $state-success-text !default;
 $alert-success-border: $state-success-border !default;
+
+$alert-success-secondary-bg: $state-success-secondary-bg !default;
+$alert-success-secondary-text: $state-success-secondary-text !default;
+$alert-success-secondary-border: $state-success-secondary-border !default;
 
 $alert-info-bg: $state-info-bg !default;
 $alert-info-text: $state-info-text !default;
