@@ -136,6 +136,17 @@ img {
 // Responsive images (ensure images don't scale beyond their parents)
 .img-responsive {
   @include img-responsive;
+
+  // modifier to make max-width 50% on desktop
+  &--50 {
+    max-width: 100%;
+
+    // 50% for larger screens
+    @media (min-width: $screen-xs-min) {
+        max-width: 50%;
+    }
+  }
+
 }
 
 // Rounded corners
