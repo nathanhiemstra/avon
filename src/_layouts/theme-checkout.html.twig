@@ -1,4 +1,5 @@
 {% extends layouts.base %}
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - HEADER #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -12,12 +13,32 @@
 
     {% include "_includes/modules/global/simple-header.html.twig" with {
       'title': 'Checkout'
-    } %}
+    } %}   ######}
 
-    ######}
-
-  </div><!-- /.no-reverse-bg -->
+  </div>
+  <!-- /.no-reverse-bg -->
   <!-- END - HEADER -->
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="super-panel reverse-bg">
+
+    <section id="" class="global-alert-msg alert container-fluid mb-0 alert-success fade in">
+      <span class="alert-msg-icon lt-icon lt-medium lt-checkmark"></span>
+      <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">Balance successfully paid</span>
+    </section>
+
+    <section id="" class="global-alert-msg alert container-fluid mb-0 alert-danger fade in">
+      <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">There was an error...</span>
+    </section>
+    
+  </div>
+  <!-- /.super-panel -->
+
 {% endblock %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}

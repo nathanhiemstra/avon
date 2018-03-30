@@ -98,6 +98,30 @@
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMN 10 - Max 8x4 #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Column: 10 - Max, Inner 8x4",
+    slug:         "columns-10-max-8x4",
+    snippet:      '
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <main class="col-md-8" role="main">
+            <p>' ~ fpo.paragraph ~ '</p>
+          </main>
+          <aside class="col-md-4" role="complementary">
+            <p>' ~ fpo.paragraph ~ '</p>
+          </aside>
+        </div>
+      </div>
+    </div>'
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# COLUMN 8 - Max #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {

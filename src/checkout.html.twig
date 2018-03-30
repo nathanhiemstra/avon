@@ -4,105 +4,108 @@
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
+  {{ parent() }}
 
-  <div class="super-panel reverse-bg">
-    <section id="" class="global-alert-msg alert container-fluid mb-0 alert-success fade in">
-      <span class="alert-msg-icon lt-icon lt-medium lt-checkmark"></span>
-      <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">Balance successfully paid</span>
-    </section>
-    <section id="" class="global-alert-msg alert container-fluid mb-0 alert-danger fade in">
-      <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">There was an error...</span>
-    </section>
-    <div class="container container--page">
+  <div class="container container--page">
 
-    {% include "_includes/groups/navigation/back-link.twig" with {label: "Back to Payment Methods"} %}
-    {% include "_includes/groups/navigation/back-link.twig" with {label: "Cancel Split Payments"} %}
+  {% embed '_layouts/columns-10-max-8x4.html.twig' %}
 
-    <div class="clearfix my-5">
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {# DEFINE BLOCK - CONTENT HEADER #}
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {% block contentheader %}
+      {% include "_includes/groups/navigation/back-link.twig" with {label: "Back to Payment Methods"} %}
+      {% include "_includes/groups/navigation/back-link.twig" with {label: "Cancel Split Payments"} %}
+
+      <div class="clearfix my-5">
         <h2 class="m-0 pull-left">Checkout</h2>
         <a href="#" class="btn btn-discourage btn-soft btn-sm pull-right m-0">Edit Order</a>
-    </div>
+      </div>
+    {% endblock %}
+    {# END BLOCK - CONTENT HEADER #}
+
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {# DEFINE BLOCK - MAIN #}
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {% block main %}
+
+      <!-- START - BALANCE REMAINING -->
+      {% include '_includes/modules/checkout/quick-checkout-balance-remaining.html.twig' %}
+      {% include '_includes/modules/checkout/quick-checkout-balance-remaining.html.twig' with {amount: '0.00', colorClass: 'text-success'} %}
+      <!-- END - BALANCE REMAINING -->
+
+      <!--START: ADD/CHOOSE PAYMENT METHOD-->
+      {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {headline: 'Choose Payment Method', hasSplitPayment: true} %}
+      <!-- END - ADD/CHOOSE PAYMENT METHOD -->
+
+      <!-- START - PAYMENTS -->
+      {% include '_includes/modules/checkout/quick-checkout-payments.html.twig' with {headline: 'Payments'} %}
+      <!-- END - PAYMENTS -->
+
+      <!-- START - SUCCESSFUL PAYMENTS -->
+      {% include '_includes/modules/checkout/quick-checkout-success-payments.html.twig' with {headline: 'Successful Payments'} %}
+      <!-- END - SUCCESSFUL PAYMENTS -->
+
+      <!-- START - FAILED PAYMENTS -->
+      {% include '_includes/modules/checkout/quick-checkout-failed-payments.html.twig' with {headline: 'Failed Payments'} %}
+      <!-- END - FAILED PAYMENTS -->
+
+      <!-- START: PAY WITH AVON CREDIT-->
+      {% include '_includes/modules/checkout/quick-checkout-ac.html.twig' %}
+      <!-- END: PAY WITH AVON CREDIT -->
+
+      <!-- START - CREDIT CARD PAYMENT METHOD -->
+      {% include '_includes/modules/checkout/quick-checkout-cc.html.twig' %}
+      <!-- END - CREDIT CARD PAYMENT METHOD -->
+
+      <!-- START: PAY WITH QUICKPAY-->
+      {% include '_includes/modules/checkout/quick-checkout-aq.html.twig' with { showAmount:true } %}
+      <!-- END: PAY WITH QUICKPAY-->
+
+      <!-- START - ORDER OVERVIEW -->
+      {% include '_includes/modules/checkout/module-order-overview.html.twig' %}
+      <!-- END - ORDER OVERVIEW -->
+
+      <!-- START - ADDRESS -->
+      {% include '_includes/modules/checkout/module-ship-to.html.twig' %}
+      <!-- END - ADDRESS -->
+
+      <!-- START - SHIPPING -->
+      {% include '_includes/modules/checkout/module-shipping-method.html.twig' %}
+      <!-- END - SHIPPING -->
+
+      <!-- START - BALANCE DUE METHOD -->
+      {% include '_includes/modules/checkout/quick-checkout-balance-due.html.twig' %}
+      <!-- END - SHIPPING METHOD -->
+
+      <h3 class="mb-5 text-center">Review and Submit Order</h3>
+
+      <!-- DEV NOTE :: This sticky footer requires some js to add appropriate padding to <body> :: See avon-main.js near the bottom -> "if(hasStickyFooter) {... -->
+      <!-- DEV NOTE :: add class .d-none to this div to hide it -->
+      <nav class="navbar navbar-default navbar-fixed-bottom navbar-fixed-bottom--auto-height m-0 p-3" role="navigation">
+        <div class="container">
+          <a class="btn btn-primary btn-lg btn-block">Review and Complete Order</a>
+        </div>
+      </nav>
+
+    {% endblock %}
+    {# END BLOCK - MAIN #}
+
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {# DEFINE BLOCK - ASIDE #}
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {% block aside %}
+      <h1>Aside</h1>
+      <p>Laboris consequat incididunt aute consectetur culpa mollit magna. Magna fugiat officia ex nostrud anim ad irure in ullamco. Labore amet fugiat et sint fugiat amet nostrud do est qui anim nulla.</p>
+    {% endblock %}
+    {# END BLOCK - ASIDE #}
+
+  {% endembed %}
+  {# END LAYOUT EMBED #}
 
 
-      {% embed '_layouts/columns-12-slim.html.twig' %}
-
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {# DEFINE BLOCK - MAIN #}
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {% block main %}
-
-          <div class="container">
-
-          
-
-            <!-- START - BALANCE REMAINING -->
-            {% include '_includes/modules/checkout/quick-checkout-balance-remaining.html.twig' %}
-            {% include '_includes/modules/checkout/quick-checkout-balance-remaining.html.twig' with {amount: '0.00', colorClass: 'text-success'} %}
-            <!-- END - BALANCE REMAINING -->
-
-            <!--START: ADD/CHOOSE PAYMENT METHOD-->
-            {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {headline: 'Choose Payment Method', hasSplitPayment: true} %}
-            <!-- END - ADD/CHOOSE PAYMENT METHOD -->
-
-            <!-- START - PAYMENTS -->
-            {% include '_includes/modules/checkout/quick-checkout-payments.html.twig' with {headline: 'Payments'} %}
-            <!-- END - PAYMENTS -->
-
-            <!-- START - SUCCESSFUL PAYMENTS -->
-            {% include '_includes/modules/checkout/quick-checkout-success-payments.html.twig' with {headline: 'Successful Payments'} %}
-            <!-- END - SUCCESSFUL PAYMENTS -->
-
-            <!-- START - FAILED PAYMENTS -->
-            {% include '_includes/modules/checkout/quick-checkout-failed-payments.html.twig' with {headline: 'Failed Payments'} %}
-            <!-- END - FAILED PAYMENTS -->
-
-            <!-- START: PAY WITH AVON CREDIT-->
-            {% include '_includes/modules/checkout/quick-checkout-ac.html.twig' %}
-            <!-- END: PAY WITH AVON CREDIT -->
-
-            <!-- START - CREDIT CARD PAYMENT METHOD -->
-            {% include '_includes/modules/checkout/quick-checkout-cc.html.twig' %}
-            <!-- END - CREDIT CARD PAYMENT METHOD -->
-
-            <!-- START: PAY WITH QUICKPAY-->
-            {% include '_includes/modules/checkout/quick-checkout-aq.html.twig' with { showAmount:true } %}
-            <!-- END: PAY WITH QUICKPAY-->
-
-            <!-- START - ORDER OVERVIEW -->
-            {% include '_includes/modules/checkout/module-order-overview.html.twig' %}
-            <!-- END - ORDER OVERVIEW -->
-
-            <!-- START - ADDRESS -->
-            {% include '_includes/modules/checkout/module-ship-to.html.twig' %}
-            <!-- END - ADDRESS -->
-
-            <!-- START - SHIPPING -->
-            {% include '_includes/modules/checkout/module-shipping-method.html.twig' %}
-            <!-- END - SHIPPING -->
-
-            <!-- START - BALANCE DUE METHOD -->
-            {% include '_includes/modules/checkout/quick-checkout-balance-due.html.twig' %}
-            <!-- END - SHIPPING METHOD -->
-
-            <h3 class="mb-5 text-center">Review and Submit Order</h3>
-
-            <!-- DEV NOTE :: This sticky footer requires some js to add appropriate padding to <body> :: See avon-main.js near the bottom -> "if(hasStickyFooter) {... -->
-            <!-- DEV NOTE :: add class .d-none to this div to hide it -->
-            <nav class="navbar navbar-default navbar-fixed-bottom navbar-fixed-bottom--auto-height m-0 p-3" role="navigation">
-              <div class="container">
-                <a class="btn btn-primary btn-lg btn-block">Review and Complete Order</a>
-              </div>
-            </nav>
-
-          </div>
-          <!-- /.container -->
-
-        {% endblock %}
-
-      {% endembed %}
-
-    </div>
-  </div>
-  <!-- /.super-panel -->
+</div>
+<!-- / .container -->
 
 {% endblock %}
+{# END BLOCK - CONTENT #}
