@@ -206,6 +206,13 @@ $(document).ready(function () {
   }
 
 
+
+  // Check to see if there's scrollable tab nav on the page
+  // if so, let's init the js
+  if($('#scrollableTabsNav').length) NavTabsScrollable.init();
+
+
+
   // INIT OTHER DEMO SCRIPTS
   if (typeof Brochures !== 'undefined') Brochures.init();
   if (typeof CheckoutDemo !== 'undefined') CheckoutDemo.init();
