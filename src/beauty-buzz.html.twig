@@ -15,41 +15,42 @@
       {% block main %}
 
         <!--START: AVON BUZZ LOGO-->
-        <div class="py-4">
-          <h2 class="text-uppercase text-center">Beauty Buzz</h2>
+        <div class="my-5 pb-4 text-center">
+          <img src="images/logos/beauty-buzz.png" class="img-responsive img-responsive--50 m-auto px-5 px-md-0" alt="Beauty Buzz">
         </div>
         <!--END: AVON BUZZ LOGO-->
 
         <section class="pt-4">
           <!-- START: NAV TABS -->
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#buzz-1" data-toggle="tab">MAR 19-25</a></li>
-            <li><a href="#buzz-2" data-toggle="tab">MAR 12-18</a></li>
-            <li><a href="#buzz-3" data-toggle="tab">MAR 5-11</a></li>
-            <li><a href="#buzz-4" data-toggle="tab">FEB 26-MAR 4</a></li>
-          </ul>
+          {% include "_includes/groups/navigation/scrollable-tabs/scrollable-tabs.html.twig" %}
           <!-- END: NAV TABS -->
+
+          <hr class="full-width-divider m-0">
 
           <!-- START: TAB PANES -->
           <div class="tab-content">
 
             {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
               id: 'buzz-1',
+              tabLabel: 'Group 1',
               classes: 'active'
             } %}
 
             {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
               id: 'buzz-2',
+              tabLabel: 'Group 2',
               classes: ''
             } %}
 
             {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
               id: 'buzz-3',
+              tabLabel: 'Group 3',
               classes: ''
             } %}
 
             {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
               id: 'buzz-4',
+              tabLabel: 'Group 4',
               classes: ''
             } %}
 
