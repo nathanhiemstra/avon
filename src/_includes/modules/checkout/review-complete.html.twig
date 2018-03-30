@@ -153,9 +153,13 @@
                 :: See avon-main.js near the bottom -> "if(hasStickyFooter) {... -->
   <nav class="navbar navbar-default navbar-fixed-bottom navbar-fixed-bottom--auto-height m-0 p-3" role="navigation">
     <div class="container">
-      <a class="btn btn-primary btn-lg btn-block">Submit Order</a>
+      <a class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#pay-avon-payment-successful">Submit Order</a>
     </div>
   </nav>
+
+  <!-- START - MODAL - PAY AVON PAYMENT SUCCESSFULL -->
+  {% include "_includes/modules/checkout/modals/payment-success-modal.html.twig" %}
+  <!-- END - MODAL - PAY AVON PAYMENT SUCCESSFULL -->
 
 </div>
 <!-- /.container -->
