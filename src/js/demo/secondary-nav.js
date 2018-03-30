@@ -25,8 +25,6 @@ var SecondaryNav = (function () {
   // private methods
   var _addListeners = function () {
 
-    console.log($els.outerCollapsible);
-
     // prevent nested collapsibles from firing events on the parent
     $els.nestedCollapsible.on('hide.bs.collapse', function(e) {
       e.stopPropagation();

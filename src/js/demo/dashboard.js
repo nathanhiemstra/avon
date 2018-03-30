@@ -11,14 +11,11 @@ var dashboardDemo = (function () {
   // public methods
   var init = function () {
 
-    console.log('dashboard.js'); 
-
     // grab the DOM els we need
     $els = {
       changeWidgetTriggers:   $('.container--dashboard #widgets-my .change-widget-trigger'),
       carouselIndicators:     $('#select-widget-modal .carousel-indicators'),
-      selectWidgetTrigger:    $('#select-widget-modal #select-widget-trigger'),
-      
+      selectWidgetTrigger:    $('#select-widget-modal #select-widget-trigger')
     };
 
     var candidateForChangeNum;
@@ -34,7 +31,7 @@ var dashboardDemo = (function () {
       _markCandidateForChange(this);
     });
 
-     // When "Select Widget" is clicked, 
+     // When "Select Widget" is clicked,
     $els.selectWidgetTrigger.on('click', function() {
       _swapWidget();
     });
@@ -49,14 +46,14 @@ var dashboardDemo = (function () {
 
 
   var _swapWidget = function(itemClicked) {
-    // Find out which widget is currently visible 
+    // Find out which widget is currently visible
     var currentVisibleWidgetNum = ($els.carouselIndicators.find('.active').data('slide-to') + 1);
 
     // Update the "candidate" widget with the selected widget
     $('.container--dashboard #widgets-my .widget-img:eq(' + candidateForChangeNum + ')').attr('src','images/fpo/home/' + currentVisibleWidgetNum + '.png');
   };
 
-  
+
 
 
   return {

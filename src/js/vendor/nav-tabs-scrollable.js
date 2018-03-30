@@ -23,8 +23,6 @@ var NavTabsScrollable = ( function () {
     document.documentElement.classList.remove( "no-js" );
     document.documentElement.classList.add( "js" );
 
-    console.log( els.scrollableTabsNav );
-
     // let's check to see if it's worth initializing
     if( els.scrollableTabsNav ) {
       _run();
