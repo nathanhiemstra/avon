@@ -39,7 +39,7 @@
       <td>**** **** **** 5678</td>
     </tr>
   </table>
-  
+
   <hr>
 
   <h5 class="mb-4 pl-3">Billing Address</h5>
@@ -83,7 +83,7 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalFooter %}
 
-    <button type="button" class="btn btn-default">Go Back</button>
-    <button type="button" class="btn btn-primary">Submit Payment</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Go Back</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pay-avon-payment-successful">Submit Payment</button>
 
 {% endblock %}

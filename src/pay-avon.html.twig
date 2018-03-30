@@ -351,26 +351,21 @@
                         </div>
                       </div>
 
-                      {# MODAL - MODAL EITHER OR #}
-                      {% include "_includes/modules/modals/modal-either-or.html.twig" %}
-
-                      {# MODAL - PAY AVAON REVIEW #}
-                      {% include "_includes/modules/account/pay-avon-review-modal.html.twig" %}
                     </div>
                 </div>
 
                 </div>
                 <div class="row">
                   <div class="col-sm-3 col-md-2 mt-4">
-                <!-- START - Continue Button -->
-                <a class="btn btn-primary btn-sm d-block" disabled="disabled" data-toggle="modal" data-target="#pay-avon-review">Continue</a>
-                <!-- END - Continue Button -->
+                    <!-- START - Continue Button -->
+                    <a href="javascript:void(0)" class="btn btn-primary btn-sm d-block" disabled="disabled" data-toggle="modal" data-target="#confirm-payment-details">Continue</a>
+                    <!-- END - Continue Button -->
                   </div>
 
                   <div class="col-sm-3 col-md-2 mt-4">
-                <!-- START - Continue Button -->
-                <a class="btn btn-primary btn-sm d-block" data-toggle="modal" data-target="#blank-modal-either-or">Continue</a>
-                <!-- END - Continue Button -->
+                    <!-- START - Continue Button -->
+                    <a href="javascript:void(0)" class="btn btn-primary btn-sm d-block" data-toggle="modal" data-target="#confirm-payment-details">Continue</a>
+                    <!-- END - Continue Button -->
                   </div>
                 </div>
 
@@ -379,6 +374,14 @@
             </div>
           </div>
           <!-- END - PAYMENT TYPE SECTION -->
+
+          <!-- START - MODAL - PAY AVON CONFIRM PAYMENT DETAILS -->
+          {% include "_includes/modules/account/pay-avon-confirm-payment-details-modal.html.twig" %}
+          <!-- END - MODAL - PAY AVON CONFIRM PAYMENT DETAILS -->
+
+          <!-- START - MODAL - PAY AVON PAYMENT SUCCESSFULL -->
+          {% include "_includes/modules/account/pay-avon-payment-success-modal.html.twig" %}
+          <!-- END - MODAL - PAY AVON PAYMENT SUCCESSFULL -->
 
         {% endblock %}
 
