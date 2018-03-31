@@ -1,0 +1,56 @@
+{% if btnText is empty %}
+  {% set btnText = 'Submit Order' %}
+{% endif %}
+
+<!-- START - CHECKOUT ORDER TOTAL -->
+<section class="checkout-order-total invisible" data-split-content="desktop">
+
+  <div data-split-content="content">
+
+    <h5 class="header visible-md visible-lg text-center mt-0 mb-4">Total</h5>
+
+    <div id="checkout-details">
+
+      <dl class="clearfix mb-2">
+        <dt class="pull-left">Subtotal (7 items)</dt>
+        <dd class="pull-right"><strong>$XXX.XX</strong></dd>
+      </dl>
+      <dl class="clearfix mb-2 text-muted">
+        <dt class="pull-left normal">Shipping</dt>
+        <dd class="pull-right">+ $XXX.XX</dd>
+      </dl>
+      <dl class="clearfix mb-2 text-muted">
+        <dt class="pull-left normal">Taxes</dt>
+        <dd class="pull-right">+ $XXX.XX</dd>
+      </dl>
+      <dl class="clearfix border-bottom pb-3 mb-3 text-muted">
+        <dt class="pull-left">Earnings/Discount</dt>
+        <dd class="pull-right">- $XXX.XX</dd>
+      </dl>
+
+      <dl class="clearfix border-bottom pb-3 mb-3">
+        <dt class="pull-left">Order Total</dt>
+        <dd class="pull-right"><strong>$XXX.XX</strong></dd>
+      </dl>
+
+      <dl class="clearfix mb-2">
+        <dt class="pull-left normal">Account Balance</dt>
+        <dd class="pull-right">- $XX.XX</dd>
+      </dl>
+      <dl class="clearfix pb-3 mb-3">
+        <dt class="pull-left text-primary">Pay This Amount</dt>
+        <dd class="pull-right text-primary"><strong>$XX.XX</strong></dd>
+      </dl>
+
+    </div>
+
+    <div data-split-content="buttons">
+      <a id="checkout-checkout-btn"
+        class="btn btn-primary btn-block mb-0 mb-md-3 fade in"
+        role="button">{{ btnText }}</a>
+    </div>
+
+  </div>
+
+</section>
+<!-- END - CHECKOUT ORDER TOTAL -->

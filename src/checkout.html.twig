@@ -8,7 +8,7 @@
 
   <div class="container container--page">
 
-  {% embed '_layouts/columns-10-max-8x4.html.twig' %}
+  {% embed '_layouts/columns-10-max-8x4-header.html.twig' %}
 
     {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
     {# DEFINE BLOCK - CONTENT HEADER #}
@@ -17,7 +17,7 @@
       {% include "_includes/groups/navigation/back-link.twig" with {label: "Back to Payment Methods"} %}
       {% include "_includes/groups/navigation/back-link.twig" with {label: "Cancel Split Payments"} %}
 
-      <div class="clearfix my-5">
+      <div class="clearfix my-5 pb-5 border-bottom">
         <h2 class="m-0 pull-left">Checkout</h2>
         <a href="#" class="btn btn-discourage btn-soft btn-sm pull-right m-0">Edit Order</a>
       </div>
@@ -28,6 +28,12 @@
     {# DEFINE BLOCK - MAIN #}
     {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
     {% block main %}
+
+      <div class="mb-4" data-split-content="mobile">
+
+        <!-- DEV NOTE :: Order summary information is moved here with js on small screens -->
+
+      </div>
 
       <!-- START - BALANCE REMAINING -->
       {% include '_includes/modules/checkout/quick-checkout-balance-remaining.html.twig' %}
@@ -78,16 +84,6 @@
       {% include '_includes/modules/checkout/quick-checkout-balance-due.html.twig' %}
       <!-- END - SHIPPING METHOD -->
 
-      <h3 class="mb-5 text-center">Review and Submit Order</h3>
-
-      <!-- DEV NOTE :: This sticky footer requires some js to add appropriate padding to <body> :: See avon-main.js near the bottom -> "if(hasStickyFooter) {... -->
-      <!-- DEV NOTE :: add class .d-none to this div to hide it -->
-      <nav class="navbar navbar-default navbar-fixed-bottom navbar-fixed-bottom--auto-height m-0 p-3" role="navigation">
-        <div class="container">
-          <a class="btn btn-primary btn-lg btn-block">Review and Complete Order</a>
-        </div>
-      </nav>
-
     {% endblock %}
     {# END BLOCK - MAIN #}
 
@@ -95,8 +91,18 @@
     {# DEFINE BLOCK - ASIDE #}
     {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
     {% block aside %}
-      <h1>Aside</h1>
-      <p>Laboris consequat incididunt aute consectetur culpa mollit magna. Magna fugiat officia ex nostrud anim ad irure in ullamco. Labore amet fugiat et sint fugiat amet nostrud do est qui anim nulla.</p>
+
+      <!-- START - ORDER TOTAL ASIDE -->
+      {% include '_includes/modules/checkout/checkout-order-total.html.twig' %}
+      <!-- END - ORDER TOTAL ASIDE -->
+
+      <!-- START - ORDER TOTAL STICKY FOOTER -->
+      <!-- DEV NOTE :: This sticky footer requires some js to add appropriate
+                    :: padding to <body> :: See avon-main.js near the bottom
+                    :: look for "if(hasStickyFooter) {... -->
+      {% include '_includes/modules/checkout/checkout-sticky-footer.html.twig' %}
+      <!-- END - ORDER TOTAL STICKY FOOTER -->
+
     {% endblock %}
     {# END BLOCK - ASIDE #}
 

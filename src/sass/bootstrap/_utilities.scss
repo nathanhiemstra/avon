@@ -94,6 +94,11 @@
 
 .affix {
   position: fixed;
+
+  &.affix--aside-col-4 {
+    top: $spacing-5;
+    width: 285px;
+  }
 }
 
 // Vertical Alignment

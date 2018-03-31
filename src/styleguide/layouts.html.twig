@@ -101,12 +101,16 @@
   {# COLUMN 10 - Max 8x4 #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Column: 10 - Max, Inner 8x4",
-    slug:         "columns-10-max-8x4",
+    title:        "Column: 10 - Max, Inner 8x4 with content header",
+    slug:         "columns-10-max-8x4-header",
     snippet:      '
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
+          <header class="col-md-12" role="header">
+            <h1 class="border-bottom pb-4 mb-4">' ~ fpo.sentence ~ '</h1>
+          </header>
+          <hr>
           <main class="col-md-8" role="main">
             <p>' ~ fpo.paragraph ~ '</p>
           </main>
