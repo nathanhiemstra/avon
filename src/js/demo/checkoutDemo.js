@@ -21,6 +21,7 @@ var CheckoutDemo = (function () {
       summaryDiv: $('.quick-checkout-summary'),
       submitBtn: $('.quick-checkout-submit'),
 
+      affixAside: $('.affix--aside-col-4'),
       splitContainerMobile: $('[data-split-content="mobile"]'),
       splitContainerDesktop: $('[data-split-content="desktop"]'),
       splitContainerBottom: $('[data-split-content="bottom"]'),
@@ -52,6 +53,13 @@ var CheckoutDemo = (function () {
       _calculateBottomPadding();
       _checkWidthAndMoveSummary();
     });
+
+    if($els.affixAside.length) {
+      console.log('FUCK :: ', $els.affixAside.data('offset-top'));
+      var toTop = $els.affixAside.offset().top - 32;
+      $els.affixAside.data('offset-top', toTop);
+        console.log('NOW :: ', $els.affixAside.data('offset-top'));
+    }
 
   };
 

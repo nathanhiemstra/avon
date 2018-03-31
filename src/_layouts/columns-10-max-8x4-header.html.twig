@@ -13,8 +13,10 @@
       </main>
 
       <aside class="col-md-4">
-        <!-- TODO :: the affix offset should be dynamic -->
-        <div class="affix--aside-col-4" role="complementary" data-spy="affix" data-offset-top="600">
+        <!-- DEV NOTE :: data-offset-top attr is set with js in
+                      :: src/js/demo/checkoutDemo.js. This allows
+                      :: the sidebar to stick at the right point -->
+        <div class="affix--aside-col-4" role="complementary" data-spy="affix">
           {% block aside %}{% endblock %}
         </div>
       </aside>
