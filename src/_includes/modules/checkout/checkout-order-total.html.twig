@@ -1,7 +1,3 @@
-{% if btnText is empty %}
-  {% set btnText = 'Submit Order' %}
-{% endif %}
-
 <!-- START - CHECKOUT ORDER TOTAL -->
 <section class="checkout-order-total invisible" data-split-content="desktop">
 
@@ -45,9 +41,10 @@
     </div>
 
     <div data-split-content="buttons">
-      <a id="checkout-checkout-btn"
-        class="btn btn-primary btn-block mb-0 mb-md-3 fade in"
-        role="button">{{ btnText }}</a>
+      <button class="btn btn-primary btn-block mb-0 mb-md-3 fade in" role="button">Submit Order</button>
+      <button class="btn btn-primary btn-block mb-0 mb-md-3 fade in disabled visible-md visible-lg" role="button">Submit Order</button>
+      <button class="btn btn-primary btn-block mb-0 mb-md-3 fade in visible-md visible-lg" role="button">Review & Submit Order</button>
+      <button class="btn btn-primary btn-block mb-0 mb-md-3 fade in disabled visible-md visible-lg" role="button">Review & Submit Order</button>
     </div>
 
   </div>

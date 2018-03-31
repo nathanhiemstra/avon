@@ -55,10 +55,8 @@ var CheckoutDemo = (function () {
     });
 
     if($els.affixAside.length) {
-      console.log('FUCK :: ', $els.affixAside.data('offset-top'));
       var toTop = $els.affixAside.offset().top - 32;
       $els.affixAside.data('offset-top', toTop);
-        console.log('NOW :: ', $els.affixAside.data('offset-top'));
     }
 
   };
