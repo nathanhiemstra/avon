@@ -1,3 +1,7 @@
+{% if buttonText is not defined %}
+  {% set buttonText = 'Continue' %}
+{% endif %}
+
 <section class="list-group box-emphasize box-emphasize--focused">
 
   <div class="list-group-item border-0">
@@ -161,7 +165,7 @@
       <!-- END - BILLING ADDRESS FORM FIELDS -->
 
       <!-- START - Continue Button -->
-      <a href="javascript:void(0);" class="btn btn-primary">Continue</a>
+      <a href="javascript:void(0);" class="btn btn-primary">{{ buttonText }}</a>
       <!-- END - Continue Button -->
 
     </form>

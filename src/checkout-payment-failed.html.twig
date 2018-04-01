@@ -17,6 +17,9 @@
     {# DEFINE BLOCK - CONTENT HEADER #}
     {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
     {% block contentheader %}
+      {% include "_includes/groups/navigation/back-link.twig" with {label: "Back to Payment Methods"} %}
+      {% include "_includes/groups/navigation/back-link.twig" with {label: "Cancel Split Payments"} %}
+
       <div class="clearfix my-5 pb-5 border-bottom">
         <h2 class="m-0 pull-left">Checkout</h2>
         <a href="#" class="btn btn-discourage btn-soft btn-sm pull-right m-0">Edit Order</a>
@@ -35,28 +38,44 @@
 
       </div>
 
-      <!-- START - BALANCE DUE METHOD -->
-      {% include '_includes/modules/checkout/quick-checkout-balance-due.html.twig' %}
-      <!-- END - SHIPPING METHOD -->
+      <!-- START - ORDER OVERVIEW -->
+      {% include '_includes/modules/checkout/module-order-overview.html.twig' %}
+      <!-- END - ORDER OVERVIEW -->
+
+      <!-- START - ADDRESS -->
+      {% include '_includes/modules/checkout/module-ship-to.html.twig' %}
+      <!-- END - ADDRESS -->
+
+      <!-- START - SHIPPING -->
+      {% include '_includes/modules/checkout/module-shipping-method.html.twig' %}
+      <!-- END - SHIPPING -->
+
+      <!-- START - FAILED PAYMENTS -->
+      {% include '_includes/modules/checkout/quick-checkout-failed-payments.html.twig' with {headline: 'Failed Payments'} %}
+      <!-- END - FAILED PAYMENTS -->
+
+      <!-- START - PAYMENTS -->
+      {% include '_includes/modules/checkout/quick-checkout-payments.html.twig' with {headline: 'Payments'} %}
+      <!-- END - PAYMENTS -->
+
+      <!-- START - SUCCESSFUL PAYMENTS -->
+      {% include '_includes/modules/checkout/quick-checkout-success-payments.html.twig' with {headline: 'Successful Payments'} %}
+      <!-- END - SUCCESSFUL PAYMENTS -->
 
       <!--START: ADD/CHOOSE PAYMENT METHOD-->
-      {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {
-        headline: 'Choose Payment Method',
-        hasSplitPayment: true
-      } %}
+      {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {headline: 'Choose Payment Method', hasSplitPayment: true} %}
       <!-- END - ADD/CHOOSE PAYMENT METHOD -->
 
+      <!-- START: PAY WITH AVON CREDIT-->
+      {% include '_includes/modules/checkout/quick-checkout-ac.html.twig' %}
+      <!-- END: PAY WITH AVON CREDIT -->
+
       <!-- START - CREDIT CARD PAYMENT METHOD -->
-      {% include '_includes/modules/checkout/quick-checkout-cc.html.twig' with {
-        buttonText: 'Submit'
-      } %}
+      {% include '_includes/modules/checkout/quick-checkout-cc.html.twig' %}
       <!-- END - CREDIT CARD PAYMENT METHOD -->
 
       <!-- START: PAY WITH QUICKPAY-->
-      {% include '_includes/modules/checkout/quick-checkout-aq.html.twig' with {
-        showAmount:true,
-        buttonText: 'Submit'
-      } %}
+      {% include '_includes/modules/checkout/quick-checkout-aq.html.twig' with { showAmount:true } %}
       <!-- END: PAY WITH QUICKPAY-->
 
     {% endblock %}
@@ -69,7 +88,12 @@
 
       <!-- START - ORDER TOTAL ASIDE -->
       {% include '_includes/modules/checkout/checkout-order-total.html.twig' with {
-        disabled: true
+        buttonsToShow: {
+          sumbmitEnabled: true,
+          submitDisabled: true,
+          reviewEnabled: false,
+          reviewDisabled: false
+        }
       } %}
       <!-- END - ORDER TOTAL ASIDE -->
 

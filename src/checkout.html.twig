@@ -4,7 +4,15 @@
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
-  {{ parent() }}
+
+  <section id="" class="global-alert-msg alert container-fluid mb-0 alert-success fade in">
+    <span class="alert-msg-icon lt-icon lt-medium lt-checkmark"></span>
+    <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">Balance successfully paid</span>
+  </section>
+
+  <section id="" class="global-alert-msg alert container-fluid mb-0 alert-danger fade in">
+    <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">There was an error...</span>
+  </section>
 
   <div class="container container--page">
 
