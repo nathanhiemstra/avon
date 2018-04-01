@@ -11,14 +11,14 @@
   {% block main %}
 
     <section class="container container--page">
-      {% embed layouts.columns3x9 %}
+      {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
 
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {# DEFINE BLOCK - ASIDE #}
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block aside %}
 
-          {% include '_includes/groups/navigation/my-account-nav.html.twig' %}
+          {% include '_includes/groups/navigation/my-account-nav.html.twig' with { active : 'pay-avon' } %}
 
         {% endblock %}
 
@@ -351,26 +351,21 @@
                         </div>
                       </div>
 
-                      {# MODAL - MODAL EITHER OR #}
-                      {% include "_includes/modules/modals/modal-either-or.html.twig" %}
-
-                      {# MODAL - PAY AVAON REVIEW #}
-                      {% include "_includes/modules/account/pay-avon-review-modal.html.twig" %}
                     </div>
                 </div>
 
                 </div>
                 <div class="row">
                   <div class="col-sm-3 col-md-2 mt-4">
-                <!-- START - Continue Button -->
-                <a class="btn btn-primary btn-sm d-block" disabled="disabled" data-toggle="modal" data-target="#pay-avon-review">Continue</a>
-                <!-- END - Continue Button -->
+                    <!-- START - Continue Button -->
+                    <a href="javascript:void(0)" class="btn btn-primary btn-sm d-block" disabled="disabled" data-toggle="modal" data-target="#confirm-payment-details">Continue</a>
+                    <!-- END - Continue Button -->
                   </div>
 
                   <div class="col-sm-3 col-md-2 mt-4">
-                <!-- START - Continue Button -->
-                <a class="btn btn-primary btn-sm d-block" data-toggle="modal" data-target="#blank-modal-either-or">Continue</a>
-                <!-- END - Continue Button -->
+                    <!-- START - Continue Button -->
+                    <a href="javascript:void(0)" class="btn btn-primary btn-sm d-block" data-toggle="modal" data-target="#confirm-payment-details">Continue</a>
+                    <!-- END - Continue Button -->
                   </div>
                 </div>
 
@@ -379,6 +374,14 @@
             </div>
           </div>
           <!-- END - PAYMENT TYPE SECTION -->
+
+          <!-- START - MODAL - PAY AVON CONFIRM PAYMENT DETAILS -->
+          {% include "_includes/modules/account/pay-avon-confirm-payment-details-modal.html.twig" %}
+          <!-- END - MODAL - PAY AVON CONFIRM PAYMENT DETAILS -->
+
+          <!-- START - MODAL - PAY AVON PAYMENT SUCCESSFULL -->
+          {% include "_includes/modules/account/pay-avon-payment-success-modal.html.twig" %}
+          <!-- END - MODAL - PAY AVON PAYMENT SUCCESSFULL -->
 
         {% endblock %}
 
@@ -392,25 +395,25 @@
   <!-- END - MODAL - QUICKPAY ENROLLMENT -->
 
   <!-- START - MODAL - QUICKPAY ENROLLMENT -->
-  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-modal.html.twig" %}
+  {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-modal.html.twig" %}
   <!-- END - MODAL - QUICKPAY ENROLLMENT -->
 
   <!-- START - MODAL - QUICKPAY ENROLLMENT REVIEW -->
-  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-review-modal.html.twig" %}
+  {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-review-modal.html.twig" %}
   <!-- END - MODAL - QUICKPAY ENROLLMENT REVIEW -->
 
   <!-- START - MODAL - QUICKPAY ENROLLMENT SUCCESS -->
-  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-success-modal.html.twig" %}
+  {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-success-modal.html.twig" %}
   <!-- END - MODAL - QUICKPAY ENROLLMENT SUCCESS -->
 
   <!-- START - MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
-  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-learn-more-modal.html.twig" %}
+  {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-learn-more-modal.html.twig" %}
   <!-- END - MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
 
   <!-- MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
-  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-learn-more-modal.html.twig" %}
+  {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-learn-more-modal.html.twig" %}
 
   <!-- MODAL - QUICKPAY ENROLLMENT REVIEW -->
-  {% include "_includes/modules/checkout/checkout-quickpay-enrollment-review-modal.html.twig" %}
+  {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-review-modal.html.twig" %}
 
 {% endblock %}

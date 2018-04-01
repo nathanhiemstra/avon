@@ -1,0 +1,52 @@
+{% extends '_layouts/theme-checkout.html.twig' %}
+{% set useSaveAndExit = true %}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <section class="container">
+
+    {% embed '_layouts/columns-12-slim.html.twig' %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        <section class="container container--page pb-5">
+          <h2 class="text-center mb-5">Your order has been placed!</h2>
+          <section class="list-group box-emphasize">
+            <div class="list-group-item remove-last-border">
+              <p class="text-center mt-3">Thank you for shopping with us. Your order is being processed, and it will be shipped in 24-48 hours.</p>
+              <div class="my-4 ">
+                <div class="text-center alert alert-success alert-secondary">
+                  <h6 class="mt-0">Your order confirmation number is:</h6>
+                  <h2 class="mb-0 text-emphasis"><strong>AV01234567890</strong></h2>
+                </div>
+                
+                {% include '_includes/modules/checkout/quick-checkout-successful-payments-content.html.twig' with {headline: 'Successful Payments'} %}
+              </div>
+
+              <div class="mb-5">
+                <p><strong>Track Your Order</strong></p>
+                <p class="text-muted small">To check your order status at any time please go the <a href="#" class="underline nowrap">My Orders</a> section of the website. You will also receive an email containing all the order details within the next 24 hours.</p>
+              </div>
+
+              <div class="my-2">
+                <p><strong>Questions about your order</strong></p>
+                <p class="text-muted small">Please email us or call us at <a href="tel:1-800-500-2866" class="link-phone-number nowrap">1-800-500-AVON</a> (<a href="tel:1-800-500-2866" class="link-phone-number link-muted nowrap">1-800-500-2866</a>) if you have an questions regarding the your order.</p>
+              </div>
+            </div>
+          </section>
+          <button class="btn btn-primary btn-lg btn-block">Back to home</button>
+        </section>
+
+      {% endblock %}
+
+    {% endembed %}
+
+  </section>
+
+
+{% endblock %}

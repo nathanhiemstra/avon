@@ -94,6 +94,11 @@
 
 .affix {
   position: fixed;
+
+  &.affix--aside-col-4 {
+    top: $spacing-5;
+    width: 285px;
+  }
 }
 
 // Vertical Alignment
@@ -109,6 +114,18 @@
 
 .align-bottom {
   vertical-align: bottom !important;
+}
+
+// Disableable
+// -------------------------
+// a 'disableable' container will set disabled states on all of it's
+// decendants when 'disabled' class is added to said container
+.disableable {
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
 }
 
 // Arrow box

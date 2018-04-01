@@ -1,0 +1,13 @@
+{% if headline is empty %}
+  {% set headline = 'Successful Payments' %}
+{% endif %}
+
+<section class="list-group box-emphasize">
+  <div class="list-group-item remove-last-border">
+    
+    {% include '_includes/modules/checkout/quick-checkout-successful-payments-content.html.twig' with {
+      headline: headline
+    } %}
+
+  </div>
+</section>

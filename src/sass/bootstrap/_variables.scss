@@ -16,6 +16,8 @@ $gray-medium: #8e8e8e !default;
 $gray-light: #CCC !default;
 $gray-lighter: #F2F2F2 !default;
 $green: #3EA572 !default;
+$green-light: #d6f4e5 !default;
+$green-dark: #126339;
 $orange: #FAA342 !default;
 $pink: #ED008C !default;
 $pink-dark: #D4027B !default;
@@ -42,6 +44,14 @@ $brand-info: $blue !default;
 $brand-warning: $orange !default;
 $brand-danger: $red !default;
 $brand-disabled: $gray-light !default;
+$brand-discourage: $black !default;
+
+$brand-success-secondary: $green-light !default;
+$brand-info-secondary: $brand-info !default;
+$brand-warning-secondary: $brand-warning !default;
+$brand-danger-secondary: $brand-danger !default;
+$brand-disabled-secondary: $brand-disabled !default;
+$brand-discourage-secondary: $brand-discourage !default;
 
 //== Scaffolding
 //
@@ -52,6 +62,10 @@ $body-bg: $white !default;
 
 //** Global text color on `<body>`.
 $text-color: $gray-dark !default;
+$text-muted: $gray-medium !default;
+$text-muted-hover: $gray !default;
+
+ 
 
 //** Global textual link color.
 $link-color: $brand-primary !default;
@@ -252,6 +266,10 @@ $btn-warning-border: $brand-warning !default;
 $btn-danger-color: $white !default;
 $btn-danger-bg: $brand-danger !default;
 $btn-danger-border: $brand-danger !default;
+
+$btn-discourage-color: $brand-discourage !default;
+$btn-discourage-bg: $white !default;
+$btn-discourage-border: $brand-discourage !default;
 
 $btn-disabled-color: $brand-disabled !default;
 $btn-disabled-bg: $brand-disabled !default;
@@ -631,6 +649,10 @@ $state-success-text: $body-bg !default;
 $state-success-bg: $brand-success !default;
 $state-success-border: darken(adjust-hue($state-success-bg, -10), 5%) !default;
 
+$state-success-secondary-text: $brand-success !default;
+$state-success-secondary-bg: $brand-success-secondary !default;
+$state-success-secondary-border: darken(adjust-hue($state-success-secondary-bg, -10), 5%) !default;
+
 $state-info-text: #31708f !default;
 $state-info-bg: #d9edf7 !default;
 $state-info-border: darken(adjust-hue($state-info-bg, -10), 7%) !default;
@@ -774,6 +796,10 @@ $alert-link-font-weight: bold !default;
 $alert-success-bg: $state-success-bg !default;
 $alert-success-text: $state-success-text !default;
 $alert-success-border: $state-success-border !default;
+
+$alert-success-secondary-bg: $state-success-secondary-bg !default;
+$alert-success-secondary-text: $state-success-secondary-text !default;
+$alert-success-secondary-border: $state-success-secondary-border !default;
 
 $alert-info-bg: $state-info-bg !default;
 $alert-info-text: $state-info-text !default;

@@ -1,4 +1,5 @@
 {% extends layouts.base %}
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - HEADER #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -12,13 +13,17 @@
 
     {% include "_includes/modules/global/simple-header.html.twig" with {
       'title': 'Checkout'
-    } %}
+    } %}   ######}
 
-    ######}
-
-  </div><!-- /.no-reverse-bg -->
+  </div>
+  <!-- /.no-reverse-bg -->
   <!-- END - HEADER -->
 {% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}{% endblock %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - FOOTER (blank) #}

@@ -1,3 +1,7 @@
+{% if buttonText is not defined %}
+  {% set buttonText = 'Continue' %}
+{% endif %}
+
 <section class="list-group box-emphasize box-emphasize--focused">
 
   <div class="list-group-item border-0">
@@ -12,14 +16,30 @@
     <!-- START - FORM -->
     <form role="form" class="pt-4">
 
-      <div class="form-group has-feedback">
-        <label class="control-label">Card Number</label>
-        {% include components.elements.forms.input with {
-          placeholder: 'cc'
-        } %}
+      <div class="form-group">
+        <label class="control-label">Amount to Pay</label>
+        <div class="row">
+          <div class="col-xs-4">
+            <!-- DEV NOTE :: to disable this input add 'disabled' attribute -->
+            {% include components.elements.forms.input with {
+              placeholder: '$XXX.XX',
+              type: 'number'
+            } %}
+          </div>
+        </div>
       </div>
 
-      <div class="list-group-item border-0 p-1 mb-4">
+      <div class="form-group">
+        <label class="control-label">Card Number</label>
+        <div class="input-group">
+          <span class="input-group-addon"><img src="/images/icons/payment-visa.svg"></span>
+          {% include components.elements.forms.input with {
+            placeholder: ''
+          } %}
+        </div>
+      </div>
+
+      <div class="form-group">
         <label class="control-label">Name on Card</label>
         <div class="row">
           <div class="col-xs-12 mb-3 mb-xs-0">
@@ -28,12 +48,12 @@
         </div>
       </div>
 
-      <div class="list-group-item border-0 p-0 mb-3">
+      <div class="form-group">
+
         <div class="row">
 
           <div class="col-xs-12 col-sm-9 mb-4 mb-xs-0">
             <label class="control-label">Expiration date</label>
-
             <div class="row">
               <div class="col-xs-12 col-sm-6 mb-3 mb-xs-0">
                 <select class="form-control form-inline">
@@ -54,7 +74,6 @@
                 <span class="lt-icon lt-triangle-down form-control-feedback mr-4"></span>
               </div>
             </div>
-
           </div>
 
           <div class="col-xs-12 col-sm-3">
@@ -69,10 +88,22 @@
               placeholder: ''
             } %}
           </div>
-        </div>
+
+        </div> <!-- / .row -->
+
+      </div><!-- / .form-group -->
+
+      <!-- START - SAME ADDRESS CHECKBOX -->
+      <div class="form-group mb-4">
+        {% include "_includes/elements/forms/checkbox.html.twig" with {
+          checked: false,
+          theLabel: 'Billing address is same as Shipping'
+        } %}
       </div>
+      <!-- END - SAME ADDRESS CHECKBOX -->
 
       <!-- START - BILLING ADDRESS FORM FIELDS -->
+      <!-- DEV NOTE :: add class '.d-none' to billing-address to hide -->
       <div class="billing-address">
         <div class="form-group">
           <div class="mb-3">
@@ -134,7 +165,7 @@
       <!-- END - BILLING ADDRESS FORM FIELDS -->
 
       <!-- START - Continue Button -->
-      <a class="btn btn-primary">Continue</a>
+      <a href="javascript:void(0);" class="btn btn-primary">{{ buttonText }}</a>
       <!-- END - Continue Button -->
 
     </form>

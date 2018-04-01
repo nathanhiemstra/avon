@@ -53,12 +53,26 @@
   }
 }
 
+// Secondary alerts (inside content area)
+.alert-secondary {
+  border-radius: $border-radius-secondary;
+  border: none;
+}
+
 // Alternate styles
 //
 // Generate contextual modifier classes for colorizing the alert.
 
 .alert-success {
   @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+
+  &.alert-secondary {
+    @include alert-variant($alert-success-secondary-bg, $alert-success-secondary-border, $alert-success-secondary-text);
+
+    .text-emphasis {
+      color: $green-dark;
+    }
+  }
 }
 
 .alert-info {
@@ -89,11 +103,13 @@
     position: relative;
     display: inline-block;
   }
+
   .lt-icon {
     position: absolute;
     top: 1px;
     left: 0;
   }
+
   span:not(.lt-icon) {
     display: inline-block;
     text-align: left;

@@ -1,0 +1,95 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'confirm-payment-details' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+  <h6 class="modal-title">Review Payment</h6>
+
+{% endblock %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+
+  <h4 class="my-5 pl-3">Please review your payment information</h4>
+
+  <h5 class="mb-4 pl-3">Credit Card Information</h5>
+
+  <table class="table table-no-borders table-fixed">
+    <tr>
+      <td class="font-weight-bold text-uppercase">Card Type</td>
+      <td>Mastercard</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">Name on Crad</td>
+      <td>Tisha Pennington</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">Card number</td>
+      <td>**** **** **** 5678</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h5 class="mb-4 pl-3">Billing Address</h5>
+
+  <table class="table table-no-borders table-fixed">
+    <tr>
+      <td class="font-weight-bold text-uppercase">Address Line 1</td>
+      <td>9072 Rialto Street</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">Address Line 2</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">City</td>
+      <td>Naples</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">State</td>
+      <td>FL</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">ZIP</td>
+      <td>80965</td>
+    </tr>
+  </table>
+
+  <hr>
+  <table class="table table-no-borders table-fixed">
+    <tr>
+      <td class="font-weight-bold text-uppercase">Payment Amount</td>
+      <td>$1,000,000.00</td>
+    </tr>
+  </table>
+
+{% endblock %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-default btn-block" data-dismiss="modal" aria-hidden="true">Go Back</button>
+    </div>
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#pay-avon-payment-successful">Submit Payment</button>
+    </div>
+  </div><!-- /.row -->
+
+{% endblock %}

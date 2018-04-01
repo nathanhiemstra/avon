@@ -17,6 +17,7 @@
     }
   }
 }
+
 .link-primary {
   @include link-primary;
 }
@@ -65,6 +66,11 @@
   .link-phone-number,
   .link-phone-number:hover {
     color: $text-color;
+
+    &.link-muted,
+    &.link-muted:hover {
+      color: $text-muted;
+    }
   }
 
   .link-phone-number:hover {
@@ -124,20 +130,20 @@
 
 // Muted link uses muted colors with default link behavior
 .link-muted {
-  color: $gray-medium !important;
+  color: $text-muted !important;
 
   .lt-icon,
   .lt-icon:before {
-    color: $gray-medium !important;
+    color: $text-muted !important;
   }
 
   &:focus,
   &:hover {
-    color: $gray !important;
+    color: $text-muted-hover !important;
 
     .lt-icon,
     .lt-icon:before {
-      color: $gray-medium !important;
+      color: $text-muted !important;
     }
   }
 }
@@ -145,6 +151,7 @@
 // responsive primary plain link is .link-primary on small screens and .link-plain on large screens
 @mixin responsive-primary-plain-link {
   @include link-primary;
+
   // desktop
   @media (min-width: $screen-sm-min) {
     @include link-plain;

@@ -1,21 +1,56 @@
-{% if type is empty %}
-  {% set type = 'Undefined Method' %}
+<!--
+Parameters:
+  amount (string - dollar amount '$0.00')
+  type (string - name of payment type 'VISA ending in 1234')
+  icon (string - path to payment icon '/images/icons/payment-avoncredit.svg')
+  subhead (string - secondary info that appears under the payment type '$85 available' or 'Transaction ID: 12345')
+  editable (boolean - will show or hide 'Edit | Remove' links)
+  alertMsg (string - if present, will show an alert / warning with its value)
+  buttonMode (boolean - will make the entire row item clickable)
+-->
+
+{# set defaults #}
+{% if editable is not defined %}
+  {% set editable = true %}
 {% endif %}
 
-{% if icon is empty %}
-  {% set icon = '/images/icons/payment-avoncredit.svg' %}
+{% if buttonMode is not defined %}
+  {% set buttonMode = false %}
 {% endif %}
 
-{% if amount is empty %}
-  {% set amount = '$00.00' %}
+{# wrap entire row in link if buttonMode is true #}
+{% if buttonMode %}
+  <a href="#" class="link-plain">
 {% endif %}
 
-<div class="clearfix my-2 border-bottom py-3">
-  <div class="clearfix">
-    <div class="pull-left"><img class="mr-2" src="{{ icon }}"> {{ type }}</div>
-    <div class="pull-right text-right">{{ amount }}</div>
+  <div class="clearfix my-2 border-bottom py-3">
+    {% if icon %}
+      <div class="pull-left mr-4">
+        <img src="{{ icon }}">
+      </div>
+    {% endif %}
+    <div class="pull-left">
+      <div>{{ type }}</div>
+      {% if subhead %}<div class="text-muted small">{{ subhead }}</div>{% endif %}
+    </div>
+    <div class="pull-right text-right">
+      {% if amount %}
+        <div>{{ amount }}</div>
+      {% endif %}
+      {% if editable %}
+        <div class="small"><a class="underline" href="#">Edit</a> | <a class="underline" href="#">Remove</a></div>
+      {% endif %}
+    </div>
+
+    {% if alertMsg %}
+      <div class="clearfix"></div>
+      <div class="alert alert-promo mt-4 mb-3">
+        {{ alertMsg }}
+      </div>
+    {% endif %}
+
   </div>
-  <div class="pull-right small mt-2">
-    <a class="underline" href="#">Edit</a> | <a class="underline" href="#">Remove</a>
-  </div>
-</div>
+
+{% if buttonMode %}
+  </a>
+{% endif %}

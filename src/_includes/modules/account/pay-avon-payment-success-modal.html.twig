@@ -1,0 +1,65 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'pay-avon-payment-successful' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <h6 class="modal-title">Payment Confirmation</h6>
+
+{% endblock %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+  <h4 class="text-center my-4">Thank you for your payment!</h4>
+
+  <p class="my-5 text-center">{{fpo.paragraph}}</p>
+
+  <table class="table table-no-borders table-fixed reverse-bg mb-4">
+    <tr>
+      <td class="font-weight-bold text-uppercase">Account Number</td>
+      <td>248975632</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">Date</td>
+      <td>September 24, 2018 at 12:42 PM Eastern Time</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">Transaction ID</td>
+      <td>xyr872</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">Payment Amount</td>
+      <td>$1,000,000.00</td>
+    </tr>
+  </table>
+
+  <div class="text-center">
+    <a href="#" class="underline">Print this page</a>
+  </div>
+
+  <p class="my-5 text-center">
+    {{fpo.paragraph}}
+  </p>
+
+{% endblock %}
+
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4 my-2">
+      <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" aria-hidden="true">OK</button>
+    </div>
+  </div>
+
+{% endblock %}

@@ -19,6 +19,57 @@
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// BOX SCROLL HIDE
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Box style with border and max-height - overflow hidden on mobile, scrolls on desktop
+
+$num-visible-items: 4;
+$item-height: 72px;
+$item-padding: 15px;
+$total-item-height: $item-height + ($item-padding * 2);
+
+.box-scrollhide {
+  max-height: ($total-item-height * $num-visible-items) + ($num-visible-items * 1px);
+  overflow-y: hidden;
+  border: 1px solid $border-color;
+  padding: $item-padding;
+
+  li {
+    padding-top: $item-padding;
+    padding-bottom: $item-padding;
+    border-bottom: 1px solid $border-color;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+    &:last-of-type {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  img {
+    height: $item-height;
+    width: auto;
+    margin-right: $item-padding;
+  }
+
+  .title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  // Desktop
+  @media (min-width: $screen-md) {
+    overflow-y: scroll;
+  }
+
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // BOX GROUP - PRIMARY WITH CAROUSEL
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -173,7 +224,7 @@ $box-group--primary-item-width: 220px;
 
 .box-group--secondary {
   .box-group--item {
-    
+
     // full width for mobile
     @media (max-width: $screen-sm-min) {
       width: 100%;

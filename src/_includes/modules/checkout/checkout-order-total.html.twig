@@ -1,0 +1,68 @@
+{% if disabled is not defined %}
+  {% set disabled = false %}
+{% endif %}
+
+{% if buttonsToShow is not defined %}
+  {% set buttonsToShow = {
+    sumbmitEnabled: true,
+    submitDisabled: true,
+    reviewEnabled: true,
+    reviewDisabled: true
+  } %}
+{% endif %}
+
+<!-- START - CHECKOUT ORDER TOTAL -->
+<!-- DEV NOTE :: 'disableable' is used to disable all items within the container when .disable is also present
+              :: So, you can toggle .disabled on a 'disableable' element to disable it's decendants-->
+<section class="checkout-order-total invisible disableable {% if disabled %} disabled {% endif %}" data-split-content="desktop">
+
+  <div data-split-content="content">
+
+    <h5 class="header visible-md visible-lg text-center mt-0 mb-4">Total</h5>
+
+    <div id="checkout-details">
+
+      <dl class="clearfix mb-2">
+        <dt class="pull-left">Subtotal (7 items)</dt>
+        <dd class="pull-right"><strong>$XXX.XX</strong></dd>
+      </dl>
+      <dl class="clearfix mb-2 text-muted">
+        <dt class="pull-left normal">Shipping</dt>
+        <dd class="pull-right">+ $XXX.XX</dd>
+      </dl>
+      <dl class="clearfix mb-2 text-muted">
+        <dt class="pull-left normal">Taxes</dt>
+        <dd class="pull-right">+ $XXX.XX</dd>
+      </dl>
+      <dl class="clearfix border-bottom pb-3 mb-3 text-muted">
+        <dt class="pull-left">Earnings/Discount</dt>
+        <dd class="pull-right">- $XXX.XX</dd>
+      </dl>
+
+      <dl class="clearfix border-bottom pb-3 mb-3">
+        <dt class="pull-left">Order Total</dt>
+        <dd class="pull-right"><strong>$XXX.XX</strong></dd>
+      </dl>
+
+      <dl class="clearfix mb-2">
+        <dt class="pull-left normal">Account Balance</dt>
+        <dd class="pull-right">- $XX.XX</dd>
+      </dl>
+      <dl class="clearfix pb-3 mb-3">
+        <dt class="pull-left text-primary">Pay This Amount</dt>
+        <dd class="pull-right text-primary"><strong>$XX.XX</strong></dd>
+      </dl>
+
+    </div>
+
+    <div data-split-content="buttons">
+      {% if buttonsToShow.sumbmitEnabled %}<button class="btn btn-primary btn-block mb-0 mb-md-3 fade in" role="button">Submit Order</button>{% endif %}
+      {% if buttonsToShow.submitDisabled %}<button class="btn btn-primary btn-block mb-0 mb-md-3 fade in disabled visible-md visible-lg" role="button">Submit Order</button>{% endif %}
+      {% if buttonsToShow.reviewEnabled %}<button class="btn btn-primary btn-block mb-0 mb-md-3 fade in visible-md visible-lg" role="button">Review & Submit Order</button>{% endif %}
+      {% if buttonsToShow.reviewDisabled %}<button class="btn btn-primary btn-block mb-0 mb-md-3 fade in disabled visible-md visible-lg" role="button">Review & Submit Order</button>{% endif %}
+    </div>
+
+  </div>
+
+</section>
+<!-- END - CHECKOUT ORDER TOTAL -->

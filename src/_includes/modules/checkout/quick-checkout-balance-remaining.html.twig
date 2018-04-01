@@ -8,9 +8,20 @@
 
 <section class="list-group box-emphasize text-center">
   <div class="list-group-item">
-    <h6 class="mb-3 h1 {{colorClass}}">${{amount}}</h6>
+    <h6 class="mb-3 h1 {{colorClass}}">
+      {% if overpaid %}+{% endif %}${{amount}}
+    </h6>
     <p class="text-uppercase font-weight-bold">
-      of ${{amount}} Remaining
+      {% if overpaid %}
+        You are overpaid
+      {% else %}
+        of ${{amount}} Remaining
+      {% endif %}
+    </p>
+    <p>
+      {% if overpaid %}
+        Elit adipisicing eu nisi cillum exercitation cupidatat laborum minim do ad consequat. Tempor consectetur occaecat ad incididunt adipisicing adipisicing culpa et id.
+      {% endif %}
     </p>
   </div>
 </section>

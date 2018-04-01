@@ -19,10 +19,20 @@ var CheckoutDemo = (function () {
       avonQuikpayDiv: $('.quick-checkout-aq'),
       avonCreditDiv: $('.quick-checkout-ac'),
       summaryDiv: $('.quick-checkout-summary'),
-      submitBtn: $('.quick-checkout-submit')
+      submitBtn: $('.quick-checkout-submit'),
+
+      affixAside: $('.affix--aside-col-4'),
+      splitContainerMobile: $('[data-split-content="mobile"]'),
+      splitContainerDesktop: $('[data-split-content="desktop"]'),
+      splitContainerBottom: $('[data-split-content="bottom"]'),
+      splitContainerButtons: $('[data-split-content="buttons"]'),
+      splitContainerContent: $('[data-split-content="content"]')
+
     };
 
     _addListeners();
+    _calculateBottomPadding();
+    _checkWidthAndMoveSummary();
 
   };
 
@@ -38,6 +48,16 @@ var CheckoutDemo = (function () {
         currentView = 'Summary';
         _switchView();
     });
+
+    $(window).resize(function () {
+      _calculateBottomPadding();
+      _checkWidthAndMoveSummary();
+    });
+
+    if($els.affixAside.length) {
+      var toTop = $els.affixAside.offset().top - 32;
+      $els.affixAside.data('offset-top', toTop);
+    }
 
   };
 
@@ -71,6 +91,38 @@ var CheckoutDemo = (function () {
 
     }
 
+  };
+
+  var _calculateBottomPadding = function () {
+    var footerHeight = $els.splitContainerBottom.outerHeight();
+    $('body').css('padding-bottom', footerHeight);
+  };
+
+  var _checkWidthAndMoveSummary = function () {
+
+    if($(window).width() > 991) {
+      // desktop view
+      $els.splitContainerBottom.addClass('invisible');
+
+      // move summary block to sidebar
+      $els.splitContainerContent.detach().appendTo($els.splitContainerDesktop);
+
+      // move 'checkout' & 'refresh' buttons to sidebar summary
+      $els.splitContainerButtons.detach().appendTo($els.splitContainerDesktop);
+      $els.splitContainerBottom.addClass('invisible');
+    } else {
+      // mobile view
+      $els.splitContainerBottom.removeClass('invisible');
+
+      // move summary block to top of page
+      $els.splitContainerContent.detach().appendTo($els.splitContainerMobile);
+
+      // move 'checkout' & 'refresh' buttons to fixed bottom nav
+      $els.splitContainerButtons.detach().appendTo($els.splitContainerBottom);
+      $els.splitContainerBottom.removeClass('invisible');
+    }
+
+    _calculateBottomPadding();
   };
 
   return {
