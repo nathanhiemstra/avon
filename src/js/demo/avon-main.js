@@ -169,6 +169,9 @@ $( document ).ready( function () {
   // POPOVERS
   $( '[data-toggle="popover"]:not(#popover-cart)' ).popover();
 
+  // SPLIT CONTENT
+  $('[data-split-content]').contentSplit();
+
   // handle cart popover and add a custom class for styling
   var cartPopover = $( "#popover-cart" );
 
