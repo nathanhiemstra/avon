@@ -27,7 +27,7 @@
       <p class="mb-5"><strong>Add a bank account to complete sign up.</strong></p>
 
       {% include components.elements.forms.radio with {
-        id: 'account-1',
+        id: 'select-account-modal-existing-1',
         name: 'select-account',
         classes: 'my-2 mr-4',
         theValue: 'accont 1',
@@ -36,7 +36,7 @@
       } %}
 
       {% include components.elements.forms.radio with {
-        id: 'account-2',
+        id: 'select-account-modal-add-new',
         name: 'select-account',
         classes: 'my-2 mr-4',
         theValue: 'account 2',
@@ -45,7 +45,7 @@
       } %}
 
       <!-- START - ADD NEW ACCOUNT -->
-      <div class="d-none">
+      <div id="select-account-modal-add-new-details" class="d-none">
 
         <p>To enroll, please fill out the fields below.</p>
 
