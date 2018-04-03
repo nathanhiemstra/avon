@@ -1,0 +1,114 @@
+{% extends "_layouts/modal.html.twig" %}
+{% if not modalId %}
+  {% set modalId = 'change-account-modal' %}
+{% endif %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+  <h4 class="modal-title text-center">Change Your Account</h4>
+
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+
+   <div>
+
+      <h6>Current Direct Pay Account</h6>
+      <p>Account: BOFA **********3212 Savings</p>
+
+      <h6>Change to this Account</h6>
+      <div class="form-group">
+        <label class="control-label">Bank Name</label>
+        {% include "_includes/elements/forms/input.html.twig" with {
+          type : 'text'
+        } %}
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Name on Account</label>
+        {% include "_includes/elements/forms/input.html.twig" with {
+          type : 'text'
+        } %}
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Bank Account Number</label>
+        {% include "_includes/elements/forms/input.html.twig" with {
+          type : 'text'
+        } %}
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Bank Routing Number<span class="lt-icon lt-info lt-sm align-middle ml-4" data-toggle="modal" data-target="#routing-number" aria-hidden="true"></span></label>
+        {% include "_includes/elements/forms/input.html.twig" with {
+          type : 'text'
+        } %}
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Account Type</label>
+        <div class="row">
+          <div class="col-md-6">
+            {% include components.elements.forms.radio with {
+              id: 'account-type-checking',
+              name: 'language',
+              classes: 'my-2 mr-4',
+              theValue: 'checking',
+              theLabel: 'Checking',
+              checked: true
+            } %}
+          </div>
+          <div class="col-md-6">
+            {% include components.elements.forms.radio with {
+              id: 'account-type-saving',
+              name: 'language',
+              classes: 'my-2',
+              theValue: 'savings',
+              theLabel: 'Savings',
+              checked: false
+            } %}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Last 4-digits of SSN</label>
+        {% include "_includes/elements/forms/input.html.twig" with {
+          type : 'text'
+        } %}
+      </div>
+
+   </div>
+
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-default btn-block" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    </div>
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Change</button>
+    </div>
+  </div><!-- /.row -->
+
+
+
+{% endblock %}

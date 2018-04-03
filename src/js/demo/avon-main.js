@@ -226,6 +226,21 @@ $( document ).ready( function () {
     }
   } );
 
+
+  // Add new account modal radio button shows 'add new account' content
+  $('#select-account-modal-add-new').on('change', function() {
+      if(this.checked) {
+        $('#select-account-modal-add-new-details').removeClass('d-none');
+      }
+  });
+  $('#select-account-modal-existing-1').on('change', function() {
+      if(this.checked) {
+        $('#select-account-modal-add-new-details').addClass('d-none');
+      }
+  });
+
+
+
   // Check to see if there's scrollable tab nav on the page
   // if so, let's init the js
   if($('#scrollableTabsNav').length) NavTabsScrollable.init();

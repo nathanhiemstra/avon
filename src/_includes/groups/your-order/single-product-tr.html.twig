@@ -3,13 +3,14 @@
 {% else %}
   {% set bottomPadding = ' pb-3 pb-md-4 ' %}
 {% endif %}
+
 <tr class="pt-3">
   <td class="t-item py-3 pt-md-5 pb-4 pl-md-3">
     <img src="{{ img }}" alt="">
   </td>
   <td class="t-desc py-3 pt-md-5 pb-4 pl-0 pl-md-3">
     <div>
-      <span class="mr-4">{{ productName }}</span>
+      <span class="mr-4">{% if indexNum == '1' %}FPO Short{% else %}{{ productName }}{% endif %}</span>
       <span class="product-sku text-muted">{{ sku }}</span>
     </div>
   </td>
