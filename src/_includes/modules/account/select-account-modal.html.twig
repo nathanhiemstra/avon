@@ -1,0 +1,135 @@
+{% extends "_layouts/modal.html.twig" %}
+{% if not modalId %}
+  {% set modalId = 'select-an-account' %}
+{% endif %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+  <h4 class="modal-title text-center">Select an account</h4>
+
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+
+   <div class="py-5">
+      
+      <h4 class="mb-5">Add a bank account to complete sign up.</h4>
+
+      {% include components.elements.forms.radio with {
+        id: 'account-1',
+        name: 'select-account',
+        classes: 'my-2 mr-4',
+        theValue: 'accont 1',
+        theLabel: 'Use BOFA **********3123 Savings',
+        checked: true
+      } %}
+
+      {% include components.elements.forms.radio with {
+        id: 'account-2',
+        name: 'select-account',
+        classes: 'my-2 mr-4',
+        theValue: 'account 2',
+        theLabel: 'Add a new Account',
+        checked: true
+      } %}
+
+      <!-- START - ADD NEW ACCOUNT -->
+      <div>
+          
+        <p>To enroll, please fill out the fields below.</p>
+
+        <div class="form-group">
+          <label class="control-label">Bank Name</label>
+          {% include "_includes/elements/forms/input.html.twig" with {
+            type : 'text'
+          } %}
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Name on Account</label>
+          {% include "_includes/elements/forms/input.html.twig" with {
+            type : 'text'
+          } %}
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Bank Account Number</label>
+          {% include "_includes/elements/forms/input.html.twig" with {
+            type : 'text'
+          } %}
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Bank Routing Number<span class="lt-icon lt-info lt-sm align-middle ml-4"></span></label>
+          {% include "_includes/elements/forms/input.html.twig" with {
+            type : 'text'
+          } %}
+        </div>
+        <div class="form-group">
+          <label class="control-label">Account Type</label>
+          <div class="row">
+            <div class="col-md-6">
+              {% include components.elements.forms.radio with {
+                id: 'account-type',
+                name: 'language',
+                classes: 'my-2 mr-4',
+                theValue: 'checking',
+                theLabel: 'Checking',
+                checked: true
+              } %}
+            </div>
+            <div class="col-md-6">
+              {% include components.elements.forms.radio with {
+                id: 'account-type',
+                name: 'language',
+                classes: 'my-2',
+                theValue: 'savings',
+                theLabel: 'Savings',
+                checked: false
+              } %}
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Last 4-digits of SSN</label>
+          {% include "_includes/elements/forms/input.html.twig" with {
+            type : 'text'
+          } %}
+        </div>
+      </div>
+      <!-- END - ADD NEW ACCOUNT -->
+
+   </div>
+
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-default btn-block">Cancel</button>
+    </div>
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-primary btn-block">Save</button>
+    </div>
+  </div><!-- /.row -->
+
+
+
+{% endblock %}
