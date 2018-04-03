@@ -77,7 +77,9 @@
       <!-- DEV NOTE :: This sticky footer requires some js to add appropriate
                     :: padding to <body> :: See avon-main.js near the bottom
                     :: look for "if(hasStickyFooter) {... -->
-      {% include '_includes/modules/checkout/checkout-sticky-footer.html.twig' %}
+      {% include '_includes/modules/checkout/checkout-sticky-footer.html.twig' with {
+        classes: 'd-none'
+      } %}
       <!-- END - ORDER TOTAL STICKY FOOTER -->
 
     {% endblock %}

@@ -42,23 +42,25 @@
         <!-- START - REPEATABLE ITEMS -->
 
         {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
-          productName: 'Anew Ultimate Supreme Advanced Performance Créme',
+          productName: 'Aute ut aute non dolor consequat consectetur nostrud eiusmod laboris duis.',
           img: '/images/fpo/agnew-ultimate-grey-bg.png',
           autoReplenish: null,
           sku: '829-957',
           price: '$30.00',
           salePrice: null,
-          classes: 'input-sm'
+          classes: 'input-sm',
+          indexNum: indexNum
         }%}
 
         {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
-          productName: 'Anew Super Coverup',
+          productName: 'Anew Ultimate Supreme Advanced Performance Créme',
           img: '/images/fpo/cover-up.png',
           autoReplenish: true,
           sku: '329-321',
           price: '$10.00',
           salePrice: '$8.99',
-          classes: 'input-sm'
+          classes: 'input-sm',
+          indexNum: indexNum
         }%}
 
         {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
@@ -69,7 +71,8 @@
           price: '$45.00',
           salePrice: null,
           classes: 'input-sm',
-          whichRow: 'last'
+          whichRow: 'last',
+          indexNum: indexNum
         }%}
 
          <!-- END - REPEATABLE ITEMS -->
