@@ -12,8 +12,8 @@
     <span class="sr-only">Close modal</span>
     <span class="lt-icon lt-close lt-large py-1"></span>
   </button>
-  <h4 class="modal-title text-center">Select an account</h4>
 
+  <h4 class="modal-title text-center">Select an account</h4>
 
 {% endblock %}
 
@@ -22,10 +22,9 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
-
    <div class="py-5">
-      
-      <h4 class="mb-5">Add a bank account to complete sign up.</h4>
+
+      <p class="mb-5"><strong>Add a bank account to complete sign up.</strong></p>
 
       {% include components.elements.forms.radio with {
         id: 'account-1',
@@ -47,7 +46,7 @@
 
       <!-- START - ADD NEW ACCOUNT -->
       <div class="d-none">
-          
+
         <p>To enroll, please fill out the fields below.</p>
 
         <div class="form-group">

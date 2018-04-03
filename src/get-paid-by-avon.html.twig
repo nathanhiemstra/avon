@@ -46,6 +46,7 @@
               </div>
               <div class="col-sm-6">
                 <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#sign-up-with-an-account">Sign Up</button>
+                <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#sign-up-with-an-account">Cancel Enrollment</button>
               </div>
             </div>
 
@@ -56,6 +57,7 @@
               </div>
               <div class="col-sm-6">
                 <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#select-an-account">Sign Up</button>
+                <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#sign-up-with-an-account">Cancel Enrollment</button>
               </div>
             </div>
 
@@ -92,23 +94,23 @@
           </section>
 
           <!-- START - SIGN UP WITH ACCOUNT MODAL -->
-          {% include "_includes/modules/account/sign-up-with-account-modal.html.twig" %}
+          {% include "_includes/modules/account/modals-get-paid/sign-up-with-account-modal.html.twig" %}
           <!-- END - SIGN UP WITH ACCOUNT MODAL -->
 
           <!-- START - SELECT ACCOUNT MODAL -->
-          {% include "_includes/modules/account/select-account-modal.html.twig" %}
+          {% include "_includes/modules/account/modals-get-paid/select-account-modal.html.twig" %}
           <!-- END - SELECT ACCOUNT MODAL -->
 
           <!-- START - CANCEL ENROLLMENT MODAL -->
-          {% include "_includes/modules/account/cancel-an-account.html.twig" %}
+          {% include "_includes/modules/account/modals-get-paid/cancel-an-account-modal.html.twig" %}
           <!-- END - CANCEL ENROLLMENT MODAL -->
 
           <!-- START - SAVINGS PLAN MODAL -->
-          {% include "_includes/modules/account/savings-plan.html.twig" %}
+          {% include "_includes/modules/account/modals-get-paid/savings-plan-modal.html.twig" %}
           <!-- END - SAVINGS PLAN MODAL -->
 
           <!-- START - ROUTING NUMBER MODAL -->
-          {% include "_includes/modules/account/routing-number.html.twig" %}
+          {% include "_includes/modules/account/modals-get-paid/routing-number-modal.html.twig" %}
           <!-- END - ROUTING NUMBER MODAL -->
 
         {% endblock %}
