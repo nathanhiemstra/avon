@@ -1,0 +1,100 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+      {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - ASIDE #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block aside %}
+
+          {% include '_includes/groups/navigation/my-account-nav.html.twig' with { active : 'get-paid-by-avon' } %}
+
+        {% endblock %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - MAIN #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block main %}
+
+          <h2>Get Paid by Avon</h2>
+          <p class="text-muted">Get all your payments from Avon quickly and easily with automatic deposits. Earnings incentives, rewards and credits go sraight to your account!</p>
+
+          <hr>
+
+          
+          <section>
+
+            <h4 class="my-3 text-uppercase">Let Avon directly deposit to the bank account of your choise</h4>
+            <p class="text-muted">Recommended! The safest and fastest way to get paid.</p>
+
+            <div class="row my-5">
+              <div class="col-sm-6">
+                  <h5 class="m-0">Traditional Earnings</h5>
+                  <p>Traditional / non-estore sales earnings <br>
+                  (Leadership earnings, incentive pay-outs, etc).</p>
+              </div>
+              <div class="col-sm-6">
+                  <button class="btn btn-sm btn-primary">Sign Up</button>
+              </div>
+            </div>
+
+            <div class="row my-5">
+              <div class="col-sm-6">
+                  <h5 class="m-0">Online Earnings</h5>
+                  <p>Online / eStore sales earnings</p>
+              </div>
+              <div class="col-sm-6">
+                  <button class="btn btn-sm btn-primary">Sign Up</button>
+              </div>
+            </div>
+
+          </section>
+
+          <hr>
+
+          <section>
+
+            <h4 class="my-3 text-uppercase">Start Saving with Avon's savings plan</h4>
+            <p class="text-muted">Recommended! The easiest way to ensure a financially secure future.</p>
+
+            <div class="row my-5">
+              <div class="col-sm-6">
+                  <h5 class="m-0">Saving Plan</h5>
+                  <a href="#" class="underline">Learn More</a>
+              </div>
+              <div class="col-sm-6">
+                  <button class="btn btn-sm btn-primary">Sign Up</button>
+              </div>
+            </div>
+
+          </section>
+          
+          <hr>
+
+          <section>
+            <h4 class="my-3 text-uppercase">Get a Pre-Paid card in the mail</h4>
+            <p class="text-muted">If you do not enroll in the direct deposit options above. Avon will automatically mail you a Citibank pre-paid card. After that, every time Avon is suppossed to pay you, our card will be loaded with specific amount.</p>
+            <p class="text-muted">Question? Check out the <a href="#" class="underline">FAQ</a>.</p>
+
+            <button class="btn btn-sm btn-primary">Verify your card balance</button>
+          </section>
+
+        {% endblock %}
+
+      {% endembed %}
+    </section>
+
+  {% endblock %}
+
+{% endblock %}
