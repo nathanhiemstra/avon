@@ -16,7 +16,9 @@
 
   <div class="container container--page">
 
-  {% embed '_layouts/columns-10-max-8x4-header.html.twig' %}
+  {% embed '_layouts/columns-10-max-8x4-header.html.twig' with {
+    contentSplit: true
+  } %}
 
     {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
     {# DEFINE BLOCK - CONTENT HEADER #}

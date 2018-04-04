@@ -1,4 +1,8 @@
-<div class="row">
+{% if contentSplit is not defined %}
+  {% set contentSplit = false %}
+{% endif %}
+
+<div class="row" {% if contentSplit %} data-split-content {% endif %}>
   <main class="col-md-8" role="main">
     {% block main %}{% endblock %}
   </main>

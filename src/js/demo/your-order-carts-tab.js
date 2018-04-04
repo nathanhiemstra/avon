@@ -45,8 +45,8 @@ var YourOrderCartsTab = (function () {
 
     _addListeners();
     _updateCheckoutTotals();
-    _calculateBottomPadding();
-    _checkWidthAndMoveSummary();
+    // _calculateBottomPadding();
+    // _checkWidthAndMoveSummary();
 
   };
 
@@ -71,10 +71,10 @@ var YourOrderCartsTab = (function () {
       _toggleUpdateTotals();
     });
 
-    $(window).resize(function () {
-      _calculateBottomPadding();
-      _checkWidthAndMoveSummary();
-    });
+    // $(window).resize(function () {
+    //   _calculateBottomPadding();
+    //   _checkWidthAndMoveSummary();
+    // });
 
   };
 
@@ -212,47 +212,47 @@ var YourOrderCartsTab = (function () {
 
   };
 
-  var _calculateBottomPadding = function () {
-    var footerHeight = $els.cartsBtnsFixedContainer.outerHeight();
-    $('body').css('padding-bottom', footerHeight);
-  };
+  // var _calculateBottomPadding = function () {
+  //   var footerHeight = $els.cartsBtnsFixedContainer.outerHeight();
+  //   $('body').css('padding-bottom', footerHeight);
+  // };
 
-  var _checkWidthAndMoveSummary = function () {
-
-    if($(window).width() > 991) {
-      // desktop view
-      $els.cartsBtnsFixedContainer.addClass('invisible');
-      $els.checkoutSummary.removeClass('invisible');
-
-      // reset 'colspan' attribute from quantity
-      $els.columnQty.attr('colspan', 1);
-
-      // move summary block to sidebar
-      $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerDesktop);
-
-      // move 'checkout' & 'refresh' buttons to sidebar summary
-      $els.cartsButtons.detach().appendTo($els.cartsSummaryContainerDesktop);
-      $els.checkoutSummary.removeClass('invisible');
-      $els.cartsBtnsFixedContainer.addClass('invisible');
-    } else {
-      // mobile view
-      $els.cartsBtnsFixedContainer.removeClass('invisible');
-      $els.checkoutSummary.addClass('invisible');
-
-      // widen 'colspan' attribute on quantity
-      $els.columnQty.attr('colspan', 2);
-
-      // move summary block to top of page
-      $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerMobile);
-
-      // move 'checkout' & 'refresh' buttons to fixed bottom nav
-      $els.cartsButtons.detach().appendTo($els.cartsBtnsFixedContainer);
-      $els.cartsBtnsFixedContainer.removeClass('invisible');
-      $els.checkoutSummary.addClass('invisible');
-    }
-
-    _calculateBottomPadding();
-  };
+  // var _checkWidthAndMoveSummary = function () {
+  //
+  //   if($(window).width() > 991) {
+  //     // desktop view
+  //     $els.cartsBtnsFixedContainer.addClass('invisible');
+  //     $els.checkoutSummary.removeClass('invisible');
+  //
+  //     // reset 'colspan' attribute from quantity
+  //     $els.columnQty.attr('colspan', 1);
+  //
+  //     // move summary block to sidebar
+  //     $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerDesktop);
+  //
+  //     // move 'checkout' & 'refresh' buttons to sidebar summary
+  //     $els.cartsButtons.detach().appendTo($els.cartsSummaryContainerDesktop);
+  //     $els.checkoutSummary.removeClass('invisible');
+  //     $els.cartsBtnsFixedContainer.addClass('invisible');
+  //   } else {
+  //     // mobile view
+  //     $els.cartsBtnsFixedContainer.removeClass('invisible');
+  //     $els.checkoutSummary.addClass('invisible');
+  //
+  //     // widen 'colspan' attribute on quantity
+  //     $els.columnQty.attr('colspan', 2);
+  //
+  //     // move summary block to top of page
+  //     $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerMobile);
+  //
+  //     // move 'checkout' & 'refresh' buttons to fixed bottom nav
+  //     $els.cartsButtons.detach().appendTo($els.cartsBtnsFixedContainer);
+  //     $els.cartsBtnsFixedContainer.removeClass('invisible');
+  //     $els.checkoutSummary.addClass('invisible');
+  //   }
+  //
+  //   _calculateBottomPadding();
+  // };
 
   return {
     init: init

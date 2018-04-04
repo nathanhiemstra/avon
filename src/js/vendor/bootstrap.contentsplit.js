@@ -37,17 +37,16 @@
     $.each(this.$els, function(i, val) {
       if(val.length < 1) {
         console.error('The ContentSplit plugin requires a DOM elelent with the following data attribute: ' + val.selector + ' - This element should be placed within the outer [data-split-content] element.');
-
       }
     });
 
     var that = this;
     $(window).resize(function () {
+      console.log('resize');
       that._calculateAndApplyBottomPadding();
       that._checkWidthAndMoveContent();
     });
 
-    this._calculateAndApplyBottomPadding();
     this._checkWidthAndMoveContent();
 
   };
@@ -57,8 +56,8 @@
   };
 
   ContentSplit.prototype._calculateAndApplyBottomPadding = function() {
-    // console.log(this.splitContainerButtons.outerHeight());
-    var footerHeight = this.$els.splitContainerButtons.outerHeight();
+    // console.log(this.$els.splitContainerBottom.outerHeight());
+    var footerHeight = this.$els.splitContainerBottom.outerHeight();
     $('body').css('padding-bottom', footerHeight);
   };
   ContentSplit.prototype._checkWidthAndMoveContent = function() {

@@ -28,7 +28,9 @@
 
     <section class="container">
 
-      {% embed "_layouts/columns-8x4.html.twig" %}
+      {% embed "_layouts/columns-8x4.html.twig" with {
+        contentSplit: true
+      } %}
 
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {# DEFINE BLOCK - MAIN #}

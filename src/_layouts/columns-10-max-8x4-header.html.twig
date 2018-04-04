@@ -1,4 +1,8 @@
-<div class="container" data-split-content>
+{% if contentSplit is not defined %}
+  {% set contentSplit = false %}
+{% endif %}
+
+<div class="container" {% if contentSplit %} data-split-content {% endif %}>
 
   <div class="row">
 
