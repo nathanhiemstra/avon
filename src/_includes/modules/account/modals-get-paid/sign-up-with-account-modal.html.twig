@@ -1,6 +1,6 @@
 {% extends "_layouts/modal.html.twig" %}
 {% if not modalId %}
-  {% set modalId = 'sign-up-with-an-account' %}
+  {% set modalId = 'modal-sign-up-with-an-account' %}
 {% endif %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -49,7 +49,7 @@
       </div>
 
       <div class="form-group">
-        <label class="control-label">Bank Routing Number<span class="lt-icon lt-info lt-sm align-middle ml-4" data-toggle="modal" data-target="#routing-number" aria-hidden="true"></span></label>
+        <label class="control-label">Bank Routing Number<span class="lt-icon lt-info lt-sm align-middle ml-4" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span></label>
         {% include "_includes/elements/forms/input.html.twig" with {
           type : 'text'
         } %}

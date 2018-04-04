@@ -1,0 +1,63 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="container container--page">
+
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        <h1 class="mb-5">Get Paid by Avon - Modals</h1>
+
+        <p><a data-toggle="modal" data-target="#modal-sign-up-with-an-account">Sign up with an Account</a></p>
+
+        <p><a data-toggle="modal" data-target="#modal-change-account">Change Your Account</a></p>
+
+        <p><a data-toggle="modal" data-target="#modal-select-an-account">Select an Account</a></p>
+
+        <p><a data-toggle="modal" data-target="#modal-cancel-an-account">Cancel Enrollment</a></p>
+
+        <p><a data-toggle="modal" data-target="#modal-savings-plan">Avon's Savings Plan</a></p>
+
+        <p><a data-toggle="modal" data-target="#modal-routing-number">Bank Routing Number</a></p>
+
+        <!-- START - SIGN UP WITH ACCOUNT MODAL -->
+        {% include "_includes/modules/account/modals-get-paid/sign-up-with-account-modal.html.twig" %}
+        <!-- END - SIGN UP WITH ACCOUNT MODAL -->
+
+        <!-- START - CHANGE ACCOUNT ACCOUNT MODAL -->
+        {% include "_includes/modules/account/modals-get-paid/change-account-modal.html.twig" %}
+        <!-- END - CHANGE ACCOUNT ACCOUNT MODAL -->
+
+        <!-- START - SELECT ACCOUNT MODAL -->
+        {% include "_includes/modules/account/modals-get-paid/select-account-modal.html.twig" %}
+        <!-- END - SELECT ACCOUNT MODAL -->
+
+        <!-- START - CANCEL ENROLLMENT MODAL -->
+        {% include "_includes/modules/account/modals-get-paid/cancel-an-account-modal.html.twig" %}
+        <!-- END - CANCEL ENROLLMENT MODAL -->
+
+        <!-- START - SAVINGS PLAN MODAL -->
+        {% include "_includes/modules/account/modals-get-paid/savings-plan-modal.html.twig" %}
+        <!-- END - SAVINGS PLAN MODAL -->
+
+        <!-- START - ROUTING NUMBER MODAL -->
+        {% include "_includes/modules/account/modals-get-paid/routing-number-modal.html.twig" %}
+        <!-- END - ROUTING NUMBER MODAL -->
+
+
+      {% endblock %}
+
+
+  </div>
+
+{% endblock %}
+
+
+<!-- START - MODAL - QUICKPAY ENROLLMENT -->
