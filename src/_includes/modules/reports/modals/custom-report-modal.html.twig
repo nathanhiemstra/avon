@@ -1,6 +1,11 @@
 {% extends "_layouts/modal.html.twig" %}
+
 {% if not modalId %}
   {% set modalId = 'customize-report' %}
+{% endif %}
+
+{% if not modalSizeClass %}
+  {% set modalSizeClass = 'modal-lg' %}
 {% endif %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -25,54 +30,53 @@
     <h4>Select Criteria</h4>
     <div class="row">
       {% include "_includes/elements/forms/checkbox.html.twig" with {
-        checked: true, 
-        classes: "col-md-4",
+        checked: true,
+        classes: "col-md-4 my-2",
         theLabel: 'Beauty Amount'
       } %}
 
       {% include "_includes/elements/forms/checkbox.html.twig" with {
-        classes: "col-md-4",
+        classes: "col-md-4 my-2",
         theLabel: 'Beauty Earinings %'
       } %}
 
-      {% include "_includes/elements/forms/checkbox.html.twig" with { 
-        classes: "col-md-4",
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        classes: "col-md-4 my-2",
         theLabel: 'Zero commission Amount'
       } %}
 
       {% include "_includes/elements/forms/checkbox.html.twig" with {
-        classes: "col-md-4",
+        classes: "col-md-4 my-2",
         theLabel: 'Beauty Earnings'
       } %}
 
-      {% include "_includes/elements/forms/checkbox.html.twig" with { 
-        classes: "col-md-4",
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        classes: "col-md-4 my-2",
         theLabel: 'Fashion $ Home Earnings'
       } %}
 
       {% include "_includes/elements/forms/checkbox.html.twig" with {
-        classes: "col-md-4",
+        classes: "col-md-4 my-2",
         theLabel: 'Total Order Amount'
       } %}
 
-      {% include "_includes/elements/forms/checkbox.html.twig" with { 
-        classes: "col-md-4",
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        classes: "col-md-4 my-2",
         theLabel: 'Earnings Source'
       } %}
 
       {% include "_includes/elements/forms/checkbox.html.twig" with {
-        classes: "col-md-4",
+        classes: "col-md-4 my-2",
         theLabel: 'Fashion &amp; Home Amount'
       } %}
 
       {% include "_includes/elements/forms/checkbox.html.twig" with {
-        classes: "col-md-4",
+        classes: "col-md-4 my-2",
         theLabel: 'Fashion &amp; Home Earnings %'
       } %}
     </div>
 
-    <em class="text-muted my-3">Customer, Campaign #, Date, and Confirmation Number will appear on every report.</em>
-
+    <p class="text-muted mt-4"><em>Customer, Campaign #, Date, and Confirmation Number will appear on every report.</em></p>
 
 {% endblock %}
 

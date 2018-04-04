@@ -51,8 +51,8 @@
         <!-- START:  CAMPAIGN NUMBER FILTER -->
         <div class="form-group my-2">
           <label class="control-label d-block">Name on Account</label>
-          {% include components.elements.forms.select with { 
-            'items': [{'label': '07 - 2018'}, {'label': '08 - 2018'}, {'label': '09 - 2018'}] 
+          {% include components.elements.forms.select with {
+            'items': [{'label': '07 - 2018'}, {'label': '08 - 2018'}, {'label': '09 - 2018'}]
           } %}
         </div>
         <!-- END:  CAMPAIGN NUMBER FILTER -->
@@ -246,7 +246,7 @@
           </table>
         </div>
         <!-- END: EARNINGS TABLE -->
-        
+
         <!-- START: MANGOLIA CONTENT BLOCK -->
         <div class="reverse-bg py-2 text-center">
           <h4 class="m-0">Mangolia managed Content Block</h4>
@@ -254,13 +254,13 @@
         <!-- END: MANGOLIA CONTENT BLOCK -->
 
         <!-- START - CANCEL ENROLLMENT MODAL -->
-        {% include "_includes/modules/modals/custom-report-modal.html.twig" %} 
+        {% include "_includes/modules/reports/modals/custom-report-modal.html.twig" %} 
         <!-- END - CANCEL ENROLLMENT MODAL -->
 
         <!-- START - CANCEL ENROLLMENT MODAL -->
-        {% include "_includes/modules/modals/invoice-modal.html.twig" %} 
+        {% include "_includes/modules/reports/modals/invoice-modal.html.twig" %} 
         <!-- END - CANCEL ENROLLMENT MODAL -->
-        
+
 
       {% endblock %}
 
