@@ -1,0 +1,99 @@
+{% extends "_layouts/modal.html.twig" %}
+
+{% if not modalId %}
+  {% set modalId = 'customize-report' %}
+{% endif %}
+
+{% if not modalSizeClass %}
+  {% set modalSizeClass = 'modal-lg' %}
+{% endif %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+  <h4 class="modal-title text-center">Customize Report</h4>
+
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+    <h4>Select Criteria</h4>
+    <div class="row">
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        checked: true,
+        classes: "col-md-4 my-2",
+        theLabel: 'Beauty Amount'
+      } %}
+
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        classes: "col-md-4 my-2",
+        theLabel: 'Beauty Earinings %'
+      } %}
+
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        classes: "col-md-4 my-2",
+        theLabel: 'Zero commission Amount'
+      } %}
+
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        classes: "col-md-4 my-2",
+        theLabel: 'Beauty Earnings'
+      } %}
+
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        classes: "col-md-4 my-2",
+        theLabel: 'Fashion $ Home Earnings'
+      } %}
+
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        classes: "col-md-4 my-2",
+        theLabel: 'Total Order Amount'
+      } %}
+
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        classes: "col-md-4 my-2",
+        theLabel: 'Earnings Source'
+      } %}
+
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        classes: "col-md-4 my-2",
+        theLabel: 'Fashion &amp; Home Amount'
+      } %}
+
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        classes: "col-md-4 my-2",
+        theLabel: 'Fashion &amp; Home Earnings %'
+      } %}
+    </div>
+
+    <p class="text-muted mt-4"><em>Customer, Campaign #, Date, and Confirmation Number will appear on every report.</em></p>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-default btn-block" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    </div>
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-primary btn-block">Update</button>
+    </div>
+  </div><!-- /.row -->
+
+
+
+{% endblock %}

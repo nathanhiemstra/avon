@@ -1,0 +1,334 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="container container--page">
+
+    {% embed "_layouts/columns-10-max.html.twig" %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        <!-- START: MANGOLIA CONTENT BLOCK -->
+        <div class="reverse-bg py-2 text-center mb-5">
+          <h4 class="m-0">Mangolia managed Content Block</h4>
+        </div>
+        <!-- END: MANGOLIA CONTENT BLOCK -->
+
+        <h2>Direct Delivery Orders Report</h2>
+        <p>{{fpo.paragraph}}</p>
+        <p>{{fpo.sentence}}</p>
+
+        <!-- START: FILTERS HEADER -->
+        <section class="d-flex flex-wrap align-items-end">
+
+          <!-- START: FILTER RADIOS -->
+          <div class="form-group text-muted w-100">
+            <div class="pull-left pr-4 my-2">
+              Filter By
+            </div>
+            <div class="pull-left clearfix">
+              {% include components.elements.forms.radio with {
+              id: 'filter-by-date',
+              name: 'filter-type',
+              classes: 'pull-left my-2 mr-4',
+              theValue: 'accont 1',
+              theLabel: 'Date',
+              checked: true
+            } %}
+
+              {% include components.elements.forms.radio with {
+              id: 'filter-by-campaign',
+              name: 'filter-type',
+              classes: 'pull-left my-2',
+              theValue: 'account 2',
+              theLabel: 'Campaign',
+              checked: true
+            } %}
+            </div>
+          </div>
+          <!-- END: FILTER RADIOS -->
+
+          <!-- START: CAMPAIGN NUMBER FILTER -->
+          <!-- DEV NOTE: ONLY ONE OF THESE FILTERS TO DISPLAY AT A TIME DEPENDING ON RADIO SELECTION ABOVE -->
+          <div class="my-2">
+            <label class="control-label d-block">Name on Account</label>
+            <div class="form-group has-feedback d-inline-block mb-0">
+              <select class="form-control">
+                <option>07 - 2018</option>
+                <option>08 - 2018</option>
+                <option>09 - 2018</option>
+              </select>
+              <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+            </div>
+          </div>
+          <!-- END: CAMPAIGN NUMBER FILTER -->
+
+          <!-- START: DATE FILTER -->
+          <!-- DEV NOTE: ONLY ONE OF THESE FILTERS TO DISPLAY AT A TIME DEPENDING ON RADIO SELECTION ABOVE -->
+          <form class="my-2 d-none">
+            <div class="form-group has-feedback col-xs-12 col-sm-4 mb-0 p-0 pr-md-2">
+              <label for="order-history-start-date" class="control-label">Start Date</label>
+              <input id="delivery-report-start-date" type="text" class="form-control" placeholder="03/02/2018">
+              <span class="lt-icon lt-calendar form-control-feedback"></span>
+              {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig'  %}
+            </div>
+            <div class="form-group has-feedback col-xs-12 col-sm-4 mb-0 p-0 pl-md-2 pr-md-2">
+              <label for="delivery-report-end-date" class="control-label">End Date</label>
+              <input id="order-history-end-date" type="text" class="form-control" placeholder="04/02/2018">
+              <span class="lt-icon lt-calendar form-control-feedback"></span>
+              {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig'  %}
+            </div>
+            <div class="form-group col-xs-12 col-sm-4 mb-0 p-0 pl-md-2">
+              <label class="control-label hidden-xs">&nbsp;</label>
+              <button type="submit" class="form-control btn btn-primary">Update Results</button>
+            </div>
+          </form>
+          <!-- END: DATE FILTER -->
+
+          <!-- START: CUSTOMIZE REPORT -->
+          <div class="ml-auto">
+            <a href="javascript:void(0)" class="underline" data-toggle="modal" data-target="#customize-report">Customize report</a>
+          </div>
+          <!-- END: CUSTOMIZE REPORT -->
+
+        </section>
+        <!-- END: FILTERS HEADER -->
+
+        <hr>
+
+        <h2>Orders</h2>
+
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered-outside-only">
+            <thead>
+              <tr>
+                <th>Customer Name</th>
+                <th>Camp #</th>
+                <th>Confirmation Number</th>
+                <th>Date</th>
+                <th>Total Earnings</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Elise Marsh</td>
+                <td>09</td>
+                <td>
+                  <a href="javascript:void(0)" class="underline" data-toggle="modal" data-target="#invoice-modal">AVR0135671236</a>
+                </td>
+                <td>08/02/2017</td>
+                <td class="text-center">$8.50</td>
+              </tr>
+              <tr>
+                <td>Elise Marsh</td>
+                <td>09</td>
+                <td>
+                  <a href="javascript:void(0)" class="underline" data-toggle="modal" data-target="#invoice-modal">AVR0135671236</a>
+                </td>
+                <td>08/02/2017</td>
+                <td class="text-center">$8.50</td>
+              </tr>
+              <tr>
+                <td>Elise Marsh</td>
+                <td>09</td>
+                <td>
+                  <a href="javascript:void(0)" class="underline" data-toggle="modal" data-target="#invoice-modal">AVR0135671236</a>
+                </td>
+                <td>08/02/2017</td>
+                <td class="text-center">$8.50</td>
+              </tr>
+              <tr>
+                <td>Elise Marsh</td>
+                <td>09</td>
+                <td>
+                  <a href="javascript:void(0)" class="underline" data-toggle="modal" data-target="#invoice-modal">AVR0135671236</a>
+                </td>
+                <td>08/02/2017</td>
+                <td class="text-center">$8.50</td>
+              </tr>
+              <tr>
+                <td>Elise Marsh</td>
+                <td>09</td>
+                <td>
+                  <a href="javascript:void(0)" class="underline" data-toggle="modal" data-target="#invoice-modal">AVR0135671236</a>
+                </td>
+                <td>08/02/2017</td>
+                <td class="text-center">$8.50</td>
+              </tr>
+              <tr>
+                <td>Elise Marsh</td>
+                <td>09</td>
+                <td>
+                  <a href="javascript:void(0)" class="underline" data-toggle="modal" data-target="#invoice-modal">AVR0135671236</a>
+                </td>
+                <td>08/02/2017</td>
+                <td class="text-center">$8.50</td>
+              </tr>
+              <tr>
+                <td>Elise Marsh</td>
+                <td>09</td>
+                <td>
+                  <a href="javascript:void(0)" class="underline" data-toggle="modal" data-target="#invoice-modal">AVR0135671236</a>
+                </td>
+                <td>08/02/2017</td>
+                <td class="text-center">$8.50</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- START - PAGINATION -->
+        <ul class="pagination">
+          <li class="disabled page-prev">
+            <a href="javascript:void(0)">
+              <span class="lt-icon lt-carat-left lt-medium"></a>
+            </li>
+            <li class="active">
+              <a href="javascript:void(0)">1</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">2</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">3</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">4</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">5</a>
+            </li>
+            <li class="page-next">
+              <a href="javascript:void(0)">
+                <span class="lt-icon lt-carat-right lt-medium"></a>
+              </li>
+            </ul>
+            <!-- END - PAGINATION -->
+
+            <!--START: RESTURNS SECTION -->
+            <h2>Returns</h2>
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered-outside-only">
+                <thead>
+                  <tr>
+                    <th>Customer Name</th>
+                    <th>Camp #</th>
+                    <th>Confirmation Number</th>
+                    <th>Date</th>
+                    <th>Total Earnings</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Elise Marsh</td>
+                    <td>09</td>
+                    <td>
+                      <a href="#" class="underline">AVR0135671236</a>
+                    </td>
+                    <td>08/02/2017</td>
+                    <td class="text-center">$8.50</td>
+                  </tr>
+                  <tr>
+                    <td>Elise Marsh</td>
+                    <td>09</td>
+                    <td>
+                      <a href="#" class="underline">AVR0135671236</a>
+                    </td>
+                    <td>08/02/2017</td>
+                    <td class="text-center">$8.50</td>
+                  </tr>
+                  <tr>
+                    <td>Elise Marsh</td>
+                    <td>09</td>
+                    <td>
+                      <a href="#" class="underline">AVR0135671236</a>
+                    </td>
+                    <td>08/02/2017</td>
+                    <td class="text-center">$8.50</td>
+                  </tr>
+                  <tr>
+                    <td>Elise Marsh</td>
+                    <td>09</td>
+                    <td>
+                      <a href="#" class="underline">AVR0135671236</a>
+                    </td>
+                    <td>08/02/2017</td>
+                    <td class="text-center">$8.50</td>
+                  </tr>
+                  <tr>
+                    <td>Elise Marsh</td>
+                    <td>09</td>
+                    <td>
+                      <a href="#" class="underline">AVR0135671236</a>
+                    </td>
+                    <td>08/02/2017</td>
+                    <td class="text-center">$8.50</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- END: RESTURNS SECTION -->
+
+            <!-- START: PRINT LINK -->
+            <div class="text-center">
+              <a href="#" class="underline">Print</a>
+            </div>
+            <!-- END: PRINT LINK -->
+
+            <!-- START: EARNINGS TABLE -->
+            <div class="table-responsive my-3">
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <td>
+                      <h6>Total Order Amount</h6>
+                    </td>
+                    <td>
+                      <h6>Total Earnings</h6>
+                    </td>
+                    <td>
+                      <h6>Total Earnings Reverted Due to Terms</h6>
+                    </td>
+                    <td>
+                      <h6>Total Adjusted Earnings</h6>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Jane Johnson</td>
+                    <td>0844557744</td>
+                    <td>456618581</td>
+                    <td>23</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- END: EARNINGS TABLE -->
+
+            <!-- START: MANGOLIA CONTENT BLOCK -->
+            <div class="reverse-bg py-2 text-center">
+              <h4 class="m-0">Mangolia managed Content Block</h4>
+            </div>
+            <!-- END: MANGOLIA CONTENT BLOCK -->
+
+            <!-- START - CANCEL ENROLLMENT MODAL -->
+            {% include "_includes/modules/reports/modals/custom-report-modal.html.twig" %}
+            <!-- END - CANCEL ENROLLMENT MODAL -->
+
+            <!-- START - CANCEL ENROLLMENT MODAL -->
+            {% include "_includes/modules/reports/modals/invoice-modal.html.twig" %}
+            <!-- END - CANCEL ENROLLMENT MODAL -->
+
+          {% endblock %}
+
+        {% endembed %}
+
+      </div>
+
+    {% endblock %}
