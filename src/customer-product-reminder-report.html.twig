@@ -1,0 +1,136 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="container container--page">
+
+    {% embed "_layouts/columns-10-max.html.twig" %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        <h2>Customer Product Reminder</h2>
+        <p>{{fpo.paragraph}}</p>
+        <p>{{fpo.paragraph}}</p>
+        
+        <div class="clearfix">
+          <div class="pull-left">
+            <form class="form-inline" role="form">
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" id="inputSuccess4">
+                <span class="lt-icon lt-search lt-medium form-control-feedback"></span>
+              </div>
+            </form>
+          </div>
+          <div class="pull-right my-2">
+            <a href="#" class="mx-2">Print</a> |
+            <a href="#" class="mx-2">Export All</a> |
+            <a href="#">Remove Selected</a>
+          </div>
+        </div>
+
+        <div class="mt-3 table-responsive">
+          <table class="table table-bordered-outside-only">
+            <thead>
+              <tr>
+                <th>Customers</th>
+                <th>Description</th>
+                <th>Qty</th>
+                <th>Purchase Date</th>
+                <th>Follow Up</th>
+                <th>Call Customer</th>
+                <th>Send Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ana Jones</td>
+                <td>Anew Ultimate Night Cream</td>
+                <td>2</td>
+                <td>08/02/2017</td>
+                <td>4 Days</td>
+                <td>817-308-2007</td>
+                <td>jonesa@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Ana Jones</td>
+                <td>Anew Ultimate Night Cream</td>
+                <td>4</td>
+                <td>08/02/2017</td>
+                <td>4 Days</td>
+                <td>817-308-2007</td>
+                <td>Update Email Address</td>
+              </tr>
+              <tr>
+                <td>Ana Jones</td>
+                <td>Anew Ultimate Night Cream</td>
+                <td>3</td>
+                <td>08/02/2017</td>
+                <td>4 Days</td>
+                <td>817-308-2007</td>
+                <td>jonesa@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Ana Jones</td>
+                <td>Anew Ultimate Night Cream</td>
+                <td>2</td>
+                <td>08/02/2017</td>
+                <td>4 Days</td>
+                <td>817-308-2007</td>
+                <td>jonesa@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Ana Jones</td>
+                <td>Anew Ultimate Night Cream</td>
+                <td>1</td>
+                <td>08/02/2017</td>
+                <td>4 Days</td>
+                <td>817-308-2007</td>
+                <td>jonesa@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Ana Jones</td>
+                <td>Anew Ultimate Night Cream</td>
+                <td>2</td>
+                <td>08/02/2017</td>
+                <td>4 Days</td>
+                <td>817-308-2007</td>
+                <td>jonesa@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Ana Jones</td>
+                <td>Anew Ultimate Night Cream</td>
+                <td>2</td>
+                <td>08/02/2017</td>
+                <td>4 Days</td>
+                <td>817-308-2007</td>
+                <td>jonesa@gmail.com</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="m-0">Showing 7 out of 38 Items</p>
+        </div>
+        <ul class="pagination">
+          <li><a href="#">&laquo;</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">&raquo;</a></li>
+        </ul>
+
+       
+
+      {% endblock %}
+
+    {% endembed %}
+
+  </div>
+
+{% endblock %}
