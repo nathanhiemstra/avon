@@ -21,9 +21,17 @@
 
     <div class="item-content">
 
-      <!-- START - FPO CONTENT -->
-      <img {{ src }} alt="FPO image" class="widget-img">
-      <!-- END - FPO CONTENT -->
+      {% if widgetPath %}
+        <!-- START - WIDGET -->
+        {% include widgetPath %}
+        <!-- END - WIDGET -->
+      {% endif %}
+
+      {% if fpoImgSrc %}
+        <!-- START - FPO CONTENT -->
+        <img {{ fpoImgSrc }} alt="FPO image" class="widget-img">
+        <!-- END - FPO CONTENT -->
+      {% endif %}
 
     </div>
   </div><!-- /.box-group-item -->
