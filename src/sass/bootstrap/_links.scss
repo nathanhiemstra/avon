@@ -1,19 +1,19 @@
 // Sometimes we need to force our primary brand color on links in navbars and such
 @mixin link-primary {
-  color: $link-color !important;
+  color: $link-color;
 
   .lt-icon,
   .lt-icon:before {
-    color: $link-color !important;
+    color: $link-color;
   }
 
   &:focus,
   &:hover {
-    color: $link-hover-color !important;
+    color: $link-hover-color;
 
     .lt-icon,
     .lt-icon:before {
-      color: $link-hover-color !important;
+      color: $link-hover-color;
     }
   }
 }
@@ -24,40 +24,40 @@
 
 // Secondary link uses the default body text color but a primary hover state
 .link-secondary {
-  color: $text-color !important;
+  color: $text-color;
 
   .lt-icon,
   .lt-icon:before {
-    color: $text-color !important;
+    color: $text-color;
   }
 
   &:focus,
   &:hover {
-    color: $link-hover-color !important;
+    color: $link-hover-color;
 
     .lt-icon,
     .lt-icon:before {
-      color: $link-hover-color !important;
+      color: $link-hover-color;
     }
   }
 }
 
 // Reverse link - light color to be used on darker bg
 .link-reverse-plain {
-  color: $white !important;
+  color: $white;
 
   .lt-icon,
   .lt-icon:before {
-    color: $white !important;
+    color: $white;
   }
 
   &:focus,
   &:hover {
-    color: $white !important;
+    color: $white;
 
     .lt-icon,
     .lt-icon:before {
-      color: $white !important;
+      color: $white;
     }
   }
 }
@@ -81,22 +81,22 @@
 
 // Reverse underline link uses light color with underline decoration
 .link-reverse-underline {
-  color: $white !important;
-  text-decoration: underline !important;
+  color: $white;
+  text-decoration: underline;
 
   .lt-icon,
   .lt-icon:before {
-    color: $white !important;
+    color: $white;
   }
 
   &:focus,
   &:hover {
-    color: $white !important;
-    text-decoration: none !important;
+    color: $white;
+    text-decoration: none;
 
     .lt-icon,
     .lt-icon:before {
-      color: $white !important;
+      color: $white;
     }
   }
 }
@@ -130,20 +130,20 @@
 
 // Muted link uses muted colors with default link behavior
 .link-muted {
-  color: $text-muted !important;
+  color: $text-muted;
 
   .lt-icon,
   .lt-icon:before {
-    color: $text-muted !important;
+    color: $text-muted;
   }
 
   &:focus,
   &:hover {
-    color: $text-muted-hover !important;
+    color: $text-muted-hover;
 
     .lt-icon,
     .lt-icon:before {
-      color: $text-muted !important;
+      color: $text-muted;
     }
   }
 }
