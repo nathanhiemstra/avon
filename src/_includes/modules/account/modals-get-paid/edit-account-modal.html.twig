@@ -1,6 +1,6 @@
 {% extends "_layouts/modal.html.twig" %}
 {% if not modalId %}
-  {% set modalId = 'modal-change-account' %}
+  {% set modalId = 'modal-edit-account' %}
 {% endif %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -12,7 +12,7 @@
     <span class="sr-only">Close modal</span>
     <span class="lt-icon lt-close lt-large py-1"></span>
   </button>
-  <h4 class="modal-title text-center">Change Your Account</h4>
+  <h4 class="modal-title text-center">Edit Your Account</h4>
 
 
 {% endblock %}
@@ -57,31 +57,28 @@
         } %}
       </div>
 
-      <div class="form-group">
-        <label class="control-label">Account Type</label>
-        <div class="row">
-          <div class="col-md-6">
-            {% include components.elements.forms.radio with {
-              id: 'account-type-checking',
-              name: 'language',
-              classes: 'my-2 mr-4',
-              theValue: 'checking',
-              theLabel: 'Checking',
-              checked: true
-            } %}
-          </div>
-          <div class="col-md-6">
-            {% include components.elements.forms.radio with {
-              id: 'account-type-saving',
-              name: 'language',
-              classes: 'my-2',
-              theValue: 'savings',
-              theLabel: 'Savings',
-              checked: false
-            } %}
-          </div>
-        </div>
+      <!-- START: ACCOUNT TYPE RADIOS -->
+      <div class="form-group w-100">
+        <form class="form-inline" role="form">
+          <h6 class="pt-2">Account Type</h6>
+          {% include components.elements.forms.radio with {
+            id: 'account-type-checking',
+            name: 'account-type',
+            classes: 'radio-inline pl-0',
+            theLabel: 'Checking',
+            checked: true
+          } %}
+
+          {% include components.elements.forms.radio with {
+            id: 'account-type-savings',
+            name: 'account-type',
+            classes: 'radio-inline',
+            theLabel: 'Savings',
+            checked: false
+          } %}
+        </form>
       </div>
+      <!-- END: ACCOUNT TYPE RADIOS -->
 
       <div class="form-group">
         <label class="control-label">Last 4-digits of SSN</label>

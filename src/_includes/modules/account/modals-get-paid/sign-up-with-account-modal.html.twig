@@ -12,8 +12,8 @@
     <span class="sr-only">Close modal</span>
     <span class="lt-icon lt-close lt-large py-1"></span>
   </button>
-  <h4 class="modal-title text-center">Sign Up with an Account</h4>
 
+  <h4 class="modal-title text-center">Sign Up with an Account</h4>
 
 {% endblock %}
 
@@ -22,66 +22,71 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
+  <p class="my-5 text-center">Add a bank account to complete sign up.</p>
 
-   <div>
+  <div class="form-group">
+    <label class="control-label">Bank Name</label>
+    {% include "_includes/elements/forms/input.html.twig" with {
+      type : 'text'
+    } %}
+  </div>
 
-      <p class="mb-5"><strong>Add a bank account to complete sign up.</strong></p>
+  <div class="form-group">
+    <label class="control-label">Name on Account</label>
+    {% include "_includes/elements/forms/input.html.twig" with {
+      type : 'text'
+    } %}
+  </div>
 
-      <div class="form-group">
-        <label class="control-label">Bank Name</label>
-        {% include "_includes/elements/forms/input.html.twig" with {
-          type : 'text'
-        } %}
-      </div>
+  <div class="form-group">
+    <label class="control-label">Bank Account Number
+      <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span>
+    </label>
+    {% include "_includes/elements/forms/input.html.twig" with {
+      type : 'text'
+    } %}
+  </div>
 
-      <div class="form-group">
-        <label class="control-label">Name on Account</label>
-        {% include "_includes/elements/forms/input.html.twig" with {
-          type : 'text'
-        } %}
-      </div>
+  <div class="form-group">
+    <label class="control-label">Bank Routing Number
+      <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span>
+    </label>
+    {% include "_includes/elements/forms/input.html.twig" with {
+      type : 'text'
+    } %}
+  </div>
 
-      <div class="form-group">
-        <label class="control-label">Bank Account Number</label>
-        {% include "_includes/elements/forms/input.html.twig" with {
-          type : 'text'
-        } %}
-      </div>
+  <!-- START: ACCOUNT TYPE RADIOS -->
+  <div class="form-group w-100">
+    <form class="form-inline" role="form">
+      <h6 class="pt-2">Account Type</h6>
+      {% include components.elements.forms.radio with {
+        id: 'account-type-checking',
+        name: 'account-type',
+        classes: 'radio-inline pl-0',
+        theLabel: 'Checking',
+        checked: true
+      } %}
 
-      <div class="form-group">
-        <label class="control-label">Bank Routing Number<span class="lt-icon lt-info lt-sm align-middle ml-4" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span></label>
-        {% include "_includes/elements/forms/input.html.twig" with {
-          type : 'text'
-        } %}
-      </div>
+      {% include components.elements.forms.radio with {
+        id: 'account-type-savings',
+        name: 'account-type',
+        classes: 'radio-inline',
+        theLabel: 'Savings',
+        checked: false
+      } %}
+    </form>
+  </div>
+  <!-- END: ACCOUNT TYPE RADIOS -->
 
-      <div class="form-group">
-        <label class="control-label">Account Type</label>
-        <div class="row">
-          <div class="col-md-6">
-            {% include components.elements.forms.radio with {
-              id: 'account-type-checking',
-              name: 'language',
-              classes: 'my-2 mr-4',
-              theValue: 'checking',
-              theLabel: 'Checking',
-              checked: true
-            } %}
-          </div>
-          <div class="col-md-6">
-            {% include components.elements.forms.radio with {
-              id: 'account-type-saving',
-              name: 'language',
-              classes: 'my-2',
-              theValue: 'savings',
-              theLabel: 'Savings',
-              checked: false
-            } %}
-          </div>
-        </div>
-      </div>
-   </div>
-
+  <div class="form-group">
+    <label class="control-label">Last 4 digits of SSN
+      <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span>
+    </label>
+    {% include "_includes/elements/forms/input.html.twig" with {
+      type : 'text'
+    } %}
+  </div>
 
 {% endblock %}
 
@@ -92,7 +97,7 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-6 my-2">
-      <button type="button" class="btn btn-default btn-block" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      <button type="button" class="btn btn-discourage btn-block" data-dismiss="modal" aria-hidden="true">Cancel</button>
     </div>
     <div class="col-xs-12 col-sm-6 my-2">
       <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Save</button>

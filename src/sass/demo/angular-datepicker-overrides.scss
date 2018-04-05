@@ -39,26 +39,26 @@
       float: none !important;
     }
   }
-}
 
-.btn-danger,
-.btn-info,
-.btn-success {
-  display: block;
-  width: 100%;
-  margin: 2px !important;
-}
+  .btn-danger,
+  .btn-info,
+  .btn-success {
+    display: block;
+    width: 100%;
+    margin: 2px !important;
+  }
 
-.btn-danger,
-.btn-info,
-.btn-success,
-.btn-danger:hover,
-.btn-info:hover,
-.btn-success:hover,
-.btn-danger.active,
-.btn-info.active,
-.btn-success.active {
-  background-color: $btn-primary-bg !important;
-  border-color: $btn-primary-border !important;
-  color: #fff !important;
+  .btn-danger,
+  .btn-info,
+  .btn-success,
+  .btn-danger:hover,
+  .btn-info:hover,
+  .btn-success:hover,
+  .btn-danger.active,
+  .btn-info.active,
+  .btn-success.active {
+    background-color: $btn-primary-bg !important;
+    border-color: $btn-primary-border !important;
+    color: #fff !important;
+  }
 }
