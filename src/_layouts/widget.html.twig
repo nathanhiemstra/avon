@@ -1,0 +1,45 @@
+{% if widgetLayout == 'flex-column' %}
+  {% set classes = 'd-flex flex-column justify-content-between h-100 p-4 text-center' %}
+{% endif %}
+
+<!-- START - WIDGET -->
+  <section class="widget {{ classes }}" id ="{{ widgetId }}">
+
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {# RENDER BLOCK - widgetHeader #}
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {% set _block = block('widgetHeader') %}
+    {% if _block is not empty %}
+
+      <div class="widget-header">
+        {{ _block|raw }}
+      </div>
+
+    {% endif %}
+
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {# RENDER BLOCK - widgetBody #}
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {% set _block = block('widgetBody') %}
+    {% if _block is not empty %}
+
+      <div class="widget-body">
+        {{ _block|raw }}
+      </div>
+
+    {% endif %}
+
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {# RENDER BLOCK - widgetFooter #}
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {% set _block = block('widgetFooter') %}
+    {% if _block is not empty %}
+
+      <div class="widget-footer">
+        {{ _block|raw }}
+      </div>
+
+    {% endif %}
+
+  </section>
+<!-- END - WIDGET -->
