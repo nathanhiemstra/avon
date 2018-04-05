@@ -5,18 +5,18 @@
   <h5 class="text-center my-4 pt-5">From Avon</h5>
   <!-- END - FPO HEADLINE -->
 
-  {% include "_includes/groups/boxes/primary/carousel-container.html.twig" with { 
-    carouselId: 'carousel-from-avon', 
+  {% include "_includes/groups/boxes/primary/carousel-container.html.twig" with {
+    carouselId: 'carousel-from-avon',
     itemContainerType: 'carouselBoxesCombo',
     items: {
       item1: {
         widgetPath: '_includes/modules/widgets/widget-kickstart.html.twig'
       },
       item2: {
-        fpoImgSrc: 'src="images/fpo/home/2.png"'
+        widgetPath: '_includes/modules/widgets/widget-campaign-selling-dates.html.twig'
       },
       item3: {
-        fpoImgSrc: 'src="images/fpo/home/3.png"'
+        widgetPath: '_includes/modules/widgets/widget-customer-product-reminders.html.twig'
       },
       item4: {
         fpoImgSrc: 'src="images/fpo/home/4.png"'

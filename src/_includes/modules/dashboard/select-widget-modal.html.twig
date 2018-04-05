@@ -22,24 +22,24 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
-  {% include "_includes/groups/boxes/primary/carousel-container.html.twig" with { 
-  carouselId: 'carousel-' ~ modalId, 
+  {% include "_includes/groups/boxes/primary/carousel-container.html.twig" with {
+  carouselId: 'carousel-' ~ modalId,
   hasToolbar: null,
   items: {
     item1: {
       widgetPath: '_includes/modules/widgets/widget-kickstart.html.twig'
     },
     item2: {
-      fpoImgSrc: 'src="images/fpo/home/2.png"'
+      widgetPath: '_includes/modules/widgets/widget-campaign-selling-dates.html.twig'
     },
     item3: {
-      fpoImgSrc: 'src="images/fpo/home/3.png"'
+      widgetPath: '_includes/modules/widgets/widget-customer-product-reminders.html.twig'
     },
     item4: {
       fpoImgSrc: 'src="images/fpo/home/4.png"'
     },
     item5: {
-      fpoImgSrc: 'src="images/fpo/home/5.png"'
+      widgetPath: '_includes/modules/widgets/widget-your-activities.html.twig'
     },
     item6: {
       fpoImgSrc: 'src="images/fpo/home/6.png"'
