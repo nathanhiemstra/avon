@@ -1,22 +1,30 @@
 /**
- * OnlineOrderHistory - handles all Online Order History page behavior
- * @return {init} [description]
+ * Pagination - handles demo behavior for pagination
+ *            - looks for the attr: data-pagination-target which should
+ *            - point to a class attached to exactly two tables
+ * @return {init}
  */
 
-var OnlineOrderHistory = (function () {
+var Pagination = (function () {
 
   var $els = {};
+  var targetClass = '';
+  var $targets;
 
   // public methods
   var init = function () {
 
     // grab the DOM els we need
+
     $els = {
+      pagination: $('[data-pagination-target]'),
       pagePrev: $('.pagination .page-prev'),
       pageNext: $('.pagination .page-next'),
-      pageItems: $('.pagination li:not(.page-next):not(.page-prev)'),
-      tables: $('.table')
+      pageItems: $('.pagination li:not(.page-next):not(.page-prev)')
     };
+
+    targetClass = $els.pagination.data('pagination-target');
+    targets = $('.' + targetClass);
 
     _addListeners();
 
@@ -46,7 +54,7 @@ var OnlineOrderHistory = (function () {
 
   // demo - simply toggles the table view back and forth
   var _toggleView = function() {
-    $els.tables.toggleClass('hidden');
+    targets.toggleClass('hidden');
   };
 
   return {

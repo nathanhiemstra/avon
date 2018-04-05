@@ -252,7 +252,7 @@ $( document ).ready( function () {
   if( typeof FormDemo !== 'undefined' ) FormDemo.init();
   if( typeof GlobalSearch !== 'undefined' ) GlobalSearch.init();
   if( typeof Modals !== 'undefined' ) Modals.init();
-  if( typeof OnlineOrderHistory !== 'undefined' ) OnlineOrderHistory.init();
+  if( typeof Pagination !== 'undefined' ) Pagination.init();
   if( typeof ProductDetail !== 'undefined' ) ProductDetail.init();
   if( typeof ProductFilters !== 'undefined' ) ProductFilters.init();
   if( typeof SecondaryNav !== 'undefined' ) SecondaryNav.init();
