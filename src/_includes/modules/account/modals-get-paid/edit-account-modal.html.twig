@@ -83,7 +83,8 @@
       <div class="form-group">
         <label class="control-label">Last 4-digits of SSN</label>
         {% include "_includes/elements/forms/input.html.twig" with {
-          type : 'text'
+          type: 'password',
+          maxlength: '4'
         } %}
       </div>
 
