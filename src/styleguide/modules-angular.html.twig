@@ -1,0 +1,42 @@
+{# styleguide/index.html.twig #}
+{% set title = "Styleguide Modules" %}
+{% set slug = "styleguide-modules-angular" %}
+{% extends "styleguide/_layouts/styleguide-main.html.twig" %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - STYLEGUIDE CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block styleguideContent %}
+
+
+
+
+  <h1 id="global" class="bs-headline">Angular</h1>
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# ANGULAR - DATEPICKER - MONTH #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Angular Calendar - Month",
+    description:  "The global header is composed of the two utility navs shown above and the primary navigation list",
+    slug:         "global-angular-datepicker-month",
+    path:         "_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig"
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# ANGULAR - DATEPICKER - YEAR #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Angular Calendar - Year",
+    slug:         "global-angular-datepicker-year",
+    path:         "_includes/groups/forms/datepicker-rendered-from-you-avon-year.html.twig"
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+{% endblock %}
