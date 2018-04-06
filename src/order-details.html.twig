@@ -33,13 +33,13 @@
             </div>
           </div>
 
+          <!-- START - SORT DROPDOWN -->
           <div class="product-list-header--filters">
-
-            <!-- START - SORT DROPDOWN -->
-            {% include "_includes/modules/product/list/menu-items/sort-dropdown.html.twig" %}
-            <!-- END - SORT DROPDOWN -->
-
+            {% include "_includes/modules/product/list/menu-items/sort-dropdown.html.twig" with {
+              variation: 'customer'
+            } %}
           </div>
+          <!-- END - SORT DROPDOWN -->
 
           <!--START: ORDER DETAILS-->
           <div class="panel-group pt-3 border-bottom" id="order-details">
