@@ -1,0 +1,36 @@
+.ng-override-sortable-table {
+  [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+    display: none !important;
+  }
+
+  table th.sortable {
+    span {
+      white-space: nowrap;
+
+      &:after {
+        @extend [class^="lt-"];
+
+        @extend .lt-carat-down:before;
+
+        font-size: 20px;
+        color: $text-muted;
+      }
+
+      &:hover:after {
+        color: $link-hover-color;
+      }
+    }
+
+    &.sort-desc span:after {
+      @extend .lt-carat-down:before;
+
+      color: $brand-primary;
+    }
+
+    &.sort-asc span:after {
+      @extend .lt-carat-up:before;
+
+      color: $brand-primary;
+    }
+  }
+}

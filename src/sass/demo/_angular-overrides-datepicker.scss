@@ -72,17 +72,24 @@
     width: 20px;
     display: block;
     font-style: initial;
+
+    &:before {
+      @extend [class^="lt-"];
+
+      font-size: 28px;
+      line-height: 24px;
+    }
   }
 
   .glyphicon-chevron-left {
     &:before {
-      content: "<";
+      @extend .lt-carat-left:before;
     }
   }
 
   .glyphicon-chevron-right {
     &:before {
-      content: ">";
+      @extend .lt-carat-right:before;
     }
   }
 }
