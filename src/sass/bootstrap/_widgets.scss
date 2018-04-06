@@ -1,0 +1,12 @@
+.widget {
+
+  &.layout-flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-align: center;
+    padding: $spacing-4;
+  }
+  
+}

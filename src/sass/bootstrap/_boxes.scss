@@ -154,12 +154,18 @@ $box-group--primary-item-width: 220px;
 
 // BOX STYLES - SOMETIMES APPEAR WITH NO CAROUSEL
 .box-group--primary {
+
   .box-group--item {
     background-color: $body-bg;
     overflow: hidden;
     flex-flow: wrap row;
     margin: $box-group--primary-item-margin auto;
     width: $box-group--primary-item-width;
+    height: 100%;
+
+    .item-content {
+      width: 100%;
+    }
   }
 
   .toolbar {
@@ -169,6 +175,7 @@ $box-group--primary-item-width: 220px;
     flex-grow: 1;
     justify-content: space-between;
     width: 100%;
+    height: 32px;
 
     .badge {
       max-height: 20px;
