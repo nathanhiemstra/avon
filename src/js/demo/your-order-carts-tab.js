@@ -37,7 +37,10 @@ var YourOrderCartsTab = (function () {
       cartsPromoAlert: $('#carts-promo-alert'),
       cartsRefreshAlert: $('#carts-refresh-alert'),
 
-      columnQty: $('.single-cart-item .t-qty')
+      columnQty: $('.single-cart-item .t-qty'),
+
+      // els for row highlighting demo
+      qtyInputs: $('[data-initial-value]')
     };
 
     totalNumChecked = $els.carts.length;
@@ -45,8 +48,7 @@ var YourOrderCartsTab = (function () {
 
     _addListeners();
     _updateCheckoutTotals();
-    // _calculateBottomPadding();
-    // _checkWidthAndMoveSummary();
+    _checkQtyInputs();
 
   };
 
@@ -69,13 +71,45 @@ var YourOrderCartsTab = (function () {
       totalsOff = false;
       _updateCheckoutTotals();
       _toggleUpdateTotals();
+
+      // loop qty inputs, set data-initial-value to current value, remove all
+      // row highlights
+      $.each($els.qtyInputs, function(i, val) {
+        var parentRow = $(this).closest('tr');
+        var curValue = $(this).val();
+
+        $(this).data('initial-value', curValue);
+        $(this).attr('data-initial-value', curValue);
+        parentRow.removeClass('highlight-row');
+      });
+
+      _checkQtyInputs();
+
     });
 
-    // $(window).resize(function () {
-    //   _calculateBottomPadding();
-    //   _checkWidthAndMoveSummary();
-    // });
+  };
 
+  var _checkQtyInputs = function() {
+    // loop qty inputs, check if current val is differnet from initial, toggle
+    // highlight-row class
+    $.each($els.qtyInputs, function(i, val) {
+      var parentRow = $(this).closest('tr');
+
+      $(this).off().on('change textInput input blur', function() {
+        if($(this).val() !== $(this).data('initial-value').toString()) {
+          parentRow.addClass('highlight-row');
+          totalsOff = true;
+          _toggleUpdateTotals();
+        } else {
+          parentRow.removeClass('highlight-row');
+          if($('.highlight-row').length < 1) {
+            totalsOff = false;
+            _toggleUpdateTotals();
+          }
+        }
+      });
+
+    });
   };
 
   var _toggleUpdateTotals = function () {
@@ -211,48 +245,6 @@ var YourOrderCartsTab = (function () {
     totalsOff = false;
 
   };
-
-  // var _calculateBottomPadding = function () {
-  //   var footerHeight = $els.cartsBtnsFixedContainer.outerHeight();
-  //   $('body').css('padding-bottom', footerHeight);
-  // };
-
-  // var _checkWidthAndMoveSummary = function () {
-  //
-  //   if($(window).width() > 991) {
-  //     // desktop view
-  //     $els.cartsBtnsFixedContainer.addClass('invisible');
-  //     $els.checkoutSummary.removeClass('invisible');
-  //
-  //     // reset 'colspan' attribute from quantity
-  //     $els.columnQty.attr('colspan', 1);
-  //
-  //     // move summary block to sidebar
-  //     $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerDesktop);
-  //
-  //     // move 'checkout' & 'refresh' buttons to sidebar summary
-  //     $els.cartsButtons.detach().appendTo($els.cartsSummaryContainerDesktop);
-  //     $els.checkoutSummary.removeClass('invisible');
-  //     $els.cartsBtnsFixedContainer.addClass('invisible');
-  //   } else {
-  //     // mobile view
-  //     $els.cartsBtnsFixedContainer.removeClass('invisible');
-  //     $els.checkoutSummary.addClass('invisible');
-  //
-  //     // widen 'colspan' attribute on quantity
-  //     $els.columnQty.attr('colspan', 2);
-  //
-  //     // move summary block to top of page
-  //     $els.cartsDetails.detach().appendTo($els.cartsSummaryContainerMobile);
-  //
-  //     // move 'checkout' & 'refresh' buttons to fixed bottom nav
-  //     $els.cartsButtons.detach().appendTo($els.cartsBtnsFixedContainer);
-  //     $els.cartsBtnsFixedContainer.removeClass('invisible');
-  //     $els.checkoutSummary.addClass('invisible');
-  //   }
-  //
-  //   _calculateBottomPadding();
-  // };
 
   return {
     init: init
