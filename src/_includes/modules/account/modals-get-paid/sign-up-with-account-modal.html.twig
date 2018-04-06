@@ -22,7 +22,7 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
-  <p class="my-5 text-center">Add a bank account to complete sign up.</p>
+  <p class="my-b text-center">Add a bank account to complete sign up.</p>
 
   <div class="form-group">
     <label class="control-label">Bank Name</label>
@@ -80,9 +80,7 @@
   <!-- END - ACCOUNT TYPE RADIOS -->
 
   <div class="form-group">
-    <label class="control-label">Last 4 digits of SSN
-      <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span>
-    </label>
+    <label class="control-label">Last 4 digits of SSN</label>
     {% include "_includes/elements/forms/input.html.twig" with {
       type: 'password',
       maxlength: '4'
@@ -98,7 +96,7 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-6 my-2">
-      <button type="button" class="btn btn-discourage btn-block" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      <button type="button" class="btn btn-default btn-block" data-dismiss="modal" aria-hidden="true">Cancel</button>
     </div>
     <div class="col-xs-12 col-sm-6 my-2">
       <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Save</button>

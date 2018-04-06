@@ -1,6 +1,6 @@
 {% extends "_layouts/modal.html.twig" %}
 {% if not modalId %}
-  {% set modalId = 'modal-edit-account' %}
+  {% set modalId = 'modal-change-account' %}
 {% endif %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -9,10 +9,9 @@
 {% block modalHeader %}
 
   <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
-    <span class="sr-only">Close modal</span>
     <span class="lt-icon lt-close lt-large py-1"></span>
   </button>
-  <h4 class="modal-title text-center">Edit Your Account</h4>
+  <h4 class="modal-title text-center">Change Your Account</h4>
 
 
 {% endblock %}
@@ -44,7 +43,7 @@
       </div>
 
       <div class="form-group">
-        <label class="control-label">Bank Account Number</label>
+        <label class="control-label">Bank Account Number<span class="lt-icon lt-info lt-sm align-middle ml-4" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span></label>
         {% include "_includes/elements/forms/input.html.twig" with {
           type : 'text'
         } %}
