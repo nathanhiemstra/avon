@@ -1,0 +1,35 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+  <section class="container container--page">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="mb-5">Blank Modal - Either/Or Error</h2>
+        <p>
+          <!-- START - MODAL TRIGGER -->
+          <button class="btn btn-primary" data-toggle="modal" data-target="#blank-modal-either-or-error">Open Modal</button>
+          <!-- START - MODAL TRIGGER -->
+        </p>
+
+        <!-- START - MODAL CONTENT -->
+        {% include "_includes/modules/modals/modal-either-or-error.html.twig" %} 
+        <!-- END - MODAL CONTENT -->
+      </div>
+    </div>
+
+  </section>
+
+  {% endblock %}
+
+
+{% endblock %}
