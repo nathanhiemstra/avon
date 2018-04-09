@@ -157,12 +157,6 @@ gulp.task('compile', function () {
                 },
               },
               modules: {
-                brochures: {
-                  header:         prefix.modules + "brochures/header.html.twig",
-                  gridView:       prefix.modules + "brochures/grid-view.html.twig",
-                  detailView:     prefix.modules + "brochures/detail-view.html.twig",
-                  quickLook:      prefix.modules + "brochures/quick-look.html.twig"
-                },
                 checkout: {
                   itemizedCheckout: prefix.modules + "checkout/itemized-checkout.html.twig",
                   reviewComplete:   prefix.modules + "checkout/review-complete.html.twig",
