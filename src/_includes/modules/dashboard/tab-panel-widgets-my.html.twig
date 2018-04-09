@@ -3,18 +3,5 @@
 {% include "_includes/groups/boxes/primary/item-container.html.twig" with {
   hasToolbar: true,
   carouselId: 'select-widget-modal',
-  items: {
-    item1: {
-      widgetPath: '_includes/modules/widgets/widget-kickstart.html.twig'
-    },
-    item2: {
-      widgetPath: '_includes/modules/widgets/widget-campaign-selling-dates.html.twig'
-    },
-    item3: {
-      widgetPath: '_includes/modules/widgets/widget-customer-product-reminders.html.twig'
-    },
-    item4: {
-      widgetPath: '_includes/modules/widgets/widget-online-store-orders.html.twig'
-    }
-  }
+  items: components.modules.widgets.primary
 } %}

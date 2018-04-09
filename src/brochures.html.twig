@@ -16,7 +16,7 @@
       <!-- START - VIRTUAL BROCHURE HEADER -->
       <section class="container">
         <div class="row">
-          {% include components.modules.brochures.header %}
+          {% include '_includes/modules/brochures/header.html.twig' %}
         </div>
       </section>
       <!-- END - VIRTUAL BROCHURE HEADER -->
@@ -24,13 +24,13 @@
       <section>
         <!-- START - GRID -->
         <div class="container brochure-grid-view">
-          {% include components.modules.brochures.gridView %}
+          {% include '_includes/modules/brochures/grid-view.html.twig' %}
         </div>
         <!-- END - GRID -->
 
         <!-- START - DETAILS -->
         <div class="container brochure-detail-view hidden">
-          {% include components.modules.brochures.detailView %}
+          {% include '_includes/modules/brochures/detail-view.html.twig' %}
         </div>
         <!-- END - DETAILS -->
       </section>
@@ -41,6 +41,6 @@
   {% endblock %}
 
   {# MODAL - Brochure Quick Look #}
-  {% include components.modules.brochures.quickLook %}
+  {% include '_includes/modules/brochures/quick-look.html.twig' %}
 
 {% endblock %}
