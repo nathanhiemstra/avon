@@ -11,11 +11,13 @@
   {% set containerClasses = 'box-group--primary' %}
 {% endif %}
 
+
 <!-- START - {{ comment }}  -->
 <div class="{{ containerClasses }}">
   {% for item in items %}
     {% include "_includes/groups/boxes/primary/item.html.twig" with { 
-      src: item.imgPath, 
+      fpoImgSrc: item.fpoImgSrc,
+      widgetPath: item.widgetPath, 
       isFirstItem: loop.first, 
       loopIndex: loop.index, 
       hasToolbar: hasToolbar 

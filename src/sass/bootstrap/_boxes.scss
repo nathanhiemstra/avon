@@ -154,12 +154,22 @@ $box-group--primary-item-width: 220px;
 
 // BOX STYLES - SOMETIMES APPEAR WITH NO CAROUSEL
 .box-group--primary {
+
+  $toolbar-height: 32px;
+  // $min-item-height: 250px;
+
   .box-group--item {
     background-color: $body-bg;
     overflow: hidden;
     flex-flow: wrap row;
     margin: $box-group--primary-item-margin auto;
     width: $box-group--primary-item-width;
+    height: 100%;
+  }
+
+  .item-content {
+    width: 100%;
+    // min-height: $min-item-height;
   }
 
   .toolbar {
@@ -169,9 +179,14 @@ $box-group--primary-item-width: 220px;
     flex-grow: 1;
     justify-content: space-between;
     width: 100%;
+    height: $toolbar-height;
 
     .badge {
       max-height: 20px;
+    }
+
+    &+.item-content {
+      height: calc(100% - #{$toolbar-height});
     }
   }
 

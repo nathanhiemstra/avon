@@ -2,13 +2,13 @@
   {% set btnText = 'Checkout' %}
 {% endif %}
 <!-- START - ORDER TOTAL -->
-<section class="checkout-order-total invisible">
+<section class="checkout-order-total" data-split-content-container="desktop">
   {# add classes to hide if it's not the cart popover #}
   <div id="carts-summary-container-dt" class="{% if not isPopover %} hidden-xs hidden-sm {% endif %}">
 
     <h3 class="h-utility text-center">Total</h3>
 
-    <div id="carts-details" class="mt-3 mt-md-5">
+    <div id="carts-details" class="mt-3 mt-md-5" data-split-content-chunk="content">
 
       <dl class="clearfix border-bottom pb-3 mb-3">
         <dt class="pull-left label-utility text-primary">Order total</dt>
@@ -35,7 +35,7 @@
 
     </div>
 
-    <div id="carts-buttons">
+    <div id="carts-buttons" data-split-content-chunk="buttons">
       <a id="carts-checkout-btn"
         class="btn btn-primary btn-lg btn-block mb-0 mb-md-3 fade in"
         role="button"

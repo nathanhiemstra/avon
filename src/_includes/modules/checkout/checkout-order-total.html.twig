@@ -13,10 +13,10 @@
 
 <!-- START - CHECKOUT ORDER TOTAL -->
 <!-- DEV NOTE :: 'disableable' is used to disable all items within the container when .disable is also present
-              :: So, you can toggle .disabled on a 'disableable' element to disable it's decendants-->
-<section class="checkout-order-total invisible disableable {% if disabled %} disabled {% endif %}" data-split-content="desktop">
+              :: So, you can toggle .disabled on a 'disableable' element to disable it's descendants-->
+<section class="checkout-order-total disableable {% if disabled %} disabled {% endif %}" data-split-content-container="desktop">
 
-  <div data-split-content="content">
+  <div data-split-content-chunk="content">
 
     <h5 class="header visible-md visible-lg text-center mt-0 mb-4">Total</h5>
 
@@ -55,7 +55,7 @@
 
     </div>
 
-    <div data-split-content="buttons">
+    <div data-split-content-chunk="buttons">
       {% if buttonsToShow.sumbmitEnabled %}<button class="btn btn-primary btn-block mb-0 mb-md-3 fade in" role="button">Submit Order</button>{% endif %}
       {% if buttonsToShow.submitDisabled %}<button class="btn btn-primary btn-block mb-0 mb-md-3 fade in disabled visible-md visible-lg" role="button">Submit Order</button>{% endif %}
       {% if buttonsToShow.reviewEnabled %}<button class="btn btn-primary btn-block mb-0 mb-md-3 fade in visible-md visible-lg" role="button">Review & Submit Order</button>{% endif %}

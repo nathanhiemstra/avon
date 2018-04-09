@@ -1,21 +1,20 @@
 <div class="alert alert-info">Select the widgets you would like to appear on your home page under the “Just For You” section</div>
 
-{% include "_includes/groups/boxes/primary/item-container.html.twig" with { 
+{% include "_includes/groups/boxes/primary/item-container.html.twig" with {
   hasToolbar: true,
   carouselId: 'select-widget-modal',
   items: {
     item1: {
-      imgPath: 'src="images/fpo/home/1.png"'
+      widgetPath: '_includes/modules/widgets/widget-kickstart.html.twig'
     },
     item2: {
-      imgPath: 'src="images/fpo/home/2.png"'
+      widgetPath: '_includes/modules/widgets/widget-campaign-selling-dates.html.twig'
     },
     item3: {
-      imgPath: 'src="images/fpo/home/3.png"'
+      widgetPath: '_includes/modules/widgets/widget-customer-product-reminders.html.twig'
     },
     item4: {
-      imgPath: 'src="images/fpo/home/4.png"'
+      fpoImgSrc: 'src="images/fpo/home/4.png"'
     }
   }
 } %}
-

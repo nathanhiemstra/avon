@@ -73,3 +73,19 @@ a.badge {
     cursor: pointer;
   }
 }
+
+///////////////////////
+// Modifiers
+///////////////////////
+
+// circular badge
+.badge--circ {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: $spacing-3;
+}

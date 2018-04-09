@@ -7,7 +7,7 @@
 
 
 <!-- START - SINGLE SLIDE -->
-<div class="item  {{ classes }}">
+<div class="item my-3  {{ classes }}">
   <div class="box-group--item box-emphasize">
 
     {% if hasToolbar %}
@@ -21,12 +21,19 @@
 
     <div class="item-content">
 
-      <!-- START - FPO CONTENT -->
-      <img {{ src }} alt="FPO image" class="widget-img">
-      <!-- END - FPO CONTENT -->
+      {% if widgetPath %}
+        <!-- START - WIDGET -->
+        {% include widgetPath %}
+        <!-- END - WIDGET -->
+      {% endif %}
+
+      {% if fpoImgSrc %}
+        <!-- START - FPO CONTENT -->
+        <img {{ fpoImgSrc }} alt="FPO image" class="widget-img">
+        <!-- END - FPO CONTENT -->
+      {% endif %}
 
     </div>
   </div><!-- /.box-group-item -->
 </div><!-- /.item -->
 <!-- END - SINGLE SLIDE -->
-

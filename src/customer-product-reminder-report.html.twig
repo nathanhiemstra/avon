@@ -1,0 +1,83 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="container container--page">
+
+    {% embed "_layouts/columns-10-max.html.twig" %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        <h2>Customer Product Reminder</h2>
+        <p>{{fpo.paragraph}}</p>
+        <p>{{fpo.paragraph}}</p>
+
+        <div class="clearfix my-4">
+          <div class="pull-left">
+            <form class="form-inline" role="form">
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" id="inputSuccess4">
+                <span class="lt-icon lt-search lt-medium form-control-feedback"></span>
+              </div>
+            </form>
+          </div>
+          <div class="pull-right my-3">
+            <a href="#" class="mx-2">Print</a> |
+            <a href="#" class="mx-2">Export All</a> |
+            <a href="#">Remove Selected</a>
+          </div>
+        </div>
+
+        {% include '_includes/modules/reports/customer-product-reminder-table.html.twig' with {
+          index: '1',
+          hidden: false,
+          classes: 'product-reminder-table'
+        } %}
+
+        {% include '_includes/modules/reports/customer-product-reminder-table.html.twig' with {
+          index: '2',
+          hidden: true,
+          classes: 'product-reminder-table'
+        } %}
+        
+        <!-- START - PAGINATION -->
+        <ul class="pagination" data-pagination-target="product-reminder-table">
+          <li class="disabled page-prev">
+            <a href="javascript:void(0)"><span class="lt-icon lt-carat-left lt-medium"></a>
+          </li>
+          <li class="active">
+            <a href="javascript:void(0)">1</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">2</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">3</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">4</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">5</a>
+          </li>
+          <li class="page-next">
+            <a href="javascript:void(0)"><span class="lt-icon lt-carat-right lt-medium"></a>
+          </li>
+        </ul>
+        <!-- END - PAGINATION -->
+
+
+
+      {% endblock %}
+
+    {% endembed %}
+
+  </div>
+
+{% endblock %}

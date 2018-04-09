@@ -52,7 +52,7 @@ body {
 
       // on desktop, it should have no negative margin
       @media (min-width: $screen-sm-min) {
-          margin-top: 0;
+        margin-top: 0;
       }
     }
 
@@ -71,10 +71,8 @@ body {
 
   // pages which contain our 'secondary' nav - .navbar-secondary
   &.container--secondary-nav {
-      margin-top: 0;
-
+    margin-top: 0;
   }
-
 }
 
 // account for aside and main in pages with breadcrumbs
@@ -116,6 +114,10 @@ a {
   &:focus {
     @include tab-focus;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 // Figures
@@ -143,10 +145,9 @@ img {
 
     // 50% for larger screens
     @media (min-width: $screen-xs-min) {
-        max-width: 50%;
+      max-width: 50%;
     }
   }
-
 }
 
 // Rounded corners

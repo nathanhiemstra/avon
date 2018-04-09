@@ -12,12 +12,14 @@
       <li>
         <a href="javascript:void(0)">Alphabetical Z-A</a>
       </li>
+      {% if variation is not defined or variation == 'product' %}
       <li>
         <a href="javascript:void(0)">Price Low-High</a>
       </li>
       <li>
         <a href="javascript:void(0)">Price High-Low</a>
       </li>
+      {% endif %}
     </ul>
   </span>
 

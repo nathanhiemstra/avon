@@ -2585,4 +2585,101 @@ $('#myCarousel').on('slide.bs.carousel', function () {
 </div>
 
 
+
+<!-- Content Split
+================================================== -->
+<div class="bs-docs-section">
+  <h1 id="contentsplit" class="page-header">Content Split <small>bootstap.contentsplit.js</small></h1>
+
+  <h2 id="contentsplit-examples">Example</h2>
+  <p>Splits sidebar content into top and bottom contaners on smaller screens. All content and container definitions are required via data attributes.</p>
+  <p>Resize the bwowser window to see it in action.</p>
+
+  <div class="container-fluid" style="background-color: white;">
+    <div class="row" data-split-content>
+      <main class="col-xs-8">
+        <div data-split-content-container="mobile">
+          <!-- Main content will be moved here on smaller screens -->
+        </div>
+        <h2>Normal Page Content</h2>
+        <p>Cupidatat cupidatat voluptate laborum anim mollit quis exercitation ad ullamco veniam ipsum reprehenderit est ex officia enim occaecat. Cillum qui irure fugiat est consectetur minim sunt tempor sit aliquip occaecat. Irure tempor eiusmod incididunt exercitation minim incididunt eu.</p>
+        <p>Et officia elit irure velit elit aute incididunt ea eu irure veniam duis eiusmod tempor sit elit. Nisi ad eu magna veniam nulla dolor eu mollit cillum ea dolor non ut proident. Eu quis elit duis dolor quis consequat eiusmod elit magna consequat et ad laboris dolore amet nulla consequat. Nostrud consectetur magna aliquip sunt Lorem quis elit ea anim culpa ad. Proident ea et sunt aliqua magna minim tempor reprehenderit laboris do ad id in. Mollit dolor enim commodo sunt sint ea magna amet eiusmod non enim pariatur labore ullamco excepteur sunt officia. Ad cillum aute minim dolor labore consequat et cupidatat duis ullamco id minim magna esse. Labore et incididunt quis non eu officia aliquip laboris irure eiusmod et veniam consequat elit occaecat.</p>
+      </main>
+      <aside class="col-xs-4" data-split-content-container="desktop">
+        <!-- All content will be moved here on larger screens -->
+        <div data-split-content-chunk="content">
+          <!-- This is the main content -->
+          <h6>Main Content Split</h6>
+          <p><strong>I'm part of the main content split.</strong> In sit sint aliquip occaecat proident culpa elit fugiat reprehenderit anim officia ex ea dolore est.</p>
+        </div>
+        <div data-split-content-chunk="buttons">
+          <!-- This is the button content -->
+          <button class="btn btn-primary btn-block">Some Cta</button>
+          <small class="text-center">I'm part of the buttons split</small>
+        </div>
+      </aside>
+      <footer data-split-content-container="bottom">
+        <!-- Buttons will be moved here on smaller screens -->
+      </footer>
+    </div>
+  </div>
+
+  {{ highlightMarkup }}
+  <div class="container-fluid" style="background-color: white;">
+    <div class="row" data-split-content>
+      <main class="col-xs-8">
+        <div data-split-content-container="mobile">
+          <!-- Main content will be moved here on smaller screens -->
+        </div>
+        <h2>Normal Page Content</h2>
+        <p>Cupidatat cupidatat voluptate laborum anim mollit quis exercitation ad ullamco veniam ipsum reprehenderit est ex officia enim occaecat. Cillum qui irure fugiat est consectetur minim sunt tempor sit aliquip occaecat. Irure tempor eiusmod incididunt exercitation minim incididunt eu.</p>
+        <p>Et officia elit irure velit elit aute incididunt ea eu irure veniam duis eiusmod tempor sit elit. Nisi ad eu magna veniam nulla dolor eu mollit cillum ea dolor non ut proident. Eu quis elit duis dolor quis consequat eiusmod elit magna consequat et ad laboris dolore amet nulla consequat. Nostrud consectetur magna aliquip sunt Lorem quis elit ea anim culpa ad. Proident ea et sunt aliqua magna minim tempor reprehenderit laboris do ad id in. Mollit dolor enim commodo sunt sint ea magna amet eiusmod non enim pariatur labore ullamco excepteur sunt officia. Ad cillum aute minim dolor labore consequat et cupidatat duis ullamco id minim magna esse. Labore et incididunt quis non eu officia aliquip laboris irure eiusmod et veniam consequat elit occaecat.</p>
+      </main>
+      <aside class="col-xs-4" data-split-content-container="desktop">
+        <!-- All content will be moved here on larger screens -->
+        <div data-split-content-chunk="content">
+          <!-- This is the main content -->
+          <h6>Main Content Split</h6>
+          <p><strong>I'm part of the main content split.</strong> In sit sint aliquip occaecat proident culpa elit fugiat reprehenderit anim officia ex ea dolore est.</p>
+        </div>
+        <div data-split-content-chunk="buttons">
+          <!-- This is the button content -->
+          <button class="btn btn-primary btn-block">Some Cta</button>
+          <small class="text-center">I'm part of the buttons split</small>
+        </div>
+      </aside>
+      <footer data-split-content-container="bottom">
+        <!-- Buttons will be moved here on smaller screens -->
+      </footer>
+    </div>
+  </div>
+  {{ endhighlight }}
+
+  <hr class="bs-docs-separator">
+
+  <h2 id="contentsplit-usage">Usage</h2>
+  <p>Use the content split plugin via data attributes and trigger with JavaScript.</p>
+
+  <h3>Data attributes</h3>
+  <p>To add split content behavior, first define the parent container with the bare attribute <code>data-split-content</code>. Then, within that container, you must define five other elements with data attributes. Three containers and two elements that hold the actual content we want to split up.</p>
+  <ul>
+    <li><code>data-split-content-container="desktop"</code> - This is where the content will live, unsplit, on larger screens</li>
+    <li><code>data-split-content-container="mobile"</code> - This is where the main content will live on smaller screens</li>
+    <li><code>data-split-content-container="bottom"</code> - This is where the buttons will live on smaller screens, usually a fixed-bottom element</li>
+    <li><code>data-split-content-chunk="content"</code> - This is the main content which will be moved between <code>data-split-content-container="desktop"</code> and <code>data-split-content-container="mobile"</code></li>
+    <li><code>data-split-content-chunk="buttons"</code> - This is the buttons which will be moved between <code>data-split-content-container="desktop"</code> and <code>data-split-content-container="bottom"</code></li>
+  </ul>
+
+  <h3>JavaScript</h3>
+  <p>Call the content split plugin via JavaScript. Simply target the outer container and pass a breakpoint if you wish:</p>
+
+{{ highlightJavascript }}
+  $('[data-split-content]').contentSplit({ breakpoint: 991 });
+{{ endhighlight }}
+
+  <p>Note: the default breakpoint is 991 if one is not provided.</p>
+
+</div>
+
+
 {% endblock %}
