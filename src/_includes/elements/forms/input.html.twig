@@ -1,4 +1,4 @@
-{% if text is empty %}
+{% if type is empty %}
   {% set type = 'text' %}
 {% endif %}
 {% if classes %}
@@ -16,7 +16,11 @@
 {% if placeholder %}
   {% set placeholder = ' placeholder="' ~ placeholder ~ '"' %}
 {% endif %}
+{% if includeValueData %}
+  {% set data = ' data-initial-value="' ~ theValue ~ '"' %}
+{% endif %}
 {% if theValue %}
   {% set theValue = ' value="' ~ theValue ~ '"' %}
 {% endif %}
-<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}>
+
+<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}{{ data }}>

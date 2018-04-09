@@ -10,13 +10,13 @@
         <label for="order-history-start-date" class="control-label">Start Date</label>
         <input id="order-history-start-date" type="text" class="form-control" placeholder="11/17/2017">
         <span class="lt-icon lt-calendar form-control-feedback"></span>
-        {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig'  %}
+        {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig' with { class: 'd-none' }  %}
     </div>
     <div class="form-group has-feedback col-xs-12 col-sm-3 p-0 pl-md-2 pr-md-2">
         <label for="order-history-end-date" class="control-label">End Date</label>
         <input id="order-history-end-date" type="text" class="form-control" placeholder="02/15/2018">
         <span class="lt-icon lt-calendar form-control-feedback"></span>
-        {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig'  %}
+        {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig' with { class: 'd-none' }  %}
     </div>
     <div class="form-group has-feedback col-xs-12 col-sm-3 p-0 pl-md-2 pr-md-2">
         <label for="order-history-trans-type" class="control-label">Transaction Type</label>

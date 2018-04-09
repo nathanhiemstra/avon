@@ -1,0 +1,95 @@
+.demo-datepicker-from-angular {
+  small {
+    color: inherit;
+  }
+
+  tr:last-child th {
+    padding-top: 10px;
+  }
+
+  .btn {
+    box-shadow: none;
+
+    .text-info:not(.text-muted),
+    &.active .text-info {
+      color: #fff !important;
+    }
+  }
+
+  .ng-hide {
+    display: none;
+  }
+
+  .btn-default {
+    border-color: transparent;
+  }
+
+  .btn-group {
+    display: block;
+    width: 100%;
+
+    > .btn {
+      float: none;
+    }
+
+    &.pull-left,
+    + .pull-right {
+      float: none !important;
+    }
+  }
+
+  .btn-danger,
+  .btn-info,
+  .btn-success {
+    display: block;
+    width: 100%;
+    margin: 2px !important;
+  }
+
+  .btn-group {
+    .btn-danger,
+    .btn-info {
+      display: none;
+    }
+  }
+
+  .btn-danger,
+  .btn-info,
+  .btn-success,
+  .btn-danger:hover,
+  .btn-info:hover,
+  .btn-success:hover,
+  .btn-danger.active,
+  .btn-info.active,
+  .btn-success.active {
+    background-color: $btn-primary-bg !important;
+    border-color: $btn-primary-border !important;
+    color: #fff !important;
+  }
+
+  .glyphicon-chevron-left,
+  .glyphicon-chevron-right {
+    width: 20px;
+    display: block;
+    font-style: initial;
+
+    &:before {
+      @extend [class^="lt-"];
+
+      font-size: 28px;
+      line-height: 24px;
+    }
+  }
+
+  .glyphicon-chevron-left {
+    &:before {
+      @extend .lt-carat-left:before;
+    }
+  }
+
+  .glyphicon-chevron-right {
+    &:before {
+      @extend .lt-carat-right:before;
+    }
+  }
+}

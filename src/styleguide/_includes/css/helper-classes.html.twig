@@ -289,6 +289,56 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {#  #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  <h3 id="helper-classes-disableable">Disabling content</h3>
+  <p>Disable all contents of a container with the use of <code>.disableable</code> and <code>.disable</code> classes.
+  <p>This will effectively disable all descendants of the parent using CSS and apply a visual cue that the content is disabled.</p>
+
+  <div class="container-fluid">
+    <hr>
+    <div class="disableable disabled">
+      <h3>Disabled</h3>
+      <p>Proident ea consectetur sint duis laborum cupidatat amet officia adipisicing quis aliqua reprehenderit voluptate ipsum.</p>
+      <button class="btn btn-primary btn-block">I'm disabled</button>
+    </div>
+    <hr>
+    <div class="disableable">
+      <h3>Not Disabled</h3>
+      <p>Proident ea consectetur sint duis laborum cupidatat amet officia adipisicing quis aliqua reprehenderit voluptate ipsum.</p>
+      <button class="btn btn-primary btn-block">I'm not disabled</button>
+    </div>
+  </div>
+  <hr>
+
+  {{ highlightMarkup }}
+  <div class="disableable disabled">
+    <h3>Disabled</h3>
+    <p>Proident ea consectetur sint duis laborum cupidatat amet officia adipisicing quis aliqua reprehenderit voluptate ipsum.</p>
+    <button class="btn btn-primary btn-block">I'm disabled</button>
+  </div>
+  <div class="disableable">
+    <h3>Not Disabled</h3>
+    <p>Proident ea consectetur sint duis laborum cupidatat amet officia adipisicing quis aliqua reprehenderit voluptate ipsum.</p>
+    <button class="btn btn-primary btn-block">I'm not disabled</button>
+  </div>
+  {{ endhighlight }}
+
+
+  {{ highlightCss }}
+  // Source
+  .disableable {
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+  {{ endhighlight }}
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {#  #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   <h3 id="helper-classes-screen-readers">Screen reader content</h3>
   <p>Hide an element to all devices <strong>except screen readers</strong> with <code>.sr-only</code>. Necessary for following <a href="../getting-started/#accessibility">accessibility best practices</a>. Can also be used as a mixin.</p>
 

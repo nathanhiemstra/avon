@@ -1,0 +1,27 @@
+{% extends "_layouts/widget.html.twig" %}
+
+{% set widgetId = 'widget-kickstart-program' %}
+{% set widgetLayout = 'flex-column' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetHeader %}
+  <h7>Days left to sell in co3</h7>
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetBody %}
+  <div class="container-fluid px-4">
+    <h2 class="m-0">FPO BODY</h2>
+  </div>
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetFooter %}
+  <button class="btn btn-primary btn-sm btn-soft">Start Your Order</button>
+{% endblock %}

@@ -1,27 +1,17 @@
-{% set drawerId = 'drawer-item-entry' %}
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
 
 
-<!-- START - ITEM ENTRY DRAWER -->
-{% if isInStyleguide != true %}
-<section id="{{ drawerId }}" class="drawer drawer-fixed-top drawer-hidden drawer-item-entry">
-{% endif %}
-
-  <!-- DRAWER CONTENT -->
-  <section class="drawer-content">
-
-    <div class="no-reverse-bg">
-
-      <!-- HEADER -->
-      {% include components.modules.global.drawer.header with {
-        drawerLabel: 'Item Entry',
-        drawerId: drawerId,
-        drawerLogoMobile: false
-      } %}
-
-    </div>
-    <!-- /.no-reverse-bg -->
-
-    <!-- <div class="container m-0 p-0"> -->
+    <section class="container container--page">
 
       <div class="row m-0 p-4 item-entry-content--form">
 
@@ -114,13 +104,10 @@
         </div>
       </div>
 
-    <!-- </div> -->
-    <!-- /.container -->
+    </section>
 
-  </section>
+  {% endblock %}
 
-{% if isInStyleguide != true  %}
-</section>
-{% endif %}
-<!-- /.drawer -->
-<!-- END - ITEM ENTRY DRAWER -->
+{% endblock %}
+
+

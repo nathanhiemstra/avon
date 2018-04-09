@@ -1,0 +1,167 @@
+<!-- START - Rendered calendar/datepicker taken from https://www.youravon.com/us-home/my-orders/order-summary -->
+<div class="ng-override-sortable-table from-youravon">
+
+  <table class="table ng-scope ng-table" columnparent="" ng-table="orderItems" id="greenItemsTable" ng-show="showGreenTable" template-header="customHeaderTemplate" aria-hidden="false" style="table-layout: fixed;"><!-- ngInclude: templates.header --><thead ng-include="templates.header" class="ng-scope">
+  <!-- ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) --><th id="itemCampaignNr" ng-controller="ngTableSorterRowController" title="" ng-repeat="$column in $columns" ng-class="{
+                     'sortable': $column.sortable(this),
+                     'sort-asc': params.sorting()[$column.sortable(this)]=='asc',
+                     'sort-desc': params.sorting()[$column.sortable(this)]=='desc'
+                   }" ng-click="sortBy($column, $event)" ng-if="$column.show(this)" ng-init="template = $column.headerTemplateURL(this)" class="header  sortable" role="button" tabindex="0" style="width: 120px;">
+    <!-- ngIf: !template --><div ng-if="!template" class="ng-table-header ng-scope" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'div',  'text-left': $column.titleAlt(this)=='lineNrNm'}">
+      <span ng-bind="$column.title(this)" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'span'}" class="ng-binding sort-indicator">Campaign</span>
+    <span data-toggle="modal" data-target="#3" ng-show="false" aria-hidden="true" class="ng-hide">
+            <i class="fa fa-question"></i>
+    </span>
+    </div><!-- end ngIf: !template -->
+    <!-- ngIf: template -->
+    </th><!-- end ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) --><th id="origln" ng-controller="ngTableSorterRowController" title="" ng-repeat="$column in $columns" ng-class="{
+                     'sortable': $column.sortable(this),
+                     'sort-asc': params.sorting()[$column.sortable(this)]=='asc',
+                     'sort-desc': params.sorting()[$column.sortable(this)]=='desc'
+                   }" ng-click="sortBy($column, $event)" ng-if="$column.show(this)" ng-init="template = $column.headerTemplateURL(this)" class="header  sortable sort-desc" role="button" tabindex="0" style="width: 132px;">
+    <!-- ngIf: !template --><div ng-if="!template" class="ng-table-header ng-scope" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'div',  'text-left': $column.titleAlt(this)=='lineNrNm'}">
+      <span ng-bind="$column.title(this)" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'span'}" class="ng-binding sort-indicator">Product #</span>
+    <span data-toggle="modal" data-target="#3" ng-show="false" aria-hidden="true" class="ng-hide">
+            <i class="fa fa-question"></i>
+    </span>
+    </div><!-- end ngIf: !template -->
+    <!-- ngIf: template -->
+    </th><!-- end ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) --><th id="lineNrNm" ng-controller="ngTableSorterRowController" title="" ng-repeat="$column in $columns" ng-class="{
+                     'sortable': $column.sortable(this),
+                     'sort-asc': params.sorting()[$column.sortable(this)]=='asc',
+                     'sort-desc': params.sorting()[$column.sortable(this)]=='desc'
+                   }" ng-click="sortBy($column, $event)" ng-if="$column.show(this)" ng-init="template = $column.headerTemplateURL(this)" class="header  sortable sort-asc" role="button" tabindex="0" style="width: 449px;">
+    <!-- ngIf: !template --><div ng-if="!template" class="ng-table-header ng-scope text-left" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'div',  'text-left': $column.titleAlt(this)=='lineNrNm'}">
+      <span ng-bind="$column.title(this)" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'span'}" class="ng-binding sort-indicator">Description</span>
+    <span data-toggle="modal" data-target="#3" ng-show="false" aria-hidden="true" class="ng-hide">
+            <i class="fa fa-question"></i>
+    </span>
+    </div><!-- end ngIf: !template -->
+    <!-- ngIf: template -->
+    </th><!-- end ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) --><th id="avlbltyCd" ng-controller="ngTableSorterRowController" title="" ng-repeat="$column in $columns" ng-class="{
+                     'sortable': $column.sortable(this),
+                     'sort-asc': params.sorting()[$column.sortable(this)]=='asc',
+                     'sort-desc': params.sorting()[$column.sortable(this)]=='desc'
+                   }" ng-click="sortBy($column, $event)" ng-if="$column.show(this)" ng-init="template = $column.headerTemplateURL(this)" class="header " role="button" tabindex="0" style="width: 73px;">
+    <!-- ngIf: !template --><div ng-if="!template" class="ng-table-header ng-scope" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'div',  'text-left': $column.titleAlt(this)=='lineNrNm'}">
+      <span ng-bind="$column.title(this)" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'span'}" class="ng-binding sort-indicator">Avail</span>
+    <span data-toggle="modal" data-target="#3" ng-show="false" aria-hidden="true" class="ng-hide">
+            <i class="fa fa-question"></i>
+    </span>
+    </div><!-- end ngIf: !template -->
+    <!-- ngIf: template -->
+    </th><!-- end ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) --><th id="qty" ng-controller="ngTableSorterRowController" title="" ng-repeat="$column in $columns" ng-class="{
+                     'sortable': $column.sortable(this),
+                     'sort-asc': params.sorting()[$column.sortable(this)]=='asc',
+                     'sort-desc': params.sorting()[$column.sortable(this)]=='desc'
+                   }" ng-click="sortBy($column, $event)" ng-if="$column.show(this)" ng-init="template = $column.headerTemplateURL(this)" class="header " role="button" tabindex="0" style="width: 72px;">
+    <!-- ngIf: !template --><div ng-if="!template" class="ng-table-header ng-scope" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'div',  'text-left': $column.titleAlt(this)=='lineNrNm'}">
+      <span ng-bind="$column.title(this)" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'span'}" class="ng-binding sort-indicator">Qty</span>
+    <span data-toggle="modal" data-target="#3" ng-show="false" aria-hidden="true" class="ng-hide">
+            <i class="fa fa-question"></i>
+    </span>
+    </div><!-- end ngIf: !template -->
+    <!-- ngIf: template -->
+    </th><!-- end ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) --><th id="repTotalPrc" ng-controller="ngTableSorterRowController" title="" ng-repeat="$column in $columns" ng-class="{
+                     'sortable': $column.sortable(this),
+                     'sort-asc': params.sorting()[$column.sortable(this)]=='asc',
+                     'sort-desc': params.sorting()[$column.sortable(this)]=='desc'
+                   }" ng-click="sortBy($column, $event)" ng-if="$column.show(this)" ng-init="template = $column.headerTemplateURL(this)" class="header " role="button" tabindex="0" style="width: 123px;">
+    <!-- ngIf: !template --><div ng-if="!template" class="ng-table-header ng-scope" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'div',  'text-left': $column.titleAlt(this)=='lineNrNm'}">
+      <span ng-bind="$column.title(this)" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'span'}" class="ng-binding sort-indicator">Total Price</span>
+    <span data-toggle="modal" data-target="#3" ng-show="false" aria-hidden="true" class="ng-hide">
+            <i class="fa fa-question"></i>
+    </span>
+    </div><!-- end ngIf: !template -->
+    <!-- ngIf: template -->
+    </th><!-- end ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) --><th id="netSales" ng-controller="ngTableSorterRowController" title="" ng-repeat="$column in $columns" ng-class="{
+                     'sortable': $column.sortable(this),
+                     'sort-asc': params.sorting()[$column.sortable(this)]=='asc',
+                     'sort-desc': params.sorting()[$column.sortable(this)]=='desc'
+                   }" ng-click="sortBy($column, $event)" ng-if="$column.show(this)" ng-init="template = $column.headerTemplateURL(this)" class="header " role="button" tabindex="0" style="width: 115px;">
+    <!-- ngIf: !template --><div ng-if="!template" class="ng-table-header ng-scope" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'div',  'text-left': $column.titleAlt(this)=='lineNrNm'}">
+      <span ng-bind="$column.title(this)" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'span'}" class="ng-binding sort-indicator">Your Cost</span>
+    <span data-toggle="modal" data-target="#3" ng-show="false" aria-hidden="true" class="ng-hide">
+            <i class="fa fa-question"></i>
+    </span>
+    </div><!-- end ngIf: !template -->
+    <!-- ngIf: template -->
+    </th><!-- end ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns -->
+</thead>
+        <tbody><!-- ngRepeat: lineItem in $data --><tr ng-repeat="lineItem in $data" ng-show="true &amp;&amp; true &amp;&amp; true &amp;&amp; !lineItem.isRestrictedItem" class="ng-scope" aria-hidden="false">
+          <!-- ngIf: $columns[0].show(this) --><td class="text-center ng-scope" sortable="columns[0].isSortable" ng-if="$columns[0].show(this)" data-title-alt="columns[0].columnId" data-title="columns[0].columnName" data-title-text="itemCampaignNr"><span class="ng-binding">9</span></td><!-- end ngIf: $columns[0].show(this) -->
+          <!-- ngIf: $columns[1].show(this) --><td class="text-center ng-scope" sortable="columns[1].isSortable" ng-if="$columns[1].show(this)" data-title-alt="columns[1].columnId" data-title="columns[1].columnName" data-title-text="origln"> <span class="ng-binding">579359</span></td><!-- end ngIf: $columns[1].show(this) -->
+          <!-- ngIf: $columns[2].show(this) -->
+          <!-- ngIf: $columns[3].show(this) --><td sortable="columns[3].isSortable" ng-if="$columns[3].show(this)" data-title-alt="columns[3].columnId" data-title="columns[3].columnName" data-title-text="lineNrNm" class="ng-scope">
+            <span class="description ng-binding" ng-bind-html="lineItem.lineNrNm">Avon True Color Moisturizing Eye Makeup Remover Lotion</span>
+          </td><!-- end ngIf: $columns[3].show(this) -->
+          <!-- ngIf: $columns[4].show(this) --><td class="text-center ng-scope" sortable="columns[4].isSortable" ng-if="$columns[4].show(this)" data-title-alt="columns[4].columnId" data-title="columns[4].columnName" data-title-text="avlbltyCd">
+            <i class="fa fa-circle in-stock" ng-show="true" aria-hidden="false"></i>
+            <i class="fa fa-circle going-fast ng-hide" ng-show="false" aria-hidden="true"></i>
+          </td><!-- end ngIf: $columns[4].show(this) -->
+          <!-- ngIf: $columns[5].show(this) -->
+          <!-- ngIf: $columns[6].show(this) --><td class="text-center ng-scope" sortable="columns[6].isSortable" ng-if="$columns[6].show(this)" data-title-alt="columns[6].columnId" data-title="columns[6].columnName" data-title-text="qty">
+            <span ng-bind-html="lineItem.qty" class="ng-binding">1</span>
+          </td><!-- end ngIf: $columns[6].show(this) -->
+          <!-- ngIf: $columns[7].show(this) -->
+          <!-- ngIf: $columns[8].show(this) -->
+          <!-- ngIf: $columns[9].show(this) --><td class="text-center ng-scope" sortable="columns[9].isSortable" ng-if="$columns[9].show(this)" data-title-alt="columns[9].columnId" data-title="columns[9].columnName" data-title-text="repTotalPrc">
+            <span class="ng-binding" ng-bind-html="(lineItem.repTotalPrc | currency :&quot;$&quot;: 2) || noPriceTag">$3.99</span>
+          </td><!-- end ngIf: $columns[9].show(this) -->
+          <!-- ngIf: $columns[10].show(this) --><td class="text-center ng-scope" sortable="columns[10].isSortable" ng-if="$columns[10].show(this)" data-title-alt="columns[10].columnId" data-title="columns[10].columnName" data-title-text="netSales">
+            <span class="ng-binding" ng-bind-html="(lineItem.netSales | currency :&quot;$&quot;: 2) || noPriceTag">$3.19</span>
+          </td><!-- end ngIf: $columns[10].show(this) -->
+          <!-- ngIf: $columns[11].show(this) -->
+        </tr><!-- end ngRepeat: lineItem in $data --><tr ng-repeat="lineItem in $data" ng-show="true &amp;&amp; true &amp;&amp; true &amp;&amp; !lineItem.isRestrictedItem" class="ng-scope" aria-hidden="false">
+          <!-- ngIf: $columns[0].show(this) --><td class="text-center ng-scope" sortable="columns[0].isSortable" ng-if="$columns[0].show(this)" data-title-alt="columns[0].columnId" data-title="columns[0].columnName" data-title-text="itemCampaignNr"><span class="ng-binding">9</span></td><!-- end ngIf: $columns[0].show(this) -->
+          <!-- ngIf: $columns[1].show(this) --><td class="text-center ng-scope" sortable="columns[1].isSortable" ng-if="$columns[1].show(this)" data-title-alt="columns[1].columnId" data-title="columns[1].columnName" data-title-text="origln"> <span class="ng-binding">090211</span></td><!-- end ngIf: $columns[1].show(this) -->
+          <!-- ngIf: $columns[2].show(this) -->
+          <!-- ngIf: $columns[3].show(this) --><td sortable="columns[3].isSortable" ng-if="$columns[3].show(this)" data-title-alt="columns[3].columnId" data-title="columns[3].columnName" data-title-text="lineNrNm" class="ng-scope">
+            <span class="description ng-binding" ng-bind-html="lineItem.lineNrNm">Let's Makeup Beauty Set</span>
+          </td><!-- end ngIf: $columns[3].show(this) -->
+          <!-- ngIf: $columns[4].show(this) --><td class="text-center ng-scope" sortable="columns[4].isSortable" ng-if="$columns[4].show(this)" data-title-alt="columns[4].columnId" data-title="columns[4].columnName" data-title-text="avlbltyCd">
+            <i class="fa fa-circle in-stock" ng-show="true" aria-hidden="false"></i>
+            <i class="fa fa-circle going-fast ng-hide" ng-show="false" aria-hidden="true"></i>
+          </td><!-- end ngIf: $columns[4].show(this) -->
+          <!-- ngIf: $columns[5].show(this) -->
+          <!-- ngIf: $columns[6].show(this) --><td class="text-center ng-scope" sortable="columns[6].isSortable" ng-if="$columns[6].show(this)" data-title-alt="columns[6].columnId" data-title="columns[6].columnName" data-title-text="qty">
+            <span ng-bind-html="lineItem.qty" class="ng-binding">1</span>
+          </td><!-- end ngIf: $columns[6].show(this) -->
+          <!-- ngIf: $columns[7].show(this) -->
+          <!-- ngIf: $columns[8].show(this) -->
+          <!-- ngIf: $columns[9].show(this) --><td class="text-center ng-scope" sortable="columns[9].isSortable" ng-if="$columns[9].show(this)" data-title-alt="columns[9].columnId" data-title="columns[9].columnName" data-title-text="repTotalPrc">
+            <span class="ng-binding" ng-bind-html="(lineItem.repTotalPrc | currency :&quot;$&quot;: 2) || noPriceTag">$9.99</span>
+          </td><!-- end ngIf: $columns[9].show(this) -->
+          <!-- ngIf: $columns[10].show(this) --><td class="text-center ng-scope" sortable="columns[10].isSortable" ng-if="$columns[10].show(this)" data-title-alt="columns[10].columnId" data-title="columns[10].columnName" data-title-text="netSales">
+            <span class="ng-binding" ng-bind-html="(lineItem.netSales | currency :&quot;$&quot;: 2) || noPriceTag">$7.99</span>
+          </td><!-- end ngIf: $columns[10].show(this) -->
+          <!-- ngIf: $columns[11].show(this) -->
+        </tr><!-- end ngRepeat: lineItem in $data --><tr ng-repeat="lineItem in $data" ng-show="true &amp;&amp; true &amp;&amp; true &amp;&amp; !lineItem.isRestrictedItem" class="ng-scope" aria-hidden="false">
+          <!-- ngIf: $columns[0].show(this) --><td class="text-center ng-scope" sortable="columns[0].isSortable" ng-if="$columns[0].show(this)" data-title-alt="columns[0].columnId" data-title="columns[0].columnName" data-title-text="itemCampaignNr"><span class="ng-binding">9</span></td><!-- end ngIf: $columns[0].show(this) -->
+          <!-- ngIf: $columns[1].show(this) --><td class="text-center ng-scope" sortable="columns[1].isSortable" ng-if="$columns[1].show(this)" data-title-alt="columns[1].columnId" data-title="columns[1].columnName" data-title-text="origln"> <span class="ng-binding">109226</span></td><!-- end ngIf: $columns[1].show(this) -->
+          <!-- ngIf: $columns[2].show(this) -->
+          <!-- ngIf: $columns[3].show(this) --><td sortable="columns[3].isSortable" ng-if="$columns[3].show(this)" data-title-alt="columns[3].columnId" data-title="columns[3].columnName" data-title-text="lineNrNm" class="ng-scope">
+            <span class="description ng-binding" ng-bind-html="lineItem.lineNrNm">Makeup Remover Wipes with Mineral Complex</span>
+          </td><!-- end ngIf: $columns[3].show(this) -->
+          <!-- ngIf: $columns[4].show(this) --><td class="text-center ng-scope" sortable="columns[4].isSortable" ng-if="$columns[4].show(this)" data-title-alt="columns[4].columnId" data-title="columns[4].columnName" data-title-text="avlbltyCd">
+            <i class="fa fa-circle in-stock" ng-show="true" aria-hidden="false"></i>
+            <i class="fa fa-circle going-fast ng-hide" ng-show="false" aria-hidden="true"></i>
+          </td><!-- end ngIf: $columns[4].show(this) -->
+          <!-- ngIf: $columns[5].show(this) -->
+          <!-- ngIf: $columns[6].show(this) --><td class="text-center ng-scope" sortable="columns[6].isSortable" ng-if="$columns[6].show(this)" data-title-alt="columns[6].columnId" data-title="columns[6].columnName" data-title-text="qty">
+            <span ng-bind-html="lineItem.qty" class="ng-binding">3</span>
+          </td><!-- end ngIf: $columns[6].show(this) -->
+          <!-- ngIf: $columns[7].show(this) -->
+          <!-- ngIf: $columns[8].show(this) -->
+          <!-- ngIf: $columns[9].show(this) --><td class="text-center ng-scope" sortable="columns[9].isSortable" ng-if="$columns[9].show(this)" data-title-alt="columns[9].columnId" data-title="columns[9].columnName" data-title-text="repTotalPrc">
+            <span class="ng-binding" ng-bind-html="(lineItem.repTotalPrc | currency :&quot;$&quot;: 2) || noPriceTag">$14.97</span>
+          </td><!-- end ngIf: $columns[9].show(this) -->
+          <!-- ngIf: $columns[10].show(this) --><td class="text-center ng-scope" sortable="columns[10].isSortable" ng-if="$columns[10].show(this)" data-title-alt="columns[10].columnId" data-title="columns[10].columnName" data-title-text="netSales">
+            <span class="ng-binding" ng-bind-html="(lineItem.netSales | currency :&quot;$&quot;: 2) || noPriceTag">$11.98</span>
+          </td><!-- end ngIf: $columns[10].show(this) -->
+          <!-- ngIf: $columns[11].show(this) -->
+        </tr><!-- end ngRepeat: lineItem in $data -->
+      </tbody></table>
+
+      <!-- START - Rendered calendar/datepicker taken from https://www.youravon.com/us-home/my-orders/order-summary -->
+    </div>

@@ -75,7 +75,7 @@ li.avon-product-list__item {
 
       // transition: 0.5s opacity ease;
       // opacity: 1;
-
+   
     }
 
     // // Only show badge if collapsed
@@ -125,7 +125,7 @@ li.avon-product-list__item {
     // @media (min-width: $screen-md-min) {
     //     cursor: default;
     // }
-
+ 
   }
 }
 
@@ -133,8 +133,6 @@ li.avon-product-list__item {
   width: 60px;
   height: auto;
 }
-
-
 
 // **************************************
 // Your Order - cart table specific styles
@@ -161,9 +159,10 @@ li.avon-product-list__item {
 
   .t-item {
     padding-left: 0;
-    
+
     img {
-      width: 60px; height: auto;
+      width: 60px;
+      height: auto;
     }
   }
 
@@ -219,6 +218,14 @@ li.avon-product-list__item {
 
     .t-price, .t-qty {
       display: table-cell;
+    }
+  }
+}
+
+.highlight-row {
+  .t-qty {
+    input.form-control {
+      border: 2px solid $brand-primary;
     }
   }
 }

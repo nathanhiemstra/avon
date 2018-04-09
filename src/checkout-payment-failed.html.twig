@@ -11,7 +11,9 @@
 
   <div class="container container--page">
 
-  {% embed '_layouts/columns-10-max-8x4-header.html.twig' %}
+    {% embed '_layouts/columns-10-max-8x4-header.html.twig' with {
+      contentSplit: true
+    } %}
 
     {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
     {# DEFINE BLOCK - CONTENT HEADER #}
@@ -32,7 +34,7 @@
     {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
     {% block main %}
 
-      <div class="mb-4 mb-md-0" data-split-content="mobile">
+      <div class="mb-4 mb-md-0" data-split-content-container="mobile">
 
         <!-- DEV NOTE :: Order summary information is moved here with js on small screens -->
 
@@ -66,17 +68,17 @@
       {% include '_includes/modules/checkout/quick-checkout-payment-method.html.twig' with {headline: 'Choose Payment Method', hasSplitPayment: true} %}
       <!-- END - ADD/CHOOSE PAYMENT METHOD -->
 
-      <!-- START: PAY WITH AVON CREDIT-->
+      <!-- START - PAY WITH AVON CREDIT-->
       {% include '_includes/modules/checkout/quick-checkout-ac.html.twig' %}
-      <!-- END: PAY WITH AVON CREDIT -->
+      <!-- END - PAY WITH AVON CREDIT -->
 
       <!-- START - CREDIT CARD PAYMENT METHOD -->
       {% include '_includes/modules/checkout/quick-checkout-cc.html.twig' %}
       <!-- END - CREDIT CARD PAYMENT METHOD -->
 
-      <!-- START: PAY WITH QUICKPAY-->
+      <!-- START - PAY WITH QUICKPAY-->
       {% include '_includes/modules/checkout/quick-checkout-aq.html.twig' with { showAmount:true } %}
-      <!-- END: PAY WITH QUICKPAY-->
+      <!-- END - PAY WITH QUICKPAY-->
 
     {% endblock %}
     {# END BLOCK - MAIN #}

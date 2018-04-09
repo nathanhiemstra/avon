@@ -22,46 +22,45 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
-<img data-src="holder.js/100%x180" alt="Generic placeholder thumbnail">
-  {% include "_includes/groups/boxes/primary/carousel-container.html.twig" with { 
-  carouselId: 'carousel-' ~ modalId, 
+  {% include "_includes/groups/boxes/primary/carousel-container.html.twig" with {
+  carouselId: 'carousel-' ~ modalId,
   hasToolbar: null,
   items: {
     item1: {
-      imgPath: 'src="images/fpo/home/1.png"'
+      widgetPath: '_includes/modules/widgets/widget-kickstart.html.twig'
     },
     item2: {
-      imgPath: 'src="images/fpo/home/2.png"'
+      widgetPath: '_includes/modules/widgets/widget-campaign-selling-dates.html.twig'
     },
     item3: {
-      imgPath: 'src="images/fpo/home/3.png"'
+      widgetPath: '_includes/modules/widgets/widget-customer-product-reminders.html.twig'
     },
     item4: {
-      imgPath: 'src="images/fpo/home/4.png"'
+      fpoImgSrc: 'src="images/fpo/home/4.png"'
     },
     item5: {
-      imgPath: 'src="images/fpo/home/5.png"'
+      widgetPath: '_includes/modules/widgets/widget-your-activities.html.twig'
     },
     item6: {
-      imgPath: 'src="images/fpo/home/6.png"'
+      fpoImgSrc: 'src="images/fpo/home/6.png"'
     },
     item7: {
-      imgPath: 'src="images/fpo/home/7.png"'
+      fpoImgSrc: 'src="images/fpo/home/7.png"'
     },
     item8: {
-      imgPath: 'src="images/fpo/home/8.png"'
+      fpoImgSrc: 'src="images/fpo/home/8.png"'
     },
     item9: {
-      imgPath: 'src="images/fpo/home/9.png"'
+      fpoImgSrc: 'src="images/fpo/home/9.png"'
     },
     item10: {
-      imgPath: 'src="images/fpo/home/10.png"'
+      fpoImgSrc: 'src="images/fpo/home/10.png"'
     },
     item11: {
-      imgPath: 'src="images/fpo/home/11.png"'
+      fpoImgSrc: 'src="images/fpo/home/11.png"'
     },
     item12: {
-      imgPath: 'src="images/fpo/home/12.png"'
+      fpoImgSrc: 'src="images/fpo/home/12.png"'
     }
   }
 } %}
