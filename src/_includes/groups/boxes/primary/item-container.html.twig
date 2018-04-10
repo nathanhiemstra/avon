@@ -11,19 +11,23 @@
   {% set containerClasses = 'box-group--primary' %}
 {% endif %}
 
+{# if we're dealing with widgets, we need a class for height styles #}
+{% if isWidget %}
+  {% set containerClasses = containerClasses ~ ' box-group--widgets' %}
+{% endif %}
+
 
 <!-- START - {{ comment }}  -->
 <div class="{{ containerClasses }}">
   {% for item in items %}
-    {% include "_includes/groups/boxes/primary/item.html.twig" with { 
+    {% include "_includes/groups/boxes/primary/item.html.twig" with {
       fpoImgSrc: item.fpoImgSrc,
-      widgetPath: item.widgetPath, 
-      isFirstItem: loop.first, 
-      loopIndex: loop.index, 
-      hasToolbar: hasToolbar 
+      widgetPath: item.widgetPath,
+      isFirstItem: loop.first,
+      loopIndex: loop.index,
+      hasToolbar: hasToolbar,
+      itemContainerType: itemContainerType
     } %}
   {% endfor %}
 </div>
 <!-- END - {{ comment }} -->
-
-

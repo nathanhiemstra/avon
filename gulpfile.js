@@ -224,7 +224,7 @@ gulp.task('compile', function () {
                       widgetPath: prefix.modules + 'widgets/widget-your-activities.html.twig'
                     },
                     item6: {
-                      fpoImgSrc: 'src="images/fpo/home/6.png"'
+                      widgetPath: prefix.modules + 'widgets/widget-social-posts.html.twig'
                     },
                     item7: {
                       fpoImgSrc: 'src="images/fpo/home/7.png"'

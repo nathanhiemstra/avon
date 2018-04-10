@@ -232,6 +232,19 @@ $box-group--primary-item-width: 220px;
   }
 }
 
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// BOX GROUP - WIDGETS
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Since widgets need a set height, we need some height styles on their container
+.box-group--widgets {
+  .item-content {
+    height: 100%;
+    min-height: 275px;
+  }
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // BOX GROUP - SECONDARY
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

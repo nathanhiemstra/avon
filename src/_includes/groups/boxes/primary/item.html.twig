@@ -5,9 +5,15 @@
   {% set toolbarDataAttrs = ' data-toggle="modal" data-target="#' ~ carouselId ~ '"'  %}
 {% endif %}
 
+{% if itemContainerType == 'carouselOnly' %}
+  {% set addMargin = false %}
+{% else %}
+  {% set addMargin = true %}
+{% endif %}
+
 
 <!-- START - SINGLE SLIDE -->
-<div class="item my-3  {{ classes }}">
+<div class="item {% if addMargin %}my-3{% else %}my-0{% endif %} {{ classes }}">
   <div class="box-group--item box-emphasize">
 
     {% if hasToolbar %}
