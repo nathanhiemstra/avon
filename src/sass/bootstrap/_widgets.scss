@@ -18,6 +18,14 @@
     margin: 0 auto;
   }
 
+  // make radial progress responsive inside widgets
+  .progress-radial {
+    max-width: 90%;
+    width: 90% !important;
+    height: auto !important;
+    margin: -$spacing-3 auto 0;
+  }
+
 }
 
 .widget-truncate {

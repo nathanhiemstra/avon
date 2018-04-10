@@ -7,7 +7,7 @@
 {# DEFINE BLOCK - widgetHeader #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block widgetHeader %}
-  <h7>Days left to sell in co3</h7>
+  <h7>Days left to sell in CO3</h7>
 {% endblock %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -15,7 +15,29 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block widgetBody %}
   <div class="container-fluid px-4">
-    <h2 class="m-0">FPO BODY</h2>
+    <div class="progress-radial"
+  		role="progressbar"
+  		aria-valuenow="2"
+  		aria-valuemin="0"
+  		aria-valuemax="14"
+  		data-radprogress-offset="2"
+  		data-radprogress-stroke-width="6"
+  		data-radprogress-diameter="120">
+
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+
+    <span class="sr-only">sr-only msg fpo</span>
+
+    <div class="progress-counter">
+			<h1 data-radprogress-counter>12</h1>
+		</div>
+
+	</div>
+
+  <div class="progress-msg">
+    <p class="text-muted m-0"><strong>Order by September 24th</strong></p>
+  </div>
+
   </div>
 {% endblock %}
 
