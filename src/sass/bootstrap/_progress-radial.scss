@@ -1,0 +1,74 @@
+//
+// Progress rings
+// --------------------------------------------------
+
+
+// Ring itself
+// -------------------------
+
+.progress-radial {
+	position: relative;
+  // transform: rotate(-2deg);
+
+  svg {
+  	path, circle {
+  		fill: none;
+  		stroke: $progress-bar-bg;
+  		&.filled {
+  			stroke: $gray-light;
+  		}
+  	}
+  }
+
+  .progress-counter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -56%);
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  // Variations
+  // -------------------------
+
+  &.progress-radial-success {
+    svg path, svg circle {
+  		stroke: $progress-bar-success-bg;
+      &.filled {
+  			stroke: $gray-light;
+  		}
+    }
+  }
+
+  &.progress-radial-info {
+    svg path, svg circle {
+  		stroke: $progress-bar-info-bg;
+      &.filled {
+  			stroke: $gray-light;
+  		}
+    }
+  }
+
+  &.progress-radial-warning {
+    svg path, svg circle {
+  		stroke: $progress-bar-warning-bg;
+      &.filled {
+  			stroke: $gray-light;
+  		}
+    }
+  }
+
+  &.progress-radial-danger {
+    svg path, svg circle {
+  		stroke: $progress-bar-danger-bg;
+      &.filled {
+  			stroke: $gray-light;
+  		}
+    }
+  }
+
+}

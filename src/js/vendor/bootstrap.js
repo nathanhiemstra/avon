@@ -2051,3 +2051,184 @@ $('.carousel-thumbs').thumbnailsCarousel();
   })
 
 }(jQuery);
+
+
+
+/* ========================================================================
+ * Avon: radialprogress.js
+ * ========================================================================*/
+
+
+
+ +function ($) {
+   'use strict';
+
+	// RADIAL PROGRESS CLASS DEFINITION
+  // ======================
+
+	function RadialProgress(element, options) {
+		this.options = $.extend({}, RadialProgress.DEFAULTS, options);
+
+		this.$el = $(element);
+		this.$svg = this.$el.find('svg');
+		this.$progressCounter = this.$el.find('[data-radprogress-counter]');
+
+		this.minSegments = this.$el.attr('aria-valuemin') || options.minSegments;
+		this.totalSegments = this.$el.attr('aria-valuemax') || options.totalSegments;
+		this.filledSegments = this.$el.attr('aria-valuenow') || options.filledSegments;
+		this.offset = this.$el.data('radprogress-offset') || options.offset;
+		this.strokeWidth = this.$el.data('radprogress-stroke-width') || options.strokeWidth;
+		this.diameter = this.$el.data('radprogress-diameter') || options.diameter;
+		this.draw();
+	}
+
+	RadialProgress.DEFAULTS = {
+		minSegments: 0,
+    totalSegments: 14,
+		filledSegments: 2,
+		offset: 2,
+		strokeWidth: 5,
+		diameter: 150
+  }
+
+	// Public Methods
+
+	/**
+	 * Specify the cartesian coordinates so we can use the elliptical arc command
+	 * @param {Number} centerX X Polar coordinate
+	 * @param {Number} centerY Y Polar coordinate
+	 * @param {Number} radius Radius of the circle
+	 * @param {Number} angleInDegrees Angle from 0 to 360
+	 */
+	RadialProgress.polarToCartesian = function(centerX, centerY, radius, angleInDegrees) {
+		var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+		return {
+			x: centerX + (radius * Math.cos(angleInRadians)),
+			y: centerY + (radius * Math.sin(angleInRadians))
+		};
+	};
+
+	/**
+	 * Creates the value of the d attribute of an svg path to draw the segment
+	 * @param {Number} x X coordinate of the center of the circle
+	 * @param {Number} y Y coordinate of the center of the circle
+	 * @param {Number} startAngle In degrees from 0 to 360, starting point of the arc
+	 * @param {Number} endAngle In degrees from 0 to 360, end point of the arc
+	 */
+	RadialProgress.describeArc = function(x, y, radius, startAngle, endAngle) {
+		var start = RadialProgress.polarToCartesian(x, y, radius, endAngle),
+				end = RadialProgress.polarToCartesian(x, y, radius, startAngle),
+				arcSweep = endAngle - startAngle <= 180 ? '0' : '1',
+				d = [
+					'M', start.x, start.y,
+					'A', radius, radius, 0, arcSweep, 0, end.x, end.y
+				].join(' ');
+		return d;
+	};
+
+	// Private Methods
+
+	/**
+	 * Draws the segment
+	 */
+	RadialProgress.prototype.draw = function() {
+		var size = this.diameter / 2;
+		var radius = size - (this.strokeWidth * 2); // account for stroke width in radius
+
+		var len = this.offset === 0 ?
+					(360 / this.totalSegments) :
+					(360 - (this.offset * this.totalSegments)) / this.totalSegments,
+				prevStartAngle = 0,
+				prevEndAngle = 0,
+				segment = '', i;
+		if (this.offset === 0 && this.totalSegments === 1) {
+			segment = '<circle cx="' + size + '" cy="' + size + '" r="' + radius + '"';
+			segment += this.filledSegments === 1 ? ' class="filled"/>' : ' />'
+		} else {
+			for (i = 1; i <= this.totalSegments; i++) {
+				prevStartAngle = prevEndAngle + this.offset;
+				prevEndAngle = (len * i) + (this.offset * i);
+				segment += '<path ';
+				segment += this.filledSegments >= i ? 'class="filled" ' : '';
+				segment += 'd="';
+				segment += RadialProgress.describeArc(size, size, radius, prevStartAngle, prevEndAngle);
+				segment += '"/>';
+			}
+		}
+
+		// set width and height of container el to diameter
+		this.$el.css({ 'width': this.diameter, 'height': this.diameter });
+
+		// reset the viewbox to diameter
+		var viewbox = '0 0 ' + this.diameter + ' ' + this.diameter;
+		this.$svg.removeAttr('viewBox');
+		this.$svg.each(function () { $(this)[0].setAttribute('viewBox', viewbox) });
+
+		// render svg
+		this.$svg.html(segment);
+
+		// set the stroke width on all paths
+		this.$svg.find('path').css('stroke-width', this.strokeWidth);
+
+		// set the progress counter value
+		var counterText = this.totalSegments - this.filledSegments;
+		this.$progressCounter.text(counterText);
+
+	};
+
+	/**
+	 * Updates the number of filled vs unfilled segments
+	 * @param {Number} totalSegments Total number of segments
+	 * @param {Number} filledSegments Number of filled segments
+	 * @param {Number} offset Segment padding
+	 */
+	RadialProgress.prototype.update = function(totalSegments, filledSegments, offset) {
+		this.totalSegments = totalSegments;
+		this.filledSegments = filledSegments;
+		this.offset = offset;
+		this.draw();
+	};
+
+	// RADIAL PROGRESS PLUGIN DEFINITION
+  // =======================
+
+  var old = $.fn.radprogress
+
+  $.fn.radprogress = function (option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.radprogress')
+      var options = typeof option == 'object' && option
+
+      if (!data) $this.data('bs.radprogress', (data = new RadialProgress(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  $.fn.radprogress.Constructor = RadialProgress
+
+
+  // RADIAL PROGRESS NO CONFLICT
+  // =================
+
+  $.fn.radprogress.noConflict = function () {
+    $.fn.radprogress = old
+    return this
+  }
+
+
+  // RADIAL PROGRESS DATA-API
+  // ==============
+
+  $(window).on('load', function () {
+    $('.progress-radial').each(function () {
+      var $this = $(this);
+      var data = $this.data();
+
+      data = data || {};
+
+      $this.radprogress(data)
+    })
+  })
+
+}(jQuery);

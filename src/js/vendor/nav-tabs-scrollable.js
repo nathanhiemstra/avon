@@ -57,47 +57,6 @@ var NavTabsScrollable = ( function () {
       ticking = true;
     } );
 
-    // handle tab clicks - nudge scroll position if necessary
-    // var _handleTabClick = function(e) {
-    //   if( SETTINGS.navBarTravelling === true ) {
-    //     return;
-    //   }
-    //
-    //   var windowWidth = window.innerWidth - 30;
-    //   var boundingRect = e.target.getBoundingClientRect();
-    //   var elPositionX = Math.floor(boundingRect.x);
-    //   var elWidth = Math.floor(boundingRect.width);
-    //
-    //   var elOverflowRight = (elPositionX + elWidth) > windowWidth;
-    //   var elOverflowLeft = elPositionX < 15;
-    //   var distanceNeeded = 0;
-    //
-    //   console.log('el position :: ', elPositionX);
-    //   console.log('el width :: ', elWidth);
-    //   console.log('entire width :: ', windowWidth);
-    //
-    //   if(elOverflowRight) {
-    //     console.log('NEED TO MOVE LEFT');
-    //     // calculate the distance required
-    //     distanceNeeded = (elPositionX + elWidth) - windowWidth;
-    //     console.log(distanceNeeded);
-    //     els.scrollableTabsNavContents.style.transform = "translateX(" + -distanceNeeded + "px)";
-    //   }
-    //
-    //   if(elOverflowLeft) {
-    //     console.log('NEED TO MOVE RIGHT');
-    //     // calculate the distance required
-    //     distanceNeeded = (elPositionX + elWidth) + 15;
-    //     console.log(distanceNeeded);
-    //     els.scrollableTabsNavContents.style.transform = "translateX(" + distanceNeeded + "px)";
-    //   }
-    //
-    // };
-    //
-    // for (var i = 0; i < els.allTabs.length; i++) {
-    //   els.allTabs[i].addEventListener("click", _handleTabClick);
-    // }
-
     var _handleLeftClick = function() {
         // If in the middle of a move return
         if( SETTINGS.navBarTravelling === true ) {
