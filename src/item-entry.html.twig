@@ -23,6 +23,7 @@
             <label for="item-entry-line-number" class="control-label">Line Number</label>
             <input id="item-entry-line-number" type="text" class="form-control" placeholder="234-567">
             <div class="stock-status">
+              <!-- DEV NOTE :: Only one of these stock status messages will appear at a time -->
               <span class="small">
                 <span class="lt-icon lt-checkmark lt-medium align-middle m-0"></span>
                 <strong class="align-middle">In stock</strong>
@@ -80,6 +81,8 @@
 
         <hr>
 
+        <!-- START - MORE ON THE WAY SECTION -->
+        <!-- DEV NOTE :: To hide this section, toggle class '.d-none' -->
         <div class="clearfix text-center">
           <p><strong>More on the way</strong></p>
           <p>Sint ullamco consequat tempor dolore velit Lorem sint enim ipsum elit officia ex. Irure commodo fugiat anim exercitation elit quis et dolor laboris exercitation velit pariatur laboris ipsum.</p>
@@ -88,13 +91,17 @@
               <button type="submit" class="btn btn-default btn-block">View similar products</button>
             </div>
             <div class="form-group col-xs-12 col-sm-6 p-0 pl-sm-2">
+              <!-- DEV NOTE :: to enable button, remove .diabled class -->
               <button type="submit" class="btn btn-primary btn-block disabled">Notify me when in stock</button>
             </div>
           </div>
         </div>
+        <!-- END - MORE ON THE WAY SECTION -->
 
         <hr>
 
+        <!-- START - SOLD OUT SECTION -->
+        <!-- DEV NOTE :: To hide this section, toggle class '.d-none' -->
         <div class="clearfix text-center">
           <p>
             <span class="lt-icon lt-warning lt-medium align-middle m-0"></span>
@@ -107,9 +114,12 @@
             </div>
           </div>
         </div>
+        <!-- END - SOLD OUT SECTION -->
 
         <hr>
 
+        <!-- START - CARTS -->
+        <!-- DEV NOTE :: To hide this section, toggle class '.d-none' -->
         <div class="clearfix">
           <ul class="list-group pt-3 mb-4">
             <h6 class="mb-1">Added to Cart</h6>
@@ -121,18 +131,19 @@
             {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '3', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false} %}
             <!-- END - REPRESENTATIVE DELIVERY CARTS -->
           </ul>
+
+          <ul class="list-group pt-3 mb-4">
+            <h6 class="mb-1">Future Orders</h6>
+            <p class="small text-muted">Available for checkout in the next campaign</p>
+
+            <!-- START - REPRESENTATIVE DELIVERY CARTS -->
+            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '4', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false} %}
+            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '5', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false} %}
+            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '6', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false} %}
+            <!-- END - REPRESENTATIVE DELIVERY CARTS -->
+          </ul>
         </div>
-
-        <ul class="list-group pt-3 mb-4">
-          <h6 class="mb-1">Future Orders</h6>
-          <p class="small text-muted">Available for checkout in the next campaign</p>
-
-          <!-- START - REPRESENTATIVE DELIVERY CARTS -->
-          {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '4', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false} %}
-          {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '5', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false} %}
-          {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '6', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false} %}
-          <!-- END - REPRESENTATIVE DELIVERY CARTS -->
-        </ul>
+        <!-- END - CARTS -->
 
     {% endblock %}
 
