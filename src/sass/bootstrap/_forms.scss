@@ -616,7 +616,14 @@ select.form-control.input-lg {
     & + span.lt-icon {
       pointer-events: none;
     }
+
   }
+
+  // make sure default down arrow is hidden on IE
+  select::-ms-expand {
+    display: none;
+  }
+  
 }
 
 // Feedback icon (requires .lt-icon classes)
