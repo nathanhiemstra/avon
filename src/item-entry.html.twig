@@ -21,7 +21,7 @@
 
           <div class="form-group col-xs-12 col-sm-2 p-0 pr-sm-2">
             <label for="item-entry-line-number" class="control-label">Line Number</label>
-            <input id="item-entry-line-number" type="text" class="form-control" placeholder="234-567">
+            <input id="item-entry-line-number" type="text" onClick="this.select();" class="form-control" value="234-567">
             <div class="stock-status">
               <!-- DEV NOTE :: Only one of these stock status messages will appear at a time -->
               <span class="small">
@@ -51,19 +51,16 @@
 
           <div class="form-group has-error col-xs-12 col-sm-2 p-0 pl-sm-3 pr-sm-2">
             <label for="item-entry-line-number" class="control-label">Quantity</label>
-            <input id="item-entry-line-number" type="number" class="form-control" placeholder="1">
+            <input id="item-entry-line-number" type="number" class="form-control" value="1">
             <p class="text-danger small label-abs">
               <strong>You have exceeded your demo limit.<br>Please modify the quantity.</strong>
             </p>
           </div>
 
+          <!-- DEV NOTE "" the funcationlaity for this dropdown is currently piggybacking on the same dropdown from the Product Details "Who is this for". The Javascript that controls it is in product-detail.js -->
           <div class="form-group has-feedback col-xs-12 col-sm-5 p-0 pl-sm-2">
             <label for="order-history-trans-type" class="control-label">Who is this for?</label>
-            <select class="form-control">
-              <option>{{ fpo.person.2 }}</option>
-              <option>{{ fpo.person.3 }}</option>
-              <option>{{ fpo.person.4 }}</option>
-            </select>
+            <input type="text" class="form-control" id="pdpCustomerSelect">
             <span class="lt-icon lt-triangle-down form-control-feedback"></span>
           </div>
 
