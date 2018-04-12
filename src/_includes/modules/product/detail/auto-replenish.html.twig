@@ -1,0 +1,42 @@
+{% extends "_layouts/modal.html.twig" %}
+{% if not modalId %}
+  {% set modalId = 'auto-replenish' %}
+{% endif %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-primary pull-left" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Go back</span>
+    <span class="lt-icon lt-left lt-large py-1"></span>
+  </button>
+  <h4 class="modal-title text-center">Auto Replenish</h4>
+
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+
+   <p>
+    {{ fpo.paragraph }}{{ fpo.paragraph }}
+   </p>
+
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Ok</button>
+
+
+
+{% endblock %}
