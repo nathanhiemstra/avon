@@ -1,13 +1,14 @@
 
+{% set emailAddress = 'helen.hicks@yahoo.com' %}
 {% set emailmarkup %}
-    <div class='reverse-bg p-3 mb-3'>
-      <span>helen.hicks@yahoo.com</span>
-      <a href='#' class='underline'>Copy</a>
+    <div class='reverse-bg py-2 px-3 mb-3 nowrap'>
+      <span>{{ emailAddress }}</span>
+      <a href='javascript:void(0)' class='underline pl-2'>Copy</a>
     </div>
-    <div class='clearfix'>
-      <button type='button' class='btn btn-default btn-sm pull-right-sm'>
+    <div class='text-right'>
+      <a href='mailto:{{ emailAddress }}' class='btn btn-default btn-sm'>
         Send email
-      </button>
+      </a>
     </div>
 {% endset %}
 
@@ -35,22 +36,25 @@
         <td class="t-follow">4 Days</td>
         <td class="t-call">
 
-          <a class="visible-sm visible-md visible-lg" href="javascript:void(0)" data-container="body" data-toggle="popover" data-placement="top" data-content="18173082001"><span class="lt-icon lt-phone"></span></a>
+          <a class="visible-sm visible-md visible-lg" href="javascript:void(0)" data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus" data-content="18173082001"><span class="lt-icon lt-phone"></span></a>
 
           <a class="visible-xs" href="tel:18173082001"><span class="lt-icon lt-phone"></span></a>
 
         </td>
         <td class="t-text visible-xs"><a href="sms:8173082007"><span class="lt-icon lt-comment"></span></a></td>
-
         <td class="t-email">
-
-          <a class="visible-sm visible-md visible-lg" href="javascript:void(0)" data-container="body" data-toggle="popover" data-placement="top" data-html="true" 
-          data-content="{{emailmarkup}}">
+          <a 
+            class="popover-email-combo" 
+            href="javascript:void(0)" 
+            data-container="body" 
+            data-toggle="popover" 
+            data-placement="top" 
+            data-trigger="manual" 
+            data-html="true" 
+            data-email="{{ emailAddress }}"
+            data-content="{{ emailmarkup }}">
             <span class="lt-icon lt-mail"></span>
           </a>
-
-          <a class="visible-xs" href="mailto:jonesa@gmail.com"><span class="lt-icon lt-mail"></span></a>
-
         </td>
 
         <td class="t-action"><span class="lt-icon lt-trash"></span></td>
