@@ -67,11 +67,14 @@
   {% include '_includes/groups/your-order/message-status-in-stock.html.twig' %}
   {% include '_includes/groups/your-order/message-status-out-of-stock.html.twig' %}
   {% include '_includes/groups/your-order/message-status-sold-out.html.twig' %}
+  <span class="small pl-4">
+    <span class="underline">Auto-Replenish</span> <span class="lt-icon lt-info lt-medium" data-toggle="modal" data-target="#auto-replenish"></span>
+  </span>
 </div>
 <!-- END - STOCK STATUS MESSAGES -->
 
 <!-- START - AUTO-REPLENISH MODAL -->
-{% include "_includes/modules/product/detail/auto-replenish.html.twig" %} 
+{% include "_includes/modules/product/detail/auto-replenish.html.twig" %}
 <!-- END - AUTO-REPLENISH MODAL -->
 
 <!-- START - VARIANT SELECT -->
