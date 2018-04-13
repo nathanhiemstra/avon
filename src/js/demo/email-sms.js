@@ -4,31 +4,21 @@
  */
 
 
-  // function sendEmail(address) {
-
-  //   // Trigger message
-  //   window.location.href = 'mailto:' + address;
-  // }
-
-
-
-
-  // $(".popover-email-combo").on( "click", function ( e ) {
-
-  //   var width = $( window ).width();
-  //   // If we're on mobile, suppress the popover and just trigger the email. 
-  //   if ( width > 768 ) {
-  //       $(this).popover('show');
-  //   } else {
-  //     var address = $( this ).data( 'email' );
-  //     // console.log('address: ',address); 
-  //     sendEmail(address);
-  //   }
-    
-
-  // } );
-
-
+//   $('body').on('click', function (e) {
+//     //only buttons
+//     if ($(e.target).data('toggle') !== 'popover'
+//         && $(e.target).parents('.popover.in').length === 0) { 
+//         $('.popover-email-combo').popover('hide');
+//     }
+//     //buttons and icons within buttons
+//     /*
+//     if ($(e.target).data('toggle') !== 'popover'
+//         && $(e.target).parents('[data-toggle="popover"]').length === 0
+//         && $(e.target).parents('.popover.in').length === 0) { 
+//         $('[data-toggle="popover"]').popover('hide');
+//     }
+//     */
+// });
 
 
 var EmailSms = (function () {
@@ -46,6 +36,8 @@ var EmailSms = (function () {
     _addListeners();
   };
 
+
+
   // private methods
   var _addListeners = function () {
 
@@ -56,8 +48,11 @@ var EmailSms = (function () {
       var mobileWidth = 768;
 
       if ( windowWidth > mobileWidth ) {
+        $(this).popover('hide');
+
         // If we're on mobile send email
         var address = $( this ).data( 'email' );
+
         _sendEmail(address);
       } else {
         // If we're on tablet or desktop show popover
@@ -67,10 +62,13 @@ var EmailSms = (function () {
     });
   };
 
+  
+
   // FUNCTIONS
   
   var _showPopover = function( itemClicked) {
     $(itemClicked).popover('show');
+
   };
 
   var _sendEmail = function( address ) {
