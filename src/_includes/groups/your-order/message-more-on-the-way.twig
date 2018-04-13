@@ -1,16 +1,16 @@
 <!-- START - OUT OF STOCK -->
-<div class="p-3 reverse-bg my-3">
+<div class="box-basic my-3">
   <p><strong>More on the way</strong></p>
-  <div>This item is currently out of stock, but we are expecting more soon. Sign up to be notified as soon as it's available.</div>
+  <div class="small">This item is currently out of stock, but we are expecting more soon. Sign up to be notified as soon as it's available.</div>
   {% if outOfStock %}
       {% set disabled = ' disabled' %}
     <!-- START - OUT OF STOCK CONFIRMATION MESSAGE -->
-    <div class="mt-4">Thanks! We'll e-mail you at <strong>rosa.kim@gmail.com</strong> when it comes back in stock</div class="mt-4">
+    <div class="mt-4 small">Thanks! We'll e-mail you at <strong>rosa.kim@gmail.com</strong> when it comes back in stock</div>
     <!-- END - OUT OF STOCK CONFIRMATION MESSAGE -->
   {% endif %}
   <div>
-    <button type="button" class="btn btn-discourage btn-soft mt-4 mr-4">View similar products</button>
-    <button type="button" class="btn btn-discourage btn-soft mt-4"{{ disabled }}>Notify me when instock</button>
+    <button type="button" class="btn btn-discourage btn-soft btn-sm mt-4 mr-4">View similar products</button>
+    <button type="button" class="btn btn-discourage btn-soft btn-sm mt-4"{{ disabled }}>Notify me when instock</button>
   </div>
 </div>
 <!-- END - OUT OF STOCK -->
