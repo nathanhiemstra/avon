@@ -83,6 +83,16 @@ input[type="checkbox"]:focus {
   @include tab-focus;
 }
 
+// Hide up and down arrows in number fields
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 // Adjust output element
 output {
   display: block;
@@ -167,7 +177,7 @@ output {
     opacity: 1;
 
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
-
+ 
   }
 
   &[disabled],
@@ -205,7 +215,7 @@ select.form-control {
 
   + .lt-triangle-down.form-control-feedback {
     // transform: rotate(90deg);
-
+ 
   }
 }
 
@@ -617,6 +627,11 @@ select.form-control.input-lg {
       pointer-events: none;
     }
   }
+
+  // make sure default down arrow is hidden on IE
+  select::-ms-expand {
+    display: none;
+  }
 }
 
 // Feedback icon (requires .lt-icon classes)
@@ -684,6 +699,8 @@ select.form-control.input-lg {
 
 .has-error {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
+
+  border-width: $state-danger-border-width;
 }
 
 // Reposition feedback icon if input has visible label above
@@ -836,7 +853,7 @@ select.form-control.input-lg {
     padding-top: $padding-base-vertical + 1;
 
     // Default padding plus a border
-
+ 
   }
 
   // Account for padding we're adding to ensure the alignment and of help text
@@ -860,7 +877,7 @@ select.form-control.input-lg {
       padding-top: $padding-base-vertical + 1;
 
       // Default padding plus a border
-
+   
     }
   }
 

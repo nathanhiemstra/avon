@@ -91,3 +91,9 @@ a.label {
 .label-xs {
     @include button-size($btn-padding-xs-vertical, $btn-padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
 }
+
+// absolute position label
+.label-abs {
+  position: absolute;
+  white-space: nowrap;
+}

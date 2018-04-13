@@ -39,3 +39,20 @@
     </div>
   </td>
 </tr>
+<!-- START - PRODUCT AVAILABILITY ROW -->
+<tr class="border-0">
+  <td colspan="4" class="p-0 pb-2">
+
+    {% if showMessages %}
+
+     {% include '_includes/groups/your-order/message-more-on-the-way.twig' %}
+
+     {% include '_includes/groups/your-order/message-more-on-the-way.twig' with { outOfStock: true } %}
+
+     {% include '_includes/groups/your-order/message-sold-out.html.twig' %}
+
+   {% endif %}
+
+  </td>
+</tr>
+<!-- END - PRODUCT AVAILABILITY ROW -->

@@ -50,6 +50,16 @@
         }
       }
 
+      // Hide user name in that weird place on the narrow sie of tablet
+      @media (min-width: $screen-sm) and (max-width: 910px) {
+        .account-list__user {
+          .profile-name,
+          .profile-img {
+            display: none !important;
+          }
+        }
+      }
+
       .account-list__user {
         width: 100%;
         margin-bottom: 0.5rem;
@@ -87,6 +97,18 @@
 
       li {
         white-space: nowrap;
+
+        @media (min-width: $screen-sm-min) {
+          font-weight: bold;
+        }
+
+        &:not(:first-child) {
+          a:before {
+            content: '|';
+            margin-right: 5px;
+            color: $gray;
+          }
+        }
       }
 
       // desktop
@@ -166,7 +188,7 @@
     }
 
     // end desktop
-
+ 
   }
 
   $primary-nav-x-space: 2rem;
@@ -197,7 +219,7 @@
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 1;
-        margin: $primary-nav-x-space/2 0;
+        margin: ($primary-nav-x-space / 2) 0;
       }
     }
 
@@ -393,7 +415,7 @@
         }
 
         // end .has-sub-items
-
+     
       }
     }
 
@@ -528,7 +550,7 @@
       display: flex;
 
       // transform: translateX(0);
-
+   
     }
 
     &.off-canvas--right {
@@ -563,7 +585,7 @@
 
       // first level child
       > a,
-       > a:hover,
+      > a:hover,
       > a:focus {
         background-color: $brand-primary;
         transition: $ui-animation-time background-color $ui-animation-ease;
@@ -623,7 +645,7 @@
         }
 
         // end .sub-list-item a.collapsed
-
+     
       }
 
       // end .sub-list-item a
@@ -649,7 +671,7 @@
     }
 
     // end .sub-list-item
-
+ 
   }
 }
 

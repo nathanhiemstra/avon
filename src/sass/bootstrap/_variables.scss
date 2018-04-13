@@ -62,7 +62,7 @@ $body-bg: $white !default;
 
 //** Global text color on `<body>`.
 $text-color: $gray-dark !default;
-$text-muted: $gray-medium !default;
+$text-muted: $gray !default;
 $text-muted-hover: $gray !default;
 
  
@@ -268,7 +268,7 @@ $btn-danger-bg: $brand-danger !default;
 $btn-danger-border: $brand-danger !default;
 
 $btn-discourage-color: $brand-discourage !default;
-$btn-discourage-bg: $white !default;
+$btn-discourage-bg: transparent !default;
 $btn-discourage-border: $brand-discourage !default;
 
 $btn-disabled-color: $brand-disabled !default;
@@ -664,6 +664,7 @@ $state-warning-border: darken(adjust-hue($state-warning-bg, -10), 5%) !default;
 $state-danger-text: #D6321C !default;
 $state-danger-bg: #f2dede !default;
 $state-danger-border: darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+$state-danger-border-width: 2px;
 
 //== Tooltips
 //
@@ -1045,8 +1046,7 @@ $pre-scrollable-max-height: 340px !default;
 //** Horizontal offset for forms and lists.
 $component-offset-horizontal: 180px !default;
 
-//** Text muted color
-$text-muted: $gray !default;
+
 
 //** Abbreviations and acronyms border color
 $abbr-border-color: $gray-light !default;
