@@ -664,6 +664,7 @@ $state-warning-border: darken(adjust-hue($state-warning-bg, -10), 5%) !default;
 $state-danger-text: #D6321C !default;
 $state-danger-bg: #f2dede !default;
 $state-danger-border: darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+$state-danger-border-width: 2px;
 
 //== Tooltips
 //

@@ -64,15 +64,9 @@
 
 <!-- START - STOCK STATUS MESSAGES -->
 <div class="pdp-stock-status my-3">
-  <span class="small">
-    <span class="lt-icon lt-checkmark lt-medium"></span> In stock
-  </span>
-  <span class="small text-danger">
-    <span class="lt-icon lt-close lt-medium"></span> Out of stock
-  </span>
-  <span class="small text-danger">
-    <span class="lt-icon lt-warning lt-medium"></span> Sold out
-  </span>
+  {% include '_includes/groups/your-order/message-status-in-stock.html.twig' %}
+  {% include '_includes/groups/your-order/message-status-out-of-stock.html.twig' %}
+  {% include '_includes/groups/your-order/message-status-sold-out.html.twig' %}
 </div>
 <!-- END - STOCK STATUS MESSAGES -->
 
@@ -165,7 +159,7 @@
 
   <!-- START - SOLD OUT MESSAGE -->
   <div class="form-group d-inline-block col-xs-12 p-0 m-0">
-    <p class="text-danger"><span class="lt-icon lt-warning lt-medium text-danger"></span> <strong>This product is sold out</strong></p>
+    {% include '_includes/groups/your-order/message-title-this-product-is-sold-out.twig' %}
     <p class="small">This item is currently unavailable. Lorem ipsum dolor sit amet, and view similar products.</p>
   </div>
   <!-- END - SOLD OUT MESSAGE -->
