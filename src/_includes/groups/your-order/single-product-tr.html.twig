@@ -43,29 +43,15 @@
 <tr class="border-0">
   <td colspan="4" class="p-0 pb-2">
 
-    <!-- START - OUT OF STOCK -->
-    <div class="p-3 reverse-bg my-3">
-      <p><strong>More on the way</strong></p>
-      <p>This item is currently out of stock, but we are expecting more soon. Sign up to be notified as soon as it's available.</p>
-      <!-- START - OUT OF STOCK CONFIRMATION MESSAGE -->
-      <p>Thanks! We'll e-mail you at <strong>rosa.kim@gmail.com</strong> when it comes back in stock</p>
-      <!-- END - OUT OF STOCK CONFIRMATION MESSAGE -->
-      <div class="clearfix">
-        <button type="button" class="btn btn-discourage btn-soft mr-4">View similar products</button>
-        <button type="button" class="btn btn-discourage btn-soft">Notify me when instock</button>
-      </div>
-    </div>
-    <!-- END - OUT OF STOCK -->
+    {% if showMessages %}
 
-    <!-- START - SOLD OUT -->
-    <div class="p-3 reverse-bg my-3">
-      <p class="text-danger"><span class="lt-icon lt-warning lt-large"></span><strong>This product is sold out</strong></p>
-      <p>{{fpo.sentence}}{{fpo.sentence}}</p>
-      <div class="clearfix">
-        <button type="button" class="btn btn-discourage btn-soft">View similar products</button>
-      </div>
-    </div>
-    <!-- END - SOLD OUT -->
+     {% include '_includes/groups/your-order/message-more-on-the-way.twig' %}
+
+     {% include '_includes/groups/your-order/message-more-on-the-way.twig' with { outOfStock: true } %}
+
+     {% include '_includes/groups/your-order/message-sold-out.html.twig' %}
+
+   {% endif %}
 
   </td>
 </tr>
