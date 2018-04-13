@@ -5,4 +5,10 @@
       padding-bottom: 50px;
     }
   }
+
+  .item-entry-col {
+    @media (min-width: $screen-sm) {
+      padding-right: 0;
+    }
+  }
 }
