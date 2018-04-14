@@ -6,19 +6,19 @@
   {% set carouselBoxesCombo_Class = 'carousel--hide-on-tablet-and-above' %}
 {% endif %}
 
-<!-- START - CAROUSEL {{ carouselId }}--> 
-<div 
-  id="{{ carouselId }}" 
-  class="carousel slide box-group--primary-with-carousel {{ carouselBoxesCombo_Class }}" 
-  data-ride="carousel"  
+<!-- START - CAROUSEL {{ carouselId }}-->
+<div
+  id="{{ carouselId }}"
+  class="carousel slide box-group--primary-with-carousel {{ carouselBoxesCombo_Class }}"
+  data-ride="carousel"
   data-interval="false">
- 
+
   <!-- START - INDICATORS (DOTS) -->
   <ol class="carousel-indicators">
     {% for item in items %}
-      <li 
-        data-target="#{{ carouselId }}" 
-        data-slide-to="{{ (loop.index - 1) }}" 
+      <li
+        data-target="#{{ carouselId }}"
+        data-slide-to="{{ (loop.index - 1) }}"
         {% if loop.first %} class="active" {% endif %}></li>
     {% endfor %}
   </ol>
@@ -26,14 +26,15 @@
 
 
   <!-- START - SLIDES CONTAINER  -->
-  {% include "_includes/groups/boxes/primary/item-container.html.twig" with { 
-    items: items, 
+  {% include "_includes/groups/boxes/primary/item-container.html.twig" with {
+    items: items,
     hasToolbar: hasToolbar,
     itemContainerType: itemContainerType,
     carouselId: carouselId,
-    loopIndex: loop.index
+    loopIndex: loop.index,
+    isWidget: true
   } %}
-  
+
   <!-- END - SLIDES CONTAINER  -->
 
 
@@ -47,4 +48,4 @@
   <!-- END - CONTROLS -->
 
 </div>
-<!-- END - CAROUSEL {{ carouselId }}--> 
+<!-- END - CAROUSEL {{ carouselId }}-->

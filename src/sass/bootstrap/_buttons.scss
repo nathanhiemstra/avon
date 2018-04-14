@@ -137,6 +137,17 @@ a.btn {
 // Discourage - black
 .btn-discourage {
   @include button-variant($btn-discourage-color, $btn-discourage-bg, $btn-discourage-border);
+
+  &[disabled],
+  fieldset[disabled] & {
+    color: $btn-link-disabled-color;
+
+    &:focus,
+    &:hover {
+      color: $btn-link-disabled-color;
+      border-color: $btn-link-disabled-color;
+    }
+  }
 }
 
 // Avon Custom Buttons

@@ -1,0 +1,38 @@
+{% extends "_layouts/widget.html.twig" %}
+
+{% set widgetId = 'widget-social-posts' %}
+{% set widgetLayout = 'flex-column' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetHeader %}
+  <h7>My upcoming social posts</h7>
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetBody %}
+
+  <div class="container-fluid px-0">
+    <div class="d-flex align-items-center justify-content-center small text-uppercase my-3">
+      <strong class="widget-box filled">M</strong>
+      <strong class="widget-box filled">T</strong>
+      <strong class="widget-box filled">W</strong>
+      <strong class="widget-box filled">T</strong>
+      <strong class="widget-box">F</strong>
+      <strong class="widget-box">S</strong>
+      <strong class="widget-box">S</strong>
+    </div>
+    <p class="text-muted mt-4"><strong>4 posts scheduled for next week</strong></p>
+  </div>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetFooter %}
+  <button class="btn btn-primary btn-sm btn-soft">Schedule more posts</button>
+{% endblock %}

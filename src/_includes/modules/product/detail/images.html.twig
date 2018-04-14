@@ -6,7 +6,7 @@
     <li data-target="#pdp-images" data-slide-to="0" class="active"></li>
     <li data-target="#pdp-images" data-slide-to="1"></li>
     <li data-target="#pdp-images" data-slide-to="2"></li>
-    <li data-target="#pdp-images" data-slide-to="3"></li>
+    <li data-toggle="modal" data-target="#product-video" aria-hidden="true"></li>
   </ol>
   <!-- END - INDICATORS -->
 
@@ -21,9 +21,9 @@
     <div class="item">
       <img src="/images/fpo/anew_lg.png" alt="">
     </div>
-    <div class="item">
+    <!-- <div class="item">
       <img src="/images/fpo/pretty_lady.png" alt="">
-    </div>
+    </div> -->
   </div>
   <!-- END - CAROUSEL INNER -->
 
@@ -58,14 +58,20 @@
         </a>
       </div>
 
-      <div class="col-xs-3 mb-3">
+      <!-- <div class="col-xs-3 mb-3">
         <a href="#" class="thumbnail thumbnail--square">
           <img src="/images/fpo/pretty_lady.png" alt="..."/>
         </a>
+      </div> -->
+
+      <div class="col-xs-3 mb-3">
+        <a href="javascript:void(0)" class="thumbnail thumbnail--square" data-toggle="modal" data-target="#product-video" aria-hidden="true">
+          <img src="/images/fpo/video.png" alt="..."/>
+        </a>
       </div>
 
-
     </div>
+
   </div>
   <!-- END - CAROUSEL THUMBS -->
 
@@ -79,3 +85,7 @@
     </div>
   </div>
   <!-- END - SOCIAL ICONS -->
+
+  <!-- START - PRODUCT VIDEO MODAL -->
+  {% include "_includes/modules/product/detail/product-video-modal.html.twig" %}
+  <!-- END - PRODUCT VIDEO MODAL -->

@@ -1,6 +1,6 @@
 {% extends "_layouts/widget.html.twig" %}
 
-{% set widgetId = 'widget-kickstart-program' %}
+{% set widgetId = 'widget-selling-dates' %}
 {% set widgetLayout = 'flex-column' %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -14,7 +14,7 @@
 {# DEFINE BLOCK - widgetBody #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block widgetBody %}
-  <div class="container-fluid px-4">
+  <div class="container-fluid px-0">
     <div class="progress-radial"
   		role="progressbar"
   		aria-valuenow="2"
@@ -22,9 +22,9 @@
   		aria-valuemax="14"
   		data-radprogress-offset="2"
   		data-radprogress-stroke-width="6"
-  		data-radprogress-diameter="120">
+  		data-radprogress-diameter="150">
 
-		<svg version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+		<div class="svg-holder"></div>
 
     <span class="sr-only">sr-only msg fpo</span>
 

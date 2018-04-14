@@ -205,6 +205,63 @@ gulp.task('compile', function () {
                   },
                   total:          prefix.modules + 'your-order/order-total.html.twig'
                 },
+
+                widgets: {
+                  all: {
+                    item1: {
+                      widgetPath: prefix.modules + 'widgets/widget-kickstart.html.twig'
+                    },
+                    item2: {
+                      widgetPath: prefix.modules + 'widgets/widget-campaign-selling-dates.html.twig'
+                    },
+                    item3: {
+                      widgetPath: prefix.modules + 'widgets/widget-customer-product-reminders.html.twig'
+                    },
+                    item4: {
+                      widgetPath: prefix.modules + 'widgets/widget-online-store-orders.html.twig'
+                    },
+                    item5: {
+                      widgetPath: prefix.modules + 'widgets/widget-your-activities.html.twig'
+                    },
+                    item6: {
+                      widgetPath: prefix.modules + 'widgets/widget-social-posts.html.twig'
+                    },
+                    item7: {
+                      fpoImgSrc: 'src="images/fpo/home/7.png"'
+                    },
+                    item8: {
+                      fpoImgSrc: 'src="images/fpo/home/8.png"'
+                    },
+                    item9: {
+                      fpoImgSrc: 'src="images/fpo/home/9.png"'
+                    },
+                    item10: {
+                      fpoImgSrc: 'src="images/fpo/home/10.png"'
+                    },
+                    item11: {
+                      fpoImgSrc: 'src="images/fpo/home/11.png"'
+                    },
+                    item12: {
+                      fpoImgSrc: 'src="images/fpo/home/12.png"'
+                    }
+                  },
+                  primary: {
+                    item1: {
+                      widgetPath: prefix.modules + 'widgets/widget-kickstart.html.twig'
+                    },
+                    item2: {
+                      widgetPath: prefix.modules + 'widgets/widget-campaign-selling-dates.html.twig'
+                    },
+                    item3: {
+                      widgetPath: prefix.modules + 'widgets/widget-customer-product-reminders.html.twig'
+                    },
+                    item4: {
+                      widgetPath: prefix.modules + 'widgets/widget-online-store-orders.html.twig'
+                    }
+                  }
+
+                }
+
               }
             },
             pages: {

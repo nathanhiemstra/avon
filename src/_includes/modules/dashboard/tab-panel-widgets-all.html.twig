@@ -1,41 +1,5 @@
 {% include "_includes/groups/boxes/primary/item-container.html.twig" with {
   hasToolbar: null,
-  items: {
-    item1: {
-      widgetPath: '_includes/modules/widgets/widget-kickstart.html.twig'
-    },
-    item2: {
-      widgetPath: '_includes/modules/widgets/widget-campaign-selling-dates.html.twig'
-    },
-    item3: {
-      widgetPath: '_includes/modules/widgets/widget-customer-product-reminders.html.twig'
-    },
-    item4: {
-      fpoImgSrc: 'src="images/fpo/home/4.png"'
-    },
-    item5: {
-      widgetPath: '_includes/modules/widgets/widget-your-activities.html.twig'
-    },
-    item6: {
-      fpoImgSrc: 'src="images/fpo/home/6.png"'
-    },
-    item7: {
-      fpoImgSrc: 'src="images/fpo/home/7.png"'
-    },
-    item8: {
-      fpoImgSrc: 'src="images/fpo/home/8.png"'
-    },
-    item9: {
-      fpoImgSrc: 'src="images/fpo/home/9.png"'
-    },
-    item10: {
-      fpoImgSrc: 'src="images/fpo/home/10.png"'
-    },
-    item11: {
-      fpoImgSrc: 'src="images/fpo/home/11.png"'
-    },
-    item12: {
-      fpoImgSrc: 'src="images/fpo/home/12.png"'
-    }
-  }
+  items: components.modules.widgets.all,
+  isWidget: true
 } %}

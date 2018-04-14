@@ -26,10 +26,10 @@
 $num-visible-items: 4;
 $item-height: 72px;
 $item-padding: 15px;
-$total-item-height: $item-height + ($item-padding * 2);
+$total-item-height: $item-height + $item-padding * 2;
 
 .box-scrollhide {
-  max-height: ($total-item-height * $num-visible-items) + ($num-visible-items * 1px);
+  max-height: $total-item-height * $num-visible-items + $num-visible-items * 1px;
   overflow-y: hidden;
   border: 1px solid $border-color;
   padding: $item-padding;
@@ -42,6 +42,7 @@ $total-item-height: $item-height + ($item-padding * 2);
     &:first-of-type {
       padding-top: 0;
     }
+
     &:last-of-type {
       padding-bottom: 0;
       border-bottom: none;
@@ -65,9 +66,7 @@ $total-item-height: $item-height + ($item-padding * 2);
   @media (min-width: $screen-md) {
     overflow-y: scroll;
   }
-
 }
-
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // BOX GROUP - PRIMARY WITH CAROUSEL
@@ -154,8 +153,8 @@ $box-group--primary-item-width: 220px;
 
 // BOX STYLES - SOMETIMES APPEAR WITH NO CAROUSEL
 .box-group--primary {
-
   $toolbar-height: 32px;
+
   // $min-item-height: 250px;
 
   .box-group--item {
@@ -169,7 +168,9 @@ $box-group--primary-item-width: 220px;
 
   .item-content {
     width: 100%;
+
     // min-height: $min-item-height;
+ 
   }
 
   .toolbar {
@@ -185,7 +186,7 @@ $box-group--primary-item-width: 220px;
       max-height: 20px;
     }
 
-    &+.item-content {
+    & + .item-content {
       height: calc(100% - #{$toolbar-height});
     }
   }
@@ -232,6 +233,19 @@ $box-group--primary-item-width: 220px;
   }
 }
 
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// BOX GROUP - WIDGETS
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Since widgets need a set height, we need some height styles on their container
+.box-group--widgets {
+  .item-content {
+    height: 100%;
+    min-height: 275px;
+  }
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // BOX GROUP - SECONDARY
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -239,7 +253,6 @@ $box-group--primary-item-width: 220px;
 
 .box-group--secondary {
   .box-group--item {
-
     // full width for mobile
     @media (max-width: $screen-sm-min) {
       width: 100%;
@@ -353,4 +366,11 @@ $box-group--primary-item-width: 220px;
       justify-content: flex-start;
     }
   }
+}
+
+.box-basic {
+  border-radius: $border-radius-secondary !important;
+  padding: $spacing-4;
+
+  @extend .reverse-bg;
 }

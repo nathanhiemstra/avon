@@ -2070,7 +2070,9 @@ $('.carousel-thumbs').thumbnailsCarousel();
 		this.options = $.extend({}, RadialProgress.DEFAULTS, options);
 
 		this.$el = $(element);
-		this.$svg = this.$el.find('svg');
+    console.log ( "element=", $(element).find('.radial-svg') );
+    this.$svgHolder = $(element).find('.svg-holder');
+		//this.$svg = $(element).find('svg');
 		this.$progressCounter = this.$el.find('[data-radprogress-counter]');
 
 		this.minSegments = this.$el.attr('aria-valuemin') || options.minSegments;
@@ -2159,13 +2161,14 @@ $('.carousel-thumbs').thumbnailsCarousel();
 		// set width and height of container el to diameter
 		this.$el.css({ 'width': this.diameter, 'height': this.diameter });
 
-		// reset the viewbox to diameter
-		var viewbox = '0 0 ' + this.diameter + ' ' + this.diameter;
-		this.$svg.removeAttr('viewBox');
-		this.$svg.each(function () { $(this)[0].setAttribute('viewBox', viewbox) });
-
 		// render svg
-		this.$svg.html(segment);
+		this.$svgHolder.html('<svg version="1.1" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">' + segment + '</svg>');
+    this.$svg = this.$svgHolder.find('svg');
+
+    // reset the viewbox to diameter
+		var viewbox = '0 0 ' + this.diameter + ' ' + this.diameter;
+		//this.$svg.removeAttr('viewBox');
+		this.$svg.each(function () { $(this)[0].setAttribute('viewBox', viewbox) });
 
 		// set the stroke width on all paths
 		this.$svg.find('path').css('stroke-width', this.strokeWidth);

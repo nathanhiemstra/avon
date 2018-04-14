@@ -19,6 +19,13 @@ var Modals = (function () {
       modalTriggers: $('[data-toggle="modal"]')
     };
 
+    $('#product-video').on('hidden.bs.modal', function () {
+      var video = $(this).find("iframe");
+      var videoSrc = video.attr("src");
+      video.attr("src","");
+      video.attr("src",videoSrc);
+    })
+
     _addListeners();
   };
 

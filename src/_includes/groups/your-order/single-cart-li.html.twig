@@ -14,11 +14,19 @@
         <span class="ml-3 align-middle">{{ personName }}</span>
       </a>
     </dt>
-    <dt class="pull-right cart-total" data-total="{{ total }}">${{ total }}</dd>
+    {% if total %}
+      <dt class="pull-right cart-total" data-total="{{ total }}">${{ total }}</dd>
+    {% endif %}
   </dl>
 
   <dl class="clearfix ml-5 mt-0 mt-md-3 mb-3 mr-0">
-    <dd class="pull-left small text-muted">{{ itemCount }} items</dd>
+    {% if expiredItems %}
+      {% set itemsTextExpired = " expired " %}
+      {% set itemsTextClass = " text-danger" %}
+    {% else %}
+      {% set itemsTextClass = " text-muted" %}
+    {% endif %}
+    <dd class="pull-left small{{ itemsTextClass }}">{{ itemCount }}{{ itemsTextExpired }} items</dd>
     <dd class="pull-right cart-delete small text-muted">
       <a href="javascript:void(0);" class="link-muted underline" data-toggle="modal" data-target="#blank-modal-either-or">Delete</a>
     </dd>
@@ -49,7 +57,10 @@
           price: '$30.00',
           salePrice: null,
           classes: 'input-sm',
-          indexNum: indexNum
+          indexNum: indexNum,
+          showMessagesOutOfStock: null,
+          expiredItems: expiredItems,
+          quantityStatic: quantityStatic
         }%}
 
         {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
@@ -60,7 +71,10 @@
           price: '$10.00',
           salePrice: '$8.99',
           classes: 'input-sm',
-          indexNum: indexNum
+          indexNum: indexNum,
+          showMessagesOutOfStock: true,
+          expiredItems: expiredItems,
+          quantityStatic: quantityStatic
         }%}
 
         {% include '_includes/groups/your-order/single-product-tr.html.twig' with {
@@ -72,7 +86,10 @@
           salePrice: null,
           classes: 'input-sm',
           whichRow: 'last',
-          indexNum: indexNum
+          indexNum: indexNum,
+          showMessagesOutOfStock: null,
+          expiredItems: expiredItems,
+          quantityStatic: quantityStatic
         }%}
 
          <!-- END - REPEATABLE ITEMS -->
