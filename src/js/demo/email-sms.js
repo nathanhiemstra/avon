@@ -47,28 +47,37 @@ var EmailSms = (function () {
       var windowWidth = $( window ).width();
       var mobileWidth = 768;
 
-      if ( windowWidth > mobileWidth ) {
-        $(this).popover('hide');
+      if ( windowWidth < mobileWidth ) {
 
-        // If we're on mobile send email
+        // MOBILE
+        // Trigger email
         var address = $( this ).data( 'email' );
-
         _sendEmail(address);
+
       } else {
-        // If we're on tablet or desktop show popover
+
+        // TABLET / DESKTOP
         _showPopover(this);
       }
 
     });
+
+
+    $els.popoverEmailCombo.focusout(function( e ) {
+      _hidePopover(this);
+    });
+
   };
 
-  
 
   // FUNCTIONS
   
   var _showPopover = function( itemClicked) {
     $(itemClicked).popover('show');
+  };
 
+  var _hidePopover = function( itemClicked) {
+    $(itemClicked).popover('hide');
   };
 
   var _sendEmail = function( address ) {
@@ -82,3 +91,25 @@ var EmailSms = (function () {
   };
 
 })();
+
+
+
+
+
+$('body').on('click', function (e) {
+
+  console.log('e: ',e); 
+  console.log('$(e.target): ',$(e.target).parent()); 
+    //only buttons
+    // if ($(e.target).data('toggle') !== 'popover') { 
+    //     $('[data-toggle="popover"]').popover('hide');
+    // }
+    //buttons and icons within buttons
+    /*
+    if ($(e.target).data('toggle') !== 'popover'
+        && $(e.target).parents('[data-toggle="popover"]').length === 0
+        && $(e.target).parents('.popover.in').length === 0) { 
+        $('[data-toggle="popover"]').popover('hide');
+    }
+    */
+});
