@@ -39,6 +39,16 @@
   <!-- END - REPRESENTATIVE DELIVERY CARTS -->
 </ul>
 
+<ul class="list-group pt-3 mb-4">
+  <h6 class="mb-1">Expired Items</h6>
+  <p class="small text-muted">{{ fpo.sentence }}</p>
+
+  <!-- START - EXPIRED ITEMS -->
+  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '9', personName: fpo.person.5, itemCount: '8', total: null, classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true, showCampaignNum: true, expiredItems: true} %}
+  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '10', personName: fpo.person.4, itemCount: '8', total: null, classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true, showCampaignNum: true, expiredItems: true} %}
+  <!-- END - EXPIRED ITEMS -->
+</ul>
+
 <!-- START - MODAL CONTENT -->
 {% include "_includes/modules/modals/modal-either-or.html.twig" %}
 <!-- END - MODAL CONTENT -->

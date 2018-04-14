@@ -10,8 +10,15 @@
   </td>
   <td class="t-desc py-3 pt-md-5 pb-4 pl-0 pl-md-3">
     <div>
-      <span class="mr-4">{% if indexNum == '1' %}FPO Short{% else %}{{ productName }}{% endif %}</span>
-      <span class="product-sku text-muted">{{ sku }}</span>
+      <span class="mr-4"><strong>{% if indexNum == '1' %}FPO Short{% else %}{{ productName }}{% endif %}</strong></span>
+      <span class="desc-group text-muted small">
+        <span class="product-sku mr-2">{{ sku }}</span>
+      {% if showCampaignNum %}
+        <span class="campaign-num">Campaign 4</span>
+      {% endif %}
+      </span>
+
+      
     </div>
   </td>
   <td class="t-price {% if salePrice %}t-price--reduced{% endif %} pb-0 pb-md-3 pt-3 pt-md-5 pr-0 pr-md-3">
@@ -25,33 +32,41 @@
   </td>
   <!-- Developer note: If this is the last <tr> in the <table> change "pb-3 pb-md-4" to "pb-0" -->
   <td class="t-qty text-right {{ bottomPadding }} pt-0 pt-md-5 pr-0 px-md-3">
-    <span class="d-flex align-items-center">
-      {# <label class="mb-0 mr-3 hidden-xs hidden-md hidden-lg">QTY:</label> #}
-      {% include "_includes/elements/forms/input.html.twig" with {
-        classes: 'text-right input-sm mt-2 mt-md-0',
-        size: '6',
-        theValue: '1',
-        includeValueData: true
-      } %}
-    </span>
+      {% set qtyExample = "1" %}
+      {% if quantityStatic %}
+        {{ qtyExample }}
+      {% else %}
+        <span class="d-flex align-items-center">
+          {% include "_includes/elements/forms/input.html.twig" with {
+            classes: 'text-right input-sm mt-2 mt-md-0',
+            size: '6',
+            theValue: qtyExample,
+            includeValueData: true
+          } %}
+        </span>
+      {% endif %}
+    
     <div class="mt-2 mt-md-4">
       <a href="javascript:void(0);" class="small link-muted underline" data-toggle="modal" data-target="#blank-modal-either-or">Delete</a>
     </div>
   </td>
 </tr>
+
 <!-- START - PRODUCT AVAILABILITY ROW -->
 <tr class="border-0">
   <td colspan="4" class="p-0 pb-2">
 
-    {% if showMessages %}
+    
 
-     {% include '_includes/groups/your-order/message-more-on-the-way.twig' %}
-
-     {% include '_includes/groups/your-order/message-more-on-the-way.twig' with { outOfStock: true } %}
-
-     {% include '_includes/groups/your-order/message-sold-out.html.twig' %}
-
-   {% endif %}
+    {% if expiredItems %}
+      {% include '_includes/groups/your-order/message-expired.html.twig' %}
+    {% else %}
+      {% if showMessagesOutOfStock %}
+        {% include '_includes/groups/your-order/message-more-on-the-way.html.twig' %}
+        {% include '_includes/groups/your-order/message-more-on-the-way.html.twig' with { outOfStock: true } %}
+        {% include '_includes/groups/your-order/message-sold-out.html.twig' %}
+     {% endif %}
+    {% endif %}
 
   </td>
 </tr>
