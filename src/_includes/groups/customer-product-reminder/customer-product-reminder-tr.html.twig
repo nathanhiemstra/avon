@@ -1,0 +1,108 @@
+{# EMAIL - UPDATE OR NORMAL ICON? #}
+{% if updateEmail %}
+
+   {# "Update" link #}
+   {% set tdEmail %}
+      <a href="javascript:void(0);" class="underline" data-toggle="modal" data-target="#modal-update-email-address">Update</a>
+   {% endset %}
+
+{% else %}
+
+   {# Email icon#}
+   {% set emailAddress = 'person@gmail.com' %}
+   {% set emailmarkup %}
+       <div class='reverse-bg py-2 px-3 mb-3 nowrap'>
+         <span>{{ emailAddress }}</span>
+         <a href='javascript:void(0)' class='underline pl-2'>Copy</a>
+       </div>
+       <div class='text-right'>
+         <a href='mailto:{{ emailAddress }}' class='btn btn-default btn-sm'>
+           Send email
+         </a>
+       </div>
+   {% endset %}
+   {% set tdEmail %}
+      <a 
+        class="popover-override" 
+        href="mailto:{{ emailAddress }}" 
+        data-container="body" 
+        data-toggle="popover" 
+        data-placement="top" 
+        data-trigger="manual" 
+        data-html="true" 
+        data-content="{{ emailmarkup }}">
+        <span class="lt-icon lt-mail"></span>
+       </a>
+   {% endset %}
+
+{% endif %}
+
+{# PHONE - UPDATE OR NORMAL ICON? #}
+{% if updatePhone %}
+
+   {# "Update" link #}
+   {% set tdPhone %}
+      <a href="javascript:void(0);" class="underline" data-toggle="modal" data-target="#modal-update-phone-number">Update</a>
+   {% endset %}
+
+{% else %}
+
+   {# Phone icon#}
+   {% set tdPhone %}
+      <a 
+         class="popover-override" 
+         href="tel:15555555555" 
+         data-container="body" 
+         data-toggle="popover" 
+         data-placement="top" 
+         data-trigger="manual" 
+         data-html="true" 
+         data-content="(555) 555-5555">
+         <span class="lt-icon lt-phone"></span>
+       </a>
+   {% endset %}
+
+{% endif %}
+
+{# TEXT - UPDATE OR NORMAL ICON? #}
+{% if updateText %}
+
+   {# "Update" link #}
+   {% set tdText %}
+      <a href="javascript:void(0);" class="underline" data-toggle="modal" data-target="#modal-update-text-number">Update</a>
+   {% endset %}
+
+{% else %}
+
+   {# Text icon#}
+   {% set tdText %}
+      <a href="sms:15555555555"><span class="lt-icon lt-comment"></span></a>
+   {% endset %}
+
+{% endif %}
+
+
+
+
+
+
+
+<tr>
+   <td class="t-customers">{{ customer}}</td>
+   <td class="t-desc">{{ desc}}</td>
+   <td class="t-qty">{{ qty }}</td>
+   <td class="t-purchase">08/02/2017</td>
+   <td class="t-follow">4 Days</td>
+   <td class="t-call">
+    {{ tdPhone }}
+   </td>
+   <td class="t-text visible-xs">
+      {{ tdText }}
+   </td>
+   <td class="t-email">
+      {{ tdEmail}}
+    </td>
+   <td class="t-action">
+      <a href="javascript:void(0)"><span class="lt-icon lt-trash"></span></a>
+   </td>
+</tr>

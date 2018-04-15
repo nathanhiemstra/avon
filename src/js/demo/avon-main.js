@@ -263,7 +263,7 @@ $( document ).ready( function () {
   if( typeof SecondaryNav !== 'undefined' ) SecondaryNav.init();
   if( typeof YourOrderCartsTab !== 'undefined' ) YourOrderCartsTab.init();
   if( typeof dashboardDemo !== 'undefined' ) dashboardDemo.init();
-  if( typeof EmailSms !== 'undefined' ) EmailSms.init();
+  if( typeof PopoverCustomizer !== 'undefined' ) PopoverCustomizer.init();
 
 
 } );
