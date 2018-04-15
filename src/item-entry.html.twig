@@ -25,15 +25,15 @@
               <input id="item-entry-line-number" type="text" onClick="this.select();" class="form-control" value="234-567">
               <div class="stock-status">
                 <!-- DEV NOTE :: Only one of these stock status messages will appear at a time -->
-                
+
                 {% include '_includes/groups/your-order/message-status-in-stock.html.twig' %}
                 {% include '_includes/groups/your-order/message-status-out-of-stock.html.twig' %}
                 {% include '_includes/groups/your-order/message-status-sold-out.html.twig' %}
-               
+
               </div>
             </div>
           </div>
-          
+
           <div class="col-xs-12 col-sm-3 item-entry-col">
             <div class="form-group has-feedback">
               <label for="item-entry-campaign" class="control-label">Campaign</label>
@@ -45,9 +45,9 @@
               <span class="lt-icon lt-triangle-down form-control-feedback"></span>
             </div>
           </div>
-          
+
           <div class="col-xs-12 col-sm-2 item-entry-col">
-            <div class="form-group has-error item-entry-quantity">
+            <div class="form-group has-error has-error--absolute-2-line item-entry-quantity">
               <label for="item-entry-quantity" class="control-label">Quantity</label>
               <input id="item-entry-quantity" type="number" class="form-control" value="1">
               <p class="text-danger small label-abs">
