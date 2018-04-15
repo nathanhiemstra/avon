@@ -40,7 +40,13 @@
 
   {% endblock %}
 
-  {# MODAL - Brochure Quick Look #}
+  <!-- MODAL - BROCHURE QUICK LOOK -->
   {% include '_includes/modules/product/detail/quick-shop.html.twig' %}
+
+  <!-- MODAL - PRODUCT IMAGE LG -->
+  {% include "_includes/modules/product/detail/product-image-modal.html.twig" with { isInQuickShopModal: true } %}
+
+  <!-- MODAL - PRODUCT VIDEO LG -->
+  {% include "_includes/modules/product/detail/product-video-modal.html.twig" with { isInQuickShopModal: true } %}
 
 {% endblock %}

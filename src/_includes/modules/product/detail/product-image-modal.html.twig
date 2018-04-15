@@ -1,19 +1,27 @@
 {% extends "_layouts/modal.html.twig" %}
 {% if not modalId %}
-  {% set modalId = 'product-image' %}
+  {% set modalId = 'modal-product-image' %}
 {% endif %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - modalHeader #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalHeader %}
+  
+  {% if isInQuickShopModal %}
+    <!-- Make the "got back" arrow re-open the Quick Shop modal --> 
+    <button type="button" class="close link-primary pull-left" data-toggle="modal" data-target="#quick-shop-modal" data-direction="back" aria-hidden="true">
+      <span class="sr-only">Go back</span>
+      <span class="lt-icon lt-left lt-large py-1"></span>
+    </button>
+  {% else %}
+    <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+      <span class="sr-only">Close modal</span>
+      <span class="lt-icon lt-close lt-large py-1"></span>
+    </button>
+  {% endif %}
 
-  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
-    <span class="sr-only">Close modal</span>
-    <span class="lt-icon lt-close lt-large py-1"></span>
-  </button>
-  <!-- <h4 class="modal-title text-center">Anew Skinvincible Deep Recovery Cream</h4> -->
-
+  <h4 class="modal-title text-center">Product name</h4>
 
 {% endblock %}
 
