@@ -1,6 +1,6 @@
 {% extends "_layouts/modal.html.twig" %}
 {% if not modalId %}
-  {% set modalId = 'customer-phone-no-update' %}
+  {% set modalId = 'modal-update-text-number' %}
 {% endif %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -12,7 +12,7 @@
     <span class="sr-only">Close modal</span>
     <span class="lt-icon lt-close lt-large py-1"></span>
   </button>
-  <h4 class="modal-title text-center">Add Email</h4>
+  <h4 class="modal-title text-center">Add text number</h4>
 
 
 {% endblock %}
@@ -24,11 +24,11 @@
 
 
    <p class="text-center my-3">
-    Add Phone Number for Kory Rasmussen. <br>
+    Add text number for XXXX XXXXXX. <br>
     We will save it in your contacts for future use.
    </p>
    <div class="form-group">
-      <label class="control-label">Phone Number</label>
+      <label class="control-label">Text Number</label>
       {% include "_includes/elements/forms/input.html.twig" with {
         type : 'text'
       } %}
