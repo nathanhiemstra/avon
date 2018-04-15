@@ -117,9 +117,9 @@
             <p class="small text-muted">Go to your cart to view and manage all items. <a href="javascript:void(0)">Go to Your Order</a></p>
 
             <!-- START - REPRESENTATIVE DELIVERY CARTS -->
-            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false} %}
-            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false} %}
-            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '3', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false} %}
+            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
+            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
+            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '3', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
             <!-- END - REPRESENTATIVE DELIVERY CARTS -->
           </ul>
 
