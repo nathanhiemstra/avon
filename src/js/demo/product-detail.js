@@ -23,6 +23,10 @@ var ProductDetail = (function () {
       customerSelectTrigger:        $('#pdpCustomerSelect + .form-control-feedback')
     };
 
+    $('#pdp-images .carousel-inner a').click(function(e) {
+      $('#product-image img').attr('src', $(this).data('src'))
+    });
+
     _addListeners();
     _cloneSocialIcons();
   };
