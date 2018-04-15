@@ -128,9 +128,9 @@
             <p class="small text-muted">Available for checkout in the next campaign</p>
 
             <!-- START - REPRESENTATIVE DELIVERY CARTS -->
-            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '4', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false} %}
-            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '5', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false} %}
-            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '6', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false} %}
+            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '4', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
+            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '5', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
+            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '6', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
             <!-- END - REPRESENTATIVE DELIVERY CARTS -->
           </ul>
         </div>
