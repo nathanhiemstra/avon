@@ -1,0 +1,56 @@
+{% extends "_layouts/modal.html.twig" %}
+{% if not modalId %}
+  {% set modalId = 'customer-email-update' %}
+{% endif %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+  <h4 class="modal-title text-center">Add Email</h4>
+
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+
+   <p class="text-center my-3">
+    Add an email for Kory Rasmussen. <br>
+    We will save it in your contacts for future use.
+   </p>
+   <div class="form-group">
+      <label class="control-label">Email Address</label>
+      {% include "_includes/elements/forms/input.html.twig" with {
+        type : 'text'
+      } %}
+    </div>
+
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-default btn-block" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    </div>
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-primary btn-block">Save</button>
+    </div>
+  </div><!-- /.row -->
+
+
+
+{% endblock %}

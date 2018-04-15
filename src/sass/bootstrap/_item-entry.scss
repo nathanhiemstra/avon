@@ -1,8 +1,7 @@
 .container--item-entry {
   .item-entry-quantity {
     &.has-error {
-      // Because an error message inside is position absolute.
-      padding-bottom: 50px;
+      //moved to _forms.scss
     }
   }
 

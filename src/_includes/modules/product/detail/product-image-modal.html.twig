@@ -1,0 +1,27 @@
+{% extends "_layouts/modal.html.twig" %}
+{% if not modalId %}
+  {% set modalId = 'product-image' %}
+{% endif %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+  <!-- <h4 class="modal-title text-center">Anew Skinvincible Deep Recovery Cream</h4> -->
+
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+<img class="img-responsive" src="/images/fpo/anew_lg.png" alt="">
+
+{% endblock %}
