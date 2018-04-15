@@ -34,6 +34,10 @@
           </div>
         </div>
 
+        <!-- START - TABLES -->
+
+        <!-- Developer note: On mobile and tablet/desktop, the SMS and email lisnk behave differently. -->
+        <!-- This is handled in /js/demo/popovers.js -->
         {% include '_includes/modules/reports/customer-product-reminder-table.html.twig' with {
           index: '1',
           hidden: false,
@@ -45,6 +49,8 @@
           hidden: true,
           classes: 'product-reminder-table'
         } %}
+
+        <!-- END - TABLES -->
         
         <!-- START - PAGINATION -->
         <ul class="pagination" data-pagination-target="product-reminder-table">

@@ -33,7 +33,7 @@ var PopoverCustomizer = (function () {
        // TABLET / DESKTOP
       if ( windowWidth > mobileWidth ) {
 
-        // Don't de default (email or call)
+        // Prevent default anchor behavior (email or call)
         event.preventDefault();
 
         // Trigger popover
