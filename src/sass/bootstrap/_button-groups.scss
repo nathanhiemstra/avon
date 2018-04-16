@@ -219,6 +219,49 @@
 }
 
 
+
+// 50/50 button groups
+// ----------------------
+
+.btn-group-50-50 {
+  // @extend .clearfix;
+  display: block;
+  width: 100%;
+
+  > .btn-group {
+    width: 50%;
+    padding-right: $spacing-4;
+    padding-left: $spacing-4;
+
+    .btn {
+      display: inline-block;
+      float: none;
+      width: 100%;
+    }
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    &:only-child {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+
+      .btn {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+
 // Checkbox and radio options
 //
 // In order to support the browser's form validation feedback, powered by the
