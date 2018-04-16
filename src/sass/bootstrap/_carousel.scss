@@ -26,8 +26,8 @@
     }
 
     // Account for jankitude on images
-    > a > img,
-    > img {
+    > a > img:not(.overlay-img),
+    > img:not(.overlay-img) {
       @include img-responsive;
 
       line-height: 1;
@@ -61,6 +61,12 @@
         left: 0;
       }
     }
+
+    // .item--product-video has a play-icon overlay
+    &--product-video {
+      @include play-icon-overlay(100);
+    }
+
   }
 
   > .next,

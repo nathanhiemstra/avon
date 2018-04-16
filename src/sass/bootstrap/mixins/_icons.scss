@@ -1,0 +1,45 @@
+// play-icon adds a transparent white bg to a play icon and takes a size
+// Note :: A structure like the following is required in markup:
+//      :: <div class="play-icon"><span class="lt-icon lt-play"></span></div>
+// Note :: pointer-events are set to none so this falls through when used on links
+@mixin play-icon-overlay($size: 36) {
+
+  .play-icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    line-height: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+
+    .lt-play {
+      font-size: #{$size / 1.5}px;
+      margin-left: 8.5%; // nudge the play icon a bit for centering
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: inline-block;
+      border-radius: 50%;
+      width: $size+px;
+      height: $size+px;
+      transform: translate(-#{$size / 2}px, -#{$size / 2}px);
+      background-color: rgba(white ,0.8);
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    pointer-events: none;
+  }
+
+}

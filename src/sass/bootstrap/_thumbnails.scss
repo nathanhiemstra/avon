@@ -68,19 +68,5 @@ a.thumbnail.active {
 // Video thumbnail, overlays a play button icon
 .thumbnail--video {
   position: relative;
-
-  &:after {
-    content: '\e929';
-    font-family: 'lt2';
-    font-size: 3em;
-    color: black;
-    opacity: 0.5;
-    position: absolute;
-    display: inline-block;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    transform: translateY(-50%) rotate(-90deg);
-  }
-
+  @include play-icon-overlay(36);
 }
