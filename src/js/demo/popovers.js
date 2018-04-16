@@ -3,8 +3,6 @@
  * @return {init} [description]
  */
 
-
-
 var PopoverCustomizer = (function () {
 
   var $els = {};
@@ -14,7 +12,7 @@ var PopoverCustomizer = (function () {
 
     // grab the DOM els we need
     $els = {
-      popoverOverride: $('.popover-override')
+      popoverAnchorCombo: $('[data-popover-anchor-combo="true"]')
     };
 
     _addListeners();
@@ -25,8 +23,7 @@ var PopoverCustomizer = (function () {
   // private methods
   var _addListeners = function () {
 
-    $els.popoverOverride.on('click', function(e) {
-
+    $els.popoverAnchorCombo.on('click', function(e) {
       var windowWidth = $( window ).width();
       var mobileWidth = 768;
 
@@ -37,21 +34,19 @@ var PopoverCustomizer = (function () {
         event.preventDefault();
 
         // Trigger popover
+        // Note: This popover is not triggered like others with a normal click because because in the markeup we use: data-trigger="manual"
         _showPopover(this);
       }
-
     });
 
-    // Sincer we're opening the popover programaticall, we must close it programatically
-    $els.popoverOverride.focusout(function( e ) {
+    // Since we're opening the popover programatically, we must close it programatically
+    $els.popoverAnchorCombo.focusout(function( e ) {
       _hidePopover(this);
     });
 
   };
 
-
   // FUNCTIONS
-  
   var _showPopover = function(itemClicked) {
     $(itemClicked).popover('show');
   };
@@ -59,9 +54,6 @@ var PopoverCustomizer = (function () {
   var _hidePopover = function(itemClicked) {
     $(itemClicked).popover('hide');
   };
-
-
-
 
   return {
     init: init

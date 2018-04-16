@@ -23,14 +23,14 @@
    {% endset %}
    {% set tdEmail %}
       <a 
-        class="popover-override" 
         href="mailto:{{ emailAddress }}" 
         data-container="body" 
         data-toggle="popover" 
         data-placement="top" 
         data-trigger="manual" 
         data-html="true" 
-        data-content="{{ emailmarkup }}">
+        data-content="{{ emailmarkup }}"
+        data-popover-anchor-combo="true">
         <span class="lt-icon lt-mail"></span>
        </a>
    {% endset %}
@@ -50,14 +50,14 @@
    {# Phone icon#}
    {% set tdPhone %}
       <a 
-         class="popover-override" 
          href="tel:15555555555" 
          data-container="body" 
          data-toggle="popover" 
          data-placement="top" 
          data-trigger="manual" 
          data-html="true" 
-         data-content="(555) 555-5555">
+         data-content="(555) 555-5555"
+         data-popover-anchor-combo="true">
          <span class="lt-icon lt-phone"></span>
        </a>
    {% endset %}
