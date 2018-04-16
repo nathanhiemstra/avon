@@ -14,7 +14,7 @@
 
   .carousel-inner {
     > .item {
-      img {
+      img:not(.overlay-img) {
         width: 100%;
       }
     }

@@ -6,24 +6,37 @@
     <li data-target="#pdp-images" data-slide-to="0" class="active"></li>
     <li data-target="#pdp-images" data-slide-to="1"></li>
     <li data-target="#pdp-images" data-slide-to="2"></li>
-    <li data-toggle="modal" data-target="#product-video" aria-hidden="true"></li>
+    <li data-target="#pdp-images" data-slide-to="3"></li>
+    <!-- <li data-toggle="modal" data-target="#product-video" aria-hidden="true"></li> -->
   </ol>
   <!-- END - INDICATORS -->
 
   <!-- START - CAROUSEL INNER -->
   <div class="carousel-inner">
     <div class="item active">
-      <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-product-image"  data-src="/images/fpo/anew_fade-bg-lg.png" aria-hidden="true"><img src="/images/fpo/anew_fade-bg-lg.png" alt=""></a>
+      <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-product-image"  data-src="/images/fpo/anew_fade-bg-lg.png" aria-hidden="true">
+        <img src="/images/fpo/anew_fade-bg-lg.png" alt="">
+      </a>
     </div>
     <div class="item">
-      <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-product-image"  data-src="/images/fpo/anew_sm.png" aria-hidden="true"><img src="/images/fpo/anew_sm.png" alt=""></a>
+      <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-product-image"  data-src="/images/fpo/anew_sm.png" aria-hidden="true">
+        <img src="/images/fpo/anew_sm.png" alt="">
+      </a>
     </div>
     <div class="item">
-      <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-product-image"  data-src="/images/fpo/anew_lg.png" aria-hidden="true"><img src="/images/fpo/anew_lg.png" alt=""></a>
+      <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-product-image"  data-src="/images/fpo/anew_lg.png" aria-hidden="true">
+        <img src="/images/fpo/anew_lg.png" alt="">
+      </a>
     </div>
-    <!-- <div class="item">
-      <img src="/images/fpo/pretty_lady.png" alt="">
-    </div> -->
+    <div class="item item--product-video">
+      <!-- <img src="/images/icons/btn_play_large.png" class="overlay-img" alt="play-video"> -->
+      <div class="play-icon">
+        <span class="lt-icon lt-play"></span>
+      </div>
+      <a href="javascript:void(0)" data-toggle="modal" data-target="#product-video"  data-src="/images/fpo/product-alt.jpg" aria-hidden="true">
+        <img src="/images/fpo/product-alt.jpg" alt="">
+      </a>
+    </div>
   </div>
   <!-- END - CAROUSEL INNER -->
 
@@ -58,15 +71,12 @@
         </a>
       </div>
 
-      <!-- <div class="col-xs-3 mb-3">
-        <a href="#" class="thumbnail thumbnail--square">
-          <img src="/images/fpo/pretty_lady.png" alt="..."/>
-        </a>
-      </div> -->
-
       <div class="col-xs-3 mb-3">
-        <a href="javascript:void(0)" class="thumbnail thumbnail--square" data-toggle="modal" data-target="#product-video" aria-hidden="true">
-          <img src="/images/fpo/video.png" alt="..."/>
+        <!-- <a href="javascript:void(0)" class="thumbnail thumbnail--square" data-toggle="modal" data-target="#product-video" aria-hidden="true"> -->
+        <a href="javascript:void(0)" class="thumbnail thumbnail--square thumbnail--video">
+          <div class="play-icon">
+            <span class="lt-icon lt-play"></span>
+          </div>
         </a>
       </div>
 

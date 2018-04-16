@@ -232,6 +232,12 @@ html:hover [class^="lt-"] {
   transform: rotate(-45deg);
 }
 
+// lt-play is a rotated and squished .lt-triangle-down
+.lt-play {
+  @extend .lt-triangle-down;
+  transform: rotate(-90deg) scale(0.65, 1);
+}
+
 // badge icon - icon with an overlayed badge
 // assumes a nested .badge
 .badged-icon {
