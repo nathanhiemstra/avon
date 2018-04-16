@@ -229,6 +229,7 @@
   width: 100%;
 
   > .btn-group {
+
     width: 50%;
     padding-right: $spacing-4;
     padding-left: $spacing-4;
@@ -258,8 +259,23 @@
         margin: 0 auto;
       }
     }
-  }
-}
+
+    // 100% width on mobile
+    @media (max-width: $screen-xs-max) {
+      &:first-of-type, &:last-of-type, &:only-child {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+
+  } // end .btn-group
+
+} // end .btn-group-50-50
 
 
 // Checkbox and radio options

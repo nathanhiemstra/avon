@@ -25,15 +25,15 @@
               <input id="item-entry-line-number" type="text" onClick="this.select();" class="form-control" value="234-567">
               <div class="stock-status">
                 <!-- DEV NOTE :: Only one of these stock status messages will appear at a time -->
-                
+
                 {% include '_includes/groups/your-order/message-status-in-stock.html.twig' %}
                 {% include '_includes/groups/your-order/message-status-out-of-stock.html.twig' %}
                 {% include '_includes/groups/your-order/message-status-sold-out.html.twig' %}
-               
+
               </div>
             </div>
           </div>
-          
+
           <div class="col-xs-12 col-sm-3 item-entry-col">
             <div class="form-group has-feedback">
               <label for="item-entry-campaign" class="control-label">Campaign</label>
@@ -45,7 +45,7 @@
               <span class="lt-icon lt-triangle-down form-control-feedback"></span>
             </div>
           </div>
-          
+
           <div class="col-xs-12 col-sm-2 item-entry-col">
             <div class="form-group has-error item-entry-quantity">
               <label for="item-entry-quantity" class="control-label">Quantity</label>
@@ -65,12 +65,12 @@
             </div>
           </div>
 
-          <div class="clear">
-            <div class="col-xs-12 col-sm-6 my-2">
-              <button type="submit" class="btn btn-default btn-block">Add to future order</button>
+          <div class="col-xs-12 btn-group btn-group-50-50">
+            <div class="btn-group my-2">
+              <button type="submit" class="btn btn-default">Add to future order</button>
             </div>
-            <div class="col-xs-12 col-sm-6 my-2">
-              <button type="submit" class="btn btn-primary btn-block">Add to order</button>
+            <div class="btn-group my-2">
+              <button type="submit" class="btn btn-primary">Add to order</button>
             </div>
           </div>
 
@@ -84,12 +84,13 @@
         <div class="row text-center">
           <p><strong>More on the way</strong></p>
           <p class="px-4">{{ fpo.sentence }} {{ fpo.sentence }}</p>
-          <div class="clear">
-            <div class="col-xs-12 col-sm-6 my-2">
-              <a href="javascript:void(0)" class="btn btn-default btn-block">View similar products</a>
+
+          <div class="col-xs-12 btn-group btn-group-50-50">
+            <div class="btn-group my-2">
+              <button type="submit" class="btn btn-default">View similar products</button>
             </div>
-            <div class="col-xs-12 col-sm-6 my-2">
-              <a href="javascript:void(0)" class="btn btn-default btn-block disabled">Notify me when in stock</a>
+            <div class="btn-group my-2">
+              <button type="submit" class="btn btn-default disabled">Notify me when in stock</button>
             </div>
           </div>
         <!-- END - MORE ON THE WAY SECTION -->
@@ -101,8 +102,11 @@
         <div class="clearfix text-center">
           {% include '_includes/groups/your-order/message-title-this-product-is-sold-out.twig' %}
           <p class="px-4">{{ fpo.sentence }} {{ fpo.sentence }}</p>
-          <div class="col-xs-12 col-sm-6 col-sm-offset-3 my-2">
-            <a hre<a href="javascript:void(0)" class="btn btn-default btn-block">View similar products</a>
+
+          <div class="col-xs-12 btn-group btn-group-50-50">
+            <div class="btn-group my-2">
+              <button type="submit" class="btn btn-default">View similar products</button>
+            </div>
           </div>
         </div>
         <!-- END - SOLD OUT SECTION -->
