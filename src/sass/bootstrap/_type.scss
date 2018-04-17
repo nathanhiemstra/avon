@@ -244,6 +244,14 @@ mark,
   }
 }
 
+.text-muted-medium {
+  color: $gray-medium !important;
+
+  &:before, &:after {
+    color: $gray-medium !important;
+  }
+}
+
 .text-light {
   color: $white !important;
 

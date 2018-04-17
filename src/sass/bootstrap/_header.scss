@@ -82,6 +82,9 @@
           .profile-name {
             max-width: unset;
             max-width: 17vw;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 1px;
           }
 
           .profile-img {
@@ -89,7 +92,17 @@
             height: 32px;
           }
         }
+      } // end .account-list__user
+
+      #accountDrop {
+        font-weight: bold;
+        font-size: 13px;
       }
+
+      .link-reverse-underline {
+        letter-spacing: 0.2px;
+      }
+
     }
 
     .tools-list {
@@ -115,6 +128,7 @@
       @media (min-width: $screen-sm-min) {
         order: 1;
         flex: 1 1 auto;
+        letter-spacing: 0.9px;
       }
     }
 
@@ -162,10 +176,6 @@
 
       > ul:first-of-type {
         flex: 1 1 auto;
-
-        li:first-of-type {
-          padding-left: 8px;
-        }
       }
 
       .nav > li:first-of-type {
@@ -223,7 +233,7 @@
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 1;
-        margin: ($primary-nav-x-space / 2) 0;
+        margin: 2.5rem 0 0 0;
       }
     }
 
@@ -260,7 +270,7 @@
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 3;
-        margin: $primary-nav-x-space 2rem $primary-nav-x-space 0;
+        margin: 2.5rem 2rem 0 0;
       }
     }
 
@@ -284,7 +294,7 @@
         display: flex;
         width: 100%;
         order: 4;
-        margin-top: $spacing-3;
+        margin-top: calc(#{$spacing-3} + 6px);
       }
 
       // MAIN NAV LIST
@@ -468,7 +478,7 @@
 
     $height-1: 42px;
     $height-2: 48px;
-    $utility-height: calc((#{$height-1} + #{$height-2}) - #{$spacing-4});
+    $utility-height: calc((#{$height-1} + #{$height-2}) - 1.1rem);
     // $utility-height: ($height-1 + $height-2) - 10px;
 
     // GHOST - holds a relative postion for utility navs on desktop, which require absolute positioning
@@ -512,6 +522,11 @@
       margin: 0;
       padding: 0 15px 15px;
 
+      .nav > li {
+        padding: $spacing-2;
+        margin: 0;
+      }
+
       // desktop
       @media (min-width: $screen-sm-min) {
         position: absolute;
@@ -521,6 +536,15 @@
         left: 0;
         height: $height-1;
         min-height: $height-1;
+        font-size: 12px;
+        letter-spacing: 0.9px;
+        line-height: 1.67;
+
+        .nav > li {
+          &:first-of-type {
+            padding-right: $spacing-4;
+          }
+        }
       }
     }
 
