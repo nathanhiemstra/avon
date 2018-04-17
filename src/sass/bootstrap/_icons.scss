@@ -244,13 +244,13 @@ html:hover [class^="lt-"] {
   }
   .badge--align-right {
     &.badge {
-      right: -42%;
+      right: -25%;
     }
   }
 
   .badge {
     position: absolute;
-    top: -6px;
+    top: -2px;
     padding: 3px 6px;
     font-family: $font-family-base;
     font-size: $font-size-small;

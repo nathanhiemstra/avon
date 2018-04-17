@@ -164,12 +164,12 @@
         flex: 1 1 auto;
 
         li:first-of-type {
-          padding-left: 8px !important;
+          padding-left: 8px;
         }
       }
 
       .nav > li:first-of-type {
-        margin-right: 15px !important;
+        margin-right: 15px;
       }
 
       .nav,
@@ -188,19 +188,20 @@
     }
 
     // end desktop
- 
+
   }
 
   $primary-nav-x-space: 2rem;
 
   &--primary-nav {
     margin: 0;
-    padding: 2rem 1.5rem;
+    padding: 2rem $spacing-4;
 
     // desktop
     @media (min-width: $screen-sm-min) {
       flex-wrap: wrap;
       padding-bottom: 0;
+      padding: $spacing-4 2rem 0;
 
       .primary-nav__cart,
       .primary-nav__search {
@@ -208,6 +209,9 @@
           display: flex;
           align-items: center;
           justify-content: flex-start;
+        }
+        .lt-search, .lt-cart {
+          font-size: 31px;
         }
       }
     }
@@ -232,16 +236,16 @@
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 2;
-        margin: $primary-nav-x-space 0.5rem;
+        margin: 0;
         text-align: center;
       }
 
       img {
-        height: 20px;
+        height: 28px;
 
         // desktop
         @media (min-width: $screen-sm-min) {
-          height: 39px;
+          height: 60px;
         }
       }
     }
@@ -256,7 +260,7 @@
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 3;
-        margin: $primary-nav-x-space 0.5rem $primary-nav-x-space 0;
+        margin: $primary-nav-x-space 2rem $primary-nav-x-space 0;
       }
     }
 
@@ -280,7 +284,7 @@
         display: flex;
         width: 100%;
         order: 4;
-        margin-top: $primary-nav-x-space;
+        margin-top: $spacing-3;
       }
 
       // MAIN NAV LIST
@@ -349,6 +353,10 @@
             }
           }
 
+          a {
+            color: $text-color;
+          }
+
           a,
           a:hover {
             text-transform: uppercase;
@@ -415,7 +423,7 @@
         }
 
         // end .has-sub-items
-     
+
       }
     }
 
@@ -460,7 +468,8 @@
 
     $height-1: 42px;
     $height-2: 48px;
-    $utility-height: $height-1 + $height-2;
+    $utility-height: calc((#{$height-1} + #{$height-2}) - #{$spacing-4});
+    // $utility-height: ($height-1 + $height-2) - 10px;
 
     // GHOST - holds a relative postion for utility navs on desktop, which require absolute positioning
     .primary-nav__ghost {
@@ -550,7 +559,7 @@
       display: flex;
 
       // transform: translateX(0);
-   
+
     }
 
     &.off-canvas--right {
@@ -645,7 +654,7 @@
         }
 
         // end .sub-list-item a.collapsed
-     
+
       }
 
       // end .sub-list-item a
@@ -671,7 +680,7 @@
     }
 
     // end .sub-list-item
- 
+
   }
 }
 
