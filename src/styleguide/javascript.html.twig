@@ -1711,6 +1711,79 @@ $('#myPopover').on('hidden.bs.popover', function () {
 
 
 
+<!-- Popovers
+================================================== -->
+<div class="bs-docs-section">
+  <h1 id="progress" class="page-header">Progress</h1>
+
+  <h2 id="progress-seg-rad">Segmented Radial</h2>
+
+  <p>Add segments to a radial progress bar with this plugin. Ideal when individual units have meaning, like a 7 day countdown where each day is a segment.</p>
+
+  <div class="bs-example py-5">
+    <div class="container-fluid px-0">
+      <div class="progress-radial m-auto"
+    		role="progressbar"
+    		aria-valuenow="3"
+    		aria-valuemin="0"
+    		aria-valuemax="7"
+    		data-radprogress-offset="2"
+    		data-radprogress-stroke-width="6"
+    		data-radprogress-diameter="150">
+  		<div class="svg-holder"></div>
+      <span class="sr-only">sr-only msg fpo</span>
+      <div class="progress-counter">
+  			<h1 data-radprogress-counter></h1>
+  		</div>
+  	 </div>
+	 </div>
+   <h6 class="text-center">Days left to renew</h6>
+  </div><!-- /example -->
+
+  {{ highlightJavascript }}
+  <div class="progress-radial m-auto"
+    role="progressbar"
+    aria-valuenow="3"
+    aria-valuemin="0"
+    aria-valuemax="7"
+    data-radprogress-offset="2"
+    data-radprogress-stroke-width="6"
+    data-radprogress-diameter="150">
+
+    <div class="svg-holder"></div>
+
+    <span class="sr-only">sr-only msg fpo</span>
+
+    <div class="progress-counter">
+      <h1 data-radprogress-counter></h1>
+    </div>
+
+ </div>
+  {{ endhighlight }}
+
+  <h2 id="collapse-usage">Usage</h2>
+  <p>All data is handled with data attributes and, like normal progress bars, the use of aria attributes for progress values.</p>
+  <ul>
+    <li><code>aria-valuenow</code> the current progress value</li>
+    <li><code>aria-valuemin</code> the minimun value allowed</li>
+    <li><code>aria-valuemax</code> the maximum value allowed</li>
+    <li><code>data-radprogress-offset</code> the size of the gap between segments</li>
+    <li><code>data-radprogress-stroke-width</code> the thickness of the circle</li>
+    <li><code>data-radprogress-diameter</code> the diamater of the circle in pixels</li>
+    <li><code>data-radprogress-counter</code> no value required, will hold the numerical progress value</li>
+  </ul>
+
+  <p>In addition to the attributes above, the <code>.progress-radial</code> container should contain the following child elements:</p>
+  <ul>
+    <li><code>.svg-holder</code> container for the generated SVG element</li>
+    <li><code>.progress-counter</code> optional container for the progress numerical value which will be centered in the circle</li>
+    <li>Any element with a <code>data-radprogress-counter</code> attribute. This is optional and will hold the actual numerical progress value.</li>
+  </ul>
+
+</div>
+
+
+
 <!-- Alert
 ================================================== -->
 <div class="bs-docs-section">
