@@ -1,0 +1,182 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="container container--page">
+
+    {% embed "_layouts/columns-10-max.html.twig" %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        <h1>Error Showcase</h1>
+        <p>This page exists to showcase error message variations in a single location and exists <strong>for demo purposes only</strong>.</p>
+
+        <hr>
+
+        <!-- START - SYSTEM MALFUNCTION -->
+        <h2>System Malfunction Error</h2>
+        <p>A situation where the webpage experiences an error while calling dynamic / database-driven content.</p>
+
+        <section>
+          <h4 class="my-5">Example</h4>
+          <section class="global-alert-msg alert container-fluid mb-0 alert-danger fade in">
+            <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">There was an error loading page content. Please try refreshing.</span>
+          </section>
+          <div class="reverse-bg my-4 p-4">
+            <h6>Product information unable to be loaded</h6>
+            <p>We're sorry for the inconvenience. Something happened on our end.</p>
+            <p>Please refresh the page or try back later.</p>
+            <p><a class="link-primary">Refresh Page</a></p>
+          </div>
+        </section>
+        <!-- END - SYSTEM MALFUNCTION -->
+
+        <hr>
+
+        <!-- START - PAGE-LEVEL ERROR -->
+        <h2>Page-level Error</h2>
+        <p>Similar to the System malfunction scenario, but this situation can be corrected by the user.</p>
+
+        <section>
+          <h4 class="my-5">Example</h4>
+          <section class="global-alert-msg alert container-fluid mb-0 alert-danger fade in">
+            <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">There was an error processing one or more of your payments.</span>
+          </section>
+          <div class="my-4">
+            <h6>Payment Methods</h6>
+            <div class="reverse-bg my-4 p-4">
+              <p>Est adipisicing velit id incididunt sit aute quis dolore exercitation amet anim tempor. Laboris proident reprehenderit aute ipsum ex do tempor. Id anim cupidatat magna aliqua quis ullamco deserunt culpa. Aute ullamco in qui eiusmod ex dolor fugiat nulla in proident veniam. Nostrud sit anim eiusmod voluptate magna sunt pariatur exercitation nisi culpa mollit non. Sit enim est reprehenderit deserunt Lorem aliqua ea aliqua sit incididunt.</p>
+            </div>
+          </div>
+        </section>
+        <!-- END - PAGE-LEVEL ERROR -->
+
+        <hr>
+
+        <!-- START - SECTION-LEVEL ERROR -->
+        <h2>Section-level Error</h2>
+        <p>A situation where a self-contained section of a webpage has an error to address. Almost certainly form-based.</p>
+
+        <section>
+          <h4 class="my-5">Example</h4>
+          <div class="my-4">
+            <h6>Payment Methods</h6>
+            <section class="global-alert-msg alert container-fluid alert-danger fade in mb-4">
+              <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">Please correct errors and try again.</span>
+            </section>
+            <form>
+            <div class="form-group">
+              <label for="error-showcase-quantity" class="control-label">Quantity</label>
+              <input id="error-showcase-quantity" type="number" class="form-control" value="1">
+            </div>
+            <div class="form-group has-error has-error--absolute-2-line">
+              <label for="error-showcase-card-num" class="control-label">Card Number</label>
+              <input id="error-showcase-card-num" type="number" class="form-control" value="123412341234">
+              <p class="text-danger small label-abs">
+                <strong>Card Number is invalid</strong>
+              </p>
+            </div>
+            </form>
+          </div>
+        </section>
+        <!-- END - SECTION-LEVEL ERROR -->
+
+        <hr>
+
+        <!-- START - FILTER ERROR -->
+        <h2>Filter Error</h2>
+        <p>A situation where a user-entered data set can not be processed.</p>
+
+        <section>
+          <h4 class="my-5">Example</h4>
+          <h6>My Statements</h6>
+          <section class="global-alert-msg alert container-fluid alert-danger fade in mb-4">
+            <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">Date range must be lorem ipsum dolor sit amet.</span>
+          </section>
+          <form class="clearfix my-5">
+            <div class="form-group has-feedback has-error col-xs-12 col-sm-3 p-0 pr-md-2">
+              <label for="order-history-start-date" class="control-label">Start Date</label>
+              <input id="order-history-start-date" type="text" class="form-control" placeholder="11/17/2017">
+              <span class="lt-icon lt-calendar form-control-feedback"></span>
+              {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig' with { class: 'd-none' }  %}
+            </div>
+            <div class="form-group has-feedback has-error col-xs-12 col-sm-3 p-0 pl-md-2 pr-md-2">
+              <label for="order-history-end-date" class="control-label">End Date</label>
+              <input id="order-history-end-date" type="text" class="form-control" placeholder="02/15/2018">
+              <span class="lt-icon lt-calendar form-control-feedback"></span>
+              {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig' with { class: 'd-none' }  %}
+            </div>
+            <div class="form-group has-feedback col-xs-12 col-sm-3 p-0 pl-md-2 pr-md-2">
+              <label for="order-history-trans-type" class="control-label">Transaction Type</label>
+              <select class="form-control">
+                <option>All Transactions</option>
+                <option>Transaction Type I</option>
+                <option>Transaction Type II</option>
+              </select>
+              <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+            </div>
+            <!-- search button -->
+            <div class="form-group col-xs-12 col-sm-3 p-0 pl-md-2">
+              <label class="control-label hidden-xs">&nbsp;</label>
+              <button type="submit" class="form-control btn btn-primary">Search</button>
+            </div>
+          </form>
+        </section>
+        <!-- END - FILTER ERROR -->
+
+        <hr>
+
+        <!-- START - NULL SET ERROR -->
+        <h2>Null Set Error</h2>
+        <p>A situation where a user enters data that does not trip an error, but also does not show any information.</p>
+
+        <section>
+          <h4 class="my-5">Example</h4>
+          <h6>My Statements</h6>
+          <form class="clearfix my-5">
+            <div class="form-group has-feedback col-xs-12 col-sm-3 p-0 pr-md-2">
+              <label for="order-history-start-date" class="control-label">Start Date</label>
+              <input id="order-history-start-date" type="text" class="form-control" placeholder="11/17/2017">
+              <span class="lt-icon lt-calendar form-control-feedback"></span>
+              {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig' with { class: 'd-none' }  %}
+            </div>
+            <div class="form-group has-feedback col-xs-12 col-sm-3 p-0 pl-md-2 pr-md-2">
+              <label for="order-history-end-date" class="control-label">End Date</label>
+              <input id="order-history-end-date" type="text" class="form-control" placeholder="02/15/2018">
+              <span class="lt-icon lt-calendar form-control-feedback"></span>
+              {% include '_includes/groups/forms/datepicker-rendered-from-you-avon.html.twig' with { class: 'd-none' }  %}
+            </div>
+            <div class="form-group has-feedback col-xs-12 col-sm-3 p-0 pl-md-2 pr-md-2">
+              <label for="order-history-trans-type" class="control-label">Transaction Type</label>
+              <select class="form-control">
+                <option>All Transactions</option>
+                <option>Transaction Type I</option>
+                <option>Transaction Type II</option>
+              </select>
+              <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+            </div>
+            <!-- search button -->
+            <div class="form-group col-xs-12 col-sm-3 p-0 pl-md-2">
+              <label class="control-label hidden-xs">&nbsp;</label>
+              <button type="submit" class="form-control btn btn-primary">Search</button>
+            </div>
+          </form>
+          <section class="global-alert-msg alert container-fluid alert-danger fade in mb-4">
+            <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">No transactions available for that time.</span>
+          </section>
+        </section>
+        <!-- END - NULL SET ERROR -->
+
+    {% endblock %}
+
+  {% endembed %}
+
+</div>
+
+{% endblock %}
