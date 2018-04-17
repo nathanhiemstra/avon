@@ -19,13 +19,6 @@ var Modals = (function () {
       modalTriggers: $('[data-toggle="modal"]')
     };
 
-    $('#product-video').on('hidden.bs.modal', function () {
-      var video = $(this).find("iframe");
-      var videoSrc = video.attr("src");
-      video.attr("src","");
-      video.attr("src",videoSrc);
-    })
-
     _addListeners();
   };
 
@@ -36,6 +29,23 @@ var Modals = (function () {
 
     $els.modalTriggers.on('click', function (e) {
       _handleModalOpen(e);
+    });
+
+    // reset video source to prevent play / pause nonsense
+    $('#product-video').on('hidden.bs.modal', function () {
+      var video = $(this).find("iframe");
+      var videoSrc = video.attr("src");
+      video.attr("src","");
+      video.attr("src",videoSrc);
+    });
+
+    // If product video modal is triggered by nav dot, manually call slide-to
+    // This is necessary because we can't have multiple data-target attrs
+    $('#product-video').on('show.bs.modal', function (e) {
+      var $trigger = $(e.relatedTarget);
+      var $carousel = $trigger.closest('.carousel');
+      var slideTo = $trigger.data('slide-to');
+      $carousel.carousel(slideTo);
     });
 
   };
