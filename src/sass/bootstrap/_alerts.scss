@@ -126,10 +126,15 @@
 // Global header alert message
 //
 // TODO :: should be a dismissable alert? see .alert-dismissable above
-
+.alert-page-level,
 .global-alert-msg {
   overflow: hidden;
   transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 
   &.collapsed {
     height: 0;
@@ -154,16 +159,44 @@
 
   .alert-msg-txt {
     vertical-align: middle;
+    text-transform: uppercase;
   }
 
   .alert-msg-btn {
     text-transform: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .alert-msg-icon,
+  .alert-msg-txt,
+  .alert-msg-btn {
+    margin-left: $spacing-2;
+    margin-right: $spacing-1;
   }
 
   .container {
     .modal & {
       width: auto;
     }
+  }
+
+  &.alert-dismissable,
+  &.alert-dismissible {
+    .close {
+      top: inherit;
+    }
+  }
+
+  .fixed-right,
+  .close {
+    position: absolute;
+    right: $alert-padding;
+  }
+
+  .fixed-left {
+    position: absolute;
+    left: 0;
   }
 }
 
@@ -172,3 +205,23 @@
 
 //   // cursor: default;
 // }
+
+.alert-section-level {
+  text-align: left;
+
+  .alert-msg-header {
+    font-weight: bold;
+
+    + .alert-msg-body {
+      margin-top: $spacing-4;
+    }
+  }
+
+  .alert-msg-body {
+    color: $text-color;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

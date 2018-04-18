@@ -1,0 +1,19 @@
+{% if alertId %}
+  {% set alertId = ' id="' ~ alertId ~ '"' %}
+{% endif %}
+
+{% if alertClasses is not defined %}
+  {% set alertClasses = '' %}
+{% endif %}
+
+{% if alertMsg is not defined %}
+  {% set alertMsg = 'This is a default alert message, you should change me!' %}
+{% endif %}
+
+
+<section class="alert alert-section-level {{ alertClasses }}"{{ alertId }}>
+  <div class="alert-msg-header">{{ alertMsg }}</div>
+  {% if alertMsgBody %}
+    <div class="alert-msg-body">{{ alertMsgBody }}</div>
+  {% endif %}
+</section>
