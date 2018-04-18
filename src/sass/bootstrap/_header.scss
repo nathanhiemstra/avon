@@ -248,7 +248,7 @@
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 2;
-        margin: $spacing-1 0 2rem;
+        margin: $spacing-1 0;
         text-align: center;
       }
 
@@ -296,6 +296,7 @@
         display: flex;
         width: 100%;
         order: 4;
+        margin-top: 1.75rem;
       }
 
       // MAIN NAV LIST
