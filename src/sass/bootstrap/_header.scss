@@ -51,7 +51,7 @@
       }
 
       // Hide user name in that weird place on the narrow sie of tablet
-      @media (min-width: $screen-sm) and (max-width: 910px) {
+      @media (min-width: $screen-sm) and (max-width: 970px) {
         .account-list__user {
           .profile-name,
           .profile-img {
@@ -92,7 +92,9 @@
             height: 32px;
           }
         }
-      } // end .account-list__user
+      }
+
+      // end .account-list__user
 
       #accountDrop {
         font-weight: bold;
@@ -102,7 +104,6 @@
       .link-reverse-underline {
         letter-spacing: 0.2px;
       }
-
     }
 
     .tools-list {
@@ -198,7 +199,7 @@
     }
 
     // end desktop
-
+ 
   }
 
   $primary-nav-x-space: 2rem;
@@ -220,6 +221,7 @@
           align-items: center;
           justify-content: flex-start;
         }
+
         .lt-search, .lt-cart {
           font-size: 31px;
         }
@@ -433,7 +435,7 @@
         }
 
         // end .has-sub-items
-
+     
       }
     }
 
@@ -479,6 +481,7 @@
     $height-1: 42px;
     $height-2: 48px;
     $utility-height: calc((#{$height-1} + #{$height-2}) - 1.1rem);
+
     // $utility-height: ($height-1 + $height-2) - 10px;
 
     // GHOST - holds a relative postion for utility navs on desktop, which require absolute positioning
@@ -583,7 +586,7 @@
       display: flex;
 
       // transform: translateX(0);
-
+   
     }
 
     &.off-canvas--right {
@@ -678,7 +681,7 @@
         }
 
         // end .sub-list-item a.collapsed
-
+     
       }
 
       // end .sub-list-item a
@@ -704,7 +707,7 @@
     }
 
     // end .sub-list-item
-
+ 
   }
 }
 
