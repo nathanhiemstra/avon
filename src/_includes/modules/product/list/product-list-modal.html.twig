@@ -1,0 +1,33 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'product-list-modal' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+
+  <h4 class="modal-title">Product List</h4>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+    <!-- START - PRODUCT LIST -->
+    <div class="py-4">
+      {% include "_includes/modules/product/list/product-list.html.twig" with {
+        isModal: true
+      } %}
+    </div>
+    <!-- END - PRODUCT LIST -->
+
+  <!-- /.row -->
+
+{% endblock %}

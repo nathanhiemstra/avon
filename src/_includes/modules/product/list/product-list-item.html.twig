@@ -1,5 +1,9 @@
-<li class="avon-product-list__item container-fluid border-bottom py-5 px-0">
-  <a href="{{ itemUrl }}">
+{% if isModal %}
+  {% set linkAttrs = 'data-toggle="modal" data-target="#quick-shop-modal"' %}
+{% endif %}
+
+<li class="avon-product-list__item container-fluid border-bottom">
+  <a href="{{ itemUrl }}" {{ linkAttrs }}>
     <div class="row">
       <div class="col col-xs-3 col-sm-2">
         <img src="{{ imgUrl }}" class="product-img img-responsive">

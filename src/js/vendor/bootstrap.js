@@ -1104,17 +1104,30 @@ $('.carousel-thumbs').thumbnailsCarousel();
 
   $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
     var $this   = $(this)
+    var winWidth = $(window).width();
     var href    = $this.attr('href')
     var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
+    var $targDt = $($this.attr('data-target-desktop') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
     var option  = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
 
     if ($this.is('a')) e.preventDefault()
 
-    $target
-      .modal(option, this)
-      .one('hide', function () {
-        $this.is(':visible') && $this.focus()
-      })
+    if($targDt.length > 0 && winWidth > 768) {
+      // show data-target-desktop modal
+      $targDt
+        .modal(option, this)
+        .one('hide', function () {
+          $this.is(':visible') && $this.focus()
+        })
+    } else {
+      // show default modal
+      $target
+        .modal(option, this)
+        .one('hide', function () {
+          $this.is(':visible') && $this.focus()
+        })
+    }
+
   })
 
   $(document)
