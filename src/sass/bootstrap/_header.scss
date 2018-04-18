@@ -199,7 +199,7 @@
     }
 
     // end desktop
- 
+
   }
 
   $primary-nav-x-space: 2rem;
@@ -219,26 +219,33 @@
         a {
           display: flex;
           align-items: center;
-          justify-content: flex-start;
+          justify-content: flex-end;
+          white-space: nowrap;
         }
 
         .lt-search, .lt-cart {
           font-size: 31px;
         }
+
+        .lt-cart {
+          margin-left: $spacing-2;
+        }
+
       }
     }
 
     // START - SEARCH
     .primary-nav__search {
       order: 3;
+      width: 0;
 
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 1;
-        margin: 2.5rem 0 0 0;
+        margin: 0;
+        width: 200px;
       }
     }
-
     // END - SEARCH
 
     // START - LOGO
@@ -248,16 +255,16 @@
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 2;
-        margin: 0;
+        margin: $spacing-1 0;
         text-align: center;
       }
 
       img {
-        height: 28px;
+        height: 32px;
 
         // desktop
         @media (min-width: $screen-sm-min) {
-          height: 60px;
+          height: 64px;
         }
       }
     }
@@ -268,11 +275,14 @@
     .primary-nav__cart {
       order: 4;
       margin-left: 1rem;
+      width:50px;
+      text-align: right;
 
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 3;
-        margin: 2.5rem 2rem 0 0;
+        margin: 0 2rem 0 0;
+        width: 200px;
       }
     }
 
@@ -283,6 +293,7 @@
       order: 1;
       flex: 1 1 auto;
       z-index: 9;
+      width: 50px;
     }
 
     // END - HAMBURGER TOGGLE
@@ -296,7 +307,7 @@
         display: flex;
         width: 100%;
         order: 4;
-        margin-top: calc(#{$spacing-3} + 6px);
+        margin-top: 1.75rem;
       }
 
       // MAIN NAV LIST
@@ -435,7 +446,7 @@
         }
 
         // end .has-sub-items
-     
+
       }
     }
 
@@ -586,7 +597,7 @@
       display: flex;
 
       // transform: translateX(0);
-   
+
     }
 
     &.off-canvas--right {
@@ -681,7 +692,7 @@
         }
 
         // end .sub-list-item a.collapsed
-     
+
       }
 
       // end .sub-list-item a
@@ -707,7 +718,7 @@
     }
 
     // end .sub-list-item
- 
+
   }
 }
 
