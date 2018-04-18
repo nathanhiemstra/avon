@@ -51,7 +51,7 @@
       }
 
       // Hide user name in that weird place on the narrow sie of tablet
-      @media (min-width: $screen-sm) and (max-width: 910px) {
+      @media (min-width: $screen-sm) and (max-width: 970px) {
         .account-list__user {
           .profile-name,
           .profile-img {
@@ -83,7 +83,7 @@
             max-width: unset;
             max-width: 17vw;
             font-weight: bold;
-            font-size: 13px;
+            font-size: 14px;
             letter-spacing: 1px;
           }
 
@@ -92,17 +92,18 @@
             height: 32px;
           }
         }
-      } // end .account-list__user
+      }
+
+      // end .account-list__user
 
       #accountDrop {
         font-weight: bold;
-        font-size: 13px;
+        font-size: 15px;
       }
 
       .link-reverse-underline {
         letter-spacing: 0.2px;
       }
-
     }
 
     .tools-list {
@@ -220,6 +221,7 @@
           align-items: center;
           justify-content: flex-start;
         }
+
         .lt-search, .lt-cart {
           font-size: 31px;
         }
@@ -233,7 +235,7 @@
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 1;
-        margin: 2.5rem 0 0 0;
+        margin: 0;
       }
     }
 
@@ -246,16 +248,16 @@
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 2;
-        margin: 0;
+        margin: $spacing-1 0 2rem;
         text-align: center;
       }
 
       img {
-        height: 28px;
+        height: 32px;
 
         // desktop
         @media (min-width: $screen-sm-min) {
-          height: 60px;
+          height: 64px;
         }
       }
     }
@@ -270,7 +272,7 @@
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 3;
-        margin: 2.5rem 2rem 0 0;
+        margin: 0 2rem 0 0;
       }
     }
 
@@ -294,7 +296,6 @@
         display: flex;
         width: 100%;
         order: 4;
-        margin-top: calc(#{$spacing-3} + 6px);
       }
 
       // MAIN NAV LIST
@@ -479,6 +480,7 @@
     $height-1: 42px;
     $height-2: 48px;
     $utility-height: calc((#{$height-1} + #{$height-2}) - 1.1rem);
+
     // $utility-height: ($height-1 + $height-2) - 10px;
 
     // GHOST - holds a relative postion for utility navs on desktop, which require absolute positioning
