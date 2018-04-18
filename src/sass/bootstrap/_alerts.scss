@@ -43,12 +43,14 @@
 .alert-dismissable,
 .alert-dismissible {
   padding-right: $alert-padding + 20;
+  position: absolute;
+  left: 0;
+  right: 0;
 
   // Adjust close link position
   .close {
-    position: relative;
-    top: -5px;
-    right: -21px;
+    position: absolute;
+    right: $alert-padding;
     color: inherit;
   }
 }
@@ -167,8 +169,78 @@
   }
 }
 
-// a.programatically-disabled {
-//   pointer-events: none;
+.alert-page-level {
+  overflow: hidden;
+  transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-//   // cursor: default;
-// }
+  &.collapsed {
+    height: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  // make sure icons and text inherit alert class colors
+  .alert-msg-icon,
+  .alert-msg-icon:before,
+  .close,
+  .close .lt-icon,
+  .close .lt-icon:before,
+  .close:hover {
+    color: inherit;
+  }
+
+  .alert-msg-icon {
+    margin-top: -1px;
+
+    &.lt-warning {
+      margin-top: -2px;
+    }
+  }
+
+  .alert-msg-txt {
+    text-transform: uppercase;
+  }
+
+  .alert-msg-btn {
+    text-transform: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .alert-msg-icon,
+  .alert-msg-txt,
+  .alert-msg-btn {
+    margin-left: $spacing-2;
+    margin-right: $spacing-1;
+  }
+
+  .container {
+    .modal & {
+      width: auto;
+    }
+  }
+}
+
+.alert-section-level {
+  text-align: left;
+
+  .alert-msg-header {
+    font-weight: bold;
+
+    + .alert-msg-body {
+      margin-top: $spacing-4;
+    }
+  }
+
+  .alert-msg-body {
+    color: $text-color;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

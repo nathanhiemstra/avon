@@ -1,0 +1,31 @@
+{% if alertClasses is not defined %}
+  {% set alertClasses = '' %}
+{% endif %}
+
+{% if alertDismissable %}
+  {% set alertDismissableClasses = ' alert-dismissable fade in' %}
+{% endif %}
+
+{% if alertMsg is not defined %}
+  {% set alertMsg = 'This is a default alert message, you should change me!' %}
+{% endif %}
+
+{% if alertBtnText is not defined %}
+  {% set alertBtnText = false %}
+{% endif %}
+
+<!-- NOTE :: add 'collapsed' class to alert-page-level for animated collapse -->
+<section class="alert alert-page-level {{ alertClasses }}{{ alertDismissableClasses}}"{{ alertId }}>
+  {% if alertIcon %}
+    <span class="alert-msg-icon lt-icon lt-medium {{ alertIcon }}"></span>
+  {% endif %}
+  <span class="alert-msg-txt">{{ alertMsg }}</span>
+  {% if alertBtnText %}
+    <button type="button" class="alert-msg-btn btn btn-sm btn-transparent-light">{{ alertBtnText }}</button>
+  {% endif %}
+  {% if alertDismissable %}
+    <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-hidden="true">
+      <span class="lt-icon lt-close lt-large"></span>
+    </a>
+  {% endif %}
+</section>
