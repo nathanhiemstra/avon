@@ -43,12 +43,14 @@
 .alert-dismissable,
 .alert-dismissible {
   padding-right: $alert-padding + 20;
+  position: absolute;
+  left: 0;
+  right: 0;
 
   // Adjust close link position
   .close {
-    position: relative;
-    top: -5px;
-    right: -21px;
+    position: absolute;
+    right: $alert-padding;
     color: inherit;
   }
 }
@@ -126,15 +128,10 @@
 // Global header alert message
 //
 // TODO :: should be a dismissable alert? see .alert-dismissable above
-.alert-page-level,
+
 .global-alert-msg {
   overflow: hidden;
   transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 
   &.collapsed {
     height: 0;
@@ -159,6 +156,52 @@
 
   .alert-msg-txt {
     vertical-align: middle;
+  }
+
+  .alert-msg-btn {
+    text-transform: none;
+  }
+
+  .container {
+    .modal & {
+      width: auto;
+    }
+  }
+}
+
+.alert-page-level {
+  overflow: hidden;
+  transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.collapsed {
+    height: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  // make sure icons and text inherit alert class colors
+  .alert-msg-icon,
+  .alert-msg-icon:before,
+  .close,
+  .close .lt-icon,
+  .close .lt-icon:before,
+  .close:hover {
+    color: inherit;
+  }
+
+  .alert-msg-icon {
+    margin-top: -1px;
+
+    &.lt-warning {
+      margin-top: -2px;
+    }
+  }
+
+  .alert-msg-txt {
     text-transform: uppercase;
   }
 
@@ -180,31 +223,7 @@
       width: auto;
     }
   }
-
-  &.alert-dismissable,
-  &.alert-dismissible {
-    .close {
-      top: inherit;
-    }
-  }
-
-  .fixed-right,
-  .close {
-    position: absolute;
-    right: $alert-padding;
-  }
-
-  .fixed-left {
-    position: absolute;
-    left: 0;
-  }
 }
-
-// a.programatically-disabled {
-//   pointer-events: none;
-
-//   // cursor: default;
-// }
 
 .alert-section-level {
   text-align: left;
