@@ -707,8 +707,6 @@ $('.carousel-thumbs').thumbnailsCarousel();
     var parent  = $this.attr('data-parent')
     var $parent = parent && $(parent)
 
-    // console.log($this, $target);
-
     $target.toggleClass('collapse--off-canvas');
 
     // nested toggles need special treatment for .drawer-open class
@@ -2083,9 +2081,7 @@ $('.carousel-thumbs').thumbnailsCarousel();
 		this.options = $.extend({}, RadialProgress.DEFAULTS, options);
 
 		this.$el = $(element);
-    console.log ( "element=", $(element).find('.radial-svg') );
     this.$svgHolder = $(element).find('.svg-holder');
-		//this.$svg = $(element).find('svg');
 		this.$progressCounter = this.$el.find('[data-radprogress-counter]');
 
 		this.minSegments = this.$el.attr('aria-valuemin') || options.minSegments;
