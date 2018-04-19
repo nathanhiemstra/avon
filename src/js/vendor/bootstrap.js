@@ -1101,12 +1101,14 @@ $('.carousel-thumbs').thumbnailsCarousel();
   // ==============
 
   $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
-    var $this   = $(this)
+    var $this = $(this)
     var winWidth = $(window).width();
-    var href    = $this.attr('href')
+    var href = $this.attr('href')
     var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
     var $targDt = $($this.attr('data-target-desktop') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
-    var option  = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
+    var isNested = $this.attr('data-target-is-nested');
+    var direction = $this.attr('data-direction');
+    var option = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
 
     if ($this.is('a')) e.preventDefault()
 
@@ -1124,6 +1126,15 @@ $('.carousel-thumbs').thumbnailsCarousel();
         .one('hide', function () {
           $this.is(':visible') && $this.focus()
         })
+    }
+
+    // if the target is explicitly nested, let's add a class
+    if(isNested) {
+      $target.addClass('is-nested');
+      $targDt.addClass('is-nested');
+    } else {
+      $target.removeClass('is-nested');
+      $targDt.removeClass('is-nested');
     }
 
   })

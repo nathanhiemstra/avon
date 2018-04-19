@@ -9,6 +9,7 @@
 var Modals = (function () {
 
   var $els = {};
+  var breadcrumbs = [];
 
   // public methods
   var init = function () {
@@ -86,12 +87,21 @@ var Modals = (function () {
       var $curTarget = $(curTarget);
       var $destTarget = $(destTarget);
       var curTargetData = $curTarget.data('bs.modal');
+      var direction = $(e.target).data('direction');
       var destHasBackButton = $destTarget.find('[data-direction="back"]').length;
 
       // check if shown
       if ((curTargetData || {}).isShown) {
         // hide current
         $curTarget.modal('hide');
+        // handle breadcrumbs
+        if(direction !== 'back') {
+          // going deeper, add a breadcrumb
+          breadcrumbs.push(curTarget);
+        } else {
+          // going back, remove a breadcrumb
+          breadcrumbs.pop();
+        }
         // wait for current to be hidden
         $curTarget.on('hidden.bs.modal', function (e) {
           // wait for destination modal to be shown, then update body class
@@ -100,10 +110,10 @@ var Modals = (function () {
           });
         });
 
-        // if destination modal has a back button, set it's target to the modal
-        // currently being closed
+        // if destination modal has a back button, set it's target based on breadcrumbs
         if (destHasBackButton) {
-          $destTarget.find('[data-direction="back"]').attr('data-target', curTarget);
+          backTarget = breadcrumbs[breadcrumbs.length - 1];
+          $destTarget.find('[data-direction="back"]').attr('data-target', backTarget);
         }
       }
     });
