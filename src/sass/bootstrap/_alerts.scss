@@ -43,9 +43,10 @@
 .alert-dismissable,
 .alert-dismissible {
   padding-right: $alert-padding + 20;
-  position: absolute;
-  left: 0;
-  right: 0;
+
+  // position: absolute;
+  // left: 0;
+  // right: 0;
 
   // Adjust close link position
   .close {
