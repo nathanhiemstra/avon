@@ -203,6 +203,11 @@
     }
 
     width: 100%;
+
+    &.sticky {
+      position: fixed;
+      top: 0;
+    }
   }
 
   // make sure icons and text inherit alert class colors
