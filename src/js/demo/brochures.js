@@ -46,9 +46,9 @@ var Brochures = (function () {
       _toggleView();
     });
 
-    $els.brochureContainer.on('click', function() {
-      _toggleModal();
-    });
+    // $els.brochureContainer.on('click', function() {
+    //   _toggleModal();
+    // });
 
     // $els.brochureCarousel.on('slide.bs.carousel', function (e) {
     //   _updateProgress(e);
@@ -62,9 +62,9 @@ var Brochures = (function () {
     $els.backBtn.toggleClass('hidden');
   };
 
-  var _toggleModal = function() {
-    console.log('Show Modal');
-  };
+  // var _toggleModal = function() {
+  //   console.log('Show Modal');
+  // };
 
   // var _updateProgress = function(e) {
   //   if(e) currentStep = $(e.relatedTarget).data('step');
