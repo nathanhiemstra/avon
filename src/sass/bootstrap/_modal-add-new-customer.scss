@@ -1,0 +1,26 @@
+// Add New Customer modal requires some unique styles depending on whether or not it
+// is triggered by another modal
+
+#add-new-customer-modal {
+
+  button.back {
+    display: none;
+  }
+
+  button.close:not(.back) {
+    display: block;
+  }
+
+  &.nested {
+
+    button.close:not(.back) {
+      display: none;
+    }
+
+    button.back {
+      display: block;
+    }
+
+  }
+
+}

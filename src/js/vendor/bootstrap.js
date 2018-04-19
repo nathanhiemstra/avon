@@ -1129,12 +1129,10 @@ $('.carousel-thumbs').thumbnailsCarousel();
     }
 
     // if the target is explicitly nested, let's add a class
-    if(isNested) {
+    if(isNested && winWidth < 769) {
       $target.addClass('is-nested');
-      $targDt.addClass('is-nested');
     } else {
       $target.removeClass('is-nested');
-      $targDt.removeClass('is-nested');
     }
 
   })

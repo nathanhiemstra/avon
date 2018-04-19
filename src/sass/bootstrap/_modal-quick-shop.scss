@@ -3,16 +3,13 @@
 
 #quick-shop-modal {
 
-  button.back {
+  button.back,
+  .pdp-campaign-text {
     display: none;
   }
 
   .pdp-campaign-select {
     display: inline-block;
-  }
-
-  .pdp-campaign-text {
-    display: none;
   }
 
   &.is-nested {
@@ -21,10 +18,7 @@
       display: block;
     }
 
-    .pdp-view-offers {
-      display: none;
-    }
-
+    .pdp-view-offers,
     .pdp-campaign-select {
       display: none;
     }
