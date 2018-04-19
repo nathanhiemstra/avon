@@ -65,7 +65,9 @@ var ProductDetail = (function () {
         }
 
         // a new modal trigger was just created, let's tell everyone about it
-        $(document).trigger('newModalsAvailable');
+        setTimeout(function() {
+          $(document).trigger('newModalsAvailable');
+        }, 0);
       },
       appendTo: $els.autocompleteHost,
       showOnFocus: true,

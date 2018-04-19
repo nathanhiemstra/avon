@@ -33,6 +33,9 @@ var Modals = (function () {
     });
 
     $(document).on('newModalsAvailable', function(e) {
+      // console.log('newModalsAvailable');
+      // turn off the event
+      $(document).off('newModalsAvailable');
       // new dynamically created modal triggers are available - let's reset
       init();
     });
