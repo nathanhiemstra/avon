@@ -3,10 +3,10 @@
 {% endif %}
 
 {% if notificationMsg is not defined %}
-  {% set notificationMsg = 'Campaign 3 is due by 11:59 local time on Wednesday 01/17/2018 21 Day(s) left' %}
+  {% set notificationMsg = 'Campaign 4 is due by midnight on April 24, 2018' %}
 {% endif %}
 
-<section class="global-alert-msg alert alert-promo container-fluid mb-0 {{ classes }} fade in">
+<section class="alert-page-level {{ classes }} fade in">
   <span class="alert-msg-icon lt-icon lt-warning lt-medium {{ alertIcon }}"></span>
-  <span class="alert-msg-txt text-uppercase mr-0 mr-sm-4 ml-0 ml-sm-2">{{ notificationMsg }}</span>
+  <span class="alert-msg-txt h6">{{ notificationMsg }}</span>
 </section>

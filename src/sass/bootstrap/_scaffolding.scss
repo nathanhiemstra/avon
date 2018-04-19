@@ -33,7 +33,11 @@ body {
 
 .container {
   &.container--breadcrumb {
-    margin-top: $spacing-4;
+    // + :not(.alert-dismissable) {
+    padding-top: $spacing-4;
+
+    // }
+
     margin-bottom: -0.5rem;
   }
 

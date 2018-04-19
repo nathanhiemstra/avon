@@ -6,13 +6,6 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalHeader %}
 
-  <!-- DEV NOTE :: this button only displays if .is-nested class appears on
-                :: modal, which only happens from product list modal -->
-  <button type="button" class="close back link-primary pull-left" data-toggle="modal" data-target="#product-list-modal" data-direction="back" aria-hidden="true">
-    <span class="sr-only">Go back</span>
-    <span class="lt-icon lt-left lt-large py-1"></span>
-  </button>
-
   <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
     <span class="sr-only">Close modal</span>
     <span class="lt-icon lt-close lt-large py-1"></span>
@@ -26,7 +19,18 @@
 {# DEFINE BLOCK - modalHeaderMessage #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalHeaderMessage %}
-
+{# 
+  <!-- START - GLOBAL ALERT MESSAGE -->
+   {% include "_includes/modules/global/alert-page-level.html.twig" with {
+      'alertId': '',
+      'alertClasses': 'alert-success',
+      'alertIcon': 'lt-checkmark',
+      'alertMsg': 'Item has been added',
+      'alertBtnText': 'View your Order',
+    }
+  %}
+  <!-- END - GLOBAL ALERT MESSAGE -->
+ #}
 {% endblock %}
 
 
@@ -34,21 +38,6 @@
 {# DEFINE BLOCK - modalBody #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
-
-  <!-- START - GLOBAL ALERT MESSAGE -->
-
-  {# NOTE :: alert is commented out for now, it needs to live in the modalBody
-          :: so it was moved here from above but the styles are off. We'll
-          :: need a new alert style for modals #}
-  {# {% include "_includes/modules/global/alert-page-level.html.twig" with {
-      'alertId': '',
-      'alertClasses': 'alert-success',
-      'alertIcon': 'lt-checkmark',
-      'alertMsg': 'Item has been added',
-      'alertBtnText': 'View your Order',
-    }
-  %} #}
-  <!-- END - GLOBAL ALERT MESSAGE -->
 
   <!-- DEVELOPER NOTE :: this markup, starting with the .row below is shared
     between Product Detail Page and Quick Shop Modal -->

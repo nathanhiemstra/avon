@@ -5,6 +5,8 @@ $( document ).ready( function () {
 
 
 
+
+
   ////////////////////////////////////////////////////////
   // VARIABLES
   ////////////////////////////////////////////////////////
@@ -264,6 +266,7 @@ $( document ).ready( function () {
   if( typeof YourOrderCartsTab !== 'undefined' ) YourOrderCartsTab.init();
   if( typeof dashboardDemo !== 'undefined' ) dashboardDemo.init();
   if( typeof PopoverCustomizer !== 'undefined' ) PopoverCustomizer.init();
+  if( typeof Sticky !== 'undefined' ) Sticky.init();
 
 
 } );
