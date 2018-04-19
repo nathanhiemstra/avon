@@ -227,13 +227,13 @@ gulp.task('compile', function () {
                       widgetPath: prefix.modules + 'widgets/widget-social-posts.html.twig'
                     },
                     item7: {
-                      fpoImgSrc: 'src="images/fpo/home/7.png"'
+                      widgetPath: prefix.modules + 'widgets/widget-registered-customers.html.twig'
                     },
                     item8: {
-                      fpoImgSrc: 'src="images/fpo/home/8.png"'
+                      widgetPath: prefix.modules + 'widgets/widget-facebook-performance.html.twig'
                     },
                     item9: {
-                      fpoImgSrc: 'src="images/fpo/home/9.png"'
+                      widgetPath: prefix.modules + 'widgets/widget-social-performance.html.twig'
                     },
                     item10: {
                       fpoImgSrc: 'src="images/fpo/home/10.png"'
