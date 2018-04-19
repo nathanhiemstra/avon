@@ -66,11 +66,10 @@
     &--product-video {
       @include play-icon-overlay(100);
     }
-
   }
 
   > .next,
-   > .prev,
+  > .prev,
   > .active {
     display: block;
   }
@@ -125,6 +124,10 @@
   text-align: center;
   background-color: rgba(0, 0, 0, 0);
 
+  // .lt-large {
+  //   font-size: inherit;
+  // }
+
   // Fix IE9 click-thru bug
   // We can't have this transition here because WebKit cancels the carousel
   // animation if you trip this while in the middle of another animation.
@@ -132,7 +135,7 @@
   // Set gradients for backgrounds
   &.left {
     // @include gradient-horizontal($start-color: rgba(0,0,0,.5), $end-color: rgba(0,0,0,.0001));
-
+ 
   }
 
   &.right {
@@ -140,7 +143,7 @@
     right: 0;
 
     // @include gradient-horizontal($start-color: rgba(0,0,0,.0001), $end-color: rgba(0,0,0,.5));
-
+ 
   }
 
   // Hover/focus state
@@ -165,6 +168,7 @@
     display: inline-block;
     width: 60px;
     height: 80px;
+
     // background-color: $body-bg;
     line-height: 76px;
   }
@@ -194,7 +198,7 @@
       content: '\2039';
 
       // SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
-
+   
     }
   }
 
@@ -203,7 +207,7 @@
       content: '\203a';
 
       // SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
-
+   
     }
   }
 }
@@ -250,7 +254,7 @@
     background-color: $gray-light;
 
     // IE9
-
+ 
   }
 
   .active {
@@ -277,7 +281,7 @@
     text-shadow: none;
 
     // No shadow for button elements in carousel-caption
-
+ 
   }
 }
 
@@ -292,7 +296,9 @@
       margin-top: -40px;
       background-color: $body-bg;
       line-height: 76px;
+
       // font-size: $carousel-control-font-size * 1.5;
+   
     }
 
     .icon-prev {
@@ -329,11 +335,13 @@
       text-decoration: none;
     }
   }
+
   // Fade transition for carousel items
   .item {
     left: 0 !important;
     opacity: 0;
     transition: opacity $ui-animation-time ease;
+
     &.active {
       opacity: 1;
     }

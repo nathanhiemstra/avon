@@ -37,5 +37,13 @@
 
 
 <!-- START - GLOBAL CAMPAIGN TIMER -->
-{% include '_includes/modules/global/alert-page-level-campaign-timer.html.twig' %}
+{% include "_includes/modules/global/alert-page-level.html.twig" with {
+    'alertId': '',
+    'alertClasses': 'alert-neutral alert-campaign-timer',
+    'alertIcon': 'lt-warning',
+    'alertMsg': 'Campaign 4 is due by midnight on April 24, 2018',
+    'alertBtnText': null,
+    'alertDismissable': null
+  }
+%}
 <!-- END - GLOBAL CAMPAIGN TIMER -->

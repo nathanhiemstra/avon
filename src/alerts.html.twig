@@ -12,7 +12,7 @@
     {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
     {% block main %}
 
-      <!-- START - GLOBAL ALERT MESSAGE -->
+      <!-- START - PAGE LEVEL - ERROR -->
       {% include "_includes/modules/global/alert-page-level.html.twig" with {
           'alertId': null,
           'alertClasses': 'alert-danger',
@@ -22,25 +22,30 @@
           'alertDismissable': false
         }
       %}
-      <!-- END - GLOBAL ALERT MESSAGE -->
+      <!-- END - PAGE LEVEL - ERROR -->
 
-      <!-- START - GLOBAL ALERT MESSAGE -->
+      <!-- START - PAGE LEVEL - SUCCESS -->
       {% include "_includes/modules/global/alert-page-level.html.twig" with {
           'alertId': null,
-          'alertClasses': 'alert-danger',
-          'alertIcon': 'lt-warning',
+          'alertClasses': 'alert-success',
+          'alertIcon': 'lt-checkmark',
           'alertMsg': 'Page level - dismissable',
           'alertBtnText': 'Optional button',
           'alertDismissable': true
         }
       %}
+      <!-- END - PAGE LEVEL - SUCCESS -->
     
       <section class="container container--page">
 
-        <h1>Error Alerts</h1>
-        <p>{{ fpo.paragraph }}</p>
+        <h1>Alerts</h1>
+        <h3>Page level</h3>
+        <p>Page level alerts go between the header and content and span thw width of the window. Icons and buttons are optional. Dismissable alerts become sticky to the top of the window once you scroll down far enough. </p>
 
-        <!-- START - GLOBAL ALERT MESSAGE -->
+        <h3>Section level</h3>
+        <p>Section level alerts usually are at the top of a section, but can be inserted anywhere. They are as wide as their parent container. They can contain any topy of content. However, if it's just one line, it is structured and styled slightly differently..</p>
+
+        <!-- START - SECTION LEVEL -->
         {% include "_includes/modules/global/alert-section-level.html.twig" with {
             'alertId': null,
             'alertClasses': 'alert-danger',
@@ -50,12 +55,13 @@
             'alertBtnText': false
           }
         %}
+        <!-- END - SECTION LEVEL -->
 
 
-        <!-- START - GLOBAL ALERT MESSAGE -->
+        <!-- START - SECTION LEVEL - WITH RICH TEXT -->
         {% include "_includes/modules/global/alert-section-level.html.twig" with {
             'alertId': null,
-            'alertClasses': 'alert-danger',
+            'alertClasses': 'alert-info',
             'alertIcon': 'lt-warning',
             'alertMsg': 'Section level - with rich text',
             'alertMsgBody': '
@@ -66,10 +72,14 @@
             'alertDismissable': false
           }
         %}
+        <!-- END - SECTION LEVEL - WITH RICH TEXT -->
 
 
      
-
+        <p>{{ fpo.paragraph }}</p>
+        <p>{{ fpo.paragraph }}</p>
+        <p>{{ fpo.paragraph }}</p>
+        <p>{{ fpo.paragraph }}</p>
         {# <div class="row">
           <div class="col-xs-3">
 

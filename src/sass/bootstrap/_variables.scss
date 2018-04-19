@@ -404,15 +404,20 @@ $dropdown-caret-color: $black !default;
 //
 // Note: These variables are not generated into the Customizer.
 
-$zindex-navbar: 1000 !default;
-$zindex-dropdown: 1000 !default;
-$zindex-popover: 1060 !default;
-$zindex-tooltip: 1070 !default;
-$zindex-navbar-fixed: 1030 !default;
-$zindex-drawer-fixed: 1031 !default;
-$zindex-drawer-backdrop: 1020 !default;
-$zindex-modal-background: 1040 !default;
-$zindex-modal: 1050 !default;
+$zindex-navbar:             1000 !default;
+$zindex-dropdown:           1000 !default;
+$zindex-drawer-backdrop:    1020 !default;
+$zindex-navbar-fixed:       1030 !default;
+$zindex-drawer-fixed:       1031 !default;
+$zindex-alert-dismissable:  1032 !default;
+$zindex-modal-background:   1040 !default;
+$zindex-modal:              1050 !default;
+$zindex-popover:            1060 !default;
+$zindex-tooltip:            1070 !default;
+
+
+
+
 
 //== Media queries breakpoints
 //
@@ -821,6 +826,10 @@ $alert-reverse-border: $black !default;
 $alert-promo-bg: $brand-primary-muted !default;
 $alert-promo-text: $black !default;
 $alert-promo-border: $brand-primary-muted !default;
+
+$alert-neutral-bg: $gray-lighter !default;
+$alert-neutral-text: $black !default;
+$alert-neutral-border: $gray-lighter !default;
 
 //== Progress bars
 //
