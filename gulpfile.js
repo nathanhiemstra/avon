@@ -230,7 +230,7 @@ gulp.task('compile', function () {
                       fpoImgSrc: 'src="images/fpo/home/7.png"'
                     },
                     item8: {
-                      fpoImgSrc: 'src="images/fpo/home/8.png"'
+                      widgetPath: prefix.modules + 'widgets/widget-facebook-performance.html.twig'
                     },
                     item9: {
                       fpoImgSrc: 'src="images/fpo/home/9.png"'

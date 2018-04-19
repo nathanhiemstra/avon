@@ -1,0 +1,29 @@
+{% extends "_layouts/widget.html.twig" %}
+
+{% set widgetId = 'widget-kickstart-program' %}
+{% set widgetLayout = 'flex-column' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetHeader %}
+  <h7>Facebook Performance</h7>
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetBody %}
+  <p class="text-muted">Feb 14 - Feb 21</p>
+  <img class="mb-3" src="images/social/FB-f-Logo__blue_29.png" alt="facebook">
+  <p>Likes: <strong>104</strong></p>
+  <p>Comments: <strong>341</strong></p>
+  <p>Total Reach: <strong>104</strong></p>
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetFooter %}
+  <button class="btn btn-primary btn-sm btn-soft">View your analytics</button>
+{% endblock %}
