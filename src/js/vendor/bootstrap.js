@@ -707,8 +707,6 @@ $('.carousel-thumbs').thumbnailsCarousel();
     var parent  = $this.attr('data-parent')
     var $parent = parent && $(parent)
 
-    // console.log($this, $target);
-
     $target.toggleClass('collapse--off-canvas');
 
     // nested toggles need special treatment for .drawer-open class
@@ -1103,18 +1101,42 @@ $('.carousel-thumbs').thumbnailsCarousel();
   // ==============
 
   $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
-    var $this   = $(this)
-    var href    = $this.attr('href')
+    var $this = $(this)
+    var winWidth = $(window).width();
+    var href = $this.attr('href')
     var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
-    var option  = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
+    var $targDt = $($this.attr('data-target-desktop') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
+    var isNested = $this.attr('data-target-is-nested');
+    var direction = $this.attr('data-direction');
+    var option = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
 
     if ($this.is('a')) e.preventDefault()
 
-    $target
-      .modal(option, this)
-      .one('hide', function () {
-        $this.is(':visible') && $this.focus()
-      })
+    if($targDt.length > 0 && winWidth > 768) {
+      // show data-target-desktop modal
+      $targDt
+        .modal(option, this)
+        .one('hide', function () {
+          $this.is(':visible') && $this.focus()
+        })
+    } else {
+      // show default modal
+      $target
+        .modal(option, this)
+        .one('hide', function () {
+          $this.is(':visible') && $this.focus()
+        })
+    }
+
+    // if the target is explicitly nested, let's add a class
+    if(isNested) {
+      $target.addClass('is-nested');
+      $targDt.addClass('is-nested');
+    } else {
+      $target.removeClass('is-nested');
+      $targDt.removeClass('is-nested');
+    }
+
   })
 
   $(document)
@@ -2070,9 +2092,7 @@ $('.carousel-thumbs').thumbnailsCarousel();
 		this.options = $.extend({}, RadialProgress.DEFAULTS, options);
 
 		this.$el = $(element);
-    console.log ( "element=", $(element).find('.radial-svg') );
     this.$svgHolder = $(element).find('.svg-holder');
-		//this.$svg = $(element).find('svg');
 		this.$progressCounter = this.$el.find('[data-radprogress-counter]');
 
 		this.minSegments = this.$el.attr('aria-valuemin') || options.minSegments;

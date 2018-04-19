@@ -1,0 +1,34 @@
+// Quick Shop modal requires some unique styles depending on whether or not it
+// is triggered by another modal
+
+.pdp-campaign-text {
+  display: none;
+}
+
+#quick-shop-modal {
+  button.back {
+    display: none;
+  }
+
+  .pdp-campaign-select {
+    display: inline-block;
+  }
+
+  &.is-nested {
+    button.back {
+      display: block;
+    }
+
+    .pdp-view-offers {
+      display: none;
+    }
+
+    .pdp-campaign-select {
+      display: none;
+    }
+
+    .pdp-campaign-text {
+      display: inline-block;
+    }
+  }
+}

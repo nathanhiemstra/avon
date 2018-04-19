@@ -1,4 +1,8 @@
-<ul class="avon-product-list border-top mt-5">
+{% if isModal is not defined %}
+  {% set isModal = false %}
+{% endif %}
+
+<ul class="avon-product-list {% if not isModal %}border-top mt-5{% else %}avon-product-list--modal{% endif %}">
 
   <!-- START - LIST ITEMS LOOP -->
 
@@ -9,7 +13,8 @@
     itemPrice: '$30.00',
     regPrice: '$36.00',
     numRatings: '73',
-    stockStatus: 'In Stock'
+    stockStatus: 'In Stock',
+    isModal: isModal
   }%}
 
   {% include components.modules.product.list.productListItem with {
@@ -19,7 +24,8 @@
     itemPrice: '$30.00',
     regPrice: '$36.00',
     numRatings: '73',
-    stockStatus: 'In Stock'
+    stockStatus: 'In Stock',
+    isModal: isModal
   }%}
 
   {% include components.modules.product.list.productListItem with {
@@ -29,7 +35,8 @@
     itemPrice: '$30.00',
     regPrice: '$36.00',
     numRatings: '73',
-    stockStatus: 'In Stock'
+    stockStatus: 'In Stock',
+    isModal: isModal
   }%}
 
   {% include components.modules.product.list.productListItem with {
@@ -39,7 +46,8 @@
     itemPrice: '$30.00',
     regPrice: '$36.00',
     numRatings: '73',
-    stockStatus: 'In Stock'
+    stockStatus: 'In Stock',
+    isModal: isModal
   }%}
 
   <!-- END - LIST ITEMS LOOP -->

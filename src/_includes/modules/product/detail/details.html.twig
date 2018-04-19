@@ -23,9 +23,9 @@
 <!-- END - PRICE -->
 
 <!-- START - CAMPAIGN SELECT -->
-<div class="form-group has-feedback d-inline-block align-middle my-3 my-md-4">
+<div class="pdp-campaign-select form-group has-feedback align-middle my-3 my-md-4">
   <div class="dropdown dropdown--pdp-campaign-select">
-    <button class="btn btn-select input-sm form-control pdp-campaign-select dropdown-toggle" id="pdpCampaignSelect" data-toggle="dropdown">
+    <button class="btn btn-select input-sm form-control dropdown-toggle" id="pdpCampaignSelect" data-toggle="dropdown">
       <span class="campaign-name">CO4</span>
     </button>
     <span class="lt-icon lt-triangle-down form-control-feedback"></span>
@@ -53,12 +53,18 @@
 </div>
 <!-- END - CAMPAIGN SELECT -->
 
+<!-- START - CAMPAIGN TEXT -->
+<div class="pdp-campaign-text">
+  <span class="text-muted">Campaign 04</span>
+</div>
+<!-- END - CAMPAIGN TEXT -->
+
 <!-- START - PRICE AND OFFERS -->
 <p class="my-0 my-md-3 w-100">
   <span class="text-muted col-xs-12 col-sm-6 px-0 my-3 my-md-0">Regular price:
     <span class="strike-through">$12.99</span>
   </span>
-  <a class="underline col-xs-12 col-sm-6 px-0 my-3 my-md-0" href="#" data-toggle="modal" data-target="#product-offers-modal">View Offers <span class="pdp-offers">(1)</span></a>
+  <a class="pdp-view-offers underline col-xs-12 col-sm-6 px-0 my-3 my-md-0" href="#" data-toggle="modal" data-target="#product-offers-modal">View Offers <span class="pdp-offers">(1)</span></a>
 </p>
 <!-- END - PRICE AND OFFERS -->
 
@@ -67,8 +73,8 @@
   {% include '_includes/groups/your-order/message-status-in-stock.html.twig' %}
   {% include '_includes/groups/your-order/message-status-out-of-stock.html.twig' %}
   {% include '_includes/groups/your-order/message-status-sold-out.html.twig' %}
-  <span class="small pl-4">
-    <span class="underline">Auto-Replenish</span> <span class="lt-icon lt-info lt-medium" data-toggle="modal" data-target="#auto-replenish"></span>
+  <span class="small pl-4 nowrap">
+    <a href="javascript:void(0)" class="underline">Auto-Replenish</a> <span class="lt-icon lt-info lt-medium" data-toggle="modal" data-target="#auto-replenish"></span>
   </span>
 </div>
 <!-- END - STOCK STATUS MESSAGES -->

@@ -29,8 +29,18 @@ ul.avon-product-list {
 }
 
 li.avon-product-list__item {
+  padding: $spacing-5 0;
+
   &:last-child {
     border-bottom: none !important;
+  }
+}
+
+ul.avon-product-list--modal {
+  li.avon-product-list__item {
+    &:first-child {
+      padding-top: 0;
+    }
   }
 }
 
@@ -75,7 +85,7 @@ li.avon-product-list__item {
 
       // transition: 0.5s opacity ease;
       // opacity: 1;
-   
+
     }
 
     // // Only show badge if collapsed
@@ -125,7 +135,7 @@ li.avon-product-list__item {
     // @media (min-width: $screen-md-min) {
     //     cursor: default;
     // }
- 
+
   }
 }
 

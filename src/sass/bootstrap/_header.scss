@@ -255,7 +255,7 @@
       // desktop
       @media (min-width: $screen-sm-min) {
         order: 2;
-        margin: $spacing-1 0;
+        margin: $spacing-1 0 $spacing-1 2rem;
         text-align: center;
       }
 

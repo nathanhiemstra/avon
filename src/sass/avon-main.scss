@@ -65,15 +65,6 @@
 @import "bootstrap/images";
 @import "bootstrap/layouts";
 @import "bootstrap/widgets";
-@import "bootstrap/sticky";
-
-// Pages
-@import "bootstrap/dashboard";
-@import "bootstrap/brochures";
-@import "bootstrap/product-detail";
-@import "bootstrap/product-lists";
-@import "bootstrap/global-search";
-@import "bootstrap/item-entry";
 
 // Components w/ JavaScript
 @import "bootstrap/modals";
@@ -81,6 +72,15 @@
 @import "bootstrap/popovers";
 @import "bootstrap/carousel";
 @import "bootstrap/carousel-responsive";
+
+// Pages & Modals
+@import "bootstrap/dashboard";
+@import "bootstrap/brochures";
+@import "bootstrap/product-detail";
+@import "bootstrap/product-lists";
+@import "bootstrap/global-search";
+@import "bootstrap/item-entry";
+@import "bootstrap/modal-quick-shop";
 
 // Utility classes
 @import "bootstrap/utilities";

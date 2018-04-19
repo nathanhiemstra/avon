@@ -43,8 +43,8 @@
 .alert-dismissable,
 .alert-dismissible {
   padding-right: $alert-padding + 20;
-  z-index: $zindex-alert-dismissable;
   position: relative;
+  z-index: $zindex-alert-dismissable;
 
   // Adjust close link position
   .close {
@@ -203,6 +203,11 @@
     }
 
     width: 100%;
+
+    &.sticky {
+      position: fixed;
+      top: 0;
+    }
   }
 
   // make sure icons and text inherit alert class colors
