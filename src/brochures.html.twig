@@ -46,6 +46,9 @@
   <!-- MODAL - BROCHURE QUICK SHOP -->
   {% include '_includes/modules/product/detail/quick-shop.html.twig' %}
 
+  <!-- START - ADD NEW CUSTOMER MODAL -->
+  {% include "_includes/modules/modals/modal-either-or.html.twig" with { 'modalId': 'add-new-customer-modal' } %}
+
   <!-- MODAL - PRODUCT IMAGE LG -->
   {% include "_includes/modules/product/detail/product-image-modal.html.twig" with { isInQuickShopModal: true } %}
 

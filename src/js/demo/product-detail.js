@@ -20,7 +20,8 @@ var ProductDetail = (function () {
       socialIconsContainerDesktop:  $('#pdp-imgs__social-desktop'),
       socialIconsContainerMobile:   $('#pdp-imgs__social-mobile'),
       customerSelectInput:          $('#pdpCustomerSelect'),
-      customerSelectTrigger:        $('#pdpCustomerSelect + .form-control-feedback')
+      customerSelectTrigger:        $('#pdpCustomerSelect + .form-control-feedback'),
+      autocompleteHost:             $('#pdpCustomerSelect').closest('.form-group')
     };
 
     $('#pdp-images .carousel-inner a').click(function(e) {
@@ -52,6 +53,21 @@ var ProductDetail = (function () {
         // re-add click listener on down arrow
         $els.customerSelectTrigger.on('click', _handleDropdownClick);
       },
+      beforeRender: function(container, suggestions) {
+        // only show 'view all results' button if we have suggestions
+        if(suggestions.length) {
+          $(container)
+            .append('<a href="javascript:void(0)" id="autocomplete-add-customer-link" class="link-primary border-top" data-toggle="modal" data-target="#add-new-customer-modal">Add a new customer</a>');
+        } else {
+          $(container)
+            .find('.autocomplete-suggestion:last-of-type')
+            .css('padding-bottom', 0);
+        }
+
+        // a new modal trigger was just created, let's tell everyone about it
+        $(document).trigger('newModalsAvailable');
+      },
+      appendTo: $els.autocompleteHost,
       showOnFocus: true,
       minChars: 0,
       maxHeight: 400,

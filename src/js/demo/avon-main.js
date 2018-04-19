@@ -256,7 +256,6 @@ $( document ).ready( function () {
   if( typeof CheckoutDemo !== 'undefined' ) CheckoutDemo.init();
   if( typeof FormDemo !== 'undefined' ) FormDemo.init();
   if( typeof GlobalSearch !== 'undefined' ) GlobalSearch.init();
-  if( typeof Modals !== 'undefined' ) Modals.init();
   if( typeof Pagination !== 'undefined' ) Pagination.init();
   if( typeof ProductDetail !== 'undefined' ) ProductDetail.init();
   if( typeof ProductFilters !== 'undefined' ) ProductFilters.init();
@@ -264,6 +263,6 @@ $( document ).ready( function () {
   if( typeof YourOrderCartsTab !== 'undefined' ) YourOrderCartsTab.init();
   if( typeof dashboardDemo !== 'undefined' ) dashboardDemo.init();
   if( typeof PopoverCustomizer !== 'undefined' ) PopoverCustomizer.init();
-
+  if( typeof Modals !== 'undefined' ) Modals.init();
 
 } );

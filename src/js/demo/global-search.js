@@ -49,7 +49,7 @@ var GlobalSearch = (function () {
         // only show 'view all results' button if we have suggestions
         if(suggestions.length) {
           $(container)
-            .append('<a id="autocomplete-all-results-link" class="link-primary border-top">View all results</button>');
+            .append('<a id="autocomplete-all-results-link" class="link-primary border-top">View all results</a>');
         } else {
           $(container)
             .find('.autocomplete-suggestion:last-of-type')

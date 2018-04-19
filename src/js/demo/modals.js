@@ -32,6 +32,11 @@ var Modals = (function () {
       _handleModalOpen(e);
     });
 
+    $(document).on('newModalsAvailable', function(e) {
+      // new dynamically created modal triggers are available - let's reset
+      init();
+    });
+
     // reset video source to prevent play / pause nonsense
     $('#product-video').on('hidden.bs.modal', function () {
       var video = $(this).find("iframe");
@@ -79,7 +84,6 @@ var Modals = (function () {
 
 
   var _handleModalSwitch = function (e) {
-
     // loop through triggers
     $.each($els.modalTriggers, function (i, val) {
       var curTarget = $(this).data('target');
