@@ -2,11 +2,6 @@
 $( document ).ready( function () {
 
 
-
-
-
-
-
   ////////////////////////////////////////////////////////
   // VARIABLES
   ////////////////////////////////////////////////////////
@@ -265,11 +260,7 @@ $( document ).ready( function () {
   if( typeof YourOrderCartsTab !== 'undefined' ) YourOrderCartsTab.init();
   if( typeof dashboardDemo !== 'undefined' ) dashboardDemo.init();
   if( typeof PopoverCustomizer !== 'undefined' ) PopoverCustomizer.init();
-<<<<<<< HEAD
   if( typeof Modals !== 'undefined' ) Modals.init();
-=======
   if( typeof Sticky !== 'undefined' ) Sticky.init();
-
->>>>>>> 07158b951b0dab40c989755d06881305aece6439
 
 } );
