@@ -1,0 +1,29 @@
+{% extends "_layouts/widget.html.twig" %}
+
+{% set widgetId = 'widget-kickstart-program' %}
+{% set widgetLayout = 'flex-column' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetHeader %}
+  <h7>Social Performance</h7>
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetBody %}
+  <p class="text-muted mb-3">Feb 14 - Feb 21</p>
+  <p class="text-left pl-4"><img class="mr-3" src="/images/social/google.svg"> New Likes: <strong>5,234</strong></p>
+  <p class="text-left pl-4"><img class="mr-3" src="/images/social/google.svg"> Retweets: <strong>912</strong></p>
+  <p class="text-left pl-4"><img class="mr-3" src="/images/social/google.svg"> New Pins Saved: <strong>59</strong></p>
+  <p class="text-left pl-4"><img class="mr-3" src="/images/social/google.svg"> <a href="#" class="underline">Connect now</a></p>
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetFooter %}
+  <button class="btn btn-primary btn-sm btn-soft">View your analytics</button>
+{% endblock %}
