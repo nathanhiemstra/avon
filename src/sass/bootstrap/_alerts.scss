@@ -43,9 +43,8 @@
 .alert-dismissable,
 .alert-dismissible {
   padding-right: $alert-padding + 20;
-  position: absolute;
-  left: 0;
-  right: 0;
+  z-index: $zindex-alert-dismissable;
+  position: relative;
 
   // Adjust close link position
   .close {
@@ -95,6 +94,20 @@
 
 .alert-promo {
   @include alert-variant($alert-promo-bg, $alert-promo-border, $alert-promo-text);
+}
+
+.alert-neutral {
+  @include alert-variant($alert-neutral-bg, $alert-neutral-border, $alert-neutral-text);
+
+  font-weight: bold;
+  padding: 12px;
+  letter-spacing: 1px;
+
+  .alert-msg-icon {
+    &:before {
+      color: $link-color;
+    }
+  }
 }
 
 // promo alert with an absolutely positioned icon and left aligned text
@@ -183,6 +196,15 @@
     border: 0;
   }
 
+  &.alert-dismissable,
+  &.alert-dismissible {
+    &:not(.sticky) {
+      position: absolute;
+    }
+
+    width: 100%;
+  }
+
   // make sure icons and text inherit alert class colors
   .alert-msg-icon,
   .alert-msg-icon:before,
@@ -226,8 +248,6 @@
 }
 
 .alert-section-level {
-  text-align: left;
-
   .alert-msg-header {
     font-weight: bold;
 
@@ -242,5 +262,16 @@
     p:last-child {
       margin-bottom: 0;
     }
+  }
+}
+
+.alert-campaign-timer {
+  padding: 14px;
+
+  .alert-msg-txt {
+    @extend .h6;
+
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
