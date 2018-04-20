@@ -1,0 +1,42 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          {% include "_includes/groups/navigation/back-link.twig" with {label: "Home"} %}
+
+          <h2>Message Center</h2>
+
+          <p>One location for all of your Avon-specific messaging. Id ex fugiat ullamco laboris elit reprehenderit laborum duis laborum.</p>
+
+          <!-- START - TAB NAVIGATION -->
+          {% include "_includes/modules/message-center/tab-nav.html.twig" %}
+          <!-- END - TAB NAVIGATION -->
+
+          <section class="container my-5">
+           {% include '_includes/modules/message-center/tab-content.html.twig' %}
+          </section>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  {% endblock %}
+
+
+{% endblock %}
