@@ -10,10 +10,16 @@
   {% set alertMsg = 'This is a default alert message, you should change me!' %}
 {% endif %}
 
+{% if alertLevel == 'page' %}
+  {% set alertLevelClass = 'alert-level-page alert-strong' %}
+{% else %}
+  {% set alertLevelClass = 'alert-level-section' %}
+{% endif %}
 
-<section class="alert alert-section-level {{ alertClasses }}"{{ alertId }}>
+<section class="alert {{ alertLevelClass }} {{ alertClasses }}"{{ alertId }}>
   <div class="alert-msg-header">{{ alertMsg }}</div>
   {% if alertMsgBody %}
     <div class="alert-msg-body">{{ alertMsgBody }}</div>
   {% endif %}
 </section>
+

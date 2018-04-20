@@ -15,9 +15,15 @@ $gray-dark: $gray-base !default;
 $gray-medium: #8e8e8e !default;
 $gray-light: #CCC !default;
 $gray-lighter: #F2F2F2 !default;
+
+
 $green: #3EA572 !default;
-$green-light: #d6f4e5 !default;
-$green-dark: #126339;
+$green-dark: #087F44;
+$green-light: #82D3AB !default;
+$green-lighter: #D5F4E5 !default;
+
+
+
 $orange: #FAA342 !default;
 $pink: #ED008C !default;
 $pink-dark: #D4027B !default;
@@ -26,7 +32,14 @@ $magenta-dark: #78114E !default;
 $magenta-deep: #2B1823 !default;
 $magenta-deeper: #190E15 !default;
 $pink-light: #FEF4F8 !default;
-$red: #E54530 !default;
+
+
+$red: #d6321c !default;
+$red-dark: #AD1804 !default;
+$red-light: #F29F94 !default;
+$red-lighter: #FDEDEA !default;
+
+
 $white: #fff !default;
 
 // Colors by function
@@ -46,12 +59,8 @@ $brand-danger: $red !default;
 $brand-disabled: $gray-light !default;
 $brand-discourage: $black !default;
 
-$brand-success-secondary: $green-light !default;
-$brand-info-secondary: $brand-info !default;
-$brand-warning-secondary: $brand-warning !default;
-$brand-danger-secondary: $brand-danger !default;
-$brand-disabled-secondary: $brand-disabled !default;
-$brand-discourage-secondary: $brand-discourage !default;
+
+
 
 //== Scaffolding
 //
@@ -651,12 +660,9 @@ $jumbotron-heading-font-size: ceil($font-size-base * 4.5) !default;
 //## Define colors for form feedback states and, by default, alerts.
 
 $state-success-text: $body-bg !default;
-$state-success-bg: $brand-success !default;
+$state-success-bg: $green-lighter !default;
 $state-success-border: darken(adjust-hue($state-success-bg, -10), 5%) !default;
 
-$state-success-secondary-text: $brand-success !default;
-$state-success-secondary-bg: $brand-success-secondary !default;
-$state-success-secondary-border: darken(adjust-hue($state-success-secondary-bg, -10), 5%) !default;
 
 $state-info-text: #31708f !default;
 $state-info-bg: #d9edf7 !default;
@@ -666,10 +672,13 @@ $state-warning-text: #8a6d3b !default;
 $state-warning-bg: #fcf8e3 !default;
 $state-warning-border: darken(adjust-hue($state-warning-bg, -10), 5%) !default;
 
-$state-danger-text: #D6321C !default;
-$state-danger-bg: #f2dede !default;
-$state-danger-border: darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+$state-danger-text: $red-dark !default;
+$state-danger-bg: $red-lighter !default;
+$state-danger-border: $red-lighter !default;
 $state-danger-border-width: 2px;
+
+
+
 
 //== Tooltips
 //
@@ -800,12 +809,13 @@ $alert-border-radius: $border-radius-base !default;
 $alert-link-font-weight: bold !default;
 
 $alert-success-bg: $state-success-bg !default;
-$alert-success-text: $state-success-text !default;
+$alert-success-text: $green-dark !default;
 $alert-success-border: $state-success-border !default;
 
-$alert-success-secondary-bg: $state-success-secondary-bg !default;
-$alert-success-secondary-text: $state-success-secondary-text !default;
-$alert-success-secondary-border: $state-success-secondary-border !default;
+$alert-success-strong-bg: $green !default;
+$alert-success-strong-text: $white !default;
+$alert-success-strong-border: $alert-success-strong-bg !default;
+
 
 $alert-info-bg: $state-info-bg !default;
 $alert-info-text: $state-info-text !default;
@@ -815,9 +825,13 @@ $alert-warning-bg: $state-warning-bg !default;
 $alert-warning-text: $state-warning-text !default;
 $alert-warning-border: $state-warning-border !default;
 
-$alert-danger-bg: $state-danger-bg !default;
+$alert-danger-bg:  $state-danger-bg !default;
 $alert-danger-text: $state-danger-text !default;
-$alert-danger-border: $state-danger-border !default;
+$alert-danger-border: $state-danger-border  !default;
+
+$alert-danger-strong-bg: $red !default;
+$alert-danger-strong-text: $white !default;
+$alert-danger-strong-border: $red !default;
 
 $alert-reverse-bg: $black !default;
 $alert-reverse-text: $white !default;
