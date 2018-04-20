@@ -14,8 +14,7 @@ var Sticky = (function () {
 
     // grab the DOM els we need
     $els = {
-      stickyTarget: $('.alert-page-level.alert-dismissable'),
-      closeTrigger: $('.alert-page-level.alert-dismissable .close')
+      stickyTarget: $('.alert-page-level.alert-dismissable')
     };
 
     // Variables
@@ -27,17 +26,8 @@ var Sticky = (function () {
 
   // private methods
   var _addListeners = function (stickyTargetOffsetTop) {
-    
     window.onscroll = function() { _toggleSticky(stickyTargetOffsetTop) };
-  
-    $els.closeTrigger.on('click', function(e) {
-     var _dsimissAlert(this);
-    });
-
-
   };
-
-  
 
 
   // Toggle sticky class
@@ -48,13 +38,6 @@ var Sticky = (function () {
     } else {
       $els.stickyTarget.removeClass("sticky");
     }
-  };
-
-
-  // Dismiss alert
-  var _dsimissAlert = function(itemClicked) {
-    // TODO find out what is triggering the close an preventing the animation
-    $(itemClicked).addClass("collapsed");
   };
 
 
