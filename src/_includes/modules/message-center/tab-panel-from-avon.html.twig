@@ -12,40 +12,36 @@
 
 	<!-- START - MESSAGE LIST LOOP -->
 
-	{% include "_includes/modules/message-center/message-item-from-avon.html.twig" with {
-	    msgText: 'A new Representative Delivery Order is available in',
-	    msgLinkText: 'Your order',
-	    msgURL: '#',
+	{% include "_includes/modules/message-center/message-item.html.twig" with {
+	    msgText: 'A new Representative Delivery Order is available in <a href="#">Your Order</a>',
 	    msgDate: 'Apr 17',
 	    msgStatus: unread,
-      index: 17
+      index: 17,
+			hasDelete: false
 	  }%}
 
-	 {% include "_includes/modules/message-center/message-item-from-avon.html.twig" with {
-	    msgText: 'Registration is open for Rep Fest 2018',
-	    msgLinkText: 'Register today',
-	    msgURL: '#',
+	 {% include "_includes/modules/message-center/message-item.html.twig" with {
+	    msgText: 'Registration is open for Rep Fest 2018 <a href="#">Register Today</a>',
 	    msgDate: 'Apr 6',
 	    msgStatus: unread,
-      index: 18
+      index: 18,
+			hasDelete: false
 	  }%}
 
-	  {% include "_includes/modules/message-center/message-item-from-avon.html.twig" with {
-	    msgText: 'A new Representative Delivery Order is available in',
-	    msgLinkText: 'Your order',
-	    msgURL: '#',
+	  {% include "_includes/modules/message-center/message-item.html.twig" with {
+	    msgText: 'A new Representative Delivery Order is available in <a href="#">Your Order</a>',
 	    msgDate: 'Apr 6',
 	    msgStatus: read,
-      index: 19
+      index: 19,
+			hasDelete: false
 	  }%}
 
-	  {% include "_includes/modules/message-center/message-item-from-avon.html.twig" with {
-	    msgText: 'Registration is open for Rep Fest 2018',
-	    msgLinkText: 'Register today',
-	    msgURL: '#',
+	  {% include "_includes/modules/message-center/message-item.html.twig" with {
+	    msgText: 'Registration is open for Rep Fest 2018 <a href="#">Register Today</a>',
 	    msgDate: 'Apr 6',
 	    msgStatus: read,
-      index: 20
+      index: 20,
+			hasDelete: false
 	  }%}
 
 	  <!-- END - MESSAGE LIST LOOP -->

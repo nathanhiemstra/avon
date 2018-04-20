@@ -218,8 +218,27 @@ $checkbox-pad-right: 14px;
 .list-group-item--collapse {
   line-height: 1.8;
 
-  .collapse {
-    // 
+  [data-toggle="collapse"] {
+    cursor: pointer;
+  }
+
+  .collapsed {
+    .collapse {
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .collapsing, .in {
+      white-space: normal;
+      text-overflow: inherit;
+      overflow: visible;
+    }
+  }
+
+  .content {
+    position: relative;
+    max-width: 80%;
   }
 
   .collapse[aria-expanded="false"] {
