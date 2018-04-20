@@ -1,3 +1,49 @@
-<p>
-  FPO - From Avon tab panel
-</p>
+{% set read = 'reverse-bg' %}
+{% set unread = '' %}
+
+<form class="form-inline mb-4" role="form">
+  <div class="form-group has-feedback">
+    <input type="text" class="form-control">
+    <span class="lt-icon lt-search lt-medium form-control-feedback"></span>
+  </div>
+</form>
+
+<ul class="list-group">
+
+	<!-- START - MESSAGE LIST LOOP -->
+
+	{% include "_includes/modules/message-center/message-item-from-avon.html.twig" with {
+	    msgText: 'A new Representative Delivery Order is available in',
+	    msgLinkText: 'Your order',
+	    msgURL: '#',
+	    msgDate: 'Apr 17',
+	    msgStatus: unread
+	  }%}
+
+	 {% include "_includes/modules/message-center/message-item-from-avon.html.twig" with {
+	    msgText: 'Registration is open for Rep Fest 2018',
+	    msgLinkText: 'Register today',
+	    msgURL: '#',
+	    msgDate: 'Apr 6',
+	    msgStatus: unread
+	  }%}
+
+	  {% include "_includes/modules/message-center/message-item-from-avon.html.twig" with {
+	    msgText: 'A new Representative Delivery Order is available in',
+	    msgLinkText: 'Your order',
+	    msgURL: '#',
+	    msgDate: 'Apr 6',
+	    msgStatus: read
+	  }%}
+
+	  {% include "_includes/modules/message-center/message-item-from-avon.html.twig" with {
+	    msgText: 'Registration is open for Rep Fest 2018',
+	    msgLinkText: 'Register today',
+	    msgURL: '#',
+	    msgDate: 'Apr 6',
+	    msgStatus: read
+	  }%}
+
+	  <!-- END - MESSAGE LIST LOOP -->
+
+</ul>
