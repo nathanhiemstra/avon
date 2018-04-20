@@ -1106,19 +1106,20 @@ $('.carousel-thumbs').thumbnailsCarousel();
     var href = $this.attr('href')
     var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
     var $targDt = $($this.attr('data-target-desktop') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
-    var isNested = $this.attr('data-target-is-nested');
+    var hasTargDt = $targDt.length > 0;
     var direction = $this.attr('data-direction');
     var option = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
 
     if ($this.is('a')) e.preventDefault()
 
-    if($targDt.length > 0 && winWidth > 768) {
+    if(hasTargDt && winWidth > 768) {
       // show data-target-desktop modal
       $targDt
         .modal(option, this)
         .one('hide', function () {
           $this.is(':visible') && $this.focus()
         })
+        .addClass('desktop');
     } else {
       // show default modal
       $target
@@ -1126,13 +1127,6 @@ $('.carousel-thumbs').thumbnailsCarousel();
         .one('hide', function () {
           $this.is(':visible') && $this.focus()
         })
-    }
-
-    // if the target is explicitly nested, let's add a class
-    if(isNested && winWidth < 769) {
-      $target.addClass('is-nested');
-    } else {
-      $target.removeClass('is-nested');
     }
 
   })

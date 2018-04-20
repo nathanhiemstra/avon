@@ -58,11 +58,12 @@ var ProductDetail = ( function () {
         if( suggestions.length ) {
           $( container )
             .append(
-              '<a href="javascript:void(0)" id="autocomplete-add-customer-link" class="link-primary border-top" data-toggle="modal" data-target="#add-new-customer-modal">Add a new customer</a>'
+              '<a id="autocomplete-add-customer-link" class="link-primary border-top" data-toggle="modal" data-target="#add-new-customer-modal">Add a new customer</a>'
             );
 
           // hide suggestions when apended link is clicked
-          $( '#autocomplete-add-customer-link' ).on( 'click', function () {
+          $( '#autocomplete-add-customer-link' ).on( 'click', function ( e ) {
+            e.preventDefault();
             $els.customerSelectInput.autocomplete( 'hide' );
           } );
         } else {

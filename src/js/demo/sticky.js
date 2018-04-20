@@ -19,6 +19,10 @@ var Sticky = (function () {
 
     // Variables
     var stickyTargetOffset = $els.stickyTarget.offset();
+
+    // if there's no target, we're done here
+    if(!stickyTargetOffset) return;
+
     var stickyTargetOffsetTop = stickyTargetOffset.top;
 
     _addListeners(stickyTargetOffsetTop);
