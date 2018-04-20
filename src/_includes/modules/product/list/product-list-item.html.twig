@@ -1,5 +1,5 @@
 {% if isModal %}
-  {% set linkAttrs = 'data-toggle="modal" data-target="#quick-shop-modal" data-target-is-nested=true' %}
+  {% set linkAttrs = 'data-toggle="modal" data-target="#quick-shop-modal" data-target-responsive=true' %}
 {% endif %}
 
 <li class="avon-product-list__item container-fluid border-bottom">
@@ -29,7 +29,7 @@
         </div>
         <div class="col col-xs-12 col-sm-4 hidden-xs">
           <p>
-            <button type="button" class="btn btn-default btn-sm pull-right-sm" data-toggle="modal" data-target="#quick-shop-modal">
+            <button type="button" class="btn btn-default btn-sm pull-right-sm" data-toggle="modal" data-target="#quick-shop-modal" data-target-desktop="#quick-shop-modal">
               Quick Shop
             </button>
           </p>

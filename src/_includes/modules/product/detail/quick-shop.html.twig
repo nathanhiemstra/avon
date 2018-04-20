@@ -6,10 +6,17 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalHeader %}
 
+  <!-- DEV NOTE :: this button only displays if .nested class is present on modal -->
+  <button type="button" class="close back link-primary pull-left" data-toggle="modal" data-target="#product-list-modal" data-direction="back" aria-hidden="true">
+    <span class="sr-only">Go back</span>
+    <span class="lt-icon lt-left lt-large py-1"></span>
+  </button>
+
   <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
     <span class="sr-only">Close modal</span>
     <span class="lt-icon lt-close lt-large py-1"></span>
   </button>
+
   <h4 class="modal-title">Quick Shop</h4>
 
 {% endblock %}
@@ -19,7 +26,7 @@
 {# DEFINE BLOCK - modalHeaderMessage #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalHeaderMessage %}
-{# 
+{#
   <!-- START - GLOBAL ALERT MESSAGE -->
    {% include "_includes/modules/global/alert-page-level.html.twig" with {
       'alertId': '',

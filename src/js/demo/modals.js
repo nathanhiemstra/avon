@@ -87,28 +87,36 @@ var Modals = ( function () {
 
 
   var _handleModalSwitch = function ( e ) {
+    console.log( 'Modal is nested' );
     // loop through triggers
     $.each( $els.modalTriggers, function ( i, val ) {
       var curTarget = $( this ).data( 'target' );
-      var destTarget = $( e.target ).data( 'target' );
+      var destTarget = $( e.currentTarget ).data( 'target' );
+      var destTargetDt = $( e.currentTarget ).data( 'target-desktop' );
       var $curTarget = $( curTarget );
       var $destTarget = $( destTarget );
       var curTargetData = $curTarget.data( 'bs.modal' );
-      var direction = $( e.target ).data( 'direction' );
+      var direction = $( e.currentTarget ).data( 'direction' );
+      var movingBack = false;
       var destHasBackButton = $destTarget.find( '[data-direction="back"]' ).length;
 
       // check if shown
       if( ( curTargetData || {} ).isShown ) {
+
         // hide current
         $curTarget.modal( 'hide' );
+
         // handle breadcrumbs
         if( direction !== 'back' ) {
           // going deeper, add a breadcrumb
           breadcrumbs.push( curTarget );
+          movingBack = false;
         } else {
           // going back, remove a breadcrumb
           breadcrumbs.pop();
+          movingBack = true;
         }
+
         // wait for current to be hidden
         $curTarget.on( 'hidden.bs.modal', function ( e ) {
           // clean up nested classes
@@ -119,8 +127,11 @@ var Modals = ( function () {
           } );
         } );
 
-        // we're launching a modal from a modal so let's add a claas to the target
+        // we're launching a modal from a modal so let's add a class to the target
         $destTarget.on( 'show.bs.modal', function ( e ) {
+          // if moving back to first item in breadcrumb, don't add nested class
+          if( movingBack && breadcrumbs.length < 2 ) return;
+          // otherwise, add nested class
           $destTarget.addClass( 'nested' );
         } );
 
@@ -129,6 +140,7 @@ var Modals = ( function () {
           backTarget = breadcrumbs[ breadcrumbs.length - 1 ];
           $destTarget.find( '[data-direction="back"]' ).attr( 'data-target', backTarget );
         }
+
       }
     } );
   };

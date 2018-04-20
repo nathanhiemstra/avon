@@ -6,26 +6,41 @@
 }
 
 #quick-shop-modal {
+  .pdp-campaign-text {
+    display: inline-block;
+  }
+
+  .pdp-campaign-select,
   button.back {
     display: none;
   }
 
-  .pdp-campaign-select {
-    display: inline-block;
-  }
-
-  &.is-nested {
+  &.nested {
     button.back {
       display: block;
     }
 
-    .pdp-view-offers,
-    .pdp-campaign-select {
+    // desktop
+    @media (min-width: $screen-sm-min) {
+      .pdp-campaign-text {
+        display: none;
+      }
+
+      .pdp-campaign-select {
+        display: inline-block;
+      }
+    }
+
+  }
+
+  &.desktop {
+    .pdp-campaign-text {
       display: none;
     }
 
-    .pdp-campaign-text {
+    .pdp-campaign-select {
       display: inline-block;
     }
   }
+
 }
