@@ -1,18 +1,10 @@
-  
-  <li class="list-group-item {{msgStatus}}">
-  	<div class="row">
-  		<div class="col-md-11">
-  			<div class="row">
-  				<div class="col-md-10">
-  					{{msgText}} <a href="{{msgURL}}">{{msgLinkText}}</a>.
-  				</div>
-  				<div class="col-md-2 text-right">
-  					{{msgDate}}
-  				</div>
-  			</div>
-  		</div>
-  		<div class="col-md-1 text-center">
-  			<span class="lt-icon lt-trash lt-large"></span>
-  		</div>
-  	</div>
-  </li>
+<li class="list-group-item list-group-item--collapse d-flex {{msgStatus}}">
+  <a role="button" class="collapsed link-plain" data-toggle="collapse" data-target="#collapseExample{{ index }}" aria-expanded="false" aria-controls="collapseExample{{ index }}">
+    <p class="collapse mr-4 mb-0" id="collapseExample{{index}}" aria-expanded="false">
+      {{msgText}}
+      <a href="{{msgURL}}">{{msgLinkText}}</a>
+    </p>
+  </a>
+  <span class="nowrap ml-auto mr-4">{{msgDate}}</span>
+  <span class="lt-icon lt-trash lt-large"></span>
+</li>

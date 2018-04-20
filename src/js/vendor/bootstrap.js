@@ -570,8 +570,8 @@ $('.carousel-thumbs').thumbnailsCarousel();
 
     this.$element
       .removeClass('collapse')
-      .addClass('collapsing')
-      [dimension](0)
+      .addClass('collapsing')[dimension](0)
+      .attr('aria-expanded', true)
 
     this.transitioning = 1
 
@@ -611,6 +611,7 @@ $('.carousel-thumbs').thumbnailsCarousel();
       .addClass('collapsing')
       .removeClass('collapse')
       .removeClass('in')
+      .attr('aria-expanded', false)
 
     this.transitioning = 1
 

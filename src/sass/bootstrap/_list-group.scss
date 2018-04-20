@@ -213,3 +213,21 @@ $checkbox-pad-right: 14px;
     }
   }
 }
+
+// COLLAPSABLE LIST GROUP ITEMS
+.list-group-item--collapse {
+  line-height: 1.8;
+
+  .collapse {
+    // 
+  }
+
+  .collapse[aria-expanded="false"] {
+    display: block;
+    height: 24px !important;
+    overflow: hidden;
+  }
+  .collapsing[aria-expanded="false"] {
+    height: 24px !important;
+  }
+}
