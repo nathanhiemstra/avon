@@ -69,6 +69,10 @@
 
   &.alert-strong {
     @include alert-variant($alert-success-strong-bg, $alert-success-strong-border, $alert-success-strong-text);
+
+    .alert-msg-icon-badge {
+      color: $alert-success-text;
+    }
   }
 }
 
@@ -85,6 +89,10 @@
 
   &.alert-strong {
     @include alert-variant($alert-danger-strong-bg, $alert-danger-strong-border, $alert-danger-strong-text);
+
+    .alert-msg-icon-badge {
+      color: $alert-danger-text;
+    }
   }
 }
 
@@ -182,35 +190,43 @@
   }
 }
 
-.alert-level-header {
-  overflow: hidden;
-  transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
+.alert-msg-icon-badge {
+  background-color: $white;
+  padding: 3px;
+  margin-top: -3px;
+  margin-bottom: -3px;
+  border-radius: 20px;
+  color: inherit;
+}
+
+.alert-icon-msg-cols {
+  .alert-msg-icon {
+    float: left;
+    margin-right: 10px;
+  }
+
+  .alert-msg-txt {
+    display: inline-block;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.alert-msg-headline {
+  font-weight: bold;
+  margin-bottom: 9px;
+}
+
+.alert-msg-list {
+  padding-left: 18px;
   margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
 
-  &.collapsed {
-    height: 0;
-    padding: 0;
-    border: 0;
-  }
-
-  &.alert-dismissable,
-  &.alert-dismissible {
-    &:not(.sticky) {
-      position: absolute;
-    }
-
-    width: 100%;
-
-    &.sticky {
-      position: fixed;
-      top: 0;
-    }
-  }
-
+[class*="alert-level-"] {
   // make sure icons and text inherit alert class colors
+  // :not(.alert-msg-icon-badge) {
   .alert-msg-icon,
   .alert-msg-icon:before,
   .close,
@@ -220,16 +236,14 @@
     color: inherit;
   }
 
+  // }
+
   .alert-msg-icon {
     margin-top: -1px;
 
     &.lt-warning {
       margin-top: -2px;
     }
-  }
-
-  .alert-msg-txt {
-    text-transform: uppercase;
   }
 
   .alert-msg-btn {
@@ -252,24 +266,51 @@
   }
 }
 
+.alert-level-header {
+  overflow: hidden;
+  transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .alert-msg-txt {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &.collapsed {
+    height: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  &.alert-dismissable,
+  &.alert-dismissible {
+    &:not(.sticky) {
+      position: absolute;
+    }
+
+    width: 100%;
+
+    &.sticky {
+      position: fixed;
+      top: 0;
+    }
+  }
+}
+
+.alert-level-page {
+  font-weight: bold;
+}
+
 .alert-level-section {
   text-align: left;
+}
 
-  .alert-msg-header {
-    font-weight: bold;
-
-    + .alert-msg-body {
-      margin-top: $spacing-4;
-    }
-  }
-
-  .alert-msg-body {
-    color: $text-color;
-
-    p:last-child {
-      margin-bottom: 0;
-    }
-  }
+.alert-level-page,
+.alert-level-section {
+  border-radius: $border-radius-secondary;
 }
 
 .alert-campaign-timer {

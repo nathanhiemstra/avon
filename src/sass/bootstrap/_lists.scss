@@ -39,6 +39,11 @@ ol {
   }
 }
 
+// Removes indent
+.list-flush {
+  padding-left: 0;
+}
+
 .list-inline-abutted {
   @include list-unstyled;
 
@@ -136,7 +141,7 @@ dd {
     @include clearfix;
 
     // Clear the floated `dt` if an empty `dd` is present
-
+ 
   }
 
   @media (min-width: $dl-horizontal-breakpoint) {

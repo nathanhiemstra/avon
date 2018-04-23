@@ -17,7 +17,7 @@
 <!-- NOTE :: add 'collapsed' class to alert-level-header for animated collapse -->
 <section class="alert alert-level-header alert-strong {{ alertClasses }}{{ alertDismissableClasses}}"{{ alertId }}>
   {% if alertIcon %}
-    <span class="alert-msg-icon lt-icon lt-medium {{ alertIcon }}"></span>
+    <span class="alert-msg-icon alert-msg-icon-badge lt-medium {{ alertIcon }}"></span>
   {% endif %}
   <span class="alert-msg-txt">{{ alertMsg }}</span>
   {% if alertBtnText %}
