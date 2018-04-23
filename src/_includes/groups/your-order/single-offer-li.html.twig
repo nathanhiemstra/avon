@@ -27,6 +27,10 @@
     </div>
     <!-- END - HEADER TEXT -->
 
+    {% if showError %}
+      {% include "_includes/groups/alerts/alert-level-section-generic.twig" %}
+    {% endif %}
+
     <!-- START - DESCRIPTION TEXT -->
     <div class="description-text text-muted">
       {{ descriptionText }}

@@ -19,6 +19,7 @@
     {# DEFINE BLOCK - CONTENT HEADER #}
     {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
     {% block contentheader %}
+
       {% include "_includes/groups/navigation/back-link.twig" with {label: "Back to Payment Methods"} %}
       {% include "_includes/groups/navigation/back-link.twig" with {label: "Cancel Split Payments"} %}
 
@@ -26,6 +27,8 @@
         <h2 class="m-0 pull-left">Checkout</h2>
         <a href="#" class="btn btn-discourage btn-soft btn-sm pull-right m-0">Edit Order</a>
       </div>
+
+      {% include "_includes/groups/alerts/alert-level-section-generic.twig" %}
     {% endblock %}
     {# END BLOCK - CONTENT HEADER #}
 
