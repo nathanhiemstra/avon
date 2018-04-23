@@ -3,7 +3,7 @@
 
    {# "Update" link #}
    {% set tdEmail %}
-      <a href="javascript:void(0);" class="underline" data-toggle="modal" data-target="#modal-update-email-address">Update</a>
+      <a href="javascript:void(0)" class="underline" data-toggle="modal" data-target="#modal-update-email-address">Update</a>
    {% endset %}
 
 {% else %}
@@ -22,13 +22,13 @@
        </div>
    {% endset %}
    {% set tdEmail %}
-      <a 
-        href="mailto:{{ emailAddress }}" 
-        data-container="body" 
-        data-toggle="popover" 
-        data-placement="top" 
-        data-trigger="manual" 
-        data-html="true" 
+      <a
+        href="mailto:{{ emailAddress }}"
+        data-container="body"
+        data-toggle="popover"
+        data-placement="top"
+        data-trigger="manual"
+        data-html="true"
         data-content="{{ emailmarkup }}"
         data-popover-anchor-combo="true">
         <span class="lt-icon lt-mail"></span>
@@ -42,20 +42,20 @@
 
    {# "Update" link #}
    {% set tdPhone %}
-      <a href="javascript:void(0);" class="underline" data-toggle="modal" data-target="#modal-update-phone-number">Update</a>
+      <a href="javascript:void(0)" class="underline" data-toggle="modal" data-target="#modal-update-phone-number">Update</a>
    {% endset %}
 
 {% else %}
 
    {# Phone icon#}
    {% set tdPhone %}
-      <a 
-         href="tel:15555555555" 
-         data-container="body" 
-         data-toggle="popover" 
-         data-placement="top" 
-         data-trigger="manual" 
-         data-html="true" 
+      <a
+         href="tel:15555555555"
+         data-container="body"
+         data-toggle="popover"
+         data-placement="top"
+         data-trigger="manual"
+         data-html="true"
          data-content="(555) 555-5555"
          data-popover-anchor-combo="true">
          <span class="lt-icon lt-phone"></span>
@@ -69,7 +69,7 @@
 
    {# "Update" link #}
    {% set tdText %}
-      <a href="javascript:void(0);" class="underline" data-toggle="modal" data-target="#modal-update-text-number">Update</a>
+      <a href="javascript:void(0)" class="underline" data-toggle="modal" data-target="#modal-update-text-number">Update</a>
    {% endset %}
 
 {% else %}
