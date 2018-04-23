@@ -18,13 +18,17 @@
 
 {% if alertLevel == 'page' %}
   {% set alertLevelClass = ' alert-level-page ' %}
+{% elseif alertLevel == 'inline-text'  %}
+  {% set alertLevelClass = ' alert-level-inline-text ' %}
 {% else %}
   {% set alertLevelClass = ' alert-level-section ' %}
 {% endif %}
 
 <section class="alert{{ alertLevelClass }}{{ alertClasses }}"{{ alertId }}>
   {{ alertIconMsgColsTagOpen }}
-    <span class="alert-msg-icon alert-msg-icon-badge lt-medium {{ alertIcon }}"></span>
+    {% if alertIcon %}
+      <span class="alert-msg-icon alert-msg-icon-badge lt-medium {{ alertIcon }}"></span>
+    {% endif %}
     <span class="alert-msg-txt">
       {# If a headline is not defined, assume the message IS the headline #}
       {% if alertMsgHeadline %}

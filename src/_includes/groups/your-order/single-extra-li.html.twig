@@ -18,8 +18,15 @@
   <!-- START - DESCRIPTION -->
   <div class="col-sm-8 offer-description pr-0">
 
+    
+    
+
     <!-- START - DESCRIPTION TEXT -->
     <div class="description-text">
+      {{ headerText }}
+      {% if showError %}
+        {% include "_includes/groups/alerts/alert-level-section-generic.twig" %}
+      {% endif %}
       {{ descriptionText }}
     </div>
     <!-- END - DESCRIPTION TEXT -->
@@ -31,6 +38,8 @@
     </div>
     <!-- END - PRICING INFO -->
     {% endif %}
+
+    
 
     {% if hasShowContents %}
     <!-- START - SHOW CONTENTS -->

@@ -33,6 +33,30 @@
 
           <hr>
 
+          <!-- START - SECTION LEVEL - WITH ERROR LIST -->
+          {% include "_includes/groups/alerts/alert-level-page-and-section.html.twig" with {
+              alertId: null,
+              alertClasses: 'alert-danger',
+              alertIcon: 'lt-warning',
+              alertIconMsgCols: true,
+              alertMsgHeadline: 'Section level with error list',
+              alertMsg: '
+               <ul class="alert-msg-list">
+                <li>Other Amount: Sorry, we are unable to process this request. Please review payment amount to ensure it is not greater than $25,000 or does not exceed your balance by more than $1,000.</li>
+                <li>QuickPAY: Field PIN is mandatory, please fill it in.</li>
+                <li>QuickPAY: Account is currently being processed.</li>
+                <li>Credit cards(s): Zipcode field is mandatory.</li>
+              </ul>
+              ',
+              alertBtnText: false,
+              alertDismissable: false,
+              alertLevel: 'section'
+            }
+          %}
+          <!-- END - SECTION LEVEL - WITH ERROR LIST -->
+
+
+
           <!-- START - PAYMENT AMOUNT SECTION -->
           <div class="">
 
