@@ -44,7 +44,10 @@
 .alert-dismissible {
   padding-right: $alert-padding + 20;
   position: relative;
-  z-index: $zindex-alert-dismissable;
+
+  &.sticky {
+    z-index: $zindex-alert-dismissable;
+  }
 
   // Adjust close link position
   .close {
