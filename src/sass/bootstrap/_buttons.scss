@@ -72,7 +72,7 @@ a.btn {
     pointer-events: none;
 
     // Future-proof disabling of clicks on `<a>` elements
- 
+
   }
 }
 
@@ -111,6 +111,7 @@ a.btn {
   @include button-variant($btn-success-color, transparent, $btn-success-color);
 
   border-width: 1px;
+  border-style: solid;
   font-weight: 100;
 }
 
@@ -170,7 +171,7 @@ a.btn {
     line-height: 0;
 
     // prevent larger icons increasing button height
- 
+
   }
 
   > i,
@@ -208,6 +209,80 @@ a.btn {
     }
   }
 }
+
+// Transparent light responsive looks like .btn-transparent-light on small
+// screens but has a custom look on large screens
+.btn-trans-light-responsive {
+  @extend .btn-transparent-light;
+
+  letter-spacing: 0.1px;
+
+  span, small, strong {
+    vertical-align: middle;
+  }
+
+  // strong {
+  //   font-size: $font-size-small;
+  // }
+
+  // dropdowns
+  .dropdown-menu {
+    background-color: transparent;
+
+    li a {
+      color: $white;
+    }
+  }
+
+  i, i:after, i:before {
+    line-height: 0;
+
+    // prevent larger icons increasing button height
+
+  }
+
+  > i,
+  > i:before,
+  > span,
+  > span:before,
+  &:focus,
+  &:hover {
+    background-color: transparent !important;
+    color: $white !important;
+  }
+
+  // desktop
+  @media (min-width: $screen-sm-min) {
+    background-color: transparent;
+    letter-spacing: 0.9px;
+    color: $brand-primary;
+
+    // strong {
+    //   font-size: $font-size-small;
+    // }
+
+    // dropdowns
+    .dropdown-menu {
+      background-color: transparent;
+
+      li a {
+        color: $brand-primary;
+      }
+    }
+
+    > i,
+    > i:before,
+    > span,
+    > span:before,
+    &:focus,
+    &:hover {
+      background-color: transparent !important;
+      color: $brand-primary !important;
+    }
+  }
+}
+
+// utilities
 
 .btn-bottom-align {
   vertical-align: bottom;
