@@ -261,6 +261,7 @@ $( document ).ready( function () {
   if( typeof dashboardDemo !== 'undefined' ) dashboardDemo.init();
   if( typeof PopoverCustomizer !== 'undefined' ) PopoverCustomizer.init();
   if( typeof Modals !== 'undefined' ) Modals.init();
+  if( typeof MessageCenter !== 'undefined' ) MessageCenter.init();
   if( typeof Sticky !== 'undefined' ) Sticky.init();
 
 } );

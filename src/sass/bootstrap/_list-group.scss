@@ -222,6 +222,24 @@ $checkbox-pad-right: 14px;
     cursor: pointer;
   }
 
+  .content {
+    position: relative;
+    max-width: 100%;
+    overflow-y: hidden;
+
+    &.has-delete {
+      max-width: 90%;
+    }
+
+    .content__close {
+      height: 20px;
+      opacity: 1;
+      transition:
+        opacity $ui-animation-time ease,
+        height $ui-animation-time ease;
+    }
+  }
+
   .collapsed {
     .collapse {
       max-width: 100%;
@@ -234,11 +252,10 @@ $checkbox-pad-right: 14px;
       text-overflow: inherit;
       overflow: visible;
     }
-  }
-
-  .content {
-    position: relative;
-    max-width: 80%;
+    .content__close {
+      height: 0;
+      opacity: 0;
+    }
   }
 
   .collapse[aria-expanded="false"] {
@@ -248,5 +265,42 @@ $checkbox-pad-right: 14px;
   }
   .collapsing[aria-expanded="false"] {
     height: 24px !important;
+  }
+}
+
+// Message Center Messages
+.msg-center-messages {
+  .list-group-item {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+
+    .content {
+      &__close {
+
+      }
+    }
+    .msg-date {
+      font-size: $font-size-small;
+      color: $text-muted;
+    }
+    .msg-icon {
+      position: absolute;
+      align-self: flex-end;
+    }
+
+    // desktop
+    @media (min-width: $screen-sm-min) {
+      flex-direction: row;
+      align-items: flex-start;
+
+      .msg-date {
+        font-size: $font-size-base;
+        margin-left: auto;
+      }
+      .msg-icon {
+        position: relative;
+        align-self: flex-start;
+      }
+    }
   }
 }

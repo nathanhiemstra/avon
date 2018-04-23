@@ -1,10 +1,22 @@
-<li class="list-group-item list-group-item--collapse d-flex {{ msgStatus }}">
-  <div class="content collapsed" data-toggle="collapse" data-target="#msgCenterRow{{ index }}" aria-expanded="false" aria-controls="msgCenterRow{{ index }}">
+{% set msgClass = '' %}
+{% if msgRead %}
+  {% set msgClass = 'reverse-bg' %}
+{% endif %}
+
+{% set contentClass = '' %}
+{% if hasDelete %}
+  {% set contentClass = 'has-delete' %}
+{% endif %}
+
+<li class="list-group-item list-group-item--collapse d-flex {{ msgClass }}">
+  <div class="content collapsed {{ contentClass }}" data-toggle="collapse" data-target="#msgCenterRow{{ index }}" aria-expanded="false" aria-controls="msgCenterRow{{ index }}">
     <p class="collapse mr-4 mb-0" id="msgCenterRow{{ index }}" aria-expanded="false">
       {{ msgText }}
     </p>
-    <!-- <span class="more">...</span> -->
+    <div class="content__close">
+      <a href="javascript:void(0)" data-toggle="collapse" data-target="#msgCenterRow{{ index }}" aria-controls="msgCenterRow{{ index }}">Close</a>
+    </div>
   </div>
-  <span class="nowrap ml-auto mr-4">{{ msgDate }}</span>
-  {% if hasDelete %}<span class="lt-icon lt-trash lt-large"></span>{% endif %}
+  <span class="msg-date nowrap mr-4">{{ msgDate }}</span>
+  {% if hasDelete %}<span class="msg-icon lt-icon lt-trash lt-large"></span>{% endif %}
 </li>

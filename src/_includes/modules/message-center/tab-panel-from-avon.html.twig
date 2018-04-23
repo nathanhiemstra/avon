@@ -1,37 +1,34 @@
-{% set read = 'reverse-bg' %}
-{% set unread = '' %}
-
 <form class="form-inline mb-4" role="form">
   <div class="form-group has-feedback">
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" placeholder="Type to Filter">
     <span class="lt-icon lt-search lt-medium form-control-feedback"></span>
   </div>
 </form>
 
-<ul class="list-group">
+<ul class="list-group msg-center-messages">
 
 	<!-- START - MESSAGE LIST LOOP -->
 
 	{% include "_includes/modules/message-center/message-item.html.twig" with {
 	    msgText: 'A new Representative Delivery Order is available in <a href="#">Your Order</a>',
 	    msgDate: 'Apr 17',
-	    msgStatus: unread,
+	    msgRead: false,
       index: 17,
 			hasDelete: false
 	  }%}
 
 	 {% include "_includes/modules/message-center/message-item.html.twig" with {
-	    msgText: 'Registration is open for Rep Fest 2018 <a href="#">Register Today</a>',
+	    msgText: 'Registration is open for Rep Fest 2018. Magna minim eiusmod occaecat incididunt occaecat qui mollit consequat amet voluptate ipsum nostrud elit. Exercitation adipisicing enim elit non sit pariatur dolore voluptate nostrud occaecat fugiat consequat id et Lorem sit. <a href="#">Register Today</a>',
 	    msgDate: 'Apr 6',
-	    msgStatus: unread,
+	    msgRead: false,
       index: 18,
 			hasDelete: false
 	  }%}
 
 	  {% include "_includes/modules/message-center/message-item.html.twig" with {
-	    msgText: 'A new Representative Delivery Order is available in <a href="#">Your Order</a>',
+	    msgText: 'A new Representative Delivery Order is available in lorem ipsum. Ut veniam elit commodo commodo officia sunt Lorem irure quis. Incididunt pariatur minim ea minim ad elit et deserunt aute anim qui quis velit. <a href="#">Your Order</a>',
 	    msgDate: 'Apr 6',
-	    msgStatus: read,
+	    msgRead: true,
       index: 19,
 			hasDelete: false
 	  }%}
@@ -39,7 +36,7 @@
 	  {% include "_includes/modules/message-center/message-item.html.twig" with {
 	    msgText: 'Registration is open for Rep Fest 2018 <a href="#">Register Today</a>',
 	    msgDate: 'Apr 6',
-	    msgStatus: read,
+	    msgRead: true,
       index: 20,
 			hasDelete: false
 	  }%}

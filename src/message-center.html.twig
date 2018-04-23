@@ -10,7 +10,7 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
-    <section class="container container--page">
+    <section class="container container--page container--msg-center">
 
       <div class="row">
 
@@ -26,9 +26,9 @@
           {% include "_includes/modules/message-center/tab-nav.html.twig" %}
           <!-- END - TAB NAVIGATION -->
 
-          <section class="container my-5">
-           {% include '_includes/modules/message-center/tab-content.html.twig' %}
-          </section>
+          <!-- START - TAB CONTENT -->
+          {% include '_includes/modules/message-center/tab-content.html.twig' %}
+          <!-- END - TAB CONTENT -->
 
         </div>
 
@@ -37,6 +37,5 @@
     </section>
 
   {% endblock %}
-
 
 {% endblock %}
