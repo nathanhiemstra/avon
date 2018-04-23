@@ -61,6 +61,9 @@ html:hover [class^="lt-"] {
   }
 }
 
+
+
+
 [class^="lt-"].after:before, [class*=" lt-"].after:before {
 	display: none;
 	content: '';
