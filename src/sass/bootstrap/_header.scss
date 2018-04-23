@@ -71,6 +71,7 @@
 
         .profile-name {
           max-width: 250px;
+          font-weight: bold;
         }
 
         .profile-img {
@@ -88,7 +89,6 @@
           .profile-name {
             max-width: unset;
             max-width: 17vw;
-            font-weight: bold;
             font-size: 14px;
             letter-spacing: 1px;
           }
@@ -103,6 +103,15 @@
 
       .account-list__drop {
         order: 1;
+        width: 132px;
+        overflow-x: visible;
+
+        &.open {
+          .lt-icon {
+            transform: rotate(-180deg);
+            transform-origin: center center;
+          }
+        }
 
         // desktop
         @media (min-width: $screen-sm-min) {
@@ -337,6 +346,7 @@
     // START - MAIN NAV CONTENT
     .primary-nav__content {
       order: 3;
+      border-top: 0;
 
       // desktop
       @media (min-width: $screen-sm-min) {
