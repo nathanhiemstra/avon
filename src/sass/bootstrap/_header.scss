@@ -693,6 +693,11 @@
   .navbar-sub__sub-list {
     height: calc(100% - 64px);
 
+    // desktop
+    @media (min-width: $screen-sm-min) {
+      height: auto;
+    }
+
     li.sub-list-item {
       border-bottom: 1px solid rgba($white, 0.05);
       padding-left: $spacing-2;
@@ -771,6 +776,7 @@
 
       // desktop
       @media (min-width: $screen-sm-min) {
+
         .arrow-box,
         .lt-icon {
           display: none !important;
@@ -787,6 +793,7 @@
           color: $text-color;
         }
       }
+
     }
 
     // end .sub-list-item
