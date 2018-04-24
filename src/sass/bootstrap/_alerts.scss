@@ -324,6 +324,22 @@
   @extend .small;
 }
 
+.alert-level-inline-rich-text {
+  .alert-msg-icon {
+    font-size: 48px;
+
+    &:before {
+      color: $gray-light;
+    }
+  }
+
+  .alert-msg-icon,
+  .alert-msg-txt {
+    color: $text-muted;
+    display: block;
+  }
+}
+
 .alert-campaign-timer {
   padding: 14px;
 
