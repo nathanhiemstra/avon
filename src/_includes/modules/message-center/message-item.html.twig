@@ -11,12 +11,12 @@
 <li class="list-group-item list-group-item--collapse d-flex {{ msgClass }}">
   <div class="content collapsed {{ contentClass }}" data-toggle="collapse" data-target="#msgCenterRow{{ index }}" aria-expanded="false" aria-controls="msgCenterRow{{ index }}">
     <p class="collapse mr-4 mb-0" id="msgCenterRow{{ index }}" aria-expanded="false">
-      {{ msgText }}
+      <span>{{ msgText }}</span>
     </p>
     <div class="content__close">
-      <a href="javascript:void(0)" data-toggle="collapse" data-target="#msgCenterRow{{ index }}" aria-controls="msgCenterRow{{ index }}">Close</a>
+      <a href="javascript:void(0)">Close</a>
     </div>
   </div>
   <span class="msg-date nowrap mr-4">{{ msgDate }}</span>
-  {% if hasDelete %}<span class="msg-icon lt-icon lt-trash lt-large"></span>{% endif %}
+  {% if hasDelete %}<a href="javascript:void(0)"><span class="msg-icon lt-icon lt-trash lt-large"></span></a>{% endif %}
 </li>

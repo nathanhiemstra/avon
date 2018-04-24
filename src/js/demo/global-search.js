@@ -43,7 +43,7 @@ var GlobalSearch = (function () {
         // $(this).val('');
       },
       formatResult: function (suggestion, currentVal) {
-        return _constructItemTemplate(suggestion);
+        return _constructGlobalSearchItem(suggestion);
       },
       beforeRender: function(container, suggestions) {
         // only show 'view all results' button if we have suggestions
@@ -97,7 +97,7 @@ var GlobalSearch = (function () {
     $els.searchParent.toggleClass('search-expanded');
   };
 
-  var _constructItemTemplate = function(suggestion) {
+  var _constructGlobalSearchItem = function(suggestion) {
     return '<div class="item border-bottom p-3">' +
         '<a href="' + suggestion.itemUrl + '" class="link-plain">' +
           '<div class="d-flex align-items-center flex-fill">' +
