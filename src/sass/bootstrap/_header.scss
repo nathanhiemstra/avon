@@ -107,6 +107,13 @@
         width: 132px;
         overflow-x: visible;
 
+        // mobile only
+        @media (max-width: $screen-sm-min) {
+          .lt-icon:before {
+            color: $white;
+          }
+        }
+
         // desktop
         @media (min-width: $screen-sm-min) {
           order: 2;
@@ -241,7 +248,7 @@
     }
 
     // end desktop
-
+ 
   }
 
   $primary-nav-x-space: 2rem;
@@ -507,7 +514,7 @@
         }
 
         // end .has-sub-items
-
+     
       }
     }
 
@@ -658,7 +665,7 @@
       display: flex;
 
       // transform: translateX(0);
-
+   
     }
 
     &.off-canvas--right {
@@ -772,7 +779,7 @@
         }
 
         // end .sub-list-item a.collapsed
-
+     
       }
 
       // end .sub-list-item a
@@ -798,7 +805,7 @@
     }
 
     // end .sub-list-item
-
+ 
   }
 }
 
