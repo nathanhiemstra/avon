@@ -99,6 +99,7 @@
           }
         }
       }
+
       // end .account-list__user
 
       .account-list__drop {
@@ -121,14 +122,17 @@
 
       .account-list__spanish {
         order: 2;
+
         // desktop
         @media (min-width: $screen-sm-min) {
           order: 3;
         }
       }
+
       .account-list__log {
         order: 3;
         margin-right: 4rem;
+
         // desktop
         @media (min-width: $screen-sm-min) {
           order: 4;
@@ -244,7 +248,7 @@
     }
 
     // end desktop
-
+ 
   }
 
   $primary-nav-x-space: 2rem;
@@ -275,7 +279,6 @@
         .lt-cart {
           margin-left: $spacing-2;
         }
-
       }
     }
 
@@ -291,11 +294,15 @@
         width: 200px;
       }
     }
+
     // END - SEARCH
 
     // START - LOGO
     .primary-nav__logo {
       order: 2;
+
+      // Nayt changed this from 1rem to 2rem - 4/24
+      margin-left: 1.6rem;
 
       // desktop
       @media (min-width: $screen-sm-min) {
@@ -319,8 +326,10 @@
     // START - CART / ORDER
     .primary-nav__cart {
       order: 4;
-      margin-left: 1rem;
-      width:50px;
+
+      // Nayt changed this from 1rem to 2rem - 4/24
+      margin-left: 2rem;
+      width: 50px;
       text-align: right;
 
       // desktop
@@ -505,7 +514,7 @@
         }
 
         // end .has-sub-items
-
+     
       }
     }
 
@@ -656,7 +665,7 @@
       display: flex;
 
       // transform: translateX(0);
-
+   
     }
 
     &.off-canvas--right {
@@ -684,6 +693,7 @@
         color: $white;
         font-size: 36px;
       }
+
       h3 {
         line-height: 1.64;
       }
@@ -769,14 +779,13 @@
         }
 
         // end .sub-list-item a.collapsed
-
+     
       }
 
       // end .sub-list-item a
 
       // desktop
       @media (min-width: $screen-sm-min) {
-
         .arrow-box,
         .lt-icon {
           display: none !important;
@@ -793,11 +802,10 @@
           color: $text-color;
         }
       }
-
     }
 
     // end .sub-list-item
-
+ 
   }
 }
 
