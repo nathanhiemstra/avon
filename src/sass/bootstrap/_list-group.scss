@@ -226,37 +226,47 @@ $checkbox-pad-right: 14px;
     position: relative;
     max-width: 100%;
     overflow-y: hidden;
+    pointer-events: none;
 
     &.has-delete {
       max-width: 90%;
     }
 
+    p span a {
+      pointer-events: all;
+    }
+
     .content__close {
+      pointer-events: all;
       height: 20px;
       opacity: 1;
       transition:
         opacity $ui-animation-time ease,
         height $ui-animation-time ease;
     }
-  }
 
-  .collapsed {
-    .collapse {
-      max-width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .collapsing, .in {
-      white-space: normal;
-      text-overflow: inherit;
-      overflow: visible;
-    }
-    .content__close {
-      height: 0;
-      opacity: 0;
-    }
-  }
+    &.collapsed {
+      pointer-events: all;
+
+      .collapse {
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .collapsing, .in {
+        white-space: normal;
+        text-overflow: inherit;
+        overflow: visible;
+      }
+      .content__close {
+        height: 0;
+        opacity: 0;
+      }
+
+    } // end .content.collapsed
+
+  } // end .content
 
   .collapse[aria-expanded="false"] {
     display: block;

@@ -1,0 +1,19 @@
+<!-- START - SECTION LEVEL - WITH ERROR LIST -->
+{% include "_includes/groups/alerts/alert-level-page-and-section.html.twig" with {
+    alertId: null,
+    alertClasses: 'alert-danger',
+    alertIcon: 'lt-warning',
+    alertIconMsgCols: true,
+    alertMsgHeadline: 'Section level with error list',
+    alertMsg: '
+     <ul class="alert-msg-list">
+      <li>Error item 1</li>
+      <li>Error item 2</li>
+    </ul>
+    ',
+    alertBtnText: false,
+    alertDismissable: false,
+    alertLevel: 'section'
+  }
+%}
+<!-- END - SECTION LEVEL - WITH ERROR LIST -->

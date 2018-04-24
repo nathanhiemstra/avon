@@ -44,6 +44,7 @@
 .alert-dismissible {
   padding-right: $alert-padding + 20;
   position: relative;
+  z-index: 1;
 
   &.sticky {
     z-index: $zindex-alert-dismissable;
@@ -203,9 +204,12 @@
 }
 
 .alert-icon-msg-cols {
+  position: relative;
+  padding-left: 35px;
+
   .alert-msg-icon {
-    float: left;
-    margin-right: 10px;
+    position: absolute;
+    left: -5px;
   }
 
   .alert-msg-txt {
@@ -229,7 +233,7 @@
 
 [class*="alert-level-"] {
   // make sure icons and text inherit alert class colors
-  // :not(.alert-msg-icon-badge) {
+
   .alert-msg-icon,
   .alert-msg-icon:before,
   .close,
@@ -239,7 +243,7 @@
     color: inherit;
   }
 
-  // }
+  width: 100%;
 
   .alert-msg-icon {
     margin-top: -1px;
@@ -307,13 +311,39 @@
   font-weight: bold;
 }
 
-.alert-level-section {
+.alert-level-section,
+.alert-level-inline-text {
   text-align: left;
 }
 
 .alert-level-page,
-.alert-level-section {
+.alert-level-section,
+.alert-level-inline-text {
   border-radius: $border-radius-secondary;
+
+  @extend .small;
+}
+
+.alert-level-inline-rich-text {
+  .alert-msg-icon {
+    font-size: 48px;
+
+    &:before {
+      color: $gray-light;
+    }
+  }
+
+  .alert-msg-icon,
+  .alert-msg-txt {
+    color: $text-muted;
+    display: block;
+  }
+
+  .alert-msg-txt {
+    + .btn {
+      margin-top: $spacing-3;
+    }
+  }
 }
 
 .alert-campaign-timer {
@@ -324,5 +354,11 @@
 
     margin-top: 0;
     margin-bottom: 0;
+  }
+}
+
+.has-error {
+  .lt-warning:before {
+    color: $alert-danger-text;
   }
 }

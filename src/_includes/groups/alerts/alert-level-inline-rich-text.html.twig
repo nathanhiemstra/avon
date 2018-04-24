@@ -1,0 +1,35 @@
+{% if alertId %}
+  {% set alertId = ' id="' ~ alertId ~ '"' %}
+{% endif %}
+
+{% if alertClasses is not defined %}
+  {% set alertClasses = '' %}
+{% endif %}
+
+{% if alertMsg is not defined %}
+  {% set alertMsg = 'This is a default alert message, you should change me!' %}
+{% endif %}
+
+{% if alertLevel == 'page' %}
+  {% set alertLevelClass = ' alert-level-page ' %}
+{% elseif alertLevel == 'inline-text'  %}
+  {% set alertLevelClass = ' alert-level-inline-text ' %}
+{% else %}
+  {% set alertLevelClass = ' alert-level-section ' %}
+{% endif %}
+
+<section class="alert alert-level-inline-rich-text {{ alertClasses }}"{{ alertId }}>
+
+    {% if alertIcon %}
+      <span class="alert-msg-icon {{ alertIcon }}"></span>
+    {% endif %}
+    <span class="alert-msg-txt">
+     {{ alertMsg }}
+    </span>
+    {% if alertBtnText %}
+      <a href="javascript:void(0)" class="btn btn-default btn-soft btn-discourage btn-sm">{{ alertBtnText }}</a>
+    {% endif %}
+  
+  </span>
+</section>
+

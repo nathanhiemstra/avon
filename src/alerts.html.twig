@@ -13,7 +13,7 @@
     {% block main %}
 
       <!-- START - HEADER LEVEL - ERROR -->
-      {% include "_includes/modules/global/alert-level-header.html.twig" with {
+      {% include "_includes/groups/alerts/alert-level-header.html.twig" with {
           alertId: null,
           alertClasses: 'alert-danger',
           alertIcon: 'lt-warning',
@@ -25,7 +25,7 @@
       <!-- END - HEADER LEVEL - ERROR -->
 
       <!-- START - HEADER LEVEL - SUCCESS -->
-      {% include "_includes/modules/global/alert-level-header.html.twig" with {
+      {% include "_includes/groups/alerts/alert-level-header.html.twig" with {
           alertId: null,
           alertClasses: 'alert-success',
           alertIcon: 'lt-checkmark',
@@ -39,7 +39,7 @@
       <section class="container container--page">
 
          <!-- START - SECTION LEVEL -->
-        {% include "_includes/modules/global/alert-level-page-and-section.html.twig" with {
+        {% include "_includes/groups/alerts/alert-level-page-and-section.html.twig" with {
             alertId: null,
             alertClasses: 'alert-danger',
             alertIcon: 'lt-warning',
@@ -62,7 +62,7 @@
         <p>Section level alerts usually are at the top of a section, but can be inserted anywhere. They fill op the width of their parent container. They can contain any trpe of content. However, if it's just one line, it is structured and styled slightly differently. They have a light background.</p>
 
         <!-- START - SECTION LEVEL -->
-        {% include "_includes/modules/global/alert-level-page-and-section.html.twig" with {
+        {% include "_includes/groups/alerts/alert-level-page-and-section.html.twig" with {
             alertId: null,
             alertClasses: 'alert-danger',
             alertIcon: 'lt-warning',
@@ -73,32 +73,42 @@
         %}
         <!-- END - SECTION LEVEL -->
 
+        {% include "_includes/groups/alerts/alert-level-section-generic.twig" %}
+        
 
-        <!-- START - SECTION LEVEL - WITH RICH TEXT -->
-        {% include "_includes/modules/global/alert-level-page-and-section.html.twig" with {
-            alertId: null,
-            alertClasses: 'alert-info',
-            alertIcon: 'lt-warning',
-            alertIconMsgCols: true,
-            alertMsgHeadline: 'Section level - with rich text',
-            alertMsg: '
-             <ul class="alert-msg-list">
-              <li>Invalid Line Number</li>
-              <li>Invalid Quantity</li>
-            </ul>
-            ',
-            alertBtnText: false,
-            alertDismissable: false,
-            alertLevel: 'section'
-          }
-        %}
-        <!-- END - SECTION LEVEL - WITH RICH TEXT -->
+        <hr>
+        <section class="my-5">
+          <h3>Inline level - Input</h3>
+          <p>The label is red with a "warning" icon and the input gets a red border.</p>
+          <div class="form-group has-error">
+            <label class="control-label" for="pdpQuantity">
+              <span class="lt-icon lt-warning lt-medium align-middle m-0"></span>Quantity
+            </label>
+            <input type="text" class="form-control" id="pdpQuantity" placeholder="1">
+          </div>
+        </section>
+        <hr>
+        <section class="my-5">
+          <h3>Inline level - Text</h3>
+          <p>Example: an expanded <a href="your-order.html">Your Order</a> cart.</p>
+          <!-- START - INLINE LEVEL - TEXT -->
+            {% include "_includes/groups/alerts/alert-level-page-and-section.html.twig" with {
+                alertId: null,
+                alertClasses: 'alert-danger',
+                alertIcon: null,
+                alertMsg: 'Error pertaining to this cart',
+                alertBtnText: false,
+                alertLevel: 'inline-text'
+              }
+            %}
+            <!-- END - INLINE LEVEL - TEXT -->
 
-
-        <h3>Inline level</h3>
-        <p>Coming next.</p>
-        <p>{{ fpo.paragraph }}</p>
-        <p>{{ fpo.paragraph }}</p>
+         </section>
+        <hr>         
+        <section class="my-5">
+          <h3>Inline level - Rich Text</h3>
+          <p>Example: Message center or Customer Product Reminder if no content loads. </p>
+        </section>
      
 
         {# <div class="row">
