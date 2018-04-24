@@ -25,7 +25,7 @@
     <div class="description-text">
       {{ headerText }}
       {% if showError %}
-        {% include "_includes/groups/alerts/alert-level-section-generic.twig" %}
+        {% include "_includes/groups/alerts/alert-level-section-generic.twig" with {marginClasses: null } %}
       {% endif %}
       {{ descriptionText }}
     </div>

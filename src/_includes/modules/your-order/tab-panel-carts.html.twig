@@ -1,4 +1,5 @@
-{% include "_includes/groups/alerts/alert-level-section-generic.twig" %}
+{% include "_includes/groups/alerts/alert-level-section-generic.twig" with {marginClasses: 'mt-3 mb-0'} %}
+
 
 <ul class="list-group list-group--checkboxed pt-3 mb-4">
 
@@ -13,7 +14,7 @@
   </li>
 
   <!-- START - MAIN CARTS -->
-  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '1', personName: fpo.person.1, itemCount: '3', total: '90.00', classes: 'd-inline-block', collapsed: false, viewOffers: true} %}
+  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '1', personName: fpo.person.1, itemCount: '3', total: '90.00', classes: 'd-inline-block', collapsed: false, viewOffers: true, showAlert: true} %}
   {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, viewOffers: true} %}
   {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '3', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
   {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '4', personName: fpo.person.4, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true} %}
@@ -46,8 +47,8 @@
   <p class="small text-muted">{{ fpo.sentence }}</p>
 
   <!-- START - EXPIRED ITEMS -->
-  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '9', personName: fpo.person.5, itemCount: '8', total: null, classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true, expiredItems: true} %}
-  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '10', personName: fpo.person.4, itemCount: '8', total: null, classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true, expiredItems: true} %}
+  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '9', personName: fpo.person.5, itemCount: '8', total: null, classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true, expiredItems: true, showAlert: true} %}
+  {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '10', personName: fpo.person.4, itemCount: '8', total: null, classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true, expiredItems: true, showAlert: true} %}
   <!-- END - EXPIRED ITEMS -->
 </ul>
 

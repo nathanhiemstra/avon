@@ -321,7 +321,9 @@
 .alert-level-inline-text {
   border-radius: $border-radius-secondary;
 
-  @extend .small;
+  .alert-msg-list {
+    @extend .small;
+  }
 }
 
 .alert-level-inline-rich-text {
@@ -357,8 +359,37 @@
   }
 }
 
+.show-when-has-error {
+  display: none;
+}
+
 .has-error {
-  .lt-warning:before {
+  .show-when-has-error {
+    display: inline-block;
+  }
+
+  .lt-icon:before {
     color: $alert-danger-text;
+  }
+
+  &--icon-inline-absolute {
+    padding-left: 24px;
+    position: relative;
+    display: block;
+
+    .lt-icon {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -8px;
+    }
+  }
+
+  &--icon-inline {
+    .lt-icon {
+      margin-bottom: 2px;
+      vertical-align: middle;
+      margin-right: 4px;
+    }
   }
 }

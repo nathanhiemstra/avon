@@ -22,5 +22,17 @@
 {% if theValue %}
   {% set theValue = ' value="' ~ theValue ~ '"' %}
 {% endif %}
-
-<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}{{ data }}>
+{% if hasInlineErrorIcon %}
+  {% set errorClass = 'has-error--icon-inline' %}
+{% endif %}
+{% if hasAbsoluteErrorIcon %}
+  {% set errorClass = 'has-error--icon-inline-absolute' %}
+{% endif %}
+{% if (hasInlineErrorIcon) or (hasAbsoluteErrorIcon) %}
+  {% set errorIcon %}{% include "_includes/elements/forms/label-error-icon.html.twig" %}{% endset %}
+  {% set hasInlineErrorIconStart = '<span class="' ~ errorClass ~ '">' %}
+  {% set hasInlineErrorIconEnd = '</span">' %}
+{% endif %}
+{{ hasInlineErrorIconStart }}
+{{ errorIcon }}<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}{{ data }}>
+{{ hasInlineErrorIconEnd }}

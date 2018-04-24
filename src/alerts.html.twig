@@ -73,19 +73,73 @@
         %}
         <!-- END - SECTION LEVEL -->
 
-        {% include "_includes/groups/alerts/alert-level-section-generic.twig" %}
+        {% include "_includes/groups/alerts/alert-level-section-generic.twig" with {marginClasses: null } %}
         
 
         <hr>
         <section class="my-5">
           <h3>Inline level - Input</h3>
+
+          <h6 class="mt-5">With label</h6>
           <p>The label is red with a "warning" icon and the input gets a red border.</p>
           <div class="form-group has-error">
-            <label class="control-label" for="pdpQuantity">
-              <span class="lt-icon lt-warning lt-medium align-middle m-0"></span>Quantity
+    {#         <label class="control-label" for="pdpQuantity">
+              {% include "_includes/elements/forms/label-error-icon.html.twig" %}Quantity
             </label>
             <input type="text" class="form-control" id="pdpQuantity" placeholder="1">
+ #}
+
+            {% include components.groups.forms.inputAndLabel with {
+              id: 'error-with-label', 
+              mainLabel: 'Quantity',
+              haslabelErrorIcon: true,
+              hasInlineErrorIcon: null,
+              hasAbsoluteErrorIcon: null,
+              classes: 'form-control'
+            } %}
           </div>
+
+          <h6 class="mt-5">Without label - Inline</h6>
+          <p>When the input has a set width. The red "warning" icon goes to the left of the input gets a red border.</p>
+          <div class="form-group has-error">
+            {% include components.elements.forms.input with {
+              placeholder: '',
+              theValue: '30000',
+              size: '7',
+              haslabelErrorIcon: null,
+              hasInlineErrorIcon: true,
+              hasAbsoluteErrorIcon: null,
+              classes: 'form-control form-control-inline'
+            } %}
+          </div>
+
+          <h6 class="mt-5">Without label - Position Absolute. </h6>
+          <p>When input fills the width of it's container (set to width: 100%)</p>
+          <div class="form-group has-error">
+            {% include components.elements.forms.input with {
+              placeholder: '',
+              theValue: '30000',
+              haslabelErrorIcon: null,
+              hasInlineErrorIcon: null,
+              hasAbsoluteErrorIcon: true,
+              classes: 'form-control'
+            } %}
+          </div>
+
+
+
+          <h6 class="mt-5">Radio</h6>
+          <div class="form-group has-error">
+            {% include components.elements.forms.radio with {
+              name: 'pay-type',
+              theValue: 'quick-pay',
+              theLabel: 'QuikPAY',
+              disabled: false,
+              haslabelErrorIcon: true
+            } %}
+          </div>
+              
+
         </section>
         <hr>
         <section class="my-5">
@@ -107,7 +161,25 @@
         <hr>         
         <section class="my-5">
           <h3>Inline level - Rich Text</h3>
-          <p>Example: Message center or Customer Product Reminder if no content loads. </p>
+          <p>Inline level with rich text alerts are for when somehting has not loaded on the page. This fills the spot where the content should be. </p>
+          <!-- START - INLINE LEVEL - RICH TEXT -  -->
+          {% include "_includes/groups/alerts/alert-level-inline-rich-text.html.twig" with {
+              alertId: null,
+              alertClasses: null,
+              alertIcon: 'lt-warning',
+              alertIconMsgCols: true,
+              alertMsgHeadline: null,
+              alertMsg: '
+                <h6>Something is unable to be loaded</h6>
+                <p>We’re sorry for the inconvenience. Lorem ipsum dolor sit amet consect adipiscing elit verbose.</p>
+                <p>Please refresh the page or try back at a later time.</p>
+              ',
+              alertBtnText: 'Refresh page',
+              alertDismissable: false,
+              alertLevel:  'inline-rich-text'
+            }
+          %}
+          <!-- END - INLINE LEVEL - RICH TEXT - -->
         </section>
      
 

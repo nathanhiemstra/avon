@@ -1,15 +1,17 @@
-{% include components.elements.forms.label with {'id': id, 'mainLabel': mainLabel %}
+{% include components.elements.forms.label with {'id': id, 'mainLabel': mainLabel, haslabelErrorIcon: haslabelErrorIcon} %}
 {% include components.elements.forms.input with {
-  'id':               id, 
-  'items':            items, 
-  'classes':          classes, 
-  'type':             type, 
-  'placeholder':      placeholder, 
-  'theValue':         theValue, 
-  'size':             size, 
-  'maxlength':        maxlength, 
-  'includeValueData': includeValueData, 
-  'theValue':         theValue  
+  'id':                 id, 
+  'items':              items, 
+  'classes':            classes, 
+  'type':               type, 
+  'placeholder':        placeholder, 
+  'theValue':           theValue, 
+  'size':               size, 
+  'maxlength':          maxlength, 
+  'includeValueData':   includeValueData, 
+  'theValue':           theValue,
+  hasInlineErrorIcon:   hasInlineErrorIcon,
+  hasAbsoluteErrorIcon: hasAbsoluteErrorIcon,
   %}
 {% if errorMessage %}
   {% include components.elements.forms.errorMessage with {'errorMessage': errorMessage} %}

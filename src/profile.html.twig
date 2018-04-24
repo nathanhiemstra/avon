@@ -136,9 +136,16 @@
           <!-- START - CONTACT INFORMATION EDIT -->
           <section class="row">
 
-            <h5 class="my-5">Contact Information</h5>
+            
 
-            {% include "_includes/groups/alerts/alert-level-section-generic.twig" %}
+            <div class="col col-sm-12">
+
+              <h5 class="my-5">Contact Information</h5>
+              
+              {% include "_includes/groups/alerts/alert-level-section-generic.twig" with {marginClasses: 'mb-0' } %}
+            </div>
+
+            
 
             <div class="col col-md-7">
 
@@ -251,7 +258,7 @@
 
             <h5 class="my-5">Settings</h5>
 
-            {% include "_includes/groups/alerts/alert-level-section-generic.twig" %}
+            {% include "_includes/groups/alerts/alert-level-section-generic.twig" with {marginClasses: null } %}
 
             <form role="form">
 
