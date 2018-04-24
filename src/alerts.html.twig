@@ -83,12 +83,6 @@
           <h6 class="mt-5">With label</h6>
           <p>The label is red with a "warning" icon and the input gets a red border.</p>
           <div class="form-group has-error">
-    {#         <label class="control-label" for="pdpQuantity">
-              {% include "_includes/elements/forms/label-error-icon.html.twig" %}Quantity
-            </label>
-            <input type="text" class="form-control" id="pdpQuantity" placeholder="1">
- #}
-
             {% include components.groups.forms.inputAndLabel with {
               id: 'error-with-label', 
               mainLabel: 'Quantity',

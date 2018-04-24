@@ -352,21 +352,38 @@
                       </div>
                       <div class="row">
                         <div class="col-md-6">
-                        <p class="mb-3 text-danger small"><strong>ZIP</strong></p>
                           <div class="form-group has-error">
-                          {% include components.elements.forms.input with {
-                            placeholder: '',
-                          } %}
-                          <small class="mb-3 text-danger font-weight-bold">This field is mandatory</small>
+                            {% include components.groups.forms.inputAndLabel with {
+                              id: 'pay-avon-zip', 
+                              mainLabel: 'ZIP',
+                              haslabelErrorIcon: true,
+                              hasInlineErrorIcon: null,
+                              hasAbsoluteErrorIcon: null,
+                              classes: 'form-control'
+                            } %}
                           </div>
                         </div>
+
                         <div class="col-md-6">
-                        <p class="mb-3 small text-muted font-weight-bold">City</p>
+                          {% include components.groups.forms.inputAndLabel with {
+                            id: 'pay-avon-city', 
+                            mainLabel: 'City',
+                            placeholder: 'Albuquerque',
+                            haslabelErrorIcon: true,
+                            hasInlineErrorIcon: null,
+                            hasAbsoluteErrorIcon: null,
+                            classes: 'form-control'
+                          } %}
+                    
+
+
+
+                       {#  <p class="mb-3 small text-muted font-weight-bold"></p>
                           <div class="form-group font-weight-bold">
                             {% include components.elements.forms.input with {
                               placeholder: 'Albuquerque'
                             } %}
-                          </div>
+                          </div> #}
                         </div>
                       </div>
 
