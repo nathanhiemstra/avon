@@ -3,12 +3,20 @@
 // --------------------------------------------------
 
 // Dropdown triangle
-.dropdown .lt-triangle-down {
-  font-size: 1em;
-  display: inline-block;
-  vertical-align: middle;
-  margin-bottom: 0.1em;
-  margin-left: 0.1em;
+.dropdown {
+  .lt-triangle-down {
+    font-size: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0.1em;
+    margin-left: 0.1em;
+  }
+  &.open {
+    .lt-triangle-down {
+        transform: rotate(-180deg);
+        transform-origin: center center;
+      }
+  }
 }
 
 // Dropdown arrow/caret

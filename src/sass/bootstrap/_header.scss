@@ -107,10 +107,10 @@
         width: 132px;
         overflow-x: visible;
 
-        &.open {
-          .lt-icon {
-            transform: rotate(-180deg);
-            transform-origin: center center;
+        // mobile only
+        @media (max-width: $screen-sm-min) {
+          .lt-icon:before {
+            color: $white;
           }
         }
 
