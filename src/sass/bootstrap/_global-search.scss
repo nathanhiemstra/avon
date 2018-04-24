@@ -21,6 +21,8 @@ $gray-ultralight: lighten($gray-lighter, 2%);
     }
 
     a {
+      height: 100%;
+
       span:nth-child(2) {
         display: inline-block;
       }
@@ -28,13 +30,12 @@ $gray-ultralight: lighten($gray-lighter, 2%);
       .lt-close {
         display: none;
         position: absolute;
-        left: 330px;
+        right: $spacing-4;
         z-index: 99;
       }
     }
 
     .autocomplete-suggestions {
-      // TODO :: bring shadows in this file inline with global shadows
       box-shadow: -4px 4px 4px rgba(0,0,0,0.05), 4px 4px 4px rgba(0,0,0,0.05);
     }
 
@@ -72,7 +73,7 @@ $gray-ultralight: lighten($gray-lighter, 2%);
       justify-content: center;
       top: 0;
       right: 0;
-      height: 69px; // TODO :: make this header height var?
+      height: 100%;
       z-index: 10;
 
       a {
@@ -87,6 +88,10 @@ $gray-ultralight: lighten($gray-lighter, 2%);
 
         .lt-search {
           padding: $spacing-3;
+        }
+
+        .lt-close {
+          display: inline-block;
         }
 
         input {
@@ -110,23 +115,24 @@ $gray-ultralight: lighten($gray-lighter, 2%);
   // in progress expanding and collapsing states
   &.collapsing,
   &.expanding {
-    height: 69px;
+    height: 73px;
+    border-bottom: 1px solid $border-color;
     z-index: 10;
 
     .primary-nav__cart,
     .primary-nav__logo,
     .primary-nav__toggle {
       opacity: 0;
-    }
-  }
-
-  &.expanding {
-    .primary-nav__cart,
-    .primary-nav__logo,
-    .primary-nav__toggle {
       transition: opacity 0s;
     }
   }
+
+  // &.expanding {
+  //   .primary-nav__cart,
+  //   .primary-nav__logo,
+  //   .primary-nav__toggle {
+  //   }
+  // }
 
   /*
    * ----------
@@ -208,6 +214,7 @@ $gray-ultralight: lighten($gray-lighter, 2%);
 
           .lt-close {
             display: inline-block;
+            left: 330px;
           }
 
           input.primary-nav__search-input {
