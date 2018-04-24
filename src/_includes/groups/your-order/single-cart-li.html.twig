@@ -19,18 +19,6 @@
     {% endif %}
   </dl>
 
-  <!-- START - INLINE LEVEL - TEXT -->
-  {% include "_includes/groups/alerts/alert-level-page-and-section.html.twig" with {
-      alertId: null,
-      alertClasses: 'alert-danger',
-      alertIcon: null,
-      alertMsg: 'Error pertaining to this cart',
-      alertBtnText: false,
-      alertLevel: 'inline-text'
-    }
-  %}
-  <!-- END - INLINE LEVEL - TEXT -->
-
   <dl class="clearfix ml-5 mt-0 mt-md-3 mb-3 mr-0">
     {% if expiredItems %}
       {% set itemsTextExpired = " expired " %}
@@ -44,6 +32,18 @@
     </dd>
   </dl>
   <!-- END - CART SUMMARY -->
+
+   <!-- START - INLINE LEVEL - TEXT -->
+  {% include "_includes/groups/alerts/alert-level-page-and-section.html.twig" with {
+      alertId: null,
+      alertClasses: 'alert-danger',
+      alertIcon: null,
+      alertMsg: 'Error pertaining to this cart',
+      alertBtnText: false,
+      alertLevel: 'inline-text'
+    }
+  %}
+  <!-- END - INLINE LEVEL - TEXT -->
 
   <!-- START - CART DETAILS (EXPANDABLE) -->
   <div class="details collapse {% if collapsed == false %} in {% endif %}" id="collapse-{{ indexNum }}-cart-item">

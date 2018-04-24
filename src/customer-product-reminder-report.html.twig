@@ -34,6 +34,26 @@
           </div>
         </div>
 
+        <!-- START - SECTION LEVEL - WITH ERROR LIST -->
+        {% include "_includes/groups/alerts/alert-level-inline-rich-text.html.twig" with {
+            alertId: null,
+            alertClasses: null,
+            alertIcon: 'lt-warning',
+            alertIconMsgCols: true,
+            alertMsgHeadline: null,
+            alertMsg: '
+              <h6>Product Information unable to be loaded</h6>
+              <p>We’re sorry for the inconvenience. Lorem ipsum dolor sit amet consect adipiscing elit verbose.</p>
+              <p>Please refresh the page or try back at a later time.</p>
+              <a href="javascript:void(0)" class="btn btn-default btn-soft btn-discourage btn-sm">Refresh page</a>
+            ',
+            alertBtnText: false,
+            alertDismissable: false,
+            alertLevel:  null
+          }
+        %}
+        <!-- END - SECTION LEVEL - WITH ERROR LIST -->
+
         <!-- START - TABLES -->
 
         <!-- Developer note: On mobile vs tablet/desktop, the "phone/cal" and "email" links behave differently. -->
@@ -78,25 +98,7 @@
         </ul>
         <!-- END - PAGINATION -->
 
-        <!-- START - SECTION LEVEL - WITH ERROR LIST -->
-        {% include "_includes/groups/alerts/alert-level-inline-rich-text.html.twig" with {
-            alertId: null,
-            alertClasses: null,
-            alertIcon: 'lt-warning',
-            alertIconMsgCols: true,
-            alertMsgHeadline: null,
-            alertMsg: '
-              <h6>Product Information unable to be loaded</h6>
-              <p>We’re sorry for the inconvenience. Lorem ipsum dolor sit amet consect adipiscing elit verbose.</p>
-              <p>Please refresh the page or try back at a later time.</p>
-              <a href="javascript:void(0)" class="btn btn-default btn-soft btn-discourage btn-sm">Refresh page</a>
-            ',
-            alertBtnText: false,
-            alertDismissable: false,
-            alertLevel:  null
-          }
-        %}
-        <!-- END - SECTION LEVEL - WITH ERROR LIST -->
+        
 
 
       {% endblock %}

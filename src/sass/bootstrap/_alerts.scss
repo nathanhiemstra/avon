@@ -338,6 +338,12 @@
     color: $text-muted;
     display: block;
   }
+
+  .alert-msg-txt {
+    + .btn {
+      margin-top: $spacing-3;
+    }
+  }
 }
 
 .alert-campaign-timer {
