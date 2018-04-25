@@ -66,7 +66,7 @@ n:avon-poc yoursweetusername$ gulp
 [IcoMoon](https://icomoon.io/app/)
   - u: icomoon@wondergiant.com
   - p: 6E7%IH3!D2My&^&Kp&%Qp
-* Update Process Part 1: [https://vimeo.com/259414033](https://vimeo.com/259413997)
+* Update Process Part 1: [https://vimeo.com/259413997](https://vimeo.com/259413997)
   - p: avonfont
 * Update Process Part 2: [https://vimeo.com/259414033](https://vimeo.com/259414033)
   - p: avonfont
