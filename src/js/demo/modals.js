@@ -29,10 +29,12 @@ var Modals = ( function () {
   // private methods
   var _addListeners = function () {
 
-    _updateDataToggles();
-    $( window ).resize( function () {
+    if($els.modalPopoverCombos.length) {
       _updateDataToggles();
-    } );
+      $( window ).resize( function () {
+        _updateDataToggles();
+      } );
+    }
 
     $els.modalPopoverCombos.on( 'show.bs.popover', function () {
       $( this ).addClass( 'open' );
