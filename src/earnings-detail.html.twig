@@ -1,0 +1,66 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          {% include "_includes/groups/navigation/back-link.twig" with {label: "Back to Earnings"} %}
+
+          <h2>Campaign 9 Details</h2>
+
+          <!--START - ORDER DETAILS-->
+          <div class="my-0 my-md-3 table-responsive">
+            <table class="table table-striped table-bordered-outside-only m-0">
+
+              <thead>
+                <tr>
+                  <th>Sales Type</th>
+                  <th>Order Size</th>
+                  <th>Estimated Earnings</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>23</td>
+                  <td>4</td>
+                  <td>728080</td>
+                </tr>
+                <tr>
+                  <td>23</td>
+                  <td>4</td>
+                  <td>103615</td>
+                </tr>
+                <tr>
+                  <td>23</td>
+                  <td>4</td>
+                  <td>857083</td>
+                </tr>
+                <tr>
+              </tbody>
+
+            </table>
+          </div>
+          <!--END - ORDER DETAILS-->
+
+        </div>
+
+      </div>
+
+    </section>
+
+  {% endblock %}
+
+{% endblock %}
