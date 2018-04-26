@@ -3,12 +3,12 @@
     <label class="control-label">Store URL</label>
     {% include "_includes/elements/forms/input.html.twig" with {
       type : 'url',
-      value: 'http://youravon.com/janejohnson5983'
+      theValue: 'http://youravon.com/janejohnson5983'
     } %}
   </div>
-  <div class="form-group">
-    <button>Copy Link</button>
-    <button>View Store</button>
-    <button>Edit Store</button>
+  <div class="form-group d-flex align-items-start justify-content-between">
+    <button href="#" class="col-xs-4 btn btn-default btn-soft btn-sm nowrap">Copy Link</button>
+    <button href="#" class="col-xs-4 btn btn-default btn-soft btn-sm nowrap mx-4">View Store</button>
+    <button href="#" class="col-xs-4 btn btn-default btn-soft btn-sm nowrap">Edit Store</button>
   </div>
 </form>

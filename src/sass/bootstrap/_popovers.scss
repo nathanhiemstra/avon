@@ -137,9 +137,9 @@
     pointer-events: none;
   }
 }
-.popover--cart {
+.popover--box {
   max-width: inherit;
-  min-width: 325px;
+  min-width: 375px;
   left: initial !important;
   right: $spacing-2 !important;
 
@@ -172,10 +172,4 @@
         transform: translateX(0);
       }
   }
-}
-
-
-// My Store popover
-.popover--my-store {
-  
 }

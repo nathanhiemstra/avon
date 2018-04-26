@@ -18,7 +18,7 @@ var Modals = ( function () {
     $els = {
       body: $( 'body' ),
       modalTriggers: $( '[data-toggle="modal"]' ),
-      modalPopoverCombos: $('[data-popover-modal-combo]')
+      modalPopoverCombos: $( '[data-popover-modal-combo]' )
     };
 
     _addListeners();
@@ -30,14 +30,22 @@ var Modals = ( function () {
   var _addListeners = function () {
 
     _updateDataToggles();
-    $(window).resize(function() {
+    $( window ).resize( function () {
       _updateDataToggles();
-    });
+    } );
+
+    $els.modalPopoverCombos.on( 'show.bs.popover', function () {
+      $( this ).addClass( 'open' );
+    } );
+
+    $els.modalPopoverCombos.on( 'hide.bs.popover', function () {
+      $( this ).removeClass( 'open' );
+    } );
 
     // Since we're opening popovers programatically, we must close them programatically
-    $els.modalPopoverCombos.on('blur', function( e ) {
-      _hidePopover(this);
-    });
+    // $els.modalPopoverCombos.on('blur', function( e ) {
+    //   _hidePopover(this);
+    // });
 
     $( document ).on( 'newModalsAvailable', function ( e ) {
       // console.log('newModalsAvailable');
@@ -68,29 +76,32 @@ var Modals = ( function () {
 
 
 
-  var _updateDataToggles = function() {
+  var _updateDataToggles = function () {
     var windowWidth = $( window ).width();
     var mobileWidth = 768;
 
-    if ( windowWidth > mobileWidth ) {
+    if( windowWidth > mobileWidth ) {
       // TABLET / DESKTOP - add popover in place of modal
-      $els.modalPopoverCombos.attr('data-toggle', 'popover');
-      $els.modalPopoverCombos.popover();
+      $els.modalPopoverCombos.attr( 'data-toggle', 'popover' );
+      $els.modalPopoverCombos.popover()
+        .data( 'bs.popover' )
+        .tip()
+        .addClass( 'popover--box' );
     } else {
       // MOBILE - add modal in place of popover
-      $els.modalPopoverCombos.attr('data-toggle', 'modal');
-      $els.modalPopoverCombos.popover('destroy');
+      $els.modalPopoverCombos.attr( 'data-toggle', 'modal' );
+      $els.modalPopoverCombos.popover( 'destroy' );
     }
   };
 
 
 
-  var _showPopover = function(itemClicked) {
-    $(itemClicked).popover('show');
+  var _showPopover = function ( itemClicked ) {
+    $( itemClicked ).popover( 'show' );
   };
 
-  var _hidePopover = function(itemClicked) {
-    $(itemClicked).popover('hide');
+  var _hidePopover = function ( itemClicked ) {
+    $( itemClicked ).popover( 'hide' );
   };
 
 
