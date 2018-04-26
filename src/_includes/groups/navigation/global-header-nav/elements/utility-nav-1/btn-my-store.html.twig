@@ -1,18 +1,19 @@
+{% set popoverMarkup %}
+  {% include '_includes/modules/my-store/my-store-form.html.twig' %}
+{% endset %}
+
 <li class="col-xs-6 dropdown">
-  <a href="#" id="storeDrop" role="button" class="dropdown-toggle text-uppercase btn-trans-light-responsive" data-toggle="dropdown">
+  <a href="#" id="storeDrop" role="button"
+    class="text-uppercase btn-trans-light-responsive"
+    data-toggle="modal"
+    data-target="#my-store-modal"
+    data-popover-modal-combo="true"
+    data-placement="bottom"
+    data-container="body"
+    data-html="true"
+    data-content="{{ popoverMarkup | e('html') }}">
     <span class="lt-icon lt-store lt-medium"></span>
     <strong>My Store</strong>
     <span class="lt-icon lt-triangle-down"></span>
   </a>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="storeDrop">
-    <li >
-      <a role="menuitem" tabindex="-1" href="#">Something</a>
-    </li>
-    <li role="presentation">
-      <a role="menuitem" tabindex="-1" href="#">Another action</a>
-    </li>
-    <li role="presentation">
-      <a role="menuitem" tabindex="-1" href="#">Something else here</a>
-    </li>
-  </ul>
 </li>

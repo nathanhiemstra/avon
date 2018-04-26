@@ -17,7 +17,8 @@ var Modals = ( function () {
     // grab the DOM els we need
     $els = {
       body: $( 'body' ),
-      modalTriggers: $( '[data-toggle="modal"]' )
+      modalTriggers: $( '[data-toggle="modal"]' ),
+      modalPopoverCombos: $('[data-popover-modal-combo]')
     };
 
     _addListeners();
@@ -28,9 +29,15 @@ var Modals = ( function () {
   // private methods
   var _addListeners = function () {
 
-    $els.modalTriggers.on( 'click', function ( e ) {
-      _handleModalOpen( e );
-    } );
+    _updateDataToggles();
+    $(window).resize(function() {
+      _updateDataToggles();
+    });
+
+    // Since we're opening popovers programatically, we must close them programatically
+    $els.modalPopoverCombos.on('blur', function( e ) {
+      _hidePopover(this);
+    });
 
     $( document ).on( 'newModalsAvailable', function ( e ) {
       // console.log('newModalsAvailable');
@@ -57,6 +64,33 @@ var Modals = ( function () {
       $carousel.carousel( slideTo );
     } );
 
+  };
+
+
+
+  var _updateDataToggles = function() {
+    var windowWidth = $( window ).width();
+    var mobileWidth = 768;
+
+    if ( windowWidth > mobileWidth ) {
+      // TABLET / DESKTOP - add popover in place of modal
+      $els.modalPopoverCombos.attr('data-toggle', 'popover');
+      $els.modalPopoverCombos.popover();
+    } else {
+      // MOBILE - add modal in place of popover
+      $els.modalPopoverCombos.attr('data-toggle', 'modal');
+      $els.modalPopoverCombos.popover('destroy');
+    }
+  };
+
+
+
+  var _showPopover = function(itemClicked) {
+    $(itemClicked).popover('show');
+  };
+
+  var _hidePopover = function(itemClicked) {
+    $(itemClicked).popover('hide');
   };
 
 

@@ -60,7 +60,3 @@ var PopoverCustomizer = (function () {
   };
 
 })();
-
-
-
-
