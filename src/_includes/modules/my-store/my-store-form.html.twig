@@ -1,14 +1,15 @@
 <form id="#storeDrop-content">
   <div class="form-group">
-    <label class="control-label">Store URL</label>
+    {% if isModal %}<label class="control-label">Store URL</label>{% endif %}
     {% include "_includes/elements/forms/input.html.twig" with {
       type : 'url',
-      theValue: 'http://youravon.com/janejohnson5983'
+      theValue: 'http://youravon.com/janejohnson5983',
+      readonly: true
     } %}
   </div>
-  <div class="form-group d-flex align-items-start justify-content-between">
-    <button href="#" class="col-xs-4 btn btn-default btn-soft btn-sm nowrap">Copy Link</button>
-    <button href="#" class="col-xs-4 btn btn-default btn-soft btn-sm nowrap mx-4">View Store</button>
-    <button href="#" class="col-xs-4 btn btn-default btn-soft btn-sm nowrap">Edit Store</button>
+  <div class="form-group d-flex align-items-start justify-content-between mb-0">
+    <button href="javascript:void(0)" class="copy-input-btn col-xs-4 btn btn-discourage btn-soft btn-sm nowrap">Copy Link</button>
+    <button href="#" class="col-xs-4 btn btn-discourage btn-soft btn-sm nowrap mx-4">View Store</button>
+    <button href="#" class="col-xs-4 btn btn-discourage btn-soft btn-sm nowrap">Edit Store</button>
   </div>
 </form>

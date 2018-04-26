@@ -1,5 +1,7 @@
 {% set popoverMarkup %}
-  {% include '_includes/modules/my-store/my-store-form.html.twig' %}
+  {% include '_includes/modules/my-store/my-store-form.html.twig' with {
+    isModal: false
+  } %}
 {% endset %}
 
 <li class="col-xs-6 dropdown">
@@ -14,6 +16,6 @@
     data-content="{{ popoverMarkup | e('html') }}">
     <span class="lt-icon lt-store lt-medium"></span>
     <strong>My Store</strong>
-    <span class="lt-icon lt-triangle-down"></span>
+    <span class="lt-icon lt-triangle-down hidden-xs"></span>
   </a>
 </li>
