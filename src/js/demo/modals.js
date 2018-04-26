@@ -29,7 +29,7 @@ var Modals = ( function () {
   // private methods
   var _addListeners = function () {
 
-    if($els.modalPopoverCombos.length) {
+    if( $els.modalPopoverCombos.length ) {
       _updateDataToggles();
       $( window ).resize( function () {
         _updateDataToggles();
@@ -43,11 +43,6 @@ var Modals = ( function () {
     $els.modalPopoverCombos.on( 'hide.bs.popover', function () {
       $( this ).removeClass( 'open' );
     } );
-
-    // Since we're opening popovers programatically, we must close them programatically
-    // $els.modalPopoverCombos.on('blur', function( e ) {
-    //   _hidePopover(this);
-    // });
 
     $( document ).on( 'newModalsAvailable', function ( e ) {
       // console.log('newModalsAvailable');
@@ -76,7 +71,16 @@ var Modals = ( function () {
 
   };
 
-
+  var _checkTarget = function ( e ) {
+    var $target = $( e.target );
+    var hasPopover = $target.closest( '.popover' ).length;
+    var isTrigger = $target.closest( '[data-toggle="popover"]' ).length;
+    if( isTrigger || hasPopover ) {
+      return;
+    } else {
+      $els.modalPopoverCombos.popover( 'hide' );
+    }
+  };
 
   var _updateDataToggles = function () {
     var windowWidth = $( window ).width();
@@ -89,14 +93,19 @@ var Modals = ( function () {
         .data( 'bs.popover' )
         .tip()
         .addClass( 'popover--box' );
+
+      // add listener on document so we can close popover on click outside
+      $( document ).on( 'click', _checkTarget );
+
     } else {
       // MOBILE - add modal in place of popover
       $els.modalPopoverCombos.attr( 'data-toggle', 'modal' );
       $els.modalPopoverCombos.popover( 'destroy' );
+
+      // clean up document listener
+      $( document ).unbind( 'click', _checkTarget );
     }
   };
-
-
 
   var _showPopover = function ( itemClicked ) {
     $( itemClicked ).popover( 'show' );
@@ -105,8 +114,6 @@ var Modals = ( function () {
   var _hidePopover = function ( itemClicked ) {
     $( itemClicked ).popover( 'hide' );
   };
-
-
 
   var _handleModalOpen = function ( e ) {
 
@@ -130,8 +137,6 @@ var Modals = ( function () {
     if( modalOpen ) _handleModalSwitch( e );
 
   };
-
-
 
   var _handleModalSwitch = function ( e ) {
     console.log( 'Modal is nested' );

@@ -1,5 +1,7 @@
 {% set popoverMarkup %}
-  {% include '_includes/modules/my-store/my-store-form.html.twig' %}
+  {% include '_includes/modules/my-store/my-store-form.html.twig' with {
+    isModal: false
+  } %}
 {% endset %}
 
 <li class="col-xs-6 dropdown">

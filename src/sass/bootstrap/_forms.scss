@@ -180,6 +180,10 @@ output {
 
   }
 
+  &[readonly] {
+    border-color: $input-bg-disabled;
+  }
+
   &[disabled],
   fieldset[disabled] & {
     cursor: $cursor-disabled;
