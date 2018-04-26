@@ -33,33 +33,26 @@
 
           <hr>
 
-          <!-- START - SECTION LEVEL - WITH ERROR LIST -->
-          {% include "_includes/groups/alerts/alert-level-page-and-section.html.twig" with {
-              alertId: null,
-              alertClasses: 'alert-danger',
-              alertIcon: 'lt-warning',
-              alertIconMsgCols: true,
-              alertMsgHeadline: 'Section level with error list',
-              alertMsg: '
-               <ul class="alert-msg-list">
-                <li>Sorry, we are unable to process this request. Please review payment amount to ensure it is not greater than $25,000 or does not exceed your balance by more than $1,000.</li>
-                <li>Field PIN is mandatory, please fill it in.</li>
-                <li>Zipcode field is mandatory.</li>
-              </ul>
-              ',
-              alertBtnText: false,
-              alertDismissable: false,
-              alertLevel: 'section'
-            }
-          %}
-          <!-- END - SECTION LEVEL - WITH ERROR LIST -->
-
-
+          <!-- START - SECTION LEVEL ERROR -->
+          {% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+            alertIcon: 'lt-warning-fill',
+            alertHeadline: 'Section level error with error list',
+            alertBody: '
+            <ul class="alert-list">
+              <li>Sorry, we are unable to process this request. Please review payment amount to ensure it is not greater than $25,000 or does not exceed your balance by more than $1,000.</li>
+              <li>Field PIN is mandatory, please fill it in.</li>
+              <li>Zipcode field is mandatory.</li>
+            </ul>',
+            alertBtnText: null,
+            alertClasses: 'alert-danger',
+            alertLevel: 'content',
+            alertDismissable: false,
+            alertId: null
+          } %}
+          <!-- END - SECTION LEVEL ERROR -->
 
           <!-- START - PAYMENT AMOUNT SECTION -->
           <div class="">
-
-
             <div class="ml-4">
             <p><strong>How much are you paying today?</strong></p>
 
@@ -243,8 +236,9 @@
                   disabled: true,
                   haslabelErrorIcon: false
                 } %}
-                <strong class="text-danger small">(Account is currently being processed)</strong>
+                
                 <div class="ml-5">
+                  <strong class="text-danger small ml-3">(Account is currently being processed)</strong>
                   <p class="small text-muted ml-3"><em>The enrollment process takes 6 days to complete from the date you submitted your request. Once the enrollment process has completed, please activate your QuikPAY account by calling 1-877-QuikPAY (1-877-784-5729) and resetting your PIN #. After activating your QuikPAY Pin, please allow 24 hours before it updates on the site.</em></p>
                 </div>
               </div>

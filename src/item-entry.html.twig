@@ -52,12 +52,17 @@
           </div>
 
           <div class="col-xs-12 col-sm-2 item-entry-col">
-            <div class="form-group has-error has-error--absolute-2-line item-entry-quantity">
-              <label for="item-entry-quantity" class="control-label">Quantity</label>
-              <input id="item-entry-quantity" type="number" class="form-control" value="1">
-              <p class="text-danger small label-abs">
-                <strong>You have exceeded your demo limit.<br>Please modify the quantity.</strong>
-              </p>
+            <div class="form-group has-error item-entry-quantity">
+              {% include components.groups.forms.inputAndLabel with {
+                id: 'item-entry-quantity"', 
+                mainLabel: 'Quantity',
+                haslabelErrorIcon: true,
+                hasInlineErrorIcon: null,
+                hasAbsoluteErrorIcon: null,
+                classes: 'form-control',
+                type: 'number',
+                theValue: '1'
+              } %}
             </div>
           </div>
 

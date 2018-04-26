@@ -46,10 +46,14 @@
         } %}
       </div>
 
-      <div class="form-group">
-        <label class="control-label">Bank Account Number<span class="lt-icon lt-info lt-sm align-middle ml-4" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span></label>
+      <div class="form-group has-error">
+        <label class="control-label">{% include "_includes/elements/forms/label-error-icon.html.twig" %}Bank Account Number<span class="lt-icon lt-info lt-sm align-middle ml-4" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span></label>
         {% include "_includes/elements/forms/input.html.twig" with {
-          type : 'text'
+          type : 'text',
+          haslabelErrorIcon: true,
+          hasInlineErrorIcon: null,
+          hasAbsoluteErrorIcon: null,
+          classes: 'form-control'
         } %}
       </div>
 

@@ -34,17 +34,22 @@
   <!-- END - CART SUMMARY -->
 
   {% if showAlert %}
-    <!-- START - INLINE LEVEL - TEXT -->
-    {% include "_includes/groups/alerts/alert-level-page-and-section.html.twig" with {
-        alertId: null,
-        alertClasses: 'alert-danger mb-0',
-        alertIcon: null,
-        alertMsg: 'Error pertaining to this cart',
-        alertBtnText: false,
-        alertLevel: 'inline-text'
-      }
-    %}
-    <!-- END - INLINE LEVEL - TEXT -->
+    <!-- START - INLINE LEVEL - JUST BULLETS -->
+    {% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+      alertIcon: null,
+      alertHeadline: null,
+      alertBody: '
+      <ul class="alert-list">
+        <li>Error pertaining to this cart 1</li>
+        <li>Error pertaining to this cart 1</li>
+      </ul>',
+      alertBtnText: null,
+      alertClasses: 'alert-danger',
+      alertLevel: 'content',
+      alertDismissable: false,
+      alertId: null
+    } %}
+    <!-- END - INLINE LEVEL - JUST BULLETS -->
   {% endif %}
 
   <!-- START - CART DETAILS (EXPANDABLE) -->

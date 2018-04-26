@@ -1,0 +1,64 @@
+{% if alertId %}
+  {% set alertId = ' id="' ~ alertId ~ '"' %}
+{% endif %}
+
+{% if alertLevel %}
+  {% set alertLevelClass = ' alert-level-' ~ alertLevel ~ ' ' %}
+{% endif %}
+
+{% if alertClasses is not defined %}
+  {% set alertClasses = '' %}
+{% endif %}
+
+{% if alertIcon %}
+  {% set alertIcon %}
+    <span class="alert-aside">
+      <span class="alert-icon alert-icon-badge {{ alertIcon }}"></span>
+    </span>
+  {% endset %}
+{% endif %}
+
+{% if alertHeadline %}
+  {% set alertHeadline %}
+    <span class="alert-headline">{{ alertHeadline }}</span>
+  {% endset %}
+{% endif %}
+
+{% if alertBtnText %}
+  {% set alertBtn %}
+    <button type="button" class="alert-btn btn btn-sm btn-transparent-light">{{ alertBtnText }}</button>
+  {% endset %}
+{% endif %}
+
+{% if alertDismissable %}
+  {% set alertDismissableClasses = ' alert-dismissable fade in ' %}
+    {% set alertBtnClose %}
+      <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-hidden="true"><span class="lt-icon lt-close lt-large"></span></a>
+  {% endset %}
+{% endif %}
+
+
+{% if alertBody %}
+  {% set alertBody %}
+    <span class="alert-body">
+      {{ alertBody }}
+    </span>
+  {% endset %}
+{% endif %}
+
+{% if (alertLevel == 'headline') or (alertLevel == 'page')%}
+  {% set alertBody = null %}
+{% endif %}
+
+
+<section class="alert {{ alertClasses }} {{ alertLevelClass }} {{ alertDismissableClasses }}"{{ alertId }}>
+  {{ alertBtnClose }}{# "Close" must be first child level inside .alert #}
+  <span class="alert-cols">
+    {{ alertIcon }}
+    <span class="alert-main">
+      {{ alertHeadline }}
+      {{ alertBtn}}
+      {{ alertBody }}
+    </span>
+  </span>
+</section>

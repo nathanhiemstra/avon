@@ -152,10 +152,15 @@
               <form role="form">
 
                 <div class="my-5">
-                  <div class="form-group">
-                    <label class="control-label">Nickname</label>
-                    {% include "_includes/elements/forms/input.html.twig" with {
-                      type : 'text',
+                  <div class="form-group has-error">
+                    {% include components.groups.forms.inputAndLabel with {
+                      id: 'profile-nickname"', 
+                      mainLabel: 'Nickname',
+                      haslabelErrorIcon: true,
+                      hasInlineErrorIcon: null,
+                      hasAbsoluteErrorIcon: null,
+                      classes: 'form-control',
+                      type: 'text',
                       theValue: 'Janet Johnson'
                     } %}
                   </div>
@@ -257,8 +262,6 @@
           <section class="">
 
             <h5 class="my-5">Settings</h5>
-
-            {% include "_includes/groups/alerts/alert-level-section-generic.twig" with {marginClasses: null } %}
 
             <form role="form">
 

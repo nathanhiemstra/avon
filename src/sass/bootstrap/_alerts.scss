@@ -21,9 +21,9 @@
   }
 
   // Provide class for links that match alerts
-  .alert-link {
-    font-weight: $alert-link-font-weight;
-  }
+  // .alert-link {
+  //   font-weight: $alert-link-font-weight;
+  // }
 
   // Improve alignment and spacing of inner content
   > p,
@@ -55,6 +55,7 @@
     position: absolute;
     right: $alert-padding;
     color: inherit;
+    margin-top: -2px;
   }
 }
 
@@ -74,7 +75,8 @@
   &.alert-strong {
     @include alert-variant($alert-success-strong-bg, $alert-success-strong-border, $alert-success-strong-text);
 
-    .alert-msg-icon-badge {
+    .alert-msg-icon-badge,
+    .alert-icon-badge {
       color: $alert-success-text;
     }
   }
@@ -94,7 +96,8 @@
   &.alert-strong {
     @include alert-variant($alert-danger-strong-bg, $alert-danger-strong-border, $alert-danger-strong-text);
 
-    .alert-msg-icon-badge {
+    .alert-msg-icon-badge,
+    .alert-icon-badge {
       color: $alert-danger-text;
     }
   }
@@ -157,6 +160,12 @@
 .global-alert-msg {
   overflow: hidden;
   transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
+  border-radius: 0;
+
+  // Make this dark green because we changed the default to light green.
+  &.alert-success {
+    @extend .alert-success.alert-strong;
+  }
 
   &.collapsed {
     height: 0;
@@ -180,7 +189,8 @@
   }
 
   .alert-msg-txt {
-    vertical-align: middle;
+    // vertical-align: middle;
+ 
   }
 
   .alert-msg-btn {
@@ -241,122 +251,98 @@
   }
 }
 
-[class*="alert-level-"] {
-  // make sure icons and text inherit alert class colors
+// [class*="alert-level-"] {
+//   // make sure icons and text inherit alert class colors
 
-  .alert-msg-icon,
-  .alert-msg-icon:before,
-  .close,
-  .close .lt-icon,
-  .close .lt-icon:before,
-  .close:hover {
-    color: inherit;
-  }
+//   .alert-msg-icon,
+//   .alert-msg-icon:before,
+//   .close,
+//   .close .lt-icon,
+//   .close .lt-icon:before,
+//   .close:hover {
+//     color: inherit;
+//   }
 
-  width: 100%;
+//   width: 100%;
 
-  .alert-msg-icon {
-    margin-top: -1px;
+//   .alert-msg-icon {
+//     margin-top: -1px;
 
-    &.lt-warning {
-      margin-top: -2px;
-    }
-  }
+//     &.lt-warning {
+//       margin-top: -2px;
+//     }
+//   }
 
-  .alert-msg-btn {
-    text-transform: none;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+//   .alert-msg-btn {
+//     text-transform: none;
+//     margin-top: 0;
+//     margin-bottom: 0;
+//   }
 
-  .alert-msg-icon,
-  .alert-msg-txt,
-  .alert-msg-btn {
-    margin-left: $spacing-2;
-    margin-right: $spacing-1;
-  }
+//   .alert-msg-icon,
+//   .alert-msg-txt,
+//   .alert-msg-btn {
+//     margin-left: $spacing-2;
+//     margin-right: $spacing-1;
+//   }
 
-  .container {
-    .modal & {
-      width: auto;
-    }
-  }
-}
+//   .container {
+//     .modal & {
+//       width: auto;
+//     }
+//   }
+// }
 
-.alert-level-header {
-  overflow: hidden;
-  transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+// .alert-level-header {
+//   overflow: hidden;
+//   transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
+//   margin-bottom: 0;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
 
-  .alert-msg-txt {
-    text-transform: uppercase;
-    font-weight: bold;
-  }
+//   .alert-msg-txt {
+//     text-transform: uppercase;
+//     font-weight: bold;
+//   }
 
-  &.collapsed {
-    height: 0;
-    padding: 0;
-    border: 0;
-  }
+//   &.collapsed {
+//     height: 0;
+//     padding: 0;
+//     border: 0;
+//   }
 
-  &.alert-dismissable,
-  &.alert-dismissible {
-    &:not(.sticky) {
-      position: absolute;
-    }
+//   &.alert-dismissable,
+//   &.alert-dismissible {
+//     &:not(.sticky) {
+//       position: absolute;
+//     }
 
-    width: 100%;
+//     width: 100%;
 
-    &.sticky {
-      position: fixed;
-      top: 0;
-    }
-  }
-}
+//     &.sticky {
+//       position: fixed;
+//       top: 0;
+//     }
+//   }
+// }
 
-.alert-level-page {
-  font-weight: bold;
-}
+// // Page and Section are always bold because they have no rich text.
 
-.alert-level-section,
-.alert-level-inline-text {
-  text-align: left;
-}
+// .alert-level-section,
+// .alert-level-inline-text {
+//   text-align: left;
+// }
 
-.alert-level-page,
-.alert-level-section,
-.alert-level-inline-text {
-  border-radius: $border-radius-secondary;
+// .alert-level-page,
+// .alert-level-section,
+// .alert-level-inline-text {
+//   border-radius: $border-radius-secondary;
 
-  .alert-msg-list {
-    @extend .small;
-  }
-}
-
-.alert-level-inline-rich-text {
-  .alert-msg-icon {
-    font-size: 48px;
-
-    &:before {
-      color: $gray-light;
-    }
-  }
-
-  .alert-msg-icon,
-  .alert-msg-txt {
-    color: $text-muted;
-    display: block;
-  }
-
-  .alert-msg-txt {
-    + .btn {
-      margin-top: $spacing-3;
-    }
-  }
-}
+//   .alert-msg-list {
+//     @extend .small;
+//   }
+// }
 
 .alert-campaign-timer {
   padding: 14px;
@@ -400,6 +386,174 @@
       margin-bottom: 2px;
       vertical-align: middle;
       margin-right: 4px;
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// NEW ALERTS
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.alert-icon,
+.alert-icon:before,
+.close,
+.close .lt-icon,
+.close .lt-icon:before,
+.close:hover {
+  color: inherit;
+}
+
+.alert-level {
+  &-header {
+    overflow: hidden;
+    transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
+    margin-bottom: 0;
+    border-radius: 0;
+
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
+    .alert-headline {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .alert-btn {
+      text-transform: none;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    &.collapsed {
+      height: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    &.alert-dismissable,
+    &.alert-dismissible {
+      &:not(.sticky) {
+        position: absolute;
+      }
+
+      width: 100%;
+
+      &.sticky {
+        position: fixed;
+        top: 0;
+      }
+    }
+
+    // If it's in a modal, let it be inline
+    .modal & {
+      position: relative;
+    }
+  }
+
+  &-content {
+    text-align: left;
+    justify-content: left;
+
+    .alert-cols {
+      // Make teh default ceneterd, to aler defauls without flex.
+      justify-content: inherit;
+    }
+  }
+}
+
+// Columns
+.alert-cols {
+  display: flex;
+
+  // Make teh default ceneterd, to aler defauls without flex.
+  justify-content: center;
+
+  .alert-aside {
+    margin-right: 10px;
+  }
+}
+
+// Icon
+.alert-icon-badge {
+  background-color: $white;
+  padding: 3px;
+  margin-top: 2px;
+  border-radius: 20px;
+  color: inherit;
+  display: block;
+}
+
+// Headline
+.alert-headline {
+  font-weight: bold;
+
+  + .alert-body {
+    margin-top: 8px;
+  }
+
+  + .alert-btn {
+    margin-left: 8px;
+  }
+}
+
+.alert-body {
+  display: block;
+
+  p:last-child,
+  ul li:last-child,
+  ul:last-child {
+    margin-bottom: 0;
+  }
+
+  @extend .small;
+}
+
+.alert-list {
+  padding-left: 18px;
+  margin-bottom: 8px;
+  text-align: left;
+  display: inline-block;
+
+  li {
+    margin-top: 0;
+    margin-bottom: 6px;
+
+    ul & {
+      // Override nested style that would turn it to a circle
+      list-style-type: disc;
+    }
+  }
+}
+
+.alert-link {
+  text-decoration: underline;
+}
+
+.alert-btn {
+  text-transform: none;
+  border-width: 1px;
+  background-color: transparent;
+}
+
+.alert-level-inline-rich-text {
+  .alert-msg-icon {
+    font-size: 48px;
+
+    &:before {
+      color: $gray-light;
+    }
+  }
+
+  .alert-msg-icon,
+  .alert-msg-txt {
+    color: $text-muted;
+    display: block;
+  }
+
+  .alert-msg-txt {
+    + .btn {
+      margin-top: $spacing-3;
     }
   }
 }

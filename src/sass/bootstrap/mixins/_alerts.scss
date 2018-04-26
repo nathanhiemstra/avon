@@ -8,7 +8,17 @@
   hr {
     border-top-color: darken($border, 5%);
   }
-  .alert-link {
-    color: darken($text-color, 10%);
+
+  .alert-link,
+  .alert-btn {
+    color: $text-color;
+
+    &:hover {
+      color: darken($text-color, 5%);
+    }
+  }
+
+  .alert-btn {
+    border-color: $text-color;
   }
 }

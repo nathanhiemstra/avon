@@ -44,17 +44,23 @@ Parameters:
 
     {% if alertMsg %}
       <div class="clearfix"></div>
-      <!-- START - INLINE LEVEL - TEXT -->
-      {% include "_includes/groups/alerts/alert-level-page-and-section.html.twig" with {
-          alertId: null,
-          alertClasses: 'alert-danger mt-4 mb-0',
-          alertIcon: null,
-          alertMsg: alertMsg,
-          alertBtnText: false,
-          alertLevel: 'inline-text'
-        }
-      %}
-      <!-- END - INLINE LEVEL - TEXT -->
+
+      <!-- START - INLINE LEVEL - JUST BULLETS -->
+      {% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+        alertIcon: null,
+        alertHeadline: null,
+        alertBody: '
+        <ul class="alert-list">
+          <li>Error pertaining to this payment method</li>
+        </ul>',
+        alertBtnText: null,
+        alertClasses: 'alert-danger mt-4 mb-0',
+        alertLevel: 'content',
+        alertDismissable: false,
+        alertId: null
+      } %}
+      <!-- END - INLINE LEVEL - JUST BULLETS -->
+
     {% endif %}
 
   </div>
