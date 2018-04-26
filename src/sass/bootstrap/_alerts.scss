@@ -79,6 +79,10 @@
     .alert-icon-badge {
       color: $alert-success-text;
     }
+
+    .text-emphasis {
+      color: $green-dark;
+    }
   }
 }
 
@@ -189,8 +193,7 @@
   }
 
   .alert-msg-txt {
-    // vertical-align: middle;
- 
+    vertical-align: middle;
   }
 
   .alert-msg-btn {
@@ -250,99 +253,6 @@
     }
   }
 }
-
-// [class*="alert-level-"] {
-//   // make sure icons and text inherit alert class colors
-
-//   .alert-msg-icon,
-//   .alert-msg-icon:before,
-//   .close,
-//   .close .lt-icon,
-//   .close .lt-icon:before,
-//   .close:hover {
-//     color: inherit;
-//   }
-
-//   width: 100%;
-
-//   .alert-msg-icon {
-//     margin-top: -1px;
-
-//     &.lt-warning {
-//       margin-top: -2px;
-//     }
-//   }
-
-//   .alert-msg-btn {
-//     text-transform: none;
-//     margin-top: 0;
-//     margin-bottom: 0;
-//   }
-
-//   .alert-msg-icon,
-//   .alert-msg-txt,
-//   .alert-msg-btn {
-//     margin-left: $spacing-2;
-//     margin-right: $spacing-1;
-//   }
-
-//   .container {
-//     .modal & {
-//       width: auto;
-//     }
-//   }
-// }
-
-// .alert-level-header {
-//   overflow: hidden;
-//   transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
-//   margin-bottom: 0;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-
-//   .alert-msg-txt {
-//     text-transform: uppercase;
-//     font-weight: bold;
-//   }
-
-//   &.collapsed {
-//     height: 0;
-//     padding: 0;
-//     border: 0;
-//   }
-
-//   &.alert-dismissable,
-//   &.alert-dismissible {
-//     &:not(.sticky) {
-//       position: absolute;
-//     }
-
-//     width: 100%;
-
-//     &.sticky {
-//       position: fixed;
-//       top: 0;
-//     }
-//   }
-// }
-
-// // Page and Section are always bold because they have no rich text.
-
-// .alert-level-section,
-// .alert-level-inline-text {
-//   text-align: left;
-// }
-
-// .alert-level-page,
-// .alert-level-section,
-// .alert-level-inline-text {
-//   border-radius: $border-radius-secondary;
-
-//   .alert-msg-list {
-//     @extend .small;
-//   }
-// }
 
 .alert-campaign-timer {
   padding: 14px;
