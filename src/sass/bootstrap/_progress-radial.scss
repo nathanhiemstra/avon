@@ -8,7 +8,6 @@
 
 .progress-radial {
 	position: relative;
-  // transform: rotate(-2deg);
 
   svg {
   	path, circle {
@@ -20,6 +19,18 @@
   	}
   }
 
+	// reverse modifier reverses the color scheme
+	&--reverse {
+		svg {
+	  	path, circle {
+	  		stroke: $gray-light;
+	  		&.filled {
+	  			stroke: $progress-bar-bg;
+	  		}
+	  	}
+	  }
+	}
+
   .progress-counter {
     position: absolute;
     top: 50%;
@@ -29,6 +40,15 @@
     * {
       margin: 0;
       padding: 0;
+    }
+
+    &.percentage {
+      [data-radprogress-counter]:after {
+        content: '%';
+        vertical-align: super;
+        font-size: 58%;
+        font-weight: bold;
+      }
     }
   }
 
