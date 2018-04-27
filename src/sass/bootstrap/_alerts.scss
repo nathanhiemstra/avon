@@ -469,7 +469,7 @@
   }
 
   .alert-msg-txt {
-    + .btn {
+    .btn, + .btn {
       margin-top: $spacing-3;
     }
   }
