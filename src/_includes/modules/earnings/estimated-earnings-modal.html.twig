@@ -1,0 +1,43 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'earnings-estimated-modal' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+
+  <h4 class="modal-title">Estimated Earnings</h4>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+  {% include "_includes/groups/alerts/alert-level-section-generic.twig" with {marginClasses: null } %}
+
+  <!-- START - GENERIC MODAL CONTENT -->
+  <p>
+    {{ fpo.paragraph }}
+  </p>
+  <!-- END - GENERIC MODAL CONTENT -->
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+    <!-- START - OK Button -->
+    <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+    <!-- END - OK BUTTON -->
+  <!-- /.row -->
+
+{% endblock %}
