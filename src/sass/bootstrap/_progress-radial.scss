@@ -14,7 +14,7 @@
   		fill: none;
   		stroke: $progress-bar-bg;
   		&.filled {
-  			stroke: $gray-light;
+  			stroke: $gray-lighter;
   		}
   	}
   }
@@ -23,7 +23,7 @@
 	&--reverse {
 		svg {
 	  	path, circle {
-	  		stroke: $gray-light;
+	  		stroke: $gray-lighter;
 	  		&.filled {
 	  			stroke: $progress-bar-bg;
 	  		}
@@ -59,7 +59,7 @@
     svg path, svg circle {
   		stroke: $progress-bar-success-bg;
       &.filled {
-  			stroke: $gray-light;
+  			stroke: $gray-lighter;
   		}
     }
   }
@@ -68,7 +68,7 @@
     svg path, svg circle {
   		stroke: $progress-bar-info-bg;
       &.filled {
-  			stroke: $gray-light;
+  			stroke: $gray-lighter;
   		}
     }
   }
@@ -77,7 +77,7 @@
     svg path, svg circle {
   		stroke: $progress-bar-warning-bg;
       &.filled {
-  			stroke: $gray-light;
+  			stroke: $gray-lighter;
   		}
     }
   }
@@ -86,7 +86,7 @@
     svg path, svg circle {
   		stroke: $progress-bar-danger-bg;
       &.filled {
-  			stroke: $gray-light;
+  			stroke: $gray-lighter;
   		}
     }
   }

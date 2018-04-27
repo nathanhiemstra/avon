@@ -14,13 +14,24 @@
 {# DEFINE BLOCK - widgetBody #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block widgetBody %}
-    <div class="progress progress-bar-sm mt-5 mb-3">
-  	  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-  	    <span class="sr-only">60% Complete</span>
-  	  </div>
-  	</div>
+    <div class="container-fluid px-0">
+      <div class="progress-radial progress-radial--reverse m-auto"
+        role="progressbar"
+        aria-valuenow="82"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        data-radprogress-offset="0"
+        data-radprogress-stroke-width="5"
+        data-radprogress-diameter="100">
+      <div class="svg-holder"></div>
+      <span class="sr-only">82% Complete</span>
+      <div class="progress-counter percentage">
+        <h3 data-radprogress-counter></h3>
+      </div>
+     </div>
+    </div>
     <p class="m-0 text-uppercase">Bronze (BEL)</p>
-    <hr>
+    <hr class="my-3">
     <p class="m-0"><strong class="text-uppercase text-muted">Next Level: </strong><strong>Silver (SEL)</strong></p>
 {% endblock %}
 
