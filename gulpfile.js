@@ -242,7 +242,7 @@ gulp.task('compile', function () {
                       widgetPath: prefix.modules + 'widgets/widget-leadership-level.html.twig'
                     },
                     item12: {
-                      fpoImgSrc: 'src="images/fpo/home/12.png"'
+                      widgetPath: prefix.modules + 'widgets/widget-new-recruits.html.twig'
                     }
                   },
                   primary: {
