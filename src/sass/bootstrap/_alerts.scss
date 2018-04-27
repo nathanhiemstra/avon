@@ -314,6 +314,12 @@
 }
 
 .alert-level {
+  &-header,
+  &-page,
+  &-content {
+    width: 100%;
+  }
+
   &-header {
     overflow: hidden;
     transition: $ui-animation-time height ease, $ui-animation-time padding ease, $ui-animation-time border ease;
@@ -366,7 +372,7 @@
     justify-content: left;
 
     .alert-cols {
-      // Make teh default ceneterd, to aler defauls without flex.
+      // Make the default ceneterd, to aler defauls without flex.
       justify-content: inherit;
     }
   }
@@ -392,6 +398,7 @@
   border-radius: 20px;
   color: inherit;
   display: block;
+  font-size: 18px;
 }
 
 // Headline
@@ -403,7 +410,7 @@
   }
 
   + .alert-btn {
-    margin-left: 8px;
+    margin-left: 15px;
   }
 }
 
