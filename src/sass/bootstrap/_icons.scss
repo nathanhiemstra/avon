@@ -57,7 +57,7 @@ html:hover [class^="lt-"] {
 .lt-icon {
   // nudge icons up slightly with align-middle
   &.align-middle {
-    margin-bottom: 2px;
+    transform: translateY(-2px);
   }
 }
 

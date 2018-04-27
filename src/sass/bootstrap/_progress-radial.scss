@@ -41,6 +41,15 @@
       margin: 0;
       padding: 0;
     }
+
+    &.percentage {
+      [data-radprogress-counter]:after {
+        content: '%';
+        vertical-align: super;
+        font-size: 58%;
+        font-weight: bold;
+      }
+    }
   }
 
   // Variations
