@@ -36,11 +36,15 @@
       } %}
     </div>
 
-    <div class="form-group">
-      <label class="control-label">Routing Number</label>
+    <div class="form-group has-error">
+      <label class="control-label">{% include "_includes/elements/forms/label-error-icon.html.twig" %}Routing Number</label>
       <span class="lt-icon lt-tip lt-medium align-middle"></span>
       {% include components.elements.forms.input with {
-        placeholder: '01340013'
+        placeholder: '01340013',
+        haslabelErrorIcon: true,
+        hasInlineErrorIcon: null,
+        hasAbsoluteErrorIcon: null,
+        classes: 'form-control'
       } %}
     </div>
 

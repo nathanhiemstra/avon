@@ -1,11 +1,12 @@
 <!-- START - HEADER LEVEL - ERROR -->
-{% include "_includes/groups/alerts/alert-level-header.html.twig" with {
-    'alertId': null,
-    'alertClasses': 'alert-danger',
-    'alertIcon': 'lt-warning',
-    'alertMsg': 'There was an error..',
-    'alertBtnText': null,
-    'alertDismissable': false
-  }
-%}
+{% include "_includes/groups/alerts/alert-level-template.html.twig" with {
+  alertIcon: 'lt-warning-fill',
+  alertHeadline: 'There was an error...',
+  alertBody: null,
+  alertBtnText: null,
+  alertClasses: 'alert-danger alert-strong',
+  alertLevel: 'header',
+  alertDismissable: false,
+  alertId: null
+} %}
 <!-- END - HEADER LEVEL - ERROR -->

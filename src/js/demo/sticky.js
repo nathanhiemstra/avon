@@ -14,7 +14,7 @@ var Sticky = (function () {
 
     // grab the DOM els we need
     $els = {
-      stickyTarget: $('.alert-level-header.alert-dismissable')
+      stickyTarget: $('.alert.alert-dismissable')
     };
 
     // Variables

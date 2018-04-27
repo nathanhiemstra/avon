@@ -1,19 +1,17 @@
-<!-- START - SECTION LEVEL - WITH ERROR LIST -->
-{% include "_includes/groups/alerts/alert-level-page-and-section.html.twig" with {
-    alertId: null,
-    alertClasses: 'alert-danger ' ~ marginClasses,
-    alertIcon: 'lt-warning',
-    alertIconMsgCols: true,
-    alertMsgHeadline: 'Section level with error list',
-    alertMsg: '
-     <ul class="alert-msg-list">
-      <li>Error item 1</li>
-      <li>Error item 2</li>
-    </ul>
-    ',
-    alertBtnText: false,
-    alertDismissable: false,
-    alertLevel: 'section'
-  }
-%}
-<!-- END - SECTION LEVEL - WITH ERROR LIST -->
+<!-- START - INLINE LEVEL - GENERIC -->
+{% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+  alertIcon: 'lt-warning-fill',
+  alertHeadline: 'This goes to the top of the section where the error occured.',
+  alertBody: '
+  <ul class="alert-list">
+    <li>Error explanation 1</li>
+    <li>Error explanation 2</li>
+    <li>Error explanation 3</li>
+  </ul>',
+  alertBtnText: null,
+  alertClasses: 'alert-danger ' ~ marginClasses,
+  alertLevel: 'content',
+  alertDismissable: false,
+  alertId: null
+} %}
+<!-- END - INLINE LEVEL - GENERIC -->

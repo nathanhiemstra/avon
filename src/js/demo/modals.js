@@ -75,11 +75,19 @@ var Modals = ( function () {
     var $target = $( e.target );
     var hasPopover = $target.closest( '.popover' ).length;
     var isTrigger = $target.closest( '[data-toggle="popover"]' ).length;
-    if( isTrigger || hasPopover ) {
+    var isCopyBtn = $target.hasClass('copy-input-btn');
+
+    if(hasPopover && isCopyBtn) {
+      var $input = $target.closest('form').find('input[readonly]');
+      var valToCopy = $input.select();
+      document.execCommand('copy');
+      $target.html('Copied!');
+    } else if(isTrigger || hasPopover) {
       return;
     } else {
       $els.modalPopoverCombos.popover( 'hide' );
     }
+
   };
 
   var _updateDataToggles = function () {
