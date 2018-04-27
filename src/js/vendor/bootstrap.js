@@ -2088,13 +2088,16 @@ $('.carousel-thumbs').thumbnailsCarousel();
     this.$svgHolder = $(element).find('.svg-holder');
 		this.$progressCounter = this.$el.find('[data-radprogress-counter]');
 
-		this.minSegments = this.$el.attr('aria-valuemin') || options.minSegments;
-		this.totalSegments = this.$el.attr('aria-valuemax') || options.totalSegments;
-		this.filledSegments = this.$el.attr('aria-valuenow') || options.filledSegments;
-		this.offset = this.$el.data('radprogress-offset') || options.offset;
-		this.strokeWidth = this.$el.data('radprogress-stroke-width') || options.strokeWidth;
-		this.diameter = this.$el.data('radprogress-diameter') || options.diameter;
-		this.draw();
+		this.minSegments = this.$el.attr('aria-valuemin') || this.options.minSegments;
+		this.totalSegments = this.$el.attr('aria-valuemax') || this.options.totalSegments;
+		this.filledSegments = this.$el.attr('aria-valuenow') || this.options.filledSegments;
+
+    this.offset = this.options.radprogressOffset;
+		this.strokeWidth = this.options.radprogressStrokeWidth;
+		this.diameter = this.options.radprogressDiameter;
+		this.countdown = this.options.radprogressCountdown || this.options.countdown;
+
+    this.draw();
 	}
 
 	RadialProgress.DEFAULTS = {
@@ -2103,7 +2106,8 @@ $('.carousel-thumbs').thumbnailsCarousel();
 		filledSegments: 2,
 		offset: 2,
 		strokeWidth: 5,
-		diameter: 150
+		diameter: 150,
+    countdown: false
   }
 
 	// Public Methods
@@ -2156,6 +2160,7 @@ $('.carousel-thumbs').thumbnailsCarousel();
 				prevStartAngle = 0,
 				prevEndAngle = 0,
 				segment = '', i;
+
 		if (this.offset === 0 && this.totalSegments === 1) {
 			segment = '<circle cx="' + size + '" cy="' + size + '" r="' + radius + '"';
 			segment += this.filledSegments === 1 ? ' class="filled"/>' : ' />'
@@ -2187,7 +2192,12 @@ $('.carousel-thumbs').thumbnailsCarousel();
 		this.$svg.find('path').css('stroke-width', this.strokeWidth);
 
 		// set the progress counter value
-		var counterText = this.totalSegments - this.filledSegments;
+		var counterText = '';
+		if(this.countdown) {
+      counterText = this.totalSegments - this.filledSegments;
+    } else {
+      counterText = this.filledSegments;
+    }
 		this.$progressCounter.text(counterText);
 
 	};
@@ -2242,7 +2252,6 @@ $('.carousel-thumbs').thumbnailsCarousel();
       var data = $this.data();
 
       data = data || {};
-
       $this.radprogress(data)
     })
   })

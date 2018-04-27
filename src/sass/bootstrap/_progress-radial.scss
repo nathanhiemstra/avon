@@ -8,7 +8,6 @@
 
 .progress-radial {
 	position: relative;
-  // transform: rotate(-2deg);
 
   svg {
   	path, circle {
@@ -19,6 +18,18 @@
   		}
   	}
   }
+
+	// reverse modifier reverses the color scheme
+	&--reverse {
+		svg {
+	  	path, circle {
+	  		stroke: $gray-light;
+	  		&.filled {
+	  			stroke: $progress-bar-bg;
+	  		}
+	  	}
+	  }
+	}
 
   .progress-counter {
     position: absolute;
