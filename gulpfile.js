@@ -239,7 +239,7 @@ gulp.task('compile', function () {
                       widgetPath: prefix.modules + 'widgets/widget-achievement-level.html.twig'
                     },
                     item11: {
-                      fpoImgSrc: 'src="images/fpo/home/11.png"'
+                      widgetPath: prefix.modules + 'widgets/widget-leadership-level.html.twig'
                     },
                     item12: {
                       fpoImgSrc: 'src="images/fpo/home/12.png"'
