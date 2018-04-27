@@ -1,0 +1,33 @@
+{% extends "_layouts/widget.html.twig" %}
+
+{% set widgetId = 'widget-kickstart-program' %}
+{% set widgetLayout = 'flex-column' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetHeader %}
+  <h7>Your PC Level</h7>
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetBody %}
+    <img src="images/logos/achievement-level.png" alt="achievement-level" width="50">
+    <p class="m-0 text-muted"><strong>Contenter</strong></p>
+    <p class="m-0 text-muted">$9,200 Award Sales</p>
+    <div class="progress progress-bar-sm mt-5 mb-3">
+	  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+	    <span class="sr-only">60% Complete</span>
+	  </div>
+	</div>
+    <p class="m-0">Sell $800 more by C04 to reach President'd Club</p>
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - widgetFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block widgetFooter %}
+  <button class="btn btn-default btn-sm btn-soft">Get more info</button>
+{% endblock %}

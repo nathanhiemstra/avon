@@ -85,3 +85,8 @@
 .progress-bar-danger {
   @include progress-bar-variant($progress-bar-danger-bg);
 }
+
+// Prgogress bar small
+ .progress-bar-sm{
+      height: 8px;
+ }

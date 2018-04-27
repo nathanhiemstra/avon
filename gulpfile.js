@@ -236,7 +236,7 @@ gulp.task('compile', function () {
                       widgetPath: prefix.modules + 'widgets/widget-social-performance.html.twig'
                     },
                     item10: {
-                      fpoImgSrc: 'src="images/fpo/home/10.png"'
+                      widgetPath: prefix.modules + 'widgets/widget-achievement-level.html.twig'
                     },
                     item11: {
                       fpoImgSrc: 'src="images/fpo/home/11.png"'
