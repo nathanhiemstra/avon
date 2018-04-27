@@ -18,7 +18,8 @@ var Modals = ( function () {
     $els = {
       body: $( 'body' ),
       modalTriggers: $( '[data-toggle="modal"]' ),
-      modalPopoverCombos: $( '[data-popover-modal-combo]' )
+      modalPopoverCombos: $( '[data-popover-modal-combo]' ),
+      copyInputBtns: $('.copy-input-btn')
     };
 
     _addListeners();
@@ -34,6 +35,7 @@ var Modals = ( function () {
       $( window ).resize( function () {
         _updateDataToggles();
       } );
+      $els.copyInputBtns.on('click', _checkTarget);
     }
 
     $els.modalPopoverCombos.on( 'show.bs.popover', function () {
@@ -77,17 +79,28 @@ var Modals = ( function () {
     var isTrigger = $target.closest( '[data-toggle="popover"]' ).length;
     var isCopyBtn = $target.hasClass('copy-input-btn');
 
-    if(hasPopover && isCopyBtn) {
+    if(isCopyBtn) {
+      e.preventDefault();
       var $input = $target.closest('form').find('input[readonly]');
-      var valToCopy = $input.select();
-      document.execCommand('copy');
-      $target.html('Copied!');
+      _copyInputToClipboard($target, $input);
     } else if(isTrigger || hasPopover) {
       return;
     } else {
       $els.modalPopoverCombos.popover( 'hide' );
     }
 
+  };
+
+  var _copyInputToClipboard = function(target, inputEl) {
+    var valToCopy = inputEl.select();
+    document.execCommand('copy');
+    // only update button styles on desktop
+    if($(window).width() > 768) {
+      target.addClass('btn-success').html('Copied!');
+      setTimeout(function() {
+        target.removeClass('btn-success').html('Copy');
+      }, 5000);
+    }
   };
 
   var _updateDataToggles = function () {
