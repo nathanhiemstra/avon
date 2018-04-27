@@ -94,13 +94,13 @@ var Modals = ( function () {
   var _copyInputToClipboard = function(target, inputEl) {
     var valToCopy = inputEl.select();
     document.execCommand('copy');
-    // only update button styles on desktop
-    if($(window).width() > 768) {
-      target.addClass('btn-success').html('Copied!');
-      setTimeout(function() {
-        target.removeClass('btn-success').html('Copy');
-      }, 5000);
-    }
+
+    // Update button class and text
+    target.addClass('btn-success').html('Copied!');
+    setTimeout(function() {
+      target.removeClass('btn-success').html('Copy');
+    }, 3000);
+
   };
 
   var _updateDataToggles = function () {
