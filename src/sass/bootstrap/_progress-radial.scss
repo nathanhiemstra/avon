@@ -8,17 +8,28 @@
 
 .progress-radial {
 	position: relative;
-  // transform: rotate(-2deg);
 
   svg {
   	path, circle {
   		fill: none;
   		stroke: $progress-bar-bg;
   		&.filled {
-  			stroke: $gray-light;
+  			stroke: $gray-lighter;
   		}
   	}
   }
+
+	// reverse modifier reverses the color scheme
+	&--reverse {
+		svg {
+	  	path, circle {
+	  		stroke: $gray-lighter;
+	  		&.filled {
+	  			stroke: $progress-bar-bg;
+	  		}
+	  	}
+	  }
+	}
 
   .progress-counter {
     position: absolute;
@@ -30,6 +41,15 @@
       margin: 0;
       padding: 0;
     }
+
+    &.percentage {
+      [data-radprogress-counter]:after {
+        content: '%';
+        vertical-align: super;
+        font-size: 58%;
+        font-weight: bold;
+      }
+    }
   }
 
   // Variations
@@ -39,7 +59,7 @@
     svg path, svg circle {
   		stroke: $progress-bar-success-bg;
       &.filled {
-  			stroke: $gray-light;
+  			stroke: $gray-lighter;
   		}
     }
   }
@@ -48,7 +68,7 @@
     svg path, svg circle {
   		stroke: $progress-bar-info-bg;
       &.filled {
-  			stroke: $gray-light;
+  			stroke: $gray-lighter;
   		}
     }
   }
@@ -57,7 +77,7 @@
     svg path, svg circle {
   		stroke: $progress-bar-warning-bg;
       &.filled {
-  			stroke: $gray-light;
+  			stroke: $gray-lighter;
   		}
     }
   }
@@ -66,7 +86,7 @@
     svg path, svg circle {
   		stroke: $progress-bar-danger-bg;
       &.filled {
-  			stroke: $gray-light;
+  			stroke: $gray-lighter;
   		}
     }
   }

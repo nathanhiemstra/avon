@@ -115,6 +115,22 @@ a.btn {
   font-weight: 100;
 }
 
+// Discourage - black
+.btn-discourage {
+  @include button-variant($btn-discourage-color, $btn-discourage-bg, $btn-discourage-border);
+
+  &[disabled],
+  fieldset[disabled] & {
+    color: $btn-link-disabled-color;
+
+    &:focus,
+    &:hover {
+      color: $btn-link-disabled-color;
+      border-color: $btn-link-disabled-color;
+    }
+  }
+}
+
 // Success appears as green
 .btn-success {
   @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
@@ -133,22 +149,6 @@ a.btn {
 // Danger and error appear as red
 .btn-danger {
   @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
-}
-
-// Discourage - black
-.btn-discourage {
-  @include button-variant($btn-discourage-color, $btn-discourage-bg, $btn-discourage-border);
-
-  &[disabled],
-  fieldset[disabled] & {
-    color: $btn-link-disabled-color;
-
-    &:focus,
-    &:hover {
-      color: $btn-link-disabled-color;
-      border-color: $btn-link-disabled-color;
-    }
-  }
 }
 
 // Avon Custom Buttons

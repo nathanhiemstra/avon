@@ -1729,7 +1729,8 @@ $('#myPopover').on('hidden.bs.popover', function () {
     		aria-valuemax="7"
     		data-radprogress-offset="2"
     		data-radprogress-stroke-width="6"
-    		data-radprogress-diameter="150">
+    		data-radprogress-diameter="150"
+        data-radprogress-countdown="true">
   		<div class="svg-holder"></div>
       <span class="sr-only">sr-only msg fpo</span>
       <div class="progress-counter">
@@ -1748,7 +1749,8 @@ $('#myPopover').on('hidden.bs.popover', function () {
     aria-valuemax="7"
     data-radprogress-offset="2"
     data-radprogress-stroke-width="6"
-    data-radprogress-diameter="150">
+    data-radprogress-diameter="150"
+    data-radprogress-countdown="true">
 
     <div class="svg-holder"></div>
 
@@ -1761,6 +1763,46 @@ $('#myPopover').on('hidden.bs.popover', function () {
  </div>
   {{ endhighlight }}
 
+  <div class="bs-example py-5">
+    <div class="container-fluid px-0">
+      <div class="progress-radial progress-radial--reverse m-auto"
+    		role="progressbar"
+    		aria-valuenow="43"
+    		aria-valuemin="0"
+    		aria-valuemax="100"
+    		data-radprogress-offset="0"
+    		data-radprogress-stroke-width="6"
+    		data-radprogress-diameter="150">
+  		<div class="svg-holder"></div>
+      <span class="sr-only">sr-only msg fpo</span>
+      <div class="progress-counter percentage">
+  			<h1 data-radprogress-counter></h1>
+  		</div>
+  	 </div>
+	 </div>
+   <h6 class="text-center">Complete</h6>
+  </div><!-- /example -->
+
+  {{ highlightJavascript }}
+    <div class="container-fluid px-0">
+      <div class="progress-radial progress-radial--reverse m-auto"
+        role="progressbar"
+        aria-valuenow="43"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        data-radprogress-offset="0"
+        data-radprogress-stroke-width="6"
+        data-radprogress-diameter="150">
+      <div class="svg-holder"></div>
+      <span class="sr-only">sr-only msg fpo</span>
+      <div class="progress-counter percentage">
+        <h1 data-radprogress-counter></h1>
+      </div>
+     </div>
+   </div>
+   <h6 class="text-center">Complete</h6>
+  {{ endhighlight }}
+
   <h2 id="collapse-usage">Usage</h2>
   <p>All data is handled with data attributes and, like normal progress bars, the use of aria attributes for progress values.</p>
   <ul>
@@ -1770,6 +1812,7 @@ $('#myPopover').on('hidden.bs.popover', function () {
     <li><code>data-radprogress-offset</code> the size of the gap between segments</li>
     <li><code>data-radprogress-stroke-width</code> the thickness of the circle</li>
     <li><code>data-radprogress-diameter</code> the diamater of the circle in pixels</li>
+    <li><code>data-radprogress-countdown</code> true or false, Whether or not to count down (for example, 3 days left out of 14) - defaults to false.</li>
     <li><code>data-radprogress-counter</code> no value required, will hold the numerical progress value</li>
   </ul>
 

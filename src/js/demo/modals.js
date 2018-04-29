@@ -17,7 +17,9 @@ var Modals = ( function () {
     // grab the DOM els we need
     $els = {
       body: $( 'body' ),
-      modalTriggers: $( '[data-toggle="modal"]' )
+      modalTriggers: $( '[data-toggle="modal"]' ),
+      modalPopoverCombos: $( '[data-popover-modal-combo]' ),
+      copyInputBtns: $('.copy-input-btn')
     };
 
     _addListeners();
@@ -28,8 +30,20 @@ var Modals = ( function () {
   // private methods
   var _addListeners = function () {
 
-    $els.modalTriggers.on( 'click', function ( e ) {
-      _handleModalOpen( e );
+    if( $els.modalPopoverCombos.length ) {
+      _updateDataToggles();
+      $( window ).resize( function () {
+        _updateDataToggles();
+      } );
+      $els.copyInputBtns.on('click', _checkTarget);
+    }
+
+    $els.modalPopoverCombos.on( 'show.bs.popover', function () {
+      $( this ).addClass( 'open' );
+    } );
+
+    $els.modalPopoverCombos.on( 'hide.bs.popover', function () {
+      $( this ).removeClass( 'open' );
     } );
 
     $( document ).on( 'newModalsAvailable', function ( e ) {
@@ -59,7 +73,68 @@ var Modals = ( function () {
 
   };
 
+  var _checkTarget = function ( e ) {
+    var $target = $( e.target );
+    var hasPopover = $target.closest( '.popover' ).length;
+    var isTrigger = $target.closest( '[data-toggle="popover"]' ).length;
+    var isCopyBtn = $target.hasClass('copy-input-btn');
 
+    if(isCopyBtn) {
+      e.preventDefault();
+      var $input = $target.closest('form').find('input[readonly]');
+      _copyInputToClipboard($target, $input);
+    } else if(isTrigger || hasPopover) {
+      return;
+    } else {
+      $els.modalPopoverCombos.popover( 'hide' );
+    }
+
+  };
+
+  var _copyInputToClipboard = function(target, inputEl) {
+    var valToCopy = inputEl.select();
+    document.execCommand('copy');
+
+    // Update button class and text
+    target.addClass('btn-success').html('Copied!');
+    setTimeout(function() {
+      target.removeClass('btn-success').html('Copy');
+    }, 3000);
+
+  };
+
+  var _updateDataToggles = function () {
+    var windowWidth = $( window ).width();
+    var mobileWidth = 768;
+
+    if( windowWidth > mobileWidth ) {
+      // TABLET / DESKTOP - add popover in place of modal
+      $els.modalPopoverCombos.attr( 'data-toggle', 'popover' );
+      $els.modalPopoverCombos.popover()
+        .data( 'bs.popover' )
+        .tip()
+        .addClass( 'popover--box' );
+
+      // add listener on document so we can close popover on click outside
+      $( document ).on( 'click', _checkTarget );
+
+    } else {
+      // MOBILE - add modal in place of popover
+      $els.modalPopoverCombos.attr( 'data-toggle', 'modal' );
+      $els.modalPopoverCombos.popover( 'destroy' );
+
+      // clean up document listener
+      $( document ).unbind( 'click', _checkTarget );
+    }
+  };
+
+  var _showPopover = function ( itemClicked ) {
+    $( itemClicked ).popover( 'show' );
+  };
+
+  var _hidePopover = function ( itemClicked ) {
+    $( itemClicked ).popover( 'hide' );
+  };
 
   var _handleModalOpen = function ( e ) {
 
@@ -83,8 +158,6 @@ var Modals = ( function () {
     if( modalOpen ) _handleModalSwitch( e );
 
   };
-
-
 
   var _handleModalSwitch = function ( e ) {
     console.log( 'Modal is nested' );

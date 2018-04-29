@@ -8,7 +8,7 @@
 <h3 class="pdp-product-title mt-3 w-100">Anew Skinvincible Deep Recovery Cream</h3>
 <!-- END - TITLE -->
 
-{% include "_includes/groups/alerts/alert-level-section-generic.twig" %}
+{% include "_includes/groups/alerts/alert-level-section-generic.twig" with {marginClasses: 'my-3' } %}
 
 <!-- START - VIEW MORE INFO LINK -->
 <!-- Dev note: Only appears in Quick SHop modal -->
@@ -142,19 +142,22 @@
 
 <div class="col-xs-12 p-0">
   <!-- START - QUANTITY -->
-  <div class="pdp-quantity-input col-xs-3 px-0 my-3">
-    <div class="form-group has-error has-error--absolute-1-line text-left p-0 m-0 pr-4 pb-3">
-      <label class="control-label" for="pdpQuantity">Quantity</label>
-      <input type="text" class="form-control" id="pdpQuantity" placeholder="1">
-      <p class="text-danger small label-abs">
-        <strong>You have exceeded your demo limit. Please modify the quantity.</strong>
-      </p>
+  <div class="pdp-quantity-input col-xs-4 col-md-3 px-0 my-3">
+    <div class="form-group has-error text-left p-0 m-0 pr-4 pb-3">
+      {% include components.groups.forms.inputAndLabel with {
+        id: 'pdpQuantity',
+        mainLabel: 'Quantity',
+        haslabelErrorIcon: true,
+        hasInlineErrorIcon: null,
+        hasAbsoluteErrorIcon: null,
+        classes: 'form-control'
+      } %}
     </div>
   </div>
   <!-- END - QUANTITY -->
 
   <!-- START - CUSTOMER SELECT -->
-  <div class="pdp-customer-select col-xs-9 px-0 mt-3 mb-0 mb-md-3 pb-3">
+  <div class="pdp-customer-select col-xs-8 col-md-9 px-0 mt-3 mb-0 mb-md-3 pb-3">
     <div class="form-group text-left has-feedback d-inline-block col-xs-12 p-0 m-0">
       <label class="control-label" for="pdpCustomerSelect">Who is this for?</label>
       <input type="text" class="form-control" id="pdpCustomerSelect">

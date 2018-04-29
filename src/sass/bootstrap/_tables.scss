@@ -149,7 +149,25 @@ th {
       }
     }
   }
+  // Sparse right table - 1st column aligned left, all others aligned right
+  &--right {
+    > tbody,
+    > tfoot,
+    > thead {
+      tr {
+        td,
+        th {
+          text-align: right;
+
+          &:first-of-type {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
 }
+
 
 .table-last-col-right {
   > tbody,

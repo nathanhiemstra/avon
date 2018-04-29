@@ -5,15 +5,18 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  <!-- START - GLOBAL ALERT MESSAGE -->
-  {% include "_includes/groups/alerts/alert-level-header.html.twig" with {
-      'alertId': '',
-      'alertClasses': 'alert-danger',
-      'alertIcon': '',
-      'alertMsg': 'FPO Error message'
-    }
-  %}
-  <!-- END - GLOBAL ALERT MESSAGE -->
+  <!-- START - HEADER LEVEL ALERT -->
+  {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
+    alertIcon: 'lt-warning-fill',
+    alertHeadline: 'FPO error message',
+    alertBody: null,
+    alertBtnText: null,
+    alertClasses: 'alert-danger alert-strong',
+    alertLevel: 'header',
+    alertDismissable: false,
+    alertId: null
+  } %}
+  <!-- END - HEADER LEVEL ALERT -->
 
 
   <div class="container container--page">

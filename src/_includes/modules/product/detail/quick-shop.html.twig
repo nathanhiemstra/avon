@@ -26,16 +26,7 @@
 {# DEFINE BLOCK - modalHeaderMessage #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalHeaderMessage %}
-  <!-- START - GLOBAL ALERT MESSAGE -->
-   {% include "_includes/groups/alerts/alert-level-header.html.twig" with {
-      'alertId': '',
-      'alertClasses': 'alert-success',
-      'alertIcon': 'lt-checkmark',
-      'alertMsg': 'Item has been added',
-      'alertBtnText': 'View your Order'
-    }
-  %}
-  <!-- END - GLOBAL ALERT MESSAGE -->
+  {% include "_includes/modules/product/detail/alert-header-level-view-you-order.html.twig" %}
 {% endblock %}
 
 

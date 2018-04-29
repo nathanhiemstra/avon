@@ -169,7 +169,7 @@ $( document ).ready( function () {
   } );
 
   // POPOVERS
-  $( '[data-toggle="popover"]:not(#popover-cart)' ).popover();
+  $( '[data-toggle="popover"]:not(#popover-cart):not([data-popover-modal-combo])' ).popover();
 
   // SPLIT CONTENT
   $('[data-split-content]').contentSplit();
@@ -188,7 +188,7 @@ $( document ).ready( function () {
       } )
       .data( 'bs.popover' )
       .tip()
-      .addClass( 'popover--cart' );
+      .addClass( 'popover--box' );
 
     // hide cart popover on body click
     $( 'body' ).on( 'click', function ( e ) {

@@ -1,0 +1,82 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          {% include "_includes/groups/navigation/back-link.twig" with {label: "Back to Earnings"} %}
+
+          <h2>Campaign 9 Details</h2>
+
+          <section class="d-flex align-items-center justify-content-end border-top pt-3 mt-5">
+            <a href="#"><span class="lt-icon lt-print lt-medium align-middle mr-2"></span>Print</a>
+          </section>
+
+          <!-- START - TABLE -->
+          <div class="my-0 my-md-3 table-responsive">
+            <table class="table table-striped table-bordered-outside-only table-sparse--right m-0">
+
+              <thead>
+                <tr>
+                  <th>Sales Type</th>
+                  <th>Order Size</th>
+                  <th>Estimated Earnings</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Direct Delivery Orders</td>
+                  <td>$430.90</td>
+                  <td>$100.23</td>
+                </tr>
+                <tr>
+                  <td>Online Store Orders</td>
+                  <td>$52.00</td>
+                  <td>$10.40</td>
+                </tr>
+                <tr>
+                  <td>Lorem Ipsum Dolor Sit</td>
+                  <td>$11.11</td>
+                  <td>$6.54</td>
+                </tr>
+                <!-- <tr>
+                  <td class="border-0"></td>
+                  <td class="border-0"></td>
+                  <td class="border-0"></td>
+                </tr> -->
+              </tbody>
+
+              <tfoot class="mt-4">
+                <tr class="info">
+                  <td class="text-uppercase">Totals</td>
+                  <td>$493.01</td>
+                  <td>$116.06</td>
+                </tr>
+              </tfoot>
+
+            </table>
+          </div>
+          <!-- END - TABLE -->
+
+        </div>
+
+      </div>
+
+    </section>
+
+  {% endblock %}
+
+{% endblock %}

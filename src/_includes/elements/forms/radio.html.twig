@@ -19,10 +19,14 @@
 
 {{ thelabel ? theLabel : '' }}
 
+{% if haslabelErrorIcon %}
+  {% set errorIcon %}{% include "_includes/elements/forms/label-error-icon.html.twig" %}{% endset %}
+{% endif %}
+
 <div class="radio {{ classes }}">
-  <label>
+  <label class="control-label">
     <input type="radio" {{ name }} {{ id }}{{ theValue }}{{ checked }}{{ disabled }}{{ dataAttrs }}>
     <span class="mr-4"></span>
-    {{ theLabel }}
+    {{ errorIcon }}{{ theLabel }}
   </label>
 </div>

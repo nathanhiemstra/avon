@@ -33,17 +33,24 @@
   </dl>
   <!-- END - CART SUMMARY -->
 
-   <!-- START - INLINE LEVEL - TEXT -->
-  {% include "_includes/groups/alerts/alert-level-page-and-section.html.twig" with {
-      alertId: null,
-      alertClasses: 'alert-danger',
+  {% if showAlert %}
+    <!-- START - INLINE LEVEL - JUST BULLETS -->
+    {% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
       alertIcon: null,
-      alertMsg: 'Error pertaining to this cart',
-      alertBtnText: false,
-      alertLevel: 'inline-text'
-    }
-  %}
-  <!-- END - INLINE LEVEL - TEXT -->
+      alertHeadline: null,
+      alertBody: '
+      <ul class="alert-list">
+        <li>Error pertaining to this cart 1</li>
+        <li>Error pertaining to this cart 1</li>
+      </ul>',
+      alertBtnText: null,
+      alertClasses: 'alert-danger',
+      alertLevel: 'content',
+      alertDismissable: false,
+      alertId: null
+    } %}
+    <!-- END - INLINE LEVEL - JUST BULLETS -->
+  {% endif %}
 
   <!-- START - CART DETAILS (EXPANDABLE) -->
   <div class="details collapse {% if collapsed == false %} in {% endif %}" id="collapse-{{ indexNum }}-cart-item">

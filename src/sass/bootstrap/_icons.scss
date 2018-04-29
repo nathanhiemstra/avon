@@ -57,7 +57,7 @@ html:hover [class^="lt-"] {
 .lt-icon {
   // nudge icons up slightly with align-middle
   &.align-middle {
-    margin-bottom: 2px;
+    transform: translateY(-2px);
   }
 }
 
@@ -73,6 +73,15 @@ html:hover [class^="lt-"] {
   color: $brand-primary;
 }
 
+.lt-clock:before {
+  content: "\e933";
+}
+.lt-document:before {
+  content: "\e934";
+}
+.lt-print:before {
+  content: "\e935";
+}
 .lt-checkbox-minus:before {
   content: "\e931";
 }
@@ -213,6 +222,9 @@ html:hover [class^="lt-"] {
 }
 .lt-warning:before {
   content: "\e927";
+}
+.lt-warning-fill:before {
+  content: "\e932";
 }
 .lt-right-button:before {
   content: "\e92a";
