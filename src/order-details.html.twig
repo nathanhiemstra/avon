@@ -33,13 +33,19 @@
             </div>
           </div>
 
-          <!-- START - SORT DROPDOWN -->
-          <div class="product-list-header--filters">
-            {% include "_includes/modules/product/list/menu-items/sort-dropdown.html.twig" with {
-              variation: 'customer'
-            } %}
+          <div class="row d-flex align-items-end px-4 py-1">
+            <div class="d-flex align-items-center px-2">
+              <span class="lt-icon lt-warning text-danger mr-2"></span>
+              Indicates order contains sold out items
+            </div>
+            <!-- START - SORT DROPDOWN -->
+            <div class="product-list-header--filters ml-auto">
+              {% include "_includes/modules/product/list/menu-items/sort-dropdown.html.twig" with {
+                variation: 'customer'
+              } %}
+            </div>
+            <!-- END - SORT DROPDOWN -->
           </div>
-          <!-- END - SORT DROPDOWN -->
 
           <!--START - ORDER DETAILS-->
           <div class="panel-group pt-3 border-bottom" id="order-details">
@@ -113,7 +119,7 @@
                       <div class="col-md-6 p-0 mb-2 mb-md-0">
                         <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
                         <span class="lt-icon lt-icon lt-collapse-circle lt-large"></span>
-                        <span>Jane Johnson</span>
+                        <span><span class="lt-icon lt-warning align-middle text-danger"></span> Jane Johnson</span>
                       </div>
                       <div class="col-xs-6 col-md-3 text-muted p-2">
                         3 Orders
@@ -131,6 +137,7 @@
                     <table class="table table-striped table-bordered-outside-only m-0">
                       <thead>
                         <tr>
+                          <th></th>
                           <th>Order ID</th>
                           <th>Date</th>
                           <th>Campaign</th>
@@ -139,18 +146,21 @@
                       </thead>
                       <tbody>
                         <tr>
+                          <td><span class="lt-icon lt-warning align-middle text-danger"></span></td>
                           <td><a href="#" class="underline">0844557744</a></td>
                           <td>01/19/2018</td>
                           <td>23</td>
                           <td>25</td>
                         </tr>
                         <tr>
+                          <td><span class="lt-icon lt-warning align-middle text-danger"></span></td>
                           <td><a href="#" class="underline">0844557744</a></td>
                           <td>01/19/2018</td>
                           <td>23</td>
                           <td>25</td>
                         </tr>
                         <tr>
+                          <td></td>
                           <td><a href="#" class="underline">0844557744</a></td>
                           <td>01/19/2018</td>
                           <td>23</td>
