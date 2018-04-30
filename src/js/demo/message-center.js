@@ -15,6 +15,7 @@ var MessageCenter = (function () {
     // grab the DOM els we need
     $els = {
       msgItems: $('.container--msg-center').find('.msg-center-messages .content'),
+      searchForms: $('.container--msg-center').find('form.page-search'),
       searchInputs: $('.container--msg-center').find('form.page-search input'),
       closeBtns: $('.container--msg-center').find('.input-close-btn')
     };
@@ -24,6 +25,11 @@ var MessageCenter = (function () {
 
   // private methods
   var _addListeners = function () {
+
+    // prevent search form from doing anything on submit
+    $els.searchForms.on('submit', function(e) {
+      e.preventDefault();
+    });
 
     // remove class on item collapse
     $els.msgItems.on('show.bs.collapse', function() {
