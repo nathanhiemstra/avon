@@ -21,30 +21,32 @@
           <h2>Order Details</h2>
 
           <div class="row">
-            <div class="col-md-3">
-              <dl class="clearfix my-2 text-muted text-uppercase">
-                <dt class="pull-left">Confirmation</dt>
-                <dd class="pull-right text-right">Campaign</dd>
+            <div class="col-xs-12 d-flex my-2">
+              <dl class="mr-4 pr-4 border-right">
+                <dt class="text-muted text-uppercase">Confirmation</dt>
+                <dd>456618581</dd>
               </dl>
-              <dl class="clearfix my-2 text-muted">
-                <dt class="pull-left">456618581</dt>
-                <dd class="pull-right text-right">23</dd>
+              <dl>
+                <dt class="text-muted text-uppercase">Campaign</dt>
+                <dd>23</dd>
               </dl>
             </div>
           </div>
 
-          <div class="row d-flex align-items-end px-4 py-1">
-            <div class="d-flex align-items-center px-2">
+          <div class="row d-flex align-items-end flex-wrap px-4 py-1">
+            <div class="d-flex align-items-center mr-auto">
               <span class="lt-icon lt-warning text-danger mr-2"></span>
               Indicates order contains sold out items
             </div>
+
             <!-- START - SORT DROPDOWN -->
-            <div class="product-list-header--filters ml-auto">
+            <div class="product-list-header--filters">
               {% include "_includes/modules/product/list/menu-items/sort-dropdown.html.twig" with {
                 variation: 'customer'
               } %}
             </div>
             <!-- END - SORT DROPDOWN -->
+
           </div>
 
           <!--START - ORDER DETAILS-->
@@ -54,7 +56,7 @@
             <div class="panel panel-light border-top">
               <div class="panel-heading border-bottom-0">
                 <h4 class="panel-title">
-                  <a class="d-block" data-toggle="collapse" data-parent="#order-details" href="#collapseOne">
+                  <a class="d-block" data-toggle="collapse" href="#collapseOne">
 
                     <div class="row">
                       <div class="col-md-6 p-0 mb-2 mb-md-0">
@@ -114,7 +116,7 @@
             <div class="panel panel-light border-top">
               <div class="panel-heading border-bottom-0">
                 <h4 class="panel-title">
-                  <a class="d-block collapsed" data-toggle="collapse" data-parent="#order-details" href="#collapseTwo">
+                  <a class="d-block collapsed" data-toggle="collapse" href="#collapseTwo">
                     <div class="row">
                       <div class="col-md-6 p-0 mb-2 mb-md-0">
                         <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
@@ -137,7 +139,7 @@
                     <table class="table table-striped table-bordered-outside-only m-0">
                       <thead>
                         <tr>
-                          <th></th>
+                          <th style="width: 15px;" class="pr-0"></th>
                           <th>Order ID</th>
                           <th>Date</th>
                           <th>Campaign</th>
@@ -146,21 +148,21 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td><span class="lt-icon lt-warning align-middle text-danger"></span></td>
+                          <td style="width: 15px;" class="pr-0"><span class="lt-icon lt-warning align-middle text-danger"></span></td>
                           <td><a href="#" class="underline">0844557744</a></td>
                           <td>01/19/2018</td>
                           <td>23</td>
                           <td>25</td>
                         </tr>
                         <tr>
-                          <td><span class="lt-icon lt-warning align-middle text-danger"></span></td>
+                          <td style="width: 15px;" class="pr-0"><span class="lt-icon lt-warning align-middle text-danger"></span></td>
                           <td><a href="#" class="underline">0844557744</a></td>
                           <td>01/19/2018</td>
                           <td>23</td>
                           <td>25</td>
                         </tr>
                         <tr>
-                          <td></td>
+                          <td style="width: 15px;" class="pr-0"></td>
                           <td><a href="#" class="underline">0844557744</a></td>
                           <td>01/19/2018</td>
                           <td>23</td>
@@ -177,7 +179,7 @@
             <div class="panel panel-light border-top">
               <div class="panel-heading border-bottom-0">
                 <h4 class="panel-title">
-                  <a class="d-block collapsed" data-toggle="collapse" data-parent="#order-details" href="#collapseThree">
+                  <a class="d-block collapsed" data-toggle="collapse" href="#collapseThree">
                     <div class="row">
                       <div class="col-md-6 p-0 mb-2 mb-md-0">
                         <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
@@ -236,7 +238,7 @@
             <div class="panel panel-light border-top">
               <div class="panel-heading border-bottom-0">
                 <h4 class="panel-title">
-                  <a class="d-block collapsed" data-toggle="collapse" data-parent="#order-details" href="#collapsefour">
+                  <a class="d-block collapsed" data-toggle="collapse" href="#collapsefour">
                     <div class="row">
                       <div class="col-md-6 p-0 mb-2 mb-md-0">
                         <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
@@ -295,7 +297,7 @@
             <div class="panel panel-light border-top">
               <div class="panel-heading border-bottom-0">
                 <h4 class="panel-title">
-                  <a class="d-block collapsed" data-toggle="collapse" data-parent="#order-details" href="#collapseFive">
+                  <a class="d-block collapsed" data-toggle="collapse" href="#collapseFive">
                     <div class="row">
                       <div class="col-md-6 p-0 mb-2 mb-md-0">
                         <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
