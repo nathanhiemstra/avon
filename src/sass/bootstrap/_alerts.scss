@@ -255,7 +255,14 @@
 }
 
 .alert-campaign-timer {
-  padding: 14px;
+  padding: 11px;
+  letter-spacing: 1px;
+
+  .lt-icon {
+    font-size: 22px;
+    transform: translateY(-1px);
+    margin-right: 3px;
+  }
 
   .alert-msg-txt {
     @extend .h6;
