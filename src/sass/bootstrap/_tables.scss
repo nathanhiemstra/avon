@@ -341,6 +341,14 @@ table {
   overflow-x: auto;
   min-height: 0.01%;
 
+  > .table {
+    > thead {
+      > tr {
+        > th, > td { white-space: nowrap; }
+      }
+    }
+  }
+
   // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
 
   @media screen and (max-width: $screen-xs-max) {

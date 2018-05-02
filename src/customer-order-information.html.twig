@@ -20,39 +20,41 @@
 
           <h2>Customer Order Information</h2>
 
-          <div class="row">
-            <div class="m-0 p-0 col-md-3 col-sm-12 col-xs-12">
-              <div class="col-xs-5 col-sm-3 col-md-12 text-muted text-uppercase font-weight-bold">Customer</div>
-              <div class="col-xs-7 col-sm-9 text-muted text-uppercase">Jane Johnson</div>
-            </div>
-            <div class="m-0 p-0 col-md-3 col-xs-12">
-              <div class="col-xs-5 col-sm-3 col-md-12 text-muted font-weight-bold">Order ID</div>
-              <div class="col-xs-7 col-sm-9 text-muted">0844557744</div>
-            </div>
-            <div class="m-0 p-0 col-md-3 col-xs-12">
-              <div class="col-xs-5 col-sm-3 col-md-12 text-muted text-uppercase font-weight-bold">Confirmation</div>
-              <div class="col-xs-7 col-sm-9">456618581
-              </div>
-            </div>
-            <div class="m-0 p-0 col-md-3 col-xs-12">
-              <div class="col-xs-5 col-sm-3 col-md-12 text-muted font-weight-bold">Campaign</div>
-              <div class="col-xs-7 col-sm-9 text-muted">23</div>
+          <div class="row my-5">
+            <div class="col-xs-12 d-flex flex-wrap my-2">
+              {% include '_includes/modules/customer-orders/order-summary-item.html.twig' with {
+                title: 'Customer',
+                value: 'Jane Johnson'
+              } %}
+              {% include '_includes/modules/customer-orders/order-summary-item.html.twig' with {
+                title: 'Order ID',
+                value: '0844557744'
+              } %}
+              {% include '_includes/modules/customer-orders/order-summary-item.html.twig' with {
+                title: 'Confirmation',
+                value: '456618581'
+              } %}
+              {% include '_includes/modules/customer-orders/order-summary-item.html.twig' with {
+                title: 'Campaign',
+                value: '23',
+                isLast: true
+              } %}
+              <a class="align-self-end ml-auto" href="#"><span class="lt-icon lt-print lt-medium align-middle mr-2"></span>Print</a>
             </div>
           </div>
 
           <!-- <div class="row"> <div class="visible-sm visible-xs p-4"> <div class="alert-reverse p-2"> <h5 class="text-center">Items in Customer Order 844557744</h5> </div> </div> </div> -->
 
-          <div class="row mt-4">
+          <!-- <div class="row mt-4">
             <div class="col-xs-12 d-flex align-items-end justify-content-end my-3">
-              <a href="#">
-                <span class="lt-icon lt-print lt-medium align-middle mr-2"></span>Print</a>
+              <a href="#"><span class="lt-icon lt-print lt-medium align-middle mr-2"></span>Print</a>
             </div>
-          </div>
+          </div> -->
 
           <hr class="my-0">
 
           <!-- DEV NOTE: This headline only appears if 'Sold Out' table is visible below -->
-          <h3 class="mt-4">Items in Order 0844557744</h3>
+          <h4 class="mt-5 mb-4">Items in Order 0844557744</h4>
 
           <!--START - ORDER DETAILS TABLE-->
           {% include '_includes/modules/customer-orders/customer-order-info-table.html.twig' with {
@@ -92,8 +94,8 @@
           } %}
           <!--END - ORDER DETAILS TABLE-->
 
-          <h3 class="mt-4">
-            <span class="lt-icon lt-warning lt-large text-danger align-middle"></span> Sold Out</h3>
+          <h4 class="mt-5 mb-4">
+            <span class="lt-icon lt-warning lt-large text-danger align-middle"></span> Sold Out</h4>
 
           <!--START - SOLD OUT TABLE-->
           {% include '_includes/modules/customer-orders/customer-order-info-table.html.twig' with {

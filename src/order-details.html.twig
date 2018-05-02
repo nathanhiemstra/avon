@@ -22,14 +22,15 @@
 
           <div class="row mt-5">
             <div class="col-xs-12 d-flex my-2">
-              <dl class="mb-0 mr-4 pr-4 border-right">
-                <dt class="text-muted text-uppercase mb-3">Confirmation</dt>
-                <dd class="large">456618581</dd>
-              </dl>
-              <dl class="mb-0">
-                <dt class="text-muted text-uppercase mb-3">Campaign</dt>
-                <dd class="large">23</dd>
-              </dl>
+              {% include '_includes/modules/customer-orders/order-summary-item.html.twig' with {
+                title: 'Confirmation',
+                value: '456618581'
+              } %}
+              {% include '_includes/modules/customer-orders/order-summary-item.html.twig' with {
+                title: 'Campaign',
+                value: '23',
+                isLast: true
+              } %}
             </div>
           </div>
 
