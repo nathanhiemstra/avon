@@ -74,7 +74,7 @@ $text-color: $gray-dark !default;
 $text-muted: $gray !default;
 $text-muted-hover: $gray !default;
 
- 
+
 
 //** Global textual link color.
 $link-color: $brand-primary !default;
@@ -231,6 +231,9 @@ $table-cell-padding: 12px !default;
 
 //** Padding for cells in `.table-condensed`.
 $table-condensed-cell-padding: 5px !default;
+
+//** Padding for cells in `.table-compact`.
+$table-compact-cell-padding: 10px !default;
 
 //** Default background color used for all tables.
 $table-bg: transparent !default;

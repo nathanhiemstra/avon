@@ -123,6 +123,21 @@ th {
   }
 }
 
+// Compact table - less padding, smaller fonts
+.table-compact {
+  font-size: $font-size-small;
+  > tbody,
+  > tfoot,
+  > thead {
+    > tr {
+      > td, > th {
+        font-size: $font-size-small;
+        padding: $table-compact-cell-padding;
+      }
+    }
+  }
+}
+
 // table with fixed layout
 .table-fixed {
   table-layout: fixed;
@@ -262,6 +277,9 @@ th {
   }
 }
 
+// Outside border
+//
+
 .table-bordered-outside-only {
   border: 1px solid $table-border-color;
 }
@@ -330,7 +348,7 @@ table {
     margin-bottom: $line-height-computed * 0.75;
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid $table-border-color;
+    // border: 1px solid $table-border-color;
 
     // Tighten up spacing
     > .table {
@@ -344,12 +362,6 @@ table {
           > td,
           > th {
             white-space: nowrap;
-
-            // &.clamp {
-            //   min-width: 700px;
-            //   max-width: 700px;
-            //   white-space: normal;
-            // }
           }
         }
       }
