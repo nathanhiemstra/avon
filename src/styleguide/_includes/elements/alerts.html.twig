@@ -14,6 +14,7 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   <h2 id="alerts-examples">Examples</h2>
   <p>Wrap any text and an optional dismiss button in <code>.alert</code> and one of the four contextual classes (e.g., <code>.alert-success</code>) for basic alert messages.</p>
+  <p>Use the .alert-link utility class to quickly provide matching colored links within any alert.</p>
 
   <div class="bs-callout bs-callout-info">
     <h4>No default class</h4>
@@ -22,29 +23,20 @@
 
   <div class="bs-example">
     <div class="alert alert-success">
-      <strong>Well done!</strong> You successfully read this important alert message.
-    </div>
-    <div class="alert alert-success alert-strong">
-      <strong>Well done! (strong)</strong> You successfully read this important alert message.
+      <strong>Success!</strong> This message might have a <a href="#" class="alert-link">link</a>..
     </div>
 
     <div class="alert alert-danger">
-      <strong>Oh snap!</strong> Change a few things up and try submitting again.
+      <strong>Danger!</strong> This message might have a <a href="#" class="alert-link">link</a>..
     </div>
-
-    <div class="alert alert-danger alert-strong">
-      <strong>Oh snap! (strong)</strong> Change a few things up and try submitting again.
-    </div>
-
 
     <div class="alert alert-info">
-      <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-    </div>
-    <div class="alert alert-warning">
-      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+      <strong>Info!</strong> This message might have a <a href="#" class="alert-link">link</a>..
     </div>
 
-    
+    <div class="alert alert-warning">
+      <strong>Warning!</strong> This message might have a <a href="#" class="alert-link">link</a>..
+    </div>
 
     <div class="alert alert-reverse">
       <strong>Oh snap!</strong> Change a few things up and try submitting again.
@@ -63,8 +55,47 @@
   <div class="alert alert-promo">...</div>
   {{ endhighlight }}
 
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# XXX #}
+
+
+
+
+  <h2 id="alerts-strong">Strong Alerts</h2>
+  <p>These only get used as "Header Level" messages (full width and just under the header). Never inline, within the page content.</p>
+
+  <div class="bs-callout bs-callout-info">
+    <p>Use the <code>.alert-strong</code> utility class to make a dark version.</p>
+  </div>
+
+  <div class="bs-example">
+
+    <div class="alert alert-success alert-strong">
+      <strong>Success! (strong)</strong> This message might have a <a href="#" class="alert-link">link</a>..
+    </div>
+
+    <div class="alert alert-danger alert-strong">
+      <strong>Danger! (strong)</strong> This message might have a <a href="#" class="alert-link">link</a>.
+    </div>
+
+    <div class="alert alert-info alert-strong">
+      <strong>Info! (strong)</strong> This message might have a <a href="#" class="alert-link">link</a>.
+    </div>
+
+    <div class="alert alert-warning alert-strong">
+      <strong>Warning! (strong)</strong> This message might have a <a href="#" class="alert-link">link</a>.
+    </div>
+  </div>
+  {{ highlightMarkup }}
+  <div class="alert alert-success alert-strong">...</div>
+  <div class="alert alert-info alert-strong">...</div>
+  <div class="alert alert-warning alert-strong">...</div>
+  <div class="alert alert-danger alert-strong">...</div>
+  {{ endhighlight }}
+
+
+
+
+   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DISMISSABLE #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   <h2 id="alerts-dismissable">Dismissable alerts</h2>
     <p>Build on any alert by adding an optional <code>.alert-dismissable</code> and close button.</p>
@@ -86,43 +117,362 @@
     <p>Be sure to use the <code>&lt;button&gt;</code> element with the <code>data-dismiss="alert"</code> data attribute.</p>
   </div>
 
+
+
+
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# XXX #}
+  {# Alert Levels #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  <h2 id="alerts-links">Links in alerts</h2>
-  <p>Use the <code>.alert-link</code> utility class to quickly provide matching colored links within any alert.</p>
-  <div class="bs-example">
-    <div class="alert alert-success">
-      <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
-    </div>
-    <div class="alert alert-info">
-      <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
-    </div>
-    <div class="alert alert-warning">
-      <strong>Warning!</strong> Better check yourself, you're <a href="#" class="alert-link">not looking too good</a>.
-    </div>
-    <div class="alert alert-danger">
-      <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-    </div>
-    <div class="alert alert-reverse">
-      <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-    </div>
-  </div>
+
+  <h2 id="alerts-levels">Alerts Levels</h2>
+  <p><strong>Header, Page, Section, and Inline</strong></p>
+  <p>These are specific types of alerts used in certain situaltions and locations on the page. </p>
+
+  <p>All "level" alerts share the following structure. Items in { curly braces } show which features maybe be used or not depending on which "level" and options within each "level". See <strong>alert-level-template.html.twig</strong> for more details.</p>
+
   {{ highlightMarkup }}
-  <div class="alert alert-success">
-    <a href="#" class="alert-link">...</a>
-  </div>
-  <div class="alert alert-info">
-    <a href="#" class="alert-link">...</a>
-  </div>
-  <div class="alert alert-warning">
-    <a href="#" class="alert-link">...</a>
-  </div>
-  <div class="alert alert-danger">
-    <a href="#" class="alert-link">...</a>
-  </div>
-  <div class="alert alert-reverse">
-    <a href="#" class="alert-link">...</a>
-  </div>
+
+    <section class="alert { alertClasses } { alertLevelClass } { alertDismissableClasses }">
+      { alertBtnClose }<!-- "Close" must be first child level inside .alert-->
+      <span class="alert-cols">
+        { alertIcon }
+        <span class="alert-main">
+          { alertHeadline }
+          { alertBtn}
+          { alertBody }
+        </span>
+      </span>
+    </section>
+
   {{ endhighlight }}
-</div>
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# HEADER LEVEL #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  <h3 id="alerts-level-header">Header Levels</h3>
+  <p><strong>Purpose</strong></p>
+  <p>System malfunction. You cannot continue. A situation where the webpage experiences an error while calling dynamic / database-driven content.</p>
+  <p><strong>Notes</strong></p>
+  <p>Normally this message would be the width of the browser window. If dismissable, the header will stick to the top of the window after scrolling down. The close "X" will appear. See <a href="http://s4dc-hotfix.dreamhosters.com/alerts.html">working example</a>.</p>
+
+  <div class="bs-callout bs-callout-info">
+    <p>Use the <code>.alert-level-header</code> and <code>.alert-strong</code> utility classes.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-info small">
+    <p class="mb-0"><strong>Rules:</strong></p>
+    <ul class="mb-0">
+      <li>Place between header and content.</li>
+      <li>Headline only. No body text.</li>
+    </ul>
+  </div>
+
+  <div class="bs-callout bs-callout-info small">
+    <p class="mb-0"><strong>Optional:</strong></p>
+    <ul class="mb-0">
+      <li>Icon</li>
+      <li>Button</li>
+      <li>Dismissable (<code>.alert-dismissable</code>)</li>
+    </ul>
+  </div>
+
+  <div class="bs-example">
+    {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
+      alertIcon: 'lt-warning-fill',
+      alertHeadline: 'Header Level',
+      alertBody: null,
+      alertBtnText: 'Optional button',
+      alertClasses: 'alert-success alert-strong',
+      alertLevel: 'header',
+      alertDismissable: true,
+      alertId: null
+    } %}
+  </div>
+
+  {{ highlightMarkup }}
+   <section class="alert alert-danger alert-strong  alert-level-header  ">
+      <span class="alert-cols">
+        <span class="alert-aside">
+          <span class="alert-icon alert-icon-badge lt-warning-fill"></span>
+        </span>
+        <span class="alert-main">
+            <span class="alert-headline">Header Level</span>
+        </span>
+      </span>
+    </section>
+
+  {{ endhighlight }}
+
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+  &#123;% include "_includes/groups/alerts/alert-level-template.html.twig" with {
+      alertIcon: 'lt-warning-fill',
+      alertHeadline: 'Header Level',
+      alertBody: null,
+      alertBtnText: 'Optional button',
+      alertClasses: 'alert-success alert-strong',
+      alertLevel: 'header',
+      alertDismissable: true,
+      alertId: null
+    } %}
+
+  {{ endhighlight }}
+
+
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# PAGE LEVEL #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  <h3 id="alerts-level-page">Page Levels</h3>
+  <p><strong>Purpose</strong></p>
+  <p>Similar to the system malfunction scenario, but this situation can be corrected by the user.</p>
+  <ul class="small">
+    <li>Show a notification at the top of the page stating the error</li>
+    <li>Depending on the error, indicate where it is and what can be corrected</li>
+  </ul>
+  <p><strong>Notes</strong></p>
+  <p>Normally appears below the header, at the top of the page content, and is the width of the page content. See <a href="http://s4dc-hotfix.dreamhosters.com/alerts.html">working example</a>.</p>
+
+  <div class="bs-callout bs-callout-info">
+    <p>Use the <code>.alert-level-page</code>.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-info small">
+    <p class="mb-0"><strong>Rules:</strong></p>
+    <ul class="mb-0">
+      <li>Place as the first element inside the page content: <code>&lt;section class="container container--page"&gt;&lt;/section&gt;</code></li>
+      <li>Headline only. No body text.</li>
+      <li>Is not dismissable.</li>
+    </ul>
+  </div>
+
+  <div class="bs-callout bs-callout-info small">
+    <p class="mb-0"><strong>Optional:</strong></p>
+    <ul class="mb-0">
+      <li>Icon</li>
+      <li>Button</li>
+    </ul>
+  </div>
+
+  <div class="bs-example">
+    {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
+      alertIcon: 'lt-warning-fill',
+      alertHeadline: 'Page Level',
+      alertBody: null,
+      alertBtnText: null,
+      alertClasses: 'alert-danger',
+      alertLevel: 'page',
+      alertDismissable: false,
+      alertId: null
+    } %}
+  </div>
+
+  {{ highlightMarkup }}
+   <section class="alert alert-danger alert-level-page">
+    <span class="alert-cols">
+      <span class="alert-aside">
+        <span class="alert-icon alert-icon-badge lt-warning-fill"></span>
+      </span>
+      <span class="alert-main">
+        <span class="alert-headline">Page Level</span>
+      </span>
+    </span>
+  </section>
+  {{ endhighlight }}
+
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+  &#123;% include "_includes/groups/alerts/alert-level-template.html.twig" with {
+      alertIcon: 'lt-warning-fill',
+      alertHeadline: 'Page Level',
+      alertBody: null,
+      alertBtnText: null,
+      alertClasses: 'alert-danger',
+      alertLevel: 'page',
+      alertDismissable: false,
+      alertId: null
+    } %}
+  {{ endhighlight }}
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# SECTION LEVEL #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  <h3 id="alerts-level-section">Section Level</h3>
+  <p><strong>Purpose</strong></p>
+  <p>A situation where a self-contained section of a webpage has an error to address. Almost certainly form-based.</p>
+  <ul class="small">
+    <li>After the error, scroll the user to the top of the affected section.</li>
+    <li>Show a notification at the top of the section.</li>
+    <li>Indicate where the error is and what can be corrected. </li>
+  </ul>
+  <p>See <a href="http://s4dc-hotfix.dreamhosters.com/alerts.html">working example</a>.</p>
+
+  <div class="bs-callout bs-callout-info">
+    <p>Use the <code>.alert-level-content</code>. Note, there is no <strong>.alert-level-section</strong> class. </p> 
+  </div>
+
+  <div class="bs-callout bs-callout-info small">
+    <p class="mb-0"><strong>Rules:</strong></p>
+    <ul class="mb-0">
+      <li>Place as the top of the "section" where the error occured.</li>
+      <li>Headline.</li>
+      <li>Is not dismissable.</li>
+    </ul>
+  </div>
+
+  <div class="bs-callout bs-callout-info small">
+    <p class="mb-0"><strong>Optional:</strong></p>
+    <ul class="mb-0">
+      <li>Icon</li>
+      <li>You can put any content inside body: <code>&lt;span class="alert-body"&gt;&lt;/span&gt;</code>. However, if you include a bulleted list, use this class: <code>&lt;ul class="alert-list"&gt;&lt;/ul&gt;</code></li>
+    </ul>
+  </div>
+
+  <div class="bs-example">
+    {% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+      alertIcon: 'lt-warning-fill',
+      alertHeadline: 'Section level',
+      alertBody: '
+      <ul class="alert-list">
+        <li>Error 1</li>
+        <li>Error 2</li>
+        <li>Error 3</li>
+      </ul>',
+      alertBtnText: null,
+      alertClasses: 'alert-danger',
+      alertLevel: 'content',
+      alertDismissable: false,
+      alertId: null
+    } %}
+  </div>
+
+  {{ highlightMarkup }}
+  <section class="alert alert-danger alert-level-content">
+    <span class="alert-cols">
+      <span class="alert-aside">
+        <span class="alert-icon alert-icon-badge lt-warning-fill"></span>
+      </span>
+      <span class="alert-main">
+        <span class="alert-headline">Section level</span>
+        <span class="alert-body">
+          <ul class="alert-list">
+            <li>Error 1</li>
+            <li>Error 2</li>
+            <li>Error 3</li>
+          </ul>
+        </span>
+      </span>
+    </span>
+  </section>
+  {{ endhighlight }}
+
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+  &#123;% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+      alertIcon: 'lt-warning-fill',
+      alertHeadline: 'Section level',
+      alertBody: '
+      &lt;ul class="alert-list"&gt;
+        &lt;li&gt;Error 1&lt;/li&gt;
+        &lt;li&gt;Error 2&lt;/li&gt;
+        &lt;li&gt;Error 3&lt;/li&gt;
+      &lt;/ul&gt;',
+      alertBtnText: null,
+      alertClasses: 'alert-danger',
+      alertLevel: 'content',
+      alertDismissable: false,
+      alertId: null
+    } %}
+  {{ endhighlight }}
+
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# INLINE LEVEL #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  <h3 id="alerts-level-inline">Inline Level</h3>
+  <p>Placed next to where the error occured. This suppliments a Section Level error.</p>
+
+  <div class="bs-callout bs-callout-info">
+    <p>Use the <code>.alert-level-content</code>. Note, there is no <strong>.alert-level-inline</strong> class. </p> 
+  </div>
+
+  <div class="bs-callout bs-callout-info small">
+    <p class="mb-0"><strong>Rules:</strong></p>
+    <ul class="mb-0">
+      <li>Place next to where the error occured.</li>
+      <li>Is not dismissable.</li>
+    </ul>
+  </div>
+
+  <div class="bs-callout bs-callout-info small">
+    <p class="mb-0"><strong>Optional:</strong></p>
+    <ul class="mb-0">
+      <li>Icon</li>
+      <li>Headline</li>
+      <li>You can put any content inside body: <code>&lt;span class="alert-body"&gt;&lt;/span&gt;</code>. However, if you include a bulleted list, use this class: <code>&lt;ul class="alert-list"&gt;&lt;/ul&gt;</code></li>
+    </ul>
+  </div>
+
+  <div class="bs-example">
+    {% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+      alertIcon: null,
+      alertHeadline: null,
+      alertBody: '
+      <ul class="alert-list">
+        <li>Error 1</li>
+        <li>Error 2</li>
+      </ul>',
+      alertBtnText: null,
+      alertClasses: 'alert-danger',
+      alertLevel: 'content',
+      alertDismissable: false,
+      alertId: null
+    } %}
+  </div>
+
+  {{ highlightMarkup }}
+  <section class="alert alert-danger alert-level-content">
+    <span class="alert-cols">
+      <span class="alert-aside">
+        <span class="alert-icon alert-icon-badge lt-warning-fill"></span>
+      </span>
+      <span class="alert-main">
+        <span class="alert-headline">Section level</span>
+        <span class="alert-body">
+          <ul class="alert-list">
+            <li>Error 1</li>
+            <li>Error 2</li>
+          </ul>
+        </span>
+      </span>
+    </span>
+  </section>
+  {{ endhighlight }}
+
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+  &#123;% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+      alertIcon: null,
+      alertHeadline: null,
+      alertBody: '
+      &lt;ul class="alert-list"&gt;
+        &lt;li&gt;Error 1&lt;/li&gt;
+        &lt;li&gt;Error 2&lt;/li&gt;
+      &lt;/ul&gt;',
+      alertBtnText: null,
+      alertClasses: 'alert-danger',
+      alertLevel: 'content',
+      alertDismissable: false,
+      alertId: null
+    } %}
+  {{ endhighlight }}
+
+
+
+
+ 
+
+ 

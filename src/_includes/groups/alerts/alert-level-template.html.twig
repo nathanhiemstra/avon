@@ -37,7 +37,6 @@
   {% endset %}
 {% endif %}
 
-
 {% if alertBody %}
   {% set alertBody %}
     <span class="alert-body">
@@ -49,7 +48,6 @@
 {% if (alertLevel == 'headline') or (alertLevel == 'page')%}
   {% set alertBody = null %}
 {% endif %}
-
 
 <section class="alert {{ alertClasses }} {{ alertLevelClass }} {{ alertDismissableClasses }}"{{ alertId }}>
   {{ alertBtnClose }}{# "Close" must be first child level inside .alert #}

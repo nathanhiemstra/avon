@@ -69,6 +69,9 @@
 //
 // Generate contextual modifier classes for colorizing the alert.
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
+// SUCCESS 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-success {
   @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
 
@@ -86,14 +89,31 @@
   }
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
+// INFO 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-info {
   @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+
+  &.alert-strong {
+    @include alert-variant($alert-info-strong-bg, $alert-info-strong-border, $alert-info-strong-text);
+  }
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
+// WARNING 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-warning {
   @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+
+  &.alert-strong {
+    @include alert-variant($alert-warning-strong-bg, $alert-warning-strong-border, $alert-warning-strong-text);
+  }
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
+// DANGER 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-danger {
   @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 
@@ -107,14 +127,23 @@
   }
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
+// REVERSE 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-reverse {
   @include alert-variant($alert-reverse-bg, $alert-reverse-border, $alert-reverse-text);
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
+// PROMO 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-promo {
   @include alert-variant($alert-promo-bg, $alert-promo-border, $alert-promo-text);
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
+// NEUTRAL 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-neutral {
   @include alert-variant($alert-neutral-bg, $alert-neutral-border, $alert-neutral-text);
 
