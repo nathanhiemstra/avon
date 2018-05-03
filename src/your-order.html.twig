@@ -10,7 +10,22 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
+    <!-- START - HEADER LEVEL ALERT -->
+    {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
+      alertIcon: 'lt-warning-fill',
+      alertHeadline: 'There has been an error reaching our offers and discount engine.',
+      alertBody: null,
+      alertBtnText: null,
+      alertClasses: 'alert-danger alert-strong',
+      alertLevel: 'header',
+      alertDismissable: false,
+      alertId: null
+    } %}
+    <!-- END - HEADER LEVEL ALERT -->
+
     {% include "_includes/modules/product/detail/alert-header-level-view-you-order.html.twig" with {alertDismissable: true} %}
+
+
 
     <!-- START - TAB NAVIGATION -->
     <section class="container container--page">
