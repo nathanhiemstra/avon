@@ -966,3 +966,26 @@ $search-btn-size: 44px;
     }
   }
 }
+
+input {
+  &[maxlength="1"],
+  &[maxlength='1'] {
+    min-width: 30px;
+  }
+
+  &[maxlength="2"],
+  &[maxlength='2'] {
+    min-width: 38px;
+  }
+
+  &[maxlength="3"],
+  &[maxlength='3'] {
+    min-width: 48px;
+  }
+
+  ,
+  &[maxlength="4"],
+  &[maxlength='4'] {
+    min-width: 58px;
+  }
+}
