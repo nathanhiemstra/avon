@@ -707,6 +707,16 @@ select.form-control.input-lg {
   .form-control {
     border-width: $state-danger-border-width;
   }
+
+  // Note: These will go away once Avon adopts new error pattern.
+  // Adding class names twice to override inline .p-0
+  &--absolute-1-line.has-error--absolute-1-line {
+    padding-bottom: 25px !important;
+  }
+
+  &--absolute-2-line.has-error--absolute-2-line {
+    padding-bottom: 50px !important;
+  }
 }
 
 // Reposition feedback icon if input has visible label above
