@@ -8,20 +8,20 @@
 
     <h5 class="h-utility text-center mb-4">Total</h5>
 
+    <div id="carts-details" class="mt-3 mt-md-5" data-split-content-chunk="content">
+
      <!-- START - INLINE LEVEL - WITH HEADLINE -->
-      {% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+      {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
         alertIcon: 'lt-warning-fill',
         alertHeadline: 'Discounts and Offers unavailable at this time.',
         alertBody: null,
         alertBtnText: null,
-        alertClasses: 'alert-danger mb-0',
+        alertClasses: 'alert-danger',
         alertLevel: 'content',
         alertDismissable: false,
         alertId: null
       } %}
       <!-- END - INLINE LEVEL - JUST HEADLINE -->
-
-    <div id="carts-details" class="mt-3 mt-md-5" data-split-content-chunk="content">
 
       <dl class="clearfix border-bottom pb-3 mb-3">
         <dt class="pull-left text-primary">Order total</dt>
