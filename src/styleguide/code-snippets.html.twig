@@ -12,15 +12,127 @@
 <div class="bs-docs-section">
   <h1 id="code-snippets" class="page-header">Code Snippets</h1>
 
-  
+
+
+  <h2 id="campaign-literature">Campaign Literature</h2>
+  <p>Snippet to show campaign literature on a content page.</p>
+
+  <div class="bs-example">
+
+    <!-- START - CAMPAIGN LITERATURE SNIPPET -->
+    <div class="box-group box-group-halves">
+
+      <div class="box-group--single">
+
+        <div class="img">
+          <img src="../../images/utility/placeholder_thumb.png" alt="" class="img-responsive">
+        </div>
+
+        <div class="content">
+
+          <div class="header">
+            <h5 class="text-capitalize mt-0 mb-2">Purchase Order</h5>
+            <p class="text-muted">View, download, and/or print your order form.</p>
+          </div>
+
+          <div class="details">
+            <div class="column small">
+              <p class="mt-2"><a href="#">Current - C11</a></p>
+              <p class="mt-2"><a href="#">Future - C12</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box-group--single">
+
+        <div class="img">
+          <img src="../../images/utility/placeholder_thumb.png" alt="" class="img-responsive">
+        </div>
+
+        <div class="content">
+
+          <div class="header">
+            <h5 class="text-capitalize mt-0 mb-2">Product Number Guide</h5>
+            <p class="text-muted">Information on product numbers in the campaign as well as ordering instructions for special offers.</p>
+          </div>
+
+          <div class="details">
+            <div class="column small">
+              <p class="mt-2"><a href="#">Current - C11</a></p>
+              <p class="mt-2"><a href="#">Future - C12</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END - CAMPAIGN LITERATURE SNIPPET -->
+
+  </div><!-- /.bs-example -->
+
+
+  {{ highlightMarkup }}
+  <!-- START - CAMPAIGN LITERATURE SNIPPET -->
+  <div class="box-group box-group-halves">
+
+    <div class="box-group--single">
+
+      <div class="img">
+        <img src="../../images/utility/placeholder_thumb.png" alt="" class="img-responsive">
+      </div>
+
+      <div class="content">
+
+        <div class="header">
+          <h5 class="text-capitalize mt-0 mb-2">Purchase Order</h5>
+          <p class="text-muted">View, download, and/or print your order form.</p>
+        </div>
+
+        <div class="details">
+          <div class="column small">
+            <p class="mt-2"><a href="#">Current - C11</a></p>
+            <p class="mt-2"><a href="#">Future - C12</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box-group--single">
+
+      <div class="img">
+        <img src="../../images/utility/placeholder_thumb.png" alt="" class="img-responsive">
+      </div>
+
+      <div class="content">
+
+        <div class="header">
+          <h5 class="text-capitalize mt-0 mb-2">Product Number Guide</h5>
+          <p class="text-muted">Information on product numbers in the campaign as well as ordering instructions for special offers.</p>
+        </div>
+
+        <div class="details">
+          <div class="column small">
+            <p class="mt-2"><a href="#">Current - C11</a></p>
+            <p class="mt-2"><a href="#">Future - C12</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- END - CAMPAIGN LITERATURE SNIPPET -->
+  {{ endhighlight }}
+
+
 
   <h2 id="facebook-login">Facebook Login Button</h2>
   <p>Example code withing Avon's live home page code.</p>
 
   <div class="bs-example">
-    
-    
-    
+
+
+
     <!-- START - NEW FROM S4DC -->
     <!-- Demo: https://codepen.io/studio4dc/pen/mXOBjm -->
     <style>
@@ -39,7 +151,7 @@
       }
       .login-divider span {
         display: inline-block;
-        position: relative; 
+        position: relative;
         line-height: 0.5;
       }
       .login-divider span:before,
@@ -73,15 +185,15 @@
 
   </div><!-- /.bs-example -->
 
-  
+
   {{ highlightMarkup }}
   <form class="login ng-pristine ng-invalid ng-invalid-required ng-submitted ng-valid-pattern ng-valid-maxlength" name="login" id="login" novalidate="" method="post">
 
-    <div id="error-msg" ng-show="login.$submitted &amp;&amp; (login.userId.$touched || login.userId.$untouched 
+    <div id="error-msg" ng-show="login.$submitted &amp;&amp; (login.userId.$touched || login.userId.$untouched
         || login.password.$touched || login.password.$untouched)" class="ng-hide" aria-hidden="true">
-      <span class="has-error ng-binding" ng-show="login.userId.$error.required || 
+      <span class="has-error ng-binding" ng-show="login.userId.$error.required ||
         login.password.$error.required" aria-hidden="false">
-        All fields required.</span> <span ng-hide="login.userId.$error.required || 
+        All fields required.</span> <span ng-hide="login.userId.$error.required ||
         login.password.$error.required" class="has-error ng-binding ng-hide" aria-hidden="true">  </span>
     </div>
 
@@ -96,7 +208,7 @@
     </div>
 
     <input id="login_submit" type="submit" class="btn btn-primary" ng-click="login.$valid &amp;&amp; doLogin()" ng-disabled="isDisabled" value="Log In"> <a class="forgot-pwd ng-binding" ng-click="pswdHint()">Forgot your password?</a>
-    
+
     <!-- START - NEW FROM S4DC -->
     <!-- Demo: https://codepen.io/studio4dc/pen/mXOBjm -->
     <style>
@@ -115,7 +227,7 @@
       }
       .login-divider span {
         display: inline-block;
-        position: relative; 
+        position: relative;
         line-height: 0.5;
       }
       .login-divider span:before,

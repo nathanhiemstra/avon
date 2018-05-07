@@ -170,7 +170,7 @@ $box-group--primary-item-width: 220px;
     width: 100%;
 
     // min-height: $min-item-height;
- 
+
   }
 
   .toolbar {
@@ -373,4 +373,76 @@ $box-group--primary-item-width: 220px;
   padding: $spacing-4;
 
   @extend .reverse-bg;
+}
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// BOX GROUPS
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.box-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box-group-halves {
+
+  .box-group--single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $spacing-4 0;
+    margin: 0 $spacing-4;
+
+    .img {
+      width: 33.33%;
+      height: auto;
+      margin-right: 0;
+    }
+
+    .content {
+      width: 100%;
+      padding: $spacing-4 0;
+
+      .header {
+        text-align: left;
+        margin-bottom: 0;
+      }
+      .details {
+        justify-content: flex-start;
+      }
+    }
+
+    &:nth-child(odd) {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  // desktop
+  @media (min-width: $screen-sm-min) {
+    flex-wrap: nowrap;
+
+    .box-group--single {
+      flex-direction: row;
+      align-items: flex-start;
+      width: 50%;
+      padding: $spacing-4 0;
+      margin: 0 $spacing-4;
+
+      .img {
+        width: 33.33%;
+        height: auto;
+        margin-right: 0;
+      }
+
+      .content {
+        width: 66.66%;
+        padding: $spacing-4 0;
+      }
+
+      &:nth-child(odd) {
+        border-bottom: none;
+      }
+    }
+  }
 }
