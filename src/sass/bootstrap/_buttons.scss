@@ -451,6 +451,12 @@ input[type="button"] {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: normal;
+  opacity: 1;
+  transition: opacity $ui-animation-time ease;
+
+  &.invisible {
+    opacity: 0;
+  }
 
   .lt-icon {
     &:before, &:after {

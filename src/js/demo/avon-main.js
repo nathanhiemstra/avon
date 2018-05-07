@@ -249,6 +249,7 @@ $( document ).ready( function () {
 
 
   // INIT OTHER DEMO SCRIPTS
+  if( typeof BackToTop !== 'undefined' ) BackToTop.init();
   if( typeof Brochures !== 'undefined' ) Brochures.init();
   if( typeof CheckoutDemo !== 'undefined' ) CheckoutDemo.init();
   if( typeof FormDemo !== 'undefined' ) FormDemo.init();
