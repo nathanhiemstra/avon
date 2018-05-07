@@ -121,14 +121,21 @@
       </thead>
       <tbody>
         <!-- SPRINT 8 -->
+        {% set sprintLatestLabel = "Sprint 8 (v3) - May 1" %}
+        {% set sprintLatestFileName = "sprint-08-v3-may-1" %}
         <tr class="alert-neutral">
-          <td><a href="http://s4dc-deliveries.dreamhosters.com/sprint-08-v2-apr-29__vs__sprint-08-v1-apr-22/FolderComparisonReport.html">View</a></td>
+          <td><a href="http://s4dc-deliveries.dreamhosters.com/{{ sprintLatestFileName }}__vs__sprint-08-v2-apr-29/FolderComparisonReport.html">View</a></td>
+          <td>{{ sprintLatestLabel }}</td>
           <td>Sprint 8 (v2) - Apr 29</td>
+        </tr>
+        <tr class="alert-neutral">
+          <td><a href="http://s4dc-deliveries.dreamhosters.com/{{ sprintLatestFileName }}__vs__sprint-08-v1-apr-22/FolderComparisonReport.html">View</a></td>
+          <td>{{ sprintLatestLabel }}</td>
           <td>Sprint 8 (v1) - Apr 22</td>
         </tr>
         <tr class="alert-neutral">
-          <td><a href="http://s4dc-deliveries.dreamhosters.com/sprint-08-v2-apr-29__vs__sprint-07-v5-apr-19/FolderComparisonReport.html">View</a></td>
-          <td>Sprint 8 (v2) - Apr 29</td>
+          <td><a href="http://s4dc-deliveries.dreamhosters.com/{{ sprintLatestFileName }}__vs__sprint-07-v5-apr-19/FolderComparisonReport.html">View</a></td>
+          <td>{{ sprintLatestLabel }}</td>
           <td>Sprint 7 (v5) - Apr 19</td>
         </tr>
         <!-- SPRINT 7 -->
