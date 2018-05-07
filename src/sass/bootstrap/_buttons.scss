@@ -433,3 +433,56 @@ input[type="button"] {
     width: 100%;
   }
 }
+
+// Back to Top - Global Button
+.btn-back-to-top {
+  position: fixed;
+  bottom: 35px;
+  right: 12px;
+  z-index: $zindex-modal-background;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border-width: 1px;
+  background-color: rgba($body-bg, 0.95);
+  border-color: $gray-light;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.18);
+  color: $gray;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: normal;
+
+  .lt-icon {
+    &:before, &:after {
+      color: $gray;
+      transition: color $ui-animation-time ease;
+    }
+  }
+
+  span {
+    margin-left: 1px;
+    transition: color $ui-animation-time ease;
+
+    &:not(.lt-icon) {
+      margin-top: -6px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &:hover {
+    color: $text-color;
+
+    .lt-icon {
+      &:before, &:after {
+        color: $text-color;
+      }
+    }
+  }
+
+  // desktop
+  @media (min-width: $screen-sm-min) {
+    bottom: 29px;
+    right: 22px;
+  }
+
+}
