@@ -180,8 +180,6 @@ span.variant-swatch {
 @media (min-width: 480px) and (max-width: $screen-sm), (min-width: $screen-md) {
   // Text on one line
   .pdp-quantity-input {
-    background-color: pink;
-
     .has-error--absolute-2-line {
       &.has-error--absolute-2-line {
         padding-bottom: 25px !important;
