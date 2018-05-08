@@ -437,7 +437,7 @@ input[type="button"] {
 // Back to Top - Global Button
 .btn-back-to-top {
   position: fixed;
-  bottom: 35px;
+  bottom: 24px;
   right: 12px;
   z-index: $zindex-modal-background;
   width: 54px;
@@ -452,22 +452,25 @@ input[type="button"] {
   font-weight: 500;
   letter-spacing: normal;
   opacity: 1;
-  transition: opacity $ui-animation-time ease;
+  pointer-events: all;
+  transition: opacity $ui-animation-time*1.5 ease;
 
   &.invisible {
+    visibility: visible;
+    pointer-events: none;
     opacity: 0;
   }
 
   .lt-icon {
     &:before, &:after {
       color: $gray;
-      transition: color $ui-animation-time ease;
+      transition: color $ui-animation-time*1.5 ease;
     }
   }
 
   span {
     margin-left: 1px;
-    transition: color $ui-animation-time ease;
+    transition: color $ui-animation-time*1.5 ease;
 
     &:not(.lt-icon) {
       margin-top: -6px;
@@ -487,7 +490,7 @@ input[type="button"] {
 
   // desktop
   @media (min-width: $screen-sm-min) {
-    bottom: 29px;
+    bottom: 24px;
     right: 22px;
   }
 
