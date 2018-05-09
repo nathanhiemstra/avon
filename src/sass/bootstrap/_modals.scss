@@ -141,6 +141,7 @@
 .modal-footer {
   padding: $modal-inner-padding;
   text-align: right;
+  background-color: $body-bg;
 
   // right align buttons
   border-top: 1px solid $modal-footer-border-color;
@@ -240,6 +241,13 @@
   &.has-no-footer {
     .modal-body {
       bottom: 0;
+    }
+  }
+
+  // modal either / or has two buttons and needs more bottom space to accommodate
+  &.modal-either-or {
+    .modal-body {
+      bottom: 115px;
     }
   }
 
