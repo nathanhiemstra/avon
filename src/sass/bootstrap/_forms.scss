@@ -177,7 +177,7 @@ output {
     opacity: 1;
 
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
- 
+
   }
 
   &[readonly] {
@@ -219,7 +219,7 @@ select.form-control {
 
   + .lt-triangle-down.form-control-feedback {
     // transform: rotate(90deg);
- 
+
   }
 }
 
@@ -869,7 +869,7 @@ select.form-control.input-lg {
     padding-top: $padding-base-vertical + 1;
 
     // Default padding plus a border
- 
+
   }
 
   // Account for padding we're adding to ensure the alignment and of help text
@@ -893,7 +893,7 @@ select.form-control.input-lg {
       padding-top: $padding-base-vertical + 1;
 
       // Default padding plus a border
-   
+
     }
   }
 
@@ -977,8 +977,8 @@ $search-btn-size: 44px;
   }
 }
 
-// These are for inputs that are manipulated with Angular. 
-// Angular uses it's own method of populating the input rather than value="". 
+// These are for inputs that are manipulated with Angular.
+// Angular uses it's own method of populating the input rather than value="".
 // That method doesn't seem to know how wide the input should be based.
 // So we give it a min-width.
 input {
@@ -1001,4 +1001,14 @@ input {
   &[maxlength='4'] {
     min-width: 58px;
   }
+
+  // TODO :: might need cases here for input-sm and input-lg
+  $size-start: 24px;
+  $size-increment: 10px;
+  @for $size from 1 through 11 {
+    &[size="#{$size}"] {
+      min-width: $size-start + ($size * $size-increment);
+    }
+  }
+
 }
