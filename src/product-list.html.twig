@@ -41,11 +41,7 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
-        <!-- START - CONTENT BLOCK -->
-        <div class="reverse-bg py-3 mb-5">
-          <h4 class="m-0 text-center">Mangolia Managed Content Block</h4>
-        </div>
-        <!-- END - CONTENT BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
 
         {% include "_includes/modules/product/landing/landing-body.html.twig" %}
 

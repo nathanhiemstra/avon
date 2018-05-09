@@ -14,11 +14,7 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
-        <!-- START - MANGOLIA CONTENT BLOCK -->
-        <div class="reverse-bg py-2 text-center mb-5">
-          <h4 class="m-0">Mangolia managed Content Block</h4>
-        </div>
-        <!-- END - MANGOLIA CONTENT BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
 
         <h2 class="mb-4">Direct Delivery Orders Report</h2>
         <p>{{fpo.paragraph}}</p>
@@ -211,14 +207,8 @@
           <a href="javascript:void(0)" class="underline">Print</a>
         </div>
         <!-- END - PRINT LINK -->
-
         
-
-        <!-- START - MANGOLIA CONTENT BLOCK -->
-        <div class="reverse-bg py-2 text-center my-4">
-          <h4 class="m-0">Mangolia managed Content Block</h4>
-        </div>
-        <!-- END - MANGOLIA CONTENT BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom' } %}
 
       {% endblock %}
 
