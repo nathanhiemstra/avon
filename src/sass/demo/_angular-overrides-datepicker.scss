@@ -22,6 +22,10 @@
 
   .btn-default {
     border-color: transparent;
+
+    &:not(.active) {
+      background-color: $white;
+    }
   }
 
   .btn-group {
@@ -63,7 +67,7 @@
   .btn-info.active,
   .btn-success.active {
     background-color: $btn-primary-bg !important;
-    border-color: $btn-primary-border !important;
+    border-color: transparent !important;
     color: #fff !important;
   }
 
@@ -92,4 +96,24 @@
       @extend .lt-carat-right:before;
     }
   }
+
+  .btn-default {
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+      color: $btn-default-color;
+      cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &.focus {
+        border-color: transparent;
+        color: $btn-default-hover-color;
+      }
+    }
+  }
+
+  display: block;
+  top: 45px;
+  left: 0px;
 }
