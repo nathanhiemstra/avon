@@ -9,17 +9,22 @@ aside.secondary-nav {
     padding-left: $spacing-3;
     padding-right: $spacing-5;
   }
-
 }
 
 .navbar.navbar-secondary {
   height: $navbar-height;
 
+  @media (min-width: $screen-sm-min) {
+    height: inherit;
+  }
+
   // Give our outermost group some padding and a mobile shadow
   > .list-group {
     padding-left: $spacing-3;
     padding-right: $spacing-3;
-    @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+
+    @include box-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+
     transition: $ui-animation-time box-shadow ease;
   }
 
@@ -31,7 +36,6 @@ aside.secondary-nav {
   }
 
   .list-group {
-
     .list-group-item {
       border: none;
       padding: $spacing-3 0;
@@ -58,7 +62,6 @@ aside.secondary-nav {
           border: none;
           margin-left: $spacing-4;
         }
-
       }
 
       a {
@@ -90,18 +93,14 @@ aside.secondary-nav {
         }
 
         &.active {
-          color: $brand-primary
+          color: $brand-primary;
         }
-
       }
-
     }
-
   }
 
   // desktop
   @media (min-width: $screen-md-min) {
-
     // remove shadow and padding on desktop view
     > .list-group {
       padding-left: 0;
@@ -123,9 +122,7 @@ aside.secondary-nav {
     }
 
     .list-group {
-
       .list-group-item {
-
         border: none;
         padding: $spacing-1 0 $spacing-3;
 
@@ -138,11 +135,7 @@ aside.secondary-nav {
             color: $brand-primary;
           }
         }
-
       }
-
     }
-
   }
-
 }
