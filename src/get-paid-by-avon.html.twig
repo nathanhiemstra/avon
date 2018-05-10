@@ -11,10 +11,6 @@
   {% block main %}
 
     <section class="container container--page">
-    
-    <!-- START - MAGNOLIA BLOCK -->
-    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
-    <!-- END - MAGNOLIA BLOCK -->
 
       {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
 
@@ -31,6 +27,12 @@
         {# DEFINE BLOCK - MAIN #}
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block main %}
+
+          <!-- START - MAGNOLIA BLOCK -->
+
+          {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
+
+          <!-- END - MAGNOLIA BLOCK -->
 
           <h2>Get Paid by Avon</h2>
           <p>Get all your payments from Avon quickly and easily with automatic deposits. Earnings incentives, rewards and credits go sraight to your account!</p>
@@ -115,7 +117,7 @@
       <!-- START - MAGNOLIA BLOCK -->
       {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom' } %}
       <!-- END - MAGNOLIA BLOCK -->
-          
+
     </section>
 
   {% endblock %}
