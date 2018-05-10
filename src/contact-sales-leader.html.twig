@@ -7,12 +7,18 @@
 
   <div class="container container--page">
 
+
+
     {% embed "_layouts/content-center-max-width.html.twig" %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {# DEFINE BLOCK - MAIN #}
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
+
+        <!-- START - MAGNOLIA BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
+        <!-- END - MAGNOLIA BLOCK -->
 
         {% include "_includes/groups/navigation/back-link.twig" with {label: "Support"} %}
 
@@ -62,6 +68,10 @@
           </div>
 
         </section>
+
+        <!-- START - MAGNOLIA BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom' } %}
+        <!-- END - MAGNOLIA BLOCK -->
 
       {% endblock %}
 

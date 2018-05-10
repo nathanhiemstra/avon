@@ -28,6 +28,10 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
+        <!-- START - MAGNOLIA BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
+        <!-- END - MAGNOLIA BLOCK -->
+
         <h2 class="pb-3">Track Submitted Orders</h2>
         <p>Click on Confirmation numbers below to see order details. Items not available can be viewed on your invoice.</p>
         <div class="table-responsive mt-5">
@@ -127,6 +131,10 @@
             </tbody>
           </table>
         </div>
+
+        <!-- START - MAGNOLIA BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom' } %}
+        <!-- END - MAGNOLIA BLOCK -->
 
       {% endblock %}
 

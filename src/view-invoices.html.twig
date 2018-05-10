@@ -14,6 +14,10 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
+        <!-- START - MAGNOLIA BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
+        <!-- END - MAGNOLIA BLOCK -->
+
         <h2>View Invoices</h2>
 
         <div class="invoice-iframe-holder mt-4">
@@ -30,6 +34,10 @@
             allowfullscreen=""></iframe>
         </div>
         <p>We recommend you also check your<a href="#">Invoice Addendums</a>.</p>
+
+        <!-- START - MAGNOLIA BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom' } %}
+        <!-- END - MAGNOLIA BLOCK -->
 
       {% endblock %}
 

@@ -16,6 +16,10 @@
 
         <div class="col-md-12">
 
+          <!-- START - MAGNOLIA BLOCK -->
+          {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
+          <!-- END - MAGNOLIA BLOCK -->
+
           {% include "_includes/groups/navigation/back-link.twig" with {label: "Back to online Order 456618581"} %}
 
           <h2>Customer Order Information</h2>
@@ -124,6 +128,10 @@
             price. In addition, demo prices may vary. Your invoice will reflect your actual prices. Prices for items that contain LABC or FUND in the description are available based on eligibility rules. Your invoice will reflect your actual price.</p>
 
           <p class="text-muted mt-4">**Items with quantity '0' were filled from 'on hand' inventory. For Customer Order History refer to your Customer Invoicing tool or Customer Order History in your web office.</p>
+
+          <!-- START - MAGNOLIA BLOCK -->
+          {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom' } %}
+          <!-- END - MAGNOLIA BLOCK -->
 
         </div>
 

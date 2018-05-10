@@ -14,6 +14,10 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
+        <!-- START - MAGNOLIA BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
+        <!-- END - MAGNOLIA BLOCK -->
+
         {% include "_includes/groups/navigation/back-link.twig" with {label: "Back"} %}
 
         {% set listItem = '<li><a class="underline" href="#">3RONJUF4IYODCOQVN6</a></li>' %}
@@ -117,6 +121,10 @@
           </table>
 
         </div>
+
+        <!-- START - MAGNOLIA BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom' } %}
+        <!-- END - MAGNOLIA BLOCK -->
 
       {% endblock %}
 

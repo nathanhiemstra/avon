@@ -14,6 +14,10 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
+        <!-- START - MAGNOLIA BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
+        <!-- END - MAGNOLIA BLOCK -->
+
         <h2>Customer Product Reminder</h2>
         <p>{{fpo.paragraph}}</p>
         <p>{{fpo.paragraph}}</p>
@@ -99,11 +103,15 @@
         <!-- END - PAGINATION -->
 
 
+        <!-- START - MAGNOLIA BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom' } %}
+        <!-- END - MAGNOLIA BLOCK -->
 
 
       {% endblock %}
 
     {% endembed %}
+
 
   </div>
 

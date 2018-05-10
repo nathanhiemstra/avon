@@ -14,9 +14,17 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
+        <!-- START - MAGNOLIA BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
+        <!-- END - MAGNOLIA BLOCK -->
+
         <h2 class="pb-3">Process Returns</h2>
         <!-- Developer note: For the "src", for demo purposes, we added "https://www.youravon.com" to the "src" in production: "/us-home/my-account/process-returns-iframe.html" -->
         <iframe class="embed-responsive-item" id="avnIframeUrl" src="https://www.youravon.com/us-home/my-account/process-returns-iframe.html" width="800px" height="800px" scrolling="yes" frameborder="0"></iframe>
+
+        <!-- START - MAGNOLIA BLOCK -->
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom' } %}
+        <!-- END - MAGNOLIA BLOCK -->
 
       {% endblock %}
 

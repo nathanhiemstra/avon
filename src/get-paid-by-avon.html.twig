@@ -11,6 +11,11 @@
   {% block main %}
 
     <section class="container container--page">
+    
+    <!-- START - MAGNOLIA BLOCK -->
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
+    <!-- END - MAGNOLIA BLOCK -->
+
       {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
 
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -106,6 +111,11 @@
         {% endblock %}
 
       {% endembed %}
+
+      <!-- START - MAGNOLIA BLOCK -->
+      {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom' } %}
+      <!-- END - MAGNOLIA BLOCK -->
+          
     </section>
 
   {% endblock %}
