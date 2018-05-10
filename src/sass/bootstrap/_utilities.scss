@@ -85,8 +85,8 @@
 // note that .overflow-ellipsis requires that the element have a set width like width: 200px;
 .overflow-ellipsis {
   text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 // For Affix plugin
@@ -99,6 +99,10 @@
     top: $spacing-5;
     width: 285px;
   }
+}
+
+.affix-top {
+  z-index: $zindex-affix;
 }
 
 // Vertical Alignment
@@ -156,12 +160,10 @@
     border-width: 7px;
     margin-left: 0;
     z-index: 9;
-
     opacity: 1;
     transform: translate(0, -1px);
     transition: $ui-animation-time opacity $ui-animation-ease, $ui-animation-time transform $ui-animation-ease;
   }
-
 }
 
 // Full width divider - add .full-width-divider to an hr to achieve a full
