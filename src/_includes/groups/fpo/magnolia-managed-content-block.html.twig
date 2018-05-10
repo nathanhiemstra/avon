@@ -3,8 +3,16 @@
 {% else %}
   {% set classes = 'mb-5' %}
 {% endif %}
-<!-- START - CONTENT BLOCK -->
-<div class="reverse-bg py-3 {{ classes }}">
-  <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+{% if extraSpacing %}
+  {% set extraSpacingClass = ' pt-' ~  extraSpacing %}
+{% else %}
+  {% set extraSpacingClass = ' pb-' ~  extraSpacing %}
+{% endif %}
+
+<!-- START - GENERIC CONTENT BLOCK -->
+<div class="generic-content-block {{ classes }}{{ extraSpacingClass }}">
+  <div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+  </div>
 </div>
-<!-- END - CONTENT BLOCK -->
+<!-- END - GENERIC CONTENT BLOCK -->
