@@ -67,6 +67,22 @@
 
   // Remove focus outline from opened modal
   outline: 0;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media all and (-ms-high-contrast: none) {
+  /* IE10 */
+  .modal-content {
+    background-color: white;
+  }
+
+  /* IE11 */
+  *::-ms-backdrop, .modal-content {
+    background-color: transparent;
+    max-height: inherit;
+  }
 }
 
 // Modal background // it's like a desert in here, so DRY, I need water
@@ -131,6 +147,8 @@
 .modal-body {
   position: relative;
   padding: $modal-inner-padding;
+  flex-grow: 1;
+  overflow-y: auto;
 
   p:last-child {
     margin-bottom: 0;
@@ -156,7 +174,7 @@
     margin-bottom: 0;
 
     // account for input[type="submit"] which gets the bottom margin like all other inputs
-
+ 
   }
 
   // but override that for button groups
@@ -189,6 +207,8 @@
 
   .modal-content {
     @include box-shadow(0 5px 15px rgba(0, 0, 0, 0.5));
+
+    max-height: calc(100vh - 60px);
   }
 
   // Modal sizes
@@ -200,7 +220,7 @@
     width: $screen-sm;
 
     // 768px
-
+ 
   }
 }
 
@@ -231,9 +251,6 @@
   }
 
   .modal-body {
-    position: absolute;
-    top: 62px;
-    bottom: 60px;
     width: 100%;
     overflow: auto;
   }
@@ -244,18 +261,7 @@
     }
   }
 
-  // modal either / or has two buttons and needs more bottom space to accommodate
-  &.modal-either-or {
-    .modal-body {
-      bottom: 115px;
-    }
-  }
-
   .modal-footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
     padding: 10px;
   }
 }
