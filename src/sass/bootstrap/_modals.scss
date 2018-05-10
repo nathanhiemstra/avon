@@ -72,19 +72,6 @@
   flex-direction: column;
 }
 
-@media all and (-ms-high-contrast: none) {
-  /* IE10 */
-  .modal-content {
-    background-color: white;
-  }
-
-  /* IE11 */
-  *::-ms-backdrop, .modal-content {
-    background-color: transparent;
-    max-height: inherit;
-  }
-}
-
 // Modal background // it's like a desert in here, so DRY, I need water
 .modal-backdrop,
 .drawer-backdrop {
@@ -281,5 +268,12 @@
 @media (max-width: $screen-sm-max) {
   .modal-fullscreen-sm {
     @include modal-fullscreen;
+  }
+}
+
+/* IE11 */
+@media all and (-ms-high-contrast: none) {
+  *::-ms-backdrop, .modal-content {
+    max-height: inherit !important;
   }
 }
