@@ -48,7 +48,7 @@ var CheckoutDemo = (function () {
     });
 
     if($els.affixAside.length) {
-      var toTop = $els.affixAside.offset().top - 32;
+      var toTop = $els.affixAside.offset().top;
       $els.affixAside.data('offset-top', toTop);
     }
 
