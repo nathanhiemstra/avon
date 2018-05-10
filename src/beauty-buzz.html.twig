@@ -7,6 +7,7 @@
 
   <div class="container container--page">
 
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
 
     {% embed "_layouts/content-center-max-width.html.twig" %}
 
@@ -14,10 +15,6 @@
       {# DEFINE BLOCK - MAIN #}
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
-
-        <!-- START - MAGNOLIA BLOCK -->
-        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
-        <!-- END - MAGNOLIA BLOCK -->
 
         <!--START - AVON BUZZ LOGO-->
         <div class="my-5 pb-4 text-center">
