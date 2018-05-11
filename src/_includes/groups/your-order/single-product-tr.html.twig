@@ -19,12 +19,12 @@
 
     </div>
   </td>
-  <td class="t-price {% if salePrice %}t-price--reduced{% endif %} pb-0 pb-md-3 pt-3 pt-md-5 pr-0 pr-md-3">
+  <td class="t-price {% if salePrice %}t-price--reduced{% endif %} text-right pb-0 pb-md-3 pt-3 pt-md-5 pr-0 pr-md-3">
     {% if salePrice %}
-      <span class="text-primary d-block">{{ salePrice }}</span>
+      <span class="text-primary d-block"><strong>{{ salePrice }}</strong></span>
       <span class="d-block small text-muted strike-through">{{ price }}</span>
     {% else %}
-      <span>{{ price }}</span>
+      <span><strong>{{ price }}</strong></span>
     {% endif %}
     <span class="hidden-xs hidden-sm">{{ eachShipment }}</span>
   </td>

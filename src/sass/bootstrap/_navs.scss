@@ -95,6 +95,7 @@
       border-width: 0px;
       border-bottom: 4px solid transparent;
       border-radius: $border-radius-base $border-radius-base 0 0;
+      font-weight: bold;
 
       &:hover {
         border-color: $link-hover-color;
