@@ -140,7 +140,7 @@ $gray-ultralight: lighten($gray-lighter, 2%);
    * ----------
    */
 
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: $breakpoint-header-min) {
 
     .primary-nav__search {
       min-width: auto;

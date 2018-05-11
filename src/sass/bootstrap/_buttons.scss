@@ -248,7 +248,7 @@ a.btn {
   }
 
   // desktop
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: $breakpoint-header-min) {
     background-color: transparent;
     letter-spacing: 0.9px;
     color: $brand-primary;

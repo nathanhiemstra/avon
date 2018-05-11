@@ -25,7 +25,7 @@ var PopoverCustomizer = (function () {
 
     $els.popoverAnchorCombo.on('click', function(e) {
       var windowWidth = $( window ).width();
-      var mobileWidth = 768;
+      var mobileWidth = 940; // note: this must match the sass-variable $breakpoint-header
 
        // TABLET / DESKTOP
       if ( windowWidth > mobileWidth ) {

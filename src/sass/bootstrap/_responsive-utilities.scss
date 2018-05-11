@@ -152,6 +152,10 @@
   @include responsive-invisibility('.hidden-xs');
 }
 
+@media (max-width: $breakpoint-header-max) {
+  @include responsive-invisibility('.hidden-xs-header');
+}
+
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   @include responsive-invisibility('.hidden-sm');
 }

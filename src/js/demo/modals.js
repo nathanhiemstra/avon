@@ -105,7 +105,7 @@ var Modals = ( function () {
 
   var _updateDataToggles = function () {
     var windowWidth = $( window ).width();
-    var mobileWidth = 768;
+    var mobileWidth = 940; // note: this must match sass var $breakpoint-header
 
     if( windowWidth > mobileWidth ) {
       // TABLET / DESKTOP - add popover in place of modal
