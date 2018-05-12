@@ -707,8 +707,15 @@ $('.carousel-thumbs').thumbnailsCarousel();
     var option  = data ? 'toggle' : $this.data()
     var parent  = $this.attr('data-parent')
     var $parent = parent && $(parent)
+    var $backdrop = $('<div class="menu-backdrop">')
 
     $target.toggleClass('collapse--off-canvas');
+
+    if($target.hasClass('collapse--off-canvas')) {
+      $backdrop.appendTo(document.body);
+    } else {
+      $('.menu-backdrop').remove();
+    }
 
     // nested toggles need special treatment for .drawer-open class
     if($this.hasClass('off-canvas-nested')) {

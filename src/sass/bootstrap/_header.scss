@@ -667,17 +667,18 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    max-width: 500px;
 
-    // transform: translateX(-100%);
-    display: none;
+    transform: translateX(-100%);
+    // display: none;
 
-    // transition: $ui-animation-time transform $ui-animation-ease;
+    transition: $ui-animation-time transform $ui-animation-ease;
 
     // show menu
     &.collapse--off-canvas {
-      display: flex;
+      // display: flex;
 
-      // transform: translateX(0);
+      transform: translateX(0);
 
     }
 
@@ -823,3 +824,11 @@
 }
 
 // END .navbar-sub
+
+.menu-backdrop {
+  position: fixed;
+  top: 0; right: 0;
+  bottom: 0; left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1
+}
