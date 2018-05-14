@@ -34,9 +34,11 @@
 @include responsive-invisibility('.visible-lg');
 
 .visible-xs-block,
+.visible-xs-block-header,
 .visible-xs-inline,
 .visible-xs-inline-block,
 .visible-xs-flex,
+.visible-xs-flex-header,
 .visible-sm-block,
 .visible-sm-inline,
 .visible-sm-inline-block,
@@ -60,6 +62,11 @@
     display: block !important;
   }
 }
+.visible-xs-block-header {
+  @media (max-width: $breakpoint-header-max) {
+    display: block !important;
+  }
+}
 .visible-xs-inline {
   @media (max-width: $screen-xs-max) {
     display: inline !important;
@@ -72,6 +79,11 @@
 }
 .visible-xs-flex {
   @media (max-width: $screen-xs-max) {
+    display: flex !important;
+  }
+}
+.visible-xs-flex-header {
+  @media (max-width: $breakpoint-header-max) {
     display: flex !important;
   }
 }
