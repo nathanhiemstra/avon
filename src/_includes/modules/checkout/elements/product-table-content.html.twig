@@ -15,12 +15,12 @@
         </td>
 
         <td class="t-price">
-          <div class="mb-2">{{ item.price }}</div>
+          <div class="mb-2"><strong>{{ item.price }}</strong></div>
           <div class="text-muted mb-2">
             {% if showEarningsDetails %}
-            QTY: {{ item.qty }} x $10.00
+            QTY: <strong>{{ item.qty }}</strong> x $10.00
             {% else %}
-            QTY: {{ item.qty }}
+            QTY: <strong>{{ item.qty }}</strong>
             {% endif %}
           </div>
           {% if showEarningsDetails %}
