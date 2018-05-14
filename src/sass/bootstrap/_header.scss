@@ -67,7 +67,8 @@
       .account-list__user {
         order: 4;
         width: 100%;
-        margin-bottom: 0.5rem;
+        margin: $spacing-3 0 $spacing-2 $spacing-1;
+        padding-right: 0;
 
         .profile-name {
           max-width: 250px;
@@ -84,7 +85,8 @@
         @media (min-width: $breakpoint-header-min) {
           order: 1;
           width: auto;
-          margin-bottom: 0;
+          margin: 0;
+          padding-right: $spacing-4;
 
           .profile-name {
             max-width: unset;
@@ -595,10 +597,11 @@
       color: $white;
       width: 100%;
       margin: 0;
-      padding: 15px;
+      padding: $spacing-3 $spacing-4;
 
       // desktop
       @media (min-width: $breakpoint-header-min) {
+        padding: $spacing-4 $spacing-5;
         background-color: $black;
         justify-content: flex-start;
         position: absolute;
@@ -614,9 +617,9 @@
     .navbar--utility-1 {
       order: 2;
       width: 100%;
-      margin: 0;
-      padding: 0 15px 15px;
       font-size: 12px;
+      margin: 0;
+      padding: 0 $spacing-4 $spacing-4;
 
       .nav > li {
         padding: $spacing-2;
@@ -627,7 +630,7 @@
       @media (min-width: $breakpoint-header-min) {
         position: absolute;
         display: block;
-        padding: 15px;
+        padding: $spacing-4 $spacing-5;
         top: $height-2;
         left: 0;
         height: $height-1;
@@ -667,7 +670,7 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    max-width: 500px;
+    max-width: $mobile-menu-max-width;
 
     transform: translateX(-100%);
     // display: none;

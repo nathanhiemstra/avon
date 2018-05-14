@@ -177,7 +177,7 @@ output {
     opacity: 1;
 
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
- 
+
   }
 
   &[readonly] {
@@ -219,7 +219,7 @@ select.form-control {
 
   + .lt-triangle-down.form-control-feedback {
     // transform: rotate(90deg);
- 
+
   }
 }
 
@@ -664,14 +664,31 @@ select.form-control.input-lg {
 
   // inline-block elements' icons need some love
   &.d-inline-block {
-    .lt-icon {
-      top: 50%;
-      transform: translateY(-50%);
+    // .dropdown {
+      .lt-icon {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    // }
+
+    // open state
+    .dropdown.open {
+      .lt-icon {
+        top: 50%;
+        transform: translateY(-50%) rotate(-180deg);
+      }
     }
 
     // handle cases where label is grouped in
     label + input + .lt-icon {
       transform: translateY(-17%);
+    }
+
+    // open state
+    .dropdown.open {
+      label + input + .lt-icon {
+        transform: translateY(-17%) rotate(-180deg);
+      }
     }
   }
 }
@@ -869,7 +886,7 @@ select.form-control.input-lg {
     padding-top: $padding-base-vertical + 1;
 
     // Default padding plus a border
- 
+
   }
 
   // Account for padding we're adding to ensure the alignment and of help text
@@ -893,7 +910,7 @@ select.form-control.input-lg {
       padding-top: $padding-base-vertical + 1;
 
       // Default padding plus a border
-   
+
     }
   }
 
