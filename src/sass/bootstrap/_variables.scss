@@ -377,6 +377,11 @@ $input-group-addon-border-color: $input-border !default;
 //** Disabled cursor for form controls and buttons.
 $cursor-disabled: not-allowed !default;
 
+//== Mobile Menu
+//
+//## Mobile Menu fly-out contents.
+$mobile-menu-max-width: 500px;
+
 //== Dropdowns
 //
 //## Dropdown menu container and contents.

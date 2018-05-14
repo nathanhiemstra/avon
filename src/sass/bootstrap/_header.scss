@@ -667,7 +667,7 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    max-width: 500px;
+    max-width: $mobile-menu-max-width;
 
     transform: translateX(-100%);
     // display: none;
