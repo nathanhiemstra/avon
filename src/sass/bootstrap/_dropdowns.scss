@@ -118,12 +118,12 @@ a, .dropdown {
   // responsive dropdown behaves normally on desktop but is block-level on mobile
   &--responsive {
     // DESKTOP
-    @media (min-width: $screen-sm-min) {
+    @media (min-width: $breakpoint-header-min) {
       background-color: $dropdown-bg;
     }
 
     // MOBILE
-    @media (max-width: $screen-xs-max) {
+    @media (max-width: $breakpoint-header-max) {
       position: relative;
       top: 0;
       display: block;
