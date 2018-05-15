@@ -414,7 +414,7 @@
         }
 
         // custom tablet
-        @media (min-width: $breakpoint-header-min) and (max-width: $screen-md-max) {
+        @media (min-width: $breakpoint-header-min) {
           display: flex;
           justify-content: space-between;
           width: 100%;
