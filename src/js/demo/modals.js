@@ -113,7 +113,7 @@ var Modals = ( function () {
       $els.modalPopoverCombos.popover()
         .data( 'bs.popover' )
         .tip()
-        .addClass( 'popover--box' );
+        .addClass( 'popover--box popover--noshadow' );
 
       // add listener on document so we can close popover on click outside
       $( document ).on( 'click', _checkTarget );
