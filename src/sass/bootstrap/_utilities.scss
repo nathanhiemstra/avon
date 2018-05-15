@@ -99,6 +99,13 @@
     top: $spacing-5;
     width: 285px;
   }
+
+  @media (max-width: $screen-md-min) {
+    .affix--aside-col-4 {
+      // For when this affix (scroll spy) module is displaying a stickyfooter on mobile
+      z-index: 1;
+    }
+  }
 }
 
 .affix-top {
