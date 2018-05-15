@@ -35,9 +35,9 @@ $gray-ultralight: lighten($gray-lighter, 2%);
       }
     }
 
-    .autocomplete-suggestions {
-      box-shadow: -4px 4px 4px rgba(0,0,0,0.05), 4px 4px 4px rgba(0,0,0,0.05);
-    }
+    // .autocomplete-suggestions {
+    //   box-shadow: -4px 4px 4px rgba(0,0,0,0.05), 4px 4px 4px rgba(0,0,0,0.05);
+    // }
 
     // mobile only styles for autocomplete
     @media (max-width: $screen-xs-max) {
@@ -200,10 +200,10 @@ $gray-ultralight: lighten($gray-lighter, 2%);
         align-items: center;
         justify-content: center;
         height: auto;
-        border-top: 1px solid $border-color;
-        border-left: 1px solid $border-color;
-        border-bottom: 1px solid $border-color;
-        box-shadow: -4px -4px 4px $gray-lighter, -4px 4px 4px $gray-lighter;
+        border-top: 1px solid $gray;
+        border-left: 1px solid $gray;
+        border-bottom: 1px solid $gray;
+        // box-shadow: -4px -4px 4px $gray-lighter, -4px 4px 4px $gray-lighter;
 
         a {
 
@@ -220,10 +220,10 @@ $gray-ultralight: lighten($gray-lighter, 2%);
             display: inline-block;
             width: 327px;
             opacity: 1;
-            border-top: 1px solid $border-color;
-            border-right: 1px solid $border-color;
-            border-bottom: 1px solid $border-color;
-            box-shadow: 4px -4px 4px $gray-lighter, 4px 4px 4px $gray-lighter;
+            border-top: 1px solid $gray;
+            border-right: 1px solid $gray;
+            border-bottom: 1px solid $gray;
+            // box-shadow: 4px -4px 4px $gray-lighter, 4px 4px 4px $gray-lighter;
 
             &:focus {
               outline: none;

@@ -363,6 +363,7 @@
       @media (min-width: $breakpoint-header-min) {
         display: flex;
         width: 100%;
+        max-width: $container-large-desktop;
         order: 4;
         margin-top: 1.75rem;
       }
@@ -400,17 +401,21 @@
           width: auto;
           background-color: $body-bg;
 
+          .dropdown-menu {
+            li, a {
+              width: 100%;
+              display: inline-block;
+            }
+          }
+
           a {
             width: auto;
           }
 
-          li {
-            float: left;
-          }
         }
 
         // custom tablet
-        @media (min-width: $breakpoint-header-min) and (max-width: $screen-md-max) {
+        @media (min-width: $breakpoint-header-min) {
           display: flex;
           justify-content: space-between;
           width: 100%;
@@ -719,15 +724,12 @@
 
   .navbar-sub__sub-list {
     height: calc(100% - 64px);
-
-    // desktop
-    @media (min-width: $breakpoint-header-min) {
-      height: auto;
-    }
+    overflow-y: scroll;
 
     li.sub-list-item {
       border-bottom: 1px solid rgba($white, 0.05);
       padding-left: $spacing-2;
+      overflow: hidden;
 
       a {
         text-transform: none;
@@ -801,7 +803,7 @@
 
       // end .sub-list-item a
 
-      // desktop
+      // .navbar-sub__sub-list desktop
       @media (min-width: $breakpoint-header-min) {
         .arrow-box,
         .lt-icon {
@@ -809,7 +811,7 @@
         }
 
         a {
-          padding: 1rem 15px;
+          padding: $spacing-2 0;
         }
 
         a:focus,
@@ -820,13 +822,41 @@
         }
       }
     }
+  } // end .navbar-sub__sub-list
 
-    // end .sub-list-item
+  // Unique styles for products and orders dropdowns
+  &.navbar-products,
+  &.navbar-orders {
+    .navbar-sub__sub-list {
+      // desktop
+      @media (min-width: $breakpoint-header-min) {
+        height: auto;
+        column-count: 2;
+        column-gap: 48px;
+        column-fill: auto;
+        padding: 18px 24px;
 
+        li.sub-list-item {
+          padding-left: 0;
+        }
+      }
+    }
+
+    h3 {
+      font-size: $font-size-h3;
+    }
   }
-}
 
-// END .navbar-sub
+  &.navbar-orders {
+    .navbar-sub__sub-list {
+      // desktop
+      @media (min-width: $breakpoint-header-min) {
+        column-count: 1;
+      }
+    }
+  }
+
+} // END .navbar-sub
 
 .menu-backdrop {
   position: fixed;
