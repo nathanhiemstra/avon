@@ -1,5 +1,12 @@
 .global-header {
   position: relative;
+
+  // remove shadows from dropdowns & popover, darker border than default
+  .dropdown-menu,
+  #mystorepopover {
+    box-shadow: none;
+    border: 1px solid $gray;
+  }
 }
 
 .navbar {
