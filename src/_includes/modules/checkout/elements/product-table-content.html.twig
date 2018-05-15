@@ -3,7 +3,7 @@
 
     {% for item in items %}
       <tr>
-        <td class="t-item">
+        <td class="t-item py-3">
           <img src="{{ item.imgPath }}" class="product-img-fixed-size" alt="">
         </td>
 
@@ -18,9 +18,9 @@
           <div class="mb-2"><strong>{{ item.price }}</strong></div>
           <div class="text-muted mb-2">
             {% if showEarningsDetails %}
-            QTY: <strong>{{ item.qty }}</strong> x $10.00
+            QTY: {{ item.qty }} x <strong>$10.00</strong>
             {% else %}
-            QTY: <strong>{{ item.qty }}</strong>
+            QTY: {{ item.qty }}
             {% endif %}
           </div>
           {% if showEarningsDetails %}

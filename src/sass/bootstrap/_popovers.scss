@@ -177,3 +177,8 @@
       }
   }
 }
+
+.popover--noshadow {
+  box-shadow: none;
+  border: 1px solid $gray;
+}
