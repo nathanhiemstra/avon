@@ -52,13 +52,6 @@
     <p class="my-5 text-center">To enroll, please fill out the fields below.</p>
 
     <div class="form-group">
-      <label class="control-label">Bank Name</label>
-      {% include "_includes/elements/forms/input.html.twig" with {
-        type : 'text'
-      } %}
-    </div>
-
-    <div class="form-group">
       <label class="control-label">Name on Account</label>
       {% include "_includes/elements/forms/input.html.twig" with {
         type : 'text'
@@ -66,7 +59,14 @@
     </div>
 
     <div class="form-group">
-      <label class="control-label">Bank Account Number
+      <label class="control-label">Bank Name</label>
+      {% include "_includes/elements/forms/input.html.twig" with {
+        type : 'text'
+      } %}
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Bank Routing Number
         <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span>
       </label>
       {% include "_includes/elements/forms/input.html.twig" with {
@@ -75,7 +75,7 @@
     </div>
 
     <div class="form-group">
-      <label class="control-label">Bank Routing Number
+      <label class="control-label">Bank Account Number
         <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span>
       </label>
       {% include "_includes/elements/forms/input.html.twig" with {
