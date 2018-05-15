@@ -370,7 +370,6 @@
       @media (min-width: $breakpoint-header-min) {
         display: flex;
         width: 100%;
-        max-width: $container-large-desktop;
         order: 4;
         margin-top: 1.75rem;
       }
@@ -378,6 +377,7 @@
       // MAIN NAV LIST
       .navbar-main__list {
         width: 100%;
+        max-width: $container-large-desktop;
         background-color: $body-bg;
 
         li {
