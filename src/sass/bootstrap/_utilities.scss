@@ -99,12 +99,13 @@
     top: $spacing-5;
     width: 285px;
   }
+}
 
-  @media (max-width: $screen-md-min) {
-    .affix--aside-col-4 {
-      // For when this affix (scroll spy) module is displaying a stickyfooter on mobile
-      z-index: 1;
-    }
+// TODO: Figure out why the contents of this element get moved back into the aside column 15px wider than the column breakpoint. Then remove +15px.
+@media (max-width: $screen-md + 15px) {
+  .affix--aside-col-4 {
+    // For when this affix (scroll spy) module is displaying a stickyfooter on mobile
+    z-index: 1;
   }
 }
 
