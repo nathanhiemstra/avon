@@ -339,6 +339,12 @@ gulp.task('sass', function(){
     }))
 });
 
+gulp.task('sass-prod', function(){
+  return gulp.src(path.src.sass)
+    .pipe(sass()) // Converts Sass to CSS with gulp-sass
+    .pipe(gulp.dest(path.dist.css))
+});
+
 gulp.task('server', function() {
   browserSync.init({
     server: {
@@ -357,5 +363,5 @@ gulp.task('watch', function() {
   gulp.watch(path.src.twig, ['compile']);
 });
 
-gulp.task('build', gulpSequence('clean', 'sass', 'compile', 'copy'));
+gulp.task('build', gulpSequence('clean', 'sass-prod', 'compile', 'copy'));
 gulp.task('default', gulpSequence('build', 'watch', 'server'));
