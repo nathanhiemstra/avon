@@ -879,7 +879,9 @@
 
   // Unique styles for products and orders dropdowns
   &.navbar-products,
-  &.navbar-orders {
+  &.navbar-orders,
+  &.Products,
+  &.Orders {
     .navbar-sub__sub-list {
       // desktop
       @media (min-width: $breakpoint-header-min) {
@@ -900,7 +902,8 @@
     }
   }
 
-  &.navbar-orders {
+  &.navbar-orders,
+  &.Orders {
     .navbar-sub__sub-list {
       // desktop
       @media (min-width: $breakpoint-header-min) {
