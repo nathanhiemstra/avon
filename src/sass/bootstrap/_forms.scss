@@ -127,7 +127,7 @@ output {
 .form-control {
   display: block;
 
-  &:not(.form-control-inline):not(input[size]) {
+  &:not(.form-control-inline) {
     width: 100%;
   }
 
