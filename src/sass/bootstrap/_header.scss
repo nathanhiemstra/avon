@@ -446,8 +446,10 @@
             // MOBILE
             @media (max-width: $breakpoint-header-max) {
               color: $text-color;
-              border-left: 4px solid $brand-primary;
               border-bottom: none;
+              &:not(.toggle-back) {
+                border-left: 4px solid $brand-primary;
+              }
             }
           }
 
@@ -871,5 +873,10 @@
   top: 0; right: 0;
   bottom: 0; left: 0;
   background-color: rgba(0, 0, 0, 0.75);
-  z-index: 1
+  z-index: $zindex-navbar - 1;
+
+  // desktop
+  @media (min-width: $breakpoint-header-min) {
+    display: none;
+  }
 }
