@@ -98,6 +98,10 @@
   }
 
   .btn-default {
+    .text-info.text-info.text-info.text-info {
+      color: $btn-default-color !important;
+    }
+
     &.disabled,
     &[disabled],
     fieldset[disabled] & {
