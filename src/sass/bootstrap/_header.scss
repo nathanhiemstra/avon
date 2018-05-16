@@ -434,6 +434,14 @@
           // desktop
           @media (min-width: $breakpoint-header-min) {
             font-weight: normal;
+            a .lt-icon {
+              transition: $ui-animation-time transform $ui-animation-ease;
+            }
+            &:hover {
+              a .lt-icon {
+                transform: scaleY(-1);
+              }
+            }
           }
 
           &.active > a,
@@ -742,6 +750,7 @@
         text-transform: none;
         padding: 1.5rem 15px;
         border-left: 4px solid $body-bg;
+        color: $text-color;
       }
 
       // first level child
@@ -826,7 +835,7 @@
         a:hover {
           text-transform: none;
           border-bottom: none;
-          color: $text-color;
+          color: $brand-primary;
         }
       }
     }
