@@ -161,7 +161,6 @@
         $heading.addClass('js-tabcollapse-panel-heading ' + (active ? '' : 'collapsed'));
         $heading.attr({
             'data-toggle': 'collapse',
-            'data-parent': '#' + parentId,
             'href': '#' + groupId
         });
         return $heading;

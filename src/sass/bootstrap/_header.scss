@@ -116,6 +116,11 @@
         width: 132px;
         overflow-x: visible;
 
+        // tiny
+        @media (max-width: $screen-tiny) {
+          flex: 1 0 100%;
+        }
+
         // mobile only
         @media (max-width: $breakpoint-header-max) {
           .lt-icon:before {
@@ -132,6 +137,13 @@
       .account-list__language {
         order: 2;
 
+        // tiny
+        @media (max-width: $screen-tiny) {
+          a {
+            padding-left: 0;
+          }
+        }
+
         // desktop
         @media (min-width: $breakpoint-header-min) {
           order: 3;
@@ -141,6 +153,13 @@
       .account-list__log {
         order: 3;
         margin-right: 4rem;
+
+        // tiny
+        @media (max-width: $screen-tiny) {
+          a {
+            padding-left: 0;
+          }
+        }
 
         // desktop
         @media (min-width: $breakpoint-header-min) {
@@ -177,6 +196,16 @@
             color: $gray;
           }
         }
+
+        &:first-of-type {
+          // tiny
+          @media (max-width: $screen-tiny) {
+            white-space: nowrap;
+            max-width: 62px;
+            overflow: hidden;
+          }
+        }
+
       }
 
       // desktop
@@ -221,6 +250,11 @@
         width: 50%;
         margin: 5px;
         text-align: center;
+
+        // tiny
+        @media (max-width: $screen-tiny) {
+          width: 100%;
+        }
 
         // desktop
         @media (min-width: $breakpoint-header-min) {}
@@ -370,7 +404,6 @@
       @media (min-width: $breakpoint-header-min) {
         display: flex;
         width: 100%;
-        max-width: $container-large-desktop;
         order: 4;
         margin-top: 1.75rem;
       }
@@ -378,6 +411,7 @@
       // MAIN NAV LIST
       .navbar-main__list {
         width: 100%;
+        max-width: $container-large-desktop;
         background-color: $body-bg;
 
         li {
@@ -454,8 +488,10 @@
             // MOBILE
             @media (max-width: $breakpoint-header-max) {
               color: $text-color;
-              border-left: 4px solid $brand-primary;
               border-bottom: none;
+              &:not(.toggle-back) {
+                border-left: 4px solid $brand-primary;
+              }
             }
           }
 
@@ -880,5 +916,10 @@
   top: 0; right: 0;
   bottom: 0; left: 0;
   background-color: rgba(0, 0, 0, 0.75);
-  z-index: 1
+  z-index: $zindex-navbar - 1;
+
+  // desktop
+  @media (min-width: $breakpoint-header-min) {
+    display: none;
+  }
 }

@@ -224,6 +224,10 @@
   <h2 id="forms-control-sizes">Control sizing</h2>
   <p>Set heights using classes like <code>.input-lg</code>, and set widths using grid column classes like <code>.col-lg-*</code>.</p>
 
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# Control sizing - height #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
   <h3>Height sizing</h3>
   <p>Create taller or shorter form controls that match button sizes.</p>
   <h4>Inputs</h4>
@@ -247,12 +251,9 @@
   <div class="bs-example bs-example-control-sizing">
     <form role="form">
       <div class="controls">
-
         {% include components.elements.forms.select with {'classes': 'input-lg'} %}
         {% include components.elements.forms.select %}
         {% include components.elements.forms.select with {'classes': 'input-sm'} %}
-
-
       </div>
     </form>
   </div><!-- /.bs-example -->
@@ -262,6 +263,82 @@
 {% include components.elements.forms.select  %}
 {% include components.elements.forms.select with {'classes': 'input-sm'} %}
 {{ endhighlight }}
+
+
+
+
+
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# Control sizing - width #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+  <h3 id="forms-control-sizes-width">Width sizing</h3>
+  <p>This is to to make the "size" attribute behave correctly. It overrides 100% from bootstrap and also to accounts for the padding added by bootstrap that throws off "size".</p>
+  <h4>Inputs</h4>
+  <div class="bs-example bs-example-control-sizing">
+    <form role="form">
+      <div class="controls">
+        
+        <div class="row">
+          <div class="col col-sm-3">
+            <p>{% include components.elements.forms.input with { size: 1, classes: 'input-sm', placeholder:  '8' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 2, classes: 'input-sm', placeholder:  '88' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 3, classes: 'input-sm', placeholder:  '888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 4, classes: 'input-sm', placeholder:  '8888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 5, classes: 'input-sm', placeholder:  '88888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 6, classes: 'input-sm', placeholder:  '888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 7, classes: 'input-sm', placeholder:  '8888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 8, classes: 'input-sm', placeholder:  '88888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 9, classes: 'input-sm', placeholder:  '888888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 10, classes:'input-sm', placeholder: '8888888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 11, classes:'input-sm', placeholder: '88888888888' } %}</p>
+          </div>
+          <div class="col col-sm-3">
+            <p>{% include components.elements.forms.input with { size: 1, placeholder:  '8' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 2, placeholder:  '88' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 3, placeholder:  '888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 4, placeholder:  '8888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 5, placeholder:  '88888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 6, placeholder:  '888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 7, placeholder:  '8888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 8, placeholder:  '88888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 9, placeholder:  '888888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 10, placeholder: '8888888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 11, placeholder: '88888888888' } %}</p>
+          </div>
+          <div class="col col-sm-3">
+            <p>{% include components.elements.forms.input with { size: 1, classes: 'input-lg', placeholder:  '8' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 2, classes: 'input-lg', placeholder:  '88' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 3, classes: 'input-lg', placeholder:  '888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 4, classes: 'input-lg', placeholder:  '8888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 5, classes: 'input-lg', placeholder:  '88888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 6, classes: 'input-lg', placeholder:  '888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 7, classes: 'input-lg', placeholder:  '8888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 8, classes: 'input-lg', placeholder:  '88888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 9, classes: 'input-lg', placeholder:  '888888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 10, classes:'input-lg', placeholder: '8888888888' } %}</p>
+            <p>{% include components.elements.forms.input with { size: 11, classes:'input-lg', placeholder: '88888888888' } %}</p>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div><!-- /.bs-example -->
+
+{{ highlightMarkup }}
+
+  {% include components.elements.forms.input with { size: 6, classes: 'input-sm', placeholder:  '888888' } %}
+  {% include components.elements.forms.input with { size: 6, placeholder:  '888888' } %}
+  {% include components.elements.forms.input with { size: 6, classes: 'input-lg', placeholder:  '888888' } %}
+
+{{ endhighlight }}
+
+
+
+
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# Textarea #}

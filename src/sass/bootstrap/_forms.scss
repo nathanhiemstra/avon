@@ -127,7 +127,7 @@ output {
 .form-control {
   display: block;
 
-  &:not(.form-control-inline) {
+  &:not(.form-control-inline):not(input[size]) {
     width: 100%;
   }
 
@@ -177,7 +177,7 @@ output {
     opacity: 1;
 
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
-
+ 
   }
 
   &[readonly] {
@@ -219,7 +219,7 @@ select.form-control {
 
   + .lt-triangle-down.form-control-feedback {
     // transform: rotate(90deg);
-
+ 
   }
 }
 
@@ -665,10 +665,11 @@ select.form-control.input-lg {
   // inline-block elements' icons need some love
   &.d-inline-block {
     // .dropdown {
-      .lt-icon {
-        top: 50%;
-        transform: translateY(-50%);
-      }
+    .lt-icon {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
     // }
 
     // open state
@@ -886,7 +887,7 @@ select.form-control.input-lg {
     padding-top: $padding-base-vertical + 1;
 
     // Default padding plus a border
-
+ 
   }
 
   // Account for padding we're adding to ensure the alignment and of help text
@@ -910,7 +911,7 @@ select.form-control.input-lg {
       padding-top: $padding-base-vertical + 1;
 
       // Default padding plus a border
-
+   
     }
   }
 
@@ -994,37 +995,37 @@ $search-btn-size: 44px;
   }
 }
 
-// These are for inputs that are manipulated with Angular.
-// Angular uses it's own method of populating the input rather than value="".
-// That method doesn't seem to know how wide the input should be based.
-// So we give it a min-width.
+// This is to override 100% from bootstrap and also to account for the padding added by bootstrap that throws off "size"
+
 input.form-control {
-  &[maxlength="1"],
-  &[maxlength='1'] {
-    min-width: 30px;
-  }
+  $size-start: 2em;
+  $size-increment: 0.55em;
 
-  &[maxlength="2"],
-  &[maxlength='2'] {
-    min-width: 38px;
+  &[size="1"] {
+    // width: $size-start;
+    text-align: center;
   }
-
-  &[maxlength="3"],
-  &[maxlength='3'] {
-    min-width: 48px;
-  }
-
-  &[maxlength="4"],
-  &[maxlength='4'] {
-    min-width: 58px;
-  }
-
-  $size-start: 3em;
-  $size-increment: 0.616em;
 
   @for $size from 1 through 11 {
     &[size="#{$size}"] {
+      // width: $size-start + $size * $size-increment;
       width: $size-start + $size * $size-increment;
+    }
+
+    $size-increment: $size-increment + $size-increment * 0.01;
+  }
+
+  &.input-lg {
+    $size-start: 2.8em;
+    $size-increment: 0.58em;
+
+    @for $size from 1 through 11 {
+      &[size="#{$size}"] {
+        // width: $size-start + $size * $size-increment;
+        width: $size-start + $size * $size-increment;
+      }
+
+      $size-increment: $size-increment + $size-increment * 0.01;
     }
   }
 }
