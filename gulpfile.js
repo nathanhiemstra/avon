@@ -363,5 +363,6 @@ gulp.task('watch', function() {
   gulp.watch(path.src.twig, ['compile']);
 });
 
-gulp.task('build', gulpSequence('clean', 'sass-prod', 'compile', 'copy'));
+gulp.task('build-prod', gulpSequence('clean', 'sass-prod', 'compile', 'copy'));
+gulp.task('build', gulpSequence('clean', 'sass', 'compile', 'copy'));
 gulp.task('default', gulpSequence('build', 'watch', 'server'));
