@@ -197,6 +197,11 @@
           }
         }
 
+        // tiny plus
+        // @media (max-width: $screen-tiny-plus) {
+        //   font-size: 12px;
+        // }
+
         &:first-of-type {
           // tiny
           @media (max-width: $screen-tiny) {
@@ -767,6 +772,12 @@
         font-size: 36px;
       }
 
+      &:hover {
+        .lt-icon:before {
+          color: $brand-primary;
+        }
+      }
+
       h3 {
         line-height: 1.64;
       }
@@ -822,6 +833,8 @@
       }
 
       a {
+        font-size: 18px;
+
         .lt-carat-right {
           opacity: 1;
           color: $white;
