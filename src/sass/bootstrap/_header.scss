@@ -905,11 +905,16 @@
       @media (min-width: $breakpoint-header-min) {
         height: auto;
         column-count: 2;
-        column-gap: 48px;
+        column-gap: 24px;
         padding: 18px 24px;
 
         li.sub-list-item {
           padding-left: 0;
+
+          > a {
+            width: 150px;
+            white-space: normal;
+          }
         }
       }
     }
