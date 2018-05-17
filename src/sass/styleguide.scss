@@ -1875,6 +1875,16 @@ pre[class*="language-"] {
   @include clearfix;
 
   height: 400px;
+
+  + .demo-datepicker-from-angular {
+    .global-angular-datepicker-day & {
+      height: 0;
+    }
+
+    .global-angular-datepicker-year & {
+      height: 285px;
+    }
+  }
 }
 
 .ng-override-sortable-table {

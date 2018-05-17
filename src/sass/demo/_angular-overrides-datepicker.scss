@@ -7,27 +7,6 @@
     padding-top: 10px;
   }
 
-  .btn {
-    box-shadow: none;
-
-    .text-info:not(.text-muted),
-    &.active .text-info {
-      color: #fff !important;
-    }
-  }
-
-  .ng-hide {
-    display: none;
-  }
-
-  .btn-default {
-    border-color: transparent;
-
-    &:not(.active) {
-      background-color: $white;
-    }
-  }
-
   .btn-group {
     display: block;
     width: 100%;
@@ -57,19 +36,19 @@
     }
   }
 
-  .btn-danger,
-  .btn-info,
-  .btn-success,
-  .btn-danger:hover,
-  .btn-info:hover,
-  .btn-success:hover,
-  .btn-danger.active,
-  .btn-info.active,
-  .btn-success.active {
-    background-color: $btn-primary-bg !important;
-    border-color: transparent !important;
-    color: #fff !important;
-  }
+  // .btn-danger,
+  // .btn-info,
+  // .btn-success,
+  // .btn-danger:hover,
+  // .btn-info:hover,
+  // .btn-success:hover,
+  // .btn-danger.active,
+  // .btn-info.active,
+  // .btn-success.active {
+  //   background-color: $btn-primary-bg !important;
+  //   border-color: transparent !important;
+  //   color: #fff !important;
+  // }
 
   .glyphicon-chevron-left,
   .glyphicon-chevron-right {
@@ -97,23 +76,149 @@
     }
   }
 
-  .btn-default {
-    .text-info.text-info.text-info.text-info {
-      color: $btn-default-color !important;
-    }
+  .ng-hide {
+    display: none;
+  }
 
-    &.disabled,
-    &[disabled],
-    fieldset[disabled] & {
-      color: $btn-default-color;
-      cursor: pointer;
+  .btn-default {
+    // On month view, the active classes are a little different
+    // &:not(.active) {
+    //   .text-info.text-info.text-info.text-info {
+    //     // [ng-switch-when="month"] & {
+    //     color: $btn-default-color !important;
+
+    //     // }
+
+    //   }
+    // }
+
+    // &.disabled,
+    // &[disabled],
+    // fieldset[disabled] & {
+    //   color: $btn-default-color;
+    //   cursor: pointer;
+
+    //   &:hover,
+    //   &:focus,
+    //   &.focus {
+    //     border-color: transparent;
+    //     color: $btn-default-hover-color;
+    //   }
+    // }
+ 
+  }
+
+  @mixin demo-datepicker-btn-default {
+    background-color: #fff !important;
+    color: $btn-default-color !important;
+  }
+
+  @mixin demo-datepicker-btn-default-hover {
+    background-color: #fff !important;
+    color: $btn-default-hover-color !important;
+  }
+
+  @mixin demo-datepicker-btn-today {
+    border-color: $gray-light !important;
+    color: $btn-default-color !important;
+  }
+
+  @mixin demo-datepicker-btn-active {
+    background-color: $btn-primary-bg !important;
+    color: #fff !important;
+  }
+
+  @mixin demo-datepicker-btn-active-hover {
+    background-color: $btn-default-hover-color !important;
+    color: #fff !important;
+  }
+
+  // The "day" calendar has a <span>" inside that we need to do stuff with later.
+  [ng-switch-when="day"] {
+    tbody {
+      .btn {
+        padding: 0;
+
+        > span {
+          padding: 5px 10px;
+          border: 1px solid transparent;
+          display: block;
+        }
+      }
+    }
+  }
+
+  [ng-switch-when="month"] {
+    tbody {
+      td {
+        padding: 0 4px;
+
+        .btn {
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+      }
+    }
+  }
+
+  .btn {
+    box-shadow: none;
+    border-color: transparent !important;
+    cursor: pointer;
+
+    // padding: 0;
+    border-width: 0;
+
+    &:hover,
+    &:focus,
+    &.focus {}
+
+    // Make the spane define size of box so we can use a border on it later
+
+    // Use .btn-default here to override bootstrap style
+    &.btn-default {
+      @include demo-datepicker-btn-default;
 
       &:hover,
       &:focus,
       &.focus {
-        border-color: transparent;
-        color: $btn-default-hover-color;
+        @include demo-datepicker-btn-default-hover;
       }
+    }
+
+    // If today is NOT selected
+    &:not(.active) {
+      .text-info {
+        @include demo-datepicker-btn-today;
+      }
+    }
+
+    // Selected days
+    &.active {
+      @include demo-datepicker-btn-active;
+
+      // If today IS selected
+      .text-info {
+        color: #fff !important;
+      }
+
+      &:hover,
+      &:focus,
+      &.focus {
+        @include demo-datepicker-btn-active-hover;
+      }
+    }
+  }
+
+  // Big buttons
+  .btn-danger,
+  .btn-success {
+    @include demo-datepicker-btn-active;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      @include demo-datepicker-btn-active-hover;
     }
   }
 
