@@ -835,6 +835,11 @@
       a {
         font-size: 18px;
 
+        // desktop
+        @media (min-width: $breakpoint-header-min) {
+          font-size: 15px;
+        }
+
         .lt-carat-right {
           opacity: 1;
           color: $white;
