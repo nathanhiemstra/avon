@@ -221,6 +221,10 @@ a.btn {
     vertical-align: middle;
   }
 
+  strong {
+    white-space: nowrap;
+  }
+
   // dropdowns
   .dropdown-menu {
     background-color: transparent;
@@ -245,6 +249,19 @@ a.btn {
   &:hover {
     background-color: transparent !important;
     color: $white !important;
+  }
+
+  // tiny
+  @media (max-width: $screen-tiny-min) {
+    strong {
+      display: block;
+      margin-top: 3px;
+    }
+  }
+
+  // tiny-plus
+  @media (max-width: $screen-tiny-plus) {
+    padding: 10px 5px !important;
   }
 
   // desktop

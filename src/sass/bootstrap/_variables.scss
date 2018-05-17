@@ -449,8 +449,10 @@ $zindex-tooltip:            1070 !default;
 //
 //## Define the breakpoints at which your layout will change, adapting to different screen sizes.
 
-// Tiny screen that 1 user will have
-$screen-tiny: 385px !default;
+// Tiny screen
+$screen-tiny: 320px;
+$screen-tiny-min: $screen-tiny - 1;
+$screen-tiny-plus: 385px !default;
 
 // Extra small screen / phone
 //** Deprecated `$screen-xs` as of v3.0.1

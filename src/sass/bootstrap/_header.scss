@@ -116,8 +116,16 @@
         width: 132px;
         overflow-x: visible;
 
+        // tiny-plus
+        @media (max-width: $screen-tiny-plus) {
+          width: 125px;
+          a {
+            padding-right: 0;
+          }
+        }
+
         // tiny
-        @media (max-width: $screen-tiny) {
+        @media (max-width: $screen-tiny-min) {
           flex: 1 0 100%;
         }
 
@@ -138,7 +146,15 @@
         order: 2;
 
         // tiny
-        @media (max-width: $screen-tiny) {
+        @media (max-width: $screen-tiny-plus) {
+          a {
+            padding-left: 0;
+            padding-right: 12px;
+          }
+        }
+
+        // tiny plus
+        @media (min-width: $screen-tiny) and (max-width: $screen-tiny-plus) {
           a {
             padding-left: 0;
           }
@@ -155,7 +171,15 @@
         margin-right: 4rem;
 
         // tiny
-        @media (max-width: $screen-tiny) {
+        @media (max-width: $screen-tiny-plus) {
+          margin-right: 0;
+          a {
+            padding-left: 0;
+          }
+        }
+
+        // tiny plus
+        @media (min-width: $screen-tiny) and (max-width: $screen-tiny-plus) {
           a {
             padding-left: 0;
           }
@@ -198,15 +222,16 @@
         }
 
         // tiny plus
-        // @media (max-width: $screen-tiny-plus) {
-        //   font-size: 12px;
-        // }
+        @media (max-width: $screen-tiny-plus) {
+          font-size: 12px;
+          margin-bottom: 10px;
+        }
 
         &:first-of-type {
           // tiny
-          @media (max-width: $screen-tiny) {
+          @media (max-width: $screen-tiny-plus) {
             white-space: nowrap;
-            max-width: 62px;
+            max-width: 57px;
             overflow: hidden;
           }
         }
@@ -255,11 +280,6 @@
         width: 50%;
         margin: 5px;
         text-align: center;
-
-        // tiny
-        @media (max-width: $screen-tiny) {
-          width: 100%;
-        }
 
         // desktop
         @media (min-width: $breakpoint-header-min) {}
