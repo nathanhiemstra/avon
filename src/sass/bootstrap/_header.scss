@@ -930,6 +930,11 @@
       // desktop
       @media (min-width: $breakpoint-header-min) {
         column-count: 1;
+
+        li.sub-list-item > a {
+          width: auto;
+          white-space: nowrap;
+        }
       }
     }
   }
