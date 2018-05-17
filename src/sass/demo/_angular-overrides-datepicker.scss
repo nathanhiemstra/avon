@@ -139,6 +139,7 @@
       .btn {
         padding: 0;
 
+        // Make the span define size of box so we can use a border on it later
         > span {
           padding: 5px 10px;
           border: 1px solid transparent;
@@ -165,15 +166,7 @@
     box-shadow: none;
     border-color: transparent !important;
     cursor: pointer;
-
-    // padding: 0;
     border-width: 0;
-
-    &:hover,
-    &:focus,
-    &.focus {}
-
-    // Make the spane define size of box so we can use a border on it later
 
     // Use .btn-default here to override bootstrap style
     &.btn-default {
