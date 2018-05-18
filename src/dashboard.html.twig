@@ -13,7 +13,7 @@
     <div class="container--dashboard">
 
       <section class="container container--page">
-        
+
         <!-- START - MAGNOLIA BLOCK -->
         {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
         <!-- END - MAGNOLIA BLOCK -->
@@ -27,12 +27,15 @@
 
       </section>
       <!-- /.container -->
-      
+
       <section class="container my-5">
        {% include '_includes/modules/dashboard/tab-content.html.twig' %}
 
        <!-- START - MAGNOLIA BLOCK -->
-        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom' } %}
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+          position: 'bottom',
+          extraSpacing: '5'
+        } %}
         <!-- END - MAGNOLIA BLOCK -->
       </section>
 

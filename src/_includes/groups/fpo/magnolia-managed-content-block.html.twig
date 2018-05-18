@@ -1,18 +1,25 @@
 {% if position == 'bottom' %}
   {% set classes = 'bottom' %}
+  {% if extraSpacing %}
+    {% set paddingClass = ' pt-' ~  extraSpacing %}
+  {% endif %}
+  {% if removeDefaultSpacing %}
+    {% set marginClass = ' mt-0' %}
+  {% endif %}
 {% elseif position == 'within' %}
   {% set classes = 'within' %}
+  {% if extraSpacing %}
+    {% set paddingClass = ' pb-' ~  extraSpacing %}
+  {% endif %}
 {% else %}
   {% set classes = 'top' %}
-{% endif %}
-{% if extraSpacing %}
-  {% set extraSpacingClass = ' pt-' ~  extraSpacing %}
-{% else %}
-  {% set extraSpacingClass = ' pb-' ~  extraSpacing %}
+  {% if extraSpacing %}
+    {% set paddingClass = ' pb-' ~  extraSpacing %}
+  {% endif %}
 {% endif %}
 
 <!-- START - GENERIC CONTENT BLOCK -->
-<div class="generic-content-block {{ classes }}{{ extraSpacingClass }}">
+<div class="generic-content-block {{ classes }}{{ marginClass }}{{ paddingClass }}">
   <div class="reverse-bg py-3">
     <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
   </div>
