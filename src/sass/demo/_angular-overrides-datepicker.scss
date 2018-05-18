@@ -137,42 +137,9 @@
     color: #fff !important;
   }
 
-  // The "day" calendar has a <span>" inside that we need to do stuff with later.
-  // [ng-switch-when="day"] {
-  //   td {
-  //     padding-left: 1px;
-  //     padding-right: 1px;
-  //   }
-
-  //   tbody {
-  //     .btn {
-  //       padding: 0;
-
-  //       // Make the span define size of box so we can use a border on it later
-  //       > span {
-  //         padding: 5px 10px;
-  //         border: 1px solid transparent;
-  //         display: block;
-  //       }
-  //     }
-  //   }
-  // }
-
   [ng-switch-when="month"] {
     margin-left: 5px;
     margin-right: 5px;
-
-    //   tbody {
-    //     td {
-    //       padding: 0 4px;
-
-    //       .btn {
-    //         padding-left: 8px;
-    //         padding-right: 8px;
-    //       }
-    //     }
-    //   }
- 
   }
 
   td {
@@ -191,6 +158,7 @@
       &[colspan="5"] {
         .btn {
           &.btn-default {
+            // Middle button in header
             cursor: default;
           }
         }
@@ -231,12 +199,22 @@
     &.btn-default {
       @include demo-datepicker-btn-default;
 
-      // &:hover,
-      // &:focus,
-      // &.focus {
-      //   @include demo-datepicker-btn-default-hover;
-      // }
-   
+      &:not(.active) {
+        // Future days
+        &.disabled,
+        &[disabled],
+        fieldset[disabled] & {
+          color: $gray-light !important;
+
+          &:hover,
+          &:focus,
+          &.focus {
+            color: $gray-light !important;
+            cursor: default;
+            background-color: #fff !important;
+          }
+        }
+      }
     }
 
     // If today is NOT selected
@@ -259,20 +237,6 @@
       &:focus,
       &.focus {
         @include demo-datepicker-btn-active-hover;
-      }
-    }
-
-    // Future days
-    &.disabled,
-    &[disabled],
-    fieldset[disabled] & {
-      color: $gray-light !important;
-
-      &:hover,
-      &:focus,
-      &.focus {
-        color: $gray-light !important;
-        cursor: default;
       }
     }
   }
