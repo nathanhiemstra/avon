@@ -1,7 +1,9 @@
 {% if position == 'bottom' %}
-  {% set classes = 'mt-5' %}
+  {% set classes = 'bottom' %}
+{% elseif position == 'within' %}
+  {% set classes = 'within' %}
 {% else %}
-  {% set classes = 'mb-5' %}
+  {% set classes = 'top' %}
 {% endif %}
 {% if extraSpacing %}
   {% set extraSpacingClass = ' pt-' ~  extraSpacing %}

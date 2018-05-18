@@ -1,0 +1,14 @@
+// Generic Magnolia managed content blocks that appear at the top and bottom
+// of pages
+.generic-content-block {
+    &.top {
+        margin-bottom: $spacing-5;
+        margin-top: $spacing-5;
+    }
+    &.within {
+        margin-bottom: $spacing-5;
+    }
+    &.bottom {
+        margin-top: $spacing-5 * 3;
+    }
+}
