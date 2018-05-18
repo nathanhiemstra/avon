@@ -61,15 +61,16 @@
 
         </section>
 
-        <!-- START - MAGNOLIA BLOCK -->
-        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom' } %}
-        <!-- END - MAGNOLIA BLOCK -->
-
       {% endblock %}
 
     {% endembed %}
 
-
+    <!-- START - MAGNOLIA BLOCK -->
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+      position: 'bottom',
+      removeDefaultSpacing: true
+    } %}
+    <!-- END - MAGNOLIA BLOCK -->
 
   </div>
 
