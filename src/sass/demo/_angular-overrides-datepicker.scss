@@ -135,6 +135,11 @@
 
   // The "day" calendar has a <span>" inside that we need to do stuff with later.
   [ng-switch-when="day"] {
+    td {
+      padding-left: 1px;
+      padding-right: 1px;
+    }
+
     tbody {
       .btn {
         padding: 0;
@@ -167,6 +172,7 @@
     border-color: transparent !important;
     cursor: pointer;
     border-width: 0;
+    padding: 1px;
 
     // Use .btn-default here to override bootstrap style
     &.btn-default {
