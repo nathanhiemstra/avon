@@ -5,8 +5,16 @@
   .dropdown-menu,
   #mystorepopover {
     box-shadow: none;
-    border: 1px solid $gray;
+    border: none;
   }
+
+  // desktop
+  @media (min-width: $breakpoint-header-min) {
+    .dropdown-menu {
+      border: 1px solid $gray;
+    }
+  }
+
 }
 
 .navbar {
