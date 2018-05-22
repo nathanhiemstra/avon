@@ -1,5 +1,10 @@
 $gray-ultralight: lighten($gray-lighter, 2%);
 
+// IE11 fix - hide IE native clear symbols on inputs
+input::-ms-clear {
+ display: none;
+}
+
 .navbar--primary-nav {
 
   /*
@@ -30,8 +35,13 @@ $gray-ultralight: lighten($gray-lighter, 2%);
       .lt-close {
         display: none;
         position: absolute;
-        right: $spacing-4;
+        top: 50%;
+        transform: translateY(-50%);
         z-index: 99;
+
+        @media (max-width: $breakpoint-header-max) {
+          right: $spacing-4;
+        }
       }
     }
 
