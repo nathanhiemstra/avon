@@ -11,11 +11,12 @@ a, .dropdown {
     margin-bottom: 0.1em;
     margin-left: 0.1em;
   }
+
   &.open {
     .lt-triangle-down {
-        transform: rotate(-180deg);
-        transform-origin: center center;
-      }
+      transform: rotate(-180deg);
+      transform-origin: center center;
+    }
   }
 }
 
@@ -112,7 +113,7 @@ a, .dropdown {
     white-space: nowrap;
 
     // prevent links from randomly breaking onto new lines
-
+ 
   }
 
   // responsive dropdown behaves normally on desktop but is block-level on mobile
@@ -316,4 +317,11 @@ a, .dropdown {
     margin-left: -40vw;
     overflow-x: auto;
   }
+}
+
+.dropdown-menu--scrollable {
+  overflow-y: auto;
+
+  // Useing 400px to be consistent with other autocomplete dropdown on PDP.
+  max-height: 400px;
 }
