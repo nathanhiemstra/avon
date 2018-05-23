@@ -8,7 +8,7 @@
 .carousel--responsive {
   .carousel-inner,
   .carousel-thumbs {
-    width: 80%;
+    width: 66%;
     margin: 0 auto;
   }
 
@@ -22,5 +22,18 @@
 
   .carousel-indicators {
     bottom: -35px;
+  }
+
+  @media (max-width: 340px) {
+    .carousel-control {
+      width: 0;
+
+      .icon-next,
+      .icon-prev,
+      .lt-left,
+      .lt-right {
+        font-size: 30px;
+      }
+    }
   }
 }
