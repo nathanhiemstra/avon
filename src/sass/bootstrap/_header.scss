@@ -10,7 +10,8 @@
 
   // desktop
   @media (min-width: $breakpoint-header-min) {
-    .dropdown-menu {
+    .dropdown-menu,
+    #mystorepopover {
       border: 1px solid $gray;
     }
   }
