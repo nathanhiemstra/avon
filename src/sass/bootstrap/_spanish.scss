@@ -1,0 +1,14 @@
+[lang="es"] {
+
+  // switch mobile menu buttons to stacked layout earlier for Spanish
+  .btn-trans-light-responsive {
+    // iPhone 6+ and below
+    @media (max-width: 415px) {
+      strong {
+        display: block;
+        margin-top: 3px;
+      }
+    }
+  }
+
+}

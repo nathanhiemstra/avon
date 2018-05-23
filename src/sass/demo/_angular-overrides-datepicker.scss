@@ -27,6 +27,7 @@
     display: block;
     width: 100%;
     margin: 2px !important;
+    padding: 11px 10px !important;
   }
 
   .btn-group {
@@ -71,6 +72,8 @@
   }
 
   .glyphicon-chevron-right {
+    margin-right: 5px;
+
     &:before {
       @extend .lt-carat-right:before;
     }
@@ -114,8 +117,9 @@
   }
 
   @mixin demo-datepicker-btn-default-hover {
-    background-color: #fff !important;
-    color: $btn-default-hover-color !important;
+    background-color: $gray-lighter !important;
+
+    // color: $btn-default-hover-color !important;
   }
 
   @mixin demo-datepicker-btn-today {
@@ -133,35 +137,52 @@
     color: #fff !important;
   }
 
-  // The "day" calendar has a <span>" inside that we need to do stuff with later.
-  [ng-switch-when="day"] {
-    td {
-      padding-left: 1px;
-      padding-right: 1px;
-    }
+  [ng-switch-when="month"] {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
-    tbody {
+  td {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  thead {
+    th {
       .btn {
-        padding: 0;
+        &.btn-default {
+          color: #000 !important;
+        }
+      }
 
-        // Make the span define size of box so we can use a border on it later
-        > span {
-          padding: 5px 10px;
-          border: 1px solid transparent;
-          display: block;
+      &[colspan="5"] {
+        .btn {
+          &.btn-default {
+            // Middle button in header
+            cursor: default;
+          }
         }
       }
     }
   }
 
-  [ng-switch-when="month"] {
-    tbody {
-      td {
-        padding: 0 4px;
+  tbody {
+    .btn {
+      padding: 0 !important;
+      margin: 0 !important;
 
-        .btn {
-          padding-left: 8px;
-          padding-right: 8px;
+      // Make the span define size of box so we can use a border on it later
+      > span {
+        padding: 5px 10px;
+        border: 1px solid transparent;
+        display: block;
+      }
+
+      &.btn-default:not(.active) {
+        &:hover,
+        &:focus,
+        &.focus {
+          @include demo-datepicker-btn-default-hover;
         }
       }
     }
@@ -178,10 +199,21 @@
     &.btn-default {
       @include demo-datepicker-btn-default;
 
-      &:hover,
-      &:focus,
-      &.focus {
-        @include demo-datepicker-btn-default-hover;
+      &:not(.active) {
+        // Future days
+        &.disabled,
+        &[disabled],
+        fieldset[disabled] & {
+          color: $gray-light !important;
+
+          &:hover,
+          &:focus,
+          &.focus {
+            color: $gray-light !important;
+            cursor: default;
+            background-color: #fff !important;
+          }
+        }
       }
     }
 

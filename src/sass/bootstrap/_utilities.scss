@@ -192,3 +192,13 @@ hr.full-width-divider {
     }
   }
 }
+
+// The ":after:table" messes up flex-wrap in Safari
+.row-fix-safari-flex {
+  &.row {
+    &:before,
+    &:after {
+      display: inline-block;
+    }
+  }
+}

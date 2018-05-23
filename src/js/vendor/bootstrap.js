@@ -2060,17 +2060,19 @@ $('.carousel-thumbs').thumbnailsCarousel();
   // ==============
 
   $(window).on('load', function () {
-    $('[data-spy="affix"]').each(function () {
-      var $spy = $(this)
-      var data = $spy.data()
+    setTimeout(function() {
+      $('[data-spy="affix"]').each(function () {
+        var $spy = $(this)
+        var data = $spy.data()
 
-      data.offset = data.offset || {}
+        data.offset = data.offset || {}
 
-      if (data.offsetBottom) data.offset.bottom = data.offsetBottom
-      if (data.offsetTop)    data.offset.top    = data.offsetTop
+        if (data.offsetBottom) data.offset.bottom = data.offsetBottom
+        if (data.offsetTop)    data.offset.top    = data.offsetTop
 
-      $spy.affix(data)
-    })
+        $spy.affix(data)
+      })
+    }, 250);
   })
 
 }(jQuery);

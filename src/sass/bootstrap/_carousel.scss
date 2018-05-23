@@ -117,6 +117,10 @@
   bottom: 0;
   width: $carousel-control-width;
 
+  #pdp-images & {
+    width: 16%;
+  }
+
   @include opacity($carousel-control-opacity);
 
   font-size: $carousel-control-font-size;
@@ -168,21 +172,18 @@
     display: inline-block;
     width: 60px;
     height: 80px;
-
-    // background-color: $body-bg;
+    font-size: 50px;
     line-height: 76px;
   }
 
   .icon-prev,
   .lt-left {
-    left: 50%;
-    margin-left: -6px;
+    left: calc(50% - 30px);
   }
 
   .icon-next,
   .lt-right {
-    right: 50%;
-    margin-right: -6px;
+    right: calc(50% - 30px);
   }
 
   .icon-next,

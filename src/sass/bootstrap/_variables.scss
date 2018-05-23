@@ -436,6 +436,8 @@ $zindex-navbar-fixed:       1030 !default;
 $zindex-affix:              1031 !default;
 $zindex-drawer-fixed:       1031 !default;
 $zindex-alert-dismissable:  1032 !default;
+$zindex-mobile-menu-bg:     1033 !default;
+$zindex-mobile-menu:        1034 !default;
 $zindex-modal-background:   1040 !default;
 $zindex-modal:              1050 !default;
 $zindex-popover:            1060 !default;
@@ -1060,7 +1062,7 @@ $breadcrumb-separator: "|" !default;
 $carousel-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !default;
 
 $carousel-control-color: $white !default;
-$carousel-control-width: 10px !default;
+$carousel-control-width: 30px !default;
 $carousel-control-opacity: 0.5 !default;
 $carousel-control-font-size: 20px !default;
 

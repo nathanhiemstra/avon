@@ -12,7 +12,10 @@
 
 <!-- START - VIEW MORE INFO LINK -->
 <!-- Dev note: Only appears in Quick SHop modal -->
-<a href="#" class="pdp-more-info-link w-100 my-4 underline">View more info</a>
+<div class="w-100">
+  <a href="#" class="pdp-more-info-link my-4 underline">View more info</a>
+</div>
+
 <!-- END - VIEW MORE INFO LINK -->
 
 
@@ -100,7 +103,8 @@
         <span class="variant-id d-inline-block align-middle">654-473</span>
         <span class="lt-icon lt-triangle-down form-control-feedback"></span>
       </button>
-      <ul class="dropdown-menu" role="menu" aria-labelledby="pdpVariantSelect">
+      <ul class="dropdown-menu dropdown-menu--scrollable" role="menu" aria-labelledby="pdpVariantSelect">
+        {% set variant_list %}
         <li role="presentation">
           <a role="menuitem" tabindex="-1" href="#" class="pl-2">
             <span class="variant-swatch d-inline-block align-middle mr-2" style="background-color: salmon;"></span>
@@ -133,6 +137,13 @@
             <span class="variant-id d-inline-block align-middle">654-473</span>
           </a>
         </li>
+        {% endset %}
+
+        {{ variant_list }}
+        {{ variant_list }}
+        {{ variant_list }}
+        {{ variant_list }}
+        {{ variant_list }}
       </ul>
       <!-- end .dropdown-menu -->
     </div>
