@@ -10,10 +10,11 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
-    <section class="container container--page">
-
+    <div data-analytics="top-content" class="top-content">
       {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
+    </div>
 
+    <section class="container container--page">
 
       {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
 
@@ -57,14 +58,14 @@
 
       {% endembed %}
 
-      <!-- START - MAGNOLIA BLOCK -->
+    </section>
+
+    <div data-analytics="below-content" class="below-content">
       {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
         position: 'bottom',
         extraSpacing: 4
       } %}
-      <!-- END - MAGNOLIA BLOCK -->
-
-    </section>
+    </div>
 
   {% endblock %}
 
