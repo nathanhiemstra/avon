@@ -44,7 +44,7 @@
 .alert-dismissible {
   padding-right: $alert-padding + 20;
   position: relative;
-  z-index: 1;
+  z-index: $zindex-alert-dismissable;
 
   &.sticky {
     z-index: $zindex-alert-dismissable;
@@ -70,7 +70,7 @@
 // Generate contextual modifier classes for colorizing the alert.
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
-// SUCCESS 
+// SUCCESS
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-success {
   @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
@@ -90,7 +90,7 @@
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
-// INFO 
+// INFO
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-info {
   @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
@@ -101,7 +101,7 @@
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
-// WARNING 
+// WARNING
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-warning {
   @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
@@ -112,7 +112,7 @@
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
-// DANGER 
+// DANGER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-danger {
   @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
@@ -128,21 +128,21 @@
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
-// REVERSE 
+// REVERSE
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-reverse {
   @include alert-variant($alert-reverse-bg, $alert-reverse-border, $alert-reverse-text);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
-// PROMO 
+// PROMO
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-promo {
   @include alert-variant($alert-promo-bg, $alert-promo-border, $alert-promo-text);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
-// NEUTRAL 
+// NEUTRAL
 // ~~~~~~~~~~~~~~~~~~~~~~~~~
 .alert-neutral {
   @include alert-variant($alert-neutral-bg, $alert-neutral-border, $alert-neutral-text);
