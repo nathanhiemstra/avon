@@ -173,7 +173,8 @@ span.variant-swatch {
 // This is temporary until Avon uses new error pattern
 
 .pdp-quantity-input {
-  .has-error--absolute-2-line {
+  &.has-error .has-error--absolute-2-line,
+  .has-error.has-error--absolute-2-line {
     .label-abs {
       white-space: normal;
       width: 280px;
@@ -184,10 +185,9 @@ span.variant-swatch {
 @media (min-width: 480px) and (max-width: $screen-sm), (min-width: $screen-md) {
   // Text on one line
   .pdp-quantity-input {
-    .has-error--absolute-2-line {
-      &.has-error--absolute-2-line {
-        padding-bottom: 25px !important;
-      }
+    &.has-error .has-error--absolute-2-line.has-error--absolute-2-line,
+    .has-error.has-error--absolute-2-line.has-error--absolute-2-line {
+      padding-bottom: 25px !important;
 
       .label-abs {
         width: 420px;
