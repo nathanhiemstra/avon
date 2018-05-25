@@ -331,7 +331,7 @@ gulp.task('default', ['compile']);
 gulp.task('sass', function(){
   return gulp.src(path.src.sass)
     .pipe(sourcemaps.init())
-    .pipe(sass()) // Converts Sass to CSS with gulp-sass
+    .pipe(sass({ outputStyle: 'compressed' })) // Converts Sass to CSS with gulp-sass
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.dist.css))
     .pipe(browserSync.reload({
@@ -341,7 +341,7 @@ gulp.task('sass', function(){
 
 gulp.task('sass-prod', function(){
   return gulp.src(path.src.sass)
-    .pipe(sass()) // Converts Sass to CSS with gulp-sass
+    .pipe(sass({ outputStyle: 'compressed' })) // Converts Sass to CSS with gulp-sass
     .pipe(gulp.dest(path.dist.css))
 });
 
