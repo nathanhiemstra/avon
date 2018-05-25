@@ -1,6 +1,13 @@
 // Generic Magnolia managed content blocks that appear at
 // the top and bottom of pages
 
+.top-content,
+.bottom-content {
+  &:empty {
+    display: none;
+  }
+}
+
 .top-content {
   @extend .container;
   margin-top: $spacing-page-top;
