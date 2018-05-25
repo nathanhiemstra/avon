@@ -738,6 +738,7 @@
         min-height: $height-1;
         letter-spacing: 0.9px;
         line-height: 1.67;
+        z-index: 1;
 
         .nav > li {
           &:first-of-type {
