@@ -1,7 +1,6 @@
 // Generic Magnolia managed content blocks that appear at
 // the top and bottom of pages
 
-div[data-analytics="top-content"],
 .top-content {
   @extend .container;
   margin-top: $spacing-page-top;
@@ -15,7 +14,6 @@ div[data-analytics="top-content"],
   }
 }
 
-div[data-analytics="below-content"],
 .below-content {
   @extend .container;
   margin-top: 0;
