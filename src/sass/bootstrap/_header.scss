@@ -720,6 +720,7 @@
       font-size: 12px;
       margin: 0;
       padding: 0 $spacing-4 $spacing-4;
+      z-index: $zindex-navbar;
 
       .nav > li {
         padding: $spacing-2;
