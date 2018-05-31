@@ -86,6 +86,13 @@ a.btn {
   &[disabled],
   fieldset[disabled] & {
     color: $btn-disabled-color;
+
+    &.focus,
+    &:focus,
+    &:hover {
+      border-color: $btn-disabled-bg;
+      color: $btn-disabled-bg;
+    }
   }
 
   &:active,
@@ -103,6 +110,13 @@ a.btn {
   &[disabled],
   fieldset[disabled] & {
     background-color: $btn-disabled-bg;
+
+    &.focus,
+    &:focus,
+    &:hover {
+      background-color: $btn-disabled-bg;
+      border-color: $btn-disabled-bg;
+    }
   }
 }
 
