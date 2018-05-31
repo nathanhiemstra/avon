@@ -31,10 +31,15 @@
     {% set reverseBgUndoStart = '<div class="reverse-bg-undo">' %}
     {% set reverseBgUndoEnd = '</div><!-- /.reverse-bg-undo -->' %}
 {% endif %}
+
+{% if sectionClass is not defined %}
+  {% set sectionClass = '' %}
+{% endif %}
+
 <body {{ bodyClasses }}>
 
   <!-- START - PAGE CONTENT -->
-  <section id="avon-poc">
+  <section id="avon-poc" class="{{ sectionClass }}">
       <a class="sr-only" href="#content">Skip to main content</a>
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}

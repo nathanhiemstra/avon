@@ -41,7 +41,12 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
-        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'within' } %}
+        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+          position: 'within',
+          html: '<div class="reverse-bg py-3">
+          <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+          </div>'
+        } %}
 
         {% include "_includes/modules/product/landing/landing-body.html.twig" %}
 

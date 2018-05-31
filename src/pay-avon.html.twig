@@ -1,5 +1,7 @@
 {% extends layouts.base %}
 
+{% set sectionClass = 'page--pay-avon' %}
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -12,9 +14,14 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
-    <section class="container container--page">
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+      position: 'top',
+      html: '<div class="reverse-bg py-3">
+      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+      </div>'
+    } %}
 
-      {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
+    <section class="container container--page">
 
 
       {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
@@ -33,7 +40,7 @@
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {% block main %}
 
-          
+
 
           <h2 class="mb-5">Pay Avon</h2>
 
@@ -450,11 +457,16 @@
 
       {% endembed %}
 
-          <!-- START - MAGNOLIA BLOCK -->
-          {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom', extraSpacing: 3} %}
-          <!-- END - MAGNOLIA BLOCK -->
-
     </section>
+
+    <!-- START - MAGNOLIA BLOCK -->
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+      position: 'bottom',
+      html: '<div class="reverse-bg py-3">
+      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+      </div>'
+    } %}
+    <!-- END - MAGNOLIA BLOCK -->
 
   {% endblock %}
 

@@ -1,5 +1,7 @@
 {% extends layouts.base %}
 
+{% set sectionClass = 'page--acct-balance' %}
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -10,9 +12,12 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
-    <div data-analytics="top-content" class="top-content">
-      {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
-    </div>
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+      position: 'top',
+      html: '<div class="reverse-bg py-3">
+      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+      </div>'
+    } %}
 
     <section class="container container--page">
 
@@ -60,12 +65,12 @@
 
     </section>
 
-    <div data-analytics="below-content" class="below-content">
-      {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
-        position: 'bottom',
-        extraSpacing: 4
-      } %}
-    </div>
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+      position: 'bottom',
+      html: '<div class="reverse-bg py-3">
+      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+      </div>'
+    } %}
 
   {% endblock %}
 

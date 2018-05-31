@@ -1,74 +1,87 @@
 {% extends layouts.base %}
 
+{% set sectionClass = 'page--beauty-buzz' %}
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  <div class="container container--page">
+  <div class="container--beauty-buzz">
 
-    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+      position: 'top',
+      html: '<div class="reverse-bg py-3">
+      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+      </div>'
+    } %}
 
-    {% embed "_layouts/content-center-max-width.html.twig" %}
+    <div class="container container--page">
 
-      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-      {# DEFINE BLOCK - MAIN #}
-      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-      {% block main %}
+      {% embed "_layouts/content-center-max-width.html.twig" %}
 
-        <!--START - AVON BUZZ LOGO-->
-        <div class="my-5 pb-4 text-center">
-          <img src="images/logos/beauty-buzz.png" class="img-responsive img-responsive--50 m-auto px-5 px-md-0" alt="Beauty Buzz">
-        </div>
-        <!--END - AVON BUZZ LOGO-->
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - MAIN #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block main %}
 
-        <section class="pt-4">
-          <!-- START - NAV TABS -->
-          {% include "_includes/groups/navigation/scrollable-tabs/scrollable-tabs.html.twig" %}
-          <!-- END - NAV TABS -->
-
-          <hr class="full-width-divider m-0">
-
-          <!-- START - TAB PANES -->
-          <div class="tab-content">
-
-            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
-              id: 'buzz-1',
-              tabLabel: 'Group 1',
-              classes: 'active'
-            } %}
-
-            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
-              id: 'buzz-2',
-              tabLabel: 'Group 2',
-              classes: ''
-            } %}
-
-            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
-              id: 'buzz-3',
-              tabLabel: 'Group 3',
-              classes: ''
-            } %}
-
-            {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
-              id: 'buzz-4',
-              tabLabel: 'Group 4',
-              classes: ''
-            } %}
-
+          <!--START - AVON BUZZ LOGO-->
+          <div class="my-5 pb-4 text-center">
+            <img src="images/logos/beauty-buzz.png" class="img-responsive img-responsive--50 m-auto px-5 px-md-0" alt="Beauty Buzz">
           </div>
-          <!-- END - TAB PANES -->
+          <!--END - AVON BUZZ LOGO-->
 
-        </section>
+          <section class="pt-4">
+            <!-- START - NAV TABS -->
+            {% include "_includes/groups/navigation/scrollable-tabs/scrollable-tabs.html.twig" %}
+            <!-- END - NAV TABS -->
 
-      {% endblock %}
+            <hr class="full-width-divider m-0">
 
-    {% endembed %}
+            <!-- START - TAB PANES -->
+            <div class="tab-content">
+
+              {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
+                id: 'buzz-1',
+                tabLabel: 'Group 1',
+                classes: 'active'
+              } %}
+
+              {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
+                id: 'buzz-2',
+                tabLabel: 'Group 2',
+                classes: ''
+              } %}
+
+              {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
+                id: 'buzz-3',
+                tabLabel: 'Group 3',
+                classes: ''
+              } %}
+
+              {% include "_includes/modules/beauty-buzz/tab-pane.html.twig" with {
+                id: 'buzz-4',
+                tabLabel: 'Group 4',
+                classes: ''
+              } %}
+
+            </div>
+            <!-- END - TAB PANES -->
+
+          </section>
+
+        {% endblock %}
+
+      {% endembed %}
+
+    </div>
 
     <!-- START - MAGNOLIA BLOCK -->
     {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
       position: 'bottom',
-      removeDefaultSpacing: true
+      html: '<div class="reverse-bg py-3">
+      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+      </div>'
     } %}
     <!-- END - MAGNOLIA BLOCK -->
 

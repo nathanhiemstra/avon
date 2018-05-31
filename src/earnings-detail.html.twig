@@ -1,5 +1,7 @@
 {% extends layouts.base %}
 
+{% set sectionClass = 'page--earnings-detail' %}
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -10,15 +12,20 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
+    <!-- START - MAGNOLIA BLOCK -->
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+      position: 'top',
+      html: '<div class="reverse-bg py-3">
+      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+      </div>'
+    } %}
+    <!-- END - MAGNOLIA BLOCK -->
+
     <section class="container container--page">
 
       <div class="row">
 
         <div class="col-md-12">
-
-          <!-- START - MAGNOLIA BLOCK -->
-          {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
-          <!-- END - MAGNOLIA BLOCK -->
 
           {% include "_includes/groups/navigation/back-link.twig" with {label: "Back to Earnings"} %}
 
@@ -75,18 +82,20 @@
           </div>
           <!-- END - TABLE -->
 
-          <!-- START - MAGNOLIA BLOCK -->
-          {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
-            position: 'bottom',
-            extraSpacing: 5
-          } %}
-          <!-- END - MAGNOLIA BLOCK -->
-
         </div>
 
       </div>
 
     </section>
+
+    <!-- START - MAGNOLIA BLOCK -->
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+      position: 'bottom',
+      html: '<div class="reverse-bg py-3">
+      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+      </div>'
+    } %}
+    <!-- END - MAGNOLIA BLOCK -->
 
   {% endblock %}
 

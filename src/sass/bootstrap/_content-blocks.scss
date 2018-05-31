@@ -1,8 +1,9 @@
 // Generic Magnolia managed content blocks that appear at
 // the top and bottom of pages
-
 .top-content,
-.bottom-content {
+.below-content,
+.within-content {
+
   &:empty {
     display: none;
   }
@@ -11,25 +12,39 @@
 .top-content {
   @extend .container;
   margin-top: $spacing-page-top;
-
-  .generic-content-block {
-    margin-bottom: $spacing-5;
-
-    // &.within {
-    //   margin-bottom: $spacing-5;
-    // }
-  }
+  margin-bottom: $spacing-5;
 }
 
 .below-content {
   @extend .container;
-  margin-top: 0;
+  margin-top: $spacing-5;
+}
 
-  .generic-content-block {
-    margin-top: $spacing-5;
+.within-content {
+  margin-bottom: $spacing-5;
+}
 
-    // &.within {
-    //   margin-bottom: $spacing-5;
-    // }
+
+// Page-specific content block styles
+.page--beauty-buzz {
+  .below-content {
+    margin-top: 0;
+  }
+}
+
+.page--dashboard,
+.page--change-pass,
+.page--pay-avon {
+  .below-content {
+    padding-top: $spacing-5;
+  }
+}
+
+.page--acct-balance,
+.page--cust-order-info,
+.page--earnings,
+.page--earnings-detail {
+  .below-content {
+    padding-top: $spacing-4;
   }
 }
