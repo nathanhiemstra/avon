@@ -1,9 +1,20 @@
 {% extends layouts.base %}
 
+{% set sectionClass = 'page--order-detail' %}
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
+
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'top',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# DEFINE BLOCK - MAIN #}
@@ -15,10 +26,6 @@
       <div class="row">
 
         <div class="col-md-12">
-
-          <!-- START - MAGNOLIA BLOCK -->
-          {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
-          <!-- END - MAGNOLIA BLOCK -->
 
           {% include "_includes/groups/navigation/back-link.twig" with {label: "Back to online Order History"} %}
 
@@ -305,13 +312,6 @@
 
           <p class="text-muted mt-4">{{fpo.paragraph}}</p>
 
-          <!-- START - MAGNOLIA BLOCK -->
-          {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
-            position: 'bottom',
-            extraSpacing: 5
-          } %}
-          <!-- END - MAGNOLIA BLOCK -->
-
         </div>
 
       </div>
@@ -319,6 +319,15 @@
     </section>
 
   {% endblock %}
+
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'bottom',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
 
 
 {% endblock %}

@@ -1,15 +1,22 @@
 {% extends layouts.base %}
 
+{% set sectionClass = 'page--invoice-addendums' %}
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  <div class="container container--page">
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'top',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
 
-    <!-- START - MAGNOLIA BLOCK -->
-    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
-    <!-- END - MAGNOLIA BLOCK -->
+  <div class="container container--page">
 
     {% embed "_layouts/columns-10-max.html.twig" %}
 
@@ -65,13 +72,15 @@
 
     {% endembed %}
 
-    <!-- START - MAGNOLIA BLOCK -->
-    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
-      position: 'bottom',
-      extraSpacing: 2
-    } %}
-    <!-- END - MAGNOLIA BLOCK -->
-
   </div>
+
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'bottom',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
 
 {% endblock %}

@@ -1,9 +1,20 @@
 {% extends layouts.base %}
 
+{% set sectionClass = 'page--view-invoices' %}
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
+
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'top',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
 
   <div class="container container--page">
 
@@ -13,10 +24,6 @@
       {# DEFINE BLOCK - MAIN #}
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
-
-        <!-- START - MAGNOLIA BLOCK -->
-        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
-        <!-- END - MAGNOLIA BLOCK -->
 
         <h2>View Invoices</h2>
 
@@ -35,17 +42,19 @@
         </div>
         <p>We recommend you also check your <a href="#">Invoice Addendums</a>.</p>
 
-        <!-- START - MAGNOLIA BLOCK -->
-        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
-          position: 'bottom',
-          extraSpacing: 5
-        } %}
-        <!-- END - MAGNOLIA BLOCK -->
-
       {% endblock %}
 
     {% endembed %}
 
   </div>
+
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'bottom',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
 
 {% endblock %}

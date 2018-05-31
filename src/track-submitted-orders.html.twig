@@ -1,9 +1,20 @@
 {% extends layouts.base %}
 
+{% set sectionClass = 'page--track-orders' %}
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
+
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'top',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
 
   <!-- START - HEADER LEVEL ALERT -->
   {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
@@ -27,10 +38,6 @@
       {# DEFINE BLOCK - MAIN #}
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
-
-        <!-- START - MAGNOLIA BLOCK -->
-        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
-        <!-- END - MAGNOLIA BLOCK -->
 
         <h2 class="pb-3">Track Submitted Orders</h2>
         <p>Click on Confirmation numbers below to see order details. Items not available can be viewed on your invoice.</p>
@@ -132,18 +139,19 @@
           </table>
         </div>
 
-        <!-- START - MAGNOLIA BLOCK -->
-        {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
-          position: 'bottom',
-          extraSpacing: 5
-        } %}
-        
-        <!-- END - MAGNOLIA BLOCK -->
-
       {% endblock %}
 
     {% endembed %}
 
   </div>
+
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'bottom',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
 
 {% endblock %}

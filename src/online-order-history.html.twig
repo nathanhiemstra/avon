@@ -1,9 +1,20 @@
 {% extends layouts.base %}
 
+{% set sectionClass = 'page--order-history' %}
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
+
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'top',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# DEFINE BLOCK - MAIN #}
@@ -11,10 +22,6 @@
   {% block main %}
 
     <section class="container container--page">
-
-      <!-- START - MAGNOLIA BLOCK -->
-      {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
-      <!-- END - MAGNOLIA BLOCK -->
 
       <div class="row">
 
@@ -271,13 +278,18 @@
 
       </div>
 
-      <!-- START - MAGNOLIA BLOCK -->
-      {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'bottom', extraSpacing: 4 } %}
-      <!-- END - MAGNOLIA BLOCK -->
-      
     </section>
 
   {% endblock %}
+
+    <!-- START - MAGNOLIA BLOCK -->
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+      position: 'bottom',
+      html: '<div class="reverse-bg py-3">
+      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+      </div>'
+    } %}
+    <!-- END - MAGNOLIA BLOCK -->
 
 
 {% endblock %}

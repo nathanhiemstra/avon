@@ -1,9 +1,20 @@
 {% extends layouts.base %}
 
+{% set sectionClass = 'page--msg-center' %}
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
+
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'top',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# DEFINE BLOCK - MAIN #}
@@ -15,10 +26,6 @@
       <div class="row">
 
         <div class="col-md-12">
-
-          <!-- START - MAGNOLIA BLOCK -->
-          {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with { position: 'top' } %}
-          <!-- END - MAGNOLIA BLOCK -->
 
           {% include "_includes/groups/navigation/back-link.twig" with {label: "Home"} %}
 
@@ -34,13 +41,6 @@
           {% include '_includes/modules/message-center/tab-content.html.twig' %}
           <!-- END - TAB CONTENT -->
 
-          <!-- START - MAGNOLIA BLOCK -->
-          {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
-            position: 'bottom',
-            extraSpacing: 5
-          } %}
-          <!-- END - MAGNOLIA BLOCK -->
-
         </div>
 
       </div>
@@ -48,5 +48,14 @@
     </section>
 
   {% endblock %}
+
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'bottom',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
 
 {% endblock %}

@@ -34,17 +34,41 @@
 
 .page--dashboard,
 .page--change-pass,
-.page--pay-avon {
+.page--pay-avon,
+.page--sales-leader {
   .below-content {
     padding-top: $spacing-5;
+  }
+}
+
+.page--returns {
+  .below-content {
+    padding-top: $spacing-5 - $spacing-2;
   }
 }
 
 .page--acct-balance,
 .page--cust-order-info,
 .page--earnings,
-.page--earnings-detail {
+.page--earnings-detail,
+.page--order-history,
+.page--support {
   .below-content {
     padding-top: $spacing-4;
+  }
+}
+
+.page--msg-center,
+.page--order-detail,
+.page--view-invoices {
+  .below-content {
+    padding-top: $spacing-3;
+  }
+}
+
+.page--invoice-addendums,
+.page--track-orders {
+  .below-content {
+    padding-top: $spacing-2;
   }
 }
