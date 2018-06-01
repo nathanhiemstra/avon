@@ -311,20 +311,36 @@
 
                         <div class="row">
                           <div class="col-xs-12 col-sm-7 mb-4 mb-sm-0">
-                            <select class="form-control form-inline font-weight-bold text-default">
-                              <option>05 - May</option>
-                              <option>06 - June</option>
-                              <option>07 - July</option>
-                              <option>08- Aug</option>
+                            <select class="form-control form-inline text-default">
+                              <option>MM</option>
+                              <option>01</option>
+                              <option>02</option>
+                              <option>03</option>
+                              <option>04</option>
+                              <option>05</option>
+                              <option>06</option>
+                              <option>07</option>
+                              <option>08</option>
+                              <option>09</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option>12</option>
                             </select>
                             <span class="lt-icon lt-triangle-down form-control-feedback mr-4"></span>
                           </div>
                           <div class="col-xs-12 col-sm-5">
-                            <select class="form-control form-inline font-weight-bold text-default">
-                              <option>1984</option>
-                              <option>1985</option>
-                              <option>1986</option>
-                              <option>1987</option>
+                            <select class="form-control form-inline text-default">
+                              <option>YYYY</option>
+                              <option>2018</option>
+                              <option>2019</option>
+                              <option>2020</option>
+                              <option>2021</option>
+                              <option>2022</option>
+                              <option>2023</option>
+                              <option>2024</option>
+                              <option>2025</option>
+                              <option>2026</option>
+                              <option>2027</option>
                             </select>
                             <span class="lt-icon lt-triangle-down form-control-feedback mr-4"></span>
                           </div>
@@ -347,12 +363,12 @@
                     <div class="pt-3">
                       <h6 class="mb-4 pt-4">billing Address</h6>
                       <p class="mb-3 small text-muted font-weight-bold">Address</p>
-                      <div class="form-group font-weight-bold">
+                      <div class="form-group">
                         {% include components.elements.forms.input with {
                           placeholder: '1234 Westminster Junction'
                         } %}
                       </div>
-                      <div class="form-group font-weight-bold">
+                      <div class="form-group">
                         {% include components.elements.forms.input with {
                           placeholder: 'Unit #3289W'
                         } %}
@@ -395,10 +411,11 @@
                       </div>
 
                       <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                         <p class="mb-3 small font-weight-bold text-muted">State</p>
                           <div class="form-group has-feedback">
-                            <select class="form-control font-weight-bold text-default">
+                            <select class="form-control text-default">
+                              <option>Select</option>
                               <option>AK - Alaska</option>
                               <option>State 1</option>
                               <option>State 2</option>
@@ -407,10 +424,11 @@
                             <span class="lt-icon lt-triangle-down form-control-feedback"></span>
                           </div>
                         </div>
-                        <div class="col-md-7">
-                        <p class="mb-3 small font-weight-bold text-muted">Country</p>
+                        <div class="col-md-6">
+                        <p class="mb-3 small text-muted">Country</p>
                         <div class="form-group has-feedback">
-                          <select class="form-control font-weight-bold text-default">
+                          <select class="form-control text-default">
+                            <option>Select</option>
                             <option>United States</option>
                             <option>Country 1</option>
                             <option>Country 2</option>
@@ -425,17 +443,19 @@
                 </div>
 
                 </div>
-                <div class="row">
-                  <div class="col-sm-3 col-md-2 mt-4">
-                    <!-- START - Continue Button -->
-                    <a href="javascript:void(0)" class="btn btn-primary btn-sm d-block" disabled="disabled" data-toggle="modal" data-target="#confirm-payment-details">Continue</a>
-                    <!-- END - Continue Button -->
-                  </div>
+                <div class="ml-5">
+                  <div class="row">
+                    <div class="col-sm-4 col-md-3 mt-4">
+                      <!-- START - Continue Button -->
+                      <a href="javascript:void(0)" class="btn btn-primary d-block" disabled="disabled" data-toggle="modal" data-target="#confirm-payment-details">Continue</a>
+                      <!-- END - Continue Button -->
+                    </div>
 
-                  <div class="col-sm-3 col-md-2 mt-4">
-                    <!-- START - Continue Button -->
-                    <a href="javascript:void(0)" class="btn btn-primary btn-sm d-block" data-toggle="modal" data-target="#confirm-payment-details">Continue</a>
-                    <!-- END - Continue Button -->
+                    <div class="col-sm-4 col-md-3 mt-4">
+                      <!-- START - Continue Button -->
+                      <a href="javascript:void(0)" class="btn btn-primary d-block" data-toggle="modal" data-target="#confirm-payment-details">Continue</a>
+                      <!-- END - Continue Button -->
+                    </div>
                   </div>
                 </div>
 
