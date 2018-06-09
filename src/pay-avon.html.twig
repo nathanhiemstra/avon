@@ -7,19 +7,19 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'top',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+
   {% include "_includes/modules/checkout/checkout-generic-error.html.twig" %}
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# DEFINE BLOCK - MAIN #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
-
-    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
-      position: 'top',
-      html: '<div class="reverse-bg py-3">
-      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
-      </div>'
-    } %}
 
     <section class="container container--page">
 
@@ -479,16 +479,16 @@
 
     </section>
 
-    <!-- START - MAGNOLIA BLOCK -->
-    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
-      position: 'bottom',
-      html: '<div class="reverse-bg py-3">
-      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
-      </div>'
-    } %}
-    <!-- END - MAGNOLIA BLOCK -->
-
   {% endblock %}
+
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'bottom',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
 
   <!-- START - MODAL - GENERIC -->
   {% include "_includes/modules/modals/modal-blank-generic.html.twig" %}
