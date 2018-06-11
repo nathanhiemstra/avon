@@ -30,6 +30,10 @@ var Modals = ( function () {
   // private methods
   var _addListeners = function () {
 
+    $els.modalTriggers.on('click', function(e) {
+      _handleModalOpen(e);
+    });
+
     if( $els.modalPopoverCombos.length ) {
       _updateDataToggles();
       $( window ).resize( function () {
@@ -160,7 +164,7 @@ var Modals = ( function () {
   };
 
   var _handleModalSwitch = function ( e ) {
-    console.log( 'Modal is nested' );
+    // console.log( 'Modal is nested' );
     // loop through triggers
     $.each( $els.modalTriggers, function ( i, val ) {
       var curTarget = $( this ).data( 'target' );
