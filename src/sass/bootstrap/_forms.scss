@@ -177,7 +177,7 @@ output {
     opacity: 1;
 
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
- 
+
   }
 
   &[readonly] {
@@ -219,7 +219,7 @@ select.form-control {
 
   + .lt-triangle-down.form-control-feedback {
     // transform: rotate(90deg);
- 
+
   }
 }
 
@@ -887,7 +887,7 @@ select.form-control.input-lg {
     padding-top: $padding-base-vertical + 1;
 
     // Default padding plus a border
- 
+
   }
 
   // Account for padding we're adding to ensure the alignment and of help text
@@ -911,7 +911,7 @@ select.form-control.input-lg {
       padding-top: $padding-base-vertical + 1;
 
       // Default padding plus a border
-   
+
     }
   }
 
@@ -1026,6 +1026,18 @@ input.form-control {
       }
 
       $size-increment: $size-increment + $size-increment * 0.01;
+    }
+  }
+}
+
+// Temporary case-by-case small input tweaks - Eventually, these will be global
+.page--pay-avon {
+  .input-sm {
+    font-size: 16px;
+  }
+  @media (min-width: $screen-sm-min) {
+    .input-sm {
+      font-size: 15px;
     }
   }
 }
