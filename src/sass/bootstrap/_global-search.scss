@@ -19,6 +19,7 @@ input::-ms-clear {
 
     input.primary-nav__search-input {
       display: none;
+      padding-right: 4rem;
 
       &:focus {
         outline: none;
@@ -185,6 +186,7 @@ input::-ms-clear {
       border-top: 1px solid transparent;
       border-right: 1px solid transparent;
       border-bottom: 1px solid transparent;
+      padding-right: 5rem;
       // transition: opacity $ui-animation-time $ui-animation-ease, border-color $ui-animation-time $ui-animation-ease;
     }
 

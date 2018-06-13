@@ -188,7 +188,7 @@ $( document ).ready( function () {
       } )
       .data( 'bs.popover' )
       .tip()
-      .addClass( 'popover--box' );
+      .addClass( 'popover--box popover--noshadow' );
 
     // hide cart popover on body click
     $( 'body' ).on( 'click', function ( e ) {
