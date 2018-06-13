@@ -1031,7 +1031,8 @@ input.form-control {
 }
 
 // Temporary case-by-case small input tweaks - Eventually, these will be global
-.page--pay-avon {
+.page--pay-avon,
+.tab--open-orders {
   .input-sm {
     font-size: 16px;
   }
