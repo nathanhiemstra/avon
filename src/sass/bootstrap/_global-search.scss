@@ -17,7 +17,6 @@ input::-ms-clear {
     min-width: 0;
     transition: min-width $ui-animation-time $ui-animation-ease;
     font-size: 16px;
-    line-height: 1;
 
     input.primary-nav__search-input {
       display: none;
@@ -163,7 +162,7 @@ input::-ms-clear {
       border-bottom: 1px solid transparent;
       padding: $spacing-3;
       transition: border-color 0 $ui-animation-ease;
-      font-size: 14px;
+      font-size: 13px;
 
       a {
         display: flex;
