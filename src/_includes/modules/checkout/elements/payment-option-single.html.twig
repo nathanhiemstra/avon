@@ -20,7 +20,7 @@ Parameters:
 
 {# wrap entire row in link if buttonMode is true #}
 {% if buttonMode %}
-  <a href="#" class="link-plain">
+  <a href="#" class="link-secondary">
 {% endif %}
 
   <div class="clearfix my-2 border-bottom py-3">
@@ -46,7 +46,7 @@ Parameters:
       <div class="clearfix"></div>
 
       <!-- START - INLINE LEVEL - JUST BULLETS -->
-      {% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+      {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
         alertIcon: null,
         alertHeadline: null,
         alertBody: '

@@ -121,6 +121,12 @@ th {
       }
     }
   }
+
+  &.table-checkout {
+    > tbody > tr > td {
+      padding: 17px 5px;
+    }
+  }
 }
 
 // Compact table - less padding, smaller fonts
