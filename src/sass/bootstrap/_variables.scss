@@ -355,13 +355,13 @@ $input-label-text-color: $gray;
 $input-label-font-size: 14px;
 
 //** Default `.form-control` height
-$input-height-base: $line-height-computed + $padding-base-vertical * 2 + 2 !default;
+$input-height-base: $line-height-computed + $padding-base-vertical * 2 + 8 !default;
 
 //** Large `.form-control` height
-$input-height-large: ceil($font-size-large * $line-height-large) + $padding-large-vertical * 2 + 2 !default;
+$input-height-large: ceil($font-size-large * $line-height-large) + $padding-large-vertical * 2 - 4 !default;
 
 //** Small `.form-control` height
-$input-height-small: floor($font-size-small * $line-height-small) + $padding-small-vertical * 2 + 2 !default;
+$input-height-small: floor($font-size-small * $line-height-small) + $padding-small-vertical * 2 + 12 !default;
 
 //** `.form-group` margin
 $form-group-margin-bottom: $spacing-4 !default;
