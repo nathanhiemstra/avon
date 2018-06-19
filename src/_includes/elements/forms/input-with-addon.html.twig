@@ -19,8 +19,11 @@
 {% if theValue %}
   {% set theValue = ' value="' ~ theValue ~ '"' %}
 {% endif %}
+{% if onInputJs %}
+  {% set oninput = 'oninput="' ~ onInputJs ~ '"' %}
+{% endif %}
 
 <div class="input-group">
   <span class="input-group-addon">{{ addon }}</span>
-  <input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}>
+  <input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}{{ oninput }}>
 </div>

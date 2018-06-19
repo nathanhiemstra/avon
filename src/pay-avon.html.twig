@@ -63,7 +63,7 @@
 
           <!-- START - PAYMENT AMOUNT SECTION -->
           <div class="">
-            <div class="ml-4">
+            <div class="ml-0 ml-sm-4">
               <p>
                 <strong>How much are you paying today?</strong>
               </p>
@@ -73,18 +73,9 @@
                     name: 'pay-option',
                     classes: 'd-inline',
                     theValue: 'credit',
-                    theLabel: '$55.32 <small>(Current balance as of March 08, 2018 at 03:15 PM EST)</small>'
+                    theLabel: '$55.32 <small>(Current balance as of March 08, 2018 at 03:15 PM EST)</small>',
+                    haslabelTooltip: true
                   } %}
-
-                <a
-                  href="javascript:void(0)"
-                  data-toggle="popover"
-                  data-target="#generic-modal"
-                  class="lt-icon lt-tip lt-medium align-middle no-underline"
-                  data-container="body"
-                  data-placement="bottom"
-                  data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></a>
-
               </div>
 
               <div class="form-group">
@@ -92,10 +83,10 @@
                   name: 'pay-option',
                   classes: 'd-inline',
                   theValue: 'credit',
-                  theLabel: '$0.00 <small>(Amount Due with Campaign 07)</small>'
+                  theLabel: '$0.00 <small>(Amount Due with Campaign 07)</small>',
+                  haslabelModal: true,
+                  dataTarget: '#amount-due'
                 } %}
-
-                <a href="javascript:void(0)" data-toggle="modal" data-target="#amount-due" class="lt-icon lt-tip lt-medium align-middle no-underline"></a>
 
                 {# MODAL - AMOUNT DUE #}
                 {% include "_includes/modules/account/modals-pay/pay-avon-amount-due-modal.html.twig" %}
@@ -116,6 +107,7 @@
 
                   <span class="form-group has-error">
                     {% include components.elements.forms.input with {
+                      type: 'number',
                       placeholder: '',
                       theValue: '25,000.00',
                       size: '8',
@@ -152,7 +144,7 @@
           <!-- START - PAYMENT TYPE SECTION -->
           <div class="pt-5">
 
-            <div class="ml-4">
+            <div class="ml-0 ml-sm-4">
               <p>
                 <strong>Please select a payment type:</strong>
               </p>
@@ -194,6 +186,8 @@
 
                       <span class="form-group has-error">
                         {% include components.elements.forms.input with {
+                        type: 'password',
+                        maxlength: 4,
                         placeholder: null,
                         theValue: null,
                         size: '7',
@@ -291,13 +285,14 @@
               </div>
               <!-- END - PAY TYPE - CREDIT CARD -->
 
-              <div class="ml-sm-4">
+              <div class="ml-3">
                 <div class="row">
                   <div class="col-sm-6 ml-5">
                     <div class="form-group">
                       <label class="control-label" for="pay-avon-cardnum">Card Number</label>
 
                       {% include '_includes/elements/forms/input-with-addon.html.twig' with {
+                        type: 'number',
                         id: 'pay-avon-cardnum',
                         placeholder: '',
                         classes: '',
@@ -308,9 +303,13 @@
 
                     <div class="form-group">
                       {% include '_includes/elements/forms/input-with-addon.html.twig' with {
+                        type: 'number',
                         placeholder: '1234 5678 9098 7654',
                         classes: '',
-                        addon: '<img src="/images/icons/payment-visa.svg">'
+                        addon: '<img src="/images/icons/payment-visa.svg">',
+                        onInputJs: "javascript: var target = this, position = target.selectionEnd, length = target.value.length;
+                          target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+                          target.selectionEnd = position += ((target.value.charAt(position - 1) === ' ' && target.value.charAt(length - 1) === ' ' && length !== target.value.length) ? 1 : 0);"
                       } %}
                     </div>
 
@@ -372,8 +371,11 @@
                         <label class="control-label" for="pay-avon-cvv">CVV</label>
                         <span class="lt-icon lt-tip lt-medium align-middle"></span>
                         {% include components.elements.forms.input with {
+                          type: 'number',
                           id: 'pay-avon-cvv',
-                          placeholder: '123'
+                          placeholder: '123',
+                          maxlength: 3,
+                          onInputJs: 'javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);'
                         } %}
                       </div>
 
@@ -401,12 +403,15 @@
                         <div class="col-md-6">
                           <div class="form-group has-error">
                             {% include components.groups.forms.inputAndLabel with {
+                              type: 'number',
                               id: 'pay-avon-zip',
                               mainLabel: 'ZIP',
                               haslabelErrorIcon: true,
                               hasInlineErrorIcon: null,
                               hasAbsoluteErrorIcon: null,
-                              classes: 'form-control'
+                              classes: 'form-control',
+                              maxlength: 5,
+                              onInputJs: 'javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);'
                             } %}
                           </div>
                         </div>

@@ -37,6 +37,9 @@
   {% set attrs = attrs ~ ' readonly' %}
   {% set listeners = listeners ~ ' onclick="this.select()"' %}
 {% endif %}
+{% if onInputJs %}
+  {% set oninput = 'oninput="' ~ onInputJs ~ '"' %}
+{% endif %}
 {{ hasInlineErrorIconStart }}
-{{ errorIcon }}<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}{{ data }}{{ attrs }}{{ listeners }}>
+{{ errorIcon }}<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}{{ data }}{{ attrs }}{{ listeners }}{{ oninput }}>
 {{ hasInlineErrorIconEnd }}

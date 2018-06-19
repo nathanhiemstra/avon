@@ -23,10 +23,26 @@
   {% set errorIcon %}{% include "_includes/elements/forms/label-error-icon.html.twig" %}{% endset %}
 {% endif %}
 
+{% if haslabelTooltip %}
+  {% set tipIcon %}
+    {% include "_includes/elements/forms/label-tooltip-icon.html.twig" with {
+      dataTarget: dataTarget
+    } %}
+  {% endset %}
+{% endif %}
+
+{% if haslabelModal %}
+  {% set tipIcon %}
+    {% include "_includes/elements/forms/label-modal-icon.html.twig" with {
+      dataTarget: dataTarget
+    } %}
+  {% endset %}
+{% endif %}
+
 <div class="radio {{ classes }}">
   <label class="control-label">
     <input type="radio" {{ name }} {{ id }}{{ theValue }}{{ checked }}{{ disabled }}{{ dataAttrs }}>
     <span class="mr-4"></span>
-    {{ errorIcon }}{{ theLabel }}
+    {{ errorIcon }}{{ theLabel }}{{ tipIcon }}
   </label>
 </div>
