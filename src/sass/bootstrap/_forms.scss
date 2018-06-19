@@ -149,7 +149,7 @@ output {
   border: 1px solid $input-border;
   border-radius: $input-border-radius;
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md) {
     font-size: $font-size-base;
   }
 
