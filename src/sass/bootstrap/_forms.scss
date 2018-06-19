@@ -84,7 +84,8 @@ input[type="checkbox"]:focus {
 }
 
 // Hide up and down arrows in number fields
-input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -149,7 +150,7 @@ output {
   border: 1px solid $input-border;
   border-radius: $input-border-radius;
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg-min) {
     font-size: $font-size-base;
   }
 
@@ -217,7 +218,8 @@ select.form-control {
     display: none;
   }
 
-  + .lt-icon, + .lt-icon:before {
+  + .lt-icon,
+  + .lt-icon:before {
     color: $link-color;
   }
 
@@ -1034,14 +1036,13 @@ input.form-control {
   }
 }
 
-// Temporary case-by-case small input tweaks - Eventually, these will be global
-.page--pay-avon,
-.tab--open-orders {
-  .input-sm {
+// larger font on mobile input-sm
+.form-control {
+  &.input-sm {
     font-size: 16px;
   }
-  @media (min-width: $screen-sm-min) {
-    .input-sm {
+  @media (min-width: $screen-lg-min) {
+    &.input-sm {
       font-size: 15px;
     }
   }
