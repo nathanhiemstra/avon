@@ -32,9 +32,22 @@ var ProductDetail = ( function () {
     _cloneSocialIcons();
   };
 
+  var test = function(param) {
+    // console.log('show modal instead of dropdown :: ', param);
+    if($(window).width() < 768) {
+      // console.log('show the modal version');
+    } else {
+      // console.log('show the normal dropdown');
+    }
+  };
+
   // private methods
   var _addListeners = function () {
 
+    $els.customerSelectInput.on('focus', function() {
+      $els.customerSelectTrigger.off();
+      // test('open');
+    });
     $els.customerSelectTrigger.on( 'click', _handleDropdownClick );
 
     // Customer input select auto-complete - https://github.com/devbridge/jQuery-Autocomplete
@@ -45,13 +58,20 @@ var ProductDetail = ( function () {
         // console.log('You selected: ' + suggestion.value);
         // _handleItemEntrySelection(this, suggestion);
         $( this ).val( suggestion.value );
+        console.log('focus on the next input');
+        $('#item-entry-line-number').focus().select();
       },
       formatResult: function ( suggestion, currentVal ) {
         return _constructItemTemplate( suggestion );
       },
-      onHide: function () {
+      onHide: function (e) {
+        console.log('on hide');
         // re-add click listener on down arrow
-        $els.customerSelectTrigger.on( 'click', _handleDropdownClick );
+        setTimeout(function() {
+          console.log('readd events');
+          $els.customerSelectTrigger.off().on( 'click', _handleDropdownClick );
+        }, 100);
+        test('close');
       },
       beforeRender: function ( container, suggestions ) {
         // only show 'view all results' button if we have suggestions
@@ -92,8 +112,9 @@ var ProductDetail = ( function () {
 
   // handle customer dropdown arrow click
   var _handleDropdownClick = function ( e ) {
-    $els.customerSelectInput.focus();
+    e.preventDefault();
     $els.customerSelectTrigger.off();
+    $els.customerSelectInput.focus();
   };
 
   // When page loads, make copy of icons in other part of markup for mobile view.

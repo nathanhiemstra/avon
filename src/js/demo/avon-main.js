@@ -1,4 +1,3 @@
-
 $( document ).ready( function () {
 
 
@@ -168,11 +167,52 @@ $( document ).ready( function () {
     toggleDatePicker( this );
   } );
 
+  // ITEM ENTRY
+  var $itemEntryLineNum = $( '#item-entry-line-number' );
+
+  $itemEntryLineNum.on( 'keyup', function ( e ) {
+
+    // return if selection is made within input
+    var selection = window.getSelection().toString();
+    if( selection !== '' ) {
+      return;
+    }
+
+    // return if arrow keys are pressed
+    if( $.inArray( event.keyCode, [ 38, 40, 37, 39 ] ) !== -1 ) {
+      return;
+    }
+
+    var $this = $( this );
+    var input = $this.val();
+
+    input = input.replace( /[\W\s\._\-]+/g, '' );
+
+    var split = 1,
+      chunk = [];
+
+    for( var i = 0, len = input.length; i < len; i += split ) {
+      split = ( i >= 3 && i <= 7 ) ? 3 : 3;
+      chunk.push( input.substr( i, split ) );
+    }
+
+    $this.val( function () {
+      return chunk.join( "-" ).toUpperCase();
+    } );
+
+    if( this.value.length == this.maxLength ) {
+      $( '#item-entry-quantity' ).focus().select();
+      $( '#item-entry-campaign' ).removeAttr( 'disabled' );
+    }
+
+  } );
+
+
   // POPOVERS
   $( '[data-toggle="popover"]:not(#popover-cart):not([data-popover-modal-combo])' ).popover();
 
   // SPLIT CONTENT
-  $('[data-split-content]').contentSplit();
+  $( '[data-split-content]' ).contentSplit();
 
   // handle cart popover and add a custom class for styling
   var cartPopover = $( "#popover-cart" );
@@ -230,22 +270,22 @@ $( document ).ready( function () {
 
 
   // Add new account modal radio button shows 'add new account' content
-  $('#select-account-modal-add-new').on('change', function() {
-      if(this.checked) {
-        $('#select-account-modal-add-new-details').removeClass('d-none');
-      }
-  });
-  $('#select-account-modal-existing-1').on('change', function() {
-      if(this.checked) {
-        $('#select-account-modal-add-new-details').addClass('d-none');
-      }
-  });
+  $( '#select-account-modal-add-new' ).on( 'change', function () {
+    if( this.checked ) {
+      $( '#select-account-modal-add-new-details' ).removeClass( 'd-none' );
+    }
+  } );
+  $( '#select-account-modal-existing-1' ).on( 'change', function () {
+    if( this.checked ) {
+      $( '#select-account-modal-add-new-details' ).addClass( 'd-none' );
+    }
+  } );
 
 
 
   // Check to see if there's scrollable tab nav on the page
   // if so, let's init the js
-  if($('#scrollableTabsNav').length) NavTabsScrollable.init();
+  if( $( '#scrollableTabsNav' ).length ) NavTabsScrollable.init();
 
 
   // INIT OTHER DEMO SCRIPTS

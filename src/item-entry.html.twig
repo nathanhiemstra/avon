@@ -16,46 +16,40 @@
 
         <h1>Item Entry</h1>
 
+        <div class="mt-5">
+          {% include "_includes/groups/alerts/alert-level-section-generic.twig" with {marginClasses: null } %}
+        </div>
+
         <!-- START - FORM -->
         <form class="clearfix my-5 row">
 
-          <div class="col-xs-12">
-            {% include "_includes/groups/alerts/alert-level-section-generic.twig" with {marginClasses: null } %}
-          </div>
-          
-
-          <div class="col-xs-12 col-sm-2 item-entry-col">
-            <div class="form-group ">
-              <label for="item-entry-line-number" class="control-label">Line Number</label>
-              <input id="item-entry-line-number" type="text" onClick="this.select();" class="form-control" value="234-567">
-              <div class="stock-status">
-                <!-- DEV NOTE :: Only one of these stock status messages will appear at a time -->
-
-                {% include '_includes/groups/your-order/message-status-in-stock.html.twig' %}
-                {% include '_includes/groups/your-order/message-status-out-of-stock.html.twig' %}
-                {% include '_includes/groups/your-order/message-status-sold-out.html.twig' %}
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-sm-3 item-entry-col">
+          <!-- DEV NOTE :: the functionality for this dropdown is currently piggybacking on the same dropdown from the Product Details "Who is this for". The Javascript that controls it is in product-detail.js -->
+          <div class="col-xs-12 col-sm-4 item-entry-col">
             <div class="form-group has-feedback">
-              <label for="item-entry-campaign" class="control-label">Campaign</label>
-              <select id="item-entry-campaign" class="form-control">
-                <option>CO4 - $18.99</option>
-                <option>CO5 - $18.99</option>
-                <option>CO6 - $18.99</option>
-              </select>
+              <label for="order-history-trans-type" class="control-label">Who is this for?</label>
+              <input type="text" class="form-control" id="pdpCustomerSelect">
               <span class="lt-icon lt-triangle-down form-control-feedback"></span>
             </div>
           </div>
 
-          <div class="col-xs-12 col-sm-2 item-entry-col">
+          <div class="col-xs-4 col-sm-3 item-entry-col">
+            <div class="form-group ">
+              <label for="item-entry-line-number" class="control-label">Line <span class="label-full">Number</span><span class="label-abbr">#</span></label>
+              <input id="item-entry-line-number" type="text" onclick="this.select();" class="form-control" value="234-567" maxlength="7">
+              <div class="stock-status">
+                <!-- DEV NOTE :: Only one of these stock status messages will appear at a time -->
+                {% include '_includes/groups/your-order/message-status-in-stock.html.twig' %}
+                {% include '_includes/groups/your-order/message-status-out-of-stock.html.twig' %}
+                {% include '_includes/groups/your-order/message-status-sold-out.html.twig' %}
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-3 col-sm-2 item-entry-col">
             <div class="form-group has-error item-entry-quantity">
               {% include components.groups.forms.inputAndLabel with {
-                id: 'item-entry-quantity"', 
-                mainLabel: 'Quantity',
+                id: 'item-entry-quantity"',
+                mainLabel: '<span class="label-full">Quantity</span><span class="label-abbr">Qty</span>',
                 haslabelErrorIcon: true,
                 hasInlineErrorIcon: null,
                 hasAbsoluteErrorIcon: null,
@@ -66,11 +60,14 @@
             </div>
           </div>
 
-          <!-- DEV NOTE "" the funcationlaity for this dropdown is currently piggybacking on the same dropdown from the Product Details "Who is this for". The Javascript that controls it is in product-detail.js -->
-          <div class="col-xs-12 col-sm-5">
+          <div class="col-xs-5 col-sm-3 item-entry-col">
             <div class="form-group has-feedback">
-              <label for="order-history-trans-type" class="control-label">Who is this for?</label>
-              <input type="text" class="form-control" id="pdpCustomerSelect">
+              <label for="item-entry-campaign" class="control-label">Campaign</label>
+              <select id="item-entry-campaign" class="form-control" disabled>
+                <option>CO4 - $18.99</option>
+                <option>CO5 - $18.99</option>
+                <option>CO6 - $18.99</option>
+              </select>
               <span class="lt-icon lt-triangle-down form-control-feedback"></span>
             </div>
           </div>
@@ -92,8 +89,11 @@
         <!-- START - MORE ON THE WAY SECTION -->
         <!-- DEV NOTE :: To hide this section, toggle class '.d-none' -->
         <div class="row text-center">
-          <p><strong>More on the way</strong></p>
-          <p class="px-4">{{ fpo.sentence }} {{ fpo.sentence }}</p>
+          <p>
+            <strong>More on the way</strong>
+          </p>
+          <p class="px-4">{{ fpo.sentence }}
+            {{ fpo.sentence }}</p>
 
           <div class="col-xs-12 btn-group btn-group-50-50">
             <div class="btn-group my-2">
@@ -103,60 +103,63 @@
               <button type="submit" class="btn btn-default disabled">Notify me when in stock</button>
             </div>
           </div>
-        <!-- END - MORE ON THE WAY SECTION -->
+          <!-- END - MORE ON THE WAY SECTION -->
 
-        <hr>
+          <hr>
 
-        <!-- START - SOLD OUT SECTION -->
-        <!-- DEV NOTE :: To hide this section, toggle class '.d-none' -->
-        <div class="clearfix text-center">
-          {% include '_includes/groups/your-order/message-title-this-product-is-sold-out.twig' %}
-          <p class="px-4">{{ fpo.sentence }} {{ fpo.sentence }}</p>
+          <!-- START - SOLD OUT SECTION -->
+          <!-- DEV NOTE :: To hide this section, toggle class '.d-none' -->
+          <div class="clearfix text-center">
+            {% include '_includes/groups/your-order/message-title-this-product-is-sold-out.twig' %}
+            <p class="px-4">{{ fpo.sentence }}
+              {{ fpo.sentence }}</p>
 
-          <div class="col-xs-12 btn-group btn-group-50-50">
-            <div class="btn-group my-2">
-              <button type="submit" class="btn btn-default">View similar products</button>
+            <div class="col-xs-12 btn-group btn-group-50-50">
+              <div class="btn-group my-2">
+                <button type="submit" class="btn btn-default">View similar products</button>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- END - SOLD OUT SECTION -->
+          <!-- END - SOLD OUT SECTION -->
 
-        <hr>
+          <hr>
 
-        <!-- START - CARTS -->
-        <!-- DEV NOTE :: To hide this section, toggle class '.d-none' -->
-        <div class="clearfix">
-          <ul class="list-group pt-3 mb-4">
-            <h6 class="mb-1">Added to Cart</h6>
-            <p class="small text-muted">Go to your cart to view and manage all items. <a href="javascript:void(0)">Go to Your Order</a></p>
+          <!-- START - CARTS -->
+          <!-- DEV NOTE :: To hide this section, toggle class '.d-none' -->
+          <div class="clearfix">
+            <ul class="list-group pt-3 mb-4">
+              <h6 class="mb-1">Added to Cart</h6>
+              <p class="small text-muted">Go to your cart to view and manage all items.
+                <a href="javascript:void(0)">Go to Your Order</a>
+              </p>
 
-            <!-- START - REPRESENTATIVE DELIVERY CARTS -->
-            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
-            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
-            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '3', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
-            <!-- END - REPRESENTATIVE DELIVERY CARTS -->
-          </ul>
+              <!-- START - REPRESENTATIVE DELIVERY CARTS -->
+              {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '1', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
+              {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '2', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
+              {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '3', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
+              <!-- END - REPRESENTATIVE DELIVERY CARTS -->
+            </ul>
 
-          <ul class="list-group pt-3 mb-4">
-            <h6 class="mb-1">Future Orders</h6>
-            <p class="small text-muted">Available for checkout in the next campaign</p>
+            <ul class="list-group pt-3 mb-4">
+              <h6 class="mb-1">Future Orders</h6>
+              <p class="small text-muted">Available for checkout in the next campaign</p>
 
-            <!-- START - REPRESENTATIVE DELIVERY CARTS -->
-            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '4', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
-            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '5', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
-            {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '6', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
-            <!-- END - REPRESENTATIVE DELIVERY CARTS -->
-          </ul>
-        </div>
-        <!-- END - CARTS -->
+              <!-- START - REPRESENTATIVE DELIVERY CARTS -->
+              {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '4', personName: fpo.person.1, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
+              {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '5', personName: fpo.person.2, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
+              {% include '_includes/groups/your-order/single-cart-li.html.twig' with {indexNum: '6', personName: fpo.person.3, itemCount: '8', total: '90.00', classes: 'd-inline-block', collapsed: true, includeCheckbox: false, quantityStatic: true} %}
+              <!-- END - REPRESENTATIVE DELIVERY CARTS -->
+            </ul>
+          </div>
+          <!-- END - CARTS -->
 
-    {% endblock %}
+        {% endblock %}
 
-  {% endembed %}
+      {% endembed %}
 
-  <!-- START - ADD NEW CUSTOMER MODAL -->
-  {% include "_includes/modules/modals/add-new-customer-modal.html.twig" %}
+      <!-- START - ADD NEW CUSTOMER MODAL -->
+      {% include "_includes/modules/modals/add-new-customer-modal.html.twig" %}
 
-</div>
+    </div>
 
-{% endblock %}
+  {% endblock %}

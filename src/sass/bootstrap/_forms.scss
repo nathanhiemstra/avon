@@ -38,6 +38,25 @@ label {
 
   // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
   margin-bottom: 5px;
+
+  // show label abbreviations on small screens and full label on large screens
+  & > span {
+    &.label-full {
+      display: none;
+    }
+    &.label-abbr {
+      display: inline;
+    }
+    // desktop
+    @media (min-width: $screen-xs-min) {
+      &.label-full {
+        display: inline;
+      }
+      &.label-abbr {
+        display: none;
+      }
+    }
+  }
 }
 
 // Normalize form controls
