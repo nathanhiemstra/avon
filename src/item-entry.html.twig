@@ -21,7 +21,7 @@
         </div>
 
         <!-- START - FORM -->
-        <form class="clearfix my-5 row">
+        <form class="clearfix my-5 row form-item-entry">
 
           <!-- DEV NOTE :: the functionality for this dropdown is currently piggybacking on the same dropdown from the Product Details "Who is this for". The Javascript that controls it is in product-detail.js -->
           <div class="col-xs-12 col-sm-4 item-entry-col">
@@ -74,10 +74,10 @@
 
           <div class="col-xs-12 btn-group btn-group-50-50">
             <div class="btn-group my-2">
-              <button type="submit" class="btn btn-default">Add to future order</button>
+              <button type="submit" class="btn btn-default btn-loader" data-loading-text="<span class='spinner'></span><span class='alert-icon alert-icon-badge lt-checkmark'></span>">Add to future order</button>
             </div>
             <div class="btn-group my-2">
-              <button type="submit" class="btn btn-primary">Add to order</button>
+              <button type="submit" class="btn btn-primary btn-loader" data-loading-text="<span class='spinner'></span><span class='alert-icon alert-icon-badge lt-checkmark'></span>">Add to order</button>
             </div>
           </div>
 

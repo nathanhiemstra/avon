@@ -181,19 +181,21 @@ a.btn {
     }
   }
 
-  i, i:after, i:before {
+  i,
+  i:after,
+  i:before {
     line-height: 0;
 
     // prevent larger icons increasing button height
 
   }
 
-  > i,
-  > i:before,
-  > span,
-  > span:before,
   &:focus,
-  &:hover {
+   > i:before,
+   > span,
+   > span:before,
+  &:hover,
+  > i {
     background-color: $brand-primary !important;
     color: $white !important;
   }
@@ -212,12 +214,12 @@ a.btn {
       }
     }
 
-    > i,
-    > i:before,
-    > span,
-    > span:before,
     &:focus,
-    &:hover {
+     > i:before,
+     > span,
+     > span:before,
+    &:hover,
+    > i {
       background-color: transparent !important;
       color: $brand-primary !important;
     }
@@ -231,7 +233,9 @@ a.btn {
 
   letter-spacing: 0.1px;
 
-  span, small, strong {
+  small,
+  span,
+  strong {
     vertical-align: middle;
   }
 
@@ -248,19 +252,21 @@ a.btn {
     }
   }
 
-  i, i:after, i:before {
+  i,
+  i:after,
+  i:before {
     line-height: 0;
 
     // prevent larger icons increasing button height
 
   }
 
-  > i,
-  > i:before,
-  > span,
-  > span:before,
   &:focus,
-  &:hover {
+   > i:before,
+   > span,
+   > span:before,
+  &:hover,
+  > i {
     background-color: transparent !important;
     color: $white !important;
   }
@@ -297,13 +303,13 @@ a.btn {
       }
     }
 
-    > i,
-    > i:before,
-    > span,
-    > span:before,
     &:focus,
+     > i:before,
+     > span,
+     > span:before,
+    &:active,
     &:hover,
-    &:active {
+    > i {
       background-color: transparent !important;
       color: $brand-primary !important;
       border: 1px solid transparent !important;
@@ -337,8 +343,8 @@ a.btn {
   color: $text-color;
   padding: $btn-padding-small-vertical $btn-padding-small-horizontal;
 
-  &:hover,
-  &:focus {
+  &:focus,
+  &:hover {
     color: $text-color;
   }
 
@@ -493,7 +499,8 @@ input[type="button"] {
   }
 
   .lt-icon {
-    &:before, &:after {
+    &:after,
+    &:before {
       color: $gray;
       transition: color $ui-animation-time*1.5 ease;
     }
@@ -513,7 +520,8 @@ input[type="button"] {
     color: $text-color;
 
     .lt-icon {
-      &:before, &:after {
+      &:after,
+      &:before {
         color: $text-color;
       }
     }
@@ -525,4 +533,110 @@ input[type="button"] {
     right: 22px;
   }
 
+}
+
+// Button with loading indicator - for ajax operations
+.btn-loader {
+
+  transition: background-color $ui-animation-time $ui-animation-ease;
+
+  &.loading {
+    .spinner,
+    .spinner:after {
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+    }
+
+    .spinner {
+      display: flex;
+      margin: 0 auto;
+      position: relative;
+      text-indent: -9999em;
+      border-top: 2px solid $brand-alt;
+      border-right: 2px solid $brand-alt;
+      border-bottom: 2px solid $brand-alt;
+      border-left: 2px solid $body-bg;
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-animation: rotate 1.1s infinite linear;
+      animation: rotate 1.1s infinite linear;
+    }
+
+    .alert-icon {
+      display: none;
+      justify-content: center;
+      margin: 0 auto;
+      color: $brand-primary;
+      opacity: 0;
+      transition: opacity 2s;
+    }
+
+    // variations
+    &.btn-primary {
+      background-color: $brand-primary;
+      border-color: $brand-primary;
+    }
+
+    &.btn-default {
+      background-color: $body-bg;
+      border-color: $brand-primary;
+
+      .spinner {
+        border-top: 2px solid $gray-light;
+        border-right: 2px solid $gray-light;
+        border-bottom: 2px solid $gray-light;
+        border-left: 2px solid $brand-primary;
+      }
+
+    }
+
+  }
+  // end .loading
+
+  &.loaded {
+
+    .spinner {
+      display: none;
+    }
+
+    .alert-icon {
+      display: inline-block;
+      opacity: 1;
+      transition: opacity 3s;
+    }
+
+    &.btn-default {
+      .alert-icon {
+        background-color: $brand-primary;
+        color: $body-bg;
+      }
+    }
+
+  }
+
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }

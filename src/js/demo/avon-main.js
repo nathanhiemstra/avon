@@ -152,6 +152,26 @@ $( document ).ready( function () {
     $optionSelected.tab( 'show' );
   } );
 
+  // LOADER BUTTONS DEMO
+  $( '.btn-loader' ).on( 'click', function () {
+    var $this = $( this );
+    $this.button('loading');
+    $this.addClass( 'loading' );
+    setTimeout( function () {
+      $this.addClass('loaded');
+      setTimeout(function() {
+        $this.removeClass('loading loaded');
+        $this.button('reset');
+      }, 1500);
+    }, 2500 );
+  } );
+
+  // necessary to prevent form submitting and allow our button animation demo
+  $( ".form-item-entry" ).submit( function ( e ) {
+    e.preventDefault();
+  } );
+
+
 
   // YOUR OFFERS
   $objects.yourOrder.offers.showDetails.on( "click", function () {
