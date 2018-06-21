@@ -1,3 +1,43 @@
+// customer select form - used in multiple locations and connected to autocomplete
+
+.form-control {
+  &.customer-select {
+    transition: border-bottom-color 0s, padding-left $ui-animation-time ease;
+
+    &~.lt-triangle-down {
+      display: inline-block;
+    }
+
+    &~.lt-close {
+      display: none;
+      font-weight: normal;
+      top: 27px;
+
+      &:before {
+        color: $gray;
+      }
+    }
+
+    &:active,
+    &:focus,
+    .active {
+      padding-left: 20px;
+      border-color: $gray;
+      border-bottom-color: $body-bg;
+
+      &~.lt-triangle-down {
+        display: none;
+      }
+
+      &~.lt-close {
+        display: inline-block;
+      }
+    }
+
+  }
+
+}
+
 .autocomplete-suggestions {
   border: 1px solid $gray;
   border-top: none;
@@ -7,21 +47,25 @@
 }
 
 .autocomplete-suggestion {
-  padding: 2px 5px;
   white-space: nowrap;
   overflow: hidden;
+  border-left: 4px solid $body-bg;
   transition: 0.2s background-color ease;
 
   .item {
+    a {
+      display: block;
+      padding: 8px 15px;
+    }
+
     p {
       margin: 0;
       white-space: normal;
     }
 
     p.title {
-      // text-overflow: ellipsis;
-      // overflow: hidden;
-      font-weight: bold;
+      font-weight: normal;
+      color: $text-color;
       margin-bottom: $spacing-2;
     }
 
@@ -30,14 +74,9 @@
     }
   }
 
-  &:last-of-type {
-    .item {
-      border-bottom: none !important;
-    }
-  }
-
   &.autocomplete-selected {
-    background-color: $gray-lighter;
+    background-color: $brand-primary-muted;
+    border-left: 4px solid $brand-primary;
   }
 }
 
@@ -60,21 +99,32 @@
   padding: $spacing-4;
 }
 
-/***********
-
-  Instance specific styles
-
- ***********/
-
-#autocomplete-all-results-link,
-#autocomplete-add-customer-link {
+#autocomplete-add-customer-link,
+#autocomplete-all-results-link {
   position: sticky;
   bottom: 0;
   display: block;
   width: 100%;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-  background-color: white;
+  height: 44px;
+  line-height: 44px;
+  text-align: left;
+  background-color: $body-bg;
+  padding-left: 20px;
+  border-top: 1px solid $gray-lighter;
   cursor: pointer;
+
+  .lt-plus {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    transform: rotate(-45deg);
+    transition: transform $ui-animation-time $ui-animation-ease;
+  }
+
+  &:hover, &:active, .active {
+    text-decoration: none;
+    .lt-plus {
+      transform: rotate(45deg);
+    }
+  }
 }

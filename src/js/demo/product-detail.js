@@ -78,7 +78,7 @@ var ProductDetail = ( function () {
         if( suggestions.length ) {
           $( container )
             .append(
-              '<a id="autocomplete-add-customer-link" class="link-primary border-top" data-toggle="modal" data-target="#add-new-customer-modal">Add a new customer</a>'
+              '<a id="autocomplete-add-customer-link" class="link-primary" data-toggle="modal" data-target="#add-new-customer-modal">Add a new customer<span class="lt-icon lt-plus lt-medium"></span></a>'
             );
 
           // hide suggestions when apended link is clicked
@@ -100,7 +100,7 @@ var ProductDetail = ( function () {
       appendTo: $els.autocompleteHost,
       showOnFocus: true,
       minChars: 0,
-      maxHeight: 400,
+      maxHeight: 244,
       showNoSuggestionNotice: false,
       noSuggestionNotice: 'Sorry, nothing matches that query',
       triggerSelectOnValidInput: false,
@@ -125,7 +125,7 @@ var ProductDetail = ( function () {
 
   // construct the html for predictive search template
   var _constructItemTemplate = function ( suggestion ) {
-    return '<div class="item border-bottom p-4">' +
+    return '<div class="item">' +
       '<a href="javascript:void(0)">' +
       '<div class="row">' +
       '<div class="col col-xs-12">' +
