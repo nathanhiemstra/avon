@@ -223,6 +223,8 @@ $( document ).ready( function () {
     if( this.value.length == this.maxLength ) {
       $( '#item-entry-quantity' ).focus().select();
       $( '#item-entry-campaign' ).removeAttr( 'disabled' );
+      $( '#item-entry-btn-add-future' ).removeAttr( 'disabled' );
+      $( '#item-entry-btn-add' ).removeAttr( 'disabled' );
     }
 
   } );
