@@ -542,7 +542,9 @@ input[type="button"] {
 
   &.loading {
     .spinner,
-    .spinner:after {
+    .spinner:after,
+    .alert-icon,
+    .alert-icon:after {
       border-radius: 50%;
       width: 24px;
       height: 24px;
@@ -570,7 +572,6 @@ input[type="button"] {
       margin: 0 auto;
       color: $brand-primary;
       opacity: 0;
-      transition: opacity 2s;
     }
 
     // variations
@@ -604,7 +605,7 @@ input[type="button"] {
     .alert-icon {
       display: inline-block;
       opacity: 1;
-      transition: opacity 3s;
+      animation: fadein $ui-animation-time forwards linear;
     }
 
     &.btn-default {
@@ -616,6 +617,15 @@ input[type="button"] {
 
   }
 
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes rotate {
