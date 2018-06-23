@@ -42,12 +42,34 @@ var ProductDetail = ( function () {
     // $els.customerSelectInput.focus();
     // $els.customerSelectInput[0].selectionStart = 0;
     // $els.customerSelectInput[0].selectionEnd = $els.customerSelectInput.val().length;
+    var iOS = /iPad|iPhone|iPod/.test( navigator.userAgent ) && !window.MSStream;
+    var focusedElement;
+
+    if(iOS) {
+      console.log('IOS IOS IOS');
+    }
 
     $els.customerSelectInput.on( 'focus', function () {
-      // console.log('focus');
-      // $('html,body').scrollTop(0);
+      $( 'html,body' ).scrollTop( 0 );
       $els.customerSelectTrigger.off();
+      if( focusedElement == this ) return; //already focused, return so user can now place cursor at specific point in input.
+      focusedElement = this;
+      setTimeout( function () {
+        if(iOS) {
+          $els.customerSelectInput[0].selectionStart = 0;
+          $els.customerSelectInput[0].selectionEnd = $els.customerSelectInput.val().length;
+        } else {
+          focusedElement.select();
+        }
+      }, 50 ); //select all text in any field on focus for easy re-entry. Delay sightly to allow focus to "stick" before selecting.
+    } ).on( 'blur', function () {
+      focusedElement = null;
     } );
+
+    // $els.customerSelectInput.on( 'focus', function () {
+    //   $('html,body').scrollTop(0);
+    //   $els.customerSelectTrigger.off();
+    // } );
     $els.customerSelectTrigger.on( 'click', _handleDropdownClick );
 
     // Customer input select auto-complete - https://github.com/devbridge/jQuery-Autocomplete
