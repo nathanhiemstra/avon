@@ -42,6 +42,7 @@ var FAKE_PRODUCTS = [
 ]
 
 var FAKE_CUSTOMER_DATA = [
+  { value: 'You (Rosa Stone)' },
   { value: 'Jane Johnson' },
   { value: 'John Doe' },
   { value: 'Jennifer Jones' },

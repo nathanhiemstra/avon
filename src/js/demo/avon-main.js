@@ -162,6 +162,7 @@ $( document ).ready( function () {
       setTimeout(function() {
         $this.removeClass('loading loaded');
         $this.button('reset');
+        $('#item-entry-line-number').val('').focus();
       }, 1500);
     }, 2500 );
   } );
@@ -221,7 +222,9 @@ $( document ).ready( function () {
     } );
 
     if( this.value.length == this.maxLength ) {
-      $( '#item-entry-quantity' ).focus().select();
+      $( '#item-entry-quantity' ).select();
+      $( '#item-entry-quantity' )[0].selectionStart = 0;
+      $( '#item-entry-quantity' )[0].selectionEnd = $( '#item-entry-quantity' ).val().length;
       $( '#item-entry-campaign' ).removeAttr( 'disabled' );
       $( '#item-entry-btn-add-future' ).removeAttr( 'disabled' );
       $( '#item-entry-btn-add' ).removeAttr( 'disabled' );

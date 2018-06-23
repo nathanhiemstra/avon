@@ -1,42 +1,203 @@
+$customer-select-break: $screen-sm-min;
+
 // customer select form - used in multiple locations and connected to autocomplete
+.customer-select-autocomplete {
 
-.form-control {
-  &.customer-select {
-    transition: border-bottom-color 0s, padding-left $ui-animation-time ease;
+  .modal-header {
+    display: none;
+    border-bottom: none;
+  }
 
-    &~.lt-triangle-down {
-      display: inline-block;
+  .form-group .lt-close {
+    display: none;
+  }
+
+  .form-group .lt-plus {
+    display: inline-block;
+  }
+
+  &.autocomplete-open {
+    // MOBILE STATE - Looks like a modal
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: $body-bg;
+    z-index:$zindex-modal;
+    overflow-x: hidden;
+
+    // DESKTOP STATE
+    @media (min-width: $customer-select-break) {
+      position: relative;
+      float: left;
+      width: 33.3%;
+      padding-left: 15px;
+      padding-right: 15px;
+      overflow-x: visible;
     }
 
-    &~.lt-close {
-      display: none;
-      font-weight: normal;
-      top: 27px;
+    .modal-header {
+      display: block;
+      padding: 15px 15px 32px;
 
-      &:before {
-        color: $gray;
-      }
-    }
-
-    &:active,
-    &:focus,
-    .active {
-      padding-left: 20px;
-      border-color: $gray;
-      border-bottom-color: $body-bg;
-
-      &~.lt-triangle-down {
+      // DESKTOP STATE
+      @media (min-width: $customer-select-break) {
         display: none;
       }
+    }
 
-      &~.lt-close {
+    .form-group {
+      // MOBILE STATE
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+
+      // DESKTOP STATE
+      @media (min-width: $customer-select-break) {
+        margin-bottom: $spacing-4;
+        padding-bottom: 0;
+      }
+    }
+
+    .form-group label {
+      // MOBILE STATE
+      display: none;
+
+      // DESKTOP STATE
+      @media (min-width: $customer-select-break) {
         display: inline-block;
       }
     }
 
+    .form-group input {
+      transition: border-bottom-color 0s, padding-left $ui-animation-time ease;
+
+      // MOBILE STATE
+      padding: 15px;
+      border: 1px solid $gray-light;
+      width: 90%;
+      margin-left: 5%;
+
+      // DESKTOP STATE
+      @media (min-width: $customer-select-break) {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      &~.lt-triangle-down {
+        // MOBILE STATE
+        display: none;
+
+        // DESKTOP STATE
+        @media (min-width: $customer-select-break) {
+          display: inline-block;
+        }
+      }
+
+      &~.lt-close {
+        font-weight: normal;
+        top: 27px;
+
+        &:before {
+          color: $gray;
+        }
+
+        // MOBILE STATE
+        display: none;
+
+        // DESKTOP STATE
+        @media (min-width: $customer-select-break) {
+          display: inline-block;
+        }
+      }
+
+      &:active,
+      &:focus,
+      .active {
+
+        // MOBILE STATE
+
+        // DESKTOP STATE
+        @media (min-width: $customer-select-break) {
+          padding-left: 20px;
+          border-color: $gray;
+          border-bottom-color: $body-bg;
+        }
+
+        &~.lt-triangle-down {
+          display: none;
+        }
+
+        &~.lt-close {
+          // MOBILE STATE
+          display: none;
+
+          // DESKTOP STATE
+          @media (min-width: $customer-select-break) {
+            display: inline-block;
+          }
+        }
+      }
+
+    }
+
+    .autocomplete-suggestions {
+      // MOBILE STATE
+      width: 100% !important;
+      border: none;
+      margin-top: 18px;
+      border-top: 1px solid $gray-light;
+      padding-bottom: 68px;
+
+      // DESKTOP STATE
+      @media (min-width: $customer-select-break) {
+        border: 1px solid $gray;
+        border-top: none;
+        margin-top: 0;
+        padding-bottom: 0;
+        max-height: 204px !important; // override inline style added by autocomplete plugin
+      }
+    }
   }
 
 }
+
+// .customer-select-autocomplete input {
+//   transition: border-bottom-color 0s, padding-left $ui-animation-time ease;
+//
+//   &~.lt-triangle-down {
+//     display: inline-block;
+//   }
+
+  // &~.lt-close {
+  //   display: none;
+  //   font-weight: normal;
+  //   top: 27px;
+  //
+  //   &:before {
+  //     color: $gray;
+  //   }
+  // }
+
+//   &:active,
+//   &:focus,
+//   .active {
+//     padding-left: 20px;
+//     border-color: $gray;
+//     border-bottom-color: $body-bg;
+//
+//     &~.lt-triangle-down {
+//       display: none;
+//     }
+//
+//     &~.lt-close {
+//       display: inline-block;
+//     }
+//   }
+//
+// }
 
 .autocomplete-suggestions {
   border: 1px solid $gray;
@@ -49,7 +210,7 @@
 .autocomplete-suggestion {
   white-space: nowrap;
   overflow: hidden;
-  border-left: 4px solid $body-bg;
+  padding-left: 4px;
   transition: 0.2s background-color ease;
 
   .item {
@@ -74,9 +235,13 @@
     }
   }
 
+  &.selected {
+    padding-left: 0;
+    border-left: 4px solid $brand-primary;
+  }
+
   &.autocomplete-selected {
     background-color: $brand-primary-muted;
-    border-left: 4px solid $brand-primary;
   }
 }
 
@@ -99,32 +264,105 @@
   padding: $spacing-4;
 }
 
+.autocomplete-suggestion-footer {
+  // MOBILE STATE
+  position: fixed;
+  display: block;
+  // align-items: center;
+  // justify-content: center;
+  bottom: 0;
+  width: 100%;
+  // height: 68px;
+  background-color: $body-bg;
+  border-top: 1px solid $gray-light;
+  padding: 10px;
+
+  // DESKTOP STATE
+  @media (min-width: $customer-select-break) {
+    position: sticky;
+    display: block;
+    height: 44px;
+    text-align: left;
+    background-color: $body-bg;
+    padding-left: 20px;
+    border-top: 1px solid $gray-lighter;
+    cursor: pointer;
+  }
+}
+
 #autocomplete-add-customer-link,
 #autocomplete-all-results-link {
-  position: sticky;
-  bottom: 0;
-  display: block;
-  width: 100%;
-  height: 44px;
-  line-height: 44px;
-  text-align: left;
-  background-color: $body-bg;
-  padding-left: 20px;
-  border-top: 1px solid $gray-lighter;
+  // MOBILE STATE
   cursor: pointer;
+  width: 100%;
+  @extend .btn;
+  @extend .btn-default;
+  // position: fixed;
+  // bottom: 0;
+  // display: block;
+  // width: 100%;
+  // height: 68px;
+  // line-height: 44px;
+  // text-align: left;
+  // background-color: $body-bg;
+  // padding-left: 20px;
+  // border-top: 1px solid $gray-lighter;
+  // cursor: pointer;
+  // box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
 
-  .lt-plus {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    transform: rotate(-45deg);
-    transition: transform $ui-animation-time $ui-animation-ease;
+  // DESKTOP STATE
+  @media (min-width: $customer-select-break) {
+    border: none;
+    font-size: $font-size-base;
+    text-transform: none;
+    padding: 0;
+    // line-height: 44px;
+    font-weight: normal;
+    letter-spacing: 0.1px;
+    text-align: left;
+    // position: sticky;
+    // bottom: 0;
+    // display: block;
+    // width: 100%;
+    // height: 44px;
+    // line-height: 44px;
+    // text-align: left;
+    // background-color: $body-bg;
+    // padding-left: 20px;
+    // border-top: 1px solid $gray-lighter;
+    // cursor: pointer;
   }
 
-  &:hover, &:active, .active {
+  .lt-plus {
+    display: none;
+
+    // DESKTOP STATE
+    @media (min-width: $customer-select-break) {
+      display: inline-block;
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      transform: rotate(-45deg);
+      transition: transform $ui-animation-time $ui-animation-ease, color $ui-animation-time $ui-animation-ease;
+    }
+  }
+
+  &:active,
+  &:focus,
+  &:active:focus,
+  &:active:hover,
+  &:hover,
+  .active {
     text-decoration: none;
+    box-shadow: none;
+    outline: none;
+    background-color: $body-bg;
+
     .lt-plus {
       transform: rotate(45deg);
+      &:before {
+        color: $brand-primary-emphasize;
+      }
     }
   }
 }

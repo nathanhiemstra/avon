@@ -24,10 +24,19 @@
         <form class="clearfix my-5 row form-item-entry">
 
           <!-- DEV NOTE :: the functionality for this dropdown is currently piggybacking on the same dropdown from the Product Details "Who is this for". The Javascript that controls it is in product-detail.js -->
-          <div class="col-xs-12 col-sm-4 item-entry-col">
+          <div class="col-xs-12 col-sm-4 item-entry-col customer-select-autocomplete">
+
+            <div class="modal-header">
+              <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+                <span class="sr-only">Close modal</span>
+                <span class="lt-icon lt-close lt-large py-1"></span>
+              </button>
+              <h4 class="modal-title text-center">Select a Customer</h4>
+            </div>
+
             <div class="form-group has-feedback">
               <label for="order-history-trans-type" class="control-label">Who is this for?</label>
-              <input type="text" class="form-control customer-select" id="pdpCustomerSelect" placeholder="Search">
+              <input type="text" class="form-control" id="pdpCustomerSelect" placeholder="Search" value="You (Rosa Stone)">
               <span class="lt-icon lt-triangle-down form-control-feedback"></span>
               <span class="lt-icon lt-close lt-medium form-control-feedback"></span>
             </div>
@@ -36,7 +45,7 @@
           <div class="col-xs-4 col-sm-3 item-entry-col">
             <div class="form-group ">
               <label for="item-entry-line-number" class="control-label">Line <span class="label-full">Number</span><span class="label-abbr">#</span></label>
-              <input id="item-entry-line-number" type="text" onclick="this.select();" class="form-control" value="234-567" maxlength="7">
+              <input id="item-entry-line-number" class="form-control" type="tel" inputmode="numeric" onclick="this.select();" maxlength="7" novalidate>
               <div class="stock-status">
                 <!-- DEV NOTE :: Only one of these stock status messages will appear at a time -->
                 {% include '_includes/groups/your-order/message-status-in-stock.html.twig' %}
@@ -46,25 +55,20 @@
             </div>
           </div>
 
-          <div class="col-xs-3 col-sm-2 item-entry-col">
+          <div class="col-xs-2 col-sm-2 item-entry-col">
             <div class="form-group has-error item-entry-quantity">
-              {% include components.groups.forms.inputAndLabel with {
-                id: 'item-entry-quantity"',
-                mainLabel: '<span class="label-full">Quantity</span><span class="label-abbr">Qty</span>',
-                haslabelErrorIcon: true,
-                hasInlineErrorIcon: null,
-                hasAbsoluteErrorIcon: null,
-                classes: 'form-control',
-                type: 'number',
-                theValue: '1'
-              } %}
+              <label class="control-label nowrap" for="item-entry-quantity">
+                <i class="lt-icon lt-warning-fill lt-medium show-when-has-error"></i>
+                <span class="label-full">Quantity</span><span class="label-abbr">Qty</span>
+              </label>
+              <input id="item-entry-quantity" class="form-control form-control" type="text" pattern="[0-9]*" inputmode="numeric" value="1">
             </div>
           </div>
 
-          <div class="col-xs-5 col-sm-3 item-entry-col">
+          <div class="col-xs-6 col-sm-3 item-entry-col">
             <div class="form-group has-feedback">
               <label for="item-entry-campaign" class="control-label">Campaign</label>
-              <select id="item-entry-campaign" class="form-control" disabled>
+              <select id="item-entry-campaign" class="form-control">
                 <option>CO4 - $18.99</option>
                 <option>CO5 - $18.99</option>
                 <option>CO6 - $18.99</option>
@@ -75,7 +79,7 @@
 
           <div class="col-xs-12 btn-group btn-group-50-50">
             <div class="btn-group my-2">
-              <button id="item-entry-btn-add-future" type="submit" class="btn btn-default btn-loader" data-loading-text="<span class='spinner'></span><span class='alert-icon alert-icon-badge lt-checkmark'></span>" disabled>Add to future order</button>
+              <button id="item-entry-btn-add-future" type="button" class="btn btn-default btn-loader" data-loading-text="<span class='spinner'></span><span class='alert-icon alert-icon-badge lt-checkmark'></span>" disabled>Add to future order</button>
             </div>
             <div class="btn-group my-2">
               <button id="item-entry-btn-add" type="submit" class="btn btn-primary btn-loader" data-loading-text="<span class='spinner'></span><span class='alert-icon alert-icon-badge lt-checkmark'></span>" disabled>Add to order</button>
