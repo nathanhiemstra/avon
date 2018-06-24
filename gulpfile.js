@@ -332,6 +332,7 @@ gulp.task('sass', function(){
   return gulp.src(path.src.sass)
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compact' })) // Converts Sass to CSS with gulp-sass
+    .pipe(autoprefixer())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.dist.css))
     .pipe(browserSync.reload({

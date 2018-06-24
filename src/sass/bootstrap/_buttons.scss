@@ -342,6 +342,10 @@ a.btn {
   text-align: left;
   color: $text-color;
   padding: $btn-padding-small-vertical $btn-padding-small-horizontal;
+  letter-spacing: 0.1px;
+  height: 100%;
+  font-weight: normal;
+  background-color: $body-bg;
 
   &:focus,
   &:hover {

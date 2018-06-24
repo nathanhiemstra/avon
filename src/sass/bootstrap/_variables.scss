@@ -226,7 +226,7 @@ $component-active-color: $white !default;
 $component-active-bg: $brand-primary !default;
 
 //** Width of the `border` for generating carets that indicate dropdowns.
-$caret-width-base: 4px !default;
+$caret-width-base: 8px !default;
 
 //** Carets increase slightly in size for larger components.
 $caret-width-large: 5px !default;
@@ -406,7 +406,7 @@ $dropdown-link-color: $gray-dark !default;
 $dropdown-link-hover-color: darken($gray-dark, 5%) !default;
 
 //** Hover background for dropdown links.
-$dropdown-link-hover-bg: $gray-lighter !default;
+$dropdown-link-hover-bg: $brand-primary-muted !default;
 
 //** Active dropdown menu item text color.
 $dropdown-link-active-color: $component-active-color !default;

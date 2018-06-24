@@ -89,6 +89,9 @@
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
 
+// Vendor
+@import "vendor/bootstrap-select";
+
 // Demo - Angular Overrides
 @import "demo/angular-overrides-datepicker";
 @import "demo/angular-overrides-sortable-table";
