@@ -50,10 +50,10 @@ var ProductDetail = ( function () {
     // $els.customerSelectInput.focus().select();
 
     $els.customerSelectInput.on( 'focus', function () {
-      // be sure we're at the top
-      if( $( window ).width() < 768 ) {
-        $( 'html,body' ).scrollTop( 0 );
-      }
+      // be sure we're at the top - DEV NOTE :: this should only hgappen on Item Entry, not PDP
+      // if( $( window ).width() < 768 ) {
+      //   $( 'html,body' ).scrollTop( 0 );
+      // }
 
       // turn off listeners on trigger
       $els.customerSelectTrigger.off();
@@ -79,11 +79,15 @@ var ProductDetail = ( function () {
         if( !customerDropSelectedValue ) customerDropSelectedValue = 'You (Rosa Stone)';
         // set the input value to selected
         $els.customerSelectInput.val( customerDropSelectedValue );
-        // move focus to line number and highlight
-        $( '#item-entry-line-number' ).focus().select();
-        // select on ios
-        $( '#item-entry-line-number' )[ 0 ].selectionStart = 0;
-        $( '#item-entry-line-number' )[ 0 ].selectionEnd = $( '#item-entry-line-number' ).val().length;
+
+        if( $( '#item-entry-line-number' ).length ) {
+          // move focus to line number and highlight
+          $( '#item-entry-line-number' ).focus().select();
+          // select on ios
+          $( '#item-entry-line-number' )[ 0 ].selectionStart = 0;
+          $( '#item-entry-line-number' )[ 0 ].selectionEnd = $( '#item-entry-line-number' ).val().length;
+        }
+
       },
       formatResult: function ( suggestion, currentVal ) {
         return _constructItemTemplate( suggestion );
@@ -131,6 +135,7 @@ var ProductDetail = ( function () {
         }, 0 );
       },
       appendTo: $els.autocompleteHost,
+      width: $els.autocompleteHost.width(),
       showOnFocus: true,
       minChars: 0,
       maxHeight: $( window ).height(),

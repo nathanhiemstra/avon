@@ -319,6 +319,25 @@ $customer-select-break: $screen-sm-min;
 
 
 //
+// PDP SPECIFIC
+//
+
+.pdp-customer-select {
+  &.autocomplete-open {
+    // TABLET-ISH STATE
+    @media (min-width: $customer-select-break) {
+      width: 66.66%;
+    }
+    // DESKTOP STATE
+    @media (min-width: $screen-md-min) {
+      width: 75%;
+    }
+  }
+}
+
+
+
+//
 // GLOBAL SEARCH SPECIFIC
 //
 
