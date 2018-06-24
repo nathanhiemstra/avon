@@ -5,7 +5,7 @@
  * @return {init} [description]
  */
 
-var GlobalSearch = (function () {
+var GlobalSearch = ( function () {
 
   var $els = {};
   var autoCompleteOptions = {};
@@ -15,10 +15,10 @@ var GlobalSearch = (function () {
 
     // grab the DOM els we need
     $els = {
-      searchParent: $('.navbar--primary-nav'),
-      searchContainer: $('.primary-nav__search'),
-      searchBtn: $('.primary-nav__search span'),
-      searchInput : $('.primary-nav__search-input')
+      searchParent: $( '.navbar--primary-nav' ),
+      searchContainer: $( '.primary-nav__search' ),
+      searchBtn: $( '.primary-nav__search span' ),
+      searchInput: $( '.primary-nav__search-input' )
     };
 
     _addListeners();
@@ -28,89 +28,116 @@ var GlobalSearch = (function () {
   // private methods
   var _addListeners = function () {
 
+    $els.searchInput.on( 'focus', function () {
+      // be sure we're at the top
+      if( $( window ).width() < 768 ) {
+        $( 'html,body' ).scrollTop( 0 );
+      }
+    } );
+
     //
     // https://github.com/devbridge/jQuery-Autocomplete
     //
 
-    $els.searchInput.autocomplete({
+    $els.searchInput.autocomplete( {
       // NOTE :: the 'serviceUrl' below should be used in production, for
       //      :: now we're using fake data with 'lookup'
       // serviceUrl: '/autocomplete/data/somepath', // ajax
       lookup: FAKE_PRODUCTS,
-      onSelect: function (suggestion) {
-        console.log('You selected: ' + suggestion.value);
+      onSelect: function ( suggestion ) {
+        console.log( 'You selected: ' + suggestion.value );
+        $els.searchInput.autocomplete( 'hide' );
         // _handleSearchInputSelection(this, suggestion);
         // $(this).val('');
       },
-      formatResult: function (suggestion, currentVal) {
-        return _constructGlobalSearchItem(suggestion);
+      formatResult: function ( suggestion, currentVal ) {
+        return _constructGlobalSearchItem( suggestion );
       },
-      beforeRender: function(container, suggestions) {
+      onHide: function ( e ) {
+        // $els.searchContainer.removeClass( 'autocomplete-open' );
+        // $( 'body' ).removeClass( 'modal-open' );
+      },
+      beforeRender: function ( container, suggestions ) {
+        // add a class to the container
+        // $els.searchContainer.addClass( 'autocomplete-open' );
+
+        // add a class to the body on mobile to prevent bg scrolling
+        // if( $( window ).width() < 768 ) {
+          // $( 'body' ).addClass( 'modal-open' );
+        // }
+
         // only show 'view all results' button if we have suggestions
-        if(suggestions.length) {
-          $(container)
-            .append('<a id="autocomplete-all-results-link" class="link-primary border-top">View all results</a>');
+        if( suggestions.length ) {
+          $( container )
+            .append(
+              '<div class="autocomplete-suggestion-footer"><a id="autocomplete-all-results-link" class="link-primary">View all results<span class="lt-icon lt-plus lt-medium"></span></a></div>'
+            );
         } else {
-          $(container)
-            .find('.autocomplete-suggestion:last-of-type')
-            .css('padding-bottom', 0);
+          $( container )
+            .find( '.autocomplete-suggestion:last-of-type' )
+            .css( 'padding-bottom', 0 );
         }
       },
       appendTo: $els.searchContainer,
-      maxHeight: 400,
+      showOnFocus: true,
+      minChars: 0,
+      maxHeight: $( window ).height(),
       width: 373,
       showNoSuggestionNotice: true,
-      noSuggestionNotice: 'Nothing matches that search',
+      noSuggestionNotice: '<h6>No matches for that product</h6><p>Please check your entry and try again.</p>',
       triggerSelectOnValidInput: false,
-      preserveInput: true
-    });
+      preserveInput: true,
+      autoSelectFirst: true
+    } );
 
-    $els.searchBtn.on('click', _toggleSearchExpand);
+    $els.searchBtn.on( 'click', _toggleSearchExpand );
 
-    $els.searchInput.blur(function () {
+    $els.searchInput.blur( function () {
       _toggleSearchExpand();
-    });
+    } );
 
   };
 
-  var _toggleSearchExpand = function (e) {
+  var _toggleSearchExpand = function ( e ) {
 
-    var isExpanded = $els.searchParent.hasClass('search-expanded');
+    var isExpanded = $els.searchParent.hasClass( 'search-expanded' );
     var animationTime = 200; // NOTE :: it's important that this matches $ui-animation-time scss variable
 
-    if(isExpanded) {
+    if( isExpanded ) {
       // add / remove collapsing class
-      $els.searchParent.addClass('collapsing');
-      setTimeout(function() {
-        $els.searchParent.removeClass('collapsing');
-      }, animationTime);
+      $els.searchParent.addClass( 'collapsing' );
+      $els.searchInput.autocomplete( 'hide' );
+      setTimeout( function () {
+        $els.searchParent.removeClass( 'collapsing' );
+      }, animationTime );
     } else {
       // add / remove expanding class
-      $els.searchParent.addClass('expanding');
-      setTimeout(function() {
-        $els.searchParent.removeClass('expanding');
+      $els.searchParent.addClass( 'expanding' );
+      setTimeout( function () {
+        $els.searchParent.removeClass( 'expanding' );
         $els.searchInput.focus();
-      }, animationTime);
+      }, animationTime );
     }
 
     // show / hide
-    $els.searchParent.toggleClass('search-expanded');
+    $els.searchParent.toggleClass( 'search-expanded' );
   };
 
-  var _constructGlobalSearchItem = function(suggestion) {
-    return '<div class="item border-bottom p-3">' +
-        '<a href="' + suggestion.itemUrl + '" class="link-plain">' +
-          '<div class="d-flex align-items-center flex-fill">' +
-            '<div>' +
-              '<p class="title">' + suggestion.value + '</p>' +
-              '<p>' +
-                '<!-- DEVELOPER NOTE :: If "Regular price" is not shown here, remove .text-primary to make the price black -->' +
-                '<span class="sale-price text-primary mr-4">' + suggestion.salePrice + '</span>' +
-                '<span class="reg-price small text-muted">Regular Price: <span class="strike-through">' + suggestion.regPrice + '</span></span>' +
-              '</p>' +
-            '</div>' +
-          '</div>' +
-        '</a>' +
+  var _constructGlobalSearchItem = function ( suggestion ) {
+    return '<div class="item">' +
+      '<a href="' + suggestion.itemUrl + '" class="link-plain">' +
+      '<div class="d-flex align-items-center flex-fill">' +
+      '<div>' +
+      '<p class="title">' + suggestion.value + '</p>' +
+      '<p>' +
+      '<!-- DEVELOPER NOTE :: If "Regular price" is not shown here, remove .text-primary to make the price black -->' +
+      '<span class="sale-price text-primary mr-4">' + suggestion.salePrice + '</span>' +
+      '<span class="reg-price small text-muted">Regular Price: <span class="strike-through">' + suggestion.regPrice +
+      '</span></span>' +
+      '</p>' +
+      '</div>' +
+      '</div>' +
+      '</a>' +
       '</div>';
   };
 
@@ -118,4 +145,4 @@ var GlobalSearch = (function () {
     init: init
   };
 
-})();
+} )();

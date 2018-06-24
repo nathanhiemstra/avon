@@ -27,7 +27,9 @@ $customer-select-break: $screen-sm-min;
     padding-right: 0;
     background-color: $body-bg;
     z-index:$zindex-modal;
+    overflow: auto;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 
     // DESKTOP STATE
     @media (min-width: $customer-select-break) {
@@ -36,6 +38,7 @@ $customer-select-break: $screen-sm-min;
       width: 33.3%;
       padding-left: 15px;
       padding-right: 15px;
+      overflow: unset;
       overflow-x: visible;
     }
 
@@ -173,6 +176,7 @@ $customer-select-break: $screen-sm-min;
 }
 
 .autocomplete-suggestion {
+  cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
   padding-left: 4px;
@@ -285,8 +289,8 @@ $customer-select-break: $screen-sm-min;
     @media (min-width: $customer-select-break) {
       display: inline-block;
       position: absolute;
-      top: 12px;
-      right: 16px;
+      top: 2px;
+      right: 0;
       transform: rotate(-45deg);
       transition: transform $ui-animation-time $ui-animation-ease, color $ui-animation-time $ui-animation-ease;
     }
@@ -307,6 +311,44 @@ $customer-select-break: $screen-sm-min;
       transform: rotate(45deg);
       &:before {
         color: $brand-primary-emphasize;
+      }
+    }
+  }
+}
+
+
+
+//
+// GLOBAL SEARCH SPECIFIC
+//
+
+.navbar--primary-nav .autocomplete-suggestion-footer {
+  // MOBILE STATE
+  position: relative;
+
+  #autocomplete-all-results-link {
+    position: relative;
+    top: unset;
+    right: unset;
+    bottom: unset;
+    left: unset;
+  }
+
+  // DESKTOP STATE
+  @media (min-width: $customer-select-break) {
+    padding: 0;
+
+    #autocomplete-all-results-link {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      line-height: 44px;
+      padding-left: 20px;
+
+      > .lt-plus {
+        top: 12px;
+        right: unset;
       }
     }
   }

@@ -47,14 +47,10 @@ input::-ms-clear {
       }
     }
 
-    // .autocomplete-suggestions {
-    //   box-shadow: -4px 4px 4px rgba(0,0,0,0.05), 4px 4px 4px rgba(0,0,0,0.05);
-    // }
-
     // mobile only styles for autocomplete
     @media (max-width: $screen-xs-max) {
       .autocomplete-suggestions {
-        top: 48px;
+        top: 73px;
         left: 0;
         border-left: none;
         border-right: none;

@@ -7,7 +7,8 @@
 var ProductDetail = ( function () {
 
   var $els = {};
-  var customerDropSelectedIndex = 0;
+  var customerDropSelectedValue = '';
+  var focusedElement;
 
   // public methods
   var init = function () {
@@ -37,39 +38,35 @@ var ProductDetail = ( function () {
   // private methods
   var _addListeners = function () {
 
-    // This, for some reason, breaks focus functionality on customer select on ios
-    // It doesn't open the mobile customer select on initial focus
-    // $els.customerSelectInput.focus();
-    // $els.customerSelectInput[0].selectionStart = 0;
-    // $els.customerSelectInput[0].selectionEnd = $els.customerSelectInput.val().length;
-    var iOS = /iPad|iPhone|iPod/.test( navigator.userAgent ) && !window.MSStream;
-    var focusedElement;
+    // get current value for input
+    // DEV NOTE :: demo only, this will be different in production
+    //          :: we'll need to get the last customer shopped fof or
+    //          :: default to current user (You)
+    customerDropSelectedValue = 'You (Rosa Stone)';
+    $els.customerSelectInput.val( customerDropSelectedValue );
 
-    if(iOS) {
-      console.log('IOS IOS IOS');
-    }
+    // This is desired functionality but breaks lots of things since
+    // autocomplete relies on focus
+    // $els.customerSelectInput.focus().select();
 
     $els.customerSelectInput.on( 'focus', function () {
-      $( 'html,body' ).scrollTop( 0 );
+      // be sure we're at the top
+      if( $( window ).width() < 768 ) {
+        $( 'html,body' ).scrollTop( 0 );
+      }
+
+      // turn off listeners on trigger
       $els.customerSelectTrigger.off();
-      if( focusedElement == this ) return; //already focused, return so user can now place cursor at specific point in input.
-      focusedElement = this;
+      if( focusedElement == $els.customerSelectTrigger ) return; // already focused, return so user can now place cursor at specific point in input.
+      focusedElement = $els.customerSelectTrigger;
       setTimeout( function () {
-        if(iOS) {
-          $els.customerSelectInput[0].selectionStart = 0;
-          $els.customerSelectInput[0].selectionEnd = $els.customerSelectInput.val().length;
-        } else {
-          focusedElement.select();
-        }
+        $els.customerSelectInput.val( '' ).focus();
       }, 50 ); //select all text in any field on focus for easy re-entry. Delay sightly to allow focus to "stick" before selecting.
+
     } ).on( 'blur', function () {
       focusedElement = null;
     } );
 
-    // $els.customerSelectInput.on( 'focus', function () {
-    //   $('html,body').scrollTop(0);
-    //   $els.customerSelectTrigger.off();
-    // } );
     $els.customerSelectTrigger.on( 'click', _handleDropdownClick );
 
     // Customer input select auto-complete - https://github.com/devbridge/jQuery-Autocomplete
@@ -77,15 +74,24 @@ var ProductDetail = ( function () {
       // serviceUrl: '/autocomplete/data/somepath', // ajax
       lookup: FAKE_CUSTOMER_DATA, // no ajax, just a js object located in fakeData.js
       onSelect: function ( suggestion ) {
-        customerDropSelectedIndex = $( '.autocomplete-suggestion:contains(' + suggestion.value + ')' ).attr(
-          'data-index' );
-        $( this ).val( suggestion.value );
+        // save the selected value, fall back to default and set
+        customerDropSelectedValue = suggestion.value;
+        if( !customerDropSelectedValue ) customerDropSelectedValue = 'You (Rosa Stone)';
+        // set the input value to selected
+        $els.customerSelectInput.val( customerDropSelectedValue );
+        // move focus to line number and highlight
         $( '#item-entry-line-number' ).focus().select();
+        // select on ios
+        $( '#item-entry-line-number' )[ 0 ].selectionStart = 0;
+        $( '#item-entry-line-number' )[ 0 ].selectionEnd = $( '#item-entry-line-number' ).val().length;
       },
       formatResult: function ( suggestion, currentVal ) {
         return _constructItemTemplate( suggestion );
       },
       onHide: function ( e ) {
+        // set the selected item
+        $els.customerSelectInput.val( customerDropSelectedValue );
+
         // re-add click listener on down arrow
         setTimeout( function () {
           $els.customerSelectTrigger.off().on( 'click', _handleDropdownClick );
@@ -97,31 +103,27 @@ var ProductDetail = ( function () {
         // add a class to the container
         $els.customerSelectContainer.addClass( 'autocomplete-open' );
 
+        // add a class to the body on mobile to prevent bg scrolling
         if( $( window ).width() < 768 ) {
           $( 'body' ).addClass( 'modal-open' );
         }
 
         // add a class to the previously selected item
-        $( '.autocomplete-suggestions' ).find( '[data-index="' + customerDropSelectedIndex + '"]' ).addClass(
+        $( '.autocomplete-suggestions' ).find( '.autocomplete-suggestion:contains("' +
+          customerDropSelectedValue + '")' ).addClass(
           'selected' );
 
-        // only show 'view all results' button if we have suggestions
-        if( suggestions.length ) {
-          $( container )
-            .append(
-              '<div class="autocomplete-suggestion-footer"><a id="autocomplete-add-customer-link" class="link-primary" data-toggle="modal" data-target="#add-new-customer-modal">Add a new customer<span class="lt-icon lt-plus lt-medium"></span></a></div>'
-            );
+        // append 'add a customer' button if we have suggestions
+        $( container )
+          .append(
+            '<div class="autocomplete-suggestion-footer"><a id="autocomplete-add-customer-link" class="link-primary" data-toggle="modal" data-target="#add-new-customer-modal">Add a new customer<span class="lt-icon lt-plus lt-medium"></span></a></div>'
+          );
 
-          // hide suggestions when apended link is clicked
-          $( '#autocomplete-add-customer-link' ).on( 'click', function ( e ) {
-            e.preventDefault();
-            $els.customerSelectInput.autocomplete( 'hide' );
-          } );
-        } else {
-          $( container )
-            .find( '.autocomplete-suggestion:last-of-type' )
-            .css( 'padding-bottom', 0 );
-        }
+        // hide suggestions when apended link is clicked
+        $( '#autocomplete-add-customer-link' ).on( 'click', function ( e ) {
+          e.preventDefault();
+          $els.customerSelectInput.autocomplete( 'hide' );
+        } );
 
         // a new modal trigger was just created, let's tell everyone about it
         setTimeout( function () {
@@ -133,9 +135,11 @@ var ProductDetail = ( function () {
       minChars: 0,
       maxHeight: $( window ).height(),
       showNoSuggestionNotice: true,
-      noSuggestionNotice: 'Sorry, nothing matches that query',
-      triggerSelectOnValidInput: false,
-      preserveInput: true
+      noSuggestionNotice: '<h6>No matches for that name</h6><p>Please check your entry and try again, or add a new customer below.</p>',
+      triggerSelectOnValidInput: true,
+      preserveInput: true,
+      autoSelectFirst: true,
+      tabDisabled: true
     } );
 
   };
@@ -143,7 +147,6 @@ var ProductDetail = ( function () {
 
   // handle customer dropdown arrow click
   var _handleDropdownClick = function ( e ) {
-    console.log( 'drop click' );
     e.preventDefault();
     $els.customerSelectTrigger.off();
     $els.customerSelectInput.focus();
