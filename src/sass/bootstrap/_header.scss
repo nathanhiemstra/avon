@@ -97,6 +97,13 @@
           height: 36px;
         }
 
+        .rep-name-hover {
+          cursor: auto;
+          &:hover {
+            color: $gray-lighter;
+          }
+        }
+
         // desktop
         @media (min-width: $breakpoint-header-min) {
           order: 1;
