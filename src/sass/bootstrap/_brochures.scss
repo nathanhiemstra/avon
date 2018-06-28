@@ -1,7 +1,6 @@
 // Brochures specific styles
 
 .container--brochures {
-
   .header--has-nav {
     .header-title {
       display: none;
@@ -14,6 +13,10 @@
     .lg-right {
       @media (min-width: $screen-sm-min) {
         text-align: right;
+
+        .ui-select-container {
+          text-align: left;
+        }
       }
     }
   }

@@ -1,0 +1,9 @@
+{% if number is empty %}
+  {% set number = 1 %}
+{% endif %}
+<div class="brochure-item col-xs-6 col-sm-3 p-4">
+  <a href="javascript:void(0)">
+    <div class="brochure-img" style="background-image: url(./images/fpo/brochures/0{{ number }}.jpg);"></div>
+    <div class="text-center mt-3">Brochure Title</div>
+  </a>
+</div>
