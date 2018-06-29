@@ -200,3 +200,10 @@ span.variant-swatch {
     }
   }
 }
+
+.pdp-stock-status {
+  [data-target="#auto-replenish"] {
+    padding-left: 3px;
+    padding-right: 10px;
+  }
+}
