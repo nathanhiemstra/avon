@@ -21,8 +21,6 @@
     }
   }
 
-  .brochure-item {}
-
   .brochure-img {
     min-height: 200px;
     background-size: cover;
@@ -44,6 +42,10 @@
     @media (min-width: $screen-lg-min) {
       min-height: 325px;
     }
+  }
+
+  .brochure-img-alt {
+    min-width: 50px;
   }
 
   .brochures-back-btn {
