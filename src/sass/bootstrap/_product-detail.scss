@@ -205,5 +205,9 @@ span.variant-swatch {
   [data-target="#auto-replenish"] {
     padding-left: 3px;
     padding-right: 10px;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
