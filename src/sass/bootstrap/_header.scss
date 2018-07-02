@@ -397,11 +397,17 @@
       }
 
       img {
-        height: 23px;
+        height: 27px;
+
+        // Compensate for the height of "YOUR" so the rest is lined up vertically in the middle with the things onleft and right.
+        margin-top: -9px;
 
         // desktop
         @media (min-width: $breakpoint-header-min) {
-          height: 40px;
+          height: 44px;
+
+          // Compensate for the height of "YOUR" so the rest is lined up vertically in the middle with the things onleft and right.
+          margin-top: -15px;
         }
       }
     }
