@@ -15,7 +15,6 @@
       border: 1px solid $gray;
     }
   }
-
 }
 
 .navbar {
@@ -99,6 +98,7 @@
 
         .rep-name-hover {
           cursor: auto;
+
           &:hover {
             color: $gray-lighter;
           }
@@ -135,6 +135,7 @@
         // tiny-plus
         @media (max-width: $screen-tiny-plus) {
           width: 125px;
+
           a {
             padding-right: 0;
           }
@@ -189,6 +190,7 @@
         // tiny
         @media (max-width: $screen-tiny-plus) {
           margin-right: 0;
+
           a {
             padding-left: 0;
           }
@@ -251,7 +253,6 @@
             overflow: hidden;
           }
         }
-
       }
 
       // desktop
@@ -332,7 +333,7 @@
     }
 
     // end desktop
-
+ 
   }
 
   $primary-nav-x-space: 2rem;
@@ -396,11 +397,11 @@
       }
 
       img {
-        height: 32px;
+        height: 23px;
 
         // desktop
         @media (min-width: $breakpoint-header-min) {
-          height: 64px;
+          height: 40px;
         }
       }
     }
@@ -503,7 +504,6 @@
           a {
             width: auto;
           }
-
         }
 
         // custom tablet
@@ -519,9 +519,11 @@
           // desktop
           @media (min-width: $breakpoint-header-min) {
             font-weight: normal;
+
             a .lt-icon {
               transition: $ui-animation-time transform $ui-animation-ease;
             }
+
             &:hover {
               a .lt-icon {
                 transform: scaleY(-1);
@@ -540,6 +542,7 @@
             @media (max-width: $breakpoint-header-max) {
               color: $text-color;
               border-bottom: none;
+
               &:not(.toggle-back) {
                 border-left: 4px solid $brand-primary;
               }
@@ -577,7 +580,9 @@
             @media (min-width: $breakpoint-header-min) and (max-width: $screen-md-max) {
               font-size: 13px;
               letter-spacing: normal;
-              padding: 10px 0; // set 0 padding x so flex can do it's thing
+              padding: 10px 0;
+
+              // set 0 padding x so flex can do it's thing
             }
 
             // desktop
@@ -636,7 +641,7 @@
         }
 
         // end .has-sub-items
-
+     
       }
     }
 
@@ -780,8 +785,8 @@
     padding: 0;
     overflow-x: hidden;
     max-width: $mobile-menu-max-width;
-
     transform: translateX(-100%);
+
     // display: none;
 
     transition: $ui-animation-time transform $ui-animation-ease;
@@ -791,7 +796,6 @@
       // display: flex;
 
       transform: translateX(0);
-
     }
 
     &.off-canvas--right {
@@ -838,6 +842,7 @@
 
     li.sub-list-item {
       border-bottom: 1px solid rgba($white, 0.05);
+
       // padding-left: $spacing-2;
       overflow: hidden;
 
@@ -917,7 +922,7 @@
         }
 
         // end .sub-list-item a.collapsed
-
+     
       }
 
       // end .sub-list-item a
@@ -941,7 +946,9 @@
         }
       }
     }
-  } // end .navbar-sub__sub-list
+  }
+
+  // end .navbar-sub__sub-list
 
   // Unique styles for products and orders dropdowns
   &.navbar-products,
@@ -986,13 +993,16 @@
       }
     }
   }
+}
 
-} // END .navbar-sub
+// END .navbar-sub
 
 .menu-backdrop {
   position: fixed;
-  top: 0; right: 0;
-  bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.75);
   z-index: $zindex-mobile-menu-bg;
 
