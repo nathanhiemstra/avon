@@ -403,12 +403,6 @@
 
       img {
         height: 23px;
-        margin-top: -6px;
-
-        @media (min-width: $screen-tiny-plus) {
-          height: 27px;
-          margin-top: 0;
-        }
 
         // Larger mobile
         @media (min-width: $screen-tiny-plus) {
