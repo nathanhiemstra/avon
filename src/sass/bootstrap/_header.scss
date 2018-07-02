@@ -350,6 +350,8 @@
 
       .primary-nav__cart,
       .primary-nav__search {
+        margin-top: 15px;
+
         a {
           display: flex;
           align-items: center;
@@ -386,8 +388,11 @@
     .primary-nav__logo {
       order: 2;
 
-      // Nayt changed this from 1rem to 2rem - 4/24
-      margin-left: 1.6rem;
+      // margin-left: 1.6rem;
+
+      @media (min-width: $screen-tiny-plus) {
+        margin-left: 1.6rem;
+      }
 
       // desktop
       @media (min-width: $breakpoint-header-min) {
@@ -397,10 +402,18 @@
       }
 
       img {
-        height: 27px;
+        height: 23px;
+        margin-top: -6px;
 
-        // Compensate for the height of "YOUR" so the rest is lined up vertically in the middle with the things onleft and right.
-        margin-top: -9px;
+        @media (min-width: $screen-tiny-plus) {
+          height: 27px;
+          margin-top: 0;
+        }
+
+        // Larger mobile
+        @media (min-width: $screen-tiny-plus) {
+          height: 27px;
+        }
 
         // desktop
         @media (min-width: $breakpoint-header-min) {
