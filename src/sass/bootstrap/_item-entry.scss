@@ -26,4 +26,24 @@
     }
   }
 
+  .item-entry-added-item {
+    transition: transform 0.35s $ui-animation-ease, opacity 0.35s $ui-animation-ease;
+    transform: translateY(8px);
+    opacity: 0;
+
+    &+hr {
+      transition: opacity 0.35s $ui-animation-ease;
+      opacity: 0;
+    }
+
+    &.show {
+      transform: translateY(0);
+      opacity: 1;
+
+      &+hr {
+        opacity: 1;
+      }
+    }
+  }
+
 }
