@@ -31,7 +31,7 @@
     transform: translateY(8px);
     opacity: 0;
 
-    &+hr {
+    hr {
       transition: opacity 0.35s $ui-animation-ease;
       opacity: 0;
     }
@@ -40,7 +40,7 @@
       transform: translateY(0);
       opacity: 1;
 
-      &+hr {
+      hr {
         opacity: 1;
       }
     }
