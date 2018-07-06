@@ -342,7 +342,7 @@ gulp.task('sass', function(){
 
 gulp.task('sass-prod', function(){
   return gulp.src(path.src.sass)
-    .pipe(sass({ outputStyle: 'compact' })) // Converts Sass to CSS with gulp-sass
+    .pipe(sass({ outputStyle: 'compressed' })) // Converts Sass to CSS with gulp-sass
     .pipe(gulp.dest(path.dist.css))
 });
 
