@@ -8,7 +8,6 @@
 var GlobalSearch = ( function () {
 
   var $els = {};
-  var autoCompleteOptions = {};
 
   // public methods
   var init = function () {
@@ -81,7 +80,7 @@ var GlobalSearch = ( function () {
       appendTo: $els.searchContainer,
       showOnFocus: true,
       minChars: 0,
-      maxHeight: $( window ).height(),
+      maxHeight: $( window ).height() - $('.primary-nav__search').height(),
       width: 373,
       showNoSuggestionNotice: true,
       noSuggestionNotice: '<h6>No matches for that product</h6><p>Please check your entry and try again.</p>',

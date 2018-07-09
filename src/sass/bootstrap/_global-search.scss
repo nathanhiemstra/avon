@@ -50,7 +50,7 @@ input::-ms-clear {
     // mobile only styles for autocomplete
     @media (max-width: $screen-xs-max) {
       .autocomplete-suggestions {
-        top: 73px;
+        top: 69px;
         left: 0;
         border-left: none;
         border-right: none;
@@ -123,7 +123,7 @@ input::-ms-clear {
   // in progress expanding and collapsing states
   &.collapsing,
   &.expanding {
-    height: 73px;
+    height: 69px;
     border-bottom: 1px solid $border-color;
     z-index: 10;
 
