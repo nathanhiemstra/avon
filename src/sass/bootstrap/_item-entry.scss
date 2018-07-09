@@ -27,23 +27,45 @@
   }
 
   .item-entry-added-item {
-    transition: transform 0.35s $ui-animation-ease, opacity 0.35s $ui-animation-ease;
-    transform: translateY(8px);
-    opacity: 0;
+    display: none;
 
-    hr {
-      transition: opacity 0.35s $ui-animation-ease;
-      opacity: 0;
+    > hr {
+      display: none;
     }
 
     &.show {
-      transform: translateY(0);
-      opacity: 1;
+      animation-name: fadein;
+      animation-duration: 0.75s;
+      animation-fill-mode: forwards;
+      animation-timing-function: $ui-animation-ease;
 
       hr {
-        opacity: 1;
+        display: block;
       }
     }
   }
 
+}
+
+@keyframes fadein {
+    0% {
+      display: none;
+      opacity: 0;
+      transform: translateY(10px) scaleY(0);
+    }
+    1% {
+      display: block;
+      opacity: 0;
+      transform: translateY(10px) scaleY(0);
+    }
+    50% {
+      display: block;
+      opacity: 0;
+      transform: translateY(10px) scaleY(1);
+    }
+    100% {
+      display: block;
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+    }
 }
