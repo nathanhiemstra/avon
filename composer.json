@@ -1,0 +1,5 @@
+{
+    "require-dev": {
+        "allocine/twigcs": "^3.0"
+    }
+}
