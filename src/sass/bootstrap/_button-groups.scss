@@ -276,6 +276,16 @@
 
   } // end .btn-group
 
+  // flip default stacking on mobile
+  &.btn-group-alt-stack {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @media (min-width: $screen-sm-min) {
+        display: block;
+    }
+  }
+
 } // end .btn-group-50-50
 
 

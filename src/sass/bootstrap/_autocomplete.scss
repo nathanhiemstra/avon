@@ -59,7 +59,7 @@ $customer-select-break: $screen-sm-min;
 
       // DESKTOP STATE
       @media (min-width: $customer-select-break) {
-        margin-bottom: $spacing-4;
+        margin-bottom: 0;
         padding-bottom: 0;
       }
     }

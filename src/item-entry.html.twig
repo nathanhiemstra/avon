@@ -35,8 +35,8 @@
               <div class="stock-status">
                 <!-- DEV NOTE :: Only one of these stock status messages will appear at a time -->
                 {% include '_includes/groups/your-order/message-status-in-stock.html.twig' %}
-                {% include '_includes/groups/your-order/message-status-out-of-stock.html.twig' %}
-                {% include '_includes/groups/your-order/message-status-sold-out.html.twig' %}
+                <!-- {% include '_includes/groups/your-order/message-status-out-of-stock.html.twig' %}
+                {% include '_includes/groups/your-order/message-status-sold-out.html.twig' %} -->
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@
             </div>
           </div>
 
-          <div class="col-xs-12 btn-group btn-group-50-50">
+          <div class="col-xs-12 btn-group btn-group-50-50 btn-group-alt-stack">
             <div class="btn-group my-2">
               <button id="item-entry-btn-add-future" type="button" class="btn btn-default btn-loader" data-loading-text="<span class='spinner'></span><span class='alert-icon alert-icon-badge lt-checkmark'></span>" disabled>Add to future order</button>
             </div>
