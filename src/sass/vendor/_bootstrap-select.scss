@@ -247,8 +247,12 @@ select.selectpicker {
         color: #fff;
       }
 
-      &.disabled a {
-        @include cursor-disabled();
+      &:first-of-type {
+        // don't show the placeholder option in expanded menu
+        // Note, placeholder option should be first and have <option selected="true" disabled="true">
+        &.disabled {
+          display: none;
+        }
       }
 
       a {
