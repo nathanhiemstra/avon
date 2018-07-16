@@ -384,3 +384,18 @@ $customer-select-break: $screen-sm-min;
     }
   }
 }
+
+// IE Hacks
+html.isIE {
+  .autocomplete-open {
+    overflow: visible;
+  }
+
+  .autocomplete-suggestion-footer {
+    position: relative;
+
+    #autocomplete-add-customer-link {
+      position: absolute;
+    }
+  }
+}

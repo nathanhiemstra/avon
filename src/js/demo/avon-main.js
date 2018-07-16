@@ -1,5 +1,10 @@
 $( document ).ready( function () {
 
+  if (navigator.userAgent.indexOf("MSIE") !== -1 || navigator.appVersion.indexOf("Trident/") > 0) {
+    /* Microsoft Internet Explorer detected, add class to document. */
+    $("html").addClass("isIE");
+  }
+
 
   ////////////////////////////////////////////////////////
   // VARIABLES
