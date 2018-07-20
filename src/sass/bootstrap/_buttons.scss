@@ -355,6 +355,19 @@ a.btn {
   .form-control-feedback {
     line-height: $input-height-base;
   }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: $btn-disabled-bg;
+
+    &.focus,
+    &:focus,
+    &:hover {
+      background-color: $btn-disabled-bg;
+      border-color: $btn-disabled-bg;
+    }
+  }
 }
 
 // Link buttons
