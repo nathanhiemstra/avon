@@ -1,0 +1,65 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'shippingModal' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+    <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+        <span class="sr-only">Close modal</span>
+        <span class="lt-icon lt-close lt-large py-1"></span>
+    </button>
+
+    <h6 class="modal-title">Shipping &amp; Handling Fee</h6>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+    {# <h4 class="text-center my-4">Thank you for enrolling!</h4>
+
+    <h5 class="text-center py-3">Your Quickpay information:</h5> #}
+
+    <table class="table table-striped table-no-borders mb-4">
+        <thead>
+            <tr>
+                <th>Order Total</th>
+                <th>Shipping Fee*</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="font-weight-bold text-uppercase">$0 - $149.99</td>
+                <td>$7</td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold text-uppercase">$150 - $299.99</td>
+                <td>$9</td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold text-uppercase">$300 - $499.99</td>
+                <td>$13</td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold text-uppercase">$500+</td>
+                <td>$16</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>* Lorem ipsum dolor, lorem dolor.</p>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+{% endblock %}
