@@ -71,6 +71,12 @@
             </div>
           </div>
 
+          <div class="clear">
+            <p class="px-4 text-danger error-msg error-msg--wordy" ng-show="showDemoLimitErr" aria-hidden="false">
+              <strong>You have exceeded your demo limit. You are allowed to order a maximum quantity of 1. Your available quantity left is 1. Please modify the quantity.</strong>
+            </p>
+          </div>
+
           <div class="col-xs-12 btn-group btn-group-50-50 btn-group-alt-stack">
             <div class="btn-group my-2">
               <button id="item-entry-btn-add-future" type="button" class="btn btn-default btn-loader" data-loading-text="<span class='spinner'></span><span class='alert-icon alert-icon-badge lt-checkmark'></span>" disabled>Add to future order</button>

@@ -42,6 +42,13 @@
   .error-msg {
     height: 0;
     margin-bottom: 0;
+
+    &--wordy {
+      line-height: $line-height-computed;
+      position: relative;
+      height: auto;
+      padding-top: 4rem;
+    }
   }
 
   .btn-group-50-50 {

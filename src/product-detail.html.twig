@@ -158,6 +158,16 @@
                   </div>
                 </div>' %}
 
+          {% set relatedProductLarge = '<div class="col-xs-6 col-sm-3">
+                  <div class="thumbnail thumbnail--square">
+                    <a href="#"><img src="/images/fpo/product-details/related_01.png" alt="" class="img-responsive"></a>
+                  </div>
+                  <div class="caption text-center p-3">
+                    <p class="small">Product name lorem ipsum dolor. Product name lorem ipsum dolor. Product name lorem ipsum dolor. Product name lorem ipsum dolor</p>
+                    <p class="large m-0">$99.99</p>
+                  </div>
+                </div>' %}
+
           <!-- START - CAROUSEL -->
           <div id="carousel-related-products" class="carousel slide pt-0 pt-md-5" data-ride="carousel" data-interval="0">
 
@@ -166,7 +176,7 @@
               <div class="item active">
                 <div class="row px-0 px-md-4">
                   {{ relatedProduct }}
-                  {{ relatedProduct }}
+                  {{ relatedProductLarge }}
                   {{ relatedProduct }}
                   {{ relatedProduct }}
                 </div>
@@ -174,7 +184,7 @@
               <div class="item">
                 <div class="row px-0 px-md-4">
                   {{ relatedProduct }}
-                  {{ relatedProduct }}
+                  {{ relatedProductLarge }}
                   {{ relatedProduct }}
                   {{ relatedProduct }}
                 </div>
