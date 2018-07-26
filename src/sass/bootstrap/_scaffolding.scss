@@ -64,7 +64,7 @@ body {
     // we can use .page-inner to provide proper top spacing for any odd
     // content that doesn't fit the format above
     .page-inner {
-      margin-top: $line-height-computed;
+      margin-top: 1rem;
     }
   }
 
@@ -82,7 +82,7 @@ body {
 // account for aside and main in pages with breadcrumbs
 .container--breadcrumb + .container--page {
   aside, main {
-    margin-top: $line-height-computed;
+    margin-top: 0.5rem;
   }
 }
 
