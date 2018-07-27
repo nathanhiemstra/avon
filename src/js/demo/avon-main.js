@@ -317,6 +317,21 @@ $( document ).ready( function () {
   // if so, let's init the js
   if( $( '#scrollableTabsNav' ).length ) NavTabsScrollable.init();
 
+  // Print links
+  var printLinks = $('.print-link');
+  if(printLinks.length) {
+    printLinks.on('click', function(e) {
+      // check for expand all button
+      var expandBtn = $('.expand-all');
+      if(expandBtn.length) {
+        expandBtn.trigger('click');
+      }
+      setTimeout(function() {
+        window.print();
+      }, 0);
+    });
+  }
+
 
   // INIT OTHER DEMO SCRIPTS
   if( typeof BackToTop !== 'undefined' ) BackToTop.init();
