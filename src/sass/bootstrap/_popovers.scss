@@ -182,3 +182,16 @@
   box-shadow: none;
   border: 1px solid $gray;
 }
+
+// IE specific styles
+.isIE {
+  .popover--box {
+    max-width: 450px;
+    min-width: 300px;
+    
+    // small screens
+    @media (max-width: $screen-xs-max) {
+      max-width: 100%;
+    }
+  }
+}

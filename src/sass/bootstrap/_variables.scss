@@ -737,8 +737,9 @@ $tooltip-arrow-color: $tooltip-bg !default;
 //** Popover body background color
 $popover-bg: $white !default;
 
-//** Popover maximum width
-$popover-max-width: 276px !default;
+//** Popover widths
+$popover-min-width: 300px !default;
+$popover-max-width: 450px !default;
 
 //** Popover border color
 $popover-border-color: rgba(0, 0, 0, 0.2) !default;
