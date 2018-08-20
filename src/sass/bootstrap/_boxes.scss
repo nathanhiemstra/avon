@@ -253,6 +253,7 @@ $box-group--primary-item-width: 220px;
 
 .box-group--secondary {
   .box-group--item {
+    min-height: 210px;
     // full width for mobile
     @media (max-width: $screen-sm-min) {
       width: 100%;
