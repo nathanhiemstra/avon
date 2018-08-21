@@ -236,3 +236,12 @@ ul.avon-product-list--modal {
     }
   }
 }
+
+// checkbox groups for product filters
+.checkbox-group {
+  .checkbox {
+    label {
+      color: $text-color;
+    }
+  }
+}
