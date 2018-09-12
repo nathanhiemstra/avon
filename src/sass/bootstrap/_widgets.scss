@@ -1,11 +1,33 @@
 .widget {
+  font-size: 13px;
 
-  // .widget-header {
-  // }
+  .widget-header {
+    h7 {
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+
+  .small {
+    font-size: 12px;
+  }
+
+  .widget-large {
+    font-size: 15px;
+  }
+
+  .widget-columns {
+    display: flex;
+    justify-content: space-between;
+  }
+
   // .widget-body {
   // }
-  // .widget-footer {
-  // }
+  .widget-footer {
+    .link-primary {
+      text-decoration: underline;
+    }
+  }
 
   &.layout-flex-column {
     display: flex;
@@ -25,13 +47,12 @@
     width: 90%;
     max-width: 90%;
     height: auto !important;
-    margin: -$spacing-2 auto 0;
+    margin: (-$spacing-2) auto 0;
 
     svg {
       max-width: 140px;
     }
   }
-
 }
 
 .widget-truncate {
@@ -42,16 +63,19 @@
   white-space: nowrap;
 }
 
-$widget-box-size: 25px;
+$widget-box-size: 23px;
+
 .widget-box {
   display: inline-block;
   width: $widget-box-size;
   height: $widget-box-size;
+  line-height: $widget-box-size;
   margin: $spacing-1;
-  padding: $spacing-1;
-  background-color: $gray-light;
+  background-color: $gray-lighter;
+  border-radius: $border-radius-secondary;
 
   &.filled {
+    color: $white;
     background-color: $brand-primary;
   }
 }

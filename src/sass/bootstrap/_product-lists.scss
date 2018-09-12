@@ -85,7 +85,7 @@ ul.avon-product-list--modal {
 
       // transition: 0.5s opacity ease;
       // opacity: 1;
-   
+
     }
 
     // // Only show badge if collapsed
@@ -135,7 +135,7 @@ ul.avon-product-list--modal {
     // @media (min-width: $screen-md-min) {
     //     cursor: default;
     // }
- 
+
   }
 }
 
@@ -243,5 +243,13 @@ ul.avon-product-list--modal {
     label {
       color: $text-color;
     }
+  }
+}
+
+.aside-product-categories,
+.aside-product-features,
+.aside-product-filters {
+  .list-group-item {
+    font-size: 13px;
   }
 }

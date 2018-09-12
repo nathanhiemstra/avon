@@ -1,0 +1,18 @@
+.container--ddr {
+  .form-group {
+    button {
+      display: none !important;
+    }
+  }
+  [data-toggle="modal"] {
+    display: none !important;
+  }
+  .table-responsive {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  a[href]:after {
+    content: none !important;
+  }
+}

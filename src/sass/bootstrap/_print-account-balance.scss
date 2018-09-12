@@ -1,0 +1,11 @@
+.container--account-balance {
+  a[href]:after {
+    content: none !important;
+  }
+  main {
+    button,
+    h3 + a {
+      display: none !important;
+    }
+  }
+}

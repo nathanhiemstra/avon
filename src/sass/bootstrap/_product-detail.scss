@@ -10,6 +10,16 @@
     padding-right: 45px;
   }
 
+  // don't show empty <h6> - line number
+  h6:empty {
+    display: none;
+
+    & + h3 {
+      // if empty line number remove top margin on title
+      margin-top: 0 !important;
+    }
+  }
+
   .pdp-variant-select {
     margin: $spacing-3 0 2rem;
   }

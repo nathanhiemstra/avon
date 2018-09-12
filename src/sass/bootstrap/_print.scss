@@ -99,6 +99,26 @@
 
     // Bootstrap specific changes end
 
+    // Avon specific print styles
+    .avon-header,
+    .alert-level-header,
+    .alert-campaign-timer,
+    .global-header,
+    .footer,
+    .top-content,
+    .below-content,
+    .product-list-header--filters,
+    .back-link,
+    a[data-toggle],
+    .print-link,
+    .expand-all,
+    .hide-all,
+    .ng-hide {
+      display: none !important;
+    }
+
     // import page print styles
     @import "print-order-details";
+    @import "print-direct-delivery-report";
+    @import "print-account-balance";
 }

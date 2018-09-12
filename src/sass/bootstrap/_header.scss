@@ -333,7 +333,7 @@
     }
 
     // end desktop
- 
+
   }
 
   $primary-nav-x-space: 2rem;
@@ -654,7 +654,7 @@
         }
 
         // end .has-sub-items
-     
+
       }
     }
 
@@ -699,7 +699,7 @@
 
     $height-1: 42px;
     $height-2: 48px;
-    $utility-height: calc((#{$height-1} + #{$height-2}) - 1.1rem);
+    $utility-height: calc((#{$height-1} - -#{$height-2}) - 1.1rem); // minus negative because of minify problems
 
     // $utility-height: ($height-1 + $height-2) - 10px;
 
@@ -750,6 +750,10 @@
       .nav > li {
         padding: $spacing-2;
         margin: 0;
+
+        .lt-icon {
+          line-height: 0;
+        }
       }
 
       // desktop
@@ -768,6 +772,10 @@
         .nav > li {
           &:first-of-type {
             padding-right: $spacing-4;
+          }
+
+          .lt-icon {
+            line-height: 1;
           }
         }
       }
@@ -935,7 +943,7 @@
         }
 
         // end .sub-list-item a.collapsed
-     
+
       }
 
       // end .sub-list-item a
