@@ -89,3 +89,7 @@ a.badge {
   border-radius: 50%;
   margin-right: $spacing-3;
 }
+
+.badge--reverse {
+  background-color: $badge-reverse-bg;
+}

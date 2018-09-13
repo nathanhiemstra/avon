@@ -181,6 +181,9 @@
 }
 
 .alert-reverse {
+  a, .lt-icon:before {
+    color: $white;
+  }
   .alert-link {
     text-decoration: underline;
   }

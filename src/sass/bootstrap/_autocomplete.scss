@@ -164,6 +164,12 @@ $customer-select-break: $screen-sm-min;
         max-height: 204px !important; // override inline style added by autocomplete plugin
       }
     }
+    .autocomplete-spacer {
+      height: 66px;
+      @media (min-width: $customer-select-break) {
+        height: 0;
+      }
+    }
   }
 
 }

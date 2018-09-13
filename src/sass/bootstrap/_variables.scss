@@ -7,65 +7,65 @@ $bootstrap-sass-asset-helper: false !default;
 //== Colors
 
 // Colors by name
-$black:           #000 !default;
+$black: #000 !default;
 
-$blue-dark:       #0E6FA2 !default;
-$blue:            #2C97D0 !default;
-$blue-light:      #9BD5ED !default;
-$blue-lighter:    #ECF6FA !default;
+$blue-dark: #0E6FA2 !default;
+$blue: #2C97D0 !default;
+$blue-light: #9BD5ED !default;
+$blue-lighter: #ECF6FA !default;
 
-$gray-base:       $black !default;
-$gray-dark:       $gray-base !default;
-$gray:            #666 !default;
-$gray-medium:     #8e8e8e !default;
-$gray-light:      #CCC !default;
-$gray-lighter:    #F2F2F2 !default;
+$gray-base: $black !default;
+$gray-dark: $gray-base !default;
+$gray: #666 !default;
+$gray-medium: #8e8e8e !default;
+$gray-light: #CCC !default;
+$gray-lighter: #F2F2F2 !default;
 
-$green-dark:      #087F44 !default;
-$green:           #3EA572 !default;
-$green-light:     #82D3AB !default;
-$green-lighter:   #D5F4E5 !default;
+$green-dark: #087F44 !default;
+$green: #3EA572 !default;
+$green-light: #82D3AB !default;
+$green-lighter: #D5F4E5 !default;
 
-$magenta-dark:    #78114E !default;
-$magenta:         #8A175B !default;
-$magenta-deep:    #2B1823 !default;
-$magenta-deeper:  #190E15 !default;
+$magenta-dark: #78114E !default;
+$magenta: #8A175B !default;
+$magenta-deep: #2B1823 !default;
+$magenta-deeper: #190E15 !default;
 
-$orange-dark:     #C76E0A !default;
-$orange:          #FAA342 !default;
-$orange-light:    #F9CFA0 !default;
-$orange-lighter:  #FDF3E8 !default;
+$orange-dark: #C76E0A !default;
+$orange: #FAA342 !default;
+$orange-light: #F9CFA0 !default;
+$orange-lighter: #FDF3E8 !default;
 
-$pink-dark:       #D4027B !default;
-$pink:            #ED008C !default;
-$pink-light:      #FEF4F8 !default;
+$pink-dark: #D4027B !default;
+$pink: #ED008C !default;
+$pink-light: #FEF4F8 !default;
 
-$purple:          #48293B !default;
+$purple: #48293B !default;
 
-$red-dark:        #AD1804 !default;
-$red:             #D6321C !default;
-$red-light:       #F29F94 !default;
-$red-lighter:     #FDEDEA !default;
+$red-dark: #AD1804 !default;
+$red: #D6321C !default;
+$red-light: #F29F94 !default;
+$red-lighter: #FDEDEA !default;
 
 
 $white: #fff !default;
 
 // Colors by function
-$brand-primary:           $pink !default;
+$brand-primary: $pink !default;
 $brand-primary-emphasize: $pink-dark !default;
-$brand-primary-muted:     $pink-light !default;
+$brand-primary-muted: $pink-light !default;
 
-$brand-alt:               $magenta !default;
-$brand-alt-emphasize:     $magenta-dark !default;
-$brand-alt-deep:          $magenta-deep !default;
-$brand-alt-deeper:        $magenta-deeper !default;
+$brand-alt: $magenta !default;
+$brand-alt-emphasize: $magenta-dark !default;
+$brand-alt-deep: $magenta-deep !default;
+$brand-alt-deeper: $magenta-deeper !default;
 
-$brand-success:           $green !default;
-$brand-info:              $blue !default;
-$brand-warning:           $orange !default;
-$brand-danger:            $red !default;
-$brand-disabled:          $gray-light !default;
-$brand-discourage:        $black !default;
+$brand-success: $green !default;
+$brand-info: $blue !default;
+$brand-warning: $orange !default;
+$brand-danger: $red !default;
+$brand-disabled: $gray-light !default;
+$brand-discourage: $black !default;
 
 
 
@@ -75,23 +75,21 @@ $brand-discourage:        $black !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:                   $white !default;
+$body-bg: $white !default;
 
 //** Global text color on `<body>`.
-$text-color:                $gray-dark !default;
-$text-muted:                $gray !default;
-$text-muted-hover:          $gray !default;
+$text-color: $gray-dark !default;
+$text-muted: $gray !default;
+$text-muted-hover: $gray !default;
 
 
 
 //** Global textual link color.
-$link-color:                $brand-primary !default;
+$link-color: $brand-primary !default;
 
 //** Sometimes the link should not be pink
-$link-reverse-color:        $text-color !default;
-$link-reverse-hover-color:  $black!default;
-
-
+$link-reverse-color: $text-color !default;
+$link-reverse-hover-color: $black !default;
 
 //** Link hover color set via `darken()` function.
 $link-hover-color: $brand-primary-emphasize !default;
@@ -268,7 +266,8 @@ $btn-default-color: $brand-primary !default;
 $btn-default-bg: $white !default;
 $btn-default-border: $brand-primary !default;
 
-$btn-default-hover-color: $brand-primary-emphasize !default $btn-primary-color:$white !default;
+$btn-default-hover-color: $brand-primary-emphasize !default;
+$btn-primary-color: $white !default;
 $btn-primary-bg: $brand-primary !default;
 $btn-primary-border: $brand-primary !default;
 
@@ -430,23 +429,19 @@ $dropdown-caret-color: $black !default;
 //
 // Note: These variables are not generated into the Customizer.
 
-$zindex-navbar:             1000 !default;
-$zindex-dropdown:           1000 !default;
-$zindex-drawer-backdrop:    1020 !default;
-$zindex-navbar-fixed:       1030 !default;
-$zindex-affix:              1031 !default;
-$zindex-drawer-fixed:       1031 !default;
-$zindex-alert-dismissable:  1032 !default;
-$zindex-mobile-menu-bg:     1033 !default;
-$zindex-mobile-menu:        1034 !default;
-$zindex-modal-background:   1040 !default;
-$zindex-modal:              1050 !default;
-$zindex-popover:            1060 !default;
-$zindex-tooltip:            1070 !default;
-
-
-
-
+$zindex-navbar: 1000 !default;
+$zindex-dropdown: 1000 !default;
+$zindex-drawer-backdrop: 1020 !default;
+$zindex-navbar-fixed: 1030 !default;
+$zindex-affix: 1031 !default;
+$zindex-drawer-fixed: 1031 !default;
+$zindex-alert-dismissable: 1032 !default;
+$zindex-mobile-menu-bg: 1033 !default;
+$zindex-mobile-menu: 1034 !default;
+$zindex-modal-background: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
 
 //== Media queries breakpoints
 //
@@ -693,7 +688,6 @@ $state-success-text: $body-bg !default;
 $state-success-bg: $green-lighter !default;
 $state-success-border: darken(adjust-hue($state-success-bg, -10), 5%) !default;
 
-
 $state-info-text: #31708f !default;
 $state-info-bg: #d9edf7 !default;
 $state-info-border: darken(adjust-hue($state-info-bg, -10), 7%) !default;
@@ -706,9 +700,6 @@ $state-danger-text: $red-dark !default;
 $state-danger-bg: $red-lighter !default;
 $state-danger-border: $red-lighter !default;
 $state-danger-border-width: 2px;
-
-
-
 
 //== Tooltips
 //
@@ -839,45 +830,45 @@ $alert-padding: 15px !default;
 $alert-border-radius: $border-radius-secondary !default;
 $alert-link-font-weight: bold !default;
 
-$alert-success-bg:            $state-success-bg !default;
-$alert-success-text:          $green-dark !default;
-$alert-success-border:        $state-success-border !default;
-$alert-success-strong-bg:     $green !default;
-$alert-success-strong-text:   $white !default;
+$alert-success-bg: $state-success-bg !default;
+$alert-success-text: $green-dark !default;
+$alert-success-border: $state-success-border !default;
+$alert-success-strong-bg: $green !default;
+$alert-success-strong-text: $white !default;
 $alert-success-strong-border: $alert-success-strong-bg !default;
 
-$alert-info-bg:               $state-info-bg !default;
-$alert-info-text:             $state-info-text !default;
-$alert-info-border:           $state-info-border !default;
-$alert-info-strong-bg:        $blue !default;
-$alert-info-strong-text:      $white !default;
-$alert-info-strong-border:    $blue !default;
+$alert-info-bg: $state-info-bg !default;
+$alert-info-text: $state-info-text !default;
+$alert-info-border: $state-info-border !default;
+$alert-info-strong-bg: $blue !default;
+$alert-info-strong-text: $white !default;
+$alert-info-strong-border: $blue !default;
 
-$alert-warning-bg:            $state-warning-bg !default;
-$alert-warning-text:          $state-warning-text !default;
-$alert-warning-border:        $state-warning-border !default;
-$alert-warning-strong-bg:     $orange-dark !default;
-$alert-warning-strong-text:   $white !default;
+$alert-warning-bg: $state-warning-bg !default;
+$alert-warning-text: $state-warning-text !default;
+$alert-warning-border: $state-warning-border !default;
+$alert-warning-strong-bg: $orange-dark !default;
+$alert-warning-strong-text: $white !default;
 $alert-warning-strong-border: $orange-dark !default;
 
-$alert-danger-bg:             $state-danger-bg !default;
-$alert-danger-text:           $state-danger-text !default;
-$alert-danger-border:         $state-danger-border  !default;
-$alert-danger-strong-bg:      $red !default;
-$alert-danger-strong-text:    $white !default;
-$alert-danger-strong-border:  $red !default;
+$alert-danger-bg: $state-danger-bg !default;
+$alert-danger-text: $state-danger-text !default;
+$alert-danger-border: $state-danger-border !default;
+$alert-danger-strong-bg: $red !default;
+$alert-danger-strong-text: $white !default;
+$alert-danger-strong-border: $red !default;
 
-$alert-reverse-bg:            $black !default;
-$alert-reverse-text:          $white !default;
-$alert-reverse-border:        $black !default;
+$alert-reverse-bg: $black !default;
+$alert-reverse-text: $white !default;
+$alert-reverse-border: $black !default;
 
-$alert-promo-bg:              $brand-primary-muted !default;
-$alert-promo-text:            $black !default;
-$alert-promo-border:          $brand-primary-muted !default;
+$alert-promo-bg: $brand-primary-muted !default;
+$alert-promo-text: $black !default;
+$alert-promo-border: $brand-primary-muted !default;
 
-$alert-neutral-bg:            $gray-lighter !default;
-$alert-neutral-text:          $black !default;
-$alert-neutral-border:        $gray-lighter !default;
+$alert-neutral-bg: $gray-lighter !default;
+$alert-neutral-text: $black !default;
+$alert-neutral-border: $gray-lighter !default;
 
 //== Progress bars
 //
@@ -1032,6 +1023,7 @@ $badge-active-color: $link-color !default;
 
 //** Badge background color in active nav link
 $badge-active-bg: $white !default;
+$badge-reverse-bg: $black !default;
 
 $badge-font-weight: bold !default;
 $badge-line-height: 1 !default;
@@ -1059,7 +1051,6 @@ $breadcrumb-separator: "|" !default;
 //== Carousel
 //
 //##
-
 
 $carousel-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !default;
 
@@ -1102,8 +1093,6 @@ $pre-scrollable-max-height: 340px !default;
 
 //** Horizontal offset for forms and lists.
 $component-offset-horizontal: 180px !default;
-
-
 
 //** Abbreviations and acronyms border color
 $abbr-border-color: $gray-light !default;

@@ -60,3 +60,14 @@
   //   transition: 0.5s width ease, 0.5s transform ease;
   // }
 }
+
+// Brochures tab pane in Order Cart
+#pd-extras {
+  .single-cart-item {
+    .form-group {
+      span > p {
+        display: inline-block;
+      }
+    }
+  }
+}

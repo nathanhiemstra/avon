@@ -164,6 +164,7 @@ $box-group--primary-item-width: 220px;
     margin: $box-group--primary-item-margin auto;
     width: $box-group--primary-item-width;
     height: 100%;
+    border: 1px solid $border-color;
   }
 
   .item-content {
@@ -233,8 +234,6 @@ $box-group--primary-item-width: 220px;
   }
 }
 
-
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // BOX GROUP - WIDGETS
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -253,7 +252,6 @@ $box-group--primary-item-width: 220px;
 
 .box-group--secondary {
   .box-group--item {
-    // min-height: 210px;
     // full width for mobile
     @media (max-width: $screen-sm-min) {
       width: 100%;
@@ -383,8 +381,6 @@ $box-group--primary-item-width: 220px;
   @extend .reverse-bg;
 }
 
-
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // BOX GROUPS
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -394,7 +390,6 @@ $box-group--primary-item-width: 220px;
 }
 
 .box-group-halves {
-
   .box-group--single {
     display: flex;
     flex-direction: column;
@@ -416,6 +411,7 @@ $box-group--primary-item-width: 220px;
         text-align: left;
         margin-bottom: 0;
       }
+
       .details {
         justify-content: flex-start;
       }

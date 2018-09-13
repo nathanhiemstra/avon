@@ -1,0 +1,15 @@
+.banner-notifications {
+  border-radius: 0;
+
+  .view-all {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .badge {
+    &:hover {
+      color: $white;
+    }
+  }
+}

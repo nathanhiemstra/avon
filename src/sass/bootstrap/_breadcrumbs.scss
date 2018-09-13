@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 .breadcrumb {
-    padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
+    padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal 5px;
     margin-bottom: $line-height-computed;
     list-style: none;
     background-color: $breadcrumb-bg;

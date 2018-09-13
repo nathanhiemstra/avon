@@ -48,7 +48,7 @@ input::-ms-clear {
     }
 
     // mobile only styles for autocomplete
-    @media (max-width: $screen-xs-max) {
+    @media (max-width: $breakpoint-header-max) {
       .autocomplete-suggestions {
         top: 69px;
         left: 0;
@@ -179,7 +179,7 @@ input::-ms-clear {
       opacity: 0;
       top: -1px;
       left: 40px;
-      height: calc(100% + 2px);
+      height: calc(100% - -2px); // minus negative because of minify problems
       border: none;
       border-top: 1px solid transparent;
       border-right: 1px solid transparent;

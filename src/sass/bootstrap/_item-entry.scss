@@ -28,7 +28,7 @@
 
   .form-group {
     margin-bottom: $spacing-4;
-    
+
     // desktop
     @media (min-width: $screen-sm-min) {
       margin-bottom: 0;
@@ -37,6 +37,10 @@
 
   .input-alert {
     height: 0;
+
+    > span.fade {
+      position: absolute;
+    }
   }
 
   .error-msg {
