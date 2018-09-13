@@ -129,6 +129,15 @@ a.btn {
   font-weight: 100;
 }
 
+// transparent dark has a trasparent bg with dark border & text and a thinner border & text
+.btn-transparent-dark {
+  @include button-variant($black, transparent, $black);
+
+  border-width: 1px;
+  border-style: solid;
+  font-weight: 100;
+}
+
 // Discourage - black
 .btn-discourage {
   @include button-variant($btn-discourage-color, $btn-discourage-bg, $btn-discourage-border);
@@ -315,6 +324,96 @@ a.btn {
       border: 1px solid transparent !important;
       border-color: transparent !important;
     }
+  }
+}
+
+// Transparent dark responsive looks like .btn-transparent-dark on small
+// screens but has a custom look on large screens
+.btn-trans-dark-responsive {
+  @extend .btn-transparent-dark;
+
+  letter-spacing: 0.1px;
+
+  small,
+  span,
+  strong {
+    vertical-align: middle;
+  }
+
+  strong {
+    white-space: nowrap;
+  }
+
+  // dropdowns
+  .dropdown-menu {
+    background-color: transparent;
+
+    li a {
+      color: $black;
+    }
+  }
+
+  i,
+  i:after,
+  i:before {
+    line-height: 0;
+
+    // prevent larger icons increasing button height
+
+  }
+
+  &:focus,
+   > i:before,
+   > span,
+   > span:before,
+  &:hover,
+  > i {
+    background-color: transparent !important;
+    color: $black !important;
+  }
+
+  // tiny
+  @media (max-width: $screen-tiny-min) {
+    strong {
+      display: block;
+      margin-top: 3px;
+    }
+  }
+
+  // tiny-plus
+  @media (max-width: $screen-tiny-plus) {
+    padding: 10px 5px !important;
+  }
+
+  // desktop
+  @media (min-width: $breakpoint-header-min) {
+    background-color: transparent;
+    letter-spacing: 0.9px;
+    color: $brand-primary;
+    border-color: transparent;
+
+    // dropdowns
+    .dropdown-menu {
+      background-color: transparent;
+
+      li a {
+        color: $brand-primary;
+      }
+    }
+
+    &:focus,
+    > i:before,
+    > span,
+    > span:before,
+    &:active,
+    &:hover,
+    > i {
+      background-color: transparent !important;
+      color: $brand-primary !important;
+      border: 1px solid transparent !important;
+      border-color: transparent !important;
+    }
+
   }
 }
 

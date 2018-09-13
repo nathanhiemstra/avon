@@ -1,3 +1,5 @@
+$navbar-header-mobile-height: 64px;
+
 .global-header {
   position: relative;
 
@@ -82,25 +84,32 @@
       .account-list__user {
         order: 4;
         width: 100%;
-        margin: $spacing-3 0 $spacing-2 $spacing-1;
+        margin: 2rem 0 $spacing-2 $spacing-1;
         padding-right: 0;
+        background-color: $gray-lighter;
 
         .profile-name {
           max-width: 250px;
           font-weight: bold;
+          color: $black;
         }
 
         .profile-img {
           border-radius: 50%;
-          width: 36px;
-          height: 36px;
+          width: 40px;
+          height: 40px;
+          margin-right: $spacing-2;
         }
 
         .rep-name-hover {
           cursor: auto;
 
           &:hover {
-            color: $gray-lighter;
+            color: $black;
+            // desktop
+            @media (min-width: $breakpoint-header-min) {
+              color: $gray-lighter;
+            }
           }
         }
 
@@ -110,17 +119,19 @@
           width: auto;
           margin: 0;
           padding-right: $spacing-4;
+          background-color: transparent;
 
           .profile-name {
             max-width: unset;
             max-width: 17vw;
             font-size: 14px;
             letter-spacing: 1px;
+            color: $gray-lighter;
           }
 
           .profile-img {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
           }
         }
       }
@@ -144,13 +155,6 @@
         // tiny
         @media (max-width: $screen-tiny-min) {
           flex: 1 0 100%;
-        }
-
-        // mobile only
-        @media (max-width: $breakpoint-header-max) {
-          .lt-icon:before {
-            color: $white;
-          }
         }
 
         // desktop
@@ -210,9 +214,39 @@
         }
       }
 
+      .navbar-backdrop {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: $navbar-header-mobile-height;
+        background-color: $gray-lighter;
+        left: 0;
+        z-index: -1;
+
+        // tiny
+        @media (max-width: $screen-tiny-min) {
+          top: 106px;
+        }
+
+        // desktop
+        @media (min-width: $breakpoint-header-min) {
+          display: none;
+        }
+      }
+
       #accountDrop {
         font-weight: bold;
         font-size: 15px;
+
+        // mobile only
+        @media (max-width: $breakpoint-header-max) {
+          &+.dropdown-menu {
+            background-color: $black;
+            width: 100vw;
+            padding-left: 15px;
+            margin-left: -15px;
+          }
+        }
       }
 
       .link-reverse-underline {
@@ -225,7 +259,11 @@
       font-weight: bold;
 
       li a {
-        color: $gray-light;
+        color: $black;
+
+        &:hover {
+          color: $black;
+        }
       }
 
       li {
@@ -235,7 +273,7 @@
           a:before {
             content: '|';
             margin-right: 5px;
-            color: $gray;
+            color: $gray-light;
           }
         }
 
@@ -639,6 +677,10 @@
             pointer-events: none;
           }
 
+          a .lt-icon {
+            visibility: visible;
+          }
+
           // desktop
           @media (min-width: $breakpoint-header-min) {
             // enable dropdown toggle on desktop
@@ -681,7 +723,7 @@
 
     .navbar-header {
       width: 100%;
-      height: 64px;
+      height: $navbar-header-mobile-height;
 
       .navbar-toggle {
         z-index: 9;
@@ -699,7 +741,7 @@
 
     $height-1: 42px;
     $height-2: 48px;
-    $utility-height: calc((#{$height-1} + #{$height-2}) - 1.1rem);
+    $utility-height: calc((#{$height-1} - -#{$height-2}) - 1.1rem); // minus negative because of minify problems
 
     // $utility-height: ($height-1 + $height-2) - 10px;
 
@@ -746,10 +788,15 @@
       margin: 0;
       padding: 0 $spacing-4 $spacing-4;
       z-index: $zindex-navbar;
+      background-color: $gray-lighter;
 
       .nav > li {
         padding: $spacing-2;
         margin: 0;
+
+        .lt-icon {
+          line-height: 0;
+        }
       }
 
       // desktop
@@ -764,10 +811,15 @@
         letter-spacing: 0.9px;
         line-height: 1.67;
         z-index: 1;
+        background-color: transparent;
 
         .nav > li {
           &:first-of-type {
             padding-right: $spacing-4;
+          }
+
+          .lt-icon {
+            line-height: 1;
           }
         }
       }
@@ -806,8 +858,6 @@
 
     // show menu
     &.collapse--off-canvas {
-      // display: flex;
-
       transform: translateX(0);
     }
 
@@ -850,7 +900,7 @@
   }
 
   .navbar-sub__sub-list {
-    height: calc(100% - 64px);
+    height: calc(100% - #{$navbar-header-mobile-height});
     overflow-y: auto;
 
     li.sub-list-item {
