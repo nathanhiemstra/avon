@@ -1,0 +1,114 @@
+{# layout.html.twig #}
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>{{ title }}</title>
+
+  <!-- Core CSS - containts customized bootstrap plus new CSS -->
+  <link href="./css/avon-main.css" rel="stylesheet">
+
+  <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/images/ico/favicon.ico">
+</head>
+
+
+{% set _block = block('reverseBg') %}
+{% if _block is not empty %}
+    {% set bodyClasses = 'class="reverse-bg"' %}
+    {% set reverseBgUndoStart = '<div class="reverse-bg-undo">' %}
+    {% set reverseBgUndoEnd = '</div><!-- /.reverse-bg-undo -->' %}
+{% endif %}
+
+{% if sectionClass is not defined %}
+  {% set sectionClass = '' %}
+{% endif %}
+
+<body {{ bodyClasses }}>
+
+  <!-- START - PAGE CONTENT -->
+  <section id="avon-poc" class="{{ sectionClass }}">
+      <a class="sr-only" href="#content">Skip to main content</a>
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# RENDER BLOCK - HEADER #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block header %}
+        {% include "_includes/modules/global/header-simple.html.twig" %}
+      {% endblock %}
+
+      <!-- <div class="drawer-backdrop fade"></div> -->
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# RENDER BLOCK - CONTENT #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block content %}{% endblock %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# RENDER BLOCK - FOOTER #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block footer %}
+        {% include components.modules.global.footer %}
+      {% endblock %}
+
+  </section>
+  <!-- END - PAGE CONTENT -->
+
+  <!-- START - VENDOR SCRIPTS -->
+  <script src="./js/vendor/jquery/1.10.2/jquery.min.js"></script>
+  <script src="./js/vendor/jquery.autocomplete.min.js"></script>
+  <script src="./js/vendor/bootstrap.js"></script>
+  <script src="./js/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+  <script src="./js/vendor/bootstrap.tabcollapse.js"></script>
+  <script src="./js/vendor/bootstrap.contentsplit.js"></script>
+  <script src="./js/vendor/nav-tabs-scrollable.js"></script>
+  <!-- END - VENDOR SCRIPTS -->
+
+  <!-- START - DEMO SCRIPTS -->
+  <script src="./js/demo/avon-main.js"></script>
+  <script src="./js/demo/back-to-top.js"></script>
+  <script src="./js/demo/brochures.js"></script>
+  <script src="./js/demo/checkoutDemo.js"></script>
+  <script src="./js/demo/dashboard.js"></script>
+  <script src="./js/demo/fakeData.js"></script>
+  <script src="./js/demo/formDemo.js"></script>
+  <script src="./js/demo/global-search.js"></script>
+  <script src="./js/demo/holder.js"></script>
+  <script src="./js/demo/message-center.js"></script>
+  <script src="./js/demo/modals.js"></script>
+  <script src="./js/demo/pagination.js"></script>
+  <script src="./js/demo/popovers.js"></script>
+  <script src="./js/demo/product-detail.js"></script>
+  <script src="./js/demo/product-filters.js"></script>
+  <script src="./js/demo/secondary-nav.js"></script>
+  <script src="./js/demo/sticky.js"></script>
+  <script src="./js/demo/your-order-carts-tab.js"></script>
+  <!-- END - DEMO SCRIPTS -->
+
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+
+  <!-- START - GLOBAL MODALS -->
+  {% include '_includes/modules/my-store/my-store-modal.html.twig' %}
+  <!-- END - GLOBAL MODALS -->
+
+</body>
+</html>
