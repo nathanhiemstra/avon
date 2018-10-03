@@ -208,6 +208,10 @@ hr {
   margin-bottom: $line-height-computed * 1.03704;
   border: 0;
   border-top: 1px solid $hr-border;
+
+  &.thick {
+    border-top: 2px solid $hr-border;
+  }
 }
 
 // Only display content to screen readers
