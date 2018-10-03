@@ -55,6 +55,78 @@
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMN 12 - Inner 6x6 #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Column: 12 - Inner 6x6",
+    slug:         "columns-12-6x6",
+    snippet:      '
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-6" role="complementary">
+          <p><img class="img-responsive" src="http://via.placeholder.com/800x800"></p>
+        </aside>
+        <main class="col-md-6" role="main">
+          <p>' ~ fpo.paragraph ~ '</p>
+          <p>' ~ fpo.paragraph ~ '</p>
+        </main>
+      </div>
+    </div>'
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMN 12 - Optional Promo (With Promo) #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Column: 12 - Optional Promo (With Promo)",
+    description:  "This layout allows us to use the same template but a different layout depending on some variable which will ultimately come from the server. If the page contains a promo, for example, the layout is 12 column, with an inner 6x6 as seen below. If no promo is present, the layout is a <a href='#columns-12-without-optional-promo'>centered 6 column</a>.",
+    slug:         "columns-12-with-optional-promo",
+    snippet:      '
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-6" role="complementary">
+          <p><img class="img-responsive" src="http://via.placeholder.com/800x800"></p>
+        </aside>
+        <main class="col-md-6" role="main">
+          <p>' ~ fpo.paragraph ~ '</p>
+          <p>' ~ fpo.paragraph ~ '</p>
+        </main>
+      </div>
+    </div>'
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMN 12 - Optional Promo (Without Promo - Max 6) #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Column: 12 - Optional Promo (Without Promo - Max 6)",
+    slug:         "columns-12-without-optional-promo",
+    description:  "This layout allows us to use the same template but a different layout depending on some variable which will ultimately come from the server. If the page contains a promo, for example, the layout is <a href='#columns-12-with-optional-promo'>12 column, with an inner 6x6</a>. If no promo is present, the layout is a centered 6 column as seen below.",
+    snippet:      '
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <main class="col-md-6 col-md-offset-3" role="main">
+            <p>' ~ fpo.paragraph ~ '</p>
+            <p>' ~ fpo.paragraph ~ '</p>
+          </main>
+        </div>
+      </div>
+    </div>'
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# COLUMN 10 - Max #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
@@ -87,31 +159,6 @@
             <p>' ~ fpo.paragraph ~ '</p>
           </aside>
           <main class="col-md-9" role="main">
-            <p>' ~ fpo.paragraph ~ '</p>
-          </main>
-        </div>
-      </div>
-    </div>'
-  }%}
-  {% include styleguide.item with 'styleguideItem': styleguideItem %}
-
-
-
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# COLUMN 10 - Max 6x6 #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% set styleguideItem = {
-    title:        "Column: 10 - Max, Inner 6x6",
-    slug:         "columns-10-max-6x6",
-    snippet:      '
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <aside class="col-md-6" role="complementary">
-            <p><img class="img-responsive" src="http://via.placeholder.com/800x800"></p>
-          </aside>
-          <main class="col-md-6" role="main">
-            <p>' ~ fpo.paragraph ~ '</p>
             <p>' ~ fpo.paragraph ~ '</p>
           </main>
         </div>
