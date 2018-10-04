@@ -1,0 +1,26 @@
+{% extends "_layouts/base-simple-header.html.twig" %}
+
+{% set sectionClass = 'page--register' %}
+{% set showPromo = false %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+      {% include "_includes/modules/register/starter-kit-list/starter-kit-list.html.twig" %}
+    </section>
+
+  {% endblock %}
+  
+  <!-- START - MODAL - STARTER KIT -->
+  {% include "_includes/modules/register/starter-kit-detail/starter-kit-modal.html.twig" %} 
+  <!-- END - MODAL - STARTER KIT -->
+
+{% endblock %}

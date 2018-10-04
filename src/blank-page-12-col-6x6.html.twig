@@ -1,0 +1,44 @@
+{% extends "_layouts/base-simple-header.html.twig" %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="container container--page">
+
+    {% embed "_layouts/columns-12-6x6.html.twig" %}
+
+    {# <aside class="col-md-6" role="complementary">
+          <p><img class="img-responsive" src="http://via.placeholder.com/800x800"></p>
+        </aside>
+        <main class="col-md-6" role="main">
+          <p>' ~ fpo.paragraph ~ '</p>
+          <p>' ~ fpo.paragraph ~ '</p>
+        </main> #}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - ASIDE #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block aside %}
+
+        <p><img class="img-responsive" src="http://via.placeholder.com/800x800"></p>
+
+      {% endblock %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        <h1>12 Columns - Inner 6x6</h1>
+        <p style="margin-bottom: 400px">{{ fpo.paragraph }} {{ fpo.paragraph }}</p>
+
+      {% endblock %}
+
+    {% endembed %}
+
+  </div>
+
+{% endblock %}
+
