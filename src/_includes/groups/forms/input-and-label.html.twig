@@ -1,4 +1,8 @@
-{% include components.elements.forms.label with {'id': id, 'mainLabel': mainLabel, 'haslabelErrorIcon': haslabelErrorIcon} %}
+{% include components.elements.forms.label with {
+  'id': id, 
+  'mainLabel': mainLabel, 
+  'haslabelErrorIcon': haslabelErrorIcon
+} %}
 {% include components.elements.forms.input with {
   'id':                   id, 
   'items':                items, 
@@ -12,7 +16,8 @@
   'theValue':             theValue,
   'hasInlineErrorIcon':   hasInlineErrorIcon,
   'hasAbsoluteErrorIcon': hasAbsoluteErrorIcon,
-  } %}
+  'required':             required
+} %}
 {% if errorMessage %}
   {% include components.elements.forms.errorMessage with {'errorMessage': errorMessage} %}
 {% endif %}

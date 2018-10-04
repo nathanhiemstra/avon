@@ -10,13 +10,16 @@
 {% if checked %}
   {% set checked = ' checked' %}
 {% endif %}
+{% if required %}
+  {% set required = ' required' %}
+{% endif %}
 
 {{ thelabel ? theLabel : '' }}
 
-<div class="checkbox {{ classes }}">
+<div class="checkbox {{ classes }} {% if wrapLabel %}wrap-label{% endif %}">
   <label>
-    <input type="checkbox" {{ id }}{{ name }}{{ theValue }}{{ checked }}>
-    <span class="mr-4"><i class="lt-icon lt-checkbox-checkmark lt-small"></i><i class="indeterminate lt-icon lt-checkbox-minus"></i></span>
+    <input type="checkbox" {{ id }}{{ name }}{{ theValue }}{{ checked }}{{ required }}>
+    <span class="{% if not wrapLabel %}mr-4{% endif %}"><i class="lt-icon lt-checkbox-checkmark lt-small"></i><i class="indeterminate lt-icon lt-checkbox-minus"></i></span>
     {{ theLabel }}
   </label>
 </div>
