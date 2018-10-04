@@ -1,0 +1,32 @@
+<li class="avon-product-list__item container-fluid border-bottom">
+  <a href="{{itemLink}}">
+    <div class="row">
+      <div class="col col-sm-11 col-xs-offset-1 p-0">
+        <span class="label label-info m-sm-4">{{itemInfo}}</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-sm-10 col-xs-7">
+        <div class="col col-xs-3 col-sm-1 pl-0 hidden-xs">
+          <img src="{{ imgUrl }}" class="product-img img-responsive">
+        </div>
+        <div class="col col-sm-8 pr-0">
+          <p class="title link-plain"><strong>{{ itemTitle }}</strong></p>
+          <p>
+            <span class="sale-price mr-4 link-plain large"><strong>{{ itemPrice }}</strong></span>
+            <span class="reg-price small text-muted link-plain nowrap">Save <span>{{ itemDiscount }}</span></span>
+          </p>
+        </div>
+        <div class="col col-sm-3 p-0">
+          <button type="button" class="btn btn-link pull-right">View Details</button>
+        </div>
+      </div>
+      <div class="col col-sm-2 col-xs-5">
+        <button type="button" class="btn btn-default pull-right-sm">
+            Select
+          </button>
+      </div>
+    </div>
+  </a>
+</li>
