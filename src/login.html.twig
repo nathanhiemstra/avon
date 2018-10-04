@@ -1,23 +1,100 @@
 {% extends layouts.base %}
 
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# DEFINE BLOCK - MAIN #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% block main %}
+  <section class="container container--page">
+    {% embed layouts.columns6max %}
 
-    <section class="container container--page">
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
 
-      <h1>Login - FPO</h1>
-      <button type="button" class="btn btn-default">Login</button>
+        <h1>Representative Login</h1>
 
-    </section>
 
-  {% endblock %}
+        <!-- START - INLINE LEVEL - WITH MAX TEXT -->
+        {% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+          alertIcon: 'lt-warning-fill',
+          alertHeadline: 'Alert message',
+          alertBody: '
+          <ul class="alert-list">
+            <li>Here is a <a href="#" class="alert-link">Link</a>.</li>
+            <li>' ~ fpo.sentence ~ '</li>
+          </ul>
+          <p>' ~ fpo.sentence ~ ' ' ~ fpo.sentence ~ '</p>',
+          alertBtnText: null,
+          alertClasses: 'alert-danger',
+          alertLevel: 'content',
+          alertDismissable: false,
+          alertId: null
+        } %}
+        <!-- END - INLINE LEVEL - WITH MAX TEXT -->
 
+        <!-- START LOGIN FORM -->
+        <!-- EMAIL INPUT -->
+        <div class="form-group has-error">
+          {% include components.groups.forms.inputAndLabel with {
+            id: 'error-with-label', 
+            mainLabel: 'Email or Account Number',
+            haslabelErrorIcon: true,
+            hasInlineErrorIcon: null,
+            hasAbsoluteErrorIcon: null,
+            classes: 'form-control'
+          } %}
+        </div>
+
+
+        <!-- PASSWORD INPUT -->
+        <div class="form-group has-feedback has-error">
+          {% include components.groups.forms.inputAndLabel with {
+            id: 'login-password',
+            mainLabel: 'Password',
+            haslabelErrorIcon: true,
+            hasInlineErrorIcon: null,
+            hasAbsoluteErrorIcon: null,
+            classes: 'form-control',
+            type: 'password',
+            theValue: 'Password123'
+          } %}
+         <span class="lt-icon lt-eye lt-medium form-control-feedback" toggle-password-visibility="login-password"></span>
+        </div>
+
+        <div class="password-requirements my-3">
+          <span class="lt-icon lt-checkmark lt-medium align-middle"></span> Password strength: <span>Weak</span> <span>Strong</span>
+          <ul class="list-unstyled">
+            <li><span class="lt-icon lt-close lt-medium align-middle"></span> Rule 1</li>
+            <li><span class="lt-icon lt-close lt-medium align-middle"></span> Rule 2</li>
+            <li><span class="lt-icon lt-close lt-medium align-middle"></span> Rule 3</li>
+          </ul>
+        </div>
+
+        
+
+
+
+        <button type="button" class="btn btn-default btn-block">Login</button>
+        {% include "_includes/elements/misc/divider-with-or.html.twig" %}
+        {% include "_includes/modules/login/login-via-social.html.twig" %}
+
+        <!-- END LOGIN FORM -->
+
+        <hr>
+
+        <div class="text-center">Need an account? <a href="#">Register today</a></div>
+
+      {% endblock %}
+
+    {% endembed %}
+
+  </section>
 
 {% endblock %}
+
+
+
+

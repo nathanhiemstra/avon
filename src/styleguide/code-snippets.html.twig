@@ -125,6 +125,10 @@
   {{ endhighlight }}
 
 
+<style>
+   
+    
+  </style>
 
   <h2 id="facebook-login">Facebook Login Button</h2>
   <p>Example code withing Avon's live home page code.</p>
@@ -134,50 +138,11 @@
 
 
     <!-- START - NEW FROM S4DC -->
-    <!-- Demo: https://codepen.io/studio4dc/pen/mXOBjm -->
-    <style>
-      .login-facebook {
-        margin-top: 20px;
-      }
-      .login-facebook img {
-        width: 100%;
-      }
-      .login-divider {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        color: #666;
-        overflow: hidden;
-        text-align: center;
-      }
-      .login-divider span {
-        display: inline-block;
-        position: relative;
-        line-height: 0.5;
-      }
-      .login-divider span:before,
-      .login-divider span:after {
-        content: "";
-        position: absolute;
-        height: 5px;
-        border-bottom: 1px solid #CCC;
-        top: 0;
-        width: 1000px;
-      }
-      .login-divider span:before {
-        right: 100%;
-        margin-right: 15px;
-      }
-      .login-divider span:after {
-        left: 100%;
-        margin-left: 15px;
-      }
-    </style>
-
     <div class="form-group">
-      <div class="login-divider"><span>or</span></div>
-      <a href="#" class="login-facebook">
-        <img src="https://scontent.ford1-1.fna.fbcdn.net/v/t39.2365-6/17639236_1785253958471956_282550797298827264_n.png?oh=8ba4730dd8728f6fc0a63c7c6f924739&amp;oe=5AD919EA" alt="Continue with Facebook">
-      </a>
+
+      {% include "_includes/elements/misc/divider-with-or.html.twig" %}
+      {% include "_includes/modules/login/login-via-social.html.twig" %}
+
     </div>
     <!-- END - NEW FROM S4DC -->
 
@@ -211,49 +176,13 @@
 
     <!-- START - NEW FROM S4DC -->
     <!-- Demo: https://codepen.io/studio4dc/pen/mXOBjm -->
-    <style>
-      .login-facebook {
-        margin-top: 20px;
-      }
-      .login-facebook img {
-        width: 100%;
-      }
-      .login-divider {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        color: #666;
-        overflow: hidden;
-        text-align: center;
-      }
-      .login-divider span {
-        display: inline-block;
-        position: relative;
-        line-height: 0.5;
-      }
-      .login-divider span:before,
-      .login-divider span:after {
-        content: "";
-        position: absolute;
-        height: 5px;
-        border-bottom: 1px solid #CCC;
-        top: 0;
-        width: 1000px;
-      }
-      .login-divider span:before {
-        right: 100%;
-        margin-right: 15px;
-      }
-      .login-divider span:after {
-        left: 100%;
-        margin-left: 15px;
-      }
-    </style>
+
 
     <div class="form-group">
-      <div class="login-divider"><span>or</span></div>
-      <a href="#" class="login-facebook">
-        <img src="https://scontent.ford1-1.fna.fbcdn.net/v/t39.2365-6/17639236_1785253958471956_282550797298827264_n.png?oh=8ba4730dd8728f6fc0a63c7c6f924739&amp;oe=5AD919EA" alt="Continue with Facebook">
-      </a>
+    
+      {% include "_includes/elements/misc/divider-with-or.html.twig" %}
+      {% include "_includes/modules/login/login-via-social.html.twig" %}
+
     </div>
     <!-- END - NEW FROM S4DC -->
 
