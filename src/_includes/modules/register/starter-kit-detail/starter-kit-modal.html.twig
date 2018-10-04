@@ -6,12 +6,6 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalHeader %}
 
-  <!-- DEV NOTE :: this button only displays if .nested class is present on modal -->
-  <button type="button" class="close back link-primary pull-left" data-toggle="modal" data-target="#product-list-modal" data-direction="back" aria-hidden="true">
-    <span class="sr-only">Go back</span>
-    <span class="lt-icon lt-left lt-large py-1"></span>
-  </button>
-
   <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
     <span class="sr-only">Close modal</span>
     <span class="lt-icon lt-close lt-large py-1"></span>
@@ -21,7 +15,6 @@
 
 {% endblock %}
 
-
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - modalBody #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -29,20 +22,18 @@
 
   <div class="row">
 
-    <!-- START - PRODUCT IMAGES -->
+    <!-- START - KIT IMAGES -->
     <div class="pdp-images-block col-sm-6 pr-md-4 pr-lg-5">
-      {% include "_includes/modules/login-register/starter-kit-detail/images.html.twig" %}
+      {% include "_includes/modules/register/starter-kit-detail/images.html.twig" %}
     </div>
-    <!-- END - PRODUCT IMAGES -->
+    <!-- END - KIT IMAGES -->
 
-    <!-- START - PRODUCT DETAILS -->
+    <!-- START - KIT DETAILS -->
     <div class="pdp-details-block col-sm-6 pt-4 pt-md-0 pl-md-0 d-flex">
-      {% include "_includes/modules/login-register/starter-kit-detail/details.html.twig" %}
+      {% include "_includes/modules/register/starter-kit-detail/details.html.twig" %}
     </div>
-    <!-- END - PRODUCT DETAILS -->
+    <!-- END - KIT DETAILS -->
 
   </div>
-
-
 
 {% endblock %}
