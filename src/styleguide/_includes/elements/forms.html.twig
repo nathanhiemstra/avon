@@ -468,6 +468,39 @@
 
 
 
+  <p>Proper indents when label text is super long</p>
+
+  <div class="bs-example" style="padding: 15px; padding-bottom: 35px;">
+    {% include components.elements.forms.checkbox with {
+      id: 'checkbox1',
+      name: 'checkbox1',
+      wrapLabel: true,
+      theLabel: 'By registering, you agree to Avon’s <a href="#">Privacy Statement</a> and <a href="#">Conditions of Use</a>, and you are over 18 years old. Bacon ipsum dolor amet biltong tail pork loin doner filet mignon. Shank kevin beef ribs, corned beef doner filet mignon leberkas salami.'
+    } %}
+    {% include components.elements.forms.checkbox with {
+      id: 'checkbox1',
+      name: 'checkbox1',
+      classes: 'input-sm',
+      wrapLabel: true,
+      theLabel: 'By registering, you agree to Avon’s <a href="#">Privacy Statement</a> and <a href="#">Conditions of Use</a>, and you are over 18 years old. Bacon ipsum dolor amet biltong tail pork loin doner filet mignon. Shank kevin beef ribs, corned beef doner filet mignon leberkas salami.'
+    } %}
+  </div><!-- /.bs-example -->
+
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+    &#123;% include components.elements.forms.checkbox with {id: 'checkbox1', name: 'checkbox1', wrapLabel: true, theLabel: 'By registering, you agree to Avon’s <a href="#">Privacy Statement</a> and <a href="#">Conditions of Use</a>, and you are over 18 years old. Bacon ipsum dolor amet biltong tail pork loin doner filet mignon. Shank kevin beef ribs, corned beef doner filet mignon leberkas salami.'} %}
+  {{ endhighlight }}
+
+  {{ highlightMarkup }}
+    {% include components.elements.forms.checkbox with {
+      id: 'checkbox1',
+      name: 'checkbox1',
+      wrapLabel: true,
+      theLabel: 'By registering, you agree to Avon’s <a href="#">Privacy Statement</a> and <a href="#">Conditions of Use</a>, and you are over 18 years old. Bacon ipsum dolor amet biltong tail pork loin doner filet mignon. Shank kevin beef ribs, corned beef doner filet mignon leberkas salami.'
+    } %}
+  {{ endhighlight }}
+
+
+
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# Radios #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -577,3 +610,34 @@
     } %}
   {{ endhighlight }}
 </div>
+
+<p>Proper indents when label text is super long</p>
+
+  <div class="bs-example" style="padding: 15px; padding-bottom: 35px;">
+    {% include components.elements.forms.radio with {
+      id: 'radio1',
+      name: 'radio1',
+      wrapLabel: true,
+      theLabel: 'By registering, you agree to Avon’s <a href="#">Privacy Statement</a> and <a href="#">Conditions of Use</a>, and you are over 18 years old. Bacon ipsum dolor amet biltong tail pork loin doner filet mignon. Shank kevin beef ribs, corned beef doner filet mignon leberkas salami.'
+    } %}
+    {% include components.elements.forms.radio with {
+      id: 'radio2',
+      name: 'radio2',
+      classes: 'input-sm',
+      wrapLabel: true,
+      theLabel: 'By registering, you agree to Avon’s <a href="#">Privacy Statement</a> and <a href="#">Conditions of Use</a>, and you are over 18 years old. Bacon ipsum dolor amet biltong tail pork loin doner filet mignon. Shank kevin beef ribs, corned beef doner filet mignon leberkas salami.'
+    } %}
+  </div><!-- /.bs-example -->
+
+  <pre class="language-markup code-toolbar"><code class="language-twig">
+    &#123;% include components.elements.forms.radio with {id: 'radio1', name: 'radio1', wrapLabel: true, theLabel: 'By registering, you agree to Avon’s <a href="#">Privacy Statement</a> and <a href="#">Conditions of Use</a>, and you are over 18 years old. Bacon ipsum dolor amet biltong tail pork loin doner filet mignon. Shank kevin beef ribs, corned beef doner filet mignon leberkas salami.'} %}
+  {{ endhighlight }}
+
+  {{ highlightMarkup }}
+    {% include components.elements.forms.radio with {
+      id: 'radio1',
+      name: 'radio1',
+      wrapLabel: true,
+      theLabel: 'By registering, you agree to Avon’s <a href="#">Privacy Statement</a> and <a href="#">Conditions of Use</a>, and you are over 18 years old. Bacon ipsum dolor amet biltong tail pork loin doner filet mignon. Shank kevin beef ribs, corned beef doner filet mignon leberkas salami.'
+    } %}
+  {{ endhighlight }}

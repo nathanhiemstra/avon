@@ -97,7 +97,7 @@
                     id: 'regPassword',
                     required: true
                   } %}
-                  <a class="lt-icon lt-eye lt-medium form-control-feedback"></a>
+                  <a class="lt-icon lt-eye lt-medium form-control-feedback" toggle-password-visibility="regPassword"></a>
                 </div>
               </div>
             </div>
@@ -121,24 +121,9 @@
 
           </form>
           <!-- END - FORM -->
-
-          <hr class="thick">
-
-          <div class="row">
-            <div class="col-md-12 form-group">
-              <a href="javascript:void(0)" class="btn btn-primary d-block" disabled="disabled">Login with Facebook</a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 form-group">
-              <a href="javascript:void(0)" class="btn btn-primary d-block" disabled="disabled">Login with Google</a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 form-group">
-              <a href="javascript:void(0)" class="btn btn-primary d-block" disabled="disabled">Login with Instagram</a>
-            </div>
-          </div>
+          
+          {% include "_includes/elements/misc/divider-with-or.html.twig" %}
+          {% include "_includes/modules/login/login-via-social.html.twig" %}
 
           <hr class="thick">
 

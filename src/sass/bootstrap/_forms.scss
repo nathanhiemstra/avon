@@ -327,9 +327,9 @@ input[type="search"] {
   // offset & left-align multi-line labels
   &.wrap-label {
     label {
-      padding-left: 35px;
+      padding-left: 3.5rem;
       span {
-        margin-left: -35px;
+        margin-left: -3.5rem;
       }
     }
   }
@@ -349,6 +349,15 @@ input[type="search"] {
         i {
           top: 0;
           left: 0;
+        }
+      }
+    }
+
+    &.wrap-label {
+      label {
+        padding-left: 2.5rem;
+        span {
+          margin-left: -2.5rem;
         }
       }
     }
