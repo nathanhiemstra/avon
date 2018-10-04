@@ -32,6 +32,25 @@
         {% block main %}
 
           <h3 class="text-center text-uppercase">Become a Representative</h3>
+
+          <!-- START - INLINE LEVEL ALERT WITH MAX TEXT -->
+          {% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+            alertIcon: 'lt-info',
+            alertHeadline: 'An account with that email address exists.',
+            alertBody: '
+            <ul class="alert-list">
+              <li>Here is a <a href="#" class="alert-link">Link</a>.</li>
+              <li>' ~ fpo.sentence ~ '</li>
+            </ul>
+            <p>Please enter a different email address or access your account from the <a href="#" class="alert-link">Login page</a>.</p>',
+            alertBtnText: null,
+            alertClasses: 'alert-danger',
+            alertLevel: 'content',
+            alertDismissable: false,
+            alertId: null
+          } %}
+          <!-- END - INLINE LEVEL ALERT WITH MAX TEXT -->
+
           <hr class="thick">
 
           <!-- START - MENTOR SECTION -->
@@ -88,7 +107,17 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group has-feedback">
-                  {% include '_includes/elements/forms/label.html.twig' with {
+                  {% include components.groups.forms.inputAndLabel with {
+                    id: 'regPassword',
+                    mainLabel: 'Password',
+                    type: 'password',
+                    required: true,
+                    haslabelErrorIcon: true,
+                    hasInlineErrorIcon: null,
+                    hasAbsoluteErrorIcon: null,
+                    theValue: 'mypassword'
+                  } %}
+                  {# {% include '_includes/elements/forms/label.html.twig' with {
                     id: 'regPassword',
                     mainLabel: 'Password'
                   } %}
@@ -96,8 +125,16 @@
                     type: 'password',
                     id: 'regPassword',
                     required: true
-                  } %}
+                  } %} #}
                   <a class="lt-icon lt-eye lt-medium form-control-feedback" toggle-password-visibility="regPassword"></a>
+                </div>
+                <div class="password-requirements my-3">
+                  <span class="lt-icon lt-checkmark lt-medium align-middle"></span> Password strength: <span>Weak</span> <span>Strong</span>
+                  <ul class="list-unstyled">
+                    <li><span class="lt-icon lt-close lt-medium align-middle"></span> Rule 1</li>
+                    <li><span class="lt-icon lt-close lt-medium align-middle"></span> Rule 2</li>
+                    <li><span class="lt-icon lt-close lt-medium align-middle"></span> Rule 3</li>
+                  </ul>
                 </div>
               </div>
             </div>
