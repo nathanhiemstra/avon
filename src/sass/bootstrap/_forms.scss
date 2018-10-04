@@ -324,6 +324,16 @@ input[type="search"] {
     cursor: pointer;
   }
 
+  // offset & left-align multi-line labels
+  &.wrap-label {
+    label {
+      padding-left: 35px;
+      span {
+        margin-left: -35px;
+      }
+    }
+  }
+
   // small checkboxes and radios
   &.input-sm {
     height: 20px;

@@ -1,8 +1,13 @@
 
 <div class="checkbox">
   <label>
-    {% include components.elements.forms.checkbox with {'id': id, 'theValue': theValue, 'classes': classes, 'checked': checked} %}
-    
+    {% include components.elements.forms.checkbox with {
+      'id': id, 
+      'theValue': theValue, 
+      'classes': classes, 
+      'checked': checked,
+      'required': required
+    } %} 
     {{ label }}
   </label>
 </div>
