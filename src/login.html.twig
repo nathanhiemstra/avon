@@ -14,7 +14,7 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
-        <h1>Representative Log</h1>
+        <h1>Representative Login</h1>
 
 
         <!-- START - INLINE LEVEL - WITH MAX TEXT -->
@@ -35,8 +35,8 @@
         } %}
         <!-- END - INLINE LEVEL - WITH MAX TEXT -->
 
-
-
+        <!-- START LOGIN FORM -->
+        <!-- EMAIL INPUT -->
         <div class="form-group has-error">
           {% include components.groups.forms.inputAndLabel with {
             id: 'error-with-label', 
@@ -48,6 +48,7 @@
           } %}
         </div>
 
+        <!-- PASSWORD INPUT -->
         <div class="form-group has-error">
           {% include components.groups.forms.inputAndLabel with {
             id: 'current-password',
@@ -61,11 +62,15 @@
           } %}
         </div>
 
-
-
-
-
         <button type="button" class="btn btn-default btn-block">Login</button>
+        {% include "_includes/elements/misc/divider-with-or.html.twig" %}
+        {% include "_includes/modules/login/login-via-social.html.twig" %}
+
+        <!-- END LOGIN FORM -->
+
+        <hr>
+
+        <div class="text-center">Need an account? <a href="#">Register today</a></div>
 
       {% endblock %}
 
