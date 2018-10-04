@@ -101,6 +101,7 @@ gulp.task('compile', function () {
               columns12:          '_layouts/columns-12.html.twig',
               columns9x3:         '_layouts/columns-9x3.html.twig',
               columns3x9:         '_layouts/columns-3x9.html.twig',
+              columns6max:        '_layouts/columns-6-max.html.twig',
               themes: {
                 checkout:         '_layouts/theme-checkout.html.twig',
                 yourOrder:        '_layouts/theme-your-order.html.twig'

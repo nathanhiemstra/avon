@@ -72,7 +72,7 @@ a.btn {
     pointer-events: none;
 
     // Future-proof disabling of clicks on `<a>` elements
-
+ 
   }
 }
 
@@ -196,13 +196,13 @@ a.btn {
     line-height: 0;
 
     // prevent larger icons increasing button height
-
+ 
   }
 
   &:focus,
-   > i:before,
-   > span,
-   > span:before,
+  > i:before,
+  > span,
+  > span:before,
   &:hover,
   > i {
     background-color: $brand-primary !important;
@@ -224,9 +224,9 @@ a.btn {
     }
 
     &:focus,
-     > i:before,
-     > span,
-     > span:before,
+    > i:before,
+    > span,
+    > span:before,
     &:hover,
     > i {
       background-color: transparent !important;
@@ -267,13 +267,13 @@ a.btn {
     line-height: 0;
 
     // prevent larger icons increasing button height
-
+ 
   }
 
   &:focus,
-   > i:before,
-   > span,
-   > span:before,
+  > i:before,
+  > span,
+  > span:before,
   &:hover,
   > i {
     background-color: transparent !important;
@@ -313,9 +313,9 @@ a.btn {
     }
 
     &:focus,
-     > i:before,
-     > span,
-     > span:before,
+    > i:before,
+    > span,
+    > span:before,
     &:active,
     &:hover,
     > i {
@@ -359,13 +359,13 @@ a.btn {
     line-height: 0;
 
     // prevent larger icons increasing button height
-
+ 
   }
 
   &:focus,
-   > i:before,
-   > span,
-   > span:before,
+  > i:before,
+  > span,
+  > span:before,
   &:hover,
   > i {
     background-color: transparent !important;
@@ -413,7 +413,6 @@ a.btn {
       border: 1px solid transparent !important;
       border-color: transparent !important;
     }
-
   }
 }
 
@@ -606,7 +605,7 @@ input[type="button"] {
   letter-spacing: normal;
   opacity: 1;
   pointer-events: all;
-  transition: opacity $ui-animation-time*1.5 ease;
+  transition: opacity ($ui-animation-time * 1.5) ease;
 
   &.invisible {
     visibility: visible;
@@ -618,13 +617,13 @@ input[type="button"] {
     &:after,
     &:before {
       color: $gray;
-      transition: color $ui-animation-time*1.5 ease;
+      transition: color ($ui-animation-time * 1.5) ease;
     }
   }
 
   span {
     margin-left: 1px;
-    transition: color $ui-animation-time*1.5 ease;
+    transition: color ($ui-animation-time * 1.5) ease;
 
     &:not(.lt-icon) {
       margin-top: -6px;
@@ -648,12 +647,10 @@ input[type="button"] {
     bottom: 24px;
     right: 22px;
   }
-
 }
 
 // Button with loading indicator - for ajax operations
 .btn-loader {
-
   transition: background-color $ui-animation-time $ui-animation-ease;
 
   &.loading {
@@ -707,14 +704,12 @@ input[type="button"] {
         border-bottom: 2px solid $gray-light;
         border-left: 2px solid $brand-primary;
       }
-
     }
-
   }
+
   // end .loading
 
   &.loaded {
-
     .spinner {
       display: none;
     }
@@ -731,15 +726,14 @@ input[type="button"] {
         color: $body-bg;
       }
     }
-
   }
-
 }
 
 @keyframes fadein {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -756,6 +750,7 @@ input[type="button"] {
     transform: rotate(360deg);
   }
 }
+
 @keyframes rotate {
   0% {
     -webkit-transform: rotate(0deg);

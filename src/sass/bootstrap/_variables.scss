@@ -13,6 +13,8 @@ $blue-dark: #0E6FA2 !default;
 $blue: #2C97D0 !default;
 $blue-light: #9BD5ED !default;
 $blue-lighter: #ECF6FA !default;
+$blue-facebook: #4C69BA !default;
+$blue-facebook-dark: #3B55A0 !default;
 
 $gray-base: $black !default;
 $gray-dark: $gray-base !default;
@@ -47,7 +49,6 @@ $red: #D6321C !default;
 $red-light: #F29F94 !default;
 $red-lighter: #FDEDEA !default;
 
-
 $white: #fff !default;
 
 // Colors by function
@@ -67,9 +68,6 @@ $brand-danger: $red !default;
 $brand-disabled: $gray-light !default;
 $brand-discourage: $black !default;
 
-
-
-
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
@@ -81,8 +79,6 @@ $body-bg: $white !default;
 $text-color: $gray-dark !default;
 $text-muted: $gray !default;
 $text-muted-hover: $gray !default;
-
-
 
 //** Global textual link color.
 $link-color: $brand-primary !default;
@@ -123,26 +119,54 @@ $font-size-small: ceil($font-size-base * 0.83333) !default;
 // 40px
 
 // H1
-$font-size-h1: floor($font-size-base * 2.8) !default; // 42px
-$font-size-h1-desktop: floor($font-size-base * 3.2) !default; // 48px
+$font-size-h1: floor($font-size-base * 2.8) !default;
 
-$font-size-h2: floor($font-size-base * 2.0) !default; // 30px
-$font-size-h2-desktop: floor($font-size-base * 2.4) !default; // 36px
+// 42px
+$font-size-h1-desktop: floor($font-size-base * 3.2) !default;
 
-$font-size-h3: ceil($font-size-base * 1.4666) !default; // 22px
-$font-size-h3-desktop: ceil($font-size-base * 2.0) !default; // 30px
+// 48px
 
-$font-size-h4: ceil($font-size-base * 1.2) !default; // 18px
-$font-size-h4-desktop: ceil($font-size-base * 1.6) !default; // 24px
+$font-size-h2: floor($font-size-base * 2) !default;
 
-$font-size-h5: $font-size-base !default; // 15px
-$font-size-h5-desktop: ceil($font-size-base * 1.2) !default; // 18px
+// 30px
+$font-size-h2-desktop: floor($font-size-base * 2.4) !default;
 
-$font-size-h6: ceil($font-size-base * 0.8666) !default; // 13px
-$font-size-h6-desktop: ceil($font-size-base * 0.9333) !default; // 14px
+// 36px
 
-$font-size-h7: ceil($font-size-base * 0.7333) !default; // 11px
-$font-size-h7-desktop: ceil($font-size-base * 0.83333) !default; // 12px
+$font-size-h3: ceil($font-size-base * 1.4666) !default;
+
+// 22px
+$font-size-h3-desktop: ceil($font-size-base * 2) !default;
+
+// 30px
+
+$font-size-h4: ceil($font-size-base * 1.2) !default;
+
+// 18px
+$font-size-h4-desktop: ceil($font-size-base * 1.6) !default;
+
+// 24px
+
+$font-size-h5: $font-size-base !default;
+
+// 15px
+$font-size-h5-desktop: ceil($font-size-base * 1.2) !default;
+
+// 18px
+
+$font-size-h6: ceil($font-size-base * 0.8666) !default;
+
+// 13px
+$font-size-h6-desktop: ceil($font-size-base * 0.9333) !default;
+
+// 14px
+
+$font-size-h7: ceil($font-size-base * 0.7333) !default;
+
+// 11px
+$font-size-h7-desktop: ceil($font-size-base * 0.83333) !default;
+
+// 12px
 
 // 12px
 

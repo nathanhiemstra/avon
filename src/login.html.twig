@@ -1,23 +1,80 @@
 {% extends layouts.base %}
 
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# DEFINE BLOCK - MAIN #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% block main %}
+  <section class="container container--page">
+    {% embed layouts.columns6max %}
 
-    <section class="container container--page">
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
 
-      <h1>Login - FPO</h1>
-      <button type="button" class="btn btn-default">Login</button>
+        <h1>Representative Log</h1>
 
-    </section>
 
-  {% endblock %}
+        <!-- START - INLINE LEVEL - WITH MAX TEXT -->
+        {% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+          alertIcon: 'lt-warning-fill',
+          alertHeadline: 'Alert message',
+          alertBody: '
+          <ul class="alert-list">
+            <li>Here is a <a href="#" class="alert-link">Link</a>.</li>
+            <li>' ~ fpo.sentence ~ '</li>
+          </ul>
+          <p>' ~ fpo.sentence ~ ' ' ~ fpo.sentence ~ '</p>',
+          alertBtnText: null,
+          alertClasses: 'alert-danger',
+          alertLevel: 'content',
+          alertDismissable: false,
+          alertId: null
+        } %}
+        <!-- END - INLINE LEVEL - WITH MAX TEXT -->
 
+
+
+        <div class="form-group has-error">
+          {% include components.groups.forms.inputAndLabel with {
+            id: 'error-with-label', 
+            mainLabel: 'Email or Account Number',
+            haslabelErrorIcon: true,
+            hasInlineErrorIcon: null,
+            hasAbsoluteErrorIcon: null,
+            classes: 'form-control'
+          } %}
+        </div>
+
+        <div class="form-group has-error">
+          {% include components.groups.forms.inputAndLabel with {
+            id: 'current-password',
+            mainLabel: 'Password',
+            haslabelErrorIcon: true,
+            hasInlineErrorIcon: null,
+            hasAbsoluteErrorIcon: null,
+            classes: 'form-control',
+            type: 'password',
+            theValue: '•••••'
+          } %}
+        </div>
+
+
+
+
+
+        <button type="button" class="btn btn-default btn-block">Login</button>
+
+      {% endblock %}
+
+    {% endembed %}
+
+  </section>
 
 {% endblock %}
+
+
+
+
