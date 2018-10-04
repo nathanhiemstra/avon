@@ -48,19 +48,34 @@
           } %}
         </div>
 
+
         <!-- PASSWORD INPUT -->
-        <div class="form-group has-error">
+        <div class="form-group has-feedback has-error">
           {% include components.groups.forms.inputAndLabel with {
-            id: 'current-password',
+            id: 'login-password',
             mainLabel: 'Password',
             haslabelErrorIcon: true,
             hasInlineErrorIcon: null,
             hasAbsoluteErrorIcon: null,
             classes: 'form-control',
             type: 'password',
-            theValue: '•••••'
+            theValue: 'Password123'
           } %}
+         <span class="lt-icon lt-eye lt-medium form-control-feedback" toggle-password-visibility="login-password"></span>
         </div>
+
+        <div class="password-requirements my-3">
+          <span class="lt-icon lt-checkmark lt-medium align-middle"></span> Password strength: <span>Weak</span> <span>Strong</span>
+          <ul class="list-unstyled">
+            <li><span class="lt-icon lt-close lt-medium align-middle"></span> Rule 1</li>
+            <li><span class="lt-icon lt-close lt-medium align-middle"></span> Rule 2</li>
+            <li><span class="lt-icon lt-close lt-medium align-middle"></span> Rule 3</li>
+          </ul>
+        </div>
+
+        
+
+
 
         <button type="button" class="btn btn-default btn-block">Login</button>
         {% include "_includes/elements/misc/divider-with-or.html.twig" %}

@@ -349,5 +349,6 @@ $( document ).ready( function () {
   if( typeof Modals !== 'undefined' ) Modals.init();
   if( typeof MessageCenter !== 'undefined' ) MessageCenter.init();
   if( typeof Sticky !== 'undefined' ) Sticky.init();
+  if( typeof TogglePasswordVisibility !== 'undefined' ) TogglePasswordVisibility.init();
 
 } );

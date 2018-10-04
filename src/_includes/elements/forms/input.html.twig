@@ -41,5 +41,5 @@
   {% set oninput = 'oninput="' ~ onInputJs ~ '"' %}
 {% endif %}
 {{ hasInlineErrorIconStart }}
-{{ errorIcon }}<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}{{ data }}{{ attrs }}{{ listeners }}{{ oninput }}>
+{{ errorIcon }}<input type="{{ type }}" onclick="myFunction()" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}{{ data }}{{ attrs }}{{ listeners }}{{ oninput }}>
 {{ hasInlineErrorIconEnd }}
