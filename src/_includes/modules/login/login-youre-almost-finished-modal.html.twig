@@ -1,0 +1,46 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'modal-login-youre-almost-finished' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+
+  <h4 class="modal-title">You're Almost Finished</h4>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+  <div>
+    <div class="badge">J</div>
+    <p><strong>Janet Johnson</strong></p>
+    <p>janet.johnson@gmail.com</p>
+    <p>
+      You have a registration in progress.<br>
+      Click continue and we'll start where you left off!
+    </p>
+
+  </div>
+
+{% endblock %}
+
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <button type="button" class="btn btn-default btn-block">Continue</button>
+
+{% endblock %}

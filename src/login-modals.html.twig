@@ -1,0 +1,32 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="container container--page">
+
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        <h1 class="mb-5">Login - Modals</h1>
+
+        <p><a data-toggle="modal" data-target="#modal-login-youre-almost-finished">You're almost finished</a></p>
+
+        <!-- START - YOU'RE ALMOST FINISHED MODAL -->
+        {% include "_includes/modules/login/login-youre-almost-finished-modal.html.twig" %}
+        <!-- END - YOU'RE ALMOST FINISHED MODAL -->
+
+      {% endblock %}
+
+
+  </div>
+
+{% endblock %}
+
+
+<!-- START - MODAL - QUICKPAY ENROLLMENT -->
