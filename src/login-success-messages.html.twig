@@ -19,16 +19,32 @@
         <h1>[Set your email address / Reset your password]</h1>
 
         <div class="d-flex my-5 ">
-          <span class="lt-icon lt-checkmark lt-large mr-5"></span>
+          <span class="lt-icon lt-checkmark lt-large mr-5 text-success"></span>
           <div>{{ fpo.paragraph }}</div>
         </div>
 
         <div class="my-5">
 
-          <div class="well p-4 text-center">
-            <span class="lt-icon lt-mail lt-medium" toggle-password-visibility="login-password"></span> 
-            <span>janet.johnson@gmail.com</span>
-          </div>         
+          <section class="list-group box-emphasize">
+            <div class="list-group-item remove-last-border py-4 d-flex justify-content-center well">
+
+
+                <span class="mr-4">
+                  <span class="lt-icon lt-mail lt-medium" toggle-password-visibility="login-password"></span>
+                </span>
+                <span>janet.johnson@gmail.com</span>
+
+
+
+            </div>
+          </section>
+          {# <div class="well p-4 text-center">
+            <span>
+              <span class="lt-icon lt-mail lt-medium" toggle-password-visibility="login-password"></span>
+              <span>janet.johnson@gmail.com</span>
+            </span>
+
+          </div> #}
           <button type="button" class="btn btn-default btn-block">Continue to YourAvon</button>
 
         </div>
