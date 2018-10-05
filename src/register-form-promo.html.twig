@@ -1,0 +1,180 @@
+{% extends "_layouts/base-simple-header.html.twig" %}
+
+{% set sectionClass = 'page--register' %}
+{% set showPromo = true %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+
+      {% embed '_layouts/columns-12-optional-promo.html.twig' with {
+        showPromo: showPromo
+      } %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - ASIDE #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block aside %}
+          <img class="img-responsive" src="http://via.placeholder.com/600x1200">
+        {% endblock %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - MAIN #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block main %}
+
+          <h3 class="text-center text-uppercase">Become a Representative</h3>
+
+          <!-- START - INLINE LEVEL ALERT WITH MAX TEXT -->
+          {% include "_includes/groups/alerts/alert-level-template.html.twig" with {          
+            alertIcon: 'lt-info',
+            alertHeadline: 'An account with that email address exists.',
+            alertBody: '
+            <ul class="alert-list">
+              <li>Here is a <a href="#" class="alert-link">Link</a>.</li>
+              <li>' ~ fpo.sentence ~ '</li>
+            </ul>
+            <p>Please enter a different email address or access your account from the <a href="#" class="alert-link">Login page</a>.</p>',
+            alertBtnText: null,
+            alertClasses: 'alert-danger',
+            alertLevel: 'content',
+            alertDismissable: false,
+            alertId: null
+          } %}
+          <!-- END - INLINE LEVEL ALERT WITH MAX TEXT -->
+
+          <hr class="thick">
+
+          <!-- START - MENTOR SECTION -->
+          <div class="mentor-section">
+            <div class="d-flex align-items-center">
+              <span class="img">
+                <img src="images/utility/placeholder_thumb.png" alt="" class="circular-img">
+              </span>
+              <span class="content ml-4">
+                <p class="m-0">Your Mentor</p>
+                <p class="text-capitalize m-0">Tisha Pennington</p>
+              </span>
+              <span class="ml-auto">
+                <a href="#">Remove</a>
+              </span>
+            </div>
+            <hr class="thick">
+          </div>
+          <!-- END - MENTOR SECTION -->
+
+          <!-- START - FORM -->
+          <form>
+
+            <div class="row">
+              <div class="col-md-6 form-group">
+                {% include '_includes/groups/forms/input-and-label.html.twig' with {
+                  id: 'regFirstName',
+                  mainLabel: 'First Name',
+                  required: true
+                } %}
+              </div>
+
+              <div class="col-md-6 form-group">
+                {% include '_includes/groups/forms/input-and-label.html.twig' with {
+                  type: 'text',
+                  id: 'regLastName',
+                  mainLabel: 'Last Name',
+                  required: true
+                } %}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 form-group">
+                {% include '_includes/groups/forms/input-and-label.html.twig' with {
+                  type: 'email',
+                  id: 'regEmail',
+                  mainLabel: 'Email Address',
+                  required: true
+                } %}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group has-feedback">
+                  {% include components.groups.forms.inputAndLabel with {
+                    id: 'regPassword',
+                    mainLabel: 'Password',
+                    type: 'password',
+                    required: true,
+                    haslabelErrorIcon: true,
+                    hasInlineErrorIcon: null,
+                    hasAbsoluteErrorIcon: null,
+                    theValue: 'mypassword'
+                  } %}
+                  {# {% include '_includes/elements/forms/label.html.twig' with {
+                    id: 'regPassword',
+                    mainLabel: 'Password'
+                  } %}
+                  {% include '_includes/elements/forms/input.html.twig' with {
+                    type: 'password',
+                    id: 'regPassword',
+                    required: true
+                  } %} #}
+                  <a class="lt-icon lt-eye lt-medium form-control-feedback" toggle-password-visibility="regPassword"></a>
+                </div>
+                {% include "_includes/elements/forms/input-password-requirements.html.twig" with {
+                  classes: ''
+                } %}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 form-group">
+                {% include '_includes/elements/forms/checkbox.html.twig' with {
+                  id: 'regAgreement',
+                  wrapLabel: true,
+                  required: true,
+                  theLabel: 'By registering, you agree to Avon’s <a href="#">Privacy Statement</a> and <a href="#">Conditions of Use</a>, and you are over 18 years old.'
+                } %}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <a href="javascript:void(0)" class="btn btn-primary d-block" disabled="disabled">Register</a>
+              </div>
+            </div>
+
+          </form>
+          <!-- END - FORM -->
+          
+          {% include "_includes/elements/misc/divider-with-or.html.twig" %}
+          {% include "_includes/modules/login/login-via-social.html.twig" %}
+
+          <hr class="thick">
+
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p>Already have an account? <a href="#">Log in</a></p>
+            </div>
+          </div>
+
+        {% endblock %}
+
+      {% endembed %}
+
+    </section>
+
+  {% endblock %}
+
+  <!-- START - MODAL - GENERIC -->
+  {# {% include "_includes/modules/modals/modal-blank-generic.html.twig" %} #}
+  <!-- END - MODAL - QUICKPAY ENROLLMENT -->
+
+{% endblock %}
