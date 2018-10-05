@@ -5,14 +5,16 @@
   {% include '_includes/groups/navigation/simple-header/header-utility-nav-2-simple.html.twig' %}
 
 </nav>
-<section class="navbar navbar-default d-flex align-items-center">
+<section class="navbar navbar--simple-nav navbar-default d-flex flex-fill align-items-center">
+  <span class="hidden-xs">&nbsp;</span>
   <!-- logo -->
-  <div class="primary-nav__logo">
+  <div class="primary-nav__logo d-flex justify-content-center">
     {% include '_includes/elements/images/logo-your-avon.html.twig' %}
   </div>
-  <div class="navbar-links">
-    <a href="#">Log In</a>
-    <a href="#">Get Started</a>
+  <!-- links -->
+  <div class="navbar-links d-flex justify-content-end"> 
+    <a href="#" class="btn btn-link">Log In</a>
+    <a href="#" class="btn btn-default btn-primary hidden-xs">Get Started</a>
   </div>
 </section>
 <!-- END - SIMPLE HEADER CONTAINER -->
