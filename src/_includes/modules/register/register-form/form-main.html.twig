@@ -1,0 +1,42 @@
+<h3 class="text-center text-uppercase">Become a Representative</h3>
+
+<!-- START - INLINE LEVEL ALERT WITH MAX TEXT -->
+{% include "_includes/groups/alerts/alert-level-template.html.twig" with {
+alertIcon: 'lt-info',
+alertHeadline: 'An account with that email address exists.',
+alertBody: '
+<ul class="alert-list">
+  <li>Here is a <a href="#" class="alert-link">Link</a>.</li>
+  <li>' ~ fpo.sentence ~ '</li>
+</ul>
+<p>Please enter a different email address or access your account from the <a href="#" class="alert-link">Login page</a>.</p>',
+alertBtnText: null,
+alertClasses: 'alert-danger',
+alertLevel: 'content',
+alertDismissable: false,
+alertId: null
+} %}
+<!-- END - INLINE LEVEL ALERT WITH MAX TEXT -->
+
+<hr class="thick">
+
+<!-- START - MENTOR CARD -->
+{% include '_includes/modules/register/register-form/mentor-card.html.twig' %}
+<!-- END - MENTOR CARD -->
+
+<!-- START - FORM -->
+{% include '_includes/modules/register/register-form/register-form.html.twig' %}
+<!-- END - FORM -->
+
+<!-- START - SOCIAL LOGINS -->
+{% include "_includes/elements/misc/divider-with-or.html.twig" %}
+{% include "_includes/modules/login/login-via-social.html.twig" %}
+<!-- END - SOCIAL LOGINS -->
+
+<hr class="thick">
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <p>Already have an account? <a href="#">Log in</a></p>
+  </div>
+</div>

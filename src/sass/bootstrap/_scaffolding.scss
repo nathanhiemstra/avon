@@ -152,6 +152,30 @@ img {
       max-width: 50%;
     }
   }
+
+  // modifier for a page promo image which sits to one
+  // side on desktop and above content on mobile
+  // also, full page width on mobile
+  &--promo {
+    position: relative;
+    object-fit: cover;
+    max-height: 200px;
+    max-width: unset;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin: -$spacing-5 -50vw $spacing-5 -50vw;
+
+    // desktop
+    @media (min-width: $screen-md-min) {
+      object-fit: unset;
+      max-height: 100%;
+      width: 100%;
+      left: 0;
+      right: 0;
+      margin: 0 0 0 0;
+    }
+  }
 }
 
 // Rounded corners
