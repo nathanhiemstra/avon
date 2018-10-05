@@ -1,7 +1,7 @@
 {# styleguide/index.html.twig #}
 {% set title = "Styleguide Modules" %}
 {% set slug = "styleguide-modules-global" %}
-{% extends "styleguide/_layouts/styleguide-main.html.twig" %}
+{% extends "styleguide/_layouts/styleguide-full-width.html.twig" %}
 
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -33,7 +33,20 @@
     title:        "Global Header",
     slug:         "global-header",
     description:  "The global header is composed of the two utility navs shown above and the primary navigation list",
-    path:         "_includes/groups/navigation/global-header-nav/header-nav-container.html.twig"
+    path:         "_includes/modules/global/header.html.twig"
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# GLOBAL - SIMPLE HEADER #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Simple Header",
+    slug:         "simple-header",
+    description:  "The simple header is stripped down primarily for unauthenticated users",
+    path:         "_includes/modules/global/header-simple.html.twig"
   }%}
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
