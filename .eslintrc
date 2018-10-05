@@ -1,0 +1,18 @@
+{
+  "extends": ["prettier"],
+  "globals": {
+
+    "window": true,
+    "document": true,
+    "console": true,
+    "location": true,
+    "setTimeout": true,
+    "confirm": true,
+    "sessionStorage": true,
+
+    "angular": true,
+    "$": true,
+    "jQuery": true,
+    "_": true
+  }
+}
