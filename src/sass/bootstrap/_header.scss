@@ -10,11 +10,54 @@ $navbar-header-mobile-height: 64px;
     border: none;
   }
 
+  &--simple {
+    .navbar--primary-nav {
+      padding: 0;
+    }
+    .primary-nav__logo {
+      max-width: 200px;
+      img {
+        width: 100%;
+      }
+    }
+    .navbar-links {
+      margin-left: auto;
+      padding-right: 10px;
+      a {
+        text-transform: uppercase;
+        padding: $spacing-3;
+        &:first-child {
+          color: $black;
+        }
+        &:last-child {
+          background: $text-color;
+          color: $white;
+        }
+      }
+    }
+  }
+
   // desktop
   @media (min-width: $breakpoint-header-min) {
     .dropdown-menu,
     #mystorepopover {
       border: 1px solid $gray;
+    }
+    &--simple {
+      .navbar--primary-nav {
+        padding: 2rem;
+      }
+      .primary-nav__logo {
+        margin-left: auto;
+      }
+      .navbar-default {
+        padding: 2.5rem 2rem;
+      }
+      .navbar-links {
+        a {
+          padding: $spacing-3 $spacing-5;
+        }
+      }
     }
   }
 }
