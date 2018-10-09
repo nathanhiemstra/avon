@@ -6,119 +6,127 @@
 // ==========================================================================
 
 @media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; // Black prints faster: h5bp.com/s
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: $black !important;
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+    // Black prints faster: h5bp.com/s
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
 
-    // Don't show links that are fragment identifiers,
-    // or use the `javascript:` pseudo protocol
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+  // Don't show links that are fragment identifiers,
+  // or use the `javascript:` pseudo protocol
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
 
-    thead {
-        display: table-header-group; // h5bp.com/t
-    }
+  pre,
+  blockquote {
+    border: 1px solid $gray-medium;
+    page-break-inside: avoid;
+  }
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+  thead {
+    display: table-header-group;
 
-    img {
-        max-width: 100% !important;
-    }
+    // h5bp.com/t
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+  }
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
 
-    // Bootstrap specific changes start
+  img {
+    max-width: 100% !important;
+  }
 
-    // Bootstrap components
-    .navbar {
-        display: none;
-    }
-    .btn,
-    .dropup > .btn {
-        > .caret {
-            border-top-color: #000 !important;
-        }
-    }
-    .label {
-        border: 1px solid #000;
-    }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-    .table {
-        border-collapse: collapse !important;
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 
-        td,
-        th {
-            background-color: #fff !important;
-        }
+  // Bootstrap specific changes start
+
+  // Bootstrap components
+  .navbar {
+    display: none;
+  }
+
+  .btn,
+  .dropup > .btn {
+    > .caret {
+      border-top-color: $black !important;
     }
-    .table-bordered {
-        th,
-        td {
-            border: 1px solid #ddd !important;
-        }
+  }
+
+  .label {
+    border: 1px solid $black;
+  }
+
+  .table {
+    border-collapse: collapse !important;
+
+    td,
+    th {
+      background-color: $white !important;
     }
+  }
 
-    // Bootstrap specific changes end
-
-    // Avon specific print styles
-    .avon-header,
-    .alert-level-header,
-    .alert-campaign-timer,
-    .global-header,
-    .footer,
-    .top-content,
-    .below-content,
-    .product-list-header--filters,
-    .back-link,
-    a[data-toggle],
-    .print-link,
-    .expand-all,
-    .hide-all,
-    .ng-hide {
-      display: none !important;
+  .table-bordered {
+    th,
+    td {
+      border: 1px solid $border-color !important;
     }
+  }
 
-    // import page print styles
-    @import "print-order-details";
-    @import "print-direct-delivery-report";
-    @import "print-account-balance";
+  // Bootstrap specific changes end
+
+  // Avon specific print styles
+  .avon-header,
+  .alert-level-header,
+  .alert-campaign-timer,
+  .global-header,
+  .footer,
+  .top-content,
+  .below-content,
+  .product-list-header--filters,
+  .back-link,
+  a[data-toggle],
+  .print-link,
+  .expand-all,
+  .hide-all,
+  .ng-hide {
+    display: none !important;
+  }
+
+  // import page print styles
+  @import "print-order-details";
+  @import "print-direct-delivery-report";
+  @import "print-account-balance";
 }

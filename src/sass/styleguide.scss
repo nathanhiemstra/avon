@@ -820,7 +820,7 @@ h1[id] {
 // }
 
 // .color-swatches .color-brand-primary {
-//     background-color: #ED008C;
+//     background-color: $brand-primary;
 // }
 
 // .color-swatches .color-brand-success {
@@ -1677,7 +1677,7 @@ body {
 
 .bs-masthead,
 .bs-header {
-  background-color: #ed008c;
+  background-color: $brand-primary;
   background-image: none;
   padding-top: 30px;
   padding-bottom: 28px;
@@ -1699,7 +1699,7 @@ body {
 .bs-docs-nav .navbar-nav > li > a:hover,
 .bs-docs-nav .navbar-nav > .active > a,
 .bs-docs-nav .navbar-nav > .active > a:hover {
-  color: #ed008c;
+  color: $brand-primary;
   background-color: transparent;
 }
 
