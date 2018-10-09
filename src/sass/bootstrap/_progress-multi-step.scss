@@ -1,5 +1,5 @@
-[data-multi-step] {
-  ul {
+[multi-step-progress] {
+  ul.steps {
     margin-bottom: 30px;
     padding-left: 0;
     overflow: hidden;
@@ -52,6 +52,24 @@
           color: $progress-bar-color;
         }
       }
+    }
+  }
+
+  ul.content {
+    list-style: none;
+    padding: $spacing-4;
+    text-align: center;
+
+    li {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    p {
+      text-align: left;
     }
   }
 }

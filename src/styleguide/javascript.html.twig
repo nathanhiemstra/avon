@@ -1830,20 +1830,38 @@ $('#myPopover').on('hidden.bs.popover', function () {
   <p>Navigation pattern for step-through processes such as registration.</p>
 
   <div class="bs-example">
-    <div data-multi-step="">
-      <ul class="pt-4">
-        <li class="active" data-icon="&#xe90a">Verify</li>
-        <li data-icon="&#xe926">Upload</li>
-        <li data-icon="&#xe91a">Security</li>
+    <div multi-step-progress="">
+
+      <ul class="steps pt-4">
+        <li data-target-step="1" data-icon="&#xe90a">Verify</li>
+        <li data-target-step="2" data-icon="&#xe926">Upload</li>
+        <li data-target-step="3" data-icon="&#xe91a">Security</li>
       </ul>
+
+      <ul class="content pb-4">
+        <li class="active" data-step="1">
+          <h1>Step 1</h1>
+          <p>{{ fpo.paragraph }}</p>
+        </li>
+        <li data-step="2">
+          <h1>Step 2</h1>
+          <p>{{ fpo.paragraph }}</p>
+        </li>
+        <li data-step="3">
+          <h1>Step 3</h1>
+          <p>{{ fpo.paragraph }}</p>
+        </li>
+      </ul>
+
       <div class="btn-group btn-group-50-50 clearfix">
         <div class="btn-group my-4">
-          <button type="button" class="btn btn-default">Back</button>
+          <button type="button" class="btn btn-default" data-step-back>Back</button>
         </div>
         <div class="btn-group my-4">
-          <button type="button" class="btn btn-primary">Continue</button>
+          <button type="button" class="btn btn-primary" data-step-forward>Continue</button>
         </div>
       </div>
+
     </div>
   </div>
 

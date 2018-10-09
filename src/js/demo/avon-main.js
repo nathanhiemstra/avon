@@ -332,6 +332,11 @@ $( document ).ready( function () {
     });
   }
 
+  // Progress Steps
+  $('[multi-step-progress]').progressSteps({
+    currentStep: 1
+  });
+
 
   // INIT OTHER DEMO SCRIPTS
   if( typeof BackToTop !== 'undefined' ) BackToTop.init();
