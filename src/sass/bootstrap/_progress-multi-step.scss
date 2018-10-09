@@ -1,0 +1,57 @@
+[data-multi-step] {
+  ul {
+    margin-bottom: 30px;
+    padding-left: 0;
+    overflow: hidden;
+    text-align: center;
+
+    li {
+      list-style-type: none;
+      color: $gray;
+      font-size: 9px;
+      width: calc(100%/3);
+      float: left;
+      position: relative;
+      font: 500 13px/1 $font-family-sans-serif;
+
+      &:before {
+        font: normal normal normal 30px/50px 'lt2';
+        content: attr(data-icon);
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        display: block;
+        background: $progress-bg;
+        border-radius: 50%;
+        margin: 0 auto 10px auto;
+      }
+
+      &:after {
+        content: '';
+        width: 100%;
+        height: 10px;
+        background: $progress-bg;
+        position: absolute;
+        left: -50%;
+        top: 21px;
+        z-index: -1;
+      }
+
+      &:last-child {
+        &:after {
+          width: 150%;
+        }
+      }
+
+      &.active {
+        color: $progress-bar-bg;
+
+        &:before,
+        &:after {
+          background: $progress-bar-bg;
+          color: $progress-bar-color;
+        }
+      }
+    }
+  }
+}
