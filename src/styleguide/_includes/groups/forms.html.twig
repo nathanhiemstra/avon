@@ -34,7 +34,7 @@
     </form>
   </div><!-- /example -->
 
-  
+
   {{ highlightMarkup }}
   <form role="form">
     <div class="form-group">
@@ -98,7 +98,7 @@
     </form>
   </div><!-- /example -->
 
-  
+
   {{ highlightMarkup }}
   <form class="form-inline" role="form">
     <div class="form-group">
@@ -157,7 +157,7 @@
     </form>
   </div><!-- /.bs-example -->
 
-  
+
   {{ highlightMarkup }}
   <form class="form-horizontal" role="form">
     <div class="form-group">
@@ -189,6 +189,48 @@
   </form>
   {{ endhighlight }}
 
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# Input and Label #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+  <h2 id="input-and-label">Input and Label</h2>
+  <p>Include for an input and label with an optional label addon which will render any provided markup aligned right.</p>
+  <div class="bs-example">
+    <form role="form">
+      <div class="form-group">
+        {% include components.groups.forms.inputAndLabel with {
+          id: 'myID',
+          mainLabel: 'Password',
+          labelAddon: '<a class="" href="#">Forgot?</a>',
+          type: 'password',
+          theValue: 'Password123'
+        } %}
+      </div>
+    </form>
+  </div><!-- /example -->
+
+  {{ highlightMarkup }}
+    <form role="form">
+      <div class="form-group">
+        <label class="control-label" for="myID">Password</label>
+        <span class="control-label-addon"><a href="#">Forgot?</a></span>
+        <input type="password" class="form-control" id="myID" value="Password123">
+      </div>
+    </form>
+  {{ endhighlight }}
+
+  <pre class="language-markup code-toolbar">
+    <code class="language-twig">
+      &#123;% include components.groups.forms.inputAndLabel with {
+        id: 'myID',
+        mainLabel: 'Password',
+        labelAddon: '<a href="#">Forgot?</a>',
+        type: 'password',
+        theValue: 'Password123'
+      } %}
+    </code>
+  </pre>
+
 
 
 
@@ -198,7 +240,7 @@
   <h2 id="forms-checkboxes-radios">Checkboxes and radios</h2>
   <p>Checkboxes are for selecting one or several options in a list while radios are for selecting one option from many.</p>
 
-  
+
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# Default (stacked) #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -223,7 +265,7 @@
     </form>
   </div><!-- /.bs-example -->
 
-  
+
   <pre class="language-markup code-toolbar"><code class="language-twig">
   &#123;% include components.groups.forms.checkboxAndLabel with {theValue: 'Option1', label: "Option one is this and that&mdash;be sure to include why it's great"} %}
   {{ endhighlight }}
@@ -266,7 +308,7 @@
     </form>
   </div><!-- /.bs-example -->
 
-  
+
   {{ highlightMarkup }}
   <label class="checkbox-inline">
     <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
@@ -303,7 +345,7 @@
     </form>
   </div><!-- /.bs-example -->
 
-  
+
   {{ highlightMarkup }}
   <form class="form-horizontal" role="form">
     <div class="form-group">
@@ -361,7 +403,7 @@
     </form>
   </div><!-- /.bs-example -->
 
-  
+
   {{ highlightMarkup }}
   <form role="form">
     <fieldset disabled>
@@ -408,7 +450,7 @@
     </form>
   </div><!-- /.bs-example -->
 
-  
+
   {{ highlightMarkup }}
   <div class="row">
     <div class="col-xs-2">
@@ -437,7 +479,7 @@
     </form>
   </div><!-- /.bs-example -->
 
-  
+
   {{ highlightMarkup }}
   <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
   {{ endhighlight }}
