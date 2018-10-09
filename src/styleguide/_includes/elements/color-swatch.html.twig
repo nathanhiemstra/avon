@@ -1,0 +1,31 @@
+
+
+
+
+{% if reverse %}
+  {% set classReverse = ' reverse ' %}
+{% endif %}
+
+{% if not is_root_color %}
+  {% set classSecondary = ' color-swatch-secondary ' %}
+{% endif %}
+
+
+
+
+
+  <div class="color-swatch {{ classSecondary }} {{ classReverse }}" style="background-color: #{{ color_hex }}">
+    <strong>${{ color_names[0] }}</strong><br>
+
+    {# List additional color names #}
+    {% for color_name in color_names %}
+      {# Skip the first color name (that's listed above) #}
+      {% if not loop.first  %}
+        ${{ color_name }}<br>
+      {% endif %}
+    {% endfor %}
+
+    {# List hex color #}
+    #{{ color_hex }}
+  </div>
+
