@@ -1097,8 +1097,14 @@ input.form-control {
     display: flex;
     align-items: center;
   }
-  // .bootstrap-select {
-  //   width: auto;
-  //   min-width: 150px;
-  // }
+  .circ {
+    min-width: 24px;
+  }
+
+  &.radio-select-combo-lg {
+    .form-control,
+    label {
+      height: 60px;
+    }
+  }
 }

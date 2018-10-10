@@ -331,7 +331,7 @@
     <form role="form">
       <div class="form-group">
         {% set selectPicker %}
-          <select class="form-control form-inline selectpicker" data-size="5" data-style="btn-select btn-lg" data-icon-base="lt-icon">
+          <select class="form-control selectpicker" data-size="5" data-style="btn-select btn-lg" data-icon-base="lt-icon">
             <option selected="true" disabled="true">Select a credit card</option>
             <option data-content="<img src='../images/icons/payment-visa.svg'> Credit Card 1"></option>
             <option data-content="<img src='../images/icons/payment-mastercard.svg'> Credit Card 2"></option>
@@ -351,6 +351,7 @@
           name: 'myName',
           theLabel: selectPicker,
           checked: false,
+          classes: 'radio-select-combo-lg'
         } %}
         {% include '_includes/elements/forms/radio.html.twig' with {
           id: 'myId',
