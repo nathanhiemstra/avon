@@ -1902,7 +1902,6 @@ $('#myPopover').on('hidden.bs.popover', function () {
   {{ endhighlight }}
 
   <h2 id="progress-steps-usage">Usage</h2>
-  <p>The outer container should have an attribute <code>multi-step-progress</code>. Contained inside should be two unordered lists with corresponding items. One with a class of <code>steps</code> and one with a class of <code>content</code>.</p>
 
   {{ highlightJavascript }}
     $('[multi-step-progress]').progressSteps({
@@ -1910,11 +1909,15 @@ $('#myPopover').on('hidden.bs.popover', function () {
     });
   {{ endhighlight }}
 
+  <p>The outer container should have an attribute <code>multi-step-progress</code>. Contained inside should be two unordered lists with corresponding items. One with a class of <code>steps</code> and one with a class of <code>content</code>. Finally, there should also be two buttons in the container with attributes: <code>data-step-forward</code> and <code>data-step-back</code>.</p>
+
   <h4>Attributes</h4>
   <ul>
     <li><code>data-target-step</code> list item attribute in <code>.steps</code> which corresponds to <code>data-step</code> in <code>.content</code></li>
     <li><code>data-icon</code> Icon to display on <code>.steps</code> list items. NOTE: this value should be an HTML entity based on unicode for the desired icon.</li>
     <li><code>data-step</code> list item attribute in <code>.content</code> which corresponds to <code>data-target-step</code> in <code>.steps</code></li>
+    <li><code>data-step-forward</code> Add this to the forward button</li>
+    <li><code>data-step-back</code> Add this to the back button</li>
   </ul>
   <h4>Options</h4>
   <ul>
