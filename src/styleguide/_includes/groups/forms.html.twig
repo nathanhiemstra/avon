@@ -321,6 +321,107 @@
   </label>
   {{ endhighlight }}
 
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# Radio and Select Picker #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+  <h2 id="input-and-label">Radio and Select Picker</h2>
+  <p>Include for a radio with a select picker include as the 'value'</p>
+  <div class="bs-example">
+    <form role="form">
+      <div class="form-group">
+        {% set selectPicker %}
+          <select class="form-control form-inline selectpicker" data-size="5" data-style="btn-select" data-icon-base="lt-icon">
+            <option selected="true" disabled="true">Select...</option>
+            <option data-content="<img src='../images/icons/payment-visa.svg'> Credit Card 1"></option>
+            <option data-content="<img src='../images/icons/payment-mastercard.svg'> Credit Card 2"></option>
+            <option data-content="<img src='../images/icons/payment-visa.svg'> Credit Card 3"></option>
+            <option data-content="<img src='../images/icons/payment-visa.svg'> Credit Card 4"></option>
+          </select>
+        {% endset %}
+        {% include '_includes/elements/forms/radio.html.twig' with {
+          id: 'myId',
+          name: 'myName',
+          theLabel: 'Option One',
+          checked: true
+        } %}
+        {% include '_includes/groups/forms/radio-and-select.html.twig' with {
+          id: 'myId',
+          name: 'myName',
+          theLabel: selectPicker,
+          checked: false
+        } %}
+        {% include '_includes/elements/forms/radio.html.twig' with {
+          id: 'myId',
+          name: 'myName',
+          theLabel: 'Option Three',
+          checked: false
+        } %}
+      </div>
+    </form>
+  </div><!-- /example -->
+
+  <pre class="language-markup code-toolbar">
+    <code class="language-twig">
+      &#123;% set selectPicker %}
+      {{ highlightMarkup }}
+      <select class="form-control form-inline selectpicker" data-size="5" data-style="btn-select" data-icon-base="lt-icon">
+        <option selected="true" disabled="true">Select...</option>
+        <option data-content="<img src='../images/icons/payment-visa.svg'> Credit Card 1"></option>
+        <option data-content="<img src='../images/icons/payment-mastercard.svg'> Credit Card 2"></option>
+        <option data-content="<img src='../images/icons/payment-visa.svg'> Credit Card 3"></option>
+        <option data-content="<img src='../images/icons/payment-visa.svg'> Credit Card 4"></option>
+      </select>
+      {{ endhighlight }}
+      &#123;% endset %}
+
+      &#123;% include '_includes/groups/forms/radio-and-select.html.twig' with {
+        id: 'myId',
+        name: 'myName',
+        theLabel: selectPicker,
+        checked: false
+      } %}
+    </code>
+  </pre>
+
+  {{ highlightMarkup }}
+  <form role="form">
+    <div class="form-group">
+
+      <div class="radio">
+        <label class="control-label">
+          <input type="radio" name="myName" id="myId" checked="">
+          <span class="circ mr-4"></span>
+          Option One
+        </label>
+      </div>
+
+      <div class="radio radio-select-combo">
+        <label class="control-label">
+          <input type="radio" name="myName" id="myId" false="">
+          <span class="circ mr-4"></span>
+          <select class="form-control form-inline selectpicker" data-size="5" data-style="btn-select" data-icon-base="lt-icon">
+            <option selected="true" disabled="true">Select...</option>
+            <option data-content="<img src='../images/icons/payment-visa.svg'> Credit Card 1"></option>
+            <option data-content="<img src='../images/icons/payment-mastercard.svg'> Credit Card 2"></option>
+            <option data-content="<img src='../images/icons/payment-visa.svg'> Credit Card 3"></option>
+            <option data-content="<img src='../images/icons/payment-visa.svg'> Credit Card 4"></option>
+          </select>
+        </label>
+      </div>
+
+      <div class="radio">
+        <label class="control-label">
+          <input type="radio" name="myName" id="myId" false="">
+          <span class="circ mr-4"></span>
+          Option Three
+        </label>
+      </div>
+
+    </div>
+  </form>
+  {{ endhighlight }}
+
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# Static control #}
