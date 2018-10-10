@@ -1,0 +1,44 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="container container--page">
+
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+
+        <h1 class="mb-5">Pay Avon - Stored Credit Cards (Modals)</h1>
+
+        <p><a data-toggle="modal" data-target="#checkout-edit-stored-card-modal">Create modal: Edit card</a></p>
+
+        <p><a data-toggle="modal" data-target="#checkout-review-payment-modal">Review Payment</a></p>
+
+        <!-- START - MODAL - EDIT CARD -->
+        {% include "_includes/modules/checkout/modals/checkout-edit-card-modal.html.twig" %}
+        <!-- END - MODAL - EDIT CARD -->
+
+        <!-- START - MODAL - REVIEW PAYMENT -->
+        {% include "_includes/modules/checkout/modals/checkout-review-payment-modal.html.twig" %}
+        <!-- END - MODAL - REVIEW PAYMENT -->
+
+        <!-- START - MODAL - PAYMENT CONFIRMATION-->
+        {% include "_includes/modules/checkout/modals/checkout-payment-confirmation-modal.html.twig" %}
+        <!-- END - MODAL - PAYMENT CONFIRMATION-->
+
+
+      {% endblock %}
+
+
+  </div>
+
+{% endblock %}
+
+
+<!-- START - MODAL - QUICKPAY ENROLLMENT -->
