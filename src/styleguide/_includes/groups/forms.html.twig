@@ -327,12 +327,12 @@
 
   <h2 id="input-and-label">Radio and Select Picker</h2>
   <p>Include for a radio with a select picker include as the 'value'</p>
-  <div class="bs-example">
+  <div class="bs-example p-5">
     <form role="form">
       <div class="form-group">
         {% set selectPicker %}
-          <select class="form-control form-inline selectpicker" data-size="5" data-style="btn-select" data-icon-base="lt-icon">
-            <option selected="true" disabled="true">Select...</option>
+          <select class="form-control form-inline selectpicker" data-size="5" data-style="btn-select btn-lg" data-icon-base="lt-icon">
+            <option selected="true" disabled="true">Select a credit card</option>
             <option data-content="<img src='../images/icons/payment-visa.svg'> Credit Card 1"></option>
             <option data-content="<img src='../images/icons/payment-mastercard.svg'> Credit Card 2"></option>
             <option data-content="<img src='../images/icons/payment-visa.svg'> Credit Card 3"></option>
@@ -343,19 +343,21 @@
           id: 'myId',
           name: 'myName',
           theLabel: 'Option One',
-          checked: true
+          checked: true,
+          classes: 'my-5'
         } %}
         {% include '_includes/groups/forms/radio-and-select.html.twig' with {
           id: 'myId',
           name: 'myName',
           theLabel: selectPicker,
-          checked: false
+          checked: false,
         } %}
         {% include '_includes/elements/forms/radio.html.twig' with {
           id: 'myId',
           name: 'myName',
           theLabel: 'Option Three',
-          checked: false
+          checked: false,
+          classes: 'my-5'
         } %}
       </div>
     </form>

@@ -72,7 +72,7 @@ a.btn {
     pointer-events: none;
 
     // Future-proof disabling of clicks on `<a>` elements
- 
+
   }
 }
 
@@ -196,7 +196,7 @@ a.btn {
     line-height: 0;
 
     // prevent larger icons increasing button height
- 
+
   }
 
   &:focus,
@@ -267,7 +267,7 @@ a.btn {
     line-height: 0;
 
     // prevent larger icons increasing button height
- 
+
   }
 
   &:focus,
@@ -359,7 +359,7 @@ a.btn {
     line-height: 0;
 
     // prevent larger icons increasing button height
- 
+
   }
 
   &:focus,
@@ -464,6 +464,21 @@ a.btn {
     &:hover {
       background-color: $btn-disabled-bg;
       border-color: $btn-disabled-bg;
+    }
+  }
+
+  &.btn-lg {
+    height: auto;
+    padding: $btn-padding-large-vertical $btn-padding-base-horizontal;
+
+    .caret {
+      border-top: $caret-width-base dashed;
+      border-top: $caret-width-base solid $brand-primary;
+      // IE8
+      border-right: $caret-width-base solid transparent;
+      border-left: $caret-width-base solid transparent;
+
+      right: $btn-padding-base-horizontal;
     }
   }
 }
