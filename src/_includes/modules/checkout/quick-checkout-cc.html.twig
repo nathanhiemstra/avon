@@ -8,8 +8,7 @@
 
     <!-- START - HEADER -->
     <div class="clearfix mb-4">
-      <h6 class="pull-left m-0 mt-2">Pay with credit card</h6>
-      <a class="pull-right underline" href="#">Cancel</a>
+      <h6 class="pull-left m-0 mt-2">Enter credit card details</h6>
     </div>
     <!-- END - HEADER -->
 
@@ -159,6 +158,18 @@
         </div>
       </div>
       <!-- END - BILLING ADDRESS FORM FIELDS -->
+
+      <div class="pb-4">
+        {% include "_includes/elements/forms/checkbox.html.twig" with {
+          checked: true,
+          theLabel: 'Save credit card information to my account',
+          helperText: 'Donec id elit non mi porta gravida et eget metus. Nulla vitae elit libero, a phareta augue verbose.',
+          emphasize: true
+        } %} 
+      </div>
+      <!-- START - Cancel Button -->
+      <a href="javascript:void(0)" class="btn btn-default" href="#">Cancel</a>
+      <!-- START - Cancel Button -->
 
       <!-- START - Continue Button -->
       <a href="javascript:void(0)" class="btn btn-primary">{{ buttonText }}</a>
