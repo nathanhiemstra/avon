@@ -1,0 +1,88 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'checkout-review-payment-modal' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+<button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+  <span class="sr-only">Close modal</span>
+  <span class="lt-icon lt-close lt-large py-1"></span>
+</button>
+<h6 class="modal-title">Review Payment</h6>
+
+{% endblock %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+<h4 class="px-3 mb-5">Please Review your payment information</h4>
+
+<h5 class="text-uppercase px-3">Credit card Information</h5>
+<table class="table table-no-borders table-fixed">
+  <tr>
+    <td class="font-weight-bold text-uppercase">Card type</td>
+    <td>Mastercard</td>
+  </tr>
+  <tr>
+    <td class="font-weight-bold text-uppercase">Name on Card</td>
+    <td>Tisha Pennington</td>
+  </tr>
+  <tr>
+    <td class="font-weight-bold text-uppercase">Card number</td>
+    <td>**** **** **** 5678</td>
+  </tr>
+</table>
+<hr class="mx-3">
+<h5 class="text-uppercase px-3">Billing Address</h5>
+<table class="table table-no-borders table-fixed">
+  <tr>
+    <td class="font-weight-bold text-uppercase">Address line 1</td>
+    <td>9072 Rialto Street</td>
+  </tr>
+  <tr>
+    <td class="font-weight-bold text-uppercase">Address line 2</td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td class="font-weight-bold text-uppercase">City</td>
+    <td>Naples</td>
+  </tr>
+  <tr>
+    <td class="font-weight-bold text-uppercase">State</td>
+    <td>FL</td>
+  </tr>
+  <tr>
+    <td class="font-weight-bold text-uppercase">ZIP</td>
+    <td>80965</td>
+  </tr>
+</table>
+<hr class="mx-3">
+<table class="table table-no-borders table-fixed">
+  <tr>
+    <td class="font-weight-bold text-uppercase">Payment Amount</td>
+    <td>$25.00</td>
+  </tr>
+</table>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+<div class="row">
+  <div class="col-xs-6 my-2">
+    <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Go Back</button>
+  </div>
+  <div class="col-xs-6 my-2">
+    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#checkout-payment-confirmation-modal">Submit</button>
+  </div>
+</div>
+
+{% endblock %}

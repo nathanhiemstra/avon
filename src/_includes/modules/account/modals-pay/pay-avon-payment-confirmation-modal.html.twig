@@ -1,0 +1,61 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'checkout-payment-confirmation-modal' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+<button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+  <span class="sr-only">Close modal</span>
+  <span class="lt-icon lt-close lt-large py-1"></span>
+</button>
+<h6 class="modal-title">payment Confirmation</h6>
+
+{% endblock %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+<h4 class="text-center px-3">Than you for your payment!</h4>
+<p class="text-center my-5">{{fpo.paragraph}}</p>
+<div class="reverse-bg px-5">
+  <table class="table table-no-borders table-fixed my-3">
+    <tr>
+      <td class="font-weight-bold text-uppercase">Account Number</td>
+      <td>248975632</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">Date</td>
+      <td>September 24, 2018 at 12:42&nbsp;PM Estern Time</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">Transaction ID</td>
+      <td>xyz872</td>
+    </tr>
+    <tr>
+      <td class="font-weight-bold text-uppercase">Payment Amount</td>
+      <td>$25.00</td>
+    </tr>
+  </table>
+</div>
+<p class="text-center"><a href="#" class="underline">Print this page</a></p>
+<p class="text-center my-5">{{fpo.paragraph}}</p>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-4 my-2">
+    <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Ok</button>
+  </div>
+</div>
+
+{% endblock %}
