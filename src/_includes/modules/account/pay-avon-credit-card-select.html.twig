@@ -42,7 +42,7 @@ dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin.in"'
   <option data-content="{{ opt2 }}"></option>
   <option data-content="{{ opt3 }}"></option>
 </select>
-<div class="select-picker-addon"><a class="underline" href="#">Edit card</a></div>
+<div class="select-picker-addon"><a class="underline" data-toggle="modal" data-target="#pay-avon-edit-stored-card-modal">Edit card</a></div>
 {% endset %}
 
 {% include '_includes/groups/forms/radio-and-select.html.twig' with {

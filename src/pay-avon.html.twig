@@ -143,20 +143,20 @@ html: '<div class="reverse-bg py-3">
       <!-- Developer note: The following demonstrates three "QUICKPAY STATES" for the QuickPAY radio button.-->
 
       <!-- START - QUICKPAY STATE - ENROLLED -->
-      <div class="form-group mb-0">
+      <div class="form-group mb-5">
         {% include components.elements.forms.radio with {
         name: 'pay-type',
         theValue: 'quick-pay',
         theLabel: 'QuikPAY <small>(You are enrolled. <u><a href="#">Edit</a></u>)</small>',
-        dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
+        dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin, #collapse-cc-details.in"',
         disabled: false,
-        checked: true,
+        checked: false,
         } %}
 
         <!-- START - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
         <!-- Developer note: This gets shown when this radio is selected. It relies on "data-toggle" and "data-target". Demo: aqw3^ -->
         <!-- Developer note: Add class has-error if there is an error. -->
-        <div id="collapse-quickpay-pin" class="form-group panel-collapse in mb-0 ml-5">
+        <div id="collapse-quickpay-pin" class="form-group collapse mb-0 ml-5">
           <div class="ml-3">
             <span>Please enter your 4-digit PIN code:</span>
             <input type="text" class="form-control form-control-inline input-sm mb-3" size="7" maxlength="4"
@@ -203,14 +203,14 @@ html: '<div class="reverse-bg py-3">
       <!-- END - QUICKPAY STATE - ENROLLED -->
 
       <!-- START - QUICKPAY STATE - NOT ENROLLED -->
-      <div class="form-group pt-2">
+      <div class="form-group mb-5">
         <!-- Developer note: This is disabled. -->
         {% include components.elements.forms.radio with {
         name: 'pay-type',
         theValue: 'quick-pay',
         theLabel: '<em>QuikPAY</em> <small class="text-default">You are not enrolled.</small> <button class="btn btn-default btn-sm btn-soft ml-3"
           data-toggle="modal" data-target="#checkout-quickpay-enrollment-modal"><a class="ml-2 mr-2">Enroll now</a></button>',
-        dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
+        dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin.in, #collapse-cc-details.in"',
         disabled: false
         } %}
 
@@ -223,14 +223,14 @@ html: '<div class="reverse-bg py-3">
       <!-- END - QUICKPAY STATE - NOT ENROLLED -->
 
       <!-- START - QUICKPAY STATE - ENROLLMENT IN PROCESS -->
-      <div class="form-group">
+      <div class="form-group mb-5">
         <!-- Developer note: This is disabled. -->
 
         {% include components.elements.forms.radio with {
         name: 'pay-type',
         theValue: 'quick-pay',
         theLabel: 'QuikPAY',
-        dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
+        dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin.in, #collapse-cc-details.in"',
         disabled: false,
         haslabelErrorIcon: false
         } %}
@@ -250,24 +250,10 @@ html: '<div class="reverse-bg py-3">
       <!-- END - PAY TYPE - QUICKPAY -->
 
       <!-- START - PAY TYPE - CREDIT CARD -->
-      <div class="form-group">
-        {% include "_includes/modules/account/pay-avon-credit-card-select.html.twig" %}
-      </div>
-
-      <div class="ml-3">
-        <div class="row">
-          <div class="col-sm-2 col-xs-4 ml-5">
-            <div class="form-group">
-              {% include "_includes/groups/forms/input-and-label.html.twig" with {
-              mainLabel: 'CVV',
-              labelAddon: '<a href="javascript:void(0)" data-toggle="modal" data-target="#shippingModal">
-                <span class="lt-icon lt-tip lt-medium align-middle"></span>
-              </a>',
-              type: 'number'
-              } %}
-            </div>
-          </div>
-        </div>
+      <div class="form-group mb-5">
+        {% include "_includes/modules/account/pay-avon-credit-card-select.html.twig" with {
+        dataAttrs: 'data-toggle="collapse" data-target="#collapse-cc-details, #collapse-quickpay-pin.in"'
+        } %}
       </div>
 
       {# <div class="ml-5">
@@ -277,7 +263,22 @@ html: '<div class="reverse-bg py-3">
       </div> #}
       <!-- END - PAY TYPE - CREDIT CARD -->
 
-      <div class="ml-3">
+      <!-- START - CREDIT CARD DETAILS -->
+      {# <div id="collapse-quickpay-pin" class="form-group panel-collapse in mb-0 ml-5"></div> #}
+      <div id="collapse-cc-details" class="ml-3 collapse">
+        <div class="row">
+          <div class="col-sm-2 col-xs-4 ml-5">
+            <div class="form-group">
+              {% include "_includes/groups/forms/input-and-label.html.twig" with {
+              mainLabel: 'CVV',
+              labelAddon: '<a href="javascript:void(0)" data-toggle="modal" data-target="#generic-modal">
+                <span class="lt-icon lt-tip lt-medium align-middle"></span>
+              </a>',
+              type: 'number'
+              } %}
+            </div>
+          </div>
+        </div>
         <div class="row">
           <div class="col-sm-6 ml-5">
             <div class="form-group">
@@ -359,26 +360,30 @@ html: '<div class="reverse-bg py-3">
               </div>
 
               <div class="col-xs-12 col-sm-3">
-                <label class="control-label" for="pay-avon-cvv">CVV</label>
-                <span class="lt-icon lt-tip lt-medium align-middle"></span>
-                {% include components.elements.forms.input with {
+                {% include "_includes/groups/forms/input-and-label.html.twig" with {
+                mainLabel: 'CVV',
+                labelAddon: '<a href="javascript:void(0)" data-toggle="modal" data-target="#generic-modal">
+                  <span class="lt-icon lt-tip lt-medium align-middle"></span>
+                </a>',
                 type: 'number',
-                id: 'pay-avon-cvv',
-                placeholder: '123',
-                maxlength: 3,
-                onInputJs: 'javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0,
-                this.maxLength);'
+                maxLength: 3
                 } %}
               </div>
 
             </div>
 
+            <!-- START - BILLING ADDRESS -->
             <div class="pt-3">
+
+              {% include "_includes/elements/forms/checkbox.html.twig" with {
+                checked: true,
+                theLabel: 'Billing address is same as Shipping'
+              } %}
+
               <h6 class="mb-4 pt-4">billing Address</h6>
 
               <div class="form-group">
                 <label class="control-label" for="pay-avon-billaddrs">Address</label>
-                <span class="lt-icon lt-tip lt-medium align-middle"></span>
                 {% include components.elements.forms.input with {
                 id: 'pay-avon-billaddrs',
                 placeholder: '1234 Westminster Junction'
@@ -392,7 +397,7 @@ html: '<div class="reverse-bg py-3">
               </div>
 
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group has-error">
                     {% include components.groups.forms.inputAndLabel with {
                     type: 'number',
@@ -409,7 +414,7 @@ html: '<div class="reverse-bg py-3">
                   </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-8">
                   {% include components.groups.forms.inputAndLabel with {
                   id: 'pay-avon-city',
                   mainLabel: 'City',
@@ -423,7 +428,7 @@ html: '<div class="reverse-bg py-3">
               </div>
 
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group has-feedback">
                     <label class="control-label" for="pay-avon-state">State</label>
                     <select id="pay-avon-state" class="form-control selectpicker" data-size="4" data-style="btn-select"
@@ -441,7 +446,7 @@ html: '<div class="reverse-bg py-3">
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                   <!-- <p class="mb-3 small text-muted">Country</p> -->
                   <div class="form-group has-feedback">
                     <label class="control-label" for="pay-avon-country">Country</label>
@@ -465,29 +470,66 @@ html: '<div class="reverse-bg py-3">
                 </div>
               </div>
 
+              {% include "_includes/elements/forms/checkbox.html.twig" with {
+                checked: true,
+                theLabel: 'Save credit card information to my account',
+                helperText: 'Donec id elit non mi porta gravida et eget metus. Nulla vitae elit libero, a phareta augue verbose.',
+                emphasize: true
+              } %}
+
             </div>
+            <!-- END - BILLING ADDRESS -->
+
+            <!-- START - BUTTONS -->
+            <div class="row mb-5">
+              <div class="col-xs-5 mt-4">
+                <a href="javascript:void(0)" class="btn btn-default d-block" data-toggle="collapse" data-target="#collapse-cc-details.in">Cancel</a>
+              </div>
+              <div class="col-xs-5 mt-4">
+                <a href="javascript:void(0)" class="btn btn-primary d-block" data-toggle="modal" data-target="#pay-avon-review-payment-modal">Continue</a>
+              </div>
+            </div>
+            <!-- END - BUTTONS -->
+
           </div>
 
-        </div>
-        <div class="ml-5">
-          <div class="row">
-            <div class="col-sm-4 col-md-3 mt-4">
-              <!-- START - Continue Button -->
-              <a href="javascript:void(0)" class="btn btn-primary d-block" disabled="disabled" data-toggle="modal"
-                data-target="#confirm-payment-details">Continue</a>
-              <!-- END - Continue Button -->
-            </div>
-
-            <div class="col-sm-4 col-md-3 mt-4">
-              <!-- START - Continue Button -->
-              <a href="javascript:void(0)" class="btn btn-primary d-block" data-toggle="modal" data-target="#confirm-payment-details">Continue</a>
-              <!-- END - Continue Button -->
-            </div>
-          </div>
         </div>
 
       </div>
+      <!-- END - CREDIT CARD DETAILS -->
+
+      <!-- START - PAYPAL PAY TYPE-->
+      <div class="form-group mb-5">
+        {% include components.elements.forms.radio with {
+        name: 'pay-type',
+        theValue: 'paypal',
+        theLabel: '<img class="mr-2 mb-1" src="../images/icons/payment-paypal.svg"> PayPal',
+        dataAttrs: 'data-toggle="collapse" data-target="#collapse-cc-details.in, #collapse-quickpay-pin.in"',
+        disabled: false,
+        checked: false,
+        } %}
+      </div>
+      <!-- END - PAYPAL PAY TYPE-->
+
     </div>
+
+    <div class="ml-5">
+      <div class="row">
+        <div class="col-sm-4 col-md-3 mt-4">
+          <!-- START - Continue Button -->
+          <a href="javascript:void(0)" class="btn btn-primary d-block btn-sm" disabled="disabled" data-toggle="modal"
+            data-target="#confirm-payment-details">Continue</a>
+          <!-- END - Continue Button -->
+        </div>
+
+        <div class="col-sm-4 col-md-3 mt-4">
+          <!-- START - Continue Button -->
+          <a href="javascript:void(0)" class="btn btn-primary d-block btn-sm" data-toggle="modal" data-target="#confirm-payment-details">Continue</a>
+          <!-- END - Continue Button -->
+        </div>
+      </div>
+    </div>
+
   </div>
   <!-- END - PAYMENT TYPE SECTION -->
 
@@ -541,5 +583,14 @@ html: '<div class="reverse-bg py-3">
 
 <!-- MODAL - QUICKPAY ENROLLMENT REVIEW -->
 {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-review-modal.html.twig" %}
+
+<!-- MODAL - EDIT CREDIT CARD -->
+{% include "_includes/modules/account/modals-pay/pay-avon-edit-card-modal.html.twig" %}
+
+<!-- MODAL - REVIEW PAYMENT -->
+{% include "_includes/modules/account/modals-pay/pay-avon-review-payment-modal.html.twig" %}
+
+<!-- MODAL - PAYMENT CONFIRMATION -->
+{% include "_includes/modules/account/modals-pay/pay-avon-payment-confirmation-modal.html.twig" %}
 
 {% endblock %}

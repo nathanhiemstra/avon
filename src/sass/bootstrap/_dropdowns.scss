@@ -127,7 +127,7 @@ a, .dropdown {
     white-space: nowrap;
 
     // prevent links from randomly breaking onto new lines
- 
+
   }
 
   // responsive dropdown behaves normally on desktop but is block-level on mobile
@@ -362,4 +362,23 @@ a, .dropdown {
 
   // Useing 400px to be consistent with other autocomplete dropdown on PDP.
   max-height: 400px;
+}
+
+// bootstap select additions / overrides
+.bootstrap-select {
+  $icon-size: 24px;
+
+  .dropdown-menu,
+  .filter-option {
+    img.thumb {
+      width: $icon-size;
+      height: auto;
+      margin-right: $spacing-3;
+    }
+
+    .info {
+      margin-left: calc(#{$icon-size} + #{$spacing-3});
+      line-height: 0.5;
+    }
+  }
 }

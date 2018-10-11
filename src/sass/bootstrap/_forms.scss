@@ -1118,7 +1118,7 @@ input.form-control {
   }
 
   .bootstrap-select {
-    max-width: 396px;
+    max-width: 398px;
   }
 
   // override default plugin style
@@ -1128,6 +1128,7 @@ input.form-control {
 
   .select-picker-addon {
     height: 0;
+    line-height: 2.5;
     flex-basis: 100%;
     display: flex;
     justify-content: flex-end;
@@ -1139,25 +1140,6 @@ input.form-control {
     .form-control,
     label {
       height: 60px;
-    }
-  }
-}
-
-// bootstap select additions
-.bootstrap-select {
-  $icon-size: 24px;
-
-  .dropdown-menu,
-  .filter-option {
-    img.thumb {
-      width: $icon-size;
-      height: auto;
-      margin-right: $spacing-3;
-    }
-
-    .info {
-      margin-left: calc(#{$icon-size} + #{$spacing-3});
-      line-height: 0.5;
     }
   }
 }
