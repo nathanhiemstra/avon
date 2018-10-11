@@ -1,0 +1,53 @@
+{% if buttonText is not defined %}
+  {% set buttonText = 'Continue' %}
+{% endif %}
+
+<section class="list-group box-emphasize box-emphasize--focused">
+    <div class="list-group-item  remove-last-border border-0">
+        <div class="clearfix mb-4">
+            <h6 class="pull-left m-0 mt-2">Credit Card CVV</h6>
+            <a class="pull-right underline" href="#">Edit card</a>
+        </div>
+
+        {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+            type: 'VISA ending 1234',
+            icon: '/images/icons/payment-visa.svg',
+            holder: 'Marcia Brady',
+            editable: false
+        } %}
+
+        <!-- START - FORM -->
+    <form role="form" class="pt-4 pb-4">
+
+      <div class="form-group">
+
+        <div class="row">
+            <div class="col-sm-4 col-xs-12 pb-3">
+              {% include "_includes/groups/forms/input-and-label.html.twig" with {
+                mainLabel: 'Amount to Pay',
+                placeholder: '$XXX.XX',
+                type: 'number'
+              } %}
+            </div>
+            <div class="col-sm-4 col-xs-12">
+              {% include "_includes/groups/forms/input-and-label.html.twig" with {
+                mainLabel: 'CVV',
+                labelAddon: '<a href="javascript:void(0)" data-toggle="modal" data-target="#shippingModal" class="pull-right no-underline d-inline-block align-middle ml-2">
+                    <span class="lt-icon lt-tip lt-medium align-middle"></span>
+                </a>',
+                type: 'number'
+              } %}
+            </div>
+        </div>
+      </div>
+    </form>
+
+        <!-- START - Cancel Button -->
+        <a href="javascript:void(0)" class="btn btn-default" href="#">Cancel</a>
+        <!-- START - Cancel Button -->
+
+        <!-- START - Continue Button -->
+        <a href="javascript:void(0)" class="btn btn-primary">{{ buttonText }}</a>
+        <!-- END - Continue Button -->
+    </div>
+</section>

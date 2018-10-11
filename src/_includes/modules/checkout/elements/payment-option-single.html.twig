@@ -4,9 +4,14 @@ Parameters:
   type (string - name of payment type 'VISA ending in 1234')
   icon (string - path to payment icon '/images/icons/payment-avoncredit.svg')
   subhead (string - secondary info that appears under the payment type '$85 available' or 'Transaction ID: 12345')
+  holder (string - card holder name 'Marcia Brady')
+  expired (boolean - will show or hide the 'Expired' text)
+  expiredDate (string - card expired date '01/17')
   editable (boolean - will show or hide 'Edit | Remove' links)
   alertMsg (string - if present, will show an alert / warning with its value)
   buttonMode (boolean - will make the entire row item clickable)
+
+
 -->
 
 {# set defaults #}
@@ -20,19 +25,39 @@ Parameters:
 
 {# wrap entire row in link if buttonMode is true #}
 {% if buttonMode %}
-  <a href="#" class="link-secondary">
+  <a href="#" class="link-secondary btn-block border-bottom">
+{% else %}
+   <div class="border-bottom">
 {% endif %}
 
-  <div class="clearfix my-2 border-bottom py-3">
+  {% if expired %}
+  <div class="clearfix my-2 py-3 text-danger">
+  {% else %}
+  <div class="clearfix my-2 py-3">
+  {% endif %}
     {% if icon %}
       <div class="pull-left mr-4">
         <img src="{{ icon }}">
       </div>
     {% endif %}
-    <div class="pull-left">
-      <div>{{ type }}</div>
-      {% if subhead %}<div class="text-muted small">{{ subhead }}</div>{% endif %}
-    </div>
+    {% if expired %}
+      <div class="pull-left">
+        <div>{{ type }}</div>
+        {% if subhead %}<div class="text-danger small">{{ subhead }}</div>{% endif %}
+        {% if holder %}<div class="text-danger small">
+          {{ holder }}
+          {% if expiredDate %}| Exp. {{ expiredDate }}{% endif %}
+        {% endif %}
+        </div>
+      </div>
+    {% else %}
+      <div class="pull-left">
+        <div>{{ type }}</div>
+        {% if subhead %}<div class="text-muted small">{{ subhead }}</div>{% endif %}
+        {% if holder %}<div class="text-muted small">{{ holder }}</div>{% endif %}
+
+      </div>
+    {% endif %}
     <div class="pull-right text-right">
       {% if amount %}
         <div>{{ amount }}</div>
@@ -40,6 +65,7 @@ Parameters:
       {% if editable %}
         <div class="small"><a class="underline" href="#">Edit</a> | <a class="underline" href="#">Remove</a></div>
       {% endif %}
+      
     </div>
 
     {% if alertMsg %}
@@ -67,4 +93,6 @@ Parameters:
 
 {% if buttonMode %}
   </a>
+{% else %}
+  </div>
 {% endif %}

@@ -9,9 +9,24 @@
 
     {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
       type: 'Credit card',
+      icon: '/images/icons/payment-mastercard.svg',
+      subhead: null,
+      amount: null,
+      holder: 'Marcia Brady',
+      expired: false,
+      expiredDate: null,
+      editable: false,
+      buttonMode: true
+    } %}
+
+    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'Credit card',
       icon: '/images/icons/payment-visa.svg',
       subhead: null,
       amount: null,
+      holder: 'Marcia Brady',
+      expired: true,
+      expiredDate: '01/17',
       editable: false,
       buttonMode: true
     } %}
@@ -21,6 +36,9 @@
       icon: '/images/icons/payment-avoncredit.svg',
       subhead: '($85 available!)',
       amount: null,
+      holder: null,
+      expired: false,
+      expiredDate: null,
       editable: false,
       buttonMode: true
     } %}
@@ -30,22 +48,24 @@
       icon: '/images/icons/payment-quickpay.svg',
       subhead: null,
       amount: null,
+      holder: null,
+      expired: false,
+      expiredDate: null,
       editable: false,
       buttonMode: true
     } %}
 
-    {% if hasSplitPayment %}
-      <a href="javascript:void(0)">
-        <div class="clearfix pt-4">
-          <div class="pull-left">
-            Split Payments
-          </div>
-          <div class="pull-right">
-            <span class="lt-icon lt-right lt-large"></span>
-          </div>
-        </div>
-      </a>
-    {% endif %}
+    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'PayPal',
+      icon: '/images/icons/payment-paypal.svg',
+      subhead: null,
+      amount: null,
+      holder: null,
+      expired: false,
+      expiredDate: null,
+      editable: false,
+      buttonMode: true
+    } %}
 
   </div>
 </section>
