@@ -40,18 +40,21 @@ label {
   margin-bottom: 5px;
 
   // show label abbreviations on small screens and full label on large screens
-  & > span {
+  &>span {
     &.label-full {
       display: none;
     }
+
     &.label-abbr {
       display: inline;
     }
+
     // desktop
     @media (min-width: $screen-xs-min) {
       &.label-full {
         display: inline;
       }
+
       &.label-abbr {
         display: none;
       }
@@ -215,7 +218,7 @@ output {
 
   // [converter] extracted textarea& to textarea.form-control
 
-  & + .text-danger {
+  &+.text-danger {
     margin-top: 5px;
   }
 }
@@ -237,12 +240,12 @@ select.form-control {
     display: none;
   }
 
-  + .lt-icon,
-  + .lt-icon:before {
+  +.lt-icon,
+  +.lt-icon:before {
     color: $link-color;
   }
 
-  + .lt-triangle-down.form-control-feedback {
+  +.lt-triangle-down.form-control-feedback {
     // transform: rotate(90deg);
 
   }
@@ -273,6 +276,7 @@ input[type="search"] {
 // Note that as of 9.3, iOS doesn't support `week`.
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
+
   input[type="date"],
   input[type="time"],
   input[type="datetime-local"],
@@ -328,6 +332,7 @@ input[type="search"] {
   &.wrap-label {
     label {
       padding-left: 3.5rem;
+
       span {
         margin-left: -3.5rem;
       }
@@ -356,6 +361,7 @@ input[type="search"] {
     &.wrap-label {
       label {
         padding-left: 2.5rem;
+
         span {
           margin-left: -2.5rem;
         }
@@ -373,8 +379,8 @@ input[type="search"] {
   margin-top: 4px \9;
 }
 
-.checkbox + .checkbox,
-.radio + .radio {
+.checkbox+.checkbox,
+.radio+.radio {
   margin-top: -5px;
 
   // Move up sibling radios or checkboxes for tighter spacing
@@ -393,8 +399,8 @@ input[type="search"] {
   cursor: pointer;
 }
 
-.checkbox-inline + .checkbox-inline,
-.radio-inline + .radio-inline {
+.checkbox-inline+.checkbox-inline,
+.radio-inline+.radio-inline {
   margin-top: 0;
   margin-left: 10px;
 
@@ -407,6 +413,7 @@ input[type="search"] {
 // Note: Neither radios nor checkboxes can be readonly.
 input[type="radio"],
 input[type="checkbox"] {
+
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
@@ -417,6 +424,7 @@ input[type="checkbox"] {
 // These classes are used directly on <label>s
 .checkbox-inline,
 .radio-inline {
+
   &.disabled,
   fieldset[disabled] & {
     cursor: $cursor-disabled;
@@ -426,6 +434,7 @@ input[type="checkbox"] {
 // These classes are used on elements with <label> descendants
 .checkbox,
 .radio {
+
   &.disabled,
   fieldset[disabled] & {
     label {
@@ -507,8 +516,8 @@ input[type="checkbox"] {
   display: none;
 }
 
-.checkbox label input[type="checkbox"] + span > i,
-.radio label input[type="radio"] + span > i {
+.checkbox label input[type="checkbox"]+span>i,
+.radio label input[type="radio"]+span>i {
   opacity: 0;
   transition: 0.1s opacity ease;
 
@@ -517,8 +526,8 @@ input[type="checkbox"] {
   }
 }
 
-.checkbox label input[type="checkbox"]:checked + span > i,
-.radio label input[type="radio"]:checked + span > i {
+.checkbox label input[type="checkbox"]:checked+span>i,
+.radio label input[type="radio"]:checked+span>i {
   opacity: 1;
 
   &.indeterminate {
@@ -526,14 +535,14 @@ input[type="checkbox"] {
   }
 }
 
-.radio label input[type="radio"]:checked + span {
+.radio label input[type="radio"]:checked+span {
   &:after {
     opacity: 1;
   }
 }
 
-.checkbox label input[type="checkbox"]:indeterminate + span > i,
-.radio label input[type="radio"]:indeterminate + span > i {
+.checkbox label input[type="checkbox"]:indeterminate+span>i,
+.radio label input[type="radio"]:indeterminate+span>i {
   opacity: 0;
 
   &.indeterminate {
@@ -541,8 +550,8 @@ input[type="checkbox"] {
   }
 }
 
-.checkbox label input[type="checkbox"]:disabled + span,
-.radio label input[type="radio"]:disabled + span {
+.checkbox label input[type="checkbox"]:disabled+span,
+.radio label input[type="radio"]:disabled+span {
   opacity: 0.5;
 }
 
@@ -671,7 +680,7 @@ select.form-control.input-lg {
     padding-right: $input-height-base;
 
     // disable mouse events on select icon so it falls through
-    & + span.lt-icon {
+    &+span.lt-icon {
       pointer-events: none;
     }
   }
@@ -708,6 +717,7 @@ select.form-control.input-lg {
 
   // inline-block elements' icons need some love
   &.d-inline-block {
+
     // .dropdown {
     .lt-icon {
       top: 50%;
@@ -725,30 +735,30 @@ select.form-control.input-lg {
     }
 
     // handle cases where label is grouped in
-    label + input + .lt-icon {
+    label+input+.lt-icon {
       transform: translateY(-17%);
     }
 
     // open state
     .dropdown.open {
-      label + input + .lt-icon {
+      label+input+.lt-icon {
         transform: translateY(-17%) rotate(-180deg);
       }
     }
   }
 }
 
-.form-group-lg .form-control + .form-control-feedback,
-.input-group-lg + .form-control-feedback,
-.input-lg + .form-control-feedback {
+.form-group-lg .form-control+.form-control-feedback,
+.input-group-lg+.form-control-feedback,
+.input-lg+.form-control-feedback {
   width: $input-height-large;
   height: $input-height-large;
   line-height: $input-height-large;
 }
 
-.form-group-sm .form-control + .form-control-feedback,
-.input-group-sm + .form-control-feedback,
-.input-sm + .form-control-feedback {
+.form-group-sm .form-control+.form-control-feedback,
+.input-group-sm+.form-control-feedback,
+.input-sm+.form-control-feedback {
   width: $input-height-small;
   height: $input-height-small;
   line-height: $input-height-small;
@@ -783,7 +793,7 @@ select.form-control.input-lg {
 
 // Reposition feedback icon if input has visible label above
 .has-feedback label {
-  & ~ .form-control-feedback {
+  &~.form-control-feedback {
     top: $line-height-computed + 5;
 
     // Height of the `label` and its margin
@@ -803,7 +813,7 @@ select.form-control.input-lg {
     }
   }
 
-  &.sr-only ~ .form-control-feedback {
+  &.sr-only~.form-control-feedback {
     top: 0;
   }
 }
@@ -837,8 +847,10 @@ select.form-control.input-lg {
 
 // [converter] extracted from `.form-inline` for libsass compatibility
 @mixin form-inline {
+
   // Kick in the inline
   @media (min-width: $screen-sm-min) {
+
     // Inline-block all the things for "inline"
     .form-group {
       display: inline-block;
@@ -872,7 +884,7 @@ select.form-control.input-lg {
     }
 
     // Input groups need that 100% width though
-    .input-group > .form-control {
+    .input-group>.form-control {
       width: 100%;
     }
 
@@ -919,6 +931,7 @@ select.form-control.input-lg {
 // labels on the left and inputs on the right.
 
 .form-horizontal {
+
   // Consistent vertical alignment of radios and checkboxes
   //
   // Labels also get some reset styles, but that is scoped to a media query below.
@@ -1009,7 +1022,7 @@ $search-btn-size: 44px;
       padding-left: $search-btn-size;
 
       &:focus {
-        + .input-group-addon:last-of-type {
+        +.input-group-addon:last-of-type {
           opacity: 1;
         }
       }
@@ -1056,7 +1069,7 @@ input.form-control {
       width: $size-start + $size * $size-increment;
     }
 
-    $size-increment: $size-increment + $size-increment * 0.01;
+    $size-increment: $size-increment+$size-increment * 0.01;
   }
 
   &.input-lg {
@@ -1069,7 +1082,7 @@ input.form-control {
         width: $size-start + $size * $size-increment;
       }
 
-      $size-increment: $size-increment + $size-increment * 0.01;
+      $size-increment: $size-increment+$size-increment * 0.01;
     }
   }
 }
@@ -1079,6 +1092,7 @@ input.form-control {
   &.input-sm {
     font-size: 16px;
   }
+
   @media (min-width: $screen-lg-min) {
     &.input-sm {
       font-size: 15px;
@@ -1095,16 +1109,33 @@ input.form-control {
 .radio-select-combo {
   label {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
   }
+
   .circ {
     min-width: 24px;
   }
+
   .bootstrap-select {
     max-width: 396px;
   }
 
+  // override default plugin style
+  .bootstrap-select.form-control:not([class*="col-"]) {
+    width: 89%;
+  }
+
+  .select-picker-addon {
+    height: 0;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 435px;
+  }
+
   &.radio-select-combo-lg {
+
     .form-control,
     label {
       height: 60px;
@@ -1123,6 +1154,7 @@ input.form-control {
       height: auto;
       margin-right: $spacing-3;
     }
+
     .info {
       margin-left: calc(#{$icon-size} + #{$spacing-3});
       line-height: 0.5;

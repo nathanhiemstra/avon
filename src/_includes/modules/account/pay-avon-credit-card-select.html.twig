@@ -36,12 +36,13 @@ dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin.in"'
 {% endset %}
 
 {% set selectPicker %}
-<select class="form-control form-inline selectpicker" data-size="5" data-style="btn-select" data-icon-base="lt-icon">
+<select class="form-control selectpicker" data-size="5" data-style="btn-select" data-icon-base="lt-icon">
   <option selected="true" disabled="true">Select a credit card</option>
   <option data-content="{{ opt1 }}"></option>
   <option data-content="{{ opt2 }}"></option>
   <option data-content="{{ opt3 }}"></option>
 </select>
+<div class="select-picker-addon"><a class="underline" href="#">Edit card</a></div>
 {% endset %}
 
 {% include '_includes/groups/forms/radio-and-select.html.twig' with {
