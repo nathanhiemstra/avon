@@ -7,32 +7,279 @@
 
   <h3 id="colors">Colors</h3>
   <div class="bs-example">
-    <div class="color-swatches">
+    <ul class="color-swatches list-unstyled d-flex flex-column">
 
-      <div class="color-swatch color-brand-primary">$brand-primary<br> #ED008C</div>
-      <div class="color-swatch color-swatch-group">
-        <div class="color-swatch color-brand-primary-emphasize">$brand-primary-emphasize<br> #D4027B</div>
-        <div class="color-swatch color-brand-primary-muted reverse">$brand-primary-muted<br> #FEF4F8</div>
-      </div>
+      {# Pink #}
+      <li class="swatch-row-group">
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "ED008C",
+        color_names: ["pink", "brand-primary", "link-color", "btn-default-color"],
+        reverse: false,
+        is_root_color: true
+      }%}
 
-      <div class="color-swatch color-brand-alt">$brand-alt<br> #8A175B</div>
-      <div class="color-swatch color-swatch-group">
-        <div class="color-swatch color-brand-alt-emphasize">$brand-alt-emphasize<br> #78114E</div>
-        <div class="color-swatch color-brand-alt-deep">$brand-alt-deep<br> #2B1823</div>
-      </div>
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "D4027B",
+        color_names: ["pink-dark", "brand-primary-emphasize", "link-hover-color"],
+        reverse: false,
+        is_root_color: false
+      }%}
 
-      <div class="color-swatch color-brand-info ">$brand-info<br> #2C97D0</div>
-      <div class="color-swatch color-brand-success">$brand-success<br> #3EA572</div>
-      <div class="color-swatch color-brand-warning">$brand-warning<br> #FAA342</div>
-      <div class="color-swatch color-brand-danger">$brand-danger<br> #E54530</div>
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "FEF4F8",
+        color_names: ["pink-light", "brand-primary-muted"],
+        reverse: true,
+        is_root_color: false
+      }%}
+      </li>
 
-      <div class="color-swatch color-gray-dark">$gray-dark<br> #000</div>
-      <div class="color-swatch color-gray">$gray<br> #666 </div>
-      <div class="color-swatch color-gray-light reverse">$gray-light<br> #CCC</div>
-      <div class="color-swatch color-gray-lighter reverse">$gray-lighter<br> #F2F2F2</div>
-      <div class="color-swatch color-white border reverse">$white<br> #FFF </div>
 
-    </div>
+      {# Magenta #}
+      <li class="swatch-row-group">
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "8A175B",
+        color_names: ["magenta", "brand-alt"],
+        reverse: false,
+        is_root_color: true
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "78114E",
+        color_names: ["magenta-dark", "brand-alt"],
+        reverse: false,
+        is_root_color: false
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "2B1823",
+        color_names: ["magenta-deep", "brand-alt-deep-emphasize"],
+        reverse: false,
+        is_root_color: false
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "190E15",
+        color_names: ["magenta-deeper", "brand-alt-deeper"],
+        reverse: false,
+        is_root_color: false
+      }%}
+      </li>
+
+
+
+
+      {# Purple #}
+      <li class="swatch-row-group">
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "48293B",
+        color_names: ["purple"],
+        reverse: false,
+        is_root_color: true
+      }%}
+      </li>
+
+
+      {# Red #}
+      <li class="swatch-row-group">
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "D6321C",
+        color_names: ["red", "brand-danger"],
+        reverse: false,
+        is_root_color: true
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "AD1804",
+        color_names: ["red-dark", "state-danger-text"],
+        reverse: false,
+        is_root_color: false
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "F29F94",
+        color_names: ["red-light"],
+        reverse: false,
+        is_root_color: false
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "FDEDEA",
+        color_names: ["red-lighter", "state-danger-bg"],
+        reverse: true,
+        is_root_color: false
+      }%}
+      </li>
+
+
+      {# Orange #}
+      <li class="swatch-row-group">
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "FAA342",
+        color_names: ["orange", "brand-warning"],
+        reverse: false,
+        is_root_color: true
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "C76E0A",
+        color_names: ["orange-dark", "alert-warning-strong-bg"],
+        reverse: false,
+        is_root_color: false
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "F9CFA0",
+        color_names: ["orange-light"],
+        reverse: false,
+        is_root_color: false
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "FDF3E8",
+        color_names: ["orange-lighter"],
+        reverse: true,
+        is_root_color: false
+      }%}
+      </li>
+
+
+
+      {# Blue #}
+      <li class="swatch-row-group">
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "2C97D0",
+        color_names: ["blue", "brand-info"],
+        reverse: false,
+        is_root_color: true
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "0E6FA2",
+        color_names: ["blue-dark", "alert-info-strong-bg"],
+        reverse: false,
+        is_root_color: false
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "9BD5ED",
+        color_names: ["blue-light"],
+        reverse: false,
+        is_root_color: false
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "ECF6FA",
+        color_names: ["blue-lighter"],
+        reverse: true,
+        is_root_color: false
+      }%}
+
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "8a6d3b",
+        color_names: ["$state-info-text:"],
+        reverse: true,
+        is_root_color: false
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "fcf8e3",
+        color_names: ["state-info-bg"],
+        reverse: true,
+        is_root_color: false
+      }%}
+
+
+      </li>
+
+
+      {# Green #}
+      <li class="swatch-row-group">
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "3EA572",
+        color_names: ["green", "brand-success", "alert-success-strong-bg"],
+        reverse: false,
+        is_root_color: true
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "087F44",
+        color_names: ["green-dark", "alert-success-text"],
+        reverse: false,
+        is_root_color: false
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "82D3AB",
+        color_names: ["green-light"],
+        reverse: false,
+        is_root_color: false
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "D5F4E5",
+        color_names: ["green-lighter", "state-success-bg", "alert-success-bg"],
+        reverse: true,
+        is_root_color: false
+      }%}
+      </li>
+
+
+
+      {# Grey #}
+      <li class="swatch-row-group">
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "666",
+        color_names: ["gray", "input-color", "input-label-text-color"],
+        reverse: false,
+        is_root_color: true
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "8e8e8e",
+        color_names: ["gray-medium", "link-color-muted"],
+        reverse: false,
+        is_root_color: false
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "CCC",
+        color_names: ["gray-light", "border-color"],
+        reverse: false,
+        is_root_color: false
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "F2F2F2",
+        color_names: ["gray-lighter", "state-success-bg", "alert-success-bg"],
+        reverse: true,
+        is_root_color: false
+      }%}
+      </li>
+
+      {# Black and White #}
+      <li class="swatch-row-group">
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "000",
+        color_names: ["black", "text-color", "gray-base", "gray-dark"],
+        reverse: false,
+        is_root_color: true
+      }%}
+
+      {% include "styleguide/_includes/elements/color-swatch.html.twig" with {
+        color_hex: "FFF",
+        color_names: ["white"],
+        reverse: true,
+        is_root_color: true
+      }%}
+
+
+      </li>
+
+
+
+
+    </ul>
   </div>
 
 

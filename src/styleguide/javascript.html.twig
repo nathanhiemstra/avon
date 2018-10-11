@@ -1711,7 +1711,7 @@ $('#myPopover').on('hidden.bs.popover', function () {
 
 
 
-<!-- Popovers
+<!-- Progress
 ================================================== -->
 <div class="bs-docs-section">
   <h1 id="progress" class="page-header">Progress</h1>
@@ -1803,7 +1803,7 @@ $('#myPopover').on('hidden.bs.popover', function () {
    <h6 class="text-center">Complete</h6>
   {{ endhighlight }}
 
-  <h2 id="collapse-usage">Usage</h2>
+  <h2 id="progress-radial-usage">Usage</h2>
   <p>All data is handled with data attributes and, like normal progress bars, the use of aria attributes for progress values.</p>
   <ul>
     <li><code>aria-valuenow</code> the current progress value</li>
@@ -1821,6 +1821,107 @@ $('#myPopover').on('hidden.bs.popover', function () {
     <li><code>.svg-holder</code> container for the generated SVG element</li>
     <li><code>.progress-counter</code> optional container for the progress numerical value which will be centered in the circle</li>
     <li>Any element with a <code>data-radprogress-counter</code> attribute. This is optional and will hold the actual numerical progress value.</li>
+  </ul>
+
+
+
+  <h2 id="progress-multi-step">Multi-step</h2>
+
+  <p>Navigation pattern for step-through processes such as registration.</p>
+
+  <div class="bs-example">
+    <div multi-step-progress="">
+
+      <ul class="steps pt-4">
+        <li data-target-step="1" data-icon="&#xe90a">Verify</li>
+        <li data-target-step="2" data-icon="&#xe926">Upload</li>
+        <li data-target-step="3" data-icon="&#xe91a">Security</li>
+      </ul>
+
+      <ul class="content pb-4">
+        <li class="active" data-step="1">
+          <h1>Step 1</h1>
+          <p>{{ fpo.paragraph }}</p>
+        </li>
+        <li data-step="2">
+          <h1>Step 2</h1>
+          <p>{{ fpo.paragraph }}</p>
+        </li>
+        <li data-step="3">
+          <h1>Step 3</h1>
+          <p>{{ fpo.paragraph }}</p>
+        </li>
+      </ul>
+
+      <div class="btn-group btn-group-50-50 clearfix">
+        <div class="btn-group my-4">
+          <button type="button" class="btn btn-default" data-step-back>Back</button>
+        </div>
+        <div class="btn-group my-4">
+          <button type="button" class="btn btn-primary" data-step-forward>Continue</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {{ highlightMarkup }}
+  <div multi-step-progress="">
+
+      <ul class="steps pt-4">
+        <li data-target-step="1" data-icon="&#xe90a">Verify</li>
+        <li data-target-step="2" data-icon="&#xe926">Upload</li>
+        <li data-target-step="3" data-icon="&#xe91a">Security</li>
+      </ul>
+
+      <ul class="content pb-4">
+        <li class="active" data-step="1">
+          <h1>Step 1</h1>
+          <p>{{ fpo.paragraph }}</p>
+        </li>
+        <li data-step="2">
+          <h1>Step 2</h1>
+          <p>{{ fpo.paragraph }}</p>
+        </li>
+        <li data-step="3">
+          <h1>Step 3</h1>
+          <p>{{ fpo.paragraph }}</p>
+        </li>
+      </ul>
+
+      <div class="btn-group btn-group-50-50 clearfix">
+        <div class="btn-group my-4">
+          <button type="button" class="btn btn-default" data-step-back>Back</button>
+        </div>
+        <div class="btn-group my-4">
+          <button type="button" class="btn btn-primary" data-step-forward>Continue</button>
+        </div>
+      </div>
+
+    </div>
+  {{ endhighlight }}
+
+  <h2 id="progress-steps-usage">Usage</h2>
+
+  {{ highlightJavascript }}
+    $('[multi-step-progress]').progressSteps({
+      currentStep: 1
+    });
+  {{ endhighlight }}
+
+  <p>The outer container should have an attribute <code>multi-step-progress</code>. Contained inside should be two unordered lists with corresponding items. One with a class of <code>steps</code> and one with a class of <code>content</code>. Finally, there should also be two buttons in the container with attributes: <code>data-step-forward</code> and <code>data-step-back</code>.</p>
+
+  <h4>Attributes</h4>
+  <ul>
+    <li><code>data-target-step</code> list item attribute in <code>.steps</code> which corresponds to <code>data-step</code> in <code>.content</code></li>
+    <li><code>data-icon</code> Icon to display on <code>.steps</code> list items. NOTE: this value should be an HTML entity based on unicode for the desired icon.</li>
+    <li><code>data-step</code> list item attribute in <code>.content</code> which corresponds to <code>data-target-step</code> in <code>.steps</code></li>
+    <li><code>data-step-forward</code> Add this to the forward button</li>
+    <li><code>data-step-back</code> Add this to the back button</li>
+  </ul>
+  <h4>Options</h4>
+  <ul>
+    <li><code>currentStep</code> - option to pass the current step on init. Defaults to 1.</li>
   </ul>
 
 </div>

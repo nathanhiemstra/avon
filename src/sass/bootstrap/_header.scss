@@ -10,11 +10,32 @@ $navbar-header-mobile-height: 64px;
     border: none;
   }
 
+  &--simple {
+    .navbar--primary-nav {
+      padding: 0;
+      border: none;
+    }
+    .primary-nav__logo, .navbar-links, span {
+      flex: 1;
+    }
+    .primary-nav__logo {
+      img {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  }
+
   // desktop
   @media (min-width: $breakpoint-header-min) {
     .dropdown-menu,
     #mystorepopover {
       border: 1px solid $gray;
+    }
+    &--simple {
+      .navbar--primary-nav {
+        padding: 2.5rem $spacing-5;
+      }
     }
   }
 }
@@ -375,7 +396,10 @@ $navbar-header-mobile-height: 64px;
   }
 
   $primary-nav-x-space: 2rem;
-
+  &--simple-nav {
+    margin-bottom: 0;
+    padding: 2rem $spacing-5;
+  }
   &--primary-nav {
     margin: 0;
     padding: 2rem $spacing-4;

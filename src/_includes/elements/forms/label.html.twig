@@ -1,4 +1,10 @@
 {% if haslabelErrorIcon %}
-  {% set errorIcon %}{% include "_includes/elements/forms/label-error-icon.html.twig" %}{% endset %}
+  {% set errorIcon %}
+    {% include "_includes/elements/forms/label-error-icon.html.twig" %}
+  {% endset %}
 {% endif %}
+
 <label class="control-label" for="{{ id }}">{{ errorIcon }}{{ mainLabel }}</label>
+{% if labelAddon %}
+  <span class="control-label-addon">{{ labelAddon }}</span>
+{% endif %}

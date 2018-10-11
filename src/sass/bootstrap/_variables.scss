@@ -712,13 +712,13 @@ $state-success-text: $body-bg !default;
 $state-success-bg: $green-lighter !default;
 $state-success-border: darken(adjust-hue($state-success-bg, -10), 5%) !default;
 
-$state-info-text: #31708f !default;
-$state-info-bg: #d9edf7 !default;
-$state-info-border: darken(adjust-hue($state-info-bg, -10), 7%) !default;
+$state-info-text: $blue-dark !default;
+$state-info-bg: $blue-lighter;
+$state-info-border: $blue-dark !default;
 
-$state-warning-text: #8a6d3b !default;
-$state-warning-bg: #fcf8e3 !default;
-$state-warning-border: darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+$state-warning-text: $orange-dark !default;
+$state-warning-bg: $orange-lighter !default;
+$state-warning-border: $orange-dark !default;
 
 $state-danger-text: $red-dark !default;
 $state-danger-bg: $red-lighter !default;
@@ -828,7 +828,7 @@ $modal-content-bg: $white !default;
 $modal-content-border-color: rgba(0, 0, 0, 0.2) !default;
 
 //** Modal content border color **for IE8**
-$modal-content-fallback-border-color: #999 !default;
+$modal-content-fallback-border-color: $gray-medium !default;
 
 //** Modal backdrop background color
 $modal-backdrop-bg: $black !default;

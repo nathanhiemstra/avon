@@ -1,0 +1,169 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'pay-avon-edit-stored-card-modal' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+<button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+  <span class="sr-only">Close modal</span>
+  <span class="lt-icon lt-close lt-large py-1"></span>
+</button>
+<h6 class="modal-title">Edit Card Info</h6>
+
+{% endblock %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+<div class="my-4 pb-4 border-bottom">
+  <img class="payment-img payment-img--lrg mr-4" src="images/icons/payment-visa.svg" alt="VISA">
+  <span class="payment-name">VISA</span> ending in <span class="payment-digits">9876</span>
+</div>
+
+<form role="form">
+  <div class="form-group has-error">
+    {% include components.groups.forms.inputAndLabel with {
+      id: 'name-on-card',
+      mainLabel: 'Name on Card',
+      haslabelErrorIcon: true,
+      hasInlineErrorIcon: null,
+      hasAbsoluteErrorIcon: null,
+      classes: 'form-control',
+      type: 'input',
+      theValue: 'Marcia Brady'
+    } %}
+  </div>
+
+  <div class="form-group has-error">
+    <label class="control-label"><i class="lt-icon lt-warning-fill lt-medium show-when-has-error"></i>Expiration date</label>
+    <div class="row">
+      <div class="col col-sm-6">
+        <div class="form-group has-feedback">
+          <select class="form-control" name="" id="">
+            <option value="01">01 - Jan</option>
+            <option value="02">02 - Feb</option>
+            <option value="03">03 - Mar</option>
+            <option value="04">04 - Apr</option>
+          </select>
+          <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="col col-sm-6">
+        <div class="form-group has-feedback">
+          <select class="form-control" name="" id="">
+            <option value="2019">2019</option>
+            <option value="2020">2019</option>
+            <option value="2021">2019</option>
+          </select>
+          <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h6>Billing Address</h6>
+
+
+  <div class="form-group has-error">
+    {% include components.groups.forms.inputAndLabel with {
+      id: 'address',
+      mainLabel: 'Address',
+      haslabelErrorIcon: true,
+      hasInlineErrorIcon: null,
+      hasAbsoluteErrorIcon: null,
+      classes: 'mb-3',
+      type: 'input',
+      theValue: '1234 Main Street'
+    } %}
+
+  </div>
+  <div class="form-group">
+    {% include components.elements.forms.input with {
+    theValue: 'Unit 1'
+    } %}
+  </div>
+
+  <div class="row">
+    <div class="col col-xs-3">
+      <div class="form-group has-error">
+        {% include components.groups.forms.inputAndLabel with {
+          id: 'zip',
+          mainLabel: 'ZIP',
+          haslabelErrorIcon: true,
+          hasInlineErrorIcon: null,
+          hasAbsoluteErrorIcon: null,
+          classes: '',
+          type: 'input',
+          theValue: '12345'
+        } %}
+      </div>
+    </div>
+    <div class="col col-xs-9">
+      <div class="form-group has-error">
+        {% include components.groups.forms.inputAndLabel with {
+          id: 'city',
+          mainLabel: 'City',
+          haslabelErrorIcon: true,
+          hasInlineErrorIcon: null,
+          hasAbsoluteErrorIcon: null,
+          classes: '',
+          type: 'input',
+          theValue: 'Albequerque'
+        } %}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col-xs-3">
+      <div class="form-group">
+        <label class="control-label"><i class="lt-icon lt-warning-fill lt-medium show-when-has-error"></i>State</label>
+        <div class="form-group has-feedback">
+          <select class="form-control" name="" id="">
+            <option value="AK">AK</option>
+            <option value="NJ">NJ</option>
+            <option value="TX">TX</option>
+          </select>
+          <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+        </div>
+      </div>
+    </div>
+    <div class="col col-xs-9">
+      <div class="form-group has-error">
+        <label class="control-label"><i class="lt-icon lt-warning-fill lt-medium show-when-has-error"></i>Contry</label>
+        <div class="form-group has-feedback">
+          <select class="form-control" name="" id="">
+            <option value="">Select a country</option>
+            <option value="USA">USA</option>
+            <option value="India">India</option>
+          </select>
+          <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+<div class="row">
+  <div class="col-xs-6 my-2">
+    <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Cancel</button>
+  </div>
+  <div class="col-xs-6 my-2">
+    <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Update</button>
+  </div>
+</div>
+
+{% endblock %}

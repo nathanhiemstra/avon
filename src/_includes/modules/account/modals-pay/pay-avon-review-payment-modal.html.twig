@@ -1,0 +1,88 @@
+{% extends "_layouts/modal.html.twig" %}
+{% set modalId = 'pay-avon-review-payment-modal' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+<button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+  <span class="sr-only">Close modal</span>
+  <span class="lt-icon lt-close lt-large py-1"></span>
+</button>
+<h6 class="modal-title">Review Payment</h6>
+
+{% endblock %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+<h4 class="px-3 mb-5">Please review your payment information</h4>
+
+<h5 class="px-3">Credit card Information</h5>
+<table class="table table-no-borders table-fixed">
+  <tr>
+    <td><h6>Card type</h6></td>
+    <td>Mastercard</td>
+  </tr>
+  <tr>
+    <td><h6>Name on Card</h6></td>
+    <td>Tisha Pennington</td>
+  </tr>
+  <tr>
+    <td><h6>Card number</h6></td>
+    <td>**** **** **** 5678</td>
+  </tr>
+</table>
+<hr class="mx-3">
+<h5 class="px-3">Billing Address</h5>
+<table class="table table-no-borders table-fixed">
+  <tr>
+    <td><h6>Address line 1</h6></td>
+    <td>9072 Rialto Street</td>
+  </tr>
+  <tr>
+    <td><h6>Address line 2</td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td><h6>City</h6></td>
+    <td>Naples</td>
+  </tr>
+  <tr>
+    <td><h6>State</h6></td>
+    <td>FL</td>
+  </tr>
+  <tr>
+    <td><h6>ZIP</h6></td>
+    <td>80965</td>
+  </tr>
+</table>
+<hr class="mx-3">
+<table class="table table-no-borders table-fixed">
+  <tr>
+    <td><h6>Payment Amount</h6></td>
+    <td>$25.00</td>
+  </tr>
+</table>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+<div class="row">
+  <div class="col-xs-6 my-2">
+    <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Cancel</button>
+  </div>
+  <div class="col-xs-6 my-2">
+    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#checkout-payment-confirmation-modal">Submit</button>
+  </div>
+</div>
+
+{% endblock %}

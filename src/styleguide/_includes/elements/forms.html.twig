@@ -281,7 +281,7 @@
   <div class="bs-example bs-example-control-sizing">
     <form role="form">
       <div class="controls">
-        
+
         <div class="row">
           <div class="col col-sm-3">
             <p>{% include components.elements.forms.input with { size: 1, classes: 'input-sm', placeholder:  '8' } %}</p>
@@ -386,6 +386,26 @@
   {% include components.elements.forms.select %}
 
   {% include components.elements.forms.select with {multiple: true} %}
+  {{ endhighlight }}
+
+  <h3>Select Picker</h3>
+  <p><a href="http://plugins.upbootstrap.com/bootstrap-select/">bootstrap-select</a> - A js powered select element for robust select dropdowns</p>
+  <select class="form-control form-inline selectpicker" data-size="5" data-style="btn-select" data-icon-base="lt-icon">
+    <option selected="true" disabled="true">Select...</option>
+    <option data-content="<img src='../images/icons/payment-visa.svg'> Visa"></option>
+    <option data-content="<img src='../images/icons/payment-mastercard.svg'> Master Card"></option>
+    <option data-content="<img src='../images/icons/payment-quickpay.svg'> QuickPay"></option>
+    <option data-content="<img src='../images/icons/payment-avoncredit.svg'> Avon Credit"></option>
+  </select>
+
+  {{ highlightMarkup }}
+  <select class="form-control form-inline selectpicker" data-size="5" data-style="btn-select" data-icon-base="lt-icon">
+    <option selected="true" disabled="true">Select...</option>
+    <option data-content="<img src='../images/icons/payment-visa.svg'> Visa"></option>
+    <option data-content="<img src='../images/icons/payment-mastercard.svg'> Master Card"></option>
+    <option data-content="<img src='../images/icons/payment-quickpay.svg'> QuickPay"></option>
+    <option data-content="<img src='../images/icons/payment-avoncredit.svg'> Avon Credit"></option>
+  </select>
   {{ endhighlight }}
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
