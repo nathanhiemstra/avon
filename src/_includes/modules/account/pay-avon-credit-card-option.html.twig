@@ -1,0 +1,2 @@
+<img class='thumb' src='{{ thumb }}'><span class='{% if expired %}text-danger{% endif %}'>{{ cardType }} ending in {{ lastFour }}</span>
+<p class='info small {% if expired %}text-danger{% else %}text-muted{% endif %}'>{{ name }} | {% if expired %}Expired {% else %}Expires {% endif %} {{ expirationDate }}</p>

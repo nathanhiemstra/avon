@@ -1100,11 +1100,32 @@ input.form-control {
   .circ {
     min-width: 24px;
   }
+  .bootstrap-select {
+    max-width: 396px;
+  }
 
   &.radio-select-combo-lg {
     .form-control,
     label {
       height: 60px;
+    }
+  }
+}
+
+// bootstap select additions
+.bootstrap-select {
+  $icon-size: 24px;
+
+  .dropdown-menu,
+  .filter-option {
+    img.thumb {
+      width: $icon-size;
+      height: auto;
+      margin-right: $spacing-3;
+    }
+    .info {
+      margin-left: calc(#{$icon-size} + #{$spacing-3});
+      line-height: 0.5;
     }
   }
 }

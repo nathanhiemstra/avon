@@ -1,0 +1,51 @@
+{# {% include components.elements.forms.radio with {
+name: 'pay-type',
+theValue: 'cc-cards',
+theLabel: 'Credit Card(s)',
+dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin.in"'
+} %} #}
+{% set opt1 %}
+{% include "_includes/modules/account/pay-avon-credit-card-option.html.twig" with {
+  thumb: '../images/icons/payment-visa.svg',
+  cardType: 'VISA',
+  lastFour: '1234',
+  name: 'Marcia Brady',
+  expirationDate: '01/21'
+} %}
+{% endset %}
+
+{% set opt2 %}
+{% include "_includes/modules/account/pay-avon-credit-card-option.html.twig" with {
+  thumb: '../images/icons/payment-mastercard.svg',
+  cardType: 'Master Card',
+  lastFour: '9876',
+  name: 'Marcia Brady',
+  expirationDate: '03/18',
+  expired: true
+} %}
+{% endset %}
+
+{% set opt3 %}
+{% include "_includes/modules/account/pay-avon-credit-card-option.html.twig" with {
+  thumb: '../images/icons/payment-visa.svg',
+  cardType: 'VISA',
+  lastFour: '3456',
+  name: 'Marcia Brady',
+  expirationDate: '08/21'
+} %}
+{% endset %}
+
+{% set selectPicker %}
+<select class="form-control form-inline selectpicker" data-size="5" data-style="btn-select" data-icon-base="lt-icon">
+  <option selected="true" disabled="true">Select a credit card</option>
+  <option data-content="{{ opt1 }}"></option>
+  <option data-content="{{ opt2 }}"></option>
+  <option data-content="{{ opt3 }}"></option>
+</select>
+{% endset %}
+
+{% include '_includes/groups/forms/radio-and-select.html.twig' with {
+name: 'pay-type',
+theLabel: selectPicker,
+checked: false
+} %}

@@ -7,541 +7,529 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block content %}
 
-  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
-    position: 'top',
-    html: '<div class="reverse-bg py-3">
-    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
-    </div>'
-  } %}
+{% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+position: 'top',
+html: '<div class="reverse-bg py-3">
+  <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+</div>'
+} %}
 
-  {% include "_includes/modules/checkout/checkout-generic-error.html.twig" %}
+{% include "_includes/modules/checkout/checkout-generic-error.html.twig" %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - MAIN #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block main %}
+
+<section class="container container--page">
+
+  {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - ASIDE #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block aside %}
+
+  {% include '_includes/groups/navigation/my-account-nav.html.twig' with { active : 'pay-avon' } %}
+
+  {% endblock %}
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# DEFINE BLOCK - MAIN #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
-    <section class="container container--page">
+  <h2 class="mb-5">Pay Avon</h2>
 
-      {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
+  <hr>
 
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {# DEFINE BLOCK - ASIDE #}
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {% block aside %}
+  <!-- START - SECTION LEVEL ERROR -->
+  {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
+  alertIcon: 'lt-warning-fill',
+  alertHeadline: 'Section level error with error list',
+  alertBody: '
+  <ul class="alert-list">
+    <li>Sorry, we are unable to process this request. Please review payment amount to ensure it is not greater than
+      $25,000 or does not exceed your balance by more than $1,000.</li>
+    <li>Field PIN is mandatory, please fill it in.</li>
+    <li>Zipcode field is mandatory.</li>
+  </ul>',
+  alertBtnText: null,
+  alertClasses: 'alert-danger',
+  alertLevel: 'content',
+  alertDismissable: false,
+  alertId: null
+  } %}
+  <!-- END - SECTION LEVEL ERROR -->
 
-          {% include '_includes/groups/navigation/my-account-nav.html.twig' with { active : 'pay-avon' } %}
+  <!-- START - PAYMENT AMOUNT SECTION -->
+  <div class="">
+    <div class="ml-0 ml-sm-4">
+      <p>
+        <strong>How much are you paying today?</strong>
+      </p>
 
-        {% endblock %}
+      <div class="form-group">
+        {% include components.elements.forms.radio with {
+        name: 'pay-option',
+        classes: 'd-inline',
+        theValue: 'credit',
+        theLabel: '$55.32 <small>(Current balance as of March 08, 2018 at 03:15 PM EST)</small>',
+        haslabelTooltip: true
+        } %}
+      </div>
 
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {# DEFINE BLOCK - MAIN #}
-        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-        {% block main %}
+      <div class="form-group">
+        {% include components.elements.forms.radio with {
+        name: 'pay-option',
+        classes: 'd-inline',
+        theValue: 'credit',
+        theLabel: '$0.00 <small>(Amount Due with Campaign 07)</small>',
+        haslabelModal: true,
+        dataTarget: '#amount-due'
+        } %}
 
-          <h2 class="mb-5">Pay Avon</h2>
+        {# MODAL - AMOUNT DUE #}
+        {% include "_includes/modules/account/modals-pay/pay-avon-amount-due-modal.html.twig" %}
 
-          <hr>
+      </div>
 
-          <!-- START - SECTION LEVEL ERROR -->
-          {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
-            alertIcon: 'lt-warning-fill',
-            alertHeadline: 'Section level error with error list',
-            alertBody: '
-            <ul class="alert-list">
-              <li>Sorry, we are unable to process this request. Please review payment amount to ensure it is not greater than $25,000 or does not exceed your balance by more than $1,000.</li>
-              <li>Field PIN is mandatory, please fill it in.</li>
-              <li>Zipcode field is mandatory.</li>
-            </ul>',
-            alertBtnText: null,
-            alertClasses: 'alert-danger',
-            alertLevel: 'content',
-            alertDismissable: false,
-            alertId: null
+      <div class="form-group has-error">
+
+        <div class="">
+
+          {% include components.elements.forms.radio with {
+          name: 'pay-option',
+          classes: 'd-inline',
+          theValue: 'credit',
+          theLabel: 'Other Amount: $',
+          checked: true
           } %}
-          <!-- END - SECTION LEVEL ERROR -->
 
-          <!-- START - PAYMENT AMOUNT SECTION -->
-          <div class="">
-            <div class="ml-0 ml-sm-4">
-              <p>
-                <strong>How much are you paying today?</strong>
-              </p>
+          <span class="form-group has-error">
+            {% include components.elements.forms.input with {
+            type: 'number',
+            placeholder: '',
+            theValue: '25,000.00',
+            size: '8',
+            haslabelErrorIcon: null,
+            hasInlineErrorIcon: true,
+            hasAbsoluteErrorIcon: null,
+            classes: 'input-sm form-control form-control-inline'
+            } %}
+          </span>
+          <a href="javascript:void(0)" data-toggle="popover" data-target="#generic-modal" class="lt-icon lt-tip lt-medium align-middle ml-2 no-underline"
+            data-container="body" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></a>
 
-              <div class="form-group">
-                {% include components.elements.forms.radio with {
-                    name: 'pay-option',
-                    classes: 'd-inline',
-                    theValue: 'credit',
-                    theLabel: '$55.32 <small>(Current balance as of March 08, 2018 at 03:15 PM EST)</small>',
-                    haslabelTooltip: true
-                  } %}
-              </div>
+        </div>
 
-              <div class="form-group">
-                {% include components.elements.forms.radio with {
-                  name: 'pay-option',
-                  classes: 'd-inline',
-                  theValue: 'credit',
-                  theLabel: '$0.00 <small>(Amount Due with Campaign 07)</small>',
-                  haslabelModal: true,
-                  dataTarget: '#amount-due'
+      </div>
+
+    </div>
+
+  </div>
+  <!-- END - PAYMENT AMOUNT SECTION -->
+
+  <!-- START - PAYMENT TYPE SECTION -->
+  <div class="pt-5">
+
+    <div class="ml-0 ml-sm-4">
+      <p>
+        <strong>Please select a payment type:</strong>
+      </p>
+
+      <!-- START - PAY TYPE - QUICKPAY -->
+
+      <!-- Developer note: The following demonstrates three "QUICKPAY STATES" for the QuickPAY radio button.-->
+
+      <!-- START - QUICKPAY STATE - ENROLLED -->
+      <div class="form-group mb-0">
+        {% include components.elements.forms.radio with {
+        name: 'pay-type',
+        theValue: 'quick-pay',
+        theLabel: 'QuikPAY <small>(You are enrolled. <u><a href="#">Edit</a></u>)</small>',
+        dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
+        disabled: false,
+        checked: true,
+        } %}
+
+        <!-- START - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
+        <!-- Developer note: This gets shown when this radio is selected. It relies on "data-toggle" and "data-target". Demo: aqw3^ -->
+        <!-- Developer note: Add class has-error if there is an error. -->
+        <div id="collapse-quickpay-pin" class="form-group panel-collapse in mb-0 ml-5">
+          <div class="ml-3">
+            <span>Please enter your 4-digit PIN code:</span>
+            <input type="text" class="form-control form-control-inline input-sm mb-3" size="7" maxlength="4"
+              placeholder="&bull;&bull;&bull;&bull;">
+            <a href="javascript:void(0)" data-toggle="popover" data-target="#generic-modal" class="lt-icon lt-tip lt-medium align-middle no-underline"
+              data-container="body" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></a>
+            <br />
+            <span>Please enter your 4-digit PIN code:</span>
+
+            <span class="form-inline-container">
+
+              <span class="form-group has-error">
+                {% include components.elements.forms.input with {
+                type: 'password',
+                maxlength: 4,
+                placeholder: null,
+                theValue: null,
+                size: '7',
+                haslabelErrorIcon: null,
+                hasInlineErrorIcon: true,
+                hasAbsoluteErrorIcon: null,
+                classes: 'input-sm form-control form-control-inline has-feedback'
                 } %}
+              </span>
 
-                {# MODAL - AMOUNT DUE #}
-                {% include "_includes/modules/account/modals-pay/pay-avon-amount-due-modal.html.twig" %}
-
-              </div>
-
-              <div class="form-group has-error">
-
-                <div class="">
-
-                  {% include components.elements.forms.radio with {
-                    name: 'pay-option',
-                    classes: 'd-inline',
-                    theValue: 'credit',
-                    theLabel: 'Other Amount: $',
-                    checked: true
-                  } %}
-
-                  <span class="form-group has-error">
-                    {% include components.elements.forms.input with {
-                      type: 'number',
-                      placeholder: '',
-                      theValue: '25,000.00',
-                      size: '8',
-                      haslabelErrorIcon: null,
-                      hasInlineErrorIcon: true,
-                      hasAbsoluteErrorIcon: null,
-                      classes: 'input-sm form-control form-control-inline'
-                    } %}
-                  </span>
-                  <a
-                    href="javascript:void(0)"
-                    data-toggle="popover"
-                    data-target="#generic-modal"
-                    class="lt-icon lt-tip lt-medium align-middle ml-2 no-underline"
-                    data-container="body"
-                    data-placement="bottom"
-                    data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></a>
-
-                </div>
-
-              </div>
               {#
-              <div class="pl-3">
-                <p class="text-danger small pl-5"><strong>
-                  Sorry, we are unable to process this request. Please review payment amount to ensure it is not greater than $25,000 or does not exceed your balance by more than $1,000.
-                </strong></p>
+              <input type="text" class="input-sm form-control form-control-inline has-feedback" size="7" maxlength="4">
+              <div class="form-control-inline-feedback">
+                <p class="text-danger small"><b>Field PIN is mandatory, please fill it in.</b></p>
               </div> #}
+            </span>
+
+            <a href="javascript:void(0)" data-toggle="popover" data-target="#generic-modal" class="lt-icon lt-tip lt-medium align-middle no-underline"
+              data-container="body" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></a>
+
+            <!-- Developer note: Show if there is an error. -->
+
+            <!-- <p class="text-danger small"><b>Field PIN is mandatory, please fill it in.</b></p> -->
+          </div>
+
+        </div>
+        <!-- END - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
+      </div>
+      <!-- END - QUICKPAY STATE - ENROLLED -->
+
+      <!-- START - QUICKPAY STATE - NOT ENROLLED -->
+      <div class="form-group pt-2">
+        <!-- Developer note: This is disabled. -->
+        {% include components.elements.forms.radio with {
+        name: 'pay-type',
+        theValue: 'quick-pay',
+        theLabel: '<em>QuikPAY</em> <small class="text-default">You are not enrolled.</small> <button class="btn btn-default btn-sm btn-soft ml-3"
+          data-toggle="modal" data-target="#checkout-quickpay-enrollment-modal"><a class="ml-2 mr-2">Enroll now</a></button>',
+        dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
+        disabled: false
+        } %}
+
+        <div class="ml-5">
+          <p class="text-muted small ml-3">
+            <em>QuickPAY is the safer, easier way to pay online without revealing your credit card number.</em>
+          </p>
+        </div>
+      </div>
+      <!-- END - QUICKPAY STATE - NOT ENROLLED -->
+
+      <!-- START - QUICKPAY STATE - ENROLLMENT IN PROCESS -->
+      <div class="form-group">
+        <!-- Developer note: This is disabled. -->
+
+        {% include components.elements.forms.radio with {
+        name: 'pay-type',
+        theValue: 'quick-pay',
+        theLabel: 'QuikPAY',
+        dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
+        disabled: false,
+        haslabelErrorIcon: false
+        } %}
+
+        <div class="ml-5">
+          <strong class="text-danger small ml-3">(Account is currently being processed)</strong>
+          <p class="small text-muted ml-3">
+            <em>The enrollment process takes 6 days to complete from the date you submitted your request. Once the
+              enrollment process has completed, please activate your QuikPAY account by calling 1-877-QuikPAY
+              (1-877-784-5729) and resetting your PIN #. After
+              activating your QuikPAY Pin, please allow 24 hours before it updates on the site.</em>
+          </p>
+        </div>
+      </div>
+      <!-- END - QUICKPAY STATE - ENROLLMENT IN PROCESS -->
+
+      <!-- END - PAY TYPE - QUICKPAY -->
+
+      <!-- START - PAY TYPE - CREDIT CARD -->
+      <div class="col-sm-6 pl-0">
+        <div class="form-group">
+          {% include "_includes/modules/account/pay-avon-credit-card-select.html.twig" %}
+        </div>
+      </div>
+
+
+
+      {# <div class="ml-5">
+        <p class="small text-muted ml-3">
+          <em>Avon accepts MasterCard, VISA, Discover, American Express, and Diners Club credit cards</em>
+        </p>
+      </div> #}
+      <!-- END - PAY TYPE - CREDIT CARD -->
+
+      <div class="ml-3">
+        <div class="row">
+          <div class="col-sm-6 ml-5">
+            <div class="form-group">
+              <label class="control-label" for="pay-avon-cardnum">Card Number</label>
+
+              {% include '_includes/elements/forms/input-with-addon.html.twig' with {
+              type: 'number',
+              id: 'pay-avon-cardnum',
+              placeholder: '',
+              classes: '',
+              addon: '<img src="/images/icons/payment-visa.svg">'
+              } %}
 
             </div>
 
-          </div>
-          <!-- END - PAYMENT AMOUNT SECTION -->
+            <div class="form-group">
+              {% include '_includes/elements/forms/input-with-addon.html.twig' with {
+              type: 'number',
+              placeholder: '1234 5678 9098 7654',
+              classes: '',
+              addon: '<img src="/images/icons/payment-visa.svg">',
+              onInputJs: "javascript: var target = this, position = target.selectionEnd, length = target.value.length;
+              target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+              target.selectionEnd = position += ((target.value.charAt(position - 1) === ' ' &&
+              target.value.charAt(length - 1) === ' ' && length !== target.value.length) ? 1 : 0);"
+              } %}
+            </div>
 
-          <!-- START - PAYMENT TYPE SECTION -->
-          <div class="pt-5">
+            <div class="form-group">
+              <p class="mb-3 text-muted small">Name on Card</p>
+              {% include components.elements.forms.input with {
+              placeholder: 'Phoebe Pope'
+              } %}
+            </div>
 
-            <div class="ml-0 ml-sm-4">
-              <p>
-                <strong>Please select a payment type:</strong>
-              </p>
+            <div class="row">
 
-              <!-- START - PAY TYPE - QUICKPAY -->
+              <div class="col-xs-12 col-sm-9 mb-4 mb-sm-0">
+                <label class="control-label">Expiration Date</label>
 
-              <!-- Developer note: The following demonstrates three "QUICKPAY STATES" for the QuickPAY radio button.-->
-
-              <!-- START - QUICKPAY STATE - ENROLLED -->
-              <div class="form-group mb-0">
-                {% include components.elements.forms.radio with {
-                  name: 'pay-type',
-                  theValue: 'quick-pay',
-                  theLabel: 'QuikPAY <small>(You are enrolled. <u><a href="#">Edit</a></u>)</small>',
-                  dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
-                  disabled: false,
-                  checked: true,
-                } %}
-
-                <!-- START - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
-                <!-- Developer note: This gets shown when this radio is selected. It relies on "data-toggle" and "data-target". Demo: aqw3^ -->
-                <!-- Developer note: Add class has-error if there is an error. -->
-                <div id="collapse-quickpay-pin" class="form-group panel-collapse in mb-0 ml-5">
-                  <div class="ml-3">
-                    <span>Please enter your 4-digit PIN code:</span>
-                    <input type="text" class="form-control form-control-inline input-sm mb-3" size="7" maxlength="4" placeholder="&bull;&bull;&bull;&bull;">
-                    <a
-                      href="javascript:void(0)"
-                      data-toggle="popover"
-                      data-target="#generic-modal"
-                      class="lt-icon lt-tip lt-medium align-middle no-underline"
-                      data-container="body"
-                      data-placement="bottom"
-                      data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></a>
-                    <br/>
-                    <span>Please enter your 4-digit PIN code:</span>
-
-                    <span class="form-inline-container">
-
-                      <span class="form-group has-error">
-                        {% include components.elements.forms.input with {
-                        type: 'password',
-                        maxlength: 4,
-                        placeholder: null,
-                        theValue: null,
-                        size: '7',
-                        haslabelErrorIcon: null,
-                        hasInlineErrorIcon: true,
-                        hasAbsoluteErrorIcon: null,
-                        classes: 'input-sm form-control form-control-inline has-feedback'
-                      } %}
-                      </span>
-
-                      {#
-                    <input type="text" class="input-sm form-control form-control-inline has-feedback" size="7" maxlength="4">
-                    <div class="form-control-inline-feedback">
-                      <p class="text-danger small"><b>Field PIN is mandatory, please fill it in.</b></p>
-                    </div> #}
-                    </span>
-
-                    <a
-                      href="javascript:void(0)"
-                      data-toggle="popover"
-                      data-target="#generic-modal"
-                      class="lt-icon lt-tip lt-medium align-middle no-underline"
-                      data-container="body"
-                      data-placement="bottom"
-                      data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></a>
-
-                    <!-- Developer note: Show if there is an error. -->
-
-                    <!-- <p class="text-danger small"><b>Field PIN is mandatory, please fill it in.</b></p> -->
-                  </div>
-
-                </div>
-                <!-- END - ONLY SHOW WHEN RADIO BUTTON IS SELECTED -->
-              </div>
-              <!-- END - QUICKPAY STATE - ENROLLED -->
-
-              <!-- START - QUICKPAY STATE - NOT ENROLLED -->
-              <div class="form-group pt-2">
-                <!-- Developer note: This is disabled. -->
-                {% include components.elements.forms.radio with {
-                  name: 'pay-type',
-                  theValue: 'quick-pay',
-                  theLabel: '<em>QuikPAY</em>  <small class="text-default">You are not enrolled.</small> <button class="btn btn-default btn-sm btn-soft ml-3" data-toggle="modal" data-target="#checkout-quickpay-enrollment-modal"><a class="ml-2 mr-2">Enroll now</a></button>',
-                  dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
-                  disabled: true
-                } %}
-
-                <div class="ml-5">
-                  <p class="text-muted small ml-3">
-                    <em>QuickPAY is the safer, easier way to pay online without revealing your credit card number.</em>
-                  </p>
-                </div>
-              </div>
-              <!-- END - QUICKPAY STATE - NOT ENROLLED -->
-
-              <!-- START - QUICKPAY STATE - ENROLLMENT IN PROCESS -->
-              <div class="form-group">
-                <!-- Developer note: This is disabled. -->
-
-                {% include components.elements.forms.radio with {
-                  name: 'pay-type',
-                  theValue: 'quick-pay',
-                  theLabel: 'QuikPAY',
-                  dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin:not(.in)"',
-                  disabled: true,
-                  haslabelErrorIcon: false
-                } %}
-
-                <div class="ml-5">
-                  <strong class="text-danger small ml-3">(Account is currently being processed)</strong>
-                  <p class="small text-muted ml-3">
-                    <em>The enrollment process takes 6 days to complete from the date you submitted your request. Once the enrollment process has completed, please activate your QuikPAY account by calling 1-877-QuikPAY (1-877-784-5729) and resetting your PIN #. After
-                      activating your QuikPAY Pin, please allow 24 hours before it updates on the site.</em>
-                  </p>
-                </div>
-              </div>
-              <!-- END - QUICKPAY STATE - ENROLLMENT IN PROCESS -->
-
-              <!-- END - PAY TYPE - QUICKPAY -->
-
-              <!-- START - PAY TYPE - CREDIT CARD -->
-              <div class="form-group">
-                {% include components.elements.forms.radio with {
-                  name: 'pay-type',
-                  theValue: 'cc-cards',
-                  theLabel: 'Credit Card(s)',
-                  dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin.in"'
-                } %}
-              </div>
-
-              <div class="ml-5">
-                <p class="small text-muted ml-3">
-                  <em>Avon accepts MasterCard, VISA, Discover, American Express, and Diners Club credit cards</em>
-                </p>
-              </div>
-              <!-- END - PAY TYPE - CREDIT CARD -->
-
-              <div class="ml-3">
                 <div class="row">
-                  <div class="col-sm-6 ml-5">
-                    <div class="form-group">
-                      <label class="control-label" for="pay-avon-cardnum">Card Number</label>
 
-                      {% include '_includes/elements/forms/input-with-addon.html.twig' with {
-                        type: 'number',
-                        id: 'pay-avon-cardnum',
-                        placeholder: '',
-                        classes: '',
-                        addon: '<img src="/images/icons/payment-visa.svg">'
-                      } %}
-
-                    </div>
-
-                    <div class="form-group">
-                      {% include '_includes/elements/forms/input-with-addon.html.twig' with {
-                        type: 'number',
-                        placeholder: '1234 5678 9098 7654',
-                        classes: '',
-                        addon: '<img src="/images/icons/payment-visa.svg">',
-                        onInputJs: "javascript: var target = this, position = target.selectionEnd, length = target.value.length;
-                          target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
-                          target.selectionEnd = position += ((target.value.charAt(position - 1) === ' ' && target.value.charAt(length - 1) === ' ' && length !== target.value.length) ? 1 : 0);"
-                      } %}
-                    </div>
-
-                    <div class="form-group">
-                      <p class="mb-3 text-muted small">Name on Card</p>
-                      {% include components.elements.forms.input with {
-                        placeholder: 'Phoebe Pope'
-                      } %}
-                    </div>
-
-                    <div class="row">
-
-                      <div class="col-xs-12 col-sm-9 mb-4 mb-sm-0">
-                        <label class="control-label">Expiration Date</label>
-
-                        <div class="row">
-
-                          <div class="col-xs-12 col-sm-6 mb-4 mb-sm-0">
-                            <select class="form-control form-inline selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
-                              <option selected="true" disabled="true">MM</option>
-                              <option>01</option>
-                              <option>02</option>
-                              <option>03</option>
-                              <option>04</option>
-                              <option>05</option>
-                              <option>06</option>
-                              <option>07</option>
-                              <option>08</option>
-                              <option>09</option>
-                              <option>10</option>
-                              <option>11</option>
-                              <option>12</option>
-                            </select>
-                          </div>
-
-                          <div class="col-xs-12 col-sm-6">
-                            <select class="form-control form-inline selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
-                              <option selected="true" disabled="true">YYYY</option>
-                              <option>2018</option>
-                              <option>2019</option>
-                              <option>2020</option>
-                              <option>2021</option>
-                              <option>2022</option>
-                              <option>2023</option>
-                              <option>2024</option>
-                              <option>2025</option>
-                              <option>2026</option>
-                              <option>2027</option>
-                            </select>
-                          </div>
-
-                        </div>
-
-                      </div>
-
-                      <div class="col-xs-12 col-sm-3">
-                        <label class="control-label" for="pay-avon-cvv">CVV</label>
-                        <span class="lt-icon lt-tip lt-medium align-middle"></span>
-                        {% include components.elements.forms.input with {
-                          type: 'number',
-                          id: 'pay-avon-cvv',
-                          placeholder: '123',
-                          maxlength: 3,
-                          onInputJs: 'javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);'
-                        } %}
-                      </div>
-
-                    </div>
-
-                    <div class="pt-3">
-                      <h6 class="mb-4 pt-4">billing Address</h6>
-
-                      <div class="form-group">
-                        <label class="control-label" for="pay-avon-billaddrs">Address</label>
-                        <span class="lt-icon lt-tip lt-medium align-middle"></span>
-                        {% include components.elements.forms.input with {
-                          id: 'pay-avon-billaddrs',
-                          placeholder: '1234 Westminster Junction'
-                        } %}
-                      </div>
-
-                      <div class="form-group">
-                        {% include components.elements.forms.input with {
-                          placeholder: 'Unit #3289W'
-                        } %}
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group has-error">
-                            {% include components.groups.forms.inputAndLabel with {
-                              type: 'number',
-                              id: 'pay-avon-zip',
-                              mainLabel: 'ZIP',
-                              haslabelErrorIcon: true,
-                              hasInlineErrorIcon: null,
-                              hasAbsoluteErrorIcon: null,
-                              classes: 'form-control',
-                              maxlength: 5,
-                              onInputJs: 'javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);'
-                            } %}
-                          </div>
-                        </div>
-
-                        <div class="col-md-6">
-                          {% include components.groups.forms.inputAndLabel with {
-                            id: 'pay-avon-city',
-                            mainLabel: 'City',
-                            placeholder: 'Albuquerque',
-                            haslabelErrorIcon: true,
-                            hasInlineErrorIcon: null,
-                            hasAbsoluteErrorIcon: null,
-                            classes: 'form-control'
-                          } %}
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group has-feedback">
-                            <label class="control-label" for="pay-avon-state">State</label>
-                            <select id="pay-avon-state" class="form-control selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
-                              <option selected="true" disabled="true">Select&hellip;</option>
-                              <option>AK - Alaska</option>
-                              <option>State 2</option>
-                              <option>State 3</option>
-                              <option>State 4</option>
-                              <option>State 5</option>
-                              <option>State 6</option>
-                              <option>State 7</option>
-                              <option>State 8</option>
-                              <option>State 9</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <!-- <p class="mb-3 small text-muted">Country</p> -->
-                          <div class="form-group has-feedback">
-                            <label class="control-label" for="pay-avon-country">Country</label>
-                            <select id="pay-avon-country" class="form-control selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
-                              <option selected="true" disabled="true">Select&hellip;</option>
-                              <option>United States</option>
-                              <option>Country 1</option>
-                              <option>Country 2</option>
-                              <option>Country 3</option>
-                              <option>Country 4</option>
-                              <option>Country 5</option>
-                              <option>Country 6</option>
-                              <option>Country 7</option>
-                              <option>Country 8</option>
-                              <option>Country 9</option>
-                              <option>Country 10</option>
-                              <option>Country 11</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
+                  <div class="col-xs-12 col-sm-6 mb-4 mb-sm-0">
+                    <select class="form-control form-inline selectpicker" data-size="4" data-style="btn-select"
+                      data-icon-base="lt-icon">
+                      <option selected="true" disabled="true">MM</option>
+                      <option>01</option>
+                      <option>02</option>
+                      <option>03</option>
+                      <option>04</option>
+                      <option>05</option>
+                      <option>06</option>
+                      <option>07</option>
+                      <option>08</option>
+                      <option>09</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                    </select>
                   </div>
 
-                </div>
-                <div class="ml-5">
-                  <div class="row">
-                    <div class="col-sm-4 col-md-3 mt-4">
-                      <!-- START - Continue Button -->
-                      <a href="javascript:void(0)" class="btn btn-primary d-block" disabled="disabled" data-toggle="modal" data-target="#confirm-payment-details">Continue</a>
-                      <!-- END - Continue Button -->
-                    </div>
-
-                    <div class="col-sm-4 col-md-3 mt-4">
-                      <!-- START - Continue Button -->
-                      <a href="javascript:void(0)" class="btn btn-primary d-block" data-toggle="modal" data-target="#confirm-payment-details">Continue</a>
-                      <!-- END - Continue Button -->
-                    </div>
+                  <div class="col-xs-12 col-sm-6">
+                    <select class="form-control form-inline selectpicker" data-size="4" data-style="btn-select"
+                      data-icon-base="lt-icon">
+                      <option selected="true" disabled="true">YYYY</option>
+                      <option>2018</option>
+                      <option>2019</option>
+                      <option>2020</option>
+                      <option>2021</option>
+                      <option>2022</option>
+                      <option>2023</option>
+                      <option>2024</option>
+                      <option>2025</option>
+                      <option>2026</option>
+                      <option>2027</option>
+                    </select>
                   </div>
+
                 </div>
 
               </div>
+
+              <div class="col-xs-12 col-sm-3">
+                <label class="control-label" for="pay-avon-cvv">CVV</label>
+                <span class="lt-icon lt-tip lt-medium align-middle"></span>
+                {% include components.elements.forms.input with {
+                type: 'number',
+                id: 'pay-avon-cvv',
+                placeholder: '123',
+                maxlength: 3,
+                onInputJs: 'javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0,
+                this.maxLength);'
+                } %}
+              </div>
+
+            </div>
+
+            <div class="pt-3">
+              <h6 class="mb-4 pt-4">billing Address</h6>
+
+              <div class="form-group">
+                <label class="control-label" for="pay-avon-billaddrs">Address</label>
+                <span class="lt-icon lt-tip lt-medium align-middle"></span>
+                {% include components.elements.forms.input with {
+                id: 'pay-avon-billaddrs',
+                placeholder: '1234 Westminster Junction'
+                } %}
+              </div>
+
+              <div class="form-group">
+                {% include components.elements.forms.input with {
+                placeholder: 'Unit #3289W'
+                } %}
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group has-error">
+                    {% include components.groups.forms.inputAndLabel with {
+                    type: 'number',
+                    id: 'pay-avon-zip',
+                    mainLabel: 'ZIP',
+                    haslabelErrorIcon: true,
+                    hasInlineErrorIcon: null,
+                    hasAbsoluteErrorIcon: null,
+                    classes: 'form-control',
+                    maxlength: 5,
+                    onInputJs: 'javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0,
+                    this.maxLength);'
+                    } %}
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  {% include components.groups.forms.inputAndLabel with {
+                  id: 'pay-avon-city',
+                  mainLabel: 'City',
+                  placeholder: 'Albuquerque',
+                  haslabelErrorIcon: true,
+                  hasInlineErrorIcon: null,
+                  hasAbsoluteErrorIcon: null,
+                  classes: 'form-control'
+                  } %}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group has-feedback">
+                    <label class="control-label" for="pay-avon-state">State</label>
+                    <select id="pay-avon-state" class="form-control selectpicker" data-size="4" data-style="btn-select"
+                      data-icon-base="lt-icon">
+                      <option selected="true" disabled="true">Select&hellip;</option>
+                      <option>AK - Alaska</option>
+                      <option>State 2</option>
+                      <option>State 3</option>
+                      <option>State 4</option>
+                      <option>State 5</option>
+                      <option>State 6</option>
+                      <option>State 7</option>
+                      <option>State 8</option>
+                      <option>State 9</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <!-- <p class="mb-3 small text-muted">Country</p> -->
+                  <div class="form-group has-feedback">
+                    <label class="control-label" for="pay-avon-country">Country</label>
+                    <select id="pay-avon-country" class="form-control selectpicker" data-size="4" data-style="btn-select"
+                      data-icon-base="lt-icon">
+                      <option selected="true" disabled="true">Select&hellip;</option>
+                      <option>United States</option>
+                      <option>Country 1</option>
+                      <option>Country 2</option>
+                      <option>Country 3</option>
+                      <option>Country 4</option>
+                      <option>Country 5</option>
+                      <option>Country 6</option>
+                      <option>Country 7</option>
+                      <option>Country 8</option>
+                      <option>Country 9</option>
+                      <option>Country 10</option>
+                      <option>Country 11</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
-          <!-- END - PAYMENT TYPE SECTION -->
 
-          <!-- START - MODAL - PAY AVON CONFIRM PAYMENT DETAILS -->
-          {% include "_includes/modules/account/modals-pay/pay-avon-confirm-payment-details-modal.html.twig" %}
-          <!-- END - MODAL - PAY AVON CONFIRM PAYMENT DETAILS -->
+        </div>
+        <div class="ml-5">
+          <div class="row">
+            <div class="col-sm-4 col-md-3 mt-4">
+              <!-- START - Continue Button -->
+              <a href="javascript:void(0)" class="btn btn-primary d-block" disabled="disabled" data-toggle="modal"
+                data-target="#confirm-payment-details">Continue</a>
+              <!-- END - Continue Button -->
+            </div>
 
-          <!-- START - MODAL - PAY AVON PAYMENT SUCCESSFULL -->
-          {% include "_includes/modules/account/modals-pay/pay-avon-payment-success-modal.html.twig" %}
-          <!-- END - MODAL - PAY AVON PAYMENT SUCCESSFULL -->
+            <div class="col-sm-4 col-md-3 mt-4">
+              <!-- START - Continue Button -->
+              <a href="javascript:void(0)" class="btn btn-primary d-block" data-toggle="modal" data-target="#confirm-payment-details">Continue</a>
+              <!-- END - Continue Button -->
+            </div>
+          </div>
+        </div>
 
-        {% endblock %}
+      </div>
+    </div>
+  </div>
+  <!-- END - PAYMENT TYPE SECTION -->
 
-      {% endembed %}
+  <!-- START - MODAL - PAY AVON CONFIRM PAYMENT DETAILS -->
+  {% include "_includes/modules/account/modals-pay/pay-avon-confirm-payment-details-modal.html.twig" %}
+  <!-- END - MODAL - PAY AVON CONFIRM PAYMENT DETAILS -->
 
-    </section>
+  <!-- START - MODAL - PAY AVON PAYMENT SUCCESSFULL -->
+  {% include "_includes/modules/account/modals-pay/pay-avon-payment-success-modal.html.twig" %}
+  <!-- END - MODAL - PAY AVON PAYMENT SUCCESSFULL -->
 
   {% endblock %}
 
-  <!-- START - MAGNOLIA BLOCK -->
-  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
-    position: 'bottom',
-    html: '<div class="reverse-bg py-3">
-    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
-    </div>'
-  } %}
-  <!-- END - MAGNOLIA BLOCK -->
+  {% endembed %}
 
-  <!-- START - MODAL - GENERIC -->
-  {% include "_includes/modules/modals/modal-blank-generic.html.twig" %}
-  <!-- END - MODAL - QUICKPAY ENROLLMENT -->
+</section>
 
-  <!-- START - MODAL - QUICKPAY ENROLLMENT -->
-  {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-modal.html.twig" %}
-  <!-- END - MODAL - QUICKPAY ENROLLMENT -->
+{% endblock %}
 
-  <!-- START - MODAL - QUICKPAY ENROLLMENT REVIEW -->
-  {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-review-modal.html.twig" %}
-  <!-- END - MODAL - QUICKPAY ENROLLMENT REVIEW -->
+<!-- START - MAGNOLIA BLOCK -->
+{% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+position: 'bottom',
+html: '<div class="reverse-bg py-3">
+  <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+</div>'
+} %}
+<!-- END - MAGNOLIA BLOCK -->
 
-  <!-- START - MODAL - QUICKPAY ENROLLMENT SUCCESS -->
-  {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-success-modal.html.twig" %}
-  <!-- END - MODAL - QUICKPAY ENROLLMENT SUCCESS -->
+<!-- START - MODAL - GENERIC -->
+{% include "_includes/modules/modals/modal-blank-generic.html.twig" %}
+<!-- END - MODAL - QUICKPAY ENROLLMENT -->
 
-  <!-- START - MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
-  {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-learn-more-modal.html.twig" %}
-  <!-- END - MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
+<!-- START - MODAL - QUICKPAY ENROLLMENT -->
+{% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-modal.html.twig" %}
+<!-- END - MODAL - QUICKPAY ENROLLMENT -->
 
-  <!-- MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
-  {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-learn-more-modal.html.twig" %}
+<!-- START - MODAL - QUICKPAY ENROLLMENT REVIEW -->
+{% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-review-modal.html.twig" %}
+<!-- END - MODAL - QUICKPAY ENROLLMENT REVIEW -->
 
-  <!-- MODAL - QUICKPAY ENROLLMENT REVIEW -->
-  {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-review-modal.html.twig" %}
+<!-- START - MODAL - QUICKPAY ENROLLMENT SUCCESS -->
+{% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-success-modal.html.twig" %}
+<!-- END - MODAL - QUICKPAY ENROLLMENT SUCCESS -->
+
+<!-- START - MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
+{% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-learn-more-modal.html.twig" %}
+<!-- END - MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
+
+<!-- MODAL - QUICKPAY ENROLLMENT LEARN MORE -->
+{% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-learn-more-modal.html.twig" %}
+
+<!-- MODAL - QUICKPAY ENROLLMENT REVIEW -->
+{% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-review-modal.html.twig" %}
 
 {% endblock %}
