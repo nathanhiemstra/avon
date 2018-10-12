@@ -161,6 +161,7 @@ p {
 small,
 .small {
   font-size: floor(100% * $font-size-small / $font-size-base);
+  line-height: 1.38;
 }
 
 .tiny {

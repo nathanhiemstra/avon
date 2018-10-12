@@ -4,7 +4,7 @@
   {% endset %}
 {% endif %}
 
-<label class="control-label" for="{{ id }}">{{ errorIcon }}{{ mainLabel }}</label>
+<label class="control-label {{ classes }}" for="{{ id }}">{{ errorIcon }}{{ mainLabel }}</label>
 {% if labelAddon %}
   <span class="control-label-addon">{{ labelAddon }}</span>
 {% endif %}

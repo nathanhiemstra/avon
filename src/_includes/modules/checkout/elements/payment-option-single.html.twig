@@ -10,8 +10,6 @@ Parameters:
   editable (boolean - will show or hide 'Edit | Remove' links)
   alertMsg (string - if present, will show an alert / warning with its value)
   buttonMode (boolean - will make the entire row item clickable)
-
-
 -->
 
 {# set defaults #}
@@ -23,17 +21,21 @@ Parameters:
   {% set buttonMode = false %}
 {% endif %}
 
+{% if border is not defined %}
+  {% set border = true %}
+{% endif %}
+
 {# wrap entire row in link if buttonMode is true #}
 {% if buttonMode %}
-  <a href="#" class="link-secondary btn-block border-bottom">
+  <a href="#" class="link-secondary btn-block {% if border %}border-bottom{% endif %}">
 {% else %}
-   <div class="border-bottom">
+   <div class="{% if border %}border-bottom{% endif %}">
 {% endif %}
 
   {% if expired %}
-  <div class="clearfix my-2 py-3 text-danger">
+  <div class="clearfix {% if customClasses %}{{ customClasses }}{% else %}my-2 py-3{% endif %} text-danger">
   {% else %}
-  <div class="clearfix my-2 py-3">
+  <div class="clearfix {% if customClasses %}{{ customClasses }}{% else %}my-2 py-3{% endif %}">
   {% endif %}
     {% if icon %}
       <div class="pull-left mr-4">
@@ -42,7 +44,7 @@ Parameters:
     {% endif %}
     {% if expired %}
       <div class="pull-left">
-        <div>{{ type }}</div>
+        <div>{{ type }} - Expired</div>
         {% if subhead %}<div class="text-danger small">{{ subhead }}</div>{% endif %}
         {% if holder %}<div class="text-danger small">
           {{ holder }}
@@ -55,7 +57,6 @@ Parameters:
         <div>{{ type }}</div>
         {% if subhead %}<div class="text-muted small">{{ subhead }}</div>{% endif %}
         {% if holder %}<div class="text-muted small">{{ holder }}</div>{% endif %}
-
       </div>
     {% endif %}
     <div class="pull-right text-right">
@@ -65,7 +66,6 @@ Parameters:
       {% if editable %}
         <div class="small"><a class="underline" href="#">Edit</a> | <a class="underline" href="#">Remove</a></div>
       {% endif %}
-      
     </div>
 
     {% if alertMsg %}

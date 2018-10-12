@@ -36,8 +36,9 @@
     color: $link-hover-color;
 
     .lt-icon,
-    .lt-icon:before {
-      color: $link-hover-color;
+    .lt-icon:before,
+    .text-muted {
+      color: $link-hover-color !important;
     }
   }
 }

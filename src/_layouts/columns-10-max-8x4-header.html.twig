@@ -2,11 +2,11 @@
   {% set contentSplit = false %}
 {% endif %}
 
-<div class="container" {% if contentSplit %} data-split-content {% endif %}>
+<div {% if contentSplit %} data-split-content {% endif %}>
 
   <div class="row">
 
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-10 col-md-offset-1 px-0">
 
       <header class="col-md-12" role="header">
         {% block contentheader %}{% endblock %}

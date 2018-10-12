@@ -36,12 +36,15 @@
     {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
       type: 'Mastercard ending in 9876',
       icon: '/images/icons/payment-mastercard.svg',
-      amount: '$25.00'
+      amount: '$25.00',
+      border: false
     } %}
 
-    <div class="pt-4">
+    <div class="pt-3">
       <div class="clearfix mb-2">
-        <h6 class="mb-3 pull-left">Add Another Payment Method</h6>
+        <!-- DEV NOTE :: This text changes to 'add a final' if the 3rd and final payment method is being added -->
+        <h6 class="mb-3">Add Another Payment Method</h6>
+        <h6 class="mb-3">Add a Final Payment Method</h6>
       </div>
 
       {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
@@ -65,11 +68,11 @@
         buttonMode: true
       } %}
 
-      <div class="text-muted pb-4">Max number of payment methods(3) reached. </div>
+      <div class="text-muted pb-4"><em>Max number of payment methods(3) reached.</em></div>
 
     </div>
   </div>
-    
 
-  
+
+
 </section>

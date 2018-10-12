@@ -372,7 +372,7 @@ $input-border-focus: $gray-light !default;
 $input-color-placeholder: #999 !default;
 
 //** Form labels text color
-$input-label-text-color: $gray;
+$input-label-text-color: $black;
 
 //** Form labels font size
 $input-label-font-size: 14px;
@@ -720,7 +720,7 @@ $state-warning-text: $orange-dark !default;
 $state-warning-bg: $orange-lighter !default;
 $state-warning-border: $orange-dark !default;
 
-$state-danger-text: $red-dark !default;
+$state-danger-text: $red !default;
 $state-danger-bg: $red-lighter !default;
 $state-danger-border: $red-lighter !default;
 $state-danger-border-width: 2px;
