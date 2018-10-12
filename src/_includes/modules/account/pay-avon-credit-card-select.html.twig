@@ -1,9 +1,3 @@
-{# {% include components.elements.forms.radio with {
-name: 'pay-type',
-theValue: 'cc-cards',
-theLabel: 'Credit Card(s)',
-dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin.in"'
-} %} #}
 {% set opt1 %}
 {% include "_includes/modules/account/pay-avon-credit-card-option.html.twig" with {
   thumb: '../images/icons/payment-visa.svg',
@@ -35,12 +29,20 @@ dataAttrs: 'data-toggle="collapse" data-target="#collapse-quickpay-pin.in"'
 } %}
 {% endset %}
 
+{% set opt4 %}
+{% include "_includes/modules/account/pay-avon-credit-card-option.html.twig" with {
+  thumb: '../images/icons/payment-creditcard.svg',
+  label: 'Use another credit card'
+} %}
+{% endset %}
+
 {% set selectPicker %}
 <select class="form-control selectpicker" data-size="5" data-style="btn-select" data-icon-base="lt-icon">
   <option selected="true" disabled="true">Select a credit card</option>
   <option data-content="{{ opt1 }}"></option>
   <option data-content="{{ opt2 }}"></option>
   <option data-content="{{ opt3 }}"></option>
+  <option data-content="{{ opt4 }}"></option>
 </select>
 <div class="select-picker-addon"><a class="underline" data-toggle="modal" data-target="#pay-avon-edit-stored-card-modal">Edit card</a></div>
 {% endset %}
