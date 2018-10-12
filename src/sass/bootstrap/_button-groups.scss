@@ -322,6 +322,8 @@
     }
   }
 
+  // 'contained' is optimal for buttons contained in a module that doesn't fill the page width
+  // mostly used for checkout payment modules on the ckeckout page
   &--contained {
     width: 100%;
 
@@ -342,19 +344,18 @@
 
         .btn {
           width: 100%;
-          // font-size: 85%;
           padding-right: 0;
           padding-left: 0;
         }
 
         &:first-of-type {
-          padding-right: $spacing-4;
+          padding-right: 6px;
           margin-bottom: 0;
         }
 
         &:last-of-type {
           margin-left: 0;
-          padding-left: $spacing-4;
+          padding-left: 6px;
         }
       }
 
@@ -363,39 +364,13 @@
 
         &:first-of-type {
           margin-bottom: 0;
-          margin-right: $spacing-4;
+          margin-right: 12px;
         }
 
         .btn {
           width: auto;
         }
       }
-
-      // @media (max-width: $screen-sm-min) {
-      //   &:first-of-type, &:last-of-type, &:only-child {
-      //     width: 100%;
-      //     padding-right: 0;
-      //     padding-left: 0;
-
-      //     .btn {
-      //       width: 100%;
-      //     }
-      //   }
-      //   &:first-of-type {
-      //     margin-bottom: $spacing-3;
-      //   }
-      // }
-      // @media (max-width: $screen-xs-max) {
-      //   &:first-of-type, &:last-of-type, &:only-child {
-      //     width: 50%;
-      //     padding-right: 0;
-      //     padding-left: 0;
-
-      //     .btn {
-      //       width: 100%;
-      //     }
-      //   }
-      // }
     }
   }
 
