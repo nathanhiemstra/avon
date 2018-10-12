@@ -1,0 +1,13 @@
+
+<svg width="24px" height="18px" viewBox="0 0 24 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="icon/payment/generic-credit" transform="translate(0.000000, -3.000000)">
+      <g id="cards-color_bitcoin" transform="translate(0.000000, 3.130000)">
+        <path d="M22.4347826,0 L1.56521739,0 C0.700695652,0 0,0.700695652 0,1.56521739 L0,16.173913 C0,17.0384348 0.700695652,17.7391304 1.56521739,17.7391304 L22.4347826,17.7391304 C23.2993043,17.7391304 24,17.0384348 24,16.173913 L24,1.56521739 C24,0.700695652 23.2993043,0 22.4347826,0 Z" id="Shape" fill="#E6E6E6" fill-rule="nonzero"></path>
+        <text id="CC" font-family="Helvetica" font-size="12" font-weight="normal" line-spacing="15" letter-spacing="0.8571429" fill="#666666">
+          <tspan x="2.47684148" y="13">CC</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
