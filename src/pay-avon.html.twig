@@ -288,7 +288,7 @@ html: '<div class="reverse-bg py-3">
               id: 'pay-avon-cardnum',
               placeholder: '',
               classes: '',
-              addon: '<img src="/images/icons/payment-visa.svg">'
+              addon: '<img src="/images/icons/payment-creditcard.svg">'
               } %}
             </div>
 
@@ -297,7 +297,7 @@ html: '<div class="reverse-bg py-3">
               type: 'number',
               placeholder: '1234 5678 9098 7654',
               classes: '',
-              addon: '<img src="/images/icons/payment-visa.svg">',
+              addon: '<img src="/images/icons/payment-creditcard.svg">',
               onInputJs: "javascript: var target = this, position = target.selectionEnd, length = target.value.length;
               target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
               target.selectionEnd = position += ((target.value.charAt(position - 1) === ' ' &&
@@ -306,9 +306,10 @@ html: '<div class="reverse-bg py-3">
             </div>
 
             <div class="form-group">
-              <p class="mb-3 text-muted small">Name on Card</p>
-              {% include components.elements.forms.input with {
-              placeholder: 'Phoebe Pope'
+              {% include components.groups.forms.inputAndLabel with {
+                id: 'name-on-card',
+                mainLabel: 'Name on Card',
+                theValue: 'Phoebe Pope'
               } %}
             </div>
 
@@ -320,39 +321,36 @@ html: '<div class="reverse-bg py-3">
                 <div class="row">
 
                   <div class="col-xs-12 col-sm-6 mb-4 mb-sm-0">
-                    <select class="form-control form-inline selectpicker" data-size="4" data-style="btn-select"
-                      data-icon-base="lt-icon">
-                      <option selected="true" disabled="true">MM</option>
-                      <option>01</option>
-                      <option>02</option>
-                      <option>03</option>
-                      <option>04</option>
-                      <option>05</option>
-                      <option>06</option>
-                      <option>07</option>
-                      <option>08</option>
-                      <option>09</option>
-                      <option>10</option>
-                      <option>11</option>
-                      <option>12</option>
-                    </select>
+                    {% include "_includes/groups/forms/selectpicker-and-label.html.twig" with {
+                    selectFirst: true,
+                    size: "4",
+                    classes: 'form-inline',
+                    options: [
+                    "MM",
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    ]
+                    } %}
                   </div>
 
                   <div class="col-xs-12 col-sm-6">
-                    <select class="form-control form-inline selectpicker" data-size="4" data-style="btn-select"
-                      data-icon-base="lt-icon">
-                      <option selected="true" disabled="true">YYYY</option>
-                      <option>2018</option>
-                      <option>2019</option>
-                      <option>2020</option>
-                      <option>2021</option>
-                      <option>2022</option>
-                      <option>2023</option>
-                      <option>2024</option>
-                      <option>2025</option>
-                      <option>2026</option>
-                      <option>2027</option>
-                    </select>
+                    {% include "_includes/groups/forms/selectpicker-and-label.html.twig" with {
+                    selectFirst: true,
+                    size: "4",
+                    classes: 'form-inline',
+                    options: [
+                    "YYYY",
+                    "2018",
+                    "2019",
+                    "2020",
+                    "2021",
+                    "2022",
+                    ]
+                    } %}
                   </div>
 
                 </div>
@@ -376,8 +374,8 @@ html: '<div class="reverse-bg py-3">
             <div class="pt-3">
 
               {% include "_includes/elements/forms/checkbox.html.twig" with {
-                checked: true,
-                theLabel: 'Billing address is same as Shipping'
+              checked: true,
+              theLabel: 'Billing address is same as Shipping'
               } %}
 
               <h6 class="mb-4 pt-4">billing Address</h6>
@@ -422,7 +420,7 @@ html: '<div class="reverse-bg py-3">
                   haslabelErrorIcon: true,
                   hasInlineErrorIcon: null,
                   hasAbsoluteErrorIcon: null,
-                  classes: 'form-control'
+                  classes: 'form-control',
                   } %}
                 </div>
               </div>
@@ -430,51 +428,49 @@ html: '<div class="reverse-bg py-3">
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group has-feedback">
-                    <label class="control-label" for="pay-avon-state">State</label>
-                    <select id="pay-avon-state" class="form-control selectpicker" data-size="4" data-style="btn-select"
-                      data-icon-base="lt-icon">
-                      <option selected="true" disabled="true">Select&hellip;</option>
-                      <option>AK - Alaska</option>
-                      <option>State 2</option>
-                      <option>State 3</option>
-                      <option>State 4</option>
-                      <option>State 5</option>
-                      <option>State 6</option>
-                      <option>State 7</option>
-                      <option>State 8</option>
-                      <option>State 9</option>
-                    </select>
+                    {% include "_includes/groups/forms/selectpicker-and-label.html.twig" with {
+                    label: "State",
+                    id: "pay-avon-state",
+                    selectFirst: true,
+                    size: "4",
+                    options: [
+                    "Select&hellip;",
+                    "AK",
+                    "State 2",
+                    "State 3",
+                    "State 4",
+                    "State 5",
+                    ]
+                    } %}
                   </div>
                 </div>
                 <div class="col-md-8">
                   <!-- <p class="mb-3 small text-muted">Country</p> -->
                   <div class="form-group has-feedback">
-                    <label class="control-label" for="pay-avon-country">Country</label>
-                    <select id="pay-avon-country" class="form-control selectpicker" data-size="4" data-style="btn-select"
-                      data-icon-base="lt-icon">
-                      <option selected="true" disabled="true">Select&hellip;</option>
-                      <option>United States</option>
-                      <option>Country 1</option>
-                      <option>Country 2</option>
-                      <option>Country 3</option>
-                      <option>Country 4</option>
-                      <option>Country 5</option>
-                      <option>Country 6</option>
-                      <option>Country 7</option>
-                      <option>Country 8</option>
-                      <option>Country 9</option>
-                      <option>Country 10</option>
-                      <option>Country 11</option>
-                    </select>
+                    {% include "_includes/groups/forms/selectpicker-and-label.html.twig" with {
+                    label: "Country",
+                    id: "pay-avon-country",
+                    selectFirst: true,
+                    size: "4",
+                    options: [
+                    "Select&hellip;",
+                    "United States",
+                    "Country 2",
+                    "Country 3",
+                    "Country 4",
+                    "Country 5",
+                    ]
+                    } %}
                   </div>
                 </div>
               </div>
 
               {% include "_includes/elements/forms/checkbox.html.twig" with {
-                checked: true,
-                theLabel: 'Save credit card information to my account',
-                helperText: 'Donec id elit non mi porta gravida et eget metus. Nulla vitae elit libero, a phareta augue verbose.',
-                emphasize: true
+              checked: true,
+              theLabel: 'Save credit card information to my account',
+              helperText: 'Donec id elit non mi porta gravida et eget metus. Nulla vitae elit libero, a phareta augue
+              verbose.',
+              emphasize: true
               } %}
 
             </div>
