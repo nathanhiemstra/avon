@@ -12,8 +12,16 @@ $( document ).ready( function () {
   }
 
   $('.radio-select-combo').on('click', function() {
+    var $radio = $(this).find('input[type="radio"]');
+    var $collapse = $('#collapse-cc-details');
+
     // check the radio button if selectpicker clicked
-    $(this).find('input[type="radio"]').prop('checked', true);
+    $radio.prop('checked', true);
+
+    // show credit card details
+    if($collapse.length && !$collapse.hasClass('in')) {
+      $collapse.collapse('show');
+    }
   });
 
 
