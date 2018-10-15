@@ -21,7 +21,7 @@
     } %}
 
     {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
-      type: 'VISA ending 1234',
+      type: '<span>VISA</span> ending <span>1234</span>',
       icon: '/images/icons/payment-visa.svg',
       amount: '$15.00',
     } %}
@@ -34,7 +34,7 @@
     } %} #}
 
     {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
-      type: 'Mastercard ending in 9876',
+      type: '<span>Mastercard</span> ending in <span>9876</span>',
       icon: '/images/icons/payment-mastercard.svg',
       amount: '$25.00',
       border: false
@@ -48,7 +48,7 @@
       </div>
 
       {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
-        type: 'Visa ending in 1234 - Expired',
+        type: '<span>Visa</span> ending in <span>1234</span> <span>- Expired</span>',
         icon: '/images/icons/payment-visa.svg',
         subhead: null,
         amount: null,
