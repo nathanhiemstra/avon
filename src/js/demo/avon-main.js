@@ -5,6 +5,17 @@ $( document ).ready( function () {
     $("html").addClass("isIE");
   }
 
+  var mobileOrTablet = navigator.userAgent.match(/Android|BlackBerry|Tablet|Mobile|iPhone|iPad|iPod|Opera Mini|IEMobile/i);
+  if(mobileOrTablet) {
+    // if mobile or tablet, enable native select for selectpicker
+    $('.selectpicker').selectpicker('mobile');
+  }
+
+  $('.radio-select-combo').on('click', function() {
+    // check the radio button if selectpicker clicked
+    $(this).find('input[type="radio"]').prop('checked', true);
+  });
+
 
   ////////////////////////////////////////////////////////
   // VARIABLES
