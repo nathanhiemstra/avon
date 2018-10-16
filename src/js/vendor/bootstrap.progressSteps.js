@@ -9,13 +9,13 @@
 
     // elements
     this.$el = $(el);
-    this.$stepLinks = this.$el.find('[data-target-step]');
+    this.$stepItems = this.$el.find('[data-target-step]');
     this.$stepContent = this.$el.find('[data-step]');
     this.$stepForwardBtn = this.$el.find('[data-step-forward]');
     this.$stepBackBtn = this.$el.find('[data-step-back]');
 
     // error checking
-    if (this.$stepLinks.length !== this.$stepContent.length) {
+    if (this.$stepItems.length !== this.$stepContent.length) {
       console.error('Progress Steps - You must provide a [data-step] for each [data-target-step] in your markup');
       return;
     }
@@ -29,8 +29,9 @@
     }
 
     // private vars
-    this._numSteps = this.$stepLinks.length;
+    this._numSteps = this.$stepItems.length;
     this._currentStep = parseInt(this.options.currentStep);
+    this._stepWidth = 100 / this._numSteps;
 
     // let's go
     this._init();
@@ -44,6 +45,11 @@
   ProgressSteps.prototype._init = function () {
 
     var that = this;
+
+    // set step width
+    $.each(this.$stepItems, function (key, val) {
+      $(this).css('width', that._stepWidth + '%');
+    });
 
     // initial state
     this.gotoStep(this._currentStep);
@@ -67,11 +73,11 @@
   ProgressSteps.prototype.gotoStep = function (step) {
 
     // get targets based on step
-    var targetStep = this.$stepLinks.filter('[data-target-step="' + step + '"]');
+    var targetStep = this.$stepItems.filter('[data-target-step="' + step + '"]');
     var targetContent = this.$stepContent.filter('[data-step=' + step + ']');
 
     // handle step progress bar
-    $.each(this.$stepLinks, function (key, val) {
+    $.each(this.$stepItems, function (key, val) {
       var linkStep = $(this).attr('data-target-step');
       if (linkStep > step) {
         $(this).removeClass('active');
