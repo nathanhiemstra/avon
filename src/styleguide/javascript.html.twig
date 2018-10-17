@@ -245,7 +245,8 @@ $('#myModal').on('show.bs.modal', function (e) {
     <p>Additionally, you may give a description of your modal dialog with <code>aria-describedby</code> on <code>.modal</code>.</p>
   </div>
 
-  <h2 id="modals-sizes">Optional sizes</h2>
+  <h2 id="modals-variations">Variations</h2>
+  <h3>Sizes</h3>
   <p>Modals have two optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code>.</p>
   <div class="bs-example">
     <button class="btn btn-primary" data-toggle="modal" data-target=".bs-modal-lg">Large modal</button>
@@ -305,6 +306,43 @@ $('#myModal').on('show.bs.modal', function (e) {
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
+
+  <h3>Vertical Center Content</h3>
+  <p>Adding <code>.modal-vert-center</code> to <code>.modal</code> will vertically center the content in the modal body. Note that this style is most noticable on smaller screens where modals are displayed full-screen.</p>
+  <div class="bs-example">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#bs-modal-vert-center">Vertically Centered Content</button>
+  </div>
+
+{{ highlightJavascript }}
+<button class="btn btn-primary" data-toggle="modal" data-target="#bs-modal-vert-center">Vertically Centered Content</button>
+
+<div id="bs-modal-vert-center" class="modal fade modal-vert-center" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+{{ endhighlight }}
+
+<!--  Modal content for the above example -->
+<div id="bs-modal-vert-center" class="modal fade modal-vert-center" tabindex="-1" role="dialog" aria-labelledby="myVertCenterModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myVertCenterModal">Vertically Centered Content</h4>
+      </div>
+      <div class="modal-body">
+        <h4 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita libero exercitationem quos, odio placeat autem praesentium, quia eos voluptatum earum omnis optio, recusandae porro blanditiis eligendi quod accusantium repudiandae aspernatur.</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Onward</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
   <h2 id="modals-templates">Using Modal Templates</h2>
   <p>When creating a new modal, an existing modal layout should be extended. For example:</p>
