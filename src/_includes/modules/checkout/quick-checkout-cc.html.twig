@@ -167,6 +167,17 @@
         } %}
       </div>
 
+      <div class="pb-4 pl-1">
+        {% include "_includes/elements/forms/checkbox.html.twig" with {
+          checked: true,
+          theLabel: 'Save credit card information to my account',
+          helperText: 'Donec id elit non mi porta gravida et eget metus. Nulla vitae elit libero, a phareta augue verbose.',
+          emphasize: false,
+          wrapLabel: true,
+          disabled: true
+        } %}
+      </div>
+
       <div class="row mt-4">
           <div class="col-xs-12">
               <div class="btn-group btn-group-50-50--contained">

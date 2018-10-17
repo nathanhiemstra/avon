@@ -1102,7 +1102,11 @@ input.form-control {
 
 // label add-on
 .control-label-addon {
-  float: right;
+  float: none;
+
+  &.right {
+    float: right;
+  }
 }
 
 // radio select picker combo
