@@ -350,12 +350,13 @@ $( document ).ready( function () {
     currentStep: 1
   });
 
-
+  // selctpicker
   if(mobileOrTablet) {
     // if mobile or tablet, enable native select for selectpicker
     $('.selectpicker').selectpicker('mobile');
   }
 
+  // radio select combos
   $('.radio-select-combo').on('click', function() {
     var $radio = $(this).find('input[type="radio"]');
     var $collapse = $('#collapse-cc-details');
@@ -366,6 +367,19 @@ $( document ).ready( function () {
     // show credit card details
     if($collapse.length && !$collapse.hasClass('in')) {
       $collapse.collapse('show');
+    }
+  });
+
+  // scroll expanded accordion items into view
+  $('.panel-collapse').on('shown.bs.collapse', function (e) {
+    var $panel = $(this).closest('.panel');
+    var panelPos = $panel.offset().top;
+    var scrollPos = $(document).scrollTop();
+    // if the top of the panel is out of frame, scroll into view
+    if(panelPos < scrollPos) {
+      $('html,body').animate({
+        scrollTop: $panel.offset().top
+      }, 200);
     }
   });
 
