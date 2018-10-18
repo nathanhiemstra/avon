@@ -1,5 +1,4 @@
 {
-  "extends": ["prettier"],
   "globals": {
 
     "window": true,
@@ -14,5 +13,6 @@
     "$": true,
     "jQuery": true,
     "_": true
-  }
+  },
+  "extends": ["prettier"]
 }

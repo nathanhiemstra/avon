@@ -359,3 +359,102 @@
     @extend .clearfix;
   }
 }
+
+
+
+// panel items with leading icons
+.panel-group--icons {
+  .panel {
+    .panel-heading {
+      position: relative;
+
+      .edit-header {
+        position: absolute;
+        top: 0;
+        line-height: 0;
+        opacity: 1;
+        transform: translateY(28px);
+        transition: transform $ui-animation-time $ui-animation-ease, opacity $ui-animation-time $ui-animation-ease;
+      }
+      .panel-title {
+        display: flex;
+        padding: $spacing-4 0;
+        transform: translateY(28px);
+        transition: transform $ui-animation-time $ui-animation-ease;
+
+        // Icons / thumbs
+        img.thumb {
+          width: $list-group-icon-size;
+          height: auto;
+          margin-top: 5px;
+          margin-right: $spacing-3;
+          align-self: flex-start;
+
+          // desktop
+          @media (min-width: $screen-xs-min) {
+            &.lg {
+              width: $list-group-icon-size-lg;
+              margin-top: 0;
+              margin-right: $list-group-icon-size;
+              align-self: center;
+            }
+          }
+        }
+
+        .content {
+          * {
+            margin-bottom: 0;
+            line-height: $list-group-icon-size;
+          }
+          div {
+            transform: translateY(0);
+            transition: transform $ui-animation-time $ui-animation-ease;
+            // desktop
+            @media (min-width: $screen-xs-min) {
+              transform: translateY(12px);
+            }
+          }
+          .info {
+            opacity: 0;
+            transition: opacity $ui-animation-time $ui-animation-ease;
+          }
+        }
+
+        .links {
+          margin-left: auto;
+
+          a {
+            color: $brand-primary;
+            text-decoration: underline;
+
+            &:not(:first-child) {
+              margin-left: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    // collapsed state
+    &.collapsed {
+      .panel-heading {
+        .edit-header {
+          opacity: 0;
+          transform: translateY(0);
+        }
+        .panel-title {
+          transform: translateY(0);
+
+          .content {
+            div {
+              transform: translateY(0);
+            }
+            .info {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
