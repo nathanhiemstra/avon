@@ -140,7 +140,7 @@ html: '<div class="reverse-bg py-3">
 
   <!-- DEV NOTE :: The 'add a new card' button disapears when max number of saved cards is reached -->
   <div class="">
-    <button class="btn btn-default btn-soft btn-sm">Add a New Card</button>
+    <button class="btn btn-default btn-soft btn-sm" data-toggle="modal" data-target="#modal-add-new-cc">Add a New Card</button>
   </div>
 
   {% endblock %}
@@ -160,13 +160,10 @@ html: '<div class="reverse-bg py-3">
 } %}
 <!-- END - MAGNOLIA BLOCK -->
 
-<!-- MODAL - EDIT CREDIT CARD -->
-{% include "_includes/modules/account/modals-pay/pay-avon-edit-card-modal.html.twig" %}
+<!-- MODAL - ADD NEW CREDIT CARD -->
+{% include "_includes/modules/account/modals-cc/add-new-cc-modal.html.twig" %}
 
-<!-- MODAL - REVIEW PAYMENT -->
-{% include "_includes/modules/account/modals-pay/pay-avon-review-payment-modal.html.twig" %}
-
-<!-- MODAL - PAYMENT CONFIRMATION -->
-{% include "_includes/modules/account/modals-pay/pay-avon-payment-confirmation-modal.html.twig" %}
+<!-- MODAL - REMOVE CREDIT CARD -->
+{% include "_includes/modules/account/modals-cc/remove-cc-modal.html.twig" %}
 
 {% endblock %}

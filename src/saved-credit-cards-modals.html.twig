@@ -14,11 +14,14 @@
 
         <h1 class="mb-5">Saved Credit Cards - Modals</h1>
 
+        <p><a data-toggle="modal" data-target="#modal-add-new-cc">Add Credit Card</a></p>
         <p><a data-toggle="modal" data-target="#modal-remove-cc">Remove Credit Card</a></p>
 
-        <!-- START - REMOVE CREDIT CARD MODAL -->
+        <!-- MODAL - ADD NEW CREDIT CARD -->
+        {% include "_includes/modules/account/modals-cc/add-new-cc-modal.html.twig" %}
+
+        <!-- MODAL - REMOVE CREDIT CARD -->
         {% include "_includes/modules/account/modals-cc/remove-cc-modal.html.twig" %}
-        <!-- END - REMOVE CREDIT CARD MODAL -->
 
       {% endblock %}
 

@@ -423,6 +423,8 @@
 
         .links {
           margin-left: auto;
+          opacity: 0;
+          transition: opacity $ui-animation-time $ui-animation-ease;
 
           a {
             color: $brand-primary;
@@ -453,6 +455,9 @@
             .info {
               opacity: 1;
             }
+          }
+          .links {
+            opacity: 1;
           }
         }
       }

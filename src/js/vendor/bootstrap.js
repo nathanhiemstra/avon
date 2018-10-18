@@ -690,7 +690,8 @@ $('.carousel-thumbs').thumbnailsCarousel();
 
       if(hasTargetContainer) {
         var $containingPanel = $this.closest('.panel');
-        if ($containingPanel) $containingPanel.find('.panel').not($containingPanel).addClass('collapsed')
+        var $panelGroup = $this.closest('.panel-group');
+        if ($containingPanel) $panelGroup.find('.panel').not($containingPanel).addClass('collapsed')
         $containingPanel[$target.hasClass('in') ? 'addClass' : 'removeClass']('collapsed')
       }
     }
