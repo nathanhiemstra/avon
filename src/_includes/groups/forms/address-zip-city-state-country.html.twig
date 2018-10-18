@@ -1,4 +1,4 @@
-<div class="form-group">
+<div class="form-group has-error">
   {% include components.groups.forms.inputAndLabel with {
     id: 'address',
     mainLabel: 'Address',
@@ -10,28 +10,34 @@
     theValue: '',
     placeholder: 'Address Line 1'
   } %}
+</div>
+<div class="form-group">
   {% include components.elements.forms.input with {
     id: 'address-2',
-    placeholder: 'Address Line 2 (optional)',
-    classes: 'mt-3'
+    placeholder: 'Address Line 2 (optional)'
   } %}
 </div>
 <!-- ZIP AND CITY -->
-<div class="form-group">
-  <div class="row">
-    <div class="col-xs-4">
+
+<div class="row">
+  <div class="col-xs-4">
+    <div class="form-group has-error">
       {% include components.groups.forms.inputAndLabel with {
         id: 'zip',
         mainLabel: 'ZIP',
-        type: 'text',
+        type: 'number',
         required: null,
         haslabelErrorIcon: true,
         hasInlineErrorIcon: null,
         hasAbsoluteErrorIcon: null,
-        theValue: ''
+        maxlength: 5,
+        onInputJs: 'javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0,
+        this.maxLength);'
       } %}
     </div>
-    <div class="col-xs-8">
+  </div>
+  <div class="col-xs-8">
+    <div class="form-group has-error">
       {% include components.groups.forms.inputAndLabel with {
         id: 'city',
         mainLabel: 'City',
@@ -46,27 +52,25 @@
   </div>
 </div>
 <!-- STATE AND COUNTRY -->
-<div class="form-group">
-  <div class="row">
-    <div class="col-xs-4">
-      <div class="form-group">
-        <label class="control-label">State</label>
-        <select class="form-control selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
-          <option selected="true" disabled="true">Select...</option>
-          <option>State 1</option>
-          <option>State 2</option>
-        </select>
-      </div>
+<div class="row">
+  <div class="col-xs-4">
+    <div class="form-group has-error">
+      <label class="control-label">State</label>
+      <select class="form-control selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
+        <option selected="true" disabled="true">Select...</option>
+        <option>State 1</option>
+        <option>State 2</option>
+      </select>
     </div>
-    <div class="col-xs-8">
-      <div class="form-group">
-        <label class="control-label">Country</label>
-        <select class="form-control selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
-          <option selected="true" disabled="true">Select...</option>
-          <option>Country 1</option>
-          <option>Country 2</option>
-        </select>
-      </div>
+  </div>
+  <div class="col-xs-8">
+    <div class="form-group has-error">
+      <label class="control-label">Country</label>
+      <select class="form-control selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
+        <option selected="true" disabled="true">Select...</option>
+        <option>Country 1</option>
+        <option>Country 2</option>
+      </select>
     </div>
   </div>
 </div>

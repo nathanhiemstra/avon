@@ -100,9 +100,7 @@
       <!-- START - BILLING ADDRESS FORM FIELDS -->
       <!-- DEV NOTE :: add class '.d-none' to billing-address to hide -->
       <section class="billing-address">
-        <!-- ADDRESS -->
         {% include "_includes/groups/forms/address-zip-city-state-country.html.twig" %}
-
       </section>
       <!-- END - BILLING ADDRESS FORM FIELDS -->
 
@@ -111,7 +109,7 @@
         {% include "_includes/elements/forms/checkbox.html.twig" with {
           checked: true,
           theLabel: 'Save credit card information to my account',
-          helperText: 'Donec id elit non mi porta gravida et eget metus. Nulla vitae elit libero, a phareta augue verbose.',
+          helperText: '' ~ fpo.sentence ~ ' ' ~ fpo.sentence  ~ '',
           emphasize: false,
           wrapLabel: true
         } %}
@@ -121,7 +119,7 @@
         {% include "_includes/elements/forms/checkbox.html.twig" with {
           checked: true,
           theLabel: 'Save credit card information to my account',
-          helperText: 'Donec id elit non mi porta gravida et eget metus. Nulla vitae elit libero, a phareta augue verbose.',
+          helperText: '' ~ fpo.sentence ~ ' ' ~ fpo.sentence  ~ '',
           emphasize: false,
           wrapLabel: true,
           disabled: true
