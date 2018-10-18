@@ -389,6 +389,7 @@
           margin-top: 5px;
           margin-right: $spacing-3;
           align-self: flex-start;
+          flex-shrink: 0;
 
           // desktop
           @media (min-width: $screen-xs-min) {

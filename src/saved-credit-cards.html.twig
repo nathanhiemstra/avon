@@ -44,8 +44,10 @@ html: '<div class="reverse-bg py-3">
   <!-- START - HEADER SECTION -->
   <div class="mb-5">
     <h5>Saved Cards</h5>
-    <p>You can save a maximum of 5 credit cards to your account. You can edit card information or add/remove at any time.</p>
-    <p>For your protection, we will remove credit cards from our system that have not been used in a one year time period. If you have any questions, please contact us.</p>
+    <p>You can save a maximum of 5 credit cards to your account. You can edit card information or add/remove at any
+      time.</p>
+    <p>For your protection, we will remove credit cards from our system that have not been used in a one year time
+      period. If you have any questions, please contact us.</p>
   </div>
   <!-- END - HEADER SECTION -->
 
@@ -53,120 +55,88 @@ html: '<div class="reverse-bg py-3">
 
   <div class="panel-group panel-group--icons" id="savedCreditCardsList">
 
-      <!-- Item -->
-      <div class="panel panel-light border-bottom collapsed">
-        <div class="panel-heading border-0 px-0">
-          <h6 class="edit-header m-0">Edit Credit Card</h6>
-          <h4 class="panel-title">
-            {% include "_includes/modules/account/saved-credit-card-item.html.twig" with {
-              thumb: '../images/icons/payment-visa.svg',
-              cardType: 'VISA',
-              lastFour: '1234',
-              name: 'Marcia Brady',
-              expirationDate: '01/21',
-              lrg: true,
-              dataParent: '#savedCreditCardsList',
-              dataTarget: '#collapseOne'
-            } %}
-          </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse">
-          <div class="panel-body">
-            <div class="my-5">
-              <h5>Content</h5>
-              <p>Nulla pariatur eu fugiat deserunt aliquip ex duis tempor laboris ex reprehenderit ullamco incididunt sit pariatur do nostrud.</p>
-            </div>
-          </div>
+    <!-- Item -->
+    <div class="panel panel-light border-bottom collapsed">
+      <div class="panel-heading border-0 px-0">
+        <h6 class="edit-header m-0">Edit Credit Card</h6>
+        <h4 class="panel-title">
+          {% include "_includes/modules/account/saved-credit-card-item.html.twig" with {
+          thumb: '../images/icons/payment-visa.svg',
+          cardType: 'VISA',
+          lastFour: '1234',
+          name: 'Marcia Brady',
+          expirationDate: '01/21',
+          lrg: true,
+          dataParent: '#savedCreditCardsList',
+          dataTarget: '#collapseOne'
+          } %}
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse row">
+        <div class="panel-body col-xs-12 col-sm-8">
+          {% include '_includes/modules/account/edit-credit-card-form.html.twig' with {
+          buttonText: 'Update',
+          cancelTarget: '#collapseOne'
+          } %}
         </div>
       </div>
+    </div>
 
-      <!-- Item -->
-      <div class="panel panel-light border-bottom collapsed">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#savedCreditCards" data-target="#collapseTwo">
-              <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
-              <span class="lt-icon lt-icon lt-collapse-circle lt-large"></span>
-              <span>Collapsible Group Item #2</span>
-            </a>
-          </h4>
-        </div>
-        <div id="collapseTwo" class="panel-collapse collapse">
-          <div class="panel-body">
-            <div class="my-5">
-              <h5>Content</h5>
-              <p>Nulla pariatur eu fugiat deserunt aliquip ex duis tempor laboris ex reprehenderit ullamco incididunt sit pariatur do nostrud.</p>
-            </div>
-          </div>
+    <!-- Item -->
+    <div class="panel panel-light border-bottom collapsed">
+      <div class="panel-heading border-0 px-0">
+        <h6 class="edit-header m-0">Edit Credit Card</h6>
+        <h4 class="panel-title">
+          {% include "_includes/modules/account/saved-credit-card-item.html.twig" with {
+          thumb: '../images/icons/payment-mastercard.svg',
+          cardType: 'Mastercard',
+          lastFour: '9876',
+          name: 'Marcia Brady Englebert Wonka-Cumberbach',
+          expirationDate: '03/18',
+          lrg: true,
+          dataParent: '#savedCreditCardsList',
+          dataTarget: '#collapseTwo'
+          } %}
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse row">
+        <div class="panel-body col-xs-12 col-sm-8">
+          {% include '_includes/modules/account/edit-credit-card-form.html.twig' with {
+          buttonText: 'Update',
+          cancelTarget: '#collapseTwo'
+          } %}
         </div>
       </div>
+    </div>
 
-      <!-- Item -->
-      <div class="panel panel-light border-bottom collapsed">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#savedCreditCards" data-target="#collapseThree">
-              <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
-              <span class="lt-icon lt-icon lt-collapse-circle lt-large"></span>
-              <span>Collapsible Group Item #3</span>
-            </a>
-          </h4>
-        </div>
-        <div id="collapseThree" class="panel-collapse collapse">
-          <div class="panel-body">
-            <div class="my-5">
-              <h5>Content</h5>
-              <p>Nulla pariatur eu fugiat deserunt aliquip ex duis tempor laboris ex reprehenderit ullamco incididunt sit pariatur do nostrud.</p>
-            </div>
-          </div>
+    <!-- Item -->
+    <div class="panel panel-light border-bottom collapsed">
+      <div class="panel-heading border-0 px-0">
+        <h6 class="edit-header m-0">Edit Credit Card</h6>
+        <h4 class="panel-title">
+          {% include "_includes/modules/account/saved-credit-card-item.html.twig" with {
+          thumb: '../images/icons/payment-visa.svg',
+          cardType: 'VISA',
+          lastFour: '3456',
+          name: 'Marcia Brady',
+          expirationDate: '08/21',
+          lrg: true,
+          dataParent: '#savedCreditCardsList',
+          dataTarget: '#collapseThree'
+          } %}
+        </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse row">
+        <div class="panel-body col-xs-12 col-sm-8">
+          {% include '_includes/modules/account/edit-credit-card-form.html.twig' with {
+          buttonText: 'Update',
+          cancelTarget: '#collapseThree'
+          } %}
         </div>
       </div>
-
-    </div><!-- /panel-group -->
-
-  <div class="list-group list-group--clean-sliced list-group--icons">
-    <div class="list-group-item">
-      {% include "_includes/modules/account/saved-credit-card-item.html.twig" with {
-        thumb: '../images/icons/payment-visa.svg',
-        cardType: 'VISA',
-        lastFour: '1234',
-        name: 'Marcia Brady',
-        expirationDate: '01/21',
-        lrg: true
-      } %}
-    </div>
-    <div class="list-group-item">
-      {% include "_includes/modules/account/saved-credit-card-item.html.twig" with {
-        thumb: '../images/icons/payment-mastercard.svg',
-        cardType: 'Mastercard',
-        lastFour: '9876',
-        name: 'Marcia Brady Englebert Wonka-Cumberbach',
-        expirationDate: '03/18',
-        expired: true,
-        lrg: true
-      } %}
-    </div>
-    <div class="list-group-item">
-      {% include "_includes/modules/account/saved-credit-card-item.html.twig" with {
-        thumb: '../images/icons/payment-visa.svg',
-        cardType: 'VISA',
-        lastFour: '3456',
-        name: 'Marcia Brady',
-        expirationDate: '08/21',
-        lrg: true
-      } %}
     </div>
 
-    <!-- START - EDIT CARD SECTION -->
-    <div id="collapseOne" class="collapse">
-      <div class="my-5">
-        <h5>Edit Credit Card</h5>
-        <p>Nulla pariatur eu fugiat deserunt aliquip ex duis tempor laboris ex reprehenderit ullamco incididunt sit pariatur do nostrud.</p>
-      </div>
-    </div>
-    <!-- END - EDIT CARD SECTION -->
-
-  </div>
+  </div><!-- /panel-group -->
 
   <!-- DEV NOTE :: The 'add a new card' button disapears when max number of saved cards is reached -->
   <div class="">
