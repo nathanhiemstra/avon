@@ -88,7 +88,7 @@
       </div><!-- / .form-group -->
 
       <!-- START - SAME ADDRESS CHECKBOX -->
-      <div class="form-group mb-4">
+      <div class="form-group">
         {% include "_includes/elements/forms/checkbox.html.twig" with {
           checked: false,
           theLabel: 'Billing address is same as Shipping',
@@ -99,65 +99,15 @@
 
       <!-- START - BILLING ADDRESS FORM FIELDS -->
       <!-- DEV NOTE :: add class '.d-none' to billing-address to hide -->
-      <div class="billing-address">
-        <div class="form-group">
-          <div class="mb-3">
-            <label class="control-label">Address</label>
-            {% include components.elements.forms.input with {
-              placeholder: 'Address Line 1'
-            } %}
-          </div>
-          {% include components.elements.forms.input with {
-            placeholder: 'Address Line 2 (optional)'
-          } %}
-        </div>
+      <section class="billing-address">
+        <!-- ADDRESS -->
+        {% include "_includes/groups/forms/address-zip-city-state-country.html.twig" %}
 
-        <div class="list-group-item border-0 p-1 mb-4">
-          <div class="row">
-            <div class="col-xs-4">
-              <label class="control-label">ZIP</label>
-              {% include components.elements.forms.input with {
-                placeholder: ' '
-              } %}
-            </div>
-            <div class="col-xs-8">
-              <label class="control-label">City</label>
-              {% include components.elements.forms.input with {
-                placeholder: ' '
-              } %}
-            </div>
-          </div>
-        </div>
-
-        <div class="list-group-item border-0 p-1 mb-4">
-          <div class="row">
-            <div class="col-xs-4">
-              <div class="form-group has-feedback">
-                <label class="control-label">State</label>
-                <select class="form-control selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
-                  <option selected="true" disabled="true">Select...</option>
-                  <option>State 1</option>
-                  <option>State 2</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="col-xs-8">
-              <div class="form-group has-feedback">
-                <label class="control-label">Country</label>
-                <select class="form-control selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
-                  <option selected="true" disabled="true">Select...</option>
-                  <option>State 1</option>
-                  <option>State 2</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
       <!-- END - BILLING ADDRESS FORM FIELDS -->
 
-      <div class="pb-4 pl-1">
+      <div class="form-group pl-1">
+
         {% include "_includes/elements/forms/checkbox.html.twig" with {
           checked: true,
           theLabel: 'Save credit card information to my account',
@@ -165,9 +115,9 @@
           emphasize: false,
           wrapLabel: true
         } %}
-      </div>
+        <!-- END - NON-DISABLED EXAMPLE -->
 
-      <div class="pb-4 pl-1">
+        <!-- START - DISABLED EXAMPLE -->
         {% include "_includes/elements/forms/checkbox.html.twig" with {
           checked: true,
           theLabel: 'Save credit card information to my account',
@@ -176,22 +126,21 @@
           wrapLabel: true,
           disabled: true
         } %}
+        <!-- END - DISABLED EXAMPLE -->
       </div>
 
-      <div class="row mt-4">
-          <div class="col-xs-12">
-              <div class="btn-group btn-group-50-50--contained">
-                <div class="btn-group">
-                  <a href="javascript:void(0)" class="btn btn-default">Cancel</a>
-                  {# <button type="button" class="btn btn-default">Left</button> #}
-                </div>
-                <div class="btn-group">
-                  <a href="javascript:void(0)" class="btn btn-primary">{{ buttonText }}</a>
-                  {# <button type="button" class="btn btn-primary">Right</button> #}
-                </div>
-              </div>
+      <div class="row mt-5">
+        <div class="col-xs-12">
+          <div class="btn-group btn-group-50-50--contained">
+            <div class="btn-group">
+              <a href="javascript:void(0)" class="btn btn-default">Cancel</a>
+            </div>
+            <div class="btn-group">
+              <a href="javascript:void(0)" class="btn btn-primary">{{ buttonText }}</a>
+            </div>
           </div>
         </div>
+      </div>
 
     </form>
     <!-- END - FORM -->

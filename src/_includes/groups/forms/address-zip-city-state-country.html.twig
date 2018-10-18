@@ -1,0 +1,72 @@
+<div class="form-group">
+  {% include components.groups.forms.inputAndLabel with {
+    id: 'address',
+    mainLabel: 'Address',
+    type: 'text',
+    required: null,
+    haslabelErrorIcon: true,
+    hasInlineErrorIcon: null,
+    hasAbsoluteErrorIcon: null,
+    theValue: '',
+    placeholder: 'Address Line 1'
+  } %}
+  {% include components.elements.forms.input with {
+    id: 'address-2',
+    placeholder: 'Address Line 2 (optional)',
+    classes: 'mt-3'
+  } %}
+</div>
+<!-- ZIP AND CITY -->
+<div class="form-group">
+  <div class="row">
+    <div class="col-xs-4">
+      {% include components.groups.forms.inputAndLabel with {
+        id: 'zip',
+        mainLabel: 'ZIP',
+        type: 'text',
+        required: null,
+        haslabelErrorIcon: true,
+        hasInlineErrorIcon: null,
+        hasAbsoluteErrorIcon: null,
+        theValue: ''
+      } %}
+    </div>
+    <div class="col-xs-8">
+      {% include components.groups.forms.inputAndLabel with {
+        id: 'city',
+        mainLabel: 'City',
+        type: 'text',
+        required: null,
+        haslabelErrorIcon: true,
+        hasInlineErrorIcon: null,
+        hasAbsoluteErrorIcon: null,
+        theValue: ''
+      } %}
+    </div>
+  </div>
+</div>
+<!-- STATE AND COUNTRY -->
+<div class="form-group">
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="form-group">
+        <label class="control-label">State</label>
+        <select class="form-control selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
+          <option selected="true" disabled="true">Select...</option>
+          <option>State 1</option>
+          <option>State 2</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-8">
+      <div class="form-group">
+        <label class="control-label">Country</label>
+        <select class="form-control selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
+          <option selected="true" disabled="true">Select...</option>
+          <option>Country 1</option>
+          <option>Country 2</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
