@@ -280,7 +280,7 @@ html: '<div class="reverse-bg py-3">
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-6 ml-5">
+          <div class="col-md-8 col-lg-6 ml-5">
             <div class="form-group">
               <label class="control-label" for="pay-avon-cardnum">Card Number</label>
               {% include '_includes/elements/forms/input-with-addon.html.twig' with {
@@ -378,9 +378,11 @@ html: '<div class="reverse-bg py-3">
               theLabel: 'Billing address is same as Shipping'
               } %}
 
-              <h6 class="mb-4 pt-4">billing Address</h6>
+              <h6 class="mb-4 pt-4">Billing Address</h6>
 
-              <div class="form-group">
+              {% include "_includes/groups/forms/address-zip-city-state-country.html.twig" %}
+
+              {# <div class="form-group">
                 <label class="control-label" for="pay-avon-billaddrs">Address</label>
                 {% include components.elements.forms.input with {
                 id: 'pay-avon-billaddrs',
@@ -463,15 +465,17 @@ html: '<div class="reverse-bg py-3">
                     } %}
                   </div>
                 </div>
-              </div>
+              </div> #}
 
               {% include "_includes/elements/forms/checkbox.html.twig" with {
               checked: true,
               theLabel: 'Save credit card information to my account',
-              helperText: 'Donec id elit non mi porta gravida et eget metus. Nulla vitae elit libero, a phareta augue
-              verbose.',
-              emphasize: true
-              } %}
+              helperText: '' ~ fpo.sentence ~ ' ' ~ fpo.sentence  ~ '',
+              emphasize: false,
+              wrapLabel: true
+            } %}
+
+
 
             </div>
             <!-- END - BILLING ADDRESS -->

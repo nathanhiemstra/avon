@@ -43,9 +43,12 @@
   {% set oninput = 'oninput="' ~ onInputJs ~ '"' %}
 {% endif %}
 {% if required %}
-  {% set required = 'required' %}
+  {% set required = ' required ' %}
+{% endif %}
+{% if disabled %}
+  {% set disabled = ' disabled ' %}
 {% endif %}
 
 {{ hasInlineErrorIconStart }}
-{{ errorIcon }}<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}{{ data }}{{ attrs }}{{ listeners }}{{ oninput }}{{ required }}>
+{{ errorIcon }}<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}{{ data }}{{ attrs }}{{ listeners }}{{ oninput }}{{ required }}{{ disabled }}>
 {{ hasInlineErrorIconEnd }}
