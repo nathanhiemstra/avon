@@ -1,0 +1,20 @@
+<!--
+Parameters:
+  currentStep (number - which step we're on)
+  stepLabels (array - list of all step labels)
+-->
+{% set anchorOpen = '<a href="#">' %}
+{% set anchorClose = '</a>' %}
+{% set stepLabels = ['Basic Info', 'Starter Kit', 'Pay &amp; Complete'] %}
+<div>
+  <ol class="list-unstyled list-inline">
+    {% for stepLabel in stepLabels %}
+      <li>{{ anchorOpen}}<span class="badge">{{ loop.index }}</span> {{ stepLabel }}{{ anchorClose }}</li>
+      {# Make subsequent steps have no anchor link #}
+      {% if currentStep == loop.index %}
+        {% set anchorOpen = '' %}
+        {% set anchorClose = '' %}
+      {% endif %}
+    {% endfor %}
+  </ol>
+</div>

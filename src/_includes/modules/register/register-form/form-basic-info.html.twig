@@ -1,0 +1,162 @@
+{% set janetEmail = 'janet.johnson@gmail.com' %}
+
+<!-- START - HEADER SECTION -->
+<section class="section--header">
+
+  <div class="well">
+    <!-- START - MENTOR CARD -->
+    {% include '_includes/modules/register/register-form/mentor-card.html.twig' %}
+    <!-- END - MENTOR CARD -->
+  </div>
+
+  <div class="well">
+    Your sponsor will be assigned after you complete the registration process. <a href="#">Learn more</a> or <a href="#">choose ytour sponsir</a>.
+  </div>
+
+  <!-- START - NAVIGATION -->
+  {% include '_includes/modules/register/register-navigation.html.twig' with {
+    currentStep: 1
+  }%}
+  <!-- END - NAVIGATION -->
+
+  <h3>Basic Info</h3>
+
+  <p>{{ fpo.paragraph }}</p>
+
+  <!-- START - INLINE LEVEL ALERT WITH MAX TEXT -->
+  {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
+  alertIcon: 'lt-warning-fill',
+  alertHeadline: fpo.sentence,
+  alertBody: '
+  <ul class="alert-list">
+    <li>Here is a <a href="#" class="alert-link">Link</a>.</li>
+    <li>' ~ fpo.sentence ~ '</li>
+  </ul>
+  <p>' ~ fpo.sentence ~ '.</p>',
+  alertBtnText: null,
+  alertClasses: 'alert-danger',
+  alertLevel: 'content',
+  alertDismissable: false,
+  alertId: null
+  } %}
+  <!-- END - INLINE LEVEL ALERT WITH MAX TEXT -->
+
+</section>
+<!-- END - HEADER SECTION -->
+
+<!-- START - OVERVIEW -->
+<section class="section--overview d-flex">
+  <div class="mr-4"><span class="lt-icon lt-info lt-large"></span></div>
+  <div>
+    <h4>Welcome, Janet Johnson!</h4>
+    <p>{{ fpo.paragraph }}</p>
+
+    <!-- START - CONTACT INFO - REVIEW -->
+    <div class="contact-info-review">
+      <dl>
+        <dt>Facebook Account</dt>
+        <dd>{{ janetEmail }}</dd>
+        <dt>Contact Email</dt>
+        <dd>{{ janetEmail }}</dd>
+      </dl>
+      <a href="javascript:void()" class="btn btn-primary btn-small">Edit</a>
+    </div>
+    <!-- END - CONTACT INFO - REVIEW -->
+
+    <!-- START - CONTACT INFO - EDIT -->
+    <div class="contact-info-edit">
+      <div class="form-group" data-toggle="tooltip" data-placement="bottom"  data-original-title="You can manage your social signin in your profile.">
+
+        {% include components.groups.forms.inputAndLabel with {
+        id: 'facebookAccount',
+        mainLabel: 'Facebook Account',
+        type: 'text',
+        required: null,
+        haslabelErrorIcon: true,
+        hasInlineErrorIcon: null,
+        hasAbsoluteErrorIcon: null,
+        theValue: janetEmail,
+        disabled: true
+        } %}
+
+      </div>
+      <div class="form-group">
+        {% include components.groups.forms.inputAndLabel with {
+        id: 'contactEmail',
+        mainLabel: 'Contact Email',
+        type: 'text',
+        required: null,
+        haslabelErrorIcon: true,
+        hasInlineErrorIcon: null,
+        hasAbsoluteErrorIcon: null,
+        theValue: janetEmail
+        } %}
+      </div>
+      <a href="javascript:void()" class="btn btn-default btn-small">Cancel</a>
+      <a href="javascript:void()" class="btn btn-primary btn-small">Save</a>
+    </div>
+    <!-- END - CONTACT INFO - EDIT -->
+
+  </div>
+</section>
+<!-- END - OVERVIEW -->
+
+<!-- START - MENTOR -->
+<section class="section--mentor">
+  <h4>Your Mentor</h4>
+  <p>The person you will sign up wwho will be show you the ropes at Avon.</p>
+
+
+  {% include components.elements.forms.radio with {
+    id: 'mentor-unknown',
+    name: 'mentor-knowability',
+    classes: '',
+    theLabel: "I don't know anyone (Avon will asssign you a mentor)",
+    checked: true
+  } %}
+
+  {% include components.elements.forms.radio with {
+    id: 'mentor-known',
+    name: 'mentor-knowability',
+    classes: '',
+    theLabel: 'I know my mentor',
+    checked: false
+  } %}
+
+  <div class="mentor-search">
+    <p>Name or referral code</p>
+    {% include '_includes/modules/search/page-search.html.twig' %}
+    <span class="avatar avatar--initial">T</span>
+    <span class="avatar"><img src="/images/fpo/img_avatar.png"></span>
+
+
+
+
+
+  </div>
+</section>
+<!-- END - MENTOR -->
+
+<!-- START - LANGUAGE -->
+<section class="section--language">
+
+
+</section>
+<!-- END - LANGUAGE -->
+
+<!-- START - CONTACT -->
+<section class="section--contact">
+
+
+</section>
+<!-- END - CONTACT -->
+
+
+
+<!-- START - FORM -->
+{# {% include '_includes/modules/register/register-form/register-form.html.twig' %} #}
+<!-- END - FORM -->
+
+
+
+<a href="javascript:void()" class="btn btn-primary btn-block">Continue</a>

@@ -289,3 +289,39 @@ html:hover [class^="lt-"] {
 .social-icons-list {
   line-height: 0;
 }
+
+:not(.global-header) {
+
+}
+
+$avatar-size: 48px;
+.avatar {
+
+  // &--initial {
+    background-color: $brand-info;
+    color: $white;
+    text-transform: uppercase;
+    font-size: ($avatar-size * 0.666);
+    line-height: 1;
+  // }
+
+  // border: 1px solid red;
+  border-radius: $avatar-size;
+  @include square($avatar-size);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  // img {
+  //   @extend .img-responsive;
+
+  // }
+}
+
+.avatar,
+.avatar img {
+
+  @include square($avatar-size);
+}
+
+
