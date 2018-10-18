@@ -45,7 +45,7 @@
 <!-- END - HEADER SECTION -->
 
 <!-- START - OVERVIEW -->
-<section class="section--overview d-flex">
+<section class="d-flex">
   <div class="mr-4"><span class="lt-icon lt-info lt-large"></span></div>
   <div>
     <h4>Welcome, Janet Johnson!</h4>
@@ -102,7 +102,7 @@
 <!-- END - OVERVIEW -->
 
 <!-- START - MENTOR -->
-<section class="section--mentor mx-4">
+<section class="my-5">
   <h6>Your Mentor</h6>
   <p>The person you will sign up wwho will be show you the ropes at Avon.</p>
 
@@ -129,15 +129,10 @@
     <span class="avatar"><img src="/images/fpo/img_avatar_square.png"></span>
   </div>
 </section>
-
-
-
-
-
 <!-- END - MENTOR -->
 
 <!-- START - LANGUAGE -->
-<section class="section--language mx-4">
+<section class="my-5">
   <h6>Language Preference</h6>
   <p>How would you like Avon to communicate with you?</p>
 
@@ -160,8 +155,8 @@
 </section>
 <!-- END - LANGUAGE -->
 
-<!-- START - CONTACT -->
-<section class="section--contact">
+<!-- START - PHONE -->
+<section class="my-5">
   <h6>Phone</h6>
   <p>Stay in touch with your mentor and make it easier for your customers to contact you.</p>
   <div class="form-group">
@@ -176,42 +171,37 @@
     theValue: '(000) 000-0000'
     } %}
   </div>
+</section>
+<!-- END - PHONE -->
 
 
+<!-- START - BIRTHDAY -->
+<section class="my-5">
   <h6>Birthday</h6>
   <p>Only your upline will see your birth month and day. No one will see your birth year. We only use that to validate that you are over 18 years old.</p>
+<!-- END - BIRTHDAY -->
 
+<!-- START - SHIPPING ADDRESS -->
+<section class="my-5">
   <h6>Shipping Address</h6>
   <p>Your default address for all product shipments, correspondence, gifts, and more.</p>
-
-
-  <section class="shipping-address">
-    {% include "_includes/groups/forms/address-zip-city-state-country.html.twig" %}
-    <div class="form-group">
-      {% include components.groups.forms.inputAndLabel with {
-        id: 'delivery-instructions',
-        mainLabel: 'Delivery Instructions (optional)',
-        type: 'text',
-        required: null,
-        haslabelErrorIcon: true,
-        hasInlineErrorIcon: null,
-        hasAbsoluteErrorIcon: null,
-        theValue: 'Please leave boxes behind the fence'
-      } %}
-    </div>
-  </section>
-
-
-
-
+  {% include "_includes/groups/forms/address-zip-city-state-country.html.twig" %}
+  <div class="form-group">
+    {% include components.groups.forms.inputAndLabel with {
+      id: 'delivery-instructions',
+      mainLabel: 'Delivery Instructions (optional)',
+      type: 'text',
+      required: null,
+      haslabelErrorIcon: true,
+      hasInlineErrorIcon: null,
+      hasAbsoluteErrorIcon: null,
+      theValue: 'Please leave boxes behind the fence'
+    } %}
+  </div>
 </section>
-<!-- END - CONTACT -->
+<!-- END - SHIPPING ADDRESS -->
 
 
-
-<!-- START - FORM -->
-{# {% include '_includes/modules/register/register-form/register-form.html.twig' %} #}
-<!-- END - FORM -->
 
 
 
