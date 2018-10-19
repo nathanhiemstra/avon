@@ -1,11 +1,18 @@
+{% if showTheValue %}
+  {% set theValue = '12345 6th St.' %}
+{% endif %}
+{% if showPlaceholder %}
+  {% set placeholder = 'Address Line 1' %}
+{% endif %}
+
 {% include components.groups.forms.inputAndLabel with {
-  id: 'address',
+  id: idPrefix ~ 'address',
   mainLabel: 'Address',
   type: 'text',
   required: null,
   haslabelErrorIcon: true,
   hasInlineErrorIcon: null,
   hasAbsoluteErrorIcon: null,
-  theValue: '',
-  placeholder: 'Address Line 1'
+  theValue: theValue,
+  placeholder: placeholder
 } %}

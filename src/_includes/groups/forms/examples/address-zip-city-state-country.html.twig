@@ -1,38 +1,32 @@
-{% if showTheValue %}
-
-{% endif %}
-
-
-
 <!-- STREET ADDRESS -->
 <div class="form-group has-error">
   {% include '_includes/groups/forms/examples/address.html.twig' with {
-    'idPrefix': null,
-    'showTheValue': showTheValue,
-    'showPlaceholder': showPlaceholder }%}
+    'idPrefix':         idPrefix,
+    'showTheValue':     showTheValue,
+    'showPlaceholder':  showPlaceholder }%}
 </div>
 <div class="form-group">
   {% include '_includes/groups/forms/examples/address-2.html.twig' with {
-    'idPrefix': null,
-    'showTheValue': showTheValue,
-    'showPlaceholder': showPlaceholder }%}
+    'idPrefix':         idPrefix,
+    'showTheValue':     showTheValue,
+    'showPlaceholder':  showPlaceholder }%}
 </div>
 <!-- ZIP AND CITY -->
 <div class="row">
   <div class="col-xs-4">
     <div class="form-group has-error">
        {% include '_includes/groups/forms/examples/zip.html.twig' with {
-        'idPrefix': null,
-        'showTheValue': showTheValue,
-         'showPlaceholder': showPlaceholder }%}
+        'idPrefix':         idPrefix,
+        'showTheValue':     showTheValue,
+         'showPlaceholder':   showPlaceholder }%}
     </div>
   </div>
   <div class="col-xs-8">
     <div class="form-group has-error">
       {% include '_includes/groups/forms/examples/city.html.twig' with {
-        'idPrefix': null,
-        'showTheValue': showTheValue,
-        'showPlaceholder': showPlaceholder }%}
+        'idPrefix':         idPrefix,
+        'showTheValue':     showTheValue,
+        'showPlaceholder':  showPlaceholder }%}
     </div>
   </div>
 </div>
@@ -41,17 +35,17 @@
   <div class="col-xs-4">
     <div class="form-group has-feedback has-error">
       {% include '_includes/groups/forms/examples/state.html.twig' with {
-        'idPrefix': null,
-        'showTheValue': showTheValue,
-        'showPlaceholder': showPlaceholder }%}
+        'idPrefix':         idPrefix,
+        'showTheValue':     showTheValue,
+        'showPlaceholder':  showPlaceholder }%}
     </div>
   </div>
   <div class="col-xs-8">
     <div class="form-group has-feedback has-error">
       {% include '_includes/groups/forms/examples/country.html.twig' with {
-        'idPrefix': null,
-        'showTheValue': showTheValue,
-        'showPlaceholder': showPlaceholder }%}
+        'idPrefix':         idPrefix,
+        'showTheValue':     showTheValue,
+        'showPlaceholder':  showPlaceholder }%}
     </div>
   </div>
 </div>

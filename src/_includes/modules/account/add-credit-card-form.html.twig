@@ -101,7 +101,11 @@
   <!-- START - BILLING ADDRESS FORM FIELDS -->
   <!-- DEV NOTE :: add class '.d-none' to billing-address to hide -->
   <section class="billing-address">
-    {% include "_includes/groups/forms/examples/address-zip-city-state-country.html.twig" %}
+    {% include "_includes/groups/forms/examples/address-zip-city-state-country.html.twig" with {
+      'idPrefix': 'enter-cc-details-',
+      'showTheValue': false,
+      'showPlaceholder': true,
+    }%}
   </section>
   <!-- END - BILLING ADDRESS FORM FIELDS -->
 

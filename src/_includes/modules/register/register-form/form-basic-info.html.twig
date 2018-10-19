@@ -185,7 +185,11 @@
 <section class="my-5">
   <h6>Shipping Address</h6>
   <p>Your default address for all product shipments, correspondence, gifts, and more.</p>
-  {% include "_includes/groups/forms/examples/address-zip-city-state-country.html.twig" %}
+  {% include "_includes/groups/forms/examples/address-zip-city-state-country.html.twig" with {
+    'idPrefix': 'shipping-',
+    'showTheValue': true,
+    'showPlaceholder': true,
+  }%}
   <div class="form-group">
     {% include components.groups.forms.inputAndLabel with {
       id: 'delivery-instructions',

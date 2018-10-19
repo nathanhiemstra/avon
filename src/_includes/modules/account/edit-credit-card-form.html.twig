@@ -61,7 +61,13 @@
   <!-- START - BILLING ADDRESS FORM FIELDS -->
   <!-- DEV NOTE :: add class '.d-none' to billing-address to hide -->
   <div class="billing-address">
-    {% include '_includes/groups/forms/examples/address-zip-city-state-country.html.twig' %}
+    <section class="billing-address">
+      {% include "_includes/groups/forms/examples/address-zip-city-state-country.html.twig" with {
+        'idPrefix': 'edit-cc-',
+        'showTheValue': true,
+        'showPlaceholder': true,
+      }%}
+    </section>
   </div>
   <!-- END - BILLING ADDRESS FORM FIELDS -->
 

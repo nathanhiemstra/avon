@@ -1,11 +1,18 @@
+{% if showTheValue %}
+  {% set theValue = 'Albuquerque' %}
+{% endif %}
+{% if showPlaceholder %}
+  {% set placeholder = 'City' %}
+{% endif %}
+
 {% include components.groups.forms.inputAndLabel with {
-  id: 'city',
+  id: idPrefix ~ 'city',
   mainLabel: 'City',
   type: 'text',
   required: null,
   haslabelErrorIcon: true,
   hasInlineErrorIcon: null,
   hasAbsoluteErrorIcon: null,
-  theValue: null,
-  placeholder: null
+  theValue: theValue,
+  placeholder: placeholder
 } %}

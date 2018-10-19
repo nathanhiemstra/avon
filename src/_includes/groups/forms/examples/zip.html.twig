@@ -1,11 +1,20 @@
+{% if showTheValue %}
+  {% set theValue = '98765' %}
+{% endif %}
+{% if showPlaceholder %}
+  {% set placeholder = 'ZIP code' %}
+{% endif %}
+
 {% include components.groups.forms.inputAndLabel with {
-  id: 'zip',
+  id: idPrefix ~ 'zip',
   mainLabel: 'ZIP',
   type: 'number',
   required: null,
   haslabelErrorIcon: true,
   hasInlineErrorIcon: null,
   hasAbsoluteErrorIcon: null,
+  theValue: theValue,
+  placeholder: placeholder,
   maxlength: 5,
   onInputJs: 'javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0,
   this.maxLength);'

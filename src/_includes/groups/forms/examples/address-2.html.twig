@@ -1,4 +1,12 @@
+{% if showTheValue %}
+  {% set theValue = 'Suite 100' %}
+{% endif %}
+{% if showPlaceholder %}
+  {% set placeholder = 'Address Line 2 (optional)' %}
+{% endif %}
+
 {% include components.elements.forms.input with {
-  id: 'address-2',
-  placeholder: 'Address Line 2 (optional)'
+  id: idPrefix ~ 'address-2',
+  theValue: theValue,
+  placeholder: placeholder
 } %}
