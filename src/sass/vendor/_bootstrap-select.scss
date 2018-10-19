@@ -91,7 +91,7 @@ select.selectpicker {
   // Error display
   .has-error & .dropdown-toggle,
   .error & .dropdown-toggle {
-    border-color: $color-red-error;
+    border-color: $state-danger-text;
   }
 
   &.fit-width {

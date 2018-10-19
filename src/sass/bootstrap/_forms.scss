@@ -776,8 +776,19 @@ select.form-control.input-lg {
 .has-error {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
 
-  .form-control {
+  .form-control,
+  .bootstrap-select .dropdown-toggle,
+  .bootstrap-select .dropdown-menu {
     border-width: $state-danger-border-width;
+  }
+  .bootstrap-select {
+    &.open {
+      > .dropdown-toggle {
+        &.btn-select {
+          border-bottom: none;
+        }
+      }
+    }
   }
 }
 
