@@ -368,7 +368,13 @@
     <form role="form">
       {% include components.elements.forms.select %}
       <br>
-      {% include components.elements.forms.select with { 'items': [{'label': 'Option Label 1'}, {'label': 'Option Label 2'}, {'label': 'Option Label 3'}] } %}
+      {% include components.elements.forms.select with {
+        'options': [
+          {'label': 'Option Label 4'},
+          {'label': 'Option Label 5'},
+          {'label': 'Option Label 6'}
+        ]
+      }%}
       <br>
       {% include components.elements.forms.select with {multiple: true} %}
     </form>
@@ -377,13 +383,27 @@
   <pre class="language-markup code-toolbar"><code class="language-twig">
   &#123;% include components.elements.forms.select %}
 
-  &#123;% include components.elements.forms.select with { 'items': [{'label': 'Option Label 1'}, {'label': 'Option Label 2'}, {'label': 'Option Label 3'}] } %}
+  &#123;% include components.elements.forms.select with {
+        'options': [
+          {'label': 'Option Label 4'},
+          {'label': 'Option Label 5'},
+          {'label': 'Option Label 6'}
+        ]
+      }%}
 
   &#123;% include components.elements.forms.select with {multiple: true %}
    </code></pre>
 
   {{ highlightMarkup }}
   {% include components.elements.forms.select %}
+
+  {% include components.elements.forms.select with {
+    'options': [
+      {'label': 'Option Label 4'},
+      {'label': 'Option Label 5'},
+      {'label': 'Option Label 6'}
+    ]
+  }%}
 
   {% include components.elements.forms.select with {multiple: true} %}
   {{ endhighlight }}
