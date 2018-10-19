@@ -199,11 +199,15 @@
     <form role="form">
       <div class="form-group">
         {% include components.groups.forms.inputAndLabel with {
-          id: 'myID',
-          mainLabel: 'Password',
-          labelAddon: '<a class="" href="#">Forgot?</a>',
-          type: 'password',
-          theValue: 'Password123'
+          id: 'address',
+          mainLabel: 'Address',
+          type: 'text',
+          required: null,
+          haslabelErrorIcon: true,
+          hasInlineErrorIcon: null,
+          hasAbsoluteErrorIcon: null,
+          theValue: '',
+          placeholder: 'Address Line 1'
         } %}
       </div>
     </form>
@@ -212,9 +216,17 @@
   {{ highlightMarkup }}
     <form role="form">
       <div class="form-group">
-        <label class="control-label" for="myID">Password</label>
-        <span class="control-label-addon"><a href="#">Forgot?</a></span>
-        <input type="password" class="form-control" id="myID" value="Password123">
+       {% include components.groups.forms.inputAndLabel with {
+          id: 'address',
+          mainLabel: 'Address',
+          type: 'text',
+          required: null,
+          haslabelErrorIcon: true,
+          hasInlineErrorIcon: null,
+          hasAbsoluteErrorIcon: null,
+          theValue: '',
+          placeholder: 'Address Line 1'
+        } %}
       </div>
     </form>
   {{ endhighlight }}
@@ -222,14 +234,61 @@
   <pre class="language-markup code-toolbar">
     <code class="language-twig">
       &#123;% include components.groups.forms.inputAndLabel with {
-        id: 'myID',
-        mainLabel: 'Password',
-        labelAddon: '<a href="#">Forgot?</a>',
-        type: 'password',
-        theValue: 'Password123'
+        id: 'address',
+        mainLabel: 'Address',
+        type: 'text',
+        required: null,
+        haslabelErrorIcon: true,
+        hasInlineErrorIcon: null,
+        hasAbsoluteErrorIcon: null,
+        theValue: '',
+        placeholder: 'Address Line 1'
       } %}
     </code>
   </pre>
+
+
+
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# Select and Label #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  <h2 id="forms-select-and-label">Select and Label</h2>
+
+   <div class="bs-example">
+    <form role="form">
+      <div class="form-group has-feedback">
+        {% include components.groups.forms.selectAndLabel with {
+          id: 'country',
+          mainLabel: 'Country',
+          required: null,
+          haslabelErrorIcon: true,
+          hasInlineErrorIcon: null,
+          hasAbsoluteErrorIcon: null,
+          optionSelected: 2,
+          'options': [
+            {'label': 'Select...'},
+            {'label': 'Country 1'},
+            {'label': 'Country 2'}
+          ]
+        } %}
+      </div>
+    </form>
+  </div><!-- /example -->
+
+
+
+
+{#
+{% include components.elements.forms.select with {
+    'options': [
+      {'label': 'Option Label 4'},
+      {'label': 'Option Label 5'},
+      {'label': 'Option Label 6'}
+    ]
+  }%}
+
+ #}
 
 
 

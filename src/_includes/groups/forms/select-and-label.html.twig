@@ -1,7 +1,27 @@
-{{ components.elements.forms.selectWrapper.start }}
-  {% include components.elements.forms.label with {'id': id, 'mainLabel': mainLabel %}
-  {% include components.elements.forms.select with {'id': id, 'items': items, 'classes': classes, hasFormGroup: true} %}
-{{ components.elements.forms.selectWrapper.end }}
-{% if errorMessage %}
-  {% include components.elements.forms.errorMessage with {'errorMessage': errorMessage} %}
-{% endif %}
+
+  {% include components.elements.forms.label with {
+    'id': id,
+    'mainLabel': mainLabel,
+    'haslabelErrorIcon': haslabelErrorIcon,
+    'labelAddon': labelAddon,
+    'classes': labelClasses
+  } %}
+  {% include components.elements.forms.select with {
+    'id':                   id,
+    'options':              options,
+    'optionSelected':       optionSelected,
+    'classes':              classes,
+    'type':                 type,
+    'placeholder':          placeholder,
+    'theValue':             theValue,
+    'size':                 size,
+    'maxlength':            maxlength,
+    'includeValueData':     includeValueData,
+    'theValue':             theValue,
+    'hasInlineErrorIcon':   hasInlineErrorIcon,
+    'hasAbsoluteErrorIcon': hasAbsoluteErrorIcon,
+    'required':             required,
+    'multiple':             multiple,
+    hasFormGroup:           true
+  } %}
+

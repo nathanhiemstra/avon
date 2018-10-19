@@ -1,0 +1,12 @@
+{% include components.groups.forms.inputAndLabel with {
+  id: 'zip',
+  mainLabel: 'ZIP',
+  type: 'number',
+  required: null,
+  haslabelErrorIcon: true,
+  hasInlineErrorIcon: null,
+  hasAbsoluteErrorIcon: null,
+  maxlength: 5,
+  onInputJs: 'javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0,
+  this.maxLength);'
+} %}
