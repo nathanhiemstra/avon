@@ -290,10 +290,10 @@ html:hover [class^="lt-"] {
   line-height: 0;
 }
 
-$avatar-size: 48px;
+
 .avatar {
-  @include square($avatar-size);
-  border-radius: $avatar-size;
+  @include square($avatar-size-md);
+  border-radius: $avatar-size-md;
   overflow: hidden;
   display: inline-block;
   text-align: center;
@@ -301,7 +301,7 @@ $avatar-size: 48px;
   background-color: $gray;
   color: $white;
   text-transform: uppercase;
-  font-size: ($avatar-size * 0.6667);
+  font-size: ($avatar-size-md * 0.6667);
   &.avatar--color {
     &-1 {
       background-color: $pink;
@@ -327,7 +327,7 @@ $avatar-size: 48px;
 
 .avatar,
 .avatar img {
-  @include square($avatar-size);
+  @include square($avatar-size-md);
 }
 .avatar img {
   // This removes empty space above the image.
