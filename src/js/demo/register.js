@@ -149,14 +149,13 @@ var Register = ( function () {
   };
 
 
-// <span class="avatar"><img src="/images/fpo/img_avatar_square.png"></span>
-//     <span class="avatar">T</span>
-//     <span class="avatar avatar--color-1">T</span>
 
+// construct the html for predictive search template
 
+// NOTE: Alternative ways teh avatar might look:
+// <span class="avatar">T</span>
+// <span class="avatar avatar--color-1">T</span>
 
-
-  // construct the html for predictive search template
   var _constructItemTemplate = function ( suggestion ) {
     return '<div class="item">' +
       '<a href="javascript:void(0)">' +
