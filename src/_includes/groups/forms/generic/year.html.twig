@@ -1,0 +1,21 @@
+{% if showTheValue %}
+  {% set optionSelected = 2 %}
+{% endif %}
+
+{% include components.groups.forms.selectAndLabel with {
+  id: idPrefix ~ 'year',
+  mainLabel: 'Year',
+  required: null,
+  haslabelErrorIcon: true,
+  hasInlineErrorIcon: null,
+  hasAbsoluteErrorIcon: null,
+  optionSelected: optionSelected,
+  hasFormGroup: true,
+  hideLabel: hidelabel,
+  'options': [
+    {'label': 'Select...'},
+    {'label': '2000'},
+    {'label': '1999'},
+    {'label': '1998'}
+  ]
+} %}

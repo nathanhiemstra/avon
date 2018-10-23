@@ -1,0 +1,29 @@
+{% if showTheValue %}
+  {% set optionSelected = 2 %}
+{% endif %}
+
+{% include components.elements.forms.select with {
+  id: idPrefix ~ 'month',
+  mainLabel: 'Month',
+  required: null,
+  haslabelErrorIcon: true,
+  hasInlineErrorIcon: null,
+  hasAbsoluteErrorIcon: null,
+  optionSelected: optionSelected,
+  hasFormGroup: true,
+  'options': [
+    {'label': 'Select...'},
+    {'label': '01 - January'},
+    {'label': '02 - February'},
+    {'label': '03 - March'},
+    {'label': '04 - April'},
+    {'label': '05 - May'},
+    {'label': '06 - June'},
+    {'label': '07 - July'},
+    {'label': '08 - August'},
+    {'label': '09 - September'},
+    {'label': '10 - October'},
+    {'label': '11 - November'},
+    {'label': '12 - December'}
+  ]
+} %}
