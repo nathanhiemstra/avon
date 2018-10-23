@@ -291,47 +291,12 @@ html:hover [class^="lt-"] {
 }
 
 
-.avatar {
-  @include square($avatar-size-md);
-  border-radius: $avatar-size-md;
-  overflow: hidden;
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  background-color: $gray;
-  color: $white;
-  text-transform: uppercase;
-  font-size: ($avatar-size-md * 0.6667);
-  &.avatar--color {
-    &-1 {
-      background-color: $pink;
-    }
-    &-2 {
-      background-color: $magenta;
-    }
-    &-3 {
-      background-color: $red-dark;
-    }
-    &-4 {
-      background-color: $orange-dark;
-    }
-    &-5 {
-      background-color: $blue;
-    }
-    &-6 {
-      background-color: $green;
-    }
-  }
 
-}
 
-.avatar,
-.avatar img {
-  @include square($avatar-size-md);
-}
-.avatar img {
-  // This removes empty space above the image.
-  display: flex;
-}
+
+
+
+
+
 
 
