@@ -394,6 +394,7 @@ $( document ).ready( function () {
   if( typeof ProductDetail !== 'undefined' ) ProductDetail.init();
   if( typeof ProductFilters !== 'undefined' ) ProductFilters.init();
   if( typeof SecondaryNav !== 'undefined' ) SecondaryNav.init();
+  if( typeof Register !== 'undefined' ) Register.init();
   if( typeof YourOrderCartsTab !== 'undefined' ) YourOrderCartsTab.init();
   if( typeof dashboardDemo !== 'undefined' ) dashboardDemo.init();
   if( typeof PopoverCustomizer !== 'undefined' ) PopoverCustomizer.init();

@@ -123,8 +123,8 @@
   } %}
 
   <div class="mentor-search">
-    <p>Name or referral code</p>
-    {% include '_includes/modules/search/page-search.html.twig' %}
+
+    {% include '_includes/modules/register/mentor-select-autocomplete.html.twig' %}
     <span class="avatar">T</span>
     <span class="avatar"><img src="/images/fpo/img_avatar_square.png"></span>
   </div>
@@ -151,7 +151,6 @@
     theLabel: 'Español',
     checked: false
   } %}
-
 </section>
 <!-- END - LANGUAGE -->
 
@@ -179,32 +178,23 @@
 <section class="my-5">
   <h6>Birthday</h6>
   <p>Only your upline will see your birth month and day. No one will see your birth year. We only use that to validate that you are over 18 years old.</p>
-
   <div class="form-inline has-error">
     <div class="form-group has-feedback mr-sm-4">
-      {% include '_includes/groups/forms/generic/month.html.twig' with {
+      {% include '_includes/elements/forms/generic/month.html.twig' with {
         optionSelected: 3
       } %}
     </div>
     <div class="form-group has-error has-feedback mr-sm-4">
-      {% include '_includes/groups/forms/generic/day.html.twig' with {
-        optionSelected: 3
-      } %}
-
-
-    </div>
-    <div class="form-group has-error has-feedback">
-      {% include '_includes/groups/forms/generic/year.html.twig' with {
+      {% include '_includes/elements/forms/generic/day.html.twig' with {
         optionSelected: 3
       } %}
     </div>
-
-
+    <div class="form-group has-error has-feedback mr-sm-4">
+      {% include '_includes/elements/forms/generic/year.html.twig' with {
+        optionSelected: 3
+      } %}
+    </div>
   </div>
-
-
-
-
 <!-- END - BIRTHDAY -->
 
 <!-- START - SHIPPING ADDRESS -->
