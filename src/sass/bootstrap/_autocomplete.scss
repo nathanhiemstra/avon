@@ -262,11 +262,14 @@ $customer-select-break: $screen-sm-min;
     position: sticky;
     display: block;
     height: 44px;
-    text-align: left;
     background-color: $body-bg;
     padding-left: 20px;
     border-top: 1px solid $gray-lighter;
     cursor: pointer;
+
+    &:not(.text-center) {
+      text-align: left;
+    }
   }
 }
 

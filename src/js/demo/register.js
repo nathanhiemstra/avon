@@ -111,11 +111,11 @@ var Register = ( function () {
         // append 'add a customer' button if we have suggestions
         $( container )
           .append(
-            '<div class="autocomplete-suggestion-footer"><a id="autocomplete-add-customer-link" class="link-primary" data-toggle="modal" data-target="#add-new-customer-modal">Add a new customer<span class="lt-icon lt-plus lt-medium"></span></a></div>'
+            '<div class="text-center autocomplete-suggestion-footer"><a href="#" id="autocomplete-footer-cta" class="link-primary">View all results</a></div>'
           );
 
         // hide suggestions when apended link is clicked
-        $( '#autocomplete-add-customer-link' ).on( 'click', function ( e ) {
+        $( '#autocomplete-footer-cta' ).on( 'click', function ( e ) {
           e.preventDefault();
           $els.autoCompleteSelectInput.autocomplete( 'hide' );
         } );
