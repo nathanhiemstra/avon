@@ -12,13 +12,12 @@ var Register = ( function () {
 
   // public methods
   var init = function () {
-
-
     // grab the DOM els we need
     $els = {
       autoCompleteSelectContainer: $( '.customer-select-autocomplete' ),
       autoCompleteSelectInput: $( '#mentorSelect' ),
-      autoCompleteSelectTrigger: $( '#mentorSelect + .form-control-feedback' ),
+      autoCompleteSelectTrigger: $( '#mentorSelect + .lt-triangle-down' ),
+      autoCompleteSelectClose: $( '#mentorSelect + .form-control-feedback + .lt-close' ),
       autocompleteHost: $( '#mentorSelect' ).closest( '.form-group' )
     };
 
@@ -58,7 +57,11 @@ var Register = ( function () {
       focusedElement = null;
     } );
 
+
     $els.autoCompleteSelectTrigger.on( 'click', _handleDropdownClick );
+
+    // NOTE :: for demo only, in production with real data, this button will show and hide when autocoimplete is open
+    $els.autoCompleteSelectClose.css('display', 'none');
 
     // Customer input select auto-complete - https://github.com/devbridge/jQuery-Autocomplete
     $els.autoCompleteSelectInput.autocomplete( {
