@@ -17,7 +17,7 @@
       {# DEFINE BLOCK - ASIDE #}
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block aside %}
-        <img class="img-responsive" src="http://via.placeholder.com/600x1200">
+        <img class="img-responsive" src="http://via.placeholder.com/800x800">
       {% endblock %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -25,12 +25,14 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
-        <h1>Representative Sign in</h1>
+        <h5 class="text-center">Representative Sign in</h5>
+
+        <hr class="thick primary stub">
 
         <div class="my-5">
 
           <!-- START - INLINE LEVEL ALERT -->
-          {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
+          {# {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
             alertIcon: 'lt-warning-fill',
             alertHeadline: 'Alert message',
             alertBody: '
@@ -44,7 +46,7 @@
             alertLevel: 'content',
             alertDismissable: false,
             alertId: null
-          } %}
+          } %} #}
           <!-- END - INLINE LEVEL ALERT -->
 
           <!-- START - FORM -->
@@ -53,6 +55,7 @@
           <button type="button" class="btn btn-primary btn-block">Sign in</button>
 
           {% include "_includes/elements/misc/divider-with-or.html.twig" %}
+
           {% include "_includes/modules/sign-in/sign-in-via-social.html.twig" %}
 
           <!-- END - FORM -->
@@ -61,7 +64,7 @@
 
         <hr>
 
-        <div class="text-center">Need an account? <a href="#">Register today</a></div>
+        <div class="text-center">Lorem Ipsum <a href="#">Lipsum</a></div>
 
       {% endblock %}
 
@@ -69,8 +72,12 @@
 
   </section>
 
+  <script type="text/javascript">
+    // hide header buttons on this page - for demo only
+    document.addEventListener('DOMContentLoaded', function(e) {
+      var headerLinks = document.querySelector('.global-header--simple .navbar-links');
+      headerLinks.style.visibility = 'hidden';
+    });
+  </script>
+
 {% endblock %}
-
-
-
-
