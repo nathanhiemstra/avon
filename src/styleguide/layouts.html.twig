@@ -78,14 +78,15 @@
 
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# COLUMN 12 - Optional Promo (With Promo) #}
+  {# COLUMN 12 - Optional Promo #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% set styleguideItem = {
-    title:        "Column: 12 - Optional Promo (With Promo)",
-    description:  "This layout allows us to use the same template but a different layout depending on some variable which will ultimately come from the server. If the page contains a promo, for example, the layout is 12 column, with an inner 6x6 as seen below. If no promo is present, the layout is a <a href='#columns-12-without-optional-promo'>centered 6 column</a>.",
+    title:        "Column: 12 - Optional Promo",
+    description:  "This layout allows us to use the same template but a different layout depending on some variable which will ultimately come from the server. If the page contains a promo, for example, the layout is 12 column, with an inner 6x6. If no promo is present, the layout is a centered 6 column.",
     slug:         "columns-12-with-optional-promo",
     snippet:      '
-    <div class="container">
+    <h4 class="text-center pt-4">With Promo - 6x6</h4>
+    <div class="container pb-4">
       <div class="row">
         <aside class="col-md-6" role="complementary">
           <p><img class="img-responsive" src="http://via.placeholder.com/800x800"></p>
@@ -95,21 +96,9 @@
           <p>' ~ fpo.paragraph ~ '</p>
         </main>
       </div>
-    </div>'
-  }%}
-  {% include styleguide.item with 'styleguideItem': styleguideItem %}
-
-
-
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {# COLUMN 12 - Optional Promo (Without Promo - Max 6) #}
-  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  {% set styleguideItem = {
-    title:        "Column: 12 - Optional Promo (Without Promo - Max 6)",
-    slug:         "columns-12-without-optional-promo",
-    description:  "This layout allows us to use the same template but a different layout depending on some variable which will ultimately come from the server. If the page contains a promo, for example, the layout is <a href='#columns-12-with-optional-promo'>12 column, with an inner 6x6</a>. If no promo is present, the layout is a centered 6 column as seen below.",
-    snippet:      '
-    <div class="container">
+    </div>
+    <h4 class="text-center">Without Promo - Max 6</h4>
+    <div class="container pb-4">
       <div class="row">
         <div class="col-md-12">
           <main class="col-md-6 col-md-offset-3" role="main">
@@ -123,6 +112,30 @@
   {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
 
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# COLUMN 12 - Promo Reverse #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% set styleguideItem = {
+    title:        "Column: 12 - Promo Reverse",
+    description:  "This layout will push the left aside content <em>below</em> the main content on small screens.",
+    slug:         "columns-12-promo-reverse",
+    snippet:      '
+    <div class="container pb-4">
+      <div class="row">
+        <div class="col-md-12 col-md-12--reverse-stack">
+          <aside class="col-md-6" role="complementary">
+            <p><img class="img-responsive" src="http://via.placeholder.com/800x800"></p>
+          </aside>
+          <main class="col-md-6" role="main">
+            <p>' ~ fpo.paragraph ~ '</p>
+            <p>' ~ fpo.paragraph ~ '</p>
+          </main>
+        </div>
+      </div>
+    </div>'
+  }%}
+  {% include styleguide.item with 'styleguideItem': styleguideItem %}
 
 
 
