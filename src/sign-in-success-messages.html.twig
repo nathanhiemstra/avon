@@ -20,7 +20,7 @@
         <h5 class="text-center">Set your email address</h5>
         <h5 class="text-center">Reset your password</h5>
 
-        <hr>
+        <hr class="thick primary stub">
 
         <div class="d-flex flex-column justify-content-center align-items-center">
           <div class="mb-4">
@@ -31,7 +31,7 @@
 
         <div class="my-5">
 
-          <button type="button" class="btn btn-primary btn-block my-5">Continue to YourAvon</button>
+          <button type="button" class="btn btn-primary btn-block my-5">Lorem Ipsum</button>
 
           <div class="box-emphasize my-5 py-2">
             <div class="py-4 d-flex justify-content-center">
@@ -63,9 +63,13 @@
   <script type="text/javascript">
     // show primary header button on this page - for demo only
     document.addEventListener('DOMContentLoaded', function(e) {
-      var btnPrimary = document.querySelector('.global-header--simple .navbar-links .btn-primary');
+      var header = document.querySelector('.global-header--simple');
+      var headerAlert = document.querySelector('.global-header--simple .alert-level-header');
+      var btnPrimary = document.querySelector('.global-header--simple .navbar-links .btn-link-responsive');
       var btnLink = document.querySelector('.global-header--simple .navbar-links .btn-link');
       var btnDefault = document.querySelector('.global-header--simple .navbar-links .btn-default');
+      header.classList.add('border-bottom');
+      headerAlert.classList.add('d-none');
       btnPrimary.classList.remove('d-none');
       btnLink.classList.add('d-none');
       btnDefault.classList.add('d-none');
