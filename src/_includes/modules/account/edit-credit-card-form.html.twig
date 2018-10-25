@@ -1,5 +1,5 @@
 {% if buttonText is not defined %}
-  {% set buttonText = 'Continue' %}
+  {% set buttonText = 'Update' %}
 {% endif %}
 
 <!-- START - FORM -->
@@ -21,7 +21,7 @@
       <div class="col-xs-12">
         <label class="control-label">Expiration date</label>
         <div class="row">
-          <div class="form-group col-xs-12 col-sm-6">
+          <div class="form-group col-xs-12 col-sm-6 has-error">
             <select class="form-control form-inline selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
               <option selected="true" disabled="true">Month</option>
               <option>January</option>
@@ -29,7 +29,7 @@
               <option>March</option>
             </select>
           </div>
-          <div class="form-group col-xs-12 col-sm-6">
+          <div class="form-group col-xs-12 col-sm-6 has-error">
             <select class="form-control form-inline selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
               <option selected="true" disabled="true">Year</option>
               <option>2018</option>
