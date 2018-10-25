@@ -291,11 +291,19 @@ html:hover [class^="lt-"] {
 }
 
 // icon with circular border
-.circlular-icon {
+.circular-icon {
   display: inline-block;
   border-radius: 50%;
   border: 2px solid $brand-primary;
   padding: 1.1rem;
+
+  &.lt-small {
+    padding: 0.85rem;
+    border-width: 1px;
+  }
+  &.lt-medium {
+    padding: 1rem;
+  }
 }
 
 
