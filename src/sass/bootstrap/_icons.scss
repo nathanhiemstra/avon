@@ -290,6 +290,14 @@ html:hover [class^="lt-"] {
   line-height: 0;
 }
 
+// icon with circular border
+.circlular-icon {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid $brand-primary;
+  padding: 1.1rem;
+}
+
 
 
 

@@ -7,6 +7,9 @@
 {% block content %}
 
   <section class="container container--page">
+
+    {% include "/_includes/elements/misc/link-back.html.twig" with { label: 'Sign In' } %}
+
     {% embed layouts.columns6max %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -14,30 +17,30 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
-        {% include "/_includes/elements/misc/link-back.html.twig" with { label: 'Back' } %}
+        <h5 class="text-center">Set your email address</h5>
+        <h5 class="text-center">Reset your password</h5>
 
-        <h1>[Set your email address / Reset your password]</h1>
+        <hr>
 
-        <div class="d-flex my-5 ">
-          <span class="lt-icon lt-checkmark lt-large mr-5 text-success"></span>
-          <div>{{ fpo.paragraph }}</div>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <div class="mb-4">
+            <span class="lt-icon lt-checkmark lt-large circlular-icon"></span>
+          </div>
+          <div>{{ fpo.sentence }}</div>
         </div>
 
         <div class="my-5">
 
-          <section class="list-group box-emphasize">
-            <div class="list-group-item remove-last-border py-4 d-flex justify-content-center well">
+          <button type="button" class="btn btn-primary btn-block my-5">Continue to YourAvon</button>
 
-
+          <div class="box-emphasize my-5 py-2">
+            <div class="py-4 d-flex justify-content-center">
                 <span class="mr-4">
                   <span class="lt-icon lt-mail lt-medium" toggle-password-visibility="login-password"></span>
                 </span>
                 <span>janet.johnson@gmail.com</span>
-
-
-
             </div>
-          </section>
+          </div>
           {# <div class="well p-4 text-center">
             <span>
               <span class="lt-icon lt-mail lt-medium" toggle-password-visibility="login-password"></span>
@@ -45,9 +48,9 @@
             </span>
 
           </div> #}
-          <button type="button" class="btn btn-default btn-block">Continue to YourAvon</button>
-
         </div>
+
+        <hr>
 
         {% include "_includes/modules/sign-in/sign-in-assistance.html.twig" %}
 
@@ -56,6 +59,18 @@
     {% endembed %}
 
   </section>
+
+  <script type="text/javascript">
+    // show primary header button on this page - for demo only
+    document.addEventListener('DOMContentLoaded', function(e) {
+      var btnPrimary = document.querySelector('.global-header--simple .navbar-links .btn-primary');
+      var btnLink = document.querySelector('.global-header--simple .navbar-links .btn-link');
+      var btnDefault = document.querySelector('.global-header--simple .navbar-links .btn-default');
+      btnPrimary.classList.remove('d-none');
+      btnLink.classList.add('d-none');
+      btnDefault.classList.add('d-none');
+    });
+  </script>
 
 {% endblock %}
 
