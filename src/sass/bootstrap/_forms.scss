@@ -776,8 +776,19 @@ select.form-control.input-lg {
 .has-error {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
 
-  .form-control {
+  .form-control,
+  .bootstrap-select .dropdown-toggle,
+  .bootstrap-select .dropdown-menu {
     border-width: $state-danger-border-width;
+  }
+  .bootstrap-select {
+    &.open {
+      > .dropdown-toggle {
+        &.btn-select {
+          border-bottom: none;
+        }
+      }
+    }
   }
 }
 
@@ -1102,7 +1113,11 @@ input.form-control {
 
 // label add-on
 .control-label-addon {
-  float: right;
+  float: none;
+
+  &.right {
+    float: right;
+  }
 }
 
 // radio select picker combo
@@ -1123,7 +1138,11 @@ input.form-control {
 
   // override default plugin style
   .bootstrap-select.form-control:not([class*="col-"]) {
-    width: 89%;
+    flex: 1;
+
+    @media (min-width: $screen-xs-min) {
+      flex: auto;
+    }
   }
 
   .select-picker-addon {

@@ -1,0 +1,141 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {% embed layouts.columns12 %}
+
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {# DEFINE BLOCK - MAIN #}
+    {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+    {% block main %}
+
+
+      <section class="container container--page">
+
+
+        <!-- END - PAGE LEVEL ALERT -->
+
+        <h1 class="mb-5">Legacy Alerts</h1>
+        <p>These are examples of alerts (error messages) that are currently implemented on YourAvon.com. They will eventually be replaced by these <a href="alerts.html">alert styles</a>.</p>
+
+
+
+        <h3>Inline level</h3>
+        <p>Messages are placed inside the <code>.form-group</code> div, after the <code>&lt;input&gt;</code></p>
+
+        {% set errorExample %}
+          <div class="text-danger small">Error message that a user needs to read.</div>
+        {% endset %}
+
+
+<code><pre>&lt;div class="form-group"&gt;
+  &lt;input&gt;
+  &lt;div class="text-danger small"&gt;Error message that a user needs to read.&lt;/div&gt;
+&lt;/div&gt;</pre>
+</code>
+
+
+          <div class="form-group">
+            {% include components.groups.forms.inputAndLabel with {
+              id: 'error-with-label',
+              mainLabel: 'Input Label',
+              haslabelErrorIcon: true,
+              hasInlineErrorIcon: null,
+              hasAbsoluteErrorIcon: null,
+              classes: 'form-control'
+            } %}
+            {% include '_includes/groups/alerts/legacy/alert.html.twig' %}
+          </div>
+
+
+
+          <h6 class="mt-5">When message can span multiple inline inputs</h6>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputEmail2">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputPassword2">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Remember me
+              </label>
+            </div>
+            <button type="submit" class="btn btn-default">Sign in</button>
+            {% include '_includes/groups/alerts/legacy/alert.html.twig' with { message: 'A long message allowed to span multiple inputs.', classes: 'mt-3'} %}
+          </form>
+
+
+          <h6 class="mt-5">When message must stay within individual input columns</h6>
+          <div class="row">
+            <div class="col-xs-4">
+              <div class="form-group">
+                 {% include '_includes/groups/forms/generic/zip.html.twig' with {
+                  'idPrefix':         idPrefix,
+                  'showTheValue':     false,
+                  'showPlaceholder':   showPlaceholder }%}
+                  {% include '_includes/groups/alerts/legacy/alert.html.twig' with { message: 'A long message NOT allowed to span multiple inputs, so it must wrap.'} %}
+              </div>
+            </div>
+            <div class="col-xs-4">
+              <div class="form-group">
+                {% include '_includes/groups/forms/generic/city.html.twig' with {
+                  'idPrefix':         idPrefix,
+                  'showTheValue':     false,
+                  'showPlaceholder':  showPlaceholder }%}
+                  {% include '_includes/groups/alerts/legacy/alert.html.twig' with { message: 'Or, message must be short.'} %}
+              </div>
+            </div>
+          </div>
+
+
+          <h6 class="mt-5">When message can span multiple input columns</h6>
+          <p>Messages are placed outside the <code>.form-group</code> <code>&lt;div&gt;</code>s, after the <code>.row</code></p>
+          <div class="row">
+            <div class="col-xs-4">
+              <div class="form-group mb-2">
+                 {% include '_includes/groups/forms/generic/zip.html.twig' with {
+                  'idPrefix':         idPrefix,
+                  'showTheValue':     false,
+                  'showPlaceholder':   showPlaceholder }%}
+
+              </div>
+            </div>
+            <div class="col-xs-4">
+              <div class="form-group mb-2">
+                {% include '_includes/groups/forms/generic/city.html.twig' with {
+                  'idPrefix':         idPrefix,
+                  'showTheValue':     false,
+                  'showPlaceholder':  showPlaceholder }%}
+
+              </div>
+            </div>
+          </div>
+          {% include '_includes/groups/alerts/legacy/alert.html.twig' with { message: 'First long message allowed to span multiple inputs.'} %}
+          {% include '_includes/groups/alerts/legacy/alert.html.twig' with { message: 'Second long message allowed to span multiple inputs.'} %}
+
+        </section>
+
+
+
+
+
+
+      </section>
+
+
+      <!-- END - RELATED PRODUCTS -->
+
+    {% endblock %}
+
+  {% endembed %}
+
+
+
+{% endblock %}

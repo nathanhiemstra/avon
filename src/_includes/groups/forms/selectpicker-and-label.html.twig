@@ -1,14 +1,16 @@
 {% if label is not defined %}
   {% set includeLabel = false %}
-  {% else %}
+{% else %}
   {% set includeLabel = true %}
 {% endif %}
 
-{% if includeLabel %}<label class="control-label" for="{{ id }}">{{ label }}</label>{% endif %}
-<select id="{{ id }}" class="selectpicker form-control {{ classes }}" data-size="{{ size }}" data-style="btn-select" data-icon-base="lt-icon">
-  {% for option in options %}
-    <option{% if selectFirst and loop.first %} selected="true" disabled="true"{% endif %}>
-      {{ option }}
-    </option>
-  {% endfor %}
-</select>
+{% if includeLabel %}
+  <label class="control-label" for="{{ id }}">{{ label }}</label>
+{% endif %}
+{% include '_includes/elements/forms/selectpicker.html.twig' with {
+  id : id,
+  classes: classes,
+  size: size,
+  options: options,
+  selectFirst: selectFirst
+} %}

@@ -43,7 +43,7 @@ html: '<div class="reverse-bg py-3">
 
   <hr>
 
-  <!-- START - SECTION LEVEL ERROR -->
+{#   <!-- START - SECTION LEVEL ERROR -->
   {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
   alertIcon: 'lt-warning-fill',
   alertHeadline: 'Section level error with error list',
@@ -60,7 +60,7 @@ html: '<div class="reverse-bg py-3">
   alertDismissable: false,
   alertId: null
   } %}
-  <!-- END - SECTION LEVEL ERROR -->
+  <!-- END - SECTION LEVEL ERROR --> #}
 
   <!-- START - PAYMENT AMOUNT SECTION -->
   <div class="">
@@ -94,7 +94,7 @@ html: '<div class="reverse-bg py-3">
 
       </div>
 
-      <div class="form-group has-error">
+      <div class="form-group">
 
         <div class="">
 
@@ -106,7 +106,7 @@ html: '<div class="reverse-bg py-3">
           checked: true
           } %}
 
-          <span class="form-group has-error">
+          <span class="form-group">
             {% include components.elements.forms.input with {
             type: 'number',
             placeholder: '',
@@ -168,7 +168,7 @@ html: '<div class="reverse-bg py-3">
 
             <span class="form-inline-container">
 
-              <span class="form-group has-error">
+              <span class="form-group">
                 {% include components.elements.forms.input with {
                 type: 'password',
                 maxlength: 4,
@@ -280,7 +280,7 @@ html: '<div class="reverse-bg py-3">
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-6 ml-5">
+          <div class="col-md-8 col-lg-6 ml-5">
             <div class="form-group">
               <label class="control-label" for="pay-avon-cardnum">Card Number</label>
               {% include '_includes/elements/forms/input-with-addon.html.twig' with {
@@ -373,119 +373,34 @@ html: '<div class="reverse-bg py-3">
             <!-- START - BILLING ADDRESS -->
             <div class="pt-3">
 
-              {% include "_includes/elements/forms/checkbox.html.twig" with {
-              checked: true,
-              theLabel: 'Billing address is same as Shipping'
-              } %}
+              <h6 class="mb-4 pt-4">Billing Address</h6>
 
-              <h6 class="mb-4 pt-4">billing Address</h6>
-
-              <div class="form-group">
-                <label class="control-label" for="pay-avon-billaddrs">Address</label>
-                {% include components.elements.forms.input with {
-                id: 'pay-avon-billaddrs',
-                placeholder: '1234 Westminster Junction'
-                } %}
-              </div>
-
-              <div class="form-group">
-                {% include components.elements.forms.input with {
-                placeholder: 'Unit #3289W'
-                } %}
-              </div>
-
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group has-error">
-                    {% include components.groups.forms.inputAndLabel with {
-                    type: 'number',
-                    id: 'pay-avon-zip',
-                    mainLabel: 'ZIP',
-                    haslabelErrorIcon: true,
-                    hasInlineErrorIcon: null,
-                    hasAbsoluteErrorIcon: null,
-                    classes: 'form-control',
-                    maxlength: 5,
-                    onInputJs: 'javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0,
-                    this.maxLength);'
-                    } %}
-                  </div>
-                </div>
-
-                <div class="col-md-8">
-                  {% include components.groups.forms.inputAndLabel with {
-                  id: 'pay-avon-city',
-                  mainLabel: 'City',
-                  placeholder: 'Albuquerque',
-                  haslabelErrorIcon: true,
-                  hasInlineErrorIcon: null,
-                  hasAbsoluteErrorIcon: null,
-                  classes: 'form-control',
-                  } %}
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group has-feedback">
-                    {% include "_includes/groups/forms/selectpicker-and-label.html.twig" with {
-                    label: "State",
-                    id: "pay-avon-state",
-                    selectFirst: true,
-                    size: "4",
-                    options: [
-                    "Select&hellip;",
-                    "AK",
-                    "State 2",
-                    "State 3",
-                    "State 4",
-                    "State 5",
-                    ]
-                    } %}
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <!-- <p class="mb-3 small text-muted">Country</p> -->
-                  <div class="form-group has-feedback">
-                    {% include "_includes/groups/forms/selectpicker-and-label.html.twig" with {
-                    label: "Country",
-                    id: "pay-avon-country",
-                    selectFirst: true,
-                    size: "4",
-                    options: [
-                    "Select&hellip;",
-                    "United States",
-                    "Country 2",
-                    "Country 3",
-                    "Country 4",
-                    "Country 5",
-                    ]
-                    } %}
-                  </div>
-                </div>
-              </div>
+              {% include "_includes/groups/forms/generic/address-zip-city-state-country.html.twig" with {
+                'idPrefix': 'billing-',
+                'showTheValue': true,
+                'showPlaceholder': true,
+              }%}
 
               {% include "_includes/elements/forms/checkbox.html.twig" with {
-              checked: true,
-              theLabel: 'Save credit card information to my account',
-              helperText: 'Donec id elit non mi porta gravida et eget metus. Nulla vitae elit libero, a phareta augue
-              verbose.',
-              emphasize: true
+                checked: true,
+                theLabel: 'Save credit card information to my account',
+                helperText: '' ~ fpo.sentence ~ ' ' ~ fpo.sentence  ~ '',
+                emphasize: false,
+                wrapLabel: true
               } %}
+              {% include "_includes/elements/forms/checkbox.html.twig" with {
+                checked: false,
+                theLabel: 'Save credit card information to my account',
+                helperText: '' ~ fpo.sentence ~ ' ' ~ fpo.sentence  ~ '',
+                emphasize: false,
+                wrapLabel: true,
+                disabled: true
+              } %}
+
+
 
             </div>
             <!-- END - BILLING ADDRESS -->
-
-            <!-- START - BUTTONS -->
-            <div class="row mb-5">
-              <div class="col-xs-5 mt-4">
-                <a href="javascript:void(0)" class="btn btn-default d-block" data-toggle="collapse" data-target="#collapse-cc-details.in">Cancel</a>
-              </div>
-              <div class="col-xs-5 mt-4">
-                <a href="javascript:void(0)" class="btn btn-primary d-block" data-toggle="modal" data-target="#pay-avon-review-payment-modal">Continue</a>
-              </div>
-            </div>
-            <!-- END - BUTTONS -->
 
           </div>
 
@@ -579,7 +494,7 @@ html: '<div class="reverse-bg py-3">
 <!-- MODAL - QUICKPAY ENROLLMENT REVIEW -->
 {% include "_includes/modules/checkout/modals/checkout-quickpay-enrollment-review-modal.html.twig" %}
 
-<!-- MODAL - EDIT CREDIT CARD -->
+<!-- MODAL - EDIT CREDIT INFO -->
 {% include "_includes/modules/account/modals-pay/pay-avon-edit-card-modal.html.twig" %}
 
 <!-- MODAL - REVIEW PAYMENT -->

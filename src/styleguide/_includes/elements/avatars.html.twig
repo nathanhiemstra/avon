@@ -1,0 +1,69 @@
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# SECTION -  AVATARS #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+<div class="bs-docs-section">
+  <h1 id="avatars" class="page-header">Avatars</h1>
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Images must be square</h4>
+    <p>The <code>.avatar</code> CSS will clip the circle. If image has the circle clipped from the actual image using transparent background, the <code>.avatar</code> background color will show around the edges of the circle. No one wants that.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-info">
+    <h4>Image not available</h4>
+    <ul>
+      <li>If no image is available, the person's first initial appears.</li>
+      <li>Default color is grey.</li>
+      <li>The number in the class names will make it possible for Magnolia to randomy choose a number when rendering pages and not require storing colors names for each profile.</li>
+    </ul>
+  </div>
+
+  <div class="bs-example">
+    <span class="avatar"><img src="/images/fpo/img_avatar_square.png"></span>
+    <span class="avatar">T</span>
+    <span class="avatar avatar--color-1">T</span>
+    <span class="avatar avatar--color-2">T</span>
+    <span class="avatar avatar--color-3">T</span>
+    <span class="avatar avatar--color-4">T</span>
+    <span class="avatar avatar--color-5">T</span>
+    <span class="avatar avatar--color-6">T</span>
+  </div>
+  {{ highlightMarkup }}
+  <span class="avatar"><img src="/images/fpo/img_avatar_square.png"></span>
+  <span class="avatar">T</span>
+  <span class="avatar avatar--color-1">T</span>
+  <span class="avatar avatar--color-2">T</span>
+  <span class="avatar avatar--color-3">T</span>
+  <span class="avatar avatar--color-4">T</span>
+  <span class="avatar avatar--color-5">T</span>
+  <span class="avatar avatar--color-6">T</span>
+  {{ endhighlight }}
+
+  <div class="bs-callout bs-callout-info">
+    <h4>Size options</h4>
+    <ul>
+      <li>Images must be at least 140px x 140px or the "large" size will look crappy.</li>
+    </ul>
+  </div>
+
+  <div class="bs-example">
+    <span class="avatar avatar-sm"><img src="/images/fpo/img_avatar_square.png"></span>
+    <span class="avatar avatar-sm mr-5">T</span>
+
+    <span class="avatar avatar-md"><img src="/images/fpo/img_avatar_square.png"></span>
+    <span class="avatar avatar-md mr-5">T</span>
+
+    <span class="avatar avatar-lg"><img src="/images/fpo/img_avatar_square.png"></span>
+    <span class="avatar avatar-lg">T</span>
+  </div>
+  {{ highlightMarkup }}
+    <span class="avatar avatar-sm"><img src="/images/fpo/img_avatar_square.png"></span>
+    <span class="avatar avatar-sm">T</span>
+
+    <span class="avatar avatar-md"><img src="/images/fpo/img_avatar_square.png"></span>
+    <span class="avatar avatar-md">T</span>
+
+    <span class="avatar avatar-lg"><img src="/images/fpo/img_avatar_square.png"></span>
+    <span class="avatar avatar-lg">T</span>
+    {{ endhighlight }}
+</div>

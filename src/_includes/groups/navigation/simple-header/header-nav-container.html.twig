@@ -5,16 +5,19 @@
   {% include '_includes/groups/navigation/simple-header/header-utility-nav-2-simple.html.twig' %}
 
 </nav>
-<section class="navbar navbar--simple-nav navbar-default d-flex flex-fill align-items-center">
+<section class="navbar navbar--simple-nav navbar-default d-flex flex-fill align-items-end">
   <span class="hidden-xs">&nbsp;</span>
   <!-- logo -->
   <div class="primary-nav__logo d-flex justify-content-center">
-    {% include '_includes/elements/images/logo-your-avon.html.twig' %}
+    {% include '_includes/elements/images/logo-your-avon.html.twig' with {
+      classes: 'mr-auto mr-md-0'
+    } %}
   </div>
   <!-- links -->
   <div class="navbar-links d-flex justify-content-end">
     <a href="#" class="btn btn-link">Log In</a>
-    <a href="#" class="btn btn-default hidden-xs">Get Started</a>
+    <a href="#" class="btn btn-default">Get Started</a>
+    <a href="#" class="btn btn-link-responsive d-none">Get Started</a>
   </div>
 </section>
 <!-- END - SIMPLE HEADER CONTAINER -->
@@ -22,7 +25,8 @@
 
 <!-- START - GLOBAL MESSAGE -->
 <section class="alert alert-level-header alert-strong alert-neutral alert-campaign-timer">
-  <span class="alert-msg-icon lt-icon lt-medium lt-tip align-middle hidden-xs"></span>
-  <span class="alert-msg-txt">Get started with Avon for just $10! Receive $546 in free product when you meet the goals. Offer expires August 6.</span>
+  {# <span class="alert-msg-icon lt-icon lt-medium lt-tip align-middle hidden-xs"></span> #}
+  <span class="alert-msg-txt mr-2">Lorem ipsum, dolor sit?</span>
+  <button class="btn btn-sm btn-default btn-soft">Lipsum</button>
 </section>
 <!-- END - GLOBAL MESSAGE -->

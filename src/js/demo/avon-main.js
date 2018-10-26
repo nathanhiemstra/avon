@@ -6,6 +6,9 @@ $( document ).ready( function () {
   }
 
 
+
+
+
   ////////////////////////////////////////////////////////
   // VARIABLES
   ////////////////////////////////////////////////////////
@@ -34,7 +37,8 @@ $( document ).ready( function () {
     datePicker: {
       trigger: ".lt-calendar",
       target: ".demo-datepicker-from-angular"
-    }
+    },
+    tooltips: '[data-toggle="tooltip"]'
     // backDrop: ".drawer-backdrop"
   };
 
@@ -66,9 +70,13 @@ $( document ).ready( function () {
     datePicker: {
       trigger: $( selectors.main ).find( selectors.datePicker.trigger ),
       target: $( selectors.main ).find( selectors.datePicker.target )
-    }
+    },
+    tooltips: $( selectors.main ).find( selectors.tooltips )
     // backDrop: $(selectors.backDrop)
   };
+
+  var mobileOrTablet = navigator.userAgent.match(/Android|BlackBerry|Tablet|Mobile|iPhone|iPad|iPod|Opera Mini|IEMobile/i);
+
 
   // $objects.backDrop.addClass('hidden');
 
@@ -111,7 +119,9 @@ $( document ).ready( function () {
 
   }
 
-
+  function tooltipInit() {
+    $objects.tooltips.tooltip();
+  }
 
   // YOUR OFFERS
   function yourOrderOffersShowDetails() {
@@ -241,6 +251,9 @@ $( document ).ready( function () {
   // POPOVERS
   $( '[data-toggle="popover"]:not(#popover-cart):not([data-popover-modal-combo])' ).popover();
 
+  // TOOLTIPS
+  tooltipInit();
+
   // SPLIT CONTENT
   $( '[data-split-content]' ).contentSplit();
 
@@ -337,6 +350,39 @@ $( document ).ready( function () {
     currentStep: 1
   });
 
+  // selctpicker
+  if(mobileOrTablet) {
+    // if mobile or tablet, enable native select for selectpicker
+    $('.selectpicker').selectpicker('mobile');
+  }
+
+  // radio select combos
+  $('.radio-select-combo').on('click', function() {
+    var $radio = $(this).find('input[type="radio"]');
+    var $collapse = $('#collapse-cc-details');
+
+    // check the radio button if selectpicker clicked
+    $radio.prop('checked', true);
+
+    // show credit card details
+    if($collapse.length && !$collapse.hasClass('in')) {
+      $collapse.collapse('show');
+    }
+  });
+
+  // scroll expanded accordion items into view
+  $('.panel-collapse').on('shown.bs.collapse', function (e) {
+    var $panel = $(this).closest('.panel');
+    var panelPos = $panel.offset().top;
+    var scrollPos = $(document).scrollTop();
+    // if the top of the panel is out of frame, scroll into view
+    if(panelPos < scrollPos) {
+      $('html,body').animate({
+        scrollTop: $panel.offset().top
+      }, 200);
+    }
+  });
+
 
   // INIT OTHER DEMO SCRIPTS
   if( typeof BackToTop !== 'undefined' ) BackToTop.init();
@@ -348,6 +394,7 @@ $( document ).ready( function () {
   if( typeof ProductDetail !== 'undefined' ) ProductDetail.init();
   if( typeof ProductFilters !== 'undefined' ) ProductFilters.init();
   if( typeof SecondaryNav !== 'undefined' ) SecondaryNav.init();
+  if( typeof Register !== 'undefined' ) Register.init();
   if( typeof YourOrderCartsTab !== 'undefined' ) YourOrderCartsTab.init();
   if( typeof dashboardDemo !== 'undefined' ) dashboardDemo.init();
   if( typeof PopoverCustomizer !== 'undefined' ) PopoverCustomizer.init();

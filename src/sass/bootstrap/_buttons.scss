@@ -177,6 +177,24 @@ a.btn {
 // Avon Custom Buttons
 // --------------------------------------------------
 
+// Link resposive button displays as a text link on mobile and btn-primary on large screens
+.btn-link-responsive {
+  @extend .btn-primary;
+
+  // mobile - since we're overriding btn styles, it makes more sense for 'desktop first' in this case
+  @media (max-width: $screen-xs-max) {
+    @include button-variant($link-color, transparent, transparent);
+    font-size: $font-size-base;
+    letter-spacing: normal;
+    text-decoration: underline;
+    text-transform: none;
+    font-weight: normal;
+    padding: 0;
+    border: none;
+    line-height: 1;
+  }
+}
+
 // Primary responsive looks like .btn-primary on small screens but has a custom look on large screens
 .btn-primary-responsive {
   @extend .btn-primary;

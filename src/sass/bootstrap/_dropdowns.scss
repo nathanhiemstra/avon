@@ -366,18 +366,16 @@ a, .dropdown {
 
 // bootstap select additions / overrides
 .bootstrap-select {
-  $icon-size: 24px;
-
   .dropdown-menu,
   .filter-option {
     img.thumb {
-      width: $icon-size;
+      width: $list-group-icon-size;
       height: auto;
       margin-right: $spacing-3;
     }
 
     .info {
-      margin-left: calc(#{$icon-size} + #{$spacing-4});
+      margin-left: calc(#{$list-group-icon-size} + #{$spacing-4});
       line-height: 0.5;
     }
   }

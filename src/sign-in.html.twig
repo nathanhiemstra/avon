@@ -1,0 +1,83 @@
+{% extends "_layouts/base-simple-header.html.twig" %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <section class="container container--page">
+    {# {% embed layouts.columns6max %} #}
+
+    {% embed "_layouts/columns-12-promo-reverse.html.twig" with {
+      showPromo: true
+    } %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - ASIDE #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block aside %}
+        <img class="img-responsive" src="http://via.placeholder.com/800x800">
+      {% endblock %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        <h5 class="text-center">Representative Sign in</h5>
+
+        <hr class="thick primary stub">
+
+        <div class="my-5">
+
+          <!-- START - INLINE LEVEL ALERT -->
+          {# {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
+            alertIcon: 'lt-warning-fill',
+            alertHeadline: 'Alert message',
+            alertBody: '
+            <ul class="alert-list">
+              <li>Here is a <a href="#" class="alert-link">Link</a>.</li>
+              <li>' ~ fpo.sentence ~ '</li>
+            </ul>
+            <p>' ~ fpo.sentence ~ ' ' ~ fpo.sentence ~ '</p>',
+            alertBtnText: null,
+            alertClasses: 'alert-danger',
+            alertLevel: 'content',
+            alertDismissable: false,
+            alertId: null
+          } %} #}
+          <!-- END - INLINE LEVEL ALERT -->
+
+          <!-- START - FORM -->
+          {% include "_includes/modules/sign-in/sign-in-email-password-inputs.html.twig" %}
+
+          <button type="button" class="btn btn-primary btn-block">Sign in</button>
+
+          {% include "_includes/elements/misc/divider-with-or.html.twig" %}
+
+          {% include "_includes/modules/sign-in/sign-in-via-social.html.twig" %}
+
+          <!-- END - FORM -->
+
+        </div>
+
+        <hr>
+
+        <div class="text-center visible-md visible-lg">Lorem Ipsum <a href="#">Lipsum</a></div>
+
+      {% endblock %}
+
+    {% endembed %}
+
+  </section>
+
+  <script type="text/javascript">
+    // hide header buttons on this page - for demo only
+    document.addEventListener('DOMContentLoaded', function(e) {
+      var headerLinks = document.querySelector('.global-header--simple .navbar-links');
+      headerLinks.style.visibility = 'hidden';
+    });
+  </script>
+
+{% endblock %}

@@ -1,0 +1,226 @@
+{% set janetEmail = 'janet.johnson@gmail.com' %}
+
+<!-- START - HEADER SECTION -->
+<section class="section--header">
+
+  <div class="well">
+    <!-- START - MENTOR CARD -->
+    {% include '_includes/modules/register/become-a-rep/mentor-card.html.twig' %}
+    <!-- END - MENTOR CARD -->
+  </div>
+
+  <div class="well">
+    Your sponsor will be assigned after you complete the registration process. <a href="#">Learn more</a> or <a href="#">choose ytour sponsir</a>.
+  </div>
+
+  <!-- START - NAVIGATION -->
+  {% include '_includes/modules/register/register-navigation.html.twig' with {
+    currentStep: 1
+  }%}
+  <!-- END - NAVIGATION -->
+
+  <h3>Basic Info</h3>
+
+  <p>{{ fpo.paragraph }}</p>
+
+  <!-- START - INLINE LEVEL ALERT WITH MAX TEXT -->
+  {% include "_includes/groups/alerts/alert-level-template.html.twig" with {
+  alertIcon: 'lt-warning-fill',
+  alertHeadline: fpo.sentence,
+  alertBody: '
+  <ul class="alert-list">
+    <li>Here is a <a href="#" class="alert-link">Link</a>.</li>
+    <li>' ~ fpo.sentence ~ '</li>
+  </ul>
+  <p>' ~ fpo.sentence ~ '.</p>',
+  alertBtnText: null,
+  alertClasses: 'alert-danger',
+  alertLevel: 'content',
+  alertDismissable: false,
+  alertId: null
+  } %}
+  <!-- END - INLINE LEVEL ALERT WITH MAX TEXT -->
+
+</section>
+<!-- END - HEADER SECTION -->
+
+<!-- START - OVERVIEW -->
+<section class="d-flex">
+  <div class="mr-4"><span class="lt-icon lt-info lt-large"></span></div>
+  <div>
+    <h4>Welcome, Janet Johnson!</h4>
+    <p>{{ fpo.paragraph }}</p>
+
+    <!-- START - CONTACT INFO - REVIEW -->
+    <div class="contact-info-review">
+      <dl>
+        <dt>Facebook Account</dt>
+        <dd>{{ janetEmail }}</dd>
+        <dt>Contact Email</dt>
+        <dd>{{ janetEmail }}</dd>
+      </dl>
+      <a href="javascript:void()" class="btn btn-primary btn-small">Edit</a>
+    </div>
+    <!-- END - CONTACT INFO - REVIEW -->
+
+    <!-- START - CONTACT INFO - EDIT -->
+    <div class="contact-info-edit">
+      <div class="form-group" data-toggle="tooltip" data-placement="bottom"  data-original-title="You can manage your social signin in your profile.">
+
+        {% include components.groups.forms.inputAndLabel with {
+        id: 'facebookAccount',
+        mainLabel: 'Facebook Account',
+        type: 'text',
+        required: null,
+        haslabelErrorIcon: true,
+        hasInlineErrorIcon: null,
+        hasAbsoluteErrorIcon: null,
+        theValue: janetEmail,
+        disabled: true
+        } %}
+
+      </div>
+      <div class="form-group">
+        {% include components.groups.forms.inputAndLabel with {
+        id: 'contactEmail',
+        mainLabel: 'Contact Email',
+        type: 'text',
+        required: null,
+        haslabelErrorIcon: true,
+        hasInlineErrorIcon: null,
+        hasAbsoluteErrorIcon: null,
+        theValue: janetEmail
+        } %}
+      </div>
+      <a href="javascript:void()" class="btn btn-default btn-small">Cancel</a>
+      <a href="javascript:void()" class="btn btn-primary btn-small">Save</a>
+    </div>
+    <!-- END - CONTACT INFO - EDIT -->
+
+  </div>
+</section>
+<!-- END - OVERVIEW -->
+
+<!-- START - MENTOR -->
+<section class="my-5">
+  <h6>Your Mentor</h6>
+  <p>The person you will sign up wwho will be show you the ropes at Avon.</p>
+
+  {% include components.elements.forms.radio with {
+    id: 'mentor-unknown',
+    name: 'mentor-knowability',
+    classes: '',
+    theLabel: "I don't know anyone (Avon will asssign you a mentor)",
+    checked: false
+  } %}
+
+  {% include components.elements.forms.radio with {
+    id: 'mentor-known',
+    name: 'mentor-knowability',
+    classes: '',
+    theLabel: 'I know my mentor',
+    checked: true
+  } %}
+
+  <div class="mentor-search">
+    {% include '_includes/modules/register/mentor-select-autocomplete.html.twig' %}
+    <!-- NOTE: Other ways the avatar may appear: http://s4dc-dev.dreamhosters.com/styleguide/elements.html#avatars -->
+  </div>
+</section>
+<!-- END - MENTOR -->
+
+<!-- START - LANGUAGE -->
+<section class="my-5">
+  <h6>Language Preference</h6>
+  <p>How would you like Avon to communicate with you?</p>
+
+  {% include components.elements.forms.radio with {
+    id: 'language-en',
+    name: 'language',
+    classes: '',
+    theLabel: "English",
+    checked: true
+  } %}
+
+  {% include components.elements.forms.radio with {
+    id: 'language-es',
+    name: 'language',
+    classes: '',
+    theLabel: 'Español',
+    checked: false
+  } %}
+</section>
+<!-- END - LANGUAGE -->
+
+<!-- START - PHONE -->
+<section class="my-5">
+  <h6>Phone</h6>
+  <p>Stay in touch with your mentor and make it easier for your customers to contact you.</p>
+  <div class="form-group has-error">
+    {% include components.groups.forms.inputAndLabel with {
+    id: 'phone-primary',
+    mainLabel: 'Primary Phone',
+    type: 'text',
+    required: null,
+    haslabelErrorIcon: true,
+    hasInlineErrorIcon: null,
+    hasAbsoluteErrorIcon: null,
+    theValue: '(000) 000-0000'
+    } %}
+  </div>
+</section>
+<!-- END - PHONE -->
+
+
+<!-- START - BIRTHDAY -->
+<section class="my-5">
+  <h6>Birthday</h6>
+  <p>Only your upline will see your birth month and day. No one will see your birth year. We only use that to validate that you are over 18 years old.</p>
+  <div class="form-inline has-error">
+    <div class="form-group has-feedback mr-sm-4">
+      {% include '_includes/elements/forms/generic/month.html.twig' with {
+        optionSelected: 3
+      } %}
+    </div>
+    <div class="form-group has-error has-feedback mr-sm-4">
+      {% include '_includes/elements/forms/generic/day.html.twig' with {
+        optionSelected: 3
+      } %}
+    </div>
+    <div class="form-group has-error has-feedback mr-sm-4">
+      {% include '_includes/elements/forms/generic/year.html.twig' with {
+        optionSelected: 3
+      } %}
+    </div>
+  </div>
+<!-- END - BIRTHDAY -->
+
+<!-- START - SHIPPING ADDRESS -->
+<section class="my-5">
+  <h6>Shipping Address</h6>
+  <p>Your default address for all product shipments, correspondence, gifts, and more.</p>
+  {% include "_includes/groups/forms/generic/address-zip-city-state-country.html.twig" with {
+    'idPrefix': 'shipping-',
+    'showTheValue': true,
+    'showPlaceholder': true,
+  }%}
+  <div class="form-group">
+    {% include components.groups.forms.inputAndLabel with {
+      id: 'delivery-instructions',
+      mainLabel: 'Delivery Instructions (optional)',
+      type: 'text',
+      required: null,
+      haslabelErrorIcon: true,
+      hasInlineErrorIcon: null,
+      hasAbsoluteErrorIcon: null,
+      theValue: 'Please leave boxes behind the fence'
+    } %}
+  </div>
+</section>
+<!-- END - SHIPPING ADDRESS -->
+
+
+
+
+
+<a href="javascript:void()" class="btn btn-primary btn-block">Continue</a>

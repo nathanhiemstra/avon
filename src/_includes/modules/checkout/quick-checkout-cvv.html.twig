@@ -3,61 +3,55 @@
 {% endif %}
 
 <section class="list-group box-emphasize box-emphasize--focused">
-    <div class="list-group-item  remove-last-border border-0">
-        <div class="clearfix mb-4">
-            <h6 class="pull-left m-0 mt-2">Credit Card CVV</h6>
-            <a class="pull-right underline" href="#">Edit card</a>
-        </div>
+  <div class="list-group-item  remove-last-border border-0">
+    <div class="clearfix mb-4">
+      <h6 class="pull-left m-0 mt-2">Credit Card CVV</h6>
+      <a class="pull-right underline" href="#">Edit card</a>
+    </div>
 
-        {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
-            type: 'VISA ending 1234',
-            icon: '/images/icons/payment-visa.svg',
-            holder: 'Marcia Brady',
-            editable: false
-        } %}
+    {% include '_includes/modules/checkout/elements/payment-option-single.html.twig' with {
+      type: 'VISA ending 1234',
+      icon: '/images/icons/payment-visa.svg',
+      holder: 'Marcia Brady',
+      editable: false
+    } %}
 
-        <!-- START - FORM -->
+    <!-- START - FORM -->
     <form role="form" class="pt-4 pb-4">
-
       <div class="form-group">
-
         <div class="row">
-            <div class="col-xs-6 col-sm-4 pb-3">
-              {% include "_includes/groups/forms/input-and-label.html.twig" with {
-                mainLabel: 'Amount to Pay',
-                labelClasses: 'nowrap',
-                placeholder: '$XXX.XX',
-                type: 'number'
-              } %}
-            </div>
-            <div class="col-xs-6 col-sm-4">
-              {% include "_includes/groups/forms/input-and-label.html.twig" with {
-                mainLabel: 'CVV',
-                labelAddon: '<a href="javascript:void(0)" data-toggle="modal" data-target="#shippingModal">
-                    <span class="lt-icon lt-tip lt-medium align-middle"></span>
-                </a>',
-                type: 'number'
-              } %}
-            </div>
+          <div class="col-xs-6 col-sm-4 pb-3">
+            {% include "_includes/groups/forms/input-and-label.html.twig" with {
+              mainLabel: 'Amount to Pay',
+              labelClasses: 'nowrap',
+              placeholder: '$XXX.XX',
+              type: 'number'
+            } %}
+          </div>
+          <div class="col-xs-6 col-sm-4">
+            {% include "_includes/groups/forms/input-and-label.html.twig" with {
+              mainLabel: 'CVV',
+              labelAddon: '<a href="javascript:void(0)" data-toggle="modal" data-target="#shippingModal">
+                  <span class="lt-icon lt-tip lt-medium align-middle"></span>
+              </a>',
+              type: 'number'
+            } %}
+          </div>
         </div>
       </div>
-
       <div class="row mt-5">
         <div class="col-xs-12">
-            <div class="btn-group btn-group-50-50--contained">
-              <div class="btn-group">
-                <a href="javascript:void(0)" class="btn btn-default" href="#">Cancel</a>
-                {# <button type="button" class="btn btn-default">Left</button> #}
-              </div>
-              <div class="btn-group">
-                <a href="javascript:void(0)" class="btn btn-primary">{{ buttonText }}</a>
-                {# <button type="button" class="btn btn-primary">Right</button> #}
-              </div>
+          <div class="btn-group btn-group-50-50--contained">
+            <div class="btn-group">
+              <a href="javascript:void(0)" class="btn btn-default">Cancel</a>
             </div>
+            <div class="btn-group">
+              <a href="javascript:void(0)" class="btn btn-primary">{{ buttonText }}</a>
+            </div>
+          </div>
         </div>
       </div>
-
     </form>
-
-    </div>
+    <!-- END - FORM -->
+  </div>
 </section>

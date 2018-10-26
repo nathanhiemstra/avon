@@ -45,10 +45,14 @@ Parameters:
     {% if expired %}
       <div class="pull-left">
         <div>{{ type }} - Expired</div>
-        {% if subhead %}<div class="text-danger small">{{ subhead }}</div>{% endif %}
-        {% if holder %}<div class="text-danger small">
-          {{ holder }}
-          {% if expiredDate %}| Exp. {{ expiredDate }}{% endif %}
+        {% if subhead %}<div class="small">{{ subhead }}</div>{% endif %}
+        {% if holder %}<div class="small">
+          <span>{{ holder }}</span>
+          {% if expiredDate %}
+            <span>| Exp.
+              <span>{{ expiredDate }}</span>
+            </span>
+          {% endif %}
         {% endif %}
         </div>
       </div>

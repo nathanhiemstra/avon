@@ -678,10 +678,22 @@ $('.carousel-thumbs').thumbnailsCarousel();
     var option  = data ? 'toggle' : $this.data()
     var parent  = $this.attr('data-parent')
     var $parent = parent && $(parent)
+    var targetContainer = $this.attr('data-target-container')
+    var hasTargetContainer = false;
+    if (typeof targetContainer !== typeof undefined && targetContainer !== false) {
+      hasTargetContainer = true
+    }
 
     if (!data || !data.transitioning) {
       if ($parent) $parent.find('[data-toggle=collapse][data-parent="' + parent + '"]').not($this).addClass('collapsed')
       $this[$target.hasClass('in') ? 'addClass' : 'removeClass']('collapsed')
+
+      if(hasTargetContainer) {
+        var $containingPanel = $this.closest('.panel');
+        var $panelGroup = $this.closest('.panel-group');
+        if ($containingPanel) $panelGroup.find('.panel').not($containingPanel).addClass('collapsed')
+        $containingPanel[$target.hasClass('in') ? 'addClass' : 'removeClass']('collapsed')
+      }
     }
 
     $target.collapse(option)

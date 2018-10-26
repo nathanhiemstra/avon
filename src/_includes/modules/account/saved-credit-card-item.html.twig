@@ -1,0 +1,27 @@
+{% if lrg %}
+ {% set lrgClass = 'lg' %}
+{% endif %}
+
+<img class='thumb {{ lrgClass }}' src='{{ thumb }}'>
+<div class="content {{ lrgClass }}">
+  <div class='{% if expired %}text-danger{% endif %}'>
+    {% if label %}
+    {{ label }}
+    {% else %}
+    {{ cardType }} ending in {{ lastFour }}
+    {% endif %}
+  </div>
+  {% if not label %}
+  <p class='info small {% if expired %}text-danger{% else %}text-muted{% endif %}'>
+    {{ name }} | {% if expired %}Expired {% else %}Expires {% endif %} {{ expirationDate }}
+  </p>
+  {% endif %}
+</div>
+<span class="links nowrap">
+  <a class="small" data-toggle="modal" data-target="#modal-remove-cc">Remove</a>
+  <a class="small"
+    data-toggle="collapse"
+    data-target="{{ dataTarget }}"
+    data-parent="{{ dataParent }}"
+    data-target-container="">Edit</a>
+</span>

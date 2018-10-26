@@ -1,0 +1,20 @@
+{% if showTheValue %}
+  {% set optionSelected = 2 %}
+{% endif %}
+
+{% include components.elements.forms.select with {
+  id: idPrefix ~ 'day',
+  mainLabel: 'Day',
+  required: null,
+  haslabelErrorIcon: true,
+  hasInlineErrorIcon: null,
+  hasAbsoluteErrorIcon: null,
+  optionSelected: optionSelected,
+  hasFormGroup: true,
+  'options': [
+    {'label': 'Select...'},
+    {'label': '2000'},
+    {'label': '1999'},
+    {'label': '1998'}
+  ]
+} %}

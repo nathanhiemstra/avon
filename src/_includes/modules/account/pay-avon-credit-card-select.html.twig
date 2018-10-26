@@ -1,15 +1,12 @@
-{% set opt1 %}
-{% include "_includes/modules/account/pay-avon-credit-card-option.html.twig" with {
+{% set ccData1 = {
   thumb: '../images/icons/payment-visa.svg',
   cardType: 'VISA',
   lastFour: '1234',
   name: 'Marcia Brady',
   expirationDate: '01/21'
 } %}
-{% endset %}
 
-{% set opt2 %}
-{% include "_includes/modules/account/pay-avon-credit-card-option.html.twig" with {
+{% set ccData2 = {
   thumb: '../images/icons/payment-mastercard.svg',
   cardType: 'Master Card',
   lastFour: '9876',
@@ -17,32 +14,65 @@
   expirationDate: '03/18',
   expired: true
 } %}
-{% endset %}
 
-{% set opt3 %}
-{% include "_includes/modules/account/pay-avon-credit-card-option.html.twig" with {
+{% set ccData3 = {
   thumb: '../images/icons/payment-visa.svg',
   cardType: 'VISA',
   lastFour: '3456',
   name: 'Marcia Brady',
   expirationDate: '08/21'
 } %}
+
+{% set ccData4 = {
+  thumb: '../images/icons/payment-creditcard.svg',
+  label: 'Use another credit card'
+} %}
+
+{% set opt1 %}
+{% include "_includes/modules/account/pay-avon-credit-card-select-option.html.twig" with {
+  thumb: ccData1.thumb,
+  cardType: ccData1.cardType,
+  lastFour: ccData1.lastFour,
+  name: ccData1.name,
+  expirationDate: ccData1.expirationDate
+} %}
+{% endset %}
+
+{% set opt2 %}
+{% include "_includes/modules/account/pay-avon-credit-card-select-option.html.twig" with {
+  thumb: ccData2.thumb,
+  cardType: ccData2.cardType,
+  lastFour: ccData2.lastFour,
+  name: ccData2.name,
+  expirationDate: ccData2.expirationDate,
+  expired: ccData2.expired
+} %}
+{% endset %}
+
+{% set opt3 %}
+{% include "_includes/modules/account/pay-avon-credit-card-select-option.html.twig" with {
+  thumb: ccData3.thumb,
+  cardType: ccData3.cardType,
+  lastFour: ccData3.lastFour,
+  name: ccData3.name,
+  expirationDate: ccData3.expirationDate
+} %}
 {% endset %}
 
 {% set opt4 %}
-{% include "_includes/modules/account/pay-avon-credit-card-option.html.twig" with {
-  thumb: '../images/icons/payment-creditcard.svg',
-  label: 'Use another credit card'
+{% include "_includes/modules/account/pay-avon-credit-card-select-option.html.twig" with {
+  thumb: ccData4.thumb,
+  label: ccData4.label
 } %}
 {% endset %}
 
 {% set selectPicker %}
 <select class="form-control selectpicker" data-size="5" data-style="btn-select" data-icon-base="lt-icon">
   <option selected="true" disabled="true">Select a credit card</option>
-  <option data-content="{{ opt1 }}"></option>
-  <option data-content="{{ opt2 }}"></option>
-  <option data-content="{{ opt3 }}"></option>
-  <option data-content="{{ opt4 }}"></option>
+  <option data-content="{{ opt1 }}">{{ ccData1.cardType ~ ' ending in ' ~ ccData1.lastFour }}</option>
+  <option data-content="{{ opt2 }}">{{ ccData2.cardType ~ ' ending in ' ~ ccData2.lastFour }}</option>
+  <option data-content="{{ opt3 }}">{{ ccData3.cardType ~ ' ending in ' ~ ccData3.lastFour }}</option>
+  <option data-content="{{ opt4 }}">{{ ccData4.label }}</option>
 </select>
 <div class="select-picker-addon"><a class="underline" data-toggle="modal" data-target="#pay-avon-edit-stored-card-modal">Edit card</a></div>
 {% endset %}

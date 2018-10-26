@@ -15,9 +15,11 @@ $navbar-header-mobile-height: 64px;
       padding: 0;
       border: none;
     }
+
     .primary-nav__logo, .navbar-links, span {
       flex: 1;
     }
+
     .primary-nav__logo {
       img {
         width: 100%;
@@ -32,6 +34,7 @@ $navbar-header-mobile-height: 64px;
     #mystorepopover {
       border: 1px solid $gray;
     }
+
     &--simple {
       .navbar--primary-nav {
         padding: 2.5rem $spacing-5;
@@ -127,6 +130,7 @@ $navbar-header-mobile-height: 64px;
 
           &:hover {
             color: $black;
+
             // desktop
             @media (min-width: $breakpoint-header-min) {
               color: $gray-lighter;
@@ -151,8 +155,7 @@ $navbar-header-mobile-height: 64px;
           }
 
           .profile-img {
-            width: 30px;
-            height: 30px;
+            @include square($avatar-size-xs);
           }
         }
       }
@@ -261,7 +264,7 @@ $navbar-header-mobile-height: 64px;
 
         // mobile only
         @media (max-width: $breakpoint-header-max) {
-          &+.dropdown-menu {
+          & + .dropdown-menu {
             background-color: $black;
             width: 100vw;
             padding-left: 15px;
@@ -396,10 +399,12 @@ $navbar-header-mobile-height: 64px;
   }
 
   $primary-nav-x-space: 2rem;
+
   &--simple-nav {
     margin-bottom: 0;
     padding: 2rem $spacing-5;
   }
+
   &--primary-nav {
     margin: 0;
     padding: 2rem $spacing-4;
@@ -765,7 +770,9 @@ $navbar-header-mobile-height: 64px;
 
     $height-1: 42px;
     $height-2: 48px;
-    $utility-height: calc((#{$height-1} - -#{$height-2}) - 1.1rem); // minus negative because of minify problems
+    $utility-height: calc((#{$height-1} - -#{$height-2}) - 1.1rem);
+
+    // minus negative because of minify problems
 
     // $utility-height: ($height-1 + $height-2) - 10px;
 

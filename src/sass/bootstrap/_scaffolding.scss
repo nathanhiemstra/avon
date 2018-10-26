@@ -236,6 +236,14 @@ hr {
   &.thick {
     border-top: 2px solid $hr-border;
   }
+
+  &.primary {
+    border-color: $brand-primary;
+  }
+
+  &.stub {
+    width: 60px;
+  }
 }
 
 // Only display content to screen readers

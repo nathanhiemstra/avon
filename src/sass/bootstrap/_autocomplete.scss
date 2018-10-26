@@ -2,7 +2,6 @@ $customer-select-break: $screen-sm-min;
 
 // customer select form - used in multiple locations and connected to autocomplete
 .customer-select-autocomplete {
-
   .modal-header {
     display: none;
     border-bottom: none;
@@ -26,7 +25,7 @@ $customer-select-break: $screen-sm-min;
     padding-left: 0;
     padding-right: 0;
     background-color: $body-bg;
-    z-index:$zindex-modal;
+    z-index: $zindex-modal;
     overflow: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
@@ -89,7 +88,7 @@ $customer-select-break: $screen-sm-min;
         margin-left: 0;
       }
 
-      &~.lt-triangle-down {
+      & ~ .lt-triangle-down {
         // MOBILE STATE
         display: none;
 
@@ -99,7 +98,7 @@ $customer-select-break: $screen-sm-min;
         }
       }
 
-      &~.lt-close {
+      & ~ .lt-close {
         font-weight: normal;
         top: 27px;
 
@@ -119,7 +118,6 @@ $customer-select-break: $screen-sm-min;
       &:active,
       &:focus,
       .active {
-
         // MOBILE STATE
 
         // DESKTOP STATE
@@ -129,11 +127,11 @@ $customer-select-break: $screen-sm-min;
           border-bottom-color: $body-bg;
         }
 
-        &~.lt-triangle-down {
+        & ~ .lt-triangle-down {
           display: none;
         }
 
-        &~.lt-close {
+        & ~ .lt-close {
           // MOBILE STATE
           display: none;
 
@@ -143,7 +141,6 @@ $customer-select-break: $screen-sm-min;
           }
         }
       }
-
     }
 
     .autocomplete-suggestions {
@@ -161,17 +158,20 @@ $customer-select-break: $screen-sm-min;
         margin-top: 0;
         padding-bottom: 0;
         overflow: auto;
-        max-height: 204px !important; // override inline style added by autocomplete plugin
+        max-height: 204px !important;
+
+        // override inline style added by autocomplete plugin
       }
     }
+
     .autocomplete-spacer {
       height: 66px;
+
       @media (min-width: $customer-select-break) {
         height: 0;
       }
     }
   }
-
 }
 
 .autocomplete-suggestions {
@@ -207,6 +207,12 @@ $customer-select-break: $screen-sm-min;
 
     img {
       mix-blend-mode: multiply;
+    }
+
+    .avatar {
+      img {
+        mix-blend-mode: inherit;
+      }
     }
   }
 
@@ -249,18 +255,21 @@ $customer-select-break: $screen-sm-min;
   background-color: $body-bg;
   border-top: 1px solid $gray-light;
   padding: 10px;
-  transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
 
   // DESKTOP STATE
   @media (min-width: $customer-select-break) {
     position: sticky;
     display: block;
     height: 44px;
-    text-align: left;
     background-color: $body-bg;
     padding-left: 20px;
     border-top: 1px solid $gray-lighter;
     cursor: pointer;
+
+    &:not(.text-center) {
+      text-align: left;
+    }
   }
 }
 
@@ -273,9 +282,12 @@ $customer-select-break: $screen-sm-min;
   bottom: 10px;
   right: 10px;
   cursor: pointer;
+
   @extend .btn;
+
   @extend .btn-default;
-  transform: translate3d(0,0,0);
+
+  transform: translate3d(0, 0, 0);
 
   // DESKTOP STATE
   @media (min-width: $customer-select-break) {
@@ -315,14 +327,13 @@ $customer-select-break: $screen-sm-min;
 
     .lt-plus {
       transform: rotate(45deg);
+
       &:before {
         color: $brand-primary-emphasize;
       }
     }
   }
 }
-
-
 
 //
 // PDP SPECIFIC
@@ -334,6 +345,7 @@ $customer-select-break: $screen-sm-min;
     @media (min-width: $customer-select-break) {
       width: 66.66%;
     }
+
     // DESKTOP STATE
     @media (min-width: $screen-md-min) {
       width: 75%;
@@ -341,16 +353,13 @@ $customer-select-break: $screen-sm-min;
   }
 }
 
-
-
 //
 // GLOBAL SEARCH SPECIFIC
 //
 
 .navbar--primary-nav {
-
   .autocomplete-suggestions {
-    box-shadow: 0px 5px 5px rgba(0,0,0,0.15);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
 
     .autocomplete-suggestion {
       border-bottom: 1px solid $table-border-color;

@@ -1,0 +1,67 @@
+.avatar {
+  &:not(img) {
+    @include square($avatar-size-md);
+
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    background-color: $gray;
+    color: $white;
+    text-transform: uppercase;
+    font-size: $avatar-size-md * 0.6667;
+    line-height: 1.55;
+  }
+
+  &.avatar--color {
+    &-1 {
+      background-color: $pink;
+    }
+
+    &-2 {
+      background-color: $magenta;
+    }
+
+    &-3 {
+      background-color: $red-dark;
+    }
+
+    &-4 {
+      background-color: $orange-dark;
+    }
+
+    &-5 {
+      background-color: $blue;
+    }
+
+    &-6 {
+      background-color: $green;
+    }
+  }
+
+  img {
+    // This removes empty space above the image.
+    display: flex;
+    width: 100%;
+  }
+
+  &.avatar-sm {
+    @include square($avatar-size-sm);
+
+    // border-radius: $avatar-size-sm;
+    font-size: $avatar-size-sm * 0.6667;
+  }
+
+  &.avatar-md {
+    // The default size is $avatar-size-md
+
+  }
+
+  &.avatar-lg {
+    @include square($avatar-size-lg);
+
+    // border-radius: $avatar-size-lg;
+    font-size: $avatar-size-lg * 0.6667;
+  }
+}

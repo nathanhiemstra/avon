@@ -11,3 +11,13 @@
   max-width: 680px;
   margin: 0 auto;
 }
+
+// layout with promo that stacks under content on small screens
+.col-md-12--reverse-stack {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @media (min-width: $screen-md) {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,159 @@
+{% if isPayment %}
+  {% set expirationClass = 'col-sm-9' %}
+  {% set cvvClass = 'col-sm-3' %}
+{% endif %}
+
+<!-- START - FORM -->
+<form role="form" class="pt-4">
+
+  {% if isPayment %}
+    <div class="form-group">
+      {% include '_includes/elements/forms/label.html.twig' with {
+        mainLabel : 'Amount to Pay'
+      } %}
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <!-- DEV NOTE :: to disable this input add 'disabled' attribute -->
+          {% include components.elements.forms.input with {
+            placeholder: '$XXX.XX',
+            type: 'number'
+          } %}
+        </div>
+      </div>
+
+    </div>
+  {% else %}
+    <h6>Enter credit card details</h6>
+  {% endif %}
+
+  <div class="form-group">
+    {% include '_includes/elements/forms/label.html.twig' with {
+      mainLabel : 'Card Number'
+    } %}
+    {% include '_includes/elements/forms/input-with-addon.html.twig' with {
+      addon: '<img src="/images/icons/payment-visa.svg">',
+      placeholder: ''
+    } %}
+  </div>
+
+  <div class="form-group">
+    {% include '_includes/elements/forms/label.html.twig' with {
+      mainLabel : 'Name on Card'
+    } %}
+    <div class="row">
+      <div class="col-xs-12 mb-3 mb-xs-0">
+        {% include components.elements.forms.input %}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-xs-12 mb-4 mb-xs-0 {{ expirationClass }}">
+        {% include '_includes/elements/forms/label.html.twig' with {
+          mainLabel : 'Expiration date'
+        } %}
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 mb-3 mb-xs-0">
+            {% include '_includes/elements/forms/selectpicker.html.twig' with {
+              classes: 'form-inline',
+              size: 4,
+              options: ['Month', 'January', 'February', 'March'],
+              selectFirst: true
+            } %}
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            {% include '_includes/elements/forms/selectpicker.html.twig' with {
+              classes: 'form-inline',
+              size: 4,
+              options: ['Year', '2018', '2019', '2020'],
+              selectFirst: true
+            } %}
+          </div>
+        </div>
+      </div>
+
+      {% if isPayment %}
+        <div class="col-xs-12 {{ cvvClass }}">
+          {% include "_includes/groups/forms/input-and-label.html.twig" with {
+            mainLabel: 'CVV',
+            labelAddon: '<a href="javascript:void(0)" data-toggle="modal" data-target="#shippingModal">
+              <span class="lt-icon lt-tip lt-medium align-middle"></span>
+            </a>',
+            type: 'number'
+          } %}
+        </div>
+      {% endif %}
+
+    </div>
+    <!-- / .row -->
+
+  </div>
+  <!-- / .form-group -->
+
+  {% if isPayment %}
+    <!-- START - SAME ADDRESS CHECKBOX -->
+    <div class="form-group">
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        checked : false,
+        theLabel: 'Billing address is same as Shipping',
+        wrapLabel: true
+      } %}
+    </div>
+    <!-- END - SAME ADDRESS CHECKBOX -->
+  {% else %}
+    <h6>Billing Address</h6>
+  {% endif %}
+
+  <!-- START - BILLING ADDRESS FORM FIELDS -->
+  <!-- DEV NOTE :: add class '.d-none' to billing-address to hide -->
+  <section class="billing-address">
+    {% include "_includes/groups/forms/generic/address-zip-city-state-country.html.twig" with {
+      'idPrefix': 'enter-cc-details-',
+      'showTheValue': false,
+      'showPlaceholder': true,
+    }%}
+  </section>
+  <!-- END - BILLING ADDRESS FORM FIELDS -->
+
+  {% if isPayment %}
+    <div class="form-group pl-1">
+
+      <!-- START - NON-DISABLED EXAMPLE -->
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        checked : true,
+        theLabel: 'Save credit card information to my account',
+        helperText: '' ~ fpo.sentence ~ ' ' ~ fpo.sentence ~ '',
+        emphasize: false,
+        wrapLabel: true
+      } %}
+      <!-- END - NON-DISABLED EXAMPLE -->
+
+      <!-- START - DISABLED EXAMPLE -->
+      {% include "_includes/elements/forms/checkbox.html.twig" with {
+        checked : false,
+        theLabel: 'Save credit card information to my account',
+        helperText: '' ~ fpo.sentence ~ ' ' ~ fpo.sentence ~ '',
+        emphasize: false,
+        wrapLabel: true,
+        disabled: true
+      } %}
+      <!-- END - DISABLED EXAMPLE -->
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-xs-12">
+        <div class="btn-group btn-group-50-50--contained">
+          <div class="btn-group">
+            <a href="javascript:void(0)" class="btn btn-default">Cancel</a>
+          </div>
+          <div class="btn-group">
+            <a href="javascript:void(0)" class="btn btn-primary">{{ buttonText }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+</form>
+<!-- END - FORM -->

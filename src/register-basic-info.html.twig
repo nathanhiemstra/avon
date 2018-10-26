@@ -1,7 +1,7 @@
 {% extends "_layouts/base-simple-header.html.twig" %}
 
-{% set sectionClass = 'page--register' %}
-{% set showPromo = false %}
+{% set sectionClass = 'page--register-basic-info' %}
+
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
@@ -16,21 +16,21 @@
 <section class="container container--page">
 
   {% embed '_layouts/columns-12-optional-promo.html.twig' with {
-  showPromo: showPromo
+  showPromo: true
   } %}
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# DEFINE BLOCK - ASIDE #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block aside %}
-  {% include '_includes/modules/register/register-form/form-aside.html.twig' %}
+  {% include '_includes/modules/register/become-a-rep/form-aside.html.twig' %}
   {% endblock %}
 
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {# DEFINE BLOCK - MAIN #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
-  {% include '_includes/modules/register/register-form/form-main.html.twig' %}
+  {% include '_includes/modules/register/basic-info.html.twig' %}
   {% endblock %}
 
   {% endembed %}
@@ -38,9 +38,4 @@
 </section>
 
 {% endblock %}
-
-<!-- START - MODAL - GENERIC -->
-{# {% include "_includes/modules/modals/modal-blank-generic.html.twig" %} #}
-<!-- END - MODAL - QUICKPAY ENROLLMENT -->
-
 {% endblock %}

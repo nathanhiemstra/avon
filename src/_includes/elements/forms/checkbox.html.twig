@@ -13,12 +13,15 @@
 {% if required %}
   {% set required = ' required' %}
 {% endif %}
+{% if disabled %}
+  {% set disabled = ' disabled' %}
+{% endif %}
 
 {{ thelabel ? theLabel : '' }}
 
 <div class="checkbox {{ classes }} {% if wrapLabel %}wrap-label{% endif %}">
   <label>
-    <input type="checkbox" {{ id }}{{ name }}{{ theValue }}{{ checked }}{{ required }}>
+    <input type="checkbox" {{ id }}{{ name }}{{ theValue }}{{ checked }}{{ required }}{{ disabled }}>
 
     <span class="{% if not wrapLabel %}mr-4{% endif %}"><i class="lt-icon lt-checkbox-checkmark lt-small"></i><i class="indeterminate lt-icon lt-checkbox-minus"></i></span>
     {% if emphasize %} <strong> {% endif %}

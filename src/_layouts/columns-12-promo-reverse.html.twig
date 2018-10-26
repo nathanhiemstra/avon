@@ -1,0 +1,27 @@
+{#
+  showPromo - boolean - if true, the layout will be
+  12 column with inner 6x6 content. if false, the layout will be
+  a single centered max 6 column
+#}
+
+{% if showPromo is not defined %}
+  {% set showPromo = false %}
+{% endif %}
+
+<div class="row">
+
+  <div class="col-md-12 col-md-12--reverse-stack">
+
+    {% if showPromo %}
+      <aside class="col-md-6" role="complementary">
+        {% block aside %}{% endblock %}
+      </aside>
+    {% endif %}
+
+    <main class="col-md-6 {% if not showPromo %}col-md-offset-3{% endif %}" role="main">
+      {% block main %}{% endblock %}
+    </main>
+
+  </div>
+
+</div>

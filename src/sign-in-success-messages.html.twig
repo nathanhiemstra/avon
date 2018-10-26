@@ -1,0 +1,83 @@
+{% extends "_layouts/base-simple-header.html.twig" %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <section class="container container--page">
+
+    {% include "/_includes/elements/misc/link-back.html.twig" with { label: 'Sign In' } %}
+
+    {% embed layouts.columns6max %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        <h5 class="text-center">Set your email address</h5>
+        <h5 class="text-center">Reset your password</h5>
+
+        <hr class="thick primary stub">
+
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <div class="mb-4">
+            <span class="lt-icon lt-checkmark lt-large circular-icon"></span>
+          </div>
+          <div>{{ fpo.sentence }}</div>
+        </div>
+
+        <div class="my-5">
+
+          <button type="button" class="btn btn-primary btn-block my-5">Lorem Ipsum</button>
+
+          <div class="box-emphasize my-5 py-2">
+            <div class="py-4 d-flex justify-content-center">
+                <span class="mr-4">
+                  <span class="lt-icon lt-mail lt-medium" toggle-password-visibility="login-password"></span>
+                </span>
+                <span>janet.johnson@gmail.com</span>
+            </div>
+          </div>
+          {# <div class="well p-4 text-center">
+            <span>
+              <span class="lt-icon lt-mail lt-medium" toggle-password-visibility="login-password"></span>
+              <span>janet.johnson@gmail.com</span>
+            </span>
+
+          </div> #}
+        </div>
+
+        <hr>
+
+        {% include "_includes/modules/sign-in/sign-in-assistance.html.twig" %}
+
+      {% endblock %}
+
+    {% endembed %}
+
+  </section>
+
+  <script type="text/javascript">
+    // show primary header button on this page - for demo only
+    document.addEventListener('DOMContentLoaded', function(e) {
+      var header = document.querySelector('.global-header--simple');
+      var headerAlert = document.querySelector('.global-header--simple .alert-level-header');
+      var btnPrimary = document.querySelector('.global-header--simple .navbar-links .btn-link-responsive');
+      var btnLink = document.querySelector('.global-header--simple .navbar-links .btn-link');
+      var btnDefault = document.querySelector('.global-header--simple .navbar-links .btn-default');
+      header.classList.add('border-bottom');
+      headerAlert.classList.add('d-none');
+      btnPrimary.classList.remove('d-none');
+      btnLink.classList.add('d-none');
+      btnDefault.classList.add('d-none');
+    });
+  </script>
+
+{% endblock %}
+
+
+
+

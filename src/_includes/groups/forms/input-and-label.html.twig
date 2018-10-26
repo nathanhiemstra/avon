@@ -1,11 +1,12 @@
-{% include components.elements.forms.label with {
+{% include '_includes/elements/forms/label.html.twig' with {
   'id': id,
   'mainLabel': mainLabel,
   'haslabelErrorIcon': haslabelErrorIcon,
   'labelAddon': labelAddon,
+  'labelAddonRight': labelAddonRight,
   'classes': labelClasses
 } %}
-{% include components.elements.forms.input with {
+{% include '_includes/elements/forms/input.html.twig' with {
   'id':                   id,
   'items':                items,
   'classes':              classes,
@@ -23,5 +24,6 @@
 {% if errorMessage %}
   {% include components.elements.forms.errorMessage with {'errorMessage': errorMessage} %}
 {% endif %}
+
 
 
