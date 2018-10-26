@@ -138,6 +138,17 @@ a.btn {
   font-weight: 100;
 }
 
+// transparent primary has a trasparent bg with $brand-primary border & text
+.btn-transparent-primary {
+  @include button-variant($brand-primary, transparent, $brand-primary);
+
+  &:focus,
+  &:hover {
+    color: $btn-default-hover-color;
+    border-color: $btn-default-hover-color;
+  }
+}
+
 // Discourage - black
 .btn-discourage {
   @include button-variant($btn-discourage-color, $btn-discourage-bg, $btn-discourage-border);
