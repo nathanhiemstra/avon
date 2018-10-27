@@ -723,13 +723,12 @@ input[type="text"] {
   &+.form-control-feedback.lt-eye::after {
     content: "";
     position: absolute;
+    top: 50%;
+    left: 52%;
     width: 2px;
     height: 25px;
-    top: 24%;
-    display: block;
-    background: $gray-medium;
-    left: 55%;
-    transform: translate(-50%, 0) rotate(45deg);
+    background-color: $gray-medium;
+    transform: translateY(-50%) rotate(45deg);
   }
 }
 
