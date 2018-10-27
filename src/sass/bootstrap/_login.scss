@@ -34,17 +34,21 @@
 
 .btn-login {
   position: relative;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
   color: $white;
   background-color: $gray;
 
   span.icon {
-    position: absolute;
-    top: 4px;
-    left: 5px;
     width: 36px;
     height: 36px;
+  }
+
+  span:not(.icon) {
+    flex: 1;
+    padding-left: 4px;
   }
 
   &:hover {
