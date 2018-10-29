@@ -21,21 +21,23 @@
       <div class="col-xs-12">
         <label class="control-label">Expiration date</label>
         <div class="row">
-          <div class="form-group col-xs-12 col-sm-6 has-error">
+          <div class="form-group col-xs-12 col-sm-6">
             <select class="form-control form-inline selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
               <option selected="true" disabled="true">Month</option>
               <option>January</option>
               <option>February</option>
               <option>March</option>
             </select>
+            {% include '_includes/groups/alerts/legacy/alert.html.twig' %}
           </div>
-          <div class="form-group col-xs-12 col-sm-6 has-error">
+          <div class="form-group col-xs-12 col-sm-6">
             <select class="form-control form-inline selectpicker" data-size="4" data-style="btn-select" data-icon-base="lt-icon">
               <option selected="true" disabled="true">Year</option>
               <option>2018</option>
               <option>2019</option>
               <option>2020</option>
             </select>
+            {% include '_includes/groups/alerts/legacy/alert.html.twig' %}
           </div>
         </div>
       </div>
