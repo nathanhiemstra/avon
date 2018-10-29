@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="57px" viewBox="0 0 56 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-check-circle</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Login---Forgot-Password-2---Tablet-Landscape" transform="translate(-484.000000, -336.000000)">
+            <g id="Stacked-Group" transform="translate(282.000000, 241.000000)">
+                <g id="icon-check-circle">
+                    <g transform="translate(0.000000, 71.000000)">
+                        <g transform="translate(203.000000, 25.000000)">
+                            <path d="M23.5631101,37.0001307 C23.3471101,37.0001307 23.1311101,36.9281307 22.9504556,36.7811307 L13.1322738,28.7811307 C12.7081283,28.4361307 12.6403829,27.8071307 12.9791101,27.3751307 C13.3168556,26.9451307 13.9363829,26.8741307 14.3585647,27.2191307 L23.4492192,34.6261307 L38.5387829,17.3361307 C38.8991101,16.9231307 39.5186374,16.8851307 39.9251101,17.2531307 C40.330601,17.6191307 40.3669283,18.2521307 40.006601,18.6641307 L24.2975101,36.6641307 C24.1040919,36.8861307 23.8340919,37.0001307 23.5631101,37.0001307" id="icon-check" fill="#ED008C"></path>
+                            <ellipse id="Oval" stroke="#ED008C" stroke-width="2" cx="27" cy="27.5" rx="27" ry="27.5"></ellipse>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

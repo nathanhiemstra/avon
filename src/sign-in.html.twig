@@ -1,5 +1,7 @@
 {% extends "_layouts/base-simple-header.html.twig" %}
 
+{% set pageClass = 'page-signin' %}
+
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
@@ -71,13 +73,5 @@
     {% endembed %}
 
   </section>
-
-  <script type="text/javascript">
-    // hide header buttons on this page - for demo only
-    document.addEventListener('DOMContentLoaded', function(e) {
-      var headerLinks = document.querySelector('.global-header--simple .navbar-links');
-      headerLinks.style.visibility = 'hidden';
-    });
-  </script>
 
 {% endblock %}

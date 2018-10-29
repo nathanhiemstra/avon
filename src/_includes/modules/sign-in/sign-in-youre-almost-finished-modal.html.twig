@@ -1,6 +1,8 @@
 {% extends "_layouts/modal.html.twig" %}
 {% set modalId = 'modal-login-youre-almost-finished' %}
 
+{% set modalClasses = 'modal-vert-center' %}
+
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - modalHeader #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -21,16 +23,13 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
-  <div class="text-center">
+  <div class="text-center mt-4">
     <p class="avatar avatar-md">J</p>
-    <p>
-      <strong>Janet Johnson</strong><br>
-      <span class="text-muted small">janet.johnson@gmail.com</span>
-    </p>
+    <p class="large mb-2">Janet Johnson</p>
+    <p class="text-muted small mb-5">janet.johnson@gmail.com</p>
     <p>You have a registration in progress.</p>
     <p>Click continue and we'll start where you left off!</p>
     </p>
-
   </div>
 
 {% endblock %}

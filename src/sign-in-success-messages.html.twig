@@ -1,5 +1,7 @@
 {% extends "_layouts/base-simple-header.html.twig" %}
 
+{% set pageClass = 'page-signin' %}
+
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
@@ -8,7 +10,10 @@
 
   <section class="container container--page">
 
-    {% include "/_includes/elements/misc/link-back.html.twig" with { label: 'Sign In' } %}
+    {% include "/_includes/elements/misc/link-back.html.twig" with {
+      label: 'Sign In',
+      classes: 'back-link--abs'
+    } %}
 
     {% embed layouts.columns6max %}
 
@@ -20,14 +25,16 @@
         <h5 class="text-center">Set your email address</h5>
         <h5 class="text-center">Reset your password</h5>
 
-        <hr class="thick primary stub">
+        <hr class="">
 
         <div class="d-flex flex-column justify-content-center align-items-center">
           <div class="mb-4">
-            <span class="lt-icon lt-checkmark lt-large circular-icon"></span>
+            <img src="./images/icons/icon-check.svg" alt="success">
           </div>
-          <div>{{ fpo.sentence }}</div>
+          <div class="text-muted">{{ fpo.sentence }}</div>
         </div>
+
+        <hr class="">
 
         <div class="my-5">
 
@@ -59,22 +66,6 @@
     {% endembed %}
 
   </section>
-
-  <script type="text/javascript">
-    // show primary header button on this page - for demo only
-    document.addEventListener('DOMContentLoaded', function(e) {
-      var header = document.querySelector('.global-header--simple');
-      var headerAlert = document.querySelector('.global-header--simple .alert-level-header');
-      var btnPrimary = document.querySelector('.global-header--simple .navbar-links .btn-link-responsive');
-      var btnLink = document.querySelector('.global-header--simple .navbar-links .btn-link');
-      var btnDefault = document.querySelector('.global-header--simple .navbar-links .btn-default');
-      header.classList.add('border-bottom');
-      headerAlert.classList.add('d-none');
-      btnPrimary.classList.remove('d-none');
-      btnLink.classList.add('d-none');
-      btnDefault.classList.add('d-none');
-    });
-  </script>
 
 {% endblock %}
 
