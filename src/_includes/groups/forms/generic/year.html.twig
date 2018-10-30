@@ -1,6 +1,9 @@
 {% if showTheValue %}
   {% set optionSelected = 2 %}
 {% endif %}
+{% if not latestYear %}
+  {% set latestYear = 2000 %}
+{% endif %}
 
 {% include components.groups.forms.selectAndLabel with {
   id: idPrefix ~ 'year',
@@ -14,8 +17,8 @@
   hideLabel: hidelabel,
   'options': [
     {'label': 'Select...'},
-    {'label': '2000'},
-    {'label': '1999'},
-    {'label': '1998'}
+    {'label': latestYear},
+    {'label': latestYear - 1},
+    {'label': latestYear - 2}
   ]
 } %}
