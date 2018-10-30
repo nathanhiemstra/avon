@@ -1,10 +1,13 @@
 {% if showTheValue %}
   {% set optionSelected = 2 %}
 {% endif %}
+{% if not latestYear %}
+  {% set latestYear = 2000 %}
+{% endif %}
 
 {% include components.elements.forms.select with {
-  id: idPrefix ~ 'day',
-  mainLabel: 'Day',
+  id: idPrefix ~ 'year',
+  mainLabel: 'Year',
   required: null,
   haslabelErrorIcon: true,
   hasInlineErrorIcon: null,
@@ -13,8 +16,8 @@
   hasFormGroup: true,
   'options': [
     {'label': 'Select...'},
-    {'label': '2000'},
-    {'label': '1999'},
-    {'label': '1998'}
+    {'label': latestYear},
+    {'label': latestYear - 1},
+    {'label': latestYear - 2}
   ]
 } %}
