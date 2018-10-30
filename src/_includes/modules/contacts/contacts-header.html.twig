@@ -1,6 +1,6 @@
 {% include "_includes/groups/navigation/back-link.twig" with {
-  label: "All Team Members",
-  classes: 'flex-basis-100 mb-5'
+label: "All Team Members",
+classes: 'flex-basis-100 mb-5'
 } %}
 <div class="d-flex align-items-center flex-basis-100 flex-basis-sm-auto">
   <span class="avatar avatar-md mr-4">L</span>
@@ -11,8 +11,22 @@
 </div>
 <div class="ml-sm-auto mt-5 mt-sm-0">
   <form class="form-inline" role="form">
-    <button type="submit" class="btn btn-default btn-soft">One</button>
-    <button type="submit" class="btn btn-default btn-soft">Two</button>
-    <button type="submit" class="btn btn-default btn-soft">Three</button>
+    <a type="button" href="tel:5551234567" class="btn btn-default btn-soft visible-xs-inline-block">Call</a>
+    <a type="button" href="sms:5551234567" class="btn btn-default btn-soft visible-xs-inline-block">Text</a>
+    <a type="button" href="mailto:test@gmail.com?Subject=Test%20Email" class="btn btn-default btn-soft hidden-xs">Email</a>
+    <a type="button" href="#" class="btn btn-default btn-soft hidden-xs">Ecard</a>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default btn-soft dropdown-toggle" data-toggle="dropdown">
+        More <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right" role="menu">
+        <li class="visible-xs"><a href="#">Send E-card</a></li>
+        <li><a href="#">Add Note</a></li>
+        <li><a href="#">Add Task</a></li>
+        <li><a href="#">Add Event</a></li>
+        <li><a href="#">Add to Group</a></li>
+        <li><a href="#">Delete Customer</a></li>
+      </ul>
+    </div>
   </form>
 </div>
