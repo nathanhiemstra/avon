@@ -96,10 +96,24 @@ a.btn {
   }
 
   &:active,
+  &.active,
   &:focus,
-  &:hover {
+  &.focus,
+  &:hover,
+  .open > &.dropdown-toggle {
     color: darken($btn-default-color, 12%);
     background-color: transparent;
+
+    .caret {
+      border-top-color: darken($btn-default-color, 12%);
+    }
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: darken($btn-default-color, 12%);
+      background-color: transparent;
+    }
   }
 }
 
