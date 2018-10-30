@@ -162,3 +162,18 @@
 .responsive-primary-plain-link {
   @include responsive-primary-plain-link;
 }
+
+.back-link {
+  font-weight: 600;
+
+  .lt-medium {
+    font-size: 24px;
+  }
+
+  &.back-link--abs {
+    @media (min-width: $screen-xs-min) {
+      position: absolute;
+      margin-top: 5px;
+    }
+  }
+}

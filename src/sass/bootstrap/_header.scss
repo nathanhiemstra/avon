@@ -11,14 +11,34 @@ $navbar-header-mobile-height: 64px;
   }
 
   &--simple {
+    border-bottom: 1px solid $border-color;
+
     .navbar--primary-nav {
       padding: 0;
       border: none;
+
+      .navbar {
+        padding: $spacing-4 $spacing-5;
+      }
     }
 
-    .primary-nav__logo, .navbar-links, span {
-      flex: 1;
+    .navbar--simple-nav {
+      justify-content: center;
     }
+
+    .primary-nav__logo {
+      align-self: center;
+      flex-shrink: 0;
+    }
+
+    // .navbar-links {
+    //   display: flex;
+    //   justify-content: flex-end;
+    //   flex: auto;
+    //   * {
+    //     white-space: nowrap;
+    //   }
+    // }
 
     .primary-nav__logo {
       img {
@@ -26,6 +46,40 @@ $navbar-header-mobile-height: 64px;
         max-width: 200px;
       }
     }
+
+    // &.page-signin,
+    // &.page-creds {
+    //   .navbar--simple-nav {
+    //     justify-content: center;
+    //   }
+    //   .navbar-links {
+    //     display: none;
+    //   }
+    // }
+
+    // &.page-set-reset {
+    //   border-bottom: 1px solid $border-color;
+
+    //   .navbar--simple-nav {
+    //     align-items: flex-end;
+    //     position: relative;
+
+    //     // desktop
+    //     @media (min-width: $screen-sm-min) {
+    //       .primary-nav__logo {
+    //         position: absolute;
+    //         max-width: 200px;
+    //         left: 50%;
+    //         transform: translateX(-50%);
+    //       }
+    //     }
+    //   }
+
+    //   .alert-level-header, .btn-link, .btn-default {
+    //     display: none;
+    //   }
+    // }
+
   }
 
   // desktop

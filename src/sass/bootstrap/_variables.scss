@@ -356,7 +356,7 @@ $input-bg: $white !default;
 $input-bg-disabled: $gray-lighter !default;
 
 //** Text color for `<input>`s
-$input-color: $gray !default;
+$input-color: $black !default;
 
 //** `<input>` border color
 $input-border: $gray-light !default;
@@ -379,7 +379,7 @@ $input-border-focus: $gray-light !default;
 $input-color-placeholder: #999 !default;
 
 //** Form labels text color
-$input-label-text-color: $black;
+$input-label-text-color: $gray;
 
 //** Form labels font size
 $input-label-font-size: 14px;

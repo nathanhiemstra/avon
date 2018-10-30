@@ -173,7 +173,7 @@ output {
   border-radius: $input-border-radius;
 
   @media (min-width: $screen-lg-min) {
-    font-size: $font-size-base;
+    font-size: $font-size-base-input;
   }
 
   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
@@ -705,6 +705,31 @@ select.form-control.input-lg {
   line-height: $input-height-base;
   text-align: center;
   pointer-events: none;
+
+  // one-off icon size difference for eye icon for password visibility (2px larger than normal)
+  &.lt-eye.lt-medium {
+    font-size: 24px;
+  }
+}
+
+// password visibility icon styles
+input[type="password"],
+input[type="text"] {
+  &+.form-control-feedback.lt-eye::before {
+    color: $gray-medium;
+  }
+}
+input[type="text"] {
+  &+.form-control-feedback.lt-eye::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    width: 2px;
+    height: 25px;
+    background-color: $gray-medium;
+    transform: translateY(-50%) rotate(45deg);
+  }
 }
 
 // handle .has-feedback when contained in padded columns

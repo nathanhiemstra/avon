@@ -96,6 +96,16 @@ aside.secondary-nav {
           color: $brand-primary;
         }
       }
+
+      // override default active state for tabbed nav
+      &.active {
+        background-color: $body-bg;
+
+        a {
+          color: $brand-primary;
+        }
+      }
+
     }
   }
 

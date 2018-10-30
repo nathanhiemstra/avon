@@ -24,6 +24,17 @@ ol {
 // [converter] extracted as `@mixin list-unstyled` for libsass compatibility
 .list-unstyled {
   @include list-unstyled;
+
+  &.password-requirements__rules {
+    li {
+      line-height: 28px;
+
+      .lt-icon {
+        font-size: 18px;
+        margin-top: 2px;
+      }
+    }
+  }
 }
 
 // Inline turns list items into inline-block
@@ -141,7 +152,7 @@ dd {
     @include clearfix;
 
     // Clear the floated `dt` if an empty `dd` is present
- 
+
   }
 
   @media (min-width: $dl-horizontal-breakpoint) {

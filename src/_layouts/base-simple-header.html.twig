@@ -1,5 +1,7 @@
 {% extends layouts.base %}
 
 {% block header %}
-  {% include "_includes/modules/global/header-simple.html.twig" %}
+  {% include "_includes/modules/global/header-simple.html.twig" with {
+    pageClass: pageClass
+  } %}
 {% endblock %}

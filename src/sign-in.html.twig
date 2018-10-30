@@ -1,5 +1,7 @@
 {% extends "_layouts/base-simple-header.html.twig" %}
 
+{% set pageClass = 'page-signin' %}
+
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
@@ -17,7 +19,7 @@
       {# DEFINE BLOCK - ASIDE #}
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block aside %}
-        <img class="img-responsive" src="http://via.placeholder.com/800x800">
+        <img class="img-responsive" src="http://via.placeholder.com/720x720">
       {% endblock %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -64,20 +66,12 @@
 
         <hr>
 
-        <div class="text-center visible-md visible-lg">Lorem Ipsum <a href="#">Lipsum</a></div>
+        <div class="text-center text-muted visible-md visible-lg">Lorem Ipsum <a href="#">Lipsum</a></div>
 
       {% endblock %}
 
     {% endembed %}
 
   </section>
-
-  <script type="text/javascript">
-    // hide header buttons on this page - for demo only
-    document.addEventListener('DOMContentLoaded', function(e) {
-      var headerLinks = document.querySelector('.global-header--simple .navbar-links');
-      headerLinks.style.visibility = 'hidden';
-    });
-  </script>
 
 {% endblock %}
