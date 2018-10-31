@@ -1,0 +1,78 @@
+{% extends layouts.base %}
+
+{% set sectionClass = 'page--contacts-list' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+
+      <header class="row" role="header">
+        <div class="col-md-12">
+          <h3 class="m-0">Customer Contacts</h3>
+        </div>
+      </header>
+
+      <hr class="mb-5">
+
+
+      <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <colgroup>
+          <col class="col-xs-1">
+          <col class="col-xs-7">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>.active</code>
+            </td>
+            <td>Applies the hover color to a particular row or cell</td>
+          </tr>
+          <tr>
+            <td>
+              <code>.success</code>
+            </td>
+            <td>Indicates a successful or positive action</td>
+          </tr>
+          <tr>
+            <td>
+              <code>.info</code>
+            </td>
+            <td>Indicates a neutral informative change or action</td>
+          </tr>
+          <tr>
+            <td>
+              <code>.warning</code>
+            </td>
+            <td>Indicates a warning that might need attention</td>
+          </tr>
+          <tr>
+            <td>
+              <code>.danger</code>
+            </td>
+            <td>Indicates a dangerous or potentially negative action</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    </section>
+
+  {% endblock %}
+
+{% endblock %}
