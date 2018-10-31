@@ -1,0 +1,138 @@
+<div id="collapse-cc-details{{ idSuffix }}" class="ml-3 collapse">
+  {% if showCVV %}
+  <!-- CVV -->
+  <div class="row">
+    <div class="col-sm-2 col-xs-4 ml-5 mb-4">
+      <div class="form-group">
+        {% include "_includes/groups/forms/input-and-label.html.twig" with {
+        mainLabel: 'CVV',
+        labelAddon: '<a href="javascript:void(0)" data-toggle="modal" data-target="#generic-modal">
+          <span class="lt-icon lt-tip lt-medium align-middle"></span>
+        </a>',
+        type: 'number'
+        } %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  <!-- Name on Card -->
+  <div class="row">
+    <div class="col-md-8 col-lg-6 ml-5">
+
+      <h6 class="mb-4 mt-0">Enter Credit Card Details</h6>
+
+      <div class="form-group">
+        {% include '_includes/elements/forms/input-with-addon.html.twig' with {
+        type: 'number',
+        placeholder: '1234 5678 9098 7654',
+        classes: '',
+        addon: '<img src="/images/icons/payment-creditcard.svg">',
+        onInputJs: "javascript: var target = this, position = target.selectionEnd, length = target.value.length;
+        target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+        target.selectionEnd = position += ((target.value.charAt(position - 1) === ' ' &&
+        target.value.charAt(length - 1) === ' ' && length !== target.value.length) ? 1 : 0);"
+        } %}
+      </div>
+
+      <div class="form-group">
+        {% include components.groups.forms.inputAndLabel with {
+          id: 'name-on-card',
+          mainLabel: 'Name on Card',
+          theValue: 'Phoebe Pope'
+        } %}
+      </div>
+
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-9 mb-4 mb-sm-0">
+          <label class="control-label">Expiration Date</label>
+
+          <div class="row">
+
+            <div class="col-xs-12 col-sm-6 mb-4 mb-sm-0">
+              {% include "_includes/groups/forms/selectpicker-and-label.html.twig" with {
+              selectFirst: true,
+              size: "4",
+              classes: 'form-inline',
+              options: [
+              "MM",
+              "01",
+              "02",
+              "03",
+              "04",
+              "05",
+              "06",
+              ]
+              } %}
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+              {% include "_includes/groups/forms/selectpicker-and-label.html.twig" with {
+              selectFirst: true,
+              size: "4",
+              classes: 'form-inline',
+              options: [
+              "YYYY",
+              "2018",
+              "2019",
+              "2020",
+              "2021",
+              "2022",
+              ]
+              } %}
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-3">
+          {% include "_includes/groups/forms/input-and-label.html.twig" with {
+          mainLabel: 'CVV',
+          labelAddon: '<a href="javascript:void(0)" data-toggle="modal" data-target="#generic-modal">
+            <span class="lt-icon lt-tip lt-medium align-middle"></span>
+          </a>',
+          type: 'number',
+          maxLength: 3
+          } %}
+        </div>
+
+      </div>
+
+      <!-- START - BILLING ADDRESS -->
+      <div class="pt-3">
+
+        <h6 class="mb-4 pt-4">Billing Address</h6>
+
+        {% include "_includes/groups/forms/generic/address-zip-city-state-country.html.twig" with {
+          'idPrefix': 'billing-',
+          'showTheValue': true,
+          'showPlaceholder': true,
+        }%}
+
+        {% include "_includes/elements/forms/checkbox.html.twig" with {
+          checked: true,
+          theLabel: 'Save credit card information to my account',
+          helperText: '' ~ fpo.sentence ~ ' ' ~ fpo.sentence  ~ '',
+          emphasize: false,
+          wrapLabel: true
+        } %}
+        {% include "_includes/elements/forms/checkbox.html.twig" with {
+          checked: false,
+          theLabel: 'Save credit card information to my account',
+          helperText: '' ~ fpo.sentence ~ ' ' ~ fpo.sentence  ~ '',
+          emphasize: false,
+          wrapLabel: true,
+          disabled: true
+        } %}
+
+
+
+      </div>
+      <!-- END - BILLING ADDRESS -->
+
+    </div>
+
+  </div>
+
+</div>
