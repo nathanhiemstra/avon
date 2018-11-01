@@ -1,0 +1,19 @@
+.table-customer-list {
+  .t-last-name {
+    padding-left: 0;
+  }
+
+  .t-phone {
+    white-space: nowrap;
+  }
+
+  .customer-type--label {
+    @extend .visible-xs;
+  }
+
+  @media (max-width: $screen-sm) {
+    .customer-type--icon {
+      display: none;
+    }
+  }
+}
