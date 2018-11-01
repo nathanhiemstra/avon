@@ -1,0 +1,66 @@
+{% extends layouts.base %}
+
+{% set sectionClass = 'page--contacts-list' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+
+      <header class="row" role="header">
+        <div class="col-md-12">
+          <h3 class="m-0">Customer Contacts</h3>
+        </div>
+      </header>
+
+      <hr class="mb-5">
+
+      {% set row %}
+        <tr>
+          <td class="t-row-1 t-inline t-firstname"><a href="#">Mark</a></td>
+          <td class="t-row-1 t-inline t-lastname"><a href="#">Otto</a></td>
+          <td class="t-row-3 t-block t-phone">000-000-0000</td>
+          <td class="t-row-3 t-block t-email">mark@otto.com</td>
+          <td class="t-row-2 t-block t-customer-type">
+            <span class="visible-xs">[customer type]</span>
+            <span class="visible-sm visible-md visible-lg">
+              <span class="lt-icon lt-checkmark"></span>
+            </span>
+          </td>
+          <td class="t-row-1 t-inline t-self-end t-actions">•••</td>
+        </tr>
+      {% endset %}
+
+      <div class="table-responsive-rows-and-cols">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="t-firstname">First Name</th>
+            <th class="t-lastname">Last Name</th>
+            <th class="t-phone">Phone</th>
+            <th class="t-email">Email</th>
+            <th class="t-online-customer">Online Customer</th>
+            <th class="t-actions">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ row }}
+          {{ row }}
+          {{ row }}
+        </tbody>
+      </table>
+    </div>
+
+
+    </section>
+
+  {% endblock %}
+
+{% endblock %}
