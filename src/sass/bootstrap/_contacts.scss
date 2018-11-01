@@ -1,44 +1,68 @@
-.table-contacts-list {
-  > thead {
+.table-contact-list {
+  $left-col-width: 45px;
+
+  > .table {
+    > thead {
+      .t-checkbox {
+        position: absolute;
+        overflow: hidden;
+        width: 0;
+        padding: 0;
+      }
+
+      .t-first-name {
+        padding-left: 0;
+      }
+    }
+
+    > tbody {
+      tr {
+        position: relative;
+      }
+
+      .t-first-name {
+        padding-left: $left-col-width;
+      }
+
+      @media (max-width: $screen-sm) {
+        .t-block {
+          padding-left: $left-col-width;
+        }
+      }
+    }
+
     .t-checkbox {
       position: absolute;
-      overflow: hidden;
-      width: 0;
-    }
-  }
+      padding-top: 16px;
 
-  > tbody {
-    > tr {
-      padding-left: 20px;
-    }
-  }
+      @media (max-width: $screen-sm) {
+        padding-top: 5px;
+      }
 
-  .t-checkbox {
-    position: absolute;
+      padding-right: 0;
 
-    .checkbox {
-      padding: 0;
-    }
-  }
-
-  .t-last-name {
-    padding-left: 0;
-  }
-
-  .t-phone {
-    white-space: nowrap;
-  }
-
-  .t-customer-type {
-    .customer-type--label {
-      @extend .visible-xs;
-
-      border: 1px solid red;
+      .checkbox {
+        margin: 0;
+      }
     }
 
-    @media (max-width: $screen-sm) {
-      .customer-type--icon {
-        display: none;
+    .t-last-name {
+      padding-left: 0;
+    }
+
+    .t-phone {
+      white-space: nowrap;
+    }
+
+    .t-customer-type {
+      .customer-type--label {
+        @extend .visible-xs;
+      }
+
+      @media (max-width: $screen-sm) {
+        .customer-type--icon {
+          display: none;
+        }
       }
     }
   }
