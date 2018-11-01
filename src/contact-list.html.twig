@@ -37,24 +37,13 @@
             </tr>
           </thead>
           <tbody>
-          {% set row %}
-            <tr>
-              <td class="t-row-1 t-inline t-first-name"><a href="#">Firstname</a></td>
-              <td class="t-row-1 t-inline t-last-name"><a href="#">Lastnameislong</a></td>
-              <td class="t-row-3 t-block t-phone">000-000-0000</td>
-              <td class="t-row-3 t-block t-email">firstnamelastname@otto.com</td>
-              <td class="t-row-2 t-block t-customer-type">
-                <span class="customer-type--label">[customer type]</span>
-                <span class="customer-type--icon">
-                  <span class="lt-icon lt-checkmark"></span>
-                </span>
-              </td>
-              <td class="t-row-1 t-inline t-self-end t-actions">•••</td>
-            </tr>
-          {% endset %}
-            {{ row }}
-            {{ row }}
-            {{ row }}
+            {% include '_includes/modules/customer-list/customer-list-tr.html.twig' with { isOnlineCustomer: true } %}
+            {% include '_includes/modules/customer-list/customer-list-tr.html.twig' with { isOnlineCustomer: true } %}
+            {% include '_includes/modules/customer-list/customer-list-tr.html.twig' with { isOnlineCustomer: false } %}
+            {% include '_includes/modules/customer-list/customer-list-tr.html.twig' with { isOnlineCustomer: false } %}
+            {% include '_includes/modules/customer-list/customer-list-tr.html.twig' with { isOnlineCustomer: false } %}
+            {% include '_includes/modules/customer-list/customer-list-tr.html.twig' with { isOnlineCustomer: false } %}
+            {% include '_includes/modules/customer-list/customer-list-tr.html.twig' with { isOnlineCustomer: false } %}
           </tbody>
         </table>
       </div>
