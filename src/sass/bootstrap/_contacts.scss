@@ -1,4 +1,26 @@
-.table-customer-list {
+.table-contacts-list {
+  > thead {
+    .t-checkbox {
+      position: absolute;
+      overflow: hidden;
+      width: 0;
+    }
+  }
+
+  > tbody {
+    > tr {
+      padding-left: 20px;
+    }
+  }
+
+  .t-checkbox {
+    position: absolute;
+
+    .checkbox {
+      padding: 0;
+    }
+  }
+
   .t-last-name {
     padding-left: 0;
   }
@@ -7,13 +29,17 @@
     white-space: nowrap;
   }
 
-  .customer-type--label {
-    @extend .visible-xs;
-  }
+  .t-customer-type {
+    .customer-type--label {
+      @extend .visible-xs;
 
-  @media (max-width: $screen-sm) {
-    .customer-type--icon {
-      display: none;
+      border: 1px solid red;
+    }
+
+    @media (max-width: $screen-sm) {
+      .customer-type--icon {
+        display: none;
+      }
     }
   }
 }

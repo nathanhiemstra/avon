@@ -1,5 +1,11 @@
 <tr>
-  <td class="t-row-1 t-inline t-first-name"><a href="#">Firstname</a></td>
+  <td class="t-row-1 t-inline t-checkbox">
+    {% include "_includes/elements/forms/checkbox.html.twig" with { checked: false, classes: 'input-sm' } %}
+  </td>
+  <td class="t-row-1 t-inline t-first-name">
+    {# {% include "_includes/elements/forms/checkbox.html.twig" with { checked: false, classes: 'input-sm' } %} #}
+    <a href="#">Firstname</a>
+  </td>
   <td class="t-row-1 t-inline t-last-name"><a href="#">Lastnameislong</a></td>
   <td class="t-row-3 t-block t-phone">000-000-0000</td>
   <td class="t-row-3 t-block t-email">firstnamelastname@otto.com</td>
