@@ -10,6 +10,16 @@ classes: 'flex-basis-100 mb-5'
       <span class="lt-icon lt-pen lt-medium mr-2"></span>
       <a href="#">Edit</a>
     </span>
+    <form class="form-inline">
+      {% include '_includes/elements/forms/input.html.twig' with {
+        type: 'text',
+        theValue: 'Linda'
+      } %}
+      {% include '_includes/elements/forms/input.html.twig' with {
+        type: 'text',
+        theValue: 'Mitchell'
+      } %}
+    </form>
     <p class="small m-0">[Online Customer / #1234567 (Active)]</p>
   </div>
 </div>
