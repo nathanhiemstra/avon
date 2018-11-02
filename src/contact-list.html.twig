@@ -23,8 +23,21 @@
 
 
       <header class="row" role="header">
-        <div class="col-md-12">
+        <div class="col-md-12 d-flex">
           <h3>Customer Contacts</h3>
+          <div class="ml-auto">
+            <a href="javascript:void(0)" class="link-plain" ondragstart="return false;">
+              <span class="lt-icon lt-search lt-large"></span>
+              <input class="primary-nav__search-input text-muted form-inline font-weight-bold ml-0 ml-md-2" type="text" placeholder="Search my team..." autocomplete="off">
+              {# <span class="lt-icon lt-close lt-large text-muted"></span> #}
+            </a>
+
+            <a class="btn btn-default btn-soft dropdown-toggle" data-toggle="dropdown">
+              By Name <span class="caret"></span>
+            </a>
+
+
+          </div>
         </div>
       </header>
 
