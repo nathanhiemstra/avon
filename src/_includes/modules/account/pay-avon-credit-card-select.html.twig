@@ -66,19 +66,34 @@
 } %}
 {% endset %}
 
+{% set selectLabel %}
+<!-- START - NO CREDIT CARDS ARE FILE -->
+<div>Use a credit card</div>
+<!-- END - NO CREDIT CARDS ARE FILE -->
+{% endset %}
+
 {% set selectPicker %}
+<!-- START - A CREDIT CARD IS ALREADY ON FILE -->
 <select class="form-control selectpicker" data-size="5" data-style="btn-select" data-icon-base="lt-icon">
-  <option selected="true" disabled="true">Select a credit card</option>
+  <option disabled="true">Select a credit card</option>
   <option data-content="{{ opt1 }}">{{ ccData1.cardType ~ ' ending in ' ~ ccData1.lastFour }}</option>
   <option data-content="{{ opt2 }}">{{ ccData2.cardType ~ ' ending in ' ~ ccData2.lastFour }}</option>
   <option data-content="{{ opt3 }}">{{ ccData3.cardType ~ ' ending in ' ~ ccData3.lastFour }}</option>
-  <option data-content="{{ opt4 }}">{{ ccData4.label }}</option>
+  <option data-content="{{ opt4 }}" selected="true">{{ ccData4.label }}</option>
 </select>
 <div class="select-picker-addon"><a class="underline" data-toggle="modal" data-target="#pay-avon-edit-stored-card-modal">Edit card</a></div>
+<!-- END - A CREDIT CARD IS ALREADY ON FILE -->
 {% endset %}
+
+{% if isCreditCardOnFile %}
+  {% set theLabelContent = selectPicker %}
+{% else %}
+  {% set theLabelContent = selectLabel %}
+{% endif %}
+
 
 {% include '_includes/groups/forms/radio-and-select.html.twig' with {
 name: 'pay-type',
-theLabel: selectPicker,
+theLabel: theLabelContent,
 checked: false
 } %}

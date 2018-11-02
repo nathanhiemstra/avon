@@ -1,0 +1,45 @@
+{% extends layouts.base %}
+
+{% set sectionClass = 'page--contacts-list' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+
+      <header class="row" role="header">
+        <div class="col-md-12">
+          <h3 class="m-0">[Team/Customer] Contacts</h3>
+        </div>
+      </header>
+
+      <!-- START - TAB NAVIGATION -->
+      <ul class="nav nav-tabs border-bottom">
+        <li class="active"><a href="#tab-list-view" data-toggle="tab">List View</a></li>
+        <li><a href="#tab-tree-view" data-toggle="tab">Tree View</a></li>
+      </ul>
+      <!-- END - TAB NAVIGATION -->
+
+      <!-- START - TAB CONTENT -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="tab-list-view">
+          {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' %}
+        </div>
+        <div class="tab-pane" id="tab-tree-view">
+          {% include '_includes/modules/contacts/contacts-list/tab-content-tree-view.html.twig' %}
+        </div>
+      </div>
+      <!-- END - TAB CONTENT -->
+
+    </section>
+
+  {% endblock %}
+
+{% endblock %}

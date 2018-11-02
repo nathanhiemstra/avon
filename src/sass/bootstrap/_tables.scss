@@ -51,7 +51,6 @@ th {
     }
   }
 
-
   // Bottom align for column headings
   > thead > tr > th {
     vertical-align: bottom;
@@ -132,6 +131,7 @@ th {
 // Compact table - less padding, smaller fonts
 .table-compact {
   font-size: $font-size-small;
+
   > tbody,
   > tfoot,
   > thead {
@@ -170,6 +170,7 @@ th {
       }
     }
   }
+
   // Sparse right table - 1st column aligned left, all others aligned right
   &--right {
     > tbody,
@@ -188,7 +189,6 @@ th {
     }
   }
 }
-
 
 .table-last-col-right {
   > tbody,
@@ -350,7 +350,9 @@ table {
   > .table {
     > thead {
       > tr {
-        > th, > td { white-space: nowrap; }
+        > th, > td {
+          white-space: nowrap;
+        }
       }
     }
   }
@@ -362,6 +364,7 @@ table {
     margin-bottom: $line-height-computed * 0.75;
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+
     // border: 1px solid $table-border-color;
 
     // Tighten up spacing
@@ -423,7 +426,6 @@ table {
 // Table will display as a stacked column on mobile devices
 // Remains a normal table on large screens
 .table-collapse-to-column {
-
   thead {
     display: none;
   }
@@ -447,12 +449,10 @@ table {
       display: inline-block;
       width: 50%;
     }
-
   }
 
   // desktop
   @media (min-width: $screen-sm-min) {
-
     thead {
       display: table-header-group;
     }
@@ -474,9 +474,77 @@ table {
         display: table-cell;
         width: auto;
       }
-
     }
-
   }
+}
 
+// Responsive tables
+//
+
+@media (max-width: $screen-sm) {
+  .table-responsive-rows-and-cols {
+    > .table {
+      > thead {
+        display: none;
+      }
+
+      > tbody {
+        > tr {
+          display: flex;
+          flex-flow: row wrap;
+          padding-bottom: $table-cell-padding;
+          border-bottom: 1px solid $table-border-color;
+          padding-top: $table-cell-padding;
+
+          // &::after {}
+
+          // &::before,
+          // &::after {
+          //   content: '';
+          //   width: 100%;
+          //   order: 1;
+          // }
+
+          > td {
+            border: none;
+            padding-top: 0;
+            padding-bottom: 0;
+          }
+        }
+
+        .t-row-2 {
+          order: 1;
+        }
+
+        .t-row-2 {
+          order: 2;
+        }
+
+        .t-row-3 {
+          order: 3;
+        }
+
+        .t-row-4 {
+          order: 4;
+        }
+
+        .t-row-5 {
+          order: 5;
+        }
+
+        .t-block {
+          width: 100%;
+        }
+
+        .t-self-end {
+          margin-left: auto;
+        }
+
+        // .t-inline + .t-inline {
+        //   padding-left: 0;
+        // }
+
+      }
+    }
+  }
 }
