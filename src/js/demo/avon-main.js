@@ -38,8 +38,10 @@ $( document ).ready( function () {
       trigger: ".lt-calendar",
       target: ".demo-datepicker-from-angular"
     },
-    tooltips: '[data-toggle="tooltip"]'
-    // backDrop: ".drawer-backdrop"
+    tooltips: '[data-toggle="tooltip"]',
+    myContacts: {
+      affix: '.page--contacts [data-spy="affix"]'
+    }
   };
 
   var $objects = {
@@ -350,7 +352,7 @@ $( document ).ready( function () {
     currentStep: 1
   });
 
-  // selctpicker
+  // selectpicker
   if(mobileOrTablet) {
     // if mobile or tablet, enable native select for selectpicker
     $('.selectpicker').selectpicker('mobile');
@@ -382,6 +384,18 @@ $( document ).ready( function () {
       }, 200);
     }
   });
+
+  // My Contacts affix buttons
+  if($(selectors.myContacts.affix).length) {
+    var affix = $(selectors.myContacts.affix);
+    var affixContainer = affix.parent();
+    var toTop = affix.offset().top;
+    affixContainer.css({
+      'min-width': '1px',
+      'height': affix.height()
+    });
+    affix.data('offset-top', toTop);
+  }
 
 
   // INIT OTHER DEMO SCRIPTS

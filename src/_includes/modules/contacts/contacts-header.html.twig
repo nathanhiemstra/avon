@@ -1,32 +1,38 @@
 {% include "_includes/groups/navigation/back-link.twig" with {
-label: "All Team Members",
+label: "All [Customers / Team Members]",
 classes: 'flex-basis-100 mb-5'
 } %}
 <div class="d-flex align-items-center flex-basis-100 flex-basis-sm-auto">
-  <span class="avatar avatar-md mr-4">L</span>
+  <span class="avatar avatar-md mr-4 flex-shrink-0">L</span>
   <div>
-    <h3 class="m-0">Linda Mitchell</h3>
-    <p class="small m-0"><span>#1234567</span> <span>(Active)</span></p>
+    <h3 class="m-0 d-inline">[Customer / Team Member Name]</h3>
+    <span class="d-inline-flex align-items-center ml-4">
+      <span class="lt-icon lt-pen lt-medium mr-2"></span>
+      <a href="#">Edit</a>
+    </span>
+    <p class="small m-0">[Online Customer / #1234567 (Active)]</p>
   </div>
 </div>
-<div class="ml-sm-auto mt-5 mt-sm-0">
-  <form class="form-inline" role="form">
-    <a type="button" href="tel:5551234567" class="btn btn-default btn-soft visible-xs-inline-block">Call</a>
-    <a type="button" href="sms:5551234567" class="btn btn-default btn-soft visible-xs-inline-block">Text</a>
-    <a type="button" href="mailto:test@gmail.com?Subject=Test%20Email" class="btn btn-default btn-soft hidden-xs">Email</a>
-    <a type="button" href="#" class="btn btn-default btn-soft hidden-xs">Ecard</a>
-    <div class="btn-group">
-      <a type="button" class="btn btn-default btn-soft dropdown-toggle" data-toggle="dropdown">
-        More <span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-right" role="menu">
-        <li class="visible-xs text-right"><a href="#">Send E-card</a></li>
-        <li class="text-right"><a href="#">Add Note</a></li>
-        <li class="text-right"><a href="#">Add Task</a></li>
-        <li class="text-right"><a href="#">Add Event</a></li>
-        <li class="text-right"><a href="#">Add to Group</a></li>
-        <li class="text-right"><a href="#">Delete Customer</a></li>
-      </ul>
-    </div>
-  </form>
+<div class="ml-lg-auto mt-5 mt-lg-0">
+  <div class="affix-container">
+    <form class="form-inline affix--mobile-top" role="form" data-spy="affix">
+      <a type="button" href="tel:5551234567" class="btn btn-default btn-soft visible-xs-inline-block">Call</a>
+      <a type="button" href="sms:5551234567" class="btn btn-default btn-soft visible-xs-inline-block">Text</a>
+      <a type="button" href="mailto:test@gmail.com?Subject=Test%20Email" class="btn btn-default btn-soft hidden-xs">Email</a>
+      <a type="button" href="#" class="btn btn-default btn-soft hidden-xs">Ecard</a>
+      <div class="btn-group">
+        <a type="button" class="btn btn-default btn-soft dropdown-toggle" data-toggle="dropdown">
+          More <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+          <li class="visible-xs text-right"><a href="#">Send E-card</a></li>
+          <li class="text-right"><a href="#">Add Note</a></li>
+          <li class="text-right"><a href="#">Add Task</a></li>
+          <li class="text-right"><a href="#">Add Event</a></li>
+          <li class="text-right"><a href="#">Add to Group</a></li>
+          <li class="text-right"><a href="#">Delete Customer</a></li>
+        </ul>
+      </div>
+    </form>
+  </div>
 </div>

@@ -103,6 +103,23 @@
     top: $spacing-5;
     width: 285px;
   }
+
+  &.affix--mobile-top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $body-bg;
+    z-index: $zindex-affix;
+    padding: $spacing-3 $spacing-4;
+    border-bottom: 1px solid $border-color;
+
+    // don't affix on larger screens
+    @media (min-width: $screen-xs-max) {
+      position: relative;
+      border-bottom: none;
+      padding: 0;
+    }
+  }
 }
 
 // TODO: Figure out why the contents of this element get moved back into the aside column 15px wider than the column breakpoint. Then remove +15px.
