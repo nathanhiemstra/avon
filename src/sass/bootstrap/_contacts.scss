@@ -54,6 +54,10 @@
       white-space: nowrap;
     }
 
+    .t-actions {
+      padding-left: 0;
+    }
+
     .t-customer-type {
       .customer-type--label {
         @extend .visible-xs;
@@ -62,6 +66,18 @@
       @media (max-width: $screen-sm) {
         .customer-type--icon {
           display: none;
+        }
+      }
+    }
+
+    @media (min-width: $screen-sm) and (max-width: $screen-md) {
+      .t-gen {
+        padding-right: 0;
+      }
+
+      .t-email {
+        .truncate {
+          width: 8vw;
         }
       }
     }

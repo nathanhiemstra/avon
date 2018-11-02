@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 .pointer-none {
-  pointer-events:none !important;
+  pointer-events: none !important;
 }
 
 // Floats
@@ -222,4 +222,10 @@ hr.full-width-divider {
       display: inline-block;
     }
   }
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

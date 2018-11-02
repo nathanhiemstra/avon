@@ -8,7 +8,9 @@
   </td>
   <td class="t-row-1 t-inline t-last-name"><a href="#">Lastnameislong</a></td>
   <td class="t-row-3 t-block t-phone">000-000-0000</td>
-  <td class="t-row-3 t-block t-email">firstnamelastname@otto.com</td>
+  <td class="t-row-3 t-block t-email"><div class="truncate"><a href="#">firstnamelastname@otto.com</a></div></td>
+{% if contactType == 'customer' %}
+  <!-- START - For "Customer List" only -->
   <td class="t-row-2 t-block t-customer-type">
     {% if isOnlineCustomer %}
     <span class="customer-type--label">[customer type]</span>
@@ -17,5 +19,15 @@
     </span>
     {% endif %}
   </td>
+  <!-- END - For "Customer List" only -->
+{% endif %}
+{% if contactType == 'team' %}
+  <!-- START - For "Team List" only -->
+  <td class="t-row-3 t-upline t-block">[contact type]</td>
+  <td class="t-row-3 t-gen t-block">#</td>
+  <!-- END - For "Team List" only -->
+{% endif %}
   <td class="t-row-1 t-inline t-self-end t-actions">•••</td>
 </tr>
+
+

@@ -58,9 +58,8 @@
 .widget-truncate {
   display: inline-block;
   width: 90%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+
+  @extend .truncate;
 }
 
 $widget-box-size: 23px;

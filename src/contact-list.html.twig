@@ -16,7 +16,16 @@
 
       <header class="row" role="header">
         <div class="col-md-12">
-          <h3 class="m-0">[Team/Customer] Contacts</h3>
+          <h3 class="m-0">Customer Contacts</h3>
+        </div>
+      </header>
+
+      {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'customer' } %}
+
+
+      <header class="row" role="header">
+        <div class="col-md-12">
+          <h3 class="m-0">Team Contacts</h3>
         </div>
       </header>
 
@@ -30,10 +39,14 @@
       <!-- START - TAB CONTENT -->
       <div class="tab-content">
         <div class="tab-pane active" id="tab-list-view">
-          {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' %}
+          <!-- START - TAB PANE - LIST VIEW -->
+          {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'team' } %}
+          <!-- END - TAB PANE - LIST VIEW -->
         </div>
         <div class="tab-pane" id="tab-tree-view">
+          <!-- START - TAB PANE - TREE VIEW -->
           {% include '_includes/modules/contacts/contacts-list/tab-content-tree-view.html.twig' %}
+          <!-- END - TAB PANE - TREE VIEW -->
         </div>
       </div>
       <!-- END - TAB CONTENT -->

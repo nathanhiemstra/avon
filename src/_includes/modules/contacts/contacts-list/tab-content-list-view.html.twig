@@ -7,7 +7,17 @@
         <th class="t-last-name">Last Name</th>
         <th class="t-phone">Phone</th>
         <th class="t-email">Email</th>
+      {% if contactType == 'customer' %}
+        <!-- START - For "Customer List" only -->
         <th class="t-online-customer">Online Customer</th>
+        <!-- END - For "Customer List" only -->
+      {% endif %}
+      {% if contactType == 'team' %}
+        <!-- START - For "Team List" only -->
+        <th class="t-upline">Upline</th>
+        <th class="t-gen">Gen.</th>
+        <!-- END - For "Team List" only -->
+      {% endif %}
         <th class="t-actions "><span class="d-none">Actions</span></th>
       </tr>
     </thead>
