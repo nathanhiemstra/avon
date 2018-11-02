@@ -15,13 +15,20 @@
     <section class="container container--page">
 
       <header class="row" role="header">
+        <div class="col-md-12 d-flex flex-wrap align-items-center">
+          {% include '_includes/modules/contacts/contacts-list/contacts-list-header.html.twig' %}
+        </div>
+      </header>
+
+
+
+      <header class="row" role="header">
         <div class="col-md-12">
           <h3 class="m-0">Customer Contacts</h3>
         </div>
       </header>
 
       {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'customer' } %}
-
 
       <header class="row" role="header">
         <div class="col-md-12">
@@ -30,7 +37,7 @@
       </header>
 
       <!-- START - TAB NAVIGATION -->
-      <ul class="nav nav-tabs border-bottom">
+      <ul class="nav nav-tabs">
         <li class="active"><a href="#tab-list-view" data-toggle="tab">List View</a></li>
         <li><a href="#tab-tree-view" data-toggle="tab">Tree View</a></li>
       </ul>

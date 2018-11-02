@@ -1,5 +1,5 @@
 .table-contact-list {
-  $left-col-width: 45px;
+  $left-col-width: 30px;
 
   > .table {
     > thead {
@@ -34,12 +34,12 @@
     .t-checkbox {
       position: absolute;
       padding-top: 16px;
+      padding-right: 0;
+      padding-left: 0;
 
       @media (max-width: $screen-sm) {
         padding-top: 5px;
       }
-
-      padding-right: 0;
 
       .checkbox {
         margin: 0;
