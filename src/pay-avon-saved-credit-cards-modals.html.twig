@@ -1,3 +1,4 @@
+
 {% extends layouts.base %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -13,14 +14,14 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
-  <h1 class="mb-5">Pay Avon - Stored Credit Cards (Modals)</h1>
+  <h1 class="mb-5">Pay Avon - Saved Credit Cards (Modals)</h1>
 
-  <p><a data-toggle="modal" data-target="#pay-avon-edit-stored-card-modal">Edit Card Info</a></p>
+  <p><a data-toggle="modal" data-target="#pay-avon-edit-card-info-modal">Edit Card Info</a></p>
   <p><a data-toggle="modal" data-target="#pay-avon-review-payment-modal">Review Payment</a></p>
   <p><a data-toggle="modal" data-target="#pay-avon-payment-confirmation-modal">Payment Confirmation</a></p>
 
   <!-- START - MODAL - EDIT CARD -->
-  {% include "_includes/modules/account/modals-pay/pay-avon-edit-card-modal.html.twig" %}
+  {% include "_includes/modules/account/modals-pay/pay-avon-edit-card-info-modal.html.twig" %}
   <!-- END - MODAL - EDIT CARD -->
 
   <!-- START - MODAL - REVIEW PAYMENT -->
@@ -36,6 +37,3 @@
 </div>
 
 {% endblock %}
-
-
-<!-- START - MODAL - QUICKPAY ENROLLMENT -->
