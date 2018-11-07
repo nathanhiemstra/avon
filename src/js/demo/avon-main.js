@@ -41,6 +41,9 @@ $( document ).ready( function () {
     tooltips: '[data-toggle="tooltip"]',
     myContacts: {
       affix: '.page--contacts [data-spy="affix"]'
+    },
+    contactsList: {
+      affix: '.page--contacts-list [data-spy="affix"]'
     }
   };
 
@@ -388,6 +391,19 @@ $( document ).ready( function () {
   // My Contacts affix buttons
   if($(selectors.myContacts.affix).length) {
     var affix = $(selectors.myContacts.affix);
+    var affixContainer = affix.parent();
+    var toTop = affix.offset().top;
+    affixContainer.css({
+      'min-width': '1px',
+      'height': affix.height()
+    });
+    affix.data('offset-top', toTop);
+  }
+
+  // Contact list afftx buttons
+  if($(selectors.contactsList.affix).length) {
+    console.log('affix found!');
+    var affix = $(selectors.contactsList.affix);
     var affixContainer = affix.parent();
     var toTop = affix.offset().top;
     affixContainer.css({

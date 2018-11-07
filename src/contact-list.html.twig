@@ -23,19 +23,28 @@
 
 
       <header class="row" role="header">
-        <div class="col-md-12 d-flex">
-          <h3>Customer Contacts</h3>
-          <div class="ml-auto">
-            <a href="javascript:void(0)" class="link-plain" ondragstart="return false;">
-              <span class="lt-icon lt-search lt-large"></span>
-              <input class="primary-nav__search-input text-muted form-inline font-weight-bold ml-0 ml-md-2" type="text" placeholder="Search my team..." autocomplete="off">
-              {# <span class="lt-icon lt-close lt-large text-muted"></span> #}
-            </a>
+        <div class="col-md-12 d-flex align-items-center flex-wrap mb-2">
+          <h3 class="mb-3 mr-auto">Customer Contacts</h3>
+          <div class="ml-0 ml-lg-auto">
 
-            <a class="btn btn-default btn-soft dropdown-toggle" data-toggle="dropdown">
-              By Name <span class="caret"></span>
-            </a>
-
+              <form class="form-inline">
+                <a class="btn btn-default btn-soft mt-3 mt-sm-0">Add New</a>
+                <a class="btn btn-default btn-soft mt-3 mt-sm-0">Import</a>
+                <div class="input-group mt-3 mt-sm-0">
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="lt-icon lt-search lt-large"></span></span>
+                    <input type="text" class="form-control" placeholder="Search my team...">
+                  </div>
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="#">Lorem</a></li>
+                      <li><a href="#">Ipsum</a></li>
+                      <li><a href="#">Dolor</a></li>
+                    </ul>
+                  </div><!-- /btn-group -->
+                </div><!-- /input-group -->
+              </form>
 
           </div>
         </div>
