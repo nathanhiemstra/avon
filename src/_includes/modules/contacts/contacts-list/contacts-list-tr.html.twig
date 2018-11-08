@@ -1,16 +1,16 @@
-<tr>
-  <td class="t-row-1 t-inline t-checkbox">
+<tr class="t-has-col-start">
+  <td class="t-checkbox t-row-1 t-col-start">
     {% include "_includes/elements/forms/checkbox.html.twig" with { checked: false, classes: 'input-sm' } %}
   </td>
-  <td class="t-row-1 t-inline t-first-name">
+  <td class="t-first-name t-row-1 t-inline t-col-sibling-left">
     <a href="#">Firstname</a>
   </td>
-  <td class="t-row-1 t-inline t-last-name"><a href="#">Lastnameislong</a></td>
-  <td class="t-row-3 t-block t-phone">000-000-0000</td>
-  <td class="t-row-3 t-block t-email"><div class="truncate"><a href="#">firstnamelastname@otto.com</a></div></td>
+  <td class="t-last-name t-row-1 t-inline"><a href="#">Lastnameislong</a></td>
+  <td class="t-phone t-row-3 t-block t-col-sibling-left">000-000-0000</td>
+  <td class="t-email t-row-3 t-block t-col-sibling-left"><div class="truncate"><a href="#">firstnamelastname@otto.com</a></div></td>
 {% if contactType == 'customer' %}
   <!-- START - For "Customer List" only -->
-  <td class="t-row-2 t-block t-customer-type">
+  <td class="t-customer-type t-row-2 t-block t-col-sibling-left">
     {% if isOnlineCustomer %}
     <span class="customer-type--label">[customer type]</span>
     <span class="customer-type--icon">
@@ -22,11 +22,11 @@
 {% endif %}
 {% if contactType == 'team' %}
   <!-- START - For "Team List" only -->
-  <td class="t-row-3 t-upline t-block">[contact type]</td>
-  <td class="t-row-3 t-gen t-block">#</td>
+  <td class="t-upline t-row-3 t-block t-col-sibling-left">[contact type]</td>
+  <td class="t-gen t-row-3 t-block t-col-sibling-left">#</td>
   <!-- END - For "Team List" only -->
 {% endif %}
-  <td class="t-row-1 t-inline t-self-end t-actions">•••</td>
+  <td class="t-actions t-row-1 t-self-end">•••</td>
 </tr>
 
 

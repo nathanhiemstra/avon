@@ -15,28 +15,7 @@
       }
     }
 
-    > tbody {
-      tr {
-        position: relative;
-      }
-
-      .t-first-name {
-        padding-left: $left-col-width;
-      }
-
-      @media (max-width: $screen-sm) {
-        .t-block {
-          padding-left: $left-col-width;
-        }
-      }
-    }
-
     .t-checkbox {
-      position: absolute;
-      padding-top: 16px;
-      padding-right: 0;
-      padding-left: 0;
-
       @media (max-width: $screen-sm) {
         padding-top: 5px;
       }
@@ -52,10 +31,6 @@
 
     .t-phone {
       white-space: nowrap;
-    }
-
-    .t-actions {
-      padding-left: 0;
     }
 
     .t-customer-type {
