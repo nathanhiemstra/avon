@@ -100,8 +100,9 @@ $link-color-muted: $gray-medium !default;
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
-
-$font-family-sans-serif: "Gotham", sans-serif !default;
+$font-family-name: "Promia Nova";
+$font-family-file-name: proxima-nova;
+$font-family-sans-serif: $font-family-name, sans-serif !default;
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
@@ -196,7 +197,7 @@ $headings-color: inherit !default;
 $icon-font-path: "../fonts/" !default;
 $base-font-path: $icon-font-path;
 
-$base-font-name: "gotham" !default;
+$base-font-name: "proxima-nova" !default;
 
 $icon-size-sm: 14px;
 $icon-size-md: 20px;
