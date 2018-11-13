@@ -452,7 +452,7 @@ input[type="checkbox"] {
 }
 
 .checkbox span,
-.radio span.circ {
+.radio > label > span {
   position: relative;
   display: inline-block;
   border: 2px solid $gray-light;
@@ -461,7 +461,7 @@ input[type="checkbox"] {
   float: left;
 }
 
-.radio span.circ {
+.radio > label > span {
   border-radius: 50%;
 
   &:after {
@@ -501,13 +501,13 @@ input[type="checkbox"] {
   }
 }
 
-.radio span.circ i {
+.radio > label > span i {
   position: absolute;
   top: 2px;
   left: 3px;
 }
 
-.radio span.circ i {
+.radio > label > spani {
   margin-left: 0.04em;
 }
 
@@ -1151,11 +1151,11 @@ input.form-control {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    > span {
+      min-width: 24px;
+    }
   }
 
-  .circ {
-    min-width: 24px;
-  }
 
   .bootstrap-select {
     max-width: 398px;

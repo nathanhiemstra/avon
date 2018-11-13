@@ -42,7 +42,7 @@
 <div class="radio {{ classes }} {% if wrapLabel %}wrap-label{% endif %}">
   <label class="control-label">
     <input type="radio" {{ name }} {{ id }}{{ theValue }}{{ checked }}{{ disabled }}{{ dataAttrs }}>
-    <span class="circ {% if not wrapLabel %}mr-4{% endif %}"></span>
+    <span class="{% if not wrapLabel %}mr-4{% endif %}"></span>
     {{ errorIcon }}{{ theLabel }}{{ tipIcon }}
   </label>
 </div>
