@@ -9,6 +9,30 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {#  Typography and links #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+
+  <!-- Font -->
+  <h2 id="type-font">Font</h2>
+  <p>The font family is Proxima Nova. Below are the three variations.</p>
+  <div class="bs-example p-4 type-font">
+    <p>Default text is Proxima Nova Regular. <br>{{ fpo.paragraph }}</p>
+    <p>
+      <span style="font-weight: 500">Text with <code>font-weight: 500</code></span> or
+      <span style="font-weight: bold"><code>font-weight: bold</code> is Proxima Nova Medium. <br>{{ fpo.paragraph }}</span>
+    </p>
+    <p style="font-weight: 900">Text with <code>font-weight: 900</code> is Proxima Nova Bold. <br>{{ fpo.paragraph }}</p>
+  </div>
+
+
+  {{ highlightMarkup }}
+    <p>Default text is Proxima Nova Regular.</p>
+    <p>
+        <span style="font-weight: 500">Text with font-weight: 500</span> or
+        <span style="font-weight: bold">font-weight: bold is Proxima Nova Medium.</span>
+    </p>
+    <p style="font-weight: 900">Text with font-weight: 900 is Proxima Nova Bold.</p>
+  {{ endhighlight }}
+
+
   <h2 id="type-links">Typography and links</h2>
   <p>Bootstrap sets basic global display, typography, and link styles. Specifically, we:</p>
   <ul>
@@ -27,27 +51,7 @@
   <p><code>.link-muted</code> - <a href="#" class="link-muted">I'm a muted link</a></p>
   <p><code>.link-reverse-plain</code> - <a href="#" class="link-reverse-plain">I'm a reverse plain link</a></p>
 
-  <!-- Headings -->
-  <h2 id="type-font">Font</h2>
-{#   <p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available. <code>.h1</code> through <code>.h6</code> classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.</p>
- #}<div class="bs-example p-4 type-font">
-    <p>Default text is Proxima Nova Regular. <br>{{ fpo.paragraph }}</p>
-    <p>
-      <span style="font-weight: 500">Text with <code>font-weight: 500</code></span> or
-      <span style="font-weight: bold"><code>font-weight: bold</code> is Proxima Nova Medium. <br>{{ fpo.paragraph }}</span>
-    </p>
-    <p style="font-weight: 900">Text with <code>font-weight: 900</code> is Proxima Nova Bold. <br>{{ fpo.paragraph }}</p>
-  </div>
 
-
-  {{ highlightMarkup }}
-    <p>Default text is Proxima Nova Regular.</p>
-    <p>
-        <span style="font-weight: 500">Text with font-weight: 500</span> or
-        <span style="font-weight: bold">font-weight: bold is Proxima Nova Medium.</span>
-    </p>
-    <p style="font-weight: 900">Text with font-weight: 900 is Proxima Nova Bold.</p>
-  {{ endhighlight }}
 
   <!-- Headings -->
   <h2 id="type-headings">Headings</h2>
