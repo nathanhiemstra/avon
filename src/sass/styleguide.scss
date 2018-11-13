@@ -1910,3 +1910,9 @@ pre[class*="language-"] {
 .alert-level-header {
   position: relative !important;
 }
+
+.type-font {
+  code {
+    font-weight: 100;
+  }
+}

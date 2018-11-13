@@ -30,18 +30,21 @@
   <!-- Headings -->
   <h2 id="type-font">Font</h2>
 {#   <p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available. <code>.h1</code> through <code>.h6</code> classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.</p>
- #}<div class="bs-example p-4">
-    <p>Default text is Proxima Nova Regular.</p>
-    <p><span class="font-weight: 500">Text with <code>font-weight: 500</code> or</span> <span class="font-weight: bold"><code>font-weight: bold</code> is Proxima Nova Medium.</span></p>
-    <p style="font-weight: 900">Text with <code>font-weight: 900</code> is Proxima Nova Bold.</p>
+ #}<div class="bs-example p-4 type-font">
+    <p>Default text is Proxima Nova Regular. <br>{{ fpo.paragraph }}</p>
+    <p>
+      <span style="font-weight: 500">Text with <code>font-weight: 500</code></span> or
+      <span style="font-weight: bold"><code>font-weight: bold</code> is Proxima Nova Medium. <br>{{ fpo.paragraph }}</span>
+    </p>
+    <p style="font-weight: 900">Text with <code>font-weight: 900</code> is Proxima Nova Bold. <br>{{ fpo.paragraph }}</p>
   </div>
 
 
   {{ highlightMarkup }}
     <p>Default text is Proxima Nova Regular.</p>
     <p>
-        <span class="font-weight: 500">Text with font-weight: 500 or</span>
-        <span class="font-weight: bold">font-weight: bold is Proxima Nova Medium.</span>
+        <span style="font-weight: 500">Text with font-weight: 500</span> or
+        <span style="font-weight: bold">font-weight: bold is Proxima Nova Medium.</span>
     </p>
     <p style="font-weight: 900">Text with font-weight: 900 is Proxima Nova Bold.</p>
   {{ endhighlight }}

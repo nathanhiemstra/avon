@@ -10,8 +10,8 @@ This CSS resource incorporates links to font software which is the valuable copy
 
 @mixin font-medium() {
   font-family: $font-family-name;
-  src: url("#{$base-font-path}#{$base-font-name}medium-webfont.eot");
-  src: url("#{$base-font-path}#{$base-font-name}medium-webfont.eot?#iefix") format("embedded-opentype"), url("#{$base-font-path}#{$base-font-name}medium-webfont.woff2") format("woff2"), url("#{$base-font-path}#{$base-font-name}medium-webfont.woff") format("woff"), url("#{$base-font-path}#{$base-font-name}medium-webfont.ttf") format("truetype");
+  src:url("#{$base-font-path}#{$base-font-name}-medium/b918fc25-caba-4cf5-8606-d77742e476f4.eot?#iefix");
+  src:url("#{$base-font-path}#{$base-font-name}-medium/b918fc25-caba-4cf5-8606-d77742e476f4.eot?#iefix") format("eot"),url("#{$base-font-path}#{$base-font-name}-medium/e898042a-5eb9-4810-b578-c3993ab58f0f.woff2") format("woff2"),url("#{$base-font-path}#{$base-font-name}-medium/cb9d4f02-d326-46b0-a857-930cce057f80.woff") format("woff"),url("#{$base-font-path}#{$base-font-name}-medium/75cafc03-22e4-41b0-8bc2-1b9081506ecc.ttf") format("truetype");
 }
 
 @mixin font-bold() {
@@ -45,11 +45,16 @@ This CSS resource incorporates links to font software which is the valuable copy
   }
   // Proxima Nova Bold
   @font-face {
-    @include font-medium();
+    @include font-bold();
     font-weight: 900;
     font-style: normal;
     font-variant: normal;
   }
+}
+
+.test-med {
+  font-weight: 500;
+  border: 1px solid red;
 }
 
 
@@ -72,6 +77,6 @@ This CSS resource incorporates links to font software which is the valuable copy
 // }
 // @font-face{
 //     font-family:"Proxima Nova Medium Italic";
-//     src:url("#{$base-font-path}#{$base-font-name}1529359/8c7dafc9-d10f-41d0-a036-be19229ef40e.eot?#iefix");
-//     src:url("#{$base-font-path}#{$base-font-name}1529359/8c7dafc9-d10f-41d0-a036-be19229ef40e.eot?#iefix") format("eot"),url("#{$base-font-path}#{$base-font-name}1529359/ce88a131-85cb-4a39-8dd1-3a4f5817b70c.woff2") format("woff2"),url("#{$base-font-path}#{$base-font-name}1529359/3ffc4ea2-8461-4897-a809-dbf92500372c.woff") format("woff"),url("#{$base-font-path}#{$base-font-name}1529359/da3b3dc5-47e4-44a6-8bff-4eee158a59c4.ttf") format("truetype");
+//     src:url("#{$base-font-path}#{$base-font-name}-medium/8c7dafc9-d10f-41d0-a036-be19229ef40e.eot?#iefix");
+//     src:url("#{$base-font-path}#{$base-font-name}-medium/8c7dafc9-d10f-41d0-a036-be19229ef40e.eot?#iefix") format("eot"),url("#{$base-font-path}#{$base-font-name}-medium/ce88a131-85cb-4a39-8dd1-3a4f5817b70c.woff2") format("woff2"),url("#{$base-font-path}#{$base-font-name}-medium/3ffc4ea2-8461-4897-a809-dbf92500372c.woff") format("woff"),url("#{$base-font-path}#{$base-font-name}-medium/da3b3dc5-47e4-44a6-8bff-4eee158a59c4.ttf") format("truetype");
 // }
