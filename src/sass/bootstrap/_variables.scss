@@ -109,68 +109,59 @@ $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 
-$font-size-base: 15px !default;
+$font-size-base: 16px !default;
 $font-size-base-input: 16px !default;
 
-// 18px
-$font-size-large: ceil($font-size-base * 1.2) !default;
-
-// 12px
-$font-size-small: ceil($font-size-base * 0.83333) !default;
-
-// 40px
-
-// H1
-$font-size-h1: floor($font-size-base * 2.8) !default;
-
-// 42px
-$font-size-h1-desktop: floor($font-size-base * 3.2) !default;
-
-// 48px
-
-$font-size-h2: floor($font-size-base * 2) !default;
-
-// 30px
-$font-size-h2-desktop: floor($font-size-base * 2.4) !default;
-
-// 36px
-
-$font-size-h3: ceil($font-size-base * 1.4666) !default;
-
-// 22px
-$font-size-h3-desktop: ceil($font-size-base * 2) !default;
-
-// 30px
-
-$font-size-h4: ceil($font-size-base * 1.2) !default;
-
-// 18px
-$font-size-h4-desktop: ceil($font-size-base * 1.6) !default;
-
-// 24px
-
-$font-size-h5: $font-size-base !default;
-
-// 15px
-$font-size-h5-desktop: ceil($font-size-base * 1.2) !default;
-
-// 18px
-
-$font-size-h6: ceil($font-size-base * 0.8666) !default;
-
-// 13px
-$font-size-h6-desktop: ceil($font-size-base * 0.9333) !default;
+// 20px
+$font-size-large: ceil($font-size-base * 1.25) !default;
 
 // 14px
+$font-size-small: ceil($font-size-base * 0.875) !default;
 
-$font-size-h7: ceil($font-size-base * 0.7333) !default;
 
-// 11px
-$font-size-h7-desktop: ceil($font-size-base * 0.83333) !default;
+// h1 mobile - 44px
+$font-size-h1: floor($font-size-base * 2.75) !default;
 
-// 12px
+// h1 desktop - 50px
+$font-size-h1-desktop: floor($font-size-base * 3.125) !default;
 
-// 12px
+// h2 mobile - 32px
+$font-size-h2: floor($font-size-base * 2) !default;
+
+// h2 desktop - 38px
+$font-size-h2-desktop: floor($font-size-base * 2.375) !default;
+
+// h3 mobile - 23px
+$font-size-h3: ceil($font-size-base * 1.4375) !default;
+
+// h3 desktop - 32px
+$font-size-h3-desktop: ceil($font-size-base * 2) !default;
+
+// h4 mobile - 20px
+$font-size-h4: ceil($font-size-base * 1.25) !default;
+
+// h4 desktop - 26px
+$font-size-h4-desktop: ceil($font-size-base * 1.625) !default;
+
+// h5 mobile - 16px
+$font-size-h5: $font-size-base !default;
+
+// h5 desktop - 19px
+$font-size-h5-desktop: ceil($font-size-base * 1.1875) !default;
+
+// h6 mobile - 14px
+$font-size-h6: ceil($font-size-base * 0.875) !default;
+
+// h6 desktop - 15px
+$font-size-h6-desktop: ceil($font-size-base * 0.9375) !default;
+
+// h7 mobile - 12px
+$font-size-h7: ceil($font-size-base * 0.75) !default;
+
+// h7 desktop - 13px
+$font-size-h7-desktop: ceil($font-size-base * 0.8125) !default;
+
+
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base: 1.6 !default;
@@ -185,7 +176,7 @@ $line-height-computed: floor($font-size-base * $line-height-base) !default;
 $headings-font-family: inherit !default;
 $headings-font-weight: 400 !default;
 $headings-font-weight-heavy: 500 !default;
-$headings-line-height: 1.1 !default;
+$headings-line-height: 1.2 !default;
 $headings-color: inherit !default;
 
 //== Iconography
