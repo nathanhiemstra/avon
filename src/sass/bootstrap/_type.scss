@@ -9,6 +9,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+//     background: url('images/fpo/headlines.jpg') -61px 53px;
+
+
 // Headings
 // -------------------------
 
@@ -32,7 +36,7 @@ h2, .h2,
 h3, .h3 {
   margin-top: $line-height-computed;
   margin-bottom: $line-height-computed / 2;
-  letter-spacing: $headings-letter-spacing-lg;
+  letter-spacing: $headings-letter-spacing;
 
   small,
   .small {
@@ -55,39 +59,47 @@ h7, .h7 {
 
 h1, .h1 {
   font-size: $font-size-h1;
+  // letter-spacing: 0.3px;
 }
 
 h2, .h2 {
   font-size: $font-size-h2;
+  // letter-spacing: 0.3px;
 }
 
 h3, .h3 {
   font-size: $font-size-h3;
+      // letter-spacing: 0.3px;
 }
 
 h4, .h4 {
   font-size: $font-size-h4;
-  letter-spacing: $headings-letter-spacing-lg;
+  letter-spacing: $headings-letter-spacing;
+  // letter-spacing: 0.3px;
 }
 
 h5, .h5 {
   font-size: $font-size-h5;
+  // letter-spacing: 0.9px;
+  letter-spacing: $headings-letter-spacing-sm;
 }
 
 h6, .h6 {
   font-size: $font-size-h6;
   letter-spacing: $headings-letter-spacing-sm;
+      // letter-spacing: .85px;
 }
 
 h7, .h7 {
   font-size: $font-size-h7;
   letter-spacing: $headings-letter-spacing-xs;
+  // letter-spacing: 0.9px;
 }
 
 h5, .h5, h6, .h6, h7, .h7 {
   text-transform: uppercase;
   font-weight: $headings-font-weight-heavy;
-  letter-spacing: 0.8px;
+  // letter-spacing: 0.9px;
 }
 
 @media (min-width: $screen-sm-min) {
@@ -109,7 +121,7 @@ h5, .h5, h6, .h6, h7, .h7 {
 
   h5, .h5 {
     font-size: $font-size-h5-desktop;
-    letter-spacing: $headings-letter-spacing-md-desktop;
+    letter-spacing: $headings-letter-spacing-sm-desktop;
   }
 
   h6, .h6 {
