@@ -113,6 +113,7 @@ h5, .h5, h6, .h6, h7, .h7 {
 
   h7, .h7 {
     font-size: $font-size-h7-desktop;
+    font-weight: 900;
   }
 }
 
@@ -157,15 +158,16 @@ p {
 // Emphasis & misc
 // -------------------------
 
-// Ex: (12px small font / 14px base font) * 100% = about 85%
 small,
 .small {
-  font-size: floor(100% * $font-size-small / $font-size-base);
-  line-height: 1.38;
+  // 16px
+  font-size: floor($font-size-small);
+  // 18px
+  line-height: 1.285715;
 }
 
 .tiny {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .medium {

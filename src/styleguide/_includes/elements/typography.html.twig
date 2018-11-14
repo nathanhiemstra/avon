@@ -9,28 +9,11 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {#  Typography and links #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-  <h2 id="type-links">Typography and links</h2>
-  <p>Bootstrap sets basic global display, typography, and link styles. Specifically, we:</p>
-  <ul>
-    <li>Set <code>background-color: #fff;</code> on the <code>body</code></li>
-    <li>Use the <code>$font-family-base</code>, <code>$font-size-base</code>, and <code>$line-height-base</code> attributes as our typographic base</li>
-    <li>Set the global link color via <code>$link-color</code> and apply link underlines only on <code>:hover</code></li>
-    <li>Use <code>.link-muted</code> for a muted link and <code>.link-plain</code> for a completely undecorated link.
-  </ul>
-  <p>These styles can be found within <code>scaffolding.scss</code>.</p>
 
-  <h4>Link Classes</h4>
-  <p>Default - <a href="#">I'm a default link</a></p>
-  <p><code>.link-primary</code> - <a href="#" class="link-primary">I'm a primary link</a>, I'll force default link behavior when needed</p>
-  <p><code>.link-secondary</code> - <a href="#" class="link-secondary">I'm a secondary link</a></p>
-  <p><code>.link-plain</code> - <a href="#" class="link-plain">I'm a plain link</a></p>
-  <p><code>.link-muted</code> - <a href="#" class="link-muted">I'm a muted link</a></p>
-  <p><code>.link-reverse-plain</code> - <a href="#" class="link-reverse-plain">I'm a reverse plain link</a></p>
-
-  <!-- Headings -->
+  <!-- Font -->
   <h2 id="type-font">Font</h2>
-{#   <p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available. <code>.h1</code> through <code>.h6</code> classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.</p>
- #}<div class="bs-example p-4 type-font">
+  <p>The font family is Proxima Nova. Below are the three variations.</p>
+  <div class="bs-example p-4 type-font">
     <p>Default text is Proxima Nova Regular. <br>{{ fpo.paragraph }}</p>
     <p>
       <span style="font-weight: 500">Text with <code>font-weight: 500</code></span> or
@@ -49,6 +32,27 @@
     <p style="font-weight: 900">Text with font-weight: 900 is Proxima Nova Bold.</p>
   {{ endhighlight }}
 
+
+  <h2 id="type-links">Typography and links</h2>
+  <p>Bootstrap sets basic global display, typography, and link styles. Specifically, we:</p>
+  <ul>
+    <li>Set <code>background-color: #fff;</code> on the <code>body</code></li>
+    <li>Use the <code>$font-family-base</code>, <code>$font-size-base</code>, and <code>$line-height-base</code> attributes as our typographic base</li>
+    <li>Set the global link color via <code>$link-color</code> and apply link underlines only on <code>:hover</code></li>
+    <li>Use <code>.link-muted</code> for a muted link and <code>.link-plain</code> for a completely undecorated link.
+  </ul>
+  <p>These styles can be found within <code>scaffolding.scss</code>.</p>
+
+  <h4>Link Classes</h4>
+  <p>Default - <a href="#">I'm a default link</a></p>
+  <p><code>.link-primary</code> - <a href="#" class="link-primary">I'm a primary link</a>, I'll force default link behavior when needed</p>
+  <p><code>.link-secondary</code> - <a href="#" class="link-secondary">I'm a secondary link</a></p>
+  <p><code>.link-plain</code> - <a href="#" class="link-plain">I'm a plain link</a></p>
+  <p><code>.link-muted</code> - <a href="#" class="link-muted">I'm a muted link</a></p>
+  <p><code>.link-reverse-plain</code> - <a href="#" class="link-reverse-plain">I'm a reverse plain link</a></p>
+
+
+
   <!-- Headings -->
   <h2 id="type-headings">Headings</h2>
   <p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available. <code>.h1</code> through <code>.h6</code> classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.</p>
@@ -57,31 +61,31 @@
       <tbody>
         <tr>
           <td><h1>h1. Heading</h1></td>
-          <td class="type-info">Book 42px (Desktop: 48px)</td>
+          <td class="type-info">Regular 44px (Desktop: 50px)</td>
         </tr>
         <tr>
           <td><h2>h2. Heading</h2></td>
-          <td class="type-info">Book 30px (Desktop: 36px)</td>
+          <td class="type-info">Regular 32px (Desktop: 38px)</td>
         </tr>
         <tr>
           <td><h3>h3. Heading</h3></td>
-          <td class="type-info">Book 22px (Desktop: 30px)</td>
+          <td class="type-info">Regular 23px (Desktop: 32px)</td>
         </tr>
         <tr>
           <td><h4>h4. Heading</h4></td>
-          <td class="type-info">Book 18px (Desktop: 24px)</td>
+          <td class="type-info">Regular 20px (Desktop: 26px)</td>
         </tr>
         <tr>
           <td><h5>h5. Heading</h5></td>
-          <td class="type-info">Medium 15px (Desktop: 18px, UPPERCASE)</td>
+          <td class="type-info">Medium 16px (Desktop: 19px, UPPERCASE)</td>
         </tr>
         <tr>
           <td><h6>h6. Heading</h6></td>
-          <td class="type-info">Medium 13px (Desktop: 14px, UPPERCASE)</td>
+          <td class="type-info">Medium 14px (Desktop: 15px, UPPERCASE)</td>
         </tr>
         <tr>
           <td><h7>h7. Heading</h7></td>
-          <td class="type-info">Medium 11px (Desktop: 12px, UPPERCASE)</td>
+          <td class="type-info">Bold 12px (Desktop: 13px, UPPERCASE)</td>
         </tr>
       </tbody>
     </table>
@@ -175,9 +179,9 @@
 
 
   <h3>Tiny text</h3>
-  <p>Use the <code>.tiny</code> class to set text 12px.</p>
+  <p>Use the <code>.tiny</code> class to set text 13px.</p>
   <div class="bs-example">
-    <p class="tiny">This line of text is tiny 12px.</p>
+    <p class="tiny">This line of text is tiny 13px.</p>
   </div>
 
   {{ highlightMarkup }}
@@ -185,7 +189,7 @@
   {{ endhighlight }}
 
   <h3>Small text</h3>
-  <p>For de-emphasizing inline or blocks of text, use the <code>&lt;small&gt;</code> tag to set text at 85% the size of the parent. Heading elements receive their own <code>font-size</code> for nested <code>&lt;small&gt;</code> elements.</p>
+  <p>For de-emphasizing inline or blocks of text, use the <code>&lt;small&gt;</code> tag to set text at 87.5% the size of the parent. Heading elements receive their own <code>font-size</code> for nested <code>&lt;small&gt;</code> elements.</p>
   <p>You may alternatively use an inline element with <code>.small</code> in place of any <code>&lt;small&gt;</code>.</p>
   <div class="bs-example">
     <p><small>This line of text is meant to be treated as fine print.</small></p>
@@ -206,9 +210,9 @@
   {{ endhighlight }}
 
   <h3>Large text</h3>
-  <p>Use the <code>.large</code> class to set text 18px.</p>
+  <p>Use the <code>.large</code> class to set text 20px.</p>
   <div class="bs-example">
-    <p class="large">This line of text is large 18px.</p>
+    <p class="large">This line of text is large 20px.</p>
   </div>
 
   {{ highlightMarkup }}
