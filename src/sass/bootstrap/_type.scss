@@ -32,6 +32,7 @@ h2, .h2,
 h3, .h3 {
   margin-top: $line-height-computed;
   margin-bottom: $line-height-computed / 2;
+  letter-spacing: $headings-letter-spacing-lg;
 
   small,
   .small {
@@ -66,6 +67,7 @@ h3, .h3 {
 
 h4, .h4 {
   font-size: $font-size-h4;
+  letter-spacing: $headings-letter-spacing-lg;
 }
 
 h5, .h5 {
@@ -74,10 +76,12 @@ h5, .h5 {
 
 h6, .h6 {
   font-size: $font-size-h6;
+  letter-spacing: $headings-letter-spacing-sm;
 }
 
 h7, .h7 {
   font-size: $font-size-h7;
+  letter-spacing: $headings-letter-spacing-xs;
 }
 
 h5, .h5, h6, .h6, h7, .h7 {
@@ -105,14 +109,17 @@ h5, .h5, h6, .h6, h7, .h7 {
 
   h5, .h5 {
     font-size: $font-size-h5-desktop;
+    letter-spacing: $headings-letter-spacing-md-desktop;
   }
 
   h6, .h6 {
     font-size: $font-size-h6-desktop;
+    letter-spacing: $headings-letter-spacing-sm-desktop;
   }
 
   h7, .h7 {
     font-size: $font-size-h7-desktop;
+    letter-spacing: $headings-letter-spacing-xs-desktop;
     font-weight: 900;
   }
 }

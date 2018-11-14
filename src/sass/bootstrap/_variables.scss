@@ -110,7 +110,7 @@ $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !defau
 $font-family-base: $font-family-sans-serif !default;
 
 $font-size-base: 16px !default;
-$font-size-base-input: 16px !default;
+$font-size-base-input: 17px !default;
 
 // 20px
 $font-size-large: ceil($font-size-base * 1.25) !default;
@@ -178,8 +178,14 @@ $headings-font-weight: 400 !default;
 $headings-font-weight-heavy: 500 !default;
 $headings-line-height: 1.2 !default;
 $headings-color: inherit !default;
+$headings-letter-spacing-lg: 0.5px !default;
+$headings-letter-spacing-sm: 1.5px !default;
+$headings-letter-spacing-xs: 1px !default;
+$headings-letter-spacing-md-desktop: 1.8px !default;
+$headings-letter-spacing-sm-desktop: 1.3px !default;
+$headings-letter-spacing-xs-desktop: 0.9px !default;
 
-//== Iconography
+//== Iconography-desktop
 
 //** Load fonts from this directory.
 
