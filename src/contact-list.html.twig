@@ -58,27 +58,8 @@
         </div>
       </header>
 
-      <!-- START - TAB NAVIGATION -->
-      <ul class="nav nav-tabs">
-        <li class="active"><a href="#tab-list-view" data-toggle="tab">List View</a></li>
-        <li><a href="#tab-tree-view" data-toggle="tab">Tree View</a></li>
-      </ul>
-      <!-- END - TAB NAVIGATION -->
+      {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'team' } %}
 
-      <!-- START - TAB CONTENT -->
-      <div class="tab-content">
-        <div class="tab-pane active" id="tab-list-view">
-          <!-- START - TAB PANE - LIST VIEW -->
-          {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'team' } %}
-          <!-- END - TAB PANE - LIST VIEW -->
-        </div>
-        <div class="tab-pane" id="tab-tree-view">
-          <!-- START - TAB PANE - TREE VIEW -->
-          {% include '_includes/modules/contacts/contacts-list/tab-content-tree-view.html.twig' %}
-          <!-- END - TAB PANE - TREE VIEW -->
-        </div>
-      </div>
-      <!-- END - TAB CONTENT -->
 
     </section>
 
