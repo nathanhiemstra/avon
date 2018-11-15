@@ -48,6 +48,13 @@ ol {
     padding-left: 5px;
     padding-right: 5px;
   }
+
+  &--dividers {
+    > li:not(:last-child) {
+      border-right: $border-width solid $list-group-border;
+      padding-right: 12px;
+    }
+  }
 }
 
 // Removes indent

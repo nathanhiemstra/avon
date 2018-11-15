@@ -102,6 +102,15 @@
   }
 }
 
+.link-underline {
+  text-decoration: underline;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 @mixin link-plain {
   color: $link-reverse-color;
   text-transform: none;

@@ -3,11 +3,11 @@
     {% include "_includes/elements/forms/checkbox.html.twig" with { checked: false, classes: 'input-sm' } %}
   </td>
   <td class="t-first-name t-row-1 t-inline t-col-sibling-left">
-    <a href="#">Firstname</a>
+    <a href="#" class="link-secondary link-underline">Firstname</a>
   </td>
-  <td class="t-last-name t-row-1 t-inline"><a href="#">Lastnameislong</a></td>
-  <td class="t-phone t-row-3 t-block t-col-sibling-left">000-000-0000</td>
-  <td class="t-email t-row-3 t-block t-col-sibling-left"><div class="truncate"><a href="#">firstnamelastname@otto.com</a></div></td>
+  <td class="t-last-name t-row-1 t-inline"><a href="#" class="link-secondary link-underline">Lastnameislong</a></td>
+  <td class="t-phone t-row-3 t-block t-col-sibling-left">(000)000-0000</td>
+  <td class="t-email t-row-3 t-block t-col-sibling-left"><div class="truncate"><a href="#" class="link-secondary link-underline">firstnamelastname@otto.com</a></div></td>
 {% if contactType == 'customer' %}
   <!-- START - For "Customer List" only -->
   <td class="t-customer-type t-row-2 t-block t-col-sibling-left">
@@ -18,6 +18,11 @@
     </span>
     {% endif %}
   </td>
+  <td class="t-groups t-row-2 t-block t-col-sibling-left">
+    {% if groupName %}<div class="d-block"><span class="label label-info">{{ groupName }}</span></div>{% endif %}
+    {% if groupName2 %}<div class="d-block"><span class="label label-info">{{ groupName2 }}</span></div>{% endif %}
+  </td>
+
   <!-- END - For "Customer List" only -->
 {% endif %}
 {% if contactType == 'team' %}
@@ -29,7 +34,7 @@
   <td class="t-actions t-row-1 t-self-end">
 
     <div class="btn-group">
-      <a href="javascript:void(0)" data-toggle="dropdown">•••</span>
+      <a href="javascript:void(0)" data-toggle="dropdown" class="link-secondary">•••</span>
       <ul class="dropdown-menu pull-right">
         <li><a href="#">Lorem</a></li>
         <li><a href="#">Ipsum</a></li>
