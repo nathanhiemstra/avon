@@ -14,22 +14,11 @@
 
     <section class="container container--page">
 
-{#       <header class="row" role="header">
-        <div class="col-md-12 d-flex flex-wrap align-items-center">
-          {% include '_includes/modules/contacts/contacts-list/contacts-list-header.html.twig' %}
-        </div>
-      </header>
- #}
-
-
       <header class="row" role="header">
         <div class="col-md-12  mb-2">
           <h3 class="mb-3 mr-auto">Customer Contacts</h3>
-
           <div class="d-flex align-items-center flex-wrap">
-
             <form class="form-inline">
-
               <div class="input-group mt-3 mt-sm-0">
                 <div class="input-group">
                   <span class="input-group-addon"><span class="lt-icon lt-search lt-large"></span></span>
@@ -47,26 +36,21 @@
                 </div><!-- /btn-group -->
               </div><!-- /input-group -->
             </form>
-
             <div class="ml-0 ml-lg-auto">
               <a class="btn btn-primary btn-sm btn-soft mt-3 mt-sm-0">Add Contact</a>
               <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Import</a>
               <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Groups</a>
             </div>
-
-          </div>
-
-
-          <div class="ml-0 ml-lg-auto">
-
-
-
           </div>
         </div>
       </header>
 
-      {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'customer' } %}
+    </section>
 
+
+
+      {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'customer' } %}
+{#
       <header class="row" role="header">
         <div class="col-md-12">
           <h3>Team Contacts</h3>
@@ -74,10 +58,15 @@
       </header>
 
       {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'team' } %}
+ #}
 
 
-    </section>
+  <div style="padding-top: 1000px">XX</div>
 
   {% endblock %}
+
+  <!-- START - FILTER MODAL -->
+  {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal.html.twig" %}
+  <!-- END - FILTER MODA -->
 
 {% endblock %}

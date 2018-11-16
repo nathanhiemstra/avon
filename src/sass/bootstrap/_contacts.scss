@@ -1,3 +1,35 @@
+.page--contacts-list {
+  .affix-actions {
+    &.affix {
+      top: 0;
+      width: 100%;
+      background-color: $white;
+      z-index: $zindex-affix;
+      background-color: $white;
+
+      &:after {
+        content: " ";
+        height: 40px;
+        width: 100%;
+        display: block;
+      }
+
+      + .container .affix-table-header {
+        th {
+          position: relative;
+
+          .th-label {
+            position: fixed;
+            z-index: $zindex-affix + 1;
+            top: 72px;
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
 .table-contact-list {
   $left-col-width: 30px;
 
