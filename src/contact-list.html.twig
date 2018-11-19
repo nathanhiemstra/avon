@@ -18,25 +18,28 @@
         <div class="col-md-12  mb-2">
           <h3 class="mb-3 mr-auto">Customer Contacts</h3>
           <div class="d-flex align-items-center flex-wrap">
-            <form class="form-inline">
+            <form class="form-inline mb-4 mr-5">
               <div class="input-group mt-3 mt-sm-0">
                 <div class="input-group">
                   <span class="input-group-addon"><span class="lt-icon lt-search lt-large"></span></span>
-                  <input type="text" class="form-control input-sm" placeholder="Search my team...">
+                  <input type="text" class="form-control input-lg has-addon-after" placeholder="Search my team...">
+                  <span class="input-group-addon addon-after">
+                    <div class="input-group-btn">
+                      <span class="btn btn-sm btn-link dropdown-toggle" data-toggle="dropdown">
+                        <span class="h7 link-muted">By name</span> <span class="caret"></span>
+                      </span>
+                      <ul class="dropdown-menu pull-right">
+                        <li><a href="#">[Filter category]</a></li>
+                        <li><a href="#">[Filter category]</a></li>
+                        <li><a href="#">[Filter category]</a></li>
+                      </ul>
+                    </div><!-- /btn-group -->
+                  </span>
                 </div>
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-                    <span class="text-uppercase">By name</span> <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu pull-right">
-                    <li><a href="#">[Filter category]</a></li>
-                    <li><a href="#">[Filter category]</a></li>
-                    <li><a href="#">[Filter category]</a></li>
-                  </ul>
-                </div><!-- /btn-group -->
+
               </div><!-- /input-group -->
             </form>
-            <div class="ml-0 ml-lg-auto">
+            <div class="mb-4 ml-0 ml-lg-auto">
               <a class="btn btn-primary btn-sm btn-soft mt-3 mt-sm-0">Add Contact</a>
               <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Import</a>
               <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Groups</a>

@@ -481,7 +481,7 @@ table {
 // Responsive tables
 //
 
-@media (max-width: $screen-sm) {
+@media (max-width: $screen-md) {
   .table-responsive-rows-and-cols {
     > .table {
       > thead {
