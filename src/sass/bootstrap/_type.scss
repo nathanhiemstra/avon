@@ -235,6 +235,11 @@ mark,
   text-transform: capitalize;
 }
 
+.text-normal {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
 // Font weight and italics
 .font-weight-bold {
   font-weight: bold;

@@ -12,12 +12,20 @@ var NbaDrawer = (function() {
   var init = function() {
     // grab the DOM els we need
     $els = {
+      nbaDrawer: $('#nbaDrawer'),
       nbaCarousel: $('#nbaCarousel'),
       nbaCurrentSlideTxt: $('#nbaCarousel .carousel-index > .current-slide'),
       nbaTotalSlidesTxt: $('#nbaCarousel .carousel-index > .total-slides'),
       nbaBadgeTxt: $('#nbaDrawer .badge.item-count'),
-      nbaMessageTxt: $('#nbaCarousel .carousel-msg')
+      nbaMessaging: $('#nbaCarousel .carousel-msg'),
+      nbaMsgSuccessTxt: $('#nbaCarousel .carousel-msg .carousel-msg_success'),
+      nbaMsgCompleteTxt: $('#nbaCarousel .carousel-msg .carousel-msg_complete'),
     };
+
+    // expand drawer by default on desktop
+    if($(window).width() > 940) {
+      $els.nbaDrawer.addClass('drawer-expanded');
+    }
 
     // initialize the carousel
     _initCarousel();
@@ -27,9 +35,6 @@ var NbaDrawer = (function() {
     if(!startIndex) startIndex = 0;
     nbaCurrentSlide = startIndex;
     nbaTotalSlides = $els.nbaCarousel.find('.item').length;
-
-    console.log('INIT CAROUSEL AT INDEX :: ', nbaCurrentSlide);
-    console.log('INIT CAROUSEL TOTAL :: ', nbaTotalSlides);
 
     // manually init carousel
     $els.nbaCarousel
@@ -69,33 +74,53 @@ var NbaDrawer = (function() {
     var nextIndexInit;
     var isLastSlide = nbaTotalSlides === 1;
 
-    console.log('currentIndex :: ', currentIndex);
-
     if(currentIndex === nbaTotalSlides - 1) {
+      // if last item, set indexes back to 0
       nextIndex = 0;
       nextIndexInit = 0;
     } else {
+      // advance to next item (nextIndexInit gets set to current index
+      // because current will be deleted from DOM)
       nextIndex = currentIndex + 1;
       nextIndexInit = currentIndex;
     }
 
-    console.log('Next, to make active :: ', nextIndex);
-    console.log('Next, to init :: ', nextIndexInit);
-
+    // grab the active and next items
     var activeEl = $els.nbaCarousel.find('.item.active');
     var nextEl = $els.nbaCarousel.find('.item').eq(nextIndex);
-    activeEl.remove();
-    nextEl.addClass('active');
 
     // re-init carousel
     if(isLastSlide) {
-      $els.nbaMessageTxt.addClass('reveal');
+      // Show complete message
+      $els.nbaMessaging.addClass('reveal');
+      $els.nbaMsgCompleteTxt.addClass('reveal');
+
+      // remove the active element
+      activeEl.remove();
+
+      // zero-out counters
       $els.nbaCurrentSlideTxt.text(0);
       $els.nbaTotalSlidesTxt.text(0);
       $els.nbaBadgeTxt.text(0);
     } else {
-      $els.nbaCarousel.carousel('pause').removeData();
-      _initCarousel(nextIndexInit);
+      // Show success message, then re-init
+      $els.nbaMessaging.addClass('reveal');
+      $els.nbaMsgSuccessTxt.addClass('reveal');
+
+      // hide success message after 3 seconds
+      setTimeout(function() {
+        $els.nbaMessaging.removeClass('reveal');
+        $els.nbaMsgSuccessTxt.removeClass('reveal');
+
+        // remove the active element and add class to next
+        activeEl.remove();
+        nextEl.addClass('active');
+
+        // reset carousel
+        $els.nbaCarousel.carousel('pause').removeData();
+        _initCarousel(nextIndexInit);
+      }, 3000);
+
     }
   };
 

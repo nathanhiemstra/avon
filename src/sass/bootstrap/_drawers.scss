@@ -186,8 +186,18 @@ html {
   }
 }
 
+/*
+
+DRAWER COMPACT
+
+*/
+
+// config
 $drawer-compact-summary-height: 40px;
 $drawer-compact-summary-max-width: 320px;
+$drawer-compact-max-width: 420px;
+$drawer-compact-min-height: 350px;
+
 .drawer-compact {
   box-shadow: none;
   height: $drawer-compact-summary-height;
@@ -201,8 +211,8 @@ $drawer-compact-summary-max-width: 320px;
   .drawer-summary {
     width: 100%;
     max-width: $drawer-compact-summary-max-width;
-    height: auto;
-    min-height: auto;
+    height: $drawer-compact-summary-height;
+    min-height: $drawer-compact-summary-height;
     background-color: $black;
     color: $white;
     transition: 0.5s max-width $ui-animation-ease;
@@ -235,9 +245,42 @@ $drawer-compact-summary-max-width: 320px;
       }
 
       .carousel-controls {
-        height: auto;
+        height: $drawer-compact-summary-height;
         opacity: 0;
         transition: 0.5s 0.3s opacity;
+
+        .container-fluid {
+          display: flex;
+          height: 100%;
+          justify-content: space-between;
+
+          @media (min-width: $screen-sm-min) {
+            justify-content: start;
+          }
+
+          &:before,
+          &:after {
+            display: none;
+          }
+
+          .left {
+            order: 1;
+          }
+          .carousel-index {
+            order: 2;
+
+            @media (min-width: $screen-sm-min) {
+              order: 3;
+            }
+          }
+          .right {
+            order: 3;
+
+            @media (min-width: $screen-sm-min) {
+              order: 2;
+            }
+          }
+        }
 
         a:hover {
           text-decoration: none;
@@ -257,13 +300,27 @@ $drawer-compact-summary-max-width: 320px;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: calc(100% - #{$drawer-compact-summary-height});
         opacity: 0;
+        transform: translateY(10px);
+        background-color: $body-bg;
         pointer-events: none;
-        transition: $ui-animation-time opacity;
+        transition: $ui-animation-time * 3 opacity,
+          $ui-animation-time * 3 transform ease;
+
+        .carousel-msg_success,
+        .carousel-msg_complete {
+          display: none;
+          align-items: center;
+
+          &.reveal {
+            display: flex;
+          }
+        }
 
         &.reveal {
           opacity: 1;
+          transform: translateY(0);
         }
       }
     }
@@ -272,7 +329,7 @@ $drawer-compact-summary-max-width: 320px;
   &.drawer-expanded {
     // doesn't expand to full height
     @media (min-width: $screen-sm-min) {
-      min-height: 350px;
+      min-height: $drawer-compact-min-height;
       overflow: hidden;
     }
 
@@ -308,7 +365,7 @@ $drawer-compact-summary-max-width: 320px;
 
   @media (min-width: $screen-sm-min) {
     width: 50%;
-    max-width: 400px;
+    max-width: $drawer-compact-max-width;
   }
 }
 
