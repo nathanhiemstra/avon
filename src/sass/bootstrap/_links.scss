@@ -158,6 +158,27 @@
   }
 }
 
+.link-disabled {
+  color: $link-color-disabled;
+  pointer-events: none;
+
+  .lt-icon,
+  .lt-icon:before {
+    color: $link-color-disabled;
+  }
+
+  &:focus,
+  &:hover {
+    color: $link-color-disabled;
+    cursor: $cursor-disabled;
+
+    .lt-icon,
+    .lt-icon:before {
+      color: $link-color-disabled;
+    }
+  }
+}
+
 // responsive primary plain link is .link-primary on small screens and .link-plain on large screens
 @mixin responsive-primary-plain-link {
   @include link-primary;

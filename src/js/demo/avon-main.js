@@ -418,6 +418,7 @@ $( document ).ready( function () {
   if( typeof BackToTop !== 'undefined' ) BackToTop.init();
   if( typeof Brochures !== 'undefined' ) Brochures.init();
   if( typeof CheckoutDemo !== 'undefined' ) CheckoutDemo.init();
+  if( typeof ContactsDemo !== 'undefined' ) ContactsDemo.init();
   if( typeof FormDemo !== 'undefined' ) FormDemo.init();
   if( typeof GlobalSearch !== 'undefined' ) GlobalSearch.init();
   if( typeof Pagination !== 'undefined' ) Pagination.init();

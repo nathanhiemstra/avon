@@ -34,13 +34,14 @@ label {
   max-width: 100%;
   color: $input-label-text-color;
   font-size: $input-label-font-size;
+
   // font-weight: bold;
 
   // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
   margin-bottom: 5px;
 
   // show label abbreviations on small screens and full label on large screens
-  &>span {
+  & > span {
     &.label-full {
       display: none;
     }
@@ -218,7 +219,7 @@ output {
 
   // [converter] extracted textarea& to textarea.form-control
 
-  &+.text-danger {
+  & + .text-danger {
     margin-top: 5px;
   }
 }
@@ -240,12 +241,12 @@ select.form-control {
     display: none;
   }
 
-  +.lt-icon,
-  +.lt-icon:before {
+  + .lt-icon,
+  + .lt-icon:before {
     color: $link-color;
   }
 
-  +.lt-triangle-down.form-control-feedback {
+  + .lt-triangle-down.form-control-feedback {
     // transform: rotate(90deg);
 
   }
@@ -276,7 +277,6 @@ input[type="search"] {
 // Note that as of 9.3, iOS doesn't support `week`.
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-
   input[type="date"],
   input[type="time"],
   input[type="datetime-local"],
@@ -379,8 +379,8 @@ input[type="search"] {
   margin-top: 4px \9;
 }
 
-.checkbox+.checkbox,
-.radio+.radio {
+.checkbox + .checkbox,
+.radio + .radio {
   margin-top: -5px;
 
   // Move up sibling radios or checkboxes for tighter spacing
@@ -399,8 +399,8 @@ input[type="search"] {
   cursor: pointer;
 }
 
-.checkbox-inline+.checkbox-inline,
-.radio-inline+.radio-inline {
+.checkbox-inline + .checkbox-inline,
+.radio-inline + .radio-inline {
   margin-top: 0;
   margin-left: 10px;
 
@@ -413,7 +413,6 @@ input[type="search"] {
 // Note: Neither radios nor checkboxes can be readonly.
 input[type="radio"],
 input[type="checkbox"] {
-
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
@@ -424,7 +423,6 @@ input[type="checkbox"] {
 // These classes are used directly on <label>s
 .checkbox-inline,
 .radio-inline {
-
   &.disabled,
   fieldset[disabled] & {
     cursor: $cursor-disabled;
@@ -434,7 +432,6 @@ input[type="checkbox"] {
 // These classes are used on elements with <label> descendants
 .checkbox,
 .radio {
-
   &.disabled,
   fieldset[disabled] & {
     label {
@@ -516,8 +513,8 @@ input[type="checkbox"] {
   display: none;
 }
 
-.checkbox label input[type="checkbox"]+span>i,
-.radio label input[type="radio"]+span>i {
+.checkbox label input[type="checkbox"] + span > i,
+.radio label input[type="radio"] + span > i {
   opacity: 0;
   transition: 0.1s opacity ease;
 
@@ -526,8 +523,8 @@ input[type="checkbox"] {
   }
 }
 
-.checkbox label input[type="checkbox"]:checked+span>i,
-.radio label input[type="radio"]:checked+span>i {
+.checkbox label input[type="checkbox"]:checked + span > i,
+.radio label input[type="radio"]:checked + span > i {
   opacity: 1;
 
   &.indeterminate {
@@ -535,14 +532,14 @@ input[type="checkbox"] {
   }
 }
 
-.radio label input[type="radio"]:checked+span {
+.radio label input[type="radio"]:checked + span {
   &:after {
     opacity: 1;
   }
 }
 
-.checkbox label input[type="checkbox"]:indeterminate+span>i,
-.radio label input[type="radio"]:indeterminate+span>i {
+.checkbox label input[type="checkbox"]:indeterminate + span > i,
+.radio label input[type="radio"]:indeterminate + span > i {
   opacity: 0;
 
   &.indeterminate {
@@ -550,8 +547,8 @@ input[type="checkbox"] {
   }
 }
 
-.checkbox label input[type="checkbox"]:disabled+span,
-.radio label input[type="radio"]:disabled+span {
+.checkbox label input[type="checkbox"]:disabled + span,
+.radio label input[type="radio"]:disabled + span {
   opacity: 0.5;
 }
 
@@ -680,7 +677,7 @@ select.form-control.input-lg {
     padding-right: $input-height-base;
 
     // disable mouse events on select icon so it falls through
-    &+span.lt-icon {
+    & + span.lt-icon {
       pointer-events: none;
     }
   }
@@ -715,12 +712,13 @@ select.form-control.input-lg {
 // password visibility icon styles
 input[type="password"],
 input[type="text"] {
-  &+.form-control-feedback.lt-eye::before {
+  & + .form-control-feedback.lt-eye::before {
     color: $gray-medium;
   }
 }
+
 input[type="text"] {
-  &+.form-control-feedback.lt-eye::after {
+  & + .form-control-feedback.lt-eye::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -742,7 +740,6 @@ input[type="text"] {
 
   // inline-block elements' icons need some love
   &.d-inline-block {
-
     // .dropdown {
     .lt-icon {
       top: 50%;
@@ -760,30 +757,30 @@ input[type="text"] {
     }
 
     // handle cases where label is grouped in
-    label+input+.lt-icon {
+    label + input + .lt-icon {
       transform: translateY(-17%);
     }
 
     // open state
     .dropdown.open {
-      label+input+.lt-icon {
+      label + input + .lt-icon {
         transform: translateY(-17%) rotate(-180deg);
       }
     }
   }
 }
 
-.form-group-lg .form-control+.form-control-feedback,
-.input-group-lg+.form-control-feedback,
-.input-lg+.form-control-feedback {
+.form-group-lg .form-control + .form-control-feedback,
+.input-group-lg + .form-control-feedback,
+.input-lg + .form-control-feedback {
   width: $input-height-large;
   height: $input-height-large;
   line-height: $input-height-large;
 }
 
-.form-group-sm .form-control+.form-control-feedback,
-.input-group-sm+.form-control-feedback,
-.input-sm+.form-control-feedback {
+.form-group-sm .form-control + .form-control-feedback,
+.input-group-sm + .form-control-feedback,
+.input-sm + .form-control-feedback {
   width: $input-height-small;
   height: $input-height-small;
   line-height: $input-height-small;
@@ -806,6 +803,7 @@ input[type="text"] {
   .bootstrap-select .dropdown-menu {
     border-width: $state-danger-border-width;
   }
+
   .bootstrap-select {
     &.open {
       > .dropdown-toggle {
@@ -829,7 +827,7 @@ input[type="text"] {
 
 // Reposition feedback icon if input has visible label above
 .has-feedback label {
-  &~.form-control-feedback {
+  & ~ .form-control-feedback {
     top: $line-height-computed + 5;
 
     // Height of the `label` and its margin
@@ -849,7 +847,7 @@ input[type="text"] {
     }
   }
 
-  &.sr-only~.form-control-feedback {
+  &.sr-only ~ .form-control-feedback {
     top: 0;
   }
 }
@@ -882,81 +880,88 @@ input[type="text"] {
 // Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
 
 // [converter] extracted from `.form-inline` for libsass compatibility
-@mixin form-inline {
 
-  // Kick in the inline
-  @media (min-width: $screen-sm-min) {
+@mixin form-inline-foundation {
+  // Inline-block all the things for "inline"
+  .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
 
-    // Inline-block all the things for "inline"
-    .form-group {
-      display: inline-block;
-      margin-bottom: 0;
-      vertical-align: middle;
-    }
+  // In navbar-form, allow folks to *not* use `.form-group`
+  .form-control {
+    display: inline-block;
+    width: auto;
 
-    // In navbar-form, allow folks to *not* use `.form-group`
-    .form-control {
-      display: inline-block;
+    // Prevent labels from stacking above inputs in `.form-group`
+    vertical-align: middle;
+  }
+
+  // Make static controls behave like regular ones
+  .form-control-static {
+    display: inline-block;
+  }
+
+  .input-group {
+    display: inline-table;
+    vertical-align: middle;
+
+    .form-control,
+    .input-group-addon,
+    .input-group-btn {
       width: auto;
-
-      // Prevent labels from stacking above inputs in `.form-group`
-      vertical-align: middle;
     }
+  }
 
-    // Make static controls behave like regular ones
-    .form-control-static {
-      display: inline-block;
+  // Input groups need that 100% width though
+  .input-group > .form-control {
+    width: 100%;
+  }
+
+  .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  // Remove default margin on radios/checkboxes that were used for stacking, and
+  // then undo the floating of radios and checkboxes to match.
+  .checkbox,
+  .radio {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+
+    label {
+      padding-left: 0;
     }
+  }
 
-    .input-group {
-      display: inline-table;
-      vertical-align: middle;
+  .radio input[type="radio"],
+  .checkbox input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
 
-      .form-control,
-      .input-group-addon,
-      .input-group-btn {
-        width: auto;
-      }
-    }
-
-    // Input groups need that 100% width though
-    .input-group>.form-control {
-      width: 100%;
-    }
-
-    .control-label {
-      margin-bottom: 0;
-      vertical-align: middle;
-    }
-
-    // Remove default margin on radios/checkboxes that were used for stacking, and
-    // then undo the floating of radios and checkboxes to match.
-    .checkbox,
-    .radio {
-      display: inline-block;
-      margin-top: 0;
-      margin-bottom: 0;
-      vertical-align: middle;
-
-      label {
-        padding-left: 0;
-      }
-    }
-
-    .radio input[type="radio"],
-    .checkbox input[type="checkbox"] {
-      position: relative;
-      margin-left: 0;
-    }
-
-    // Re-override the feedback icon.
-    .has-feedback .form-control-feedback {
-      top: 0;
-    }
+  // Re-override the feedback icon.
+  .has-feedback .form-control-feedback {
+    top: 0;
   }
 }
 
-// [converter] extracted as `@mixin form-inline` for libsass compatibility
+.form-inline-all-devices {
+  @include form-inline-foundation;
+}
+
+// Keep them inline on all browser widths
+@mixin form-inline {
+  @media (min-width: $screen-sm-min) {
+    @include form-inline-foundation;
+  }
+}
+
+// Keep them inline on tablet width and above
 .form-inline {
   @include form-inline;
 }
@@ -967,7 +972,6 @@ input[type="text"] {
 // labels on the left and inputs on the right.
 
 .form-horizontal {
-
   // Consistent vertical alignment of radios and checkboxes
   //
   // Labels also get some reset styles, but that is scoped to a media query below.
@@ -1058,7 +1062,7 @@ $search-btn-size: 44px;
       padding-left: $search-btn-size;
 
       &:focus {
-        +.input-group-addon:last-of-type {
+        + .input-group-addon:last-of-type {
           opacity: 1;
         }
       }
@@ -1105,7 +1109,7 @@ input.form-control {
       width: $size-start + $size * $size-increment;
     }
 
-    $size-increment: $size-increment+$size-increment * 0.01;
+    $size-increment: $size-increment + $size-increment * 0.01;
   }
 
   &.input-lg {
@@ -1118,7 +1122,7 @@ input.form-control {
         width: $size-start + $size * $size-increment;
       }
 
-      $size-increment: $size-increment+$size-increment * 0.01;
+      $size-increment: $size-increment + $size-increment * 0.01;
     }
   }
 }
@@ -1151,11 +1155,11 @@ input.form-control {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
     > span {
       min-width: 24px;
     }
   }
-
 
   .bootstrap-select {
     max-width: 398px;
@@ -1180,7 +1184,6 @@ input.form-control {
   }
 
   &.radio-select-combo-lg {
-
     .form-control,
     label {
       height: 60px;
