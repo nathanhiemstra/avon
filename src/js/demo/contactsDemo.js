@@ -33,9 +33,9 @@ var ContactsDemo = (function () {
   var _actionLinksToggle = function( trigger ) {
 
     if ( $els.actionLinksToggleTrigger.prop('checked') == true ) {
-      $els.actionLinksDisableable.removeClass( 'link-disabled' );
+      $els.actionLinksDisableable.removeClass( 'link-disable' );
     } else {
-      $els.actionLinksDisableable.addClass( 'link-disabled' );
+      $els.actionLinksDisableable.addClass( 'link-disable' );
     }
   };
 
