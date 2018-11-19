@@ -432,5 +432,6 @@ $( document ).ready( function () {
   if( typeof MessageCenter !== 'undefined' ) MessageCenter.init();
   if( typeof Sticky !== 'undefined' ) Sticky.init();
   if( typeof TogglePasswordVisibility !== 'undefined' ) TogglePasswordVisibility.init();
+  if( typeof NbaDrawer !== 'undefined' ) NbaDrawer.init();
 
 } );
