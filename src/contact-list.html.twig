@@ -17,6 +17,27 @@
       <header class="row" role="header">
         <div class="col-md-12  mb-2">
           <h3 class="mb-3 mr-auto">Customer Contacts</h3>
+
+
+          <!-- START - AUTOCOMPLETE -->
+          {# <div class="modal-header">
+            <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+              <span class="sr-only">Close modal</span>
+              <span class="lt-icon lt-close lt-large py-1"></span>
+            </button>
+            <h4 class="modal-title text-center">Select a Mentor</h4>
+          </div> #}
+
+          <div class="form-group has-feedback {{ formGroupClasses }}">
+            <label class="control-label" for="autocomplete-contact-list">Name or referral code</label>
+            <input type="text" class="form-control" id="autocomplete-contact-list" placeholder="Search" value="">
+            <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+            <span class="lt-icon lt-close lt-medium form-control-feedback"></span>
+          </div>
+          <!-- END - AUTOCOMPLETE -->
+
+
+
           <div class="d-flex align-items-center flex-wrap">
             <form class="form-inline mb-4 mr-5">
               <div class="input-group mt-3 mt-sm-0">
@@ -50,19 +71,7 @@
 
     </section>
 
-
-
-      {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'customer' } %}
-{#
-      <header class="row" role="header">
-        <div class="col-md-12">
-          <h3>Team Contacts</h3>
-        </div>
-      </header>
-
-      {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'team' } %}
- #}
-
+    {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'customer' } %}
 
   <div style="padding-top: 1000px">XX</div>
 
