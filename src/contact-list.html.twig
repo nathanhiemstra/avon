@@ -18,17 +18,20 @@
         <div class="col-md-12  mb-2">
           <h3 class="mb-3 mr-auto">Customer Contacts</h3>
 
-
           <!-- START - AUTOCOMPLETE -->
-
-          <!-- END - AUTOCOMPLETE -->
-
-
-
           <div class="d-flex align-items-center flex-wrap">
             <form class="form-inline mb-4 mr-5">
-              <div class="input-group mt-3 mt-sm-0">
-                <div class="input-group autocomplete-container">
+              <div class="input-group mt-3 mt-sm-0 customer-select-autocomplete contact-list-autocomplete autocomplete-container">
+                <!-- 'Modal' header for mobile autocomplete -->
+                <div class="modal-header">
+                  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+                    <span class="sr-only">Close modal</span>
+                    <span class="lt-icon lt-close lt-large py-1"></span>
+                  </button>
+                  <h4 class="modal-title text-center">Search My Team</h4>
+                </div>
+
+                <div class="input-group">
                   <span class="input-group-addon input-xs"><span class="lt-icon lt-search lt-large"></span></span>
                   {# <input type="text" class="form-control input-lg has-addon-after" placeholder="Search my team..."> #}
 
@@ -43,7 +46,7 @@
                     theValue: null,
                     placeholder: 'Search my team...'
                   } %}
-                  <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+                  {# <span class="lt-icon lt-triangle-down form-control-feedback"></span> #}
                   <span class="lt-icon lt-close lt-medium form-control-feedback"></span>
 
 
@@ -69,6 +72,8 @@
               <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Groups</a>
             </div>
           </div>
+          <!-- END - AUTOCOMPLETE -->
+
         </div>
       </header>
 

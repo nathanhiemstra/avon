@@ -9,7 +9,7 @@ var ContactsDemo = (function () {
   var $els = {};
   var autoCompleteDropSelectedValue = '';
   var autoCompleteInputId = '#autocomplete-contact-list';
-  var focusedElement;
+  var autoCompleteMaxHeight;
 
   // public methods
   var init = function () {
@@ -19,10 +19,9 @@ var ContactsDemo = (function () {
       actionLinksDisableable:   $('.page--contacts-list .action-items .disableable'),
       actionLinksToggleTrigger: $('.page--contacts-list #contact-list-toggle-all'),
       autoCompleteInput:        $( autoCompleteInputId ),
-      autoCompleteOpenTrigger:  $( autoCompleteInputId + '+ .lt-triangle-down' ),
-      autoCompleteCloseTrigger: $( autoCompleteInputId + '+ .form-control-feedback + .lt-close' ),
+      autoCompleteCloseTrigger: $( autoCompleteInputId + '+ .lt-close' ),
       autoCompleteContainer:    $( autoCompleteInputId ).closest( '.autocomplete-container' ),
-      autoCompleteParent:       $( autoCompleteInputId ).closest( '.autocomplete-container' )
+      autoCompleteParent:       $( autoCompleteInputId ).closest( '.autocomplete-container' ).parent()
     };
 
     _addListeners();
@@ -41,37 +40,21 @@ var ContactsDemo = (function () {
     });
 
     // AUTO COMPLETE
+    autoCompleteMaxHeight = $( window ).height() - $('.modal-header').outerHeight(true) - $('.contact-list-autocomplete > .input-group').outerHeight(true) - 15;
     // get current value for input
     // DEV NOTE :: demo only, this will be different in production
-    //          :: we'll need to get the last customer shopped fof or
-    //          :: default to current user (You)
     autoCompleteDropSelectedValue = 'Ms. Happyfancy';
     $els.autoCompleteInput.val( autoCompleteDropSelectedValue );
-
-    // This is desired functionality but breaks lots of things since
-    // autocomplete relies on focus
-    // $els.autoCompleteInput.focus().select();
-
     $els.autoCompleteInput.on( 'focus', function () {
-      // be sure we're at the top - DEV NOTE :: this should only hgappen on Item Entry, not PDP
-      // if( $( window ).width() < 768 ) {
-      //   $( 'html,body' ).scrollTop( 0 );
-      // }
-
-      // turn off listeners on trigger
-      $els.autoCompleteOpenTrigger.off();
-      if( focusedElement == $els.autoCompleteOpenTrigger ) return; // already focused, return so user can now place cursor at specific point in input.
-      focusedElement = $els.autoCompleteOpenTrigger;
-      setTimeout( function () {
-        $els.autoCompleteInput.val( '' ).focus();
-      }, 50 ); //select all text in any field on focus for easy re-entry. Delay sightly to allow focus to "stick" before selecting.
-
+      // be sure we're at the top
+      if( $( window ).width() < 768 ) {
+        $( 'html,body' ).scrollTop( 0 );
+      }
+      // clear input on focus
+      $els.autoCompleteInput.val('');
     } ).on( 'blur', function () {
-      focusedElement = null;
+      $els.autoCompleteInput.autocomplete('hide');
     } );
-
-
-    $els.autoCompleteOpenTrigger.on( 'click', _handleDropdownClick );
 
     // NOTE :: for demo only, in production with real data, this button will show and hide when autocoimplete is open
     $els.autoCompleteCloseTrigger.css('display', 'none');
@@ -86,15 +69,6 @@ var ContactsDemo = (function () {
         if( !autoCompleteDropSelectedValue ) autoCompleteDropSelectedValue = 'Ms. Happyfancy';
         // set the input value to selected
         $els.autoCompleteInput.val( autoCompleteDropSelectedValue );
-
-        if( $( '#item-entry-line-number' ).length ) {
-          // move focus to line number and highlight
-          $( '#item-entry-line-number' ).focus().select();
-          // select on ios
-          $( '#item-entry-line-number' )[ 0 ].selectionStart = 0;
-          $( '#item-entry-line-number' )[ 0 ].selectionEnd = $( '#item-entry-line-number' ).val().length;
-        }
-
       },
       formatResult: function ( suggestion, currentVal ) {
         return _constructItemTemplate( suggestion );
@@ -102,54 +76,48 @@ var ContactsDemo = (function () {
       onHide: function ( e ) {
         // set the selected item
         $els.autoCompleteInput.val( autoCompleteDropSelectedValue );
-
-        // re-add click listener on down arrow
-        setTimeout( function () {
-          $els.autoCompleteOpenTrigger.off().on( 'click', _handleDropdownClick );
-        }, 100 );
+        // remove class on container
         $els.autoCompleteContainer.removeClass( 'autocomplete-open' );
+        // remove class on body
         $( 'body' ).removeClass( 'modal-open' );
       },
-      beforeRender: function ( container, suggestions ) {
+      beforeRender: function ( container ) {
         // add a class to the container
         $els.autoCompleteContainer.addClass( 'autocomplete-open' );
-
-        console.log('before ' + $els.autoCompleteContainer);
-
         // add a class to the body on mobile to prevent bg scrolling
         if( $( window ).width() < 768 ) {
           $( 'body' ).addClass( 'modal-open' );
         }
-
         // add a class to the previously selected item
         $( '.autocomplete-suggestions' ).find( '.autocomplete-suggestion:contains("' +
           autoCompleteDropSelectedValue + '")' ).addClass(
           'selected' );
 
-        // append 'add a customer' button if we have suggestions
-        $( container )
-          .append(
-            '<div class="text-center autocomplete-suggestion-footer"><a href="#" id="autocomplete-footer-cta" class="link-primary">View all results</a></div>'
-          );
+        // NOTE :: we shouldn't need the below in this treatment but leaving for now just in case
+        // append button if we have suggestions
+        // $( container )
+        //   .append(
+        //     '<div class="text-center autocomplete-suggestion-footer"><a href="#" id="autocomplete-footer-cta" class="link-primary">View all results</a></div>'
+        //   );
 
         // hide suggestions when apended link is clicked
-        $( '#autocomplete-footer-cta' ).on( 'click', function ( e ) {
-          e.preventDefault();
-          $els.autoCompleteInput.autocomplete( 'hide' );
-        } );
+        // $( '#autocomplete-footer-cta' ).on( 'click', function ( e ) {
+        //   e.preventDefault();
+        //   $els.autoCompleteInput.autocomplete( 'hide' );
+        // } );
 
         // a new modal trigger was just created, let's tell everyone about it
-        setTimeout( function () {
-          $( document ).trigger( 'newModalsAvailable' );
-        }, 0 );
+        // setTimeout( function () {
+        //   $( document ).trigger( 'newModalsAvailable' );
+        // }, 0 );
       },
-      appendTo: $els.autoCompleteParent,
-      width: $els.autoCompleteParent.width(),
+      appendTo: $els.autoCompleteContainer,
+      width: $els.autoCompleteParent.outerWidth(true),
       showOnFocus: true,
       minChars: 0,
-      maxHeight: $( window ).height() / 2,
+      maxHeight: autoCompleteMaxHeight,
       showNoSuggestionNotice: true,
-      noSuggestionNotice: '<h6>No matches for that name</h6><p>Please check your entry and try again, or add a new customer below.</p>',
+      noSuggestionNotice: '<h6>No matches for that name</h6><p>Please check your entry and try again.</p>',
       triggerSelectOnValidInput: true,
       preserveInput: true,
       autoSelectFirst: true,
@@ -159,7 +127,7 @@ var ContactsDemo = (function () {
   };
 
   ///////////////////////////////////
-  // FUCNTIONS
+  // FUNCTIONS
   ///////////////////////////////////
 
   // Toggle disableable links
@@ -174,11 +142,11 @@ var ContactsDemo = (function () {
 
   // AUTOCOMPLETE
    // handle customer dropdown arrow click
-  var _handleDropdownClick = function ( e ) {
-    e.preventDefault();
-    $els.autoCompleteOpenTrigger.off();
-    $els.autoCompleteInput.focus();
-  };
+  // var _handleDropdownClick = function ( e ) {
+  //   e.preventDefault();
+  //   $els.autoCompleteOpenTrigger.off();
+  //   $els.autoCompleteInput.focus();
+  // };
 
 
 
