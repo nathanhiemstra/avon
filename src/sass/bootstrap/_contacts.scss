@@ -6,28 +6,41 @@
       background-color: $white;
       z-index: $zindex-affix;
       background-color: $white;
+      box-shadow: $box-shadow;
+      border-bottom: $border-width solid $list-group-border;
 
-      &:after {
-        content: " ";
-        height: 40px;
-        width: 100%;
-        display: block;
+      .actions-secondary {
+        border-top: none;
+        border-bottom: none;
       }
 
-      + .container .affix-table-header {
-        th {
-          position: relative;
+      // &:after {
+      //   content: " ";
+      //   height: 40px;
+      //   width: 100%;
+      //   display: block;
+      // }
 
-          .th-label {
-            position: fixed;
-            z-index: $zindex-affix + 1;
-            top: 72px;
-            padding-top: 10px;
-          }
-        }
-      }
+      // + .container .affix-table-header {
+      //   th {
+      //     position: relative;
+
+      //     .th-label {
+      //       position: fixed;
+      //       z-index: $zindex-affix + 1;
+      //       top: 72px;
+      //       padding-top: 10px;
+      //     }
+      //   }
+      // }
+
     }
   }
+}
+
+.actions-secondary {
+  border-top: $border-width solid $list-group-border;
+  border-bottom: $border-width solid $list-group-border;
 }
 
 .table-contact-list {
