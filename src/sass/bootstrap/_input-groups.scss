@@ -104,6 +104,11 @@
   }
 
   // Sizing
+
+  &.input-xs {
+    padding: $padding-xs-vertical $padding-xs-horizontal;
+  }
+
   &.input-sm {
     padding: $padding-small-vertical $padding-small-horizontal;
     font-size: $font-size-small;

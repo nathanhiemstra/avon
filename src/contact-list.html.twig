@@ -20,20 +20,7 @@
 
 
           <!-- START - AUTOCOMPLETE -->
-          {# <div class="modal-header">
-            <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
-              <span class="sr-only">Close modal</span>
-              <span class="lt-icon lt-close lt-large py-1"></span>
-            </button>
-            <h4 class="modal-title text-center">Select a Mentor</h4>
-          </div> #}
 
-          <div class="form-group has-feedback {{ formGroupClasses }}">
-            <label class="control-label" for="autocomplete-contact-list">Name or referral code</label>
-            <input type="text" class="form-control" id="autocomplete-contact-list" placeholder="Search" value="">
-            <span class="lt-icon lt-triangle-down form-control-feedback"></span>
-            <span class="lt-icon lt-close lt-medium form-control-feedback"></span>
-          </div>
           <!-- END - AUTOCOMPLETE -->
 
 
@@ -41,10 +28,26 @@
           <div class="d-flex align-items-center flex-wrap">
             <form class="form-inline mb-4 mr-5">
               <div class="input-group mt-3 mt-sm-0">
-                <div class="input-group">
-                  <span class="input-group-addon"><span class="lt-icon lt-search lt-large"></span></span>
-                  <input type="text" class="form-control input-lg has-addon-after" placeholder="Search my team...">
-                  <span class="input-group-addon addon-after">
+                <div class="input-group autocomplete-container">
+                  <span class="input-group-addon input-xs"><span class="lt-icon lt-search lt-large"></span></span>
+                  {# <input type="text" class="form-control input-lg has-addon-after" placeholder="Search my team..."> #}
+
+                  {% include components.elements.forms.input with {
+                    id: 'autocomplete-contact-list',
+                    classes: 'input-sm has-addon-after',
+                    type: 'text',
+                    required: null,
+                    haslabelErrorIcon: true,
+                    hasInlineErrorIcon: null,
+                    hasAbsoluteErrorIcon: null,
+                    theValue: null,
+                    placeholder: 'Search my team...'
+                  } %}
+                  <span class="lt-icon lt-triangle-down form-control-feedback"></span>
+                  <span class="lt-icon lt-close lt-medium form-control-feedback"></span>
+
+
+                  <span class="input-group-addon addon-after input-xs">
                     <div class="input-group-btn">
                       <span class="btn btn-sm btn-link dropdown-toggle" data-toggle="dropdown">
                         <span class="h7 link-muted">By name</span> <span class="caret"></span>
