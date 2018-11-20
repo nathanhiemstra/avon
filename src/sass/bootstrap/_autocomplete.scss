@@ -410,7 +410,7 @@ $customer-select-break: $screen-sm-min;
 
 .navbar--primary-nav {
   .autocomplete-suggestions {
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: $box-shadow;
 
     .autocomplete-suggestion {
       border-bottom: 1px solid $table-border-color;

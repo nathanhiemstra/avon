@@ -3,93 +3,105 @@
 // --------------------------------------------------
 
 .label {
-    display: inline;
-    padding: .2em .6em .3em;
-    font-size: 75%;
-    text-transform: uppercase;
-    line-height: 1;
-    color: $label-color;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .25em;
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  text-transform: uppercase;
+  line-height: 1;
+  color: $label-color;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
 
-    // [converter] extracted a& to a.label
+  // [converter] extracted a& to a.label
 
-    // Empty labels collapse automatically (not available in IE8)
-    &:empty {
-        display: none;
-    }
+  // Empty labels collapse automatically (not available in IE8)
+  &:empty {
+    display: none;
+  }
 
-    // Quick fix for labels in buttons
-    .btn & {
-        position: relative;
-        top: -1px;
-    }
+  // Quick fix for labels in buttons
+  .btn & {
+    position: relative;
+    top: -1px;
+  }
 }
 
 // Add hover effects, but only for links
 a.label {
-    &:hover,
-    &:focus {
-        color: $label-link-hover-color;
-        text-decoration: none;
-        cursor: pointer;
-    }
+  &:hover,
+  &:focus {
+    color: $label-link-hover-color;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 
 // Colors
 // Contextual variations (linked labels get darker on :hover)
 
+.label {
+  font-size: $font-size-small;
+  text-transform: uppercase;
+  font-weight: $headings-font-weight-heavy;
+  letter-spacing: 0.8px;
+}
+
 .label-default {
-    @include label-variant($label-default-bg);
-    color: $text-muted;
+  @include label-variant($label-default-bg);
+
+  color: $text-muted;
 }
 
 .label-primary {
-    @include label-variant($label-primary-bg);
+  @include label-variant($label-primary-bg);
+}
+
+.label-secondary {
+  @include label-variant($label-secondary-bg);
 }
 
 .label-success {
-    @include label-variant($label-success-bg);
+  @include label-variant($label-success-bg);
 }
 
 .label-info {
-    @include label-variant($label-info-bg);
+  @include label-variant($label-info-bg);
 }
 
 .label-warning {
-    @include label-variant($label-warning-bg);
+  @include label-variant($label-warning-bg);
 }
 
 .label-danger {
-    @include label-variant($label-danger-bg);
+  @include label-variant($label-danger-bg);
 }
 
 .label-utility {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 // Button Sizes
 // --------------------------------------------------
 
 .label-default {
-    // line-height: ensure even-numbered height of button next to large input
-    @include button-size($btn-padding-large-vertical, $btn-padding-large-horizontal, $font-size-base, $line-height-large, $btn-border-radius-large);
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($btn-padding-large-vertical, $btn-padding-large-horizontal, $font-size-base, $line-height-large, $btn-border-radius-large);
 }
 
 .label-lg {
-    // line-height: ensure even-numbered height of button next to large input
-    @include button-size($btn-padding-large-vertical, $btn-padding-large-horizontal, $font-size-base, $line-height-large, $btn-border-radius-large);
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($btn-padding-large-vertical, $btn-padding-large-horizontal, $font-size-base, $line-height-large, $btn-border-radius-large);
 }
 
 .label-sm {
-    // line-height: ensure proper height of button next to small input
-    @include button-size($btn-padding-small-vertical, $btn-padding-small-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+  // line-height: ensure proper height of button next to small input
+  @include button-size($btn-padding-small-vertical, $btn-padding-small-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
 }
 
 .label-xs {
-    @include button-size($btn-padding-xs-vertical, $btn-padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+  @include button-size($btn-padding-xs-vertical, $btn-padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
 }
 
 // absolute position label
