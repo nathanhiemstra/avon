@@ -2,7 +2,7 @@
   <td class="t-checkbox t-row-1 t-col-start pr-0">
     {% include "_includes/elements/forms/checkbox.html.twig" with { checked: false, classes: 'input-sm ', wrapLabel: true } %}
   </td>
-  <td class="t-first-name t-row-1 t-inline t-col-sibling-left pl-0">
+  <td class="t-first-name t-row-1 t-inline t-col-sibling-left pl-0X">
     <a href="#" class="link-secondary link-underline">Firstname</a>
   </td>
   <td class="t-last-name t-row-1 t-inline"><a href="#" class="link-secondary link-underline">Lastnameislong</a></td>
@@ -19,8 +19,8 @@
     {% endif %}
   </td>
   <td class="t-groups t-row-2 t-block t-col-sibling-left">
-    {% if groupName %}<div class="d-block"><span class="label label-info">{{ groupName }}</span></div>{% endif %}
-    {% if groupName2 %}<div class="d-block"><span class="label label-info">{{ groupName2 }}</span></div>{% endif %}
+    {% if groupName %}<div class="d-block"><span class="label label-secondary">{{ groupName }}</span></div>{% endif %}
+    {% if groupName2 %}<div class="d-block"><span class="label label-secondary">{{ groupName2 }}</span></div>{% endif %}
   </td>
 
   <!-- END - For "Customer List" only -->
@@ -34,7 +34,7 @@
   <td class="t-actions t-row-1 t-self-end">
 
     <div class="btn-group">
-      <a href="javascript:void(0)" data-toggle="dropdown" class="link-secondary">•••</span>
+      <a href="javascript:void(0)" data-toggle="dropdown" class="link-secondary"><span class="lt-icon lt-ellipsis lt-large"></span></span>
       <ul class="dropdown-menu pull-right">
         <li><a href="#">Lorem</a></li>
         <li><a href="#">Ipsum</a></li>
