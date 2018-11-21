@@ -57,7 +57,9 @@ var ContactsDemo = (function () {
       // clear input on focus
       $els.autoCompleteInput.val('');
     } ).on( 'blur', function () {
-      // $els.autoCompleteInput.autocomplete('hide');
+      setTimeout(function() {
+        $els.autoCompleteInput.autocomplete('hide');
+      }, 100);
     } );
 
     // NOTE :: for demo only, in production with real data, this button will show and hide when autocoimplete is open
