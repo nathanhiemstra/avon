@@ -18,17 +18,26 @@ var NbaDrawer = (function() {
       nbaTotalSlidesTxt: $('#nbaCarousel .carousel-index > .total-slides'),
       nbaBadgeTxt: $('#nbaDrawer .badge.item-count'),
       nbaMessaging: $('#nbaCarousel .carousel-msg'),
-      nbaMsgSuccessTxt: $('#nbaCarousel .carousel-msg .carousel-msg_success'),
+      nbaMsgCover: $('#nbaCarousel .carousel-msg .carousel-msg_cover'),
       nbaMsgCompleteTxt: $('#nbaCarousel .carousel-msg .carousel-msg_complete'),
     };
 
-    // expand drawer by default on desktop
-    if($(window).width() > 940) {
-      $els.nbaDrawer.addClass('drawer-expanded');
-    }
+    _checkWindowSize();
+    $(window).on('resize', function() {
+      _checkWindowSize();
+    });
 
     // initialize the carousel
     _initCarousel();
+  };
+
+  var _checkWindowSize = function() {
+    // expand drawer by default on desktop, collapse on mobile
+    if($(window).width() < 768) {
+      $els.nbaDrawer.removeClass('drawer-expanded');
+    } else {
+      $els.nbaDrawer.addClass('drawer-expanded');
+    }
   };
 
   var _initCarousel = function(startIndex) {
@@ -105,21 +114,23 @@ var NbaDrawer = (function() {
     } else {
       // Show success message, then re-init
       $els.nbaMessaging.addClass('reveal');
-      $els.nbaMsgSuccessTxt.addClass('reveal');
+      $els.nbaMsgCover.addClass('reveal');
 
       // hide success message after 3 seconds
       setTimeout(function() {
         $els.nbaMessaging.removeClass('reveal');
-        $els.nbaMsgSuccessTxt.removeClass('reveal');
+        $els.nbaMsgCover.removeClass('reveal');
 
         // remove the active element and add class to next
+        setTimeout(function() {
+        }, 250);
         activeEl.remove();
         nextEl.addClass('active');
 
         // reset carousel
         $els.nbaCarousel.carousel('pause').removeData();
         _initCarousel(nextIndexInit);
-      }, 3000);
+      }, 250);
 
     }
   };
