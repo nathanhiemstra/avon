@@ -44,6 +44,13 @@
 }
 
 .table-contact-list {
+  .label {
+    padding-top: .3em;
+    padding-bottom: .3em;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+
   $left-col-width: 30px;
 
   > .table {
@@ -79,25 +86,67 @@
     }
 
     .t-customer-type {
-      .customer-type--label {
-        @extend .visible-xs;
+      .customer-type--icon {
+        display: none;
       }
 
-      @media (max-width: $screen-sm) {
-        .customer-type--icon {
+      @media (min-width: $screen-md) {
+        padding-right: 0;
+
+        .customer-type--label {
           display: none;
+        }
+
+        .customer-type--icon {
+          display: block;
         }
       }
     }
 
-    @media (min-width: $screen-sm) and (max-width: $screen-md) {
-      .t-gen {
-        padding-right: 0;
+    @media (min-width: $screen-md) {
+      .t-key {
+        display: none;
+      }
+    }
+
+    @media (max-width: $screen-md) {
+      .t-first-name {
+        padding-right: 3px;
+      }
+    }
+
+    .t-last-name {
+      .truncate {
+        width: 40vw;
+      }
+    }
+
+    .t-email {
+      .truncate {
+        width: 72vw;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      // .t-gen {
+      //   padding-right: 0;
+      // }
+
+      .t-first-name {
+        .truncate {
+          width: 9vw;
+        }
+      }
+
+      .t-last-name {
+        .truncate {
+          width: 9vw;
+        }
       }
 
       .t-email {
         .truncate {
-          width: 8vw;
+          width: 7vw;
         }
       }
     }

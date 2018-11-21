@@ -24,37 +24,38 @@
             <span class="d-none">Select</span>
           </th>
           <th class="t-first-name">
-            <i class="th-label">First Name</i>
+            <span class="th-label">First Name</span>
           </th>
           <th class="t-last-name">
-            <i class="th-label">Last Name</i>
+            <span class="th-label">Last Name</span>
           </th>
+           {% if contactType == 'team' %}
+          <!-- START - For "Team List" only -->
+          <th class="t-upline">
+            <span class="th-label">Upline</span>
+          </th>
+          <th class="t-gen">
+            <span class="th-label">Gen.</span>
+          </th>
+
+          <!-- END - For "Team List" only -->
+        {% endif %}
           <th class="t-phone">
-            <i class="th-label">Phone</i>
+            <span class="th-label">Phone</span>
           </th>
           <th class="t-email">
-            <i class="th-label">Email</i>
+            <span class="th-label">Email</span>
           </th>
         {% if contactType == 'customer' %}
           <!-- START - For "Customer List" only -->
           <th class="t-online-customer">
-            <i class="th-label">Online Customer</i>
-          </th>
-          <th class="t-groups">
-            <i class="th-label">Groups</i>
+            <span class="th-label">Online Customer</span>
           </th>
           <!-- END - For "Customer List" only -->
         {% endif %}
-        {% if contactType == 'team' %}
-          <!-- START - For "Team List" only -->
-          <th class="t-upline">
-            <i class="th-label">Upline</i>
+          <th class="t-groups">
+            <span class="th-label">Group(s)</span>
           </th>
-          <th class="t-gen">
-            <i class="th-label">Gen.</i>
-          </th>
-          <!-- END - For "Team List" only -->
-        {% endif %}
           <th class="t-actions">
             <span class="d-none">Actions</span>
           </th>
@@ -62,31 +63,13 @@
       </thead>
       <tbody>
         {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: true, groupName: 'GroupName' } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: true } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
+        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: true, longFirstName: 'islong' } %}
+        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false, longLastName: 'isverylong'} %}
         {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false, groupName: 'GroupName', groupName2: 'GroupName' } %}
         {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false, groupName: 'Longtitle Group Name' } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
+        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false, longFirstName: 'islong', longLastName: 'issoooooverylong'} %}
+        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false, longContactName: 'issooolong' } %}
+
       </tbody>
     </table>
   </div>

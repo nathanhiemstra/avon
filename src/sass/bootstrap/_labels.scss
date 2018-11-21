@@ -26,6 +26,12 @@
     position: relative;
     top: -1px;
   }
+
+  &.label-wrap {
+    white-space: normal;
+    display: inline-block;
+    text-align: left;
+  }
 }
 
 // Add hover effects, but only for links
