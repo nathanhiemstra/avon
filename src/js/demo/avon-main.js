@@ -97,17 +97,18 @@ $( document ).ready( function () {
     var targetEl = $( targetId );
     var isDrawerTypeHidden = targetEl.hasClass( 'drawer-hidden' );
     var isExpanded = targetEl.hasClass( 'drawer-expanded' );
+    var hideBackdrop = targetEl.hasClass( 'drawer-no-backdrop' );
 
     var backdropAdded = $( '.drawer-backdrop' ).length;
     var backdropDiv;
 
-    if( backdropAdded ) {
+    if( backdropAdded || hideBackdrop ) {
       $( '.drawer-backdrop' ).remove();
     } else {
       backdropDiv = $( '<div class="drawer-backdrop in"></div>' ).appendTo( $objects.globalHeader );
     }
 
-    $objects.html.toggleClass( 'drawer-open' );
+    if(!hideBackdrop) $objects.html.toggleClass( 'drawer-open' );
 
     if( isDrawerTypeHidden ) {
       // backdropDiv.toggleClass('fade').toggleClass('in');
@@ -433,5 +434,6 @@ $( document ).ready( function () {
   if( typeof MessageCenter !== 'undefined' ) MessageCenter.init();
   if( typeof Sticky !== 'undefined' ) Sticky.init();
   if( typeof TogglePasswordVisibility !== 'undefined' ) TogglePasswordVisibility.init();
+  if( typeof NbaDrawer !== 'undefined' ) NbaDrawer.init();
 
 } );

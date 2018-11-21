@@ -1,8 +1,8 @@
 // prevent background scrolling when drawer open
 html {
-    &.drawer-open {
-        overflow-y: hidden;
-    }
+  &.drawer-open {
+    overflow-y: hidden;
+  }
 }
 
 .drawer,
@@ -23,6 +23,10 @@ html {
 
   &:not(.reverse-bg) {
     background-color: $body-bg;
+
+    &.drawer-compact {
+      background-color: transparent;
+    }
   }
 
   @include box-shadow(0 -1px 9px rgba(0, 0, 0, 0.175));
@@ -121,8 +125,8 @@ html {
   }
 
   &-hidden {
-      // TODO :: hiding this temporarily
-      display: none;
+    // TODO :: hiding this temporarily
+    display: none;
     height: 100vh;
     opacity: 0;
     pointer-events: none;
@@ -166,7 +170,6 @@ html {
         }
       }
     }
-
   }
 
   &-fixed-top {
@@ -181,7 +184,189 @@ html {
   &-fixed-bottom {
     bottom: 0;
   }
+}
 
+/*
+
+DRAWER COMPACT
+
+*/
+
+// config
+$drawer-compact-summary-height: 40px;
+$drawer-compact-summary-max-width: 320px;
+$drawer-compact-max-width: 420px;
+$drawer-compact-min-height: 350px;
+
+.drawer-compact {
+  box-shadow: none;
+  height: $drawer-compact-summary-height;
+  min-height: $drawer-compact-summary-height;
+
+  .drawer-summary,
+  .drawer-content {
+    background-color: $body-bg;
+  }
+
+  .drawer-summary {
+    width: 100%;
+    max-width: $drawer-compact-summary-max-width;
+    height: $drawer-compact-summary-height;
+    min-height: $drawer-compact-summary-height;
+    background-color: $black;
+    color: $white;
+    transition: 0.5s max-width $ui-animation-ease;
+    @include box-shadow(0 -1px 9px rgba(0, 0, 0, 0.175));
+
+    .lt-carat-up {
+      transform: scaleY(1);
+      transition: 0.5s transform $ui-animation-ease;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      max-width: $drawer-compact-summary-max-width;
+    }
+  }
+
+  .drawer-content {
+    position: relative;
+    @include box-shadow(0 9px 9px rgba(0, 0, 0, 0.175));
+
+    .carousel {
+      position: relative;
+      height: 100%;
+
+      .carousel-inner {
+        height: 100%;
+
+        .item {
+          height: 100%;
+        }
+      }
+
+      .carousel-controls {
+        height: $drawer-compact-summary-height;
+        opacity: 0;
+        transition: 0.5s 0.3s opacity;
+
+        .container-fluid {
+          display: flex;
+          height: 100%;
+          justify-content: space-between;
+
+          @media (min-width: $screen-sm-min) {
+            justify-content: start;
+          }
+
+          &:before,
+          &:after {
+            display: none;
+          }
+
+          .left {
+            order: 1;
+          }
+          .carousel-index {
+            order: 2;
+
+            @media (min-width: $screen-sm-min) {
+              order: 3;
+            }
+          }
+          .right {
+            order: 3;
+
+            @media (min-width: $screen-sm-min) {
+              order: 2;
+            }
+          }
+        }
+
+        a:hover {
+          text-decoration: none;
+        }
+
+        .current-slide,
+        .total-slides {
+          display: inline-block;
+          min-width: 10px;
+          text-align: right;
+          transition: 0.5s all $ui-animation-ease;
+        }
+      }
+
+      .carousel-msg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - #{$drawer-compact-summary-height});
+        opacity: 0;
+        transform: translateY(10px);
+        background-color: $body-bg;
+        pointer-events: none;
+        transition: $ui-animation-time * 3 opacity,
+          $ui-animation-time * 3 transform ease;
+
+        .carousel-msg_success,
+        .carousel-msg_complete {
+          display: none;
+          align-items: center;
+
+          &.reveal {
+            display: flex;
+          }
+        }
+
+        &.reveal {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  &.drawer-expanded {
+    // doesn't expand to full height
+    @media (min-width: $screen-sm-min) {
+      min-height: $drawer-compact-min-height;
+      overflow: hidden;
+    }
+
+    // show the drawer 'summary' at all times
+    .drawer-summary {
+      display: block;
+      max-width: 100%;
+
+      @media (min-width: $screen-sm-min) {
+        max-width: $drawer-compact-summary-max-width;
+      }
+
+      .lt-carat-up {
+        transform: scaleY(-1);
+      }
+    }
+
+    .drawer-content {
+      height: calc(100% - #{$drawer-compact-summary-height});
+      min-height: calc(100% - #{$drawer-compact-summary-height});
+
+      @media (min-width: $screen-sm-min) {
+        // overflow-y: hidden;
+      }
+
+      .carousel {
+        .carousel-controls {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    width: 50%;
+    max-width: $drawer-compact-max-width;
+  }
 }
 
 // TODO :: make this a drawer class, fixed top but not 100 vertical height content?
