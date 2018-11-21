@@ -40,7 +40,11 @@ var ContactsDemo = (function () {
     });
 
     // AUTO COMPLETE
-    autoCompleteMaxHeight = $( window ).height() - $('.modal-header').outerHeight(true) - $('.contact-list-autocomplete > .input-group').outerHeight(true) - 15;
+    if( $( window ).width() < 768 ) {
+      autoCompleteMaxHeight = $( window ).height() - $('.modal-header').outerHeight(true) - $('.contact-list-autocomplete > .input-group').outerHeight(true) - 15;
+    } else {
+      autoCompleteMaxHeight = 256;
+    }
     // get current value for input
     // DEV NOTE :: demo only, this will be different in production
     autoCompleteDropSelectedValue = 'Ms. Happyfancy';
@@ -53,7 +57,7 @@ var ContactsDemo = (function () {
       // clear input on focus
       $els.autoCompleteInput.val('');
     } ).on( 'blur', function () {
-      $els.autoCompleteInput.autocomplete('hide');
+      // $els.autoCompleteInput.autocomplete('hide');
     } );
 
     // NOTE :: for demo only, in production with real data, this button will show and hide when autocoimplete is open
@@ -113,15 +117,16 @@ var ContactsDemo = (function () {
       },
       appendTo: $els.autoCompleteContainer,
       width: $els.autoCompleteParent.outerWidth(true),
-      showOnFocus: true,
       minChars: 0,
       maxHeight: autoCompleteMaxHeight,
       showNoSuggestionNotice: true,
       noSuggestionNotice: '<h6>No matches for that name</h6><p>Please check your entry and try again.</p>',
       triggerSelectOnValidInput: true,
-      preserveInput: true,
-      autoSelectFirst: true,
-      tabDisabled: true
+      autoSelectFirst: true
+      // showOnFocus: false,
+      // autoSelectFirst: true,
+      // preserveInput: true,
+      // tabDisabled: true
     } );
 
   };

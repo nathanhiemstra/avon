@@ -158,9 +158,6 @@ $customer-select-break: $screen-sm-min;
         margin-top: 0;
         padding-bottom: 0;
         overflow: auto;
-        max-height: 204px !important;
-
-        // override inline style added by autocomplete plugin
       }
     }
 
@@ -172,6 +169,18 @@ $customer-select-break: $screen-sm-min;
       }
     }
   }
+
+  &:not(.contact-list-autocomplete) {
+    &.autocomplete-open {
+      .autocomplete-suggestions {
+        // DESKTOP STATE
+        @media (min-width: $customer-select-break) {
+          max-height: 204px !important;
+        }
+      }
+    }
+  }
+
 }
 
 .autocomplete-suggestions {
@@ -338,8 +347,9 @@ $customer-select-break: $screen-sm-min;
 //
 // CONTACT LIST SPECIFIC
 //
-
+// .customer-select-autocomplete.autocomplete-open .autocomplete-suggestions
 .contact-list-autocomplete {
+
   .input-group {
     input,
     .input-group-addon {
@@ -358,10 +368,6 @@ $customer-select-break: $screen-sm-min;
 
     .autocomplete-suggestions {
       overflow-y: scroll;
-      max-height: auto !important; // necessary to override js
-      @media (min-width: $customer-select-break) {
-        max-height: 256px !important; // necessary to override js
-      }
     }
 
     // .autocomplete-suggestion-footer {
