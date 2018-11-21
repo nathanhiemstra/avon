@@ -40,11 +40,16 @@ var ContactsDemo = (function () {
     });
 
     // AUTO COMPLETE
-    if( $( window ).width() < 768 ) {
-      autoCompleteMaxHeight = $( window ).height() - $('.modal-header').outerHeight(true) - $('.contact-list-autocomplete > .input-group').outerHeight(true) - 15;
-    } else {
-      autoCompleteMaxHeight = 256;
-    }
+    var resizeTimer;
+    $(window).on('resize', function() {
+      clearTimeout(resizeTimer);
+      // debounce
+      resizeTimer = setTimeout(function() {
+        _checkWindowSize();
+      }, 250);
+    });
+    _checkWindowSize();
+
     // get current value for input
     // DEV NOTE :: demo only, this will be different in production
     autoCompleteDropSelectedValue = 'Ms. Happyfancy';
@@ -146,6 +151,26 @@ var ContactsDemo = (function () {
       $els.actionLinksDisableable.addClass( 'link-disable' );
     }
   };
+
+
+  var _checkWindowSize = function() {
+    var autoCompleteOpen = $els.autoCompleteContainer.hasClass('autocomplete-open');
+    if ($(window).width() < 768) {
+      // resizing to mobile
+      autoCompleteMaxHeight = $( window ).height() - $('.modal-header').outerHeight(true) - $('.contact-list-autocomplete > .input-group').outerHeight(true) - 15;
+      if (autoCompleteOpen) $('body').addClass('modal-open');
+    } else {
+      // resizing to desktop
+      autoCompleteMaxHeight = 256;
+      $('body').removeClass('modal-open');
+    }
+    // reset autocomplete options
+    if($els.autoCompleteInput.autocomplete()) {
+      $els.autoCompleteInput.autocomplete().setOptions({
+        maxHeight: autoCompleteMaxHeight
+      });
+    }
+  }
 
   // AUTOCOMPLETE
    // handle customer dropdown arrow click
