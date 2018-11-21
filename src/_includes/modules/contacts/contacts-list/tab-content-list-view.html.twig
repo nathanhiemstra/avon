@@ -1,5 +1,5 @@
 <section class="affix-actions" data-spy="affix" data-offset-top="0">
-  <div class="container">
+  <div class="container pr-xs-0">
     <!-- START - SECONDARY ACTIONS  -->
     <div class="actions-secondary d-flex py-4">
       <div>
@@ -23,10 +23,10 @@
           <th class="t-checkbox">
             <span class="d-none">Select</span>
           </th>
-          <th class="t-first-name">
+          <th class="t-first-name t-primary">
             <span class="th-label">First Name</span>
           </th>
-          <th class="t-last-name">
+          <th class="t-last-name t-primary">
             <span class="th-label">Last Name</span>
           </th>
            {% if contactType == 'team' %}
@@ -49,7 +49,8 @@
         {% if contactType == 'customer' %}
           <!-- START - For "Customer List" only -->
           <th class="t-online-customer">
-            <span class="th-label">Online Customer</span>
+            <span class="th-label">Online <br>Customer</span>
+            <span class="th-label">Online <br>Customer</span>
           </th>
           <!-- END - For "Customer List" only -->
         {% endif %}

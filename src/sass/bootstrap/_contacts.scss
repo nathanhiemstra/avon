@@ -36,126 +36,162 @@
 
     }
   }
-}
 
-.actions-secondary {
-  border-top: $border-width solid $list-group-border;
-  border-bottom: $border-width solid $list-group-border;
+  .icon-sort {
+    height: 17px;
+  }
 
-  &--list {
-    > li.list-second-to-last {
-      @media (min-width: $screen-md) {
-        border-right: none;
-        padding-right: 3px;
+  .actions-primary {
+    // @media (min-width: $screen-sm) {
+    justify-content: space-between;
+
+    // }
+
+  }
+
+  .actions-secondary {
+    border-top: $border-width solid $list-group-border;
+    border-bottom: $border-width solid $list-group-border;
+
+    &--list {
+      > li.list-second-to-last {
+        @media (min-width: $screen-md) {
+          border-right: none;
+          padding-right: 3px;
+        }
+      }
+
+      .link-item {
+        &:hover {
+          text-decoration: none;
+        }
+
+        .link-secondary {
+          text-decoration: underline;
+        }
       }
     }
   }
-}
 
-.table-contact-list {
-  .label {
-    padding-top: .3em;
-    padding-bottom: .3em;
-    margin-top: 3px;
-    margin-bottom: 3px;
-  }
+  .table-contact-list {
+    .label {
+      padding-top: .3em;
+      padding-bottom: .3em;
+      margin-top: 3px;
+      margin-bottom: 3px;
+    }
 
-  $left-col-width: 30px;
+    $left-col-width: 40px;
 
-  > .table {
-    > thead {
-      .t-checkbox {
-        position: absolute;
-        overflow: hidden;
-        width: 0;
-        padding: 0;
+    > .table {
+      > thead {
+        .t-checkbox {
+          position: absolute;
+          overflow: hidden;
+          width: 0;
+          padding: 0;
+        }
       }
 
-      .t-first-name {
+      .t-checkbox {
+        @media (max-width: $screen-sm) {
+          padding-top: 5px;
+        }
+
+        .checkbox {
+          margin: 0;
+        }
+      }
+
+      .t-last-name {
         padding-left: 0;
       }
-    }
 
-    .t-checkbox {
-      @media (max-width: $screen-sm) {
-        padding-top: 5px;
+      > tbody {
+        .t-primary {
+          font-weight: bold;
+
+          @extend .medium;
+        }
+
+        @media (max-width: $screen-xs) {
+          .t-primary {
+            width: calc(100% - 55px);
+          }
+
+          .t-last-name {
+            padding-left: $left-col-width;
+          }
+        }
       }
 
-      .checkbox {
-        margin: 0;
-      }
-    }
-
-    .t-last-name {
-      padding-left: 0;
-    }
-
-    .t-phone {
-      white-space: nowrap;
-    }
-
-    .t-customer-type {
-      .customer-type--icon {
-        display: none;
+      .t-phone {
+        white-space: nowrap;
       }
 
-      @media (min-width: $screen-md) {
-        padding-right: 0;
-
-        .customer-type--label {
+      .t-customer-type {
+        .customer-type--icon {
           display: none;
         }
 
-        .customer-type--icon {
-          display: block;
+        @media (min-width: $screen-md) {
+          padding-right: 0;
+
+          .customer-type--label {
+            display: none;
+          }
+
+          .customer-type--icon {
+            display: block;
+          }
         }
       }
-    }
 
-    @media (min-width: $screen-md) {
-      .t-key {
-        display: none;
+      @media (min-width: $screen-md) {
+        .t-key {
+          display: none;
+        }
       }
-    }
 
-    @media (max-width: $screen-md) {
-      .t-first-name {
-        padding-right: 3px;
-      }
-    }
-
-    .t-last-name {
-      .truncate {
-        width: 40vw;
-      }
-    }
-
-    .t-email {
-      .truncate {
-        width: 72vw;
-      }
-    }
-
-    @media (min-width: $screen-md) {
-      // .t-gen {
-      //   padding-right: 0;
-      // }
-
-      .t-first-name {
-        .truncate {
-          width: 9vw;
+      @media (max-width: $screen-md) {
+        .t-first-name {
+          padding-right: 3px;
         }
       }
 
       .t-last-name {
         .truncate {
-          width: 9vw;
+          width: 40vw;
         }
       }
 
       .t-email {
         .truncate {
-          width: 7vw;
+          width: 72vw;
+        }
+      }
+
+      @media (min-width: $screen-md) {
+        // .t-gen {
+        //   padding-right: 0;
+        // }
+
+        .t-first-name {
+          .truncate {
+            width: 9vw;
+          }
+        }
+
+        .t-last-name {
+          .truncate {
+            width: 9vw;
+          }
+        }
+
+        .t-email {
+          .truncate {
+            width: 7vw;
+          }
         }
       }
     }
