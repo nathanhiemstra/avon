@@ -79,15 +79,30 @@
     }
 
     .t-customer-type {
-      .customer-type--label {
-        @extend .visible-xs;
+      .customer-type--icon {
+        display: none;
       }
 
-      @media (max-width: $screen-sm) {
-        .customer-type--icon {
+      @media (min-width: $screen-md) {
+        .customer-type--label {
           display: none;
         }
+
+        .customer-type--icon {
+          display: block;
+        }
       }
+
+      // .customer-type--label {
+      //   @extend .visible-xs;
+      // }
+
+      // @media (max-width: $screen-sm) {
+      //   .customer-type--icon {
+      //     display: none;
+      //   }
+      // }
+
     }
 
     @media (min-width: $screen-sm) and (max-width: $screen-md) {

@@ -6,31 +6,30 @@
     <a href="#" class="link-secondary link-underline">Firstname</a>
   </td>
   <td class="t-last-name t-row-1 t-inline"><a href="#" class="link-secondary link-underline">Lastnameislong</a></td>
+  {% if contactType == 'team' %}
+  <!-- START - For "Team List" only -->
+  <td class="t-upline t-row-3 t-block t-col-sibling-left">[contact-name]</td>
+  <td class="t-gen t-row-3 t-block t-col-sibling-left">#</td>
+  <!-- END - For "Team List" only -->
+{% endif %}
   <td class="t-phone t-row-3 t-block t-col-sibling-left">(000)000-0000</td>
   <td class="t-email t-row-3 t-block t-col-sibling-left"><div class="truncate"><a href="#" class="link-secondary link-underline">firstnamelastname@otto.com</a></div></td>
 {% if contactType == 'customer' %}
   <!-- START - For "Customer List" only -->
   <td class="t-customer-type t-row-2 t-block t-col-sibling-left">
     {% if isOnlineCustomer %}
-    <span class="customer-type--label">[customer type]</span>
+    <span class="customer-type--label">Online Customer</span>
     <span class="customer-type--icon">
       <span class="lt-icon lt-checkmark"></span>
     </span>
     {% endif %}
   </td>
-  <td class="t-groups t-row-2 t-block t-col-sibling-left">
-    {% if groupName %}<div class="d-block"><span class="label label-secondary">{{ groupName }}</span></div>{% endif %}
-    {% if groupName2 %}<div class="d-block"><span class="label label-secondary">{{ groupName2 }}</span></div>{% endif %}
-  </td>
-
   <!-- END - For "Customer List" only -->
 {% endif %}
-{% if contactType == 'team' %}
-  <!-- START - For "Team List" only -->
-  <td class="t-upline t-row-3 t-block t-col-sibling-left">[contact type]</td>
-  <td class="t-gen t-row-3 t-block t-col-sibling-left">#</td>
-  <!-- END - For "Team List" only -->
-{% endif %}
+  <td class="t-groups t-row-2 t-block t-col-sibling-left">
+    {% if groupName %}<span class="label label-secondary label-wrap">{{ groupName }}</span>{% endif %}
+    {% if groupName2 %}<span class="label label-secondary label-wrap">{{ groupName2 }}</span>{% endif %}
+  </td>
   <td class="t-actions t-row-1 t-self-end">
 
     <div class="btn-group">

@@ -29,6 +29,17 @@
           <th class="t-last-name">
             <i class="th-label">Last Name</i>
           </th>
+           {% if contactType == 'team' %}
+          <!-- START - For "Team List" only -->
+          <th class="t-upline">
+            <i class="th-label">Upline</i>
+          </th>
+          <th class="t-gen">
+            <i class="th-label">Gen.</i>
+          </th>
+
+          <!-- END - For "Team List" only -->
+        {% endif %}
           <th class="t-phone">
             <i class="th-label">Phone</i>
           </th>
@@ -40,21 +51,11 @@
           <th class="t-online-customer">
             <i class="th-label">Online Customer</i>
           </th>
-          <th class="t-groups">
-            <i class="th-label">Groups</i>
-          </th>
           <!-- END - For "Customer List" only -->
         {% endif %}
-        {% if contactType == 'team' %}
-          <!-- START - For "Team List" only -->
-          <th class="t-upline">
-            <i class="th-label">Upline</i>
+          <th class="t-groups">
+            <i class="th-label">Group(s)</i>
           </th>
-          <th class="t-gen">
-            <i class="th-label">Gen.</i>
-          </th>
-          <!-- END - For "Team List" only -->
-        {% endif %}
           <th class="t-actions">
             <span class="d-none">Actions</span>
           </th>
@@ -68,25 +69,7 @@
         {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false, groupName: 'Longtitle Group Name' } %}
         {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
         {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
-        {% include '_includes/modules/contacts/contacts-list/contacts-list-tr.html.twig' with { isOnlineCustomer: false } %}
+
       </tbody>
     </table>
   </div>
