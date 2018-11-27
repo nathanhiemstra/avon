@@ -250,6 +250,7 @@ $drawer-compact-min-height: 350px;
 
         .item {
           height: 100%;
+          transform-origin: center;
 
           > div.d-flex {
             justify-content: space-between;
@@ -291,6 +292,16 @@ $drawer-compact-min-height: 350px;
               text-align: right;
             }
           }
+
+          // dismiss animation
+          &.active.out {
+            animation: 0.35s dismiss-out forwards ease-in-out;
+          }
+
+          &.in {
+            animation: 0.4s dismiss-in forwards ease-in-out;
+          }
+
         }
       }
 
@@ -356,14 +367,14 @@ $drawer-compact-min-height: 350px;
         transform: translateY(10px);
         background-color: $body-bg;
         pointer-events: none;
-        transition: 0.25s opacity, 0.6s transform ease;
+        transition: 0.35s opacity, 0.6s transform ease;
 
         .carousel-msg_cover,
         .carousel-msg_complete {
           opacity: 0;
           pointer-events: none;
           align-items: center;
-          transition: 0.25s opacity;
+          transition: 0.35s opacity;
         }
 
         .carousel-msg_complete {
@@ -461,5 +472,29 @@ $drawer-compact-min-height: 350px;
   }
   &.drawer-expanded {
     transform: translateY(0);
+  }
+}
+
+@keyframes dismiss-in {
+  0% {
+    opacity: 0;
+    // transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    // transform: translateY(0);
+  }
+}
+
+@keyframes dismiss-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
   }
 }

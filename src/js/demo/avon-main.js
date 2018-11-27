@@ -97,18 +97,25 @@ $( document ).ready( function () {
     var targetEl = $( targetId );
     var isDrawerTypeHidden = targetEl.hasClass( 'drawer-hidden' );
     var isExpanded = targetEl.hasClass( 'drawer-expanded' );
-    var hideBackdrop = targetEl.hasClass( 'drawer-no-backdrop' );
+    var hideBackdrop = targetEl.hasClass( 'drawer-transparent-backdrop' );
 
     var backdropAdded = $( '.drawer-backdrop' ).length;
     var backdropDiv;
 
-    if( backdropAdded || hideBackdrop ) {
+    if( backdropAdded ) {
       $( '.drawer-backdrop' ).remove();
     } else {
-      backdropDiv = $( '<div class="drawer-backdrop in"></div>' ).appendTo( $objects.globalHeader );
+      backdropDiv = $( '<div class="drawer-backdrop in" href="' + targetId + '"></div>' ).appendTo( $objects.globalHeader );
     }
 
-    if(!hideBackdrop) $objects.html.toggleClass( 'drawer-open' );
+    if(hideBackdrop) {
+      $('.drawer-backdrop').addClass('transparent');
+      $('.drawer-backdrop').off().on('click', function(e) {
+        toggleDrawer($(this));
+      });
+    }
+
+    // if(!hideBackdrop) $objects.html.toggleClass( 'drawer-open' );
 
     if( isDrawerTypeHidden ) {
       // backdropDiv.toggleClass('fade').toggleClass('in');
@@ -403,7 +410,6 @@ $( document ).ready( function () {
 
   // Contact list afftx buttons
   if($(selectors.contactsList.affix).length) {
-    console.log('affix found!');
     var affix = $(selectors.contactsList.affix);
     var affixContainer = affix.parent();
     var toTop = affix.offset().top;

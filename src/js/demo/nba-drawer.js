@@ -125,6 +125,8 @@ var NbaDrawer = (function() {
       // Show success message, then re-init
       $els.nbaMessaging.addClass('reveal');
       $els.nbaMsgCover.addClass('reveal');
+      activeEl.addClass('out');
+      nextEl.addClass('in');
 
       // hide success message after 3 seconds
       setTimeout(function() {
@@ -132,15 +134,13 @@ var NbaDrawer = (function() {
         $els.nbaMsgCover.removeClass('reveal');
 
         // remove the active element and add class to next
-        setTimeout(function() {
-        }, 250);
         activeEl.remove();
         nextEl.addClass('active');
 
         // reset carousel
         $els.nbaCarousel.carousel('pause').removeData();
         _initCarousel(nextIndexInit);
-      }, 250);
+      }, 350);
 
     }
   };
