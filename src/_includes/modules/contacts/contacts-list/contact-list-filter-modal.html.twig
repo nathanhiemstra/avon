@@ -1,0 +1,240 @@
+{% extends "_layouts/modal.html.twig" %}
+{% if not modalId %}
+  {% set modalId = 'modal-contact-list-filter' %}
+{% endif %}
+
+{% set modalClasses = 'modal-either-or' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+
+  <h4 class="modal-title text-center">Filter</h4>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+<form role="form">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="form-group has-feedback">
+        {% include components.groups.forms.selectAndLabel with {
+          id: 'filter-account-status',
+          mainLabel: 'Account Status',
+          required: null,
+          haslabelErrorIcon: true,
+          hasInlineErrorIcon: null,
+          hasAbsoluteErrorIcon: null,
+          optionSelected: 0,
+          'options': [
+            {'label': 'All'},
+            {'label': 'Item 1'},
+            {'label': 'Item 2'}
+          ]
+        } %}
+      </div>
+      <div class="form-group has-feedback">
+        {% include components.groups.forms.selectAndLabel with {
+          id: 'filter-leadership-title',
+          mainLabel: 'Leadership Title',
+          required: null,
+          haslabelErrorIcon: true,
+          hasInlineErrorIcon: null,
+          hasAbsoluteErrorIcon: null,
+          optionSelected: 0,
+          'options': [
+            {'label': 'All'},
+            {'label': 'Item 1'},
+            {'label': 'Item 2'}
+          ]
+        } %}
+      </div>
+      <div class="form-group has-feedback">
+        {% include components.groups.forms.selectAndLabel with {
+          id: 'filter-presidents-club-level',
+          mainLabel: "President's Club Level" ,
+          required: null,
+          haslabelErrorIcon: true,
+          hasInlineErrorIcon: null,
+          hasAbsoluteErrorIcon: null,
+          optionSelected: 0,
+          'options': [
+            {'label': 'All'},
+            {'label': 'Item 1'},
+            {'label': 'Item 2'}
+          ]
+        } %}
+      </div>
+    </div><!-- /.col -->
+    <div class="col-xs-12 col-sm-6">
+      <div class="form-group has-feedback">
+        {% include components.groups.forms.selectAndLabel with {
+          id: 'filter-language',
+          mainLabel: 'Language',
+          required: null,
+          haslabelErrorIcon: true,
+          hasInlineErrorIcon: null,
+          hasAbsoluteErrorIcon: null,
+          optionSelected: 0,
+          'options': [
+            {'label': 'All'},
+            {'label': 'Item 1'},
+            {'label': 'Item 2'}
+          ]
+        } %}
+      </div>
+
+      <div class="form-group-wrapper">
+        <label class="control-label">Length of Association (LOA)</label>
+        <div class="form-inline-all-devices mb-4">
+          <div class="form-group">
+            {% include components.groups.forms.inputAndLabel with {
+              id: 'filter-length-of-association-all',
+              mainLabel: 'All',
+              type: 'text',
+              required: null,
+              haslabelErrorIcon: true,
+              hasInlineErrorIcon: null,
+              hasAbsoluteErrorIcon: null,
+              theValue: '0',
+              size: '3'
+            } %}
+          </div>
+          <div class="form-group">
+            {% include components.groups.forms.inputAndLabel with {
+              id: 'filter-length-of-association-and',
+              mainLabel: 'and',
+              type: 'text',
+              required: null,
+              haslabelErrorIcon: true,
+              hasInlineErrorIcon: null,
+              hasAbsoluteErrorIcon: null,
+              theValue: '999',
+              size: '3'
+            } %}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group has-feedback">
+        {% include components.groups.forms.selectAndLabel with {
+          id: 'filter-notes-added-recently',
+          mainLabel: 'Notes Added Recently',
+          required: null,
+          haslabelErrorIcon: true,
+          hasInlineErrorIcon: null,
+          hasAbsoluteErrorIcon: null,
+          optionSelected: 0,
+          'options': [
+            {'label': 'All'},
+            {'label': 'Item 1'},
+            {'label': 'Item 2'}
+          ]
+        } %}
+      </div>
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+
+</form>
+
+ {#  {% include "_includes/groups/alerts/alert-level-section-generic.twig" with {marginClasses: null } %}
+
+  <p class="my-b text-center">Add a bank account to complete sign up.</p>
+
+  <div class="form-group">
+    <label class="control-label">Name on Account</label>
+    {% include "_includes/elements/forms/input.html.twig" with {
+      type : 'text'
+    } %}
+  </div>
+
+  <div class="form-group">
+    <label class="control-label">Bank Name</label>
+    {% include "_includes/elements/forms/input.html.twig" with {
+      type : 'text'
+    } %}
+  </div>
+
+  <div class="form-group">
+    <label class="control-label">Bank Routing Number
+      <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span>
+    </label>
+    {% include "_includes/elements/forms/input.html.twig" with {
+      type : 'text'
+    } %}
+  </div>
+
+  <div class="form-group has-error">
+    <label class="control-label">{% include "_includes/elements/forms/label-error-icon.html.twig" %}Bank Account Number
+      <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span>
+    </label>
+    {% include "_includes/elements/forms/input.html.twig" with {
+      type : 'text',
+      haslabelErrorIcon: true,
+      hasInlineErrorIcon: null,
+      hasAbsoluteErrorIcon: null,
+      classes: 'form-control'
+    } %}
+  </div>
+
+
+  <!-- START - ACCOUNT TYPE RADIOS -->
+  <div class="form-group w-100">
+    <form class="form-inline" role="form">
+      <h6 class="pt-2">Account Type</h6>
+      {% include components.elements.forms.radio with {
+        id: 'account-type-checking',
+        name: 'account-type',
+        classes: 'radio-inline pl-0',
+        theLabel: 'Checking',
+        checked: true
+      } %}
+
+      {% include components.elements.forms.radio with {
+        id: 'account-type-savings',
+        name: 'account-type',
+        classes: 'radio-inline',
+        theLabel: 'Savings',
+        checked: false
+      } %}
+    </form>
+  </div>
+  <!-- END - ACCOUNT TYPE RADIOS -->
+
+  <div class="form-group">
+    <label class="control-label">Last 4 digits of SSN</label>
+    {% include "_includes/elements/forms/input.html.twig" with {
+      type: 'password',
+      maxlength: '4'
+    } %}
+  </div> #}
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-default btn-block" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    </div>
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Apply</button>
+    </div>
+  </div><!-- /.row -->
+
+
+
+{% endblock %}

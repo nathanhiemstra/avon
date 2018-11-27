@@ -97,6 +97,8 @@ $link-hover-decoration: underline !default;
 //** Global muted link color.
 $link-color-muted: $gray-medium !default;
 
+$link-color-disabled: $brand-disabled !default;
+
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
@@ -115,7 +117,7 @@ $font-size-base-input: 16px !default;
 $font-size-large: ceil($font-size-base * 1.2) !default;
 
 // 12px
-$font-size-small: ceil($font-size-base * 0.83333) !default;
+$font-size-small: ceil($font-size-base * 0.8) !default;
 
 // 40px
 
@@ -796,6 +798,9 @@ $label-default-bg: $gray-lighter !default;
 
 //** Primary label background color
 $label-primary-bg: $brand-primary !default;
+
+//** Primary label background color
+$label-secondary-bg: $gray !default;
 
 //** Success label background color
 $label-success-bg: $brand-success !default;

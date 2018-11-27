@@ -158,9 +158,6 @@ $customer-select-break: $screen-sm-min;
         margin-top: 0;
         padding-bottom: 0;
         overflow: auto;
-        max-height: 204px !important;
-
-        // override inline style added by autocomplete plugin
       }
     }
 
@@ -172,6 +169,18 @@ $customer-select-break: $screen-sm-min;
       }
     }
   }
+
+  &:not(.contact-list-autocomplete) {
+    &.autocomplete-open {
+      .autocomplete-suggestions {
+        // DESKTOP STATE
+        @media (min-width: $customer-select-break) {
+          max-height: 204px !important;
+        }
+      }
+    }
+  }
+
 }
 
 .autocomplete-suggestions {
@@ -336,6 +345,54 @@ $customer-select-break: $screen-sm-min;
 }
 
 //
+// CONTACT LIST SPECIFIC
+//
+// .customer-select-autocomplete.autocomplete-open .autocomplete-suggestions
+.contact-list-autocomplete {
+
+  .input-group {
+    input,
+    .input-group-addon {
+      transition: 0s border;
+    }
+  }
+
+  &.autocomplete-open {
+    width: 100%;
+    padding: 0;
+
+    // MOBILE STATE
+    @media (max-width: $customer-select-break) {
+      margin-top: 0 !important;
+    }
+
+    .autocomplete-suggestions {
+      overflow-y: scroll;
+    }
+
+    // .autocomplete-suggestion-footer {
+    //   display: none;
+    // }
+
+    .input-group {
+      input,
+      .input-group-addon {
+        // MOBILE STATE
+        @media (max-width: $customer-select-break) {
+          border: none;
+        }
+
+        // DESKTOP STATE
+        @media (min-width: $customer-select-break) {
+          border-bottom: none;
+          border-color: $gray;
+        }
+      }
+    }
+  }
+}
+
+//
 // PDP SPECIFIC
 //
 
@@ -359,7 +416,7 @@ $customer-select-break: $screen-sm-min;
 
 .navbar--primary-nav {
   .autocomplete-suggestions {
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: $box-shadow;
 
     .autocomplete-suggestion {
       border-bottom: 1px solid $table-border-color;

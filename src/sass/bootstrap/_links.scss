@@ -102,6 +102,15 @@
   }
 }
 
+.link-underline {
+  text-decoration: underline;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 @mixin link-plain {
   color: $link-reverse-color;
   text-transform: none;
@@ -145,6 +154,27 @@
     .lt-icon,
     .lt-icon:before {
       color: $text-muted;
+    }
+  }
+}
+
+.link-disable {
+  color: $link-color-disabled;
+  pointer-events: none;
+
+  .lt-icon,
+  .lt-icon:before {
+    color: $link-color-disabled;
+  }
+
+  &:focus,
+  &:hover {
+    color: $link-color-disabled;
+    cursor: $cursor-disabled;
+
+    .lt-icon,
+    .lt-icon:before {
+      color: $link-color-disabled;
     }
   }
 }
