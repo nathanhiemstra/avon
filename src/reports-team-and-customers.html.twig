@@ -1,0 +1,96 @@
+{% extends layouts.base %}
+
+{% set sectionClass = 'page--reports-landing' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+
+      <!-- START - CONTENT HEADER -->
+      <header class="row" role="header">
+        <div class="col-md-12 mb-2">
+          <div class="d-flex align-items-center flex-wrap">
+            <h2 class="mb-4 mr-auto">[Customer/Team] Reports</h2>
+            <div>
+              <button type="button" class="btn btn-default btn-soft btn-discourage btn-sm" data-toggle="modal" data-target="#reports-settings-modal">Settings</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- END - CONTENT HEADER -->
+
+    </section>
+
+
+    <section class="container">
+      <div class="row">
+        <div class="col-md-12 mb-2">
+
+
+          <!-- START - TAB NAVIGATION -->
+          <ul class="nav nav-tabs border-bottom">
+            <li class="active"><a href="#reports-saved" data-toggle="tab">Saved</a></li>
+
+            <!-- START - CUSTOMERS ONLY -->
+            <li><a href="#reports-all" data-toggle="tab">All</a></li>
+            <!-- END - CUSTOMERS ONLY -->
+
+            <!-- START - TEAM ONLY -->
+            <li><a href="#reports-dynamic" data-toggle="tab">Dynamic</a></li>
+            <li><a href="#reports-static" data-toggle="tab">Static</a></li>
+            <!-- END - TEAM ONLY -->
+          </ul>
+          <!-- END - TAB NAVIGATION -->
+
+
+          <!-- START - TAB CONTENT -->
+          <div class="tab-content">
+            <div class="tab-pane active" id="reports-saved">
+              Saved
+              {# {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-details.html.twig' %} #}
+            </div>
+            <div class="tab-pane" id="reports-all">
+              All
+            </div>
+            <div class="tab-pane" id="reports-dynamic">
+              Dynamic
+            </div>
+            <div class="tab-pane" id="reports-static">
+              Static
+            </div>
+          </div>
+          <!-- START - TAB CONTENT -->
+
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+  {#   <!-- START - TABLE - "CUSTOMER" EXAMPLE -->
+    {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'customer' } %}
+    <!-- END - TABLE - "CUSTOMER" EXAMPLE -->
+
+    <!-- START - TABLE - "TEAM" EXAMPLE -->
+    {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'team' } %}
+    <!-- RND - TABLE - "TEAM" EXAMPLE -->
+ #}
+  {% endblock %}
+
+  <!-- START - FILTER MODAL -->
+{#   {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal.html.twig" %} #}
+  <!-- END - FILTER MODA -->
+
+{% endblock %}
