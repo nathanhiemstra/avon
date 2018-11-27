@@ -14,31 +14,34 @@ var NbaDrawer = (function() {
     $els = {
       nbaDrawer: $('#nbaDrawer'),
       nbaCarousel: $('#nbaCarousel'),
+      nbaCarouselControls: $('#nbaCarousel .carousel-controls'),
       nbaCurrentSlideTxt: $('#nbaCarousel .carousel-index > .current-slide'),
       nbaTotalSlidesTxt: $('#nbaCarousel .carousel-index > .total-slides'),
       nbaBadgeTxt: $('#nbaDrawer .badge.item-count'),
       nbaMessaging: $('#nbaCarousel .carousel-msg'),
       nbaMsgCover: $('#nbaCarousel .carousel-msg .carousel-msg_cover'),
-      nbaMsgCompleteTxt: $('#nbaCarousel .carousel-msg .carousel-msg_complete'),
+      nbaMsgCompleteTxt: $('#nbaCarousel .carousel-msg .carousel-msg_complete')
     };
 
-    _checkWindowSize();
-    $(window).on('resize', function() {
-      _checkWindowSize();
-    });
+    // _checkWindowSize();
+    // $(window).on('resize', function() {
+    //   _checkWindowSize();
+    // });
 
     // initialize the carousel
     _initCarousel();
   };
 
-  var _checkWindowSize = function() {
-    // expand drawer by default on desktop, collapse on mobile
-    if($(window).width() < 768) {
-      $els.nbaDrawer.removeClass('drawer-expanded');
-    } else {
-      $els.nbaDrawer.addClass('drawer-expanded');
-    }
-  };
+  // DEV NOTE :: if you'd like to show the expanded state of the drawer based on some condition,
+  //          :: simply add 'drawer-expanded class as seen below
+  // var _checkWindowSize = function() {
+  //   // expand drawer by default on desktop, collapse on mobile
+  //   if($(window).width() < 768) {
+  //     $els.nbaDrawer.removeClass('drawer-expanded');
+  //   } else {
+  //     $els.nbaDrawer.addClass('drawer-expanded');
+  //   }
+  // };
 
   var _initCarousel = function(startIndex) {
     if(!startIndex) startIndex = 0;
@@ -67,7 +70,7 @@ var NbaDrawer = (function() {
     // DEV NOTE: This is for demo purposes, code may be different in production environment
     $els.nbaCarousel.find('.item').each(function() {
       var $item = $(this);
-      $item.find('a.dismiss-msg').off().on('click', function() {
+      $item.find('a.item_dismiss').off().on('click', function() {
         _dismissSlide();
       });
     });
@@ -100,6 +103,9 @@ var NbaDrawer = (function() {
 
     // re-init carousel
     if(isLastSlide) {
+      // update number of items
+      nbaTotalSlides = 0;
+
       // Show complete message
       $els.nbaMessaging.addClass('reveal');
       $els.nbaMsgCompleteTxt.addClass('reveal');
@@ -107,10 +113,14 @@ var NbaDrawer = (function() {
       // remove the active element
       activeEl.remove();
 
-      // zero-out counters
+      // zero-out counters, remove badge
       $els.nbaCurrentSlideTxt.text(0);
       $els.nbaTotalSlidesTxt.text(0);
       $els.nbaBadgeTxt.text(0);
+      $els.nbaBadgeTxt.addClass('d-none');
+
+      // update slide index
+      _updateNbaSlideIndex();
     } else {
       // Show success message, then re-init
       $els.nbaMessaging.addClass('reveal');
@@ -151,6 +161,18 @@ var NbaDrawer = (function() {
     $els.nbaCurrentSlideTxt.text(nbaCurrentSlide + 1);
     $els.nbaTotalSlidesTxt.text(nbaTotalSlides);
     $els.nbaBadgeTxt.text(nbaTotalSlides);
+
+    if(nbaTotalSlides < 1) {
+      // No current actions available
+      // add class to carousel
+      $els.nbaDrawer.addClass('no-items');
+      // hide all counters
+      $els.nbaBadgeTxt.addClass('d-none');
+      $els.nbaCarouselControls.addClass('d-none');
+      // show messaging
+      $els.nbaMessaging.addClass('reveal');
+      $els.nbaMsgCompleteTxt.addClass('reveal');
+    }
   };
 
   var _checkTarget = function(e) {

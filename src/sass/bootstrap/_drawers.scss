@@ -1,3 +1,5 @@
+$drawer-animation-duration: 0.5s;
+
 // prevent background scrolling when drawer open
 html {
   &.drawer-open {
@@ -35,7 +37,7 @@ html {
   left: 0;
   right: 0;
   z-index: $zindex-drawer-fixed;
-  transition: min-height 0.5s ease;
+  transition: min-height $drawer-animation-duration ease;
 
   .drawer-summary-header,
   .drawer-valign-middle {
@@ -131,7 +133,7 @@ html {
     opacity: 0;
     pointer-events: none;
     transform: translateY(-100vh);
-    transition: 0.5s transform ease;
+    transition: $drawer-animation-duration transform ease;
 
     .drawer-content {
       display: flex;
@@ -139,7 +141,7 @@ html {
       flex-direction: column;
       min-height: 100vh;
       overflow-y: scroll;
-      transition: 0.5s opacity ease;
+      transition: $drawer-animation-duration opacity ease;
     }
 
     @media (min-width: $screen-sm-min) {
@@ -193,15 +195,16 @@ DRAWER COMPACT
 */
 
 // config
-$drawer-compact-summary-height: 40px;
-$drawer-compact-summary-max-width: 320px;
-$drawer-compact-max-width: 420px;
+$drawer-compact-summary-height: 48px;
+$drawer-compact-summary-max-width: 285px;
+$drawer-compact-max-width: 475px;
 $drawer-compact-min-height: 350px;
 
 .drawer-compact {
   box-shadow: none;
   height: $drawer-compact-summary-height;
   min-height: $drawer-compact-summary-height;
+  left: 0;
 
   .drawer-summary,
   .drawer-content {
@@ -210,17 +213,21 @@ $drawer-compact-min-height: 350px;
 
   .drawer-summary {
     width: 100%;
-    max-width: $drawer-compact-summary-max-width;
+    max-width: 100%;
     height: $drawer-compact-summary-height;
     min-height: $drawer-compact-summary-height;
     background-color: $black;
     color: $white;
-    transition: 0.5s max-width $ui-animation-ease;
+    transition: $drawer-animation-duration max-width $ui-animation-ease;
     @include box-shadow(0 -1px 9px rgba(0, 0, 0, 0.175));
 
     .lt-carat-up {
       transform: scaleY(1);
-      transition: 0.5s transform $ui-animation-ease;
+      transition: $drawer-animation-duration transform $ui-animation-ease;
+    }
+
+    @media (min-width: $screen-xs-min) {
+      max-width: 50%;
     }
 
     @media (min-width: $screen-sm-min) {
@@ -230,6 +237,8 @@ $drawer-compact-min-height: 350px;
 
   .drawer-content {
     position: relative;
+    height: calc(100% - #{$drawer-compact-summary-height});
+    min-height: calc(100% - #{$drawer-compact-summary-height});
     @include box-shadow(0 9px 9px rgba(0, 0, 0, 0.175));
 
     .carousel {
@@ -241,13 +250,55 @@ $drawer-compact-min-height: 350px;
 
         .item {
           height: 100%;
+
+          > div.d-flex {
+            justify-content: space-between;
+          }
+
+          .item_title,
+          .item_more {
+            text-align: center;
+          }
+
+          .item_title {
+            font-size: 20px;
+          }
+
+          .item_more {
+            font-size: 16px;
+          }
+
+          .item_dismiss {
+            font-size: 14px;
+          }
+
+          @media (min-width: $screen-sm-min) {
+            > div.d-flex {
+              justify-content: center;
+            }
+
+            .item_title,
+            .item_more {
+              text-align: left;
+            }
+
+            .item_cta {
+              height: 36px;
+              line-height: 1;
+            }
+
+            .item_dismiss {
+              text-align: right;
+            }
+          }
         }
       }
 
       .carousel-controls {
         height: $drawer-compact-summary-height;
         opacity: 0;
-        transition: 0.5s 0.3s opacity;
+        transition: $drawer-animation-duration 0.3s opacity;
+        border-top: 1px solid $border-color;
 
         .container-fluid {
           display: flex;
@@ -291,7 +342,7 @@ $drawer-compact-min-height: 350px;
           display: inline-block;
           min-width: 10px;
           text-align: right;
-          transition: 0.5s all $ui-animation-ease;
+          transition: $drawer-animation-duration all $ui-animation-ease;
         }
       }
 
@@ -305,17 +356,19 @@ $drawer-compact-min-height: 350px;
         transform: translateY(10px);
         background-color: $body-bg;
         pointer-events: none;
-        transition: 0.25s opacity,
-          0.6s transform ease;
+        transition: 0.25s opacity, 0.6s transform ease;
 
         .carousel-msg_cover,
         .carousel-msg_complete {
-          display: none;
+          opacity: 0;
+          pointer-events: none;
           align-items: center;
+          transition: 0.25s opacity;
+        }
 
-          &.reveal {
-            display: flex;
-          }
+        .carousel-msg_complete {
+          font-size: 16px;
+          display: flex;
         }
 
         &.reveal {
@@ -327,10 +380,10 @@ $drawer-compact-min-height: 350px;
   }
 
   &.drawer-expanded {
+    overflow: visible;
     // doesn't expand to full height
     @media (min-width: $screen-sm-min) {
       min-height: $drawer-compact-min-height;
-      overflow: hidden;
     }
 
     // show the drawer 'summary' at all times
@@ -352,12 +405,23 @@ $drawer-compact-min-height: 350px;
       min-height: calc(100% - #{$drawer-compact-summary-height});
 
       @media (min-width: $screen-sm-min) {
-        border: 1px solid $black;
+        box-shadow: 0 0 6px 0 rgba($black, 0.16);
         border-left: none;
         border-bottom: none;
       }
 
       .carousel {
+        .carousel-msg {
+          .carousel-msg_complete {
+            opacity: 0;
+
+            &.reveal {
+              opacity: 1;
+              pointer-events: all;
+            }
+          }
+        }
+
         .carousel-controls {
           opacity: 1;
         }
@@ -368,6 +432,20 @@ $drawer-compact-min-height: 350px;
   @media (min-width: $screen-sm-min) {
     width: 50%;
     max-width: $drawer-compact-max-width;
+    left: 36px;
+  }
+
+  // no items in carousel
+  &.no-items {
+    &.drawer-expanded {
+      @media (min-width: $screen-sm-min) {
+        min-height: 230px;
+      }
+    }
+
+    .drawer-content {
+      height: 100%;
+    }
   }
 }
 

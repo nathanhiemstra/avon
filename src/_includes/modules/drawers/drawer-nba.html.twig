@@ -2,7 +2,7 @@
 <section id="nbaDrawer" class="drawer drawer-fixed-bottom drawer-compact drawer-no-backdrop">
   <!-- DRAWER SUMMARY -->
   <section class="drawer-summary">
-    <div class="container-fluid d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center h-100">
       <h6 class="d-flex align-items-center">Keep Growing <span class="badge item-count ml-2">3</span></h6>
       <a href="#nbaDrawer" data-toggle="drawer" class="ml-auto"> <span class="lt-icon lt-carat-up lt-large"></span> </a>
     </div>
@@ -12,50 +12,65 @@
   <section class="drawer-content">
     <div id="nbaCarousel" class="carousel carousel--banner slide d-flex flex-column justify-content-between" data-interval="false">
       <div class="carousel-inner">
+
         <!-- START - Repeatable carousel items -->
         <div class="item active px-4">
-          <div class="d-flex flex-column justify-content-center h-100">
-            <h6>Lipsum Title One</h6>
-            <p>
-              <span>Short Description. Est magna labore aute deserunt id adipisicing.</span>
-              <a data-target="#modal-nba-learn-more" data-toggle="modal">Learn more</a>
-            </p>
-            <div class="btn-group btn-group-50-50">
-              <div class="btn-group my-3"><a class="btn btn-primary btn-sm">Lorem Ipsum</a></div>
-              <div class="btn-group my-3 text-center"><a href="javascript:void(0)" class="dismiss-msg btn btn-link btn-sm text-normal">Got it. Done!</a></div>
+          <div class="d-flex flex-column h-100">
+            <div class="d-block d-md-none"></div>
+            <div>
+              <p class="item_title">Title One goes here lorem ipsum dolor sit amet elit consect adipiscing elit verbose</p>
+              <p class="item_more mb-3 mb-sm-5"><a class="underline" data-target="#modal-nba-learn-more" data-toggle="modal">Learn more</a></p>
+            </div>
+            <div class="btn-group btn-group-50-50 mb-3 mb-md-0">
+              <div class="btn-group">
+                <a class="item_cta btn btn-primary nowrap">Lorem Ipsum</a>
+              </div>
+              <div class="btn-group mb-3 mb-md-0 mt-4 mt-md-0 text-center">
+                <a href="javascript:void(0)" class="item_dismiss btn btn-link text-normal text-muted underline">Got it. Done!</a>
+              </div>
             </div>
           </div>
         </div>
+
         <div class="item px-4">
-          <div class="d-flex flex-column justify-content-center h-100">
-            <h6>Lipsum Title Two</h6>
-            <p>
-              <span>Short Description. Est magna labore aute deserunt id adipisicing.</span>
-              <a data-target="#modal-nba-learn-more" data-toggle="modal">Learn more</a>
-            </p>
-            <div class="btn-group btn-group-50-50">
-              <div class="btn-group my-3"><a class="btn btn-primary btn-sm">Lorem Ipsum</a></div>
-              <div class="btn-group my-3 text-center"><a href="javascript:void(0)" class="dismiss-msg btn btn-link btn-sm text-normal">Got it. Done!</a></div>
+          <div class="d-flex flex-column h-100">
+            <div class="d-block d-md-none"></div>
+            <div>
+              <p class="item_title">Title Two goes here lorem ipsum dolor sit amet elit consect adipiscing elit verbose</p>
+              <p class="item_more mb-3 mb-sm-5"><a class="underline" data-target="#modal-nba-learn-more" data-toggle="modal">Learn more</a></p>
+            </div>
+            <div class="btn-group btn-group-50-50 mb-3 mb-md-0">
+              <div class="btn-group">
+                <a class="item_cta btn btn-primary nowrap">Lorem Ipsum</a>
+              </div>
+              <div class="btn-group mb-3 mb-md-0 mt-4 mt-md-0 text-center">
+                <a href="javascript:void(0)" class="item_dismiss btn btn-link text-normal text-muted underline">Got it. Done!</a>
+              </div>
             </div>
           </div>
         </div>
+
         <div class="item px-4">
-          <div class="d-flex flex-column justify-content-center h-100">
-            <h6>Lipsum Title Three</h6>
-            <p>
-              <span>Short Description. Est magna labore aute deserunt id adipisicing.</span>
-              <a data-target="#modal-nba-learn-more" data-toggle="modal">Learn more</a>
-            </p>
-            <div class="btn-group btn-group-50-50">
-              <div class="btn-group my-3"><a class="btn btn-primary btn-sm">Lorem Ipsum</a></div>
-              <div class="btn-group my-3 text-center"><a href="javascript:void(0)" class="dismiss-msg btn btn-link btn-sm text-normal">Got it. Done!</a></div>
+          <div class="d-flex flex-column h-100">
+            <div class="d-block d-md-none"></div>
+            <div>
+              <p class="item_title">Title Three goes here lorem ipsum dolor sit amet elit consect adipiscing elit verbose</p>
+              <p class="item_more mb-3 mb-sm-5"><a class="underline" data-target="#modal-nba-learn-more" data-toggle="modal">Learn more</a></p>
+            </div>
+            <div class="btn-group btn-group-50-50 mb-3 mb-md-0">
+              <div class="btn-group">
+                <a class="item_cta btn btn-primary nowrap">Lorem Ipsum</a>
+              </div>
+              <div class="btn-group mb-3 mb-md-0 mt-4 mt-md-0 text-center">
+                <a href="javascript:void(0)" class="item_dismiss btn btn-link text-normal text-muted underline">Got it. Done!</a>
+              </div>
             </div>
           </div>
         </div>
         <!-- END - Repeatable carousel items -->
       </div>
 
-      <div class="carousel-controls border-top reverse-bg">
+      <div class="carousel-controls">
         <div class="container-fluid align-items-center">
           <a class="left" href="#nbaCarousel" data-slide="prev"> <span class="lt-icon lt-left lt-large"></span> </a>
           <a class="right" href="#nbaCarousel" data-slide="next"> <span class="lt-icon lt-right lt-large"></span> </a>
@@ -65,7 +80,11 @@
 
       <div class="carousel-msg d-flex align-items-center justify-content-center p-4">
         <div class="m-0 carousel-msg_cover"></div>
-        <h6 class="m-0 carousel-msg_complete"><span class="lt-icon lt-checkmark lt-medium mr-2"></span>You have no messages</h6>
+        <div class="m-0 carousel-msg_complete text-center flex-column">
+          <p class="w-100"><em>No current actions are available. Lorem ipsum dolor sit amet elit consect adipiscing elit verbose. Great job!</em></p>
+          <p class="w-100"><a href="#">Text link here lorem ipsum</a></p>
+        </div>
+        {# <h6 class="m-0 carousel-msg_complete"><span class="lt-icon lt-checkmark lt-medium mr-2"></span>You have no messages</h6> #}
       </div>
     </div>
     <!-- /#nbaCarousel -->
