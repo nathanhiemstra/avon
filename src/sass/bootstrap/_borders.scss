@@ -5,7 +5,7 @@
 //
 
 .remove-last-border .border-bottom:last-of-type {
-  border-bottom:0 !important;
+  border-bottom: 0 !important;
 }
 
 .border {
@@ -94,6 +94,16 @@
 
 .border-left-0 {
   border-left: 0 !important;
+}
+
+.border-x-0 {
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+
+.border-y-0 {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
 }
 
 .shadow-0 {

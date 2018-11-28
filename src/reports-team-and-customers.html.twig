@@ -12,9 +12,8 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
+    <!-- START - CONTENT HEADER -->
     <section class="container container--page">
-
-      <!-- START - CONTENT HEADER -->
       <header class="row" role="header">
         <div class="col-md-12 mb-2">
           <div class="d-flex align-items-center flex-wrap">
@@ -25,15 +24,13 @@
           </div>
         </div>
       </header>
-      <!-- END - CONTENT HEADER -->
-
     </section>
+    <!-- END - CONTENT HEADER -->
 
 
-    <section class="container">
+    <main class="container">
       <div class="row">
         <div class="col-md-12 mb-2">
-
 
           <!-- START - TAB NAVIGATION -->
           <ul class="nav nav-tabs border-bottom">
@@ -54,25 +51,29 @@
           <!-- START - TAB CONTENT -->
           <div class="tab-content">
             <div class="tab-pane active" id="reports-saved">
-              Saved
-              {# {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-details.html.twig' %} #}
+              {% include '_includes/modules/reports/landing/tab-pane-saved.html.twig' %}
             </div>
+
+            <!-- START - CUSTOMERS ONLY -->
             <div class="tab-pane" id="reports-all">
               All
             </div>
+            <!-- END - CUSTOMERS ONLY -->
+
+            <!-- START - TEAM ONLY -->
             <div class="tab-pane" id="reports-dynamic">
               Dynamic
             </div>
             <div class="tab-pane" id="reports-static">
               Static
             </div>
+            <!-- END - TEAM ONLY -->
           </div>
           <!-- START - TAB CONTENT -->
 
-
         </div>
       </div>
-    </section>
+    </main>
 
 
 
