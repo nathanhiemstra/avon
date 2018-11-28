@@ -111,14 +111,10 @@ $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 
-$font-size-base: 15px !default;
+$font-size-base: 16px !default;
 $font-size-base-input: 16px !default;
-
-// 20px
-$font-size-large: ceil($font-size-base * 1.3333) !default;
-
-// 14px
-$font-size-small: ceil($font-size-base * 0.9333) !default;
+$font-size-large: 20px !default;
+$font-size-small: 14px !default;
 
 $font-size-h1: 44px !default;
 $font-size-h1-desktop: 50px !default;
@@ -191,7 +187,7 @@ $font-size-h7-desktop: 13px !default;
 // $font-size-h7-desktop: 12px !default;
 
 //** Unit-less `line-height` for use in components like buttons.
-$line-height-base: 1.6 !default;
+$line-height-base: 1.5 !default;
 
 // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
@@ -236,6 +232,8 @@ $avatar-size-xs: 30px;
 $avatar-size-sm: 36px;
 $avatar-size-md: 48px;
 $avatar-size-lg: 140px;
+$avatar-text-adjustment: 0.75;
+$avatar-text-line-height: 1.3;
 
 //== Spacing
 //
@@ -411,7 +409,7 @@ $input-color-placeholder: #999 !default;
 $input-label-text-color: $gray;
 
 //** Form labels font size
-$input-label-font-size: 14px;
+$input-label-font-size: 15px;
 
 //** Default `.form-control` height
 $input-height-base: $line-height-computed + $padding-base-vertical * 2 + 8 !default;
@@ -597,6 +595,11 @@ $container-lg: $container-large-desktop !default;
 
 // For our '.slim' class. Any .container with a .slim parent will have this max-Width
 $container-slim-width: 460px;
+
+//== Labels
+//
+//##
+$label-font-size: 13px;
 
 //== Navbar
 //

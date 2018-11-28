@@ -10,8 +10,8 @@
     background-color: $gray;
     color: $white;
     text-transform: uppercase;
-    font-size: $avatar-size-md * 0.6667;
-    line-height: 1.55;
+    font-size: $avatar-size-md * $avatar-text-adjustment;
+    line-height: $avatar-text-line-height;
   }
 
   &.avatar--color {
@@ -50,7 +50,7 @@
     @include square($avatar-size-sm);
 
     // border-radius: $avatar-size-sm;
-    font-size: $avatar-size-sm * 0.6667;
+    font-size: $avatar-size-sm * $avatar-text-adjustment;
   }
 
   &.avatar-md {
@@ -62,6 +62,6 @@
     @include square($avatar-size-lg);
 
     // border-radius: $avatar-size-lg;
-    font-size: $avatar-size-lg * 0.6667;
+    font-size: $avatar-size-lg * $avatar-text-adjustment;
   }
 }
