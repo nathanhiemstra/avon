@@ -34,15 +34,15 @@
 
           <!-- START - TAB NAVIGATION -->
           <ul class="nav nav-tabs border-bottom">
-            <li class="active"><a href="#reports-saved" data-toggle="tab">Saved</a></li>
+            <li class=""><a href="#reports-saved" data-toggle="tab">Saved</a></li>
 
             <!-- START - CUSTOMERS ONLY -->
-            <li><a href="#reports-all" data-toggle="tab">All</a></li>
+            <li class=""><a href="#reports-all" data-toggle="tab">All</a></li>
             <!-- END - CUSTOMERS ONLY -->
 
             <!-- START - TEAM ONLY -->
-            <li><a href="#reports-dynamic" data-toggle="tab">Dynamic</a></li>
-            <li><a href="#reports-static" data-toggle="tab">Static</a></li>
+            <li class=""><a href="#reports-dynamic" data-toggle="tab">Dynamic</a></li>
+            <li class="active"><a href="#reports-static" data-toggle="tab">Static</a></li>
             <!-- END - TEAM ONLY -->
           </ul>
           <!-- END - TAB NAVIGATION -->
@@ -50,22 +50,22 @@
 
           <!-- START - TAB CONTENT -->
           <div class="tab-content">
-            <div class="tab-pane active" id="reports-saved">
+            <div class="tab-pane" id="reports-saved">
               {% include '_includes/modules/reports/landing/tab-pane-saved.html.twig' %}
             </div>
 
             <!-- START - CUSTOMERS ONLY -->
             <div class="tab-pane" id="reports-all">
-              All
+              {% include '_includes/modules/reports/landing/tab-pane-all.html.twig' %}
             </div>
             <!-- END - CUSTOMERS ONLY -->
 
             <!-- START - TEAM ONLY -->
             <div class="tab-pane" id="reports-dynamic">
-              Dynamic
+              {% include '_includes/modules/reports/landing/tab-pane-dynamic.html.twig' %}
             </div>
-            <div class="tab-pane" id="reports-static">
-              Static
+            <div class="tab-pane active" id="reports-static">
+              {% include '_includes/modules/reports/landing/tab-pane-static.html.twig' %}
             </div>
             <!-- END - TEAM ONLY -->
           </div>
