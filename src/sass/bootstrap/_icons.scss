@@ -73,6 +73,15 @@ html:hover [class^="lt-"] {
   color: $brand-primary;
 }
 
+.lt-download:before {
+  content: "\e936";
+}
+.lt-airplane:before {
+  content: "\e937";
+}
+.lt-filter:before {
+  content: "\e938";
+}
 .lt-clock:before {
   content: "\e933";
 }
@@ -82,11 +91,11 @@ html:hover [class^="lt-"] {
 .lt-print:before {
   content: "\e935";
 }
+.lt-warning-fill:before {
+  content: "\e932";
+}
 .lt-checkbox-minus:before {
   content: "\e931";
-}
-.lt-refresh:before {
-  content: "\e930";
 }
 .lt-checkbox-on:before {
   content: "\e92f";
@@ -102,6 +111,18 @@ html:hover [class^="lt-"] {
 }
 .lt-trash:before {
   content: "\e92c";
+}
+.lt-star:before {
+  content: "\e92b";
+}
+.lt-minus:before {
+  content: "\e928";
+}
+.lt-triangle-down:before {
+  content: "\e929";
+}
+.lt-right-button:before {
+  content: "\e92a";
 }
 .lt-bell:before {
   content: "\e901";
@@ -208,10 +229,6 @@ html:hover [class^="lt-"] {
 .lt-share:before {
   content: "\e922";
 }
-.lt-store {
-  font-size: 26px;
-  line-height: 0;
-}
 .lt-store:before {
   content: "\e923";
 }
@@ -226,22 +243,6 @@ html:hover [class^="lt-"] {
 }
 .lt-warning:before {
   content: "\e927";
-}
-.lt-warning-fill:before {
-  content: "\e932";
-}
-.lt-right-button:before {
-  content: "\e92a";
-}
-.lt-minus:before {
-  content: "\e928";
-}
-.lt-triangle-down:before {
-  content: "\e929";
-}
-.lt-star:before {
-  content: "\e92b";
-  color: $brand-primary;
 }
 
 

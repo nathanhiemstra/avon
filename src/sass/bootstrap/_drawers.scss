@@ -1,8 +1,10 @@
+$drawer-animation-duration: 0.5s;
+
 // prevent background scrolling when drawer open
 html {
-    &.drawer-open {
-        overflow-y: hidden;
-    }
+  &.drawer-open {
+    overflow-y: hidden;
+  }
 }
 
 .drawer,
@@ -23,6 +25,10 @@ html {
 
   &:not(.reverse-bg) {
     background-color: $body-bg;
+
+    &.drawer-compact {
+      background-color: transparent;
+    }
   }
 
   @include box-shadow(0 -1px 9px rgba(0, 0, 0, 0.175));
@@ -31,7 +37,7 @@ html {
   left: 0;
   right: 0;
   z-index: $zindex-drawer-fixed;
-  transition: min-height 0.5s ease;
+  transition: min-height $drawer-animation-duration ease;
 
   .drawer-summary-header,
   .drawer-valign-middle {
@@ -121,13 +127,13 @@ html {
   }
 
   &-hidden {
-      // TODO :: hiding this temporarily
-      display: none;
+    // TODO :: hiding this temporarily
+    display: none;
     height: 100vh;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-100vh);
-    transition: 0.5s transform ease;
+    transition: $drawer-animation-duration transform ease;
 
     .drawer-content {
       display: flex;
@@ -135,7 +141,7 @@ html {
       flex-direction: column;
       min-height: 100vh;
       overflow-y: scroll;
-      transition: 0.5s opacity ease;
+      transition: $drawer-animation-duration opacity ease;
     }
 
     @media (min-width: $screen-sm-min) {
@@ -166,7 +172,6 @@ html {
         }
       }
     }
-
   }
 
   &-fixed-top {
@@ -181,7 +186,320 @@ html {
   &-fixed-bottom {
     bottom: 0;
   }
+}
 
+/*
+
+DRAWER COMPACT
+
+*/
+
+// config
+$drawer-compact-summary-height: 48px;
+$drawer-compact-summary-max-width: 285px;
+$drawer-compact-max-width: 475px;
+$drawer-compact-min-height: 320px;
+
+.drawer-compact {
+  box-shadow: none;
+  height: $drawer-compact-summary-height;
+  min-height: $drawer-compact-summary-height;
+  left: 0;
+
+  .drawer-summary,
+  .drawer-content {
+    background-color: $body-bg;
+  }
+
+  .drawer-summary {
+    width: 100%;
+    max-width: 100%;
+    height: $drawer-compact-summary-height;
+    min-height: $drawer-compact-summary-height;
+    background-color: $black;
+    color: $white;
+    transition: $drawer-animation-duration max-width $ui-animation-ease;
+    @include box-shadow(0 -1px 9px rgba(0, 0, 0, 0.175));
+
+    [data-toggle="drawer"] {
+      cursor: pointer;
+    }
+
+    .badge {
+      transform-origin: 50% 50%;
+      will-change: transform;
+      transform: translateZ(0);
+
+      &.out {
+        animation: 0.35s badge-out forwards ease-out;
+      }
+
+      &.in {
+        animation: 0.65s badge-in forwards cubic-bezier(0.19, 1, 0.22, 1);
+      }
+    }
+
+    .lt-carat-up {
+      transform: scaleY(1);
+      transition: $drawer-animation-duration transform $ui-animation-ease;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      max-width: $drawer-compact-summary-max-width;
+    }
+  }
+
+  .drawer-content {
+    position: relative;
+    height: calc(100% - #{$drawer-compact-summary-height});
+    min-height: calc(100% - #{$drawer-compact-summary-height});
+    @include box-shadow(0 9px 9px rgba(0, 0, 0, 0.175));
+
+    .carousel {
+      position: relative;
+      height: 100%;
+
+      .carousel-inner {
+        height: 100%;
+
+        .item {
+          height: 100%;
+          transform-origin: center;
+
+          > div.d-flex {
+            justify-content: space-between;
+
+            .flex-spacer {
+              display: block;
+            }
+          }
+
+          .item-title,
+          .item-more {
+            text-align: center;
+          }
+
+          .item-title {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+
+          .item-more {
+            font-size: 16px;
+          }
+
+          .item-dismiss {
+            font-size: 14px;
+          }
+
+          @media (min-width: $screen-sm-min) {
+            > div.d-flex {
+              .flex-spacer {
+                display: none;
+              }
+            }
+
+            .item-title,
+            .item-more {
+              text-align: left;
+            }
+
+            .item-cta {
+              height: 36px;
+              line-height: 1;
+            }
+
+            .item-dismiss {
+              text-align: right;
+            }
+          }
+
+          // dismiss animation
+          &.active.out {
+            animation: 0.35s dismiss-out forwards ease-in-out;
+          }
+
+          &.in {
+            animation: 0.4s dismiss-in forwards ease-in-out;
+          }
+
+        }
+      }
+
+      .carousel-controls {
+        height: $drawer-compact-summary-height;
+        opacity: 0;
+        transition: $drawer-animation-duration 0.3s opacity;
+        border-top: 1px solid $border-color;
+        margin-bottom: 0;
+
+        @media (min-width: $screen-sm-min) {
+          border-top: 1px solid transparent;
+          margin-bottom: $spacing-3;
+        }
+
+        .container-fluid {
+          display: flex;
+          height: 100%;
+          justify-content: space-between;
+
+          @media (min-width: $screen-sm-min) {
+            justify-content: start;
+          }
+
+          &:before,
+          &:after {
+            display: none;
+          }
+
+          .left {
+            order: 1;
+          }
+          .carousel-index {
+            order: 2;
+
+            @media (min-width: $screen-sm-min) {
+              order: 3;
+            }
+          }
+          .right {
+            order: 3;
+
+            @media (min-width: $screen-sm-min) {
+              order: 2;
+            }
+          }
+        }
+
+        a:hover {
+          text-decoration: none;
+        }
+
+        .current-slide,
+        .total-slides {
+          display: inline-block;
+          min-width: 10px;
+          transform-origin: 50% 50%;
+          will-change: transform;
+          transform: translateZ(0);
+
+          &.out {
+            animation: 0.35s count-out forwards ease-out;
+          }
+
+          &.in {
+            animation: 0.65s count-in forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          }
+        }
+
+        .current-slide {
+          text-align: right;
+        }
+      }
+
+      .carousel-msg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - #{$drawer-compact-summary-height});
+        opacity: 0;
+        transform: translateY(10px);
+        background-color: $body-bg;
+        pointer-events: none;
+        transition: 0.35s opacity, 0.6s transform ease;
+
+        .carousel-msg_cover,
+        .carousel-msg_complete {
+          opacity: 0;
+          pointer-events: none;
+          align-items: center;
+          transition: 0.35s opacity;
+        }
+
+        .carousel-msg_complete {
+          font-size: 16px;
+          display: flex;
+        }
+
+        &.reveal {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  &.drawer-expanded {
+    overflow: visible;
+    // doesn't expand to full height
+    @media (min-width: $screen-sm-min) {
+      min-height: $drawer-compact-min-height;
+    }
+
+    // show the drawer 'summary' at all times
+    .drawer-summary {
+      display: block;
+      max-width: 100%;
+
+      @media (min-width: $screen-sm-min) {
+        max-width: $drawer-compact-summary-max-width;
+      }
+
+      .lt-carat-up {
+        transform: scaleY(-1);
+      }
+    }
+
+    .drawer-content {
+      height: calc(100% - #{$drawer-compact-summary-height});
+      min-height: calc(100% - #{$drawer-compact-summary-height});
+
+      @media (min-width: $screen-sm-min) {
+        box-shadow: 0 0 6px 0 rgba($black, 0.16);
+        border-left: none;
+        border-bottom: none;
+      }
+
+      .carousel {
+        .carousel-msg {
+          .carousel-msg_complete {
+            opacity: 0;
+
+            &.reveal {
+              opacity: 1;
+              pointer-events: all;
+            }
+          }
+        }
+
+        .carousel-controls {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    width: 50%;
+    max-width: $drawer-compact-max-width;
+    left: 36px;
+  }
+
+  // no items in carousel
+  &.no-items {
+    &.drawer-expanded {
+      @media (min-width: $screen-sm-min) {
+        min-height: 230px;
+      }
+    }
+
+    .drawer-content {
+      height: 100%;
+    }
+  }
 }
 
 // TODO :: make this a drawer class, fixed top but not 100 vertical height content?
@@ -196,5 +514,73 @@ html {
   }
   &.drawer-expanded {
     transform: translateY(0);
+  }
+}
+
+// NBA drawer animations
+@keyframes dismiss-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes dismiss-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+}
+
+@keyframes badge-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes badge-in {
+  0% {
+    opacity: 0.1;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes count-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes count-in {
+  0% {
+    opacity: 0.1;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }

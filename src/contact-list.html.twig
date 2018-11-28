@@ -14,74 +14,80 @@
 
     <section class="container container--page">
 
-{#       <header class="row" role="header">
-        <div class="col-md-12 d-flex flex-wrap align-items-center">
-          {% include '_includes/modules/contacts/contacts-list/contacts-list-header.html.twig' %}
-        </div>
-      </header>
- #}
-
-
       <header class="row" role="header">
-        <div class="col-md-12 d-flex align-items-center flex-wrap mb-2">
-          <h3 class="mb-3 mr-auto">Customer Contacts</h3>
-          <div class="ml-0 ml-lg-auto">
+        <div class="col-md-12 mb-2">
+          <h2 class="mb-4 mr-auto">][Customer/Team Contacts]</h2>
 
-              <form class="form-inline">
-                <a class="btn btn-default btn-soft mt-3 mt-sm-0">Add New</a>
-                <a class="btn btn-default btn-soft mt-3 mt-sm-0">Import</a>
-                <div class="input-group mt-3 mt-sm-0">
-                  <div class="input-group">
-                    <span class="input-group-addon"><span class="lt-icon lt-search lt-large"></span></span>
-                    <input type="text" class="form-control" placeholder="Search my team...">
-                  </div>
-                  <div class="input-group-btn">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-                    <ul class="dropdown-menu pull-right">
-                      <li><a href="#">Lorem</a></li>
-                      <li><a href="#">Ipsum</a></li>
-                      <li><a href="#">Dolor</a></li>
-                    </ul>
-                  </div><!-- /btn-group -->
-                </div><!-- /input-group -->
-              </form>
 
+          <!-- START - AUTOCOMPLETE -->
+          <div class="d-flex align-items-center flex-wrap actions-primary">
+            <form class="form-inline mb-4 mr-5">
+              <div class="input-group mt-3 mt-sm-0 customer-select-autocomplete contact-list-autocomplete autocomplete-container">
+                <!-- 'Modal' header for mobile autocomplete -->
+                <div class="modal-header">
+                  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+                    <span class="sr-only">Close modal</span>
+                    <span class="lt-icon lt-close lt-large py-1"></span>
+                  </button>
+                  <h4 class="modal-title text-center">Search My Team</h4>
+                </div>
+
+                <div class="input-group">
+                  <span class="input-group-addon input-xs"><span class="lt-icon lt-search lt-large"></span></span>
+
+                  {% include components.elements.forms.input with {
+                    id: 'autocomplete-contact-list',
+                    classes: 'input-sm has-addon-after',
+                    type: 'text',
+                    required: null,
+                    haslabelErrorIcon: true,
+                    hasInlineErrorIcon: null,
+                    hasAbsoluteErrorIcon: null,
+                    theValue: null,
+                    placeholder: 'Search my team...'
+                  } %}
+                  <span class="lt-icon lt-close lt-medium form-control-feedback"></span>
+
+                  <span class="input-group-addon addon-after input-xs">
+                    <div class="input-group-btn">
+                      <span class="btn btn-sm btn-link dropdown-toggle" data-toggle="dropdown">
+                        <span class="h7 link-muted">By name</span> <span class="caret"></span>
+                      </span>
+                      <ul class="dropdown-menu pull-right">
+                        <li><a href="#">[Filter category]</a></li>
+                        <li><a href="#">[Filter category]</a></li>
+                        <li><a href="#">[Filter category]</a></li>
+                      </ul>
+                    </div><!-- /btn-group -->
+                  </span>
+                </div>
+
+              </div><!-- /input-group -->
+            </form>
+            <div class="mb-4 ml-0 ml-lg-auto">
+              <a class="btn btn-primary btn-sm btn-soft mt-3 mt-sm-0">Add Contact</a>
+              <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0 mx-2">Import</a>
+              <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Groups</a>
+            </div>
           </div>
+          <!-- END - AUTOCOMPLETE -->
+
         </div>
       </header>
-
-      {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'customer' } %}
-
-      <header class="row" role="header">
-        <div class="col-md-12">
-          <h3>Team Contacts</h3>
-        </div>
-      </header>
-
-      <!-- START - TAB NAVIGATION -->
-      <ul class="nav nav-tabs">
-        <li class="active"><a href="#tab-list-view" data-toggle="tab">List View</a></li>
-        <li><a href="#tab-tree-view" data-toggle="tab">Tree View</a></li>
-      </ul>
-      <!-- END - TAB NAVIGATION -->
-
-      <!-- START - TAB CONTENT -->
-      <div class="tab-content">
-        <div class="tab-pane active" id="tab-list-view">
-          <!-- START - TAB PANE - LIST VIEW -->
-          {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'team' } %}
-          <!-- END - TAB PANE - LIST VIEW -->
-        </div>
-        <div class="tab-pane" id="tab-tree-view">
-          <!-- START - TAB PANE - TREE VIEW -->
-          {% include '_includes/modules/contacts/contacts-list/tab-content-tree-view.html.twig' %}
-          <!-- END - TAB PANE - TREE VIEW -->
-        </div>
-      </div>
-      <!-- END - TAB CONTENT -->
-
     </section>
 
+    <!-- START - TABLE - "CUSTOMER" EXAMPLE -->
+    {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'customer' } %}
+    <!-- END - TABLE - "CUSTOMER" EXAMPLE -->
+
+    <!-- START - TABLE - "TEAM" EXAMPLE -->
+    {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'team' } %}
+    <!-- RND - TABLE - "TEAM" EXAMPLE -->
+
   {% endblock %}
+
+  <!-- START - FILTER MODAL -->
+  {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal.html.twig" %}
+  <!-- END - FILTER MODA -->
 
 {% endblock %}

@@ -290,7 +290,7 @@
   {#  #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   <h3 id="helper-classes-disableable">Disabling content</h3>
-  <p>Disable all contents of a container with the use of <code>.disableable</code> and <code>.disable</code> classes.
+  <p>Disable all contents of a container with the use of <code>.disableable</code> and <code>.disable</code> classes. Links sometimes use <code>.link-disable</code>.
   <p>This will effectively disable all descendants of the parent using CSS and apply a visual cue that the content is disabled.</p>
 
   <div class="container-fluid">
@@ -300,6 +300,7 @@
       <p>Proident ea consectetur sint duis laborum cupidatat amet officia adipisicing quis aliqua reprehenderit voluptate ipsum.</p>
       <button class="btn btn-primary btn-block">I'm disabled</button>
     </div>
+    <a href="#" class="disableable link-disable">I'm disabled</a>
     <hr>
     <div class="disableable">
       <h3>Not Disabled</h3>
@@ -307,6 +308,7 @@
       <button class="btn btn-primary btn-block">I'm not disabled</button>
     </div>
   </div>
+  <a href="#" class="disableable">I'm not disabled</a>
   <hr>
 
   {{ highlightMarkup }}
@@ -315,11 +317,13 @@
     <p>Proident ea consectetur sint duis laborum cupidatat amet officia adipisicing quis aliqua reprehenderit voluptate ipsum.</p>
     <button class="btn btn-primary btn-block">I'm disabled</button>
   </div>
+  <a href="#" class="disableable link-disable">I'm disabled</a>
   <div class="disableable">
     <h3>Not Disabled</h3>
     <p>Proident ea consectetur sint duis laborum cupidatat amet officia adipisicing quis aliqua reprehenderit voluptate ipsum.</p>
     <button class="btn btn-primary btn-block">I'm not disabled</button>
   </div>
+  <a href="#" class="disableable">I'm not disabled</a>
   {{ endhighlight }}
 
 

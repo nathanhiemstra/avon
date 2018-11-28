@@ -95,6 +95,14 @@
 
 .drawer-backdrop {
   z-index: $zindex-drawer-backdrop;
+
+  &.transparent {
+    opacity: 0;
+
+    &.in {
+      opacity: 0;
+    }
+  }
 }
 
 // Modal header

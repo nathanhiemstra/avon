@@ -97,6 +97,7 @@ $( document ).ready( function () {
     var targetEl = $( targetId );
     var isDrawerTypeHidden = targetEl.hasClass( 'drawer-hidden' );
     var isExpanded = targetEl.hasClass( 'drawer-expanded' );
+    var hideBackdrop = targetEl.hasClass( 'drawer-transparent-backdrop' );
 
     var backdropAdded = $( '.drawer-backdrop' ).length;
     var backdropDiv;
@@ -104,10 +105,17 @@ $( document ).ready( function () {
     if( backdropAdded ) {
       $( '.drawer-backdrop' ).remove();
     } else {
-      backdropDiv = $( '<div class="drawer-backdrop in"></div>' ).appendTo( $objects.globalHeader );
+      backdropDiv = $( '<div class="drawer-backdrop in" href="' + targetId + '"></div>' ).appendTo( $objects.globalHeader );
     }
 
-    $objects.html.toggleClass( 'drawer-open' );
+    if(hideBackdrop) {
+      $('.drawer-backdrop').addClass('transparent');
+      $('.drawer-backdrop').off().on('click', function(e) {
+        toggleDrawer($(this));
+      });
+    }
+
+    // if(!hideBackdrop) $objects.html.toggleClass( 'drawer-open' );
 
     if( isDrawerTypeHidden ) {
       // backdropDiv.toggleClass('fade').toggleClass('in');
@@ -402,7 +410,6 @@ $( document ).ready( function () {
 
   // Contact list afftx buttons
   if($(selectors.contactsList.affix).length) {
-    console.log('affix found!');
     var affix = $(selectors.contactsList.affix);
     var affixContainer = affix.parent();
     var toTop = affix.offset().top;
@@ -418,6 +425,7 @@ $( document ).ready( function () {
   if( typeof BackToTop !== 'undefined' ) BackToTop.init();
   if( typeof Brochures !== 'undefined' ) Brochures.init();
   if( typeof CheckoutDemo !== 'undefined' ) CheckoutDemo.init();
+  if( typeof ContactsDemo !== 'undefined' ) ContactsDemo.init();
   if( typeof FormDemo !== 'undefined' ) FormDemo.init();
   if( typeof GlobalSearch !== 'undefined' ) GlobalSearch.init();
   if( typeof Pagination !== 'undefined' ) Pagination.init();
@@ -432,5 +440,6 @@ $( document ).ready( function () {
   if( typeof MessageCenter !== 'undefined' ) MessageCenter.init();
   if( typeof Sticky !== 'undefined' ) Sticky.init();
   if( typeof TogglePasswordVisibility !== 'undefined' ) TogglePasswordVisibility.init();
+  if( typeof NbaDrawer !== 'undefined' ) NbaDrawer.init();
 
 } );
