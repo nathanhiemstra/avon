@@ -1,40 +1,10 @@
-{% set item_small %}
-  <li class="list-group-item d-flex flex-wrap justify-content-between">
-    <div>
-      <div class="large">Customer Report Name </div>
-      <div class="text-muted mt-2">{{ fpo.sentence }}</div>
-    </div>
-    <div>
-       <a href="#" class="link-muted">
-        <span class="lt-icon lt-close lt-medium text-muted align-middle mr-2"></span>
-        <span class="xs-hidden">Delete</span>
-      </a>
-    </div>
-  </li>
-{% endset %}
-
-{% set item_large %}
-  <li class="list-group-item d-flex flex-nowrap justify-content-between">
-    <div>
-      <div class="large">Customer Report Name {{ fpo.sentence }}</div>
-      <div class="text-muted mt-2">{{ fpo.paragraph }}</div>
-    </div>
-    <div class="ml-5">
-       <a href="#" class="link-muted nowrap">
-        <span class="lt-icon lt-close lt-medium text-muted align-middle mr-2"></span>
-        <span class="xs-hidden">Delete</span>
-      </a>
-    </div>
-  </li>
-{% endset %}
-
 <ul class="list-group list-group--clean-sliced medium">
 
   <!-- START - LOOP -->
-  {{ item_small }}
-  {{ item_small }}
-  {{ item_large }}
-  {{ item_small }}
+  {% include '_includes/modules/reports/landing/tab-pane-saved-item.html.twig' %}
+  {% include '_includes/modules/reports/landing/tab-pane-saved-item.html.twig' %}
+  {% include '_includes/modules/reports/landing/tab-pane-saved-item.html.twig' with { hasWrappingText: true } %}
+  {% include '_includes/modules/reports/landing/tab-pane-saved-item.html.twig' %}
   <!-- END - LOOP -->
 
 </ul>
