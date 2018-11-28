@@ -226,6 +226,7 @@ $drawer-compact-min-height: 320px;
     }
 
     .badge {
+      min-width: 20px;
       transform-origin: 50% 50%;
       will-change: transform;
       transform: translateZ(0);
