@@ -67,6 +67,12 @@
   }
 }
 
+@media (min-width: $screen-sm) {
+  .flex-row-sm {
+    flex-direction: row !important;
+  }
+}
+
 
 @media (min-width: $screen-sm) {
   .flex-basis-md-auto {

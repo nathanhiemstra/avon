@@ -1,9 +1,6 @@
 {% if hasWrappingText %}
   {% set wrappingTitle = fpo.sentence %}
 {% endif %}
-{% if hasWrappingSubtitle %}
-  {% set wrappingSubtitle = fpo.sentence %}
-{% endif %}
 <li class="list-group-item">
 
   <div>
@@ -11,39 +8,12 @@
   </div>
 
   <ul class="list-group list-group--clean-sliced border-y">
-
-    <li class="list-group-item d-flex justify-content-between">
-      <div>
-        <div class="large">Report Subtitle</div>
-      </div>
-      <div class="ml-5">
-        <a href="#" class="nowrap">
-          <span class="lt-icon lt-medium lt-download align-middle mr-2"></span>
-          XLS
-        </a>
-        <a href="#" class="nowrap">
-          <span class="lt-icon lt-medium lt-download align-middle mr-2"></span>
-          PDF
-        </a>
-      </div>
-    </li>
-
-    <li class="list-group-item d-flex justify-content-between">
-      <div>
-        <div class="large">Report Subtitle {{ wrappingSubtitle }}</div>
-      </div>
-      <div class="ml-5">
-        <a href="#" class="nowrap">
-          <span class="lt-icon lt-medium lt-download align-middle mr-2"></span>
-          XLS
-        </a>
-        <a href="#" class="nowrap">
-          <span class="lt-icon lt-medium lt-download align-middle mr-2"></span>
-          PDF
-        </a>
-      </div>
-    </li>
-
+    <!-- START - LOOP -->
+    {% include '_includes/modules/reports/landing/tab-pane-static-subitem.html.twig' %}
+    {% include '_includes/modules/reports/landing/tab-pane-static-subitem.html.twig' with { singleLink: true } %}
+    {% include '_includes/modules/reports/landing/tab-pane-static-subitem.html.twig' with { hasWrappingText: true } %}
+    {% include '_includes/modules/reports/landing/tab-pane-static-subitem.html.twig' %}
+    <!-- END - LOOP -->
   </ul>
 
 </li>
