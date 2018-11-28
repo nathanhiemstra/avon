@@ -279,6 +279,13 @@ $drawer-compact-min-height: 320px;
             text-align: center;
           }
 
+          .item-title {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+
           .item-more {
             font-size: 16px;
           }
@@ -539,20 +546,15 @@ $drawer-compact-min-height: 320px;
     transform: scale(1);
   }
   100% {
-    opacity: 0.35;
-    transform: scale(0.65);
+    opacity: 0.1;
+    transform: scale(0.9);
   }
 }
 
 @keyframes badge-in {
   0% {
-    opacity: 0.35;
-    transform: scale(0.65);
-  }
-
-  60% {
-    opacity: 1;
-    transform: scale(1.1);
+    opacity: 0.1;
+    transform: scale(0.9);
   }
 
   100% {
