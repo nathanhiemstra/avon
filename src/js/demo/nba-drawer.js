@@ -7,20 +7,21 @@ var NbaDrawer = (function() {
   var $els = {};
   var nbaCurrentSlide;
   var nbaTotalSlides;
+  var firstRun = true;
 
   // public methods
   var init = function() {
     // grab the DOM els we need
     $els = {
-      nbaDrawer: $('#nbaDrawer'),
-      nbaCarousel: $('#nbaCarousel'),
-      nbaCarouselControls: $('#nbaCarousel .carousel-controls'),
-      nbaCurrentSlideTxt: $('#nbaCarousel .carousel-index > .current-slide'),
-      nbaTotalSlidesTxt: $('#nbaCarousel .carousel-index > .total-slides'),
-      nbaBadgeTxt: $('#nbaDrawer .badge.item-count'),
-      nbaMessaging: $('#nbaCarousel .carousel-msg'),
-      nbaMsgCover: $('#nbaCarousel .carousel-msg .carousel-msg_cover'),
-      nbaMsgCompleteTxt: $('#nbaCarousel .carousel-msg .carousel-msg_complete')
+      nbaDrawer: $('#nba-drawer'),
+      nbaCarousel: $('#nba-carousel'),
+      nbaCarouselControls: $('#nba-carousel .carousel-controls'),
+      nbaCurrentSlideTxt: $('#nba-carousel .carousel-index > .current-slide'),
+      nbaTotalSlidesTxt: $('#nba-carousel .carousel-index > .total-slides'),
+      nbaBadgeTxt: $('#nba-drawer .badge.item-count'),
+      nbaMessaging: $('#nba-carousel .carousel-msg'),
+      nbaMsgCover: $('#nba-carousel .carousel-msg .carousel-msg_cover'),
+      nbaMsgCompleteTxt: $('#nba-carousel .carousel-msg .carousel-msg_complete')
     };
 
     // _checkWindowSize();
@@ -54,29 +55,34 @@ var NbaDrawer = (function() {
       .carousel(startIndex);
 
     // set initial values in the DOM
-    _updateNbaSlideIndex(nbaCurrentSlide, nbaTotalSlides);
+    _updateNbaSlideIndex();
 
     _addListeners();
   };
 
   // private methods
   var _addListeners = function() {
+    // dispose any previous listeners
+    $els.nbaCarousel.off();
+
     // listen for carousel 'slid'
-    $els.nbaCarousel.off().on('slid.bs.carousel', function(e) {
+    $els.nbaCarousel.on('slid.bs.carousel', function(e) {
       _handleSlid(e.target);
+    });
+
+    // listen for carousel 'slide'
+    $els.nbaCarousel.on('slide.bs.carousel', function(e) {
+      _handleSlide(e.target);
     });
 
     // Demo message dismissal -
     // DEV NOTE: This is for demo purposes, code may be different in production environment
     $els.nbaCarousel.find('.item').each(function() {
       var $item = $(this);
-      $item.find('a.item_dismiss').off().on('click', function() {
+      $item.find('a.item-dismiss').off().on('click', function() {
         _dismissSlide();
       });
     });
-
-    // add listener on document so we can close drawer on click outside
-    // $(document).on('click', _checkTarget);
   };
 
   // dismiss the current slide
@@ -101,6 +107,19 @@ var NbaDrawer = (function() {
     var activeEl = $els.nbaCarousel.find('.item.active');
     var nextEl = $els.nbaCarousel.find('.item').eq(nextIndex);
 
+    // animate indicators
+    $els.nbaCurrentSlideTxt.removeClass('in').addClass('out');
+    $els.nbaTotalSlidesTxt.removeClass('in').addClass('out');
+    $els.nbaBadgeTxt.removeClass('in').addClass('out');
+
+    setTimeout(function() {
+      $els.nbaTotalSlidesTxt.removeClass('out').addClass('in');
+    }, 500);
+
+    setTimeout(function() {
+      $els.nbaBadgeTxt.removeClass('out').addClass('in');
+    }, 600);
+
     // re-init carousel
     if(isLastSlide) {
       // update number of items
@@ -122,7 +141,7 @@ var NbaDrawer = (function() {
       // update slide index
       _updateNbaSlideIndex();
     } else {
-      // Show success message, then re-init
+      // transition, then re-init
       $els.nbaMessaging.addClass('reveal');
       $els.nbaMsgCover.addClass('reveal');
       activeEl.addClass('out');
@@ -147,6 +166,10 @@ var NbaDrawer = (function() {
 
   // update indexes
   var _handleSlid = function(target) {
+    setTimeout(function() {
+      $els.nbaCurrentSlideTxt.removeClass('out').addClass('in');
+    }, 150);
+
     nbaCurrentSlide =
       $(target)
         .find('.active')
@@ -156,11 +179,26 @@ var NbaDrawer = (function() {
     _updateNbaSlideIndex();
   };
 
+  // handle slide
+  var _handleSlide = function(target) {
+    $els.nbaCurrentSlideTxt.removeClass('in').addClass('out');
+  };
+
   // update slide counter text in DOM
   var _updateNbaSlideIndex = function() {
-    $els.nbaCurrentSlideTxt.text(nbaCurrentSlide + 1);
-    $els.nbaTotalSlidesTxt.text(nbaTotalSlides);
-    $els.nbaBadgeTxt.text(nbaTotalSlides);
+    setTimeout(function() {
+      // animate in
+      if(!firstRun) {
+        $els.nbaCurrentSlideTxt.removeClass('out').addClass('in');
+      } else {
+        firstRun = false;
+      }
+
+      // update txt values
+      $els.nbaCurrentSlideTxt.text(nbaCurrentSlide + 1);
+      $els.nbaTotalSlidesTxt.text(nbaTotalSlides);
+      $els.nbaBadgeTxt.text(nbaTotalSlides);
+    }, 150);
 
     if(nbaTotalSlides < 1) {
       // No current actions available
@@ -175,24 +213,8 @@ var NbaDrawer = (function() {
     }
   };
 
-  var _checkTarget = function(e) {
-    var $target = $(e.target);
-    // var hasPopover = $target.closest('.popover').length;
-    // var isTrigger = $target.closest('[data-toggle="popover"]').length;
-    // var isCopyBtn = $target.hasClass('copy-input-btn');
-
-    // if (isCopyBtn) {
-    //   e.preventDefault();
-    //   var $input = $target.closest('form').find('input[readonly]');
-    //   _copyInputToClipboard($target, $input);
-    // } else if (isTrigger || hasPopover) {
-    //   return;
-    // } else {
-    //   $els.modalPopoverCombos.popover('hide');
-    // }
-  };
-
   return {
     init: init
   };
+
 })();
