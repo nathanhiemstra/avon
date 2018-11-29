@@ -33,12 +33,12 @@
 
   &:focus,
   &:hover {
-    color: $link-hover-color;
+    color: $text-color;
 
     .lt-icon,
     .lt-icon:before,
     .text-muted {
-      color: $link-hover-color !important;
+      color: $text-color !important;
     }
   }
 }
@@ -104,6 +104,15 @@
 
 .link-underline {
   text-decoration: underline;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.link-no-underline {
+  text-decoration: none;
 
   &:focus,
   &:hover {

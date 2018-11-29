@@ -77,7 +77,13 @@
       margin-bottom: 3px;
     }
 
-    $left-col-width: 40px;
+    .btn-group {
+      margin-top: -2px;
+      margin-bottom: -2px;
+    }
+
+    $left-col-width: 30px;
+    $right-col-width: 40px;
 
     > .table {
       > thead {
@@ -90,34 +96,32 @@
       }
 
       .t-checkbox {
-        @media (max-width: $screen-sm) {
-          padding-top: 5px;
-        }
-
         .checkbox {
-          margin: 0;
+          margin-top: 4px;
+          margin-bottom: 0;
         }
       }
 
-      .t-last-name {
-        padding-left: 0;
+      .t-first-name,
+      .t-last-name,
+      .t-upline,
+      .t-gen,
+      .t-phone,
+      .t-email {
+        vertical-align: bottom;
       }
 
       > tbody {
+        .t-absolute-col-left-and-right {
+          padding-left: $left-col-width;
+          padding-right: $right-col-width;
+          background: pink;
+        }
+
         .t-primary {
           font-weight: bold;
 
           @extend .medium;
-        }
-
-        @media (max-width: $screen-xs) {
-          .t-primary {
-            width: calc(100% - 55px);
-          }
-
-          .t-last-name {
-            padding-left: $left-col-width;
-          }
         }
       }
 
@@ -147,23 +151,29 @@
         .t-key {
           display: none;
         }
+
+        .t-groups {
+          max-width: 160px;
+        }
       }
 
       @media (max-width: $screen-md) {
         .t-first-name {
-          padding-right: 3px;
+          padding-right: 0;
+          margin-right: -8px;
         }
       }
 
       .t-last-name {
         .truncate {
-          width: 40vw;
+          // width: 40vw;
+
         }
       }
 
       .t-email {
         .truncate {
-          width: 72vw;
+          width: 55vw;
         }
       }
 
@@ -174,11 +184,17 @@
 
         .t-first-name {
           .truncate {
-            width: 9vw;
+            width: 10vw;
           }
         }
 
         .t-last-name {
+          .truncate {
+            width: 10vw;
+          }
+        }
+
+        .t-upline {
           .truncate {
             width: 9vw;
           }

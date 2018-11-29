@@ -594,8 +594,8 @@
   <h2 id="tables-responsive-rows-and-absolute-cols">Responsive - Absolute columns</h2>
   <p>Sometimes you need a <code>&lt;td&gt;</code> to act as a column that goes 100% height of the table.</p>
   <ul>
-    <li>Add <code>.t-has-col-start</code> and/or <code>.t-has-col-end</code> to the <code>&lt;tr&gt;</code>.</li>
-    <li>Add <code>.t-col-start</code> and/or <code>.t-col-end</code>  to <code>&lt;td&gt;</code>s that will be the "absolute" column.</li>
+    <li>Add <code>.t-has-absolute-col-left</code> and/or <code>.t-absolute-col-right</code> to the <code>&lt;tr&gt;</code>.</li>
+    <li>Add <code>.t-absolute-col-left</code> and/or <code>.t-absolute-col-right</code>  to <code>&lt;td&gt;</code>s that will be the "absolute" column.</li>
     <li>Add <code>.t-col-sibling-both</code> to <code>&lt;td&gt;</code>s that have a columns on both immediate left and right.</li>
     <li>Add <code>.t-col-sibling-left</code> to <code>&lt;td&gt;</code>s that have a column to it's immediate left.</li>
     <li>Add <code>.t-col-sibling-right</code> to <code>&lt;td&gt;</code>s that have a column to it's immediate right.</li>
@@ -621,14 +621,14 @@
         </thead>
         <tbody>
         {% set row %}
-          <tr class="t-has-col-start t-has-col-end">
-            <td class="t-col-start">{% include "_includes/elements/forms/checkbox.html.twig" with { classes: 'mt-2 input-sm'} %}</td>
+          <tr class="t-has-absolute-col-left t-absolute-col-right">
+            <td class="t-absolute-col-left">{% include "_includes/elements/forms/checkbox.html.twig" with { classes: 'mt-2 input-sm'} %}</td>
             <td class="t-row-1 t-inline t-col-sibling-left">Mark</td>
             <td class="t-row-1 t-inline t-col-sibling-right">Otto</td>
             <td class="t-row-3 t-block  t-col-sibling-both nowrap">000-000-0000</td>
             <td class="t-row-3 t-block  t-col-sibling-both">mark@otto.com</td>
             <td class="t-row-2 t-block  t-col-sibling-both">{{ fpo.sentence }}</td>
-            <td class="t-col-end">•••</td>
+            <td class="t-absolute-col-right">•••</td>
           </tr>
         {% endset %}
           {{ row }}
@@ -643,14 +643,14 @@
   <div class="table-responsive-rows-and-cols">
     <table class="table">
       <tbody>
-         <tr class="t-has-col-start t-has-col-end">
-            <td class="t-col-start">•••</td>
+         <tr class="t-has-absolute-col-left t-absolute-col-right">
+            <td class="t-absolute-col-left">•••</td>
             <td class="t-row-1 t-inline t-col-sibling-left">Mark</td>
             <td class="t-row-1 t-inline t-col-sibling-right">Otto</td>
             <td class="t-row-3 t-block  t-col-sibling-both">000-000-0000</td>
             <td class="t-row-3 t-block  t-col-sibling-both">mark@otto.com</td>
             <td class="t-row-2 t-block  t-col-sibling-both">Lorem...</td>
-            <td class="t-col-end">•••</td>
+            <td class="t-absolute-col-right">•••</td>
           </tr>
       </tbody>
     </table>
