@@ -1,4 +1,19 @@
 .page--contacts-list {
+  @media (max-width: 350px) {
+    .autocomplete-container {
+      .h7 {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    .autocomplete-form,
+    .autocomplete-container {
+      width: 100%;
+    }
+  }
+
   .affix-actions {
     &.affix {
       top: 0;
@@ -168,13 +183,6 @@
         }
       }
 
-      .t-last-name {
-        .truncate {
-          // width: 40vw;
-
-        }
-      }
-
       .t-email {
         .truncate {
           width: 55vw;
@@ -182,10 +190,6 @@
       }
 
       @media (min-width: $screen-md) {
-        // .t-gen {
-        //   padding-right: 0;
-        // }
-
         .t-first-name {
           .truncate {
             width: 10vw;
