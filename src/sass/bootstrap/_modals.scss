@@ -294,3 +294,13 @@
     justify-content: center;
   }
 }
+
+// center vertical and horizontal
+.modal-center-all {
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

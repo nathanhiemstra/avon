@@ -19,7 +19,7 @@
           <div class="d-flex align-items-center flex-wrap">
             <h2 class="mb-4 mr-auto">[Customer/Team] Reports</h2>
             <div>
-              <button type="button" class="btn btn-default btn-soft btn-discourage btn-sm" data-toggle="modal" data-target="#reports-settings-modal">Settings</button>
+              <button type="button" class="btn btn-default btn-soft btn-discourage btn-sm" data-toggle="modal" data-target="#report-settings-modal">Settings</button>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
 
           <!-- START - TAB NAVIGATION -->
           <ul class="nav nav-tabs border-bottom">
-            <li class=""><a href="#reports-saved" data-toggle="tab">Saved</a></li>
+            <li class="active"><a href="#reports-saved" data-toggle="tab">Saved</a></li>
 
             <!-- START - CUSTOMERS ONLY -->
             <li class=""><a href="#reports-all" data-toggle="tab">All</a></li>
@@ -42,7 +42,7 @@
 
             <!-- START - TEAM ONLY -->
             <li class=""><a href="#reports-dynamic" data-toggle="tab">Dynamic</a></li>
-            <li class="active"><a href="#reports-static" data-toggle="tab">Static</a></li>
+            <li class=""><a href="#reports-static" data-toggle="tab">Static</a></li>
             <!-- END - TEAM ONLY -->
           </ul>
           <!-- END - TAB NAVIGATION -->
@@ -50,7 +50,7 @@
 
           <!-- START - TAB CONTENT -->
           <div class="tab-content">
-            <div class="tab-pane" id="reports-saved">
+            <div class="tab-pane active" id="reports-saved">
               {% include '_includes/modules/reports/landing/tab-pane-saved.html.twig' %}
             </div>
 
@@ -64,7 +64,7 @@
             <div class="tab-pane" id="reports-dynamic">
               {% include '_includes/modules/reports/landing/tab-pane-dynamic.html.twig' %}
             </div>
-            <div class="tab-pane active" id="reports-static">
+            <div class="tab-pane" id="reports-static">
               {% include '_includes/modules/reports/landing/tab-pane-static.html.twig' %}
             </div>
             <!-- END - TEAM ONLY -->
@@ -77,8 +77,12 @@
 
   {% endblock %}
 
-  <!-- START - FILTER MODAL -->
-{#   {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal.html.twig" %} #}
-  <!-- END - FILTER MODA -->
+  <!-- START - REPORT SETTINGS MODAL -->
+  {% include "_includes/modules/reports/modals/report-settings-modal.html.twig" %}
+  <!-- END - REPORT SETTINGS MODAL -->
+
+  <!-- START - DELETE REPORT MODAL -->
+  {% include "_includes/modules/reports/modals/delete-report-modal.html.twig" %}
+  <!-- END - DELETE REPORT MODAL -->
 
 {% endblock %}

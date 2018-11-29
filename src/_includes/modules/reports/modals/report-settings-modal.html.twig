@@ -1,0 +1,56 @@
+{% extends "_layouts/modal.html.twig" %}
+
+{% if not modalId %}
+  {% set modalId = 'report-settings-modal' %}
+{% endif %}
+
+{% set modalClasses = 'modal-either-or modal-center-all' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+  <h4 class="modal-title text-center">Report Settings</h4>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+  <p class="text-center lead mt-4">{{ fpo.sentence }} {{ fpo.sentence }}</p>
+  <div class="form-group">
+    {% include "_includes/elements/forms/radio.html.twig" with {
+      name: 'report-settings',
+      theLabel : 'Lorem ipsum',
+      checked: true
+    } %}
+    {% include "_includes/elements/forms/radio.html.twig" with {
+      name: 'report-settings',
+      theLabel : 'Dolor'
+    } %}
+  </div>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-default btn-block" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    </div>
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Save</button>
+    </div>
+  </div><!-- /.row -->
+
+{% endblock %}
