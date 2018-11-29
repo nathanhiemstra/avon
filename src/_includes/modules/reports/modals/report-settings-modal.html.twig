@@ -24,16 +24,16 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
-  <p class="text-center lead mt-4">{{ fpo.sentence }} {{ fpo.sentence }}</p>
+  <p class="text-center lead mt-4">When running a report, select if the report should display the output of the filter settings first:</p>
   <div class="form-group">
     {% include "_includes/elements/forms/radio.html.twig" with {
       name: 'report-settings',
-      theLabel : 'Lorem ipsum',
+      theLabel : 'Report output first',
       checked: true
     } %}
     {% include "_includes/elements/forms/radio.html.twig" with {
       name: 'report-settings',
-      theLabel : 'Dolor'
+      theLabel : 'Filter settings first'
     } %}
   </div>
 
