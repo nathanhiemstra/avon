@@ -497,8 +497,11 @@ table {
           display: flex;
           flex-flow: row wrap;
           padding-bottom: $table-cell-padding;
-          border-bottom: 1px solid $table-border-color;
           padding-top: $table-cell-padding;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid $table-border-color;
+          }
 
           // &::after {}
 
