@@ -71,15 +71,8 @@
 
   .table-contact-list {
     .label {
-      // padding-top: .3em;
-      // padding-bottom: .3em;
       margin-top: 3px;
       margin-bottom: 3px;
-    }
-
-    .btn-group {
-      margin-top: -2px;
-      margin-bottom: -2px;
     }
 
     $left-col-width: 30px;
@@ -97,21 +90,32 @@
 
       .t-checkbox {
         .checkbox {
-          margin-top: 4px;
-          margin-bottom: 0;
+          margin-top: 5px;
+          margin-bottom: -5px;
         }
       }
 
-      .t-first-name,
-      .t-last-name,
+      .t-actions {
+        .btn-group {
+          margin-top: -2px;
+          margin-bottom: -5px;
+        }
+      }
+
+      // .t-first-name,
+      // .t-last-name,
       .t-upline,
       .t-gen,
       .t-phone,
       .t-email {
-        vertical-align: bottom;
+        padding-top: 13px;
       }
 
       > tbody {
+        td {
+          line-height: 24px;
+        }
+
         .t-absolute-col-left-and-right {
           padding-left: $left-col-width;
           padding-right: $right-col-width;
