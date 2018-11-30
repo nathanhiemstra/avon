@@ -62,16 +62,23 @@ html:hover [class^="lt-"] {
 }
 
 
-
-
 [class^="lt-"].after:before, [class*=" lt-"].after:before {
 	display: none;
 	content: '';
 }
 
-.lt-icon:before {
-  color: $brand-primary;
+.lt-icon {
+  &:before {
+    color: $brand-primary;
+  }
+  &.lt-color-text:before {
+    color: $text-color;
+  }
+  &.lt-color-muted:before {
+    color: $text-muted;
+  }
 }
+
 
 .lt-download:before {
   content: "\e936";

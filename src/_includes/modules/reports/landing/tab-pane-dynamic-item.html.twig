@@ -1,0 +1,8 @@
+{% if hasWrappingText %}
+  {% set wrappingTitle = fpo.sentence %}
+{% endif %}
+<li class="list-group-item d-flex justify-content-between">
+  <div>
+    <div class="large">Dynamic Report Name {{ wrappingTitle }}</div>
+  </div>
+</li>

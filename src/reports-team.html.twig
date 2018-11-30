@@ -1,0 +1,76 @@
+{% extends layouts.base %}
+
+{% set sectionClass = 'page--reports-landing' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <!-- START - CONTENT HEADER -->
+    <section class="container container--page">
+      <header class="row" role="header">
+        <div class="col-md-12 mb-2">
+          <div class="d-flex align-items-center flex-wrap">
+            <h2 class="mb-4 mr-auto">Team Reports</h2>
+            <div>
+              <button type="button" class="btn btn-default btn-soft btn-discourage btn-sm" data-toggle="modal" data-target="#report-settings-modal">Settings</button>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+    <!-- END - CONTENT HEADER -->
+
+
+    <main class="container">
+      <div class="row">
+        <div class="col-md-12 mb-2">
+
+          <!-- START - TAB NAVIGATION -->
+          <ul class="nav nav-tabs border-bottom">
+            <li class="active"><a href="#reports-saved" data-toggle="tab">Saved</a></li>
+            <!-- START - TEAM ONLY -->
+            <li class=""><a href="#reports-dynamic" data-toggle="tab">Dynamic</a></li>
+            <li class=""><a href="#reports-static" data-toggle="tab">Static</a></li>
+            <!-- END - TEAM ONLY -->
+          </ul>
+          <!-- END - TAB NAVIGATION -->
+
+
+          <!-- START - TAB CONTENT -->
+          <div class="tab-content mt-4">
+            <div class="tab-pane active" id="reports-saved">
+              {% include '_includes/modules/reports/landing/tab-pane-saved.html.twig' %}
+            </div>
+            <!-- START - TEAM ONLY -->
+            <div class="tab-pane" id="reports-dynamic">
+              {% include '_includes/modules/reports/landing/tab-pane-dynamic.html.twig' %}
+            </div>
+            <div class="tab-pane" id="reports-static">
+              {% include '_includes/modules/reports/landing/tab-pane-static.html.twig' %}
+            </div>
+            <!-- END - TEAM ONLY -->
+          </div>
+          <!-- START - TAB CONTENT -->
+
+        </div>
+      </div>
+    </main>
+
+  {% endblock %}
+
+  <!-- START - REPORT SETTINGS MODAL -->
+  {% include "_includes/modules/reports/modals/report-settings-modal.html.twig" %}
+  <!-- END - REPORT SETTINGS MODAL -->
+
+  <!-- START - DELETE REPORT MODAL -->
+  {% include "_includes/modules/reports/modals/delete-report-modal.html.twig" %}
+  <!-- END - DELETE REPORT MODAL -->
+
+{% endblock %}

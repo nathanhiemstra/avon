@@ -1,9 +1,10 @@
 {% extends "_layouts/modal.html.twig" %}
+
 {% if not modalId %}
-  {% set modalId = 'modal-remove-cc' %}
+  {% set modalId = 'report-settings-modal' %}
 {% endif %}
 
-{% set modalClasses = 'modal-either-or modal-vert-center' %}
+{% set modalClasses = 'modal-either-or modal-center-all' %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - modalHeader #}
@@ -14,8 +15,7 @@
     <span class="sr-only">Close modal</span>
     <span class="lt-icon lt-close lt-large py-1"></span>
   </button>
-
-  <h4 class="modal-title text-center">Remove Credit Card</h4>
+  <h4 class="modal-title text-center">Report Settings</h4>
 
 {% endblock %}
 
@@ -24,7 +24,18 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
-   <p class="lead mb-5 text-center">Are you sure you want to permanently remove this saved credit card from your account?</p>
+  <p class="text-center lead mt-4">When running a report, select if the report should display the output of the filter settings first:</p>
+  <div class="form-group">
+    {% include "_includes/elements/forms/radio.html.twig" with {
+      name: 'report-settings',
+      theLabel : 'Report output first',
+      checked: true
+    } %}
+    {% include "_includes/elements/forms/radio.html.twig" with {
+      name: 'report-settings',
+      theLabel : 'Filter settings first'
+    } %}
+  </div>
 
 {% endblock %}
 
@@ -35,13 +46,11 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-6 my-2">
-      <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Cancel</button>
+      <button type="button" class="btn btn-default btn-block" data-dismiss="modal" aria-hidden="true">Cancel</button>
     </div>
     <div class="col-xs-12 col-sm-6 my-2">
-      <button type="button" class="btn btn-primary btn-block" aria-hidden="true">Yes, Delete Card</button>
+      <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Save</button>
     </div>
   </div><!-- /.row -->
-
-
 
 {% endblock %}

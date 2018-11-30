@@ -1,5 +1,5 @@
 <img class='thumb' src='{{ thumb }}'>
-<span class='{% if expired %}text-danger{% endif %}'>
+<span class='{% if expired %}text-danger{% endif %} {% if label %}d-inline-block align-middle{% endif %}'>
   {% if label %}
     {{ label }}
   {% else %}

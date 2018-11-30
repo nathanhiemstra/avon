@@ -1,0 +1,21 @@
+{% if hasWrappingText %}
+  {% set wrappingSubtitle = fpo.sentence %}
+{% endif %}
+
+<li class="list-group-item d-flex justify-content-between pl-3">
+  <div>
+    <div class="large">Report Subtitle {{ wrappingSubtitle }}</div>
+  </div>
+  <div class="ml-5 flex-shrink-0 d-flex flex-column flex-row-sm">
+    <a href="#" class="link-primary nowrap">
+      <span class="lt-icon lt-medium lt-download align-middle"></span>
+      XLS
+    </a>
+    {% if not singleLink %}
+    <a href="#" class="link-primary nowrap ml-0 ml-md-4 mt-3 mt-md-0">
+      <span class="lt-icon lt-medium lt-download align-middle"></span>
+      PDF
+    </a>
+    {% endif %}
+  </div>
+</li>

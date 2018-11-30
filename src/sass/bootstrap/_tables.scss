@@ -488,6 +488,10 @@ table {
         display: none;
       }
 
+      // Make columns that span vertically the height of the table
+      // "$t-absolute-col-default-width" is the default width of the column.
+      $t-absolute-col-default-width: 40px;
+
       > tbody {
         > tr {
           display: flex;
@@ -540,37 +544,54 @@ table {
           margin-left: auto;
         }
 
-        // Make columns that span vertically the height of the table
-        // "$t-col-width" is the default width of the column.
-        $t-col-width: 40px;
-
-        [class*="t-has-col-"] {
+        [class*="t-has-absolute-col-"] {
           position: relative;
+        }
 
-          > .t-col-start,
-          > .t-col-end {
-            position: absolute;
+        // This is a default width. Change accordingly.
+
+        .t-has-absolute-col {
+          &-left-and-right {
+            padding-left: $t-absolute-col-default-width;
+            padding-right: $t-absolute-col-default-width;
           }
 
-          // Make columns sibling <td>s make room for the column(s)
-          .t-col-sibling-left {
-            padding-left: $t-col-width;
+          &-left {
+            padding-left: $t-absolute-col-default-width;
           }
 
-          .t-col-sibling-right {
-            padding-right: $t-col-width;
-          }
-
-          .t-col-sibling-both {
-            padding-left: $t-col-width;
-            padding-right: $t-col-width;
+          &-right {
+            padding-right: $t-absolute-col-default-width;
           }
         }
 
-        .t-has-col-end {
-          > .t-col-end {
+        .t-absolute-col {
+          &-left,
+          &-right {
+            position: absolute;
+          }
+
+          &-left {
+            left: 0;
+          }
+
+          &-right {
             right: 0;
           }
+        }
+
+        // Make columns sibling <td>s make room for the column(s)
+        .t-col-sibling-left {
+          padding-left: $t-absolute-col-default-width;
+        }
+
+        .t-col-sibling-right {
+          padding-right: $t-absolute-col-default-width;
+        }
+
+        .t-col-sibling-both {
+          padding-left: $t-absolute-col-default-width;
+          padding-right: $t-absolute-col-default-width;
         }
       }
     }

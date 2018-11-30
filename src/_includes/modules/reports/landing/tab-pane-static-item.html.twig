@@ -1,0 +1,19 @@
+{% if hasWrappingText %}
+  {% set wrappingTitle = fpo.sentence %}
+{% endif %}
+<li class="list-group-item">
+
+  <div>
+    <h3>Static Report Title {{ wrappingTitle }}</h3>
+  </div>
+
+  <ul class="list-group list-group--clean-sliced border-y">
+    <!-- START - LOOP -->
+    {% include '_includes/modules/reports/landing/tab-pane-static-subitem.html.twig' %}
+    {% include '_includes/modules/reports/landing/tab-pane-static-subitem.html.twig' with { singleLink: true } %}
+    {% include '_includes/modules/reports/landing/tab-pane-static-subitem.html.twig' with { hasWrappingText: true } %}
+    {% include '_includes/modules/reports/landing/tab-pane-static-subitem.html.twig' %}
+    <!-- END - LOOP -->
+  </ul>
+
+</li>

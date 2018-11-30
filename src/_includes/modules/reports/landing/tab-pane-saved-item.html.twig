@@ -1,0 +1,18 @@
+{% if hasWrappingText %}
+  {% set wrappingTitle = fpo.sentence %}
+  {% set wrappingBody = fpo.paragraph %}
+{% else %}
+  {% set wrappingBody = fpo.sentence %}
+{% endif %}
+<li class="list-group-item d-flex justify-content-between">
+  <div>
+    <div class="large">Customer Report Name {{ wrappingTitle }}</div>
+    <div class="text-muted mt-2">{{ wrappingBody }}</div>
+  </div>
+  <div class="ml-5">
+    <a href="#" data-toggle="modal" data-target="#delete-report-modal" class="link-muted nowrap">
+      <span class="lt-icon lt-close lt-medium text-muted align-middle mr-2"></span>
+      <span class="hidden-xs">Delete</span>
+    </a>
+  </div>
+</li>
