@@ -18,7 +18,7 @@
        {% include '_includes/groups/forms/generic/zip.html.twig' with {
         'idPrefix':         idPrefix,
         'showTheValue':     showTheValue,
-         'showPlaceholder':   showPlaceholder }%}
+        'showPlaceholder':  showPlaceholder }%}
     </div>
   </div>
   <div class="col-xs-8">
@@ -35,17 +35,15 @@
   <div class="col-xs-4">
     <div class="form-group has-feedback">
       {% include '_includes/groups/forms/generic/state.html.twig' with {
-        'idPrefix':         idPrefix,
-        'showTheValue':     showTheValue,
-        'showPlaceholder':  showPlaceholder }%}
+        'idPrefix':     idPrefix,
+        'selectFirst':  true }%}
     </div>
   </div>
   <div class="col-xs-8">
     <div class="form-group has-feedback">
       {% include '_includes/groups/forms/generic/country.html.twig' with {
         'idPrefix':         idPrefix,
-        'showTheValue':     showTheValue,
-        'showPlaceholder':  showPlaceholder }%}
+        'selectFirst':      true }%}
     </div>
   </div>
 </div>

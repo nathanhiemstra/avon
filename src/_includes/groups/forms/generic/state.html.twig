@@ -1,18 +1,8 @@
-{% if showTheValue %}
-  {% set optionSelected = 2 %}
-{% endif %}
-
-{% include components.groups.forms.selectAndLabel with {
+{% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
   id: idPrefix ~ 'state',
-  mainLabel: 'State',
-  required: null,
-  haslabelErrorIcon: true,
-  hasInlineErrorIcon: null,
-  hasAbsoluteErrorIcon: null,
-  optionSelected: optionSelected,
-  'options': [
-    {'label': 'Select...'},
-    {'label': 'State 1'},
-    {'label': 'State 2'}
-  ]
+  label: 'State',
+  classes: '',
+  size: 4,
+  options: ['Select...', 'State 1', 'State 2', 'State 3'],
+  selectFirst: selectFirst
 } %}
