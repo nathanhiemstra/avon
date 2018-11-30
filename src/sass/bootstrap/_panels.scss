@@ -423,6 +423,7 @@
 
         .links {
           margin-left: auto;
+          padding-left: $spacing-4;
           opacity: 0;
           transition: opacity $ui-animation-time $ui-animation-ease;
 
