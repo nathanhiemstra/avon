@@ -103,13 +103,6 @@
         }
       }
 
-      .t-checkbox {
-        .checkbox {
-          margin-top: 5px;
-          margin-bottom: -5px;
-        }
-      }
-
       .t-actions {
         .btn-group {
           margin-top: -2px;
@@ -117,20 +110,34 @@
         }
       }
 
-      // .t-first-name,
-      // .t-last-name,
-      .t-upline,
-      .t-gen,
-      .t-phone,
-      .t-email {
-        padding-top: 13px;
-      }
-
       > tbody {
         td {
           line-height: 24px;
         }
 
+        .t-checkbox {
+          // Increase clickable area of checkbox
+          padding-left: 0;
+          padding-right: 0;
+
+          .checkbox {
+            margin-top: 5px;
+            margin-bottom: -5px;
+
+            // Increase clickable area of checkbox
+            label {
+              padding-left: $table-cell-padding;
+              padding-bottom: $table-cell-padding * 2;
+              width: $left-col-width + 10px;
+
+              span {
+                margin-left: 0;
+              }
+            }
+          }
+        }
+
+        .checkbox.input-sm.wrap-label label span
         .t-absolute-col-left-and-right {
           padding-left: $left-col-width;
           padding-right: $right-col-width;
@@ -212,6 +219,15 @@
           .truncate {
             width: 7vw;
           }
+        }
+
+        // .t-first-name,
+        // .t-last-name,
+        .t-upline,
+        .t-gen,
+        .t-phone,
+        .t-email {
+          padding-top: 13px;
         }
       }
     }
