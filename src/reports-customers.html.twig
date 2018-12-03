@@ -16,8 +16,8 @@
     <section class="container container--page">
       <header class="row" role="header">
         <div class="col-md-12 mb-2">
-          <div class="d-flex align-items-center flex-wrap">
-            <h2 class="mb-4 mr-auto">Customer Reports</h2>
+          <div class="d-flex align-items-center flex-wrap mb-4">
+            <h2 class="mb-0 mr-auto">Customer Reports</h2>
             <div>
               <button type="button" class="btn btn-default btn-soft btn-discourage btn-sm" data-toggle="modal" data-target="#report-settings-modal">Settings</button>
             </div>
@@ -33,7 +33,7 @@
 
           <!-- START - TAB NAVIGATION -->
           <ul class="nav nav-tabs border-bottom">
-            <li class="active"><a href="#reports-saved" data-toggle="tab">Saved</a></li>
+            <li class="active"><a href="#reports-favorites" data-toggle="tab">Favorites</a></li>
             <!-- START - CUSTOMERS ONLY -->
             <li class=""><a href="#reports-all" data-toggle="tab">All</a></li>
             <!-- END - CUSTOMERS ONLY -->
@@ -42,8 +42,8 @@
 
           <!-- START - TAB CONTENT -->
           <div class="tab-content mt-4">
-            <div class="tab-pane active" id="reports-saved">
-              {% include '_includes/modules/reports/landing/tab-pane-saved.html.twig' %}
+            <div class="tab-pane active" id="reports-favorites">
+              {% include '_includes/modules/reports/landing/tab-pane-favorites.html.twig' %}
             </div>
             <!-- START - CUSTOMERS ONLY -->
             <div class="tab-pane" id="reports-all">
