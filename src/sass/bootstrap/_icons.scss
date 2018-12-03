@@ -265,6 +265,14 @@ html:hover [class^="lt-"] {
   transform: rotate(-90deg) scale(0.65, 1);
 }
 
+// lt-store needs special treatment in navbar--utility-1
+.navbar--primary-nav .navbar--utility-1 .nav > li {
+  .lt-icon.lt-store {
+    font-size: 26px;
+    line-height: 0;
+  }
+}
+
 // badge icon - icon with an overlayed badge
 // assumes a nested .badge
 .badged-icon {
