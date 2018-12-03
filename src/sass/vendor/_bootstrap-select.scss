@@ -105,6 +105,14 @@ select.selectpicker {
   .dropdown-toggle:focus {
     outline: none;
   }
+
+  // reduce top padding on credit card select
+  &.select-cc {
+    .dropdown-toggle.btn-select {
+      padding-top: 5px;
+    }
+  }
+
 }
 
 .bootstrap-select.form-control {
