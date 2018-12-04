@@ -29,6 +29,9 @@ var NbaDrawer = (function() {
 
     // initialize the carousel
     _initCarousel();
+
+    // initialize collapsibles
+    _initCollapse();
   };
 
   var _initCarousel = function(startIndex) {
@@ -45,6 +48,10 @@ var NbaDrawer = (function() {
     _updateNbaSlideIndex();
 
     _addListeners();
+  };
+
+  var _initCollapse = function() {
+    $els.nbaLearnMoreItems.collapse({ toggle: false });
   };
 
   // private methods
@@ -214,6 +221,8 @@ var NbaDrawer = (function() {
         // reset carousel
         $els.nbaCarousel.carousel('pause').removeData();
         _initCarousel(nextIndexInit);
+        _collapseHeight();
+        $els.nbaDrawer.removeClass('lm-open');
       }, 350);
 
     }
