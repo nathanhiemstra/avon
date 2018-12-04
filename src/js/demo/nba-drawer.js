@@ -221,8 +221,10 @@ var NbaDrawer = (function() {
         // reset carousel
         $els.nbaCarousel.carousel('pause').removeData();
         _initCarousel(nextIndexInit);
-        _collapseHeight();
-        $els.nbaDrawer.removeClass('lm-open');
+        if($(window).width() >= 768) {
+          _collapseHeight();
+          $els.nbaDrawer.removeClass('lm-open');
+        }
       }, 350);
 
     }
