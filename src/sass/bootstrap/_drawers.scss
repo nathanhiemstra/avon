@@ -284,6 +284,8 @@ $drawer-compact-large-height: 370px; // desktop - learn more expanded
           }
 
           .item-title {
+            font-size: 20px;
+            line-height: 1.5;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
