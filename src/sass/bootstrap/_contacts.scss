@@ -181,6 +181,13 @@
         .t-groups {
           max-width: 160px;
         }
+
+        .t-upline,
+        .t-gen,
+        .t-phone,
+        .t-email {
+          padding-top: 13px;
+        }
       }
 
       @media (max-width: $screen-md) {
