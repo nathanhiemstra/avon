@@ -4,8 +4,9 @@
 
 .label {
   display: inline;
-  padding: .4em .6em .3em;
-  font-size: 75%;
+  padding: .2em .6em .2em;
+  font-size: 81.25%;
+  font-weight: bold;
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: 0.8px;
@@ -86,22 +87,23 @@ a.label {
 // --------------------------------------------------
 
 .label-default {
-  // line-height: ensure even-numbered height of button next to large input
-  @include button-size($btn-padding-large-vertical, $btn-padding-large-horizontal, $font-size-base, $line-height-large, $btn-border-radius-large);
+  font-size: $font-size-base;
 }
 
 .label-lg {
-  // line-height: ensure even-numbered height of button next to large input
-  @include button-size($btn-padding-large-vertical, $btn-padding-large-horizontal, $font-size-base, $line-height-large, $btn-border-radius-large);
+  font-size: $font-size-large;
+}
+
+.label-md {
+  font-size: $font-size-medium;
 }
 
 .label-sm {
-  // line-height: ensure proper height of button next to small input
-  @include button-size($btn-padding-small-vertical, $btn-padding-small-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+  font-size: $font-size-small;
 }
 
 .label-xs {
-  @include button-size($btn-padding-xs-vertical, $btn-padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+  font-size: $font-size-xsmall;
 }
 
 // absolute position label

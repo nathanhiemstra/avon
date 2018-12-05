@@ -2,11 +2,10 @@ $gray-ultralight: lighten($gray-lighter, 2%);
 
 // IE11 fix - hide IE native clear symbols on inputs
 input::-ms-clear {
- display: none;
+  display: none;
 }
 
 .navbar--primary-nav {
-
   /*
    * ----------
    * MOBILE
@@ -57,7 +56,6 @@ input::-ms-clear {
         width: 101% !important;
       }
     }
-
   }
 
   .primary-nav__cart,
@@ -107,17 +105,19 @@ input::-ms-clear {
           margin-right: $spacing-4;
         }
       }
+
       // end a
 
       .primary-nav__search-input {
         display: inline-block;
         border: none;
       }
-
     }
+
     // end primary-nav__search
 
   }
+
   // end search-expanded
 
   // in progress expanding and collapsing states
@@ -149,7 +149,6 @@ input::-ms-clear {
    */
 
   @media (min-width: $breakpoint-header-min) {
-
     .primary-nav__search {
       min-width: auto;
       transition: none;
@@ -158,7 +157,7 @@ input::-ms-clear {
       border-bottom: 1px solid transparent;
       padding: $spacing-3;
       transition: border-color 0 $ui-animation-ease;
-      font-size: 13px;
+      font-size: 14px;
 
       a {
         display: flex;
@@ -170,7 +169,6 @@ input::-ms-clear {
         top: 48px;
         left: -1px;
       }
-
     }
 
     input.primary-nav__search-input {
@@ -179,13 +177,17 @@ input::-ms-clear {
       opacity: 0;
       top: -1px;
       left: 40px;
-      height: calc(100% - -2px); // minus negative because of minify problems
+      height: calc(100% - -2px);
+
+      // minus negative because of minify problems
       border: none;
       border-top: 1px solid transparent;
       border-right: 1px solid transparent;
       border-bottom: 1px solid transparent;
       padding-right: 5rem;
+
       // transition: opacity $ui-animation-time $ui-animation-ease, border-color $ui-animation-time $ui-animation-ease;
+
     }
 
     .primary-nav__cart,
@@ -196,7 +198,6 @@ input::-ms-clear {
 
     &.search-expanded,
     &.expanding {
-
       .primary-nav__cart,
       .primary-nav__logo,
       .primary-nav__toggle {
@@ -213,10 +214,10 @@ input::-ms-clear {
         border-top: 1px solid $gray;
         border-left: 1px solid $gray;
         border-bottom: 1px solid $gray;
+
         // box-shadow: -4px -4px 4px $gray-lighter, -4px 4px 4px $gray-lighter;
 
         a {
-
           .lt-search, .lt-search:before {
             padding: initial;
           }
@@ -233,21 +234,26 @@ input::-ms-clear {
             border-top: 1px solid $gray;
             border-right: 1px solid $gray;
             border-bottom: 1px solid $gray;
+
             // box-shadow: 4px -4px 4px $gray-lighter, 4px 4px 4px $gray-lighter;
 
             &:focus {
               outline: none;
             }
           }
+
           // end input
 
         }
+
         // end a
 
       }
+
       // end primary-nav__search
 
     }
+
     // end search-expanded
 
     // in progress expanding and collapsing states
@@ -269,7 +275,6 @@ input::-ms-clear {
     }
 
     &.collapsing {
-
       .primary-nav__search {
         position: relative;
       }
@@ -283,7 +288,8 @@ input::-ms-clear {
       }
     }
   }
-  // end DESKTOP
 
+  // end DESKTOP
 }
+
 // end navbar--primary-nav

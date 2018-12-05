@@ -114,7 +114,9 @@ $font-family-base: $font-family-sans-serif !default;
 $font-size-base: 16px !default;
 $font-size-base-input: 16px !default;
 $font-size-large: 20px !default;
+$font-size-medium: 16px !default;
 $font-size-small: 14px !default;
+$font-size-xsmall: 13px !default;
 
 $font-size-h1: 44px !default;
 $font-size-h1-desktop: 50px !default;
@@ -1095,8 +1097,10 @@ $badge-active-color: $link-color !default;
 $badge-active-bg: $white !default;
 $badge-reverse-bg: $black !default;
 
-$badge-font-weight: bold !default;
+$badge-font-size: 13px !default;
+$badge-icon-font-size: 14px !default;
 $badge-line-height: 1 !default;
+$badge-font-weight: bold !default;
 $badge-border-radius: 10px !default;
 
 //== Breadcrumbs
