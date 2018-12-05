@@ -7,6 +7,7 @@ var NbaDrawer = (function() {
   var $els = {};
   var nbaCurrentSlide;
   var nbaTotalSlides;
+  var resizeTimer;
   var firstRun = true;
 
   // public methods
@@ -21,28 +22,17 @@ var NbaDrawer = (function() {
       nbaBadgeTxt: $('#nba-drawer .badge.item-count'),
       nbaMessaging: $('#nba-carousel .carousel-msg'),
       nbaMsgCover: $('#nba-carousel .carousel-msg .carousel-msg_cover'),
-      nbaMsgCompleteTxt: $('#nba-carousel .carousel-msg .carousel-msg_complete')
+      nbaMsgCompleteTxt: $('#nba-carousel .carousel-msg .carousel-msg_complete'),
+      nbaLearnMoreItems: $('#nba-carousel .item-more .collapse'),
+      nbaLearnMoreToggles: $('#nba-carousel a[data-toggle="collapse"]')
     };
-
-    // _checkWindowSize();
-    // $(window).on('resize', function() {
-    //   _checkWindowSize();
-    // });
 
     // initialize the carousel
     _initCarousel();
-  };
 
-  // DEV NOTE :: if you'd like to show the expanded state of the drawer based on some condition,
-  //          :: simply add 'drawer-expanded class as seen below
-  // var _checkWindowSize = function() {
-  //   // expand drawer by default on desktop, collapse on mobile
-  //   if($(window).width() < 768) {
-  //     $els.nbaDrawer.removeClass('drawer-expanded');
-  //   } else {
-  //     $els.nbaDrawer.addClass('drawer-expanded');
-  //   }
-  // };
+    // initialize collapsibles
+    _initCollapse();
+  };
 
   var _initCarousel = function(startIndex) {
     if(!startIndex) startIndex = 0;
@@ -58,6 +48,10 @@ var NbaDrawer = (function() {
     _updateNbaSlideIndex();
 
     _addListeners();
+  };
+
+  var _initCollapse = function() {
+    $els.nbaLearnMoreItems.collapse({ toggle: false });
   };
 
   // private methods
@@ -83,6 +77,74 @@ var NbaDrawer = (function() {
         _dismissSlide();
       });
     });
+
+    // handle drawer open / close
+    $('[data-toggle="drawer"]').on('click', function() {
+      if($els.nbaDrawer.hasClass('drawer-expanded')) {
+        $els.nbaDrawer.css('min-height', '');
+      } else {
+        $els.nbaDrawer.css('min-height', '');
+      }
+    });
+
+    // handle 'learn more' collapse
+    $els.nbaLearnMoreItems.on('show.bs.collapse', function() {
+      _caluculateHeight(this);
+      $els.nbaDrawer.addClass('lm-open');
+      $(this).siblings('a').find('span.more').addClass('d-none');
+      $(this).siblings('a').find('span.less').removeClass('d-none');
+    });
+    $els.nbaLearnMoreItems.on('hide.bs.collapse', function() {
+      _collapseHeight();
+      $els.nbaDrawer.removeClass('lm-open');
+      $(this).siblings('a').find('span.more').removeClass('d-none');
+      $(this).siblings('a').find('span.less').addClass('d-none');
+    });
+
+    // handle resize
+    _checkWindowSize();
+    $(window).on('resize', function() {
+      // debounce
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        _checkWindowSize();
+      }, 250);
+    });
+  };
+
+  var _checkWindowSize = function() {
+    if($(window).width() < 768) {
+      // show all collapsibles on mobile, hide 'learn more' links
+      $els.nbaLearnMoreItems.each(function(index, value) {
+        $(value).collapse('show');
+        $(value).siblings('a[data-toggle="collapse"]').addClass('d-none');
+      });
+      // mobile - unset min-height
+      $els.nbaDrawer.css('min-height', '');
+    } else {
+      // calling collapse('hide') breaks on first run, and we don't need it on first run anyway
+      if(!firstRun) {
+        // desktop - hide all collapsibles and show 'learn more' links
+        $els.nbaLearnMoreItems.each(function(index, value) {
+          $(value).siblings('a[data-toggle="collapse"]').removeClass('d-none');
+          $(value).collapse('hide');
+        });
+        // desktop - set min-height
+        if($els.nbaDrawer.hasClass('drawer-expanded')) {
+          $els.nbaDrawer.css('min-height', '');
+        } else {
+          $els.nbaDrawer.css({'min-height': '48px', 'height': '48px'});
+        }
+      }
+    }
+    // DEV NOTE :: if you'd like to show the expanded state of the drawer based on some condition,
+    //          :: simply add 'drawer-expanded class as seen below
+    // expand drawer by default on desktop, collapse on mobile
+    // if($(window).width() < 768) {
+    //   $els.nbaDrawer.removeClass('drawer-expanded');
+    // } else {
+    //   $els.nbaDrawer.addClass('drawer-expanded');
+    // }
   };
 
   // dismiss the current slide
@@ -159,8 +221,17 @@ var NbaDrawer = (function() {
         // reset carousel
         $els.nbaCarousel.carousel('pause').removeData();
         _initCarousel(nextIndexInit);
+        if($(window).width() >= 768) {
+          _collapseHeight();
+          $els.nbaDrawer.removeClass('lm-open');
+        }
       }, 350);
 
+    }
+
+    if($(window).width() >= 768) {
+      // desktop - hide all open collapsibles
+      $els.nbaCarousel.find('.collapse.in').collapse('hide');
     }
   };
 
@@ -182,6 +253,11 @@ var NbaDrawer = (function() {
   // handle slide
   var _handleSlide = function(target) {
     $els.nbaCurrentSlideTxt.removeClass('in').addClass('out');
+
+    if($(window).width() >= 768) {
+      // desktop - hide all open collapsibles
+      $els.nbaCarousel.find('.collapse.in').collapse('hide');
+    }
   };
 
   // update slide counter text in DOM
@@ -211,6 +287,15 @@ var NbaDrawer = (function() {
       $els.nbaMessaging.addClass('reveal');
       $els.nbaMsgCompleteTxt.addClass('reveal');
     }
+  };
+
+  var _caluculateHeight = function(el) {
+    var elHeight = $(el)['height']('').height();
+    $els.nbaDrawer.css('min-height', elHeight + 300);
+  };
+
+  var _collapseHeight = function() {
+    $els.nbaDrawer.css('min-height', 300);
   };
 
   return {
