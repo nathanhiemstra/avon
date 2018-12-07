@@ -357,7 +357,8 @@ $navbar-header-mobile-height: 64px;
 
         // tiny plus
         @media (max-width: $screen-tiny-plus) {
-          font-size: 12px;
+          // font-size: 12px;
+          font-size: 13px;
           margin-bottom: 10px;
         }
 
@@ -693,6 +694,7 @@ $navbar-header-mobile-height: 64px;
             font-size: $font-size-h6-desktop;
             font-weight: normal;
             white-space: nowrap;
+            letter-spacing: 0.5px;
 
             &[role=menuitem] {
               padding-bottom: 0;
@@ -702,7 +704,9 @@ $navbar-header-mobile-height: 64px;
             @media (max-width: $breakpoint-header-max) {
               display: flex;
               align-items: center;
-              font-size: $font-size-h4;
+
+              // font-size: 18px;
+              font-size: 19px;
               color: $text-color;
               text-transform: none;
               border-left: 4px solid transparent;
@@ -712,8 +716,10 @@ $navbar-header-mobile-height: 64px;
 
             // custom tablet
             @media (min-width: $breakpoint-header-min) and (max-width: $screen-md-max) {
-              font-size: 13px;
-              letter-spacing: normal;
+              // font-size: 13px;
+              font-size: 14px;
+
+              // letter-spacing: normal;
               padding: 10px 0;
 
               // set 0 padding x so flex can do it's thing
@@ -721,7 +727,8 @@ $navbar-header-mobile-height: 64px;
 
             // desktop
             @media (min-width: $screen-md-max) {
-              font-size: 14px;
+              // font-size: 14px;
+              font-size: 15px;
               letter-spacing: 1px;
             }
           }

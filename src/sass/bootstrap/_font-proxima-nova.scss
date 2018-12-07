@@ -94,6 +94,13 @@ This CSS resource incorporates links to font software which is the valuable copy
     @include font-medium;
 
     font-weight: 500;
+    font-style: normal;
+    font-variant: normal;
+  }
+
+  @font-face {
+    @include font-medium;
+
     font-weight: bold;
     font-style: normal;
     font-variant: normal;
