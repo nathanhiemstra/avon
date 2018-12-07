@@ -2,74 +2,109 @@
 This CSS resource incorporates links to font software which is the valuable copyrighted property of Monotype and/or its suppliers. You may not attempt to copy, install, redistribute, convert, modify or reverse engineer this font software. Please contact Monotype with any questions regarding Web Fonts: http://www.fontshop.com
 */
 
-@mixin font-regular() {
-  font-family: $font-family-name;
-  src:url("#{$base-font-path}#{$base-font-name}-light/93cc6d34-798e-42c8-87d2-fd6391801b63.eot?#iefix");
-  src:url("#{$base-font-path}#{$base-font-name}-light/93cc6d34-798e-42c8-87d2-fd6391801b63.eot?#iefix") format("eot"),url("#{$base-font-path}#{$base-font-name}-light/d9fe41ee-4904-4a11-ba11-b61cd3be767f.woff2") format("woff2"),url("#{$base-font-path}#{$base-font-name}-light/2fa30669-9bbd-4ced-912f-db94a367ed6c.woff") format("woff"),url("#{$base-font-path}#{$base-font-name}-light/c12b3ebb-3771-483f-a84a-ac63d615c28e.ttf") format("truetype");
+// Proxima N W01 Light
+@mixin font-light {
+  $font-weight: "light";
+  $font-file-eot: "93cc6d34-798e-42c8-87d2-fd6391801b63";
+  $font-file-woff2: "d9fe41ee-4904-4a11-ba11-b61cd3be767f";
+  $font-file-woff: "2fa30669-9bbd-4ced-912f-db94a367ed6c";
+  $font-file-ttf: "c12b3ebb-3771-483f-a84a-ac63d615c28e";
+
+  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
 
-@mixin font-medium() {
-  font-family: $font-family-name;
-  src:url("#{$base-font-path}#{$base-font-name}-medium/b918fc25-caba-4cf5-8606-d77742e476f4.eot?#iefix");
-  src:url("#{$base-font-path}#{$base-font-name}-medium/b918fc25-caba-4cf5-8606-d77742e476f4.eot?#iefix") format("eot"),url("#{$base-font-path}#{$base-font-name}-medium/e898042a-5eb9-4810-b578-c3993ab58f0f.woff2") format("woff2"),url("#{$base-font-path}#{$base-font-name}-medium/cb9d4f02-d326-46b0-a857-930cce057f80.woff") format("woff"),url("#{$base-font-path}#{$base-font-name}-medium/75cafc03-22e4-41b0-8bc2-1b9081506ecc.ttf") format("truetype");
+// Proxima N W01 Light It
+@mixin font-light-italic {
+  $font-weight: "light-italic";
+  $font-file-eot: "ee3e7ba6-7c22-4ff7-ad76-656505595a8a";
+  $font-file-woff2: "b47d2733-d2e6-452a-9134-77bcf65f9e7e";
+  $font-file-woff: "0c4be1a2-8e16-48b4-a384-165fa5baffe3";
+  $font-file-ttf: "a7e6cc5b-7ba3-44be-9063-2cc1b3c05155";
+
+  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
 
-@mixin font-bold() {
-  font-family: $font-family-name;
-  src:url("#{$base-font-path}#{$base-font-name}-bold/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix");
-  src:url("#{$base-font-path}#{$base-font-name}-bold/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix") format("eot"),url("#{$base-font-path}#{$base-font-name}-bold/0d416408-95c6-4ad7-b08d-e60573d3b37d.woff2") format("woff2"),url("#{$base-font-path}#{$base-font-name}-bold/d999c07b-a049-4eb5-b8a6-4f36ae25e67e.woff") format("woff"),url("#{$base-font-path}#{$base-font-name}-bold/4d4a75f5-d32a-4a09-8665-133afd39cc37.ttf") format("truetype");
+// Proxima N W01 Reg
+@mixin font-regular {
+  $font-weight: "regular";
+  $font-file-eot: "7e90123f-e4a7-4689-b41f-6bcfe331c00a";
+  $font-file-woff2: "64017d81-9430-4cba-8219-8f5cc28b923e";
+  $font-file-woff: "e56ecb6d-da41-4bd9-982d-2d295bec9ab0";
+  $font-file-ttf: "2aff4f81-3e97-4a83-9e6c-45e33c024796";
+
+  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
 
+// Proxima N W01 Reg It
+@mixin font-regular-italic {
+  $font-weight: "regular-italic";
+  $font-file-eot: "bc15a635-a09b-40d1-a5c4-70310166177d";
+  $font-file-woff2: "129d49d6-5492-4ed1-96f7-0528c6d53abc";
+  $font-file-woff: "9c69c878-2255-4027-8632-ed3635cddf45";
+  $font-file-ttf: "b7eb3871-e910-4522-9982-effb425a2714";
+
+  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+}
+
+// Proxima Nova W01 Medium
+@mixin font-medium {
+  $font-weight: "medium";
+  $font-file-eot: "b918fc25-caba-4cf5-8606-d77742e476f4";
+  $font-file-woff2: "e898042a-5eb9-4810-b578-c3993ab58f0f";
+  $font-file-woff: "cb9d4f02-d326-46b0-a857-930cce057f80";
+  $font-file-ttf: "75cafc03-22e4-41b0-8bc2-1b9081506ecc";
+
+  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+}
+
+// Proxima Nova W01 Medium Italic
+@mixin font-medium-italic {
+  $font-weight: "medium-italic";
+  $font-file-eot: "8c7dafc9-d10f-41d0-a036-be19229ef40e";
+  $font-file-woff2: "ce88a131-85cb-4a39-8dd1-3a4f5817b70c";
+  $font-file-woff: "3ffc4ea2-8461-4897-a809-dbf92500372c";
+  $font-file-ttf: "da3b3dc5-47e4-44a6-8bff-4eee158a59c4";
+
+  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+}
+
+// Proxima N W01 Bold,
+@mixin font-bold {
+  $font-weight: "bold";
+  $font-file-eot: "fbc6b03a-b3a1-427c-a884-053deca3a53c";
+  $font-file-woff2: "0d416408-95c6-4ad7-b08d-e60573d3b37d";
+  $font-file-woff: "d999c07b-a049-4eb5-b8a6-4f36ae25e67e";
+  $font-file-ttf: "4d4a75f5-d32a-4a09-8665-133afd39cc37";
+
+  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+}
 
 @at-root {
   // Proxima Nova Regular
   @font-face {
-    @include font-regular();
+    @include font-regular;
+
     font-weight: normal;
     font-style: normal;
     font-variant: normal;
   }
+
   // Proxima Nova Medium
   @font-face {
-    @include font-medium();
+    @include font-medium;
+
     font-weight: 500;
-    font-style: normal;
-    font-variant: normal;
-  }
-  // Proxima Nova Medium
-  @font-face {
-    @include font-medium();
     font-weight: bold;
     font-style: normal;
     font-variant: normal;
   }
+
   // Proxima Nova Bold
   @font-face {
-    @include font-bold();
+    @include font-bold;
+
     font-weight: 900;
     font-style: normal;
     font-variant: normal;
   }
 }
-
-
-// @font-face{
-//     font-family:"Proxima Nova Light Italic";
-//     src:url("#{$base-font-path}#{$base-font-name}-light-italic/ee3e7ba6-7c22-4ff7-ad76-656505595a8a.eot?#iefix");
-//     src:url("#{$base-font-path}#{$base-font-name}-light-italic/ee3e7ba6-7c22-4ff7-ad76-656505595a8a.eot?#iefix") format("eot"),url("#{$base-font-path}#{$base-font-name}-light-italic/b47d2733-d2e6-452a-9134-77bcf65f9e7e.woff2") format("woff2"),url("#{$base-font-path}#{$base-font-name}-light-italic/0c4be1a2-8e16-48b4-a384-165fa5baffe3.woff") format("woff"),url("#{$base-font-path}#{$base-font-name}-light-italic/a7e6cc5b-7ba3-44be-9063-2cc1b3c05155.ttf") format("truetype");
-// }
-// @font-face{
-//     font-family:"Proxima Nova Reg Italic";
-//     src:url("#{$base-font-path}#{$base-font-name}-reg-italic/bc15a635-a09b-40d1-a5c4-70310166177d.eot?#iefix");
-//     src:url("#{$base-font-path}#{$base-font-name}-reg-italic/bc15a635-a09b-40d1-a5c4-70310166177d.eot?#iefix") format("eot"),url("#{$base-font-path}#{$base-font-name}-reg-italic/129d49d6-5492-4ed1-96f7-0528c6d53abc.woff2") format("woff2"),url("#{$base-font-path}#{$base-font-name}-reg-italic/9c69c878-2255-4027-8632-ed3635cddf45.woff") format("woff"),url("#{$base-font-path}#{$base-font-name}-reg-italic/b7eb3871-e910-4522-9982-effb425a2714.ttf") format("truetype");
-// }
-// @font-face{
-//     font-family:"Proxima Nova Bold Italic";
-//     src:url("#{$base-font-path}#{$base-font-name}-bold-italic/cb0c3396-af1a-4c16-95aa-8085e21044c7.eot?#iefix");
-//     src:url("#{$base-font-path}#{$base-font-name}-bold-italic/cb0c3396-af1a-4c16-95aa-8085e21044c7.eot?#iefix") format("eot"),url("#{$base-font-path}#{$base-font-name}-bold-italic/a6315c03-b55d-42b0-8ed6-79060867137d.woff2") format("woff2"),url("#{$base-font-path}#{$base-font-name}-bold-italic/46d5674a-f287-4240-b87a-f207aeb83064.woff") format("woff"),url("#{$base-font-path}#{$base-font-name}-bold-italic/9bd640b2-9a56-4391-b213-767ae9c30ef4.ttf") format("truetype");
-// }
-// @font-face{
-//     font-family:"Proxima Nova Medium Italic";
-//     src:url("#{$base-font-path}#{$base-font-name}-medium/8c7dafc9-d10f-41d0-a036-be19229ef40e.eot?#iefix");
-//     src:url("#{$base-font-path}#{$base-font-name}-medium/8c7dafc9-d10f-41d0-a036-be19229ef40e.eot?#iefix") format("eot"),url("#{$base-font-path}#{$base-font-name}-medium/ce88a131-85cb-4a39-8dd1-3a4f5817b70c.woff2") format("woff2"),url("#{$base-font-path}#{$base-font-name}-medium/3ffc4ea2-8461-4897-a809-dbf92500372c.woff") format("woff"),url("#{$base-font-path}#{$base-font-name}-medium/da3b3dc5-47e4-44a6-8bff-4eee158a59c4.ttf") format("truetype");
-// }

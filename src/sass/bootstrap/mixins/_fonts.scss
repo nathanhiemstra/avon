@@ -1,0 +1,6 @@
+
+@mixin font-base($font-weight, $font-file-eot, $font-file-woff2, $font-file-woff, $font-file-ttf) {
+  font-family: $font-family-name;
+  src: url("#{$base-font-path}#{$base-font-name}-#{$font-weight}/#{$font-file-eot}.eot?#iefix");
+  src: url("#{$base-font-path}#{$base-font-name}-#{$font-weight}/#{$font-file-eot}.eot?#iefix") format("eot"), url("#{$base-font-path}#{$base-font-name}-#{$font-weight}/#{$font-file-woff2}.woff2") format("woff2"), url("#{$base-font-path}#{$base-font-name}-#{$font-weight}/#{$font-file-woff}.woff") format("woff"), url("#{$base-font-path}#{$base-font-name}-#{$font-weight}/#{$font-file-ttf}.ttf") format("truetype");
+}
