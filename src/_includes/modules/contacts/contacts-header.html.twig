@@ -2,15 +2,17 @@
 label: "All [Customers / Team Members]",
 classes: 'flex-basis-100 mb-5'
 } %}
-<div class="d-flex align-items-center flex-basis-100 flex-basis-sm-auto">
-  <span class="avatar avatar-md mr-4 flex-shrink-0">L</span>
+<div class="d-flex align-items-center flex-basis-100 flex-basis-md-auto">
+  <!-- DEV NOTE :: This layout works with or without the avatar. If no avatar is needed, add class 'd-none' -->
+  <span class="avatar avatar-md mr-4 flex-shrink-0 d-none">L</span>
   <div>
-    <h3 class="m-0 d-inline">[Customer / Team Member Name]</h3>
-    <span class="d-inline-flex align-items-center ml-4">
-      <span class="lt-icon lt-pen lt-medium mr-2"></span>
-      <a href="#">Edit</a>
+    <h3 class="m-0 d-inline">Erlinda Conley</h3>
+    <span class="d-inline-flex align-items-end ml-4">
+      <span class="lt-icon lt-pen mr-2 text-muted"></span>
+      <a href="#" class="link-muted small lh-1">Edit</a>
     </span>
-    <form class="form-inline">
+    <!-- DEV NOTE ::  -->
+    <form class="form-inline d-none">
       {% include '_includes/elements/forms/input.html.twig' with {
         type: 'text',
         theValue: 'Linda'
@@ -20,13 +22,29 @@ classes: 'flex-basis-100 mb-5'
         theValue: 'Mitchell'
       } %}
     </form>
-    <p class="small m-0">[Online Customer / #1234567 (Active)]</p>
+    <!-- DEV NOTE :: This layout works with or without the customer number / status. If no customer number / status is needed, add class 'd-none' -->
+    <p class="small m-0 d-none">[Online Customer / #1234567 (Active)]</p>
   </div>
 </div>
-<div class="ml-lg-auto mt-5 mt-lg-0">
+<div class="ml-md-auto mt-5 mt-md-0 flex-basis-100 flex-basis-md-auto">
   <div class="affix-container">
     <form class="form-inline affix--mobile-top" role="form" data-spy="affix">
-      {% include '_includes/modules/contacts/contacts-header-buttons.html.twig' %}
+      <div class="ml-0 ml-lg-auto">
+        <a class="btn btn-default btn-sm btn-soft mr-2 hidden-md hidden-lg">Call</a>
+        <a class="btn btn-default btn-sm btn-soft mr-2 hidden-md hidden-lg">Text</a>
+        <a class="btn btn-default btn-sm btn-soft mr-2">Email</a>
+        <a class="btn btn-default btn-sm btn-soft mr-2 hidden-xs hidden-sm">E-card</a>
+        <div class="dropdown d-inline-block">
+          <a class="btn btn-default btn-sm btn-soft dropdown-toggle" id="filterMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Actions<span class="lt-icon lt-carat-down lt-medium align-middle"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="filterMenu">
+            <li><a href="#">Column title</a></li>
+            <li><a href="#">Column title</a></li>
+            <li><a href="#">Column title</a></li>
+          </ul>
+        </div>
+      </div>
     </form>
   </div>
 </div>

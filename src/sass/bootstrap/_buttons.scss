@@ -644,6 +644,14 @@ input[type="button"] {
   }
 }
 
+// icon adjustment for small buttons
+.btn-sm {
+  .lt-icon.align-middle {
+    line-height: 0;
+    transform: none;
+  }
+}
+
 // Back to Top - Global Button
 .btn-back-to-top {
   position: fixed;
