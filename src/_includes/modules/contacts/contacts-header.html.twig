@@ -3,30 +3,51 @@ label: "All [Customers / Team Members]",
 classes: 'flex-basis-100 mb-5'
 } %}
 <div class="d-flex align-items-center flex-basis-100 flex-basis-md-auto">
-  <!-- DEV NOTE :: This layout works with or without the avatar. If no avatar is needed, add class 'd-none' -->
+  <!-- DEV NOTE :: .avatar is TEAM MEMBER ONLY -
+    Add or remove class 'd-none' depending on case
+    The layout automatically works if this is hidden or shown
+  -->
   <span class="avatar avatar-md mr-4 flex-shrink-0 d-none">L</span>
   <div>
-    <h3 class="m-0 d-inline">Erlinda Conley</h3>
-    <span class="d-inline-flex align-items-end ml-4">
+    <h3 class="m-0 edit-contact-value">Erlinda Conley</h3>
+    <!-- DEV NOTE ::
+      The edit link is for CUSTOMERS ONLY
+      This link toggles the edit state
+      see src/js/demo/vibe-contacts.js
+    -->
+    <span class="edit-contact-btn align-items-end ml-3">
       <span class="lt-icon lt-pen mr-2 text-muted"></span>
       <a href="#" class="link-muted small lh-1">Edit</a>
     </span>
-    <!-- DEV NOTE ::  -->
-    <form class="form-inline d-none">
+    <!-- DEV NOTE ::
+      The form below is for CUSTOMERS ONLY
+      This form is shown with js when edit link is clicked
+      see src/js/demo/vibe-contacts.js
+    -->
+    <form class="form-inline edit-contact-form d-none">
       {% include '_includes/elements/forms/input.html.twig' with {
         type: 'text',
-        theValue: 'Linda'
+        theValue: 'Erlinda',
+        classes: 'form-control--underline pl-0 large'
       } %}
       {% include '_includes/elements/forms/input.html.twig' with {
         type: 'text',
-        theValue: 'Mitchell'
+        theValue: 'Conley',
+        classes: 'form-control--underline pl-0 ml-3 large'
       } %}
+      <div class="btn-group mt-4 mt-md-0">
+        <a href="javascript:void(0)" class="edit-contact-cancel btn btn-default btn-default-link-responsive btn-sm">Cancel</a>
+        <a href="javascript:void(0)" class="edit-contact-save btn btn-primary btn-sm ml-4">Save</a>
+      </div>
     </form>
-    <!-- DEV NOTE :: This layout works with or without the customer number / status. If no customer number / status is needed, add class 'd-none' -->
-    <p class="small m-0 d-none">[Online Customer / #1234567 (Active)]</p>
+    <!-- DEV NOTE :: customer status / number is TEAM MEMBER ONLY -
+      Add or remove class 'd-none' depending on case
+      The layout automatically works if this is hidden or shown
+    -->
+    <p class="contact-details small m-0 d-none">[Online Customer / #1234567 (Active)]</p>
   </div>
 </div>
-<div class="ml-md-auto mt-5 mt-md-0 flex-basis-100 flex-basis-md-auto">
+<div class="action-btns">
   <div class="affix-container">
     <form class="form-inline affix--mobile-top" role="form" data-spy="affix">
       <div class="ml-0 ml-lg-auto">
@@ -39,9 +60,9 @@ classes: 'flex-basis-100 mb-5'
             Actions<span class="lt-icon lt-carat-down lt-medium align-middle"></span>
           </a>
           <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="filterMenu">
-            <li><a href="#">Column title</a></li>
-            <li><a href="#">Column title</a></li>
-            <li><a href="#">Column title</a></li>
+            <li><a href="#">[Action Item]</a></li>
+            <li><a href="#">[Action Item]</a></li>
+            <li><a href="#">[Action Item]</a></li>
           </ul>
         </div>
       </div>

@@ -649,7 +649,6 @@
       checked: false
     } %}
   {{ endhighlight }}
-</div>
 
 <p>Proper indents when label text is super long</p>
 
@@ -681,3 +680,35 @@
       theLabel: 'By registering, you agree to Avon’s <a href="#">Privacy Statement</a> and <a href="#">Conditions of Use</a>, and you are over 18 years old. Bacon ipsum dolor amet biltong tail pork loin doner filet mignon. Shank kevin beef ribs, corned beef doner filet mignon leberkas salami.'
     } %}
   {{ endhighlight }}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# Modifiers #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  <h2 id="forms-modifiers">Form Control Modifiers</h2>
+  <p>Modifier classes to be added to <code>.form-control</code> elements.</p>
+
+  <p><code>.form-control--underline</code></p>
+
+  <div class="bs-example p-5">
+    <form role="form">
+      <input type="text" class="form-control form-control--underline" placeholder="Text input">
+    </form>
+  </div><!-- /.bs-example -->
+
+  {{ highlightMarkup }}
+  <input type="text" class="form-control form-control--underline" placeholder="Text input">
+  {{ endhighlight }}
+
+  <div class="bs-example p-5">
+    <form role="form" class="has-error">
+      <input type="text" class="form-control form-control--underline" placeholder="Text input">
+    </form>
+  </div><!-- /.bs-example -->
+
+  {{ highlightMarkup }}
+  <form role="form" class="has-error">
+    <input type="text" class="form-control form-control--underline" placeholder="Text input">
+  </form>
+  {{ endhighlight }}
+
+</div> <!-- /.bs-docs-section -->

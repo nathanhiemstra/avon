@@ -441,5 +441,6 @@ $( document ).ready( function () {
   if( typeof Sticky !== 'undefined' ) Sticky.init();
   if( typeof TogglePasswordVisibility !== 'undefined' ) TogglePasswordVisibility.init();
   if( typeof NbaDrawer !== 'undefined' ) NbaDrawer.init();
+  if( typeof VibeContacts !== 'undefined' ) VibeContacts.init();
 
 } );

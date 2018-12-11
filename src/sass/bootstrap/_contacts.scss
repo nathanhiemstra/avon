@@ -240,3 +240,65 @@
     }
   }
 }
+
+.page--contacts {
+  .edit-contact-value {
+    display: inline;
+  }
+
+  .edit-contact-btn {
+    display: inline-flex;
+  }
+
+  .edit-contact-form {
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: -12px;
+
+    // tablet
+    @media (min-width: $screen-sm) {
+      flex-wrap: nowrap;
+      height: 41px;
+      margin-top: -7px;
+    }
+
+    input {
+      flex-basis: 48%;
+      max-width: 240px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-basis: 100%;
+
+      // tablet
+      @media (min-width: $screen-sm) {
+        flex-basis: auto;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+      }
+    }
+  }
+  .action-btns {
+    //ml-md-auto mt-5 mt-md-0 flex-basis-100 flex-basis-md-auto
+    margin-top: $spacing-5;
+    flex-basis: 100%;
+
+    // tablet portrait
+    @media (min-width: $screen-sm) {
+    }
+
+    // tablet landscape
+    @media (min-width: 1024px) {
+      flex-basis: auto;
+      align-self: flex-end;
+      margin-bottom: 0.75rem;
+      margin-top: 0;
+      margin-left: auto;
+    }
+  }
+}
