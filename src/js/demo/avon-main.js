@@ -369,6 +369,20 @@ $( document ).ready( function () {
     $('.selectpicker').selectpicker('mobile');
   }
 
+  // prevent title pop up on hover (override default browser behavior)
+  $('.selectpicker').on('loaded.bs.select', function (e) {
+    var selectPickerBtns = $('.bootstrap-select').find('button');
+
+    selectPickerBtns.mouseover(function () {
+      $this = $(this);
+      $this.data('title', $this.attr('title'));
+      $this.attr('title', '');
+    }).mouseout(function () {
+        $this = $(this);
+        $this.attr('title', $this.data('title'));
+    });
+  });
+
   // radio select combos
   $('.radio-select-combo').on('click', function() {
     var $radio = $(this).find('input[type="radio"]');
