@@ -3,7 +3,6 @@
  * @return {init} [description]
  */
 
-
 var ContactsDemo = (function () {
 
   var $els = {};
@@ -16,12 +15,17 @@ var ContactsDemo = (function () {
 
     // grab the DOM els we need
     $els = {
-      actionLinksDisableable:   $('.page--contacts-list .action-items .disableable'),
-      actionLinksToggleTrigger: $('.page--contacts-list #contact-list-toggle-all'),
+      mainContainer:            $('.page--contacts-list'),
+      actionLinksDisableable:   $('.page--contacts-list .actions-secondary--list .disableable'),
+      actionLinksTooltip:       $('.page--contacts-list .tooltip-disableable'),
+      checkboxToggleTrigger:    $('.page--contacts-list #contact-list-toggle-all'),
+      checkboxCount:            $('.page--contacts-list .checked-checkbox-count'),
+      checkboxItem:             $('.page--contacts-list .contact-list-checkbox-item'),
+      selectedItemsControls:    $('.page--contacts-list .group--selected-item-controls'),
       autoCompleteInput:        $( autoCompleteInputId ),
       autoCompleteCloseTrigger: $( autoCompleteInputId + '+ .lt-close' ),
       autoCompleteContainer:    $( autoCompleteInputId ).closest( '.autocomplete-container' ),
-      autoCompleteParent:       $( autoCompleteInputId ).closest( '.autocomplete-container' ).parent()
+      autoCompleteParent:       $( autoCompleteInputId ).closest( '.autocomplete-container' ).parent(),
     };
 
     _addListeners();
@@ -35,8 +39,15 @@ var ContactsDemo = (function () {
   var _addListeners = function () {
 
     // ACTION LINKS
-    $els.actionLinksToggleTrigger.change(function () {
+
+    // Check/uncheck parent checkbox
+    $els.checkboxToggleTrigger.change(function () {
       _actionLinksToggle();
+    });
+
+    // Check/uncheck an individual checkbox
+    $els.checkboxItem.change(function () {
+      _checkboxToggle();
     });
 
     // AUTO COMPLETE
@@ -142,15 +153,92 @@ var ContactsDemo = (function () {
   // FUNCTIONS
   ///////////////////////////////////
 
+  var _checkedCheckboxCount = function( howManyChecked ) {
+
+    // If the number of checkxoes checked wasn't passed in, find out now
+    if ( howManyChecked == null) {
+      var howManyChecked = $('input:checkbox:checked', $els.checkboxItem).length;
+    }
+
+    if ( howManyChecked > 0 ) {
+      // More than 1 checkbox checked:
+      // This class controls several items that should be visible/hidden
+      $els.mainContainer.addClass('has-selected-customer');
+      // Display the # of checkboxs checked
+      $els.checkboxCount.html( howManyChecked + '<span class="count-label"> selected</span>');
+    } else {
+      // No checkboxes checked:
+      // Hide a bunch of stuff
+      $els.mainContainer.removeClass('has-selected-customer');
+      // Hide the # of checkboxs checked
+      $els.checkboxCount.html( '' );
+    }
+  }
+
+  var _checkboxToggle = function() {
+
+    // Check or uncheck parent checkbox
+    var howManyChecked = $('input:checkbox:checked', $els.checkboxItem).length;
+    var howManyCheckboxes = $($els.checkboxItem).length;
+
+    _checkedCheckboxCount( howManyChecked );
+
+    // Developer note: The "indeterminate" property is what makes the checkbox have either a checkmark or "-" icon.
+
+    if (  howManyChecked == howManyCheckboxes ) {
+      // ALL are checked: check the checkbox, make the icon a "checkmark"
+      $els.checkboxToggleTrigger.prop( "checked", true ).prop('indeterminate', false);
+      $els.selectedItemsControls.removeClass('hidden-xs');
+
+    } else if ( howManyChecked > 0 )  {
+      // SOME are checked: check the checkbox, make the icon a "-"
+      $els.checkboxToggleTrigger.prop( "checked", true ).prop('indeterminate', true);
+      $els.selectedItemsControls.removeClass('hidden-xs');
+      _actionLinksEnable();
+
+    } else if ( howManyChecked == 0 )  {
+      // NONE are checked: uncheck the checkbox, make the icon a "checkmark"
+      $els.checkboxToggleTrigger.prop( "checked", false ).prop('indeterminate', false);
+      $els.selectedItemsControls.addClass('hidden-xs');
+      _actionLinksDisable();
+
+    } else {
+      _actionLinksDisable();
+    }
+
+  };
+
+
   // Toggle disableable links
   var _actionLinksToggle = function( trigger ) {
 
-    if ( $els.actionLinksToggleTrigger.prop('checked') == true ) {
-      $els.actionLinksDisableable.removeClass( 'link-disable' );
+    if ( $els.checkboxToggleTrigger.prop('checked') == true ) {
+      _actionLinksEnable();
+      // Check all checkboxes
+      $('input:checkbox', $els.checkboxItem).prop('checked', true);
     } else {
-      $els.actionLinksDisableable.addClass( 'link-disable' );
+      _actionLinksDisable();
+      // Uncheck all checkboxes
+      $('input:checkbox', $els.checkboxItem).prop('checked', false);
     }
+
+    _checkedCheckboxCount();
+
   };
+
+  var _actionLinksEnable = function( trigger ) {
+    // Enable links
+    $els.actionLinksDisableable.removeClass( 'link-disable' );
+    // Disable link's tooltips
+    $els.actionLinksTooltip.tooltip('disable');
+  }
+
+  var _actionLinksDisable = function( trigger ) {
+    // Disable links
+    $els.actionLinksDisableable.addClass( 'link-disable' );
+    // Enable link's tooltips
+    $els.actionLinksTooltip.tooltip('enable');
+  }
 
 
   var _checkWindowSize = function() {
@@ -180,8 +268,6 @@ var ContactsDemo = (function () {
   //   $els.autoCompleteInput.focus();
   // };
 
-
-
 // construct the html for predictive search template
 
 // NOTE: Alternative ways teh avatar might look:
@@ -200,10 +286,6 @@ var ContactsDemo = (function () {
       '</a>' +
       '</div>';
   };
-
-
-
-
 
   return {
     init: init
