@@ -328,6 +328,18 @@
   margin-left: auto !important;
 }
 
+@media (max-width: 576px) {
+  .pr-xs-0,
+  .px-xs-0 {
+    padding-right: 0 !important;
+  }
+
+  .pl-xs-0,
+  .px-xs-0 {
+    padding-left: 0 !important;
+  }
+}
+
 @media (min-width: 576px) {
   .m-sm-0 {
     margin: 0 !important;

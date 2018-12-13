@@ -20,6 +20,15 @@
 {% endblock %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeaderMessage #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeaderMessage %}
+<div class="reverse-bg px-4 py-3 text-center text-muted">
+  <span>[4]</span> filters applied. <a href="#">Clear all</a>
+</div>
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - modalBody #}
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
@@ -147,77 +156,6 @@
 
 </form>
 
- {#  {% include "_includes/groups/alerts/alert-level-section-generic.twig" with {marginClasses: null } %}
-
-  <p class="my-b text-center">Add a bank account to complete sign up.</p>
-
-  <div class="form-group">
-    <label class="control-label">Name on Account</label>
-    {% include "_includes/elements/forms/input.html.twig" with {
-      type : 'text'
-    } %}
-  </div>
-
-  <div class="form-group">
-    <label class="control-label">Bank Name</label>
-    {% include "_includes/elements/forms/input.html.twig" with {
-      type : 'text'
-    } %}
-  </div>
-
-  <div class="form-group">
-    <label class="control-label">Bank Routing Number
-      <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span>
-    </label>
-    {% include "_includes/elements/forms/input.html.twig" with {
-      type : 'text'
-    } %}
-  </div>
-
-  <div class="form-group has-error">
-    <label class="control-label">{% include "_includes/elements/forms/label-error-icon.html.twig" %}Bank Account Number
-      <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="modal" data-target="#modal-routing-number" aria-hidden="true"></span>
-    </label>
-    {% include "_includes/elements/forms/input.html.twig" with {
-      type : 'text',
-      haslabelErrorIcon: true,
-      hasInlineErrorIcon: null,
-      hasAbsoluteErrorIcon: null,
-      classes: 'form-control'
-    } %}
-  </div>
-
-
-  <!-- START - ACCOUNT TYPE RADIOS -->
-  <div class="form-group w-100">
-    <form class="form-inline" role="form">
-      <h6 class="pt-2">Account Type</h6>
-      {% include components.elements.forms.radio with {
-        id: 'account-type-checking',
-        name: 'account-type',
-        classes: 'radio-inline pl-0',
-        theLabel: 'Checking',
-        checked: true
-      } %}
-
-      {% include components.elements.forms.radio with {
-        id: 'account-type-savings',
-        name: 'account-type',
-        classes: 'radio-inline',
-        theLabel: 'Savings',
-        checked: false
-      } %}
-    </form>
-  </div>
-  <!-- END - ACCOUNT TYPE RADIOS -->
-
-  <div class="form-group">
-    <label class="control-label">Last 4 digits of SSN</label>
-    {% include "_includes/elements/forms/input.html.twig" with {
-      type: 'password',
-      maxlength: '4'
-    } %}
-  </div> #}
 
 {% endblock %}
 

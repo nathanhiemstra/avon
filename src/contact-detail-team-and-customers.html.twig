@@ -15,7 +15,7 @@
     <section class="container container--page">
 
       <header class="row" role="header">
-        <div class="col-md-12 d-flex flex-wrap align-items-center">
+        <div class="col-md-12 d-flex flex-wrap align-items-start">
           {% include '_includes/modules/contacts/contacts-header.html.twig' %}
         </div>
       </header>
@@ -76,22 +76,6 @@
               {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-contact-hist.html.twig' %}
             </div>
           </div>
-
-          <!-- START - ACCOUNT STATEMENT BALANCES -->
-          {# {% include "_includes/modules/account/account-statements-balances.html.twig" %}\ #}
-          <!-- END - ACCOUNT STATEMENT BALANCES -->
-
-          <!-- START - ACCOUNT STATEMENT SEARCH -->
-          {# {% include "_includes/modules/account/account-statements-search.html.twig" %} #}
-          <!-- END - ACCOUNT STATEMENT SEARCH -->
-
-          <!-- START - ACCOUNT STATEMENT SEARCH RESULTS-->
-          {# {% include "_includes/modules/account/account-statements-search-results.html.twig" %} #}
-          <!-- END - ACCOUNT STATEMENT SEARCH RESULTS -->
-
-          {# <p class="text-center">
-            <a class="text-center" href="#">Print</a>
-          </p> #}
 
         {% endblock %}
 

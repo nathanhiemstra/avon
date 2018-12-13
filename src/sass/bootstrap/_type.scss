@@ -338,6 +338,11 @@ mark,
 
 @include bg-variant(".bg-danger", $state-danger-bg);
 
+// Line height
+.lh-1 {
+  line-height: 1;
+}
+
 // Page header
 // -------------------------
 

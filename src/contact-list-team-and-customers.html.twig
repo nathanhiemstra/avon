@@ -1,6 +1,12 @@
 {% extends layouts.base %}
 
-{% set sectionClass = 'page--contacts-list' %}
+{% set sectionClass = 'page--contacts-list contact-type--' ~ contactType %}
+
+  {% if contactType == 'team' %}
+    {% set contactTypeLabel = 'Team' %}
+  {% else %}
+    {% set contactTypeLabel = 'Customer' %}
+  {% endif %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
@@ -16,7 +22,7 @@
 
       <header class="row" role="header">
         <div class="col-md-12 mb-2">
-          <h2 class="mb-4 mr-auto">[Customer/Team Contacts]</h2>
+          <h2 class="mb-4 mr-auto">{{ contactTypeLabel }} Contacts</h2>
 
 
           <!-- START - AUTOCOMPLETE -->
@@ -34,7 +40,6 @@
 
                 <div class="input-group">
                   <span class="input-group-addon input-xs"><span class="lt-icon lt-search lt-large lt-color-muted"></span></span>
-
 
                   {% include components.elements.forms.input with {
                     id: 'autocomplete-contact-list',
@@ -77,13 +82,9 @@
       </header>
     </section>
 
-    <!-- START - TABLE - "CUSTOMER" EXAMPLE -->
-    {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'customer' } %}
-    <!-- END - TABLE - "CUSTOMER" EXAMPLE -->
-
-    <!-- START - TABLE - "TEAM" EXAMPLE -->
-    {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: 'team' } %}
-    <!-- RND - TABLE - "TEAM" EXAMPLE -->
+    <!-- START - TABLE - "{{ contactTypeLabel }}" EXAMPLE -->
+    {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: contactType } %}
+    <!-- END - TABLE - "{{ contactTypeLabel }}" EXAMPLE -->
 
   {% endblock %}
 

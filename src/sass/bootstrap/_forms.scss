@@ -222,6 +222,13 @@ output {
   & + .text-danger {
     margin-top: 5px;
   }
+
+  // large text modifier
+  &.large {
+    @extend h3;
+    margin: 0;
+    // font-size: $font-size-large * 2;
+  }
 }
 
 // Reset height for `textarea`s
@@ -1199,4 +1206,10 @@ input.form-control {
       height: 60px;
     }
   }
+}
+
+// form control modifiers
+.form-control--underline {
+  border: none;
+  border-bottom: 1px solid $border-color;
 }

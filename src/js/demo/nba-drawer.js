@@ -1,5 +1,5 @@
 /**
- * BackToTop - handles all 'back to top' button behavior
+ * NbaDrawer - handles all 'Next Best Action' drawer behavior
  * @return {init} [description]
  */
 
