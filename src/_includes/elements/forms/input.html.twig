@@ -5,22 +5,22 @@
   {% set classes = ' ' ~ classes %}
 {% endif %}
 {% if size %}
-  {% set size = ' size="' ~ size ~ '"' %}
+  {% set size = ' size="' ~ size ~ '" ' %}
 {% endif %}
 {% if maxlength %}
-  {% set maxlength = ' maxlength="' ~ maxlength ~ '"' %}
+  {% set maxlength = ' maxlength="' ~ maxlength ~ '" ' %}
 {% endif %}
 {% if id %}
-  {% set id = ' id="' ~ id ~ '"' %}
+  {% set id = ' id="' ~ id ~ '" ' %}
 {% endif %}
 {% if placeholder %}
-  {% set placeholder = ' placeholder="' ~ placeholder ~ '"' %}
+  {% set placeholder = ' placeholder="' ~ placeholder ~ '" ' %}
 {% endif %}
 {% if includeValueData %}
-  {% set data = ' data-initial-value="' ~ theValue ~ '"' %}
+  {% set data = ' data-initial-value="' ~ theValue ~ '" ' %}
 {% endif %}
-{% if theValue %}
-  {% set theValue = ' value="' ~ theValue ~ '"' %}
+{% if theValue is not null %}
+  {% set theValue = ' value="' ~ theValue ~ '" ' %}
 {% endif %}
 {% if hasInlineErrorIcon %}
   {% set errorClass = 'has-error--icon-inline' %}
@@ -40,7 +40,7 @@
   {% set listeners = listeners ~ ' onclick="this.select()"' %}
 {% endif %}
 {% if onInputJs %}
-  {% set oninput = 'oninput="' ~ onInputJs ~ '"' %}
+  {% set oninput = 'oninput="' ~ onInputJs ~ '" ' %}
 {% endif %}
 {% if required %}
   {% set required = ' required ' %}
@@ -48,7 +48,6 @@
 {% if disabled %}
   {% set disabled = ' disabled ' %}
 {% endif %}
-
 {{ hasInlineErrorIconStart }}
 {{ errorIcon }}<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}{{ data }}{{ attrs }}{{ listeners }}{{ oninput }}{{ required }}{{ disabled }}>
 {{ hasInlineErrorIconEnd }}
