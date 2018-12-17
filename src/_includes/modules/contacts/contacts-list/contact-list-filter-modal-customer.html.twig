@@ -1,6 +1,6 @@
 {% extends "_layouts/modal.html.twig" %}
 {% if not modalId %}
-  {% set modalId = 'modal-contact-list-filter' %}
+  {% set modalId = 'modal-contact-list-filter-customer' %}
 {% endif %}
 
 {% set modalClasses = 'modal-either-or' %}
@@ -35,57 +35,8 @@
 
 <form role="form">
   <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <div class="form-group has-feedback">
-        {% include components.groups.forms.selectAndLabel with {
-          id: 'filter-account-status',
-          mainLabel: 'Account Status',
-          required: null,
-          haslabelErrorIcon: true,
-          hasInlineErrorIcon: null,
-          hasAbsoluteErrorIcon: null,
-          optionSelected: 0,
-          'options': [
-            {'label': 'All'},
-            {'label': 'Item 1'},
-            {'label': 'Item 2'}
-          ]
-        } %}
-      </div>
-      <div class="form-group has-feedback">
-        {% include components.groups.forms.selectAndLabel with {
-          id: 'filter-leadership-title',
-          mainLabel: 'Leadership Title',
-          required: null,
-          haslabelErrorIcon: true,
-          hasInlineErrorIcon: null,
-          hasAbsoluteErrorIcon: null,
-          optionSelected: 0,
-          'options': [
-            {'label': 'All'},
-            {'label': 'Item 1'},
-            {'label': 'Item 2'}
-          ]
-        } %}
-      </div>
-      <div class="form-group has-feedback">
-        {% include components.groups.forms.selectAndLabel with {
-          id: 'filter-presidents-club-level',
-          mainLabel: "President's Club Level" ,
-          required: null,
-          haslabelErrorIcon: true,
-          hasInlineErrorIcon: null,
-          hasAbsoluteErrorIcon: null,
-          optionSelected: 0,
-          'options': [
-            {'label': 'All'},
-            {'label': 'Item 1'},
-            {'label': 'Item 2'}
-          ]
-        } %}
-      </div>
-    </div><!-- /.col -->
-    <div class="col-xs-12 col-sm-6">
+
+    <div class="col-xs-12">
       <div class="form-group has-feedback">
         {% include components.groups.forms.selectAndLabel with {
           id: 'filter-language',
@@ -103,36 +54,21 @@
         } %}
       </div>
 
-      <div class="form-group-wrapper">
-        <label class="control-label">Length of Association (LOA)</label>
-        <div class="form-inline-all-devices mb-4">
-          <div class="form-group">
-            {% include components.groups.forms.inputAndLabel with {
-              id: 'filter-length-of-association-all',
-              mainLabel: 'All',
-              type: 'text',
-              required: null,
-              haslabelErrorIcon: true,
-              hasInlineErrorIcon: null,
-              hasAbsoluteErrorIcon: null,
-              theValue: '0',
-              size: '3'
-            } %}
-          </div>
-          <div class="form-group">
-            {% include components.groups.forms.inputAndLabel with {
-              id: 'filter-length-of-association-and',
-              mainLabel: 'and',
-              type: 'text',
-              required: null,
-              haslabelErrorIcon: true,
-              hasInlineErrorIcon: null,
-              hasAbsoluteErrorIcon: null,
-              theValue: '999',
-              size: '3'
-            } %}
-          </div>
-        </div>
+      <div class="form-group has-feedback">
+        {% include components.groups.forms.selectAndLabel with {
+          id: 'filter-language',
+          mainLabel: 'Online Customers',
+          required: null,
+          haslabelErrorIcon: true,
+          hasInlineErrorIcon: null,
+          hasAbsoluteErrorIcon: null,
+          optionSelected: 0,
+          'options': [
+            {'label': 'All'},
+            {'label': 'Item 1'},
+            {'label': 'Item 2'}
+          ]
+        } %}
       </div>
 
       <div class="form-group has-feedback">

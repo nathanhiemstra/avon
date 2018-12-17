@@ -167,6 +167,10 @@
   }
 }
 
+.link-suppressed {
+  pointer-events: none;
+}
+
 .link-disable {
   color: $link-color-disabled;
   pointer-events: none;

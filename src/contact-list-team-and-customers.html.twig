@@ -75,6 +75,7 @@
               <a class="btn btn-primary btn-sm btn-soft mt-3 mt-sm-0">Add Contact</a>
               <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0 mx-2">Import</a>
               <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Groups</a>
+              <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Tree View</a>
             </div>
           </div>
           <!-- END - AUTOCOMPLETE -->
@@ -89,8 +90,10 @@
 
   {% endblock %}
 
-  <!-- START - FILTER MODAL -->
-  {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal.html.twig" %}
-  <!-- END - FILTER MODA -->
+  <!-- START - FILTER MODAL - {{ contactTypeLabel }} -->
+  {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal-" ~ contactType ~ ".html.twig" %}
+  <!-- END - FILTER MODAL - {{ contactTypeLabel }} -->
+
+
 
 {% endblock %}
