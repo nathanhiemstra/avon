@@ -1,13 +1,15 @@
 <ul class="list-inline list-inline--dividers mb-0 actions-secondary--list">
   <!-- FILTER -->
   <li class="list-second-to-last">
-    <a href="javascript:void(0)" class="link-item link-muted" data-toggle="modal" data-target="#modal-contact-list-filter">
+    <!-- START - MODAL LINK FOR {{ contactTypeLabel }} -->
+    <a href="javascript:void(0)" class="link-item link-muted" data-toggle="modal" data-target="#modal-contact-list-filter-{{ contactType }}">
       <!-- DEVELOPER NOTE: After applying a filter in the Filter Modal, the filter icon should turn solid grey. To do this, change the class from "lt-filter" to "lt-filter-fill" -->
       <span class="lt-icon lt-filter lt-medium align-middle"></span>
       <span class="lt-icon lt-filter-fill lt-medium align-middle"></span>
       <!-- DEVELOPER NOTE: ".filter-count" shows how many items are chosen in the filters modal -->
       <span class="link-underline">Filter <span class="filter-count">[4]</span></span>
     </a>
+    <!-- END - MODAL LINK FOR {{ contactTypeLabel }} -->
   </li>
   <!-- SORT -->
   <li class="visible-xs-inline-block visible-sm-inline-block">

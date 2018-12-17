@@ -89,6 +89,14 @@
   }
 
   @media (max-width: $screen-sm) {
+    .t-email {
+      a {
+        pointer-events: none;
+        text-decoration: none;
+        color: $text-muted;
+      }
+    }
+
     .actions-secondary {
       flex-wrap: wrap;
       font-size: 13px;
