@@ -31,22 +31,25 @@ var VibeContacts = (function () {
   var _addListeners = function () {
 
     // edit button
-    $els.editContactBtn.on('click', function() {
+    $els.editContactBtn.on('click', function(e) {
+      e.preventDefault();
       _handleEditContact();
     });
 
     // cancel button
-    $els.editContactCancelBtn.on('click', function() {
+    $els.editContactCancelBtn.on('click', function(e) {
+      e.preventDefault();
       _handleCancelEdit();
     });
 
     // save button
-    $els.editContactSaveBtn.on('click', function() {
+    $els.editContactSaveBtn.on('click', function(e) {
+      e.preventDefault();
       _handleSaveEdit();
     });
   };
 
-  var _handleEditContact = function(e) {
+  var _handleEditContact = function() {
     $els.editContactBtn.addClass('d-none');
     $els.editContactValue.addClass('d-none');
     $els.editContactForm.removeClass('d-none');
@@ -58,7 +61,7 @@ var VibeContacts = (function () {
     }
   };
 
-  var _handleCancelEdit = function(e) {
+  var _handleCancelEdit = function() {
     $els.editContactBtn.removeClass('d-none');
     $els.editContactValue.removeClass('d-none');
     $els.editContactForm.addClass('d-none');
@@ -69,7 +72,7 @@ var VibeContacts = (function () {
     }
   };
 
-  var _handleSaveEdit = function(e) {
+  var _handleSaveEdit = function() {
     console.log('DEV NOTE :: handle saving the edit here');
   };
 

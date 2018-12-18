@@ -12,7 +12,7 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
-    <section class="container container--page">
+    <section class="container container--page container--flex-nav">
 
       <header class="row" role="header">
         <div class="col-md-12 d-flex flex-wrap align-items-start">
@@ -20,9 +20,9 @@
         </div>
       </header>
 
-      <hr class="mb-5">
+      <hr class="w-100 mb-5">
 
-      {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
+      {% embed '_layouts/columns-3x9-secondary-nav-flex.html.twig' %}
 
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {# DEFINE BLOCK - ASIDE #}
