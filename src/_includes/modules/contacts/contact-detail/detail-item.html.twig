@@ -1,0 +1,27 @@
+{#
+  ~ Params ~
+  label: string
+  learnMoreTarget: string - id for Learn More target modal
+  canEdit: bool - indicates if this field is editable
+  content: string (html) - Main content for this field
+#}
+
+<div class="row d-flex flex-wrap my-5 mx-0">
+  <div class="item-label order-1">
+    <h6 class="m-0">{{ label }}</h6>
+    {% if learnMoreTarget %}
+    <a href="#" data-toggle="modal" data-target="{{ learnMoreTarget }}">Learn More</a>
+    {% endif %}
+  </div>
+  <div class="item-content order-3 order-sm-2 mt-4 mt-md-0">
+    {{ content }}
+  </div>
+  <div class="item-edit order-2 order-sm-3 d-flex align-items-start">
+    {% if canEdit %}
+    <span class="edit-btn d-inline-flex align-items-end align-middle">
+      <span class="lt-icon lt-pen mr-2 text-muted"></span>
+      <a href="#" class="link-muted small lh-1 font-weight-bold">Edit</a>
+    </span>
+    {% endif %}
+  </div>
+</div>

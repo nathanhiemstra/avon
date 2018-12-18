@@ -2,107 +2,119 @@
 
 <hr>
 
-<section>
+<section class="contact-detail-table">
 
-  <div class="row my-5">
-    <div class="col-xs-10 my-md-2">
-      <h6 class="col-sm-4">Email</h6>
-      <div class="col-sm-6">test@gmail.com</div>
-    </div>
-    <div class="col-xs-2 text-right">
-      <span class="edit-btn d-inline-flex align-items-end align-middle">
-        <span class="lt-icon lt-pen mr-2 text-muted"></span>
-        <a href="#" class="link-muted small lh-1 font-weight-bold">Edit</a>
-      </span>
-    </div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Email',
+    canEdit: true,
+    content: '<p class="mb-3"><a href="mailto:test@gmail.com">test@gmail.com</a></p>
+    <div class="d-flex text-danger mb-0">
+      <span class="lt-icon lt-warning lt-small mr-1"></span>
+      <span class="small">Message to this address are not being delivered</span>
+    </div>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Phone Number</h6>
-    <div class="col-sm-8">123.456.7890</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Phone Number',
+    canEdit: true,
+    content: '<p class="mb-3">Primary: (123)456-7890</p>
+      <p class="mb-0">Secondary: (890)123-4567</p>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Address</h6>
-    <div class="col-sm-8">9072 Rialto St
-      <br>Naples, FL 34113</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Address',
+    canEdit: true,
+    content: '<h6 class="text-muted mt-0 mb-4">Home Address</h6>
+      <p class="mb-3">9072 Rialto St</p>
+      <p class="mb-0">Naples, FL 34113</p>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Contact Group(s)</h6>
-    <div class="col-sm-8">
-      <span class="badge badge-pill">Groupname 1</span>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Contact Group(s)',
+    canEdit: false,
+    content: '<span class="badge badge-pill">Groupname 1</span>
       <span class="badge badge-pill">Groupname 2</span>
-      <br><a href="#">Add to Group</a></div>
-  </div>
+      <br><a href="#">Add to Group</a>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Language Preference</h6>
-    <div class="col-sm-8">Dutch</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Language Preference',
+    canEdit: true,
+    content: '<p class="mb-3">English</p>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Birthday</h6>
-    <div class="col-sm-8">September 27</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Birthday',
+    canEdit: true,
+    content: '<p class="mb-3">September 27</p>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Subscribed to my emails</h6>
-    <div class="col-sm-8">Yes</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Subscribed to my emails',
+    canEdit: false,
+    content: '<p class="mb-3">Yes</p>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Opted in to receive texts</h6>
-    <div class="col-sm-8">Yes</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Opted in to receive texts',
+    canEdit: false,
+    content: '<p class="mb-3">Yes</p>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Customer Since</h6>
-    <div class="col-sm-8">11/20/2014</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Customer Since',
+    canEdit: true,
+    content: '<p class="mb-3">11/20/2014</p>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Contact Created</h6>
-    <div class="col-sm-8">11/25/2015</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Contact Created',
+    canEdit: true,
+    content: '<p class="mb-3">11/25/2015</p>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Preferred Contact Method</h6>
-    <div class="col-sm-8">Phone</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Preferred Contact Method',
+    canEdit: true,
+    content: '<p class="mb-3">Phone</p>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Sales Tax</h6>
-    <div class="col-sm-8">Your default sales tax of 0.15% will be used for this customer</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Sales Tax',
+    canEdit: true,
+    content: '<p class="mb-3">0.00% (default)</p>',
+    learnMoreTarget: '#change-me'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Delivery Option</h6>
-    <div class="col-sm-8">Use default delivery option</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Delivery Option',
+    canEdit: true,
+    content: '<p class="mb-3">Direct Delivery only (default)</p>',
+    learnMoreTarget: '#change-me'
+  } %}
 
 </section>
