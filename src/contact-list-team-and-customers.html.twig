@@ -72,10 +72,23 @@
               </div><!-- /input-group -->
             </form>
             <div class="mb-4 ml-0 ml-lg-auto">
+
+              {% if contactType == 'customer' %}
+              <!-- START - CUSTOMER ONLY -->
               <a class="btn btn-primary btn-sm btn-soft mt-3 mt-sm-0">Add Contact</a>
               <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0 mx-2">Import</a>
+              <!-- END - CUSTOMER ONLY -->
+              {% endif %}
+
+              <!-- START - TEAM AND CUSTOMER -->
               <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Groups</a>
+              <!-- END - TEAM AND CUSTOMER -->
+
+              {% if contactType == 'team' %}
+              <!-- START - TEAM ONLY -->
               <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Tree View</a>
+              <!-- END - TEAM ONLY -->
+              {% endif %}
             </div>
           </div>
           <!-- END - AUTOCOMPLETE -->
