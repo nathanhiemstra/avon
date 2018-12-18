@@ -19,8 +19,22 @@
   {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
     label: 'Phone Number',
     canEdit: true,
-    content: '<p class="mb-3">Primary: (123)456-7890</p>
-      <p class="mb-0">Secondary: (890)123-4567</p>'
+    content: '<p class="d-flex mb-3">
+      <span class="">Primary: (123)456-7890</span>
+      <span class="d-inline visible-xs visible-sm ml-auto">
+        <a href="tel:1234567890" class="mr-2">Call</a>
+        <span class="small pipe">|</span>
+        <a href="sms://+1234567890" class="ml-2">Text</a>
+      </span>
+    </p>
+    <p class="d-flex mb-3">
+      <span class="">Secondary: (890)123-4567</span>
+      <span class="d-inline visible-xs visible-sm ml-auto">
+        <a href="tel:8901234567" class="mr-2">Call</a>
+        <span class="small pipe">|</span>
+        <a href="sms://+8901234567" class="ml-2">Text</a>
+      </span>
+    </p>'
   } %}
 
   <hr>

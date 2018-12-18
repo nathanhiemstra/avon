@@ -6,7 +6,7 @@
   content: string (html) - Main content for this field
 #}
 
-<div class="row d-flex flex-wrap my-5 mx-0">
+<div class="contact-detail-item row d-flex flex-wrap my-5 mx-0">
   <div class="item-label order-1">
     <h6 class="m-0">{{ label }}</h6>
     {% if learnMoreTarget %}
@@ -16,6 +16,15 @@
   <div class="item-content order-3 order-sm-2 mt-4 mt-md-0">
     {{ content }}
   </div>
+  {% if canEdit %}
+  <form class="item-edit-form order-3 order-sm-2 d-none mt-4 mt-md-0">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="test@gmail.com">
+    </div>
+    <button type="button" class="btn btn-default btn-cancel">Cancel</button>
+    <button type="button" class="btn btn-primary btn-save">Save</button>
+  </form>
+  {% endif %}
   <div class="item-edit order-2 order-sm-3 d-flex align-items-start">
     {% if canEdit %}
     <a class="link-muted edit-btn d-inline-flex align-items-end align-middle">

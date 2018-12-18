@@ -3,15 +3,12 @@
  * @return {init} [description]
  */
 
-
-var VibeContacts = (function () {
-
+var VibeContacts = (function() {
   var $els = {};
   var detailsHidden;
 
   // public methods
-  var init = function () {
-
+  var init = function() {
     // grab the DOM els we need
     $els = {
       editContactBtn: $('.edit-contact-btn'),
@@ -19,7 +16,10 @@ var VibeContacts = (function () {
       editContactForm: $('.edit-contact-form'),
       editContactCancelBtn: $('.edit-contact-cancel'),
       editContactSaveBtn: $('.edit-contact-save'),
-      contactDetails: $('.contact-details')
+      contactDetails: $('.contact-details'),
+      detailItemsEditBtns: $('.contact-detail-table .item-edit'),
+      detailItemsCancelBtns: $('.contact-detail-table .btn-cancel'),
+      detailItemsSaveBtns: $('.contact-detail-table .btn-save')
     };
 
     detailsHidden = $els.contactDetails.hasClass('d-none');
@@ -28,8 +28,7 @@ var VibeContacts = (function () {
   };
 
   // private methods
-  var _addListeners = function () {
-
+  var _addListeners = function() {
     // edit button
     $els.editContactBtn.on('click', function(e) {
       e.preventDefault();
@@ -47,6 +46,36 @@ var VibeContacts = (function () {
       e.preventDefault();
       _handleSaveEdit();
     });
+
+    // detail edit buttons
+    $els.detailItemsEditBtns.on('click', function(e) {
+      var $this = $(this);
+      var $form = $this.siblings('.item-edit-form');
+      // toggle element visiblilty
+      $this.removeClass('d-flex').addClass('d-none');
+      $this.siblings('.item-content').addClass('d-none');
+      $form.removeClass('d-none');
+      // focus input
+      $form.find('input:first-of-type').select().focus();
+    });
+
+    $els.detailItemsCancelBtns.on('click', function() {
+      var $parent = $(this).closest('.contact-detail-item');
+      // toggle element visiblilty
+      $parent.find('.item-edit').addClass('d-flex').removeClass('d-none');
+      $parent.find('.item-content').removeClass('d-none');
+      $parent.find('.item-edit-form').addClass('d-none');
+    });
+
+    $els.detailItemsSaveBtns.on('click', function() {
+      var $parent = $(this).closest('.contact-detail-item');
+      // toggle element visiblilty
+      $parent.find('.item-edit').addClass('d-flex').removeClass('d-none');
+      $parent.find('.item-content').removeClass('d-none');
+      $parent.find('.item-edit-form').addClass('d-none');
+
+      _handleSaveEdit();
+    });
   };
 
   var _handleEditContact = function() {
@@ -56,7 +85,7 @@ var VibeContacts = (function () {
     $els.editContactForm.find('input:first-of-type').select().focus();
 
     // hide details on edit if visible
-    if(!detailsHidden) {
+    if (!detailsHidden) {
       $els.contactDetails.addClass('d-none');
     }
   };
@@ -67,7 +96,7 @@ var VibeContacts = (function () {
     $els.editContactForm.addClass('d-none');
 
     // show details on cancel edit if visible before
-    if(!detailsHidden) {
+    if (!detailsHidden) {
       $els.contactDetails.removeClass('d-none');
     }
   };
@@ -79,5 +108,4 @@ var VibeContacts = (function () {
   return {
     init: init
   };
-
 })();

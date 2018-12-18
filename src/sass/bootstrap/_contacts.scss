@@ -425,6 +425,14 @@
 
   .item-content {
     flex-basis: 100%;
+
+    .pipe {
+      color: $gray-light;
+    }
+  }
+
+  .item-edit-form {
+    flex-basis: 100%;
   }
 
   @media (min-width: $screen-sm) {
@@ -433,7 +441,7 @@
     }
 
     .item-content {
-      flex-basis: auto;
+      flex-basis: 50%;
       margin-left: $spacing-5;
     }
 
@@ -441,4 +449,15 @@
       margin-left: auto;
     }
   }
+
+  // detail items edit mode
+  // .contact-detail-item {
+  //   &.edit-mode {
+  //     background: red;
+
+  //     .item-edit {
+  //       display: none;
+  //     }
+  //   }
+  // }
 }
