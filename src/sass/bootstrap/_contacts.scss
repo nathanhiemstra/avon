@@ -82,13 +82,30 @@
     .group--selected-item-controls {
       .list-inline--dividers {
         border-right: $border-width solid $list-group-border;
-        padding-right: 12px;
-        margin-right: 12px;
+        padding-right: 14px;
+        margin-right: 14px;
+
+        > li {
+          padding-left: 6px;
+        }
+
+        > li:not(:last-child),
+        &.show-last-divider {
+          padding-right: 14px;
+        }
       }
     }
   }
 
   @media (max-width: $screen-sm) {
+    .t-email {
+      a {
+        pointer-events: none;
+        text-decoration: none;
+        color: $text-muted;
+      }
+    }
+
     .actions-secondary {
       flex-wrap: wrap;
       font-size: 13px;

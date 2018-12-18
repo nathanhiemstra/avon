@@ -53,11 +53,11 @@ ol {
     > li:not(:last-child),
     &.show-last-divider {
       border-right: $border-width solid $list-group-border;
-      padding-right: 6px;
+      padding-right: 8px;
     }
 
     &.show-last-divider {
-      margin-right: 6px;
+      margin-right: 8px;
     }
   }
 }
