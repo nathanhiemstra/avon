@@ -1,0 +1,62 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="container container--page">
+
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        <h1 class="mb-5">Contact Detail - Modals</h1>
+
+        <p><strong>General</strong></p>
+        <ul>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-send-email">Send Email</a></li>
+
+        </ul>
+
+        <p><strong>Follow-ups</strong></p>
+        <ul>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-follow-ups-add">Add</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-follow-ups-edit">Edit</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-follow-ups-delete">Delete</a></li>
+        </ul>
+
+        <p><strong>Notes</strong></p>
+        <ul>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-notes-add">Add</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-notes-edit">Edit</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-notes-delete">Delete</a></li>
+        </ul>
+
+        <p><strong>Groups</strong></p>
+        <ul>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-groups-add">Add</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-groups-edit">Edit</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-groups-delete">Delete</a></li>
+        </ul>
+
+
+
+        <!-- START - SEND EMAIL MODAL -->
+        {% include "_includes/modules/contacts/contact-detail/modals/send-email-modal.html.twig" %}
+        <!-- END - SEND EMAIL MODAL -->
+
+
+
+
+      {% endblock %}
+
+
+  </div>
+
+{% endblock %}
+
+
+<!-- START - MODAL - QUICKPAY ENROLLMENT -->

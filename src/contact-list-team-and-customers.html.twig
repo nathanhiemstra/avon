@@ -1,12 +1,16 @@
 {% extends layouts.base %}
 
+{% if contactType is empty %}
+  {% set contactType = 'team' %}
+{% endif %}
+
 {% set sectionClass = 'page--contacts-list contact-type--' ~ contactType %}
 
-  {% if contactType == 'team' %}
-    {% set contactTypeLabel = 'Team' %}
-  {% else %}
-    {% set contactTypeLabel = 'Customer' %}
-  {% endif %}
+{% if contactType == 'team' %}
+  {% set contactTypeLabel = 'Team' %}
+{% else %}
+  {% set contactTypeLabel = 'Customer' %}
+{% endif %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
