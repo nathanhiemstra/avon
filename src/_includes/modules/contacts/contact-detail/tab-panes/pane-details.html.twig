@@ -38,10 +38,21 @@
   {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
     label: 'Contact Group(s)',
     canEdit: false,
-    content: '<span class="badge badge-pill">Groupname 1</span>
-      <span class="badge badge-pill">Groupname 2</span>
-      <br><a href="#">Add to Group</a>'
+    content: '<span class="badge badge-secondary badge-pill">
+        <span>Bowling</span>
+        <a class="dismiss" href="#"><span class="lt-icon lt-small lt-close"></span></a>
+      </span>
+      <span class="badge badge-secondary badge-pill">
+        <span>Book Club</span>
+        <a class="dismiss" href="#"><span class="lt-icon lt-small lt-close"></span></a>
+      </span>
+      <a class="d-block underline mt-4" href="#">Add to Group</a>'
   } %}
+
+  {# <span class="tag label label-info">
+      <span>Example Tag</span>
+      <a><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>
+    </span> #}
 
   <hr>
 
