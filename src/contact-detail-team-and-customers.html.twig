@@ -39,7 +39,7 @@
         {% block main %}
 
           <div class="tab-content">
-            <div class="tab-pane active" id="mc-details">
+            <div class="tab-pane" id="mc-details">
               {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-details.html.twig' %}
             </div>
             <div class="tab-pane" id="mc-follow-ups">
@@ -53,7 +53,7 @@
             </div>
 
             <!-- START - TEAM ONLY -->
-            <div class="tab-pane" id="mc-orderhist">
+            <div class="tab-pane active" id="mc-orderhist">
               {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-order-hist.html.twig' %}
             </div>
             <!-- END - TEAM ONLY -->
