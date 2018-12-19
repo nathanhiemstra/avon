@@ -1,0 +1,39 @@
+<form class="" role="form">
+  <div class="form-group mb-4">
+    <label class="control-label">Primary Phone Number</label>
+    <div class="row">
+      <div class="col-xs-7">
+        <input type="tel" class="form-control" placeholder="(123) 456-7890">
+      </div>
+      <div class="col-xs-5 pl-0">
+        <select class="form-control selectpicker" data-size="4"
+          data-style="btn-select" data-icon-base="lt-icon">
+          <option selected="true">Mobile</option>
+          <option>Home</option>
+          <option>Work</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</form>
+<form class="" role="form">
+  <div class="form-group mb-4">
+    <label class="control-label">Secondary Phone Number</label>
+    <div class="row">
+      <div class="col-xs-7">
+        <input type="tel" class="form-control" placeholder="(890) 123-4567">
+      </div>
+      <div class="col-xs-5 pl-0">
+        <select class="form-control selectpicker" data-size="4"
+          data-style="btn-select" data-icon-base="lt-icon">
+          <option>Mobile</option>
+          <option>Home</option>
+          <option>Work</option>
+          <option selected="true">Other</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</form>
+{% include '_includes/modules/contacts/contact-detail/tab-panes/details/edit-btns.html.twig' %}

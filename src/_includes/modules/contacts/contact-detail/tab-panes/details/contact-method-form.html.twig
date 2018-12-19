@@ -1,0 +1,8 @@
+<form role="form">
+  <div class="form-group">
+    {% include components.elements.forms.radio with {id: 'contactMethodPhone', name: 'contactPref', theValue: 'Phone Call', theLabel: 'Phone Call', checked: true} %}
+    {% include components.elements.forms.radio with {id: 'contactMethodText', name: 'contactPref', theValue: 'Text Message', theLabel: 'Text Message', checked: false} %}
+    {% include components.elements.forms.radio with {id: 'contactMethodEmail', name: 'contactPref', theValue: 'Email', theLabel: 'Email', checked: false} %}
+  </div>
+  {% include '_includes/modules/contacts/contact-detail/tab-panes/details/edit-btns.html.twig' %}
+</form>

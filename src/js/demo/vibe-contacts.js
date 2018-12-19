@@ -51,18 +51,19 @@ var VibeContacts = (function() {
     $els.detailItemsEditBtns.on('click', function(e) {
       var $this = $(this);
       var $form = $this.siblings('.item-edit-form');
+      var $firstInput = $form.find('input')[0];
       // toggle element visiblilty
-      $this.removeClass('d-flex').addClass('d-none');
+      $this.addClass('invisible');
       $this.siblings('.item-content').addClass('d-none');
       $form.removeClass('d-none');
       // focus input
-      $form.find('input:first-of-type').select().focus();
+      if($firstInput.length) $firstInput.select().focus();
     });
 
     $els.detailItemsCancelBtns.on('click', function() {
       var $parent = $(this).closest('.contact-detail-item');
       // toggle element visiblilty
-      $parent.find('.item-edit').addClass('d-flex').removeClass('d-none');
+      $parent.find('.item-edit').removeClass('invisible');
       $parent.find('.item-content').removeClass('d-none');
       $parent.find('.item-edit-form').addClass('d-none');
     });

@@ -3,6 +3,7 @@
   label: string
   learnMoreTarget: string - id for Learn More target modal
   canEdit: bool - indicates if this field is editable
+  formContent: string (html) - Edit form markup
   content: string (html) - Main content for this field
 #}
 
@@ -16,16 +17,12 @@
   <div class="item-content order-3 order-sm-2 mt-4 mt-md-0">
     {{ content }}
   </div>
-  {% if canEdit %}
-  <form class="item-edit-form order-3 order-sm-2 d-none mt-4 mt-md-0">
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="test@gmail.com">
+  {% if canEdit and formContent %}
+    <div class="item-edit-form order-3 order-sm-2 d-none mt-4 mt-md-0">
+      {{ formContent }}
     </div>
-    <button type="button" class="btn btn-default btn-cancel">Cancel</button>
-    <button type="button" class="btn btn-primary btn-save">Save</button>
-  </form>
   {% endif %}
-  <div class="item-edit order-2 order-sm-3 d-flex align-items-start">
+  <div class="item-edit order-2 order-sm-3 d-flex align-items-start ml-auto">
     {% if canEdit %}
     <a class="link-muted edit-btn d-inline-flex align-items-end align-middle">
       <span class="lt-icon lt-pen mr-2 text-muted"></span>
