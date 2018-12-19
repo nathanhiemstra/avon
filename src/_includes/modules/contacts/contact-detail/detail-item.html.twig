@@ -7,11 +7,11 @@
   content: string (html) - Main content for this field
 #}
 
-<div class="contact-detail-item row d-flex flex-wrap my-5 mx-0">
+<div class="contact-detail-item row d-flex flex-wrap my-4 mx-0">
   <div class="item-label order-1">
     <h6 class="m-0">{{ label }}</h6>
     {% if learnMoreTarget %}
-    <a href="#" data-toggle="modal" data-target="{{ learnMoreTarget }}">Learn More</a>
+    <a href="#" class="underline small" data-toggle="modal" data-target="{{ learnMoreTarget }}">Learn More</a>
     {% endif %}
   </div>
   <div class="item-content order-3 order-sm-2 mt-4 mt-md-0">

@@ -345,7 +345,7 @@
   }
 }
 
-.page--contacts {
+.page--contacts-detail {
   .edit-contact-value {
     display: inline;
   }
@@ -409,18 +409,6 @@
 
 // contact detail 'tables'
 .contact-detail-table {
-  // line-height: 1;
-
-  // .row {
-  //   // align-items: center;
-  //   justify-content: space-between;
-  //   // hide clearfix pseudo elements that break flex layout
-  //   &:before,
-  //   &:after {
-  //     display: none;
-  //   }
-  // }
-
   .item-label h6 { line-height: 1.33; }
 
   .item-content,
@@ -446,5 +434,9 @@
       flex-basis: 50%;
       margin-left: $spacing-5;
     }
+  }
+
+  .cd-sales-tax {
+    max-width: 130px;
   }
 }

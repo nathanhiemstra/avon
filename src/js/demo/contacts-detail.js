@@ -11,15 +11,15 @@ var VibeContacts = (function() {
   var init = function() {
     // grab the DOM els we need
     $els = {
-      editContactBtn: $('.edit-contact-btn'),
-      editContactValue: $('.edit-contact-value'),
-      editContactForm: $('.edit-contact-form'),
-      editContactCancelBtn: $('.edit-contact-cancel'),
-      editContactSaveBtn: $('.edit-contact-save'),
-      contactDetails: $('.contact-details'),
-      detailItemsEditBtns: $('.contact-detail-table .item-edit'),
-      detailItemsCancelBtns: $('.contact-detail-table .btn-cancel'),
-      detailItemsSaveBtns: $('.contact-detail-table .btn-save')
+      editContactBtn: $('.page--contacts-detail .edit-contact-btn'),
+      editContactValue: $('.page--contacts-detail .edit-contact-value'),
+      editContactForm: $('.page--contacts-detail .edit-contact-form'),
+      editContactCancelBtn: $('.page--contacts-detail .edit-contact-cancel'),
+      editContactSaveBtn: $('.page--contacts-detail .edit-contact-save'),
+      contactDetails: $('.page--contacts-detail .contact-details'),
+      detailItemsEditBtns: $('.page--contacts-detail .contact-detail-table .item-edit'),
+      detailItemsCancelBtns: $('.page--contacts-detail .contact-detail-table .btn-cancel'),
+      detailItemsSaveBtns: $('.page--contacts-detail .contact-detail-table .btn-save')
     };
 
     detailsHidden = $els.contactDetails.hasClass('d-none');
@@ -51,7 +51,8 @@ var VibeContacts = (function() {
     $els.detailItemsEditBtns.on('click', function(e) {
       var $this = $(this);
       var $form = $this.siblings('.item-edit-form');
-      var $firstInput = $form.find('input')[0];
+      var $firstInput = $($form.find('input')[0]);
+      console.log($firstInput);
       // toggle element visiblilty
       $this.addClass('invisible');
       $this.siblings('.item-content').addClass('d-none');
@@ -71,7 +72,7 @@ var VibeContacts = (function() {
     $els.detailItemsSaveBtns.on('click', function() {
       var $parent = $(this).closest('.contact-detail-item');
       // toggle element visiblilty
-      $parent.find('.item-edit').addClass('d-flex').removeClass('d-none');
+      $parent.find('.item-edit').removeClass('invisible');
       $parent.find('.item-content').removeClass('d-none');
       $parent.find('.item-edit-form').addClass('d-none');
 
