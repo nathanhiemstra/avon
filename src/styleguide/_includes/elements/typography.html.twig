@@ -14,12 +14,23 @@
   <h2 id="type-font">Font</h2>
   <p>The font family is Proxima Nova. Below are the three variations.</p>
   <div class="bs-example p-4 type-font">
+
+    <span style="font-weight: normal">Some sample demo text who's font weight is: normal</span><br>
+    <span style="font-weight: 500">Some sample demo text who's font weight is: 500</span><br>
+    <span style="font-weight: 600">Some sample demo text who's font weight is: 600</span><br>
+    <span style="font-weight: 900">Some sample demo text who's font weight is: 900</span><br>
+
+
+    </p>
+
+
+   {#
     <p>Default text is Proxima Nova Regular. <br>{{ fpo.paragraph }}</p>
     <p>
       <span style="font-weight: 500">Text with <code>font-weight: 500</code></span> or
       <span style="font-weight: bold"><code>font-weight: bold</code> is Proxima Nova Medium. <br>{{ fpo.paragraph }}</span>
     </p>
-    <p style="font-weight: 900">Text with <code>font-weight: 900</code> is Proxima Nova Bold. <br>{{ fpo.paragraph }}</p>
+    <p style="font-weight: 900">Text with <code>font-weight: 900</code> is Proxima Nova Bold. <br>{{ fpo.paragraph }}</p> #}
   </div>
 
 
@@ -156,7 +167,7 @@
 
 
   <div class="bs-example">
-    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+    <p>Nullam quis risus eget urna mollis ornare vel eu leo. <span style="font-weight:600">Cum sociis natoque penatibus</span> et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
     <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
     <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
   </div>
