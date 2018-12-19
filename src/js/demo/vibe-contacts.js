@@ -51,7 +51,8 @@ var VibeContacts = (function() {
     $els.detailItemsEditBtns.on('click', function(e) {
       var $this = $(this);
       var $form = $this.siblings('.item-edit-form');
-      var $firstInput = $form.find('input')[0];
+      var $firstInput = $($form.find('input')[0]);
+      console.log($firstInput);
       // toggle element visiblilty
       $this.addClass('invisible');
       $this.siblings('.item-content').addClass('d-none');
