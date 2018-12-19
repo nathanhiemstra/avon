@@ -1,0 +1,30 @@
+{% if not hideLabel %}
+  {% include '_includes/elements/forms/label.html.twig' with {
+    'id': id,
+    'mainLabel': mainLabel,
+    'haslabelErrorIcon': haslabelErrorIcon,
+    'labelAddon': labelAddon,
+    'labelAddonRight': labelAddonRight,
+    'classes': labelClasses
+  } %}
+{% endif %}
+{% include '_includes/elements/forms/textarea.html.twig' with {
+  'id':                   id,
+  'items':                items,
+  'classes':              classes,
+  'placeholder':          placeholder,
+  'theValue':             theValue,
+  'rows':                 rows,
+  'includeValueData':     includeValueData,
+  'theValue':             theValue,
+  'hasInlineErrorIcon':   hasInlineErrorIcon,
+  'hasAbsoluteErrorIcon': hasAbsoluteErrorIcon,
+  'required':             required,
+  'disabled':             disabled
+} %}
+{% if errorMessage %}
+  {% include components.elements.forms.errorMessage with {'errorMessage': errorMessage} %}
+{% endif %}
+
+
+

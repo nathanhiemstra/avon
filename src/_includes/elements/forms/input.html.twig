@@ -48,6 +48,13 @@
 {% if disabled %}
   {% set disabled = ' disabled ' %}
 {% endif %}
+{% if hasCalendar %}
+  {% set calendar %}
+    {% include "_includes/elements/forms/label-calendar-icon.html.twig" %}
+    {% include '_includes/groups/forms/datepicker-rendered-from-you-avon-day.html.twig' with { class: 'd-none'} %}
+  {% endset %}
+{% endif %}
 {{ hasInlineErrorIconStart }}
 {{ errorIcon }}<input type="{{ type }}" class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ theValue }}{{ size }}{{ maxlength }}{{ data }}{{ attrs }}{{ listeners }}{{ oninput }}{{ required }}{{ disabled }}>
 {{ hasInlineErrorIconEnd }}
+{{ calendar }}
