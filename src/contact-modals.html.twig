@@ -13,63 +13,54 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
-        <h1 class="mb-5">Contact - Modals</h1>
+        <h1 class="mb-5">Contact Detail - Modals</h1>
 
-        <p><a data-toggle="modal" data-target="#modal-contact-send-email">Send Email</a></p>
-
-        <h6>Groups</h6>
+        <h6>General</h6>
         <ul>
-          <li><a data-toggle="modal" data-target="#modal-contact-groups-add-to">Add To Group</a></li>
-          <li><a data-toggle="modal" data-target="#modal-contact-groups-add-new">Add New Group</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-send-email">Send Email</a></li>
+
         </ul>
 
-        <h6>Tasks</h6>
+        <h6>Follow-ups</h6>
         <ul>
-          <li><a data-toggle="modal" data-target="#modal-contact-tasks-add">Add Task</a></li>
-          <li><a data-toggle="modal" data-target="#modal-contact-tasks-edit">Edit Task</a></li>
-          <li><a data-toggle="modal" data-target="#modal-contact-tasks-delete">Delete Task</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-follow-ups-add-edit">Add/Edit</a></li>
+          <li><a href="blank-modal-either-or-error.html">Delete</a> <span class="small text-muted">(Links to the applicable template)</span></li>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-follow-ups-details">Details</a></li>
         </ul>
 
         <h6>Notes</h6>
         <ul>
-          <li><a data-toggle="modal" data-target="#modal-contact-notes-add">Add Note</a></li>
-          <li><a data-toggle="modal" data-target="#modal-contact-notes-edit">Edit Note</a></li>
-          <li><a data-toggle="modal" data-target="#modal-contact-notes-delete">Delete Note</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-notes-add-edit">Add/Edit</a></li>
+          <li><a href="blank-modal-either-or-error.html">Delete</a> <span class="small text-muted">(Links to the applicable template)</span></li>
         </ul>
 
-        <h6>Events</h6>
+        <h6>Groups</h6>
         <ul>
-          <li><a data-toggle="modal" data-target="#modal-contact-events-add">Add Event</a></li>
-          <li><a data-toggle="modal" data-target="#modal-contact-events-edit">Edit Event</a></li>
-          <li><a data-toggle="modal" data-target="#modal-contact-events-delete">Delete Event</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-groups-add-to">Add To</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-groups-add-new">Add New</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contact-detail-groups-edit">Edit</a></li>
+          <li><a href="blank-modal-either-or-error.html">Delete</a> <span class="small text-muted">(Links to the applicable template)</span></li>
         </ul>
 
 
 
+        <!-- START - SEND EMAIL MODAL -->
+        {% include "_includes/modules/contacts/contact-detail/modals/send-email-modal.html.twig" %}
+        <!-- END - SEND EMAIL MODAL -->
 
-        <!-- START - SIGN UP WITH ACCOUNT MODAL -->
-        {% include "_includes/modules/account/modals-get-paid/sign-up-with-account-modal.html.twig" %}
-        <!-- END - SIGN UP WITH ACCOUNT MODAL -->
+        <!-- START - FOLLOW-UPS ADD/EDIT MODAL -->
+        {% include "_includes/modules/contacts/contact-detail/modals/follow-ups-add-edit-modal.html.twig" %}
+        <!-- END - FOLLOW-UPS ADD/EDIT MODAL -->
 
-        <!-- START - CHANGE ACCOUNT ACCOUNT MODAL -->
-        {% include "_includes/modules/account/modals-get-paid/change-account-modal.html.twig" %}
-        <!-- END - CHANGE ACCOUNT ACCOUNT MODAL -->
+        <!-- START - FOLLOW-UPS DETAILS MODAL -->
+        {% include "_includes/modules/contacts/contact-detail/modals/follow-ups-details-modal.html.twig" %}
+        <!-- END - FOLLOW-UPS DETAILS MODAL -->
 
-        <!-- START - SELECT ACCOUNT MODAL -->
-        {% include "_includes/modules/account/modals-get-paid/select-account-modal.html.twig" %}
-        <!-- END - SELECT ACCOUNT MODAL -->
+        <!-- START - NOTES ADD/EDIT MODAL -->
+        {% include "_includes/modules/contacts/contact-detail/modals/notes-add-edit-modal.html.twig" %}
+        <!-- END - NOTES ADD/EDIT MODAL -->
 
-        <!-- START - CANCEL ENROLLMENT MODAL -->
-        {% include "_includes/modules/account/modals-get-paid/cancel-an-account-modal.html.twig" %}
-        <!-- END - CANCEL ENROLLMENT MODAL -->
 
-        <!-- START - SAVINGS PLAN MODAL -->
-        {% include "_includes/modules/account/modals-get-paid/savings-plan-modal.html.twig" %}
-        <!-- END - SAVINGS PLAN MODAL -->
-
-        <!-- START - ROUTING NUMBER MODAL -->
-        {% include "_includes/modules/account/modals-get-paid/routing-number-modal.html.twig" %}
-        <!-- END - ROUTING NUMBER MODAL -->
 
 
       {% endblock %}

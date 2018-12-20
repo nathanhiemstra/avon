@@ -1,0 +1,37 @@
+
+{% if classes %}
+  {% set classes = ' ' ~ classes %}
+{% endif %}
+{% if rows %}
+  {% set rows = ' rows="' ~ rows ~ '" ' %}
+{% endif %}
+{% if id %}
+  {% set id = ' id="' ~ id ~ '" ' %}
+{% endif %}
+{% if placeholder %}
+  {% set placeholder = ' placeholder="' ~ placeholder ~ '" ' %}
+{% endif %}
+{% if hasInlineErrorIcon %}
+  {% set errorClass = 'has-error--icon-inline' %}
+{% endif %}
+{% if hasAbsoluteErrorIcon %}
+  {% set errorClass = 'has-error--icon-inline-absolute' %}
+{% endif %}
+{% if (hasInlineErrorIcon) or (hasAbsoluteErrorIcon) %}
+  {% set errorIcon %}
+    {% include "_includes/elements/forms/label-error-icon.html.twig" %}
+  {% endset %}
+  {% set hasInlineErrorIconStart = '<span class="' ~ errorClass ~ '">' %}
+  {% set hasInlineErrorIconEnd = '</span">' %}
+{% endif %}
+{% if required %}
+  {% set required = ' required ' %}
+{% endif %}
+{% if disabled %}
+  {% set disabled = ' disabled ' %}
+{% endif %}
+
+{{ hasInlineErrorIconStart }}
+{{ errorIcon }}<textarea class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ rows }}{{ data }}{{ attrs }}{{ listeners }}{{ oninput }}{{ required }}{{ disabled }}>{{ theValue }}</textarea>
+{{ hasInlineErrorIconEnd }}
+

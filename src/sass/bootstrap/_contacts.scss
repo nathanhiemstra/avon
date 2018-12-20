@@ -387,14 +387,14 @@
       }
     }
   }
+
   .action-btns {
     //ml-md-auto mt-5 mt-md-0 flex-basis-100 flex-basis-md-auto
     margin-top: $spacing-5;
     flex-basis: 100%;
 
     // tablet portrait
-    @media (min-width: $screen-sm) {
-    }
+    @media (min-width: $screen-sm) {}
 
     // tablet landscape
     @media (min-width: $screen-tablet-landscape) {
@@ -409,7 +409,9 @@
 
 // contact detail 'tables'
 .contact-detail-table {
-  .item-label h6 { line-height: 1.33; }
+  .item-label h6 {
+    line-height: 1.33;
+  }
 
   .item-content,
   .item-edit-form {
@@ -438,5 +440,15 @@
 
   .cd-sales-tax {
     max-width: 130px;
+  }
+}
+
+#modal-contact-detail-notes-add-edit {
+  .align-with-text {
+    line-height: 1;
+  }
+
+  .form-group.d-flex .checkbox span {
+    min-width: 24px;
   }
 }

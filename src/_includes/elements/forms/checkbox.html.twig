@@ -4,6 +4,9 @@
 {% if name %}
   {% set name = ' name="' ~ name ~ '" ' %}
 {% endif %}
+{% if classesLabel %}
+  {% set classesLabel = ' class="' ~ classesLabel ~ '" ' %}
+{% endif %}
 {% if theValue %}
   {% set theValue = ' value="' ~ theValue ~ '" ' %}
 {% endif %}
@@ -20,7 +23,7 @@
 {{ thelabel ? theLabel : '' }}
 
 <div class="checkbox {{ classes }} {% if wrapLabel %}wrap-label{% endif %}">
-  <label>
+  <label{{ classesLabel }}>
     <input type="checkbox" {{ id }}{{ name }}{{ theValue }}{{ checked }}{{ required }}{{ disabled }}>
 
     <span class="{% if not wrapLabel %}mr-4{% endif %}"><i class="lt-icon lt-checkbox-checkmark lt-small"></i><i class="indeterminate lt-icon lt-checkbox-minus"></i></span>
