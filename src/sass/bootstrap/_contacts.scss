@@ -486,6 +486,28 @@
   }
 }
 
+// header buttons
+.page--contacts-detail {
+  .btn-header {
+    width: 100%;
+    margin-top: -1.75rem;
+
+    @media (min-width: $screen-sm) {
+      width: auto;
+      margin-top: -4.5rem;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-top: -$spacing-4;
+    }
+
+    @media (min-width: $screen-tablet-landscape) {
+      margin-top: 0;
+      float: right;
+    }
+  }
+}
+
 #modal-contact-detail-notes-add-edit {
   .align-with-text {
     line-height: 1;

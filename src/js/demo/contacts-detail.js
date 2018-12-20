@@ -19,7 +19,8 @@ var VibeContacts = (function() {
       contactDetails: $('.page--contacts-detail .contact-details'),
       detailItemsEditBtns: $('.page--contacts-detail .contact-detail-table .item-edit'),
       detailItemsCancelBtns: $('.page--contacts-detail .contact-detail-table .btn-cancel'),
-      detailItemsSaveBtns: $('.page--contacts-detail .contact-detail-table .btn-save')
+      detailItemsSaveBtns: $('.page--contacts-detail .contact-detail-table .btn-save'),
+      headerHr: $('.page--contacts-detail > .container--page > hr')
     };
 
     detailsHidden = $els.contactDetails.hasClass('d-none');
@@ -29,6 +30,20 @@ var VibeContacts = (function() {
 
   // private methods
   var _addListeners = function() {
+    console.log($els.headerHr);
+    // hide the header <hr> when there's a header button in the tab pane
+    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+      var href = $(e.target).attr('href');
+      var windowWidth = $(window).width();
+      var isTabletPortrait = windowWidth >= 768 && windowWidth < 1024;
+      var hasHeaderBtn = $(href).find('.btn-header').length;
+      if(hasHeaderBtn) {
+        if(isTabletPortrait) $els.headerHr.addClass('invisible');
+      } else {
+        $els.headerHr.removeClass('invisible');
+      }
+    });
+
     // edit button
     $els.editContactBtn.on('click', function(e) {
       e.preventDefault();
