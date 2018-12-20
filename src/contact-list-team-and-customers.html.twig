@@ -100,15 +100,21 @@
       </header>
     </section>
 
-    <!-- START - TABLE - "{{ contactTypeLabel }}" EXAMPLE -->
-    {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: contactType } %}
-    <!-- END - TABLE - "{{ contactTypeLabel }}" EXAMPLE -->
+
 
   {% endblock %}
+
+  <!-- START - TABLE - "{{ contactTypeLabel }}" EXAMPLE -->
+  {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: contactType } %}
+  <!-- END - TABLE - "{{ contactTypeLabel }}" EXAMPLE -->
 
   <!-- START - FILTER MODAL - {{ contactTypeLabel }} -->
   {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal-" ~ contactType ~ ".html.twig" %}
   <!-- END - FILTER MODAL - {{ contactTypeLabel }} -->
+
+  <!-- START - SEND EMAIL MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/send-email-modal.html.twig" %}
+  <!-- END - SEND EMAIL MODAL -->
 
 
 

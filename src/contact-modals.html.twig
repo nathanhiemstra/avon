@@ -24,14 +24,14 @@
         <h6>Follow-ups</h6>
         <ul>
           <li><a data-toggle="modal" data-target="#modal-contact-detail-follow-ups-add-edit">Add/Edit</a></li>
-          <li><a href="blank-modal-either-or-error.html">Delete</a> <span class="small text-muted">(Links to the applicable template)</span></li>
+          <li><a data-toggle="modal" data-target="#blank-modal-either-or-error">Delete</a></li>
           <li><a data-toggle="modal" data-target="#modal-contact-detail-follow-ups-details">Details</a></li>
         </ul>
 
         <h6>Notes</h6>
         <ul>
           <li><a data-toggle="modal" data-target="#modal-contact-detail-notes-add-edit">Add/Edit</a></li>
-          <li><a href="blank-modal-either-or-error.html">Delete</a> <span class="small text-muted">(Links to the applicable template)</span></li>
+          <li><a data-toggle="modal" data-target="#blank-modal-either-or-error">Delete</a></li>
         </ul>
 
         <h6>Groups</h6>
@@ -39,7 +39,7 @@
           <li><a data-toggle="modal" data-target="#modal-contact-detail-groups-add-to">Add To</a></li>
           <li><a data-toggle="modal" data-target="#modal-contact-detail-groups-add-new">Add New</a></li>
           <li><a data-toggle="modal" data-target="#modal-contact-detail-groups-edit">Edit</a></li>
-          <li><a href="blank-modal-either-or-error.html">Delete</a> <span class="small text-muted">(Links to the applicable template)</span></li>
+          <li><a data-toggle="modal" data-target="#blank-modal-either-or-error">Delete</a></li>
         </ul>
 
 
@@ -59,6 +59,10 @@
         <!-- START - NOTES ADD/EDIT MODAL -->
         {% include "_includes/modules/contacts/contact-detail/modals/notes-add-edit-modal.html.twig" %}
         <!-- END - NOTES ADD/EDIT MODAL -->
+
+        <!-- START - DELET MODAL (SAME TEMPLATE FOR ALL) -->
+        {% include "_includes/modules/modals/modal-either-or-error.html.twig" %}
+        <!-- END - DELET MODAL (SAME TEMPLATE FOR ALL) -->
 
 
 
