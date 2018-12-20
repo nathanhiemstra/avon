@@ -21,6 +21,7 @@ var ContactOrderHistory = (function() {
   var _addListeners = function() {};
 
   var _constructChart = function() {
+    // DEV NOTE :: This is where we initialize the chart data
     var data = {
       labels: ['Color', 'Other', 'Health & Wellness', 'Rest', 'Fashion', 'Fragrance', 'Personal Care', 'Skin Care'],
       series: [23.13, 21.88, 17.84, 13.17, 10.15, 5.1, 4.9, 3.82]
@@ -28,33 +29,32 @@ var ContactOrderHistory = (function() {
 
     var options = {
       labelInterpolationFnc: function(value) {
-        return value;
+        return value[0];
       },
-      chartPadding: 30,
-      labelOffset: 100,
+      chartPadding: 20,
+      labelOffset: 40,
       labelDirection: 'explode',
       plugins: [Chartist.plugins.legend()]
     };
 
     var responsiveOptions = [
-      // [
-      //   'screen and (min-width: 640px)',
-      //   {
-      //     chartPadding: 30,
-      //     labelOffset: 100,
-      //     labelDirection: 'explode',
-      //     labelInterpolationFnc: function(value) {
-      //       return value;
-      //     }
-      //   }
-      // ],
-      // [
-      //   'screen and (min-width: 1024px)',
-      //   {
-      //     labelOffset: 80,
-      //     chartPadding: 20
-      //   }
-      // ]
+      [
+        'screen and (min-width: 375px)',
+        {
+          chartPadding: 50,
+          labelOffset: 80,
+          labelInterpolationFnc: function(value) {
+            return value;
+          }
+        }
+      ],
+      [
+        'screen and (min-width: 500px)',
+        {
+          chartPadding: 30,
+          labelOffset: 100
+        }
+      ]
     ];
 
     var orderHistoryChart = new Chartist.Pie('.order-history-chart', data, options, responsiveOptions);
@@ -71,6 +71,7 @@ var ContactOrderHistory = (function() {
         clearInterval(timer);
 
         // append percentage values to legend list
+        // DEV NOTE :: percentage values need to be added here
         for(var i = 0; i < data.series.length; i++) {
           $(legendItems[i]).append('<span>' + data.series[i].value + '%</span>');
         }

@@ -6,6 +6,7 @@
 
   svg {
     min-height: 375px;
+    // height: 200px !important;
   }
 
   @media (min-width: $screen-sm) {
@@ -16,15 +17,20 @@
     }
 
     svg {
+      min-height: 375px;
       flex-basis: 60%;
     }
   }
 
   .ct-label {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     font-style: normal;
     fill: $black;
+
+    @media (min-width: $screen-sm) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -34,7 +40,16 @@
   z-index: 10;
   list-style: none;
   padding-left: 0;
-  margin-left: $spacing-4;
+  margin-left: 0;
+  margin-top: $spacing-5;
+  padding: 0 $spacing-4;
+  width: 100%;
+
+  @media (min-width: $screen-sm) {
+    margin-left: $spacing-4;
+    margin-top: 0;
+    width: auto;
+  }
 
   li {
     position: relative;
