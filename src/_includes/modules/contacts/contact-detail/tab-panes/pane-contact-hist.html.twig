@@ -4,27 +4,33 @@
 <ul class="list-group list-group--clean-sliced">
   {% include '_includes/modules/contacts/contact-detail/tab-panes/contact-history/li.html.twig' with {
     contactMsg: 'You created a new note:',
-    contactType: 'Note'
+    contactType: 'Note',
+    classes: 'pt-0 pb-4 pb-md-5'
   }%}
   {% include '_includes/modules/contacts/contact-detail/tab-panes/contact-history/li.html.twig' with {
     contactMsg: 'Contact removed from group:',
-    contactType: 'Group'
+    contactType: 'Group',
+    classes: 'py-4 py-md-5'
   }%}
   {% include '_includes/modules/contacts/contact-detail/tab-panes/contact-history/li.html.twig' with {
     contactMsg: 'Task created related to contact:',
-    contactType: 'Task'
+    contactType: 'Task',
+    classes: 'py-4 py-md-5'
   }%}
   {% include '_includes/modules/contacts/contact-detail/tab-panes/contact-history/li.html.twig' with {
     contactMsg: 'Email sent to this contact:',
-    contactType: 'Email'
+    contactType: 'Email',
+    classes: 'py-4 py-md-5'
   }%}
   {% include '_includes/modules/contacts/contact-detail/tab-panes/contact-history/li.html.twig' with {
     contactMsg: 'Contact invited to event:',
-    contactType: 'Event'
+    contactType: 'Event',
+    classes: 'py-4 py-md-5'
   }%}
   {% include '_includes/modules/contacts/contact-detail/tab-panes/contact-history/li.html.twig' with {
     contactMsg: 'Contact created via manual entry.',
-    contactType: null
+    contactType: null,
+    classes: 'py-4 py-md-5'
   }%}
 </ul>
 
