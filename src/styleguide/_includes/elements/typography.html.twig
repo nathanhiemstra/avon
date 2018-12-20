@@ -9,41 +9,6 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {#  Typography and links #}
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
-
-  <!-- Font -->
-  <h2 id="type-font">Font</h2>
-  <p>The font family is Proxima Nova. Below are the three variations.</p>
-  <div class="bs-example p-4 type-font">
-
-    <span style="font-weight: normal">Some sample demo text who's font weight is: normal</span><br>
-    <span style="font-weight: 500">Some sample demo text who's font weight is: 500</span><br>
-    <span style="font-weight: 600">Some sample demo text who's font weight is: 600</span><br>
-    <span style="font-weight: 900">Some sample demo text who's font weight is: 900</span><br>
-
-
-    </p>
-
-
-   {#
-    <p>Default text is Proxima Nova Regular. <br>{{ fpo.paragraph }}</p>
-    <p>
-      <span style="font-weight: 500">Text with <code>font-weight: 500</code></span> or
-      <span style="font-weight: bold"><code>font-weight: bold</code> is Proxima Nova Medium. <br>{{ fpo.paragraph }}</span>
-    </p>
-    <p style="font-weight: 900">Text with <code>font-weight: 900</code> is Proxima Nova Bold. <br>{{ fpo.paragraph }}</p> #}
-  </div>
-
-
-  {{ highlightMarkup }}
-    <p>Default text is Proxima Nova Regular.</p>
-    <p>
-        <span style="font-weight: 500">Text with font-weight: 500</span> or
-        <span style="font-weight: bold">font-weight: bold is Proxima Nova Medium.</span>
-    </p>
-    <p style="font-weight: 900">Text with font-weight: 900 is Proxima Nova Bold.</p>
-  {{ endhighlight }}
-
-
   <h2 id="type-links">Typography and links</h2>
   <p>Bootstrap sets basic global display, typography, and link styles. Specifically, we:</p>
   <ul>
@@ -64,9 +29,8 @@
   <p><code>.link-underline</code> - <a href="#" class="link-underline">I'm an underlined link</a></p>
 
 
-
   <!-- Headings -->
-  <h2 id="type-headings">Headings!</h2>
+  <h2 id="type-headings">Headings</h2>
   <p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available. <code>.h1</code> through <code>.h6</code> classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.</p>
   <div class="bs-example bs-example-type">
 
@@ -83,31 +47,31 @@
       <tbody>
         <tr>
           <td><h1>h1. Heading</h1></td>
-          <td class="type-info">Regular 44px (Desktop: 50px)</td>
+          <td class="type-info">Book 42px (Desktop: 48px)</td>
         </tr>
         <tr>
           <td><h2>h2. Heading</h2></td>
-          <td class="type-info">Regular 32px (Desktop: 38px)</td>
+          <td class="type-info">Book 30px (Desktop: 36px)</td>
         </tr>
         <tr>
           <td><h3>h3. Heading</h3></td>
-          <td class="type-info">Regular 23px (Desktop: 32px)</td>
+          <td class="type-info">Book 22px (Desktop: 30px)</td>
         </tr>
         <tr>
           <td><h4>h4. Heading</h4></td>
-          <td class="type-info">Regular 20px (Desktop: 26px)</td>
+          <td class="type-info">Book 18px (Desktop: 24px)</td>
         </tr>
         <tr>
           <td><h5>h5. Heading</h5></td>
-          <td class="type-info">Medium 16px (Desktop: 19px, UPPERCASE)</td>
+          <td class="type-info">Medium 15px (Desktop: 18px, UPPERCASE)</td>
         </tr>
         <tr>
           <td><h6>h6. Heading</h6></td>
-          <td class="type-info">Medium 14px (Desktop: 15px, UPPERCASE)</td>
+          <td class="type-info">Medium 13px (Desktop: 14px, UPPERCASE)</td>
         </tr>
         <tr>
           <td><h7>h7. Heading</h7></td>
-          <td class="type-info">Bold 12px (Desktop: 13px, UPPERCASE)</td>
+          <td class="type-info">Medium 11px (Desktop: 12px, UPPERCASE)</td>
         </tr>
       </tbody>
     </table>
@@ -125,6 +89,10 @@
 
   <p>Create lighter, secondary text in any heading with a generic <code>&lt;small&gt;</code> tag or the <code>.small</code> class.</p>
   <div class="bs-example bs-example-type">
+
+
+
+
     <table class="table">
       <tbody>
         <tr>
@@ -167,7 +135,7 @@
 
 
   <div class="bs-example">
-    <p>Nullam quis risus eget urna mollis ornare vel eu leo. <span style="font-weight:600">Cum sociis natoque penatibus</span> et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
     <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
     <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
   </div>
@@ -201,9 +169,9 @@
 
 
   <h3>Tiny text</h3>
-  <p>Use the <code>.tiny</code> class to set text 13px.</p>
+  <p>Use the <code>.tiny</code> class to set text 12px.</p>
   <div class="bs-example">
-    <p class="tiny">This line of text is tiny 13px.</p>
+    <p class="tiny">This line of text is tiny 12px.</p>
   </div>
 
   {{ highlightMarkup }}
@@ -211,7 +179,7 @@
   {{ endhighlight }}
 
   <h3>Small text</h3>
-  <p>For de-emphasizing inline or blocks of text, use the <code>&lt;small&gt;</code> tag to set text at 87.5% the size of the parent. Heading elements receive their own <code>font-size</code> for nested <code>&lt;small&gt;</code> elements.</p>
+  <p>For de-emphasizing inline or blocks of text, use the <code>&lt;small&gt;</code> tag to set text at 85% the size of the parent. Heading elements receive their own <code>font-size</code> for nested <code>&lt;small&gt;</code> elements.</p>
   <p>You may alternatively use an inline element with <code>.small</code> in place of any <code>&lt;small&gt;</code>.</p>
   <div class="bs-example">
     <p><small>This line of text is meant to be treated as fine print.</small></p>
@@ -231,10 +199,20 @@
     <p class="medium">This line of text is medium 14px.</p>
   {{ endhighlight }}
 
-  <h3>Large text</h3>
-  <p>Use the <code>.large</code> class to set text 20px.</p>
+  <h3>Marge text</h3>
+  <p>Use the <code>.marge</code> class to set text 16px.</p>
   <div class="bs-example">
-    <p class="large">This line of text is large 20px.</p>
+    <p class="marge">This line of text is marge 16px.</p>
+  </div>
+
+  {{ highlightMarkup }}
+    <p class="marge">This line of text is marge 16px.</p>
+  {{ endhighlight }}
+
+  <h3>Large text</h3>
+  <p>Use the <code>.large</code> class to set text 18px.</p>
+  <div class="bs-example">
+    <p class="large">This line of text is large 18px.</p>
   </div>
 
   {{ highlightMarkup }}
@@ -247,13 +225,18 @@
   <p>For emphasizing a snippet of text with a heavier font-weight.</p>
 
   <div class="bs-callout bs-callout-info">
-    <code>font-weight</code> settings of <code>bold</code> and <code>600</code> use Gotham Medium.
+    <code>font-weight</code> settings of <code>normal</code> and <code>100-400</code> uses Proxima Nova regular.
   </div>
   <div class="bs-callout bs-callout-info">
-    <code>font-weight: 900</code> uses Gotham Bold. Use this is for very small bold text.
+    <code>font-weight</code> settings of <code>bold</code> and <code>500-800</code> use Proxima Nova Semi-bold.
+  </div>
+  <div class="bs-callout bs-callout-info">
+    <code>font-weight</code> settings of <code>900</code> use Proxima Nova Bold. Use this is for very small bold text.
   </div>
   <div class="bs-example">
-    <p>The following snippet of text is <strong>rendered as bold text</strong>. <span class="font-weight-bold">As is this</span>.</p>
+    <p>The following snippet of text is default.</p>
+    <p>The following snippet of text is <strong>rendered as semi-bold text</strong>.</p>
+    <p>The following snippet of text is <span style="font-weight:900">rendered as bold text</span>.
   </div>
 
   {{ highlightMarkup }}

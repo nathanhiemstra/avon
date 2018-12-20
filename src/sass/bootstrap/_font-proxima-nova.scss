@@ -100,9 +100,9 @@ This CSS resource incorporates links to font software which is the valuable copy
     font-variant: normal;
   }
 
-  // Proxima Nova Medium
+  // Proxima Nova Semi-Bold
   @font-face {
-    @include font-medium;
+    @include font-semibold;
 
     font-weight: 500;
     font-style: normal;
