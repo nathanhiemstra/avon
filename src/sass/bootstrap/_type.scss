@@ -86,15 +86,16 @@ h5, .h5 {
   // letter-spacing: 0.9px;
   letter-spacing: $headings-letter-spacing-sm;
   font-weight: $headings-font-weight-heavy;
-  font-weight: 600;
+
+  // font-weight: 600;
 }
 
 h6, .h6 {
   font-size: $font-size-h6;
   letter-spacing: $headings-letter-spacing-sm;
+  font-weight: $headings-font-weight-heavy;
 
-  // font-weight: $headings-font-weight-heavy;
-  font-weight: 600;
+  // font-weight: 600;
 
   // letter-spacing: .85px;
 }
@@ -102,9 +103,9 @@ h6, .h6 {
 h7, .h7 {
   font-size: $font-size-h7;
   letter-spacing: $headings-letter-spacing-sm;
+  font-weight: $headings-font-weight-heaviest;
 
-  // font-weight: $headings-font-weight-heaviest;
-  font-weight: 900;
+  // font-weight: 900;
   letter-spacing: $headings-letter-spacing-xs-desktop;
 
   // letter-spacing: 0.9px;
@@ -137,14 +138,16 @@ h5, .h5, h6, .h6, h7, .h7 {
     font-size: $font-size-h5-desktop;
     letter-spacing: $headings-letter-spacing-md-desktop;
     line-height: $headings-line-height-sm;
-    font-weight: 500;
+    font-weight: $headings-font-weight-heavy;
+    font-family: $font-family-name-alt;
   }
 
   h6, .h6 {
     font-size: $font-size-h6-desktop;
     letter-spacing: $headings-letter-spacing-xs-desktop;
     line-height: $headings-line-height-sm;
-    font-weight: 500;
+    font-weight: $headings-font-weight-heavy;
+    font-family: $font-family-name-alt;
   }
 
   h7, .h7 {

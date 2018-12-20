@@ -10,7 +10,7 @@ This CSS resource incorporates links to font software which is the valuable copy
   $font-file-woff: "2fa30669-9bbd-4ced-912f-db94a367ed6c";
   $font-file-ttf: "c12b3ebb-3771-483f-a84a-ac63d615c28e";
 
-  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+  @include font-base($font-family-name, $font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
 
 // Proxima N W01 Light It
@@ -21,7 +21,7 @@ This CSS resource incorporates links to font software which is the valuable copy
   $font-file-woff: "0c4be1a2-8e16-48b4-a384-165fa5baffe3";
   $font-file-ttf: "a7e6cc5b-7ba3-44be-9063-2cc1b3c05155";
 
-  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+  @include font-base($font-family-name, $font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
 
 // Proxima N W01 Reg
@@ -32,7 +32,7 @@ This CSS resource incorporates links to font software which is the valuable copy
   $font-file-woff: "e56ecb6d-da41-4bd9-982d-2d295bec9ab0";
   $font-file-ttf: "2aff4f81-3e97-4a83-9e6c-45e33c024796";
 
-  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+  @include font-base($font-family-name, $font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
 
 // Proxima N W01 Reg It
@@ -43,7 +43,7 @@ This CSS resource incorporates links to font software which is the valuable copy
   $font-file-woff: "9c69c878-2255-4027-8632-ed3635cddf45";
   $font-file-ttf: "b7eb3871-e910-4522-9982-effb425a2714";
 
-  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+  @include font-base($font-family-name, $font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
 
 // Proxima Nova W01 Medium
@@ -54,7 +54,10 @@ This CSS resource incorporates links to font software which is the valuable copy
   $font-file-woff: "cb9d4f02-d326-46b0-a857-930cce057f80";
   $font-file-ttf: "75cafc03-22e4-41b0-8bc2-1b9081506ecc";
 
-  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+  // Notice we use "$font-family-name-alt" here because there's no font-weight we can set Medium to because 400 is default, and 500 jumps to semi-bold in this system.
+  // So we make a separate "Font Family" and just use that in a couple locations (headline)
+
+  @include font-base($font-family-name-alt, $font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
 
 // Proxima Nova W01 Medium Italic
@@ -65,7 +68,7 @@ This CSS resource incorporates links to font software which is the valuable copy
   $font-file-woff: "3ffc4ea2-8461-4897-a809-dbf92500372c";
   $font-file-ttf: "da3b3dc5-47e4-44a6-8bff-4eee158a59c4";
 
-  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+  @include font-base($font-family-name, $font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
 
 // Proxima Semibold,
@@ -76,7 +79,7 @@ This CSS resource incorporates links to font software which is the valuable copy
   $font-file-woff: "proxima-nova-semibold-webfont";
   $font-file-ttf: "proxima-nova-semibold-webfont";
 
-  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+  @include font-base($font-family-name, $font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
 
 // Proxima N W01 Bold,
@@ -87,13 +90,25 @@ This CSS resource incorporates links to font software which is the valuable copy
   $font-file-woff: "d999c07b-a049-4eb5-b8a6-4f36ae25e67e";
   $font-file-ttf: "4d4a75f5-d32a-4a09-8665-133afd39cc37";
 
-  @include font-base($font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+  @include font-base($font-family-name, $font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
 
 @at-root {
   // Proxima Nova Regular
   @font-face {
     @include font-regular;
+
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+  }
+
+  // Proxima Nova Medium
+  // We use "normal" again here because there's no font-weight we can set Medium to because 400 is default, and 500 jumps to semi-bold in this system.
+  // So we make a// "$font-family-name-override" is because there's no font-weight we can set Medium to because 400 is default, and 500 jumps to semi-bold in this system.
+  // So we make a separate "Font Family" and just use that in a couple locations (headline)nd just use that in a couple locations (headline)
+  @font-face {
+    @include font-medium;
 
     font-weight: normal;
     font-style: normal;
@@ -125,4 +140,8 @@ This CSS resource incorporates links to font software which is the valuable copy
     font-style: normal;
     font-variant: normal;
   }
+}
+
+.proxima-nova-medium {
+  font-family: $font-family-name-alt;
 }
