@@ -3,7 +3,8 @@
   {% include '_includes/groups/forms/generic/address.html.twig' with {
     'idPrefix':         idPrefix,
     'showTheValue':     showTheValue,
-    'showPlaceholder':  showPlaceholder }%}
+    'showPlaceholder':  showPlaceholder,
+    'hideAddressLabel': true }%}
 </div>
 <div class="form-group">
   {% include '_includes/groups/forms/generic/address-2.html.twig' with {
@@ -13,7 +14,7 @@
 </div>
 <!-- ZIP AND CITY -->
 <div class="row">
-  <div class="col-xs-4">
+  <div class="col-xs-4 pr-0">
     <div class="form-group">
        {% include '_includes/groups/forms/generic/zip.html.twig' with {
         'idPrefix':         idPrefix,
@@ -32,7 +33,7 @@
 </div>
 <!-- STATE AND COUNTRY -->
 <div class="row">
-  <div class="col-xs-4">
+  <div class="col-xs-4 pr-0">
     <div class="form-group has-feedback">
       {% include '_includes/groups/forms/generic/state.html.twig' with {
         'idPrefix':     idPrefix,

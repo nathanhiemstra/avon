@@ -165,6 +165,21 @@
       color: $text-muted;
     }
   }
+
+  &.edit-btn {
+    &:focus,
+    &:hover {
+      text-decoration: none;
+
+      span:not(.lt-icon) {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.link-suppressed {
+  pointer-events: none;
 }
 
 .link-disable {

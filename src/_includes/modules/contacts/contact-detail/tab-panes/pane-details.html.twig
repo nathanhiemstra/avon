@@ -1,100 +1,176 @@
-<h5>Details</h5>
+<h5 class="hidden-xs hidden-sm">Details</h5>
 
-<hr>
+<hr class="hidden-xs hidden-sm">
 
-<section>
+<section class="contact-detail-table">
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Email</h6>
-    <div class="col-sm-8">test@gmail.com</div>
-  </div>
+  {% set emailContent %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/email-content.html.twig' %}
+  {% endset %}
+  {% set emailForm %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/email-form.html.twig' %}
+  {% endset %}
 
-  <hr>
-
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Phone Number</h6>
-    <div class="col-sm-8">123.456.7890</div>
-  </div>
-
-  <hr>
-
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Address</h6>
-    <div class="col-sm-8">9072 Rialto St
-      <br>Naples, FL 34113</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Email',
+    canEdit: true,
+    content: emailContent,
+    formContent: emailForm
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Contact Group(s)</h6>
-    <div class="col-sm-8">
-      <span class="badge badge-pill">Groupname 1</span>
-      <span class="badge badge-pill">Groupname 2</span>
-      <br><a href="#">Add to Group</a></div>
-  </div>
+  {% set phoneContent %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/phone-content.html.twig' %}
+  {% endset %}
+  {% set phoneForm %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/phone-form.html.twig' %}
+  {% endset %}
+
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Phone Number',
+    canEdit: true,
+    content: phoneContent,
+    formContent: phoneForm
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Language Preference</h6>
-    <div class="col-sm-8">Dutch</div>
-  </div>
+  {% set addressContent %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/address-content.html.twig' %}
+  {% endset %}
+  {% set addressForm %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/address-form.html.twig' %}
+  {% endset %}
+
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Address',
+    canEdit: true,
+    content: addressContent,
+    formContent: addressForm
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Birthday</h6>
-    <div class="col-sm-8">September 27</div>
-  </div>
+  {% set groupsContent %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/groups-content.html.twig' %}
+  {% endset %}
+
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Contact Group(s)',
+    canEdit: false,
+    content: groupsContent
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Subscribed to my emails</h6>
-    <div class="col-sm-8">Yes</div>
-  </div>
+  {% set languageForm %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/language-form.html.twig' %}
+  {% endset %}
+
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Language Preference',
+    canEdit: true,
+    content: '<p class="mb-3">English</p>',
+    formContent: languageForm
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Opted in to receive texts</h6>
-    <div class="col-sm-8">Yes</div>
-  </div>
+  {% set birthdayForm %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/birthday-form.html.twig' %}
+  {% endset %}
+
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Birthday',
+    canEdit: true,
+    content: '<p class="mb-3">September 27</p>',
+    formContent: birthdayForm
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Customer Since</h6>
-    <div class="col-sm-8">11/20/2014</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Subscribed to my emails',
+    canEdit: false,
+    content: '<p class="mb-3">Yes</p>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Contact Created</h6>
-    <div class="col-sm-8">11/25/2015</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Opted in to receive texts',
+    canEdit: false,
+    content: '<p class="mb-3">Yes</p>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Preferred Contact Method</h6>
-    <div class="col-sm-8">Phone</div>
-  </div>
+  {% set memberSinceForm %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/member-since-form.html.twig' %}
+  {% endset %}
+
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Customer Since',
+    canEdit: true,
+    content: '<p class="mb-3">11/20/2014</p>',
+    formContent: memberSinceForm
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Sales Tax</h6>
-    <div class="col-sm-8">Your default sales tax of 0.15% will be used for this customer</div>
-  </div>
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Contact Created',
+    canEdit: false,
+    content: '<p class="mb-3">11/25/2015</p>',
+    formContent: '<form role="form">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="test@gmail.com">
+      </div>
+      <button type="button" class="btn btn-default btn-cancel">Cancel</button>
+      <button type="button" class="btn btn-primary btn-save">Save</button>
+    </form>'
+  } %}
 
   <hr>
 
-  <div class="row my-5">
-    <h6 class="col-sm-4 my-md-2">Delivery Option</h6>
-    <div class="col-sm-8">Use default delivery option</div>
-  </div>
+  {% set contactMethodForm %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/contact-method-form.html.twig' %}
+  {% endset %}
+
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Preferred Contact Method',
+    canEdit: true,
+    content: '<p class="mb-3">Phone</p>',
+    formContent: contactMethodForm
+  } %}
+
+  <hr>
+
+  {% set salesTaxForm %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/sales-tax-form.html.twig' %}
+  {% endset %}
+
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Sales Tax',
+    canEdit: true,
+    learnMoreTarget: '#change-me',
+    content: '<p class="mb-3">0.00% (default)</p>',
+    formContent: salesTaxForm
+  } %}
+
+  <hr>
+
+  {% set deliveryForm %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/delivery-form.html.twig' %}
+  {% endset %}
+
+  {% include '_includes/modules/contacts/contact-detail/detail-item.html.twig' with {
+    label: 'Delivery Option',
+    canEdit: true,
+    learnMoreTarget: '#change-me',
+    content: '<p class="mb-3">Direct Delivery only (default)</p>',
+    formContent: deliveryForm
+  } %}
 
 </section>

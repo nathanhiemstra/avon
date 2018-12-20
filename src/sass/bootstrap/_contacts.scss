@@ -82,13 +82,30 @@
     .group--selected-item-controls {
       .list-inline--dividers {
         border-right: $border-width solid $list-group-border;
-        padding-right: 12px;
-        margin-right: 12px;
+        padding-right: 14px;
+        margin-right: 14px;
+
+        > li {
+          padding-left: 6px;
+        }
+
+        > li:not(:last-child),
+        &.show-last-divider {
+          padding-right: 14px;
+        }
       }
     }
   }
 
   @media (max-width: $screen-sm) {
+    .t-email {
+      a {
+        pointer-events: none;
+        text-decoration: none;
+        color: $text-muted;
+      }
+    }
+
     .actions-secondary {
       flex-wrap: wrap;
       font-size: 13px;
@@ -328,7 +345,7 @@
   }
 }
 
-.page--contacts {
+.page--contacts-detail {
   .edit-contact-value {
     display: inline;
   }
@@ -370,22 +387,68 @@
       }
     }
   }
+
   .action-btns {
     //ml-md-auto mt-5 mt-md-0 flex-basis-100 flex-basis-md-auto
     margin-top: $spacing-5;
     flex-basis: 100%;
 
     // tablet portrait
-    @media (min-width: $screen-sm) {
-    }
+    @media (min-width: $screen-sm) {}
 
     // tablet landscape
-    @media (min-width: 1024px) {
+    @media (min-width: $screen-tablet-landscape) {
       flex-basis: auto;
       align-self: flex-end;
       margin-bottom: 0.75rem;
       margin-top: 0;
       margin-left: auto;
     }
+  }
+}
+
+// contact detail 'tables'
+.contact-detail-table {
+  .item-label h6 {
+    line-height: 1.33;
+  }
+
+  .item-content,
+  .item-edit-form {
+    flex-basis: 100%;
+
+    .pipe {
+      color: $gray-light;
+    }
+  }
+
+  .item-edit {
+    margin-left: auto;
+  }
+
+  @media (min-width: $screen-sm) {
+    .item-label {
+      flex-basis: 30%;
+    }
+
+    .item-content,
+    .item-edit-form {
+      flex-basis: 50%;
+      margin-left: $spacing-5;
+    }
+  }
+
+  .cd-sales-tax {
+    max-width: 130px;
+  }
+}
+
+#modal-contact-detail-notes-add-edit {
+  .align-with-text {
+    line-height: 1;
+  }
+
+  .form-group.d-flex .checkbox span {
+    min-width: 24px;
   }
 }

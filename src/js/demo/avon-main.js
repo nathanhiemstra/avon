@@ -40,7 +40,7 @@ $( document ).ready( function () {
     },
     tooltips: '[data-toggle="tooltip"]',
     myContacts: {
-      affix: '.page--contacts [data-spy="affix"]'
+      affix: '.page--contacts-detail [data-spy="affix"]'
     },
     contactsList: {
       affix: '.page--contacts-list [data-spy="affix"]'

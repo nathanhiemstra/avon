@@ -1,6 +1,6 @@
 {% extends layouts.base %}
 
-{% set sectionClass = 'page--contacts' %}
+{% set sectionClass = 'page--contacts-detail' %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
@@ -12,7 +12,7 @@
   {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
   {% block main %}
 
-    <section class="container container--page">
+    <section class="container container--page container--flex-nav">
 
       <header class="row" role="header">
         <div class="col-md-12 d-flex flex-wrap align-items-start">
@@ -20,9 +20,9 @@
         </div>
       </header>
 
-      <hr class="mb-5">
+      <hr class="w-100 mb-5">
 
-      {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
+      {% embed '_layouts/columns-3x9-secondary-nav-flex.html.twig' %}
 
         {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
         {# DEFINE BLOCK - ASIDE #}
@@ -42,39 +42,43 @@
             <div class="tab-pane active" id="mc-details">
               {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-details.html.twig' %}
             </div>
-            <div class="tab-pane" id="mc-tasks">
-              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-tasks.html.twig' %}
-            </div>
-            <div class="tab-pane" id="mc-events">
-              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-events.html.twig' %}
+            <div class="tab-pane" id="mc-follow-ups">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-follow-ups.html.twig' %}
             </div>
             <div class="tab-pane" id="mc-notes">
               {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-notes.html.twig' %}
             </div>
-            <div class="tab-pane" id="mc-busdash">
-              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-business-dash.html.twig' %}
+            <div class="tab-pane" id="mc-contacthist">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-contact-hist.html.twig' %}
             </div>
+
+            <!-- START - TEAM ONLY -->
+            <div class="tab-pane" id="mc-orderhist">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-order-hist.html.twig' %}
+            </div>
+            <!-- END - TEAM ONLY -->
+
+            <!-- START - CONTACT ONLY -->
             <div class="tab-pane" id="mc-salesperf">
               {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-sales-perf.html.twig' %}
             </div>
-            <div class="tab-pane" id="mc-inquiry">
-              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-inquiry.html.twig' %}
+            <div class="tab-pane" id="mc-transactions">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-transactions.html.twig' %}
+            </div>
+            <div class="tab-pane" id="mc-business-dash">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-business-dash.html.twig' %}
             </div>
             <div class="tab-pane" id="mc-leadership">
               {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-leadership.html.twig' %}
             </div>
-            <div class="tab-pane" id="mc-prevcamp">
-              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-previous-camps.html.twig' %}
+            <div class="tab-pane" id="mc-campaign">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-campaign.html.twig' %}
             </div>
             <div class="tab-pane" id="mc-reports">
               {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-reports.html.twig' %}
             </div>
-            <div class="tab-pane" id="mc-orderhist">
-              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-order-hist.html.twig' %}
-            </div>
-            <div class="tab-pane" id="mc-contacthist">
-              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-contact-hist.html.twig' %}
-            </div>
+            <!-- END - CONTACT ONLY -->
+
           </div>
 
         {% endblock %}

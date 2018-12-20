@@ -375,8 +375,16 @@ a, .dropdown {
     }
 
     .info {
-      margin-left: calc(#{$list-group-icon-size} + #{$spacing-4});
-      line-height: 0.5;
+      margin-left: calc(#{$list-group-icon-size} - -#{$spacing-4});
+      margin-top: -4px;
+
+      span {
+        display: inline-block;
+        max-width: 223px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
     }
   }
 }

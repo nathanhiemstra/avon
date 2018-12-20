@@ -487,6 +487,9 @@ $screen-tablet: $screen-sm-min !default;
 $screen-md: 992px !default;
 $screen-md-min: $screen-md !default;
 
+$screen-tablet-landscape: 1024px !default;
+$screen-tablet-landscape-max: $screen-tablet-landscape - 1 !default;
+
 //** Deprecated `$screen-desktop` as of v3.0.1
 $screen-desktop: $screen-md-min !default;
 
@@ -1159,3 +1162,6 @@ $ui-animation-ease: ease !default;
 
 // shadows
 $box-shadow: 0 0 6px rgba(0, 0, 0, 0.16) !default;
+
+// position utilities
+$positions: static, relative, absolute, fixed, sticky !default;

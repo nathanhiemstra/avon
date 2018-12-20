@@ -1,5 +1,5 @@
 <!-- START - SECONDARY NAV -->
-<nav class="navbar navbar-secondary collapsed" role="navigation">
+<nav class="navbar navbar-secondary navbar-secondary--flex collapsed" role="navigation">
 
   <ul class="list-group small">
 
@@ -9,8 +9,8 @@
       <!-- START - LEVEL 2 - COLLAPSABLE TRIGGER -->
       <!-- Developer note: must have data-toggle="collapse" and data-target value must match ID of "COLLAPSABLE CONTENT"-->
       <a class="collapsed" data-toggle="collapse" data-target="#secondary-nav-collapse-1">
-        My Contacts
-        <span class="lt-icon lt-carat-down lt-medium"></span>
+        <!-- Dev Note :: This value needs to reflect the 'active' item in the menu -->
+        <span id="menuTitle">Details</span> <span class="lt-icon lt-carat-down lt-medium"></span>
       </a>
       <!-- END - LEVEL 2 - COLLAPSABLE TRIGGER -->
 
@@ -19,18 +19,26 @@
 
         <!-- START - LEVEL 2 - LIST -->
         <ul class="list-group mb-0 mt-2">
+          <!-- Dev Note :: add 'active' class to these menu items when pane is active -->
+
           <li class="list-group-item active"><a href="#mc-details" data-toggle="tab">Details</a></li>
-          <li class="list-group-item"><a href="#mc-tasks" data-toggle="tab">Tasks</a></li>
-          <li class="list-group-item"><a href="#mc-events" data-toggle="tab">Events</a></li>
+          <li class="list-group-item"><a href="#mc-follow-ups" data-toggle="tab">Follow-ups</a></li>
           <li class="list-group-item"><a href="#mc-notes" data-toggle="tab">Notes</a></li>
-          <li class="list-group-item"><a href="#mc-busdash" data-toggle="tab">Business Dashboard</a></li>
-          <li class="list-group-item"><a href="#mc-salesperf" data-toggle="tab">Sales Performance</a></li>
-          <li class="list-group-item"><a href="#mc-inquiry" data-toggle="tab">Inquiry</a></li>
-          <li class="list-group-item"><a href="#mc-leadership" data-toggle="tab">Leadership</a></li>
-          <li class="list-group-item"><a href="#mc-prevcamp" data-toggle="tab">Previous Campaigns</a></li>
-          <li class="list-group-item"><a href="#mc-reports" data-toggle="tab">Reports</a></li>
-          <li class="list-group-item"><a href="#mc-orderhist" data-toggle="tab">Order History</a></li>
           <li class="list-group-item"><a href="#mc-contacthist" data-toggle="tab">Contact History</a></li>
+
+          <!-- START - TEAM ONLY -->
+          <li class="list-group-item"><a href="#mc-orderhist" data-toggle="tab">Order History</a></li>
+          <!-- END - TEAM ONLY -->
+
+          <!-- START - CONTACT ONLY -->
+          <li class="list-group-item"><a href="#mc-salesperf" data-toggle="tab">Sales Performance</a></li>
+          <li class="list-group-item"><a href="#mc-transactions" data-toggle="tab">Transactions</a></li>
+          <li class="list-group-item"><a href="#mc-business-dash" data-toggle="tab">Business Dashboard</a></li>
+          <li class="list-group-item"><a href="#mc-leadership" data-toggle="tab">Leadership Performance</a></li>
+          <li class="list-group-item"><a href="#mc-campaign" data-toggle="tab">Campaign Comparison</a></li>
+          <li class="list-group-item"><a href="#mc-reports" data-toggle="tab">Reports</a></li>
+          <!-- END - CONTACT ONLY -->
+
         </ul>
         <!-- END - LEVEL 2 - LIST -->
 

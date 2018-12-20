@@ -1,11 +1,13 @@
-{% include '_includes/elements/forms/label.html.twig' with {
-  'id': id,
-  'mainLabel': mainLabel,
-  'haslabelErrorIcon': haslabelErrorIcon,
-  'labelAddon': labelAddon,
-  'labelAddonRight': labelAddonRight,
-  'classes': labelClasses
-} %}
+{% if not hideLabel %}
+  {% include '_includes/elements/forms/label.html.twig' with {
+    'id': id,
+    'mainLabel': mainLabel,
+    'haslabelErrorIcon': haslabelErrorIcon,
+    'labelAddon': labelAddon,
+    'labelAddonRight': labelAddonRight,
+    'classes': labelClasses
+  } %}
+{% endif %}
 {% include '_includes/elements/forms/input.html.twig' with {
   'id':                   id,
   'items':                items,

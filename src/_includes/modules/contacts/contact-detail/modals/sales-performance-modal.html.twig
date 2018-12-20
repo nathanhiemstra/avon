@@ -1,0 +1,30 @@
+{% extends "_layouts/modal.html.twig" %}
+{% if not modalId %}
+  {% set modalId = 'modal-contact-detail-sales-performance' %}
+{% endif %}
+
+{% set modalSizeClass = 'modal-lg' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+
+  <h4 class="modal-title text-center">Send message</h4>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+   <iframe class="embed-responsive-item" src="https://en.wikipedia.org/wiki/Sales" width="100%" height="500" scrolling="yes" frameborder="0"></iframe>
+
+{% endblock %}
+
