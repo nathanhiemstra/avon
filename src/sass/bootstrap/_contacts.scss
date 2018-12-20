@@ -447,4 +447,8 @@
   .align-with-text {
     line-height: 1;
   }
+
+  .form-group.d-flex .checkbox span {
+    min-width: 24px;
+  }
 }
