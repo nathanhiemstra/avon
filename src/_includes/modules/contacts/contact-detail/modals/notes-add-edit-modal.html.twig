@@ -1,0 +1,76 @@
+{% extends "_layouts/modal.html.twig" %}
+{% if not modalId %}
+  {% set modalId = "modal-contact-detail-notes-add-edit" %}
+{% endif %}
+{% set modalSizeClass = null %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+
+  <h4 class="modal-title text-center">[Add/Edit] Note</h4>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+<form role="form">
+
+  <div class="form-group">
+    {% include '_includes/groups/forms/textarea-and-label.html.twig' with {
+      id: 'follow-ups-description',
+      mainLabel: 'Description',
+      haslabelErrorIcon: true,
+      hasInlineErrorIcon: null,
+      hasAbsoluteErrorIcon: null,
+      classes: null,
+      theValue: null,
+      rows: 15
+    } %}
+  </div>
+
+  <div class="form-group d-flex justify-content-between">
+   <label class="checkbox-inline">
+    <input type="checkbox" id="inlineCheckbox1" value="option1">
+    <strong>Make this note private</strong>
+    <div class="small">By default, other members of your team can view your notes</div>
+  </label>
+
+  <span class="small text-muted pull-right">
+    <span class="count-current">0</span>/<span class="count-max">350</span>
+  </span>
+  </div>
+
+
+</form>
+
+
+{% endblock %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalFooter #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalFooter %}
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Cancel</button>
+    </div>
+    <div class="col-xs-12 col-sm-6 my-2">
+      <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" aria-hidden="true">Save</button>
+    </div>
+  </div><!-- /.row -->
+
+
+
+{% endblock %}
