@@ -14,11 +14,15 @@ var ContactOrderHistory = (function() {
     };
 
     _addListeners();
-    _constructChart();
   };
 
   // private methods
-  var _addListeners = function() {};
+  var _addListeners = function() {
+    // render the chart when tab pane becomes active
+    $('a[href="#mc-orderhist"]').on('show.bs.tab', function (e) {
+      _constructChart();
+    });
+  };
 
   var _constructChart = function() {
     // DEV NOTE :: This is where we initialize the chart data
@@ -52,7 +56,7 @@ var ContactOrderHistory = (function() {
         'screen and (min-width: 500px)',
         {
           chartPadding: 30,
-          labelOffset: 100
+          labelOffset: 96
         }
       ]
     ];
