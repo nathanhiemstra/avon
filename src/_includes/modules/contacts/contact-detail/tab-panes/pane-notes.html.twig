@@ -1,5 +1,8 @@
 <h5 class="hidden-xs hidden-sm">Notes</h5>
 <hr class="hidden-xs hidden-sm">
 
-<p>{{ fpo.paragraph }}</p>
-<p>{{ fpo.paragraph }}</p>
+<ul class="list-group list-group--clean-sliced">
+  {% include '_includes/modules/contacts/contact-detail/tab-panes/notes/li.html.twig' with {
+    date: 'Mar 22, 2018 2:25 PM'
+  }%}
+</ul>

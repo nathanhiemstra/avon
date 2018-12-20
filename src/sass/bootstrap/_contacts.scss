@@ -194,7 +194,6 @@
         padding-left: $left-col-width;
 
         // background: pink;
-
       }
     }
 
@@ -242,8 +241,7 @@
           }
         }
 
-        .checkbox.input-sm.wrap-label label span
-        .t-absolute-col-left-and-right {
+        .checkbox.input-sm.wrap-label label span .t-absolute-col-left-and-right {
           padding-left: $left-col-width;
           padding-right: $right-col-width;
         }
@@ -394,7 +392,8 @@
     flex-basis: 100%;
 
     // tablet portrait
-    @media (min-width: $screen-sm) {}
+    @media (min-width: $screen-sm) {
+    }
 
     // tablet landscape
     @media (min-width: $screen-tablet-landscape) {
@@ -440,6 +439,50 @@
 
   .cd-sales-tax {
     max-width: 130px;
+  }
+}
+
+// Contact Note Items
+#mc-notes {
+  .note-item {
+    display: flex;
+    flex-wrap: wrap;
+
+    .note-date {
+      order: 1;
+    }
+
+    .note-cb {
+      order: 2;
+    }
+
+    .note-content {
+      order: 2;
+      flex-basis: 100%;
+      border-radius: 5px;
+    }
+
+    .note-btns {
+      order: 3;
+    }
+
+    @media (min-width: $screen-sm) {
+      .note-date {
+        order: 1;
+      }
+
+      .note-cb {
+        order: 2;
+      }
+
+      .note-content {
+        order: 4;
+      }
+
+      .note-btns {
+        order: 3;
+      }
+    }
   }
 }
 

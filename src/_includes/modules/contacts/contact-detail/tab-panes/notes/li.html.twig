@@ -1,7 +1,20 @@
-<li class="list-group-item">
-  <span class="d-block-xs">{{ contactMsg }}</span>
-  {% if contactType %}
-  <span class="d-block-xs"><strong><a href="#">{{ contactType }} name goes here</a></strong></span>
-  {% endif %}
-  <div class="text-muted">Mar 22, 2022 2:45 PM</div>
+<li class="list-group-item py-4 py-md-5 note-item">
+
+  <div class="note-date marge font-weight-bold mb-4 mr-4">{{ date }}</div>
+
+  <div class="note-cb marge text-muted mb-2 hidden-xs">Created by: [representative-name]</div>
+
+  <div class="note-content marge text-muted reverse-bg p-4">{{ fpo.paragraph }}</div>
+
+  <div class="note-btns text-muted medium mt-4 mt-md-0 ml-auto">
+    <a class="link-muted edit-btn d-inline-flex align-items-center">
+      <span class="lt-icon lt-pen lt-medium mr-2 text-muted"></span>
+      <span class="lh-1 font-weight-bold">Edit</span>
+    </a>
+    <a class="link-muted edit-btn d-inline-flex align-items-center ml-5 ml-md-4">
+      <span class="lt-icon lt-trash lt-medium mr-2 text-muted"></span>
+      <span class="lh-1 font-weight-bold">Delete</span>
+    </a>
+  </div>
+
 </li>
