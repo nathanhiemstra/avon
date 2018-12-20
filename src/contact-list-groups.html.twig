@@ -1,0 +1,113 @@
+{% extends layouts.base %}
+
+{% if contactType is empty %}
+  {% set contactType = 'team' %}
+{% endif %}
+
+{% set sectionClass = 'page--contacts-list contact-type--' ~ contactType %}
+
+{% if contactType == 'team' %}
+  {% set contactTypeLabel = 'Team' %}
+{% else %}
+  {% set contactTypeLabel = 'Customer' %}
+{% endif %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+
+      <header class="row" role="header">
+        <div class="col-md-12 mb-2">
+          {% include "_includes/groups/navigation/back-link.twig" with {label: "[Team / Customer] Contacts"} %}
+          
+
+
+          <!-- START - CONTACT LIST GROUP HEAD -->
+          <div class="d-flex align-items-center flex-wrap actions-primary">
+            <div class="mb-4">
+              <h2 class="mb-4 mr-auto">{{ contactTypeLabel }} Groups</h2>
+            </div>
+            <div class="mb-4 ml-0 ml-lg-auto">
+              <a class="btn btn-primary btn-sm btn-soft mt-3 mt-sm-0">+ Add Group</a>
+            </div>
+          </div>
+          <!-- END - CONTACT LIST GROUP HEAD -->
+
+        </div>
+      </header>
+    </section>
+
+    <!-- START - TABLE - Customer Groups -->
+    <div class="container px-xs-0">
+      <div class="table-responsive-rows-and-cols table-contact-list">
+        <table class="table table-striped table-last-col-right border-top small">
+          <thead class="affix-table-header">
+            <tr>
+              <th>Last Name</th>
+              <th># In Group</th>
+              <th class="t-actions">
+                <span class="d-none">Actions</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="t-block"><a href="#">Fragrance Buyers</a></td>
+              <td class="t-block">7 <span class="d-none d-inline-block-xs">Contacts in group</span></td>
+              <td class="t-actions t-absolute-col-right">
+                <div class="btn-group">
+                  <a href="javascript:void(0)" data-toggle="dropdown" class="link-muted"><span class="lt-icon lt-ellipsis lt-large"></span></a>
+                  <ul class="dropdown-menu pull-right">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Action</a></li> 
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="t-block"><a href="#">Church</a></td>
+              <td class="t-block">15 <span class="d-none d-inline-block-xs">Contacts in group</span></td>
+              <td class="t-actions t-absolute-col-right">
+                <div class="btn-group">
+                  <a href="javascript:void(0)" data-toggle="dropdown" class="link-muted"><span class="lt-icon lt-ellipsis lt-large"></span></a>
+                  <ul class="dropdown-menu pull-right">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Action</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="t-block"><a href="#">Group name</a></td>
+              <td class="t-block">2 <span class="d-none d-inline-block-xs">Contacts in group</span></td>
+              <td class="t-actions t-absolute-col-right">
+                <div class="btn-group">
+                  <a href="javascript:void(0)" data-toggle="dropdown" class="link-muted"><span class="lt-icon lt-ellipsis lt-large"></span></a>
+                  <ul class="dropdown-menu pull-right">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Action</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- END - TABLE -  Customer Groups-->
+
+  {% endblock %}
+
+
+
+{% endblock %}
