@@ -1,49 +1,33 @@
-<h5>Order History</h5>
+<h5 class="hidden-xs hidden-sm">Order History</h5>
+<h6 class="mb-0 mt-0 mt-md-5">Purchases by category</h6>
+<hr class="mt-2 mb-5">
 
-<h5>Purchases by category</h5>
+{% include '_includes/modules/contacts/contact-detail/tab-panes/order-history/pie-chart.html.twig' %}
+{# <p><img src="/images/utility/placeholder_thumb.png" class="img-circle img-responsive" style="width: 300px;"></p> #}
 
-<hr>
+<h6 class="mb-0 mt-5 mt-md-5">Orders</h6>
+<hr class="mt-2 mb-5">
 
-<p><img src="/images/utility/placeholder_thumb.png" class="img-circle img-responsive" style="width: 300px;"></p>
-
-<h5 class="mt-5">Orders</h5>
-
-<div class="table-responsive {{ classes }} {% if hidden %} hidden {% endif %}">
-  <table class="table table-striped table-bordered-outside-only">
+<div class="table-responsive-rows-and-cols">
+  <table class="table table-striped">
     <thead>
       <tr>
         <th class="t-conf-num">Confirmation #</th>
-        <th class="t-date">Date</th>
+        <th class="t-date">Date <span class="lt-icon lt-carat-down lt-medium align-middle"></span></th>
         <th class="t-c-num">C #</th>
         <th class="t-source">Source</th>
-        <th class="t-order-amount">Order Amount</th>
+        <th class="t-order-amount">Order Amt.</th>
         <th class="t-status">Status</th>
       </tr>
     </thead>
     <tbody>
       {% include '_includes/modules/contacts/contact-detail/tab-panes/order-history/tr.html.twig' with {
+        contactCnum: '10',
+        contactSource: 'Online Store'
+      }%}
+      {% include '_includes/modules/contacts/contact-detail/tab-panes/order-history/tr.html.twig' with {
         contactCnum: '18',
-        contactType: 'Online Store'
-      }%}
-      {% include '_includes/modules/contacts/contact-detail/tab-panes/order-history/tr.html.twig' with {
-        contactCnum: '17',
-        contactType: 'Online Store'
-      }%}
-      {% include '_includes/modules/contacts/contact-detail/tab-panes/order-history/tr.html.twig' with {
-        contactCnum: '15',
-        contactType: 'Your Avon'
-      }%}
-      {% include '_includes/modules/contacts/contact-detail/tab-panes/order-history/tr.html.twig' with {
-        contactCnum: '14',
-        contactType: 'Online Store'
-      }%}
-      {% include '_includes/modules/contacts/contact-detail/tab-panes/order-history/tr.html.twig' with {
-        contactCnum: '13',
-        contactType: 'Your Avon'
-      }%}
-      {% include '_includes/modules/contacts/contact-detail/tab-panes/order-history/tr.html.twig' with {
-        contactCnum: '11',
-        contactType: 'Your Avon'
+        contactSource: 'Online Store'
       }%}
     </tbody>
   </table>

@@ -97,6 +97,8 @@
 
 // Vendor
 @import "vendor/bootstrap-select";
+@import "vendor/chartist/chartist";
+@import "bootstrap/charts"; // adding here because dependency on chartist
 
 // Demo - Angular Overrides
 @import "demo/angular-overrides-datepicker";
