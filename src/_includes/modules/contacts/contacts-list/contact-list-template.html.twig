@@ -1,12 +1,16 @@
 {% extends layouts.base %}
 
+{% if contactType is empty %}
+  {% set contactType = 'team' %}
+{% endif %}
+
 {% set sectionClass = 'page--contacts-list contact-type--' ~ contactType %}
 
-  {% if contactType == 'team' %}
-    {% set contactTypeLabel = 'Team' %}
-  {% else %}
-    {% set contactTypeLabel = 'Customer' %}
-  {% endif %}
+{% if contactType == 'team' %}
+  {% set contactTypeLabel = 'Team' %}
+{% else %}
+  {% set contactTypeLabel = 'Customer' %}
+{% endif %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
@@ -40,7 +44,6 @@
 
                 <div class="input-group">
                   <span class="input-group-addon input-xs"><span class="lt-icon lt-search lt-large lt-color-muted"></span></span>
-
 
                   {% include components.elements.forms.input with {
                     id: 'autocomplete-contact-list',
@@ -97,15 +100,53 @@
       </header>
     </section>
 
-    <!-- START - TABLE - "{{ contactTypeLabel }}" EXAMPLE -->
-    {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: contactType } %}
-    <!-- END - TABLE - "{{ contactTypeLabel }}" EXAMPLE -->
+
 
   {% endblock %}
+
+  <!-- START - TABLE - "{{ contactTypeLabel }}" EXAMPLE -->
+  {% include '_includes/modules/contacts/contacts-list/tab-content-list-view.html.twig' with { contactType: contactType } %}
+  <!-- END - TABLE - "{{ contactTypeLabel }}" EXAMPLE -->
 
   <!-- START - FILTER MODAL - {{ contactTypeLabel }} -->
   {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal-" ~ contactType ~ ".html.twig" %}
   <!-- END - FILTER MODAL - {{ contactTypeLabel }} -->
+
+  <!-- START - SEND EMAIL MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/send-email-modal.html.twig" %}
+  <!-- END - SEND EMAIL MODAL -->
+
+  <!-- START - SEND ECARD MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/send-ecard-modal.html.twig" %}
+  <!-- END - SEND ECARD MODAL -->
+
+  <!-- START - FOLLOW-UPS ADD/EDIT MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/follow-ups-add-edit-modal.html.twig" %}
+  <!-- END - FOLLOW-UPS ADD/EDIT MODAL -->
+
+  <!-- START - FOLLOW-UPS DETAILS MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/follow-ups-details-modal.html.twig" %}
+  <!-- END - FOLLOW-UPS DETAILS MODAL -->
+
+  <!-- START - NOTES ADD/EDIT MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/notes-add-edit-modal.html.twig" %}
+  <!-- END - NOTES ADD/EDIT MODAL -->
+
+  <!-- START - GROUPS ADD NEW MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/groups-add-new-edit-modal.html.twig" %}
+  <!-- END - GROUPS ADD NEW MODAL -->
+
+  <!-- START - GROUPS ADD TO MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/groups-add-to-modal.html.twig" %}
+  <!-- END - GROUPS ADD TO MODAL -->
+
+  <!-- START - DELETE MODAL (SAME TEMPLATE FOR ALL) -->
+  {% include "_includes/modules/modals/modal-either-or-error.html.twig" %}
+  <!-- END - DELETE MODAL (SAME TEMPLATE FOR ALL) -->
+
+  <!-- START - LEARN MORE MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/learn-more-modal.html.twig" %}
+  <!-- END - LEARN MORE MODAL -->
 
 
 

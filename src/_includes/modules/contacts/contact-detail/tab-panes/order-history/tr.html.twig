@@ -1,8 +1,25 @@
 <tr>
-  <td class="t-conf-num">###########</td>
-  <td class="t-date">##/##/####</td>
-  <td class="t-c-num">{{ contactCnum }}</td>
-  <td class="t-source">{{ contactSource }}</td>
-  <td class="t-order-amount">$####.##</td>
-  <td class="t-status">Shipped</td>
+  <td class="t-block t-conf-num">
+    <a href="#" class="marge link-plain font-weight-bold underline">1234567890</a>
+  </td>
+  <td class="t-block t-date">
+    <label class="visible-xs-inline visible-sm-inline">Date: </label>
+    12/29/2018
+  </td>
+  <td class="t-block t-c-num">
+    <label class="visible-xs-inline visible-sm-inline">Campaign: </label>
+    {{ contactCnum }}
+  </td>
+  <td class="t-block t-source">
+    <label class="visible-xs-inline visible-sm-inline">Source: </label>
+    {{ contactSource }}
+  </td>
+  <td class="t-block t-order-amount">
+    <label class="visible-xs-inline visible-sm-inline">Order Amt: </label>
+    $123.45
+  </td>
+  <td class="t-block t-status">
+    <label class="visible-xs-inline visible-sm-inline">Status: </label>
+    Shipped
+  </td>
 </tr>

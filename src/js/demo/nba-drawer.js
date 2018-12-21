@@ -1,5 +1,5 @@
 /**
- * BackToTop - handles all 'back to top' button behavior
+ * NbaDrawer - handles all 'Next Best Action' drawer behavior
  * @return {init} [description]
  */
 
@@ -34,6 +34,8 @@ var NbaDrawer = (function() {
     _initCollapse();
   };
 
+  // DEV NOTE :: _initCarousel should be called any time the message items in the DOM have updated
+  //          :: notice we're calling it below in _dismissSlide() when a message is dismissed & removed from the DOM
   var _initCarousel = function(startIndex) {
     if(!startIndex) startIndex = 0;
     nbaCurrentSlide = startIndex;
@@ -70,7 +72,6 @@ var NbaDrawer = (function() {
     });
 
     // Demo message dismissal -
-    // DEV NOTE: This is for demo purposes, code may be different in production environment
     $els.nbaCarousel.find('.item').each(function() {
       var $item = $(this);
       $item.find('a.item-dismiss').off().on('click', function() {
@@ -148,6 +149,8 @@ var NbaDrawer = (function() {
   };
 
   // dismiss the current slide
+  // DEV NOTE :: This is for demo purposes, code may be different in production environment
+  //          :: This is where you'll want to add api calls to mark the message 'dismissed'
   var _dismissSlide = function() {
     var currentIndex = $els.nbaCarousel.find('.active').index();
     var nextIndex;
@@ -191,7 +194,7 @@ var NbaDrawer = (function() {
       $els.nbaMessaging.addClass('reveal');
       $els.nbaMsgCompleteTxt.addClass('reveal');
 
-      // remove the active element
+      // remove the active element from DOM
       activeEl.remove();
 
       // zero-out counters, remove badge
@@ -214,7 +217,7 @@ var NbaDrawer = (function() {
         $els.nbaMessaging.removeClass('reveal');
         $els.nbaMsgCover.removeClass('reveal');
 
-        // remove the active element and add class to next
+        // remove the active element from DOM and add class to next
         activeEl.remove();
         nextEl.addClass('active');
 

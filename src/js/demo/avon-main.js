@@ -40,7 +40,7 @@ $( document ).ready( function () {
     },
     tooltips: '[data-toggle="tooltip"]',
     myContacts: {
-      affix: '.page--contacts [data-spy="affix"]'
+      affix: '.page--contacts-detail [data-spy="affix"]'
     },
     contactsList: {
       affix: '.page--contacts-list [data-spy="affix"]'
@@ -369,6 +369,20 @@ $( document ).ready( function () {
     $('.selectpicker').selectpicker('mobile');
   }
 
+  // prevent title pop up on hover (override default browser behavior)
+  $('.selectpicker').on('loaded.bs.select', function (e) {
+    var selectPickerBtns = $('.bootstrap-select').find('button');
+
+    selectPickerBtns.mouseover(function () {
+      $this = $(this);
+      $this.data('title', $this.attr('title'));
+      $this.attr('title', '');
+    }).mouseout(function () {
+        $this = $(this);
+        $this.attr('title', $this.data('title'));
+    });
+  });
+
   // radio select combos
   $('.radio-select-combo').on('click', function() {
     var $radio = $(this).find('input[type="radio"]');
@@ -426,6 +440,7 @@ $( document ).ready( function () {
   if( typeof Brochures !== 'undefined' ) Brochures.init();
   if( typeof CheckoutDemo !== 'undefined' ) CheckoutDemo.init();
   if( typeof ContactsDemo !== 'undefined' ) ContactsDemo.init();
+  if( typeof ContactOrderHistory !== 'undefined' ) ContactOrderHistory.init();
   if( typeof FormDemo !== 'undefined' ) FormDemo.init();
   if( typeof GlobalSearch !== 'undefined' ) GlobalSearch.init();
   if( typeof Pagination !== 'undefined' ) Pagination.init();
@@ -441,5 +456,6 @@ $( document ).ready( function () {
   if( typeof Sticky !== 'undefined' ) Sticky.init();
   if( typeof TogglePasswordVisibility !== 'undefined' ) TogglePasswordVisibility.init();
   if( typeof NbaDrawer !== 'undefined' ) NbaDrawer.init();
+  if( typeof VibeContacts !== 'undefined' ) VibeContacts.init();
 
 } );

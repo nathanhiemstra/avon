@@ -8,7 +8,7 @@
 </span>
 {% if not label %}
 <p class='info small {% if expired %}text-danger{% else %}text-muted{% endif %}'>
-  {{ name }} | {% if expired %}Expired {% else %}Expires {% endif %} {{ expirationDate }}
+  <span class='name-on-card'>{{ name }}</span> <span>|</span> {% if expired %}<span>Expired {% else %}<span>Expires {% endif %} {{ expirationDate }}</span>
 </p>
 {% endif %}
 

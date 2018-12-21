@@ -1,0 +1,33 @@
+{#
+  ~ Params ~
+  label: string
+  learnMoreTarget: string - id for Learn More target modal
+  canEdit: bool - indicates if this field is editable
+  formContent: string (html) - Edit form markup
+  content: string (html) - Main content for this field
+#}
+
+<div class="contact-detail-item row d-flex flex-wrap my-4 mx-0">
+  <div class="item-label order-1">
+    <h6 class="m-0">{{ label }}</h6>
+    {% if learnMoreTarget %}
+    <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-learn-more" class="underline small">Learn More</a>
+    {% endif %}
+  </div>
+  <div class="item-content order-3 order-sm-2 mt-4 mt-md-0">
+    {{ content }}
+  </div>
+  {% if canEdit and formContent %}
+    <div class="item-edit-form order-3 order-sm-2 d-none mt-4 mt-md-0">
+      {{ formContent }}
+    </div>
+  {% endif %}
+  <div class="item-edit order-2 order-sm-3 d-flex align-items-start ml-auto">
+    {% if canEdit %}
+    <a class="link-muted edit-btn d-inline-flex align-items-end align-middle">
+      <span class="lt-icon lt-pen mr-2 text-muted"></span>
+      <span class="small lh-1 font-weight-bold">Edit</span>
+    </a>
+    {% endif %}
+  </div>
+</div>

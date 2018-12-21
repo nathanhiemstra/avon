@@ -1,0 +1,20 @@
+<li class="list-group-item note-item {{ classes }}">
+
+  <div class="note-date marge font-weight-bold mb-4 mr-4">{{ date }}</div>
+
+  <div class="note-cb marge text-muted mb-2 hidden-xs">Created by: [representative-name]</div>
+
+  <div class="note-content marge text-muted reverse-bg p-4">{{ fpo.paragraph }}</div>
+
+  <div class="note-btns text-muted medium mt-4 mt-md-1 ml-auto">
+    <a class="link-muted edit-btn d-inline-flex align-items-end" data-toggle="modal" data-target="#modal-contacts-notes-add-edit">
+      <span class="lt-icon lt-pen mr-2 text-muted"></span>
+      <span class="tiny lh-1 font-weight-bold">Edit</span>
+    </a>
+    <a class="link-muted edit-btn d-inline-flex align-items-end ml-5 ml-md-4" data-toggle="modal" data-target="#blank-modal-either-or-error">
+      <span class="lt-icon lt-trash mr-2 text-muted"></span>
+      <span class="tiny lh-1 font-weight-bold">Delete</span>
+    </a>
+  </div>
+
+</li>

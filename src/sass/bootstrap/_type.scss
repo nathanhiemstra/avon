@@ -172,6 +172,10 @@ small,
   font-size: 14px;
 }
 
+.marge {
+  font-size: 16px;
+}
+
 .large {
   font-size: $font-size-large;
 }
@@ -304,6 +308,11 @@ mark,
 @include bg-variant(".bg-warning", $state-warning-bg);
 
 @include bg-variant(".bg-danger", $state-danger-bg);
+
+// Line height
+.lh-1 {
+  line-height: 1;
+}
 
 // Page header
 // -------------------------

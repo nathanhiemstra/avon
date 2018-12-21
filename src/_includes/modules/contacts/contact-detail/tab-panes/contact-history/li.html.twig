@@ -1,7 +1,7 @@
-<li class="list-group-item">
-  <span class="d-block-xs">{{ contactMsg }}</span>
+<li class="list-group-item {{ classes }}">
+  <span class="d-block-xs marge mb-2">{{ contactMsg }}</span>
   {% if contactType %}
-  <span class="d-block-xs"><strong><a href="#">{{ contactType }} name goes here</a></strong></span>
+  <span class="d-block-xs marge font-weight-bold mb-2">{{ contactType }} name goes here</span>
   {% endif %}
-  <div class="text-muted">Mar 22, 2022 2:45 PM</div>
+  <div class="text-muted medium mt-0 mt-md-3">Mar 22, 2022 2:45 PM</div>
 </li>

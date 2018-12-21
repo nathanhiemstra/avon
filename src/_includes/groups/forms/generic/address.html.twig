@@ -4,10 +4,15 @@
 {% if showPlaceholder %}
   {% set placeholder = 'Address Line 1' %}
 {% endif %}
+{% if mainLabel %}
+  {% set mainLabel = mainLabel %}
+{% else %}
+  {% set mainLabel = 'Address' %}
+{% endif %}
 
 {% include components.groups.forms.inputAndLabel with {
   id: idPrefix ~ 'address',
-  mainLabel: 'Address',
+  mainLabel: mainLabel,
   type: 'text',
   required: null,
   haslabelErrorIcon: true,

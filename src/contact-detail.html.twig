@@ -1,0 +1,128 @@
+{% extends layouts.base %}
+
+{% set sectionClass = 'page--contacts-detail' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page container--flex-nav">
+
+      <header class="row" role="header">
+        <div class="col-md-12 d-flex flex-wrap align-items-start">
+          {% include '_includes/modules/contacts/contacts-header.html.twig' %}
+        </div>
+      </header>
+
+      <hr class="w-100 mb-5">
+
+      {% embed '_layouts/columns-3x9-secondary-nav-flex.html.twig' %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - ASIDE #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block aside %}
+
+          {% include '_includes/groups/navigation/my-contacts-nav.html.twig' %}
+
+        {% endblock %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - MAIN #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block main %}
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="mc-details">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-details.html.twig' %}
+            </div>
+            <div class="tab-pane" id="mc-follow-ups">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-follow-ups.html.twig' %}
+            </div>
+            <div class="tab-pane" id="mc-notes">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-notes.html.twig' %}
+            </div>
+            <div class="tab-pane" id="mc-contacthist">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-contact-hist.html.twig' %}
+            </div>
+
+            <!-- START - TEAM ONLY -->
+            <div class="tab-pane" id="mc-orderhist">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-order-hist.html.twig' %}
+            </div>
+            <!-- END - TEAM ONLY -->
+
+            <!-- START - CONTACT ONLY -->
+            <div class="tab-pane" id="mc-salesperf">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-sales-perf.html.twig' %}
+            </div>
+            <div class="tab-pane" id="mc-transactions">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-transactions.html.twig' %}
+            </div>
+            <div class="tab-pane" id="mc-business-dash">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-business-dash.html.twig' %}
+            </div>
+            <div class="tab-pane" id="mc-leadership">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-leadership.html.twig' %}
+            </div>
+            <div class="tab-pane" id="mc-campaign">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-campaign.html.twig' %}
+            </div>
+            <div class="tab-pane" id="mc-reports">
+              {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-reports.html.twig' %}
+            </div>
+            <!-- END - CONTACT ONLY -->
+
+          </div>
+
+        {% endblock %}
+
+      {% endembed %}
+
+    </section>
+
+  {% endblock %}
+
+  <!-- START - SEND EMAIL MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/send-email-modal.html.twig" %}
+  <!-- END - SEND EMAIL MODAL -->
+
+  <!-- START - SEND ECARD MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/send-ecard-modal.html.twig" %}
+  <!-- END - SEND ECARD MODAL -->
+
+  <!-- START - FOLLOW-UPS ADD/EDIT MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/follow-ups-add-edit-modal.html.twig" %}
+  <!-- END - FOLLOW-UPS ADD/EDIT MODAL -->
+
+  <!-- START - FOLLOW-UPS DETAILS MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/follow-ups-details-modal.html.twig" %}
+  <!-- END - FOLLOW-UPS DETAILS MODAL -->
+
+  <!-- START - NOTES ADD/EDIT MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/notes-add-edit-modal.html.twig" %}
+  <!-- END - NOTES ADD/EDIT MODAL -->
+
+  <!-- START - GROUPS ADD NEW MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/groups-add-new-edit-modal.html.twig" %}
+  <!-- END - GROUPS ADD NEW MODAL -->
+
+  <!-- START - GROUPS ADD TO MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/groups-add-to-modal.html.twig" %}
+  <!-- END - GROUPS ADD TO MODAL -->
+
+  <!-- START - DELETE MODAL (SAME TEMPLATE FOR ALL) -->
+  {% include "_includes/modules/modals/modal-either-or-error.html.twig" %}
+  <!-- END - DELETE MODAL (SAME TEMPLATE FOR ALL) -->
+
+  <!-- START - LEARN MORE MODAL -->
+  {% include "_includes/modules/contacts/contact-detail/modals/learn-more-modal.html.twig" %}
+  <!-- END - LEARN MORE MODAL -->
+
+{% endblock %}

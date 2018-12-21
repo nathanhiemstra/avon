@@ -3,33 +3,29 @@
  * @return {init} [description]
  */
 
-var SecondaryNav = (function () {
-
+var SecondaryNav = (function() {
   var $els = {};
+  var firstRun = true;
+  var menuBreakpoint = 1024;
 
   // public methods
-  var init = function () {
-
+  var init = function() {
     // grab the DOM els we need
     $els = {
       navContainer: $('.navbar-secondary'),
       outerCollapsible: $('#secondary-nav-collapse-1'),
-      nestedCollapsible: $('#secondary-nav-collapse-2')
-      // allCollapsibles: $( $('.navbar-secondary').find('[data-toggle="collapse"]').data('target') )
+      nestedCollapsible: $('#secondary-nav-collapse-2'),
+      menuItems: $('[data-toggle="tab"]'),
+      menuTitle: $('#menuTitle')
     };
 
     _addListeners();
-
   };
 
   // private methods
-  var _addListeners = function () {
-
-    // console.log($els.outerCollapsible);
-
-    _checkWindowSize();
-    $(window).resize(function() {
-      _checkWindowSize();
+  var _addListeners = function() {
+    $els.menuItems.on('click', function(e) {
+      _handleItemClick($(this));
     });
 
     // prevent nested collapsibles from firing events on the parent
@@ -40,30 +36,46 @@ var SecondaryNav = (function () {
       e.stopPropagation();
     });
 
-    $els.outerCollapsible.on('hide.bs.collapse', function (e) {
+    // Outer (main) collapsible events
+    $els.outerCollapsible.on('hide.bs.collapse', function(e) {
       $els.navContainer.addClass('collapsed');
     });
-
-    $els.outerCollapsible.on('show.bs.collapse', function (e) {
+    $els.outerCollapsible.on('show.bs.collapse', function(e) {
       $els.navContainer.removeClass('collapsed');
+    });
+
+    // handle resize
+    _checkWindowSize();
+    $(window).on('resize', function() {
+      _checkWindowSize();
     });
 
   };
 
+  var _handleItemClick = function(clickedItem) {
+    // update menu 'title'
+    $els.menuTitle.html(clickedItem.html());
+
+    // close the nav when tapped on mobile
+    if ($(window).width() < menuBreakpoint) {
+      $els.outerCollapsible.collapse('hide');
+    }
+  };
+
   var _checkWindowSize = function() {
-    if ($(window).width() < 992) {
-      // $els.outerCollapsible.collapse('hide');
-      // $els.outerCollapsible.addClass('collapsed');
-      // $els.navContainer.addClass('collapsed');
+    if ($(window).width() < menuBreakpoint) {
+      // prevent menu from showing on page load
+      if(firstRun) {
+        firstRun = false;
+        return;
+      }
+      $els.outerCollapsible.collapse('hide');
     } else {
       $els.outerCollapsible.collapse('show');
-      // $els.outerCollapsible.removeClass('collapsed');
-      // $els.navContainer.removeClass('collapsed');
     }
   };
 
   return {
     init: init
   };
-
 })();

@@ -1,0 +1,64 @@
+<h5 class="pane-title">Follow-ups</h5>
+<button class="btn btn-sm btn-primary btn-header" data-toggle="modal" data-target="#modal-contacts-follow-ups-add-edit">Add Follow-up</button>
+<hr class="mt-4">
+
+<section class="follow-ups-list">
+
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/follow-ups/follow-up-item.html.twig' with {
+      title: 'Contact Beth to talk to her about new products',
+      hasAlert: true,
+      isComplete: false
+    } %}
+
+    <hr>
+
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/follow-ups/follow-up-item.html.twig' with {
+      title: fpo.sentence ~ ' Bacon. ' ~ fpo.sentence,
+      hasAlert: false,
+      isComplete: false
+    } %}
+
+    <hr>
+
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/follow-ups/follow-up-item.html.twig' with {
+      title: fpo.sentence,
+      hasAlert: false,
+      isComplete: false
+    } %}
+
+    <hr>
+
+    <div class="d-flex align-items-center" role="button" data-toggle="collapse" href="#followUpsCompletedItems" aria-expanded="false" aria-controls="followUpsCompletedItems">
+      <span class="lt-icon lt-icon lt-expand-circle lt-large"></span>
+      <span class="lt-icon lt-icon lt-collapse-circle lt-large d-none"></span>
+      <span class="lh-1 ml-2">3 Completed Follow-ups</span>
+    </div>
+
+    <div id="followUpsCompletedItems" class="collapse">
+
+      <hr>
+
+      {% include '_includes/modules/contacts/contact-detail/tab-panes/follow-ups/follow-up-item.html.twig' with {
+        title: fpo.sentence,
+        hasAlert: false,
+        isComplete: true
+      } %}
+
+      <hr>
+
+      {% include '_includes/modules/contacts/contact-detail/tab-panes/follow-ups/follow-up-item.html.twig' with {
+        title: fpo.sentence,
+        hasAlert: false,
+        isComplete: true
+      } %}
+
+      <hr>
+
+      {% include '_includes/modules/contacts/contact-detail/tab-panes/follow-ups/follow-up-item.html.twig' with {
+        title: fpo.sentence,
+        hasAlert: false,
+        isComplete: true
+      } %}
+    </div>
+
+  </section>

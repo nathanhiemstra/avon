@@ -220,6 +220,24 @@ a.btn {
   }
 }
 
+// Link default resposive button displays as a '.btn-default' on mobile and text link on large screens
+.btn-default-link-responsive {
+  @extend .btn-default;
+
+  // not mobile
+  @media (min-width: $screen-sm) {
+    @include button-variant($link-color, transparent, transparent);
+    font-size: $font-size-base;
+    letter-spacing: normal;
+    text-decoration: underline;
+    text-transform: none;
+    font-weight: normal;
+    padding: 0;
+    border: none;
+    line-height: 1;
+  }
+}
+
 // Primary responsive looks like .btn-primary on small screens but has a custom look on large screens
 .btn-primary-responsive {
   @extend .btn-primary;
@@ -641,6 +659,14 @@ input[type="reset"],
 input[type="button"] {
   &.btn-block {
     width: 100%;
+  }
+}
+
+// icon adjustment for small buttons
+.btn-sm {
+  .lt-icon.align-middle {
+    line-height: 0;
+    transform: none;
   }
 }
 
