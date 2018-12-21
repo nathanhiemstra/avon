@@ -1,0 +1,43 @@
+{#
+~ Params ~
+title: string - follow-up item title
+hasAlert: bool - whether or not the date has alert status
+isComplete: bool - if true, the item is completed
+#}
+
+<div class="follow-up-item row d-flex flex-wrap my-4 mx-0">
+
+  <a class="item-title link-plain underline marge">{{ title }}</a>
+
+  <p class="item-date d-flex align-items-end mt-3 mb-5 mb-md-0 {% if hasAlert %}text-danger{% endif %}">
+    {% if hasAlert %}
+    <span class="lt-icon lt-warning mr-2"></span>
+    {% endif %}
+    {% if isComplete %}
+    <span class="text-uppercase font-weight-bold text-muted lh-1 mr-2">Completed:</span>
+    {% endif %}
+    <span class="marge font-weight-bold lh-1">Sep 7, 2018</span>
+  </p>
+
+  <div class="item-edit d-flex ml-auto mt-0 mt-md-1">
+    {% if not isComplete %}
+    <a class="link-muted edit-btn d-inline-flex align-items-center"
+      data-toggle="modal" data-target="#modal-contact-detail-follow-ups-add-edit">
+      <span class="lt-icon lt-pen lt-medium mr-2 text-muted"></span>
+      <span class="lh-1 font-weight-bold">Edit</span>
+    </a>
+    {% endif %}
+    <a class="link-muted edit-btn d-inline-flex align-items-center ml-5 ml-md-4"
+      data-toggle="modal" data-target="#blank-modal-either-or-error">
+      <span class="lt-icon lt-trash lt-medium mr-2 text-muted"></span>
+      <span class="lh-1 font-weight-bold">Delete</span>
+    </a>
+  </div>
+
+  <div class="item-cta ml-5 ml-md-4 text-right">
+    <button class="item-cta btn btn-sm btn-soft btn-discourage">
+      {% if isComplete %}Incomplete{% else %}Completed{% endif %}
+    </button>
+  </div>
+
+</div>

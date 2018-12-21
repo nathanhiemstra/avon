@@ -406,8 +406,8 @@
   }
 }
 
-// contact detail 'tables'
-.contact-detail-table {
+// contact detail list
+.contact-detail-list {
   .item-label h6 {
     line-height: 1.33;
   }
@@ -439,6 +439,53 @@
 
   .cd-sales-tax {
     max-width: 130px;
+  }
+}
+
+// Contact follow-up items
+.follow-ups-list {
+  .item-title {
+    order: 1;
+    flex-basis: 100%;
+  }
+
+  .item-date {
+    order: 2;
+    flex-basis: 100%;
+  }
+
+  .item-edit {
+    order: 3;
+    align-items: center;
+  }
+
+  .item-cta {
+    order: 4;
+  }
+
+  @media (min-width: $screen-sm) {
+    .item-title {
+      flex-basis: 60%;
+    }
+
+    .item-date {
+      order: 4;
+    }
+
+    .item-edit {
+      order: 2;
+      flex-basis: 15%;
+      align-items: flex-start;
+    }
+
+    .item-cta {
+      order: 3;
+      flex-basis: 15%;
+
+      button {
+        margin-top: -2px;
+      }
+    }
   }
 }
 
@@ -486,6 +533,25 @@
   }
 }
 
+// header title
+.page--contacts-detail {
+  .pane-title {
+    display: none;
+
+    &+hr {
+      display: none;
+    }
+
+    @media (min-width: $screen-tablet-landscape) {
+      display: inline-block;
+
+      &+hr {
+        display: block;
+      }
+    }
+  }
+}
+
 // header buttons
 .page--contacts-detail {
   .btn-header {
@@ -508,6 +574,7 @@
   }
 }
 
+// modals
 #modal-contact-detail-notes-add-edit {
   .align-with-text {
     line-height: 1;
