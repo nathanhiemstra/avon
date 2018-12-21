@@ -19,6 +19,7 @@
         <ul>
           <li><a data-toggle="modal" data-target="#modal-contacts-send-email">Send Email</a></li>
           <li><a data-toggle="modal" data-target="#modal-contacts-send-ecard">Send Ecard</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contacts-learn-more">Learn More</a></li>
         </ul>
 
         <h6>Follow-ups</h6>
@@ -74,6 +75,10 @@
         <!-- START - DELETE MODAL (SAME TEMPLATE FOR ALL) -->
         {% include "_includes/modules/modals/modal-either-or-error.html.twig" %}
         <!-- END - DELETE MODAL (SAME TEMPLATE FOR ALL) -->
+
+        <!-- START - LEARN MORE MODAL -->
+        {% include "_includes/modules/contacts/contact-detail/modals/learn-more-modal.html.twig" %}
+        <!-- END - LEARN MORE MODAL -->
 
 
 
