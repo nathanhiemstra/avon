@@ -440,6 +440,7 @@ $( document ).ready( function () {
   if( typeof Brochures !== 'undefined' ) Brochures.init();
   if( typeof CheckoutDemo !== 'undefined' ) CheckoutDemo.init();
   if( typeof ContactsDemo !== 'undefined' ) ContactsDemo.init();
+  if( typeof ContactOrderHistory !== 'undefined' ) ContactOrderHistory.init();
   if( typeof FormDemo !== 'undefined' ) FormDemo.init();
   if( typeof GlobalSearch !== 'undefined' ) GlobalSearch.init();
   if( typeof Pagination !== 'undefined' ) Pagination.init();

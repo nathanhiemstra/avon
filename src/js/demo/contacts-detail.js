@@ -17,9 +17,12 @@ var VibeContacts = (function() {
       editContactCancelBtn: $('.page--contacts-detail .edit-contact-cancel'),
       editContactSaveBtn: $('.page--contacts-detail .edit-contact-save'),
       contactDetails: $('.page--contacts-detail .contact-details'),
-      detailItemsEditBtns: $('.page--contacts-detail .contact-detail-table .item-edit'),
-      detailItemsCancelBtns: $('.page--contacts-detail .contact-detail-table .btn-cancel'),
-      detailItemsSaveBtns: $('.page--contacts-detail .contact-detail-table .btn-save')
+      detailItemsEditBtns: $('.page--contacts-detail .contact-detail-list .item-edit'),
+      detailItemsCancelBtns: $('.page--contacts-detail .contact-detail-list .btn-cancel'),
+      detailItemsSaveBtns: $('.page--contacts-detail .contact-detail-list .btn-save'),
+      headerHr: $('.page--contacts-detail > .container--page > hr'),
+      followUpsCollapseTrigger: $('#mc-follow-ups [data-toggle="collapse"]'),
+      followUpsCollapse: $('#followUpsCompletedItems')
     };
 
     detailsHidden = $els.contactDetails.hasClass('d-none');
@@ -29,6 +32,34 @@ var VibeContacts = (function() {
 
   // private methods
   var _addListeners = function() {
+    // DEV NOTE :: This is unfortunate but we need to hide the <hr> in the header only when
+    //          :: tab pane contains a 'header button' and screen is tablet landscape
+    // hide the header <hr> when there's a header button in the tab pane
+    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+      var href = $(e.target).attr('href');
+      var windowWidth = $(window).width();
+      var isTabletPortrait = windowWidth >= 768 && windowWidth < 1024;
+      var hasHeaderBtn = $(href).find('.btn-header').length;
+
+      if(hasHeaderBtn) {
+        if(isTabletPortrait) $els.headerHr.addClass('invisible');
+      } else {
+        $els.headerHr.removeClass('invisible');
+      }
+    });
+
+    // Follow-ups completed items collapse
+    $els.followUpsCollapse.on('show.bs.collapse', function(e) {
+      // console.log(e.target);
+      $els.followUpsCollapseTrigger.find('.lt-expand-circle').addClass('d-none');
+      $els.followUpsCollapseTrigger.find('.lt-collapse-circle').removeClass('d-none');
+    });
+    $els.followUpsCollapse.on('hide.bs.collapse', function(e) {
+      // console.log(e.target);
+      $els.followUpsCollapseTrigger.find('.lt-expand-circle').removeClass('d-none');
+      $els.followUpsCollapseTrigger.find('.lt-collapse-circle').addClass('d-none');
+    });
+
     // edit button
     $els.editContactBtn.on('click', function(e) {
       e.preventDefault();

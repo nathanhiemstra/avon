@@ -182,3 +182,15 @@ dd {
     }
   }
 }
+
+.dl-spacing {
+  dt {
+    margin-bottom: $spacing-2;
+  }
+
+  dd {
+    &:not(:last-child) {
+      margin-bottom: $spacing-5;
+    }
+  }
+}
