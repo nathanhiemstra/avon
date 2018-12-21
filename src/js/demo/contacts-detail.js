@@ -21,6 +21,8 @@ var VibeContacts = (function() {
       detailItemsEditBtns: $('.page--contacts-detail .contact-detail-list .item-edit'),
       detailItemsCancelBtns: $('.page--contacts-detail .contact-detail-list .btn-cancel'),
       detailItemsSaveBtns: $('.page--contacts-detail .contact-detail-list .btn-save'),
+      customSalesTaxRadio: $('.page--contacts-detail .sales-tax-radio'),
+      customSalesTaxInput: $('.page--contacts-detail #salesTaxCustomPercent'),
       headerHr: $('.page--contacts-detail > .container--page > hr'),
       followUpsCollapseTrigger: $('#mc-follow-ups [data-toggle="collapse"]'),
       followUpsCollapse: $('#followUpsCompletedItems')
@@ -107,6 +109,16 @@ var VibeContacts = (function() {
       $parent.find('.item-edit-form').addClass('d-none');
 
       _handleSaveEdit();
+    });
+
+    // Custom sales tax radio button
+    $els.customSalesTaxRadio.on('change', function(e) {
+      if($(this).find(':checked').attr('id') === 'salesTaxCustom') {
+        $els.customSalesTaxInput.prop('disabled', false);
+        $els.customSalesTaxInput.select().focus();
+      } else {
+        $els.customSalesTaxInput.prop('disabled', true);
+      }
     });
   };
 

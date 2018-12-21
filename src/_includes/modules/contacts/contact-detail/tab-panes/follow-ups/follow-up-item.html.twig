@@ -19,18 +19,18 @@ isComplete: bool - if true, the item is completed
     <span class="marge font-weight-bold lh-1">Sep 7, 2018</span>
   </p>
 
-  <div class="item-edit d-flex ml-auto mt-0 mt-md-1">
+  <div class="item-edit d-flex ml-auto mt-0 mt-md-2">
     {% if not isComplete %}
     <a class="link-muted edit-btn d-inline-flex align-items-center"
       data-toggle="modal" data-target="#modal-contacts-follow-ups-add-edit">
-      <span class="lt-icon lt-pen lt-medium mr-2 text-muted"></span>
-      <span class="lh-1 font-weight-bold">Edit</span>
+      <span class="lt-icon lt-pen mr-2 text-muted"></span>
+      <span class="small lh-1 font-weight-bold">Edit</span>
     </a>
     {% endif %}
     <a class="link-muted edit-btn d-inline-flex align-items-center ml-5 ml-md-4"
       data-toggle="modal" data-target="#blank-modal-either-or-error">
-      <span class="lt-icon lt-trash lt-medium mr-2 text-muted"></span>
-      <span class="lh-1 font-weight-bold">Delete</span>
+      <span class="lt-icon lt-trash mr-2 text-muted"></span>
+      <span class="small lh-1 font-weight-bold">Delete</span>
     </a>
   </div>
 
