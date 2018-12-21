@@ -5,7 +5,6 @@
 
 var SecondaryNav = (function() {
   var $els = {};
-  var resizeTimer;
   var firstRun = true;
   var menuBreakpoint = 1024;
 
@@ -48,11 +47,7 @@ var SecondaryNav = (function() {
     // handle resize
     _checkWindowSize();
     $(window).on('resize', function() {
-      // debounce
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function() {
-        _checkWindowSize();
-      }, 250);
+      _checkWindowSize();
     });
 
   };
