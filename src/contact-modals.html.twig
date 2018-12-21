@@ -17,28 +17,27 @@
 
         <h6>General</h6>
         <ul>
-          <li><a data-toggle="modal" data-target="#modal-contact-detail-send-email">Send Email</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contacts-send-email">Send Email</a></li>
 
         </ul>
 
         <h6>Follow-ups</h6>
         <ul>
-          <li><a data-toggle="modal" data-target="#modal-contact-detail-follow-ups-add-edit">Add/Edit</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contacts-follow-ups-add-edit">Add/Edit</a></li>
           <li><a data-toggle="modal" data-target="#blank-modal-either-or-error">Delete</a></li>
-          <li><a data-toggle="modal" data-target="#modal-contact-detail-follow-ups-details">Details</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contacts-follow-ups-details">Details</a></li>
         </ul>
 
         <h6>Notes</h6>
         <ul>
-          <li><a data-toggle="modal" data-target="#modal-contact-detail-notes-add-edit">Add/Edit</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contacts-notes-add-edit">Add/Edit</a></li>
           <li><a data-toggle="modal" data-target="#blank-modal-either-or-error">Delete</a></li>
         </ul>
 
         <h6>Groups</h6>
         <ul>
-          <li><a data-toggle="modal" data-target="#modal-contact-detail-groups-add-to">Add To</a></li>
-          <li><a data-toggle="modal" data-target="#modal-contact-detail-groups-add-new">Add New</a></li>
-          <li><a data-toggle="modal" data-target="#modal-contact-detail-groups-edit">Edit</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contacts-groups-add-to">Add To</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contacts-groups-add-new-edit">Add New / Edit</a></li>
           <li><a data-toggle="modal" data-target="#blank-modal-either-or-error">Delete</a></li>
         </ul>
 
@@ -59,6 +58,14 @@
         <!-- START - NOTES ADD/EDIT MODAL -->
         {% include "_includes/modules/contacts/contact-detail/modals/notes-add-edit-modal.html.twig" %}
         <!-- END - NOTES ADD/EDIT MODAL -->
+
+        <!-- START - GROUPS ADD NEW MODAL -->
+        {% include "_includes/modules/contacts/contact-detail/modals/groups-add-new-edit-modal.html.twig" %}
+        <!-- END - GROUPS ADD NEW MODAL -->
+
+        <!-- START - GROUPS ADD TO MODAL -->
+        {% include "_includes/modules/contacts/contact-detail/modals/groups-add-to-modal.html.twig" %}
+        <!-- END - GROUPS ADD TO MODAL -->
 
         <!-- START - DELETE MODAL (SAME TEMPLATE FOR ALL) -->
         {% include "_includes/modules/modals/modal-either-or-error.html.twig" %}
