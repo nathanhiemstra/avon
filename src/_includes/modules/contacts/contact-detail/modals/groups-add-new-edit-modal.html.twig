@@ -23,7 +23,20 @@
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {% block modalBody %}
 
-Placeholder: Add New / Edit Group
+<form role="form">
+  <div class="form-group">
+    {% include components.groups.forms.inputAndLabel with {
+      id: 'groups-names',
+      mainLabel: 'Group Name',
+      haslabelErrorIcon: true,
+      hasInlineErrorIcon: null,
+      hasAbsoluteErrorIcon: null,
+      classes: null,
+      type: 'input',
+      theValue: null
+    } %}
+  </div>
+</form>
 
 {% endblock %}
 
@@ -38,7 +51,7 @@ Placeholder: Add New / Edit Group
       <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Cancel</button>
     </div>
     <div class="col-xs-12 col-sm-6 my-2">
-      <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" aria-hidden="true">Save</button>
+      <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" aria-hidden="true">[Greate Group / Save]</button>
     </div>
   </div><!-- /.row -->
 

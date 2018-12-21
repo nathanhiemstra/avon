@@ -6,6 +6,7 @@
 var VibeContacts = (function() {
   var $els = {};
   var detailsHidden;
+  var $currentTab;
 
   // public methods
   var init = function() {
@@ -26,6 +27,7 @@ var VibeContacts = (function() {
     };
 
     detailsHidden = $els.contactDetails.hasClass('d-none');
+    $currentTab = $($('.navbar-secondary .list-group-item.active a').attr('href'));
 
     _addListeners();
   };
@@ -37,25 +39,22 @@ var VibeContacts = (function() {
     // hide the header <hr> when there's a header button in the tab pane
     $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
       var href = $(e.target).attr('href');
-      var windowWidth = $(window).width();
-      var isTabletPortrait = windowWidth >= 768 && windowWidth < 1024;
-      var hasHeaderBtn = $(href).find('.btn-header').length;
+      $currentTab = $(href);
 
-      if(hasHeaderBtn) {
-        if(isTabletPortrait) $els.headerHr.addClass('invisible');
-      } else {
-        $els.headerHr.removeClass('invisible');
-      }
+      _checkHeaderHr($currentTab);
+    });
+
+    _checkHeaderHr($currentTab);
+    $(window).on('resize', function() {
+      _checkHeaderHr($currentTab);
     });
 
     // Follow-ups completed items collapse
     $els.followUpsCollapse.on('show.bs.collapse', function(e) {
-      // console.log(e.target);
       $els.followUpsCollapseTrigger.find('.lt-expand-circle').addClass('d-none');
       $els.followUpsCollapseTrigger.find('.lt-collapse-circle').removeClass('d-none');
     });
     $els.followUpsCollapse.on('hide.bs.collapse', function(e) {
-      // console.log(e.target);
       $els.followUpsCollapseTrigger.find('.lt-expand-circle').removeClass('d-none');
       $els.followUpsCollapseTrigger.find('.lt-collapse-circle').addClass('d-none');
     });
@@ -136,6 +135,22 @@ var VibeContacts = (function() {
 
   var _handleSaveEdit = function() {
     console.log('DEV NOTE :: handle saving the edit here');
+  };
+
+  var _checkHeaderHr = function(tab) {
+    var windowWidth = $(window).width();
+    var isTabletPortrait = windowWidth >= 768 && windowWidth < 1024;
+    var hasHeaderBtn = tab.find('.btn-header').length;
+
+    if(hasHeaderBtn) {
+      if(isTabletPortrait) {
+        $els.headerHr.addClass('invisible');
+      } else {
+        $els.headerHr.removeClass('invisible');
+      }
+    } else {
+      $els.headerHr.removeClass('invisible');
+    }
   };
 
   return {

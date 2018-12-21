@@ -8,6 +8,9 @@
 {% if id %}
   {% set id = ' id="' ~ id ~ '" ' %}
 {% endif %}
+{% if maxlength %}
+  {% set maxlength = ' maxlength="' ~ maxlength ~ '" ' %}
+{% endif %}
 {% if placeholder %}
   {% set placeholder = ' placeholder="' ~ placeholder ~ '" ' %}
 {% endif %}
@@ -32,6 +35,6 @@
 {% endif %}
 
 {{ hasInlineErrorIconStart }}
-{{ errorIcon }}<textarea class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ rows }}{{ data }}{{ attrs }}{{ listeners }}{{ oninput }}{{ required }}{{ disabled }}>{{ theValue }}</textarea>
+{{ errorIcon }}<textarea class="form-control{{ classes }}"{{ id }}{{ placeholder }}{{ rows }}{{ data }}{{ attrs }}{{ listeners }}{{ oninput }}{{ required }}{{ disabled }}{{ maxlength}}>{{ theValue }}</textarea>
 {{ hasInlineErrorIconEnd }}
 
