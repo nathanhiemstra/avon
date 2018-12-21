@@ -40,10 +40,18 @@ var VibeContacts = (function() {
     //          :: tab pane contains a 'header button' and screen is tablet landscape
     // hide the header <hr> when there's a header button in the tab pane
     $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+      // console.log($(this).attr('href'));
       var href = $(e.target).attr('href');
       $currentTab = $(href);
 
       _checkHeaderHr($currentTab);
+
+      // only show the edit name button in the header if on details pane
+      if($(this).attr('href') !== '#mc-details') {
+        $els.editContactBtn.addClass('d-none');
+      } else {
+        $els.editContactBtn.removeClass('d-none');
+      }
     });
 
     _checkHeaderHr($currentTab);
