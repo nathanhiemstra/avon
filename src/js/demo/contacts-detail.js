@@ -21,6 +21,8 @@ var VibeContacts = (function() {
       detailItemsEditBtns: $('.page--contacts-detail .contact-detail-list .item-edit'),
       detailItemsCancelBtns: $('.page--contacts-detail .contact-detail-list .btn-cancel'),
       detailItemsSaveBtns: $('.page--contacts-detail .contact-detail-list .btn-save'),
+      customSalesTaxRadio: $('.page--contacts-detail .sales-tax-radio'),
+      customSalesTaxInput: $('.page--contacts-detail #salesTaxCustomPercent'),
       headerHr: $('.page--contacts-detail > .container--page > hr'),
       followUpsCollapseTrigger: $('#mc-follow-ups [data-toggle="collapse"]'),
       followUpsCollapse: $('#followUpsCompletedItems')
@@ -38,10 +40,18 @@ var VibeContacts = (function() {
     //          :: tab pane contains a 'header button' and screen is tablet landscape
     // hide the header <hr> when there's a header button in the tab pane
     $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+      // console.log($(this).attr('href'));
       var href = $(e.target).attr('href');
       $currentTab = $(href);
 
       _checkHeaderHr($currentTab);
+
+      // only show the edit name button in the header if on details pane
+      if($(this).attr('href') !== '#mc-details') {
+        $els.editContactBtn.addClass('d-none');
+      } else {
+        $els.editContactBtn.removeClass('d-none');
+      }
     });
 
     _checkHeaderHr($currentTab);
@@ -107,6 +117,16 @@ var VibeContacts = (function() {
       $parent.find('.item-edit-form').addClass('d-none');
 
       _handleSaveEdit();
+    });
+
+    // Custom sales tax radio button
+    $els.customSalesTaxRadio.on('change', function(e) {
+      if($(this).find(':checked').attr('id') === 'salesTaxCustom') {
+        $els.customSalesTaxInput.prop('disabled', false);
+        $els.customSalesTaxInput.select().focus();
+      } else {
+        $els.customSalesTaxInput.prop('disabled', true);
+      }
     });
   };
 

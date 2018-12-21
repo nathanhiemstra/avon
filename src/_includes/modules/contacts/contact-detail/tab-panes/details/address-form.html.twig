@@ -9,7 +9,7 @@
     'idPrefix': idPrefix,
     'showTheValue': showTheValue,
     'showPlaceholder': showPlaceholder,
-    'hideAddressLabel': true
+    'mainLabel': 'Street Address'
     }%}
   </div>
   <div class="form-group">
@@ -50,16 +50,9 @@
         }%}
       </div>
     </div>
-    {# <div class="col-xs-8">
-      <div class="form-group has-feedback">
-        {% include '_includes/groups/forms/generic/country.html.twig' with {
-        'idPrefix': idPrefix,
-        'selectFirst': true
-        }%}
-      </div>
-    </div> #}
   </div>
 
+  {% if not hideAddLink %}
   <div class="row mb-4">
     <div class="col-xs-12">
       <a class="underline d-flex align-items-center" href="">
@@ -67,6 +60,7 @@
       </a>
     </div>
   </div>
+  {% endif %}
 
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/edit-btns.html.twig' %}
 </form>

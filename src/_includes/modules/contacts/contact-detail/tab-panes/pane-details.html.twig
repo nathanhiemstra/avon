@@ -35,17 +35,39 @@
 
   <hr>
 
-  {% set addressContent %}
-    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/address-content.html.twig' %}
+  {% set homeAddressContent %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/address-content.html.twig' with {
+      label: 'Home Address'
+    } %}
   {% endset %}
   {% set addressForm %}
     {% include '_includes/modules/contacts/contact-detail/tab-panes/details/address-form.html.twig' %}
   {% endset %}
 
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
-    label: 'Address',
+    label: 'Home Address',
     canEdit: true,
-    content: addressContent,
+    content: homeAddressContent,
+    formContent: addressForm
+  } %}
+
+  <hr>
+
+  {% set workAddressContent %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/address-content.html.twig' with {
+      label: 'Work Address'
+    } %}
+  {% endset %}
+  {% set addressForm %}
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/address-form.html.twig' with {
+      hideAddLink: true
+    } %}
+  {% endset %}
+
+  {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
+    label: 'Work Address',
+    canEdit: true,
+    content: workAddressContent,
     formContent: addressForm
   } %}
 
