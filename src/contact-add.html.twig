@@ -16,22 +16,25 @@
 
         {% include "_includes/groups/navigation/back-link.twig" with {label: "All Customer"} %}
         <h2>Add Team/Customer</h2>
+
+        <hr>
+
         <h6 class="my-4">Contact Info</h6>
 
         <div class="row">
-          <div class="col-xs-6 form-group pr-xs-0">
+          <div class="col-md-6 form-group pr-md-0">
             {% include '_includes/groups/forms/input-and-label.html.twig' with {
             id: 'regFirstName',
-            mainLabel: 'First Name (Required)',
+            mainLabel: 'First Name',
             required: true
             } %}
           </div>
 
-          <div class="col-xs-6 form-group">
+          <div class="col-md-6 form-group">
             {% include '_includes/groups/forms/input-and-label.html.twig' with {
             type: 'text',
             id: 'regLastName',
-            mainLabel: 'Last Name (Required)',
+            mainLabel: 'Last Name',
             required: true
             } %}
           </div>
@@ -42,14 +45,14 @@
             {% include '_includes/groups/forms/input-and-label.html.twig' with {
             type: 'email',
             id: 'regEmail',
-            mainLabel: 'Email',
+            mainLabel: 'Email Address',
             required: true
             } %}
           </div>
         </div>
 
         <div class="row">
-          <div class="col-xs-7 col-md-10 form-group">
+          <div class="col-xs-7 col-md-6 form-group">
             {% include '_includes/groups/forms/input-and-label.html.twig' with {
               type: 'text',
               id: 'priPhone',
@@ -57,7 +60,7 @@
               required: true
             } %}
           </div>
-          <div class="col-xs-5 col-md-2 form-group pl-xs-0">
+          <div class="col-xs-5 col-md-3 form-group pl-xs-0">
             {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
               id: idPrefix ~ 'primary-phone',
               label: ' ',
@@ -68,7 +71,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-7 col-md-10 form-group">
+          <div class="col-xs-7 col-md-6 form-group">
             {% include '_includes/groups/forms/input-and-label.html.twig' with {
               type: 'text',
               id: 'priPhone',
@@ -76,7 +79,7 @@
               required: true
             } %}
           </div>
-          <div class="col-xs-5 col-md-2 form-group pl-xs-0">
+          <div class="col-xs-5 col-md-3 form-group pl-xs-0">
             {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
               id: idPrefix ~ 'secondary-phone',
               label: ' ',
@@ -89,14 +92,9 @@
         <div class="row">
           <div class="col-md-12 form-group m-0">
             <label class="control-label " for="languagePref">Language Preference</label>
-            <div class="clearfix">
-              <div class="pull-left mr-5">
-                {% include components.elements.forms.radio with {id: 'langEnglish', name: 'languagePref', theValue: 'English', theLabel: 'English', checked: true} %}
-              </div>
-              <div class="pull-left">
-                {% include components.elements.forms.radio with {id: 'langSpanish', name: 'languagePref', theValue: 'Spanish', theLabel: 'Spanish', checked: false} %}
-              </div>
-            </div>
+            {% include components.elements.forms.radio with {id: 'langEnglish', name: 'languagePref', theValue: 'English', theLabel: 'English', checked: true, classes:'mb-4'} %}
+
+            {% include components.elements.forms.radio with {id: 'langSpanish', name: 'languagePref', theValue: 'Spanish', theLabel: 'Spanish', checked: false} %}
           </div>
         </div>
 
