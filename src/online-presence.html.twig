@@ -1,0 +1,140 @@
+{% extends layouts.base %}
+
+{% set sectionClass = 'page--profile' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+      position: 'top',
+      html: '<div class="reverse-bg py-3">
+      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+      </div>'
+    } %}
+
+    <section class="container container--page">
+
+      {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - ASIDE #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block aside %}
+
+          {% include '_includes/groups/navigation/my-account-nav.html.twig' with { active : 'online-presence' } %}
+
+        {% endblock %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - MAIN #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block main %}
+
+          <h2>Online Presence</h2>
+          <p>{{fpo.paragraph}}</p>
+
+          <hr>
+
+          <!-- START - NAME AND ADDRESS-->
+          <section class="">
+
+            <h5 class="my-5">Online Store</h5>
+
+            <div class="row my-5">
+
+              <div class="col-sm-4 my-md-2">
+
+                <h6 class="mt-md-2 mb-0 d-inline-xs mr-2">Online Store Address</h6>
+
+                <a href="#" class="small underline">Learn more</a>
+
+              </div>
+
+              <div class="col-sm-8">
+                {% set onlineStoreAddress %}
+                    <input type="text" class="form-control" value="youravon.com/janejhonson">
+                {% endset %}
+
+                {% include '_includes/modules/account/online-presence/online-presence-item.html.twig' with {
+                  content:'<p class="m-0"><a href="#">youravon.com/janejhonson</a></p>',
+                  formContent: onlineStoreAddress
+                }%}
+              </div>
+
+            </div>
+
+            <div class="row my-5">
+
+              <div class="col-sm-4 my-md-2">
+                <h6 class="mt-md-2 mb-0 d-inline-xs mr-2">Delivery Option</h6>
+                <a href="#" class="small underline">Learn more</a>
+              </div>
+
+              <div class="col-sm-8">
+                {% set deliveryOption %}
+                    <input type="text" class="form-control" value="Personal or direct delivery">
+                {% endset %}
+
+                {% include '_includes/modules/account/online-presence/online-presence-item.html.twig' with {
+                  content:'<p class="m-0">Personal or direct delivery</p>',
+                  formContent: deliveryOption
+                }%}
+              </div>
+
+            </div> 
+
+            <div class="onlinePresenceEdit">
+              <button class="btn btn-sm btn-primary">Edit</button>
+            </div>
+
+            <div class="onlinePresenceSaveCancel d-none">
+              <button type="button" class="btn btn-sm btn-default btn-cancel">Cancel</button>
+              <button class="btn btn-sm btn-primary">Save</button>
+            </div>
+
+            <hr>
+
+            <h5 class="my-5">Let customers and representatives find me</h5>
+            <p>{{fpo.paragraph}}</p>
+
+            <div class="row my-5">
+
+              <div class="col-sm-4 my-md-2">
+
+                <h6 class="mt-md-2 mb-0 d-inline-xs mr-2">Enrollement Status</h6>
+
+                <a href="#" class="small underline">Learn more</a>
+
+              </div>
+
+              <div class="col-sm-8 has-error text-danger"><span class="lt-icon lt-large lt-close"></span>Not enrolled</div>
+            </div>
+
+            <button class="btn btn-sm btn-primary">Enroll Now</button>
+
+          </section>
+          <!-- END - NAME AND ADDRESS--> 
+
+        {% endblock %}
+
+      {% endembed %}
+
+    </section>
+
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+      position: 'bottom',
+      html: '<div class="reverse-bg py-3">
+      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+      </div>'
+    } %}
+
+  {% endblock %}
+
+{% endblock %}
