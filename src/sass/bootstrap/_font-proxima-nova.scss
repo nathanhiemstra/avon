@@ -72,12 +72,12 @@ This CSS resource incorporates links to font software which is the valuable copy
 }
 
 // Proxima Semibold,
-@mixin font-semibold {
-  $font-weight: "semibold";
-  $font-file-eot: "proxima-nova-semibold-webfont";
-  $font-file-woff2: "proxima-nova-semibold-webfont";
-  $font-file-woff: "proxima-nova-semibold-webfont";
-  $font-file-ttf: "proxima-nova-semibold-webfont";
+@mixin font-semi-bold {
+  $font-weight: "semi-bold";
+  $font-file-eot: "87e4b4fc-cdf1-450a-8bed-dd818cba908d";
+  $font-file-woff2: "ae47a7f5-89da-4879-b934-29722c3dd451";
+  $font-file-woff: "70ae52ec-d89b-4c6a-9402-854ebe423c54";
+  $font-file-ttf: "6a35571c-ea14-4dac-9ae1-0e7af0abeec8";
 
   @include font-base($font-family-name, $font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
@@ -117,7 +117,7 @@ This CSS resource incorporates links to font software which is the valuable copy
 
   // Proxima Nova Semi-Bold
   @font-face {
-    @include font-semibold;
+    @include font-semi-bold;
 
     font-weight: 500;
     font-style: normal;
@@ -125,7 +125,7 @@ This CSS resource incorporates links to font software which is the valuable copy
   }
 
   @font-face {
-    @include font-semibold;
+    @include font-semi-bold;
 
     font-weight: bold;
     font-style: normal;
