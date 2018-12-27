@@ -37,7 +37,19 @@ th {
       > th {
         padding: $table-cell-padding;
         line-height: $line-height-base;
-        vertical-align: top;
+      }
+    }
+  }
+
+  &:not(.table-valign-middle) {
+    > tbody,
+    > tfoot,
+    > thead {
+      > tr {
+        > td,
+        > th {
+          vertical-align: top;
+        }
       }
     }
   }

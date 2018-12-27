@@ -194,6 +194,7 @@
         padding-left: $left-col-width;
 
         // background: pink;
+
       }
     }
 
@@ -392,8 +393,7 @@
     flex-basis: 100%;
 
     // tablet portrait
-    @media (min-width: $screen-sm) {
-    }
+    @media (min-width: $screen-sm) {}
 
     // tablet landscape
     @media (min-width: $screen-tablet-landscape) {
@@ -544,14 +544,14 @@
   .pane-title {
     display: none;
 
-    &+hr {
+    & + hr {
       display: none;
     }
 
     @media (min-width: $screen-tablet-landscape) {
       display: inline-block;
 
-      &+hr {
+      & + hr {
         display: block;
       }
     }
@@ -588,5 +588,27 @@
 
   .form-group.d-flex .checkbox span {
     min-width: 24px;
+  }
+}
+
+.page--contacts-group {
+  .table-contact-group {
+    .t-group-number {
+      padding-left: 0;
+    }
+
+    // Mobile
+    @media (max-width: $screen-xs) {
+      font-size: $font-size-medium;
+    }
+
+    // Tablet +
+    @media (min-width: $screen-xs) {
+      table-layout: fixed;
+
+      .t-group-number {
+        padding-right: 33%;
+      }
+    }
   }
 }
