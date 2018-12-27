@@ -28,11 +28,15 @@
         {% include "_includes/groups/navigation/back-link.twig" with {label: "My Customers"} %}
 
         <h2>Import Customers</h2>
-        <p>Where would you like to import contacts from?</p>
+        <p class="mb-5">Where would you like to import contacts from?</p>
+
         <iframe class="embed-responsive-item" src="https://en.wikipedia.org/wiki/Sales" width="100%" height="300px" scrolling="yes" frameborder="0"></iframe>
-        <p class="mt-5"><strong>NOTE: </strong>Imported records with invalid email addresses or for which we already have an email address on file will not be added and will not be shown on the confirmation screen.</p>
-        <hr>
-        {{fpo.paragraph}}
+
+        <div class="small mt-5">
+          <p><strong>NOTE: </strong>Imported records with invalid email addresses or for which we already have an email address on file will not be added and will not be shown on the confirmation screen.</p>
+          <hr>
+          <p>{{fpo.paragraph}}</p>
+        </div>
 
       {% endblock %}
 
