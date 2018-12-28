@@ -10,11 +10,11 @@
 {# <dl class="user-editable--item row d-flex flex-wrap my-4 mx-0"> #}
 <dl class="user-editable--item {{ itemClass }}">
 
-  <!-- START - MAIN CONTENT -->
+  <!-- START - DISPLAY CONTENT -->
   <dt class="user-editable--content">
     {{ content }}
   </dt>
-
+  <!-- END - DISPLAY CONTENT -->
   {% if canEdit and formContent %}
   <!-- START - EDITABLE -->
   <dd class="user-editable--editable">
