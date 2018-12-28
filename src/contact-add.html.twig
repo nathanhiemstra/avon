@@ -123,7 +123,7 @@
         <h5 class="mb-4">Home Address</h5>
 
         {% include "_includes/groups/forms/generic/address-zip-city-state-country.html.twig" with {
-          'idPrefix': idPrefix ~ 'add-cust-home-',
+          'idPrefix': idPrefix ~ 'address-home-',
           'showTheValue': false,
           'showPlaceholder': false,
         }%}
@@ -145,7 +145,7 @@
 
           <h5 class="mb-4">Work Address</h5>
           {% include "_includes/groups/forms/generic/address-zip-city-state-country.html.twig" with {
-            'idPrefix': idPrefix ~ 'add-cust-work-',
+            'idPrefix': idPrefix ~ 'address-work-',
             'showTheValue': false,
             'showPlaceholder': false,
           }%}
