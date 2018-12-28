@@ -45,41 +45,6 @@
           </tr>
         </thead>
         <tbody>
-          {# <tr>
-            <td class="t-due">
-                <p class="item-date d-flex align-items-end mt-3 mb-5 mb-md-0 text-danger">
-                  <span class="lt-icon lt-warning mr-2"></span>
-                  <span class="marge font-weight-bold lh-1">Sep 7, 2018</span>
-                </p>
-            </td>
-            <td class="t-title">
-                <a class="item-title link-plain underline marge">Contact Beth to talk to her about new products</a>
-            </td>
-            <td class="t-contact">
-              <a class="item-title link-plain underline marge">Adolfo Santiago</a><br>
-              <span class="text-muted">(Team)</span>
-            </td>
-            <td class="t-actions">
-              <div class="d-flex ml-auto mt-0 mt-md-2">
-                    <a class="link-muted edit-btn d-inline-flex align-items-end">
-                      <span class="lt-icon lt-pen mr-2 text-muted"></span>
-                      <span class="tiny lh-1 font-weight-bold">Edit</span>
-                    </a>
-                    <a class="link-muted edit-btn d-inline-flex align-items-end ml-5 ml-md-4">
-                      <span class="lt-icon lt-trash mr-2 text-muted"></span>
-                      <span class="tiny lh-1 font-weight-bold">Delete</span>
-                    </a>
-              </div>
-            </td>
-            <td class="t-status">
-              <div class="text-right">
-                <button class="btn btn-sm btn-soft btn-discourage">
-                  Completed
-                </button>
-              </div>
-            </td>
-          </tr> #}
-
           {% include '_includes/modules/follow-ups-manager/tr.html.twig' with { alert: true} %}
           {% include '_includes/modules/follow-ups-manager/tr.html.twig' with { alert: false} %}
         </tbody>
