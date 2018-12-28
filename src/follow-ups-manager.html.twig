@@ -28,7 +28,7 @@
         <!-- START - FOLLOW UP BTN -->
         <a class="btn btn-primary btn-sm btn-soft mt-3 mt-sm-0">Add Follow-up</a>
         <!-- END - FOLLOW UP BTN -->
-        
+
       </div>
     </div>
 
@@ -37,35 +37,29 @@
       <table class="table table-striped table-valign-middle border-top border-bottom">
         <thead>
           <tr>
-            <th>
-              <p class="m-0">Due<span class="lt-icon lt-carat-down lt-medium ml-2 text-muted"></span></p>
-            </th>
-            <th>
-              <p class="m-0">Title<span class="lt-icon lt-carat-down lt-medium ml-2 text-muted"></span></p>
-            </th>
-            <th>
-              <p class="m-0">Contact<span class="lt-icon lt-carat-down lt-medium ml-2 text-muted"></span></p>
-            </th>
-            <th><span class="d-none">Actions</span></th>
-            <th><span class="d-none">Status</span></th>
+            <th class="t-due">Due</th>
+            <th class="t-title">Title</th>
+            <th class="t-contact">Contact</th>
+            <th class="t-actions"><span class="sr-only">Actions</span></th>
+            <th class="t-status"><span class="sr-only">Status</span></th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
+          {# <tr>
+            <td class="t-due">
                 <p class="item-date d-flex align-items-end mt-3 mb-5 mb-md-0 text-danger">
                   <span class="lt-icon lt-warning mr-2"></span>
                   <span class="marge font-weight-bold lh-1">Sep 7, 2018</span>
                 </p>
             </td>
-            <td>
+            <td class="t-title">
                 <a class="item-title link-plain underline marge">Contact Beth to talk to her about new products</a>
             </td>
-            <td>
+            <td class="t-contact">
               <a class="item-title link-plain underline marge">Adolfo Santiago</a><br>
               <span class="text-muted">(Team)</span>
             </td>
-            <td>
+            <td class="t-actions">
               <div class="d-flex ml-auto mt-0 mt-md-2">
                     <a class="link-muted edit-btn d-inline-flex align-items-end">
                       <span class="lt-icon lt-pen mr-2 text-muted"></span>
@@ -77,48 +71,17 @@
                     </a>
               </div>
             </td>
-            <td>
+            <td class="t-status">
               <div class="text-right">
                 <button class="btn btn-sm btn-soft btn-discourage">
                   Completed
                 </button>
               </div>
             </td>
-          </tr>
+          </tr> #}
 
-          <tr>
-            <td>
-              <p class="item-date d-flex align-items-end mt-3 mb-5 mb-md-0">
-                <span class="marge font-weight-bold lh-1">Aug 7, 2018</span>
-              </p>
-            </td>
-            <td>
-                <a class="item-title link-plain underline marge">Contact Beth to talk to her about new products</a>
-            </td>
-            <td>
-              <a class="item-title link-plain underline marge">Adolfo Santiago</a><br>
-              <span class="text-muted">(Customer)</span>
-            </td>
-            <td>
-              <div class="d-flex ml-auto mt-0 mt-md-2">
-                    <a class="link-muted edit-btn d-inline-flex align-items-end">
-                      <span class="lt-icon lt-pen mr-2 text-muted"></span>
-                      <span class="tiny lh-1 font-weight-bold">Edit</span>
-                    </a>
-                    <a class="link-muted edit-btn d-inline-flex align-items-end ml-5 ml-md-4">
-                      <span class="lt-icon lt-trash mr-2 text-muted"></span>
-                      <span class="tiny lh-1 font-weight-bold">Delete</span>
-                    </a>
-              </div>
-            </td>
-            <td>
-              <div class="text-right">
-                <button class="btn btn-sm btn-soft btn-discourage">
-                  Completed
-                </button>
-              </div>
-            </td>
-          </tr>
+          {% include '_includes/modules/follow-ups-manager/tr.html.twig' with { alert: true} %}
+          {% include '_includes/modules/follow-ups-manager/tr.html.twig' with { alert: false} %}
         </tbody>
       </table>
     </div>
