@@ -41,336 +41,44 @@
 
           <hr>
 
-          <!-- START - NAME AND ADDRESS-->
-          <section class="">
-
-            <h5 class="my-5">Name &amp; Address</h5>
-
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Name</h6>
-              <div class="col-sm-8">Janet Johnson</div>
-            </div>
-
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Home/Billing Address</h6>
-              <div class="col-sm-8">9072 Rialto St
-                <br>Naples, FL 34113</div>
-            </div>
-
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Shipping Address</h6>
-              <div class="col-sm-8">9072 Rialto St
-                <br>Napls, FL 34113</div>
-            </div>
-
-            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#requestchange">Request Change</button>
-
-            {# MODAL - Request Change #}
-            {% include "_includes/modules/profile/request-change.html.twig" %}
-
-          </section>
-          <!-- END - NAME AND ADDRESS-->
-
-          {# <hr>
-
-          <!-- START - PROFILE PICTURE -->
-          <section class="">
-            <h5 class="my-5">Profile Picture</h5>
-            <div class="row my-5">
-              <div class="col-sm-3">
-                <img src="images/fpo/pretty_lady.png" class="w-100">
-              </div>
-              <div class="col-sm-9">
-                <p class="">Fugiat ut excepteur esse occaecat occaecat do id laboris consectetur est ex et enim ea dolore velit adipisicing.</p>
-                <p class="text-muted small">(PNG, JPEG, or GIF formats only, 10MB max file size)</p>
-                <button class="btn btn-soft btn-default btn-sm mt-4">Choose Image</button>
-              </div>
-            </div>
-          </section>
-          <!-- END - PROFILE PICTURE --> #}
+          <!-- START - PROFILE HEADER -->
+          {% include '_includes/modules/profile/header.html.twig' %}
+          <!-- END - PROFILE HEADER -->
 
           <hr>
 
-          <!-- START - CONTACT INFORMATION STATIC -->
-          <section class="">
-
-            <form role="form">
-
-              <h5 class="my-5">Contact Information</h5>
-
-              <div class="row my-5">
-                <div class="form-group">
-                  <h6 class="col-sm-4 my-md-2">Nickname</h6>
-                  <div class="col-sm-8">
-                    <span>Janet Johnson</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row my-5">
-                <div class="form-group">
-                  <h6 class="col-sm-4 my-md-2">Email Address</h6>
-                  <div class="col-sm-8">
-                    <span>janet.johnson@aol.com</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row my-5">
-                <div class="form-group">
-                  <h6 class="col-sm-4 my-md-2">Home/Cell Phone</h6>
-                  <div class="col-sm-8">
-                    <span>(513) 123-4567</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row my-5">
-                <div class="form-group">
-                  <h6 class="col-sm-4 my-md-2">Business/Cell Phone</h6>
-                  <div class="col-sm-8">
-                    <span>(513) 123-8901</span>
-                  </div>
-                </div>
-              </div>
-
-              <button class="btn btn-sm btn-primary">Edit</button>
-
-            </form>
-
-          </section>
-          <!-- END - CONTACT INFORMATION STATIC -->
+          <!-- START - PAYMENT & DELIVERY -->
+          {% include '_includes/modules/profile/payment-and-delivery.html.twig' %}
+          <!-- END - PAYMENT & DELIVERY -->
 
           <hr>
 
-          <!-- START - CONTACT INFORMATION EDIT -->
-          <section class="row">
-
-
-
-            <div class="col col-sm-12">
-
-              <h5 class="my-5">Contact Information</h5>
-
-              {% include "_includes/groups/alerts/alert-level-section-generic.twig" with {marginClasses: 'mb-0' } %}
-            </div>
-
-
-
-            <div class="col col-md-7">
-
-              <form role="form">
-
-                <div class="my-5">
-                  <div class="form-group has-error">
-                    {% include components.groups.forms.inputAndLabel with {
-                      id: 'profile-nickname"',
-                      mainLabel: 'Nickname',
-                      haslabelErrorIcon: true,
-                      hasInlineErrorIcon: null,
-                      hasAbsoluteErrorIcon: null,
-                      classes: 'form-control',
-                      type: 'text',
-                      theValue: 'Janet Johnson'
-                    } %}
-                  </div>
-                </div>
-
-                <div class="my-5">
-                  <div class="form-group">
-                    <label class="control-label">Email Address</label>
-                    {% include "_includes/elements/forms/input.html.twig" with {
-                      type : 'email',
-                      theValue: 'janet.johnson@aol.com'
-                    } %}
-                  </div>
-                </div>
-
-                <div class="my-5">
-                  <div class="form-group">
-                    <label class="control-label">Home/Cell Phone</label>
-                    {% include "_includes/elements/forms/input.html.twig" with {
-                      type : 'tel',
-                      theValue: '(513) 123-4567'
-                    } %}
-                  </div>
-                </div>
-
-                <div class="my-5">
-                  <div class="form-group">
-                    <label class="control-label">Business/Cell Phone</label>
-                    {% include "_includes/elements/forms/input.html.twig" with {
-                      type : 'tel',
-                      theValue: '(513) 123-8901'
-                    } %}
-                  </div>
-                </div>
-
-                <button class="btn btn-sm btn-default">Cancel</button>
-                <button class="btn btn-sm btn-primary">Save</button>
-
-              </form>
-
-            </div>
-
-          </section>
-          <!-- END - CONTACT INFORMATION EDIT -->
+          <!-- START - CONTACT INFORMATION -->
+          {% include '_includes/modules/profile/contact-information.html.twig' %}
+          <!-- END - CONTACT INFORMATION -->
 
           <hr>
 
-          <!-- START - REPRESENTATIVE ID -->
-          <section class="">
+          <!-- START - ADDRESS -->
+          {% include '_includes/modules/profile/address.html.twig' %}
+          <!-- END - ADDRESS -->
 
-            <h5 class="my-5">Representative ID</h5>
+          <hr>
 
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">District Number</h6>
-              <div class="col-sm-8">5999</div>
-            </div>
-
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Account Number</h6>
-              <div class="col-sm-8">45619986</div>
-            </div>
-
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Pay by Check</h6>
-              <div class="col-sm-8">Yes</div>
-            </div>
-
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Avon Anniversary</h6>
-              <div class="col-sm-8">Nov 12, 1999</div>
-            </div>
-
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Instant Credit</h6>
-              <div class="col-sm-8">Yes</div>
-            </div>
-
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Leadership Level</h6>
-              <div class="col-sm-8">Silver Leader</div>
-            </div>
-
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Sales Level</h6>
-              <div class="col-sm-8">David H. McConnell Club</div>
-            </div>
-
-            <div class="row my-5">
-              <h6 class="col-sm-4 my-md-2">Beauty Advisor</h6>
-              <div class="col-sm-8">[value-goes-here]</div>
-            </div>
-
-          </section>
-          <!-- END - REPRESENTATIVE ID -->
+          <!-- START - LANGUAGE -->
+          {% include '_includes/modules/profile/language.html.twig' %}
+          <!-- END - LANGUAGE -->
 
           <hr>
 
           <!-- START - SETTINGS -->
-          <section class="">
-
-            <h5 class="my-5">Settings</h5>
-
-            <form role="form">
-
-              <div class="row my-5">
-                <div class="form-group">
-                  <div class="col-sm-4">
-                    <h6 class="mt-md-2 mb-0 d-inline-xs mr-2">Language Preference</h6>
-                    <a href="#" class="small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
-                  </div>
-
-                  <div class="col-sm-8 mt-4 mt-md-0">
-                    <span>English</span>
-                    {% include components.elements.forms.radio with {
-                      id: 'language-1',
-                      name: 'language',
-                      classes: 'my-2 mr-4',
-                      theValue: 'English',
-                      theLabel: 'English',
-                      checked: true
-                    } %}
-                    {% include components.elements.forms.radio with {
-                      id: 'language-2',
-                      name: 'language',
-                      classes: 'my-2',
-                      theValue: 'Language-2',
-                      theLabel: 'Language-2',
-                      checked: false
-                    } %}
-                  </div>
-                </div>
-              </div>
-
-              <div class="row my-5">
-                <div class="form-group">
-                  <div class="col-sm-4">
-                    <h6 class="mt-md-2 mb-0 d-inline-xs mr-2">Publicity Release</h6>
-                    <a href="#" class="small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
-                  </div>
-                  <div class="col-sm-8 mt-4 mt-md-0">
-                    <span>Yes</span>
-                    {% include components.elements.forms.radio with {
-                      id: 'release-yes',
-                      name: 'publicity-release',
-                      classes: 'my-2 mr-4',
-                      theValue: 'Yes',
-                      theLabel: 'Yes',
-                      checked: true
-                    } %}
-                    {% include components.elements.forms.radio with {
-                      id: 'release-no',
-                      name: 'publicity-release',
-                      classes: 'my-2',
-                      theValue: 'No',
-                      theLabel: 'No',
-                      checked: false
-                    } %}
-                  </div>
-                </div>
-              </div>
-
-              <div class="row my-5">
-                <div class="form-group">
-                  <div class="col-sm-4">
-                    <h6 class="mt-md-2 mb-0 d-inline-xs mr-2">Paperless Invoice</h6>
-                    <a href="#" class="small underline" data-toggle="modal" data-target="#learnmore">Learn More</a>
-                  </div>
-                  <div class="col-sm-8 mt-4 mt-md-0">
-                    <span>Yes</span>
-                    {% include components.elements.forms.radio with {
-                      id: 'paperless-invoice-yes',
-                      name: 'paperless-invoice',
-                      classes: 'my-2 mr-4',
-                      theValue: 'Yes',
-                      theLabel: 'Yes',
-                      checked: true
-                    } %}
-                    {% include components.elements.forms.radio with {
-                      id: 'paperless-invoice-no',
-                      name: 'paperless-invoice',
-                      classes: 'my-2',
-                      theValue: 'No',
-                      theLabel: 'No',
-                      checked: false
-                    } %}
-                  </div>
-                </div>
-              </div>
-
-              <button class="btn btn-sm btn-primary">Edit</button>
-
-            </form>
-
-          </section>
+          {% include '_includes/modules/profile/settings.html.twig' %}
           <!-- END - SETTINGS -->
 
           <hr>
 
           <!-- START - PROGRAMS -->
-          <section class="">
+          {# <section class="">
 
             <form role="form">
 
@@ -443,7 +151,7 @@
 
             </form>
 
-          </section>
+          </section> #}
           <!-- END - PROGRAMS -->
 
           {# MODAL - Learn More common modal #}

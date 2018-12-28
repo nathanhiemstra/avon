@@ -58,6 +58,12 @@
 
   }
 
+  &.avatar-ml {
+    @include square($avatar-size-ml);
+
+    font-size: $avatar-size-ml * 0.6667;
+  }
+
   &.avatar-lg {
     @include square($avatar-size-lg);
 

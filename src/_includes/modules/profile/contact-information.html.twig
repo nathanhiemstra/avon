@@ -1,0 +1,120 @@
+<!-- START - CONTACT INFORMATION STATIC -->
+<section class="">
+  <form role="form">
+    <h5 class="my-5">Contact Information</h5>
+
+    <div class="row my-5">
+      <div class="form-group">
+        <h6 class="col-sm-4 my-md-2">Nickname</h6>
+        <div class="col-sm-8">
+          <span>Janet Johnson</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-5">
+      <div class="form-group">
+        <h6 class="col-sm-4 my-md-2">Email Address</h6>
+        <div class="col-sm-8">
+          <span>janet.johnson@aol.com</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-5">
+      <div class="form-group">
+        <h6 class="col-sm-4 my-md-2">Primary Phone</h6>
+        <div class="col-sm-8">
+          <span>(513) 123-4567</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-5">
+      <div class="form-group">
+        <h6 class="col-sm-4 my-md-2">Secondary Phone</h6>
+        <div class="col-sm-8">
+          <span>(513) 123-8901</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-sm btn-primary">Edit</button>
+
+  </form>
+
+</section>
+<!-- END - CONTACT INFORMATION STATIC -->
+
+{# <hr> #}
+
+<!-- START - CONTACT INFORMATION EDIT -->
+{# <section class="row">
+
+  <div class="col col-sm-12">
+
+    <h5 class="my-5">Contact Information</h5>
+
+    {% include "_includes/groups/alerts/alert-level-section-generic.twig" with {
+      marginClasses: 'mb-0'
+    } %}
+  </div>
+
+  <div class="col col-md-7">
+
+    <form role="form">
+
+      <div class="my-5">
+        <div class="form-group has-error">
+          {% include components.groups.forms.inputAndLabel with {
+            id: 'profile-nickname"',
+            mainLabel: 'Nickname',
+            haslabelErrorIcon: true,
+            hasInlineErrorIcon: null,
+            hasAbsoluteErrorIcon: null,
+            classes: 'form-control',
+            type: 'text',
+            theValue: 'Janet Johnson'
+          } %}
+        </div>
+      </div>
+
+      <div class="my-5">
+        <div class="form-group">
+          <label class="control-label">Email Address</label>
+          {% include "_includes/elements/forms/input.html.twig" with {
+            type : 'email',
+            theValue: 'janet.johnson@aol.com'
+          } %}
+        </div>
+      </div>
+
+      <div class="my-5">
+        <div class="form-group">
+          <label class="control-label">Home/Cell Phone</label>
+          {% include "_includes/elements/forms/input.html.twig" with {
+            type : 'tel',
+            theValue: '(513) 123-4567'
+          } %}
+        </div>
+      </div>
+
+      <div class="my-5">
+        <div class="form-group">
+          <label class="control-label">Business/Cell Phone</label>
+          {% include "_includes/elements/forms/input.html.twig" with {
+            type : 'tel',
+            theValue: '(513) 123-8901'
+          } %}
+        </div>
+      </div>
+
+      <button class="btn btn-sm btn-default">Cancel</button>
+      <button class="btn btn-sm btn-primary">Save</button>
+
+    </form>
+
+  </div>
+
+</section> #}
+<!-- END - CONTACT INFORMATION EDIT -->
