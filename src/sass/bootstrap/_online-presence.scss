@@ -1,0 +1,8 @@
+.page--online-presence {
+  .bootstrap-select.form-control {
+    &.online-presence-delivery-distance-select {
+      width: 150px;
+      display: block;
+    }
+  }
+}

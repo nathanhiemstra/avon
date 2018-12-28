@@ -1,6 +1,6 @@
 {% extends layouts.base %}
 
-{% set sectionClass = 'page--profile' %}
+{% set sectionClass = 'page--online-presence' %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
@@ -47,15 +47,15 @@
           <h5 class="my-5">Online Store</h5>
           {% set itemName = 'online-store' %}
           {% set thisContent %}
-            {% include '_includes/modules/online-presence/' ~ itemName ~ '-content.html.twig' %}
+            {% include '_includes/modules/online-presence/online-store-content.html.twig' %}
           {% endset %}
           {% set thisFormContent %}
-            {% include '_includes/modules/online-presence/' ~ itemName ~ '-form.html.twig' %}
+            {% include '_includes/modules/online-presence/online-store-form.html.twig' %}
           {% endset %}
 
           {% include '_includes/groups/user-editable/item.html.twig' with {
             label: 'Online Store Address',
-            itemClass: 'item--' ~ itemName ,
+            itemClass: 'item--online-store',
             canEdit: true,
             content: thisContent,
             formContent: thisFormContent
@@ -66,53 +66,22 @@
 
           <!-- START - LET CUSTOEMRS AND REPS FIND ME -->
           <h5 class="my-5">Let Customers And Reprsentatives Find Me</h5>
-          {% set itemName = 'let-find-me' %}
           {% set thisContent %}
-            {% include '_includes/modules/online-presence/' ~ itemName ~ '-content.html.twig' %}
+            {% include '_includes/modules/online-presence/let-find-me-content.html.twig' %}
           {% endset %}
           {% set thisFormContent %}
-            {% include '_includes/modules/online-presence/' ~ itemName ~ '-form.html.twig' %}
+            {% include '_includes/modules/online-presence/let-find-me-form.html.twig' %}
           {% endset %}
 
           {% include '_includes/groups/user-editable/item.html.twig' with {
             label: 'Let Customers And Reprsentatives Find Me',
-            itemClass: 'item--' ~ itemName ,
+            itemClass: 'item--let-find-me' ,
             canEdit: true,
             content: thisContent,
             formContent: thisFormContent
           } %}
           <!-- END - LET CUSTOEMRS AND REPS FIND ME -->
 
-
-
-
-          <!-- START - NAME AND ADDRESS-->
-          <section class="">
-
-
-{#
-            <hr>
-
-            <h5 class="my-5">Let customers and representatives find me</h5>
-            <p>{{fpo.paragraph}}</p>
-
-            <div class="row my-5">
-
-              <div class="col-sm-4 my-md-2">
-
-                <h6 class="mt-md-2 mb-0 d-inline-xs mr-2">Enrollement Status</h6>
-
-                <a href="#" class="small underline">Learn more</a>
-
-              </div>
-
-              <div class="col-sm-8 has-error text-danger"><span class="lt-icon lt-large lt-close"></span>Not enrolled</div>
-            </div>
-
-            <button class="btn btn-sm btn-primary">Enroll Now</button> #}
-
-          </section>
-          <!-- END - NAME AND ADDRESS-->
 
         {% endblock %}
 

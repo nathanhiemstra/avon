@@ -1,29 +1,60 @@
 {% set editablePrefix = '<span class="sr-only">Edit</span> ' %}
+{% set idPrefix = 'online-presence-' %}
 
 <form class="" role="form">
 
+  <!-- START - ONLY SHOW IF ENROLLED -->
+  <!-- ENROLLMENT STATUS -->
+  <h6>{{ editablePrefix }}Enrollment Status</h6>
+
+  <div class="form-group mb-5 mt-4">
+    {% set radioGroupName = 'online-presence-enrollment-status' %}
+    {% include components.elements.forms.radio with {
+      id: radioGroupName ~ '-not-enrolled',
+      name: radioGroupName,
+      theValue: 'not-enrolled',
+      theLabel: 'Not Enrolled',
+      checked: false,
+      classes:'mb-4'}
+    %}
+    {% include components.elements.forms.radio with {
+      id: radioGroupName ~ '-enrolled',
+      name: radioGroupName,
+      theValue: 'enrolled',
+      theLabel: 'Enrolled',
+      checked: true}
+    %}
+  </div>
+  <!-- END - ONLY SHOW IF ENROLLED -->
+
+
   <!-- DELIVERY DISTANCE -->
-  <h6>{{ editablePrefix }}Delivery Distance <span class="lt-icon lt-question"></span></h6>
+  <h6 class="mt-4 mb-2">
+    {{ editablePrefix }}Delivery Distance
+    <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="tooltip" data-placement="top" title="Some helpful information that a user might want to know."></span>
+  </h6>
 
   <div class="form-group">
     {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
-      id: idPrefix ~ 'state',
-      label: "Select the distance you're willing to travel to the customer",
-      classes: '',
+      id: idPrefix ~ 'delivery-distance',
+      label: '<span class="tiny">Select the distance you&rsquo;re willing to travel to the customer</span>',
+      classes: idPrefix ~ 'delivery-distance-select',
       size: 4,
       options: ['Select...', '00 miles', '00 miles', '00 miles'],
       selectFirst: selectFirst
     } %}
   </div>
 
+  <!-- START - ONLY SHOW IF NOT ENROLLED -->
   <!-- TERMS AND CONDITIONS -->
-  <div class="form-group form-inline">
+  <div class="form-group form-inline my-4">
     {% include components.groups.forms.checkboxAndLabel with {
     theValue: 'agree',
     id: 'let-find-me-terms',
     name: 'let-find-me-terms',
     label: 'I agree to Avon&rsquo;s <a href="#" class="link-muted link-underline">Terms &amp; Conditions of Use</a>'} %}
   </div>
+  <!-- START - ONLY SHOW IF NOT ENROLLED -->
 
   {% include '_includes/groups/user-editable/cta-save-cancel.html.twig' %}
 

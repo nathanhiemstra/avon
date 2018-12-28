@@ -60,12 +60,12 @@ var UserEditable = (function () {
   var _savedMode = function( itemClicked ) {
 
     if ( itemClicked ) {
-      // Put only the items related to the button taht was clicked into "Saved Mode"
+      // Put only the items into "Saved Mode" that are related to the button that was clicked
       var $parent = $( itemClicked ).parents( selector.itemContainer );
       var $editableContainer = $parent.find( selector.editableContainer );
       var $savedContainer = $parent.find( selector.savedContentContainer );
     }  else {
-      // Put them all into "Saved Mode"
+      // Put all items into "Saved Mode"
       var $editableContainer = $els.editableContainer;
       var $savedContainer = $els.savedContentContainer;
     }
