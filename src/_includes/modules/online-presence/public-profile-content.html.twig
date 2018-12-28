@@ -1,20 +1,11 @@
 <p class="text-muted">This is how new customers and reps will see your profile information displayed. If you would like to edit your <a href="#" class="underline link-secondary">profile photo</a>, <a href="#" class="underline link-secondary">phone number</a>, or <a href="#" class="underline link-secondary">language spoken</a>, they can all be changed on the <a href="#" class="underline link-secondary">My Profile</a> page.</p>
 
 <!-- START - NAV TABS -->
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs border-bottom">
   <li class="active"><a href="#public-profile-english" data-toggle="tab">English</a></li>
   <li><a href="#public-profile-spanish" data-toggle="tab">Spanish</a></li>
 </ul>
 <!-- END - NAV TABS -->
-
-
-
-
-
-
-
-
-
 
 <!-- START - TAB PANES -->
 <div class="tab-content">
@@ -23,9 +14,8 @@
   <div class="tab-pane active" id="public-profile-english">
     <section>
       <!-- REPRESENTATIVE -->
-
       {% set profileAvatarAddress %}
-        <div class="d-flex align-items-start flex-basis-100 flex-basis-md-auto mt-3 mt-sm-0">
+        <div class="d-flex align-items-start flex-basis-100 flex-basis-md-auto mt-3 mt-md-0">
           <span class="avatar"><img src="/images/fpo/img_avatar_square.png"></span>
           <div class="ml-3 small">
             <strong>Erlinda Conley</strong>
@@ -34,7 +24,6 @@
           </div>
         </div>
       {% endset %}
-
 
       {% include '_includes/groups/lists/label-content/row.html.twig' with {
         rowLabel: '<h6 class="m-0">Representative</h6>',

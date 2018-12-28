@@ -1,60 +1,230 @@
 {% set editablePrefix = '<span class="sr-only">Edit</span> ' %}
 {% set idPrefix = 'online-presence-' %}
 
+<p class="text-muted">This is how new customers and reps will see your profile information displayed. If you would like to edit your <a href="#" class="underline link-secondary font-weight-bold">profile photo</a>, <a href="#" class="underline link-secondary font-weight-bold">phone number</a>, or <a href="#" class="underline link-secondary font-weight-bold">language spoken</a>, they can all be changed on the <a href="#" class="underline link-secondary font-weight-bold">My Profile</a> page.</p>
+
+<!-- START - PROFILE PHOTO -->
+<section class="mb-5 mt-4">
+  <h6>{{ editablePrefix }}Profile Photo</h6>
+  <div class="d-flex align-items-center">
+    <span class="avatar avatar-lg"><img src="/images/fpo/img_avatar_square.png"></span>
+    <div class="ml-3 small">
+      Edit photo on the <a href="#" class="underline link-secondary font-weight-bold">My Profile</a> page
+    </div>
+  </div>
+</section>
+
+<!-- END - PROFILE PHOTO -->
+
+
+
 <form class="" role="form">
 
-  <!-- START - ONLY SHOW IF ENROLLED -->
-  <!-- ENROLLMENT STATUS -->
-  <h6>{{ editablePrefix }}Enrollment Status</h6>
 
+  <!-- START - PHONE NUMBER FOR DISPLAY -->
+  <h6>{{ editablePrefix }}Phone Number For Display</h6>
   <div class="form-group mb-5 mt-4">
-    {% set radioGroupName = 'online-presence-enrollment-status' %}
+    {% set radioGroupName = 'online-presence-profile-phone' %}
     {% include components.elements.forms.radio with {
-      id: radioGroupName ~ '-not-enrolled',
+      id: radioGroupName ~ '-primary',
       name: radioGroupName,
-      theValue: 'not-enrolled',
-      theLabel: 'Not Enrolled',
+      theValue: 'primary',
+      theLabel: 'Primary (000) 000-000',
+      checked: true,
+      classes:'mb-4'}
+    %}
+    {% include components.elements.forms.radio with {
+      id: radioGroupName ~ '-secondary',
+      name: radioGroupName,
+      theValue: 'secondary',
+      theLabel: 'Secondary (000) 000-000',
       checked: false,
       classes:'mb-4'}
     %}
     {% include components.elements.forms.radio with {
-      id: radioGroupName ~ '-enrolled',
+      id: radioGroupName ~ '-both',
       name: radioGroupName,
-      theValue: 'enrolled',
-      theLabel: 'Enrolled',
-      checked: true}
+      theValue: 'both',
+      theLabel: 'Both',
+      checked: false,
+      classes:'mb-4'}
+    %}
+    {% include components.elements.forms.radio with {
+      id: radioGroupName ~ '-none',
+      name: radioGroupName,
+      theValue: 'none',
+      theLabel: 'None',
+      checked: false,
+      classes:'mb-4'}
     %}
   </div>
-  <!-- END - ONLY SHOW IF ENROLLED -->
+  <!-- END - PHONE NUMBER FOR LOCATION -->
 
+  <!-- START - LOCATION FOR DISPLAY -->
+  <h6>{{ editablePrefix }}Location Info For Display</h6>
+  <div class="form-group mb-5 mt-4">
+    {% set radioGroupName = 'online-presence-profile-location-info' %}
+    {% include components.elements.forms.radio with {
+      id: radioGroupName ~ '-location-1',
+      name: radioGroupName,
+      theValue: 'location-1',
+      theLabel: 'Morton Grove',
+      checked: true,
+      classes:'mb-4'}
+    %}
+    {% include components.elements.forms.radio with {
+      id: radioGroupName ~ '-none',
+      name: radioGroupName,
+      theValue: 'none',
+      theLabel: 'None',
+      checked: false,
+      classes:'mb-4'}
+    %}
+  </div>
+  <!-- END - LOCATION INFO FOR DISPLAY -->
 
-  <!-- DELIVERY DISTANCE -->
-  <h6 class="mt-4 mb-2">
-    {{ editablePrefix }}Delivery Distance
-    <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="tooltip" data-placement="top" title="Some helpful information that a user might want to know."></span>
-  </h6>
-
-  <div class="form-group">
-    {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
-      id: idPrefix ~ 'delivery-distance',
-      label: '<span class="tiny">Select the distance you&rsquo;re willing to travel to the customer</span>',
+  <!-- START LANGUAGE -->
+  <h6>{{ editablePrefix }}Location Info For Display</h6>
+  <div class="form-group mb-5 mt-4">
+    {% set radioGroupName = 'online-presence-profile-location-info' %}
+    {% include components.elements.forms.radio with {
+      id: radioGroupName ~ '-english',
+      name: radioGroupName,
+      theValue: 'english',
+      theLabel: 'English',
+      checked: true,
+      classes:'mb-4'}
+    %}
+    {% include components.elements.forms.radio with {
+      id: radioGroupName ~ '-spanish',
+      name: radioGroupName,
+      theValue: 'spanish',
+      theLabel: 'Spanish',
+      checked: false,
+      classes:'mb-4'}
+    %}
+    {% set selectPicker %}
+      {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
+      id: radioGroupName ~ '-new-select',
+      label: null,
       classes: idPrefix ~ 'delivery-distance-select',
       size: 4,
-      options: ['Select...', '00 miles', '00 miles', '00 miles'],
+      options: ['Select...', 'Option', 'Option', 'Option'],
       selectFirst: selectFirst
     } %}
+    {% endset %}
+    {% include '_includes/groups/forms/radio-and-select.html.twig' with {
+      id: radioGroupName ~ '-new-checkbox',
+      name: radioGroupName,
+      theLabel: selectPicker,
+      checked: false,
+      classes: 'mb-4'
+    } %}
   </div>
+  <!-- END - LANGUAGE-->
 
-  <!-- START - ONLY SHOW IF NOT ENROLLED -->
-  <!-- TERMS AND CONDITIONS -->
-  <div class="form-group form-inline my-4">
-    {% include components.groups.forms.checkboxAndLabel with {
-    theValue: 'agree',
-    id: 'let-find-me-terms',
-    name: 'let-find-me-terms',
-    label: 'I agree to Avon&rsquo;s <a href="#" class="link-muted link-underline">Terms &amp; Conditions of Use</a>'} %}
+  <!-- START - LOCATION FOR DISPLAY -->
+  <h6>{{ editablePrefix }}Location Info For Display</h6>
+  <div class="form-group mb-5 mt-4">
+    {% set radioGroupName = 'online-presence-profile-location-info' %}
+    {% include components.elements.forms.radio with {
+      id: radioGroupName ~ '-location-1',
+      name: radioGroupName,
+      theValue: 'location-1',
+      theLabel: 'Morton Grove',
+      checked: true,
+      classes:'mb-4'}
+    %}
+    {% include components.elements.forms.radio with {
+      id: radioGroupName ~ '-none',
+      name: radioGroupName,
+      theValue: 'none',
+      theLabel: 'None',
+      checked: false,
+      classes:'mb-4'}
+    %}
   </div>
-  <!-- START - ONLY SHOW IF NOT ENROLLED -->
+  <!-- END - LOCATION INFO FOR DISPLAY -->
+
+  <!-- START INTERESTS -->
+  <h6 class="mb-2">{{ editablePrefix }}Interests</h6>
+  <p class="small text-muted">(i.e. reading, yoga) - 50 character limit</p>
+  <div class="form-group mb-5 mt-4">
+    {% include '_includes/groups/forms/textarea-and-label.html.twig' with {
+      id: 'online-presence-interests-english',
+      mainLabel: 'English',
+      haslabelErrorIcon: true,
+      hasInlineErrorIcon: null,
+      hasAbsoluteErrorIcon: null,
+      classes: null,
+      theValue: fpo.sentence,
+      rows: 1,
+      maxlength: null
+    } %}
+    <div class="small text-muted mt-3 text-right">
+      <!-- Developer note: If they go over the character count, add teh class "alert-danger" to "count-current" -->
+      <span class="count-current alert-danger">55</span>/<span class="count-max">50</span>
+    </div>
+  </div>
+  <div class="form-group mb-5 mt-4">
+    {% include '_includes/groups/forms/textarea-and-label.html.twig' with {
+      id: 'online-presence-interests-spanish',
+      mainLabel: 'Spanish',
+      haslabelErrorIcon: true,
+      hasInlineErrorIcon: null,
+      hasAbsoluteErrorIcon: null,
+      classes: null,
+      theValue: null,
+      rows: 1,
+      maxlength: null
+    } %}
+    <div class="small text-muted mt-3 text-right">
+      <!-- Developer note: If they go over the character count, add the class "alert-danger" to "count-current" -->
+      <span class="count-current">0</span>/<span class="count-max">50</span>
+    </div>
+  </div>
+  <!-- END - INTERESTS -->
+
+
+  <!-- START WHY I LOVE SELLING AVON -->
+  <h6 class="mb-2">{{ editablePrefix }}Why I Love Selling Avon</h6>
+  <p class="small text-muted">100 character limit</p>
+  <div class="form-group mb-5 mt-4">
+    {% include '_includes/groups/forms/textarea-and-label.html.twig' with {
+      id: 'online-presence-why-i-love-english',
+      mainLabel: 'English',
+      haslabelErrorIcon: true,
+      hasInlineErrorIcon: null,
+      hasAbsoluteErrorIcon: null,
+      classes: null,
+      theValue: fpo.sentence,
+      rows: 3,
+      maxlength: null
+    } %}
+    <div class="small text-muted mt-3 text-right">
+      <!-- Developer note: If they go over the character count, add teh class "alert-danger" to "count-current" -->
+      <span class="count-current">55</span>/<span class="count-max">50</span>
+    </div>
+  </div>
+  <div class="form-group mb-5 mt-4">
+    {% include '_includes/groups/forms/textarea-and-label.html.twig' with {
+      id: 'online-presence-why-i-love-spanish',
+      mainLabel: 'Spanish',
+      haslabelErrorIcon: true,
+      hasInlineErrorIcon: null,
+      hasAbsoluteErrorIcon: null,
+      classes: null,
+      theValue: null,
+      rows: 3,
+      maxlength: null
+    } %}
+    <div class="small text-muted mt-3 text-right">
+      <!-- Developer note: If they go over the character count, add teh class "alert-danger" to "count-current" -->
+      <span class="count-current">0</span>/<span class="count-max">50</span>
+    </div>
+  </div>
+  <!-- END - WHY I LOVE SELLING AVON -->
+
 
   {% include '_includes/groups/user-editable/cta-save-cancel.html.twig' %}
 
