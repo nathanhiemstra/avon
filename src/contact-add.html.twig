@@ -21,7 +21,7 @@
 
         <hr>
 
-        <h6 class="my-4">Contact Info</h6>
+        <h5 class="my-4">Contact Info</h5>
 
         <div class="row">
           <div class="col-md-6 form-group pr-md-0">
@@ -116,7 +116,7 @@
 
         <hr>
 
-        <h6 class="mb-4">Home Address</h6>
+        <h5 class="mb-4">Home Address</h5>
 
         {% include "_includes/groups/forms/generic/address-zip-city-state-country.html.twig" with {
           'idPrefix': idPrefix ~ 'address-home-',
@@ -139,7 +139,7 @@
 
           <hr>
 
-          <h6 class="mb-4">Work Address</h6>
+          <h5 class="mb-4">Work Address</h5>
           {% include "_includes/groups/forms/generic/address-zip-city-state-country.html.twig" with {
             'idPrefix': idPrefix ~ 'address-work-',
             'showTheValue': false,
@@ -151,7 +151,7 @@
 
         <hr>
 
-        <h6>Birthday</h6>
+        <h5>Birthday</h5>
         <div class="row">
           <div class="form-group col-md-3 pr-sm-0 has-feedback">
             {% include "_includes/groups/forms/generic/month.html.twig" with {
