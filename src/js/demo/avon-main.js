@@ -457,5 +457,6 @@ $( document ).ready( function () {
   if( typeof TogglePasswordVisibility !== 'undefined' ) TogglePasswordVisibility.init();
   if( typeof NbaDrawer !== 'undefined' ) NbaDrawer.init();
   if( typeof VibeContacts !== 'undefined' ) VibeContacts.init();
+  if( typeof UserEditable !== 'undefined' ) UserEditable.init();
 
 } );

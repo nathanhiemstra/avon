@@ -25,7 +25,6 @@
     @media (max-width: $screen-sm) {
       .group--selected-item-controls {
         display: none;
-        background-color: pink;
       }
     }
 
@@ -192,9 +191,6 @@
     @media (min-width: $screen-sm) {
       &.table-responsive-rows-and-cols > .table > tbody .t-has-absolute-col-left-and-right {
         padding-left: $left-col-width;
-
-        // background: pink;
-
       }
     }
 

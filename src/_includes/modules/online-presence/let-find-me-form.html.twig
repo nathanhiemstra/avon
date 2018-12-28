@@ -1,0 +1,30 @@
+{% set editablePrefix = '<span class="sr-only">Edit</span> ' %}
+
+<form class="" role="form">
+
+  <!-- DELIVERY DISTANCE -->
+  <h6>{{ editablePrefix }}Delivery Distance <span class="lt-icon lt-question"></span></h6>
+
+  <div class="form-group">
+    {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
+      id: idPrefix ~ 'state',
+      label: "Select the distance you're willing to travel to the customer",
+      classes: '',
+      size: 4,
+      options: ['Select...', '00 miles', '00 miles', '00 miles'],
+      selectFirst: selectFirst
+    } %}
+  </div>
+
+  <!-- TERMS AND CONDITIONS -->
+  <div class="form-group form-inline">
+    {% include components.groups.forms.checkboxAndLabel with {
+    theValue: 'agree',
+    id: 'let-find-me-terms',
+    name: 'let-find-me-terms',
+    label: 'I agree to Avon&rsquo;s <a href="#" class="link-muted link-underline">Terms &amp; Conditions of Use</a>'} %}
+  </div>
+
+  {% include '_includes/groups/user-editable/cta-save-cancel.html.twig' %}
+
+</form>

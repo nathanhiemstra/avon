@@ -1,0 +1,35 @@
+<p>{{ fpo.paragraph }}</p>
+
+<table class="table table-no-borders table-w-inherit table-valign-middle mb-3">
+  <thead class="sr-only">
+    <tr>
+      <th class="t-label"> Label</th>
+      <th class="t-content">Content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- ONLINE STORE ADDRESS -->
+    <tr>
+      <td class="t-label pl-0">
+        <h6 class="mb-0 mt-2">Enrollment Status</h6>
+      </td>
+      <td class="t-content">
+        <!-- Developer note: Use class "d-none" to hide or show enrolled status -->
+        <!-- START - SHOW WHEN NOT ENROLLED -->
+        <span class="let-me-find--not-enrolled">
+          Not enrolled <button class="btn btn-sm btn-default btn-soft">Enroll Now</button>
+        </span>
+        <!-- END - SHOW WHEN NOT ENROLLED -->
+
+        <!-- START - SHOW WHEN ENROLLED -->
+        <span class="let-me-find--not-enrolled text-success">
+          <span class="lt-icon lt-large lt-checkmark lt-medium align-middle"></span> Not enrolled
+        </span>
+        <!-- END - SHOW WHEN ENROLLED -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+ <!-- START - SHOW WHEN NOT ENROLLED -->
+{% include '_includes/groups/user-editable/cta-edit.html.twig' %}
+<!-- END - SHOW WHEN NOT ENROLLED -->

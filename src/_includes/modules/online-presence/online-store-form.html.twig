@@ -1,0 +1,45 @@
+{% set editablePrefix = '<span class="sr-only">Edit</span> ' %}
+
+<form class="" role="form">
+
+  <!-- ONLINE STORE ADDRESS -->
+  <h6>{{ editablePrefix }}Online Store Address</h6>
+  <div class="form-group form-inline">
+   {% include '_includes/groups/forms/input-and-label.html.twig' with {
+    id: 'online-store-address',
+    mainLabel: 'youravon.com/',
+    labelClasses: 'text-default font-weight-bold pr-4',
+    type: 'input',
+    required: null,
+    haslabelErrorIcon: true,
+    hasInlineErrorIcon: null,
+    hasAbsoluteErrorIcon: null,
+    theValue: 'janejohnson'
+    } %}
+  </div>
+
+  <!-- DELIVERY OPTIONS -->
+  <h6>{{ editablePrefix }}Delivery Options</h6>
+
+  <div class="form-group">
+    {% set radioGroupName = 'online-presence-delivery-options' %}
+    {% include components.elements.forms.radio with {
+      id: radioGroupName ~ '-english',
+      name: radioGroupName,
+      theValue: 'direct-only',
+      theLabel: 'Direct Delivery Only',
+      checked: false,
+      classes:'mb-4'}
+    %}
+    {% include components.elements.forms.radio with {
+      id: radioGroupName ~ '-spanish',
+      name: radioGroupName,
+      theValue: 'direct-or-personal',
+      theLabel: 'Personal or Direct Delivery',
+      checked: true}
+    %}
+  </div>
+
+  {% include '_includes/groups/user-editable/cta-save-cancel.html.twig' %}
+
+</form>
