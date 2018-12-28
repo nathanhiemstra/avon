@@ -82,6 +82,26 @@
           } %}
           <!-- END - LET CUSTOEMRS AND REPS FIND ME -->
 
+          <hr>
+
+          <!-- START - PUBLIC PROFILE -->
+          <h5 class="my-5">Public Profile</h5>
+          {% set thisContent %}
+            {% include '_includes/modules/online-presence/public-profile-content.html.twig' %}
+          {% endset %}
+          {% set thisFormContent %}
+            {% include '_includes/modules/online-presence/public-profile-form.html.twig' %}
+          {% endset %}
+
+          {% include '_includes/groups/user-editable/item.html.twig' with {
+            label: 'Public Profile',
+            itemClass: 'item--public-profile' ,
+            canEdit: true,
+            content: thisContent,
+            formContent: thisFormContent
+          } %}
+          <!-- END - PUBLIC PROFILE -->
+
 
         {% endblock %}
 

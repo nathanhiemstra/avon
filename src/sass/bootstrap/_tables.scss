@@ -496,122 +496,125 @@ table {
 // Responsive tables
 //
 
-@media (max-width: $screen-md) {
-  .table-responsive-rows-and-cols {
-    > .table {
-      > thead {
-        display: none;
+@mixin table-responsive-rows-and-cols {
+  > .table {
+    > thead {
+      display: none;
+    }
+
+    // Make columns that span vertically the height of the table
+    // "$t-absolute-col-default-width" is the default width of the column.
+    $t-absolute-col-default-width: 40px;
+
+    > tbody {
+      > tr {
+        display: flex;
+        flex-flow: row wrap;
+        padding-bottom: $table-cell-padding;
+        padding-top: $table-cell-padding;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $table-border-color;
+        }
+
+        > td {
+          border: none;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
       }
 
-      // Make columns that span vertically the height of the table
-      // "$t-absolute-col-default-width" is the default width of the column.
-      $t-absolute-col-default-width: 40px;
+      .t-row-1 {
+        order: 1;
+      }
 
-      > tbody {
-        > tr {
-          display: flex;
-          flex-flow: row wrap;
-          padding-bottom: $table-cell-padding;
-          padding-top: $table-cell-padding;
+      .t-row-2 {
+        order: 3;
+      }
 
-          &:not(:last-child) {
-            border-bottom: 1px solid $table-border-color;
-          }
+      .t-row-3 {
+        order: 4;
+      }
 
-          // &::after {}
+      .t-row-4 {
+        order: 5;
+      }
 
-          // &::before,
-          // &::after {
-          //   content: '';
-          //   width: 100%;
-          //   order: 1;
-          // }
+      .t-row-5 {
+        order: 6;
+      }
 
-          > td {
-            border: none;
-            padding-top: 0;
-            padding-bottom: 0;
-          }
-        }
+      .t-block {
+        width: 100%;
+      }
 
-        .t-row-1 {
-          order: 1;
-        }
+      .t-self-end {
+        margin-left: auto;
+      }
 
-        .t-row-2 {
-          order: 3;
-        }
+      [class*="t-has-absolute-col-"] {
+        position: relative;
+      }
 
-        .t-row-3 {
-          order: 4;
-        }
+      // This is a default width. Change accordingly.
 
-        .t-row-4 {
-          order: 5;
-        }
-
-        .t-row-5 {
-          order: 6;
-        }
-
-        .t-block {
-          width: 100%;
-        }
-
-        .t-self-end {
-          margin-left: auto;
-        }
-
-        [class*="t-has-absolute-col-"] {
-          position: relative;
-        }
-
-        // This is a default width. Change accordingly.
-
-        .t-has-absolute-col {
-          &-left-and-right {
-            padding-left: $t-absolute-col-default-width;
-            padding-right: $t-absolute-col-default-width;
-          }
-
-          &-left {
-            padding-left: $t-absolute-col-default-width;
-          }
-
-          &-right {
-            padding-right: $t-absolute-col-default-width;
-          }
-        }
-
-        .t-absolute-col {
-          &-left,
-          &-right {
-            position: absolute;
-          }
-
-          &-left {
-            left: 0;
-          }
-
-          &-right {
-            right: 0;
-          }
-        }
-
-        // Make columns sibling <td>s make room for the column(s)
-        .t-col-sibling-left {
-          padding-left: $t-absolute-col-default-width;
-        }
-
-        .t-col-sibling-right {
-          padding-right: $t-absolute-col-default-width;
-        }
-
-        .t-col-sibling-both {
+      .t-has-absolute-col {
+        &-left-and-right {
           padding-left: $t-absolute-col-default-width;
           padding-right: $t-absolute-col-default-width;
         }
+
+        &-left {
+          padding-left: $t-absolute-col-default-width;
+        }
+
+        &-right {
+          padding-right: $t-absolute-col-default-width;
+        }
+      }
+
+      .t-absolute-col {
+        &-left,
+        &-right {
+          position: absolute;
+        }
+
+        &-left {
+          left: 0;
+        }
+
+        &-right {
+          right: 0;
+        }
+      }
+
+      // Make columns sibling <td>s make room for the column(s)
+      .t-col-sibling-left {
+        padding-left: $t-absolute-col-default-width;
+      }
+
+      .t-col-sibling-right {
+        padding-right: $t-absolute-col-default-width;
+      }
+
+      .t-col-sibling-both {
+        padding-left: $t-absolute-col-default-width;
+        padding-right: $t-absolute-col-default-width;
       }
     }
+  }
+}
+
+// Tablet +
+@media (max-width: $screen-sm) {
+  .table-responsive-rows-and-cols-sm {
+    @include table-responsive-rows-and-cols;
+  }
+}
+
+// Desktop +
+@media (max-width: $screen-md) {
+  .table-responsive-rows-and-cols {
+    @include table-responsive-rows-and-cols;
   }
 }

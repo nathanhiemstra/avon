@@ -1,0 +1,90 @@
+<p class="text-muted">This is how new customers and reps will see your profile information displayed. If you would like to edit your <a href="#" class="underline link-secondary">profile photo</a>, <a href="#" class="underline link-secondary">phone number</a>, or <a href="#" class="underline link-secondary">language spoken</a>, they can all be changed on the <a href="#" class="underline link-secondary">My Profile</a> page.</p>
+
+<!-- START - NAV TABS -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#public-profile-english" data-toggle="tab">English</a></li>
+  <li><a href="#public-profile-spanish" data-toggle="tab">Spanish</a></li>
+</ul>
+<!-- END - NAV TABS -->
+
+<!-- START - TAB PANES -->
+<div class="tab-content">
+
+  <!-- START ENGLISH -->
+  <div class="tab-pane active" id="public-profile-english">
+    <section>
+      <!-- REPRESENTATIVE -->
+      {% include '_includes/groups/lists/label-content/row.html.twig' with {
+        rowLabel: '<h6 class="m-0">Representative</h6>',
+        rowContent: 'Photo'
+      }%}
+
+      <!-- DELIVERY OPTIONS -->
+      {% include '_includes/groups/lists/label-content/row.html.twig' with {
+        rowLabel: '<h6 class="m-0">Delivery Options</h6>',
+        rowContent: fpo.sentence
+      }%}
+
+      <!-- LANGUAGES -->
+      {% include '_includes/groups/lists/label-content/row.html.twig' with {
+        rowLabel: '<h6 class="m-0">Languages</h6>',
+        rowContent: fpo.sentence
+      }%}
+
+      <!-- INTERESTS -->
+      {% include '_includes/groups/lists/label-content/row.html.twig' with {
+        rowLabel: '<h6 class="m-0">Interests</h6>',
+        rowContent: fpo.sentence
+      }%}
+
+      <!-- WHY I LOVE SELLING AVON -->
+      {% include '_includes/groups/lists/label-content/row.html.twig' with {
+        rowLabel: '<h6 class="m-0">Why I love selling Avon</h6>',
+        rowContent: fpo.sentence
+      }%}
+    </section>
+  </div>
+  <!-- END - ENGLISH -->
+  <!-- START - SPANISH -->
+  <div class="tab-pane" id="public-profile-spanish">
+    <section>
+      <!-- REPRESENTATIVE -->
+      {% include '_includes/groups/lists/label-content/row.html.twig' with {
+        rowLabel: '<h6 class="m-0">representante</h6>',
+        rowContent: 'Photo'
+      }%}
+
+      <!-- DELIVERY OPTIONS -->
+      {% include '_includes/groups/lists/label-content/row.html.twig' with {
+        rowLabel: '<h6 class="m-0">Opciones de entrega</h6>',
+        rowContent: fpo.sentence
+      }%}
+
+      <!-- LANGUAGES -->
+      {% include '_includes/groups/lists/label-content/row.html.twig' with {
+        rowLabel: '<h6 class="m-0">Idiomas</h6>',
+        rowContent: fpo.sentence
+      }%}
+
+      <!-- INTERESTS -->
+      {% include '_includes/groups/lists/label-content/row.html.twig' with {
+        rowLabel: '<h6 class="m-0">Intereses</h6>',
+        rowContent: fpo.sentence
+      }%}
+
+      <!-- WHY I LOVE SELLING AVON -->
+      {% include '_includes/groups/lists/label-content/row.html.twig' with {
+        rowLabel: '<h6 class="m-0">Por qué me encanta vender Avon</h6>',
+        rowContent: fpo.sentence
+      }%}
+    </section>
+  </div>
+  <!-- START - SPANISH -->
+
+</div>
+<!-- END TAB PANES -->
+
+
+
+
+{% include '_includes/groups/user-editable/cta-edit.html.twig' %}
