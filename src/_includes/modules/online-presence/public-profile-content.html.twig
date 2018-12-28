@@ -7,6 +7,15 @@
 </ul>
 <!-- END - NAV TABS -->
 
+
+
+
+
+
+
+
+
+
 <!-- START - TAB PANES -->
 <div class="tab-content">
 
@@ -14,9 +23,22 @@
   <div class="tab-pane active" id="public-profile-english">
     <section>
       <!-- REPRESENTATIVE -->
+
+      {% set profileAvatarAddress %}
+        <div class="d-flex align-items-start flex-basis-100 flex-basis-md-auto mt-3 mt-sm-0">
+          <span class="avatar"><img src="/images/fpo/img_avatar_square.png"></span>
+          <div class="ml-3 small">
+            <strong>Erlinda Conley</strong>
+            <div>(000) 000-0000</div>
+            <div>Hamtown, FL</div>
+          </div>
+        </div>
+      {% endset %}
+
+
       {% include '_includes/groups/lists/label-content/row.html.twig' with {
         rowLabel: '<h6 class="m-0">Representative</h6>',
-        rowContent: 'Photo'
+        rowContent: profileAvatarAddress
       }%}
 
       <!-- DELIVERY OPTIONS -->
@@ -51,7 +73,7 @@
       <!-- REPRESENTATIVE -->
       {% include '_includes/groups/lists/label-content/row.html.twig' with {
         rowLabel: '<h6 class="m-0">representante</h6>',
-        rowContent: 'Photo'
+        rowContent: profileAvatarAddress
       }%}
 
       <!-- DELIVERY OPTIONS -->
