@@ -84,10 +84,10 @@
   <!-- END - LOCATION INFO FOR DISPLAY -->
 
   <!-- START LANGUAGE -->
-  <h6>{{ editablePrefix }}Location Info For Display</h6>
+  <h6>{{ editablePrefix }}Languages</h6>
   <div class="form-group mb-5 mt-4">
     {% set radioGroupName = 'online-presence-profile-location-info' %}
-    {% include components.elements.forms.radio with {
+    {% include components.elements.forms.checkbox with {
       id: radioGroupName ~ '-english',
       name: radioGroupName,
       theValue: 'english',
@@ -95,7 +95,7 @@
       checked: true,
       classes:'mb-4'}
     %}
-    {% include components.elements.forms.radio with {
+    {% include components.elements.forms.checkbox with {
       id: radioGroupName ~ '-spanish',
       name: radioGroupName,
       theValue: 'spanish',
@@ -107,13 +107,13 @@
       {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
       id: radioGroupName ~ '-new-select',
       label: null,
-      classes: idPrefix ~ 'delivery-distance-select',
+      classes: idPrefix ~ 'delivery-distance-select input-sm',
       size: 4,
       options: ['Select...', 'Option', 'Option', 'Option'],
       selectFirst: selectFirst
     } %}
     {% endset %}
-    {% include '_includes/groups/forms/radio-and-select.html.twig' with {
+    {% include '_includes/groups/forms/checkbox-and-select.html.twig' with {
       id: radioGroupName ~ '-new-checkbox',
       name: radioGroupName,
       theLabel: selectPicker,
@@ -131,7 +131,7 @@
       id: radioGroupName ~ '-location-1',
       name: radioGroupName,
       theValue: 'location-1',
-      theLabel: 'Morton Grove',
+      theLabel: 'Morton Grove, IL',
       checked: true,
       classes:'mb-4'}
     %}

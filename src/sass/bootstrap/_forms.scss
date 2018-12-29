@@ -226,8 +226,11 @@ output {
   // large text modifier
   &.large {
     @extend h3;
+
     margin: 0;
+
     // font-size: $font-size-large * 2;
+
   }
 }
 
@@ -455,7 +458,7 @@ input[type="checkbox"] {
   clear: both;
 }
 
-.checkbox span,
+.checkbox > label > span,
 .radio > label > span {
   position: relative;
   display: inline-block;
@@ -1167,7 +1170,8 @@ input.form-control {
 }
 
 // radio select picker combo
-.radio-select-combo {
+.radio-select-combo,
+.checkbox-select-combo {
   label {
     display: flex;
     flex-wrap: wrap;
@@ -1200,7 +1204,8 @@ input.form-control {
     max-width: 435px;
   }
 
-  &.radio-select-combo-lg {
+  &.radio-select-combo-lg
+  &.checkbox-select-combo-lg {
     .form-control,
     label {
       height: 60px;
