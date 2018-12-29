@@ -5,7 +5,7 @@
 
 <!-- START - PROFILE PHOTO -->
 <section class="mb-5 mt-4">
-  <h6>{{ editablePrefix }}Profile Photo</h6>
+  <h6 class="pt-2">{{ editablePrefix }}Profile Photo</h6>
   <div class="d-flex align-items-center">
     <span class="avatar avatar-lg"><img src="/images/fpo/img_avatar_square.png"></span>
     <div class="ml-3 small">
@@ -22,7 +22,8 @@
 
 
   <!-- START - PHONE NUMBER FOR DISPLAY -->
-  <h6>{{ editablePrefix }}Phone Number For Display</h6>
+  <h6 class="mb-2">{{ editablePrefix }}Phone Number For Display</h6>
+  <p class="medium text-muted">Edit your phone numbers on the <a href="#" class="underline link-secondary">My Profile</a> page</p>
   <div class="form-group mb-5 mt-4">
     {% set radioGroupName = 'online-presence-profile-phone' %}
     {% include components.elements.forms.radio with {
@@ -61,7 +62,8 @@
   <!-- END - PHONE NUMBER FOR LOCATION -->
 
   <!-- START - LOCATION FOR DISPLAY -->
-  <h6>{{ editablePrefix }}Location Info For Display</h6>
+  <h6 class="mb-2">{{ editablePrefix }}Location Info For Display</h6>
+  <p class="medium text-muted">Your location is derived from your Billing ZIP. If this is incorrect, please edit your <a href="#" class="underline link-secondary"></a>Billing Address</a>. page</p>
   <div class="form-group mb-5 mt-4">
     {% set radioGroupName = 'online-presence-profile-location-info' %}
     {% include components.elements.forms.radio with {
@@ -123,32 +125,9 @@
   </div>
   <!-- END - LANGUAGE-->
 
-  <!-- START - LOCATION FOR DISPLAY -->
-  <h6>{{ editablePrefix }}Location Info For Display</h6>
-  <div class="form-group mb-5 mt-4">
-    {% set radioGroupName = 'online-presence-profile-location-info' %}
-    {% include components.elements.forms.radio with {
-      id: radioGroupName ~ '-location-1',
-      name: radioGroupName,
-      theValue: 'location-1',
-      theLabel: 'Morton Grove, IL',
-      checked: true,
-      classes:'mb-4'}
-    %}
-    {% include components.elements.forms.radio with {
-      id: radioGroupName ~ '-none',
-      name: radioGroupName,
-      theValue: 'none',
-      theLabel: 'None',
-      checked: false,
-      classes:'mb-4'}
-    %}
-  </div>
-  <!-- END - LOCATION INFO FOR DISPLAY -->
-
   <!-- START INTERESTS -->
   <h6 class="mb-2">{{ editablePrefix }}Interests</h6>
-  <p class="small text-muted">(i.e. reading, yoga) - 50 character limit</p>
+  <p class="medium text-muted">(i.e. reading, yoga) - 50 character limit</p>
   <div class="form-group mb-5 mt-4">
     {% include '_includes/groups/forms/textarea-and-label.html.twig' with {
       id: 'online-presence-interests-english',

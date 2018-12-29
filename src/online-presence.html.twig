@@ -38,7 +38,7 @@
         {% block main %}
 
           <h2>Online Presence</h2>
-          <p>{{fpo.paragraph}}</p>
+          <p class="text-muted">{{fpo.paragraph}}</p>
 
           <hr>
 
@@ -65,7 +65,7 @@
           <hr>
 
           <!-- START - LET CUSTOEMRS AND REPS FIND ME -->
-          <h5 class="my-5">Let Customers And Reprsentatives Find Me</h5>
+          <h5 class="mb-2">Let Customers And Reprsentatives Find Me</h5>
           {% set thisContent %}
             {% include '_includes/modules/online-presence/let-find-me-content.html.twig' %}
           {% endset %}
@@ -85,7 +85,7 @@
           <hr>
 
           <!-- START - PUBLIC PROFILE -->
-          <h5 class="my-5">Public Profile</h5>
+          <h5 class="mb-2">Public Profile</h5>
           {% set thisContent %}
             {% include '_includes/modules/online-presence/public-profile-content.html.twig' %}
           {% endset %}
