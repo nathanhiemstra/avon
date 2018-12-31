@@ -37,7 +37,7 @@
   <div class="form-group">
     {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
       id: idPrefix ~ 'delivery-distance',
-      label: '<div class="tiny mb-2">Select the distance you&rsquo;re willing to travel to the customer</div>',
+      label: '<div class="medium mb-2">Select the distance you&rsquo;re willing to travel to customer</div>',
       classes: idPrefix ~ 'delivery-distance-select',
       size: 4,
       options: ['Select...', '00 miles', '00 miles', '00 miles'],
@@ -47,7 +47,7 @@
 
   <!-- START - ONLY SHOW IF NOT ENROLLED -->
   <!-- TERMS AND CONDITIONS -->
-  <div class="form-group form-inline my-4 nowrap">
+  <div class="form-group form-inline my-4 pt-3 pb-2nowrap">
     {% include components.groups.forms.checkboxAndLabel with {
     theValue: 'agree',
     id: 'let-find-me-terms',

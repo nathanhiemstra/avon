@@ -353,8 +353,26 @@ mark,
 @include bg-variant(".bg-danger", $state-danger-bg);
 
 // Line height
-.lh-1 {
+.lh-xxs {
+  line-height: 0.9;
+}
+
+.lh-1,
+.lh-xs {
   line-height: 1;
+}
+
+.lh-sm {
+  line-height: 1.2;
+}
+
+.lh-md {
+  line-height: 1.4;
+}
+
+// Default = 1.6
+.lh-lg {
+  line-height: 1.8;
 }
 
 // Page header
