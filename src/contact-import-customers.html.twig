@@ -1,0 +1,56 @@
+{% extends layouts.base %}
+
+{% set sectionClass = 'page--sales-leader' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'top',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
+
+  <div class="container container--page">
+
+    {% embed "_layouts/columns-12.html.twig" %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        {% include "_includes/groups/navigation/back-link.twig" with {label: "My Customers"} %}
+
+        <h2>Import Customers</h2>
+        <p class="mb-5">Where would you like to import contacts from?</p>
+
+        <iframe class="embed-responsive-item" src="https://en.wikipedia.org/wiki/Sales" width="100%" height="300px" scrolling="yes" frameborder="0"></iframe>
+
+        <div class="small mt-5">
+          <p><strong>NOTE: </strong>Imported records with invalid email addresses or for which we already have an email address on file will not be added and will not be shown on the confirmation screen.</p>
+          <hr>
+          <p>{{fpo.paragraph}}</p>
+        </div>
+
+      {% endblock %}
+
+    {% endembed %}
+
+  </div>
+
+  <!-- START - MAGNOLIA BLOCK -->
+  {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+    position: 'bottom',
+    html: '<div class="reverse-bg py-3">
+    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    </div>'
+  } %}
+  <!-- END - MAGNOLIA BLOCK -->
+
+{% endblock %}

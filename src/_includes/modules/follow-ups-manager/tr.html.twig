@@ -1,0 +1,36 @@
+{% if alert %}
+  {% set alertClass = 'text-danger' %}
+  {% set alertIcon = '<span class="lt-icon lt-warning align-middle mr-2"></span>' %}
+{% endif %}
+
+<tr>
+  <td class="t-due font-weight-bold nowrap {{ alertClass }}">
+    {{ alertIcon }}Aug 7, 2018
+  </td>
+
+  <td class="t-title">
+    <a class="item-title link-plain underline">Contact Beth to talk to her about new products</a>
+  </td>
+
+  <td class="t-contact">
+    <a class="item-title link-plain underline">Adolfo Santiago</a><br>
+    <span class="text-muted">([Customer/Team])</span>
+  </td>
+
+  <td class="t-actions nowrap small font-weight-bold">
+    <a href="#" class="link-muted ml-3">
+      <span class="lt-icon lt-pen lt-small align-middle mr-1"></span> Edit
+    </a>
+    <a href="#" class="link-muted ml-3">
+      <span class="lt-icon lt-trash lt-small align-middle mr-1"></span> Delete
+    </a>
+  </td>
+
+  <td class="t-status text-right">
+    <button class="btn btn-sm btn-soft btn-discourage">
+      Completed
+    </button>
+  </td>
+</tr>
+
+

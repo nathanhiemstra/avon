@@ -1,0 +1,25 @@
+{#
+  ~ Params ~
+  label: string
+  learnMoreTarget: string - id for Learn More target modal
+  canEdit:         bool - indicates if this field is editable
+  formContent:     string (html) - Edit form markup
+  content:         string (html) - Main content for this field
+#}
+
+<dl class="user-editable--item {{ itemClass }}">
+
+  <!-- START - DISPLAY CONTENT -->
+  <dt class="user-editable--content">
+    {{ content }}
+  </dt>
+  <!-- END - DISPLAY CONTENT -->
+  {% if canEdit and formContent %}
+  <!-- START - EDITABLE -->
+  <dd class="user-editable--editable">
+    {{ formContent }}
+  </dd>
+  <!-- END - EDITABLE  -->
+  {% endif %}
+
+</dl>

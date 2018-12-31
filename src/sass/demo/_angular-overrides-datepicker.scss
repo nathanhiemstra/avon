@@ -37,6 +37,11 @@
     }
   }
 
+  .dropdown-menu {
+    left: inherit;
+    right: 0;
+  }
+
   // .btn-danger,
   // .btn-info,
   // .btn-success,
@@ -108,7 +113,7 @@
     //     color: $btn-default-hover-color;
     //   }
     // }
- 
+
   }
 
   @mixin demo-datepicker-btn-default {
@@ -254,6 +259,7 @@
   }
 
   display: block;
-  top: 45px;
-  left: 0px;
+  top: 75px;
+
+  // left: 0px;
 }

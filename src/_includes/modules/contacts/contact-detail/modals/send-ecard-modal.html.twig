@@ -1,0 +1,31 @@
+{% extends "_layouts/modal.html.twig" %}
+{% if not modalId %}
+  {% set modalId = 'modal-contacts-send-ecard' %}
+{% endif %}
+
+{% set modalSizeClass = 'modal-lg' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalHeader #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalHeader %}
+
+  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+    <span class="sr-only">Close modal</span>
+    <span class="lt-icon lt-close lt-large py-1"></span>
+  </button>
+
+  <h4 class="modal-title text-center">Send E-card</h4>
+
+{% endblock %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - modalBody #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block modalBody %}
+
+  <!-- Developer's note: the class "vh-100" sets the modal the full height of the screen. Otherwise just remove that class and set it manually with height="" -->
+   <iframe class="embed-responsive-item vh-100" src="https://en.wikipedia.org/wiki/Ecard" width="100%" height="" scrolling="yes" frameborder="0"></iframe>
+
+{% endblock %}
+

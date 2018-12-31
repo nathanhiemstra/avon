@@ -1,0 +1,60 @@
+{% extends layouts.base %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+  <section class="container container--page">
+    <h1>Follow-ups</h1>
+    <p class="mb-5">A list of follow-ups that you have made for yourself. <a class="underline" href="#">View completed</a></p>
+
+    <div class="d-flex align-items-center flex-wrap mb-3">
+      <div class="mb-4 mr-md-5">
+       <div class="input-group mt-3 mt-sm-0">
+
+         <span class="input-group-addon input-xs"><span class="lt-icon lt-search lt-large lt-color-muted"></span></span>
+
+         <input type="search" class="form-control input-sm" placeholder="Type to filter..." autocomplete="off">
+       </div>
+      </div>
+      <div class="mb-4 ml-0 ml-lg-auto">
+
+        <!-- START - FOLLOW UP BTN -->
+        <a class="btn btn-primary btn-sm btn-soft mt-3 mt-sm-0">Add Follow-up</a>
+        <!-- END - FOLLOW UP BTN -->
+
+      </div>
+    </div>
+
+    <!-- START - FOLLOW UP TABLE-->
+    <div class="table-responsive border-top">
+      <table class="table table-striped table-valign-middle border-top border-bottom">
+        <thead>
+          <tr>
+            <th class="t-due">Due</th>
+            <th class="t-title">Title</th>
+            <th class="t-contact">Contact</th>
+            <th class="t-actions"><span class="sr-only">Actions</span></th>
+            <th class="t-status"><span class="sr-only">Status</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% include '_includes/modules/follow-ups-manager/tr.html.twig' with { alert: true} %}
+          {% include '_includes/modules/follow-ups-manager/tr.html.twig' with { alert: false} %}
+        </tbody>
+      </table>
+    </div>
+    <!-- END - FOLLOW UP TABLE-->
+
+  </section>
+
+  {% endblock %}
+
+
+{% endblock %}

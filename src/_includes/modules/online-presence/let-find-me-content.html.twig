@@ -1,0 +1,28 @@
+<p class="text-muted">{{ fpo.paragraph }}</p>
+
+<section>
+  <!-- ENROLLMENT STATUS-->
+  {% set rowContent  %}
+    <!-- Developer note: Use class "d-none" to hide or show enrolled status -->
+    <!-- START - SHOW WHEN NOT ENROLLED -->
+    <span class="let-me-find--not-enrolled">
+      Not enrolled <button class="btn btn-sm btn-default btn-soft">Enroll Now</button>
+    </span>
+    <!-- END - SHOW WHEN NOT ENROLLED -->
+
+    <!-- START - SHOW WHEN ENROLLED -->
+    <span class="let-me-find--not-enrolled text-success">
+      <span class="lt-icon lt-large lt-checkmark lt-medium align-middle"></span> Enrolled
+    </span>
+    <!-- END - SHOW WHEN ENROLLED -->
+  {% endset %}
+
+  {% include '_includes/groups/lists/label-content/row.html.twig' with {
+    rowLabel: '<h6 class="m-sm-0">Enrollment Status</h6>',
+    rowContent: rowContent
+  }%}
+</section>
+
+<!-- START - SHOW WHEN NOT ENROLLED -->
+{% include '_includes/groups/user-editable/cta-edit.html.twig' %}
+<!-- END - SHOW WHEN NOT ENROLLED -->

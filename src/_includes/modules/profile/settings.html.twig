@@ -1,0 +1,68 @@
+<section class="">
+
+  <h5 class="my-5">Settings</h5>
+
+  <form role="form">
+    <div class="row my-5">
+      <div class="form-group">
+        <div class="col-sm-4">
+          <h6 class="mt-md-2 mb-0 d-inline-xs mr-2">Publicity Release</h6>
+          <a href="#" class="small underline" data-toggle="modal"
+            data-target="#learnmore">Learn More</a>
+        </div>
+        <div class="col-sm-8 mt-4 mt-md-0">
+          <span>Yes</span>
+          {# {% include components.elements.forms.radio with {
+            id: 'release-yes',
+            name: 'publicity-release',
+            classes: 'my-2 mr-4',
+            theValue: 'Yes',
+            theLabel: 'Yes',
+            checked: true
+          } %}
+          {% include components.elements.forms.radio with {
+            id: 'release-no',
+            name: 'publicity-release',
+            classes: 'my-2',
+            theValue: 'No',
+            theLabel: 'No',
+            checked: false
+          } %} #}
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-5">
+      <div class="form-group">
+        <div class="col-sm-4">
+          <h6 class="mt-md-2 mb-0 d-inline-xs mr-2">Paperless Invoice</h6>
+          <a href="#" class="small underline" data-toggle="modal"
+            data-target="#learnmore">Learn More</a>
+        </div>
+        <div class="col-sm-8 mt-4 mt-md-0">
+          <span>Yes</span>
+          {# {% include components.elements.forms.radio with {
+            id: 'paperless-invoice-yes',
+            name: 'paperless-invoice',
+            classes: 'my-2 mr-4',
+            theValue: 'Yes',
+            theLabel: 'Yes',
+            checked: true
+          } %}
+          {% include components.elements.forms.radio with {
+            id: 'paperless-invoice-no',
+            name: 'paperless-invoice',
+            classes: 'my-2',
+            theValue: 'No',
+            theLabel: 'No',
+            checked: false
+          } %} #}
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-sm btn-primary">Edit</button>
+
+  </form>
+
+</section>

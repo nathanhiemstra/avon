@@ -209,6 +209,7 @@ a.btn {
   // mobile - since we're overriding btn styles, it makes more sense for 'desktop first' in this case
   @media (max-width: $screen-xs-max) {
     @include button-variant($link-color, transparent, transparent);
+
     font-size: $font-size-base;
     letter-spacing: normal;
     text-decoration: underline;
@@ -227,6 +228,7 @@ a.btn {
   // not mobile
   @media (min-width: $screen-sm) {
     @include button-variant($link-color, transparent, transparent);
+
     font-size: $font-size-base;
     letter-spacing: normal;
     text-decoration: underline;
@@ -535,10 +537,10 @@ a.btn {
     .caret {
       border-top: $caret-width-base dashed;
       border-top: $caret-width-base solid $brand-primary;
+
       // IE8
       border-right: $caret-width-base solid transparent;
       border-left: $caret-width-base solid transparent;
-
       right: $btn-padding-base-horizontal;
     }
   }
@@ -625,6 +627,13 @@ a.btn {
 .btn-block {
   display: block;
   width: 100%;
+}
+
+@media (max-width: $screen-xs) {
+  .btn-block-xs {
+    display: block;
+    width: 100%;
+  }
 }
 
 @media (min-width: $screen-sm-min) {

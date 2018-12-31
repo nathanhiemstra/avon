@@ -13,12 +13,13 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
-        <h1 class="mb-5">Contact Detail - Modals</h1>
+        <h1 class="mb-5">Contact - Modals</h1>
 
         <h6>General</h6>
         <ul>
           <li><a data-toggle="modal" data-target="#modal-contacts-send-email">Send Email</a></li>
-
+          <li><a data-toggle="modal" data-target="#modal-contacts-send-ecard">Send Ecard</a></li>
+          <li><a data-toggle="modal" data-target="#modal-contacts-learn-more">Learn More</a></li>
         </ul>
 
         <h6>Follow-ups</h6>
@@ -47,6 +48,10 @@
         {% include "_includes/modules/contacts/contact-detail/modals/send-email-modal.html.twig" %}
         <!-- END - SEND EMAIL MODAL -->
 
+        <!-- START - SEND ECARD MODAL -->
+        {% include "_includes/modules/contacts/contact-detail/modals/send-ecard-modal.html.twig" %}
+        <!-- END - SEND ECARD MODAL -->
+
         <!-- START - FOLLOW-UPS ADD/EDIT MODAL -->
         {% include "_includes/modules/contacts/contact-detail/modals/follow-ups-add-edit-modal.html.twig" %}
         <!-- END - FOLLOW-UPS ADD/EDIT MODAL -->
@@ -70,6 +75,12 @@
         <!-- START - DELETE MODAL (SAME TEMPLATE FOR ALL) -->
         {% include "_includes/modules/modals/modal-either-or-error.html.twig" %}
         <!-- END - DELETE MODAL (SAME TEMPLATE FOR ALL) -->
+
+
+        <!-- START - LEARN MORE MODAL -->
+        {% include "_includes/modules/contacts/contact-detail/modals/learn-more-modal.html.twig" %}
+        <!-- END - LEARN MORE MODAL -->
+
 
 
 

@@ -1,0 +1,122 @@
+{% extends layouts.base %}
+
+{% set sectionClass = 'page--online-presence' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+      position: 'top',
+      html: '<div class="reverse-bg py-3">
+      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+      </div>'
+    } %}
+
+    <section class="container container--page">
+
+      {% embed '_layouts/columns-3x9-secondary-nav.html.twig' %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - ASIDE #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block aside %}
+
+          {% include '_includes/groups/navigation/my-account-nav.html.twig' with { active : 'online-presence' } %}
+
+        {% endblock %}
+
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {# DEFINE BLOCK - MAIN #}
+        {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+        {% block main %}
+
+          <h2>Online Presence</h2>
+          <p class="text-muted">{{fpo.paragraph}}</p>
+
+          <hr>
+
+
+          <!-- START - ONLINE STORE ADDRESS -->
+          <h5 class="my-5">Online Store</h5>
+          {% set itemName = 'online-store' %}
+          {% set thisContent %}
+            {% include '_includes/modules/online-presence/online-store-content.html.twig' %}
+          {% endset %}
+          {% set thisFormContent %}
+            {% include '_includes/modules/online-presence/online-store-form.html.twig' %}
+          {% endset %}
+
+          {% include '_includes/groups/user-editable/item.html.twig' with {
+            label: 'Online Store Address',
+            itemClass: 'item--online-store',
+            canEdit: true,
+            content: thisContent,
+            formContent: thisFormContent
+          } %}
+          <!-- END - ONLINE STORE ADDRESS -->
+
+          <hr>
+
+          <!-- START - LET CUSTOEMRS AND REPS FIND ME -->
+          <h5 class="mb-2">Let Customers And Reprsentatives Find Me</h5>
+          {% set thisContent %}
+            {% include '_includes/modules/online-presence/let-find-me-content.html.twig' %}
+          {% endset %}
+          {% set thisFormContent %}
+            {% include '_includes/modules/online-presence/let-find-me-form.html.twig' %}
+          {% endset %}
+
+          {% include '_includes/groups/user-editable/item.html.twig' with {
+            label: 'Let Customers And Reprsentatives Find Me',
+            itemClass: 'item--let-find-me' ,
+            canEdit: true,
+            content: thisContent,
+            formContent: thisFormContent
+          } %}
+          <!-- END - LET CUSTOEMRS AND REPS FIND ME -->
+
+          <hr>
+
+          <!-- START - PUBLIC PROFILE -->
+          <h5 class="mb-2">Public Profile</h5>
+          {% set thisContent %}
+            {% include '_includes/modules/online-presence/public-profile-content.html.twig' %}
+          {% endset %}
+          {% set thisFormContent %}
+            {% include '_includes/modules/online-presence/public-profile-form.html.twig' %}
+          {% endset %}
+
+          {% include '_includes/groups/user-editable/item.html.twig' with {
+            label: 'Public Profile',
+            itemClass: 'item--public-profile' ,
+            canEdit: true,
+            content: thisContent,
+            formContent: thisFormContent
+          } %}
+          <!-- END - PUBLIC PROFILE -->
+
+          <hr>
+
+        {% endblock %}
+
+      {% endembed %}
+
+    </section>
+
+    {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
+      position: 'bottom',
+      html: '<div class="reverse-bg py-3">
+      <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+      </div>'
+    } %}
+
+  {% endblock %}
+
+{% endblock %}

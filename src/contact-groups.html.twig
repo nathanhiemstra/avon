@@ -1,0 +1,70 @@
+{% extends layouts.base %}
+
+{% set sectionClass = 'page--contacts-group' %}
+
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {# DEFINE BLOCK - MAIN #}
+  {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+  {% block main %}
+
+    <section class="container container--page">
+
+      <header class="row" role="header">
+        <div class="col-md-12 mb-2">
+          {% include "_includes/groups/navigation/back-link.twig" with {label: "[Team / Customer] Contacts"} %}
+
+          <!-- START - CONTACT LIST GROUP HEAD -->
+          <div class="d-flex justify-content-between flex-wrap actions-primary">
+            <div>
+              <h2 class="mb-0 mb-sm-4 mr-4">[Team / Customer] Groups</h2>
+            </div>
+            <div class="w-xs-100">
+              <a class="btn btn-primary btn-sm mt-3 mt-sm-0 w-xs-100" data-toggle="modal" data-target="#modal-contact-detail-groups-add-new">Add Group</a>
+            </div>
+          </div>
+          <!-- END - CONTACT LIST GROUP HEAD -->
+
+        </div>
+      </header>
+     </section>
+
+     <!-- START - TABLE - CUSTOMER GROUPS -->
+      <section class="container px-xs-0 mt-4 mt-sm-0">
+        <div class="table-contact-group border-top">
+          <table class="table table-striped table-valign-middle border-top border-bottom">
+            <thead>
+              <tr>
+                <th class="t-group-name t-primary">Group Name</th>
+                <th class="t-group-number text-right"># In Group</th>
+                <th class="t-actions">
+                  <span class="d-none">Actions</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- START - LOOP OF TABLE ROWS -->
+              {% include '_includes/modules/contacts/contacts-group/contacts-group-tr.html.twig' %}
+              {% include '_includes/modules/contacts/contacts-group/contacts-group-tr.html.twig' %}
+              {% include '_includes/modules/contacts/contacts-group/contacts-group-tr.html.twig' %}
+              <!-- END - LOOP OF TABLE ROWS -->
+
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- END - TABLE -  Customer Groups-->
+
+  {% endblock %}
+
+  <!-- START - MODAL - ADD GROUP -->
+  {% include "_includes/modules/contacts/contact-detail/modals/groups-add-new-modal.html.twig" %}
+  <!-- END - MODAL - ADD GROUP -->
+
+{% endblock %}

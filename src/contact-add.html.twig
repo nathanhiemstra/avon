@@ -1,0 +1,195 @@
+{% extends layouts.base %}
+
+{% set idPrefix = 'contact-add-' %}
+
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{# DEFINE BLOCK - CONTENT #}
+{# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+{% block content %}
+
+  <div class="container container--page">
+
+    {% embed "_layouts/columns-10-max.html.twig" %}
+
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {# DEFINE BLOCK - MAIN #}
+      {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
+      {% block main %}
+
+        {% include "_includes/groups/navigation/back-link.twig" with {label: "[Team/Customer] Contacts"} %}
+
+        <h2>Add [Team/Customer]</h2>
+
+        <hr>
+
+        <h5 class="my-4">Contact Info</h5>
+
+        <div class="row">
+          <div class="col-md-6 form-group pr-md-0">
+            {% include '_includes/groups/forms/input-and-label.html.twig' with {
+            id: idPrefix ~ 'name-first',
+            mainLabel: 'First Name',
+            required: true
+            } %}
+          </div>
+
+          <div class="col-md-6 form-group">
+            {% include '_includes/groups/forms/input-and-label.html.twig' with {
+            type: 'text',
+            id: idPrefix ~ 'name-last',
+            mainLabel: 'Last Name',
+            required: true
+            } %}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            {% include '_includes/groups/forms/input-and-label.html.twig' with {
+            type: 'email',
+            id: idPrefix ~ 'email',
+            mainLabel: 'Email Address',
+            required: true
+            } %}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-7 col-md-6 form-group">
+            {% include '_includes/groups/forms/input-and-label.html.twig' with {
+              type: 'text',
+              theValue: '(231) 123-4567',
+              id: idPrefix ~ 'phone',
+              mainLabel: 'Primary Phone Number',
+              required: true,
+              labelClasses: 'nowrap'
+            } %}
+          </div>
+          <div class="col-xs-5 col-md-3 form-group pl-xs-0">
+            {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
+              id: idPrefix ~ 'primary-phone-type',
+              label: '&nbsp',
+              classes: '',
+              options: ['Mobile', 'Home', 'Other'],
+              selectFirst: true
+            } %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-7 col-md-6 form-group">
+            {% include '_includes/groups/forms/input-and-label.html.twig' with {
+              type: 'text',
+              theValue: '(231) 123-4567',
+              id: idPrefix ~ 'phone-secondary',
+              mainLabel: 'Secondary Phone Number',
+              required: true,
+              labelClasses: 'nowrap'
+            } %}
+          </div>
+          <div class="col-xs-5 col-md-3 form-group pl-xs-0">
+            {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
+              id: idPrefix ~ 'secondary-phone-type',
+              label: '&nbsp',
+              classes: '',
+              options: ['Mobile', 'Home', 'Other'],
+              selectFirst: true
+            } %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 form-group m-0">
+            {% set languagePrefName = idPrefix ~ 'language' %}
+            <label class="control-label mb-0">Language Preference</label>
+            {% include components.elements.forms.radio with {
+              id: languagePrefName ~ '-english',
+              name: languagePrefName,
+              theValue: 'English',
+              theLabel: 'English',
+              checked: true,
+              classes:'mb-4'}
+            %}
+            {% include components.elements.forms.radio with {
+              id: languagePrefName ~ '-spanish',
+              name: languagePrefName,
+              theValue: 'Spanish',
+              theLabel: 'Spanish',
+              checked: false}
+            %}
+          </div>
+        </div>
+
+        <hr>
+
+        <h5 class="mb-4">Home Address</h5>
+
+        {% include "_includes/groups/forms/generic/address-zip-city-state-country.html.twig" with {
+          'idPrefix': idPrefix ~ 'address-home-',
+          'showTheValue': false,
+          'showPlaceholder': false,
+        }%}
+
+        <!-- Developer note:
+        When click "+ Add work address":
+        1. Add the class "d-none" to mke it hide
+        2. Remove "d-none" from <div class="work-address"> below to make it visible.
+       -->
+        <a href="javascript:void(0)" class="my-3 link-underline" id="{{ idPrefix }}show-address-work">+ Add work address</a>
+
+
+
+        <!-- Developer note: By defaults "work-address" (below) would have the class "d-none" so it's hidden. When click "+ Add work address" (above), remove "d-none". -->
+        <!-- START - WORK ADDRESS -->
+        <div class="work-address">
+
+          <hr>
+
+          <h5 class="mb-4">Work Address</h5>
+          {% include "_includes/groups/forms/generic/address-zip-city-state-country.html.twig" with {
+            'idPrefix': idPrefix ~ 'address-work-',
+            'showTheValue': false,
+            'showPlaceholder': false,
+          }%}
+
+        </div>
+        <!-- END - WORK ADDRESS -->
+
+        <hr>
+
+        <h5>Birthday</h5>
+
+        <div class="row">
+          <div class="form-group col-xs-7 pr-0">
+            {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
+              id: idPrefix ~ 'birth-',
+              label: 'Month',
+              classes: '',
+              options: ['January', 'February', 'March', 'April'],
+              selectFirst: false
+            } %}
+          </div>
+          <div class="form-group col-xs-5">
+            {% include '_includes/groups/forms/input-and-label.html.twig' with {
+                type: 'number',
+                id: idPrefix ~ 'birth-day',
+                mainLabel: 'Day',
+                required: true
+              } %}
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <button type="button" class="btn btn-primary btn-block">Add Customer</button>
+          </div>
+        </div>
+
+      {% endblock %}
+
+    {% endembed %}
+
+  </div>
+
+{% endblock %}
+
