@@ -28,7 +28,7 @@ var UserEditable = (function () {
     };
 
     _addListeners();
-    // _savedMode();
+    _savedMode();
   };
 
   // private methods
