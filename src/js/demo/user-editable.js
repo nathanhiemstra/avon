@@ -12,8 +12,6 @@ var UserEditable = (function () {
   // public methods
   var init = function () {
 
-    console.log('Hello');
-
     // grab the DOM els we need
 
     selector = {
