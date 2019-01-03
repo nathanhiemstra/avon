@@ -20,10 +20,10 @@ var OnilinePresence = (function () {
       isNotEnrolled:                $('.page--online-presence .enroll-item--not-enrolled'),
       enrollStatusContainer:        $('.page--online-presence .enrollment-status--container'),
       enrollmentStartTrigger:       $('.page--online-presence .enroll-item--start-enrollment-trigger'),
-      enrollmentCancelTrigger:      $('.page--online-presence .user-editable--cta-cancel'),
-      enrollmentSaveTrigger:        $('.page--online-presence .user-editable--cta-save'),
-      userEditableLetMeFindTrigger: $('.page--online-presence .user-editable--cta-edit'),
       enrollRadio:                  $('.page--online-presence #online-presence-enrollment-status-enrolled'),
+      enrollmentCancelTrigger:      $('.page--online-presence .item--let-find-me .user-editable--cta-cancel'),
+      enrollmentSaveTrigger:        $('.page--online-presence .item--let-find-me .user-editable--cta-save'),
+      userEditableLetMeFindTrigger: $('.page--online-presence .item--let-find-me .user-editable--cta-edit'),
     };
 
     _addListeners();
