@@ -1,17 +1,17 @@
-<p class="text-muted">{{ fpo.paragraph }}</p>
+ <p class="text-muted">{{ fpo.paragraph }}</p>
 
 <section>
   <!-- ENROLLMENT STATUS-->
   {% set rowContent  %}
     <!-- Developer note: Use class "d-none" to hide or show enrolled status -->
     <!-- START - SHOW WHEN NOT ENROLLED -->
-    <span class="let-me-find--not-enrolled">
-      Not enrolled <button class="btn btn-sm btn-default btn-soft">Enroll Now</button>
+    <span class="enroll-item--not-enrolled">
+      Not enrolled <button class="btn btn-sm btn-default btn-soft ml-2 enroll-item--start-enrollment-trigger">Enroll Now</button>
     </span>
     <!-- END - SHOW WHEN NOT ENROLLED -->
 
     <!-- START - SHOW WHEN ENROLLED -->
-    <span class="let-me-find--not-enrolled text-success">
+    <span class="enroll-item--enrolled text-success">
       <span class="lt-icon lt-large lt-checkmark lt-medium align-middle"></span> Enrolled
     </span>
     <!-- END - SHOW WHEN ENROLLED -->

@@ -443,6 +443,7 @@ $( document ).ready( function () {
   if( typeof ContactOrderHistory !== 'undefined' ) ContactOrderHistory.init();
   if( typeof FormDemo !== 'undefined' ) FormDemo.init();
   if( typeof GlobalSearch !== 'undefined' ) GlobalSearch.init();
+  if( typeof OnilinePresence !== 'undefined' ) OnilinePresence.init();
   if( typeof Pagination !== 'undefined' ) Pagination.init();
   if( typeof ProductDetail !== 'undefined' ) ProductDetail.init();
   if( typeof ProductFilters !== 'undefined' ) ProductFilters.init();
@@ -458,5 +459,6 @@ $( document ).ready( function () {
   if( typeof NbaDrawer !== 'undefined' ) NbaDrawer.init();
   if( typeof VibeContacts !== 'undefined' ) VibeContacts.init();
   if( typeof UserEditable !== 'undefined' ) UserEditable.init();
+
 
 } );
