@@ -84,25 +84,28 @@
 
           <hr>
 
+
           <!-- START - PUBLIC PROFILE -->
-          <h5 class="mb-2">Public Profile</h5>
-          {% set thisContent %}
-            {% include '_includes/modules/online-presence/public-profile-content.html.twig' %}
-          {% endset %}
-          {% set thisFormContent %}
-            {% include '_includes/modules/online-presence/public-profile-form.html.twig' %}
-          {% endset %}
+          <!-- Developer note: the class "enroll-item-(dash dash)-enrolled" hides this until enrolled via "Let Customers And Reprsentatives Find Me" -->
+          <div class="enroll-item--enrolled">
+            <h5 class="mb-2">Public Profile</h5>
+            {% set thisContent %}
+              {% include '_includes/modules/online-presence/public-profile-content.html.twig' %}
+            {% endset %}
+            {% set thisFormContent %}
+              {% include '_includes/modules/online-presence/public-profile-form.html.twig' %}
+            {% endset %}
 
-          {% include '_includes/groups/user-editable/item.html.twig' with {
-            label: 'Public Profile',
-            itemClass: 'item--public-profile' ,
-            canEdit: true,
-            content: thisContent,
-            formContent: thisFormContent
-          } %}
+            {% include '_includes/groups/user-editable/item.html.twig' with {
+              label: 'Public Profile',
+              itemClass: 'item--public-profile' ,
+              canEdit: true,
+              content: thisContent,
+              formContent: thisFormContent
+            } %}
+            <hr>
+          </div>
           <!-- END - PUBLIC PROFILE -->
-
-          <hr>
 
         {% endblock %}
 

@@ -15,15 +15,15 @@ var OnilinePresence = (function () {
 
     // grab the DOM els we need
     $els = {
-      isInProgress:                 $('.page--online-presence .item--let-find-me .enroll-item--in-progress'),
-      isEnrolled:                   $('.page--online-presence .item--let-find-me .enroll-item--enrolled'),
-      isNotEnrolled:                $('.page--online-presence .item--let-find-me .enroll-item--not-enrolled'),
-      enrollmentStartTrigger:       $('.page--online-presence .item--let-find-me .enroll-item--start-enrollment-trigger'),
-      enrollmentCancelTrigger:      $('.page--online-presence .item--let-find-me .user-editable--cta-cancel'),
-      enrollmentSaveTrigger:        $('.page--online-presence .item--let-find-me .user-editable--cta-save'),
+      isInProgress:                 $('.page--online-presence .enroll-item--in-progress'),
+      isEnrolled:                   $('.page--online-presence .enroll-item--enrolled'),
+      isNotEnrolled:                $('.page--online-presence .enroll-item--not-enrolled'),
+      enrollStatusContainer:        $('.page--online-presence .enrollment-status--container'),
+      enrollmentStartTrigger:       $('.page--online-presence .enroll-item--start-enrollment-trigger'),
+      enrollmentCancelTrigger:      $('.page--online-presence .user-editable--cta-cancel'),
+      enrollmentSaveTrigger:        $('.page--online-presence .user-editable--cta-save'),
+      userEditableLetMeFindTrigger: $('.page--online-presence .user-editable--cta-edit'),
       enrollRadio:                  $('.page--online-presence #online-presence-enrollment-status-enrolled'),
-      enrollStatusContainer:        $('.page--online-presence .item--let-find-me  .enrollment-status--container'),
-      userEditableLetMeFindTrigger: $('.page--online-presence .item--let-find-me .user-editable--cta-edit'),
     };
 
     _addListeners();
