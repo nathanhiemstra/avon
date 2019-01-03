@@ -38,6 +38,25 @@
       wrapLabel: true
     } %}
   </div>
+  <div class="form-group">
+    {% set idPrefix = 'add-new-group-' %}
+    {% set theInput %}
+      {% include '_includes/elements/forms/input.html.twig' with {
+        id: idPrefix ~ 'input',
+        name: idPrefix ~ 'input',
+        classes: idPrefix ~ 'input input-sm form-control-inline',
+        placeholder: 'Add a new group'
+      } %}
+    {% endset %}
+    {% include '_includes/groups/forms/checkbox-and-input.html.twig' with {
+      id: idPrefix ~ 'checkbox',
+      name: idPrefix ~ 'checkbox',
+      theLabel: theInput,
+      checked: false,
+      classes: '',
+      labelClasses: 'd-flex align-items-center'
+    } %}
+  </div>
 </form>
 
 {% endblock %}

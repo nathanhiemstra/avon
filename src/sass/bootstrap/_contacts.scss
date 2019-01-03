@@ -211,6 +211,12 @@
         }
       }
 
+      > thead {
+        th {
+          white-space: nowrap;
+        }
+      }
+
       > tbody {
         td {
           line-height: 24px;
@@ -603,7 +609,7 @@
       table-layout: fixed;
 
       .t-group-number {
-        padding-right: 33%;
+        padding-right: 25%;
       }
     }
   }

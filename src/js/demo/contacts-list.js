@@ -275,16 +275,17 @@ var ContactsDemo = (function () {
 // <span class="avatar avatar--color-1">T</span>
 
   var _constructItemTemplate = function ( suggestion ) {
-    return '<div class="item">' +
+    return '<div class="item item--contact">' +
       '<a href="javascript:void(0)">' +
-      '<div class="row">' +
-      '<div class="col col-xs-12">' +
-      '<span class="avatar mr-3"><img src="/images/fpo/img_avatar_square.png"></span>' +
-      '<span class="title m-0">' + suggestion.value + '</span>' +
-      '</div>' +
-      '</div>' +
+        '<div class="row">' +
+          '<div class="col col-xs-12 d-flex align-items-center">' +
+            '<span class="avatar avatar-sm mr-3"><img src="/images/fpo/img_avatar_square.png"></span>' +
+            '<span><p class="title font-weight-bold m-0 p-0">' + suggestion.value + '</p>' +
+            '<p class="subtitle small text-muted m-0 p-0">' + suggestion.type + '</p></span>' +
+          '</div>' +
+        '</div>' +
       '</a>' +
-      '</div>';
+    '</div>';
   };
 
   return {

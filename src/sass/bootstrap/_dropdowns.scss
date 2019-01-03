@@ -205,6 +205,21 @@ a, .dropdown {
   }
 }
 
+// Alternate active state
+.dropdown-menu--alt-active {
+  padding: 0;
+
+  & > li > a {
+    border-left: 4px solid rgba($brand-primary, 0);
+  }
+
+  & > .active > a {
+    color: $text-color;
+    border-left: 4px solid rgba($brand-primary, 1);
+    background-color: $dropdown-link-hover-bg;
+  }
+}
+
 // Disabled state
 //
 // Gray out text and ensure the hover/focus state remains gray

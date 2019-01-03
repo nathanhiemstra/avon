@@ -72,7 +72,7 @@ th {
     text-transform: uppercase;
   }
 
-  // Remove top border from thead by default
+  // Remove top border from thead by default and align text bottom
   > colgroup + thead,
   > thead:first-child,
   > caption + thead {
@@ -80,6 +80,7 @@ th {
       > td,
       > th {
         border-top: 0;
+        vertical-align: bottom;
       }
     }
   }

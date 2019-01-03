@@ -42,16 +42,16 @@ var FAKE_PRODUCTS = [
 ]
 
 var FAKE_CUSTOMER_DATA = [
-  { value: 'You (Rosa Stone)' },
-  { value: 'Jane Johnson' },
-  { value: 'John Doe' },
-  { value: 'Jennifer Jones' },
-  { value: 'Mary Lee' },
-  { value: 'John Clontle' },
-  { value: 'Jerry Lewis' },
-  { value: 'Johnny Carson' },
-  { value: 'Johnny Cash' },
-  { value: 'Justice Crone' },
-  { value: 'Jenn Lewis' },
-  { value: 'Jera Thomas' },
+  { value: 'You (Rosa Stone)', type: 'eCustomer' },
+  { value: 'Jane Johnson', type: 'ALMA Lead' },
+  { value: 'John Doe', type: 'Manually entered lead' },
+  { value: 'Jennifer Jones', type: 'eCustomer' },
+  { value: 'Mary Lee', type: 'eCustomer' },
+  { value: 'John Clontle', type: 'eCustomer' },
+  { value: 'Jerry Lewis', type: 'ALMA Lead' },
+  { value: 'Johnny Carson', type: 'ALMA Lead' },
+  { value: 'Johnny Cash', type: 'eCustomer' },
+  { value: 'Justice Crone', type: 'Manually entered lead' },
+  { value: 'Jenn Lewis', type: 'eCustomer' },
+  { value: 'Jera Thomas', type: 'eCustomer' },
 ]

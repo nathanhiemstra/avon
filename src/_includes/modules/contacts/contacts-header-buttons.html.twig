@@ -17,10 +17,12 @@
       <a href="javascript:void(0)" data-toggle="dropdown" class="link-item link-muted">
         <span class="lt-icon lt-carat-down lt-medium align-middle icon-sort"></span><span class="link-underline">Sort</span>
       </a>
-      <ul class="dropdown-menu pull-right">
-        <li><a href="#">Column title</a></li>
-        <li><a href="#">Column title</a></li>
-        <li><a href="#">Column title</a></li>
+      <ul class="dropdown-menu dropdown-menu--alt-active pull-right">
+        <!-- DEV NOTE :: add class `active` to the currently activated sort method -->
+        <li class="active"><a href="#">Column title [A-Z]</a></li>
+        <li><a href="#">Column title [Z-A]</a></li>
+        <li><a href="#">Column title [Yes-No]</a></li>
+        <li><a href="#">Column title [No-Yes]</a></li>
       </ul>
     </div>
   </li>
