@@ -618,3 +618,71 @@ table {
     @include table-responsive-rows-and-cols;
   }
 }
+
+
+
+// tables with responsive column titles (thead titles collapse into rows)
+.table-responsive-column-titles {
+
+  .table > tbody > tr > td {
+    border-top: none;
+  }
+
+  @media (max-width: $screen-md) {
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    td {
+      flex-basis: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      border-top: none;
+      position: relative;
+      padding-left: 50%;
+
+      &.mobile-row {
+        float: right;
+        display: flex;
+        align-items: center;
+      }
+
+      &:first-of-type {
+        align-items: center;
+      }
+
+      &[data-title] {
+        &::before {
+          content: attr(data-title);
+          font-size: 14px;
+          font-weight: 600;
+          padding-right: $spacing-4;
+          color: $black;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    .table > tbody > tr > td {
+      border-top: 1px solid $table-border-color;
+    }
+
+    tr.clearfix:before {
+      display: none;
+    }
+  }
+
+}
+
