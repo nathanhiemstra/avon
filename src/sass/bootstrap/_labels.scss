@@ -44,6 +44,35 @@ a.label {
   }
 }
 
+// absolute position label
+.label-abs {
+  position: absolute;
+  white-space: nowrap;
+}
+
+// When it has an X icon
+.label-dismissable {
+  display: inline-block;
+  vertical-align: text-bottom;
+  padding: 3px 7px;
+
+  .lt-icon {
+    margin-right: -3px;
+
+    &:before {
+      color: $body-bg;
+    }
+  }
+
+  &.label-default {
+    .lt-icon {
+      &:before {
+        color: $text-color;
+      }
+    }
+  }
+}
+
 // Colors
 // Contextual variations (linked labels get darker on :hover)
 
@@ -108,10 +137,4 @@ a.label {
 
 .label-xs {
   @include button-size($btn-padding-xs-vertical, $btn-padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
-}
-
-// absolute position label
-.label-abs {
-  position: absolute;
-  white-space: nowrap;
 }
