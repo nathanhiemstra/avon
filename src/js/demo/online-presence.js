@@ -23,6 +23,8 @@ var OnilinePresence = (function () {
       enrollRadio:                  $('.page--online-presence #online-presence-enrollment-status-enrolled'),
       enrollmentCancelTrigger:      $('.page--online-presence .item--let-find-me .user-editable--cta-cancel'),
       enrollmentSaveTrigger:        $('.page--online-presence .item--let-find-me .user-editable--cta-save'),
+      enrollDistanceSelect:         $('.page--online-presence #online-presence-delivery-distance'),
+      enrollTermsCheckbox:          $('.page--online-presence #let-find-me-terms'),
       userEditableLetMeFindTrigger: $('.page--online-presence .item--let-find-me .user-editable--cta-edit'),
     };
 
@@ -35,6 +37,8 @@ var OnilinePresence = (function () {
   ////////////////////////////////////////////
   // LISTENERS
   ////////////////////////////////////////////
+
+
 
   var _addListeners = function () {
 
@@ -70,12 +74,45 @@ var OnilinePresence = (function () {
       }
     });
 
+    // DELIVERY DISTANCE
+    $els.enrollDistanceSelect.on('change', function() {
+      console.log('enroSelectceDropdown');
+      _checkEnableSaveButton();
+    });
+
+    // TERMS AND CONDITIONS
+    $els.enrollTermsCheckbox.on('change', function() {
+      console.log('enrollTermsCheckbox');
+      _checkEnableSaveButton();
+    });
+
   };
 
 
   ////////////////////////////////////////////
   // FUNCTIONS
   ////////////////////////////////////////////
+
+  var _checkEnableSaveButton = function() {
+    var isEnrollDistanceSelectSelected = null;
+    var isEnrollTermsCheckboxChecked = null;
+
+    // See if the first option in the dropdown is NOT selected
+    var selectedOptionText = $els.enrollDistanceSelect.find( "option:selected" ).text();
+    if ( selectedOptionText != 'Select...' ) {
+      var isEnrollDistanceSelectSelected = true;
+    }
+
+     // See if checkbox is checked
+    if ( $els.enrollTermsCheckbox.prop( "checked" ) ) {
+      var isEnrollTermsCheckboxChecked = true;
+    }
+
+    // If both are true, enable SAVE button
+    if ( isEnrollDistanceSelectSelected && isEnrollTermsCheckboxChecked ) {
+      $els.enrollmentSaveTrigger.removeAttr('disabled');
+    }
+  }
 
   // RECORED CURRENT ENROLLED STATE
   var _getEnrolledRadioChecked = function() {
@@ -102,6 +139,8 @@ var OnilinePresence = (function () {
   // UNENROLL
   var _unenroll = function() {
     _resetEnrolled();
+
+    $els.enrollmentSaveTrigger.attr('disabled','disabled');
 
     // Show "Not Enrolled" stuff
     $els.isNotEnrolled.removeClass('d-none');
