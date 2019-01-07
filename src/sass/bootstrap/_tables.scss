@@ -629,6 +629,12 @@ table {
     border-top: none;
   }
 
+  td {
+    &[data-title]::before {
+      // @extend .h6;
+    }
+  }
+
   @media (max-width: $screen-md) {
 
     /* Force table to not be like tables anymore */
@@ -656,6 +662,7 @@ table {
         float: right;
         display: flex;
         align-items: center;
+        margin-bottom: $spacing-3;
       }
 
       &:first-of-type {
@@ -665,8 +672,10 @@ table {
       &[data-title] {
         &::before {
           content: attr(data-title);
-          font-size: 14px;
-          font-weight: 600;
+          font-size: 13px;
+          text-transform: uppercase;
+          font-weight: 500;
+          letter-spacing: 0.8px;
           padding-right: $spacing-4;
           color: $black;
           white-space: nowrap;
