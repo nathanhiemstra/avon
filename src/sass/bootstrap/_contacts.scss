@@ -615,3 +615,13 @@
     }
   }
 }
+
+@media (max-width: $screen-xs) {
+  .table-contact-group {
+    .t-group-name {
+      .truncate {
+        width: 54vw;
+      }
+    }
+  }
+}
