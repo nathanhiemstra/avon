@@ -2,7 +2,13 @@
   <!-- FILTER -->
   <li class="list-second-to-last">
     <!-- START - MODAL LINK FOR {{ contactTypeLabel }} -->
-    <a href="javascript:void(0)" class="link-item link-muted" data-toggle="modal" data-target="#modal-contact-list-filter-{{ contactType }}">
+    {% if contactType == 'team' %}
+      {% set filterModalType = 'team' %}
+    {% else %}
+      <!-- Developer note: "Custmers" and "Group Member" use the same Filter modal -->
+      {% set filterModalType = 'customer' %}
+    {% endif %}
+    <a href="javascript:void(0)" class="link-item link-muted" data-toggle="modal" data-target="#modal-contact-list-filter-{{ filterModalType }}">
       <!-- DEVELOPER NOTE: After applying a filter in the Filter Modal, the filter icon should turn solid grey. To do this, change the class from "lt-filter" to "lt-filter-fill" -->
       <span class="lt-icon lt-filter lt-medium align-middle"></span>
       <span class="lt-icon lt-filter-fill lt-medium align-middle"></span>

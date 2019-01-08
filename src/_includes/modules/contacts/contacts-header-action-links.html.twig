@@ -17,6 +17,9 @@
       </a>
     </span>
   </li>
+
+  {% if contactType != 'group-members' %}
+  <!-- START - ALL EXCEPT GROUP MEMBERS -->
   <!-- ADD TO GROUP -->
   <li>
     <span class="tooltip-disableable" data-toggle="tooltip" data-placement="top" title="[A helpful message]">
@@ -26,6 +29,24 @@
       </a>
     </span>
   </li>
+  <!-- END - ALL EXCEPT GROUP MEMBERS -->
+  {% endif %}
+
+  {% if contactType == 'group-members' %}
+  <!-- START - GROUP MEMBERS ONLY -->
+  <!-- REMOVE -->
+  <li>
+    <span class="tooltip-disableable" data-toggle="tooltip" data-placement="top" title="[A helpful message]">
+      <a data-toggle="modal" data-target="#blank-modal-either-or-error" href="javascript:void(0)" class="link-item disableable link-disable">
+        <span class="lt-icon lt-trash lt-medium align-middle"></span>
+        <span class="link-underline">Remove</span>
+      </a>
+    </span>
+  </li>
+  <!-- END - GROUP MEMBERS ONLY -->
+  {% endif %}
+
+
 </ul>
 
 
