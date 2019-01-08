@@ -6,14 +6,17 @@
 
 {% set sectionClass = 'page--contacts-list contact-type--' ~ contactType %}
 
+{# Make the correct label for the version of the list we're presenting. #}
 {% if contactType == 'team' %}
-  {% set contactTypeLabel = 'Team Contacts' %}
-
+  {% set contactTypeLabel = 'Team' %}
 {% elseif contactType == 'customer' %}
-  {% set contactTypeLabel = 'Customer Contacts' %}
+  {% set contactTypeLabel = 'Customer' %}
+{% endif %}
 
-{% elseif contactType == 'group-members' %}
-  {% set contactTypeLabel = '[Group Members]' %}
+{% if isGroupMemberList == 'yes' %}
+  {% set contactTypeLabel = '[' ~ contactTypeLabel ~ ' Group Members]' %}
+{% else %}
+  {% set contactTypeLabel = contactTypeLabel ~ ' Contacts' %}
 {% endif %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -28,21 +31,21 @@
 
     <section class="container container--page">
 
-      <!-- START - GROUP MEMBERS ONLY -->
-      {% if contactType == 'group-members' %}
+      <!-- START - GROUP MEMBERS LIST ONLY -->
+      {% if isGroupMemberList == 'yes' %}
         {% include "/_includes/elements/misc/link-back.html.twig" with {
-          label: 'Customer Groups',
+          label: '[Team/Customer] Groups',
           classes: null
         } %}
       {% endif %}
-      <!-- END - GROUP MEMBERS ONLY -->
+      <!-- END - GROUP MEMBERS LIST ONLY -->
 
       <header class="row" role="header">
         <div class="col-md-12 mb-2">
           <h2 class="mb-4 mr-auto">{{ contactTypeLabel }}</h2>
 
-          {% if contactType != 'group-members' %}
-            <!-- START - ALL EXCEPT GROUP MEMBERS -->
+          {% if isGroupMemberList != 'yes' %}
+            <!-- START - ALL EXCEPT GROUP MEMBERS LIST -->
             <div class="d-flex align-items-center flex-wrap actions-primary">
 
               <!-- START - AUTOCOMPLETE -->
@@ -111,7 +114,7 @@
                 {% endif %}
               </div>
             </div>
-            <!-- END - ALL EXCEPT GROUP MEMBERS -->
+            <!-- END - ALL EXCEPT GROUP MEMBERS LIST -->
           {% endif %}
 
 
@@ -129,10 +132,9 @@
 
   <!-- START - FILTER MODAL - {{ contactTypeLabel }} -->
   {% if contactType == 'team' %}
-    {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal-team.html.twig" %}
+    {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal-" ~ contactType ~ ".html.twig" %}
   {% else %}
-    <!-- Developer note: "Custmers" and "Group Member" use the same Filter modal -->
-    {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal-customer.html.twig" %}
+    {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal-" ~ contactType ~ ".html.twig" %}
   {% endif %}
   <!-- END - FILTER MODAL - {{ contactTypeLabel }} -->
 

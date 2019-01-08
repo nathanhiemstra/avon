@@ -18,8 +18,8 @@
     </span>
   </li>
 
-  {% if contactType != 'group-members' %}
-  <!-- START - ALL EXCEPT GROUP MEMBERS -->
+  {% if isGroupMemberList != 'yes' %}
+  <!-- START - ALL EXCEPT GROUP MEMBERS LIST -->
   <!-- ADD TO GROUP -->
   <li>
     <span class="tooltip-disableable" data-toggle="tooltip" data-placement="top" title="[A helpful message]">
@@ -29,11 +29,11 @@
       </a>
     </span>
   </li>
-  <!-- END - ALL EXCEPT GROUP MEMBERS -->
+  <!-- END - ALL EXCEPT GROUP MEMBERS LIST -->
   {% endif %}
 
-  {% if contactType == 'group-members' %}
-  <!-- START - GROUP MEMBERS ONLY -->
+  {% if isGroupMemberList == 'yes' %}
+  <!-- START - GROUP MEMBERS LIST ONLY -->
   <!-- REMOVE -->
   <li>
     <span class="tooltip-disableable" data-toggle="tooltip" data-placement="top" title="[A helpful message]">
@@ -43,7 +43,7 @@
       </a>
     </span>
   </li>
-  <!-- END - GROUP MEMBERS ONLY -->
+  <!-- END - GROUP MEMBERS LIST ONLY -->
   {% endif %}
 
 
