@@ -6,27 +6,26 @@
   <!-- FIRST NAME -->
   <td class="t-first-name t-primary t-inline">
     <div class="truncate">
-      <a href="#" class="link-plain link-underline font-weight-bold">Firstname{{ longFirstName }}</a>
+      <a href="#" class="link-secondary link-underline font-weight-bold">Firstname{{ longFirstName }}</a>
     </div>
   </td>
   <!-- LAST NAME -->
   <td class="t-last-name t-primary t-inline">
     <div class="truncate">
-      <a href="#" class="link-plain link-underline font-weight-bold">Lastname{{ longLastName }}</a>
+      <a href="#" class="link-secondary link-underline font-weight-bold">Lastname{{ longLastName }}</a>
     </div>
   </td>
-
 
   {% if contactType == 'team' %}
   <!-- START - "TEAM" COLUMNS -->
   <!-- UPLINE -->
-  <td class="t-upline t-block text-muted">
+  <td class="t-upline t-block">
     <div class="truncate">
       <span class="t-key">Upline: </span>Contact Name{{ longContactName }}
     </div>
   </td>
   <!-- GEN -->
-  <td class="t-gen t-block text-muted">
+  <td class="t-gen t-block">
     <div class="truncate">
       <span class="t-key">Gen: </span>00000
     </div>
@@ -35,16 +34,16 @@
 {% endif %}
 
   <!-- PHONE -->
-  <td class="t-phone t-block text-muted">(000) 000-0000</td>
+  <td class="t-phone t-block">(000) 000-0000</td>
   <!-- EMAIL -->
-  <td class="t-email t-block text-muted">
-    <div class="truncate"><a data-toggle="modal" data-target="#modal-contacts-send-email" href="javascript:void(0)" class="link-plain link-underline">firstname{{ longFirstName }}lastname{{ longLastName }}@bigtimecompany.com</a>
+  <td class="t-email t-block">
+    <div class="truncate"><a data-toggle="modal" data-target="#modal-contacts-send-email" href="javascript:void(0)" class="link-secondary link-underline">firstname{{ longFirstName }}lastname{{ longLastName }}@bigtimecompany.com</a>
     </div>
   </td>
 {% if contactType == 'customer' %}
   <!-- START - "CUSTOMER" COLUMNS -->
   <!-- CUSTOMER -->
-  <td class="t-customer-type t-block text-muted">
+  <td class="t-customer-type t-block">
     {% if isOnlineCustomer %}
     <span class="customer-type--label">Online Customer</span>
     <span class="customer-type--icon">
@@ -55,7 +54,7 @@
   <!-- END - "CUSTOMER" COLUMNS -->
 {% endif %}
   <!-- GROUPS -->
-  <td class="t-groups t-block text-muted">
+  <td class="t-groups t-block">
     {% if groupName %}<span class="label label-secondary label-wrap">{{ groupName }}</span>{% endif %}
     {% if groupName2 %}<span class="label label-secondary label-wrap">{{ groupName2 }}</span>{% endif %}
   </td>
