@@ -610,16 +610,8 @@
   <p>Sometimes you need a <code>&lt;td&gt;</code> to act as a column that goes
     100% height of the table.</p>
   <ul>
-    <li>Add <code>.t-has-absolute-col-left</code> and/or <code>.t-absolute-col-right</code>
-      to the <code>&lt;tr&gt;</code>.</li>
-    <li>Add <code>.t-absolute-col-left</code> and/or <code>.t-absolute-col-right</code>
-      to <code>&lt;td&gt;</code>s that will be the "absolute" column.</li>
-    <li>Add <code>.t-col-sibling-both</code> to <code>&lt;td&gt;</code>s that
-      have a columns on both immediate left and right.</li>
-    <li>Add <code>.t-col-sibling-left</code> to <code>&lt;td&gt;</code>s that
-      have a column to it's immediate left.</li>
-    <li>Add <code>.t-col-sibling-right</code> to <code>&lt;td&gt;</code>s that
-      have a column to it's immediate right.</li>
+    <li>To each <code>&lt;tr&gt;</code>, add <code>.t-has-absolute-col-left</code> and/or <code>.t-has-absolute-col-right</code>.</li>
+    <li>To the <code>&lt;td&gt;</code> that is to be an "absolute" column, add <code>.t-absolute-col-left</code> or <code>.t-absolute-col-right</code>.</li>
   </ul>
 
   <div class="bs-example">
@@ -627,26 +619,26 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th class="t-checkbox"></th>
-            <th class="t-firstname">First Name</th>
-            <th class="t-lastname">Last Name</th>
-            <th class="t-phone">Phone</th>
-            <th class="t-email">Email</th>
-            <th class="t-online-customer">Online Customer</th>
-            <th class="t-actions">Actions</th>
+            <th></th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Online Customer</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           {% set row %}
-          <tr class="t-has-absolute-col-left t-absolute-col-right">
+          <tr class="t-has-absolute-col-left t-has-absolute-col-right">
             <td class="t-absolute-col-left">{% include
               "_includes/elements/forms/checkbox.html.twig" with { classes:
               'mt-2 input-sm'} %}</td>
-            <td class="t-row-1 t-inline t-col-sibling-left">Mark</td>
-            <td class="t-row-1 t-inline t-col-sibling-right">Otto</td>
-            <td class="t-row-3 t-block t-col-sibling-both nowrap">000-000-0000</td>
-            <td class="t-row-3 t-block t-col-sibling-both">mark@otto.com</td>
-            <td class="t-row-2 t-block t-col-sibling-both">{{ fpo.sentence }}</td>
+            <td class="t-inline">Mark</td>
+            <td class="t-inline">Otto</td>
+            <td class="t-block">000-000-0000</td>
+            <td class="t-block">mark@otto.com</td>
+            <td class="t-block">{{ fpo.sentence }}</td>
             <td class="t-absolute-col-right">•••</td>
           </tr>
           {% endset %}
@@ -663,13 +655,13 @@
     <table class="table">
       <tbody>
         <tr class="t-has-absolute-col-left t-absolute-col-right">
-          <td class="t-absolute-col-left">•••</td>
-          <td class="t-row-1 t-inline t-col-sibling-left">Mark</td>
-          <td class="t-row-1 t-inline t-col-sibling-right">Otto</td>
-          <td class="t-row-3 t-block t-col-sibling-both">000-000-0000</td>
-          <td class="t-row-3 t-block t-col-sibling-both">mark@otto.com</td>
-          <td class="t-row-2 t-block t-col-sibling-both">Lorem...</td>
-          <td class="t-absolute-col-right">•••</td>
+          <td class="t-absolute-col-left">...</td>
+          <td class="t-inline">...</td>
+          <td class="t-inline">...</td>
+          <td class="t-block">...</td>
+          <td class="t-block">...</td>
+          <td class="t-block">...</td>
+          <td class="t-absolute-col-right">...</td>
         </tr>
       </tbody>
     </table>
