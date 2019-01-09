@@ -31,14 +31,14 @@
 
     <section class="container container--page">
 
-      <!-- START - GROUP MEMBERS LIST ONLY -->
       {% if isGroupMemberList == 'yes' %}
+        <!-- START - GROUP MEMBERS LIST ONLY -->
         {% include "/_includes/elements/misc/link-back.html.twig" with {
           label: '[Team/Customer] Groups',
           classes: null
         } %}
+        <!-- END - GROUP MEMBERS LIST ONLY -->
       {% endif %}
-      <!-- END - GROUP MEMBERS LIST ONLY -->
 
       <header class="row" role="header">
         <div class="col-md-12 mb-2">
