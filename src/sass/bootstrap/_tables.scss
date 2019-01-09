@@ -635,6 +635,17 @@ table {
     }
   }
 
+  thead tr th.t-sort {
+    position: relative; // necessary for proper placement of dropdown menu
+    font-weight: normal;
+    text-align: right;
+
+    // tweak the placement of the dropdown menu for this pattern
+    .dropdown-menu {
+      top: 96%;
+    }
+  }
+
   @media (max-width: $screen-md) {
 
     /* Force table to not be like tables anymore */
@@ -643,7 +654,7 @@ table {
     }
 
     /* Hide table headers (but not display: none;, for accessibility) */
-    thead tr {
+    thead tr th:not(.t-sort) {
       position: absolute;
       top: -9999px;
       left: -9999px;
@@ -690,6 +701,10 @@ table {
     }
 
     tr.clearfix:before {
+      display: none;
+    }
+
+    thead tr th.t-sort {
       display: none;
     }
   }

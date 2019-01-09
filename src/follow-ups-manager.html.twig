@@ -37,10 +37,22 @@
       <table class="table table-valign-middle border-top border-bottom">
         <thead>
           <tr>
-            <th class="t-due">Due</th>
-            <th class="t-title">Title</th>
-            <th class="t-contact">Contact</th>
+            <th class="t-due">Due <span class="lt-icon lt-carat-down lt-medium"></span></th>
+            <th class="t-title">Title <span class="lt-icon lt-carat-down lt-medium"></span></th>
+            <th class="t-contact">Contact <span class="lt-icon lt-carat-down lt-medium"></span></th>
             <th class="t-actions"><span class="sr-only">Actions</span></th>
+            <!-- DEV NOTE :: t-sort is only visible on mobile and replaces everything else -->
+            <th class="t-sort text-normal text-muted underline medium pt-0 pb-4">
+              <span id="sortMenuTrigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort<span class="lt-icon lt-carat-down lt-medium text-muted ml-2"></span>
+              </span>
+              <ul class="dropdown-menu dropdown-menu--alt-active pull-right" role="menu">
+                <!-- DEV NOTE :: These values should be the same as <th> content in <thead> -->
+                <li><a href="#">Due</a></li>
+                <li><a href="#">Title</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </th>
           </tr>
         </thead>
         <tbody>

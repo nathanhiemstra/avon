@@ -679,26 +679,38 @@
 
 
   <h2 id="tables-responsive-column-titles">Responsive - Column Titles</h2>
-  <p>Column titles in <code>&lt;thead&gt;</code> are moved to the left as row
-    titles on smaller screens.</p>
+  <p>Column titles in <code>&lt;thead&gt;</code> are moved to the left as 'row
+    titles' on smaller screens.</p>
   <ul>
     <li>Use class <code>table-responsive-column-titles</code> on containing div.</li>
     <li>Any <code>&lt;td&gt;</code> that should become a 'row' title on small
-      screens should have a <code>data-title</code> attribute that reflects the
+      screens will need a <code>data-title</code> attribute that reflects the
       column title.</li>
     <li>For content that should break out of the table and float right, use
       class <code>mobile-row</code> on <code>&lt;td&gt;</code></li>
+    <li>Optionally include a 'mobile sorting' dropdown menu in a <code>&lt;th&gt;</code> in <code>&lt;thead&gt;</code> with class <code>.t-sort</code>. This item will not be visible on large screens and should contain items that reflect the normal column titles. Note this is not required for proper functioning. If omitted, there will simply be no sorting menu.</li>
   </ul>
 
   <div class="bs-example">
-    <div class="table-responsive-column-titles">
-      <table class="table table-striped">
+    <div class="table-responsive-column-titles border-top">
+      <table class="table table-valign-middle border-top border-bottom">
         <thead>
           <tr>
-            <th class="t-firstname">First Name</th>
-            <th class="t-lastname">Last Name</th>
-            <th class="t-phone">Phone</th>
+            <th class="t-firstname">First Name <span class="lt-icon lt-carat-down lt-medium"></span></th>
+            <th class="t-lastname">Last Name <span class="lt-icon lt-carat-down lt-medium"></span></th>
+            <th class="t-phone">Phone <span class="lt-icon lt-carat-down lt-medium"></span></th>
             <th><span class="sr-only">Actions</span></th>
+            <th class="t-sort text-normal text-muted underline medium pt-0 pb-4">
+              <span id="sortMenuTrigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort<span class="lt-icon lt-carat-down lt-medium text-muted ml-2"></span>
+              </span>
+              <ul class="dropdown-menu dropdown-menu--alt-active pull-right" role="menu">
+                <!-- DEV NOTE :: These values should be the same as <th> content in <thead> -->
+                <li><a href="#">First Name</a></li>
+                <li><a href="#">Last Name</a></li>
+                <li><a href="#">Phone</a></li>
+              </ul>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -721,14 +733,25 @@
   </div><!-- /example -->
 
   {{ highlightMarkup }}
-  <div class="table-responsive-column-titles">
-    <table class="table table-striped">
+  <div class="table-responsive-column-titles border-top">
+    <table class="table table-valign-middle border-top border-bottom">
       <thead>
         <tr>
-          <th class="t-firstname">First Name</th>
-          <th class="t-lastname">Last Name</th>
-          <th class="t-phone">Phone</th>
+          <th class="t-firstname">First Name <span class="lt-icon lt-carat-down lt-medium"></span></th>
+          <th class="t-lastname">Last Name <span class="lt-icon lt-carat-down lt-medium"></span></th>
+          <th class="t-phone">Phone <span class="lt-icon lt-carat-down lt-medium"></span></th>
           <th><span class="sr-only">Actions</span></th>
+          <th class="t-sort text-normal text-muted underline medium pt-0 pb-4">
+            <span id="sortMenuTrigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sort<span class="lt-icon lt-carat-down lt-medium text-muted ml-2"></span>
+            </span>
+            <ul class="dropdown-menu dropdown-menu--alt-active pull-right" role="menu">
+              <!-- DEV NOTE :: These values should be the same as <th> content in <thead> -->
+              <li><a href="#">First Name</a></li>
+              <li><a href="#">Last Name</a></li>
+              <li><a href="#">Phone</a></li>
+            </ul>
+          </th>
         </tr>
       </thead>
       <tbody>

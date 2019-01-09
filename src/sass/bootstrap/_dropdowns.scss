@@ -217,6 +217,11 @@ a, .dropdown {
     color: $text-color;
     border-left: 4px solid rgba($brand-primary, 1);
     background-color: $dropdown-link-hover-bg;
+
+    &:hover {
+      color: $text-color;
+      background-color: $dropdown-link-hover-bg;
+    }
   }
 }
 
