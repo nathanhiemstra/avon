@@ -37,8 +37,13 @@
     // Entire affix container (mobile)
     @media (max-width: $screen-sm) {
       .affix {
+        // Use visibility here + display:none below, because if affix-actions is display:none, bootstrap ignores it on scroll. And it is lost. Forever.
         &.affix-actions {
-          display: none;
+          visibility: hidden;
+
+          .container {
+            display: none;
+          }
         }
       }
     }
@@ -220,13 +225,10 @@
         > tr {
           > td {
             line-height: 24px;
-            background-color: yellow;
-            background-color: red;
           }
 
           > td:not(.t-primary) {
-            background-color: pink;
-            font-size: $font-size-medium;
+            font-size: 13px;
           }
         }
 
