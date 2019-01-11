@@ -7,7 +7,7 @@
   display: inline-block;
   min-width: 10px;
   padding: 3px 7px;
-  font-size: $badge-font-size;
+  font-size: $font-size-small;
   font-weight: $badge-font-weight;
   color: $badge-color;
   line-height: $badge-line-height;
@@ -15,7 +15,7 @@
   white-space: nowrap;
   text-align: center;
   background-color: $badge-bg;
-  border-radius: $badge-font-size;
+  border-radius: $badge-border-radius;
   vertical-align: text-bottom;
 
   // Empty badges collapse automatically (not available in IE8)
@@ -62,41 +62,6 @@
   .nav-pills > li > a > & {
     margin-left: 3px;
   }
-}
-
-// variations
-.badge-pill {
-  line-height: 1.2;
-  text-transform: uppercase;
-
-  .lt-icon:before {
-    color: $body-bg;
-  }
-}
-
-// color variants
-.badge-primary {
-  @include badge-variant($label-primary-bg);
-}
-
-.badge-secondary {
-  @include badge-variant($label-secondary-bg);
-}
-
-.badge-success {
-  @include badge-variant($label-success-bg);
-}
-
-.badge-info {
-  @include badge-variant($label-info-bg);
-}
-
-.badge-warning {
-  @include badge-variant($label-warning-bg);
-}
-
-.badge-danger {
-  @include badge-variant($label-danger-bg);
 }
 
 // Hover state, but only for links

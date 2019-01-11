@@ -9,8 +9,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-//     background: url('images/fpo/headlines.jpg') -61px 53px;
-
 // Headings
 // -------------------------
 
@@ -257,6 +255,10 @@ mark,
   }
 }
 
+.text-center-sm {
+  text-align: center;
+}
+
 .text-justify {
   text-align: justify;
 }
@@ -347,29 +349,6 @@ mark,
 @include bg-variant(".bg-warning", $state-warning-bg);
 
 @include bg-variant(".bg-danger", $state-danger-bg);
-
-// Line height
-.lh-xxs {
-  line-height: 0.9;
-}
-
-.lh-1,
-.lh-xs {
-  line-height: 1;
-}
-
-.lh-sm {
-  line-height: 1.2;
-}
-
-.lh-md {
-  line-height: 1.4;
-}
-
-// Default = 1.6
-.lh-lg {
-  line-height: 1.8;
-}
 
 // Page header
 // -------------------------

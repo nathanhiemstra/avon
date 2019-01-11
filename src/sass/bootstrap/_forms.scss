@@ -222,16 +222,6 @@ output {
   & + .text-danger {
     margin-top: 5px;
   }
-
-  // large text modifier
-  &.large {
-    @extend h3;
-
-    margin: 0;
-
-    // font-size: $font-size-large * 2;
-
-  }
 }
 
 // Reset height for `textarea`s
@@ -334,11 +324,8 @@ input[type="search"] {
     // Ensure the input doesn't jump when there is no text
     // padding-left: 20px;
     margin-bottom: 0;
+    font-weight: normal;
     cursor: pointer;
-
-    .btn-sm {
-      margin-top: -6px;
-    }
   }
 
   // offset & left-align multi-line labels
@@ -420,15 +407,6 @@ input[type="search"] {
   // space out consecutive inline controls
 }
 
-// Unlike inputs, these labels should look like regular black text
-.checkbox label,
-.radio label,
-label.radio-inline,
-label.checkbox-inline {
-  color: $radio-checkbox-label-text-color;
-  font-weight: normal;
-}
-
 // Apply same disabled cursor tweak as for inputs
 // Some special care is needed because <label>s don't inherit their parent's `cursor`.
 //
@@ -470,7 +448,7 @@ input[type="checkbox"] {
   clear: both;
 }
 
-.checkbox > label > span,
+.checkbox span,
 .radio > label > span {
   position: relative;
   display: inline-block;
@@ -1182,8 +1160,7 @@ input.form-control {
 }
 
 // radio select picker combo
-.radio-select-combo,
-.checkbox-select-combo {
+.radio-select-combo {
   label {
     display: flex;
     flex-wrap: wrap;
@@ -1216,17 +1193,10 @@ input.form-control {
     max-width: 435px;
   }
 
-  &.radio-select-combo-lg
-  &.checkbox-select-combo-lg {
+  &.radio-select-combo-lg {
     .form-control,
     label {
       height: 60px;
     }
   }
-}
-
-// form control modifiers
-.form-control--underline {
-  border: none;
-  border-bottom: 1px solid $border-color;
 }

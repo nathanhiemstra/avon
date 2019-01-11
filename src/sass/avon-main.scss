@@ -71,7 +71,6 @@
 @import "bootstrap/layouts";
 @import "bootstrap/widgets";
 @import "bootstrap/banners";
-@import "bootstrap/user-editable";
 
 // Components w/ JavaScript
 @import "bootstrap/modals";
@@ -89,7 +88,6 @@
 @import "bootstrap/login";
 @import "bootstrap/modal-add-new-customer";
 @import "bootstrap/modal-quick-shop";
-@import "bootstrap/online-presence";
 @import "bootstrap/product-detail";
 @import "bootstrap/product-lists";
 
@@ -99,10 +97,6 @@
 
 // Vendor
 @import "vendor/bootstrap-select";
-@import "vendor/chartist/chartist";
-@import "bootstrap/charts";
-
-// adding here because dependency on chartist
 
 // Demo - Angular Overrides
 @import "demo/angular-overrides-datepicker";

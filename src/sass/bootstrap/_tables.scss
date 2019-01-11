@@ -24,11 +24,8 @@ th {
 // Baseline styles
 
 .table {
-  &:not(.table-w-inherit) {
-    width: 100%;
-    max-width: 100%;
-  }
-
+  width: 100%;
+  max-width: 100%;
   margin-bottom: $line-height-computed;
 
   // Cells
@@ -40,19 +37,7 @@ th {
       > th {
         padding: $table-cell-padding;
         line-height: $line-height-base;
-      }
-    }
-  }
-
-  &:not(.table-valign-middle) {
-    > tbody,
-    > tfoot,
-    > thead {
-      > tr {
-        > td,
-        > th {
-          vertical-align: top;
-        }
+        vertical-align: top;
       }
     }
   }
@@ -496,125 +481,122 @@ table {
 // Responsive tables
 //
 
-@mixin table-responsive-rows-and-cols {
-  > .table {
-    > thead {
-      display: none;
-    }
-
-    // Make columns that span vertically the height of the table
-    // "$t-absolute-col-default-width" is the default width of the column.
-    $t-absolute-col-default-width: 40px;
-
-    > tbody {
-      > tr {
-        display: flex;
-        flex-flow: row wrap;
-        padding-bottom: $table-cell-padding;
-        padding-top: $table-cell-padding;
-
-        &:not(:last-child) {
-          border-bottom: 1px solid $table-border-color;
-        }
-
-        > td {
-          border: none;
-          padding-top: 0;
-          padding-bottom: 0;
-        }
-      }
-
-      .t-row-1 {
-        order: 1;
-      }
-
-      .t-row-2 {
-        order: 3;
-      }
-
-      .t-row-3 {
-        order: 4;
-      }
-
-      .t-row-4 {
-        order: 5;
-      }
-
-      .t-row-5 {
-        order: 6;
-      }
-
-      .t-block {
-        width: 100%;
-      }
-
-      .t-self-end {
-        margin-left: auto;
-      }
-
-      [class*="t-has-absolute-col-"] {
-        position: relative;
-      }
-
-      // This is a default width. Change accordingly.
-
-      .t-has-absolute-col {
-        &-left-and-right {
-          padding-left: $t-absolute-col-default-width;
-          padding-right: $t-absolute-col-default-width;
-        }
-
-        &-left {
-          padding-left: $t-absolute-col-default-width;
-        }
-
-        &-right {
-          padding-right: $t-absolute-col-default-width;
-        }
-      }
-
-      .t-absolute-col {
-        &-left,
-        &-right {
-          position: absolute;
-        }
-
-        &-left {
-          left: 0;
-        }
-
-        &-right {
-          right: 0;
-        }
-      }
-
-      // Make columns sibling <td>s make room for the column(s)
-      .t-col-sibling-left {
-        padding-left: $t-absolute-col-default-width;
-      }
-
-      .t-col-sibling-right {
-        padding-right: $t-absolute-col-default-width;
-      }
-
-      .t-col-sibling-both {
-        padding-left: $t-absolute-col-default-width;
-        padding-right: $t-absolute-col-default-width;
-      }
-    }
-  }
-}
-
-// Tablet +
-@media (max-width: $screen-sm) {
-  .table-responsive-rows-and-cols-sm {
-    @include table-responsive-rows-and-cols;
-  }
-}
-
-// Desktop +
 @media (max-width: $screen-md) {
   .table-responsive-rows-and-cols {
-    @include table-responsive-rows-and-cols;
+    > .table {
+      > thead {
+        display: none;
+      }
+
+      // Make columns that span vertically the height of the table
+      // "$t-absolute-col-default-width" is the default width of the column.
+      $t-absolute-col-default-width: 40px;
+
+      > tbody {
+        > tr {
+          display: flex;
+          flex-flow: row wrap;
+          padding-bottom: $table-cell-padding;
+          padding-top: $table-cell-padding;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid $table-border-color;
+          }
+
+          // &::after {}
+
+          // &::before,
+          // &::after {
+          //   content: '';
+          //   width: 100%;
+          //   order: 1;
+          // }
+
+          > td {
+            border: none;
+            padding-top: 0;
+            padding-bottom: 0;
+          }
+        }
+
+        .t-row-1 {
+          order: 1;
+        }
+
+        .t-row-2 {
+          order: 3;
+        }
+
+        .t-row-3 {
+          order: 4;
+        }
+
+        .t-row-4 {
+          order: 5;
+        }
+
+        .t-row-5 {
+          order: 6;
+        }
+
+        .t-block {
+          width: 100%;
+        }
+
+        .t-self-end {
+          margin-left: auto;
+        }
+
+        [class*="t-has-absolute-col-"] {
+          position: relative;
+        }
+
+        // This is a default width. Change accordingly.
+
+        .t-has-absolute-col {
+          &-left-and-right {
+            padding-left: $t-absolute-col-default-width;
+            padding-right: $t-absolute-col-default-width;
+          }
+
+          &-left {
+            padding-left: $t-absolute-col-default-width;
+          }
+
+          &-right {
+            padding-right: $t-absolute-col-default-width;
+          }
+        }
+
+        .t-absolute-col {
+          &-left,
+          &-right {
+            position: absolute;
+          }
+
+          &-left {
+            left: 0;
+          }
+
+          &-right {
+            right: 0;
+          }
+        }
+
+        // Make columns sibling <td>s make room for the column(s)
+        .t-col-sibling-left {
+          padding-left: $t-absolute-col-default-width;
+        }
+
+        .t-col-sibling-right {
+          padding-right: $t-absolute-col-default-width;
+        }
+
+        .t-col-sibling-both {
+          padding-left: $t-absolute-col-default-width;
+          padding-right: $t-absolute-col-default-width;
+        }
+      }
+    }
   }
 }
