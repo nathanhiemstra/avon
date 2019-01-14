@@ -54,10 +54,7 @@ This CSS resource incorporates links to font software which is the valuable copy
   $font-file-woff: "cb9d4f02-d326-46b0-a857-930cce057f80";
   $font-file-ttf: "75cafc03-22e4-41b0-8bc2-1b9081506ecc";
 
-  // Notice we use "$font-family-name-alt" here because there's no font-weight we can set Medium to because 400 is default, and 500 jumps to semi-bold in this system.
-  // So we make a separate "Font Family" and just use that in a couple locations (headline)
-
-  @include font-base($font-family-name-alt, $font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+  @include font-base($font-family-name-name, $font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
 
 // Proxima Nova W01 Medium Italic
@@ -103,18 +100,6 @@ This CSS resource incorporates links to font software which is the valuable copy
     font-variant: normal;
   }
 
-  // Proxima Nova Medium
-  // We use "normal" again here because there's no font-weight we can set Medium to because 400 is default, and 500 jumps to semi-bold in this system.
-  // So we make a// "$font-family-name-override" is because there's no font-weight we can set Medium to because 400 is default, and 500 jumps to semi-bold in this system.
-  // So we make a separate "Font Family" and just use that in a couple locations (headline)nd just use that in a couple locations (headline)
-  @font-face {
-    @include font-medium;
-
-    font-weight: normal;
-    font-style: normal;
-    font-variant: normal;
-  }
-
   // Proxima Nova Semi-Bold
   @font-face {
     @include font-semi-bold;
@@ -140,8 +125,4 @@ This CSS resource incorporates links to font software which is the valuable copy
     font-style: normal;
     font-variant: normal;
   }
-}
-
-.font-family-medium {
-  font-family: $font-family-name-alt;
 }

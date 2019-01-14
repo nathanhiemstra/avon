@@ -330,6 +330,7 @@ input[type="search"] {
   label {
     min-height: $line-height-computed;
     line-height: 24px;
+    font-size: $input-radio-checkbox-label-font-size;
 
     // Ensure the input doesn't jump when there is no text
     // padding-left: 20px;

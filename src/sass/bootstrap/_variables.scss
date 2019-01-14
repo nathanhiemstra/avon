@@ -102,8 +102,7 @@ $link-color-disabled: $brand-disabled !default;
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
-$font-family-name: "Proxmia Nova";
-$font-family-name-alt: "Proxmia Nova Medium";
+$font-family-name: "Proxima Nova";
 $font-family-file-name: proxima-nova;
 $font-family-sans-serif: $font-family-name, sans-serif !default;
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
@@ -368,6 +367,7 @@ $radio-checkbox-label-text-color: $input-color;
 
 //** Form labels font size
 $input-label-font-size: 15px;
+$input-radio-checkbox-label-font-size: $font-size-base;
 
 //** Default `.form-control` height
 $input-height-base: $line-height-computed + $padding-base-vertical * 2 + 8 !default;
