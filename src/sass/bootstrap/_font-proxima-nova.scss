@@ -54,7 +54,7 @@ This CSS resource incorporates links to font software which is the valuable copy
   $font-file-woff: "cb9d4f02-d326-46b0-a857-930cce057f80";
   $font-file-ttf: "75cafc03-22e4-41b0-8bc2-1b9081506ecc";
 
-  @include font-base($font-family-name-name, $font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
+  @include font-base($font-family-name, $font-weight: $font-weight, $font-file-eot: $font-file-eot, $font-file-woff: $font-file-woff, $font-file-woff2: $font-file-woff2, $font-file-ttf: $font-file-ttf);
 }
 
 // Proxima Nova W01 Medium Italic
