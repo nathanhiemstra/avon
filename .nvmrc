@@ -1,0 +1,2 @@
+nvm install 11.6.0
+nvm use 11.6.0
