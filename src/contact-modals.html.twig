@@ -24,25 +24,26 @@
 
         <h6>Follow-ups</h6>
         <ul>
-          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-follow-ups-add-edit">Add/Edit</a></li>
-          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#blank-modal-either-or-error">Delete</a></li>
-          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-follow-ups-details">Details</a></li>
+          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-follow-ups-add-edit">Add/Edit Follow-up</a></li>
+          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#blank-modal-either-or-error">Delete Follow-up</a></li>
+          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-follow-ups-details">Details Follow-up</a></li>
         </ul>
 
         <h6>Notes</h6>
         <ul>
-          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-notes-add-edit">Add/Edit</a></li>
-          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#blank-modal-either-or-error">Delete</a></li>
+          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-notes-add-edit">Add/Edit Note</a></li>
+          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#blank-modal-either-or-error">Delete Note</a></li>
         </ul>
 
         <h6>Groups</h6>
         <ul>
-          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-groups-add-new-edit">Add/Edit</a></li>
-          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#blank-modal-either-or-error">Delete</a></li>
-          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-groups-add-to">Add To</a></li>
-          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#blank-modal-either-or-error">Remove From</a></li>
+          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-groups-add-new-edit">Add/Edit Group</a></li>
+          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#blank-modal-either-or-error">Delete Group</a></li>
+          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-groups-add-to">Add To Group</a></li>
+          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#blank-modal-either-or-error">Remove From Group</a></li>
+          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contact-list-filter-team">Group List Filter (Teams)</a></li>
+          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contact-list-filter-customer">Group List Filter (Customers)</a></li>
         </ul>
-
 
 
         <!-- START - SEND EMAIL MODAL -->
@@ -52,6 +53,14 @@
         <!-- START - SEND ECARD MODAL -->
         {% include "_includes/modules/contacts/contact-detail/modals/send-ecard-modal.html.twig" %}
         <!-- END - SEND ECARD MODAL -->
+
+        <!-- START - TEAM FILTER MODAL -->
+        {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal-team.html.twig" %}
+        <!-- END - TEAM FILTER MODAL -->
+
+        <!-- START - CUSTOMER FILTER MODAL -->
+        {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal-customer.html.twig" %}
+        <!-- END - CUSTOMER FILTER MODAL -->
 
         <!-- START - FOLLOW-UPS ADD/EDIT MODAL -->
         {% include "_includes/modules/contacts/contact-detail/modals/follow-ups-add-edit-modal.html.twig" %}

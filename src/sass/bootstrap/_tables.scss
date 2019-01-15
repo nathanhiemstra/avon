@@ -47,6 +47,13 @@ caption {
         text-transform: uppercase;
 
         @extend .h7;
+
+        .lt-carat-down,
+        .lt-carat-up {
+          // Make sure they don't effect height of the "th"
+          margin-top: -3px;
+          margin-bottom: -3px;
+        }
       }
     }
   }

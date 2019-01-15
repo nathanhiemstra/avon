@@ -44,7 +44,11 @@ $( document ).ready( function () {
     },
     contactsList: {
       affix: '.page--contacts-list [data-spy="affix"]'
+    },
+    modals: {
+      all: '.modal'
     }
+
   };
 
   var $objects = {
@@ -72,6 +76,9 @@ $( document ).ready( function () {
       orderSummary: $( selectors.main ).find( selectors.drawers.orderSummary ),
       itemEntry: $( selectors.main ).find( selectors.drawers.itemEntry )
     },
+    modals: {
+      all: $( selectors.modals.all )
+    },
     datePicker: {
       trigger: $( selectors.main ).find( selectors.datePicker.trigger ),
       target: $( selectors.main ).find( selectors.datePicker.target )
@@ -83,14 +90,24 @@ $( document ).ready( function () {
   var mobileOrTablet = navigator.userAgent.match(/Android|BlackBerry|Tablet|Mobile|iPhone|iPad|iPod|Opera Mini|IEMobile/i);
 
 
-  // $objects.backDrop.addClass('hidden');
-
-
-
   ////////////////////////////////////////////////////////
   // FUNCTIONS
   ////////////////////////////////////////////////////////
 
+
+  function checkModalScrollable( modal ) {
+    var $modal = $(modal);
+    var $container = $(modal).find('.modal-body');
+    var containerHeight = $container.innerHeight();
+    var contentHeight = $container.prop('scrollHeight');
+
+    // If the modal has scrolling content, add a border to the footer,
+    if ( contentHeight > containerHeight ) {
+      $modal.addClass('modal-scrollable');
+    } else {
+      $modal.removeClass('modal-scrollable');
+    }
+  }
 
   function toggleDrawer( clickedItem ) {
     var targetId = $( clickedItem ).attr( 'href' ) || $( clickedItem ).data( 'target' );
@@ -157,14 +174,13 @@ $( document ).ready( function () {
 
 
 
-
-
-
-
   ////////////////////////////////////////////////////////
   // LISTENERS
   ////////////////////////////////////////////////////////
 
+  $objects.modals.all.on('shown.bs.modal', function ( e ) {
+    checkModalScrollable( this );
+  })
 
   $objects.drawers.all.on( "click", function () {
     toggleDrawer( $( this ) );
