@@ -327,6 +327,13 @@ input[type="search"] {
   margin-top: 10px;
   margin-bottom: 10px;
 
+  &.input-sm {
+    label {
+      font-size: $font-size-small;
+      line-height: 20px;
+    }
+  }
+
   label {
     min-height: $line-height-computed;
     line-height: 24px;
