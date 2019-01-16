@@ -113,7 +113,7 @@
     //     color: $btn-default-hover-color;
     //   }
     // }
- 
+
   }
 
   @mixin demo-datepicker-btn-default {
@@ -260,5 +260,7 @@
 
   display: block;
   top: 45px;
-  left: 0px;
+
+  // Commenting out for Font QA fix. I think we need this for something else though.
+  // left: 0px;
 }
