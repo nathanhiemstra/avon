@@ -202,6 +202,20 @@ a.btn {
 // Avon Custom Buttons
 // --------------------------------------------------
 
+@media (min-width: $screen-sm) {
+  .btn-sm-desktop {
+    // This is the same thing used by .btn-sm. Repeating becase you can't do @extend inside of a @media
+    @include button-size($btn-padding-small-vertical, $btn-padding-small-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+
+    // Soft - This will be combined with "btn-sm" later
+    border-radius: $border-radius-secondary;
+    border-width: 1px;
+    text-transform: none;
+    letter-spacing: 0;
+    height: inherit;
+  }
+}
+
 // Link resposive button displays as a text link on mobile and btn-primary on large screens
 .btn-link-responsive {
   @extend .btn-primary;
@@ -209,6 +223,7 @@ a.btn {
   // mobile - since we're overriding btn styles, it makes more sense for 'desktop first' in this case
   @media (max-width: $screen-xs-max) {
     @include button-variant($link-color, transparent, transparent);
+
     font-size: $font-size-base;
     letter-spacing: normal;
     text-decoration: underline;
@@ -517,10 +532,10 @@ a.btn {
     .caret {
       border-top: $caret-width-base dashed;
       border-top: $caret-width-base solid $brand-primary;
+
       // IE8
       border-right: $caret-width-base solid transparent;
       border-left: $caret-width-base solid transparent;
-
       right: $btn-padding-base-horizontal;
     }
   }

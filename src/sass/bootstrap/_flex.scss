@@ -48,7 +48,6 @@
   flex-basis: auto;
 }
 
-
 @media (min-width: 300px) {
   .flex-basis-xs-auto {
     flex-basis: auto;
@@ -71,8 +70,12 @@
   .flex-row-sm {
     flex-direction: row !important;
   }
-}
 
+  .flex-column-sm {
+    flex-direction: column !important;
+    background: pink;
+  }
+}
 
 @media (min-width: $screen-sm) {
   .flex-basis-md-auto {
