@@ -27,14 +27,14 @@
   <div class="form-group">
     {% include "_includes/elements/forms/checkbox.html.twig" with {
       checked : true,
-      theLabel: '[Group name (00)]',
+      theLabel: '[Group name (00)] - no translation needed',
       wrapLabel: true
     } %}
   </div>
   <div class="form-group">
     {% include "_includes/elements/forms/checkbox.html.twig" with {
       checked : false,
-      theLabel: '[Group name (00)]',
+      theLabel: '[Group name (00)] - no translation needed',
       wrapLabel: true
     } %}
   </div>
@@ -45,7 +45,7 @@
         id: idPrefix ~ 'input',
         name: idPrefix ~ 'input',
         classes: idPrefix ~ 'input input-sm form-control-inline',
-        placeholder: 'Add a new group'
+        placeholder: 'Create a new group'
       } %}
     {% endset %}
     {% include '_includes/groups/forms/checkbox-and-input.html.twig' with {
@@ -72,7 +72,7 @@
       <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Cancel</button>
     </div> #}
     <div class="col-xs-12 col-sm-6 my-2">
-      <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" aria-hidden="true">Add new group</button>
+      <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" aria-hidden="true">Save</button>
     </div>
   </div><!-- /.row -->
 
