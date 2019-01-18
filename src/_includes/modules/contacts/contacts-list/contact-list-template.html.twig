@@ -10,9 +10,11 @@
 {% if contactType == 'team' %}
   {% set contactTypeLabel = 'Team' %}
   {% set contactTypeSearchLabel = 'team' %}
+  {% set contactTooltip = ' team member ' %}
 {% elseif contactType == 'customer' %}
   {% set contactTypeLabel = 'Customer' %}
   {% set contactTypeSearchLabel = 'customers' %}
+  {% set contactTooltip = ' customer ' %}
 {% endif %}
 
 {% if isGroupMemberList == 'yes' %}
@@ -79,7 +81,7 @@
                     <span class="lt-icon lt-close lt-medium form-control-feedback"></span>
 
                     <span class="input-group-addon addon-after input-xs">
-                      <div class="input-group-btn">
+                      {# <div class="input-group-btn">
                         <span class="btn btn-sm btn-link link-muted link-no-underline dropdown-toggle" data-toggle="dropdown">
                           <span class="h7 ">By name</span> <span class="caret"></span>
                         </span>
@@ -88,7 +90,7 @@
                           <li><a href="#">[Filter category]</a></li>
                           <li><a href="#">[Filter category]</a></li>
                         </ul>
-                      </div><!-- /btn-group -->
+                      </div> #}<!-- /btn-group -->
                     </span>
                   </div>
 
