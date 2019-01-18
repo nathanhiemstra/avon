@@ -121,7 +121,10 @@ select.selectpicker {
   margin-bottom: 0;
   padding: 0;
   border: none;
-
+  
+  &.bootstrap-select-sm {
+    height: 45px;
+  }
 
   .dropdown-menu {
     margin-top: 0;
