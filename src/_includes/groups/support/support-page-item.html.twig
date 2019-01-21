@@ -1,16 +1,24 @@
+{% if isNotClickable %}
+  {% set containerOpen = '<div class="thumbnail box-emphasize d-flex flex-column justify-content-start m-0 h-100 text-center">' %}
+  {% set containerClose = '</div>' %}
+{% else %}
+  {% set containerOpen = '<a class="thumbnail box-emphasize d-flex flex-column justify-content-start m-0 h-100 text-center link-plain ">' %}
+  {% set containerClose = '</a>' %}
+{% endif %}
+
 <div class="col-xs-6 col-lg-4 my-4 box-group--item">
-  <a class="thumbnail box-emphasize link-plain d-flex flex-column justify-content-start m-0 h-100 text-center">
+  {{ containerOpen }}
     <div class="caption mt-4 mb-3">
       <h6 class="m-0 text-muted">{{ title }}</h6>
     </div>
     {% if imgUrl %}
       <div class="mb-3 px-4 pb-4 img-container flex-grow">
-        <img src="{{ imgUrl }}" class="img-responsive"alt="...">
+        <img src="{{ imgUrl }}" class="img-responsive" alt="...">
       </div>
     {% elseif text %}
-      <div class="mb-4 pb-4 flex-grow">
+      <div class="caption px-4 pb-4 mb-4 flex-grow">
         {{ text }}
       </div>
     {% endif %}
-  </a>
+  {{ containerClose }}
 </div>
