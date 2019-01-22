@@ -217,7 +217,15 @@
 
       > thead {
         th {
-          white-space: nowrap;
+          &:not(.t-email):not(.t-phone):not(.t-online-customer) {
+            white-space: nowrap;
+          }
+
+          .lt-carat-down,
+          .lt-carat-up {
+            margin-right: -8px;
+            margin-left: -2px;
+          }
         }
       }
 
@@ -258,10 +266,10 @@
           padding-left: $left-col-width;
           padding-right: $right-col-width;
         }
-      }
 
-      .t-phone {
-        white-space: nowrap;
+        .t-phone {
+          white-space: nowrap;
+        }
       }
 
       .t-customer-type {
@@ -334,6 +342,10 @@
         .t-email {
           .truncate {
             width: 6vw;
+
+            .lang-spanish & {
+              width: 10vw;
+            }
           }
         }
 
