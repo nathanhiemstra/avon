@@ -26,8 +26,8 @@
 <form role="form">
   <div class="form-group">
     {% include components.groups.forms.inputAndLabel with {
-      id: 'follow-ups-add-account-status',
-      mainLabel: 'Title (required)',
+      id: 'follow-ups-add-description',
+      mainLabel: 'Follow-up Description (required)',
       haslabelErrorIcon: true,
       hasInlineErrorIcon: null,
       hasAbsoluteErrorIcon: null,
@@ -39,8 +39,8 @@
 
   <div class="form-group has-feedback">
     {% include components.groups.forms.inputAndLabel with {
-      id: 'follow-ups-add-due-date',
-      mainLabel: 'Due Date (required)',
+      id: 'follow-ups-add-target-date',
+      mainLabel: 'Target Date (required)',
       haslabelErrorIcon: true,
       hasInlineErrorIcon: null,
       hasAbsoluteErrorIcon: null,
@@ -53,8 +53,8 @@
 
   <div class="form-group">
     {% include components.groups.forms.inputAndLabel with {
-      id: 'follow-ups-add-contact',
-      mainLabel: 'Contact',
+      id: 'follow-ups-add-customer',
+      mainLabel: 'Customer/Team Member',
       haslabelErrorIcon: true,
       hasInlineErrorIcon: null,
       hasAbsoluteErrorIcon: null,
@@ -66,8 +66,8 @@
 
   <div class="form-group">
     {% include '_includes/groups/forms/textarea-and-label.html.twig' with {
-      id: 'follow-ups-description',
-      mainLabel: 'Description',
+      id: 'follow-ups-notes',
+      mainLabel: 'Notes',
       haslabelErrorIcon: true,
       hasInlineErrorIcon: null,
       hasAbsoluteErrorIcon: null,

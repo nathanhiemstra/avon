@@ -10,10 +10,10 @@
 {% if contactType == 'team' %}
   {% set contactTypeLabel = 'Team' %}
   {% set contactTypeSearchLabel = 'team' %}
-  {% set contactTooltip = ' team member ' %}
+  {% set contactTooltip = ' team members ' %}
 {% elseif contactType == 'customer' %}
   {% set contactTypeLabel = 'Customer' %}
-  {% set contactTypeSearchLabel = 'customers' %}
+  {% set contactTypeSearchLabel = 'customer' %}
   {% set contactTooltip = ' customer ' %}
 {% endif %}
 
@@ -76,7 +76,7 @@
                       hasInlineErrorIcon: null,
                       hasAbsoluteErrorIcon: null,
                       theValue: null,
-                      placeholder: 'Search my ' ~ contactTypeSearchLabel ~ '...'
+                      placeholder: 'Search ' ~ contactTypeSearchLabel ~ '...'
                     } %}
                     <span class="lt-icon lt-close lt-medium form-control-feedback"></span>
 
