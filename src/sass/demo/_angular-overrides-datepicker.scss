@@ -37,9 +37,15 @@
     }
   }
 
-  .dropdown-menu {
-    left: inherit;
-    right: 0;
+  .dropdown-menu:not(.dropdown-menu-left),
+  .dropdown-menu-right {
+    left: inherit !important;
+    right: 5px !important;
+  }
+
+  .dropdown-menu-left {
+    left: 5px !important;
+    left: inherit !important;
   }
 
   // .btn-danger,
@@ -260,6 +266,11 @@
 
   display: block;
   top: 45px;
+
+  .dropdown-menu table > thead > tr:nth-child(1) > th:nth-child(2),
+  .dropdown-menu table > thead > tr:nth-child(1) > th:nth-child(2) button {
+    pointer-events: none;
+  }
 
   // Commenting out for Font QA fix. I think we need this for something else though.
   // left: 0px;
