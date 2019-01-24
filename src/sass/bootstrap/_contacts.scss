@@ -641,3 +641,19 @@
     }
   }
 }
+
+.page--import-customer {
+  .import-client--img {
+    border: $border-width solid $list-group-border;
+    padding: 1px;
+  }
+
+  .import-client--selected {
+    .import-client--img {
+      border: 2px solid $black;
+
+      // Change the padding to offset the changing border width
+      padding: 0;
+    }
+  }
+}
