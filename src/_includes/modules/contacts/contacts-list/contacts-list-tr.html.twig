@@ -18,10 +18,10 @@
 
   {% if contactType == 'team' %}
   <!-- START - "TEAM" COLUMNS -->
-  <!-- UPLINE -->
-  <td class="t-upline t-block">
+  <!-- MENTOR -->
+  <td class="t-mentor t-block">
     <div class="truncate">
-      <span class="t-key">Upline: </span>Contact Name{{ longContactName }}
+      <span class="t-key">Mentor: </span>Contact Name{{ longContactName }}
     </div>
   </td>
   <!-- GEN -->
@@ -63,13 +63,13 @@
     <div class="btn-group">
       <a href="javascript:void(0)" data-toggle="dropdown" class="link-muted"><span class="lt-icon lt-ellipsis lt-large"></span></a>
       <ul class="dropdown-menu pull-right">
-        <!-- PHONE LINK -->
         <li class="visible-xs"><a href="tel:1-000-000-0000" class="link-phone-number">Call</a></li>
-        <!-- EMAIL LINK -->
-        <li class="visible-xs"><a href="mailto:someone@somewhere.com">Email</a></li>
-        <!-- GENERIC LINK -->
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Action</a></li>
+        <li class="visible-xs"><a href="sms://+8901234567" class="link-phone-number">Text</a></li>
+        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-send-email">Send email</a></li>
+        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-send-ecard">Send eCard</a></li>
+        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-notes-add-edit">Add note</a></li>
+        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-follow-ups-add-edit">Add follow-up</a></li>
+        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-groups-add-to">Add to group</a></li>
       </ul>
     </div>
   </td>

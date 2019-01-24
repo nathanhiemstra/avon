@@ -64,7 +64,7 @@ var ContactsDemo = (function () {
     // get current value for input
     // DEV NOTE :: demo only, this will be different in production
     autoCompleteDropSelectedValue = 'Ms. Happyfancy';
-    $els.autoCompleteInput.val( autoCompleteDropSelectedValue );
+    // $els.autoCompleteInput.val( autoCompleteDropSelectedValue );
     $els.autoCompleteInput.on( 'focus', function () {
       // be sure we're at the top
       if( $( window ).width() < 768 ) {

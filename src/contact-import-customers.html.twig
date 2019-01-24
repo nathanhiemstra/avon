@@ -1,6 +1,6 @@
 {% extends layouts.base %}
 
-{% set sectionClass = 'page--sales-leader' %}
+{% set sectionClass = 'page--import-customer' %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
@@ -11,7 +11,7 @@
   {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
     position: 'top',
     html: '<div class="reverse-bg py-3">
-    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    <p class="m-0 px-0 text-center text-muted">Mangolia Managed Content Block</p>
     </div>'
   } %}
   <!-- END - MAGNOLIA BLOCK -->
@@ -25,22 +25,105 @@
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
-        {% include "_includes/groups/navigation/back-link.twig" with {label: "My Customers"} %}
+        {% include "_includes/groups/navigation/back-link.twig" with {caption: "All Customers"} %}
 
         <h2>Import Customers</h2>
-        <p class="mb-5">Where would you like to import contacts from?</p>
+        <p class="mb-5 text-muted">Where would you like to import contacts from?</p>
 
-        <div class="row">
-          <div class="col-xs-12">
-            <img class="img-responsive" src="https://via.placeholder.com/800x600?text=FPO" alt="">
+        <hr>
+
+        <section>
+
+          <div class="row">
+
+          {% set colSingle = 'col-xs-6 text-center' %}
+          {% set colGroupsOfTwo = 'col-xs-12 col-sm-6 col-md-4' %}
+
+            <!-- START - GROUP OF TWO ITEMS -->
+            <div class="{{ colGroupsOfTwo }}">
+              <div class="row">
+                <!-- START - SINGLE ITEM -->
+                <div class="{{ colSingle }}">
+                  {% include "_includes/modules/contacts/import-contacts/item.html.twig" with {
+                    imgSrc: "images/icons/import-customers/yahoo.png",
+                    caption: "Yahoo!"
+                  } %}
+                </div>
+                <!-- END - SINGLE ITEM -->
+
+                <!-- START - SINGLE ITEM -->
+                <div class="{{ colSingle }}">
+                  {% include "_includes/modules/contacts/import-contacts/item.html.twig" with {
+                    imgSrc: "images/icons/import-customers/gmail.png",
+                    caption: "Gmail",
+                    isSelected: true
+                  } %}
+                </div>
+                <!-- END - SINGLE ITEM -->
+              </div>
+            </div>
+            <!-- END - GROUP OF TWO ITEMS -->
+
+            <!-- START - GROUP OF TWO ITEMS -->
+            <div class="{{ colGroupsOfTwo }}">
+              <div class="row">
+                <!-- START - SINGLE ITEM -->
+                <div class="{{ colSingle }}">
+                  {% include "_includes/modules/contacts/import-contacts/item.html.twig" with {
+                    imgSrc: "images/icons/import-customers/outlook.png",
+                    caption: "Outlook Web"
+                  } %}
+                </div>
+                <!-- END - SINGLE ITEM -->
+
+                <!-- START - SINGLE ITEM -->
+                <div class="{{ colSingle }}">
+                  {% include "_includes/modules/contacts/import-contacts/item.html.twig" with {
+                    imgSrc: "images/icons/import-customers/aol.png",
+                    caption: "AOL"
+                  } %}
+                </div>
+                <!-- END - SINGLE ITEM -->
+              </div>
+            </div>
+            <!-- END - GROUP OF TWO ITEMS -->
+
+            <!-- START - GROUP OF TWO ITEMS -->
+            <div class="{{ colGroupsOfTwo }}">
+              <div class="row">
+                <!-- START - SINGLE ITEM -->
+                <div class="{{ colSingle }}">
+                  {% include "_includes/modules/contacts/import-contacts/item.html.twig" with {
+                    imgSrc: "images/icons/import-customers/address-book.png",
+                    caption: "Mac Address Book"
+                  } %}
+                </div>
+                <!-- END - SINGLE ITEM -->
+
+                <!-- START - SINGLE ITEM -->
+                <div class="{{ colSingle }}">
+                  {% include "_includes/modules/contacts/import-contacts/item.html.twig" with {
+                    imgSrc: "images/icons/import-customers/outlook.png",
+                    caption: "Outlook Client"
+                  } %}
+                </div>
+                <!-- END - SINGLE ITEM -->
+              </div>
+            </div>
+            <!-- END - GROUP OF TWO ITEMS -->
+
           </div>
-        </div>
 
-        <div class="small mt-5">
-          <p><strong>NOTE: </strong>Imported records with invalid email addresses or for which we already have an email address on file will not be added and will not be shown on the confirmation screen.</p>
-          <hr>
-          <p>{{fpo.paragraph}}</p>
-        </div>
+          <p>Note: Imported records with invalid email addresses or for which we already have an email address on file will not be added and will not be shown on the confirmation screen.</p>
+
+
+
+        </section>
+
+
+        <hr>
+
+        <p class="text-muted small">{{fpo.paragraph}}</p>
 
       {% endblock %}
 
@@ -52,7 +135,7 @@
   {% include "_includes/groups/fpo/magnolia-managed-content-block.html.twig" with {
     position: 'bottom',
     html: '<div class="reverse-bg py-3">
-    <p class="m-0 text-center text-muted">Mangolia Managed Content Block</p>
+    <p class="m-0 px-0 text-center text-muted">Mangolia Managed Content Block</p>
     </div>'
   } %}
   <!-- END - MAGNOLIA BLOCK -->

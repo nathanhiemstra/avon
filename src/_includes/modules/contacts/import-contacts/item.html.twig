@@ -1,0 +1,7 @@
+{% if isSelected %}
+  {% set containerClass = 'import-client--selected' %}
+{% endif %}
+<a href="#" class="thumbnail link-plain import-client {{containerClass}}">
+  <img src="{{ imgSrc}}" class="img-responsive import-client--img">
+  <h7 class="caption mt-2 px-0 d-block">{{ caption }}</h7>
+</a>

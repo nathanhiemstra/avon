@@ -9,8 +9,12 @@
 {# Make the correct label for the version of the list we're presenting. #}
 {% if contactType == 'team' %}
   {% set contactTypeLabel = 'Team' %}
+  {% set contactTypeSearchLabel = 'team' %}
+  {% set contactTooltip = ' team members ' %}
 {% elseif contactType == 'customer' %}
   {% set contactTypeLabel = 'Customer' %}
+  {% set contactTypeSearchLabel = 'customer' %}
+  {% set contactTooltip = ' customer ' %}
 {% endif %}
 
 {% if isGroupMemberList == 'yes' %}
@@ -72,12 +76,12 @@
                       hasInlineErrorIcon: null,
                       hasAbsoluteErrorIcon: null,
                       theValue: null,
-                      placeholder: 'Search my team...'
+                      placeholder: 'Search ' ~ contactTypeSearchLabel ~ '...'
                     } %}
                     <span class="lt-icon lt-close lt-medium form-control-feedback"></span>
 
                     <span class="input-group-addon addon-after input-xs">
-                      <div class="input-group-btn">
+                      {# <div class="input-group-btn">
                         <span class="btn btn-sm btn-link link-muted link-no-underline dropdown-toggle" data-toggle="dropdown">
                           <span class="h7 ">By name</span> <span class="caret"></span>
                         </span>
@@ -86,7 +90,7 @@
                           <li><a href="#">[Filter category]</a></li>
                           <li><a href="#">[Filter category]</a></li>
                         </ul>
-                      </div><!-- /btn-group -->
+                      </div> #}<!-- /btn-group -->
                     </span>
                   </div>
 
@@ -98,7 +102,7 @@
 
                 {% if contactType == 'customer' %}
                 <!-- START - CUSTOMER ONLY -->
-                <a class="btn btn-primary btn-sm btn-soft mt-3 mt-sm-0">Add Contact</a>
+                <a class="btn btn-primary btn-sm btn-soft mt-3 mt-sm-0">Add Customer</a>
                 <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0 mx-2">Import</a>
                 <!-- END - CUSTOMER ONLY -->
                 {% endif %}

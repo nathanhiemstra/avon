@@ -81,10 +81,16 @@ var NbaDrawer = (function() {
 
     // handle drawer open / close
     $('[data-toggle="drawer"]').on('click', function() {
-      if($els.nbaDrawer.hasClass('drawer-expanded')) {
-        $els.nbaDrawer.css('min-height', '');
-      } else {
-        $els.nbaDrawer.css('min-height', '');
+      if($(window).width() < 768) {
+        if($els.nbaDrawer.hasClass('drawer-expanded')) {
+          $('html').addClass('modal-open');
+          // DEV NOTE :: resetting height here prevents space bolow expanded drawer on some devices
+          $els.nbaDrawer.css({ 'min-height': window.innerHeight + 'px' });
+        } else {
+          $('html').removeClass('modal-open');
+          // unset min-height when closing
+          $els.nbaDrawer.css({ 'min-height': '' });
+        }
       }
     });
 
@@ -122,6 +128,12 @@ var NbaDrawer = (function() {
       });
       // mobile - unset min-height
       $els.nbaDrawer.css('min-height', '');
+
+      // DEV NOTE :: this fixes bugs with mobile browser address bar
+      // if the drawer is open on resize, reset the height
+      if($els.nbaDrawer.hasClass('drawer-expanded')) {
+        $els.nbaDrawer.css({ 'min-height': window.innerHeight + 'px' });
+      }
     } else {
       // calling collapse('hide') breaks on first run, and we don't need it on first run anyway
       if(!firstRun) {

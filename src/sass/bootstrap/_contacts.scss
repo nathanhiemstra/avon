@@ -217,7 +217,15 @@
 
       > thead {
         th {
-          white-space: nowrap;
+          &:not(.t-email):not(.t-phone):not(.t-online-customer) {
+            white-space: nowrap;
+          }
+
+          .lt-carat-down,
+          .lt-carat-up {
+            margin-right: -8px;
+            margin-left: -2px;
+          }
         }
       }
 
@@ -258,10 +266,10 @@
           padding-left: $left-col-width;
           padding-right: $right-col-width;
         }
-      }
 
-      .t-phone {
-        white-space: nowrap;
+        .t-phone {
+          white-space: nowrap;
+        }
       }
 
       .t-customer-type {
@@ -291,7 +299,7 @@
           max-width: 160px;
         }
 
-        .t-upline,
+        .t-mentor,
         .t-gen,
         .t-phone,
         .t-email {
@@ -325,7 +333,7 @@
           }
         }
 
-        .t-upline {
+        .t-mentor {
           .truncate {
             width: 6vw;
           }
@@ -333,13 +341,17 @@
 
         .t-email {
           .truncate {
-            width: 7vw;
+            width: 6vw;
+
+            .lang-spanish & {
+              width: 10vw;
+            }
           }
         }
 
         // .t-first-name,
         // .t-last-name,
-        .t-upline,
+        .t-mentor,
         .t-gen,
         .t-phone,
         .t-email {
@@ -415,7 +427,7 @@
 // contact detail list
 .contact-detail-list {
   .item-label h6 {
-    line-height: 1.33;
+    line-height: 1.6;
   }
 
   .item-content,
@@ -626,6 +638,22 @@
       .truncate {
         width: 54vw;
       }
+    }
+  }
+}
+
+.page--import-customer {
+  .import-client--img {
+    border: $border-width solid $list-group-border;
+    padding: 1px;
+  }
+
+  .import-client--selected {
+    .import-client--img {
+      border: 2px solid $black;
+
+      // Change the padding to offset the changing border width
+      padding: 0;
     }
   }
 }
