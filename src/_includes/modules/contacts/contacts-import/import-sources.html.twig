@@ -1,0 +1,82 @@
+        {% set colSingle = 'col-xs-6 text-center' %}
+        {% set colGroupsOfTwo = 'col-xs-12 col-sm-6 col-md-4' %}
+
+        <div class="row">
+
+
+            <!-- START - GROUP OF TWO ITEMS -->
+            <div class="{{ colGroupsOfTwo }}">
+              <div class="row">
+                <!-- START - SINGLE ITEM -->
+                <div class="{{ colSingle }}">
+                  {% include "_includes/modules/contacts/contacts-import/import-source-item.html.twig" with {
+                    imgSrc: "images/icons/contacts-import/yahoo.png",
+                    caption: "Yahoo!"
+                  } %}
+                </div>
+                <!-- END - SINGLE ITEM -->
+
+                <!-- START - SINGLE ITEM -->
+                <div class="{{ colSingle }}">
+                  {% include "_includes/modules/contacts/contacts-import/import-source-item.html.twig" with {
+                    imgSrc: "images/icons/contacts-import/gmail.png",
+                    caption: "Gmail",
+                    isSelected: true
+                  } %}
+                </div>
+                <!-- END - SINGLE ITEM -->
+              </div>
+            </div>
+            <!-- END - GROUP OF TWO ITEMS -->
+
+            <!-- START - GROUP OF TWO ITEMS -->
+            <div class="{{ colGroupsOfTwo }}">
+              <div class="row">
+                <!-- START - SINGLE ITEM -->
+                <div class="{{ colSingle }}">
+                  {% include "_includes/modules/contacts/contacts-import/import-source-item.html.twig" with {
+                    imgSrc: "images/icons/contacts-import/outlook.png",
+                    caption: "Outlook Web"
+                  } %}
+                </div>
+                <!-- END - SINGLE ITEM -->
+
+                <!-- START - SINGLE ITEM -->
+                <div class="{{ colSingle }}">
+                  {% include "_includes/modules/contacts/contacts-import/import-source-item.html.twig" with {
+                    imgSrc: "images/icons/contacts-import/aol.png",
+                    caption: "AOL"
+                  } %}
+                </div>
+                <!-- END - SINGLE ITEM -->
+              </div>
+            </div>
+            <!-- END - GROUP OF TWO ITEMS -->
+
+            <!-- START - GROUP OF TWO ITEMS -->
+            <div class="{{ colGroupsOfTwo }}">
+              <div class="row">
+                <!-- START - SINGLE ITEM -->
+                <div class="{{ colSingle }}">
+                  {% include "_includes/modules/contacts/contacts-import/import-source-item.html.twig" with {
+                    imgSrc: "images/icons/contacts-import/address-book.png",
+                    caption: "Mac Address Book"
+                  } %}
+                </div>
+                <!-- END - SINGLE ITEM -->
+
+                <!-- START - SINGLE ITEM -->
+                <div class="{{ colSingle }}">
+                  {% include "_includes/modules/contacts/contacts-import/import-source-item.html.twig" with {
+                    imgSrc: "images/icons/contacts-import/outlook.png",
+                    caption: "Outlook Client"
+                  } %}
+                </div>
+                <!-- END - SINGLE ITEM -->
+              </div>
+            </div>
+            <!-- END - GROUP OF TWO ITEMS -->
+
+          </div>
+
+          <p>Note: Imported records with invalid email addresses or for which we already have an email address on file will not be added and will not be shown on the confirmation screen.</p>

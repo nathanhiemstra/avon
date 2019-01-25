@@ -1,0 +1,29 @@
+<section class="container px-xs-0">
+  <div class="table-responsive-rows-and-cols table-contact-import">
+    <table class="table table-striped border-bottom">
+      <thead>
+        <tr>
+          <th class="t-checkbox">
+            <span class="d-none">Select</span>
+          </th>
+          <th class="t-first-name t-primary">
+            <span class="th-label">First Name</span>
+            <span class="lt-icon lt-carat-down lt-medium"></span>
+          </th>
+          <th class="t-last-name t-primary">
+            <span class="th-label">Last Name</span>
+            <span class="lt-icon lt-carat-down lt-medium"></span>
+          </th>
+          <th class="t-email">
+            <span class="th-label">Email</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% include '_includes/modules/contacts/contacts-import/importable-items-tr.html.twig' with { firstname: "Phoebe", lastname: 'Pope' } %}
+        {% include '_includes/modules/contacts/contacts-import/importable-items-tr.html.twig' with { firstname: "Mary", lastname: null } %}
+        {% include '_includes/modules/contacts/contacts-import/importable-items-tr.html.twig' with { firstname: "Ellen", lastname: 'Pope' } %}
+      </tbody>
+    </table>
+  </div>
+</section>
