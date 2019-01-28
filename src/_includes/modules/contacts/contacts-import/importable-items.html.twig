@@ -1,29 +1,49 @@
-<section class="container px-xs-0">
-  <div class="table-responsive-rows-and-cols table-contact-import">
-    <table class="table table-striped border-bottom">
-      <thead>
-        <tr>
-          <th class="t-checkbox">
-            <span class="d-none">Select</span>
-          </th>
-          <th class="t-first-name t-primary">
-            <span class="th-label">First Name</span>
-            <span class="lt-icon lt-carat-down lt-medium"></span>
-          </th>
-          <th class="t-last-name t-primary">
-            <span class="th-label">Last Name</span>
-            <span class="lt-icon lt-carat-down lt-medium"></span>
-          </th>
-          <th class="t-email">
-            <span class="th-label">Email</span>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {% include '_includes/modules/contacts/contacts-import/importable-items-tr.html.twig' with { firstname: "Phoebe", lastname: 'Pope' } %}
-        {% include '_includes/modules/contacts/contacts-import/importable-items-tr.html.twig' with { firstname: "Mary", lastname: null } %}
-        {% include '_includes/modules/contacts/contacts-import/importable-items-tr.html.twig' with { firstname: "Ellen", lastname: 'Pope' } %}
-      </tbody>
-    </table>
+<div class="d-flex justify-content-between align-items-center my-4 ">
+
+  <div class="group d-flex align-items-center">
+    <!-- START - MASTER CHECKBOX -->
+    <div class="group--checkbox">
+      {% include "_includes/elements/forms/checkbox.html.twig" with { checked: false, classes: 'input-sm m-0 ml-3 pl-1 pt-1', id:'contact-import-toggle-all' } %}
+    </div>
+    <!-- END - MASTER CHECKBOX -->
+    <div class="group--selected-item-controls pr-2 pl-4 pl-md-0 pr-sm-0" >
+        <div class="checked-checkbox-count">[0]<span class="count-label"> selected</span></div>
+    </div>
   </div>
-</section>
+
+  {% include "_includes/modules/contacts/contacts-import/import-cta.html.twig" %}
+
+</div>
+
+<div class="table-responsive-rows-and-cols table-contact-import px-xs-0X">
+  <table class="table table-striped border-y">
+    <thead>
+      <tr>
+        <th class="t-checkbox">
+          <span class="d-none">Select</span>
+        </th>
+        <th class="t-first-name t-primary">
+          <span class="th-label">First Name</span>
+          <span class="lt-icon lt-carat-down lt-medium"></span>
+        </th>
+        <th class="t-last-name t-primary">
+          <span class="th-label">Last Name</span>
+          <span class="lt-icon lt-carat-down lt-medium"></span>
+        </th>
+        <th class="t-email">
+          <span class="th-label">Email</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% include '_includes/modules/contacts/contacts-import/importable-items-tr.html.twig' with { firstname: "Phoebe", lastname: 'Pope' } %}
+      {% include '_includes/modules/contacts/contacts-import/importable-items-tr.html.twig' with { firstname: "Mary", lastname: null } %}
+      {% include '_includes/modules/contacts/contacts-import/importable-items-tr.html.twig' with { firstname: "Ellen", lastname: 'Pope' } %}
+    </tbody>
+  </table>
+</div>
+
+<div class="d-flex justify-content-end align-items-center my-4">
+  {% include "_includes/modules/contacts/contacts-import/import-cta.html.twig" %}
+</div>
+

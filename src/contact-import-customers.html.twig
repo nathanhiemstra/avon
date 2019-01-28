@@ -37,36 +37,19 @@
           {% include "_includes/modules/contacts/contacts-import/import-sources.html.twig" %}
         </section>
         <!-- END - IMPORT SOURCES -->
-  </section>
-
-  <section>
-
-    <div class="container">
-      <h4>Select the customers you’d like to import from Gmail:</h4>
-      <hr>
-    </div>
-
-    <div class="row">
-      <!-- START - IMPORTABLE ITEMS (TABLE)  -->
-      {% include "_includes/modules/contacts/contacts-import/importable-items.html.twig" %}
-      <!-- END - IMPORTABLE ITEMS (TABLE) -->
-    </div>
-
-    <div class="container container--page">
-      <h4>Select the customers you’d like to import from Gmail:</h4>
-      <hr>
-    </div>
-
-  </section>
 
 
-  <section class="container">
+
+        <!-- START - IMPORTABLE ITEMS (TABLE)  -->
+        <h4>Select the customers you’d like to import from Gmail:</h4>
+        <hr>
+        {% include "_includes/modules/contacts/contacts-import/importable-items.html.twig" %}
+        <!-- END - IMPORTABLE ITEMS (TABLE) -->
 
         <hr>
-
         <p class="text-muted small">{{fpo.paragraph}}</p>
 
-  </section>
+        </section>
 
       {% endblock %}
 
