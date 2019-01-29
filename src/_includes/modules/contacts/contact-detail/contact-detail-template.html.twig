@@ -1,6 +1,36 @@
 {% extends layouts.base %}
 
-{% set sectionClass = 'page--contacts-detail' %}
+
+{% if contactType == 'customer' %}
+  {% set contactTypeLabel = 'Customer' %}
+  {% set contactTypeLabelPlural = 'Customers' %}
+  {% set contactTypeCategory = 'customer-or-online-customer' %}
+  {% set isEditableCustomerSince = true %}
+  {% set isEditableSalesTax = true %}
+  {% set isEditableDeliveryOption = true %}
+
+{% elseif contactType == 'customer-online' %}
+  {% set contactTypeLabel = 'Online Customer' %}
+  {% set contactTypeLabelPlural = 'Customers' %}
+  {% set contactTypeCategory = 'customer-or-online-customer' %}
+  {% set isEditableEmail = true %}
+  {% set isEditablePhone = true %}
+  {% set isEditableAddressHome = true %}
+  {% set isEditableAddressWork = true %}
+  {% set isEditableLanguage = true %}
+  {% set isEditableBirthday = true %}
+  {% set isEditableCustomerSince = true %}
+  {% set isEditableSalesTax = true %}
+  {% set isEditableDeliveryOption = true %}
+
+{% elseif contactType == 'team' %}
+  {% set contactTypeLabel = 'Team' %}
+  {% set contactTypeLabelPlural = 'Team Members' %}
+  {% set contactTypeCategory = 'team' %}
+{% endif %}
+
+
+{% set sectionClass = 'page--contacts-detail contacts-detail--' ~ contactType %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
 {# DEFINE BLOCK - CONTENT #}
@@ -52,13 +82,16 @@
               {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-contact-hist.html.twig' %}
             </div>
 
-            <!-- START - TEAM ONLY -->
+          {% if contactTypeCategory == 'customer-or-online-customer' %}
+            <!-- START - CUSTOMER / ONLINE CUSTOEMR ONLY -->
             <div class="tab-pane" id="mc-orderhist">
               {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-order-hist.html.twig' %}
             </div>
-            <!-- END - TEAM ONLY -->
+            <!-- END - CUSTOMER / ONLINE CUSTOEMR ONLY -->
+          {% endif %}
 
-            <!-- START - CUSTOMER ONLY -->
+          {% if contactTypeCategory == 'team' %}
+            <!-- START - TEAM ONLY -->
             <div class="tab-pane" id="mc-salesperf">
               {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-sales-perf.html.twig' %}
             </div>
@@ -77,7 +110,8 @@
             <div class="tab-pane" id="mc-reports">
               {% include '_includes/modules/contacts/contact-detail/tab-panes/pane-reports.html.twig' %}
             </div>
-            <!-- END - CUSTOMER ONLY -->
+            <!-- END - TEAM ONLY -->
+          {% endif %}
 
           </div>
 

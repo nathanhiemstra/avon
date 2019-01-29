@@ -13,15 +13,15 @@
 
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
     label: 'Email',
-    canEdit: true,
+    canEdit: isEditableEmail,
     content: thisContent,
     formContent: thisFormContent
   } %}
   <!-- END - EMAIL -->
 
-  <hr>
 
   <!-- START - PHONE NUMBER -->
+   <hr>
   {% set thisContent %}
     {% include '_includes/modules/contacts/contact-detail/tab-panes/details/phone-content.html.twig' %}
   {% endset %}
@@ -31,18 +31,23 @@
 
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
     label: 'Phone Number',
-    canEdit: true,
+    canEdit: isEditablePhone,
     content: thisContent,
     formContent: thisFormContent
   } %}
   <!-- END - PHONE NUMBER -->
 
-  <hr>
-
   <!-- START - HOME ADDRESS -->
+   <hr>
   {% set thisContent %}
+    {% if contactType == 'team' %}
+      {% set homeAddressLabel = 'Address' %}
+    {% else %}
+      {% set homeAddressLabel = 'Home Address' %}
+    {% endif %}
+
     {% include '_includes/modules/contacts/contact-detail/tab-panes/details/address-content.html.twig' with {
-      label: 'Home Address'
+      label: homeAddressLabel
     } %}
   {% endset %}
   {% set thisFormContent %}
@@ -50,16 +55,17 @@
   {% endset %}
 
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
-    label: 'Home Address',
-    canEdit: true,
+    label: homeAddressLabel,
+    canEdit: isEditableAddressHome,
     content: thisContent,
     formContent: thisFormContent
   } %}
   <!-- END - HOME ADDRESS -->
 
-  <hr>
 
+{% if contactType != 'team' %}
   <!-- START - WORK ADDRESS -->
+   <hr>
   {% set thisContent %}
     {% include '_includes/modules/contacts/contact-detail/tab-panes/details/address-content.html.twig' with {
       label: 'Work Address'
@@ -73,15 +79,17 @@
 
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
     label: 'Work Address',
-    canEdit: true,
+    canEdit: isEditableAddressWork,
     content: thisContent,
     formContent: thisFormContent
   } %}
   <!-- END - WORK ADDRESS -->
 
-  <hr>
+{% endif %}
+
 
   <!-- START - GROUPS -->
+   <hr>
   {% set thisContent %}
     {% include '_includes/modules/contacts/contact-detail/tab-panes/details/groups-content.html.twig' %}
   {% endset %}
@@ -93,78 +101,160 @@
   } %}
   <!-- END - GROUPS -->
 
-  <hr>
+
 
   <!-- START - LANGUAGE -->
+   <hr>
   {% set thisFormContent %}
     {% include '_includes/modules/contacts/contact-detail/tab-panes/details/language-form.html.twig' %}
   {% endset %}
 
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
     label: 'Language Preference',
-    canEdit: true,
-    content: '<p class="mb-3">English</p>',
+    canEdit: isEditableLanguage,
+    content: '<p class="mb-0">English</p>',
     formContent: thisFormContent
   } %}
   <!-- END - LANGUAGE -->
 
-  <hr>
+
+
+
+  {% if contactType == 'team' %}
+  <!-- START - TEAM ONLY -->
+
+    <!-- START - ONLINE STORE -->
+     <hr>
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
+      label: 'Online Store',
+      canEdit: false,
+      content: '<p class="mb-0">youravon.com/erlindaconley</p>'
+    } %}
+
+    <!-- END - ONLINE STORE -->
+
+    <!-- START - REFERRAL CODE -->
+     <hr>
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
+      label: 'Referral Code',
+      canEdit: false,
+      content: '<p class="mb-0">12345678</p>'
+    } %}
+
+    <!-- END - REFERRAL CODE -->
+
+    <!-- START - LEADERSHIP TITLE -->
+     <hr>
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
+      label: 'Leadership Title',
+      canEdit: false,
+      content: '<p class="mb-0">Bronze Leader</p>'
+    } %}
+
+    <!-- END - LEADERSHIP TITLE -->
+
+    <!-- START - PRP TITLE -->
+     <hr>
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
+      label: 'PRP Title',
+      canEdit: false,
+      content: '<p class="mb-0">Rose Circle</p>'
+    } %}
+
+    <!-- END - PRP TITLE -->
+
+    <!-- START - MENTOR -->
+     <hr>
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
+      label: 'Mentor',
+      canEdit: false,
+      content: '<p class="mb-0">Charlotte Hassleboss</p>'
+    } %}
+
+    <!-- END - MENTOR -->
+
+    <!-- START - LENGTH OF ASSOCIATION (LOA) -->
+     <hr>
+    {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
+      label: 'Length of Associaltion (LOA) ',
+      canEdit: false,
+      content: '<p class="mb-0">3 years</p>'
+    } %}
+
+    <!-- END - LENGTH OF ASSOCIATION (LOA) -->
+
+  <!-- END - TEAM ONLY -->
+  {% endif %}
+
+
 
   <!-- START - BIRTHDAY -->
+   <hr>
   {% set thisFormContent %}
     {% include '_includes/modules/contacts/contact-detail/tab-panes/details/birthday-form.html.twig' %}
   {% endset %}
 
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
     label: 'Birthday',
-    canEdit: true,
-    content: '<p class="mb-3">September 27</p>',
+    canEdit: isEditableBirthday,
+    content: '<p class="mb-0">September 27</p>',
     formContent: thisFormContent
   } %}
   <!-- END - BIRTHDAY -->
 
-  <hr>
+
+
+  {% if contactTypeCategory == 'customer-or-online-customer' %}
+  <!-- START - CUSTOMER / ONLINE CUSTOMER ONLY -->
 
   <!-- START - EMAIL SUBSCRIPTION -->
+   <hr>
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
     label: 'Subscribed to my emails',
     canEdit: false,
-    content: '<p class="mb-3">Yes</p>'
+    content: '<p class="mb-0">Yes</p>'
   } %}
   <!-- END - EMAIL SUBSCRIPTION -->
 
-  <hr>
+
 
   {# <!-- START - TEXTS -->
+   <hr>
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
     label: 'Opted in to receive texts',
     canEdit: false,
-    content: '<p class="mb-3">Yes</p>'
+    content: '<p class="mb-0">Yes</p>'
   } %}
+   <hr>
   <!-- END - TEXTS -->
 
   <hr> #}
 
+
+
+
   <!-- START - CUSTOMER SINCE -->
+   <hr>
   {% set thisFormContent %}
     {% include '_includes/modules/contacts/contact-detail/tab-panes/details/member-since-form.html.twig' %}
   {% endset %}
 
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
     label: 'Customer Since',
-    canEdit: true,
-    content: '<p class="mb-3">11/20/2014</p>',
+    canEdit: isEditableCustomerSince,
+    content: '<p class="mb-0">11/20/2014</p>',
     formContent: thisFormContent
   } %}
   <!-- END - CUSTOMER SINCE -->
 
-  <hr>
+
 
   <!-- START - CONTACT CREATED -->
+   <hr>
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
     label: 'Contact Created',
     canEdit: false,
-    content: '<p class="mb-3">11/25/2015</p>',
+    content: '<p class="mb-0">11/25/2015</p>',
     formContent: '<form role="form">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="test@gmail.com">
@@ -175,7 +265,6 @@
   } %}
   <!-- END - CONTACT CREATED -->
 
-  <hr>
 
   {# <!-- START - CONTACT METHOD -->
   {% set thisFormContent %}
@@ -185,41 +274,47 @@
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
     label: 'Preferred Contact Method',
     canEdit: true,
-    content: '<p class="mb-3">Phone</p>',
+    content: '<p class="mb-0">Phone</p>',
     formContent: thisFormContent
   } %}
   <!-- END - CONTACT METHOD -->
 
-  <hr> #}
+   #}
 
   <!-- START - SALES TAX -->
+   <hr>
   {% set thisFormContent %}
     {% include '_includes/modules/contacts/contact-detail/tab-panes/details/sales-tax-form.html.twig' %}
   {% endset %}
 
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
     label: 'Sales Tax',
-    canEdit: true,
+    canEdit: isEditableSalesTax,
     learnMoreTarget: '#change-me',
-    content: '<p class="mb-3">0.00% (default)</p>',
+    content: '<p class="mb-0">0.00% (default)</p>',
     formContent: thisFormContent
   } %}
+
   <!-- END - SALES TAX -->
 
-  <hr>
+
 
   <!-- START - DELIVERY OPTION -->
+   <hr>
   {% set thisFormContent %}
     {% include '_includes/modules/contacts/contact-detail/tab-panes/details/delivery-form.html.twig' %}
   {% endset %}
 
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/detail-item.html.twig' with {
     label: 'Delivery Option',
-    canEdit: true,
+    canEdit: isEditableDeliveryOption,
     learnMoreTarget: '#change-me',
-    content: '<p class="mb-3">Direct Delivery only (default)</p>',
+    content: '<p class="mb-0">Direct Delivery only (default)</p>',
     formContent: thisFormContent
   } %}
   <!-- END - DELIVERY OPTION -->
+
+  <!-- END - CUSTOMER / ONLINE CUSTOMER ONLY -->
+  {% endif %}
 
 </section>

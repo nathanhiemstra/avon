@@ -1,7 +1,7 @@
 <form role="form">
   <div class="form-group">
-    {% include components.elements.forms.radio with {id: 'deliveryBoth', name: 'deliveryOption', theValue: 'Both Representative and Direct Delivery', theLabel: 'Both Representative and Direct Delivery', checked: true} %}
-    {% include components.elements.forms.radio with {id: 'deliveryDirect', name: 'deliveryOption', theValue: 'Direct Delivery Only (default)', theLabel: 'Direct Delivery Only (default)', checked: false} %}
+    {% include '_includes/elements/forms/radio.html.twig' with {id: 'deliveryBoth', name: 'deliveryOption', theValue: 'Both Representative and Direct Delivery', theLabel: 'Both Representative and Direct Delivery', checked: true} %}
+    {% include '_includes/elements/forms/radio.html.twig' with {id: 'deliveryDirect', name: 'deliveryOption', theValue: 'Direct Delivery Only (default)', theLabel: 'Direct Delivery Only (default)', checked: false} %}
   </div>
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/edit-btns.html.twig' %}
 </form>

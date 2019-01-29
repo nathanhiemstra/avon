@@ -1,7 +1,7 @@
 {% if showTheValue %}
   {% set optionSelected = 2 %}
 {% endif %}
-{% include components.groups.forms.selectAndLabel with {
+{% include '_includes/groups/forms/selectpicker-and-label.html.twig'  with {
   id: idPrefix ~ 'month',
   mainLabel: 'Month',
   required: null,

@@ -1,7 +1,7 @@
 <form role="form">
   <div class="form-group">
-    {% include components.elements.forms.radio with {id: 'langEnglish', name: 'languagePref', theValue: 'English', theLabel: 'English', checked: true} %}
-    {% include components.elements.forms.radio with {id: 'langSpanish', name: 'languagePref', theValue: 'Spanish', theLabel: 'Spanish', checked: false} %}
+    {% include '_includes/elements/forms/radio.html.twig' with {id: 'langEnglish', name: 'languagePref', theValue: 'English', theLabel: 'English', checked: true} %}
+    {% include '_includes/elements/forms/radio.html.twig' with {id: 'langSpanish', name: 'languagePref', theValue: 'Spanish', theLabel: 'Spanish', checked: false} %}
   </div>
   {% include '_includes/modules/contacts/contact-detail/tab-panes/details/edit-btns.html.twig' %}
 </form>

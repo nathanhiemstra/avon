@@ -5,7 +5,7 @@
   {% set placeholder = 'Address Line 2 (optional)' %}
 {% endif %}
 
-{% include components.elements.forms.input with {
+{% include '_includes/elements/forms/input.html.twig' with {
   id: idPrefix ~ 'address-2',
   theValue: theValue,
   placeholder: placeholder
