@@ -1,8 +1,6 @@
 {% set editablePrefix = '<span class="sr-only">Edit</span> ' %}
 {% set idPrefix = 'online-presence-' %}
 
-<p class="text-muted">This is how new customers and reps will see your profile information displayed. If you would like to edit your <a href="#" class="underline link-secondary font-weight-bold">profile photo</a>, <a href="#" class="underline link-secondary font-weight-bold">phone number</a>, or <a href="#" class="underline link-secondary font-weight-bold">language spoken</a>, they can all be changed on the <a href="#" class="underline link-secondary font-weight-bold">My Profile</a> page.</p>
-
 <!-- START - PROFILE PHOTO -->
 <section class="mb-5 mt-4">
   <h6 class="pt-2">{{ editablePrefix }}Profile Photo</h6>
@@ -138,11 +136,10 @@
       classes: null,
       theValue: fpo.sentence,
       rows: 1,
-      maxlength: null
+      maxlength: 50
     } %}
-    <div class="small text-muted mt-3 text-right">
-      <!-- Developer note: If they go over the character count, add the class "alert-danger" to "count-current" -->
-      <span class="count-current alert-danger">55</span>/<span class="count-max">50</span>
+    <div class="medium text-muted mt-3 text-right">
+      <span class="count-current">50</span>/<span class="count-max">50</span>
     </div>
   </div>
   <div class="form-group mb-5 mt-4">
@@ -155,9 +152,9 @@
       classes: null,
       theValue: null,
       rows: 1,
-      maxlength: null
+      maxlength: 50
     } %}
-    <div class="small text-muted mt-3 text-right">
+    <div class="medium text-muted mt-3 text-right">
       <!-- Developer note: If they go over the character count, add the class "alert-danger" to "count-current" -->
       <span class="count-current">0</span>/<span class="count-max">50</span>
     </div>
@@ -167,7 +164,7 @@
 
   <!-- START WHY I LOVE SELLING AVON -->
   <h6 class="mb-2">{{ editablePrefix }}Why I Love Selling Avon</h6>
-  <p class="small text-muted">100 character limit</p>
+  <p class="medium text-muted">100 character limit</p>
   <div class="form-group mb-5 mt-4">
     {% include '_includes/groups/forms/textarea-and-label.html.twig' with {
       id: 'online-presence-why-i-love-english',
@@ -178,9 +175,9 @@
       classes: null,
       theValue: fpo.sentence,
       rows: 3,
-      maxlength: null
+      maxlength: 100
     } %}
-    <div class="small text-muted mt-3 text-right">
+    <div class="medium text-muted mt-3 text-right">
       <!-- Developer note: If they go over the character count, add the class "alert-danger" to "count-current" -->
       <span class="count-current">55</span>/<span class="count-max">100</span>
     </div>
@@ -195,9 +192,9 @@
       classes: null,
       theValue: null,
       rows: 3,
-      maxlength: null
+      maxlength: 100
     } %}
-    <div class="small text-muted mt-3 text-right">
+    <div class="medium text-muted mt-3 text-right">
       <!-- Developer note: If they go over the character count, add the class "alert-danger" to "count-current" -->
       <span class="count-current">0</span>/<span class="count-max">100</span>
     </div>

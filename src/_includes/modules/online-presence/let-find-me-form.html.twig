@@ -1,61 +1,74 @@
 {% set editablePrefix = '<span class="sr-only">Edit</span> ' %}
 {% set idPrefix = 'online-presence-' %}
 
-<form class="" role="form">
+<div class="">
+  <form class="" role="form">
 
-  <!-- START - ONLY SHOW IF ENROLLED -->
-  <!-- ENROLLMENT STATUS -->
-  <h6>{{ editablePrefix }}Enrollment Status</h6>
+    <!-- START - ONLY SHOW IF ENROLLED -->
+    <div class="enroll-item--enrolled">
 
-  <div class="form-group mb-5 mt-4">
-    {% set radioGroupName = 'online-presence-enrollment-status' %}
-    {% include components.elements.forms.radio with {
-      id: radioGroupName ~ '-not-enrolled',
-      name: radioGroupName,
-      theValue: 'not-enrolled',
-      theLabel: 'Not Enrolled',
-      checked: false,
-      classes:'mb-4'}
-    %}
-    {% include components.elements.forms.radio with {
-      id: radioGroupName ~ '-enrolled',
-      name: radioGroupName,
-      theValue: 'enrolled',
-      theLabel: 'Enrolled',
-      checked: true}
-    %}
-  </div>
-  <!-- END - ONLY SHOW IF ENROLLED -->
+      <!-- ENROLLMENT STATUS -->
+      <h6>{{ editablePrefix }}Enrollment Status</h6>
 
 
-  <!-- DELIVERY DISTANCE -->
-  <h6 class="mt-4 mb-0">
-    {{ editablePrefix }}Delivery Distance
-    <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="tooltip" data-placement="top" title="Some helpful information that a user might want to know."></span>
-  </h6>
 
-  <div class="form-group">
-    {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
-      id: idPrefix ~ 'delivery-distance',
-      label: '<div class="medium mb-2">Select the distance you&rsquo;re willing to travel to customer</div>',
-      classes: idPrefix ~ 'delivery-distance-select',
-      size: 4,
-      options: ['Select...', '00 miles', '00 miles', '00 miles'],
-      selectFirst: selectFirst
-    } %}
-  </div>
 
-  <!-- START - ONLY SHOW IF NOT ENROLLED -->
-  <!-- TERMS AND CONDITIONS -->
-  <div class="form-group form-inline my-4 pt-3 pb-2nowrap">
-    {% include components.groups.forms.checkboxAndLabel with {
-    theValue: 'agree',
-    id: 'let-find-me-terms',
-    name: 'let-find-me-terms',
-    label: 'I agree to Avon&rsquo;s <a href="#" class="link-muted link-underline">Terms &amp; Conditions of Use</a>'} %}
-  </div>
-  <!-- START - ONLY SHOW IF NOT ENROLLED -->
+      <div class="form-group mb-5 mt-4 enrollment-status--container">
+        {% set radioGroupName = 'online-presence-enrollment-status' %}
+        {% include components.elements.forms.radio with {
+          id: radioGroupName ~ '-not-enrolled',
+          name: radioGroupName,
+          theValue: 'not-enrolled',
+          theLabel: 'Not Enrolled',
+          checked: false,
+          classes:'mb-4'}
+        %}
+        {% include components.elements.forms.radio with {
+          id: radioGroupName ~ '-enrolled',
+          name: radioGroupName,
+          theValue: 'enrolled',
+          theLabel: 'Enrolled',
+          checked: true}
+        %}
+      </div>
+      <!-- END - ENROLLMENT STATUS -->
 
-  {% include '_includes/groups/user-editable/cta-save-cancel.html.twig' %}
+    </div>
+    <!-- END - ONLY SHOW IF ENROLLED -->
 
-</form>
+    <!-- START - ONLY SHOW IF ENROLLMENT IS IN PROGRESS ** OR ** ENROLLED -->
+    <div class="enroll-item--enrolled enroll-item--in-progress">
+
+      <!-- DELIVERY DISTANCE -->
+      <h6 class="mt-4 mb-0">
+        {{ editablePrefix }}Delivery Distance
+        <span class="lt-icon lt-tip lt-medium align-middle" data-toggle="tooltip" data-placement="top" title="Some helpful information that a user might want to know."></span>
+      </h6>
+      <div class="form-group">
+        {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
+          id: idPrefix ~ 'delivery-distance',
+          label: '<div class="medium mb-2">Select the distance you&rsquo;re willing to travel to customer</div>',
+          classes: idPrefix ~ 'delivery-distance-select',
+          size: 4,
+          options: ['Select...', '00 miles', '00 miles', '00 miles'],
+          selectFirst: selectFirst
+        } %}
+      </div>
+
+      <!-- TERMS AND CONDITIONS -->
+      <div class="form-group form-inline my-4 pt-3 pb-2 nowrap">
+        {% include components.groups.forms.checkboxAndLabel with {
+        theValue: 'agree',
+        id: 'let-find-me-terms',
+        name: 'let-find-me-terms',
+        label: 'I agree to Avon&rsquo;s <a href="#" class="link-muted link-underline">Terms &amp; Conditions of Use</a>'} %}
+      </div>
+
+      {% include '_includes/groups/user-editable/cta-save-cancel.html.twig' %}
+
+    </div>
+    <!-- END - ONLY SHOW IF ENROLLMENT IS IN PROGRESS ** OR ** ENROLLED -->
+
+  </form>
+
+</div>

@@ -9,23 +9,24 @@
 
   <div class="container container--page">
 
-    {% embed "_layouts/columns-10-max.html.twig" %}
+    {% embed "_layouts/columns-8-max.html.twig" %}
 
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {# DEFINE BLOCK - MAIN #}
       {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
       {% block main %}
 
-        {% include "_includes/groups/navigation/back-link.twig" with {label: "[Team/Customer] Contacts"} %}
+        {% include "_includes/groups/navigation/back-link.twig" with {label: "Customer Contacts"} %}
 
-        <h2>Add [Team/Customer]</h2>
+        <h2>Add Customer</h2>
+        <p class="small text-muted">First Name, Last Name and at least one contact method are required.</p>
 
         <hr>
 
         <h5 class="my-4">Contact Info</h5>
 
         <div class="row">
-          <div class="col-md-6 form-group pr-md-0">
+          <div class="col-md-6 form-group pr-lg-0">
             {% include '_includes/groups/forms/input-and-label.html.twig' with {
             id: idPrefix ~ 'name-first',
             mainLabel: 'First Name',
@@ -55,7 +56,7 @@
         </div>
 
         <div class="row">
-          <div class="col-xs-7 col-md-6 form-group">
+          <div class="col-xs-6 form-group pr-lg-0">
             {% include '_includes/groups/forms/input-and-label.html.twig' with {
               type: 'text',
               theValue: '(231) 123-4567',
@@ -65,18 +66,7 @@
               labelClasses: 'nowrap'
             } %}
           </div>
-          <div class="col-xs-5 col-md-3 form-group pl-xs-0">
-            {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
-              id: idPrefix ~ 'primary-phone-type',
-              label: '&nbsp',
-              classes: '',
-              options: ['Mobile', 'Home', 'Other'],
-              selectFirst: true
-            } %}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-7 col-md-6 form-group">
+          <div class="col-xs-6 form-group">
             {% include '_includes/groups/forms/input-and-label.html.twig' with {
               type: 'text',
               theValue: '(231) 123-4567',
@@ -84,15 +74,6 @@
               mainLabel: 'Secondary Phone Number',
               required: true,
               labelClasses: 'nowrap'
-            } %}
-          </div>
-          <div class="col-xs-5 col-md-3 form-group pl-xs-0">
-            {% include '_includes/groups/forms/selectpicker-and-label.html.twig' with {
-              id: idPrefix ~ 'secondary-phone-type',
-              label: '&nbsp',
-              classes: '',
-              options: ['Mobile', 'Home', 'Other'],
-              selectFirst: true
             } %}
           </div>
         </div>
@@ -122,7 +103,7 @@
 
         <h5 class="mb-4">Home Address</h5>
 
-        {% include "_includes/groups/forms/generic/address-zip-city-state-country.html.twig" with {
+        {% include "_includes/groups/forms/generic/address-zip-city-state.html.twig" with {
           'idPrefix': idPrefix ~ 'address-home-',
           'showTheValue': false,
           'showPlaceholder': false,
@@ -144,7 +125,7 @@
           <hr>
 
           <h5 class="mb-4">Work Address</h5>
-          {% include "_includes/groups/forms/generic/address-zip-city-state-country.html.twig" with {
+          {% include "_includes/groups/forms/generic/address-zip-city-state.html.twig" with {
             'idPrefix': idPrefix ~ 'address-work-',
             'showTheValue': false,
             'showPlaceholder': false,
@@ -180,8 +161,8 @@
         <hr>
 
         <div class="row">
-          <div class="col-xs-12 col-sm-4">
-            <button type="button" class="btn btn-primary btn-block">Add Customer</button>
+          <div class="col-xs-12 text-right">
+            <button type="button" class="btn btn-primary btn-block-xs">Add Customer</button>
           </div>
         </div>
 

@@ -5,7 +5,7 @@
   {% set placeholder = 'ZIP code' %}
 {% endif %}
 
-{% include components.groups.forms.inputAndLabel with {
+{% include '_includes/groups/forms/input-and-label.html.twig' with {
   id: idPrefix ~ 'zip',
   mainLabel: 'ZIP',
   type: 'number',

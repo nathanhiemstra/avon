@@ -1,0 +1,38 @@
+<tr class="t-has-absolute-col-left">
+  <!-- CHECKBOX -->
+  <td class="t-checkbox t-absolute-col-left pr-0">
+    {% include "_includes/elements/forms/checkbox.html.twig" with { checked: false, classes: 'input-sm contact-list-checkbox-item ', wrapLabel: true } %}
+  </td>
+  <!-- FIRST NAME -->
+  <td class="t-first-name t-primary t-block my-2 my-lg-0">
+    {% include '_includes/elements/forms/input.html.twig' with {
+      'id':                   'import-firstname-' ~ itemNum,
+      'type':                 'text',
+      'placeholder':          'First Name',
+      'theValue':             firstname,
+      'hasInlineErrorIcon':   true,
+    } %}
+  </td>
+  <!-- LAST NAME -->
+  <td class="t-last-name t-primary t-block my-2 my-lg-0">
+    {% include '_includes/elements/forms/input.html.twig' with {
+      'id':                   'import-firstname-' ~ itemNum,
+      'type':                 'text',
+      'placeholder':          'Last Name',
+      'theValue':             lastname,
+      'hasInlineErrorIcon':   true,
+    } %}
+  </td>
+  <!-- EMAIL -->
+  <td class="t-email t-block my-2 my-lg-0">
+    {% include '_includes/elements/forms/input.html.twig' with {
+      'id':                   'import-firstname-' ~ itemNum,
+      'type':                 'email',
+      'placeholder':          'Email Address',
+      'theValue':             firstname|lower ~ lastname|lower  ~ '@gmail.com',
+      'hasInlineErrorIcon':   true,
+    } %}
+  </td>
+</tr>
+
+

@@ -14,9 +14,45 @@
     }
   }
 
+  // DEFAULT STATE (NO CHECKBOXES CHECKED)
+  &:not(.has-selected-customer) {
+    // Email/Ecard - align right
+    .group--selected-item-controls {
+      justify-content: flex-end;
+    }
+
+    // Email/Ecard - hidden (mobile)
+    @media (max-width: $screen-sm) {
+      .group--selected-item-controls {
+        display: none;
+      }
+    }
+
+    // "# seleceted" - hidden
+    .checked-checkbox-count {
+      display: none;
+    }
+
+    // AFFIXED
+    // Entire affix container (mobile)
+    @media (max-width: $screen-sm) {
+      .affix {
+        // Use visibility here + display:none below, because if affix-actions is display:none, bootstrap ignores it on scroll. And it is lost. Forever.
+        &.affix-actions {
+          visibility: hidden;
+
+          .container {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
   .affix-actions {
     &.affix {
       top: 0;
+      left: 0;
       width: 100%;
       background-color: $white;
       z-index: $zindex-affix;
@@ -28,28 +64,13 @@
         border-top: none;
         border-bottom: none;
       }
-
-      // &:after {
-      //   content: " ";
-      //   height: 40px;
-      //   width: 100%;
-      //   display: block;
-      // }
-
-      // + .container .affix-table-header {
-      //   th {
-      //     position: relative;
-
-      //     .th-label {
-      //       position: fixed;
-      //       z-index: $zindex-affix + 1;
-      //       top: 72px;
-      //       padding-top: 10px;
-      //     }
-      //   }
-      // }
-
     }
+  }
+
+  .group--selected-item-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .icon-sort {
@@ -58,13 +79,91 @@
 
   .actions-primary {
     justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: $screen-sm) {
+    .group--selected-item-controls {
+      .list-inline--dividers {
+        border-right: $border-width solid $list-group-border;
+        padding-right: 14px;
+        margin-right: 14px;
+
+        > li {
+          padding-left: 8px;
+        }
+
+        > li:not(:last-child),
+        &.show-last-divider {
+          padding-right: 14px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $screen-sm) {
+    .t-email {
+      a {
+        pointer-events: none;
+        text-decoration: none;
+      }
+    }
+
+    .actions-secondary {
+      flex-wrap: wrap;
+      font-size: 13px;
+      letter-spacing: -0.3px;
+    }
+
+    .group--selected-item-controls {
+      order: 1;
+      width: 100%;
+      border-bottom: $border-width solid $list-group-border;
+      padding-bottom: $spacing-4;
+      margin-bottom: $spacing-4;
+
+      .show-last-divider {
+        margin-right: 0;
+        padding-right: 0;
+        border-right: none;
+      }
+    }
+
+    .group--checkbox,
+    .group--table-controls {
+      order: 2;
+    }
+
+    .affix-actions {
+      &.affix {
+        .group--selected-item-controls {
+          border-bottom: none;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+
+        .group--checkbox,
+        .group--table-controls {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $screen-tiny-plus - 20px) {
+    .count-label {
+      display: none;
+    }
   }
 
   .actions-secondary {
     border-top: $border-width solid $list-group-border;
     border-bottom: $border-width solid $list-group-border;
+    justify-content: space-between;
 
     &--list {
+      white-space: nowrap;
+
       > li.list-second-to-last {
         @media (min-width: $screen-md) {
           border-right: none;
@@ -93,6 +192,12 @@
     $left-col-width: 30px;
     $right-col-width: 40px;
 
+    @media (min-width: $screen-sm) {
+      &.table-responsive-rows-and-cols > .table > tbody .t-has-absolute-col-left-and-right {
+        padding-left: $left-col-width;
+      }
+    }
+
     > .table {
       > thead {
         .t-checkbox {
@@ -110,9 +215,29 @@
         }
       }
 
+      > thead {
+        th {
+          &:not(.t-email):not(.t-phone):not(.t-online-customer) {
+            white-space: nowrap;
+          }
+
+          .lt-carat-down,
+          .lt-carat-up {
+            margin-right: -8px;
+            margin-left: -2px;
+          }
+        }
+      }
+
       > tbody {
-        td {
-          line-height: 24px;
+        > tr {
+          > td {
+            line-height: 24px;
+          }
+
+          > td:not(.t-primary) {
+            font-size: 13px;
+          }
         }
 
         .t-checkbox {
@@ -128,7 +253,7 @@
             label {
               padding-left: $table-cell-padding;
               padding-bottom: $table-cell-padding * 2;
-              width: $left-col-width + 10px;
+              width: $left-col-width;
 
               span {
                 margin-left: 0;
@@ -137,22 +262,15 @@
           }
         }
 
-        .checkbox.input-sm.wrap-label label span
+        .checkbox.input-sm.wrap-label label span,
         .t-absolute-col-left-and-right {
           padding-left: $left-col-width;
           padding-right: $right-col-width;
-          background: pink;
         }
 
-        .t-primary {
-          font-weight: bold;
-
-          @extend .medium;
+        .t-phone {
+          white-space: nowrap;
         }
-      }
-
-      .t-phone {
-        white-space: nowrap;
       }
 
       .t-customer-type {
@@ -182,7 +300,7 @@
           max-width: 160px;
         }
 
-        .t-upline,
+        .t-mentor,
         .t-gen,
         .t-phone,
         .t-email {
@@ -199,7 +317,7 @@
 
       .t-email {
         .truncate {
-          width: 55vw;
+          width: 65vw;
         }
       }
 
@@ -216,21 +334,25 @@
           }
         }
 
-        .t-upline {
+        .t-mentor {
           .truncate {
-            width: 9vw;
+            width: 6vw;
           }
         }
 
         .t-email {
           .truncate {
-            width: 7vw;
+            width: 6vw;
+
+            .lang-spanish & {
+              width: 10vw;
+            }
           }
         }
 
         // .t-first-name,
         // .t-last-name,
-        .t-upline,
+        .t-mentor,
         .t-gen,
         .t-phone,
         .t-email {

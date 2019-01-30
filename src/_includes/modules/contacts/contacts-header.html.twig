@@ -1,5 +1,5 @@
 {% include "_includes/groups/navigation/back-link.twig" with {
-label: "All [Customers / Team Members]",
+label: "All " ~ contactTypeLabelPlural,
 classes: 'flex-basis-100 mb-5'
 } %}
 <div class="d-flex align-items-center flex-basis-100 flex-basis-md-auto">
@@ -10,41 +10,48 @@ classes: 'flex-basis-100 mb-5'
   <span class="avatar avatar-md mr-4 flex-shrink-0">L</span>
   <div>
     <h3 class="m-0 edit-contact-value">Erlinda Conley</h3>
-    <!-- DEV NOTE ::
-      The edit link is for CUSTOMERS ONLY
-      This link toggles the edit state
-      see src/js/demo/contacts-detail.js
-    -->
-    <span class="edit-contact-btn align-items-end ml-3">
-      <span class="lt-icon lt-pen mr-2 text-muted"></span>
-      <a href="#" class="link-muted small lh-1 font-weight-bold">Edit</a>
-    </span>
-    <!-- DEV NOTE ::
-      The form below is for CUSTOMERS ONLY
-      This form is shown with js when edit link is clicked
-      see src/js/demo/contacts-detail.js
-    -->
-    <form class="form-inline edit-contact-form d-none">
-      {% include '_includes/elements/forms/input.html.twig' with {
-        type: 'text',
-        theValue: 'Erlinda',
-        classes: 'form-control--underline pl-0 large'
-      } %}
-      {% include '_includes/elements/forms/input.html.twig' with {
-        type: 'text',
-        theValue: 'Conley',
-        classes: 'form-control--underline pl-0 ml-3 large'
-      } %}
-      <div class="btn-group mt-4 mt-md-0">
-        <a href="javascript:void(0)" class="edit-contact-cancel btn btn-default btn-default-link-responsive btn-sm">Cancel</a>
-        <a href="javascript:void(0)" class="edit-contact-save btn btn-primary btn-sm ml-4">Save</a>
-      </div>
-    </form>
+    {% if contactType == 'customer' %}
+      <!-- DEV NOTE ::
+        The edit link is for ONLINE CUSTOMERS ONLY
+        This link toggles the edit state
+        see src/js/demo/contacts-detail.js
+      -->
+      <span class="edit-contact-btn align-items-end ml-3">
+        <span class="lt-icon lt-pen mr-2 text-muted"></span>
+        <a href="#" class="link-muted small lh-1 font-weight-bold">Edit</a>
+      </span>
+      <!-- DEV NOTE ::
+        This form is shown with js when edit link is clicked
+        see src/js/demo/contacts-detail.js
+      -->
+      <form class="form-inline edit-contact-form d-none">
+        {% include '_includes/elements/forms/input.html.twig' with {
+          type: 'text',
+          theValue: 'Erlinda',
+          classes: 'form-control--underline pl-0 large'
+        } %}
+        {% include '_includes/elements/forms/input.html.twig' with {
+          type: 'text',
+          theValue: 'Conley',
+          classes: 'form-control--underline pl-0 ml-3 large'
+        } %}
+        <div class="btn-group mt-4 mt-md-0">
+          <a href="javascript:void(0)" class="edit-contact-cancel btn btn-default btn-default-link-responsive btn-sm">Cancel</a>
+          <a href="javascript:void(0)" class="edit-contact-save btn btn-primary btn-sm ml-4">Save</a>
+        </div>
+      </form>
+    {% endif %}
     <!-- DEV NOTE :: customer status / number is TEAM MEMBER ONLY -
       Add or remove class 'd-none' depending on case
       The layout automatically works if this is hidden or shown
     -->
-    <p class="contact-details small m-0">[Online Customer / #1234567 (Active)]</p>
+      {% if contactType == 'customer-online' %}
+        <p class="contact-details small m-0">Online Customer</p>
+      {% endif %}
+      {% if contactType == 'team' %}
+        <p class="contact-details small m-0">Removed - No Order + Past Due</p>
+      {% endif %}
+
   </div>
 </div>
 <div class="action-btns">
@@ -54,7 +61,7 @@ classes: 'flex-basis-100 mb-5'
         <a href="javascript:void(0)" class="btn btn-discourage btn-sm btn-soft mr-2 hidden-md hidden-lg">Call</a>
         <a href="javascript:void(0)" class="btn btn-discourage btn-sm btn-soft mr-2 hidden-md hidden-lg">Text</a>
         <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-send-email" class="btn btn-discourage btn-sm btn-soft mr-2">Email</a>
-        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-send-ecard" class="btn btn-discourage btn-sm btn-soft mr-2 hidden-xs hidden-sm">E-card</a>
+        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-send-ecard" class="btn btn-discourage btn-sm btn-soft mr-2 hidden-xs hidden-sm">eCard</a>
         <div class="dropdown d-inline-block">
           <a class="btn btn-discourage btn-sm btn-soft dropdown-toggle" id="filterMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Actions<span class="lt-icon lt-carat-down lt-medium align-middle"></span>
@@ -63,6 +70,7 @@ classes: 'flex-basis-100 mb-5'
             <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-notes-add-edit">Add Note</a></li>
             <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-follow-ups-add-edit">Add Follow-up</a></li>
             <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal-contacts-groups-add-to">Add to Group</a></li>
+            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#blank-modal-either-or-error">Delete [Customer/Team Member]</a></li>
           </ul>
         </div>
       </div>

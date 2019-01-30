@@ -13,14 +13,6 @@ caption {
   text-align: left;
 }
 
-th {
-  text-align: left;
-
-  @extend .h6;
-
-  color: $gray;
-}
-
 // Baseline styles
 
 .table {
@@ -42,6 +34,41 @@ th {
     }
   }
 
+  > thead {
+    > tr {
+      > th {
+        border-bottom: 1px solid $table-border-color;
+        text-align: left;
+        color: $gray;
+        line-height: $line-height-tr;
+        vertical-align: bottom;
+        text-transform: uppercase;
+
+        @extend .h7;
+
+        .lt-carat-down,
+        .lt-carat-up {
+          // Make sure they don't effect height of the "th"
+          margin-top: -3px;
+          margin-bottom: -3px;
+        }
+      }
+    }
+  }
+
+  &:not(.table-valign-middle) {
+    > tbody,
+    > tfoot,
+    > thead {
+      > tr {
+        > td,
+        > th {
+          vertical-align: top;
+        }
+      }
+    }
+  }
+
   // Style for row highlighting, normally placed on a <tr>
   tr {
     transition: $ui-animation-time background-color ease;
@@ -51,13 +78,7 @@ th {
     }
   }
 
-  // Bottom align for column headings
-  > thead > tr > th {
-    vertical-align: bottom;
-    text-transform: uppercase;
-  }
-
-  // Remove top border from thead by default
+  // Remove top border from thead by default and align text bottom
   > colgroup + thead,
   > thead:first-child,
   > caption + thead {
@@ -65,6 +86,7 @@ th {
       > td,
       > th {
         border-top: 0;
+        vertical-align: bottom;
       }
     }
   }
@@ -104,6 +126,10 @@ th {
   // Nesting
   .table {
     background-color: $body-bg;
+  }
+
+  .t-primary {
+    font-weight: bold;
   }
 }
 
@@ -597,6 +623,109 @@ table {
           padding-right: $t-absolute-col-default-width;
         }
       }
+    }
+  }
+}
+
+// Tablet +
+@media (max-width: $screen-sm) {
+  .table-responsive-rows-and-cols-sm {
+    @include table-responsive-rows-and-cols;
+  }
+}
+
+// Desktop +
+@media (max-width: $screen-md) {
+  .table-responsive-rows-and-cols {
+    @include table-responsive-rows-and-cols;
+  }
+}
+
+// tables with responsive column titles (thead titles collapse into rows)
+.table-responsive-column-titles {
+  .table > tbody > tr > td {
+    border-top: none;
+  }
+
+  td {
+    &[data-title]::before {
+      // @extend .h6;
+
+    }
+  }
+
+  thead tr th.t-sort {
+    position: relative;
+
+    // necessary for proper placement of dropdown menu
+    font-weight: normal;
+    text-align: right;
+
+    // tweak the placement of the dropdown menu for this pattern
+    .dropdown-menu {
+      top: 96%;
+    }
+  }
+
+  @media (max-width: $screen-md) {
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr th:not(.t-sort) {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    td {
+      flex-basis: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      border-top: none;
+      position: relative;
+      padding-left: 50%;
+
+      &.mobile-row {
+        float: right;
+        display: flex;
+        align-items: center;
+        margin-bottom: $spacing-3;
+      }
+
+      &:first-of-type {
+        align-items: center;
+      }
+
+      &[data-title] {
+        &::before {
+          content: attr(data-title);
+          font-size: 13px;
+          text-transform: uppercase;
+          font-weight: 500;
+          letter-spacing: 0.8px;
+          padding-right: $spacing-4;
+          color: $black;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    .table > tbody > tr > td {
+      border-top: 1px solid $table-border-color;
+    }
+
+    tr.clearfix:before {
+      display: none;
+    }
+
+    thead tr th.t-sort {
+      display: none;
     }
   }
 }

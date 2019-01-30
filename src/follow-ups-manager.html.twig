@@ -15,7 +15,7 @@
     <p class="mb-5">A list of follow-ups that you have made for yourself. <a class="underline" href="#">View completed</a></p>
 
     <div class="d-flex align-items-center flex-wrap mb-3">
-      <div class="mb-4 mr-md-5">
+      <div class="mb-4 mr-5">
        <div class="input-group mt-3 mt-sm-0">
 
          <span class="input-group-addon input-xs"><span class="lt-icon lt-search lt-large lt-color-muted"></span></span>
@@ -33,18 +33,34 @@
     </div>
 
     <!-- START - FOLLOW UP TABLE-->
-    <div class="table-responsive border-top">
-      <table class="table table-striped table-valign-middle border-top border-bottom">
+    <div class="table-responsive-column-titles border-top">
+      <table class="table table-valign-middle border-top border-bottom">
         <thead>
           <tr>
-            <th class="t-due">Due</th>
-            <th class="t-title">Title</th>
-            <th class="t-contact">Contact</th>
+            <th class="t-due">Due <span class="lt-icon lt-carat-down lt-medium"></span></th>
+            <th class="t-title">Title <span class="lt-icon lt-carat-down lt-medium"></span></th>
+            <th class="t-contact">Contact <span class="lt-icon lt-carat-down lt-medium"></span></th>
             <th class="t-actions"><span class="sr-only">Actions</span></th>
-            <th class="t-status"><span class="sr-only">Status</span></th>
+            <!-- DEV NOTE :: t-sort is only visible on mobile and replaces everything else -->
+            <th class="t-sort text-normal text-muted underline medium pt-0 pb-4">
+              <span id="sortMenuTrigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort<span class="lt-icon lt-carat-down lt-medium text-muted ml-2"></span>
+              </span>
+              <ul class="dropdown-menu dropdown-menu--alt-active pull-right" role="menu">
+                <!-- DEV NOTE :: These values should be the same as <th> content in <thead> -->
+                <li class="active"><a href="#">Due [Closest]</a></li>
+                <li><a href="#">Due [Farthest]</a></li>
+                <li><a href="#">Title [A-Z]</a></li>
+                <li><a href="#">Title [Z-A]</a></li>
+                <li><a href="#">Contact [A-Z]</a></li>
+                <li><a href="#">Contact [Z-A]</a></li>
+              </ul>
+            </th>
           </tr>
         </thead>
         <tbody>
+          <!-- DEV NOTE :: The data-title attr on <td> below is very important here for small screens
+                        :: it should be exactly the same as the main <th> content in <thead> -->
           {% include '_includes/modules/follow-ups-manager/tr.html.twig' with { alert: true} %}
           {% include '_includes/modules/follow-ups-manager/tr.html.twig' with { alert: false} %}
         </tbody>

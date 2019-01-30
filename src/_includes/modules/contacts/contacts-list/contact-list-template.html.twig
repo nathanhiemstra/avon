@@ -6,10 +6,21 @@
 
 {% set sectionClass = 'page--contacts-list contact-type--' ~ contactType %}
 
+{# Make the correct label for the version of the list we're presenting. #}
 {% if contactType == 'team' %}
   {% set contactTypeLabel = 'Team' %}
-{% else %}
+  {% set contactTypeSearchLabel = 'team' %}
+  {% set contactTooltip = ' team members ' %}
+{% elseif contactType == 'customer' %}
   {% set contactTypeLabel = 'Customer' %}
+  {% set contactTypeSearchLabel = 'customer' %}
+  {% set contactTooltip = ' customer ' %}
+{% endif %}
+
+{% if isGroupMemberList == 'yes' %}
+  {% set contactTypeLabel = '[' ~ contactTypeLabel ~ ' Group Members]' %}
+{% else %}
+  {% set contactTypeLabel = contactTypeLabel ~ ' Contacts' %}
 {% endif %}
 
 {# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #}
@@ -24,77 +35,92 @@
 
     <section class="container container--page">
 
+      {% if isGroupMemberList == 'yes' %}
+        <!-- START - GROUP MEMBERS LIST ONLY -->
+        {% include "/_includes/elements/misc/link-back.html.twig" with {
+          label: '[Team/Customer] Groups',
+          classes: null
+        } %}
+        <!-- END - GROUP MEMBERS LIST ONLY -->
+      {% endif %}
+
       <header class="row" role="header">
         <div class="col-md-12 mb-2">
-          <h2 class="mb-4 mr-auto">{{ contactTypeLabel }} Contacts</h2>
+          <h2 class="mb-4 mr-auto">{{ contactTypeLabel }}</h2>
 
+          {% if isGroupMemberList != 'yes' %}
+            <!-- START - ALL EXCEPT GROUP MEMBERS LIST -->
+            <div class="d-flex align-items-center flex-wrap actions-primary">
 
-          <!-- START - AUTOCOMPLETE -->
-          <div class="d-flex align-items-center flex-wrap actions-primary">
-            <form class="form-inline mb-4 mr-md-5 autocomplete-form">
-              <div class="input-group mt-3 mt-sm-0 customer-select-autocomplete contact-list-autocomplete autocomplete-container">
-                <!-- 'Modal' header for mobile autocomplete -->
-                <div class="modal-header">
-                  <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
-                    <span class="sr-only">Close modal</span>
-                    <span class="lt-icon lt-close lt-large py-1"></span>
-                  </button>
-                  <h4 class="modal-title text-center">Search My Team</h4>
-                </div>
+              <!-- START - AUTOCOMPLETE -->
+              <form class="form-inline mb-4 mr-md-5 autocomplete-form">
+                <div class="input-group mt-3 mt-sm-0 customer-select-autocomplete contact-list-autocomplete autocomplete-container">
+                  <!-- 'Modal' header for mobile autocomplete -->
+                  <div class="modal-header">
+                    <button type="button" class="close link-muted" data-dismiss="modal" aria-hidden="true">
+                      <span class="sr-only">Close modal</span>
+                      <span class="lt-icon lt-close lt-large py-1"></span>
+                    </button>
+                    <h4 class="modal-title text-center">Search My Team</h4>
+                  </div>
 
-                <div class="input-group">
-                  <span class="input-group-addon input-xs"><span class="lt-icon lt-search lt-large lt-color-muted"></span></span>
+                  <div class="input-group">
+                    <span class="input-group-addon input-xs"><span class="lt-icon lt-search lt-large lt-color-muted"></span></span>
 
-                  {% include components.elements.forms.input with {
-                    id: 'autocomplete-contact-list',
-                    classes: 'input-sm has-addon-after',
-                    type: 'search',
-                    required: null,
-                    haslabelErrorIcon: true,
-                    hasInlineErrorIcon: null,
-                    hasAbsoluteErrorIcon: null,
-                    theValue: null,
-                    placeholder: 'Search my team...'
-                  } %}
-                  <span class="lt-icon lt-close lt-medium form-control-feedback"></span>
+                    {% include components.elements.forms.input with {
+                      id: 'autocomplete-contact-list',
+                      classes: 'input-sm has-addon-after',
+                      type: 'search',
+                      required: null,
+                      haslabelErrorIcon: true,
+                      hasInlineErrorIcon: null,
+                      hasAbsoluteErrorIcon: null,
+                      theValue: null,
+                      placeholder: 'Search ' ~ contactTypeSearchLabel ~ '...'
+                    } %}
+                    <span class="lt-icon lt-close lt-medium form-control-feedback"></span>
 
-                  <span class="input-group-addon addon-after input-xs">
-                    <div class="input-group-btn">
-                      <span class="btn btn-sm btn-link link-muted link-no-underline dropdown-toggle" data-toggle="dropdown">
-                        <span class="h7 ">By name</span> <span class="caret"></span>
-                      </span>
-                      <ul class="dropdown-menu pull-right">
-                        <li><a href="#">[Filter category]</a></li>
-                        <li><a href="#">[Filter category]</a></li>
-                        <li><a href="#">[Filter category]</a></li>
-                      </ul>
-                    </div><!-- /btn-group -->
-                  </span>
-                </div>
+                    <span class="input-group-addon addon-after input-xs">
+                      {# <div class="input-group-btn">
+                        <span class="btn btn-sm btn-link link-muted link-no-underline dropdown-toggle" data-toggle="dropdown">
+                          <span class="h7 ">By name</span> <span class="caret"></span>
+                        </span>
+                        <ul class="dropdown-menu pull-right">
+                          <li><a href="#">[Filter category]</a></li>
+                          <li><a href="#">[Filter category]</a></li>
+                          <li><a href="#">[Filter category]</a></li>
+                        </ul>
+                      </div> #}<!-- /btn-group -->
+                    </span>
+                  </div>
 
-              </div><!-- /input-group -->
-            </form>
-            <div class="mb-4 ml-0 ml-lg-auto">
+                </div><!-- /input-group -->
+              </form>
+              <!-- END - AUTOCOMPLETE -->
 
-              {% if contactType == 'customer' %}
-              <!-- START - CUSTOMER ONLY -->
-              <a class="btn btn-primary btn-sm btn-soft mt-3 mt-sm-0">Add Contact</a>
-              <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0 mx-2">Import</a>
-              <!-- END - CUSTOMER ONLY -->
-              {% endif %}
+              <div class="mb-4 ml-0 ml-lg-auto">
 
-              <!-- START - TEAM AND CUSTOMER -->
-              <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Groups</a>
-              <!-- END - TEAM AND CUSTOMER -->
+                {% if contactType == 'customer' %}
+                <!-- START - CUSTOMER ONLY -->
+                <a class="btn btn-primary btn-sm btn-soft mt-3 mt-sm-0">Add Customer</a>
+                <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0 mx-2">Import</a>
+                <!-- END - CUSTOMER ONLY -->
+                {% endif %}
 
-              {% if contactType == 'team' %}
-              <!-- START - TEAM ONLY -->
-              <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Tree View</a>
-              <!-- END - TEAM ONLY -->
-              {% endif %}
+                <!-- START - TEAM AND CUSTOMER -->
+                <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Groups</a>
+                <!-- END - TEAM AND CUSTOMER -->
+
+                {% if contactType == 'team' %}
+                <!-- START - TEAM ONLY -->
+                <a class="btn btn-default btn-sm btn-soft mt-3 mt-sm-0">Tree View</a>
+                <!-- END - TEAM ONLY -->
+                {% endif %}
+              </div>
             </div>
-          </div>
-          <!-- END - AUTOCOMPLETE -->
+            <!-- END - ALL EXCEPT GROUP MEMBERS LIST -->
+          {% endif %}
+
 
         </div>
       </header>
@@ -109,7 +135,11 @@
   <!-- END - TABLE - "{{ contactTypeLabel }}" EXAMPLE -->
 
   <!-- START - FILTER MODAL - {{ contactTypeLabel }} -->
-  {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal-" ~ contactType ~ ".html.twig" %}
+  {% if contactType == 'team' %}
+    {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal-" ~ contactType ~ ".html.twig" %}
+  {% else %}
+    {% include "_includes/modules/contacts/contacts-list/contact-list-filter-modal-" ~ contactType ~ ".html.twig" %}
+  {% endif %}
   <!-- END - FILTER MODAL - {{ contactTypeLabel }} -->
 
   <!-- START - SEND EMAIL MODAL -->

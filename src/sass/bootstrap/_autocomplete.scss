@@ -223,6 +223,16 @@ $customer-select-break: $screen-sm-min;
         mix-blend-mode: inherit;
       }
     }
+
+    &--contact {
+      .title {
+        font-weight: bold;
+      }
+      // .title,
+      // .subtitle {
+      //   line-height: 1.4;
+      // }
+    }
   }
 
   &.selected {

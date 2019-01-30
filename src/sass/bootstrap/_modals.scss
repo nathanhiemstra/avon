@@ -156,8 +156,10 @@
   text-align: right;
   background-color: $body-bg;
 
-  // right align buttons
-  border-top: 1px solid $modal-footer-border-color;
+  .modal-scrollable & {
+    // right align buttons
+    border-top: 1px solid $modal-footer-border-color;
+  }
 
   @include clearfix;
 

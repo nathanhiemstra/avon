@@ -1,9 +1,11 @@
 {% set editablePrefix = '<span class="sr-only">Edit</span> ' %}
 
+
 <form class="" role="form">
 
   <!-- ONLINE STORE ADDRESS -->
-  <h6>{{ editablePrefix }}Online Store Address</h6>
+  <h6 class="mb-0 pt-2">{{ editablePrefix }}Online Store Address</h6>
+  <p class="medium text-muted mt-2">{{ fpo.paragraph }}</p>
   <div class="form-group form-inline my-5">
    {% include '_includes/groups/forms/input-and-label.html.twig' with {
     id: 'online-store-address',
@@ -19,8 +21,8 @@
   </div>
 
   <!-- DELIVERY OPTIONS -->
-  <h6>{{ editablePrefix }}Delivery Options</h6>
-
+  <h6 class="mb-0">{{ editablePrefix }}Delivery Options</h6>
+  <p class="medium text-muted mt-2">{{ fpo.paragraph }}</p>
   <div class="form-group mt-4 pb-1">
     {% set radioGroupName = 'online-presence-delivery-options' %}
     {% include components.elements.forms.radio with {

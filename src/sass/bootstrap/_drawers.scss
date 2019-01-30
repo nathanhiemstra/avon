@@ -114,11 +114,11 @@ html {
   }
 
   &.drawer-expanded {
-    min-height: 100vh;
+    min-height: 100%;
     overflow-y: scroll;
 
     .drawer-content {
-      min-height: 100vh;
+      min-height: 100%;
     }
 
     .drawer-summary {

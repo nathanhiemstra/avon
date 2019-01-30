@@ -20,12 +20,14 @@
 <!-- START - {{ comment }}  -->
 <div class="{{ containerClasses }}">
   {% for item in items %}
+
     {% include "_includes/groups/boxes/primary/item.html.twig" with {
-      fpoImgSrc: item.fpoImgSrc,
-      widgetPath: item.widgetPath,
-      isFirstItem: loop.first,
-      loopIndex: loop.index,
-      hasToolbar: hasToolbar,
+      fpoImgSrc:    item.fpoImgSrc,
+      imgSrc:       item.imgPath,
+      widgetPath:   item.widgetPath,
+      isFirstItem:  loop.first,
+      loopIndex:    loop.index,
+      hasToolbar:   hasToolbar,
       itemContainerType: itemContainerType
     } %}
   {% endfor %}
