@@ -23,6 +23,7 @@ legend {
   padding: 0;
   margin-bottom: $line-height-computed;
   font-size: $font-size-base * 1.5;
+  font-weight: bold;
   line-height: inherit;
   color: $legend-color;
   border: 0;
@@ -32,10 +33,9 @@ legend {
 label {
   display: inline-block;
   max-width: 100%;
-  color: $input-label-text-color;
   font-size: $input-label-font-size;
-
-  // font-weight: bold;
+  font-weight: bold;
+  color: $input-label-text-color;
 
   // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
   margin-bottom: 5px;
@@ -327,15 +327,26 @@ input[type="search"] {
   margin-top: 10px;
   margin-bottom: 10px;
 
+  &.input-sm {
+    label {
+      font-size: $font-size-small;
+      line-height: 20px;
+    }
+  }
+
   label {
     min-height: $line-height-computed;
     line-height: 24px;
+    font-size: $input-radio-checkbox-label-font-size;
 
     // Ensure the input doesn't jump when there is no text
     // padding-left: 20px;
     margin-bottom: 0;
-    font-weight: normal;
     cursor: pointer;
+
+    .btn-sm {
+      margin-top: -6px;
+    }
   }
 
   // offset & left-align multi-line labels
@@ -415,6 +426,15 @@ input[type="search"] {
   margin-left: 10px;
 
   // space out consecutive inline controls
+}
+
+// Unlike inputs, these labels should look like regular black text
+.checkbox label,
+.radio label,
+label.radio-inline,
+label.checkbox-inline {
+  color: $radio-checkbox-label-text-color;
+  font-weight: normal;
 }
 
 // Apply same disabled cursor tweak as for inputs
@@ -939,7 +959,7 @@ input[type="text"] {
   .checkbox,
   .radio {
     display: inline-block;
-    margin-top: 0;
+    margin-top: -4px;
     margin-bottom: 0;
     vertical-align: middle;
 

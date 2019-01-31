@@ -13,6 +13,14 @@ caption {
   text-align: left;
 }
 
+th {
+  text-align: left;
+
+  @extend .h6;
+
+  color: $gray;
+}
+
 // Baseline styles
 
 .table {
@@ -78,6 +86,12 @@ caption {
     &.highlight-row {
       background-color: $brand-primary-muted;
     }
+  }
+  
+    // Bottom align for column headings
+  > thead > tr > th {
+    vertical-align: bottom;
+    text-transform: uppercase;
   }
 
   // Remove top border from thead by default and align text bottom
