@@ -89,9 +89,6 @@ html:hover [class^="lt-"] {
 .lt-filter:before {
   content: "\e938";
 }
-.lt-filter-fill:before {
-  content: "\e939";
-}
 .lt-clock:before {
   content: "\e933";
 }
@@ -295,13 +292,11 @@ html:hover [class^="lt-"] {
   .badge {
     position: absolute;
     top: -2px;
-    padding: 3px 6px;
+    padding: 3px 5px;
     font-family: $font-family-base;
-    font-size: $font-size-small;
+    font-size: $badge-font-size;
     height: $font-size-large;
-
   }
-
 }
 
 // Social icons and social icons list

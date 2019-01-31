@@ -5,18 +5,9 @@ aside.secondary-nav {
   padding-right: 0;
 
   // desktop
-  &:not(.secondary-nav--flex) {
-    @media (min-width: $screen-sm-min) {
-      padding-left: $spacing-3;
-      padding-right: $spacing-5;
-    }
-  }
-
-  &.secondary-nav--flex {
-    @media (min-width: $screen-tablet-landscape) {
-      padding-left: $spacing-3;
-      padding-right: $spacing-5;
-    }
+  @media (min-width: $screen-sm-min) {
+    padding-left: $spacing-3;
+    padding-right: $spacing-5;
   }
 }
 
@@ -53,6 +44,11 @@ aside.secondary-nav {
       // outermost list group items get a larger font
       font-size: $font-size-base;
       font-weight: 500;
+
+      // outermost list group item should have no padding
+      // > .list-group-item {
+      //   padding: 0;
+      // }
 
       // no border and smaller font on nested list group items
       .list-group-item {
@@ -114,89 +110,39 @@ aside.secondary-nav {
   }
 
   // desktop
-  &:not(.navbar-secondary--flex) {
-    @media (min-width: $screen-md-min) {
-      // remove shadow and padding on desktop view
-      > .list-group {
-        padding-left: 0;
-        padding-right: 0;
-        box-shadow: none;
+  @media (min-width: $screen-md-min) {
+    // remove shadow and padding on desktop view
+    > .list-group {
+      padding-left: 0;
+      padding-right: 0;
+      box-shadow: none;
 
-        // outermost toggle should look like a header
-        > .list-group-item > [data-toggle="collapse"] {
-          text-transform: uppercase;
-          color: $text-color;
-          border-bottom: 1px solid $border-color;
-          padding-bottom: $spacing-3;
-          pointer-events: none;
+      // outermost toggle should look like a header
+      > .list-group-item > [data-toggle="collapse"] {
+        text-transform: uppercase;
+        color: $text-color;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: $spacing-3;
+        pointer-events: none;
 
-          span {
-            display: none;
-          }
-        }
-      }
-
-      .list-group {
-        .list-group-item {
-          border: none;
-          padding: $spacing-1 0 $spacing-3;
-
-          .list-group-item {
-            border-top: none;
-          }
-
-          a {
-            &:hover {
-              color: $brand-primary;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  &.navbar-secondary--flex {
-    .list-group .list-group-item {
-      padding: $spacing-3 $spacing-4;
-      text-transform: uppercase;
-
-      a .lt-icon {
-        right: $spacing-3;
-      }
-    }
-    @media (min-width: $screen-md-min) {
-    }
-
-    @media (min-width: $screen-tablet-landscape) {
-      text-transform: none;
-
-      > .list-group {
-        padding-left: 0;
-        padding-right: 0;
-        box-shadow: none;
-
-        // hide the toggle
-        > .list-group-item > [data-toggle="collapse"] {
+        span {
           display: none;
         }
       }
+    }
 
+    .list-group {
+      .list-group-item {
+        border: none;
+        padding: $spacing-1 0 $spacing-3;
 
-      .list-group {
         .list-group-item {
-          text-transform: none;
-          font-weight: 500;
-          border: none;
-          padding: $spacing-1 0 $spacing-4;
+          border-top: none;
+        }
 
-          .list-group-item {
-            border-top: none;
-          }
-
-          a {
-            &:hover {
-              color: $brand-primary;
-            }
+        a {
+          &:hover {
+            color: $brand-primary;
           }
         }
       }

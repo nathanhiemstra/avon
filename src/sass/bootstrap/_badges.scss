@@ -64,41 +64,6 @@
   }
 }
 
-// variations
-.badge-pill {
-  line-height: 1.2;
-  text-transform: uppercase;
-
-  .lt-icon:before {
-    color: $body-bg;
-  }
-}
-
-// color variants
-.badge-primary {
-  @include badge-variant($label-primary-bg);
-}
-
-.badge-secondary {
-  @include badge-variant($label-secondary-bg);
-}
-
-.badge-success {
-  @include badge-variant($label-success-bg);
-}
-
-.badge-info {
-  @include badge-variant($label-info-bg);
-}
-
-.badge-warning {
-  @include badge-variant($label-warning-bg);
-}
-
-.badge-danger {
-  @include badge-variant($label-danger-bg);
-}
-
 // Hover state, but only for links
 a.badge {
   &:hover,

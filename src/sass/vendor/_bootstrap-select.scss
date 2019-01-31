@@ -41,7 +41,9 @@ select.selectpicker {
     &.bs-placeholder,
     &.bs-placeholder:hover,
     &.bs-placeholder:focus,
-    &.bs-placeholder:active { color: $input-color-placeholder; }
+    &.bs-placeholder:active {
+      color: $radio-checkbox-label-text-color;
+    }
   }
 
   &.open {
@@ -119,7 +121,10 @@ select.selectpicker {
   margin-bottom: 0;
   padding: 0;
   border: none;
-
+  
+  &.bootstrap-select-sm {
+    height: 45px;
+  }
 
   .dropdown-menu {
     margin-top: 0;

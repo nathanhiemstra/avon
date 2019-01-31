@@ -165,21 +165,6 @@
       color: $text-muted;
     }
   }
-
-  &.edit-btn {
-    &:focus,
-    &:hover {
-      text-decoration: none;
-
-      span:not(.lt-icon) {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-.link-suppressed {
-  pointer-events: none;
 }
 
 .link-disable {
@@ -218,15 +203,10 @@
 }
 
 .back-link {
-  font-size: 13px;
-
-  .small {
-    font-size: inherit;
-  }
+  font-weight: 600;
 
   .lt-medium {
-    font-size: 21px;
-    line-height: 0.9;
+    font-size: 24px;
   }
 
   &.back-link--abs {

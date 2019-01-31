@@ -80,7 +80,8 @@ n:avon-poc yoursweetusername$ gulp
 ### Deploys ###
 
 **Production** [s4dc.dreamhosters.com](http://s4dc.dreamhosters.com/)
-  1. Commit changes to ```master``` branch
+  1. Run ```gulp build-prod```. This will remove LOTSs of development-only code from the CSS file.
+  2. Commit changes to ```master``` branch
   2. Manual deploy via [Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/) (See Lastpass for cridentials) tells our Dreamhost server to get (```git-pull```)  the latest changes from our Bitbucket repo.
   A. Go to [Deploybot](https://studio-for-digital-craftsmanship.deploybot.com/)
   B. Click "Deploy"
@@ -98,5 +99,5 @@ n:avon-poc yoursweetusername$ gulp
 
 ### Who do I talk to? ###
 
-* Nathan Hiemstra nayt@s4dc.org
+* Nathan Hiemstra nathan.hiemstra@studio4dc.com
 * Danny Davis <danny@wondergiant.com>

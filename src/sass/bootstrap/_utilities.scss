@@ -115,7 +115,7 @@
     border-bottom: 1px solid $border-color;
 
     // don't affix on larger screens
-    @media (min-width: $screen-tablet-landscape) {
+    @media (min-width: $screen-xs-max) {
       position: relative;
       border-bottom: none;
       padding: 0;
@@ -229,9 +229,4 @@ hr.full-width-divider {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-// Position utilities
-@each $position in $positions {
-  .position-#{$position} { position: $position !important; }
 }

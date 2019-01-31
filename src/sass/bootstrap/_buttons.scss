@@ -202,31 +202,26 @@ a.btn {
 // Avon Custom Buttons
 // --------------------------------------------------
 
+@media (min-width: $screen-sm) {
+  .btn-sm-desktop {
+    // This is the same thing used by .btn-sm. Repeating becase you can't do @extend inside of a @media
+    @include button-size($btn-padding-small-vertical, $btn-padding-small-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+
+    // Soft - This will be combined with "btn-sm" later
+    border-radius: $border-radius-secondary;
+    border-width: 1px;
+    text-transform: none;
+    letter-spacing: 0;
+    height: inherit;
+  }
+}
+
 // Link resposive button displays as a text link on mobile and btn-primary on large screens
 .btn-link-responsive {
   @extend .btn-primary;
 
   // mobile - since we're overriding btn styles, it makes more sense for 'desktop first' in this case
   @media (max-width: $screen-xs-max) {
-    @include button-variant($link-color, transparent, transparent);
-
-    font-size: $font-size-base;
-    letter-spacing: normal;
-    text-decoration: underline;
-    text-transform: none;
-    font-weight: normal;
-    padding: 0;
-    border: none;
-    line-height: 1;
-  }
-}
-
-// Link default resposive button displays as a '.btn-default' on mobile and text link on large screens
-.btn-default-link-responsive {
-  @extend .btn-default;
-
-  // not mobile
-  @media (min-width: $screen-sm) {
     @include button-variant($link-color, transparent, transparent);
 
     font-size: $font-size-base;
@@ -629,13 +624,6 @@ a.btn {
   width: 100%;
 }
 
-@media (max-width: $screen-xs) {
-  .btn-block-xs {
-    display: block;
-    width: 100%;
-  }
-}
-
 @media (min-width: $screen-sm-min) {
   .btn-block-sm {
     display: block;
@@ -668,14 +656,6 @@ input[type="reset"],
 input[type="button"] {
   &.btn-block {
     width: 100%;
-  }
-}
-
-// icon adjustment for small buttons
-.btn-sm {
-  .lt-icon.align-middle {
-    line-height: 0;
-    transform: none;
   }
 }
 

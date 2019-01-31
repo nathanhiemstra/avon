@@ -47,31 +47,31 @@
       <tbody>
         <tr>
           <td><h1>h1. Heading</h1></td>
-          <td class="type-info">Book 42px (Desktop: 48px)</td>
+          <td class="type-info">Regular 44px (Desktop: 50px)</td>
         </tr>
         <tr>
           <td><h2>h2. Heading</h2></td>
-          <td class="type-info">Book 30px (Desktop: 36px)</td>
+          <td class="type-info">Regular 32px (Desktop: 38px)</td>
         </tr>
         <tr>
           <td><h3>h3. Heading</h3></td>
-          <td class="type-info">Book 22px (Desktop: 30px)</td>
+          <td class="type-info">Regular 23px (Desktop: 32px)</td>
         </tr>
         <tr>
           <td><h4>h4. Heading</h4></td>
-          <td class="type-info">Book 18px (Desktop: 24px)</td>
+          <td class="type-info">Regular 20px (Desktop: 26px)</td>
         </tr>
         <tr>
           <td><h5>h5. Heading</h5></td>
-          <td class="type-info">Medium 15px (Desktop: 18px, UPPERCASE)</td>
+          <td class="type-info">Semi-Bold 16px (Desktop: 19px, UPPERCASE)</td>
         </tr>
         <tr>
           <td><h6>h6. Heading</h6></td>
-          <td class="type-info">Medium 13px (Desktop: 14px, UPPERCASE)</td>
+          <td class="type-info">Semi-Bold 14px (Desktop: 15px, UPPERCASE)</td>
         </tr>
         <tr>
           <td><h7>h7. Heading</h7></td>
-          <td class="type-info">Medium 11px (Desktop: 12px, UPPERCASE)</td>
+          <td class="type-info">Bold 12px (Desktop: 13px, UPPERCASE)</td>
         </tr>
       </tbody>
     </table>
@@ -225,18 +225,25 @@
   <p>For emphasizing a snippet of text with a heavier font-weight.</p>
 
   <div class="bs-callout bs-callout-info">
-    <code>font-weight</code> settings of <code>bold</code> and <code>600</code> use Gotham Medium.
+    <code>font-weight</code> settings of <code>normal</code> and <code>100-400</code> uses Proxima Nova Regular.
   </div>
   <div class="bs-callout bs-callout-info">
-    <code>font-weight: 900</code> uses Gotham Bold. Use this is for very small bold text.
+    <code>font-weight</code> settings of <code>bold</code> and <code>500-800</code> use Proxima Nova Semi-bold.
+  </div>
+  <div class="bs-callout bs-callout-info">
+    <code>font-weight</code> settings of <code>900</code> use Proxima Nova Bold. Use this is for very small bold text.
   </div>
   <div class="bs-example">
-    <p>The following snippet of text is <strong>rendered as bold text</strong>. <span class="font-weight-bold">As is this</span>.</p>
+    <p>The following snippet of text is default.</p>
+    <p>The following snippet of text is <span style="font-weight:500">rendered as semi-bold text</span>.</p>
+    <p>The following snippet of text is <span style="font-weight:900">rendered as bold text</span>.
   </div>
 
   {{ highlightMarkup }}
   <strong>rendered as bold text</strong>.
-  <span class="font-weight-bold">As is this</span>
+  <p>The following snippet of text is default.</p>
+  <p>The following snippet of text is <span style="font-weight:500">rendered as semi-bold text</span>.</p>
+  <p>The following snippet of text is <span style="font-weight:900">rendered as bold text</span>.
   {{ endhighlight }}
 
 
