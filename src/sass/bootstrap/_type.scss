@@ -9,6 +9,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+//     background: url('images/fpo/headlines.jpg') -61px 53px;
+
 // Headings
 // -------------------------
 
@@ -32,6 +34,7 @@ h2, .h2,
 h3, .h3 {
   margin-top: $line-height-computed;
   margin-bottom: $line-height-computed / 2;
+  letter-spacing: $headings-letter-spacing;
 
   small,
   .small {
@@ -54,36 +57,64 @@ h7, .h7 {
 
 h1, .h1 {
   font-size: $font-size-h1;
+  line-height: 60px;
+
+  // letter-spacing: 0.3px;
 }
 
 h2, .h2 {
   font-size: $font-size-h2;
+  line-height: 42px;
+
+  // letter-spacing: 0.3px;
 }
 
 h3, .h3 {
   font-size: $font-size-h3;
+  line-height: 36px;
+
+  // letter-spacing: 0.3px;
 }
 
 h4, .h4 {
   font-size: $font-size-h4;
+  letter-spacing: $headings-letter-spacing;
+  line-height: 30px;
+
+  // letter-spacing: 0.3px;
 }
 
 h5, .h5 {
   font-size: $font-size-h5;
+
+  // letter-spacing: 0.9px;
+  letter-spacing: $headings-letter-spacing-sm;
+  font-weight: $headings-font-weight-heavy;
 }
 
 h6, .h6 {
   font-size: $font-size-h6;
+  letter-spacing: $headings-letter-spacing-sm;
+  font-weight: $headings-font-weight-heavy;
+  line-height: 20px;
+
+  // letter-spacing: .85px;
 }
 
 h7, .h7 {
   font-size: $font-size-h7;
+  letter-spacing: $headings-letter-spacing-sm;
+  font-weight: $headings-font-weight-heaviest;
+  line-height: 20px;
+  letter-spacing: $headings-letter-spacing-xs-desktop;
+
+  // letter-spacing: 0.9px;
 }
 
 h5, .h5, h6, .h6, h7, .h7 {
   text-transform: uppercase;
-  font-weight: $headings-font-weight-heavy;
-  letter-spacing: 0.8px;
+
+  // letter-spacing: 0.9px;
 }
 
 @media (min-width: $screen-sm-min) {
@@ -105,14 +136,22 @@ h5, .h5, h6, .h6, h7, .h7 {
 
   h5, .h5 {
     font-size: $font-size-h5-desktop;
+    letter-spacing: $headings-letter-spacing-md-desktop;
+    line-height: $headings-line-height-sm;
+    font-weight: $headings-font-weight-heavy;
   }
 
   h6, .h6 {
     font-size: $font-size-h6-desktop;
+    letter-spacing: $headings-letter-spacing-xs-desktop;
+    line-height: $headings-line-height-sm;
+    font-weight: $headings-font-weight-heavy;
   }
 
   h7, .h7 {
     font-size: $font-size-h7-desktop;
+    letter-spacing: $headings-letter-spacing-sm-desktop;
+    line-height: $headings-line-height-sm;
   }
 }
 
@@ -160,16 +199,23 @@ p {
 // Ex: (12px small font / 14px base font) * 100% = about 85%
 small,
 .small {
-  font-size: floor(100% * $font-size-small / $font-size-base);
-  line-height: 1.38;
+  // font-size: floor(100% * $font-size-small / $font-size-base);
+  font-size: floor($font-size-small);
+  
+  // line-height: 1.38;
+   // 18px
+  line-height: 1.285715;
+  
 }
 
 .tiny {
-  font-size: 12px;
+  // font-size: 12px;
+  font-size: $font-size-xsmall;
 }
 
 .medium {
-  font-size: 14px;
+  // font-size: 14px;
+  font-size: $font-size-medium;
 }
 
 .marge {
@@ -212,10 +258,6 @@ mark,
       font-size: $font-size-base;
     }
   }
-}
-
-.text-center-sm {
-  text-align: center;
 }
 
 .text-justify {

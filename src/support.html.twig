@@ -62,6 +62,26 @@
 
           {% include "_includes/groups/support/support-page-item.html.twig" with {
             'indexNum': 6,
+            'title': 'Live Chat',
+            'text': '<div class="text-muted support-icon-chat-text small">
+<strong>Monday - Friday</strong>
+<br><span>8:00 a.m. - 11:00 p.m. ET<br>5:00 a.m. - 8:00 p.m. PT</span>
+<br><br><strong>Saturday - Sunday</strong>
+<br><span>10:00 a.m. - 6:00 p.m. ET<br>7:00 a.m. - 3:00 p.m. PT</span>
+</div>'
+          } %}
+          
+          {% include "_includes/groups/support/support-page-item.html.twig" with {
+            'indexNum': 7,
+            'title': 'Live chat hours',
+            'text': ' <div class="text-muted support-icon-chat-text small mx-3">
+                Chat support is busy with other representatives right now.
+                <br /><br />Please try again in a bit!
+            </div>'
+          } %}
+
+          {% include "_includes/groups/support/support-page-item.html.twig" with {
+            'indexNum': 8,
             'title': 'Avon Mailing Address',
             'imgUrl': 'images/fpo/support/mailing-address-icon@2x.png'
           } %}

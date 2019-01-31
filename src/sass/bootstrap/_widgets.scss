@@ -1,19 +1,19 @@
 .widget {
-  font-size: 13px;
+  font-size: ceil($font-size-base * 0.875);
 
   .widget-header {
     h7 {
-      font-size: 12px;
+      font-size: ceil($font-size-base * 0.8125) ;
       font-weight: normal;
     }
   }
 
   .small {
-    font-size: 12px;
+    font-size: ceil($font-size-base * 0.8125) ;
   }
 
   .widget-large {
-    font-size: 15px;
+    font-size: $font-size-base;
   }
 
   .widget-columns {
