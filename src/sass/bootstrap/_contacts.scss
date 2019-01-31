@@ -266,6 +266,10 @@
           padding-left: $left-col-width;
           padding-right: $right-col-width;
         }
+        
+        .t-primary {
+          font-weight: bold;
+        }
 
         .t-phone {
           white-space: nowrap;
@@ -626,7 +630,7 @@
       table-layout: fixed;
 
       .t-group-number {
-        padding-right: 25%;
+        padding-right: 33%;
       }
     }
   }
