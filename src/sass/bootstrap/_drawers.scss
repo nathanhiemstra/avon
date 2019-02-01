@@ -167,7 +167,9 @@ html {
         height: auto;
 
         .drawer-content {
-          height: auto; // TODO :: update this with js
+          height: auto;
+
+          // TODO :: update this with js
           min-height: auto;
         }
       }
@@ -200,8 +202,12 @@ $drawer-compact-summary-max-width: 285px;
 $drawer-compact-max-width: 475px;
 
 // heights
-$drawer-compact-small-height: 300px; // desktop - learn more collapsed
-$drawer-compact-large-height: 370px; // desktop - learn more expanded
+$drawer-compact-small-height: 300px;
+
+// desktop - learn more collapsed
+$drawer-compact-large-height: 370px;
+
+// desktop - learn more expanded
 
 .drawer-compact {
   box-shadow: none;
@@ -222,6 +228,7 @@ $drawer-compact-large-height: 370px; // desktop - learn more expanded
     background-color: $black;
     color: $white;
     transition: $drawer-animation-duration max-width $ui-animation-ease;
+
     @include box-shadow(0 -1px 9px rgba(0, 0, 0, 0.175));
 
     [data-toggle="drawer"] {
@@ -257,6 +264,7 @@ $drawer-compact-large-height: 370px; // desktop - learn more expanded
     position: relative;
     height: calc(100% - #{$drawer-compact-summary-height});
     min-height: calc(100% - #{$drawer-compact-summary-height});
+
     @include box-shadow(0 9px 9px rgba(0, 0, 0, 0.175));
 
     .carousel {
@@ -284,7 +292,8 @@ $drawer-compact-large-height: 370px; // desktop - learn more expanded
           }
 
           .item-title {
-            font-size: 20px;
+            font-size: 16px;
+            font-weight: bold;
             line-height: 1.5;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -293,7 +302,7 @@ $drawer-compact-large-height: 370px; // desktop - learn more expanded
           }
 
           .item-more {
-            font-size: 16px;
+            font-size: 14px;
           }
 
           .item-dismiss {
@@ -313,7 +322,7 @@ $drawer-compact-large-height: 370px; // desktop - learn more expanded
             }
 
             .item-cta {
-              height: 36px;
+              // height: 36px;
               line-height: 1;
             }
 
@@ -330,7 +339,6 @@ $drawer-compact-large-height: 370px; // desktop - learn more expanded
           &.in {
             animation: 0.4s dismiss-in forwards ease-in-out;
           }
-
         }
       }
 
@@ -363,6 +371,7 @@ $drawer-compact-large-height: 370px; // desktop - learn more expanded
           .left {
             order: 1;
           }
+
           .carousel-index {
             order: 2;
 
@@ -370,6 +379,7 @@ $drawer-compact-large-height: 370px; // desktop - learn more expanded
               order: 3;
             }
           }
+
           .right {
             order: 3;
 
@@ -519,11 +529,13 @@ $drawer-compact-large-height: 370px; // desktop - learn more expanded
   .drawer-content {
     min-height: auto;
   }
+
   &.drawer-hidden {
     min-height: auto;
     height: auto;
     transform: translateY(-100px);
   }
+
   &.drawer-expanded {
     transform: translateY(0);
   }
@@ -557,6 +569,7 @@ $drawer-compact-large-height: 370px; // desktop - learn more expanded
     opacity: 1;
     transform: scale(1);
   }
+
   100% {
     opacity: 0.1;
     transform: scale(0.9);
@@ -580,6 +593,7 @@ $drawer-compact-large-height: 370px; // desktop - learn more expanded
     opacity: 1;
     transform: scale(1);
   }
+
   100% {
     opacity: 0.1;
     transform: scale(0.9);
@@ -591,6 +605,7 @@ $drawer-compact-large-height: 370px; // desktop - learn more expanded
     opacity: 0.1;
     transform: scale(0.9);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
