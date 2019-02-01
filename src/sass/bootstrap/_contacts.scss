@@ -266,7 +266,7 @@
           padding-left: $left-col-width;
           padding-right: $right-col-width;
         }
-        
+
         .t-primary {
           font-weight: bold;
         }
@@ -618,6 +618,7 @@
   .table-contact-group {
     .t-group-number {
       padding-left: 0;
+      text-align: right;
     }
 
     // Mobile
